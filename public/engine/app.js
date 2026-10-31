@@ -614,7 +614,7 @@ function screenPath() {
   return wrap;
 }
 
-const questionCount = (lesson) => lesson.activities.filter((a) => !['concept', 'hook', 'passage', 'media'].includes(a.type)).length;
+const questionCount = (lesson) => lesson.activities.filter((a) => !['concept', 'hook', 'passage', 'media', 'funfact'].includes(a.type)).length;
 
 function trailNode(it, rec, isCurrent, cell, pack, unit) {
   const boss = it.kind === 'boss';
@@ -697,6 +697,13 @@ function screenLesson() {
       activities = [{ type: 'hook', id: `${lesson.id}-prehook`, prompt: 'Three quick questions first, just to see what you already know. It is fine not to know yet!', explanation: '' },
         ...pool.map((a) => ({ ...a, id: `${a.id}-pre`, pre: true })), ...activities];
     }
+  }
+
+  // A fun fact halfway through, between two questions, and a different one on the finish screen. Replays show new ones.
+  const facts = lesson.funFacts || [], plays = learner?.lessonsDone?.[lesson.lessonId]?.count || 0;
+  if (facts.length && !lesson.isPractice && activities.length >= 6) {
+    const mid = Math.floor(activities.length / 2);
+    activities = [...activities.slice(0, mid), { type: 'funfact', id: `${lesson.id}-fact`, prompt: facts[plays % facts.length] }, ...activities.slice(mid)];
   }
 
   session = {
@@ -997,6 +1004,11 @@ function renderCelebration() {
     ]),
   ]);
 
+  const facts = s.lesson.funFacts || [];
+  if (facts.length) {
+    const plays = l?.lessonsDone?.[s.lesson.lessonId]?.count || 1;
+    box.append(el('p', { class: 'fun-fact' }, [el('b', { text: `${bookWord(s.ctx?.bookLang, 'Did you know?')} ` }), facts[plays % facts.length]]));
+  }
   box.append(...finishedNotes(s.lesson));
 
   for (const r of unlocked) {

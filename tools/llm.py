@@ -30,14 +30,16 @@ def _take_turn():
         if wait > 0: time.sleep(wait)
         f.seek(0); f.truncate(); f.write(str(time.time())); f.flush()
 
-def m27(prompt, want_json=True, tries=3, on_retry=None):
+def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
     """Reply text, or the first JSON object in it. None if every try failed. Haiku writes first, then DeepSeek if it is free
-    again, and MiniMax-M2.7 is the last resort. The name stays because every tool calls it."""
-    got = haiku(prompt, want_json=want_json, tries=1)
-    if got is not None: return got
-    if len(prompt) < 100000:   # the longest prompts do not fit on a command line
-        got = opencode(prompt, DEEPSEEK, want_json=want_json, tries=1)
+    again, and MiniMax-M2.7 is the last resort. The name stays because every tool calls it. minimax_only gets a second opinion
+    from a different model."""
+    if not minimax_only:
+        got = haiku(prompt, want_json=want_json, tries=1)
         if got is not None: return got
+        if len(prompt) < 100000:   # the longest prompts do not fit on a command line
+            got = opencode(prompt, DEEPSEEK, want_json=want_json, tries=1)
+            if got is not None: return got
     for t in range(tries):
         try:
             _take_turn()

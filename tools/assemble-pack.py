@@ -274,6 +274,7 @@ import subprocess
 def write(): json.dump(pack, open(P + 'pack.json', 'w'), indent=1, ensure_ascii=False)
 import plain   # plain-English rewrites and removal of questions confirmed broken: work/plain, made by tools/plain.py
 print('plain English:', *plain.apply(SUBJ['pack'], pack))
+import funfacts; print('lessons with fun facts:', funfacts.apply(SUBJ['pack'], pack))
 write()
 for _ in range(3):
     out = subprocess.run(['node', f'{ROOT}/tools/validate-pack.mjs', P + 'pack.json'], capture_output=True, text=True).stdout

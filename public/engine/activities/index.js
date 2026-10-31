@@ -18,10 +18,11 @@ import passage from './passage.js';
 import worked from './worked.js';
 import explain from './explain.js';
 import explore from './explore.js';
+import funfact from './funfact.js';
 
 const modules = [
   mcq, truefalse, fillblank, matchpairs, dragorder, draglabel,
-  typeanswer, listenpick, flashcard, concept, watchanswer, media, hook, passage, worked, explain, explore,
+  typeanswer, listenpick, flashcard, concept, watchanswer, media, hook, passage, worked, explain, explore, funfact,
 ];
 
 const byType = new Map();

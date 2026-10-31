@@ -3491,7 +3491,7 @@
       {
        "id": "social-science-g7-ch2-l3",
        "title": "Measuring Temperature and Precipitation",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -3533,6 +3533,73 @@
            "ch": 2,
            "p": 28
           },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g7-ch2-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Asha's school needs a thermometer for a careful daily record. Which one should it pick, and why?",
+         "steps": [
+          "A coloured liquid thermometer works because its liquid expands when warm.",
+          "So its liquid climbs the tube when the air gets hotter.",
+          "A digital thermometer is more precise, so it shows small changes.",
+          "It can also record more data, so it is preferred for careful records."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "3.4",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "social-science-g7-ch2-l3-a5",
+         "difficulty": 2,
+         "tags": [
+          "rainfall",
+          "rain gauge"
+         ],
+         "title": "How a rain gauge works",
+         "body": "Rainfall has its own measuring tool. A rain gauge measures the amount of rainfall. When rain falls, water enters a funnel. The funnel guides the water into a cylinder. A scale on the cylinder shows the depth of collected rainwater. If that depth is 5 millimetres, the area received 5 millimetres of rainfall.",
+         "keyPoints": [
+          "A rain gauge measures rainfall.",
+          "Rainwater enters a funnel and collects in a cylinder.",
+          "A scale measures the depth of collected rainwater."
+         ],
+         "explanation": "These parts work together to measure the rainfall received by an area.",
+         "src": [
           {
            "ch": 2,
            "p": 28
@@ -3611,41 +3678,6 @@
          "answer": 1,
          "explanation": "A rain gauge is used to measure the amount of rainfall.",
          "src": [
-          {
-           "ch": 2,
-           "p": 28
-          }
-         ]
-        },
-        {
-         "type": "concept",
-         "id": "social-science-g7-ch2-l3-a5",
-         "difficulty": 2,
-         "tags": [
-          "rainfall",
-          "rain gauge"
-         ],
-         "title": "How a rain gauge works",
-         "body": "Rainfall has its own measuring tool. A rain gauge measures the amount of rainfall. When rain falls, water enters a funnel. The funnel guides the water into a cylinder. A scale on the cylinder shows the depth of collected rainwater. If that depth is 5 millimetres, the area received 5 millimetres of rainfall.",
-         "keyPoints": [
-          "A rain gauge measures rainfall.",
-          "Rainwater enters a funnel and collects in a cylinder.",
-          "A scale measures the depth of collected rainwater."
-         ],
-         "explanation": "These parts work together to measure the rainfall received by an area.",
-         "src": [
-          {
-           "ch": 2,
-           "p": 28
-          },
-          {
-           "ch": 2,
-           "p": 28
-          },
-          {
-           "ch": 2,
-           "p": 28
-          },
           {
            "ch": 2,
            "p": 28
@@ -3749,6 +3781,149 @@
          ],
          "explanation": "Adding the maximum and minimum temperatures, then dividing by two, gives the mean daily temperature.",
          "src": [
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Asha's coloured liquid thermometer rises a little. Her digital thermometer shows changes the liquid did not show. Why?",
+         "options": [
+          "The digital thermometer is more precise, so it shows small changes.",
+          "The coloured liquid is bigger, so it hides small changes.",
+          "The digital thermometer makes its own heat, so it reads higher.",
+          "The coloured liquid only reads whole numbers, not small changes."
+         ],
+         "answer": 0,
+         "why": {
+          "The coloured liquid is bigger, so it hides small changes.": "Wrong: this thinks the size of the liquid hides changes, but the liquid's size does not decide this.",
+          "The digital thermometer makes its own heat, so it reads higher.": "Wrong: this thinks the thermometer heats itself, but the thermometer only measures the air around it.",
+          "The coloured liquid only reads whole numbers, not small changes.": "Wrong: this thinks the liquid only shows whole numbers, but the reading is not limited like this."
+         },
+         "explanation": "Right: a more precise thermometer can show smaller changes than a less precise one.",
+         "f": [
+          "3.4",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "Day A had the highest reading of the two days. Day B had the lowest reading of the two days. Which day had the bigger temperature range?",
+         "options": [
+          "Day A, because its highest reading is the highest of both.",
+          "Day B, because its lowest reading is the lowest of both.",
+          "We cannot tell yet, because range needs both readings from each day.",
+          "Both are equal, because each day has one special reading."
+         ],
+         "answer": 2,
+         "why": {
+          "Day A, because its highest reading is the highest of both.": "Wrong: this uses only the maximum, but range also needs the minimum.",
+          "Day B, because its lowest reading is the lowest of both.": "Wrong: this uses only the minimum, but range also needs the maximum.",
+          "Both are equal, because each day has one special reading.": "Wrong: this thinks one reading each makes the ranges equal, but range depends on both readings."
+         },
+         "explanation": "Right: range is the maximum minus the minimum, so both numbers are needed for each day.",
+         "f": [
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply rule"
+         ],
+         "prompt": "Lila's day had a very high maximum and a low minimum. Her friend says the mean daily temperature is only the maximum. Why is the friend wrong?",
+         "options": [
+          "The mean uses the maximum and minimum, added and divided by two.",
+          "The mean is only the minimum, because it is the lowest reading.",
+          "The mean is the range, so the maximum is subtracted.",
+          "The mean is only the maximum, because the hottest time matters most."
+         ],
+         "answer": 0,
+         "why": {
+          "The mean is only the minimum, because it is the lowest reading.": "Wrong: this thinks the lowest reading alone gives the mean, but the mean uses both readings.",
+          "The mean is the range, so the maximum is subtracted.": "Wrong: this mixes up the mean with the range, but the range is a different calculation.",
+          "The mean is only the maximum, because the hottest time matters most.": "Wrong: this repeats the friend's mistake, because the mean uses both readings, not just the highest."
+         },
+         "explanation": "Right: the mean daily temperature uses both the maximum and the minimum, added and divided by two.",
+         "f": [
+          "3.6",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "decide"
+         ],
+         "prompt": "A school wants a record of the temperature every hour for a week. Which thermometer should it choose, and why?",
+         "options": [
+          "Digital, because it is more precise and can record more data.",
+          "Coloured liquid, because it expands and so records more data.",
+          "Coloured liquid, because it is more precise than a digital one.",
+          "Digital, because it only works when the sun is out."
+         ],
+         "answer": 0,
+         "why": {
+          "Coloured liquid, because it expands and so records more data.": "Wrong: this thinks expanding liquid records data, but the liquid only shows the temperature as it expands.",
+          "Coloured liquid, because it is more precise than a digital one.": "Wrong: this thinks the coloured liquid is more precise, but digital thermometers are the more precise choice.",
+          "Digital, because it only works when the sun is out.": "Wrong: this thinks sunlight decides how a digital thermometer works, but its use does not depend on the sun."
+         },
+         "explanation": "Right: a digital thermometer is more precise and can record more data, which suits a long record.",
+         "f": [
+          "3.4",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
           {
            "ch": 2,
            "p": 28
@@ -4078,7 +4253,7 @@
       {
        "id": "social-science-g7-ch2-l5",
        "title": "Weather Stations",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -4155,6 +4330,43 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "social-science-g7-ch2-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A farm family wants to know if the weather will change next week. Should they trust one reading from one morning?",
+         "steps": [
+          "One reading shows the weather at one place and one time only.",
+          "Weather can change often, so one reading may be unusual.",
+          "Readings taken at regular intervals show a pattern over time.",
+          "A pattern helps forecasting, so regular readings give a clearer answer than one reading alone."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "5.1",
+          "5.3",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "social-science-g7-ch2-l5-a2",
          "difficulty": 1,
@@ -4177,25 +4389,6 @@
            "ch": 2,
            "p": 28
           },
-          {
-           "ch": 2,
-           "p": 28
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch2-l5-a3",
-         "difficulty": 1,
-         "tags": [
-          "measurements",
-          "weather-stations"
-         ],
-         "title": "Regular Measurements",
-         "prompt": "Measurements at a weather station are taken at regular intervals.",
-         "answer": true,
-         "explanation": "Regular intervals make the measurements organised and useful.",
-         "src": [
           {
            "ch": 2,
            "p": 28
@@ -4356,23 +4549,184 @@
         },
         {
          "type": "mcq",
-         "id": "social-science-g7-ch2-l5-a9",
+         "id": "social-science-g7-ch2-l5-d1",
          "difficulty": 3,
          "tags": [
-          "sikkim",
-          "automated-stations",
-          "weather-information"
+          "deep",
+          "apply"
          ],
-         "title": "The Sikkim Station",
-         "prompt": "Which statement about the Sikkim station is correct?",
+         "prompt": "A village has no staff to read instruments. Nobody can visit the weather station often. Which station gives timely weather information there?",
          "options": [
-          "It gives late information and stands below 4800 metres.",
-          "It gives early information and stands below 4800 metres.",
-          "It gives late information and stands above 4800 metres.",
-          "It gives early information and stands above 4800 metres."
+          "A station that a worker must visit and read by hand.",
+          "An automated station that records data without any person.",
+          "A station with one instrument, read only once a year.",
+          "Old notes from many years ago about the village weather."
          ],
-         "answer": 3,
-         "explanation": "The station stands at more than 4800 metres. It gives early information about upcoming weather conditions.",
+         "answer": 1,
+         "why": {
+          "A station that a worker must visit and read by hand.": "Wrong: thinks people must always be present for weather readings to be taken.",
+          "A station with one instrument, read only once a year.": "Wrong: thinks one instrument is enough, but several are needed to measure weather.",
+          "Old notes from many years ago about the village weather.": "Wrong: thinks old notes can show the weather at a place today."
+         },
+         "explanation": "Right: an automated station records data without human intervention, so its information is timely.",
+         "f": [
+          "5.5",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Station A took readings at regular times for many days. Station B took one reading on a single day. Which station can show a weather pattern?",
+         "options": [
+          "Station A, because its readings were taken at regular times.",
+          "Station B, because one reading is always the most accurate.",
+          "Both equally, because each station only measures one moment.",
+          "Station B, because a single reading covers all the days."
+         ],
+         "answer": 0,
+         "why": {
+          "Station B, because one reading is always the most accurate.": "Wrong: thinks one reading is more accurate than many readings taken over time.",
+          "Both equally, because each station only measures one moment.": "Wrong: thinks readings are equal no matter how often they are taken.",
+          "Station B, because a single reading covers all the days.": "Wrong: thinks one reading covers many days at once."
+         },
+         "explanation": "Right: regular readings taken over time show a pattern, which helps forecasting.",
+         "f": [
+          "5.3",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "map"
+         ],
+         "prompt": "A class draws a weather map using readings from one station. Their friend lives in a town far away. Can the map show that town's weather?",
+         "options": [
+          "Yes, because all towns always have the same weather.",
+          "Yes, if the station takes readings at regular intervals.",
+          "No, because each station measures weather at its own particular place.",
+          "No, because maps never show weather for any place."
+         ],
+         "answer": 2,
+         "why": {
+          "Yes, because all towns always have the same weather.": "Wrong: thinks weather is the same everywhere at the same time.",
+          "Yes, if the station takes readings at regular intervals.": "Wrong: thinks regular readings can describe other towns too.",
+          "No, because maps never show weather for any place.": "Wrong: thinks maps can never show weather, but weather maps do show it."
+         },
+         "explanation": "Right: a station measures weather at one particular place only.",
+         "f": [
+          "5.1",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "cause"
+         ],
+         "prompt": "A weather station is in a place few people visit. Its data still arrives on time every day. Why does this happen?",
+         "options": [
+          "A worker walks there to write the numbers down by hand.",
+          "Its sensors measure and record the weather data by themselves.",
+          "Clouds carry the numbers down to the nearest town each day.",
+          "Data is only saved when a person asks the station for it."
+         ],
+         "answer": 1,
+         "why": {
+          "A worker walks there to write the numbers down by hand.": "Wrong: thinks a person must always read the station for data to exist.",
+          "Clouds carry the numbers down to the nearest town each day.": "Wrong: thinks weather itself carries the data down to people.",
+          "Data is only saved when a person asks the station for it.": "Wrong: thinks data exists only when a person requests it from the station."
+         },
+         "explanation": "Right: an automated station is self-operating, so its sensors record data without people.",
+         "f": [
+          "5.5",
+          "5.6",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l5-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A farmer wants to spray medicine on crops. Strong wind could blow the medicine away. Which information helps the farmer decide?",
+         "options": [
+          "Recent wind readings from the station, taken at regular times.",
+          "One temperature reading taken at noon on a single day.",
+          "The number of people who visited the station last month.",
+          "An old map of the country drawn many years back."
+         ],
+         "answer": 0,
+         "why": {
+          "One temperature reading taken at noon on a single day.": "Wrong: thinks one temperature reading can tell the farmer about the wind.",
+          "The number of people who visited the station last month.": "Wrong: thinks the number of visitors shows what the weather is like.",
+          "An old map of the country drawn many years back.": "Wrong: thinks an old map shows today's wind."
+         },
+         "explanation": "Right: regular recent wind readings show what the wind is doing now.",
+         "f": [
+          "5.4",
+          "5.7",
+          "5.8"
+         ],
          "src": [
           {
            "ch": 2,
@@ -4403,7 +4757,7 @@
       {
        "id": "social-science-g7-ch2-l6",
        "title": "Predicting the Weather",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -4451,6 +4805,43 @@
            "ch": 2,
            "p": 28
           },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g7-ch2-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Ravi's village is by the sea. The radio says stormy weather is coming soon. Should the fishermen take their boats out today?",
+         "steps": [
+          "Stormy weather is made of wind, rain and other weather parts together.",
+          "Accurate predictions tell us about these parts before they arrive.",
+          "Fishermen are warned not to go out when stormy weather is expected.",
+          "So staying on land keeps them safe, since storms can be dangerous at sea."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "6.3",
+          "6.5",
+          "6.6"
+         ],
+         "src": [
           {
            "ch": 2,
            "p": 28
@@ -4591,24 +4982,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "social-science-g7-ch2-l6-a8",
-         "difficulty": 3,
-         "tags": [
-          "climate change",
-          "extreme weather"
-         ],
-         "prompt": "Climate change makes droughts, floods and cyclones more frequent.",
-         "answer": true,
-         "explanation": "These are examples of extreme weather made more frequent by climate change.",
-         "src": [
-          {
-           "ch": 2,
-           "p": 28
-          }
-         ]
-        },
-        {
          "type": "matchpairs",
          "id": "social-science-g7-ch2-l6-a9",
          "difficulty": 3,
@@ -4656,6 +5029,149 @@
            "p": 28
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "pattern"
+         ],
+         "prompt": "A weather station has recorded rain for many years. Meena's teacher says these records help make better predictions. Why do many years of records help?",
+         "options": [
+          "They show patterns in how the weather changes over time.",
+          "They stop rain from falling on the same place again.",
+          "They tell the exact rain for every hour next year.",
+          "They show rain only on the hottest days of the year."
+         ],
+         "answer": 0,
+         "why": {
+          "They stop rain from falling on the same place again.": "Wrong: this thinks records control the rain, but records only collect data.",
+          "They tell the exact rain for every hour next year.": "Wrong: this thinks records make perfect predictions, but predictions are never exact to the hour.",
+          "They show rain only on the hottest days of the year.": "Wrong: this thinks only hot days matter, but records help us study all the weather."
+         },
+         "explanation": "Right: long records show patterns, so predictions can be more accurate.",
+         "f": [
+          "6.1",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "plan"
+         ],
+         "prompt": "In Meena's village, rain is the strongest part of the weather in July. Her father is a farmer. He must plan his work for the month. What should he plan around?",
+         "options": [
+          "Wind, because wind is the most important part every month.",
+          "Temperature, because heat is always the strongest part of weather.",
+          "Rain, because rain is the strongest part of the weather in July.",
+          "Nothing, because no part of the weather can be strongest."
+         ],
+         "answer": 2,
+         "why": {
+          "Wind, because wind is the most important part every month.": "Wrong: this thinks one weather part is always the strongest, but it changes with the time.",
+          "Temperature, because heat is always the strongest part of weather.": "Wrong: this thinks heat always leads, but in July rain is the dominant part.",
+          "Nothing, because no part of the weather can be strongest.": "Wrong: this thinks all weather parts are equal, but one part can be dominant at a time."
+         },
+         "explanation": "Right: rain is dominant in July, so it matters most for his plans.",
+         "f": [
+          "6.6",
+          "6.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "locate"
+         ],
+         "prompt": "Ravi's aunt lives in northern India. She says: 'All summer afternoon, a hot, dusty wind pushed sand into our house.' Which weather event is she describing?",
+         "options": [
+          "A cyclone, because a strong wind means a big storm.",
+          "A loo, because a hot dusty wind blows there in summer.",
+          "A flood, because a lot of water covers the roads.",
+          "A drought, because the land stays dry for a long time."
+         ],
+         "answer": 1,
+         "why": {
+          "A cyclone, because a strong wind means a big storm.": "Wrong: this thinks any strong wind is a cyclone, but she describes a hot, dusty wind.",
+          "A flood, because a lot of water covers the roads.": "Wrong: this thinks any bad weather is a flood, but she describes wind, not water.",
+          "A drought, because the land stays dry for a long time.": "Wrong: this thinks any dry weather is a drought, but she describes a hot, dusty wind."
+         },
+         "explanation": "Right: a loo is a strong, hot, dusty wind that blows in northern India in summer.",
+         "f": [
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "prepare"
+         ],
+         "prompt": "The weather office predicts a cyclone will reach a coastal town soon. The local government wants to prepare resources. Which action helps most?",
+         "options": [
+          "Wait until the cyclone hits, then send help to the town.",
+          "Store food, water and boats in safe places before the cyclone comes.",
+          "Cancel the warnings, because the cyclone might never reach us.",
+          "Ignore the forecast, because predictions are not always perfect."
+         ],
+         "answer": 1,
+         "why": {
+          "Wait until the cyclone hits, then send help to the town.": "Wrong: this waits too long, so there is no time to prepare resources.",
+          "Cancel the warnings, because the cyclone might never reach us.": "Wrong: this thinks an uncertain event will not happen, so people stay unready.",
+          "Ignore the forecast, because predictions are not always perfect.": "Wrong: this thinks an imperfect prediction is useless, but it still helps us prepare."
+         },
+         "explanation": "Right: accurate predictions let leaders prepare resources before a disaster.",
+         "f": [
+          "6.3",
+          "6.4"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l6-potentially-disastrous-tropi-5be4ff.webp",
@@ -4668,6 +5184,136 @@
         "licenseUrl": "",
         "creator": "MODIS Land Rapid Response Team, NASA GSFC"
        }
+      },
+      {
+       "id": "social-science-g7-ch2-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 4,
+       "topicScene": "media/ch2-l1-2016-july-monsoon-clouds-in--fa96bf.webp",
+       "sceneAlt": "Monsoon clouds hang above farmers working near Goa’s Western Ghats in India.",
+       "sceneCaption": "Farmers work beneath monsoon clouds in Goa, India.",
+       "sceneCredit": {
+        "text": "2016 July monsoon clouds in Goa India by Rajarshi MITRA from Mumbai, India, CC BY 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:2016_July_monsoon_clouds_in_Goa_India.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "creator": "Rajarshi MITRA from Mumbai, India"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A school has a small weather station in its playground. Its thermometer uses a coloured liquid that expands when the temperature rises, and it records the day's maximum and minimum temperatures. Beside it is a rain gauge. Rain falls into a funnel and is collected in a cylinder, where a scale shows the depth of the water. After a shower, the scale reads 5 millimetres. A second, digital thermometer shows 15 degrees Celsius at the same time.",
+         "prompt": "If the air around the thermometer becomes warmer during the afternoon, what will the coloured liquid most likely do?",
+         "options": [
+          "It shrinks, so the column drops lower in the tube.",
+          "It takes up more space, so the column climbs higher.",
+          "It stays the same height, because only the scale changes.",
+          "It turns solid, so the column stops moving."
+         ],
+         "answer": 1,
+         "why": {
+          "It shrinks, so the column drops lower in the tube.": "Wrong: the liquid grows in warm air, so it does not shrink.",
+          "It stays the same height, because only the scale changes.": "Wrong: the liquid itself responds to temperature; the scale does not change the reading.",
+          "It turns solid, so the column stops moving.": "Wrong: the liquid does not freeze on a warm afternoon, so it keeps moving."
+         },
+         "explanation": "Right: as the temperature rises, the liquid takes up more space and climbs."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A school has a small weather station in its playground. Its thermometer uses a coloured liquid that expands when the temperature rises, and it records the day's maximum and minimum temperatures. Beside it is a rain gauge. Rain falls into a funnel and is collected in a cylinder, where a scale shows the depth of the water. After a shower, the scale reads 5 millimetres. A second, digital thermometer shows 15 degrees Celsius at the same time.",
+         "prompt": "A visitor's guide gives a temperature of 59 degrees Fahrenheit, while the school thermometer reads 15 degrees Celsius. What should the student conclude?",
+         "options": [
+          "The guide's day is hotter, because 59 is a bigger number than 15.",
+          "The two readings show the same temperature, because the two scales measure one value in different units.",
+          "The guide's reading is wrong, because Fahrenheit numbers are always smaller.",
+          "The readings differ, so the student should add them together to get one value."
+         ],
+         "answer": 1,
+         "why": {
+          "The guide's day is hotter, because 59 is a bigger number than 15.": "Wrong: the numbers belong to different scales, so their size does not compare the temperatures.",
+          "The guide's reading is wrong, because Fahrenheit numbers are always smaller.": "Wrong: Fahrenheit numbers are not always smaller; the two scales simply differ.",
+          "The readings differ, so the student should add them together to get one value.": "Wrong: adding readings from two different scales gives no meaningful temperature."
+         },
+         "explanation": "Right: both readings describe the same temperature, expressed in different units."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch2-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between a thermometer that measures the surrounding temperature and one that records daily maximum and minimum temperatures?",
+         "answer": "A surrounding-temperature thermometer shows the temperature at the moment it is read. A maximum and minimum thermometer records the highest and lowest temperatures reached during the day, so the class can later work out the temperature range or mean daily temperature.",
+         "points": [
+          "Surrounding-temperature thermometer shows the current temperature",
+          "Maximum and minimum thermometer records the highest and lowest temperatures of the day",
+          "Maximum and minimum readings allow the temperature range or mean daily temperature to be calculated"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A fishing village on a coast receives a warning from meteorologists that a cyclone is likely. Their predictions rely on instruments that have recorded data over long periods of time. Because the forecast is accurate, the local government has prepared relief resources and safe shelters. Fishermen have been advised not to go out to sea when stormy weather is expected. Many of them are staying at home.",
+         "prompt": "If the fishermen had not received this advice, what would most likely have happened?",
+         "options": [
+          "They would have sailed out unaware and been caught in the cyclone.",
+          "They would have stayed safely ashore because the sky looked clear.",
+          "The local government would have stopped recording data with its instruments.",
+          "The cyclone would have been weaker because nobody was warned about it."
+         ],
+         "answer": 0,
+         "why": {
+          "They would have stayed safely ashore because the sky looked clear.": "Wrong: the advice concerns predicted stormy weather, not the appearance of the sky.",
+          "The local government would have stopped recording data with its instruments.": "Wrong: instruments record data regardless of whether anyone is warned.",
+          "The cyclone would have been weaker because nobody was warned about it.": "Wrong: a warning does not change how strong a cyclone is."
+         },
+         "explanation": "Correct: without a warning, the fishermen would not know the danger."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A fishing village on a coast receives a warning from meteorologists that a cyclone is likely. Their predictions rely on instruments that have recorded data over long periods of time. Because the forecast is accurate, the local government has prepared relief resources and safe shelters. Fishermen have been advised not to go out to sea when stormy weather is expected. Many of them are staying at home.",
+         "prompt": "If cyclones become more frequent because of climate change, what is the best step for the local government?",
+         "options": [
+          "Stop recording instrument readings, since storms cannot be predicted at all.",
+          "Keep gathering long-term data and plan shelters for more frequent extreme storms.",
+          "Reduce warnings so fishermen are not disturbed while they work.",
+          "Wait for cyclones to become rare again before preparing any resources."
+         ],
+         "answer": 1,
+         "why": {
+          "Stop recording instrument readings, since storms cannot be predicted at all.": "Wrong: data collected with instruments helps us predict the weather.",
+          "Reduce warnings so fishermen are not disturbed while they work.": "Wrong: warnings protect fishermen, so reducing them increases danger.",
+          "Wait for cyclones to become rare again before preparing any resources.": "Wrong: climate change makes extreme weather more frequent, not rarer."
+         },
+         "explanation": "Correct: long-term data and preparation help face more frequent extreme events."
+        }
+       ]
       }
      ],
      "boss": {

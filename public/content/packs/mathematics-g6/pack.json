@@ -118,10 +118,10 @@
          "tags": [
           "worked"
          ],
-         "prompt": "A tile pattern has 6 tiles in each row, and the pattern is repeated for 4 rows. How many tiles are in the whole pattern?",
+         "prompt": "A tile pattern has 6 tiles in each row. It has 4 rows. How many tiles are in the whole pattern?",
          "steps": [
-          "One row contains 6 tiles.",
-          "There are 4 equal rows, so multiply the tiles in one row by the number of rows.",
+          "One row has 6 tiles.",
+          "There are 4 equal rows. Multiply the tiles in one row by the number of rows.",
           "6 x 4 = 24 tiles."
          ],
          "modelSpec": {
@@ -131,7 +131,7 @@
          },
          "result": "24",
          "gen": {
-          "template": "A tile pattern has {c} tiles in each row, and the pattern is repeated for {r} rows. How many tiles are in the whole pattern?",
+          "template": "A tile pattern has {c} tiles in each row. It has {r} rows. How many tiles are in the whole pattern?",
           "params": {
            "c": [
             3,
@@ -152,8 +152,8 @@
            "one_row": "c"
           },
           "steps": [
-           "One row contains {c} tiles.",
-           "There are {r} equal rows, so multiply the tiles in one row by the number of rows.",
+           "One row has {c} tiles.",
+           "There are {r} equal rows. Multiply the tiles in one row by the number of rows.",
            "{c} x {r} = {answer} tiles."
           ],
           "model": {
@@ -165,7 +165,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Watch how it is solved.",
+         "explanation": "One row has 6 tiles. There are 4 equal rows. Multiply the tiles in one row by the number of rows. 6 x 4 = 24 tiles.",
          "f": [],
          "derived": [
           "24 (generated problem)",
@@ -182,12 +182,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "Why can an idea about a pattern in one everyday activity help us understand a pattern somewhere else?",
+         "prompt": "Why can an idea from one everyday pattern help us understand another?",
          "steps": [
-          "Cooking can show patterns, so noticing one there gives us a place to begin.",
-          "Mathematics searches for patterns and asks why they exist, so noticing is only the first part.",
-          "An explanation can be used far beyond where it was discovered, so a cooking idea may help elsewhere.",
-          "Therefore, mathematics helps us carry useful pattern ideas into many everyday situations."
+          "Cooking can show a pattern, so we can start by noticing it.",
+          "Mathematics also asks why a pattern happens.",
+          "A good explanation can work in many other places.",
+          "So mathematics helps us use pattern ideas in everyday life."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -221,13 +221,13 @@
          "title": "Where Can You Find Patterns?",
          "prompt": "Where can you see patterns?",
          "options": [
-          "In nature and all around us",
-          "Only inside mathematics books",
-          "Only in science laboratories",
-          "In one special kind of shop"
+          "In nature and around us",
+          "Only in mathematics books",
+          "Only in science labs",
+          "In one kind of shop"
          ],
          "answer": 0,
-         "explanation": "Patterns can be seen in nature and all around us.",
+         "explanation": "You can see patterns in nature and around us.",
          "src": [
           {
            "ch": 1,
@@ -377,21 +377,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "A bead pattern repeats a group of 6 blue beads followed by a group of 2 red beads. How many beads are in one complete repeating group?",
-         "explanation": "One repeating group has 6 blue beads. It also has 2 red beads. 6 + 2 = 8 beads.",
+         "prompt": "A bead pattern repeats 6 blue beads, then 2 red beads. How many beads are in one repeating group?",
+         "explanation": "The group has 6 blue beads. It also has 2 red beads. 6 + 2 = 8 beads.",
          "steps": [
-          "One repeating group has 6 blue beads.",
+          "The group has 6 blue beads.",
           "It also has 2 red beads.",
           "6 + 2 = 8 beads."
          ],
-         "hint": "Add the number of blue beads and red beads in the repeating group.",
+         "hint": "Add the blue beads and the red beads.",
          "derived": [
           "2 (generated problem)",
           "6 (generated problem)",
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "A bead pattern repeats a group of {a} blue beads followed by a group of {b} red beads. How many beads are in one complete repeating group?",
+          "template": "A bead pattern repeats {a} blue beads, then {b} red beads. How many beads are in one repeating group?",
           "params": {
            "a": [
             2,
@@ -412,7 +412,7 @@
           "answer": "a+b",
           "vals": {},
           "steps": [
-           "One repeating group has {a} blue beads.",
+           "The group has {a} blue beads.",
            "It also has {b} red beads.",
            "{a} + {b} = {answer} beads."
           ],
@@ -470,21 +470,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "A movement pattern repeats 6 steps for each of 5 cycles. How many steps are completed altogether?",
-         "explanation": "One cycle has 6 steps. There are 5 equal cycles, so multiply the steps in one cycle by the number of cycles. 6 x 5 = 30 steps.",
+         "prompt": "A pattern has 6 steps. You repeat it 5 times. How many steps are done in all?",
+         "explanation": "One round has 6 steps. There are 5 rounds, all the same. Multiply the steps for one round by the number of rounds. 6 x 5 = 30 steps.",
          "steps": [
-          "One cycle has 6 steps.",
-          "There are 5 equal cycles, so multiply the steps in one cycle by the number of cycles.",
+          "One round has 6 steps.",
+          "There are 5 rounds, all the same. Multiply the steps for one round by the number of rounds.",
           "6 x 5 = 30 steps."
          ],
-         "hint": "Count the steps in one cycle and multiply by the number of cycles.",
+         "hint": "Count the steps in one round, then multiply by the number of rounds.",
          "derived": [
           "30 (generated problem)",
           "5 (generated problem)",
           "6 (generated problem)"
          ],
          "gen": {
-          "template": "A movement pattern repeats {k} steps for each of {n} cycles. How many steps are completed altogether?",
+          "template": "A pattern has {k} steps. You repeat it {n} times. How many steps are done in all?",
           "params": {
            "k": [
             2,
@@ -506,8 +506,8 @@
            "one_cycle": "k"
           },
           "steps": [
-           "One cycle has {k} steps.",
-           "There are {n} equal cycles, so multiply the steps in one cycle by the number of cycles.",
+           "One round has {k} steps.",
+           "There are {n} rounds, all the same. Multiply the steps for one round by the number of rounds.",
            "{k} x {n} = {answer} steps."
           ],
           "model": {
@@ -611,9 +611,9 @@
          "items": [
           "Find a pattern",
           "Explain why it exists",
-          "Use the explanation farther away"
+          "Use the explanation in a new place"
          ],
-         "explanation": "Mathematics finds patterns and explains them. Such explanations can help us elsewhere.",
+         "explanation": "Math finds patterns and explains them. These explanations can help us in other places.",
          "src": [
           {
            "ch": 1,
@@ -632,20 +632,20 @@
           "practice",
           "computed"
          ],
-         "prompt": "At a market, a display repeats a group of 6 mangoes in each of 6 rows. How many mangoes are in the display?",
-         "explanation": "Each row contains 6 mangoes. There are 6 rows in the repeating display. 6 x 6 = 36 mangoes.",
+         "prompt": "A shop shows mangoes in 6 rows. Each row has 6 mangoes. How many mangoes are there in all?",
+         "explanation": "Each row has 6 mangoes. There are 6 rows. 6 x 6 = 36 mangoes.",
          "steps": [
-          "Each row contains 6 mangoes.",
-          "There are 6 rows in the repeating display.",
+          "Each row has 6 mangoes.",
+          "There are 6 rows.",
           "6 x 6 = 36 mangoes."
          ],
-         "hint": "Use the repeated group size to count all the rows.",
+         "hint": "Use the number in each row to count all the mangoes.",
          "derived": [
           "36 (generated problem)",
           "6 (generated problem)"
          ],
          "gen": {
-          "template": "At a market, a display repeats a group of {k} mangoes in each of {n} rows. How many mangoes are in the display?",
+          "template": "A shop shows mangoes in {n} rows. Each row has {k} mangoes. How many mangoes are there in all?",
           "params": {
            "k": [
             3,
@@ -666,8 +666,8 @@
            "one_row": "k"
           },
           "steps": [
-           "Each row contains {k} mangoes.",
-           "There are {n} rows in the repeating display.",
+           "Each row has {k} mangoes.",
+           "There are {n} rows.",
            "{k} x {n} = {answer} mangoes."
           ],
           "model": {
@@ -710,14 +710,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "A cooking pattern uses 5 grams in the first bowl and 2 more grams in each following bowl. How many grams are used in bowl number 6?",
-         "explanation": "The first bowl uses 5 grams. Bowl number 6 is reached after 6 minus one increases of 2 grams. 5 + (6 minus one) x 2 = 15 grams.",
+         "prompt": "A cook uses 5 grams in the first bowl. Each next bowl uses 2 more grams. How many grams are in bowl number 6?",
+         "explanation": "The first bowl uses 5 grams. Bowl 6 adds 6 minus one increases of 2 grams. 5 + (6 minus one) x 2 = 15 grams.",
          "steps": [
           "The first bowl uses 5 grams.",
-          "Bowl number 6 is reached after 6 minus one increases of 2 grams.",
+          "Bowl 6 adds 6 minus one increases of 2 grams.",
           "5 + (6 minus one) x 2 = 15 grams."
          ],
-         "hint": "Use the repeated increase from the first bowl to find the later bowl.",
+         "hint": "Start at the first bowl. Add the increase for each bowl after it.",
          "derived": [
           "15 (generated problem)",
           "2 (generated problem)",
@@ -725,7 +725,7 @@
           "6 (generated problem)"
          ],
          "gen": {
-          "template": "A cooking pattern uses {first} grams in the first bowl and {increase} more grams in each following bowl. How many grams are used in bowl number {term}?",
+          "template": "A cook uses {first} grams in the first bowl. Each next bowl uses {increase} more grams. How many grams are in bowl number {term}?",
           "params": {
            "first": [
             2,
@@ -751,7 +751,7 @@
           },
           "steps": [
            "The first bowl uses {first} grams.",
-           "Bowl number {term} is reached after {term} minus one increases of {increase} grams.",
+           "Bowl {term} adds {term} minus one increases of {increase} grams.",
            "{first} + ({term} minus one) x {increase} = {answer} grams."
           ],
           "model": {
@@ -806,14 +806,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "A bus journey follows the same 4-minute pattern between each pair of stops. If the bus makes 5 such journeys, how many minutes does it travel?",
-         "explanation": "Each journey takes 4 minutes. There are 5 equal journeys, so multiply the time for one journey by the number of journeys. 4 x 5 = 20 minutes.",
+         "prompt": "Each trip between two stops takes 4 minutes. The bus makes 5 trips. How many minutes does the bus travel in all?",
+         "explanation": "Each trip takes 4 minutes. There are 5 trips, all the same. Multiply the minutes for one trip by the number of trips. 4 x 5 = 20 minutes.",
          "steps": [
-          "Each journey takes 4 minutes.",
-          "There are 5 equal journeys, so multiply the time for one journey by the number of journeys.",
+          "Each trip takes 4 minutes.",
+          "There are 5 trips, all the same. Multiply the minutes for one trip by the number of trips.",
           "4 x 5 = 20 minutes."
          ],
-         "hint": "Use skip counting by 4 for 5 journeys.",
+         "hint": "Use skip counting by 4 for 5 trips.",
          "derived": [
           "16 (generated problem)",
           "20 (generated problem)",
@@ -823,7 +823,7 @@
           "9 (generated problem)"
          ],
          "gen": {
-          "template": "A bus journey follows the same {d}-minute pattern between each pair of stops. If the bus makes {gaps} such journeys, how many minutes does it travel?",
+          "template": "Each trip between two stops takes {d} minutes. The bus makes {gaps} trips. How many minutes does the bus travel in all?",
           "params": {
            "d": [
             2,
@@ -845,8 +845,8 @@
            "one_journey": "d"
           },
           "steps": [
-           "Each journey takes {d} minutes.",
-           "There are {gaps} equal journeys, so multiply the time for one journey by the number of journeys.",
+           "Each trip takes {d} minutes.",
+           "There are {gaps} trips, all the same. Multiply the minutes for one trip by the number of trips.",
            "{d} x {gaps} = {answer} minutes."
           ],
           "model": {
@@ -1006,11 +1006,11 @@
          "tags": [
           "worked"
          ],
-         "prompt": "The sun follows a repeating 2-day weather pattern. A calendar includes 5 complete patterns and then 2 extra days. How many days are recorded altogether?",
+         "prompt": "A weather pattern repeats every 2 days. A calendar has 5 full patterns. It also has 2 extra days. How many days are there in all?",
          "steps": [
-          "Each complete weather pattern has 2 days.",
-          "The 5 complete patterns take 5 x 2 = 10 days.",
-          "Adding the 2 extra days gives 10 + 2 = 12 days."
+          "One pattern has 2 days.",
+          "The 5 patterns take 5 x 2 = 10 days.",
+          "Add the 2 extra days: 10 + 2 = 12 days."
          ],
          "modelSpec": {
           "type": "numberline",
@@ -1025,7 +1025,7 @@
          },
          "result": "12",
          "gen": {
-          "template": "The sun follows a repeating {d}-day weather pattern. A calendar includes {n} complete patterns and then {m} extra days. How many days are recorded altogether?",
+          "template": "A weather pattern repeats every {d} days. A calendar has {n} full patterns. It also has {m} extra days. How many days are there in all?",
           "params": {
            "d": [
             2,
@@ -1054,9 +1054,9 @@
            "complete_days": "n*d"
           },
           "steps": [
-           "Each complete weather pattern has {d} days.",
-           "The {n} complete patterns take {n} x {d} = {complete_days} days.",
-           "Adding the {m} extra days gives {complete_days} + {m} = {answer} days."
+           "One pattern has {d} days.",
+           "The {n} patterns take {n} x {d} = {complete_days} days.",
+           "Add the {m} extra days: {complete_days} + {m} = {answer} days."
           ],
           "model": {
            "type": "numberline",
@@ -1073,7 +1073,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Watch how it is solved.",
+         "explanation": "One pattern has 2 days. The 5 patterns take 5 x 2 = 10 days. Add the 2 extra days: 10 + 2 = 12 days.",
          "f": [],
          "derived": [
           "10 (generated problem)",
@@ -1174,20 +1174,21 @@
           "deep",
           "explain"
          ],
-         "prompt": "At home, a child notices the same tile shape repeated across the floor. What should mathematics help the child do next?",
+         "prompt": "A child sees the same tile shape again and again on the floor. What should mathematics help the child do next?",
          "options": [
-          "Ask why the repeated tile pattern occurs.",
-          "Assume every floor must have the same pattern.",
-          "Stop looking after the repeated pattern is found.",
-          "Avoid the repeated pattern instead of explaining it."
+          "Ask why the tile pattern happens.",
+          "Think every floor must have this same pattern.",
+          "Stop looking once the pattern is found.",
+          "Ignore the pattern and do not explain it."
          ],
          "answer": 0,
          "why": {
-          "Assume every floor must have the same pattern.": "This mistake assumes that seeing one pattern makes every similar place identical.",
-          "Stop looking after the repeated pattern is found.": "This mistake thinks spotting a pattern ends the mathematical search.",
-          "Avoid the repeated pattern instead of explaining it.": "This mistake treats explanation as something to avoid rather than seek."
+          "Ask why the tile pattern happens.": "",
+          "Think every floor must have this same pattern.": "This mistake thinks one pattern means every floor is the same.",
+          "Stop looking once the pattern is found.": "This mistake thinks finding a pattern ends the search.",
+          "Ignore the pattern and do not explain it.": "This mistake says explaining is something to avoid."
          },
-         "explanation": "This is right because mathematics also looks for explanations of why patterns exist.",
+         "explanation": "This is right. Mathematics also looks for reasons why patterns exist.",
          "f": [
           "1.1",
           "1.2",
@@ -1609,14 +1610,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "The Virahānka-number sequence begins 1, 2, 3, 5, 8, and 13. Two consecutive labels in a market-stall display are 8 and 13. What is the next label?",
-         "explanation": "The Virahānka sequence is 1, 2, 3, 5, 8, 13, and continues. The next label is found by adding the two given consecutive labels, 8 and 13. The next label is 21.",
+         "prompt": "This is a Virahānka-number sequence: 1, 2, 3, 5, 8, and 13. Two numbers in a row are 8 and 13. What is the next number?",
+         "explanation": "The Virahānka sequence is 1, 2, 3, 5, 8, 13, and so on. Add the two numbers, 8 and 13, to find the next number. The next number is 21.",
          "steps": [
-          "The Virahānka sequence is 1, 2, 3, 5, 8, 13, and continues.",
-          "The next label is found by adding the two given consecutive labels, 8 and 13.",
-          "The next label is 21."
+          "The Virahānka sequence is 1, 2, 3, 5, 8, 13, and so on.",
+          "Add the two numbers, 8 and 13, to find the next number.",
+          "The next number is 21."
          ],
-         "hint": "Add the two consecutive labels to find the next one.",
+         "hint": "Add the two numbers to find the next one.",
          "derived": [
           "1 (generated problem)",
           "13 (generated problem)",
@@ -1627,7 +1628,7 @@
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "The Virahānka-number sequence begins 1, 2, 3, 5, 8, and 13. Two consecutive labels in a market-stall display are {a} and {b}. What is the next label?",
+          "template": "This is a Virahānka-number sequence: 1, 2, 3, 5, 8, and 13. Two numbers in a row are {a} and {b}. What is the next number?",
           "params": {
            "a": [
             2,
@@ -1650,9 +1651,9 @@
            "next": "a+b"
           },
           "steps": [
-           "The Virahānka sequence is 1, 2, 3, 5, 8, 13, and continues.",
-           "The next label is found by adding the two given consecutive labels, {a} and {b}.",
-           "The next label is {answer}."
+           "The Virahānka sequence is 1, 2, 3, 5, 8, 13, and so on.",
+           "Add the two numbers, {a} and {b}, to find the next number.",
+           "The next number is {answer}."
           ],
           "model": null,
           "hint": "Add the two consecutive labels to find the next one.",
@@ -1677,12 +1678,12 @@
          "tags": [
           "worked"
          ],
-         "prompt": "A market tray holds 5 laddoos in each of 5 rows, making a square-number pattern. A helper removes 5 laddoos. How many laddoos remain in the tray?",
+         "prompt": "A tray has 5 rows. Each row has 5 laddoos. This makes a square number. A helper takes away 5 laddoos. How many laddoos are left?",
          "steps": [
-          "The complete tray has 5 rows with 5 laddoos in each row.",
-          "The square-number total is 25 laddoos.",
-          "Subtract 5 removed laddoos to get 20 laddoos.",
-          "There are 20 laddoos remaining."
+          "The full tray has 5 rows. Each row has 5 laddoos.",
+          "The square number total is 25 laddoos.",
+          "Take away 5 laddoos. You get 20 laddoos.",
+          "There are 20 laddoos left."
          ],
          "modelSpec": {
           "type": "array",
@@ -1691,7 +1692,7 @@
          },
          "result": "20",
          "gen": {
-          "template": "A market tray holds {n} laddoos in each of {n} rows, making a square-number pattern. A helper removes {k} laddoos. How many laddoos remain in the tray?",
+          "template": "A tray has {n} rows. Each row has {n} laddoos. This makes a square number. A helper takes away {k} laddoos. How many laddoos are left?",
           "params": {
            "n": {
             "min": 2,
@@ -1711,10 +1712,10 @@
            "remaining": "n*n-k"
           },
           "steps": [
-           "The complete tray has {n} rows with {n} laddoos in each row.",
-           "The square-number total is {square} laddoos.",
-           "Subtract {k} removed laddoos to get {remaining} laddoos.",
-           "There are {answer} laddoos remaining."
+           "The full tray has {n} rows. Each row has {n} laddoos.",
+           "The square number total is {square} laddoos.",
+           "Take away {k} laddoos. You get {remaining} laddoos.",
+           "There are {answer} laddoos left."
           ],
           "model": {
            "type": "array",
@@ -1725,7 +1726,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Watch how it is solved.",
+         "explanation": "The full tray has 5 rows. Each row has 5 laddoos. The square number total is 25 laddoos. Take away 5 laddoos. You get 20 laddoos. There are 20 laddoos left.",
          "f": [],
          "derived": [
           "20 (generated problem)",
@@ -2382,20 +2383,20 @@
           "practice",
           "computed"
          ],
-         "prompt": "Two equal groups of 8 dots are joined to show the next step of a doubling picture. How many dots are in the joined group?",
-         "explanation": "Each of the two groups contains 8 dots. Doubling means having two equal groups. The joined group contains 16 dots.",
+         "prompt": "Two groups have 8 dots each. You join the two groups. How many dots are there in all?",
+         "explanation": "Each of the two groups has 8 dots. Doubling means having two equal groups. The joined group has 16 dots.",
          "steps": [
-          "Each of the two groups contains 8 dots.",
+          "Each of the two groups has 8 dots.",
           "Doubling means having two equal groups.",
-          "The joined group contains 16 dots."
+          "The joined group has 16 dots."
          ],
-         "hint": "Put the same number of dots in each of the two groups.",
+         "hint": "Each group has the same number of dots.",
          "derived": [
           "16 (generated problem)",
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "Two equal groups of {a} dots are joined to show the next step of a doubling picture. How many dots are in the joined group?",
+          "template": "Two groups have {a} dots each. You join the two groups. How many dots are there in all?",
           "params": {
            "a": [
             2,
@@ -2409,9 +2410,9 @@
            "doubled": "2*a"
           },
           "steps": [
-           "Each of the two groups contains {a} dots.",
+           "Each of the two groups has {a} dots.",
            "Doubling means having two equal groups.",
-           "The joined group contains {answer} dots."
+           "The joined group has {answer} dots."
           ],
           "model": {
            "type": "groups",
@@ -3016,15 +3017,15 @@
           "deep",
           "think"
          ],
-         "kicker": "Let us think it through",
-         "prompt": "A child draws square dot grids and wonders how adding odd numbers helps make bigger squares.",
+         "kicker": "Let us think about it.",
+         "prompt": "A child draws square dot grids. The child wants to know how adding odd numbers makes bigger squares.",
          "steps": [
-          "The child draws a square grid and counts the dots inside it.",
-          "Each added layer contains an odd number of dots, so each addition builds a larger square.",
-          "Therefore, adding odd numbers gives square numbers.",
-          "After the first six additions, the picture makes the whole sum easy to see."
+          "The child draws a square grid. The child counts the dots.",
+          "Each new layer has an odd number of dots. So each new layer makes a bigger square.",
+          "So adding odd numbers gives square numbers.",
+          "After six additions, the picture makes it easy to see."
          ],
-         "explanation": "Think it through with Lumi.",
+         "explanation": "Think about it with Lumi.",
          "f": [
           "4.2",
           "4.3",
@@ -3137,21 +3138,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "A square grid has 3 dots in each row and 3 dots in each column. How many dots are in the grid?",
-         "explanation": "The grid has 3 rows. Each row contains 3 dots. Multiply the number of rows by the number of dots in each row. 3 x 3 = 9 dots.",
+         "prompt": "A square grid has 3 dots in each row. It has 3 dots in each column. How many dots are there in all?",
+         "explanation": "The grid has 3 rows. Each row has 3 dots. Multiply the rows by the dots in each row. 3 x 3 = 9 dots.",
          "steps": [
           "The grid has 3 rows.",
-          "Each row contains 3 dots.",
-          "Multiply the number of rows by the number of dots in each row.",
+          "Each row has 3 dots.",
+          "Multiply the rows by the dots in each row.",
           "3 x 3 = 9 dots."
          ],
-         "hint": "Count 3 rows with 3 dots in each row.",
+         "hint": "Think of 3 rows. Each row has 3 dots.",
          "derived": [
           "3 (generated problem)",
           "9 (generated problem)"
          ],
          "gen": {
-          "template": "A square grid has {n} dots in each row and {n} dots in each column. How many dots are in the grid?",
+          "template": "A square grid has {n} dots in each row. It has {n} dots in each column. How many dots are there in all?",
           "params": {
            "n": [
             2,
@@ -3168,8 +3169,8 @@
           },
           "steps": [
            "The grid has {n} rows.",
-           "Each row contains {n} dots.",
-           "Multiply the number of rows by the number of dots in each row.",
+           "Each row has {n} dots.",
+           "Multiply the rows by the dots in each row.",
            "{n} x {n} = {answer} dots."
           ],
           "model": {
@@ -3238,21 +3239,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "A cricket scoreboard has 4 rows and 4 columns of boxes. How many boxes are there altogether?",
-         "explanation": "The scoreboard has 4 rows. Each row has 4 boxes. Multiply the number of rows by the number of boxes in each row. 4 x 4 = 16 boxes.",
+         "prompt": "A cricket scoreboard has 4 rows. Each row has 4 boxes. How many boxes are there in all?",
+         "explanation": "The scoreboard has 4 rows. Each row has 4 boxes. Multiply rows by boxes in each row. 4 x 4 = 16 boxes.",
          "steps": [
           "The scoreboard has 4 rows.",
           "Each row has 4 boxes.",
-          "Multiply the number of rows by the number of boxes in each row.",
+          "Multiply rows by boxes in each row.",
           "4 x 4 = 16 boxes."
          ],
-         "hint": "Count 4 rows with 4 boxes in every row.",
+         "hint": "Count 4 rows with 4 boxes in each row.",
          "derived": [
           "16 (generated problem)",
           "4 (generated problem)"
          ],
          "gen": {
-          "template": "A cricket scoreboard has {n} rows and {n} columns of boxes. How many boxes are there altogether?",
+          "template": "A cricket scoreboard has {n} rows. Each row has {n} boxes. How many boxes are there in all?",
           "params": {
            "n": [
             2,
@@ -3270,7 +3271,7 @@
           "steps": [
            "The scoreboard has {n} rows.",
            "Each row has {n} boxes.",
-           "Multiply the number of rows by the number of boxes in each row.",
+           "Multiply rows by boxes in each row.",
            "{n} x {n} = {answer} boxes."
           ],
           "model": {
@@ -3389,20 +3390,21 @@
           "deep",
           "predict"
          ],
-         "prompt": "A child makes square dot grids and adds one more odd-number layer each time. What should the child expect after each addition?",
+         "prompt": "A child makes square dot grids. Each time, the child adds a layer with an odd number of dots. What should the child expect after each addition?",
          "options": [
-          "The dots can form a larger square grid.",
-          "The dots must form a long, thin rectangle.",
-          "The dots will stop making any new pattern.",
-          "The dots will form a circle around the grid."
+          "The dots can make a bigger square grid.",
+          "The dots must make a long, thin rectangle.",
+          "The dots will stop making a new pattern.",
+          "The dots will make a circle around the grid."
          ],
          "answer": 0,
          "why": {
-          "The dots must form a long, thin rectangle.": "This mistakes a growing square grid for a rectangle.",
-          "The dots will stop making any new pattern.": "This assumes that the odd-number pattern will stop.",
-          "The dots will form a circle around the grid.": "This mistakes the square grid for a circular shape."
+          "The dots can make a bigger square grid.": "",
+          "The dots must make a long, thin rectangle.": "This mistake thinks the grid becomes a rectangle.",
+          "The dots will stop making a new pattern.": "This mistake thinks the pattern will stop.",
+          "The dots will make a circle around the grid.": "This mistake thinks the grid becomes a circle."
          },
-         "explanation": "This is right because adding odd numbers gives square numbers.",
+         "explanation": "This is right. Adding odd numbers gives square numbers.",
          "f": [
           "4.5"
          ],
@@ -4101,20 +4103,20 @@
           "practice",
           "computed"
          ],
-         "prompt": "During a school cricket activity, a child draws the complete graph K6. Every vertex is joined to every other vertex, so how many other vertices is one vertex joined to?",
-         "explanation": "The complete graph has 6 vertices in total. Every vertex is joined to all the vertices except itself. 5 = 5 other vertices.",
+         "prompt": "Draw the complete graph K6. A vertex is a dot. Each vertex is joined to every other vertex. How many other vertices is one vertex joined to?",
+         "explanation": "The complete graph has 6 vertices in total. Each vertex is joined to all vertices except itself. 5 = 5 other vertices.",
          "steps": [
           "The complete graph has 6 vertices in total.",
-          "Every vertex is joined to all the vertices except itself.",
+          "Each vertex is joined to all vertices except itself.",
           "5 = 5 other vertices."
          ],
-         "hint": "Count all the vertices except the one you start with.",
+         "hint": "Count all vertices except the one you start with.",
          "derived": [
           "5 (generated problem)",
           "6 (generated problem)"
          ],
          "gen": {
-          "template": "During a school cricket activity, a child draws the complete graph K{vertices}. Every vertex is joined to every other vertex, so how many other vertices is one vertex joined to?",
+          "template": "Draw the complete graph K{vertices}. A vertex is a dot. Each vertex is joined to every other vertex. How many other vertices is one vertex joined to?",
           "params": {
            "vertices": [
             2,
@@ -4131,7 +4133,7 @@
           },
           "steps": [
            "The complete graph has {vertices} vertices in total.",
-           "Every vertex is joined to all the vertices except itself.",
+           "Each vertex is joined to all vertices except itself.",
            "{other_vertices} = {answer} other vertices."
           ],
           "model": null,
@@ -4671,21 +4673,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "A regular polygon has 6 equal-length sides, and each side is 8 cm long. What is the total length of all its sides in cm?",
-         "explanation": "There are 6 sides and each side is 8 cm long. Because all sides have the same length, multiply 6 by 8 to find their total length. 48 cm = 48 cm.",
+         "prompt": "A regular polygon is a shape with equal sides. This one has 6 sides. Each side is 8 cm long. How long are all its sides together, in cm?",
+         "explanation": "This shape has 6 sides. Each side is 8 cm long. All sides are the same length. So multiply 6 by 8 to find the total length. 48 cm = 48 cm.",
          "steps": [
-          "There are 6 sides and each side is 8 cm long.",
-          "Because all sides have the same length, multiply 6 by 8 to find their total length.",
+          "This shape has 6 sides. Each side is 8 cm long.",
+          "All sides are the same length. So multiply 6 by 8 to find the total length.",
           "48 cm = 48 cm."
          ],
-         "hint": "Multiply the number of equal sides by the length of one side.",
+         "hint": "Multiply the number of sides by the length of one side.",
          "derived": [
           "48 (generated problem)",
           "6 (generated problem)",
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "A regular polygon has {sides} equal-length sides, and each side is {length} cm long. What is the total length of all its sides in cm?",
+          "template": "A regular polygon is a shape with equal sides. This one has {sides} sides. Each side is {length} cm long. How long are all its sides together, in cm?",
           "params": {
            "sides": [
             3,
@@ -4708,8 +4710,8 @@
            "total": "sides*length"
           },
           "steps": [
-           "There are {sides} sides and each side is {length} cm long.",
-           "Because all sides have the same length, multiply {sides} by {length} to find their total length.",
+           "This shape has {sides} sides. Each side is {length} cm long.",
+           "All sides are the same length. So multiply {sides} by {length} to find the total length.",
            "{total} cm = {answer} cm."
           ],
           "model": {
@@ -4985,21 +4987,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "A market-stall owner paints a regular polygon sign with 6 equal-length sides. Painting one side costs 8 rupees. What is the total cost of painting all the sides in rupees?",
-         "explanation": "The sign has 6 sides, and each side costs 8 rupees. All sides cost the same amount, so find the total by multiplying 6 by 8. 48 = 48 rupees.",
+         "prompt": "A shopkeeper paints a sign with 6 equal sides. Each side costs 8 rupees to paint. How many rupees in all?",
+         "explanation": "The sign has 6 sides. Each side costs 8 rupees. Multiply 6 by 8 to find the total. 48 = 48 rupees.",
          "steps": [
-          "The sign has 6 sides, and each side costs 8 rupees.",
-          "All sides cost the same amount, so find the total by multiplying 6 by 8.",
+          "The sign has 6 sides. Each side costs 8 rupees.",
+          "Multiply 6 by 8 to find the total.",
           "48 = 48 rupees."
          ],
-         "hint": "Multiply the number of equally priced sides by the cost of one side.",
+         "hint": "Multiply the number of sides by the cost of one side.",
          "derived": [
           "48 (generated problem)",
           "6 (generated problem)",
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "A market-stall owner paints a regular polygon sign with {sides} equal-length sides. Painting one side costs {price} rupees. What is the total cost of painting all the sides in rupees?",
+          "template": "A shopkeeper paints a sign with {sides} equal sides. Each side costs {price} rupees to paint. How many rupees in all?",
           "params": {
            "sides": [
             3,
@@ -5022,8 +5024,8 @@
            "cost": "sides*price"
           },
           "steps": [
-           "The sign has {sides} sides, and each side costs {price} rupees.",
-           "All sides cost the same amount, so find the total by multiplying {sides} by {price}.",
+           "The sign has {sides} sides. Each side costs {price} rupees.",
+           "Multiply {sides} by {price} to find the total.",
            "{cost} = {answer} rupees."
           ],
           "model": {
@@ -5762,9 +5764,9 @@
          "art",
          "science"
         ],
-        "prompt": "Mathematicians think of mathematics as both an art and a science.",
+        "prompt": "Mathematicians think mathematics is both an art and a science.",
         "answer": true,
-        "explanation": "Mathematicians see both artistic and scientific sides in mathematics.",
+        "explanation": "Mathematicians see both art and science in mathematics.",
         "src": [
          {
           "ch": 1,
@@ -5852,7 +5854,7 @@
          "koch-snowflake",
          "shape-sequences"
         ],
-        "prompt": "Put the Koch snowflake's first three shapes in order by line segments.",
+        "prompt": "Put the first three Koch snowflake shapes in order by line segments.",
         "items": [
          "3 line segments",
          "12 line segments",
@@ -6219,12 +6221,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "Two places on a map are marked by Point A and Point B. What is the shortest path joining them, and how should we write its name?",
+         "prompt": "Point A and Point B are two points on a map. What is the shortest path between them? How do we write its name?",
          "steps": [
-          "We name the places Point A and Point B, because a point uses one capital letter and its name is said before its letter.",
-          "Each point marks an exact place, so the marks tell us where the two places are.",
-          "We draw a line segment from Point A to Point B, because the shortest path joining two points is a line segment.",
-          "We may write it as AB or BA, because either order gives the two end points of the same segment."
+          "We name each point with one capital letter.",
+          "Each point marks one exact place.",
+          "We draw a line segment from Point A to Point B. It is the shortest path between two points.",
+          "We can write it as AB or BA. Both names mean the same line segment."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -6510,7 +6512,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "4 rays are drawn, and each ray has a different initial point. How many initial points are there altogether?",
+         "prompt": "There are 4 rays. Each ray has a different initial point (its start point). How many initial points are there in all?",
          "explanation": "There are 4 rays. Each ray has 1 initial point. 1 x 4 = 4, so there are 4 initial points.",
          "steps": [
           "There are 4 rays.",
@@ -6526,7 +6528,7 @@
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "{n} rays are drawn, and each ray has a different initial point. How many initial points are there altogether?",
+          "template": "There are {n} rays. Each ray has a different initial point (its start point). How many initial points are there in all?",
           "params": {
            "n": [
             2,
@@ -6808,15 +6810,15 @@
           "practice",
           "computed"
          ],
-         "prompt": "4 marbles rest at distinct marked points. How many different line segments can be formed by joining every pair of marked points?",
-         "explanation": "There are 4 marked points, and each point can be paired with 3 other points. This gives 12 pair counts, but each pair has been counted twice. Divide 12 by two to obtain 6 line segments. 6 = 6 line segments.",
+         "prompt": "Draw 4 dots. No two dots are in the same place. A line segment is a straight line between two points. Join every pair of dots with a line segment. How many different line segments can you draw?",
+         "explanation": "There are 4 dots. Each dot pairs with 3 other dots. This gives 12 pairs, but each pair is counted twice. Divide 12 by two to get 6 line segments. 6 = 6 line segments.",
          "steps": [
-          "There are 4 marked points, and each point can be paired with 3 other points.",
-          "This gives 12 pair counts, but each pair has been counted twice.",
-          "Divide 12 by two to obtain 6 line segments.",
+          "There are 4 dots. Each dot pairs with 3 other dots.",
+          "This gives 12 pairs, but each pair is counted twice.",
+          "Divide 12 by two to get 6 line segments.",
           "6 = 6 line segments."
          ],
-         "hint": "Pair each marked point with every other marked point.",
+         "hint": "Pair each dot with every other dot.",
          "derived": [
           "12 (generated problem)",
           "3 (generated problem)",
@@ -6824,7 +6826,7 @@
           "6 (generated problem)"
          ],
          "gen": {
-          "template": "{n} marbles rest at distinct marked points. How many different line segments can be formed by joining every pair of marked points?",
+          "template": "Draw {n} dots. No two dots are in the same place. A line segment is a straight line between two points. Join every pair of dots with a line segment. How many different line segments can you draw?",
           "params": {
            "n": {
             "min": 3,
@@ -6839,9 +6841,9 @@
            "segments": "n*(n-1)/2"
           },
           "steps": [
-           "There are {n} marked points, and each point can be paired with {others} other points.",
-           "This gives {counted_twice} pair counts, but each pair has been counted twice.",
-           "Divide {counted_twice} by two to obtain {segments} line segments.",
+           "There are {n} dots. Each dot pairs with {others} other dots.",
+           "This gives {counted_twice} pairs, but each pair is counted twice.",
+           "Divide {counted_twice} by two to get {segments} line segments.",
            "{segments} = {answer} line segments."
           ],
           "model": null,
@@ -7165,7 +7167,7 @@
           "deep",
           "identify"
          ],
-         "prompt": "A chalk stroke starts at Point A, passes through Point B, and has no ending point. What is the stroke?",
+         "prompt": "A chalk mark starts at Point A. It goes through Point B. It has no end point. What is the mark?",
          "options": [
           "A ray with initial point A",
           "A line with initial point A",
@@ -7174,11 +7176,12 @@
          ],
          "answer": 0,
          "why": {
-          "A line with initial point A": "A line has no end and continues in both directions, not from one starting point.",
-          "A segment with initial point A": "A segment has two end points, but this stroke has no ending point.",
-          "A point with initial point A": "A point has no length, so it cannot form a chalk stroke."
+          "A ray with initial point A": "",
+          "A line with initial point A": "A line has no end. It goes on in both directions, not from one start point.",
+          "A segment with initial point A": "A segment has two end points. This mark has no end point.",
+          "A point with initial point A": "A point has no length, so it cannot make a chalk mark."
          },
-         "explanation": "The stroke starts at A, and B is another point on it, so it is a ray.",
+         "explanation": "The mark starts at A. B is another point on it. So it is a ray.",
          "f": [
           "1.2",
           "1.5",
@@ -7289,53 +7292,6 @@
           "1.11"
          ],
          "src": [
-          {
-           "ch": 2,
-           "p": 14
-          },
-          {
-           "ch": 2,
-           "p": 15
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "mathematics-g6-ch2-l1-d5",
-         "difficulty": 3,
-         "tags": [
-          "deep",
-          "apply"
-         ],
-         "prompt": "A line segment from Point A to Point B must reach farther on both sides. Which change fits the facts?",
-         "options": [
-          "Extend the segment beyond both of its end points",
-          "Extend the segment past only one of its end points",
-          "Add a starting point and change the path to a ray",
-          "Keep both ends fixed and change the path to a line"
-         ],
-         "answer": 0,
-         "why": {
-          "Extend the segment past only one of its end points": "This reaches farther on only one side, not on both sides.",
-          "Add a starting point and change the path to a ray": "This changes the figure into a ray, which has an initial point.",
-          "Keep both ends fixed and change the path to a line": "A line has no end, so keeping both ends fixed does not describe it."
-         },
-         "explanation": "A line segment can be extended beyond both of its end points.",
-         "f": [
-          "1.5",
-          "1.8",
-          "1.9",
-          "1.11"
-         ],
-         "src": [
-          {
-           "ch": 2,
-           "p": 14
-          },
-          {
-           "ch": 2,
-           "p": 14
-          },
           {
            "ch": 2,
            "p": 14
@@ -7619,12 +7575,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "A child opens a pair of scissors a little and then opens them wider. How should the angle change?",
+         "prompt": "A child opens scissors a little. Then the child opens them wider. How should the angle change?",
          "steps": [
-          "Opening the blades of scissors forms an angle.",
-          "Opening them wider makes the arms turn more.",
-          "More turning makes a greater angle, so the angle becomes greater.",
-          "Thus, the wider opening gives a greater angle."
+          "Opening scissors makes an angle.",
+          "Opening them wider makes the blades turn more.",
+          "More turning makes a bigger angle.",
+          "So the wider opening gives a bigger angle."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -8394,11 +8350,11 @@
          ],
          "prompt": "Put these steps in order to name an angle.",
          "items": [
-          "Put the ray letters on either side.",
+          "Put one ray letter on each side.",
           "Keep the vertex letter in the middle.",
           "Write Angle or ∠ before the letters."
          ],
-         "explanation": "The vertex belongs in the middle. We then use the word angle or its symbol.",
+         "explanation": "The vertex (the corner point) goes in the middle. Then we use the word angle or its symbol, ∠.",
          "src": [
           {
            "ch": 2,
@@ -8525,15 +8481,15 @@
           "practice",
           "computed"
          ],
-         "prompt": "One ray is rotated through 2 equal blocks, with 3 small turns in each block. Another angle is 20 small turns, and 20 is greater than the first angle's total. How many small turns greater is the second angle?",
-         "explanation": "The first ray turns through 2 blocks with 3 small turns in each block. Multiply to find the total: 2 x 3 = 6 small turns. The second angle is greater, so subtract: 20 - 6 = 14 small turns. The second angle is 14 small turns greater.",
+         "prompt": "A ray turns 2 times. Each time, it makes 3 small turns. The other angle is 20 small turns. This is greater than the ray's total. How many more small turns does the other angle have?",
+         "explanation": "The ray turns 2 times, with 3 small turns each time. Multiply to find the total: 2 x 3 = 6 small turns. The other angle is bigger, so subtract: 20 - 6 = 14 small turns. The other angle has 14 more small turns.",
          "steps": [
-          "The first ray turns through 2 blocks with 3 small turns in each block.",
+          "The ray turns 2 times, with 3 small turns each time.",
           "Multiply to find the total: 2 x 3 = 6 small turns.",
-          "The second angle is greater, so subtract: 20 - 6 = 14 small turns.",
-          "The second angle is 14 small turns greater."
+          "The other angle is bigger, so subtract: 20 - 6 = 14 small turns.",
+          "The other angle has 14 more small turns."
          ],
-         "hint": "First find the total small turns in all the blocks, and then subtract that total from 20.",
+         "hint": "First find the ray's total small turns. Then subtract that total from 20.",
          "derived": [
           "14 (generated problem)",
           "2 (generated problem)",
@@ -8542,7 +8498,7 @@
           "6 (generated problem)"
          ],
          "gen": {
-          "template": "One ray is rotated through {n} equal blocks, with {k} small turns in each block. Another angle is {c} small turns, and {c} is greater than the first angle's total. How many small turns greater is the second angle?",
+          "template": "A ray turns {n} times. Each time, it makes {k} small turns. The other angle is {c} small turns. This is greater than the ray's total. How many more small turns does the other angle have?",
           "params": {
            "n": [
             2,
@@ -8568,10 +8524,10 @@
            "difference": "c-n*k"
           },
           "steps": [
-           "The first ray turns through {n} blocks with {k} small turns in each block.",
+           "The ray turns {n} times, with {k} small turns each time.",
            "Multiply to find the total: {n} x {k} = {first_total} small turns.",
-           "The second angle is greater, so subtract: {c} - {first_total} = {answer} small turns.",
-           "The second angle is {answer} small turns greater."
+           "The other angle is bigger, so subtract: {c} - {first_total} = {answer} small turns.",
+           "The other angle has {answer} more small turns."
           ],
           "model": {
            "type": "compare",
@@ -9401,10 +9357,10 @@
          "tags": [
           "worked"
          ],
-         "prompt": "A clear circle is placed over 5 angle drawings, with its centre on each vertex. In every drawing, both arms cross the circle and each crossing is marked. How many marks are made in total?",
+         "prompt": "A clear circle is placed over 5 angle drawings. The centre of the circle is on each vertex (corner point). Both arms of each angle cross the circle. Each crossing gets a mark. How many marks are there in all?",
          "steps": [
-          "Each angle has two arms, so each drawing gives two circle marks.",
-          "There are 5 drawings, so multiply the marks in one drawing by the number of drawings.",
+          "Each angle has two arms, so each drawing gives two marks.",
+          "There are 5 drawings. Multiply 2 by the number of drawings.",
           "2 x 5 = 10 marks."
          ],
          "modelSpec": {
@@ -9414,7 +9370,7 @@
          },
          "result": "10",
          "gen": {
-          "template": "A clear circle is placed over {n} angle drawings, with its centre on each vertex. In every drawing, both arms cross the circle and each crossing is marked. How many marks are made in total?",
+          "template": "A clear circle is placed over {n} angle drawings. The centre of the circle is on each vertex (corner point). Both arms of each angle cross the circle. Each crossing gets a mark. How many marks are there in all?",
           "params": {
            "n": [
             2,
@@ -9431,8 +9387,8 @@
            "totalMarks": "2*n"
           },
           "steps": [
-           "Each angle has two arms, so each drawing gives two circle marks.",
-           "There are {n} drawings, so multiply the marks in one drawing by the number of drawings.",
+           "Each angle has two arms, so each drawing gives two marks.",
+           "There are {n} drawings. Multiply 2 by the number of drawings.",
            "2 x {n} = {answer} marks."
           ],
           "model": {
@@ -9444,7 +9400,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Watch how it is solved.",
+         "explanation": "Each angle has two arms, so each drawing gives two marks. There are 5 drawings. Multiply 2 by the number of drawings. 2 x 5 = 10 marks.",
          "f": [],
          "derived": [
           "10 (generated problem)",
@@ -9609,7 +9565,7 @@
           "deep",
           "predict"
          ],
-         "prompt": "A child places one drawn angle over another with the vertices overlapping. The arms of the first angle lie inside the arms of the second angle. Which opening is larger?",
+         "prompt": "A child puts one drawn angle over another. The two corners (vertices) are at the same spot. The first angle's arms are inside the second angle's arms. Which opening is larger?",
          "options": [
           "The second angle is larger.",
           "The first angle is larger.",
@@ -9618,11 +9574,12 @@
          ],
          "answer": 0,
          "why": {
-          "The first angle is larger.": "The first angle is smaller because its arms lie inside the other angle.",
-          "They must be equal.": "Equal openings must have matching arms, but these arms do not match.",
-          "The overlay cannot compare them.": "Superimposition lets us compare the angles, so it can show the difference."
+          "The second angle is larger.": "",
+          "The first angle is larger.": "The first angle is smaller because its arms are inside the other angle.",
+          "They must be equal.": "Equal openings need arms that match. These arms do not match.",
+          "The overlay cannot compare them.": "Superimposition (putting one on top) lets us compare the angles, so it shows the difference."
          },
-         "explanation": "The second angle is larger because a wider opening of the jaws makes a larger angle.",
+         "explanation": "The second angle is larger, because a wider opening between the arms makes a larger angle.",
          "f": [
           "3.1",
           "3.2",
@@ -10103,12 +10060,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "A straight strip of paper is opened flat and then folded in half so the two parts match. What two angles are formed by the fold?",
+         "prompt": "You open a straight strip of paper flat. Then you fold it in half so both parts match. What two angles does the fold make?",
          "steps": [
-          "When the strip is open, its arms lie in a straight line, so it makes a straight angle.",
-          "The fold divides the straight angle into two matching angles.",
-          "Equal angles formed by folding are called right angles, so each part makes a right angle.",
-          "This fits the rule that a straight angle contains two right angles."
+          "When the strip is flat, it makes a straight angle.",
+          "The fold splits the straight angle into two equal angles.",
+          "Equal angles from a fold are called right angles.",
+          "A straight angle has two right angles, so this fits."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -10672,12 +10629,12 @@
           "practice",
           "computed"
          ],
-         "prompt": "In cricket, a bat makes an angle 20 degrees greater than a 90-degree right angle. What is the measure of the bat's angle in degrees?",
-         "explanation": "A right angle measures 90 degrees. The bat angle is 20 degrees greater, so add 20 to 90. 90 + 20 = 110 degrees, so the bat's angle measures 110 degrees.",
+         "prompt": "In cricket, a bat makes an angle 20 degrees greater than a right angle. A right angle is 90 degrees. What is the bat's angle in degrees?",
+         "explanation": "A right angle measures 90 degrees. The bat's angle is 20 degrees greater. So add 20 to 90. 90 + 20 = 110 degrees. So the bat's angle is 110 degrees.",
          "steps": [
           "A right angle measures 90 degrees.",
-          "The bat angle is 20 degrees greater, so add 20 to 90.",
-          "90 + 20 = 110 degrees, so the bat's angle measures 110 degrees."
+          "The bat's angle is 20 degrees greater. So add 20 to 90.",
+          "90 + 20 = 110 degrees. So the bat's angle is 110 degrees."
          ],
          "hint": "Add the extra degrees to the 90-degree right angle.",
          "derived": [
@@ -10686,7 +10643,7 @@
           "90 (generated problem)"
          ],
          "gen": {
-          "template": "In cricket, a bat makes an angle {b} degrees greater than a 90-degree right angle. What is the measure of the bat's angle in degrees?",
+          "template": "In cricket, a bat makes an angle {b} degrees greater than a right angle. A right angle is 90 degrees. What is the bat's angle in degrees?",
           "params": {
            "b": [
             10,
@@ -10704,8 +10661,8 @@
           },
           "steps": [
            "A right angle measures {right} degrees.",
-           "The bat angle is {b} degrees greater, so add {b} to {right}.",
-           "{right} + {b} = {answer} degrees, so the bat's angle measures {answer} degrees."
+           "The bat's angle is {b} degrees greater. So add {b} to {right}.",
+           "{right} + {b} = {answer} degrees. So the bat's angle is {answer} degrees."
           ],
           "model": {
            "type": "compare",
@@ -10763,21 +10720,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "A market has 5 laddoo boxes. One chosen corner of each box is a right angle, and its two edges meet perpendicularly. Each right angle measures 90 degrees. What is the total measure of these 5 right angles in degrees?",
-         "explanation": "There are 5 chosen corners, and each is a right angle measuring 90 degrees. Multiply 90 degrees by the number of corners. 90 x 5 = 450 degrees, so the total measure is 450 degrees.",
+         "prompt": "There are 5 laddoo boxes. Each box has one corner that is a right angle (90 degrees). What is the total of these 5 right angles, in degrees?",
+         "explanation": "There are 5 corners. Each is a right angle of 90 degrees. Multiply 90 degrees by the number of corners. 90 x 5 = 450 degrees, so the total is 450 degrees.",
          "steps": [
-          "There are 5 chosen corners, and each is a right angle measuring 90 degrees.",
+          "There are 5 corners. Each is a right angle of 90 degrees.",
           "Multiply 90 degrees by the number of corners.",
-          "90 x 5 = 450 degrees, so the total measure is 450 degrees."
+          "90 x 5 = 450 degrees, so the total is 450 degrees."
          ],
-         "hint": "Add 90 degrees once for each chosen box corner.",
+         "hint": "Add 90 degrees once for each box corner.",
          "derived": [
           "450 (generated problem)",
           "5 (generated problem)",
           "90 (generated problem)"
          ],
          "gen": {
-          "template": "A market has {n} laddoo boxes. One chosen corner of each box is a right angle, and its two edges meet perpendicularly. Each right angle measures 90 degrees. What is the total measure of these {n} right angles in degrees?",
+          "template": "There are {n} laddoo boxes. Each box has one corner that is a right angle (90 degrees). What is the total of these {n} right angles, in degrees?",
           "params": {
            "n": [
             2,
@@ -10794,9 +10751,9 @@
            "total": "right*n"
           },
           "steps": [
-           "There are {n} chosen corners, and each is a right angle measuring {right} degrees.",
+           "There are {n} corners. Each is a right angle of {right} degrees.",
            "Multiply {right} degrees by the number of corners.",
-           "{right} x {n} = {answer} degrees, so the total measure is {answer} degrees."
+           "{right} x {n} = {answer} degrees, so the total is {answer} degrees."
           ],
           "model": null,
           "hint": "Add 90 degrees once for each chosen box corner.",
@@ -11086,7 +11043,7 @@
           "deep",
           "apply"
          ],
-         "prompt": "Riya draws two lines that meet in the shape of the letter L. What can she say about the lines?",
+         "prompt": "Riya draws two lines. They meet like the letter L. What is true about the lines?",
          "options": [
           "The lines are perpendicular lines.",
           "They meet at an acute angle.",
@@ -11095,11 +11052,12 @@
          ],
          "answer": 0,
          "why": {
-          "They meet at an acute angle.": "This mistake treats the L-shaped opening as smaller than a right angle.",
-          "They meet at an obtuse angle.": "This mistake treats the L-shaped opening as wider than a right angle.",
-          "They meet at a straight angle.": "This mistake treats the two arms as lying in one straight line."
+          "The lines are perpendicular lines.": "",
+          "They meet at an acute angle.": "This mistake thinks the L opening is smaller than a right angle.",
+          "They meet at an obtuse angle.": "This mistake thinks the L opening is wider than a right angle.",
+          "They meet at a straight angle.": "This mistake thinks the two lines make one straight line."
          },
-         "explanation": "Perpendicular is correct because lines that meet at right angles are perpendicular lines.",
+         "explanation": "Perpendicular is correct. Lines that meet at a right angle are perpendicular lines.",
          "f": [
           "4.6",
           "4.7",
@@ -11138,7 +11096,7 @@
           "deep",
           "reason"
          ],
-         "prompt": "Two wooden sticks lie end to end, making a straight angle. A third stick points from the joint and leaves one part smaller than a right angle. What must the other part be?",
+         "prompt": "Two sticks lie end to end. They make a straight angle. A third stick starts at the joint. It makes two parts. One part is smaller than a right angle. What kind of angle is the other part?",
          "options": [
           "It is an obtuse angle.",
           "It is an acute angle.",
@@ -11147,11 +11105,12 @@
          ],
          "answer": 0,
          "why": {
-          "It is an acute angle.": "This mistake assumes that both parts stay smaller than a right angle.",
-          "It is a right angle.": "This mistake assumes the two parts are equal even though one is smaller.",
-          "It is a straight angle.": "This mistake mistakes one part for the whole original angle."
+          "It is an obtuse angle.": "",
+          "It is an acute angle.": "This mistake assumes both parts are smaller than a right angle.",
+          "It is a right angle.": "This mistake assumes the two parts are equal, even though one is smaller.",
+          "It is a straight angle.": "This mistake thinks one part is the whole straight angle."
          },
-         "explanation": "The other part takes more than half of the straight angle but less than the whole, so it is obtuse.",
+         "explanation": "The other part is bigger than a right angle but smaller than a straight angle. So it is obtuse.",
          "f": [
           "4.2",
           "4.5",
@@ -11442,15 +11401,15 @@
           "deep",
           "think"
          ],
-         "kicker": "Let us think it through",
-         "prompt": "How can a workshop corner be checked to make a right angle with a protractor?",
+         "kicker": "Let us think about it.",
+         "prompt": "A workshop corner needs to be a right angle. How can you check it with a protractor?",
          "steps": [
-          "Put the protractor's centre on the corner because the centre must be placed on the angle's vertex.",
-          "Line one arm with the zero mark because one arm must pass through the zero mark.",
-          "Turn the other arm through 90 degrees because the required angle is a right angle.",
-          "The angle measures 90 degrees because it contains 90 one-degree parts inside it."
+          "Put the protractor's centre on the corner. The centre must sit on the vertex of the angle.",
+          "Line up one arm with the zero mark. The arm must pass through the zero mark.",
+          "Turn the other arm through 90 degrees. A right angle is 90 degrees.",
+          "The angle measures 90 degrees. It has 90 one-degree parts inside it."
          ],
-         "explanation": "Think it through with Lumi.",
+         "explanation": "Think about it with Lumi.",
          "f": [
           "5.2",
           "5.3",
@@ -11540,19 +11499,19 @@
           "practice",
           "computed"
          ],
-         "prompt": "On a protractor, one arm of an angle passes through zero and the other reaches the 30-degree mark. What is the measure of the angle in degrees?",
-         "explanation": "One arm of the angle passes through the zero mark. The other arm reaches the 30-degree mark. The angle measures 30 degrees.",
+         "prompt": "On a protractor, one arm of an angle is on the zero mark. The other arm reaches the 30-degree mark. What is the angle in degrees?",
+         "explanation": "One arm of the angle is on the zero mark. The other arm reaches the 30-degree mark. The angle measures 30 degrees.",
          "steps": [
-          "One arm of the angle passes through the zero mark.",
+          "One arm of the angle is on the zero mark.",
           "The other arm reaches the 30-degree mark.",
           "The angle measures 30 degrees."
          ],
-         "hint": "Read the mark reached by the arm that is not on zero.",
+         "hint": "Look at the mark that the arm not on zero reaches.",
          "derived": [
           "30 (generated problem)"
          ],
          "gen": {
-          "template": "On a protractor, one arm of an angle passes through zero and the other reaches the {degrees}-degree mark. What is the measure of the angle in degrees?",
+          "template": "On a protractor, one arm of an angle is on the zero mark. The other arm reaches the {degrees}-degree mark. What is the angle in degrees?",
           "params": {
            "degrees": [
             10,
@@ -11568,7 +11527,7 @@
            "markValue": "degrees"
           },
           "steps": [
-           "One arm of the angle passes through the zero mark.",
+           "One arm of the angle is on the zero mark.",
            "The other arm reaches the {markValue}-degree mark.",
            "The angle measures {answer} degrees."
           ],
@@ -11607,20 +11566,20 @@
           "practice",
           "computed"
          ],
-         "prompt": "An angle measures 60 degrees, and its angle bisector makes two equal angles. What is the measure of each smaller angle in degrees?",
-         "explanation": "The original angle measures 60 degrees. Bisecting it makes two equal angles, so each half measures 30 degrees. Each smaller angle measures 30 degrees.",
+         "prompt": "An angle measures 60 degrees. An angle bisector is a line that cuts it into two equal angles. How many degrees is each small angle?",
+         "explanation": "The original angle measures 60 degrees. Cutting it in half makes two equal angles. Each half measures 30 degrees. Each small angle measures 30 degrees.",
          "steps": [
           "The original angle measures 60 degrees.",
-          "Bisecting it makes two equal angles, so each half measures 30 degrees.",
-          "Each smaller angle measures 30 degrees."
+          "Cutting it in half makes two equal angles. Each half measures 30 degrees.",
+          "Each small angle measures 30 degrees."
          ],
-         "hint": "Split the angle into two equal angles.",
+         "hint": "Cut the angle into two equal parts.",
          "derived": [
           "30 (generated problem)",
           "60 (generated problem)"
          ],
          "gen": {
-          "template": "An angle measures {degrees} degrees, and its angle bisector makes two equal angles. What is the measure of each smaller angle in degrees?",
+          "template": "An angle measures {degrees} degrees. An angle bisector is a line that cuts it into two equal angles. How many degrees is each small angle?",
           "params": {
            "degrees": [
             20,
@@ -11637,8 +11596,8 @@
           },
           "steps": [
            "The original angle measures {degrees} degrees.",
-           "Bisecting it makes two equal angles, so each half measures {halfAngle} degrees.",
-           "Each smaller angle measures {answer} degrees."
+           "Cutting it in half makes two equal angles. Each half measures {halfAngle} degrees.",
+           "Each small angle measures {answer} degrees."
           ],
           "model": null,
           "hint": "Split the angle into two equal angles.",
@@ -11779,12 +11738,12 @@
           "practice",
           "computed"
          ],
-         "prompt": "At a market, 2 laddoos are equally spaced around a round tray. What is the angle measure in degrees between two neighbouring laddoos at the centre?",
-         "explanation": "The laddoos make 2 equal angles around the centre of the round tray. A full turn is 360 degrees, so each equal angle measures 180 degrees. The angle between neighbouring laddoos measures 180 degrees.",
+         "prompt": "2 laddoos sit around a round tray. The spaces between them are equal. Two laddoos next to each other make an angle in the middle of the tray. What is this angle in degrees?",
+         "explanation": "There are 2 equal angles around the centre. A full turn is 360 degrees. So each equal angle is 180 degrees. So the angle between two laddoos next to each other is 180 degrees.",
          "steps": [
-          "The laddoos make 2 equal angles around the centre of the round tray.",
-          "A full turn is 360 degrees, so each equal angle measures 180 degrees.",
-          "The angle between neighbouring laddoos measures 180 degrees."
+          "There are 2 equal angles around the centre.",
+          "A full turn is 360 degrees. So each equal angle is 180 degrees.",
+          "So the angle between two laddoos next to each other is 180 degrees."
          ],
          "hint": "Share all the degrees in a full turn equally among the equal spaces.",
          "derived": [
@@ -11793,7 +11752,7 @@
           "360 (generated problem)"
          ],
          "gen": {
-          "template": "At a market, {n} laddoos are equally spaced around a round tray. What is the angle measure in degrees between two neighbouring laddoos at the centre?",
+          "template": "{n} laddoos sit around a round tray. The spaces between them are equal. Two laddoos next to each other make an angle in the middle of the tray. What is this angle in degrees?",
           "params": {
            "n": [
             2,
@@ -11809,9 +11768,9 @@
            "sectorAngle": "360/n"
           },
           "steps": [
-           "The laddoos make {n} equal angles around the centre of the round tray.",
-           "A full turn is 360 degrees, so each equal angle measures {sectorAngle} degrees.",
-           "The angle between neighbouring laddoos measures {answer} degrees."
+           "There are {n} equal angles around the centre.",
+           "A full turn is 360 degrees. So each equal angle is {sectorAngle} degrees.",
+           "So the angle between two laddoos next to each other is {answer} degrees."
           ],
           "model": null,
           "hint": "Share all the degrees in a full turn equally among the equal spaces.",
@@ -11844,14 +11803,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "A protractor is placed on a paper model of a bus route. One arm passes through zero and the other reaches the 20-degree mark. What is the measure of the route's turn in degrees?",
-         "explanation": "The centre of the protractor is at the vertex, and one arm passes through zero. The other arm reaches the 20-degree mark. The route's turn measures 20 degrees.",
+         "prompt": "A protractor (a tool for measuring angles) sits at a corner. One arm points to zero. The other arm points to the 20-degree mark. What is the angle in degrees?",
+         "explanation": "The centre is at the vertex (the corner point). One arm is at zero. The other arm reaches the 20-degree mark. The angle measures 20 degrees.",
          "steps": [
-          "The centre of the protractor is at the vertex, and one arm passes through zero.",
+          "The centre is at the vertex (the corner point). One arm is at zero.",
           "The other arm reaches the 20-degree mark.",
-          "The route's turn measures 20 degrees."
+          "The angle measures 20 degrees."
          ],
-         "hint": "Read the mark reached by the arm that is not on zero.",
+         "hint": "Read the mark that the other arm points to.",
          "derived": [
           "110 (generated problem)",
           "160 (generated problem)",
@@ -11859,7 +11818,7 @@
           "70 (generated problem)"
          ],
          "gen": {
-          "template": "A protractor is placed on a paper model of a bus route. One arm passes through zero and the other reaches the {degrees}-degree mark. What is the measure of the route's turn in degrees?",
+          "template": "A protractor (a tool for measuring angles) sits at a corner. One arm points to zero. The other arm points to the {degrees}-degree mark. What is the angle in degrees?",
           "params": {
            "degrees": [
             20,
@@ -11875,9 +11834,9 @@
            "markValue": "degrees"
           },
           "steps": [
-           "The centre of the protractor is at the vertex, and one arm passes through zero.",
+           "The centre is at the vertex (the corner point). One arm is at zero.",
            "The other arm reaches the {markValue}-degree mark.",
-           "The route's turn measures {answer} degrees."
+           "The angle measures {answer} degrees."
           ],
           "model": null,
           "hint": "Read the mark reached by the arm that is not on zero.",
@@ -11992,12 +11951,12 @@
           "practice",
           "computed"
          ],
-         "prompt": "On a cricket field, a right angle is split into 3 equal smaller angles by marking lines. What is the measure of each smaller angle in degrees?",
-         "explanation": "A right angle measures 90 degrees. Its 90 degrees are shared equally among 3 smaller angles. Each smaller angle measures 30 degrees.",
+         "prompt": "A right angle (a square corner, 90 degrees) is split into 3 equal smaller angles by marking lines. What is the size of each smaller angle in degrees?",
+         "explanation": "A right angle measures 90 degrees. The 90 degrees are shared equally into 3 smaller angles. Each smaller angle is 30 degrees.",
          "steps": [
           "A right angle measures 90 degrees.",
-          "Its 90 degrees are shared equally among 3 smaller angles.",
-          "Each smaller angle measures 30 degrees."
+          "The 90 degrees are shared equally into 3 smaller angles.",
+          "Each smaller angle is 30 degrees."
          ],
          "hint": "Share the degrees in a right angle equally.",
          "derived": [
@@ -12006,7 +11965,7 @@
           "90 (generated problem)"
          ],
          "gen": {
-          "template": "On a cricket field, a right angle is split into {n} equal smaller angles by marking lines. What is the measure of each smaller angle in degrees?",
+          "template": "A right angle (a square corner, 90 degrees) is split into {n} equal smaller angles by marking lines. What is the size of each smaller angle in degrees?",
           "params": {
            "n": [
             2,
@@ -12023,8 +11982,8 @@
           },
           "steps": [
            "A right angle measures 90 degrees.",
-           "Its 90 degrees are shared equally among {n} smaller angles.",
-           "Each smaller angle measures {answer} degrees."
+           "The 90 degrees are shared equally into {n} smaller angles.",
+           "Each smaller angle is {answer} degrees."
           ],
           "model": null,
           "hint": "Share the degrees in a right angle equally.",
@@ -12214,20 +12173,21 @@
           "deep",
           "fix error"
          ],
-         "prompt": "Jo puts the protractor's centre beside an angle's vertex, not on it. One arm still passes through the zero mark. What should Jo change?",
+         "prompt": "Jo puts the protractor's centre next to the vertex, not on it. The vertex is the corner of an angle. One arm still goes through the zero mark. What should Jo change?",
          "options": [
-          "Move the centre exactly onto the vertex.",
+          "Move the centre onto the vertex.",
           "Move the arm away from the zero mark.",
-          "Turn the protractor through one degree.",
+          "Turn the protractor by one degree.",
           "Read the angle without moving it."
          ],
          "answer": 0,
          "why": {
-          "Move the arm away from the zero mark.": "This is the mistake of thinking the zero mark alone makes the placement correct.",
-          "Turn the protractor through one degree.": "This is the mistake of thinking a small turn can repair a wrong centre position.",
-          "Read the angle without moving it.": "This is the mistake of thinking a misplaced protractor can still give the correct angle."
+          "Move the centre onto the vertex.": "",
+          "Move the arm away from the zero mark.": "This thinks the zero mark alone makes the placement right.",
+          "Turn the protractor by one degree.": "This thinks a small turn can fix a wrong centre.",
+          "Read the angle without moving it.": "This thinks a wrong placement can still give the right angle."
          },
-         "explanation": "The centre must be on the vertex, so moving it there fixes the mistake.",
+         "explanation": "The centre must be on the vertex. Moving it there fixes the mistake.",
          "f": [
           "5.8"
          ],
@@ -13190,20 +13150,21 @@
           "case"
          ],
          "context": "At school, a student opens a pair of scissors. The blades move apart, creating more turning. Two arms have a common starting point, and this movement forms an angle. The student also uses a compass; turning its arms forms an angle. To mark the angle, the student draws a small curve at its vertex and writes ∠DBE. The middle letter, B, shows the vertex.",
-         "prompt": "If the student opens the blades of the scissors farther, what will happen to the angle?",
+         "prompt": "A student opens the blades of the scissors wider. What happens to the angle?",
          "options": [
-          "The angle will become greater.",
-          "The angle will become smaller.",
-          "The angle will stay the same.",
-          "The angle will stop being an angle."
+          "The angle gets bigger.",
+          "The angle gets smaller.",
+          "The angle stays the same.",
+          "The angle stops being an angle."
          ],
          "answer": 0,
          "why": {
-          "The angle will become smaller.": "This reverses the rule that more turning makes a greater angle.",
-          "The angle will stay the same.": "This ignores that an angle’s size depends on the amount of rotation.",
-          "The angle will stop being an angle.": "Opening the blades still forms an angle, even if the blades move farther apart."
+          "The angle gets bigger.": "",
+          "The angle gets smaller.": "This thinks more turning makes a smaller angle.",
+          "The angle stays the same.": "This forgets that the size of an angle depends on how much it turns.",
+          "The angle stops being an angle.": "The blades still make an angle when they open wider."
          },
-         "explanation": "Opening the blades farther makes more turning, and more turning makes a greater angle."
+         "explanation": "Opening the blades wider means more turning. More turning makes a bigger angle."
         },
         {
          "type": "mcq",
@@ -13256,20 +13217,21 @@
           "case"
          ],
          "context": "A pupil is comparing the angle made by two arms with the angle of a slit. The pupil places a transparent circle over the opening, with the circle’s centre at the vertex where the arms meet, and marks where each arm crosses the circle. Another pair of arms is then brought towards the slit. If the arms are moved farther apart, the pupil wants to know what changes, and whether the arms can still fit the slit.",
-         "prompt": "If the two arms are moved farther apart, what would happen to their angle?",
+         "prompt": "Move the two arms of an angle further apart. What happens to the angle?",
          "options": [
-          "It would become larger.",
-          "It would become smaller.",
-          "It would stay the same.",
-          "It would become narrower."
+          "It becomes larger.",
+          "It becomes smaller.",
+          "It stays the same.",
+          "It becomes narrower."
          ],
          "answer": 0,
          "why": {
-          "It would become smaller.": "Moving the arms farther apart does not make the angle smaller.",
-          "It would stay the same.": "A wider opening changes the angle.",
-          "It would become narrower.": "A narrower opening would make the angle smaller, but the opening is becoming wider."
+          "It becomes larger.": "",
+          "It becomes smaller.": "Moving the arms further apart does not make the angle smaller.",
+          "It stays the same.": "A wider opening changes the angle.",
+          "It becomes narrower.": "A narrower opening would make the angle smaller. But the arms are opening wider."
          },
-         "explanation": "A wider opening makes a larger angle."
+         "explanation": "Wider arms make a larger angle."
         },
         {
          "type": "mcq",
@@ -13280,20 +13242,21 @@
           "case"
          ],
          "context": "A pupil is comparing the angle made by two arms with the angle of a slit. The pupil places a transparent circle over the opening, with the circle’s centre at the vertex where the arms meet, and marks where each arm crosses the circle. Another pair of arms is then brought towards the slit. If the arms are moved farther apart, the pupil wants to know what changes, and whether the arms can still fit the slit.",
-         "prompt": "What should the pupil do first when comparing the opening with another angle by superimposition?",
+         "prompt": "Superimposition means placing one angle on top of another. What should you do first?",
          "options": [
-          "Overlap the vertices, then check the matching arms.",
+          "Overlap the vertex (corner), then check the arms.",
           "Overlap only the ends of the arms.",
-          "Match the slit before comparing the angles.",
-          "Place the circle with its centre away from the vertex."
+          "Match the opening before you compare the angles.",
+          "Put the circle's centre away from the vertex."
          ],
          "answer": 0,
          "why": {
-          "Overlap only the ends of the arms.": "Superimposing only the arm ends does not make the vertices overlap.",
-          "Match the slit before comparing the angles.": "The slit should be compared after the angles are placed over each other.",
-          "Place the circle with its centre away from the vertex.": "The centre of the circle must be on the angle’s vertex."
+          "Overlap the vertex (corner), then check the arms.": "",
+          "Overlap only the ends of the arms.": "Only the arm ends touch. The corners are not together.",
+          "Match the opening before you compare the angles.": "You compare the openings only after the angles are on each other.",
+          "Put the circle's centre away from the vertex.": "The centre of the circle must be on the vertex (corner)."
          },
-         "explanation": "The vertices must overlap when two angles are superimposed."
+         "explanation": "The vertex (corner) must overlap first when you place two angles on each other."
         },
         {
          "type": "mcq",
@@ -13304,20 +13267,21 @@
           "case"
          ],
          "context": "A pupil is comparing the angle made by two arms with the angle of a slit. The pupil places a transparent circle over the opening, with the circle’s centre at the vertex where the arms meet, and marks where each arm crosses the circle. Another pair of arms is then brought towards the slit. If the arms are moved farther apart, the pupil wants to know what changes, and whether the arms can still fit the slit.",
-         "prompt": "Before marking where the arms cross the circle, the pupil notices that the circle has shifted. What should the pupil do?",
+         "prompt": "A student is about to mark where the arms cross the circle. The circle has moved out of place. What should the student do?",
          "options": [
           "Move the circle so its centre is on the vertex.",
           "Move each arm away from the circle.",
           "Change the slit to match the opening.",
-          "Mark the arms even though the circle is misplaced."
+          "Mark the arms even though the circle is out of place."
          ],
          "answer": 0,
          "why": {
-          "Move each arm away from the circle.": "Moving the arms would change the angle being examined.",
-          "Change the slit to match the opening.": "The slit does not need to be changed when the circle is misplaced.",
-          "Mark the arms even though the circle is misplaced.": "Marking the arms with the centre away from the vertex would not follow the method."
+          "Move the circle so its centre is on the vertex.": "",
+          "Move each arm away from the circle.": "Moving the arms would change the angle itself.",
+          "Change the slit to match the opening.": "The slit does not need to change when the circle is out of place.",
+          "Mark the arms even though the circle is out of place.": "Marking the arms with the centre away from the vertex does not follow the steps."
          },
-         "explanation": "The circle must be correctly placed before the crossing points are marked."
+         "explanation": "The circle must be in the right place first. Then mark where the arms cross it."
         },
         {
          "type": "explain",
@@ -13432,7 +13396,7 @@
           "case"
          ],
          "context": "A carpenter makes three wooden frames for a classroom display. The first frame meets in a corner measuring exactly 90°. The second corner measures more than 90° but less than 180°. The third turns farther around, to a measurement greater than 180° but less than 360°. The carpenter measures all three corners in degrees and labels each one.",
-         "prompt": "If the third corner's measurement increases but stays below 360°, what angle type should it continue to have?",
+         "prompt": "The third corner gets bigger, but stays under 360°. What type of angle should it still be?",
          "options": [
           "Obtuse angle",
           "Straight angle",
@@ -13441,11 +13405,12 @@
          ],
          "answer": 2,
          "why": {
-          "Obtuse angle": "An obtuse angle measures less than 180°.",
-          "Straight angle": "A straight angle measures exactly 180°.",
-          "Acute angle": "An acute angle measures less than 90°."
+          "Obtuse angle": "An obtuse angle is less than 180°.",
+          "Straight angle": "A straight angle is exactly 180°.",
+          "Reflex angle": "",
+          "Acute angle": "An acute angle is less than 90°."
          },
-         "explanation": "The third corner remains greater than 180° and below 360°."
+         "explanation": "The third corner stays bigger than 180° and less than 360°."
         },
         {
          "type": "explain",
@@ -13455,14 +13420,14 @@
           "exam",
           "written"
          ],
-         "prompt": "How does the carpenter distinguish an obtuse corner from a reflex corner when labeling the frames?",
+         "prompt": "How can you tell an obtuse angle from a reflex angle?",
          "answer": "An obtuse angle is greater than a right angle and less than a straight angle, so its measure is greater than 90° but less than 180°. A reflex angle is greater than a straight angle, so its measure is greater than 180° but less than 360°. They lie in different ranges.",
          "points": [
-          "Measures the obtuse angle as greater than 90° and less than 180°.",
-          "Measures the reflex angle as greater than 180° and less than 360°.",
-          "Uses the degree ranges to distinguish the angle types."
+          "Says the obtuse angle is more than 90° and less than 180°.",
+          "Says the reflex angle is more than 180° and less than 360°.",
+          "Uses the degree ranges to tell the two types apart."
          ],
-         "explanation": "Compare your answer with the points a marker looks for."
+         "explanation": "Check your answer with these points."
         }
        ]
       }
@@ -13950,14 +13915,14 @@
           "numbers"
          ],
          "title": "One Taller Neighbour",
-         "prompt": "A child has one taller neighbour and one neighbour who is not taller. What does the child say?",
+         "prompt": "A child has two neighbours. One neighbour is taller than the child. The other is not. How many taller neighbours does the child have?",
          "options": [
           "0",
           "1",
           "2"
          ],
          "answer": 1,
-         "explanation": "Only one neighbour is taller, so the child's number is 1.",
+         "explanation": "Only one neighbour is taller. So the answer is 1.",
          "src": [
           {
            "ch": 3,
@@ -14095,35 +14060,6 @@
           {
            "ch": 3,
            "p": 56
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "mathematics-g6-ch3-l1-a9",
-         "difficulty": 3,
-         "tags": [
-          "five children",
-          "taller neighbours"
-         ],
-         "title": "Two Taller Neighbours",
-         "prompt": "In an arrangement of five children, at most how many children can say 2?",
-         "options": [
-          "0",
-          "1",
-          "2",
-          "4"
-         ],
-         "answer": 2,
-         "explanation": "At most two children can say 2 in an arrangement of five children.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 56
-          },
-          {
-           "ch": 3,
-           "p": 73
           }
          ]
         },
@@ -14466,12 +14402,12 @@
           "directions"
          ],
          "title": "Find the Neighbour",
-         "prompt": "Neighbouring cells are immediately to the ______, right, top and bottom.",
+         "prompt": "Neighbour cells are right next to a cell, on its ______, right, top and bottom.",
          "answers": [
           "left"
          ],
-         "hint": "Think of the directions around a square.",
-         "explanation": "Left is an immediate direction for a neighbouring cell.",
+         "hint": "Think of the sides of a square.",
+         "explanation": "Left is one direction a neighbour cell can be in.",
          "src": [
           {
            "ch": 3,
@@ -14719,15 +14655,15 @@
           "practice",
           "computed"
          ],
-         "prompt": "A row of four cells contains 10, 4, 9, and 2 points. Here 10 is larger than 4, while 9 is larger than both 4 and 2. How many cells are supercells?",
-         "explanation": "The cell 10 is a supercell because it is larger than its only neighbour 4. The cell 9 is a supercell because it is larger than 4 and 2. The cells 4 and 2 each have a larger neighbour, so they are not supercells. There are 1 + 1 = 2 supercells.",
+         "prompt": "Four cells are in a row. They have 10, 4, 9, and 2 points, from left to right. 10 is more than 4. 9 is more than 4 and more than 2. How many cells are supercells?",
+         "explanation": "Cell 10 is a supercell. It has more points than 4, the cell next to it. Cell 9 is a supercell. It has more points than 4 and 2. Cells 4 and 2 each have a cell next to them with more points. So they are not supercells. There are 1 + 1 = 2 supercells.",
          "steps": [
-          "The cell 10 is a supercell because it is larger than its only neighbour 4.",
-          "The cell 9 is a supercell because it is larger than 4 and 2.",
-          "The cells 4 and 2 each have a larger neighbour, so they are not supercells.",
+          "Cell 10 is a supercell. It has more points than 4, the cell next to it.",
+          "Cell 9 is a supercell. It has more points than 4 and 2.",
+          "Cells 4 and 2 each have a cell next to them with more points. So they are not supercells.",
           "There are 1 + 1 = 2 supercells."
          ],
-         "hint": "Check each cell against only the cells immediately beside it.",
+         "hint": "Check each cell against only the cells next to it.",
          "derived": [
           "1 (generated problem)",
           "10 (generated problem)",
@@ -14736,7 +14672,7 @@
           "9 (generated problem)"
          ],
          "gen": {
-          "template": "A row of four cells contains {a}, {b}, {c}, and {d} points. Here {a} is larger than {b}, while {c} is larger than both {b} and {d}. How many cells are supercells?",
+          "template": "Four cells are in a row. They have {a}, {b}, {c}, and {d} points, from left to right. {a} is more than {b}. {c} is more than {b} and more than {d}. How many cells are supercells?",
           "params": {
            "a": [
             8,
@@ -14771,9 +14707,9 @@
            "supercell_count": "1+1"
           },
           "steps": [
-           "The cell {a} is a supercell because it is larger than its only neighbour {b}.",
-           "The cell {c} is a supercell because it is larger than {b} and {d}.",
-           "The cells {b} and {d} each have a larger neighbour, so they are not supercells.",
+           "Cell {a} is a supercell. It has more points than {b}, the cell next to it.",
+           "Cell {c} is a supercell. It has more points than {b} and {d}.",
+           "Cells {b} and {d} each have a cell next to them with more points. So they are not supercells.",
            "There are 1 + 1 = {answer} supercells."
           ],
           "model": {
@@ -16735,12 +16671,12 @@
          "tags": [
           "collatz"
          ],
-         "prompt": "In a Collatz sequence, an odd number is multiplied by ______ and 1 is added.",
+         "prompt": "In a Collatz sequence, an odd number is multiplied by ______. Then 1 is added.",
          "answers": [
           "3"
          ],
-         "hint": "Think of the multiplier in the odd-number rule.",
-         "explanation": "The odd-number rule multiplies by 3 before adding 1.",
+         "hint": "Think about the rule for odd numbers. What do we multiply by?",
+         "explanation": "For an odd number, the rule multiplies by 3. Then it adds 1.",
          "src": [
           {
            "ch": 3,
@@ -16926,22 +16862,22 @@
           "practice",
           "computed"
          ],
-         "prompt": "Paromita estimates that about 120 children are in her class. If each child gets 3 laddoos at a school market, about how many laddoos are needed?",
-         "explanation": "The estimated class size is 120 children, and each child needs 3 laddoos. An estimate is enough because an exact attendance count is not needed. Multiplying the two amounts gives 360 laddoos. Therefore, about 360 laddoos are needed.",
+         "prompt": "Paromita estimates that about 120 children are in her class. Each child gets 3 laddoos. About how many laddoos are needed?",
+         "explanation": "The class has about 120 children. Each child needs 3 laddoos. An estimate is enough. We do not need the exact number. Multiply the two numbers. That gives 360 laddoos. So about 360 laddoos are needed.",
          "steps": [
-          "The estimated class size is 120 children, and each child needs 3 laddoos.",
-          "An estimate is enough because an exact attendance count is not needed.",
-          "Multiplying the two amounts gives 360 laddoos.",
-          "Therefore, about 360 laddoos are needed."
+          "The class has about 120 children. Each child needs 3 laddoos.",
+          "An estimate is enough. We do not need the exact number.",
+          "Multiply the two numbers. That gives 360 laddoos.",
+          "So about 360 laddoos are needed."
          ],
-         "hint": "Multiply the estimated number of children by the number of laddoos for each child.",
+         "hint": "Multiply the estimated number of children by the laddoos for each child.",
          "derived": [
           "120 (generated problem)",
           "3 (generated problem)",
           "360 (generated problem)"
          ],
          "gen": {
-          "template": "Paromita estimates that about {estimate} children are in her class. If each child gets {k} laddoos at a school market, about how many laddoos are needed?",
+          "template": "Paromita estimates that about {estimate} children are in her class. Each child gets {k} laddoos. About how many laddoos are needed?",
           "params": {
            "estimate": [
             80,
@@ -16960,10 +16896,10 @@
            "laddoos": "estimate*k"
           },
           "steps": [
-           "The estimated class size is {estimate} children, and each child needs {k} laddoos.",
-           "An estimate is enough because an exact attendance count is not needed.",
-           "Multiplying the two amounts gives {laddoos} laddoos.",
-           "Therefore, about {answer} laddoos are needed."
+           "The class has about {estimate} children. Each child needs {k} laddoos.",
+           "An estimate is enough. We do not need the exact number.",
+           "Multiply the two numbers. That gives {laddoos} laddoos.",
+           "So about {answer} laddoos are needed."
           ],
           "model": null,
           "hint": "Multiply the estimated number of children by the number of laddoos for each child.",
@@ -16996,22 +16932,22 @@
           "practice",
           "computed"
          ],
-         "prompt": "In the first number game at a bus stop, the display starts at 10. A player adds 3, which is one of the allowed choices. What number does the display show next?",
-         "explanation": "The bus display starts at 10, and the player chooses 3. The first number game allows the chosen addition. Adding it gives the new number 13. Therefore, the display shows 13 next.",
+         "prompt": "The display shows 10. A player adds 3. What number does the display show next?",
+         "explanation": "The display starts at 10. The player picks 3. The game allows adding. Adding gives the new number 13. So the display shows 13 next.",
          "steps": [
-          "The bus display starts at 10, and the player chooses 3.",
-          "The first number game allows the chosen addition.",
-          "Adding it gives the new number 13.",
-          "Therefore, the display shows 13 next."
+          "The display starts at 10. The player picks 3.",
+          "The game allows adding.",
+          "Adding gives the new number 13.",
+          "So the display shows 13 next."
          ],
-         "hint": "Add the player's chosen number to the displayed number.",
+         "hint": "Add the player's number to the number on the display.",
          "derived": [
           "10 (generated problem)",
           "13 (generated problem)",
           "3 (generated problem)"
          ],
          "gen": {
-          "template": "In the first number game at a bus stop, the display starts at {n}. A player adds {k}, which is one of the allowed choices. What number does the display show next?",
+          "template": "The display shows {n}. A player adds {k}. What number does the display show next?",
           "params": {
            "n": [
             10,
@@ -17031,10 +16967,10 @@
            "new_number": "n+k"
           },
           "steps": [
-           "The bus display starts at {n}, and the player chooses {k}.",
-           "The first number game allows the chosen addition.",
-           "Adding it gives the new number {new_number}.",
-           "Therefore, the display shows {answer} next."
+           "The display starts at {n}. The player picks {k}.",
+           "The game allows adding.",
+           "Adding gives the new number {new_number}.",
+           "So the display shows {answer} next."
           ],
           "model": {
            "type": "tape",
@@ -17090,15 +17026,15 @@
           "practice",
           "computed"
          ],
-         "prompt": "In the second number game during cricket practice, the score starts at 40. The player adds 7, choosing a number from 1 to 10. What is the score next?",
-         "explanation": "The cricket score begins at 40, and the player chooses 7. The second number game allows numbers up to 10, so this choice is allowed. Adding the chosen number gives 47. Therefore, the next score is 47.",
+         "prompt": "In a cricket practice game, the score starts at 40. A player adds 7, a number from 1 to 10. What is the score next?",
+         "explanation": "The score starts at 40. The player adds 7. The chosen number is from 1 to 10, so it is allowed. Adding the number gives 47. So the next score is 47.",
          "steps": [
-          "The cricket score begins at 40, and the player chooses 7.",
-          "The second number game allows numbers up to 10, so this choice is allowed.",
-          "Adding the chosen number gives 47.",
-          "Therefore, the next score is 47."
+          "The score starts at 40. The player adds 7.",
+          "The chosen number is from 1 to 10, so it is allowed.",
+          "Adding the number gives 47.",
+          "So the next score is 47."
          ],
-         "hint": "Add the chosen game number to the starting score.",
+         "hint": "Add the number to the starting score.",
          "derived": [
           "1 (generated problem)",
           "10 (generated problem)",
@@ -17107,7 +17043,7 @@
           "7 (generated problem)"
          ],
          "gen": {
-          "template": "In the second number game during cricket practice, the score starts at {n}. The player adds {k}, choosing a number from 1 to 10. What is the score next?",
+          "template": "In a cricket practice game, the score starts at {n}. A player adds {k}, a number from 1 to 10. What is the score next?",
           "params": {
            "n": [
             20,
@@ -17127,10 +17063,10 @@
            "new_score": "n+k"
           },
           "steps": [
-           "The cricket score begins at {n}, and the player chooses {k}.",
-           "The second number game allows numbers up to 10, so this choice is allowed.",
-           "Adding the chosen number gives {new_score}.",
-           "Therefore, the next score is {answer}."
+           "The score starts at {n}. The player adds {k}.",
+           "The chosen number is from 1 to 10, so it is allowed.",
+           "Adding the number gives {new_score}.",
+           "So the next score is {answer}."
           ],
           "model": {
            "type": "tape",
@@ -17438,15 +17374,15 @@
           "practice",
           "computed"
          ],
-         "prompt": "A Collatz sequence starts at the odd number 3. Apply the odd rule and then apply the even rule to the result. What number is reached?",
-         "explanation": "The starting number 3 is odd, so multiply it by 3 and add 1 to get 10. The result 10 is even, so divide it by 2 to get 5. The two rules have now been applied in order. Therefore, the number reached is 5.",
+         "prompt": "A Collatz sequence starts at the odd number 3. Use the odd rule. Then use the even rule on the result. What number do you get?",
+         "explanation": "3 is odd. So multiply it by 3 and add 1. You get 10. 10 is even. So divide it by 2. You get 5. You used both rules, in order. So the number you get is 5.",
          "steps": [
-          "The starting number 3 is odd, so multiply it by 3 and add 1 to get 10.",
-          "The result 10 is even, so divide it by 2 to get 5.",
-          "The two rules have now been applied in order.",
-          "Therefore, the number reached is 5."
+          "3 is odd. So multiply it by 3 and add 1. You get 10.",
+          "10 is even. So divide it by 2. You get 5.",
+          "You used both rules, in order.",
+          "So the number you get is 5."
          ],
-         "hint": "First multiply by 3 and add 1, then divide the result by 2.",
+         "hint": "First multiply by 3 and add 1. Then divide the result by 2.",
          "derived": [
           "1 (generated problem)",
           "10 (generated problem)",
@@ -17455,7 +17391,7 @@
           "5 (generated problem)"
          ],
          "gen": {
-          "template": "A Collatz sequence starts at the odd number {n}. Apply the odd rule and then apply the even rule to the result. What number is reached?",
+          "template": "A Collatz sequence starts at the odd number {n}. Use the odd rule. Then use the even rule on the result. What number do you get?",
           "params": {
            "n": [
             3,
@@ -17474,10 +17410,10 @@
            "even_step": "(3*n+1)/2"
           },
           "steps": [
-           "The starting number {n} is odd, so multiply it by 3 and add 1 to get {odd_step}.",
-           "The result {odd_step} is even, so divide it by 2 to get {even_step}.",
-           "The two rules have now been applied in order.",
-           "Therefore, the number reached is {answer}."
+           "{n} is odd. So multiply it by 3 and add 1. You get {odd_step}.",
+           "{odd_step} is even. So divide it by 2. You get {even_step}.",
+           "You used both rules, in order.",
+           "So the number you get is {answer}."
           ],
           "model": null,
           "hint": "First multiply by 3 and add 1, then divide the result by 2.",
@@ -17843,15 +17779,15 @@
           "exam",
           "written"
          ],
-         "prompt": "Explain how each child’s number is decided in the line from shortest to tallest.",
+         "prompt": "Children stand in a line from shortest to tallest. Explain how each child gets a number.",
          "answer": "Each child counts only the neighbouring children who are taller. In the line from shortest to tallest, each of the first four children has one taller neighbour, so each says 1. The tallest child has no taller neighbour, so that child says 0.",
          "points": [
-          "Count only taller neighbours.",
+          "Count only the taller children next to it.",
           "The first four children each say 1.",
           "The tallest child says 0.",
-          "The number shows how many taller neighbours there are."
+          "The number shows how many taller children are next to it."
          ],
-         "explanation": "Compare your answer with the points a marker looks for."
+         "explanation": "Check your answer with these points."
         },
         {
          "type": "mcq",
@@ -17876,24 +17812,6 @@
           "A value is a supercell only if it exceeds every value in the table.": "A supercell only needs to exceed its adjacent cells."
          },
          "explanation": "The largest number is always a supercell."
-        },
-        {
-         "type": "explain",
-         "id": "mathematics-g6-ch3-l2-e1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "written"
-         ],
-         "prompt": "Explain why the cell containing 626 is a supercell while the cell containing 200 is not.",
-         "answer": "The cell containing 626 is a supercell because its adjacent cells contain 577 and 345, and 626 is larger than both. The cell containing 200 is adjacent to 577, and 200 is smaller than 577. Therefore, 200 is not larger than all its adjacent cells.",
-         "points": [
-          "Identifies 577 and 345 as adjacent to 626.",
-          "States that 626 exceeds both neighbours.",
-          "Explains that 200 is smaller than 577.",
-          "Uses the adjacent-cell comparison rule."
-         ],
-         "explanation": "Compare your answer with the points a marker looks for."
         },
         {
          "type": "mcq",
@@ -17928,7 +17846,7 @@
           "case"
          ],
          "context": "A class is preparing a number-line activity in which eleven numbers must be placed in their correct positions. Students begin at 1, 2, 3 and continue onwards, so the nine one-digit numbers come first. They then find digit sums for 68, 176 and 545 and discover that all three sums are the same. Finally, they use 248, 653, 356, 815 and 833 to explore numbers with digit sum 14 and try making such numbers increasingly large.",
-         "prompt": "Which ordering places all the listed examples with digit sum 14 from smallest to largest?",
+         "prompt": "Each number has a digit sum of 14. Which list goes from smallest to largest?",
          "options": [
           "248, 356, 653, 815, 833",
           "248, 653, 356, 815, 833",
@@ -17937,11 +17855,12 @@
          ],
          "answer": 0,
          "why": {
-          "248, 653, 356, 815, 833": "653 is incorrectly placed before 356.",
-          "248, 356, 815, 653, 833": "815 is incorrectly placed before 653.",
-          "248, 356, 653, 833, 815": "833 is incorrectly placed before 815."
+          "248, 356, 653, 815, 833": "",
+          "248, 653, 356, 815, 833": "653 should not come before 356.",
+          "248, 356, 815, 653, 833": "815 should not come before 653.",
+          "248, 356, 653, 833, 815": "833 should not come before 815."
          },
-         "explanation": "The numbers increase at every step."
+         "explanation": "Each number is bigger than the one before it."
         },
         {
          "type": "explain",
@@ -17951,15 +17870,15 @@
           "exam",
           "written"
          ],
-         "prompt": "Explain how a digit sum differs from placing a number in its correct position on a number line.",
+         "prompt": "Explain how a digit sum is different from placing a number on a number line.",
          "answer": "A digit sum is the total obtained by adding the digits of a number. The digit sums of 68, 176 and 545 are equal. Number-line placement is different: each number goes in its correct position among numbers written from 1, 2, 3 onwards.",
          "points": [
-          "Defines a digit sum as the total of the digits.",
-          "States that 68, 176 and 545 have equal digit sums.",
-          "Explains that number-line placement uses correct positions.",
-          "Mentions that the number line starts at 1, 2, 3 and continues onwards."
+          "Says a digit sum is the total of all the digits.",
+          "Says 68, 176 and 545 have the same digit sum.",
+          "Says a number line puts each number in its correct position.",
+          "Says the number line starts at 1, 2, 3 and goes on."
          ],
-         "explanation": "Compare your answer with the points a marker looks for."
+         "explanation": "Check your answer with the points a marker looks for."
         },
         {
          "type": "mcq",
@@ -18705,8 +18624,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "The frequency table shows 10 students who chose laddoos and 4 students who chose barfis. How many more students chose laddoos than barfis?",
-         "explanation": "Subtract the smaller frequency from the larger one, so the formula is a-b. With a=8 and b=2, 8-2=6 students.",
+         "prompt": "A frequency table shows this: 10 students chose laddoos. 4 students chose barfis. How many more students chose laddoos than barfis?",
+         "explanation": "Subtract the smaller number from the bigger number: a-b. With a = 8 and b = 2, 8-2 = 6 students.",
          "derived": [
           "10 (generated problem)",
           "2 (generated problem)",
@@ -18733,8 +18652,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "Sandhya ordered the shoe sizes 7 cm, 10 cm and 13 cm from smallest to largest. What is the difference between the largest and smallest shoe sizes in cm?",
-         "explanation": "The largest size is l and the smallest is s, so the formula is l-s. With l=11 and s=5, 11-5=6 cm.",
+         "prompt": "Sandhya lines up these shoe sizes: 7 cm, 10 cm, 13 cm. What is the difference between the biggest and smallest size in cm?",
+         "explanation": "The biggest size is l. The smallest is s. So the formula is l-s. With l=11 and s=5, 11-5=6 cm.",
          "derived": [
           "10 (generated problem)",
           "11 (generated problem)",
@@ -18766,8 +18685,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A shoe-size frequency table shows 4 students in one size group and 3 students in another size group. How many students are counted in the table?",
-         "explanation": "Add the frequencies to find the total number of students, so the formula is a+b. With a=4 and b=3, 4+3=7 students.",
+         "prompt": "A shoe-size frequency table (a table of counts) shows 4 students in one size group. It shows 3 students in another size group. How many students are in the table in all?",
+         "explanation": "Add the frequencies (the counts) to find the total. The formula is a+b. With a=4 and b=3, 4+3=7 students.",
          "derived": [
           "3 (generated problem)",
           "4 (generated problem)",
@@ -19116,8 +19035,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A bar graph has 3 equally spaced horizontal lines, including the bottom and top lines. How many equal spaces are between the lines?",
-         "explanation": "The number of spaces is one less than the number of lines: n-1 spaces.",
+         "prompt": "A bar graph has 3 flat (horizontal) lines. The bottom line and the top line are two of them. The lines are the same distance apart. How many equal spaces are between the lines?",
+         "explanation": "The number of spaces is one less than the number of lines: n-1.",
          "derived": [
           "1 (generated problem)",
           "2 (generated problem)",
@@ -19185,14 +19104,14 @@
           "delhi traffic"
          ],
          "title": "Compare two bars",
-         "prompt": "Put these steps in order to compare the shortest and longest bars.",
+         "prompt": "Put these steps in order. Compare the shortest bar and the longest bar.",
          "items": [
           "Find the shortest bar.",
           "Read the traffic at 6 to 7 a.m.",
           "Find the longest bar.",
           "Read the traffic at 7 to 8 a.m."
          ],
-         "explanation": "The shortest bar shows minimum traffic from 6 to 7 a.m. The longest shows maximum traffic from 7 to 8 a.m.",
+         "explanation": "The shortest bar shows the least traffic from 6 to 7 a.m. The longest bar shows the most traffic from 7 to 8 a.m.",
          "src": [
           {
            "ch": 4,
@@ -19933,8 +19852,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A horizontal bar picture is 18 cm wide when the scale number is 3. When the scale number is changed to 1, how wide is the same picture in cm?",
-         "explanation": "New width = old width * new scale number / old scale number = 18*1/3 = 6 cm. Choosing a suitable scale controls the picture's size.",
+         "prompt": "A bar picture is 18 cm wide when the scale number is 3. The scale number changes to 1. How wide is the picture now, in cm?",
+         "explanation": "New width = old width × new scale ÷ old scale = 18 × 1 ÷ 3 = 6 cm. The scale number changes the size of the picture.",
          "derived": [
           "1 (generated problem)",
           "18 (generated problem)",
@@ -20028,8 +19947,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "In the mountain bar graph, the tallest horizontal box is 50 cm long and the shortest is 10 cm long. How many cm longer is the tallest box than the shortest box?",
-         "explanation": "Difference in box lengths = 50 - 10 = 40 cm. The horizontal boxes make the mountain heights easier to compare at a glance.",
+         "prompt": "The longest bar is 50 cm long. The shortest bar is 10 cm long. How many cm longer is the longest bar than the shortest bar?",
+         "explanation": "Difference in bar lengths = 50 - 10 = 40 cm. The bars make the lengths easy to compare.",
          "derived": [
           "10 (generated problem)",
           "40 (generated problem)",
@@ -20144,15 +20063,15 @@
          "key"
         ],
         "title": "Read the pictograph key",
-        "prompt": "What does the key in a pictograph explain?",
+        "prompt": "What does the key in a pictograph show?",
         "options": [
-         "The frequencies of sweet preferences",
-         "What each symbol or picture represents",
+         "How often each sweet is liked",
+         "What each symbol or picture means",
          "The order of shoe sizes",
          "The names of classmates"
         ],
         "answer": 1,
-        "explanation": "Good choice! The key tells you what each symbol or picture means.",
+        "explanation": "Yes. The key tells you what each symbol or picture means.",
         "src": [
          {
           "ch": 4,
@@ -20200,12 +20119,12 @@
          "observations"
         ],
         "title": "What is data?",
-        "prompt": "Data is a collection of facts, numbers, measures, ______ or descriptions that give information.",
+        "prompt": "Data is a group of facts, numbers, measures, ______ or descriptions. They give information.",
         "answers": [
          "observations"
         ],
-        "hint": "Think about what you notice and record.",
-        "explanation": "Well done! Observations are details noticed and recorded as information.",
+        "hint": "Think about what you notice and write down.",
+        "explanation": "Well done! Observations are things you notice and write down.",
         "src": [
          {
           "ch": 4,
@@ -21073,15 +20992,15 @@
           "sieve",
           "composite"
          ],
-         "prompt": "In the sieve, what are all crossed-out numbers except 1?",
+         "prompt": "In a sieve, what are the crossed-out numbers, except 1?",
          "options": [
           "Composite numbers",
           "Prime numbers",
           "Twin primes",
-          "Rectangular arrangements"
+          "Numbers in rectangle shapes"
          ],
          "answer": 0,
-         "explanation": "All crossed-out numbers except 1 are composite numbers.",
+         "explanation": "The crossed-out numbers, except 1, are composite numbers.",
          "src": [
           {
            "ch": 5,
@@ -21185,8 +21104,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "In a sieve from 1 to 21, how many crossed-out numbers are there apart from 1?",
-         "explanation": "There are 21 numbers. Remove 1 and the 8 primes from 2 to 19: 21 - 1 - 8 = 12 crossed-out numbers.",
+         "prompt": "A sieve goes from 1 to 21. How many numbers are crossed out, except 1?",
+         "explanation": "There are 21 numbers. Take away 1 and the 8 primes from 2 to 19. 21 - 1 - 8 = 12.",
          "derived": [
           "1 (generated problem)",
           "12 (generated problem)",
@@ -21661,40 +21580,6 @@
            "p": 116
           }
          ]
-        },
-        {
-         "type": "fillblank",
-         "difficulty": 3,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "A thread diagram has 15 pegs and a thread-gap of 3 cm. How many cm of thread lie from the first peg to the last peg?",
-         "explanation": "There are 13-1 = 12 gaps between 13 pegs, so the thread length is 12*3 = 36 cm.",
-         "derived": [
-          "1 (generated problem)",
-          "12 (generated problem)",
-          "13 (generated problem)",
-          "15 (generated problem)",
-          "3 (generated problem)",
-          "36 (generated problem)",
-          "42 (generated problem)"
-         ],
-         "answers": [
-          "42"
-         ],
-         "hint": "Type the number.",
-         "id": "mathematics-g6-ch5-l3-c6",
-         "src": [
-          {
-           "ch": 5,
-           "p": 116
-          },
-          {
-           "ch": 5,
-           "p": 116
-          }
-         ]
         }
        ],
        "topicScene": "media/ch5-l3-diagram-3a91c0.svg",
@@ -21899,8 +21784,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A shop packs 7 laddoos in each of 3 boxes. The number of laddoos is written as the product of its prime factors. How many laddoos are there?",
-         "explanation": "Multiplying the prime factors gives the number of laddoos: p * q.",
+         "prompt": "A shop has 3 boxes. Each box has 7 laddoos. Write the total as prime factors multiplied together. How many laddoos are there?",
+         "explanation": "Multiply the prime factors to get the number of laddoos: p * q.",
          "derived": [
           "21 (generated problem)",
           "3 (generated problem)",
@@ -24232,8 +24117,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "The floor area is 50 square metres and the carpet area is 9 square metres. What is the uncovered floor area in square metres?",
-         "explanation": "Uncovered area = floor area - carpet area = 50 - 9 = 41 square metres.",
+         "prompt": "A floor has an area of 50 square metres. A carpet covers 9 square metres of it. How many square metres of floor are not covered?",
+         "explanation": "Not covered area = floor area - carpet area. So 50 - 9 = 41 square metres.",
          "derived": [
           "41 (generated problem)",
           "50 (generated problem)",
@@ -24715,8 +24600,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A shape on graph paper has 3 rows with 2 counted squares in each row. Which calculation gives its estimated area in square units?",
-         "explanation": "There are 2 squares in each of 3 rows, so the estimated area is 3 × 2 square units.",
+         "prompt": "A shape on graph paper has 3 rows. Each row has 2 squares you can count. What is its estimated area (how much space it covers) in square units?",
+         "explanation": "Each of the 3 rows has 2 squares. So the estimated area is 3 × 2 square units.",
          "derived": [
           "12 (generated problem)",
           "2 (generated problem)",
@@ -24747,7 +24632,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A shape has 10 whole squares and 3 squares with more than half inside. Enter its estimated area in square units.",
+         "prompt": "A shape covers 10 full squares. It also covers 3 squares with more than half inside. Write its estimated area in square units.",
          "explanation": "Each square with more than half inside counts as one square unit, so the estimated area is 10 + 3 square units.",
          "derived": [
           "10 (generated problem)",
@@ -25453,39 +25338,6 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g6-ch6-l6-a7",
-         "difficulty": 3,
-         "tags": [
-          "area",
-          "perimeter",
-          "houses"
-         ],
-         "prompt": "Charan’s house and Sharan’s house have equal areas. Whose house has the greater perimeter?",
-         "options": [
-          "Charan’s house",
-          "Sharan’s house",
-          "Both houses",
-          "Neither house"
-         ],
-         "answer": 1,
-         "explanation": "Sharan’s house has a perimeter of 134 feet, which is greater than Charan’s 130 feet.",
-         "src": [
-          {
-           "ch": 6,
-           "p": 150
-          },
-          {
-           "ch": 6,
-           "p": 150
-          },
-          {
-           "ch": 6,
-           "p": 150
-          }
-         ]
-        },
-        {
          "type": "truefalse",
          "id": "mathematics-g6-ch6-l6-a8",
          "difficulty": 3,
@@ -25549,7 +25401,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A rectangular garden has an area of 300 square metres and a length of 25 metres. What is its width in metres?",
+         "prompt": "A garden is a rectangle. Its area is 300 square metres. Its length is 25 metres. What is its width in metres?",
          "explanation": "Formula: a / 25. Using a = 300, the width is 12 metres.",
          "derived": [
           "12 (generated problem)",
@@ -26054,9 +25906,9 @@
           "quarter",
           "equal shares"
          ],
-         "prompt": "When one roti is shared equally among four children, each child gets one quarter.",
+         "prompt": "Four children share one roti equally. Each child gets one quarter.",
          "answer": true,
-         "explanation": "Four equal shares make one quarter for each child.",
+         "explanation": "Yes. Four equal shares means each child gets one quarter.",
          "src": [
           {
            "ch": 7,
@@ -26256,15 +26108,15 @@
           "roti",
           "fractions"
          ],
-         "title": "From Biggest Share to Smallest",
-         "prompt": "Put these sharing groups in order from the largest share to the smallest share.",
+         "title": "From Biggest to Smallest Share",
+         "prompt": "Put these in order, from biggest share to smallest share.",
          "items": [
-          "Shared between two children",
-          "Shared among four children",
-          "Shared among five children",
-          "Shared among nine children"
+          "Shared by two children",
+          "Shared by four children",
+          "Shared by five children",
+          "Shared by nine children"
          ],
-         "explanation": "Sharing with more people gives each person a smaller share.",
+         "explanation": "When more people share, each person gets less.",
          "src": [
           {
            "ch": 7,
@@ -26501,7 +26353,7 @@
           "half-unit"
          ],
          "title": "Equal Folds",
-         "prompt": "Folding a paper strip into two equal parts makes two half-unit parts.",
+         "prompt": "If you fold a paper strip into two equal parts, you get two half-unit parts.",
          "answer": true,
          "explanation": "The two equal parts are each half of the whole strip.",
          "src": [
@@ -26942,12 +26794,12 @@
           "halves",
           "equal-parts"
          ],
-         "prompt": "If the distance from 0 to 1 is divided into two equal parts, each part is one ______.",
+         "prompt": "The line from 0 to 1 is cut into two equal parts. Each part is one ______.",
          "answers": [
           "half"
          ],
          "hint": "This is one of two equal parts.",
-         "explanation": "Dividing the distance into two equal parts makes each part one half.",
+         "explanation": "Cutting the line into two equal parts makes each part one half.",
          "src": [
           {
            "ch": 7,
@@ -27846,13 +27698,13 @@
          ],
          "prompt": "When is a fraction in lowest terms?",
          "options": [
-          "When its numerator and denominator are equal",
-          "When its numerator and denominator have no common factor except 1",
-          "When it uses the largest possible numbers",
-          "When its numerator is larger than its denominator"
+          "When the top and bottom numbers are equal",
+          "When top and bottom share no factor except 1",
+          "When it has the biggest numbers possible",
+          "When the top number is bigger than the bottom"
          ],
          "answer": 1,
-         "explanation": "Lowest terms means the only common factor is 1.",
+         "explanation": "Lowest terms means the only common factor is 1. A factor is a number that divides another number exactly.",
          "src": [
           {
            "ch": 7,
@@ -27954,8 +27806,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A tray has 2 equal marbles shared equally among 36 children. The same-sized share is written as 3 out of an unknown number of equal shares. How many equal shares are in the denominator?",
-         "explanation": "Equal shares have equivalent fractions. Since 2/36 = 3/x, we get x = (36 × 3) ÷ 2 = 54 equal shares.",
+         "prompt": "2/36 of a marble is the same as 3/x of a marble. What is the denominator x (the bottom number)?",
+         "explanation": "Equal fractions have the same value. So 2/36 = 3/x. Then x = (36 × 3) ÷ 2 = 54.",
          "derived": [
           "2 (generated problem)",
           "3 (generated problem)",
@@ -28034,8 +27886,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A fraction has 3*3 as its numerator and 13*3 as its denominator. The numbers 3 and 13 have no common factor. What is the highest common factor of the numerator and denominator?",
-         "explanation": "After the common factor 3 is removed, 3 and 13 have no common factor. Therefore, the highest common factor is 3.",
+         "prompt": "A fraction has numerator 3 × 3 and denominator 13 × 3. The numbers 3 and 13 have no common factor. What is the highest common factor of the numerator and denominator?",
+         "explanation": "Remove the common factor 3. Then 3 and 13 have no common factor. So the highest common factor is 3.",
          "derived": [
           "13 (generated problem)",
           "3 (generated problem)"
@@ -28382,7 +28234,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A blue tray is 6/5 full of marbles and a red tray is 3/5 full. By how many fifths of a tray is the blue tray fuller?",
+         "prompt": "A blue tray is 6/5 full of marbles. A red tray is 3/5 full. How many fifths fuller is the blue tray?",
          "explanation": "The denominators are already the same, so compare the numerators. The blue tray is fuller by (6-3)/5 fifths of a tray.",
          "derived": [
           "0.6 (generated problem)",
@@ -28417,8 +28269,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A heap has 2/5 of a bag of marbles. Another heap has 4/5 of a bag of marbles. How many bags of marbles are there altogether?",
-         "explanation": "The fractional unit is the same, so add the numerators and keep the denominator. The total is (2+4)/5 bags of marbles.",
+         "prompt": "One heap has 2/5 of a bag of marbles. Another heap has 4/5 of a bag. How many bags of marbles do they make in all?",
+         "explanation": "The fractional unit is the same. Add the numerators and keep the denominator. The total is (2+4)/5 bags of marbles.",
          "derived": [
           "1.2 (generated problem)",
           "2 (generated problem)",
@@ -28480,7 +28332,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A cart has 3/5 of a bag of rice and 2/9 of another bag of rice. How many forty-fifths of a bag of rice are there altogether?",
+         "prompt": "A cart has 3/5 of a bag of rice. It also has 2/9 of another bag of rice. How many forty-fifths of a bag do you have in all?",
          "explanation": "Change 3/5 to 3*9/45 and 2/9 to 2*5/45. Add the numerators and keep 45, giving (3*9+2*5)/45 forty-fifths of a bag of rice.",
          "derived": [
           "2 (generated problem)",
@@ -28518,7 +28370,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A shop has 15/5 of a bag of laddoos and 27/9 of another bag of laddoos. How many whole bags of laddoos are there altogether?",
+         "prompt": "A shop has 15/5 of a bag of laddoos. It also has 27/9 of another bag. How many whole bags (no bits left over) do you have in all?",
          "explanation": "Change both fractional units to forty-fifths, add the numerators and keep 45. The numerator is a multiple of 45, so (15*9+27*5)/45 gives a whole number of bags in lowest terms.",
          "derived": [
           "15 (generated problem)",
@@ -28559,7 +28411,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A blue heap has 7/5 of a bag of sand and a red heap has 2/9 of a bag of sand. By how many forty-fifths of a bag is the blue heap larger?",
+         "prompt": "A blue heap has 7/5 of a bag of sand. A red heap has 2/9 of a bag of sand. The blue heap is bigger by how many forty-fifths of a bag?",
          "explanation": "Change 7/5 to 7*9/45 and 2/9 to 2*5/45. Compare the new numerators and subtract them, giving (7*9-2*5)/45 forty-fifths of a bag.",
          "derived": [
           "0.2 (generated problem)",
@@ -28648,9 +28500,9 @@
          "sharing",
          "fractions"
         ],
-        "prompt": "When more children share the same roti, each child gets a bigger share.",
+        "prompt": "More children share the same roti. Each child gets a bigger share.",
         "answer": false,
-        "explanation": "More children sharing the same roti gives each child a smaller share.",
+        "explanation": "More children share the same roti. So each child gets a smaller share.",
         "src": [
          {
           "ch": 7,
@@ -29183,7 +29035,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A child fixes the compass tip at P and places the pencil point 2 cm away. What distance is the pencil point from P in cm?",
+         "prompt": "A child puts the compass tip on P. The pencil point is 2 cm away from P. How far is the pencil point from P, in cm?",
          "explanation": "The distance from P to the pencil point is r = 2 cm.",
          "derived": [
           "2 (generated problem)"
@@ -29271,7 +29123,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A child marks 5 points in different directions from P, with every point 4 cm from P. How many points are marked?",
+         "prompt": "A child marks 5 points. Each point is 4 cm from P. The points go in different directions. How many points are marked?",
          "explanation": "The number of marked points is n = 5 points.",
          "derived": [
           "4 (generated problem)",
@@ -30019,7 +29871,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A square PQRS has side 5 cm. What distance in cm should the compass be set to for marking S from P?",
+         "prompt": "A square PQRS has sides 5 cm long. How far, in cm, should the compass be set to mark S from P?",
          "explanation": "The compass distance from P to S is the same as the side length, s cm.",
          "derived": [
           "5 (generated problem)"
@@ -30047,8 +29899,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A perpendicular to PQ is drawn through P in square PQRS. What is the angle between them in degrees?",
-         "explanation": "A perpendicular makes a right angle, so 90+0*s = 90 degrees.",
+         "prompt": "Square PQRS has a side PQ. A line goes through P. It is perpendicular to PQ (it makes a square corner). What is the angle between them in degrees?",
+         "explanation": "A perpendicular makes a right angle. So 90 + 0 × s = 90 degrees.",
          "derived": [
           "0 (generated problem)",
           "90 (generated problem)"
@@ -30783,8 +30635,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A child draws diagonal PR in each of 2 rectangles. How many smaller angles at R are made altogether?",
-         "explanation": "Diagonal PR divides angle R into 2 smaller angles. For a = 2, 2*a = 2*2 = 4 smaller angles.",
+         "prompt": "A child draws diagonal PR in each of 2 rectangles. A diagonal goes from one corner to the opposite corner. How many small angles are at R in all?",
+         "explanation": "Diagonal PR splits the angle at R into 2 small angles. With a = 2, 2 × a = 2 × 2 = 4 small angles.",
          "derived": [
           "2 (generated problem)",
           "4 (generated problem)"
@@ -31088,8 +30940,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "The house needs a point A that is the same distance from B and C. If AC is 2 cm, what is AB in cm?",
-         "explanation": "A must be equally distant from B and C, so AB = AC = d. For d = 2, 3, 4, or 5, the answers are 2, 3, 4, or 5 cm.",
+         "prompt": "Point A is the same distance from B and C. AC is 2 cm. What is AB, in cm?",
+         "explanation": "A is the same distance from B and C, so AB = AC = d. For d = 2, 3, 4 or 5, the answer is 2, 3, 4 or 5 cm.",
          "derived": [
           "2 (generated problem)",
           "3 (generated problem)",
@@ -31909,7 +31761,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "There are 5 pictures. The last 2 picture is not symmetrical, and the others are symmetrical. How many pictures are symmetrical?",
+         "prompt": "There are 5 pictures. The last 2 pictures are not symmetrical (not the same on both sides). The other pictures are symmetrical. How many pictures are symmetrical?",
          "explanation": "Subtract the picture that is not symmetrical: total - bad = 3 symmetrical pictures.",
          "derived": [
           "10 (generated problem)",
@@ -32131,7 +31983,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "Riya folds 5 copies of the blue triangle along its dotted line. One half covers the other completely. How many mirror halves are there altogether?",
+         "prompt": "Riya folds 5 blue triangles in half. One half covers the other half. How many halves are there in all?",
          "explanation": "Each fold gives 2 mirror halves, so 2 * 5 gives the number of mirror halves altogether.",
          "derived": [
           "10 (generated problem)",
@@ -32196,8 +32048,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A child folds 4 square papers once each. Each folding line is called a line of symmetry. How many lines of symmetry are named altogether?",
-         "explanation": "Each fold names 1 line of symmetry, so 1 * 4 gives the number of lines of symmetry altogether.",
+         "prompt": "A child folds each of 4 square papers once. Each fold line is called a line of symmetry. How many lines of symmetry are there in all?",
+         "explanation": "Each fold gives 1 line of symmetry. So 1 × 4 gives the number of lines in all.",
          "derived": [
           "1 (generated problem)",
           "3 (generated problem)",
@@ -32227,8 +32079,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A teacher folds 4 squares vertically. How many vertical lines of symmetry are shown altogether?",
-         "explanation": "A vertical fold gives 1 vertical line of symmetry in each square, so 1 * 4 gives the number of vertical lines altogether.",
+         "prompt": "A teacher folds each of 4 squares vertically. A vertical fold goes up and down. How many vertical lines of symmetry are there in all?",
+         "explanation": "A vertical fold gives 1 vertical line of symmetry in each square. So 1 × 4 gives the number of vertical lines in all.",
          "derived": [
           "1 (generated problem)",
           "3 (generated problem)",
@@ -32259,13 +32111,13 @@
           "symmetry",
           "folding-line"
          ],
-         "prompt": "Put these steps in order to describe a line of symmetry.",
+         "prompt": "Put these sentences in order to describe a line of symmetry.",
          "items": [
-          "A line of symmetry cuts a figure into two parts.",
-          "The two parts exactly overlap.",
+          "A line of symmetry cuts a shape into two parts.",
+          "The two parts lie exactly on top of each other.",
           "The folding line is called a line of symmetry."
          ],
-         "explanation": "This order explains how matching parts show a line of symmetry. You worked it out well!",
+         "explanation": "These steps show how matching parts make a line of symmetry. Well done!",
          "src": [
           {
            "ch": 9,
@@ -32284,8 +32136,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A teacher folds 3 squares horizontally. How many horizontal lines of symmetry are shown altogether?",
-         "explanation": "A horizontal fold gives 1 horizontal line of symmetry in each square, so 1 * 3 gives the number of horizontal lines altogether.",
+         "prompt": "A teacher folds 3 squares horizontally. How many horizontal lines of symmetry are there in all?",
+         "explanation": "Each square has 1 horizontal line of symmetry. So 1 × 3 gives the total.",
          "derived": [
           "1 (generated problem)",
           "2 (generated problem)",
@@ -32315,8 +32167,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A teacher folds 3 squares along a diagonal. How many diagonal lines of symmetry are shown altogether?",
-         "explanation": "A diagonal fold gives 1 diagonal line of symmetry in each square, so 1 * 3 gives the number of diagonal lines altogether.",
+         "prompt": "A teacher folds each of 3 squares along a diagonal. A diagonal goes from one corner to the opposite corner. How many diagonal lines of symmetry are there in all?",
+         "explanation": "A diagonal fold gives 1 diagonal line of symmetry in each square. So 1 × 3 gives the number of diagonal lines in all.",
          "derived": [
           "1 (generated problem)",
           "2 (generated problem)",
@@ -32576,8 +32428,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A drawing has 5 marked points on one side of a line of symmetry. How many matching points are on the other side after reflection?",
-         "explanation": "Reflection sends each marked point to one matching point on the other side.",
+         "prompt": "A drawing has 5 marked points on one side of a line of symmetry. A reflection is a mirror copy across the line. How many matching points are on the other side after the reflection?",
+         "explanation": "A reflection gives one matching point for each marked point.",
          "derived": [
           "10 (generated problem)",
           "4 (generated problem)",
@@ -32606,7 +32458,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A square sheet of side 8 cm is reflected across its vertical line of symmetry. How wide, in cm, is each of the two equal halves?",
+         "prompt": "A square has sides of 8 cm. A line of symmetry goes straight up and down. It cuts the square into two equal halves. How wide is each half, in cm?",
          "explanation": "The two overlapping halves each have half the side length of the square.",
          "derived": [
           "16 (generated problem)",
@@ -32640,8 +32492,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A vertical reflection of a square of side 8 cm pairs its two opposite vertical sides. What is their total length, in cm?",
-         "explanation": "Each vertical side has length s cm, so their total length is 2*s cm.",
+         "prompt": "A square has side 8 cm. A vertical reflection pairs its two vertical sides. What is their total length, in cm?",
+         "explanation": "Each vertical side is s cm long, so their total length is 2 × s cm.",
          "derived": [
           "16 (generated problem)",
           "2 (generated problem)",
@@ -32679,8 +32531,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A drawing on one side of a line of symmetry has 4 points. How many points are there in total after its reflected copy is added?",
-         "explanation": "There are n original points and n matching reflected points.",
+         "prompt": "A drawing has 4 points on one side of a line of symmetry. Its reflection, a mirror copy, is added. How many points are there in total?",
+         "explanation": "The drawing has n original points. It also has n matching reflected points.",
          "derived": [
           "4 (generated problem)",
           "5 (generated problem)",
@@ -32751,8 +32603,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A paper is folded once and 5 shapes are cut through the folded half. After the paper is opened, how many matching shapes are there?",
-         "explanation": "Cutting through the folded paper makes a matching shape on each half.",
+         "prompt": "A child folds a paper once. Then 5 shapes are cut through the folded paper. The paper is opened. How many matching shapes are there in all?",
+         "explanation": "Cutting through the folded paper makes one matching shape on each half.",
          "derived": [
           "10 (generated problem)",
           "2.5 (generated problem)",
@@ -33053,8 +32905,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A windmill looks exactly the same after each 90° turn. If it makes 5 such turns, how many degrees does it turn altogether?",
-         "explanation": "The total turn is 5*90=450 degrees.",
+         "prompt": "A windmill looks the same after each 90° turn. It turns 5 times. How many degrees does it turn in all?",
+         "explanation": "The total turn is 5 x 90 = 450 degrees.",
          "derived": [
           "20 (generated problem)",
           "355 (generated problem)",
@@ -33351,30 +33203,6 @@
          "explanation": "The order of rotation counts how many times a shape matches itself in one full turn."
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g6-ch9-l5-a2",
-         "difficulty": 1,
-         "tags": [
-          "four-arm",
-          "angles"
-         ],
-         "prompt": "How far apart are adjacent central dotted lines in the four-arm figure?",
-         "options": [
-          "90°",
-          "120°",
-          "60°",
-          "72°"
-         ],
-         "answer": 0,
-         "explanation": "Adjacent central dotted lines in the four-arm figure are 90° apart.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 232
-          }
-         ]
-        },
-        {
          "type": "matchpairs",
          "id": "mathematics-g6-ch9-l5-a5",
          "difficulty": 2,
@@ -33527,7 +33355,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "For a three-bus sign to overlap, angle A must overlap angle B. If angle A is 70 degrees, what must angle B be in degrees?",
+         "prompt": "Angle A must match angle B exactly. Angle A is 70 degrees. How many degrees must angle B be?",
          "explanation": "To overlap, angle B must equal angle A. Thus, the required value is a degrees.",
          "derived": [
           "70 (generated problem)"
@@ -33841,7 +33669,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A circular plate is turned 60° about its centre, and it looks the same. In 2 such turns, how many degrees does it turn?",
+         "prompt": "A round plate turns 60 degrees around its centre. It looks the same after the turn. It turns 2 times. How many degrees does it turn in all?",
          "explanation": "A circle looks the same after any rotation. Total degrees = 60 × 2 = 120°.",
          "derived": [
           "120 (generated problem)",
@@ -33867,8 +33695,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A toy fan is turned about its centre through 60° and looks the same. Write 1 if it has rotational symmetry and 0 if it does not.",
-         "explanation": "Fans are examples of objects with rotational symmetry. Since the fan looks the same after the turn, the answer is 1.",
+         "prompt": "A toy fan turns 60 degrees around its centre. It looks the same after the turn. Write 1 if it has rotational symmetry. Write 0 if it does not.",
+         "explanation": "A fan looks the same after the turn. So it has rotational symmetry. The answer is 1.",
          "derived": [
           "0 (generated problem)",
           "1 (generated problem)",
@@ -33897,8 +33725,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "Each of the 4 marked diameters of a circle is a line of symmetry. How many marked lines of symmetry does the circle have?",
-         "explanation": "Every diameter of a circle is a line of symmetry. Therefore, the number of marked lines of symmetry is 4.",
+         "prompt": "A circle has 4 marked diameters (lines through the centre). Each one is a line of symmetry. How many marked lines of symmetry does the circle have?",
+         "explanation": "Every diameter of a circle is a line of symmetry. So the number of marked lines of symmetry is 4.",
          "derived": [
           "3 (generated problem)",
           "4 (generated problem)",
@@ -33927,7 +33755,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A design has 5 different lines of symmetry and 3 different angles of symmetry. How many symmetry features are listed altogether?",
+         "prompt": "A design has 5 different lines of symmetry. It has 3 different angles of symmetry. How many symmetry features are there in all?",
          "explanation": "The design has several lines of symmetry and several angles of symmetry. Altogether, the number is 5 + 3 = 8.",
          "derived": [
           "3 (generated problem)",
@@ -34637,36 +34465,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g6-ch10-l1-a8",
-         "difficulty": 3,
-         "tags": [
-          "floors",
-          "positive-negative"
-         ],
-         "prompt": "The Toy Store's floor number is negative, while the Food Court's floor number is positive.",
-         "answer": true,
-         "explanation": "The Toy Store has Floor –1, so it is negative. The Food Court has Floor +1, so it is positive.",
-         "src": [
-          {
-           "ch": 10,
-           "p": 244
-          },
-          {
-           "ch": 10,
-           "p": 244
-          },
-          {
-           "ch": 10,
-           "p": 244
-          },
-          {
-           "ch": 10,
-           "p": 244
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "mathematics-g6-ch10-l1-a9",
          "difficulty": 3,
@@ -35029,7 +34827,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "The lift's up button moves it 6 floors and is then pressed again to move it 3 more floors. What is the total upward movement, in floors?",
+         "prompt": "A lift goes up 6 floors. Then it goes up 3 more floors. How many floors does it go up in all?",
          "explanation": "Combining the two button presses is addition: a + b. The total upward movement is 9 floors.",
          "derived": [
           "3 (generated problem)",
@@ -35083,15 +34881,15 @@
           "movement"
          ],
          "title": "Plan a Lift Journey",
-         "prompt": "Put these steps in the correct order to find and use a movement.",
+         "prompt": "Put these steps in the right order. Use them to plan a lift trip.",
          "items": [
           "Find the starting floor",
-          "Find the target floor",
+          "Find the target floor (where you want to go)",
           "Subtract the starting floor from the target floor",
-          "Press the needed movement",
+          "Press the movement you need",
           "Reach the target floor"
          ],
-         "explanation": "The needed movement is the target floor minus the starting floor. Adding it reaches the target.",
+         "explanation": "The needed movement is the target floor minus the starting floor. Add the movement to the starting floor to reach the target.",
          "src": [
           {
            "ch": 10,
@@ -35489,7 +35287,7 @@
           "5",
           "9"
          ],
-         "explanation": "Negative numbers come before positive numbers, and smaller numbers come first.",
+         "explanation": "Negative numbers come before positive numbers. Smaller numbers come first.",
          "src": [
           {
            "ch": 10,
@@ -35625,8 +35423,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "The lift attendant starts with an empty pocket and presses the plus button 2 times. What is the pocket value in token units?",
-         "explanation": "Each plus-button press takes one positive token. So 2 positive tokens have a value of 2 token units.",
+         "prompt": "A lift attendant starts with an empty pocket. The attendant presses the plus button 2 times. What is the value in token units?",
+         "explanation": "Each press of the plus button adds one positive token. So 2 positive tokens have a value of 2 token units.",
          "derived": [
           "2 (generated problem)"
          ],
@@ -36340,9 +36138,9 @@
           "border-sum",
           "grid-rules"
          ],
-         "prompt": "The border sum comes from the top row, bottom row, left column and right column.",
+         "prompt": "The border sum uses the top row and the bottom row. It also uses the left and right columns.",
          "answer": true,
-         "explanation": "Yes, the border sum uses both rows and both columns.",
+         "explanation": "Yes. The border sum uses both rows and both columns.",
          "src": [
           {
            "ch": 10,

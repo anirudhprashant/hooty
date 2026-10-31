@@ -1089,3 +1089,7 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
   .empty img { height: 90px; }
 }
 @media (max-height: 500px) and (orientation: landscape) { .tabs-block .subject-tabs { mask-image: none; -webkit-mask-image: none; } }
+
+/* fun facts */
+.lesson:has(.activity--funfact) .mascot-strip { display: none; }
+.fun-fact { margin: 0 0 var(--s3); padding: var(--s3) var(--s4); border-radius: var(--radius-md); background: var(--primary-soft); text-align: left; line-height: 1.5; }

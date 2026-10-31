@@ -659,6 +659,841 @@
 "Equal openings need arms that match. These arms do not match.",
 "Superimposition (putting one on top) lets us compare the angles, so it shows the difference."
 ]
+},
+"Two wooden sticks lie end to end, making a straight angle. A third stick points from the joint and leaves one part smaller than a right angle. What must the other part be?": {
+"prompt": "Two sticks lie end to end. They make a straight angle. A third stick starts at the joint. It makes two parts. One part is smaller than a right angle. What kind of angle is the other part?",
+"options": [
+"It is an obtuse angle.",
+"It is an acute angle.",
+"It is a right angle.",
+"It is a straight angle."
+],
+"explanation": "The other part is bigger than a right angle but smaller than a straight angle. So it is obtuse.",
+"why": [
+"",
+"This mistake assumes both parts are smaller than a right angle.",
+"This mistake assumes the two parts are equal, even though one is smaller.",
+"This mistake thinks one part is the whole straight angle."
+]
+},
+"At a market, {n} laddoos are equally spaced around a round tray. What is the angle measure in degrees between two neighbouring laddoos at the centre?": {
+"prompt": "{n} laddoos sit around a round tray. The spaces between them are equal. Two laddoos next to each other make an angle in the middle of the tray. What is this angle in degrees?",
+"hint": "Share all the degrees in a full turn equally among the equal spaces.",
+"steps": [
+"There are {n} equal angles around the centre.",
+"A full turn is 360 degrees. So each equal angle is {sectorAngle} degrees.",
+"So the angle between two laddoos next to each other is {answer} degrees."
+]
+},
+"If the student opens the blades of the scissors farther, what will happen to the angle?": {
+"prompt": "A student opens the blades of the scissors wider. What happens to the angle?",
+"options": [
+"The angle gets bigger.",
+"The angle gets smaller.",
+"The angle stays the same.",
+"The angle stops being an angle."
+],
+"explanation": "Opening the blades wider means more turning. More turning makes a bigger angle.",
+"why": [
+"",
+"This thinks more turning makes a smaller angle.",
+"This forgets that the size of an angle depends on how much it turns.",
+"The blades still make an angle when they open wider."
+]
+},
+"Before marking where the arms cross the circle, the pupil notices that the circle has shifted. What should the pupil do?": {
+"prompt": "A student is about to mark where the arms cross the circle. The circle has moved out of place. What should the student do?",
+"options": [
+"Move the circle so its centre is on the vertex.",
+"Move each arm away from the circle.",
+"Change the slit to match the opening.",
+"Mark the arms even though the circle is out of place."
+],
+"explanation": "The circle must be in the right place first. Then mark where the arms cross it.",
+"why": [
+"",
+"Moving the arms would change the angle itself.",
+"The slit does not need to change when the circle is out of place.",
+"Marking the arms with the centre away from the vertex does not follow the steps."
+]
+},
+"Paromita estimates that about {estimate} children are in her class. If each child gets {k} laddoos at a school market, about how many laddoos are needed?": {
+"prompt": "Paromita estimates that about {estimate} children are in her class. Each child gets {k} laddoos. About how many laddoos are needed?",
+"hint": "Multiply the estimated number of children by the laddoos for each child.",
+"steps": [
+"The class has about {estimate} children. Each child needs {k} laddoos.",
+"An estimate is enough. We do not need the exact number.",
+"Multiply the two numbers. That gives {laddoos} laddoos.",
+"So about {answer} laddoos are needed."
+]
+},
+"A rectangular garden has an area of 300 square metres and a length of 25 metres. What is its width in metres?": {
+"prompt": "A garden is a rectangle. Its area is 300 square metres. Its length is 25 metres. What is its width in metres?",
+"explanation": "Formula: a / 25. Using a = 300, the width is 12 metres.",
+"hint": "Type the number."
+},
+"When is a fraction in lowest terms?": {
+"prompt": "When is a fraction in lowest terms?",
+"options": [
+"When the top and bottom numbers are equal",
+"When top and bottom share no factor except 1",
+"When it has the biggest numbers possible",
+"When the top number is bigger than the bottom"
+],
+"explanation": "Lowest terms means the only common factor is 1. A factor is a number that divides another number exactly."
+},
+"At home, a child notices the same tile shape repeated across the floor. What should mathematics help the child do next?": {
+"prompt": "A child sees the same tile shape again and again on the floor. What should mathematics help the child do next?",
+"options": [
+"Ask why the tile pattern happens.",
+"Think every floor must have this same pattern.",
+"Stop looking once the pattern is found.",
+"Ignore the pattern and do not explain it."
+],
+"explanation": "This is right. Mathematics also looks for reasons why patterns exist.",
+"why": [
+"",
+"This mistake thinks one pattern means every floor is the same.",
+"This mistake thinks finding a pattern ends the search.",
+"This mistake says explaining is something to avoid."
+]
+},
+"A square grid has {n} dots in each row and {n} dots in each column. How many dots are in the grid?": {
+"prompt": "A square grid has {n} dots in each row. It has {n} dots in each column. How many dots are there in all?",
+"hint": "Think of 3 rows. Each row has 3 dots.",
+"steps": [
+"The grid has {n} rows.",
+"Each row has {n} dots.",
+"Multiply the rows by the dots in each row.",
+"{n} x {n} = {answer} dots."
+]
+},
+"A child makes square dot grids and adds one more odd-number layer each time. What should the child expect after each addition?": {
+"prompt": "A child makes square dot grids. Each time, the child adds a layer with an odd number of dots. What should the child expect after each addition?",
+"options": [
+"The dots can make a bigger square grid.",
+"The dots must make a long, thin rectangle.",
+"The dots will stop making a new pattern.",
+"The dots will make a circle around the grid."
+],
+"explanation": "This is right. Adding odd numbers gives square numbers.",
+"why": [
+"",
+"This mistake thinks the grid becomes a rectangle.",
+"This mistake thinks the pattern will stop.",
+"This mistake thinks the grid becomes a circle."
+]
+},
+"A regular polygon has {sides} equal-length sides, and each side is {length} cm long. What is the total length of all its sides in cm?": {
+"prompt": "A regular polygon is a shape with equal sides. This one has {sides} sides. Each side is {length} cm long. How long are all its sides together, in cm?",
+"hint": "Multiply the number of sides by the length of one side.",
+"steps": [
+"This shape has {sides} sides. Each side is {length} cm long.",
+"All sides are the same length. So multiply {sides} by {length} to find the total length.",
+"{total} cm = {answer} cm."
+]
+},
+"Mathematicians think of mathematics as both an art and a science.": {
+"prompt": "Mathematicians think mathematics is both an art and a science.",
+"explanation": "Mathematicians see both art and science in mathematics."
+},
+"{n} rays are drawn, and each ray has a different initial point. How many initial points are there altogether?": {
+"prompt": "There are {n} rays. Each ray has a different initial point (its start point). How many initial points are there in all?",
+"options": [
+"4",
+"5",
+"3",
+"8"
+],
+"hint": "Find the initial point of each ray.",
+"steps": [
+"There are {n} rays.",
+"Each ray has {per_ray} initial point.",
+"{per_ray} x {n} = {points}, so there are {answer} initial points."
+],
+"why": [
+"",
+"You counted one ray too many.",
+"You left out one initial point.",
+"You counted two initial points for each ray."
+]
+},
+"{n} marbles rest at distinct marked points. How many different line segments can be formed by joining every pair of marked points?": {
+"prompt": "Draw {n} dots. No two dots are in the same place. A line segment is a straight line between two points. Join every pair of dots with a line segment. How many different line segments can you draw?",
+"hint": "Pair each dot with every other dot.",
+"steps": [
+"There are {n} dots. Each dot pairs with {others} other dots.",
+"This gives {counted_twice} pairs, but each pair is counted twice.",
+"Divide {counted_twice} by two to get {segments} line segments.",
+"{segments} = {answer} line segments."
+]
+},
+"One ray is rotated through {n} equal blocks, with {k} small turns in each block. Another angle is {c} small turns, and {c} is greater than the first angle's total. How many small turns greater is the second angle?": {
+"prompt": "A ray turns {n} times. Each time, it makes {k} small turns. The other angle is {c} small turns. This is greater than the ray's total. How many more small turns does the other angle have?",
+"hint": "First find the ray's total small turns. Then subtract that total from 20.",
+"steps": [
+"The ray turns {n} times, with {k} small turns each time.",
+"Multiply to find the total: {n} x {k} = {first_total} small turns.",
+"The other angle is bigger, so subtract: {c} - {first_total} = {answer} small turns.",
+"The other angle has {answer} more small turns."
+]
+},
+"A clear circle is placed over {n} angle drawings, with its centre on each vertex. In every drawing, both arms cross the circle and each crossing is marked. How many marks are made in total?": {
+"prompt": "A clear circle is placed over {n} angle drawings. The centre of the circle is on each vertex (corner point). Both arms of each angle cross the circle. Each crossing gets a mark. How many marks are there in all?",
+"steps": [
+"Each angle has two arms, so each drawing gives two marks.",
+"There are {n} drawings. Multiply 2 by the number of drawings.",
+"2 x {n} = {answer} marks."
+]
+},
+"In cricket, a bat makes an angle {b} degrees greater than a 90-degree right angle. What is the measure of the bat's angle in degrees?": {
+"prompt": "In cricket, a bat makes an angle {b} degrees greater than a right angle. A right angle is 90 degrees. What is the bat's angle in degrees?",
+"hint": "Add the extra degrees to the 90-degree right angle.",
+"steps": [
+"A right angle measures {right} degrees.",
+"The bat's angle is {b} degrees greater. So add {b} to {right}.",
+"{right} + {b} = {answer} degrees. So the bat's angle is {answer} degrees."
+]
+},
+"Riya draws two lines that meet in the shape of the letter L. What can she say about the lines?": {
+"prompt": "Riya draws two lines. They meet like the letter L. What is true about the lines?",
+"options": [
+"The lines are perpendicular lines.",
+"They meet at an acute angle.",
+"They meet at an obtuse angle.",
+"They meet at a straight angle."
+],
+"explanation": "Perpendicular is correct. Lines that meet at a right angle are perpendicular lines.",
+"why": [
+"",
+"This mistake thinks the L opening is smaller than a right angle.",
+"This mistake thinks the L opening is wider than a right angle.",
+"This mistake thinks the two lines make one straight line."
+]
+},
+"How can a workshop corner be checked to make a right angle with a protractor?": {
+"prompt": "A workshop corner needs to be a right angle. How can you check it with a protractor?",
+"explanation": "Think about it with Lumi.",
+"steps": [
+"Put the protractor's centre on the corner. The centre must sit on the vertex of the angle.",
+"Line up one arm with the zero mark. The arm must pass through the zero mark.",
+"Turn the other arm through 90 degrees. A right angle is 90 degrees.",
+"The angle measures 90 degrees. It has 90 one-degree parts inside it."
+],
+"kicker": "Let us think about it."
+},
+"A row of four cells contains {a}, {b}, {c}, and {d} points. Here {a} is larger than {b}, while {c} is larger than both {b} and {d}. How many cells are supercells?": {
+"prompt": "Four cells are in a row. They have {a}, {b}, {c}, and {d} points, from left to right. {a} is more than {b}. {c} is more than {b} and more than {d}. How many cells are supercells?",
+"hint": "Check each cell against only the cells next to it.",
+"steps": [
+"Cell {a} is a supercell. It has more points than {b}, the cell next to it.",
+"Cell {c} is a supercell. It has more points than {b} and {d}.",
+"Cells {b} and {d} each have a cell next to them with more points. So they are not supercells.",
+"There are 1 + 1 = {answer} supercells."
+]
+},
+"Explain how each child’s number is decided in the line from shortest to tallest.": {
+"prompt": "Children stand in a line from shortest to tallest. Explain how each child gets a number.",
+"explanation": "Check your answer with these points.",
+"points": [
+"Count only the taller children next to it.",
+"The first four children each say 1.",
+"The tallest child says 0.",
+"The number shows how many taller children are next to it."
+]
+},
+"Put these steps in order to compare the shortest and longest bars.": {
+"prompt": "Put these steps in order. Compare the shortest bar and the longest bar.",
+"title": "Compare two bars",
+"explanation": "The shortest bar shows the least traffic from 6 to 7 a.m. The longest bar shows the most traffic from 7 to 8 a.m.",
+"items": [
+"Find the shortest bar.",
+"Read the traffic at 6 to 7 a.m.",
+"Find the longest bar.",
+"Read the traffic at 7 to 8 a.m."
+]
+},
+"A horizontal bar picture is 18 cm wide when the scale number is 3. When the scale number is changed to 1, how wide is the same picture in cm?": {
+"prompt": "A bar picture is 18 cm wide when the scale number is 3. The scale number changes to 1. How wide is the picture now, in cm?",
+"options": [
+"6",
+"54",
+"72",
+"36"
+],
+"explanation": "New width = old width × new scale ÷ old scale = 18 × 1 ÷ 3 = 6 cm. The scale number changes the size of the picture."
+},
+"A shape has 10 whole squares and 3 squares with more than half inside. Enter its estimated area in square units.": {
+"prompt": "A shape covers 10 full squares. It also covers 3 squares with more than half inside. Write its estimated area in square units.",
+"explanation": "Each square with more than half inside counts as one square unit, so the estimated area is 10 + 3 square units.",
+"hint": "Type the number."
+},
+"If the distance from 0 to 1 is divided into two equal parts, each part is one ______.": {
+"prompt": "The line from 0 to 1 is cut into two equal parts. Each part is one ______.",
+"explanation": "Cutting the line into two equal parts makes each part one half.",
+"hint": "This is one of two equal parts."
+},
+"A fraction has 3*3 as its numerator and 13*3 as its denominator. The numbers 3 and 13 have no common factor. What is the highest common factor of the numerator and denominator?": {
+"prompt": "A fraction has numerator 3 × 3 and denominator 13 × 3. The numbers 3 and 13 have no common factor. What is the highest common factor of the numerator and denominator?",
+"explanation": "Remove the common factor 3. Then 3 and 13 have no common factor. So the highest common factor is 3.",
+"hint": "Type the number."
+},
+"A child fixes the compass tip at P and places the pencil point 2 cm away. What distance is the pencil point from P in cm?": {
+"prompt": "A child puts the compass tip on P. The pencil point is 2 cm away from P. How far is the pencil point from P, in cm?",
+"explanation": "The distance from P to the pencil point is r = 2 cm.",
+"hint": "Type the number."
+},
+"A child marks 5 points in different directions from P, with every point 4 cm from P. How many points are marked?": {
+"prompt": "A child marks 5 points. Each point is 4 cm from P. The points go in different directions. How many points are marked?",
+"explanation": "The number of marked points is n = 5 points.",
+"hint": "Type the number."
+},
+"A square PQRS has side 5 cm. What distance in cm should the compass be set to for marking S from P?": {
+"prompt": "A square PQRS has sides 5 cm long. How far, in cm, should the compass be set to mark S from P?",
+"explanation": "The compass distance from P to S is the same as the side length, s cm.",
+"hint": "Type the number."
+},
+"The house needs a point A that is the same distance from B and C. If AC is 2 cm, what is AB in cm?": {
+"prompt": "Point A is the same distance from B and C. AC is 2 cm. What is AB, in cm?",
+"explanation": "A is the same distance from B and C, so AB = AC = d. For d = 2, 3, 4 or 5, the answer is 2, 3, 4 or 5 cm.",
+"hint": "Type the number."
+},
+"A teacher folds 3 squares horizontally. How many horizontal lines of symmetry are shown altogether?": {
+"prompt": "A teacher folds 3 squares horizontally. How many horizontal lines of symmetry are there in all?",
+"options": [
+"4",
+"2",
+"3",
+"6"
+],
+"explanation": "Each square has 1 horizontal line of symmetry. So 1 × 3 gives the total."
+},
+"A vertical reflection of a square of side 8 cm pairs its two opposite vertical sides. What is their total length, in cm?": {
+"prompt": "A square has side 8 cm. A vertical reflection pairs its two vertical sides. What is their total length, in cm?",
+"options": [
+"16",
+"64",
+"32",
+"8"
+],
+"explanation": "Each vertical side is s cm long, so their total length is 2 × s cm."
+},
+"A windmill looks exactly the same after each 90° turn. If it makes 5 such turns, how many degrees does it turn altogether?": {
+"prompt": "A windmill looks the same after each 90° turn. It turns 5 times. How many degrees does it turn in all?",
+"options": [
+"450",
+"95",
+"20",
+"355"
+],
+"explanation": "The total turn is 5 x 90 = 450 degrees."
+},
+"A design has 5 different lines of symmetry and 3 different angles of symmetry. How many symmetry features are listed altogether?": {
+"prompt": "A design has 5 different lines of symmetry. It has 3 different angles of symmetry. How many symmetry features are there in all?",
+"explanation": "The design has several lines of symmetry and several angles of symmetry. Altogether, the number is 5 + 3 = 8.",
+"hint": "Type the number."
+},
+"The border sum comes from the top row, bottom row, left column and right column.": {
+"prompt": "The border sum uses the top row and the bottom row. It also uses the left and right columns.",
+"explanation": "Yes. The border sum uses both rows and both columns."
+},
+"Where can you see patterns?": {
+"prompt": "Where can you see patterns?",
+"title": "Where Can You Find Patterns?",
+"options": [
+"In nature and around us",
+"Only in mathematics books",
+"Only in science labs",
+"In one kind of shop"
+],
+"explanation": "You can see patterns in nature and around us."
+},
+"A movement pattern repeats {k} steps for each of {n} cycles. How many steps are completed altogether?": {
+"prompt": "A pattern has {k} steps. You repeat it {n} times. How many steps are done in all?",
+"hint": "Count the steps in one round, then multiply by the number of rounds.",
+"steps": [
+"One round has {k} steps.",
+"There are {n} rounds, all the same. Multiply the steps for one round by the number of rounds.",
+"{k} x {n} = {answer} steps."
+]
+},
+"A bus journey follows the same {d}-minute pattern between each pair of stops. If the bus makes {gaps} such journeys, how many minutes does it travel?": {
+"prompt": "Each trip between two stops takes {d} minutes. The bus makes {gaps} trips. How many minutes does the bus travel in all?",
+"options": [
+"20",
+"24",
+"9",
+"16"
+],
+"hint": "Use skip counting by 4 for 5 trips.",
+"steps": [
+"Each trip takes {d} minutes.",
+"There are {gaps} trips, all the same. Multiply the minutes for one trip by the number of trips.",
+"{d} x {gaps} = {answer} minutes."
+],
+"why": [
+"",
+"You counted one extra trip.",
+"You added instead of multiplying.",
+"You counted one trip too few."
+]
+},
+"The sun follows a repeating {d}-day weather pattern. A calendar includes {n} complete patterns and then {m} extra days. How many days are recorded altogether?": {
+"prompt": "A weather pattern repeats every {d} days. A calendar has {n} full patterns. It also has {m} extra days. How many days are there in all?",
+"steps": [
+"One pattern has {d} days.",
+"The {n} patterns take {n} x {d} = {complete_days} days.",
+"Add the {m} extra days: {complete_days} + {m} = {answer} days."
+]
+},
+"The Virahānka-number sequence begins 1, 2, 3, 5, 8, and 13. Two consecutive labels in a market-stall display are {a} and {b}. What is the next label?": {
+"prompt": "This is a Virahānka-number sequence: 1, 2, 3, 5, 8, and 13. Two numbers in a row are {a} and {b}. What is the next number?",
+"hint": "Add the two numbers to find the next one.",
+"steps": [
+"The Virahānka sequence is 1, 2, 3, 5, 8, 13, and so on.",
+"Add the two numbers, {a} and {b}, to find the next number.",
+"The next number is {answer}."
+]
+},
+"A cricket scoreboard has {n} rows and {n} columns of boxes. How many boxes are there altogether?": {
+"prompt": "A cricket scoreboard has {n} rows. Each row has {n} boxes. How many boxes are there in all?",
+"hint": "Count 4 rows with 4 boxes in each row.",
+"steps": [
+"The scoreboard has {n} rows.",
+"Each row has {n} boxes.",
+"Multiply rows by boxes in each row.",
+"{n} x {n} = {answer} boxes."
+]
+},
+"A market-stall owner paints a regular polygon sign with {sides} equal-length sides. Painting one side costs {price} rupees. What is the total cost of painting all the sides in rupees?": {
+"prompt": "A shopkeeper paints a sign with {sides} equal sides. Each side costs {price} rupees to paint. How many rupees in all?",
+"hint": "Multiply the number of sides by the cost of one side.",
+"steps": [
+"The sign has {sides} sides. Each side costs {price} rupees.",
+"Multiply {sides} by {price} to find the total.",
+"{cost} = {answer} rupees."
+]
+},
+"Put the Koch snowflake's first three shapes in order by line segments.": {
+"prompt": "Put the first three Koch snowflake shapes in order by line segments.",
+"explanation": "The first three shapes have 3, 12 and 48 line segments.",
+"items": [
+"3 line segments",
+"12 line segments",
+"48 line segments"
+]
+},
+"Two places on a map are marked by Point A and Point B. What is the shortest path joining them, and how should we write its name?": {
+"prompt": "Point A and Point B are two points on a map. What is the shortest path between them? How do we write its name?",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"We name each point with one capital letter.",
+"Each point marks one exact place.",
+"We draw a line segment from Point A to Point B. It is the shortest path between two points.",
+"We can write it as AB or BA. Both names mean the same line segment."
+],
+"kicker": "Let us think it through"
+},
+"A child opens a pair of scissors a little and then opens them wider. How should the angle change?": {
+"prompt": "A child opens scissors a little. Then the child opens them wider. How should the angle change?",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"Opening scissors makes an angle.",
+"Opening them wider makes the blades turn more.",
+"More turning makes a bigger angle.",
+"So the wider opening gives a bigger angle."
+],
+"kicker": "Let us think it through"
+},
+"Jo puts the protractor's centre beside an angle's vertex, not on it. One arm still passes through the zero mark. What should Jo change?": {
+"prompt": "Jo puts the protractor's centre next to the vertex, not on it. The vertex is the corner of an angle. One arm still goes through the zero mark. What should Jo change?",
+"options": [
+"Move the centre onto the vertex.",
+"Move the arm away from the zero mark.",
+"Turn the protractor by one degree.",
+"Read the angle without moving it."
+],
+"explanation": "The centre must be on the vertex. Moving it there fixes the mistake.",
+"why": [
+"",
+"This thinks the zero mark alone makes the placement right.",
+"This thinks a small turn can fix a wrong centre.",
+"This thinks a wrong placement can still give the right angle."
+]
+},
+"If the two arms are moved farther apart, what would happen to their angle?": {
+"prompt": "Move the two arms of an angle further apart. What happens to the angle?",
+"options": [
+"It becomes larger.",
+"It becomes smaller.",
+"It stays the same.",
+"It becomes narrower."
+],
+"explanation": "Wider arms make a larger angle.",
+"why": [
+"",
+"Moving the arms further apart does not make the angle smaller.",
+"A wider opening changes the angle.",
+"A narrower opening would make the angle smaller. But the arms are opening wider."
+]
+},
+"Neighbouring cells are immediately to the ______, right, top and bottom.": {
+"prompt": "Neighbour cells are right next to a cell, on its ______, right, top and bottom.",
+"title": "Find the Neighbour",
+"explanation": "Left is one direction a neighbour cell can be in.",
+"hint": "Think of the sides of a square."
+},
+"In the first number game at a bus stop, the display starts at {n}. A player adds {k}, which is one of the allowed choices. What number does the display show next?": {
+"prompt": "The display shows {n}. A player adds {k}. What number does the display show next?",
+"hint": "Add the player's number to the number on the display.",
+"steps": [
+"The display starts at {n}. The player picks {k}.",
+"The game allows adding.",
+"Adding gives the new number {new_number}.",
+"So the display shows {answer} next."
+]
+},
+"Which ordering places all the listed examples with digit sum 14 from smallest to largest?": {
+"prompt": "Each number has a digit sum of 14. Which list goes from smallest to largest?",
+"options": [
+"248, 356, 653, 815, 833",
+"248, 653, 356, 815, 833",
+"248, 356, 815, 653, 833",
+"248, 356, 653, 833, 815"
+],
+"explanation": "Each number is bigger than the one before it.",
+"why": [
+"",
+"653 should not come before 356.",
+"815 should not come before 653.",
+"833 should not come before 815."
+]
+},
+"A bar graph has 3 equally spaced horizontal lines, including the bottom and top lines. How many equal spaces are between the lines?": {
+"prompt": "A bar graph has 3 flat (horizontal) lines. The bottom line and the top line are two of them. The lines are the same distance apart. How many equal spaces are between the lines?",
+"explanation": "The number of spaces is one less than the number of lines: n-1.",
+"hint": "Type the number."
+},
+"What does the key in a pictograph explain?": {
+"prompt": "What does the key in a pictograph show?",
+"title": "Read the pictograph key",
+"options": [
+"How often each sweet is liked",
+"What each symbol or picture means",
+"The order of shoe sizes",
+"The names of classmates"
+],
+"explanation": "Yes. The key tells you what each symbol or picture means."
+},
+"In the sieve, what are all crossed-out numbers except 1?": {
+"prompt": "In a sieve, what are the crossed-out numbers, except 1?",
+"options": [
+"Composite numbers",
+"Prime numbers",
+"Twin primes",
+"Numbers in rectangle shapes"
+],
+"explanation": "The crossed-out numbers, except 1, are composite numbers."
+},
+"In a sieve from 1 to 21, how many crossed-out numbers are there apart from 1?": {
+"prompt": "A sieve goes from 1 to 21. How many numbers are crossed out, except 1?",
+"explanation": "There are 21 numbers. Take away 1 and the 8 primes from 2 to 19. 21 - 1 - 8 = 12.",
+"hint": "Type the number."
+},
+"When one roti is shared equally among four children, each child gets one quarter.": {
+"prompt": "Four children share one roti equally. Each child gets one quarter.",
+"explanation": "Yes. Four equal shares means each child gets one quarter."
+},
+"Put these sharing groups in order from the largest share to the smallest share.": {
+"prompt": "Put these in order, from biggest share to smallest share.",
+"title": "From Biggest to Smallest Share",
+"explanation": "When more people share, each person gets less.",
+"items": [
+"Shared by two children",
+"Shared by four children",
+"Shared by five children",
+"Shared by nine children"
+]
+},
+"Riya folds 5 copies of the blue triangle along its dotted line. One half covers the other completely. How many mirror halves are there altogether?": {
+"prompt": "Riya folds 5 blue triangles in half. One half covers the other half. How many halves are there in all?",
+"explanation": "Each fold gives 2 mirror halves, so 2 * 5 gives the number of mirror halves altogether.",
+"hint": "Type the number."
+},
+"Put these steps in order to describe a line of symmetry.": {
+"prompt": "Put these sentences in order to describe a line of symmetry.",
+"explanation": "These steps show how matching parts make a line of symmetry. Well done!",
+"items": [
+"A line of symmetry cuts a shape into two parts.",
+"The two parts lie exactly on top of each other.",
+"The folding line is called a line of symmetry."
+]
+},
+"A square sheet of side 8 cm is reflected across its vertical line of symmetry. How wide, in cm, is each of the two equal halves?": {
+"prompt": "A square has sides of 8 cm. A line of symmetry goes straight up and down. It cuts the square into two equal halves. How wide is each half, in cm?",
+"options": [
+"16",
+"4",
+"64",
+"8"
+],
+"explanation": "The two overlapping halves each have half the side length of the square."
+},
+"The lift attendant starts with an empty pocket and presses the plus button 2 times. What is the pocket value in token units?": {
+"prompt": "A lift attendant starts with an empty pocket. The attendant presses the plus button 2 times. What is the value in token units?",
+"explanation": "Each press of the plus button adds one positive token. So 2 positive tokens have a value of 2 token units.",
+"hint": "Type the number."
+},
+"Put these steps in a sensible order.": {
+"prompt": "Put these steps in a sensible order.",
+"title": "From Pattern to Discovery",
+"explanation": "Math finds patterns and explains them. These explanations can help us in other places.",
+"items": [
+"Find a pattern",
+"Explain why it exists",
+"Use the explanation in a new place"
+]
+},
+"Put these steps in order to name an angle.": {
+"prompt": "Put these steps in order to name an angle.",
+"explanation": "The vertex (the corner point) goes in the middle. Then we use the word angle or its symbol, ∠.",
+"items": [
+"Put one ray letter on each side.",
+"Keep the vertex letter in the middle.",
+"Write Angle or ∠ before the letters."
+]
+},
+"An angle measures {degrees} degrees, and its angle bisector makes two equal angles. What is the measure of each smaller angle in degrees?": {
+"prompt": "An angle measures {degrees} degrees. An angle bisector is a line that cuts it into two equal angles. How many degrees is each small angle?",
+"hint": "Cut the angle into two equal parts.",
+"steps": [
+"The original angle measures {degrees} degrees.",
+"Cutting it in half makes two equal angles. Each half measures {halfAngle} degrees.",
+"Each small angle measures {answer} degrees."
+]
+},
+"A protractor is placed on a paper model of a bus route. One arm passes through zero and the other reaches the {degrees}-degree mark. What is the measure of the route's turn in degrees?": {
+"prompt": "A protractor (a tool for measuring angles) sits at a corner. One arm points to zero. The other arm points to the {degrees}-degree mark. What is the angle in degrees?",
+"options": [
+"110",
+"-70",
+"160",
+"20"
+],
+"hint": "Read the mark that the other arm points to.",
+"steps": [
+"The centre is at the vertex (the corner point). One arm is at zero.",
+"The other arm reaches the {markValue}-degree mark.",
+"The angle measures {answer} degrees."
+],
+"why": [
+"You added a right angle instead of reading the mark.",
+"You subtracted a right angle instead of reading the mark.",
+"You used the measure of a straight angle instead of the mark.",
+""
+]
+},
+"A child has one taller neighbour and one neighbour who is not taller. What does the child say?": {
+"prompt": "A child has two neighbours. One neighbour is taller than the child. The other is not. How many taller neighbours does the child have?",
+"title": "One Taller Neighbour",
+"options": [
+"0",
+"1",
+"2"
+],
+"explanation": "Only one neighbour is taller. So the answer is 1."
+},
+"In a Collatz sequence, an odd number is multiplied by ______ and 1 is added.": {
+"prompt": "In a Collatz sequence, an odd number is multiplied by ______. Then 1 is added.",
+"explanation": "For an odd number, the rule multiplies by 3. Then it adds 1.",
+"hint": "Think about the rule for odd numbers. What do we multiply by?"
+},
+"In the second number game during cricket practice, the score starts at {n}. The player adds {k}, choosing a number from 1 to 10. What is the score next?": {
+"prompt": "In a cricket practice game, the score starts at {n}. A player adds {k}, a number from 1 to 10. What is the score next?",
+"hint": "Add the number to the starting score.",
+"steps": [
+"The score starts at {n}. The player adds {k}.",
+"The chosen number is from 1 to 10, so it is allowed.",
+"Adding the number gives {new_score}.",
+"So the next score is {answer}."
+]
+},
+"A Collatz sequence starts at the odd number {n}. Apply the odd rule and then apply the even rule to the result. What number is reached?": {
+"prompt": "A Collatz sequence starts at the odd number {n}. Use the odd rule. Then use the even rule on the result. What number do you get?",
+"hint": "First multiply by 3 and add 1. Then divide the result by 2.",
+"steps": [
+"{n} is odd. So multiply it by 3 and add 1. You get {odd_step}.",
+"{odd_step} is even. So divide it by 2. You get {even_step}.",
+"You used both rules, in order.",
+"So the number you get is {answer}."
+]
+},
+"The frequency table shows 10 students who chose laddoos and 4 students who chose barfis. How many more students chose laddoos than barfis?": {
+"prompt": "A frequency table shows this: 10 students chose laddoos. 4 students chose barfis. How many more students chose laddoos than barfis?",
+"explanation": "Subtract the smaller number from the bigger number: a-b. With a = 8 and b = 2, 8-2 = 6 students.",
+"hint": "Type the number."
+},
+"Sandhya ordered the shoe sizes 7 cm, 10 cm and 13 cm from smallest to largest. What is the difference between the largest and smallest shoe sizes in cm?": {
+"prompt": "Sandhya lines up these shoe sizes: 7 cm, 10 cm, 13 cm. What is the difference between the biggest and smallest size in cm?",
+"explanation": "The biggest size is l. The smallest is s. So the formula is l-s. With l=11 and s=5, 11-5=6 cm.",
+"hint": "Type the number."
+},
+"A shop packs 7 laddoos in each of 3 boxes. The number of laddoos is written as the product of its prime factors. How many laddoos are there?": {
+"prompt": "A shop has 3 boxes. Each box has 7 laddoos. Write the total as prime factors multiplied together. How many laddoos are there?",
+"explanation": "Multiply the prime factors to get the number of laddoos: p * q.",
+"hint": "Type the number."
+},
+"The floor area is 50 square metres and the carpet area is 9 square metres. What is the uncovered floor area in square metres?": {
+"prompt": "A floor has an area of 50 square metres. A carpet covers 9 square metres of it. How many square metres of floor are not covered?",
+"explanation": "Not covered area = floor area - carpet area. So 50 - 9 = 41 square metres.",
+"hint": "Type the number."
+},
+"Folding a paper strip into two equal parts makes two half-unit parts.": {
+"prompt": "If you fold a paper strip into two equal parts, you get two half-unit parts.",
+"title": "Equal Folds",
+"explanation": "The two equal parts are each half of the whole strip."
+},
+"A blue tray is 6/5 full of marbles and a red tray is 3/5 full. By how many fifths of a tray is the blue tray fuller?": {
+"prompt": "A blue tray is 6/5 full of marbles. A red tray is 3/5 full. How many fifths fuller is the blue tray?",
+"options": [
+"3",
+"1.8",
+"-0.6",
+"0.6"
+],
+"explanation": "The denominators are already the same, so compare the numerators. The blue tray is fuller by (6-3)/5 fifths of a tray."
+},
+"A heap has 2/5 of a bag of marbles. Another heap has 4/5 of a bag of marbles. How many bags of marbles are there altogether?": {
+"prompt": "One heap has 2/5 of a bag of marbles. Another heap has 4/5 of a bag. How many bags of marbles do they make in all?",
+"explanation": "The fractional unit is the same. Add the numerators and keep the denominator. The total is (2+4)/5 bags of marbles.",
+"hint": "Type the number."
+},
+"When more children share the same roti, each child gets a bigger share.": {
+"prompt": "More children share the same roti. Each child gets a bigger share.",
+"explanation": "More children share the same roti. So each child gets a smaller share."
+},
+"A perpendicular to PQ is drawn through P in square PQRS. What is the angle between them in degrees?": {
+"prompt": "Square PQRS has a side PQ. A line goes through P. It is perpendicular to PQ (it makes a square corner). What is the angle between them in degrees?",
+"explanation": "A perpendicular makes a right angle. So 90 + 0 × s = 90 degrees.",
+"hint": "Type the number."
+},
+"A child draws diagonal PR in each of 2 rectangles. How many smaller angles at R are made altogether?": {
+"prompt": "A child draws diagonal PR in each of 2 rectangles. A diagonal goes from one corner to the opposite corner. How many small angles are at R in all?",
+"explanation": "Diagonal PR splits the angle at R into 2 small angles. With a = 2, 2 × a = 2 × 2 = 4 small angles.",
+"hint": "Type the number."
+},
+"A child folds 4 square papers once each. Each folding line is called a line of symmetry. How many lines of symmetry are named altogether?": {
+"prompt": "A child folds each of 4 square papers once. Each fold line is called a line of symmetry. How many lines of symmetry are there in all?",
+"options": [
+"8",
+"3",
+"6",
+"4"
+],
+"explanation": "Each fold gives 1 line of symmetry. So 1 × 4 gives the number of lines in all."
+},
+"A teacher folds 4 squares vertically. How many vertical lines of symmetry are shown altogether?": {
+"prompt": "A teacher folds each of 4 squares vertically. A vertical fold goes up and down. How many vertical lines of symmetry are there in all?",
+"options": [
+"5",
+"4",
+"8",
+"3"
+],
+"explanation": "A vertical fold gives 1 vertical line of symmetry in each square. So 1 × 4 gives the number of vertical lines in all."
+},
+"A teacher folds 3 squares along a diagonal. How many diagonal lines of symmetry are shown altogether?": {
+"prompt": "A teacher folds each of 3 squares along a diagonal. A diagonal goes from one corner to the opposite corner. How many diagonal lines of symmetry are there in all?",
+"options": [
+"2",
+"3",
+"6",
+"4"
+],
+"explanation": "A diagonal fold gives 1 diagonal line of symmetry in each square. So 1 × 3 gives the number of diagonal lines in all."
+},
+"A drawing has 5 marked points on one side of a line of symmetry. How many matching points are on the other side after reflection?": {
+"prompt": "A drawing has 5 marked points on one side of a line of symmetry. A reflection is a mirror copy across the line. How many matching points are on the other side after the reflection?",
+"options": [
+"6",
+"4",
+"10",
+"5"
+],
+"explanation": "A reflection gives one matching point for each marked point."
+},
+"A drawing on one side of a line of symmetry has 4 points. How many points are there in total after its reflected copy is added?": {
+"prompt": "A drawing has 4 points on one side of a line of symmetry. Its reflection, a mirror copy, is added. How many points are there in total?",
+"options": [
+"4",
+"5",
+"9",
+"8"
+],
+"explanation": "The drawing has n original points. It also has n matching reflected points."
+},
+"A paper is folded once and 5 shapes are cut through the folded half. After the paper is opened, how many matching shapes are there?": {
+"prompt": "A child folds a paper once. Then 5 shapes are cut through the folded paper. The paper is opened. How many matching shapes are there in all?",
+"options": [
+"2.5",
+"10",
+"5",
+"20"
+],
+"explanation": "Cutting through the folded paper makes one matching shape on each half."
+},
+"For a three-bus sign to overlap, angle A must overlap angle B. If angle A is 70 degrees, what must angle B be in degrees?": {
+"prompt": "Angle A must match angle B exactly. Angle A is 70 degrees. How many degrees must angle B be?",
+"explanation": "To overlap, angle B must equal angle A. Thus, the required value is a degrees.",
+"hint": "Type the number."
+},
+"A circular plate is turned 60° about its centre, and it looks the same. In 2 such turns, how many degrees does it turn?": {
+"prompt": "A round plate turns 60 degrees around its centre. It looks the same after the turn. It turns 2 times. How many degrees does it turn in all?",
+"explanation": "A circle looks the same after any rotation. Total degrees = 60 × 2 = 120°.",
+"hint": "Type the number."
+},
+"A toy fan is turned about its centre through 60° and looks the same. Write 1 if it has rotational symmetry and 0 if it does not.": {
+"prompt": "A toy fan turns 60 degrees around its centre. It looks the same after the turn. Write 1 if it has rotational symmetry. Write 0 if it does not.",
+"options": [
+"0",
+"6",
+"1",
+"60"
+],
+"explanation": "A fan looks the same after the turn. So it has rotational symmetry. The answer is 1."
+},
+"Each of the 4 marked diameters of a circle is a line of symmetry. How many marked lines of symmetry does the circle have?": {
+"prompt": "A circle has 4 marked diameters (lines through the centre). Each one is a line of symmetry. How many marked lines of symmetry does the circle have?",
+"options": [
+"4",
+"8",
+"5",
+"3"
+],
+"explanation": "Every diameter of a circle is a line of symmetry. So the number of marked lines of symmetry is 4."
+},
+"Put these steps in the correct order to find and use a movement.": {
+"prompt": "Put these steps in the right order. Use them to plan a lift trip.",
+"title": "Plan a Lift Journey",
+"explanation": "The needed movement is the target floor minus the starting floor. Add the movement to the starting floor to reach the target.",
+"items": [
+"Find the starting floor",
+"Find the target floor (where you want to go)",
+"Subtract the starting floor from the target floor",
+"Press the movement you need",
+"Reach the target floor"
+]
+},
+"Put these numbers in order from left to right on a number line.": {
+"prompt": "Put these numbers in order from left to right on a number line.",
+"title": "Order Numbers on a Number Line",
+"explanation": "Negative numbers come before positive numbers. Smaller numbers come first.",
+"items": [
+"– 2",
+"3",
+"5",
+"9"
+]
 }
 },
 "seen": [
@@ -848,7 +1683,225 @@
 "A tray has {n} rows. Each row has {n} laddoos. This makes a square number. A helper takes away {k} laddoos. How many laddoos are left?",
 "A child draws square dot grids. The child wants to know how adding odd numbers makes bigger squares.",
 "A chalk mark starts at Point A. It goes through Point B. It has no end point. What is the mark?",
-"A child puts one drawn angle over another. The two corners (vertices) are at the same spot. The first angle's arms are inside the second angle's arms. Which opening is larger?"
+"A child puts one drawn angle over another. The two corners (vertices) are at the same spot. The first angle's arms are inside the second angle's arms. Which opening is larger?",
+"Two wooden sticks lie end to end, making a straight angle. A third stick points from the joint and leaves one part smaller than a right angle. What must the other part be?",
+"At a market, {n} laddoos are equally spaced around a round tray. What is the angle measure in degrees between two neighbouring laddoos at the centre?",
+"If the student opens the blades of the scissors farther, what will happen to the angle?",
+"Before marking where the arms cross the circle, the pupil notices that the circle has shifted. What should the pupil do?",
+"Paromita estimates that about {estimate} children are in her class. If each child gets {k} laddoos at a school market, about how many laddoos are needed?",
+"A number game begins at {n}. In round one, add {a}, chosen from 1 to 3; in round two, add {b}, chosen from 1 to 10. Follow the steps in order. What number is reached?",
+"After Table 2 is completed using 1, 0, 6, 3 and 9, which conclusion is correct?",
+"The class starts its eleven-number number-line activity from 1 and continues onwards. What should happen when the one-digit numbers are reached?",
+"Two sticks lie end to end. They make a straight angle. A third stick starts at the joint. It makes two parts. One part is smaller than a right angle. What kind of angle is the other part?",
+"{n} laddoos sit around a round tray. The spaces between them are equal. Two laddoos next to each other make an angle in the middle of the tray. What is this angle in degrees?",
+"A student opens the blades of the scissors wider. What happens to the angle?",
+"A student is about to mark where the arms cross the circle. The circle has moved out of place. What should the student do?",
+"Paromita estimates that about {estimate} children are in her class. Each child gets {k} laddoos. About how many laddoos are needed?",
+"A rectangular garden has an area of 300 square metres and a length of 25 metres. What is its width in metres?",
+"A paper strip is treated as one unit long. If 4 paper strips are placed end to end, how many units long is the joined strip?",
+"When is a fraction in lowest terms?",
+"At home, a child notices the same tile shape repeated across the floor. What should mathematics help the child do next?",
+"A square grid has {n} dots in each row and {n} dots in each column. How many dots are in the grid?",
+"A child makes square dot grids and adds one more odd-number layer each time. What should the child expect after each addition?",
+"A regular polygon has {sides} equal-length sides, and each side is {length} cm long. What is the total length of all its sides in cm?",
+"Mathematicians think of mathematics as both an art and a science.",
+"A garden is a rectangle. Its area is 300 square metres. Its length is 25 metres. What is its width in metres?",
+"When is a fraction in lowest terms?",
+"A child sees the same tile shape again and again on the floor. What should mathematics help the child do next?",
+"A square grid has {n} dots in each row. It has {n} dots in each column. How many dots are there in all?",
+"A child makes square dot grids. Each time, the child adds a layer with an odd number of dots. What should the child expect after each addition?",
+"A regular polygon is a shape with equal sides. This one has {sides} sides. Each side is {length} cm long. How long are all its sides together, in cm?",
+"Mathematicians think mathematics is both an art and a science.",
+"{n} rays are drawn, and each ray has a different initial point. How many initial points are there altogether?",
+"{n} marbles rest at distinct marked points. How many different line segments can be formed by joining every pair of marked points?",
+"A light starts at Point P, passes through Point Q, and has no ending point. Which label is correct?",
+"One ray is rotated through {n} equal blocks, with {k} small turns in each block. Another angle is {c} small turns, and {c} is greater than the first angle's total. How many small turns greater is the second angle?",
+"A clear circle is placed over {n} angle drawings, with its centre on each vertex. In every drawing, both arms cross the circle and each crossing is marked. How many marks are made in total?",
+"In cricket, a bat makes an angle {b} degrees greater than a 90-degree right angle. What is the measure of the bat's angle in degrees?",
+"Riya draws two lines that meet in the shape of the letter L. What can she say about the lines?",
+"How can a workshop corner be checked to make a right angle with a protractor?",
+"There are {n} rays. Each ray has a different initial point (its start point). How many initial points are there in all?",
+"Draw {n} dots. No two dots are in the same place. A line segment is a straight line between two points. Join every pair of dots with a line segment. How many different line segments can you draw?",
+"A ray turns {n} times. Each time, it makes {k} small turns. The other angle is {c} small turns. This is greater than the ray's total. How many more small turns does the other angle have?",
+"A clear circle is placed over {n} angle drawings. The centre of the circle is on each vertex (corner point). Both arms of each angle cross the circle. Each crossing gets a mark. How many marks are there in all?",
+"In cricket, a bat makes an angle {b} degrees greater than a right angle. A right angle is 90 degrees. What is the bat's angle in degrees?",
+"Riya draws two lines. They meet like the letter L. What is true about the lines?",
+"A workshop corner needs to be a right angle. How can you check it with a protractor?",
+"A row of four cells contains {a}, {b}, {c}, and {d} points. Here {a} is larger than {b}, while {c} is larger than both {b} and {d}. How many cells are supercells?",
+"Explain how each child’s number is decided in the line from shortest to tallest.",
+"Put these steps in order to compare the shortest and longest bars.",
+"A horizontal bar picture is 18 cm wide when the scale number is 3. When the scale number is changed to 1, how wide is the same picture in cm?",
+"A checker takes 2 marbles away from 2 marbles and adds one marble for the common group. How many marbles are in the common group of a safe pair?",
+"A shape has 10 whole squares and 3 squares with more than half inside. Enter its estimated area in square units.",
+"If the distance from 0 to 1 is divided into two equal parts, each part is one ______.",
+"A fraction has 3*3 as its numerator and 13*3 as its denominator. The numbers 3 and 13 have no common factor. What is the highest common factor of the numerator and denominator?",
+"Four cells are in a row. They have {a}, {b}, {c}, and {d} points, from left to right. {a} is more than {b}. {c} is more than {b} and more than {d}. How many cells are supercells?",
+"Children stand in a line from shortest to tallest. Explain how each child gets a number.",
+"Put these steps in order. Compare the shortest bar and the longest bar.",
+"A bar picture is 18 cm wide when the scale number is 3. The scale number changes to 1. How wide is the picture now, in cm?",
+"A shape covers 10 full squares. It also covers 3 squares with more than half inside. Write its estimated area in square units.",
+"The line from 0 to 1 is cut into two equal parts. Each part is one ______.",
+"A fraction has numerator 3 × 3 and denominator 13 × 3. The numbers 3 and 13 have no common factor. What is the highest common factor of the numerator and denominator?",
+"A child fixes the compass tip at P and places the pencil point 2 cm away. What distance is the pencil point from P in cm?",
+"A child marks 5 points in different directions from P, with every point 4 cm from P. How many points are marked?",
+"A valid name for rectangle ABCD travels around the shape and may start at vertex 1. How many sides are included in the complete name?",
+"A square PQRS has side 5 cm. What distance in cm should the compass be set to for marking S from P?",
+"The house needs a point A that is the same distance from B and C. If AC is 2 cm, what is AB in cm?",
+"A teacher folds 3 squares horizontally. How many horizontal lines of symmetry are shown altogether?",
+"A vertical reflection of a square of side 8 cm pairs its two opposite vertical sides. What is their total length, in cm?",
+"There are 6 drops of ink on one half of a folded paper. After the halves are pressed together and opened, how many matching ink marks are there?",
+"A child puts the compass tip on P. The pencil point is 2 cm away from P. How far is the pencil point from P, in cm?",
+"A child marks 5 points. Each point is 4 cm from P. The points go in different directions. How many points are marked?",
+"A square PQRS has sides 5 cm long. How far, in cm, should the compass be set to mark S from P?",
+"Point A is the same distance from B and C. AC is 2 cm. What is AB, in cm?",
+"A teacher folds 3 squares horizontally. How many horizontal lines of symmetry are there in all?",
+"A square has side 8 cm. A vertical reflection pairs its two vertical sides. What is their total length, in cm?",
+"A windmill looks exactly the same after each 90° turn. If it makes 5 such turns, how many degrees does it turn altogether?",
+"A design has 5 different lines of symmetry and 3 different angles of symmetry. How many symmetry features are listed altogether?",
+"The Toy Store's floor number is negative, while the Food Court's floor number is positive.",
+"A marble tray has 10 marbles. The lift attendant uses 3 negative tokens to take marbles away, one marble for each token. How many marbles remain?",
+"The border sum comes from the top row, bottom row, left column and right column.",
+"Where can you see patterns?",
+"A movement pattern repeats {k} steps for each of {n} cycles. How many steps are completed altogether?",
+"A bus journey follows the same {d}-minute pattern between each pair of stops. If the bus makes {gaps} such journeys, how many minutes does it travel?",
+"A windmill looks the same after each 90° turn. It turns 5 times. How many degrees does it turn in all?",
+"A design has 5 different lines of symmetry. It has 3 different angles of symmetry. How many symmetry features are there in all?",
+"The border sum uses the top row and the bottom row. It also uses the left and right columns.",
+"Where can you see patterns?",
+"A pattern has {k} steps. You repeat it {n} times. How many steps are done in all?",
+"Each trip between two stops takes {d} minutes. The bus makes {gaps} trips. How many minutes does the bus travel in all?",
+"The sun follows a repeating {d}-day weather pattern. A calendar includes {n} complete patterns and then {m} extra days. How many days are recorded altogether?",
+"The Virahānka-number sequence begins 1, 2, 3, 5, 8, and 13. Two consecutive labels in a market-stall display are {a} and {b}. What is the next label?",
+"A cricket scoreboard has {n} rows and {n} columns of boxes. How many boxes are there altogether?",
+"A market-stall owner paints a regular polygon sign with {sides} equal-length sides. Painting one side costs {price} rupees. What is the total cost of painting all the sides in rupees?",
+"Put the Koch snowflake's first three shapes in order by line segments.",
+"Two places on a map are marked by Point A and Point B. What is the shortest path joining them, and how should we write its name?",
+"A child opens a pair of scissors a little and then opens them wider. How should the angle change?",
+"A bus windscreen forms an acute angle of {a} degrees with an upright side. How many degrees smaller than a 90-degree right angle is this angle?",
+"A weather pattern repeats every {d} days. A calendar has {n} full patterns. It also has {m} extra days. How many days are there in all?",
+"This is a Virahānka-number sequence: 1, 2, 3, 5, 8, and 13. Two numbers in a row are {a} and {b}. What is the next number?",
+"A cricket scoreboard has {n} rows. Each row has {n} boxes. How many boxes are there in all?",
+"A shopkeeper paints a sign with {sides} equal sides. Each side costs {price} rupees to paint. How many rupees in all?",
+"Put the first three Koch snowflake shapes in order by line segments.",
+"Point A and Point B are two points on a map. What is the shortest path between them? How do we write its name?",
+"A child opens scissors a little. Then the child opens them wider. How should the angle change?",
+"Jo puts the protractor's centre beside an angle's vertex, not on it. One arm still passes through the zero mark. What should Jo change?",
+"If the two arms are moved farther apart, what would happen to their angle?",
+"Neighbouring cells are immediately to the ______, right, top and bottom.",
+"In the first number game at a bus stop, the display starts at {n}. A player adds {k}, which is one of the allowed choices. What number does the display show next?",
+"Explain why the cell containing 626 is a supercell while the cell containing 200 is not.",
+"Which ordering places all the listed examples with digit sum 14 from smallest to largest?",
+"A calendar can repeat after five years when how many leap years are included?",
+"A bar graph has 3 equally spaced horizontal lines, including the bottom and top lines. How many equal spaces are between the lines?",
+"Jo puts the protractor's centre next to the vertex, not on it. The vertex is the corner of an angle. One arm still goes through the zero mark. What should Jo change?",
+"Move the two arms of an angle further apart. What happens to the angle?",
+"Neighbour cells are right next to a cell, on its ______, right, top and bottom.",
+"The display shows {n}. A player adds {k}. What number does the display show next?",
+"Each number has a digit sum of 14. Which list goes from smallest to largest?",
+"A bar graph has 3 flat (horizontal) lines. The bottom line and the top line are two of them. The lines are the same distance apart. How many equal spaces are between the lines?",
+"The tallest bar has 24 students. The scale starts at zero and has 4 equal units up to the tallest bar. Which scale is suitable: (m/h), (h/m), or (m+h) students per unit?",
+"A data presentation should fit the space where it will be displayed.",
+"What does the key in a pictograph explain?",
+"In the sieve, what are all crossed-out numbers except 1?",
+"In a sieve from 1 to 21, how many crossed-out numbers are there apart from 1?",
+"A thread diagram has 15 pegs and a thread-gap of 3 cm. How many cm of thread lie from the first peg to the last peg?",
+"When one roti is shared equally among four children, each child gets one quarter.",
+"Put these sharing groups in order from the largest share to the smallest share.",
+"What does the key in a pictograph show?",
+"In a sieve, what are the crossed-out numbers, except 1?",
+"A sieve goes from 1 to 21. How many numbers are crossed out, except 1?",
+"Four children share one roti equally. Each child gets one quarter.",
+"Put these in order, from biggest share to smallest share.",
+"A paper strip is folded into two equal parts, making two half-unit parts. If 3 paper strips are folded this way, how many half-unit parts are made?",
+"A paper strip is folded in half twice, making four equal parts. If 5 paper strips are folded this way, how many quarter-unit parts are made?",
+"Three amounts are 9/2, 3/2, and 9/2 of a bus. How many half-bus loads are left after taking one bus from each amount?",
+"How is point D found in the given construction?",
+"Riya folds 5 copies of the blue triangle along its dotted line. One half covers the other completely. How many mirror halves are there altogether?",
+"A teacher draws 4 lines on a figure. Each line cuts the figure into two parts that exactly overlap. How many matching half-pairs are there altogether?",
+"Put these steps in order to describe a line of symmetry.",
+"A square sheet of side 8 cm is reflected across its vertical line of symmetry. How wide, in cm, is each of the two equal halves?",
+"Riya folds 5 blue triangles in half. One half covers the other half. How many halves are there in all?",
+"Put these sentences in order to describe a line of symmetry.",
+"A square has sides of 8 cm. A line of symmetry goes straight up and down. It cuts the square into two equal halves. How wide is each half, in cm?",
+"In a four-arm figure, a child crosses 2 gaps between adjacent central dotted lines. What angle is covered in degrees?",
+"The lift attendant starts with an empty pocket and presses the plus button 2 times. What is the pocket value in token units?",
+"An account has a credit of 700 rupees and a debit of 200 rupees. The credit is larger than the debit. What is the signed balance in rupees that the customer should try to keep?",
+"Put these steps in a sensible order.",
+"A marble shape sequence starts with {start_marbles} marbles in its first row. Each next row has one more marble, and there are {marble_terms} rows. How many marbles are in the last row?",
+"The side counts of regular polygons follow the counting numbers starting at 3. What is the number of sides of the regular polygon in position {position}?",
+"A regular polygon has {sides} sides. The next regular polygon in the side-count sequence has how many sides?",
+"Put these steps in order to name an angle.",
+"A lift attendant starts with an empty pocket. The attendant presses the plus button 2 times. What is the value in token units?",
+"Put these steps in a sensible order.",
+"Put these steps in order to name an angle.",
+"At a market, an awning makes an obtuse angle of {a} degrees. How many degrees larger than a 90-degree right angle is the awning angle?",
+"A market umbrella makes an obtuse angle of {a} degrees. Another angle is {b} degrees smaller. How many degrees larger than a 90-degree right angle is the smaller angle?",
+"An angle measures {degrees} degrees, and its angle bisector makes two equal angles. What is the measure of each smaller angle in degrees?",
+"A protractor is placed on a paper model of a bus route. One arm passes through zero and the other reaches the {degrees}-degree mark. What is the measure of the route's turn in degrees?",
+"A student says a 90° angle is right and a smaller angle is acute. Which everyday example fits both claims?",
+"A child has one taller neighbour and one neighbour who is not taller. What does the child say?",
+"In a Collatz sequence, an odd number is multiplied by ______ and 1 is added.",
+"In the second number game during cricket practice, the score starts at {n}. The player adds {k}, choosing a number from 1 to 10. What is the score next?",
+"An angle measures {degrees} degrees. An angle bisector is a line that cuts it into two equal angles. How many degrees is each small angle?",
+"A protractor (a tool for measuring angles) sits at a corner. One arm points to zero. The other arm points to the {degrees}-degree mark. What is the angle in degrees?",
+"A child has two neighbours. One neighbour is taller than the child. The other is not. How many taller neighbours does the child have?",
+"In a Collatz sequence, an odd number is multiplied by ______. Then 1 is added.",
+"In a cricket practice game, the score starts at {n}. A player adds {k}, a number from 1 to 10. What is the score next?",
+"A Collatz sequence starts at the odd number {n}. Apply the odd rule and then apply the even rule to the result. What number is reached?",
+"The frequency table shows 10 students who chose laddoos and 4 students who chose barfis. How many more students chose laddoos than barfis?",
+"Sandhya ordered the shoe sizes 7 cm, 10 cm and 13 cm from smallest to largest. What is the difference between the largest and smallest shoe sizes in cm?",
+"A shop packs 7 laddoos in each of 3 boxes. The number of laddoos is written as the product of its prime factors. How many laddoos are there?",
+"The floor area is 50 square metres and the carpet area is 9 square metres. What is the uncovered floor area in square metres?",
+"What can you use to estimate the area of a simple closed shape?",
+"Charan’s house and Sharan’s house have equal areas. Whose house has the greater perimeter?",
+"Folding a paper strip into two equal parts makes two half-unit parts.",
+"A Collatz sequence starts at the odd number {n}. Use the odd rule. Then use the even rule on the result. What number do you get?",
+"A frequency table shows this: 10 students chose laddoos. 4 students chose barfis. How many more students chose laddoos than barfis?",
+"Sandhya lines up these shoe sizes: 7 cm, 10 cm, 13 cm. What is the difference between the biggest and smallest size in cm?",
+"A shop has 3 boxes. Each box has 7 laddoos. Write the total as prime factors multiplied together. How many laddoos are there?",
+"A floor has an area of 50 square metres. A carpet covers 9 square metres of it. How many square metres of floor are not covered?",
+"If you fold a paper strip into two equal parts, you get two half-unit parts.",
+"A chikki broken into three equal pieces has a one-third piece. If 9 one-third pieces are collected, how many whole chikkis do they make?",
+"The bigger piece of chikki contains three one-quarter pieces. If there are 3 one-quarter pieces, how many bigger pieces can be made?",
+"Put these steps in order to mark one half.",
+"A blue tray is 6/5 full of marbles and a red tray is 3/5 full. By how many fifths of a tray is the blue tray fuller?",
+"A heap has 2/5 of a bag of marbles. Another heap has 4/5 of a bag of marbles. How many bags of marbles are there altogether?",
+"When more children share the same roti, each child gets a bigger share.",
+"A compass draws a circle of radius 2 cm with centre P. How far apart must the compass tip and pencil point be in cm?",
+"The full circle for the first wave in Wavy Wave has radius 2 cm. The wave is drawn using a half circle. What radius is used for the half circle in cm?",
+"A blue tray is 6/5 full of marbles. A red tray is 3/5 full. How many fifths fuller is the blue tray?",
+"One heap has 2/5 of a bag of marbles. Another heap has 4/5 of a bag. How many bags of marbles do they make in all?",
+"More children share the same roti. Each child gets a bigger share.",
+"A perpendicular to PQ is drawn through P in square PQRS. What is the angle between them in degrees?",
+"A child draws diagonal PR in each of 2 rectangles. How many smaller angles at R are made altogether?",
+"A child folds 4 square papers once each. Each folding line is called a line of symmetry. How many lines of symmetry are named altogether?",
+"A teacher folds 4 squares vertically. How many vertical lines of symmetry are shown altogether?",
+"A teacher folds 3 squares along a diagonal. How many diagonal lines of symmetry are shown altogether?",
+"A drawing has 5 marked points on one side of a line of symmetry. How many matching points are on the other side after reflection?",
+"A drawing on one side of a line of symmetry has 4 points. How many points are there in total after its reflected copy is added?",
+"A paper is folded once and 5 shapes are cut through the folded half. After the paper is opened, how many matching shapes are there?",
+"Square PQRS has a side PQ. A line goes through P. It is perpendicular to PQ (it makes a square corner). What is the angle between them in degrees?",
+"A child draws diagonal PR in each of 2 rectangles. A diagonal goes from one corner to the opposite corner. How many small angles are at R in all?",
+"A child folds each of 4 square papers once. Each fold line is called a line of symmetry. How many lines of symmetry are there in all?",
+"A teacher folds each of 4 squares vertically. A vertical fold goes up and down. How many vertical lines of symmetry are there in all?",
+"A teacher folds each of 3 squares along a diagonal. A diagonal goes from one corner to the opposite corner. How many diagonal lines of symmetry are there in all?",
+"A drawing has 5 marked points on one side of a line of symmetry. A reflection is a mirror copy across the line. How many matching points are on the other side after the reflection?",
+"A drawing has 4 points on one side of a line of symmetry. Its reflection, a mirror copy, is added. How many points are there in total?",
+"A child folds a paper once. Then 5 shapes are cut through the folded paper. The paper is opened. How many matching shapes are there in all?",
+"How far apart are adjacent central dotted lines in the four-arm figure?",
+"For a three-bus sign to overlap, angle A must overlap angle B. If angle A is 70 degrees, what must angle B be in degrees?",
+"A circular plate is turned 60° about its centre, and it looks the same. In 2 such turns, how many degrees does it turn?",
+"A toy fan is turned about its centre through 60° and looks the same. Write 1 if it has rotational symmetry and 0 if it does not.",
+"Each of the 4 marked diameters of a circle is a line of symmetry. How many marked lines of symmetry does the circle have?",
+"Put these steps in order for a lift trip to the Toy Store.",
+"Put these steps in the correct order to find and use a movement.",
+"Put these numbers in order from left to right on a number line.",
+"Angle A must match angle B exactly. Angle A is 70 degrees. How many degrees must angle B be?",
+"A round plate turns 60 degrees around its centre. It looks the same after the turn. It turns 2 times. How many degrees does it turn in all?",
+"A toy fan turns 60 degrees around its centre. It looks the same after the turn. Write 1 if it has rotational symmetry. Write 0 if it does not.",
+"A circle has 4 marked diameters (lines through the centre). Each one is a line of symmetry. How many marked lines of symmetry does the circle have?",
+"Put these steps in the right order. Use them to plan a lift trip.",
+"Put these numbers in order from left to right on a number line."
 ],
 "broken": {
 "After the fold described in the case, what kind of angles are formed by the two matching edges?": "needs the fold from the case, which is not shown",
@@ -856,7 +1909,12 @@
 "The Bakśhālī manuscript used a special sign after a negative number around 250 CE. Brahmagupta gave equal treatment to positive numbers, negative numbers, and zero in 650 CE, forming what is now called a ring. About how many years apart were these events?": "It says Brahmagupta's date was 650 CE, but it is 628 CE, and the explanation uses different dates.",
 "The Nine Chapters on Mathematical Art was completed by the first or second century CE. Using 100 CE as the later end and Kautilya's date of about 350 BCE, about how many years separated the two events?": "The explanation's arithmetic (300 and 400) does not match the answer 450.",
 "In an arrangement of five children, at most how many children can say 2?": "rule for what each child says is missing",
-"A line segment from Point A to Point B must reach farther on both sides. Which change fits the facts?": "explanation says a line segment can be extended, which is false"
+"A line segment from Point A to Point B must reach farther on both sides. Which change fits the facts?": "explanation says a line segment can be extended, which is false",
+"The Toy Store's floor number is negative, while the Food Court's floor number is positive.": "floor numbers are not in the question",
+"Explain why the cell containing 626 is a supercell while the cell containing 200 is not.": "needs a grid of cells that is not shown",
+"A thread diagram has 15 pegs and a thread-gap of 3 cm. How many cm of thread lie from the first peg to the last peg?": "answer key says 42 but the explanation gives 36; prompt says 15 pegs but explanation uses 13",
+"Charan’s house and Sharan’s house have equal areas. Whose house has the greater perimeter?": "equal areas do not show which perimeter is greater, and no perimeter numbers are given",
+"How far apart are adjacent central dotted lines in the four-arm figure?": "needs a figure the child cannot see"
 },
 "kept": {
 "A bus route is a ray whose initial point is the school. The first stop is {a} km from the school and a later stop is {b} km from the school, where {b} is greater than {a}. How many km farther from the school is the later stop?": "why not text",
@@ -896,6 +1954,30 @@
 "Six equal parts of a whole chikki can make pieces with different shapes. If 3 whole chikkis are each broken into six equal pieces, how many one-sixth pieces are made?": "prompt numbers changed",
 "On a cricket field, {n} separate rays and {m} separate line segments are drawn. How many points in total are initial points of rays or end points of line segments?": "prompt long sentence",
 "A square picture has {rows} equal rows, with {cols} dots in every row. How many dots are there altogether?": "reviewer said the meaning changed",
-"How does the Koch snowflake show a relationship between shape sequences and number sequences?": "reviewer said the meaning changed"
+"How does the Koch snowflake show a relationship between shape sequences and number sequences?": "reviewer said the meaning changed",
+"A number game begins at {n}. In round one, add {a}, chosen from 1 to 3; in round two, add {b}, chosen from 1 to 10. Follow the steps in order. What number is reached?": "prompt numbers changed",
+"A paper strip is treated as one unit long. If 4 paper strips are placed end to end, how many units long is the joined strip?": "prompt numbers changed",
+"A light starts at Point P, passes through Point Q, and has no ending point. Which label is correct?": "reviewer said the meaning changed",
+"There are 6 drops of ink on one half of a folded paper. After the halves are pressed together and opened, how many matching ink marks are there?": "blind reader got a different answer",
+"A marble tray has 10 marbles. The lift attendant uses 3 negative tokens to take marbles away, one marble for each token. How many marbles remain?": "prompt numbers changed",
+"A bus windscreen forms an acute angle of {a} degrees with an upright side. How many degrees smaller than a 90-degree right angle is this angle?": "prompt numbers changed",
+"A calendar can repeat after five years when how many leap years are included?": "prompt numbers changed",
+"A data presentation should fit the space where it will be displayed.": "reviewer said the meaning changed",
+"A paper strip is folded into two equal parts, making two half-unit parts. If 3 paper strips are folded this way, how many half-unit parts are made?": "prompt numbers changed",
+"A paper strip is folded in half twice, making four equal parts. If 5 paper strips are folded this way, how many quarter-unit parts are made?": "prompt numbers changed",
+"Three amounts are 9/2, 3/2, and 9/2 of a bus. How many half-bus loads are left after taking one bus from each amount?": "prompt numbers changed",
+"A teacher draws 4 lines on a figure. Each line cuts the figure into two parts that exactly overlap. How many matching half-pairs are there altogether?": "blind reader got a different answer",
+"A marble shape sequence starts with {start_marbles} marbles in its first row. Each next row has one more marble, and there are {marble_terms} rows. How many marbles are in the last row?": "prompt numbers changed",
+"The side counts of regular polygons follow the counting numbers starting at 3. What is the number of sides of the regular polygon in position {position}?": "prompt numbers changed",
+"A regular polygon has {sides} sides. The next regular polygon in the side-count sequence has how many sides?": "prompt numbers changed",
+"An account has a credit of 700 rupees and a debit of 200 rupees. The credit is larger than the debit. What is the signed balance in rupees that the customer should try to keep?": "reviewer said the meaning changed",
+"At a market, an awning makes an obtuse angle of {a} degrees. How many degrees larger than a 90-degree right angle is the awning angle?": "prompt numbers changed",
+"A market umbrella makes an obtuse angle of {a} degrees. Another angle is {b} degrees smaller. How many degrees larger than a 90-degree right angle is the smaller angle?": "prompt numbers changed",
+"A student says a 90° angle is right and a smaller angle is acute. Which everyday example fits both claims?": "reviewer said the meaning changed",
+"What can you use to estimate the area of a simple closed shape?": "prompt long sentence",
+"A chikki broken into three equal pieces has a one-third piece. If 9 one-third pieces are collected, how many whole chikkis do they make?": "prompt numbers changed",
+"The bigger piece of chikki contains three one-quarter pieces. If there are 3 one-quarter pieces, how many bigger pieces can be made?": "prompt numbers changed",
+"Put these steps in order to mark one half.": "items numbers changed",
+"A compass draws a circle of radius 2 cm with centre P. How far apart must the compass tip and pencil point be in cm?": "reviewer said the meaning changed"
 }
 }
