@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from subjects import S as SUBJ, LANG_NOTE
 from llm import m27
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-N = int(sys.argv[1]); W = f"{ROOT}/{SUBJ['work']}/ch{N:02d}"
+N = int(sys.argv[1]); W = os.environ.get('DEEPEN_DIR') or f"{ROOT}/{SUBJ['work']}/ch{N:02d}"
 OUT = f'{W}/deep.json'
 facts = json.load(open(f'{W}/facts.json'))
 out = json.load(open(OUT)) if os.path.exists(OUT) else {}

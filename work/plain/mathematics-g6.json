@@ -3060,6 +3060,74 @@
 "charged"
 ],
 "explanation": "A credit shows that money was added to a bank account."
+},
+"Signs show prices, and puzzles give number clues. Which pair shows numbers doing useful work?": {
+"prompt": "Signs show prices. Number puzzles give number clues. Which pair shows numbers doing useful work?",
+"options": [
+"A price sign tells shoppers prices. A number puzzle helps people play.",
+"A price sign hides prices. A number puzzle stops people from playing.",
+"A price sign needs Collatz steps. A number puzzle needs odd-number steps.",
+"A price sign counts eight 32s. A number puzzle estimates children."
+],
+"explanation": "Numbers can give information. They can also help people play puzzles and games.",
+"why": [
+"",
+"Signs tell people prices. Number puzzles help people play.",
+"Collatz is not part of prices or number puzzles.",
+"This mixes number counts and estimates with other uses."
+]
+},
+"Explain why including two leap years makes the calendar repeat sooner than including only one leap year.": {
+"prompt": "Why does two leap years make a calendar repeat sooner than one?",
+"explanation": "Check your answer with the points below.",
+"points": [
+"One leap year gives a six-year period.",
+"Two leap years give a five-year period.",
+"One year less makes the period repeat sooner.",
+"Shows the two calendar periods clearly."
+]
+},
+"How does forming and following orderly steps in the number games show computational thinking?": {
+"prompt": "How do the number games use computational thinking?",
+"explanation": "Check your answer with the points below.",
+"points": [
+"Names computational thinking as using clear, orderly steps.",
+"Gives the addition choices in the first game.",
+"Gives the smallest and largest numbers added in the second game.",
+"Says the rules guide the players."
+]
+},
+"Paromita says her class has about 100 children. A friend says this means exactly 100 children. What is the mistake?": {
+"prompt": "Paromita says her class has about 100 children. Her friend says there are exactly 100 children. What is the mistake?",
+"options": [
+"An estimate gives a rough count. It is not an exact count.",
+"The number 100 must be exact because someone estimated it.",
+"About 100 cannot describe how many children are in a class.",
+"Only number patterns can tell us about a class size."
+],
+"explanation": "An estimate is useful when we do not need an exact count.",
+"why": [
+"",
+"This wrongly treats an estimate as an exact count.",
+"The estimate does give a useful idea of the class size.",
+"Numbers can support estimation even without an exact count."
+]
+},
+"A child plans moves for a number game. Which plan shows computational thinking?": {
+"prompt": "A child plans moves for a number game. Which plan shows computational thinking?",
+"options": [
+"Choose a move, add 1, 2, or 3, then check the total.",
+"Pick any number and change it often. Do not explain the choices.",
+"Draw eight 32s in a row. Do not use any rule.",
+"Use one Collatz step for both even and odd numbers."
+],
+"explanation": "Computational thinking uses clear steps to work with numbers.",
+"why": [
+"",
+"Changing numbers without a plan does not show orderly steps.",
+"The row has no orderly steps for using the numbers.",
+"This wrongly says even and odd numbers use the same step."
+]
 }
 },
 "seen": [
@@ -3869,7 +3937,20 @@
 "A windmill has symmetry angles. Put them in order, smallest to largest.",
 "Some shapes have angles of symmetry but no lines of symmetry.",
 "We usually leave out the plus sign when we write positive numbers.",
-"A credit in a bank book shows that money was:"
+"A credit in a bank book shows that money was:",
+"Signs show prices, and puzzles give number clues. Which pair shows numbers doing useful work?",
+"Explain why including two leap years makes the calendar repeat sooner than including only one leap year.",
+"How does forming and following orderly steps in the number games show computational thinking?",
+"Paromita says her class has about 100 children. A friend says this means exactly 100 children. What is the mistake?",
+"Meghana wants a difference made by adding and subtracting 25,000, 400 and 13,000 in the boxes. Which result should she accept?",
+"A child plans moves for a number game. Which plan shows computational thinking?",
+"What changes if the calendar comparison includes two leap years instead of one?",
+"Four Collatz samples reach 1. A child says this proves the conjecture. What is the best reply?",
+"Signs show prices. Number puzzles give number clues. Which pair shows numbers doing useful work?",
+"Why does two leap years make a calendar repeat sooner than one?",
+"How do the number games use computational thinking?",
+"Paromita says her class has about 100 children. Her friend says there are exactly 100 children. What is the mistake?",
+"A child plans moves for a number game. Which plan shows computational thinking?"
 ],
 "broken": {
 "After the fold described in the case, what kind of angles are formed by the two matching edges?": "needs the fold from the case, which is not shown",
@@ -3896,7 +3977,8 @@
 "What is the area of the floor in the carpet example?": "refers to a carpet example the child cannot see",
 "Which statement about Charan’s and Sharan’s houses is correct?": "needs house sizes that are not given",
 "How far apart must the compass tip and pencil point be?": "needs point P and a circle the child cannot see",
-"A pinwheel's hexagon has 4 sides, and its hexagon pattern repeats 3 times. How many hexagon sides are in the repeated pattern?": "says a hexagon has 4 sides, but it has 6"
+"A pinwheel's hexagon has 4 sides, and its hexagon pattern repeats 3 times. How many hexagon sides are in the repeated pattern?": "says a hexagon has 4 sides, but it has 6",
+"Meghana wants a difference made by adding and subtracting 25,000, 400 and 13,000 in the boxes. Which result should she accept?": "The needed boxes and signs are missing."
 },
 "kept": {
 "A bus route is a ray whose initial point is the school. The first stop is {a} km from the school and a later stop is {b} km from the school, where {b} is greater than {a}. How many km farther from the school is the later stop?": "why not text",
@@ -4002,6 +4084,8 @@
 "Which happens when a figure folds along its line of symmetry?": "reviewer said the meaning changed",
 "Reflection leaves both sides of a line of symmetry in place.": "reviewer said the meaning changed",
 "A lift leaves the Toy Store and moves up two floors. Where does it reach?": "blind reader got a different answer",
-"An account has 1500 rupees and a debit of 100 rupees is made. What is the new balance in rupees?": "reviewer said the meaning changed"
+"An account has 1500 rupees and a debit of 100 rupees is made. What is the new balance in rupees?": "reviewer said the meaning changed",
+"Four Collatz samples reach 1. A child says this proves the conjecture. What is the best reply?": "prompt numbers changed",
+"What changes if the calendar comparison includes two leap years instead of one?": "blind reader got a different answer"
 }
 }

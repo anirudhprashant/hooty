@@ -17,8 +17,24 @@ def _remote(script, data, timeout):
     _ensure_connection()
     return subprocess.run([*SSH, f'python3 {REMOTE}/{script}'], input=data, capture_output=True, text=True, timeout=timeout)
 
-GAP = float(os.environ.get('SPARKLE_M27_GAP', '30'))   # seconds between calls across every job: the plan is shared with other agents
 LOCK = os.path.expanduser('~/.cache/sparkle-m27.lock')
+BASE_GAP = float(os.environ.get('SPARKLE_M27_GAP', '10'))   # seconds between call starts across every job. 3s ran the plan dry after about 4 hours (2026-11-01)
+GAP_FILE = LOCK + '.gap'
+
+def gap():
+    """The wait between calls. It doubles after any plan-limit error, so Anirudh's other agents on the same plan are protected,
+    and drifts back to normal after three quiet hours."""
+    try:
+        if time.time() - os.path.getmtime(GAP_FILE) < 3 * 3600: return max(BASE_GAP, float(open(GAP_FILE).read()))
+    except (OSError, ValueError): pass
+    return BASE_GAP
+
+def slow_down():
+    # Several jobs hit the same limit at once: that is one event, so the gap doubles once per quarter hour, not once per job.
+    try:
+        if time.time() - os.path.getmtime(GAP_FILE) < 900: return
+    except OSError: pass
+    g = min(60.0, max(gap() * 2, 20.0)); open(GAP_FILE, 'w').write(str(g)); print(f'plan limit hit: calls now {g:.0f}s apart', flush=True)
 
 def _take_turn():
     """One call at a time across all jobs on this machine, spaced out, so Lumi can never starve the plan in a burst."""
@@ -26,7 +42,7 @@ def _take_turn():
     with open(LOCK, 'a+') as f:
         fcntl.flock(f, fcntl.LOCK_EX)
         f.seek(0); last = float(f.read().strip() or 0)
-        wait = last + GAP - time.time()
+        wait = last + gap() - time.time()
         if wait > 0: time.sleep(wait)
         f.seek(0); f.truncate(); f.write(str(time.time())); f.flush()
 
@@ -34,6 +50,8 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
     """Reply text, or the first JSON object in it. None if every try failed. Haiku writes first, then DeepSeek if it is free
     again, and MiniMax-M2.7 is the last resort. The name stays because every tool calls it. minimax_only gets a second opinion
     from a different model."""
+    if os.environ.get('LUMI_MODEL') == 'm31':   # a trial of MiniMax-M3.1-Flash for the whole job
+        return opencode(prompt, M31, want_json=want_json, tries=tries, on_retry=on_retry)
     if not minimax_only:
         got = haiku(prompt, want_json=want_json, tries=1)
         if got is not None: return got
@@ -45,7 +63,7 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
             _take_turn()
             r = _remote('m27.py', prompt, 900)
             while '429' in r.stderr:      # plan limit: wait for it to reset, so jobs pause and nothing is marked failed or written empty
-                print('MiniMax limit reached, waiting 20 minutes', flush=True); time.sleep(1200)
+                slow_down(); print('MiniMax limit reached, waiting 20 minutes', flush=True); time.sleep(1200)
                 _take_turn(); r = _remote('m27.py', prompt, 900)
             out = r.stdout.strip()
             if not out: raise ValueError('empty reply')
@@ -111,13 +129,15 @@ def haiku(prompt, want_json=True, tries=2, on_retry=None):
     return None
 
 COOLDOWN = LOCK + '.oc-limit'
+M31 = 'minimax-coding-plan/MiniMax-M3.1-Flash'
 def opencode(prompt, model=DEEPSEEK, want_json=True, tries=3, on_retry=None):
     """A free model through opencode, on its own limit, not the shared MiniMax plan. A private server per call, in an empty
     folder, so it cannot touch the shared opencode server or any project. The free tier's limit covers all its models and
     is shared with Anirudh's own opencode use: once it is hit, leave it alone for an hour and let MiniMax carry the work."""
     for t in range(tries):
-        if os.path.exists(COOLDOWN) and time.time() - os.path.getmtime(COOLDOWN) < 3600: return None
+        if model.startswith('opencode/') and os.path.exists(COOLDOWN) and time.time() - os.path.getmtime(COOLDOWN) < 3600: return None
         try:
+            if model == M31: _take_turn()   # it draws on the same MiniMax plan, so it keeps to the same pace
             with _slot(), tempfile.TemporaryDirectory() as d:
                 r = subprocess.run(['opencode', 'run', '--standalone', '-m', model, prompt], cwd=d, capture_output=True, text=True, timeout=600, stdin=subprocess.DEVNULL)
             if 'usage limit' in r.stdout + r.stderr:
