@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="enchanted-kingdom">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lumi - learn with Lumi, one lesson at a time</title>
+<meta name="description" content="A free, open-source learning game for children. Works for any subject, any grade, any language.">
+<meta name="theme-color" content="#fff3f8">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Lumi">
+<!--BASE-->
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./assets/icons/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="icon" href="./assets/icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+<!--PRELOAD--><link rel="modulepreload" href="./engine/activities/concept.js"><link rel="modulepreload" href="./engine/activities/draglabel.js"><link rel="modulepreload" href="./engine/activities/dragorder.js"><link rel="modulepreload" href="./engine/activities/explain.js"><link rel="modulepreload" href="./engine/activities/explore.js"><link rel="modulepreload" href="./engine/activities/fillblank.js"><link rel="modulepreload" href="./engine/activities/flashcard.js"><link rel="modulepreload" href="./engine/activities/hook.js"><link rel="modulepreload" href="./engine/activities/index.js"><link rel="modulepreload" href="./engine/activities/listenpick.js"><link rel="modulepreload" href="./engine/activities/matchpairs.js"><link rel="modulepreload" href="./engine/activities/mcq.js"><link rel="modulepreload" href="./engine/activities/media.js"><link rel="modulepreload" href="./engine/activities/passage.js"><link rel="modulepreload" href="./engine/activities/truefalse.js"><link rel="modulepreload" href="./engine/activities/typeanswer.js"><link rel="modulepreload" href="./engine/activities/watchanswer.js"><link rel="modulepreload" href="./engine/activities/worked.js"><link rel="modulepreload" href="./engine/app.js"><link rel="modulepreload" href="./engine/core/bookwords.js"><link rel="modulepreload" href="./engine/core/dom.js"><link rel="modulepreload" href="./engine/core/explorables.js"><link rel="modulepreload" href="./engine/core/gen.js"><link rel="modulepreload" href="./engine/core/glossary.js"><link rel="modulepreload" href="./engine/core/i18n.js"><link rel="modulepreload" href="./engine/core/icons.js"><link rel="modulepreload" href="./engine/core/models.js"><link rel="modulepreload" href="./engine/core/sfx.js"><link rel="modulepreload" href="./engine/core/srs.js"><link rel="modulepreload" href="./engine/core/state.js"><link rel="modulepreload" href="./engine/core/store.js"><link rel="modulepreload" href="./engine/core/theme.js"><link rel="preload" as="fetch" crossorigin="anonymous" href="./themes/index.json"><link rel="preload" as="fetch" crossorigin="anonymous" href="./content/index.json"><link rel="preload" as="fetch" crossorigin="anonymous" href="./themes/enchanted-kingdom/theme.json"><link rel="preload" as="fetch" crossorigin="anonymous" href="./themes/space-starlight/theme.json"><link rel="preload" as="fetch" crossorigin="anonymous" href="./themes/jungle-canopy/theme.json"><link rel="preload" as="fetch" crossorigin="anonymous" href="./themes/calm-lagoon/theme.json"><link rel="preload" as="fetch" crossorigin="anonymous" href="./content/packs/class6-sst/pack.json"><!--/PRELOAD-->
+<link rel="preload" as="font" type="font/woff2" href="./assets/fonts/fredoka-latin-wght.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="./assets/fonts/nunito-latin-wght.woff2" crossorigin>
+<link rel="preload" as="image" href="./themes/enchanted-kingdom/assets/hero.webp" fetchpriority="high">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/ui.css">
+<link rel="stylesheet" href="./themes/enchanted-kingdom/theme.css" id="theme-css">
+</head>
+<body>
+<div id="app" class="app-shell">
+  <div class="boot">
+    <img class="boot__art" src="./themes/enchanted-kingdom/assets/hero.webp" alt="" width="640" height="640">
+    <p class="boot__name">Lumi</p>
+    <div class="boot__bar" aria-hidden="true"><span></span></div>
+    <p class="boot__note">Getting your world ready</p>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px;font:18px system-ui;text-align:center">Lumi needs JavaScript. Please turn it on in your browser settings and reload.</p></noscript>
+<script type="module" src="./engine/app.js"></script>
+</body>
+</html>

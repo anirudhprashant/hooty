@@ -1,0 +1,245 @@
+{
+"cards": {
+"Ray A turns through {n} equal blocks of {k} small turns each, while Ray B turns through {m} equal blocks of {k} small turns each, and {n} is greater than {m}. How many small turns greater is Ray A's angle?": {
+"prompt": "Ray A makes {n} equal groups of {k} small turns. Ray B makes {m} equal groups of {k} small turns. {n} is greater than {m}. How many more small turns does Ray A make?",
+"steps": [
+"Ray A has {n} groups. Ray B has {m} groups. Each group has {k} small turns.",
+"The difference in the number of groups is {n} - {m}.",
+"Multiply the difference by the number of small turns in one group.",
+"{first_total} - {second_total} = {answer} small turns. Ray A's angle is {answer} small turns greater."
+]
+},
+"There are {n} marked points, no three on the same straight line, and {m} additional distinct straight lines not determined by any pair of the marked points. How many straight lines are there altogether?": {
+"prompt": "There are {n} marked points. No three lie on one straight line. There are {m} other straight lines. None joins two marked points. How many straight lines are there altogether?",
+"steps": [
+"Grouping the {n} marked points in pairs gives {counted_twice} pair counts. Each pair is counted twice.",
+"Divide by two to get {point_lines} lines from the marked points.",
+"Add the {m} other lines. This gives {total} lines.",
+"{total} = {answer} lines."
+]
+},
+"From a common starting ray, Ray A turns {a} equal small turns and then {b} more small turns in the same direction, while Ray B turns {c} equal small turns. How many small turns are in the greater of the two angles?": {
+"prompt": "Ray A and Ray B have the same starting ray. Ray A turns {a} small turns. Then it turns {b} more in the same direction. Ray B turns {c} small turns. How many small turns are in the greater angle?",
+"hint": "Find Ray A's total turns. Then compare them with Ray B's turns.",
+"steps": [
+"Ray A turns {a} small turns, then {b} more. Ray B turns {c} small turns.",
+"Ray A turns in the same direction. {a} + {b} = {first_total} small turns.",
+"Compare {first_total} with {c}. The greater turn makes the greater angle.",
+"The greater angle has {answer} small turns."
+]
+},
+"At a bus stop, a protractor is turned so one arm of an angle lines up with its {a}-degree mark and the other with its {b}-degree mark. What is the measure of the angle in degrees?": {
+"prompt": "One side of an angle lines up with the {a}-degree mark on a protractor. The other side lines up with the {b}-degree mark. What is the angle measure in degrees?",
+"steps": [
+"The first side is at the {start}-degree mark. The second is at the {end}-degree mark.",
+"The angle is the distance between the marks. Subtract the first mark from the second.",
+"{end} degrees minus {start} degrees gives {answer} degrees."
+]
+},
+"What is the difference between one-dimensional and three-dimensional shapes, and what other dimensional possibilities are allowed?": {
+"prompt": "What is the difference between one-dimensional and three-dimensional shapes? What other numbers of dimensions can shapes have?",
+"explanation": "Compare your answer with the points a marker looks for.",
+"points": [
+"One-dimensional shapes have only length.",
+"Three-dimensional shapes have length, width, and height.",
+"Two-dimensional shapes are also possible.",
+"Shapes can have more than three dimensions."
+]
+},
+"Table 2 can be completed using five digits. One completed cell has 8 in the ten-thousands place, 5 in the thousands place, 1 in the hundreds place, 3 in the tens place, and 2 in the ones place. What is the number in that cell?": {
+"prompt": "Table 2 needs five digits. One cell has 8 in the ten-thousands place. It has 5 in the thousands place. It has 1 in the hundreds place. It has 3 in the tens place. It has 2 in the ones place. What number is in the cell?",
+"explanation": "The largest completed Table 2 has these digits. The digits are 9, 6, 3, 1 and 0. The formula gives 10000*9+1000*6+100*3+10*1+0 = 96,310.",
+"hint": "Type the number."
+},
+"Which statement uses the square and compass facts correctly?": {
+"prompt": "Which statement uses the facts about squares and compasses correctly?",
+"title": "Choose the Correct Method",
+"options": [
+"A square has equal adjacent sides. A compass can mark D so AD equals BC.",
+"A square has equal opposite sides. AB must equal CD.",
+"A rectangle can have four equal sides. AD need not equal BC.",
+"A rectangle has equal adjacent sides. AD must be smaller than BC."
+],
+"explanation": "A square has equal adjacent sides. A compass can mark D so AD equals BC.",
+"why": {
+"A square has equal adjacent sides. A compass can mark D so AD equals BC.": "This uses the correct facts about a square and a compass.",
+"A square has equal opposite sides. AB must equal CD.": "Equal opposite sides alone do not make a square.",
+"A rectangle can have four equal sides. AD need not equal BC.": "This is not the method for making the required square.",
+"A rectangle has equal adjacent sides. AD must be smaller than BC.": "AD does not have to be smaller than BC."
+}
+},
+"At school, a child draws a square grid with {n} dots on each side to show the sum of the first {n} odd numbers. How many dots are in the grid?": {
+"prompt": "At school, a child draws a square grid. It has {n} dots on each side. It shows the sum of the first {n} odd numbers. How many dots are in the grid?",
+"hint": "The picture of the odd-number sum is a square with 2 dots on each side.",
+"steps": [
+"The sum of the first {n} odd numbers is being shown.",
+"The picture is a square grid with {n} dots on each side.",
+"Multiply the number of rows by the number of dots in each row.",
+"{n} x {n} = {answer} dots."
+]
+},
+"Explain how the learner can use the thirty-six-dot display to show that the same number can be shown in different ways and play different roles.": {
+"prompt": "The learner has a display with thirty-six dots. Explain how the learner can show the same number in two ways. Explain how the two shapes have different uses.",
+"explanation": "Check your answer against the points.",
+"points": [
+"The learner uses exactly thirty-six dots",
+"The learner makes one triangle and one square",
+"The learner says the number stays the same",
+"The learner explains the different uses of the two shapes"
+]
+},
+"At school, points A and B are {a} cm apart along a straight corridor, and point C is {b} cm beyond B on the same line. What is the length in cm of the shortest line segment from A to C?": {
+"prompt": "At school, points A and B are {a} cm apart on one straight line. Point C is {b} cm past B on the same line. What is the length in cm from A to C?",
+"hint": "Add the distance from A to B and the distance from B to C.",
+"steps": [
+"The distance from A to B is {a} cm and the distance from B to C is {b} cm.",
+"The points lie in order on one line, so add the two distances.",
+"{total} cm = {answer} cm."
+]
+},
+"In a cricket-field diagram, a straight angle is split into {a} degrees and {b} degrees. What is the sum in degrees of how far the acute part is below a right angle and how far the obtuse part is above it?": {
+"prompt": "In a cricket-field diagram, a straight angle is split into {a} degrees and {b} degrees. The acute part is below a right angle. The obtuse part is above a right angle. What is the sum, in degrees, of the two differences?",
+"steps": [
+"The acute part is {below} degrees below a right angle.",
+"The obtuse part is {above} degrees above a right angle.",
+"{below} + {above} = {answer} degrees. So the sum of the two differences is {answer} degrees."
+]
+},
+"During each of {n} practice swings, a cricket bat turns through {k} equal small turns, always starting from the same position. How many small turns of rotation are made altogether?": {
+"prompt": "In each of {n} swings, the bat makes {k} equal small turns. It starts from the same place each time. How many small turns are there altogether?",
+"hint": "Multiply the number of swings by the small turns in each swing.",
+"steps": [
+"There are {n} equal practice swings.",
+"Each swing contains {k} small turns, so multiply the number of swings by the turns in one swing.",
+"{n} x {k} = {answer} small turns, so the total rotation is {answer} small turns."
+]
+},
+"In a cricket match, sign A is a regular polygon with {a} sides and sign B is a regular polygon with {b} sides. Each side of both signs is {length} cm long. How many more cm of border does sign A have than sign B?": {
+"prompt": "Sign A is a regular polygon with {a} sides. Sign B is a regular polygon with {b} sides. Each side of both signs is {length} cm long. How many more cm of border does sign A have?",
+"steps": [
+"Sign A has {side_difference} more sides than sign B.",
+"Each extra side adds {length} cm of border, so multiply the side difference by {length}.",
+"{extra_length} cm = {answer} cm."
+]
+},
+"From the same starting ray, one ray turns {a} equal small turns and then turns {b} more small turns in the same direction. How many small turns from the starting ray is the resulting angle?": {
+"prompt": "One ray makes {a} equal small turns from the same start. It then makes {b} more small turns in the same direction. How many small turns is the final angle from the starting ray?",
+"steps": [
+"The first turn is {a} small turns. The extra turn is {b} small turns.",
+"Both turns go in the same direction, so add their amounts.",
+"{a} + {b} = {answer} small turns. The final angle is {answer} small turns from the starting ray."
+]
+},
+"At a market stall, one pair of scissors opens through {a} equal small turns and another pair opens through {b} equal small turns. How many more small turns does the wider opening have?": {
+"prompt": "One pair of scissors opens through {a} equal small turns. Another pair opens through {b} equal small turns. How many more small turns does the wider opening have?",
+"hint": "Subtract the smaller opening amount from the larger opening amount.",
+"steps": [
+"The first pair opens through {a} small turns. The second pair opens through {b} small turns.",
+"Subtract the smaller amount from the larger amount.",
+"{b} - {a} = {answer} small turns. The wider opening has {answer} more small turns."
+]
+},
+"General integers were first conceived and used in Asia many centuries ago, and the earliest known uses of negative numbers occurred in accounting. Kautilya wrote about credit and debit around 300 BCE; about how many years before 1 CE was that?": {
+"prompt": "People in Asia first used general integers many centuries ago. The earliest known use of negative numbers was in accounting. Kautilya wrote about credit and debit around 300 BCE. About how many years before 1 CE was that?",
+"explanation": "Kautilya wrote around 300 BCE. That was about 300 years before 1 CE.",
+"hint": "Type the number."
+},
+"A school arranges students in {n} rows, with 1 student in the first row, 2 in the second, and so on. The school then adds {k} more students. How many students are there altogether?": {
+"prompt": "A school puts students in {n} rows. The first row has 1 student. The second row has 2 students. This pattern continues. The school adds {k} more students. How many students are there altogether?",
+"hint": "First find the total for 6 rows. Then add the extra students.",
+"steps": [
+"The rows have 1, 2, 3, and more students.",
+"Add the row counts from 1 to {n}. This gives {triangular} students.",
+"Now add {k} extra students. The total is {total} students.",
+"The answer is {answer}."
+]
+},
+"A shape collection has {flat_shapes} flat shapes with 2 dimensions each and {solid_shapes} solid shapes with 3 dimensions each. How many dimensions are counted altogether?": {
+"prompt": "A shape collection has {flat_shapes} flat shapes. Each flat shape has 2 dimensions. It also has {solid_shapes} solid shapes. Each solid shape has 3 dimensions. How many dimensions are there altogether?",
+"hint": "First find the dimensions in each group.",
+"steps": [
+"The flat shapes contribute {flat_dimensions} dimensions and the solid shapes contribute {solid_dimensions} dimensions.",
+"Add the dimensions contributed by the two groups.",
+"{flat_dimensions} + {solid_dimensions} = {answer} dimensions."
+]
+},
+"A school bus has a badge made from the regular polygon in position {position} of the side-count sequence that starts at 3. How many sides does the badge have?": {
+"prompt": "A school bus has a badge made from a regular polygon. The polygon is in position {position}. The side-count sequence starts at 3. How many sides does the badge have?",
+"hint": "Find the starting side count and then add one for each later position.",
+"steps": [
+"The first regular polygon has {first_sides} sides.",
+"Position {position} comes after {before_position} increases of 1 side.",
+"{first_sides} + {before_position} = {answer} sides."
+]
+},
+"A line segment is made by joining two paths of {a} cm and {b} cm end to end in the same direction. How long is the whole line segment in cm?": {
+"prompt": "A line segment is made by joining two parts end to end. The two parts are {a} cm and {b} cm long. The parts go in the same direction. How long is the whole line segment in cm?",
+"steps": [
+"The two parts have lengths {a} cm and {b} cm.",
+"The parts meet end to end. Add their lengths to find the whole length.",
+"{total} cm = {answer} cm."
+]
+}
+},
+"seen": [
+"Ray A turns through {n} equal blocks of {k} small turns each, while Ray B turns through {m} equal blocks of {k} small turns each, and {n} is greater than {m}. How many small turns greater is Ray A's angle?",
+"There are {n} marked points, no three on the same straight line, and {m} additional distinct straight lines not determined by any pair of the marked points. How many straight lines are there altogether?",
+"From a common starting ray, Ray A turns {a} equal small turns and then {b} more small turns in the same direction, while Ray B turns {c} equal small turns. How many small turns are in the greater of the two angles?",
+"At a bus stop, a protractor is turned so one arm of an angle lines up with its {a}-degree mark and the other with its {b}-degree mark. What is the measure of the angle in degrees?",
+"What is the difference between one-dimensional and three-dimensional shapes, and what other dimensional possibilities are allowed?",
+"Table 2 can be completed using five digits. One completed cell has 8 in the ten-thousands place, 5 in the thousands place, 1 in the hundreds place, 3 in the tens place, and 2 in the ones place. What is the number in that cell?",
+"Which statement uses the square and compass facts correctly?",
+"At school, a child draws a square grid with {n} dots on each side to show the sum of the first {n} odd numbers. How many dots are in the grid?",
+"A bus route is a ray whose initial point is the school. The first stop is {a} km from the school and a later stop is {b} km from the school, where {b} is greater than {a}. How many km farther from the school is the later stop?",
+"A child says, \"The first six odd numbers are only a picture, so they do not show a rule.\" Which reply best challenges this claim?",
+"Explain how the learner can use the thirty-six-dot display to show that the same number can be shown in different ways and play different roles.",
+"If the student explains a pattern seen at school, what is a sensible next step?",
+"At school, points A and B are {a} cm apart along a straight corridor, and point C is {b} cm beyond B on the same line. What is the length in cm of the shortest line segment from A to C?",
+"In a cricket-field diagram, a straight angle is split into {a} degrees and {b} degrees. What is the sum in degrees of how far the acute part is below a right angle and how far the obtuse part is above it?",
+"A table has polygon examples from triangle through decagon, complete graphs from K2 to K6, stacked squares, stacked triangles, and the Koch snowflake. Which description covers it fully?",
+"In a cricket game, team A's badge is a regular polygon with {a} sides, and team B's badge is a regular polygon with {b} sides. How many more sides does team A's badge have than team B's?",
+"The learner has a display with thirty-six dots. Explain how the learner can show the same number in two ways. Explain how the two shapes have different uses.",
+"At school, points A and B are {a} cm apart on one straight line. Point C is {b} cm past B on the same line. What is the length in cm from A to C?",
+"In a cricket-field diagram, a straight angle is split into {a} degrees and {b} degrees. The acute part is below a right angle. The obtuse part is above a right angle. What is the sum, in degrees, of the two differences?",
+"In the case, what should the student do after noticing a pattern in the weather?",
+"Lina wants to study the branch connected with Ravi's display. Which response should she use?",
+"During each of {n} practice swings, a cricket bat turns through {k} equal small turns, always starting from the same position. How many small turns of rotation are made altogether?",
+"A region is estimated with 12 squares on graph paper, while 5 marbles are used as circle units. Which calculation gives the square-based estimated area in square units?",
+"At school, a picture shows {buses} three-dimensional toy buses and {signs} two-dimensional bus signs. How many dimensions are counted in the picture altogether?",
+"In a cricket match, sign A is a regular polygon with {a} sides and sign B is a regular polygon with {b} sides. Each side of both signs is {length} cm long. How many more cm of border does sign A have than sign B?",
+"From the same starting ray, one ray turns {a} equal small turns and then turns {b} more small turns in the same direction. How many small turns from the starting ray is the resulting angle?",
+"At a market stall, one pair of scissors opens through {a} equal small turns and another pair opens through {b} equal small turns. How many more small turns does the wider opening have?",
+"In each of {n} swings, the bat makes {k} equal small turns. It starts from the same place each time. How many small turns are there altogether?",
+"Sign A is a regular polygon with {a} sides. Sign B is a regular polygon with {b} sides. Each side of both signs is {length} cm long. How many more cm of border does sign A have?",
+"One ray makes {a} equal small turns from the same start. It then makes {b} more small turns in the same direction. How many small turns is the final angle from the starting ray?",
+"One pair of scissors opens through {a} equal small turns. Another pair opens through {b} equal small turns. How many more small turns does the wider opening have?",
+"If the student wants the path to extend beyond both end points of line segment AB, what should the student do?",
+"After the fold described in the case, what kind of angles are formed by the two matching edges?",
+"General integers were first conceived and used in Asia many centuries ago, and the earliest known uses of negative numbers occurred in accounting. Kautilya wrote about credit and debit around 300 BCE; about how many years before 1 CE was that?",
+"A school arranges students in {n} rows, with 1 student in the first row, 2 in the second, and so on. The school then adds {k} more students. How many students are there altogether?",
+"A shape collection has {flat_shapes} flat shapes with 2 dimensions each and {solid_shapes} solid shapes with 3 dimensions each. How many dimensions are counted altogether?",
+"A student says, \"Every table entry is a regular polygon because polygon examples run from triangle through decagon.\" Which correction is best?",
+"A school bus has a badge made from the regular polygon in position {position} of the side-count sequence that starts at 3. How many sides does the badge have?",
+"A line segment is made by joining two paths of {a} cm and {b} cm end to end in the same direction. How long is the whole line segment in cm?",
+"People in Asia first used general integers many centuries ago. The earliest known use of negative numbers was in accounting. Kautilya wrote about credit and debit around 300 BCE. About how many years before 1 CE was that?",
+"A school puts students in {n} rows. The first row has 1 student. The second row has 2 students. This pattern continues. The school adds {k} more students. How many students are there altogether?",
+"A shape collection has {flat_shapes} flat shapes. Each flat shape has 2 dimensions. It also has {solid_shapes} solid shapes. Each solid shape has 3 dimensions. How many dimensions are there altogether?",
+"A school bus has a badge made from a regular polygon. The polygon is in position {position}. The side-count sequence starts at 3. How many sides does the badge have?",
+"A line segment is made by joining two parts end to end. The two parts are {a} cm and {b} cm long. The parts go in the same direction. How long is the whole line segment in cm?"
+],
+"broken": {
+"After the fold described in the case, what kind of angles are formed by the two matching edges?": "The fold case is not shown."
+},
+"kept": {
+"A bus route is a ray whose initial point is the school. The first stop is {a} km from the school and a later stop is {b} km from the school, where {b} is greater than {a}. How many km farther from the school is the later stop?": "why count changed",
+"A child says, \"The first six odd numbers are only a picture, so they do not show a rule.\" Which reply best challenges this claim?": "why count changed",
+"If the student explains a pattern seen at school, what is a sensible next step?": "why count changed",
+"A table has polygon examples from triangle through decagon, complete graphs from K2 to K6, stacked squares, stacked triangles, and the Koch snowflake. Which description covers it fully?": "why count changed",
+"In a cricket game, team A's badge is a regular polygon with {a} sides, and team B's badge is a regular polygon with {b} sides. How many more sides does team A's badge have than team B's?": "reviewer said the meaning changed",
+"In the case, what should the student do after noticing a pattern in the weather?": "why count changed",
+"Lina wants to study the branch connected with Ravi's display. Which response should she use?": "why count changed",
+"At school, a picture shows {buses} three-dimensional toy buses and {signs} two-dimensional bus signs. How many dimensions are counted in the picture altogether?": "prompt numbers changed",
+"A region is estimated with 12 squares on graph paper, while 5 marbles are used as circle units. Which calculation gives the square-based estimated area in square units?": "blind reader got a different answer",
+"If the student wants the path to extend beyond both end points of line segment AB, what should the student do?": "why count changed"
+}
+}

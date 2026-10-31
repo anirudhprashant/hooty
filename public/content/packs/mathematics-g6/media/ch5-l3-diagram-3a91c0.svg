@@ -1,0 +1,73 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title alt">
+  <title id="title">Co-prime Numbers for Safekeeping Treasures</title>
+  <desc id="alt">A colorful diagram shows why jump size 1 is blocked, why 4 and 9 are a safe co-prime pair, why 15 and 39 are not co-prime, and how 36 is the first common multiple of 4 and 9.</desc>
+  <rect width="800" height="500" fill="#fff7e8"/>
+
+  <text x="40" y="56" font-family="sans-serif" font-size="30" font-weight="700" fill="#2a1a4a">Co-prime Numbers for Safekeeping Treasures</text>
+
+  <g id="blocked-jump" aria-label="Jump size 1 is not allowed">
+    <text x="40" y="92" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">
+      <tspan x="40" dy="0">Jump size 1</tspan>
+      <tspan x="40" dy="32">not allowed</tspan>
+    </text>
+    <circle cx="145" cy="177" r="39" fill="#ffb703" stroke="#2a1a4a" stroke-width="6"/>
+    <text x="145" y="187" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="700" fill="#2a1a4a">1</text>
+    <line x1="117" y1="149" x2="173" y2="205" stroke="#ff7a59" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g id="safe-pair" aria-label="Safe co-prime pair 4 and 9">
+    <text x="300" y="92" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">Safe pair: 4 and 9</text>
+    <text x="300" y="132" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">4 factors</text>
+    <text x="560" y="132" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">9 factors</text>
+
+    <circle cx="340" cy="170" r="21" fill="#ff7a59" stroke="#2a1a4a" stroke-width="5"/>
+    <circle cx="400" cy="170" r="21" fill="#3a86ff" stroke="#2a1a4a" stroke-width="5"/>
+    <circle cx="460" cy="170" r="21" fill="#8338ec" stroke="#2a1a4a" stroke-width="5"/>
+    <text x="340" y="179" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">1</text>
+    <text x="400" y="179" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">2</text>
+    <text x="460" y="179" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">4</text>
+
+    <circle cx="575" cy="170" r="21" fill="#ff7a59" stroke="#2a1a4a" stroke-width="5"/>
+    <circle cx="635" cy="170" r="21" fill="#3a86ff" stroke="#2a1a4a" stroke-width="5"/>
+    <circle cx="695" cy="170" r="21" fill="#8338ec" stroke="#2a1a4a" stroke-width="5"/>
+    <text x="575" y="179" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">1</text>
+    <text x="635" y="179" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">3</text>
+    <text x="695" y="179" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">9</text>
+
+    <path d="M340 192 C340 205 375 205 395 208 M575 192 C575 205 540 205 520 208" fill="none" stroke="#06a77d" stroke-width="5" stroke-linecap="round"/>
+    <rect x="300" y="205" width="315" height="44" rx="22" fill="#06a77d" stroke="#2a1a4a" stroke-width="5"/>
+    <text x="458" y="237" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">Only shared factor: 1</text>
+  </g>
+
+  <g id="not-coprime" aria-label="15 and 39 are not co-prime because 3 divides both">
+    <text x="40" y="295" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">Not co-prime: 15 and 39</text>
+
+    <path d="M60 350 Q103 315 146 350 L146 365 L60 365 Z" fill="#ff7a59" stroke="#2a1a4a" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="60" y="358" width="86" height="38" rx="7" fill="#ffb703" stroke="#2a1a4a" stroke-width="6"/>
+    <text x="103" y="386" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="700" fill="#2a1a4a">15</text>
+
+    <path d="M320 350 Q363 315 406 350 L406 365 L320 365 Z" fill="#8338ec" stroke="#2a1a4a" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="320" y="358" width="86" height="38" rx="7" fill="#ffb703" stroke="#2a1a4a" stroke-width="6"/>
+    <text x="363" y="386" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="700" fill="#2a1a4a">39</text>
+
+    <line x1="146" y1="374" x2="198" y2="360" stroke="#ff7a59" stroke-width="6" stroke-linecap="round"/>
+    <line x1="320" y1="374" x2="266" y2="360" stroke="#8338ec" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="232" cy="360" r="34" fill="#3a86ff" stroke="#2a1a4a" stroke-width="6"/>
+    <text x="232" y="370" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#2a1a4a">3</text>
+    <text x="40" y="430" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">3 divides both</text>
+  </g>
+
+  <g id="common-multiple" aria-label="The first common multiple of 4 and 9 is 36, equal to their product">
+    <text x="480" y="286" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">First common multiple</text>
+    <text x="480" y="320" font-family="sans-serif" font-size="28" font-weight="700" fill="#2a1a4a">36 = 4 × 9</text>
+
+    <circle cx="530" cy="365" r="25" fill="#3a86ff" stroke="#2a1a4a" stroke-width="6"/>
+    <text x="530" y="375" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="700" fill="#2a1a4a">4</text>
+    <circle cx="700" cy="365" r="25" fill="#8338ec" stroke="#2a1a4a" stroke-width="6"/>
+    <text x="700" y="375" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="700" fill="#2a1a4a">9</text>
+
+    <path d="M530 390 C535 420 575 395 594 407 M700 390 C695 420 655 395 636 407" fill="none" stroke="#ffb703" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="615" cy="425" r="30" fill="#06a77d" stroke="#2a1a4a" stroke-width="6"/>
+    <text x="615" y="435" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="700" fill="#2a1a4a">36</text>
+  </g>
+</svg>

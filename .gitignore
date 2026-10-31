@@ -1,0 +1,18 @@
+# textbooks and everything extracted from them stay out: NCERT holds their copyright
+sources/
+work/*
+!work/plain/
+work/plain/*.log
+tools/ncert-source/
+# made by the tools, large
+public/audio/
+.venv-audio/
+node_modules/
+__pycache__/
+*.pyc
+# this machine's own setup
+tools/local.env
+tools/delegate-retry.sh
+tools/set-plan.py
+HANDOFF.md
+HANDOFF-PROMPT.txt

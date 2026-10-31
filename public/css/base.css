@@ -1,0 +1,166 @@
+/* Sparkle design tokens and page foundation.
+   Everything visual is a token. Themes only swap colours, fonts and art
+   (see core/theme.js); the scale below never changes between themes.
+
+   Principles
+   - Type: Fredoka for headings, Nunito for reading. Five sizes do all the work.
+   - Colour: one ground, one surface, one ink, one action colour, one support
+     colour. Surfaces are separated by a step in tone, not by lines.
+   - Shape: three radii only (sm controls, md cards, xl hero panels) + pill.
+   - Touch: nothing a child taps is smaller than 56px.
+   - Motion: transform and opacity only, and every move is a reward or a
+     hint. All of it stops under prefers-reduced-motion. */
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("../assets/fonts/fredoka-latin-wght.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/nunito-latin-wght.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-display: swap;
+}
+
+:root {
+  /* colour roles (set by the active theme; these are safe defaults) */
+  --bg: #fff3f8;
+  --surface: #ffffff;
+  --surface-alt: #fbe4ef;
+  --text: #2b1349;
+  --text-muted: #5b4676;
+  --primary: #ffc635;
+  --primary-text: #2b1349;
+  --primary-edge: #d99a00;
+  --secondary: #c42b78;
+  --success: #0b7a55;
+  --success-soft: #ddf6ea;
+  --danger: #c4203f;
+  --danger-soft: #ffe3e8;
+  --hero: #4b2597;
+  --hero-text: #ffffff;
+  --locked: #d9c7df;
+  --on-success: #ffffff;
+  --on-danger: #ffffff;
+  --on-secondary: #ffffff;
+  --font-display: "Fredoka", "Baloo 2", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+
+  /* derived, so every theme gets matching steps for free */
+  --tone-1: color-mix(in srgb, var(--text) 6%, transparent);
+  --tone-2: color-mix(in srgb, var(--text) 12%, transparent);
+  --tone-3: color-mix(in srgb, var(--text) 22%, transparent);
+  --primary-soft: color-mix(in srgb, var(--primary) 22%, var(--surface));
+  --secondary-soft: color-mix(in srgb, var(--secondary) 14%, var(--surface));
+
+  /* type scale (rem, so the learner's text-size setting scales everything) */
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: 1.0625rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.875rem;
+  --fs-hero: clamp(2rem, 1.2rem + 3.4vw, 3.5rem);
+
+  /* spacing, 4px base */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 72px;
+
+  /* shape */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* the tactile edge under buttons and tiles: a solid band, not a blur */
+  --edge: 4px;
+
+  --tap: 56px;
+  --gutter: 16px;
+  --nav-h: 76px;
+  --nav-w: 232px;
+  --content-max: 1080px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (min-width: 720px) { :root { --gutter: 28px; } }
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light;
+}
+html[data-dark="true"] {
+  color-scheme: dark;
+  --on-success: #052e22;
+  --on-danger: #33091a;
+  --on-secondary: #04121f;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: calc(var(--fs-md) * var(--font-scale, 1));
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#app { min-height: 100dvh; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--s2);
+  text-wrap: balance;
+}
+p { margin: 0 0 var(--s3); text-wrap: pretty; }
+img, svg { max-width: 100%; }
+
+button, input, select { font: inherit; color: inherit; }
+button { -webkit-appearance: none; appearance: none; }
+
+:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body.dyslexia-font, body.dyslexia-font * {
+  font-family: "Atkinson Hyperlegible", "Comic Sans MS", Verdana, sans-serif !important;
+  letter-spacing: 0.02em;
+  word-spacing: 0.08em;
+}

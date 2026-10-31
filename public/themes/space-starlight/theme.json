@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0",
+  "id": "space-starlight",
+  "name": "Space Starlight",
+  "description": "Rockets, planets and a very big sky.",
+  "language": "en",
+  "dark": true,
+  "palette": {
+    "bg": "#0B1633",
+    "bgAlt": "#15264F",
+    "surface": "#15264F",
+    "surfaceAlt": "#1F3569",
+    "text": "#F2F6FF",
+    "textMuted": "#AFC0E8",
+    "primary": "#FF9F1C",
+    "primaryText": "#1A0F00",
+    "primaryEdge": "#C26F00",
+    "secondary": "#57D4F0",
+    "success": "#4BE3A6",
+    "successSoft": "#10394A",
+    "danger": "#FF8A97",
+    "dangerSoft": "#4A1F38",
+    "hero": "#0A1431",
+    "heroText": "#FFFFFF",
+    "locked": "#2D4274"
+  },
+  "fonts": {
+    "display": "\"Fredoka\", \"Baloo 2\", system-ui, sans-serif",
+    "body": "\"Nunito\", system-ui, sans-serif"
+  },
+  "radii": {
+    "sm": "12px",
+    "md": "18px",
+    "lg": "26px",
+    "xl": "36px",
+    "pill": "999px"
+  },
+  "mascot": {
+    "idle": "../../characters/lumi/explorer-idle.webp",
+    "happy": "../../characters/lumi/explorer-happy.webp",
+    "wrong": "../../characters/lumi/explorer-wrong.webp",
+    "name": "Lumi"
+  },
+  "hero": "assets/hero.svg",
+  "preview": "assets/hero.svg",
+  "icon": "assets/icon.svg",
+  "rewards": [
+    {
+      "id": "badge-rocket",
+      "name": "Rocket Badge",
+      "art": "assets/reward-rocket.svg",
+      "unlockAt": 50
+    },
+    {
+      "id": "badge-planet",
+      "name": "Ringed Planet",
+      "art": "assets/reward-planet.svg",
+      "unlockAt": 150
+    },
+    {
+      "id": "badge-comet",
+      "name": "Comet",
+      "art": "assets/reward-comet.svg",
+      "unlockAt": 300
+    },
+    {
+      "id": "explorer-compass",
+      "name": "Explorer Compass",
+      "art": "../../assets/stickers/compass.svg",
+      "unlockAt": 500
+    },
+    {
+      "id": "explorer-book",
+      "name": "Story Book",
+      "art": "../../assets/stickers/book.svg",
+      "unlockAt": 1000
+    },
+    {
+      "id": "explorer-flask",
+      "name": "Science Flask",
+      "art": "../../assets/stickers/flask.svg",
+      "unlockAt": 1700
+    },
+    {
+      "id": "explorer-globe",
+      "name": "Little Globe",
+      "art": "../../assets/stickers/globe.svg",
+      "unlockAt": 2600
+    },
+    {
+      "id": "explorer-telescope",
+      "name": "Star Telescope",
+      "art": "../../assets/stickers/telescope.svg",
+      "unlockAt": 3700
+    },
+    {
+      "id": "explorer-lantern",
+      "name": "Brave Lantern",
+      "art": "../../assets/stickers/lantern.svg",
+      "unlockAt": 5000
+    },
+    {
+      "id": "explorer-trophy",
+      "name": "Golden Trophy",
+      "art": "../../assets/stickers/trophy.svg",
+      "unlockAt": 6500
+    },
+    {
+      "id": "explorer-medal",
+      "name": "Champion Medal",
+      "art": "../../assets/stickers/medal.svg",
+      "unlockAt": 8200
+    },
+    {
+      "id": "explorer-starburst",
+      "name": "Superstar",
+      "art": "../../assets/stickers/starburst.svg",
+      "unlockAt": 10000
+    }
+  ],
+  "sounds": {},
+  "copy": {
+    "appName": "Starlight Academy",
+    "start": "Launch",
+    "continue": "Continue",
+    "correct": [
+      "Lift off!",
+      "Brilliant!",
+      "Stellar work!",
+      "Houston, we have a genius!"
+    ],
+    "wrong": [
+      "Almost! Have a look at why.",
+      "Not quite. Let's see why."
+    ],
+    "practiceWeak": "Practise your weak spots",
+    "celebrateTitle": "Mission complete!"
+  },
+  "unitIcons": {
+    "history": "assets/unit-history.svg",
+    "geography": "assets/unit-geography.svg",
+    "civics": "assets/unit-civics.svg"
+  }
+}

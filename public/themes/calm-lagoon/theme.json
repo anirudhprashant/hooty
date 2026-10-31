@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0",
+  "id": "calm-lagoon",
+  "name": "Calm Lagoon",
+  "description": "A quiet harbour, a lighthouse and gentle waves.",
+  "language": "en",
+  "dark": false,
+  "palette": {
+    "bg": "#E8F7F6",
+    "bgAlt": "#D0EEEB",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#D0EEEB",
+    "text": "#0B3B47",
+    "textMuted": "#3A6570",
+    "primary": "#FF7A6B",
+    "primaryText": "#2B0A07",
+    "primaryEdge": "#CC4A3C",
+    "secondary": "#0E7E8A",
+    "success": "#0F7A56",
+    "successSoft": "#D8F4E6",
+    "danger": "#C4203F",
+    "dangerSoft": "#FFE3E8",
+    "hero": "#0C6A85",
+    "heroText": "#FFFFFF",
+    "locked": "#BFE0DD"
+  },
+  "fonts": {
+    "display": "\"Fredoka\", \"Baloo 2\", system-ui, sans-serif",
+    "body": "\"Nunito\", system-ui, sans-serif"
+  },
+  "radii": {
+    "sm": "12px",
+    "md": "18px",
+    "lg": "26px",
+    "xl": "36px",
+    "pill": "999px"
+  },
+  "mascot": {
+    "idle": "../../characters/lumi/explorer-idle.webp",
+    "happy": "../../characters/lumi/explorer-happy.webp",
+    "wrong": "../../characters/lumi/explorer-wrong.webp",
+    "name": "Lumi"
+  },
+  "hero": "assets/hero.webp",
+  "preview": "assets/hero.webp",
+  "icon": "assets/icon.svg",
+  "rewards": [
+    {
+      "id": "badge-shell",
+      "name": "Sea Shell",
+      "art": "assets/reward-shell.svg",
+      "unlockAt": 50
+    },
+    {
+      "id": "badge-starfish",
+      "name": "Starfish",
+      "art": "assets/reward-starfish.svg",
+      "unlockAt": 150
+    },
+    {
+      "id": "badge-lighthouse",
+      "name": "Lighthouse",
+      "art": "assets/reward-lighthouse.svg",
+      "unlockAt": 300
+    },
+    {
+      "id": "explorer-compass",
+      "name": "Explorer Compass",
+      "art": "../../assets/stickers/compass.svg",
+      "unlockAt": 500
+    },
+    {
+      "id": "explorer-book",
+      "name": "Story Book",
+      "art": "../../assets/stickers/book.svg",
+      "unlockAt": 1000
+    },
+    {
+      "id": "explorer-flask",
+      "name": "Science Flask",
+      "art": "../../assets/stickers/flask.svg",
+      "unlockAt": 1700
+    },
+    {
+      "id": "explorer-globe",
+      "name": "Little Globe",
+      "art": "../../assets/stickers/globe.svg",
+      "unlockAt": 2600
+    },
+    {
+      "id": "explorer-telescope",
+      "name": "Star Telescope",
+      "art": "../../assets/stickers/telescope.svg",
+      "unlockAt": 3700
+    },
+    {
+      "id": "explorer-lantern",
+      "name": "Brave Lantern",
+      "art": "../../assets/stickers/lantern.svg",
+      "unlockAt": 5000
+    },
+    {
+      "id": "explorer-trophy",
+      "name": "Golden Trophy",
+      "art": "../../assets/stickers/trophy.svg",
+      "unlockAt": 6500
+    },
+    {
+      "id": "explorer-medal",
+      "name": "Champion Medal",
+      "art": "../../assets/stickers/medal.svg",
+      "unlockAt": 8200
+    },
+    {
+      "id": "explorer-starburst",
+      "name": "Superstar",
+      "art": "../../assets/stickers/starburst.svg",
+      "unlockAt": 10000
+    }
+  ],
+  "sounds": {},
+  "copy": {
+    "appName": "Lagoon Academy",
+    "start": "Set sail",
+    "continue": "Continue",
+    "correct": [
+      "Smooth sailing!",
+      "Well done!",
+      "Right on course!",
+      "Splendid!"
+    ],
+    "wrong": [
+      "Almost! Have a look at why.",
+      "Not quite. Let's see why."
+    ],
+    "practiceWeak": "Practise your weak spots",
+    "celebrateTitle": "Voyage complete!"
+  },
+  "unitIcons": {
+    "history": "assets/unit-history.svg",
+    "geography": "assets/unit-geography.svg",
+    "civics": "assets/unit-civics.svg"
+  }
+}

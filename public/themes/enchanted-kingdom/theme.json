@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0",
+  "id": "enchanted-kingdom",
+  "name": "Enchanted Kingdom",
+  "description": "A magical academy of castles, crowns and star wands.",
+  "language": "en",
+  "dark": false,
+  "palette": {
+    "bg": "#FFF3F8",
+    "bgAlt": "#FBE4EF",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#FBE4EF",
+    "text": "#2B1349",
+    "textMuted": "#5B4676",
+    "primary": "#FFC635",
+    "primaryText": "#2B1349",
+    "primaryEdge": "#D99A00",
+    "secondary": "#C42B78",
+    "success": "#0B7A55",
+    "successSoft": "#DDF6EA",
+    "danger": "#C4203F",
+    "dangerSoft": "#FFE3E8",
+    "hero": "#4B2597",
+    "heroText": "#FFFFFF",
+    "locked": "#D9C7DF"
+  },
+  "fonts": {
+    "display": "\"Fredoka\", \"Baloo 2\", system-ui, sans-serif",
+    "body": "\"Nunito\", system-ui, sans-serif"
+  },
+  "radii": {
+    "sm": "12px",
+    "md": "18px",
+    "lg": "26px",
+    "xl": "36px",
+    "pill": "999px"
+  },
+  "mascot": {
+    "idle": "../../characters/lumi/explorer-idle.webp",
+    "happy": "../../characters/lumi/explorer-happy.webp",
+    "wrong": "../../characters/lumi/explorer-wrong.webp",
+    "name": "Lumi"
+  },
+  "hero": "assets/hero.webp",
+  "preview": "assets/hero.webp",
+  "icon": "assets/icon.svg",
+  "rewards": [
+    {
+      "id": "sticker-crown",
+      "name": "Princess Crown",
+      "art": "assets/reward-crown.svg",
+      "unlockAt": 50
+    },
+    {
+      "id": "sticker-unicorn",
+      "name": "Unicorn Sticker",
+      "art": "assets/reward-unicorn.svg",
+      "unlockAt": 150
+    },
+    {
+      "id": "sticker-wand",
+      "name": "Star Wand",
+      "art": "assets/reward-wand.svg",
+      "unlockAt": 300
+    },
+    {
+      "id": "explorer-compass",
+      "name": "Explorer Compass",
+      "art": "../../assets/stickers/compass.svg",
+      "unlockAt": 500
+    },
+    {
+      "id": "explorer-book",
+      "name": "Story Book",
+      "art": "../../assets/stickers/book.svg",
+      "unlockAt": 1000
+    },
+    {
+      "id": "explorer-flask",
+      "name": "Science Flask",
+      "art": "../../assets/stickers/flask.svg",
+      "unlockAt": 1700
+    },
+    {
+      "id": "explorer-globe",
+      "name": "Little Globe",
+      "art": "../../assets/stickers/globe.svg",
+      "unlockAt": 2600
+    },
+    {
+      "id": "explorer-telescope",
+      "name": "Star Telescope",
+      "art": "../../assets/stickers/telescope.svg",
+      "unlockAt": 3700
+    },
+    {
+      "id": "explorer-lantern",
+      "name": "Brave Lantern",
+      "art": "../../assets/stickers/lantern.svg",
+      "unlockAt": 5000
+    },
+    {
+      "id": "explorer-trophy",
+      "name": "Golden Trophy",
+      "art": "../../assets/stickers/trophy.svg",
+      "unlockAt": 6500
+    },
+    {
+      "id": "explorer-medal",
+      "name": "Champion Medal",
+      "art": "../../assets/stickers/medal.svg",
+      "unlockAt": 8200
+    },
+    {
+      "id": "explorer-starburst",
+      "name": "Superstar",
+      "art": "../../assets/stickers/starburst.svg",
+      "unlockAt": 10000
+    }
+  ],
+  "sounds": {},
+  "copy": {
+    "appName": "Enchanted Academy",
+    "start": "Begin your quest",
+    "continue": "Continue",
+    "correct": [
+      "Yes!",
+      "You got it!",
+      "Wonderful!",
+      "The stars are singing for you!"
+    ],
+    "wrong": [
+      "Almost! Have a look at why.",
+      "Not quite. Let's see why."
+    ],
+    "practiceWeak": "Practise your weak spots",
+    "celebrateTitle": "Quest complete!"
+  },
+  "unitIcons": {
+    "history": "assets/unit-history.svg",
+    "geography": "assets/unit-geography.svg",
+    "civics": "assets/unit-civics.svg"
+  }
+}

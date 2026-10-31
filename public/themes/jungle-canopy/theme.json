@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0",
+  "id": "jungle-canopy",
+  "name": "Jungle Canopy",
+  "description": "Leaves, butterflies and sunlight through the trees.",
+  "language": "en",
+  "dark": false,
+  "palette": {
+    "bg": "#EEF8EC",
+    "bgAlt": "#DCEFD8",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#DCEFD8",
+    "text": "#0F3B2A",
+    "textMuted": "#3D6554",
+    "primary": "#FF8A3D",
+    "primaryText": "#2A1000",
+    "primaryEdge": "#C95A14",
+    "secondary": "#13804A",
+    "success": "#12794A",
+    "successSoft": "#D8F3E1",
+    "danger": "#C4203F",
+    "dangerSoft": "#FFE3E8",
+    "hero": "#14633F",
+    "heroText": "#FFFFFF",
+    "locked": "#C9DFC4"
+  },
+  "fonts": {
+    "display": "\"Fredoka\", \"Baloo 2\", system-ui, sans-serif",
+    "body": "\"Nunito\", system-ui, sans-serif"
+  },
+  "radii": {
+    "sm": "12px",
+    "md": "18px",
+    "lg": "26px",
+    "xl": "36px",
+    "pill": "999px"
+  },
+  "mascot": {
+    "idle": "../../characters/lumi/explorer-idle.webp",
+    "happy": "../../characters/lumi/explorer-happy.webp",
+    "wrong": "../../characters/lumi/explorer-wrong.webp",
+    "name": "Lumi"
+  },
+  "hero": "assets/hero.webp",
+  "preview": "assets/hero.webp",
+  "icon": "assets/icon.svg",
+  "rewards": [
+    {
+      "id": "badge-leaf",
+      "name": "Golden Leaf",
+      "art": "assets/reward-leaf.svg",
+      "unlockAt": 50
+    },
+    {
+      "id": "badge-flower",
+      "name": "Jungle Flower",
+      "art": "assets/reward-flower.svg",
+      "unlockAt": 150
+    },
+    {
+      "id": "badge-butterfly",
+      "name": "Butterfly",
+      "art": "assets/reward-butterfly.svg",
+      "unlockAt": 300
+    },
+    {
+      "id": "explorer-compass",
+      "name": "Explorer Compass",
+      "art": "../../assets/stickers/compass.svg",
+      "unlockAt": 500
+    },
+    {
+      "id": "explorer-book",
+      "name": "Story Book",
+      "art": "../../assets/stickers/book.svg",
+      "unlockAt": 1000
+    },
+    {
+      "id": "explorer-flask",
+      "name": "Science Flask",
+      "art": "../../assets/stickers/flask.svg",
+      "unlockAt": 1700
+    },
+    {
+      "id": "explorer-globe",
+      "name": "Little Globe",
+      "art": "../../assets/stickers/globe.svg",
+      "unlockAt": 2600
+    },
+    {
+      "id": "explorer-telescope",
+      "name": "Star Telescope",
+      "art": "../../assets/stickers/telescope.svg",
+      "unlockAt": 3700
+    },
+    {
+      "id": "explorer-lantern",
+      "name": "Brave Lantern",
+      "art": "../../assets/stickers/lantern.svg",
+      "unlockAt": 5000
+    },
+    {
+      "id": "explorer-trophy",
+      "name": "Golden Trophy",
+      "art": "../../assets/stickers/trophy.svg",
+      "unlockAt": 6500
+    },
+    {
+      "id": "explorer-medal",
+      "name": "Champion Medal",
+      "art": "../../assets/stickers/medal.svg",
+      "unlockAt": 8200
+    },
+    {
+      "id": "explorer-starburst",
+      "name": "Superstar",
+      "art": "../../assets/stickers/starburst.svg",
+      "unlockAt": 10000
+    }
+  ],
+  "sounds": {},
+  "copy": {
+    "appName": "Canopy Academy",
+    "start": "Start exploring",
+    "continue": "Continue",
+    "correct": [
+      "Fantastic!",
+      "You found it!",
+      "Great exploring!",
+      "Wild work!"
+    ],
+    "wrong": [
+      "Almost! Have a look at why.",
+      "Not quite. Let's see why."
+    ],
+    "practiceWeak": "Practise your weak spots",
+    "celebrateTitle": "Trail complete!"
+  },
+  "unitIcons": {
+    "history": "assets/unit-history.svg",
+    "geography": "assets/unit-geography.svg",
+    "civics": "assets/unit-civics.svg"
+  }
+}

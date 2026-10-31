@@ -1,0 +1,6 @@
+/* space-starlight: colours, fonts and art arrive from theme.json via core/theme.js.
+   Only things that genuinely differ per world live here. */
+[data-theme="space-starlight"] .stage__art { background-position: center bottom; }
+/* A dark world: lift the floating nav off the page with a light edge instead of a shadow. */
+[data-theme="space-starlight"] .nav { box-shadow: 0 -2px 0 var(--tone-2); }
+@media (min-width: 900px) { [data-theme="space-starlight"] .nav { box-shadow: 2px 0 0 var(--tone-2); } }
