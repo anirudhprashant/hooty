@@ -13,6 +13,7 @@ import { t, setLocale, getLocale, availableLocales } from './core/i18n.js';
 import { getActivityModule } from './activities/index.js';
 import { icon } from './core/icons.js';
 import { bookWord } from './core/bookwords.js';
+import { saveBook, getBook, deleteBook, listBooks } from './core/mybooks.js';
 import { buildMatcher, annotate, openTermCard, markKeys, plain } from './core/glossary.js';
 
 const app = document.getElementById('app');
@@ -80,6 +81,10 @@ const loadedGrades = new Set();
 
 async function loadPack(p) {
   try {
+    if (p.local) {
+      const own = await getBook(p.id);
+      return own ? { ...own, base: '', glossary: own.glossaryData, matcher: buildMatcher(own.glossaryData) } : null;
+    }
     const full = await getJson(`./content/packs/${p.id}/pack.json`);
     const pack = { ...full, base: `./content/packs/${p.id}`, glossary: null, matcher: buildMatcher(null) };
     // A pack opts in with "glossary": "glossary.json" in pack.json. Word meanings arrive just after the book:
@@ -123,7 +128,7 @@ function loadRestInBackground(grade) {
 }
 
 function gradeList() {
-  return [...new Set(packIndex.map((p) => String(p.grade)))].sort((x, y) => Number(x) - Number(y));
+  return [...new Set(packIndex.map((p) => String(p.grade)))].sort((x, y) => (x === 'mine') - (y === 'mine') || Number(x) - Number(y));
 }
 
 // The class the child is in: the one they last picked, else Class 6 (the first class built), else the lowest.
@@ -139,7 +144,7 @@ async function loadContent() {
     const full = await getJson(`./themes/${t.id}/theme.json`);
     return { ...full, base: './themes' };
   }));
-  packIndex = packIdx.packs;
+  packIndex = [...packIdx.packs, ...await listBooks()];
   const grade = activeGrade();
   const mine = packIndex.filter((p) => String(p.grade) === grade);
   const saved = activeLearner()?.packId;
@@ -195,12 +200,13 @@ function subjectTabs() {
     if (on) row.scrollLeft = on.offsetLeft - (row.clientWidth - on.offsetWidth) / 2;
   });
   const wrap = el('div', { class: 'tabs-block' });
-  if (grades.length > 1) {
+  {
     const g = activeGrade();
     const row = el('div', { class: 'subject-tabs grade-tabs', role: 'tablist', 'aria-label': 'Class' }, grades.map((x) => el('button', {
       class: `subject-tab grade-tab${x === g ? ' is-on' : ''}`, type: 'button', role: 'tab', 'aria-selected': String(x === g),
       onclick: () => switchGrade(x),
-    }, [`Class ${x}`])));
+    }, [x === 'mine' ? 'My books' : `Class ${x}`])));
+    row.append(el('button', { class: 'subject-tab grade-tab grade-tab--add', type: 'button', onclick: () => go('addbook') }, ['+ Add my book']));
     wrap.append(row); swipe(row);
   }
   if (mine.length > 1) {
@@ -247,7 +253,7 @@ const NAV = [
   { id: 'rewards', icon: 'rewards', label: () => t('rewards') },
   { id: 'parent', icon: 'grownups', label: () => t('parent') },
 ];
-const NAV_FOR = { home: 'home', packs: 'path', path: 'path', practice: 'practice', rewards: 'rewards', themes: 'rewards', parent: 'parent' };
+const NAV_FOR = { home: 'home', packs: 'path', path: 'path', practice: 'practice', rewards: 'rewards', themes: 'rewards', parent: 'parent', addbook: 'path' };
 const SUBSCREENS = new Set(['packs', 'themes', 'settings']);
 
 function topBar(title) {
@@ -1149,6 +1155,74 @@ function screenPractice() {
   return wrap;
 }
 
+// --- a family's own textbook ------------------------------------------------
+
+function screenAddBook() {
+  const wrap = el('div', { class: 'page screen addbook' });
+  const input = el('input', { class: 'addbook__file', type: 'file', accept: 'application/pdf,.pdf', multiple: true, id: 'book-file' });
+  const name = el('input', { class: 'text-input', type: 'text', maxlength: 60, placeholder: 'Book name, like Science Class 5', 'aria-label': 'Book name' });
+  const status = el('p', { class: 'addbook__status', role: 'status' });
+  const bar = el('span');
+  const meter = el('div', { class: 'finished__bar', hidden: true }, [bar]);
+  const go2 = el('button', { class: 'btn btn--primary btn--block', type: 'button', disabled: true }, ['Make my lessons']);
+  const WHY = {
+    'no-text': 'This PDF looks like photos of pages, with no text inside. Lumi needs a PDF whose words you can select.',
+    unreadable: 'The words in this PDF are stored in an old font code, so they come out as nonsense. Try a newer copy of the book.',
+    'no-lessons': 'Lumi could not find enough lessons in this PDF. Is it a textbook, and not an answer key or a workbook?',
+  };
+  input.addEventListener('change', () => {
+    go2.disabled = !input.files.length;
+    if (input.files.length && !name.value) name.value = input.files[0].name.replace(/\.pdf$/i, '').replace(/[-_]+/g, ' ').slice(0, 60);
+  });
+  go2.addEventListener('click', async () => {
+    const files = [...input.files];
+    if (files.reduce((n, f) => n + f.size, 0) > 400 * 1048576) { status.textContent = 'That is too big for this device. Try one PDF at a time.'; return; }
+    go2.disabled = true; meter.hidden = false; status.textContent = 'Reading your book…';
+    try {
+      const { readPdf, makeBook } = await import('./core/bookmaker.js');
+      const docs = await readPdf(files.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true })), (f) => { bar.style.width = `${Math.round(f * 100)}%`; });
+      status.textContent = 'Making your lessons…';
+      await new Promise((r) => setTimeout(r, 30));
+      const pack = makeBook(docs, { title: name.value.trim() || 'My book' });
+      await saveBook(pack);
+      const card = { id: pack.id, title: pack.title, subject: pack.subject, grade: 'mine', language: pack.language, description: pack.description, local: true };
+      packIndex = [...packIndex, card];
+      loadedGrades.delete('mine');
+      addPacks([{ ...pack, base: '', glossary: pack.glossaryData, matcher: buildMatcher(pack.glossaryData) }]);
+      const l = activeLearner(); if (l) { l.grade = 'mine'; l.packId = pack.id; await persist(); }
+      router.packId = pack.id;
+      sound('next');
+      go('path');
+    } catch (e) {
+      console.warn('book failed', e);
+      status.textContent = WHY[e.code] || (e.name === 'PasswordException' ? 'This PDF is locked with a password.' : 'Lumi could not read this file. Is it a PDF?');
+      go2.disabled = false; meter.hidden = true;
+    }
+  });
+  wrap.append(el('section', { class: 'addbook__card' }, [
+    el('h2', { class: 'section-title', text: 'Turn your textbook into lessons' }),
+    el('p', { text: 'Choose the PDF of a school book. One file for the whole book, or one for each chapter. It stays on this device: nothing is uploaded.' }),
+    el('label', { class: 'btn btn--ghost btn--block', for: 'book-file', text: 'Choose PDF' }),
+    input, name, go2, meter, status,
+    el('p', { class: 'credit-note', text: 'Lumi makes reading cards and questions using the words printed in your book, with the page for each. Use books you have the right to use.' }),
+  ]));
+  const own = packIndex.filter((p) => p.local);
+  if (own.length) wrap.append(el('section', { class: 'addbook__card' }, [
+    el('h3', { text: 'My books' }),
+    ...own.map((b) => el('div', { class: 'addbook__row' }, [
+      el('span', { text: b.title }),
+      el('button', { class: 'btn btn--ghost btn--sm', type: 'button', onclick: async () => {
+        if (!confirm(`Remove ${b.title} from this device?`)) return;
+        await deleteBook(b.id);
+        packIndex = packIndex.filter((p) => p.id !== b.id); packs = packs.filter((p) => p.id !== b.id);
+        const l = activeLearner(); if (l?.grade === 'mine' && !packIndex.some((p) => p.local)) l.grade = '6';
+        render();
+      } }, ['Remove']),
+    ])),
+  ]));
+  return wrap;
+}
+
 // --- rewards and worlds ----------------------------------------------------
 
 function screenRewards() {
@@ -1413,6 +1487,7 @@ function render() {
     case 'parent': screen = screenParent(); title = t('parent'); break;
     case 'themes': screen = screenThemes(); title = t('chooseTheme'); break;
     case 'settings': screen = screenSettings(); title = t('settings'); break;
+    case 'addbook': screen = screenAddBook(); title = 'Add my book'; break;
     default: screen = screenHome(); title = '';
   }
 

@@ -2430,6 +2430,636 @@
 "prompt": "A column graph has 4 vertical bars. Each pair of bars has a 4 cm gap between them. How wide are all the gaps together, in cm?",
 "explanation": "There are 4 - 1 gaps. Total gap width = (4 - 1) x 4 = 12 cm. Equal gaps make the infographic easy to read. Information graphics are short for infographics.",
 "hint": "Type the number."
+},
+"Ordered data makes it easy to count how often each value occurs.": {
+"prompt": "Ordered data makes it easy to count how often each value appears.",
+"title": "Ordered data",
+"explanation": "Yes! Ordered data helps you count each value easily."
+},
+"Making a picture more appealing can never give people a misleading impression.": {
+"prompt": "Making a picture look nicer can never give a wrong idea.",
+"title": "Appealing pictures",
+"explanation": "Not quite! Making a picture look nicer can sometimes give a wrong idea."
+},
+"What is the sum of the two factors of the prime number 7?": {
+"prompt": "Add the two factors of the prime number 7. What do you get?",
+"explanation": "The factors are 1 and 7. Add them: 1 + 7 = 8.",
+"hint": "Type the number."
+},
+"The prime factorisation of the prime number 7 is just ______.": {
+"prompt": "The prime factorisation of the prime number 7 is just ______.",
+"title": "Prime number 7",
+"explanation": "The prime factorisation of 7 is just 7.",
+"hint": "It is the prime number itself."
+},
+"Only the last ______ digits matter when checking divisibility by 4.": {
+"prompt": "Only the last ______ digits matter for divisibility by 4.",
+"title": "Check divisibility by 4",
+"explanation": "Great! The last two digits alone are enough for this check.",
+"hint": "Look at the ending, not the whole number."
+},
+"Match each divisibility test with its rule.": {
+"prompt": "Match each divisibility test with its rule.",
+"title": "Match each divisibility test",
+"explanation": "Well done! Each test uses the digits shown here.",
+"pairs": [
+[
+"divisible by 10",
+"ends in 0"
+],
+[
+"divisible by 5",
+"ends in 0 or 5"
+],
+[
+"divisible by 2",
+"ends in 0, 2, 4, 6 or 8"
+],
+[
+"divisible by 4",
+"look only at the last two digits"
+]
+]
+},
+"Why is 8536 divisible by 4?": {
+"prompt": "Why is 8536 divisible by 4?",
+"title": "Check 8536",
+"options": [
+"Only its last digit proves it.",
+"36 is divisible by 4.",
+"Only its first two digits matter.",
+"No test is needed."
+],
+"explanation": "Great! Only the last two digits matter. Here, 36 is divisible by 4."
+},
+"Put the steps for checking divisibility by 8 in order.": {
+"prompt": "Put the steps for checking divisibility by 8 in order.",
+"title": "Check divisibility by 8",
+"explanation": "Perfect! The last three digits must make a multiple of 8.",
+"items": [
+"Look at the last three digits.",
+"Check if they make a multiple of 8.",
+"Decide if the whole number is divisible by 8."
+]
+},
+"The only number in a box that is not a square is 43. A square cloth has side 3 cm. What is its area in square cm?": {
+"prompt": "A box has many numbers. Only 43 is not a square. A square cloth has sides of 3 cm. What is its area in square cm?",
+"explanation": "Area of a square = side * side square cm.",
+"hint": "Type the number."
+},
+"The prime factorisation of 56 is 2 × 2 × ______ × 7.": {
+"prompt": "Prime factorisation of 56 is 2 × 2 × ______ × 7. What number goes in the blank?",
+"title": "Fill in the missing number",
+"explanation": "Prime factorisation writes a number as prime numbers multiplied. Here, 2 × 2 × 2 × 7 makes 56.",
+"hint": "Find the missing prime number in 2 × 2 × 2 × 7."
+},
+"A closed shape has four sides of 4 cm, 5 cm, 6 cm, and 7 cm. What is its perimeter in cm?": {
+"prompt": "A closed shape (all sides joined) has four sides. They are 4 cm, 5 cm, 6 cm and 7 cm. What is its perimeter in cm?",
+"explanation": "The perimeter of a polygon is the sum of all its side lengths: s + 4 + 5 + 6 cm.",
+"hint": "Type the number."
+},
+"A regular polygon has 4 equal sides, and each side is 5 cm long. What is its perimeter in cm?": {
+"prompt": "A regular polygon (all sides the same) has 4 sides. Each side is 5 cm long. What is its perimeter in cm?",
+"explanation": "Add all 4 equal sides: 4 * 5 = 20 cm.",
+"hint": "Type the number."
+},
+"The four square flower beds together have an area of 64 square metres.": {
+"prompt": "Four square flower beds together have an area of 64 square metres.",
+"title": "Four flower beds",
+"explanation": "Yes. Together, the four flower beds cover 64 square metres."
+},
+"A rectangular laddoo tray is 8 cm long and 4 cm wide. Enter its area in square cm.": {
+"prompt": "A laddoo tray is a rectangle. It is 8 cm long and 4 cm wide. Type its area (the space inside it) in square cm.",
+"explanation": "Area = length × width = 8 × 4 square cm.",
+"hint": "Type the number."
+},
+"A rectangular rug is 8 cm long and 3 cm wide. What is its area in square cm?": {
+"prompt": "A rug is a rectangle. It is 8 cm long and 3 cm wide. What is its area in square cm?",
+"explanation": "The area of a rectangle is length × width square cm.",
+"hint": "Type the number."
+},
+"A rectangular garden has area 300 square metres and length 25 metres. What is its width?": {
+"prompt": "A garden is a rectangle. Its area is 300 square metres. Its length is 25 metres. What is its width?",
+"options": [
+"11 metres",
+"12 metres",
+"20 metres",
+"172 metres"
+],
+"explanation": "The width is 12 metres. Multiply 25 by 12 to get 300."
+},
+"A rectangular art room is 8 cm long and 4 cm wide. What is its perimeter in cm?": {
+"prompt": "An art room is a rectangle. It is 8 cm long and 4 cm wide. What is its perimeter in cm?",
+"explanation": "Perimeter = 2 × (length + width). With length 8 and width 4, the perimeter is 24 cm.",
+"hint": "Type the number."
+},
+"The rectangular garden has area 300 square metres and length 25 metres. Its width is ______ metres.": {
+"prompt": "A garden is shaped like a rectangle. Its area is 300 square metres. Its length is 25 metres. Its width is ______ metres.",
+"explanation": "The garden's width is 12 metres.",
+"hint": "Use the area and the length to find the width."
+},
+"Match each description to its matching fact.": {
+"prompt": "Match each description to the right fact.",
+"title": "Match Parts and Facts",
+"explanation": "Each item matches equal parts in the lesson.",
+"pairs": [
+[
+"one-third piece",
+"a chikki cut into three equal pieces"
+],
+[
+"bigger piece of chikki",
+"has three one-quarter pieces"
+],
+[
+"strip folded into two equal parts",
+"makes two half-unit parts"
+],
+[
+"a folded strip, folded again",
+"gives four equal parts"
+]
+]
+},
+"Match each part with its correct description.": {
+"prompt": "Match each item to its rule.",
+"explanation": "Each pair matches a fraction with its rule.",
+"pairs": [
+[
+"Fraction smaller than one whole",
+"Numerator smaller than denominator"
+],
+[
+"Fraction bigger than one whole",
+"Numerator bigger than denominator"
+],
+[
+"Mixed number",
+"Has a whole-number part"
+],
+[
+"Fractional part",
+"Fraction smaller than one"
+]
+]
+},
+"After fractions have the same denominator, compare their numerators.": {
+"prompt": "When two fractions have the same denominator, compare their numerators.",
+"explanation": "Now the fractions have one denominator. So compare their numerators."
+},
+"A circle has centre P. Point Q is on the circle and Q is 5 cm from P. What is the radius of the circle in cm?": {
+"prompt": "A circle has centre P. Point Q is on the circle. Q is 5 cm from P. What is the radius in cm?",
+"explanation": "The radius is the distance from the centre P to Q. So r = 5 cm.",
+"hint": "Type the number."
+},
+"Match each square detail with its construction step.": {
+"prompt": "Match each square part with its construction step.",
+"explanation": "Each part matches a step for constructing square PQRS.",
+"pairs": [
+[
+"Point P",
+"You draw a perpendicular to PQ through it"
+],
+[
+"Point S",
+"You mark it on the perpendicular"
+],
+[
+"Length PS",
+"You set it to 6 cm"
+],
+[
+"Next point",
+"The compass helps you mark it"
+]
+]
+},
+"Match each part of the construction with its detail.": {
+"prompt": "Match each part of the construction with its detail.",
+"explanation": "The circles meet at A. Their centres are B and C. Each radius is 5 cm.",
+"pairs": [
+[
+"Radius (line from centre to edge) of each circle",
+"5 cm"
+],
+[
+"Centre of the first circle",
+"B"
+],
+[
+"Centre of the second circle",
+"C"
+],
+[
+"Intersection (where the circles meet)",
+"A"
+],
+[
+"Arc (curved line) centred at A",
+"Touches B and C"
+]
+]
+},
+"Which tool can simplify the construction?": {
+"prompt": "Which tool makes the construction easier?",
+"options": [
+"A compass",
+"Trial and error only",
+"Only one circle",
+"A house border line"
+],
+"explanation": "Correct! The compass makes the construction easier."
+},
+"Finding the point with a ruler does not need trial and error.": {
+"prompt": "Finding the point with a ruler does not need trial and error (trying again and again).",
+"explanation": "False. Finding the point with a ruler needs trial and error."
+},
+"A toy house has 4 border lines. Every border line is 5 cm long. What is the total length of all the border lines in cm?": {
+"prompt": "A toy house has 4 border lines. Each border line is 5 cm long. How many cm long are all the border lines together?",
+"explanation": "Total length = 5 x n. Here n is the number of lines. For n = 2, 3, 4, or 5, the total is 10, 15, 20, or 25 cm.",
+"hint": "Type the number."
+},
+"Riya uses a compass to draw a circle centred at B. She wants the circle to pass through A, and BA is 4 cm. What compass radius should she use in cm?": {
+"prompt": "Riya uses a compass to draw a circle. The centre is B. The circle must go through A. BA is 4 cm. What radius should she use, in cm?",
+"options": [
+"16",
+"2",
+"8",
+"4"
+],
+"explanation": "The compass radius must equal BA. For r = 3, 4, 5, or 6, the correct radius is 3, 4, 5, or 6 cm."
+},
+"A circle centred at C has radius 6 cm. Point A is where this circle meets the circle centred at B. What is the length of CA in cm?": {
+"prompt": "The centre of a circle is C. Its radius is 6 cm. Point A is on the circle. How long is CA, in cm?",
+"explanation": "A lies on the circle centred at C, so CA is its radius. For r = 3, 4, 5, or 6, the answers are 3, 4, 5, or 6 cm.",
+"hint": "Type the number."
+},
+"A rectangle with sides 2 cm and 10 cm is also constructed. Its shorter side is ______ cm.": {
+"prompt": "A rectangle has sides of 2 cm and 10 cm. Its shorter side is ______ cm.",
+"explanation": "The shorter side is 2 cm. The longer side is 10 cm.",
+"hint": "Pick the shorter of the two numbers."
+},
+"A butterfly picture has 3 matching colour spots in each of 4 repeating groups. How many colour spots are there?": {
+"prompt": "A butterfly picture has 4 groups of colour spots. Each group has 3 spots. How many spots are there in all?",
+"options": [
+"0.75",
+"-1",
+"7",
+"12"
+],
+"explanation": "The repeating groups have spots × groups = 12 colour spots."
+},
+"A windmill looks exactly the same after a 180° turn about its centre. How many degrees is that angle of symmetry?": {
+"prompt": "A windmill looks the same after a 180° turn. The turn is around its centre. What is this angle of symmetry, in degrees?",
+"options": [
+"270",
+"180",
+"181",
+"360"
+],
+"explanation": "The angle of symmetry is 180°. So the answer is 180."
+},
+"_____ digits can write numbers of any size in the Indian number system.": {
+"prompt": "In the Indian number system, numbers of any size use _____ digits.",
+"explanation": "Ten digits can write numbers of any size in the Indian number system.",
+"hint": "Write the number as a word."
+},
+"One lift is 3 floors above Floor 0, and another is 2 floors below Floor 0. How many floors apart are their floor numbers?": {
+"prompt": "One lift is 3 floors up from Floor 0. Another lift is 2 floors down from Floor 0. How many floors apart are they?",
+"options": [
+"4",
+"6",
+"1",
+"5"
+],
+"explanation": "The floor numbers are a and 0 - b. Their distance is a - (0 - b). That is a + b floors."
+},
+"Place A is 30 metres below sea level, where sea level is 0 metres. Place B is 60 metres above sea level. What is the difference between their heights in metres?": {
+"prompt": "Sea level is 0 metres. Place A is 30 metres below sea level. Place B is 60 metres above sea level. How many metres is the difference in height between A and B?",
+"options": [
+"90",
+"-30",
+"30",
+"1800"
+],
+"explanation": "Place A has height -30 metres. To find the difference, subtract A's height from B's height. That gives 60 - (-30) = 60 + 30 metres."
+},
+"Patterns occur in shopping, cooking, throwing a ball and playing games.": {
+"prompt": "Patterns are in shopping, cooking, throwing a ball and playing games.",
+"explanation": "Yes! Patterns are in all these everyday things."
+},
+"A picnic planner puts food into equal groups of 1, 2, 4 and 8 boxes. How many boxes should the next group have?": {
+"prompt": "A picnic planner puts food in equal groups of 1, 2, 4 and 8 boxes. How many boxes should the next group have?",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"The group sizes are 1, 2, 4 and 8.",
+"Each size is 2 times the one before. So the sizes follow the powers-of-2 sequence.",
+"The sequence goes on to 16, after 8. So the next group should have 16 boxes."
+],
+"kicker": "Let us think it through"
+},
+"Explain how the odd-number and even-number sequences are different.": {
+"prompt": "Explain how the odd-number sequence and the even-number sequence are different.",
+"explanation": "Compare your answer with the points a marker looks for.",
+"points": [
+"The odd-number sequence starts with 1.",
+"The even-number sequence starts with 2.",
+"The odd sequence goes on with bigger odd numbers.",
+"The even sequence goes on with bigger even numbers."
+]
+},
+"Put these regular polygons in order by their number of sides.": {
+"prompt": "A polygon is a flat shape with straight sides. Put these polygons in order. Start with the fewest sides.",
+"explanation": "A triangle has 3 sides. Each next shape has one more side.",
+"items": [
+"triangle",
+"quadrilateral",
+"pentagon",
+"hexagon"
+]
+},
+"Two {item} jaws have openings of {a} and {b} width units. What is the width of the larger opening in width units?": {
+"prompt": "A {item} has two openings. They are {a} and {b} width units wide. How wide is the bigger opening, in width units?",
+"steps": [
+"The two openings are {a} and {b} width units.",
+"{a} is more than {b}, so the bigger opening is {a} width units.",
+"The answer is {answer} width units."
+]
+},
+"Two rotating-arm models start on copied angles. Their starting arms match the angle rays. The same amount of turn lines up both pairs of arms. What does this show?": {
+"prompt": "Two rotating-arm models start on copied angles. Both models turn by the same amount. Both pairs of arms then line up. What does this show?",
+"options": [
+"The two angles are equal.",
+"The two angles are different.",
+"One angle needs an extra arm.",
+"The turn sizes cannot be compared."
+],
+"explanation": "Equal angles need the same turn. So the same turn lines up both pairs of arms.",
+"why": [
+"",
+"If the angles were different, the arms would not line up.",
+"The arms already line up. No extra arm is needed.",
+"The turns can be compared. Equal turns mean equal angles."
+]
+},
+"A rotating-arm model is placed at a slit in paper. Its arms do not fit the slit. What must be true?": {
+"prompt": "A rotating-arm model is put on a slit in paper. A slit is a thin cut. Its arms do not fit the slit. What must be true?",
+"options": [
+"The model angle is not equal to the slit angle.",
+"The model angle must equal the slit angle.",
+"The model angle is always larger than the slit angle.",
+"The slit angle cannot be compared at all."
+],
+"explanation": "Arms fit the slit when the angles are equal. So if they do not fit, the angles are different.",
+"why": [
+"",
+"The arms do not fit, so the angles cannot be equal.",
+"The model could be smaller. So it is not always larger.",
+"We can compare the two angles directly."
+]
+},
+"During a school activity, an angle of {degrees} degrees is bisected. What is the measure of each new angle in degrees?": {
+"prompt": "An angle of {degrees} degrees is bisected. Bisected means cut into two equal parts. How many degrees is each new angle?",
+"hint": "A bisector cuts an angle into two equal angles.",
+"steps": [
+"The original angle is {degrees} degrees.",
+"The bisector cuts it into two equal angles.",
+"Each new angle is {answer} degrees."
+]
+},
+"Which angle is greater than a straight angle but less than 360°?": {
+"prompt": "Which angle is more than a straight angle (180°) but less than 360°?",
+"options": [
+"A reflex angle",
+"An acute angle",
+"A right angle",
+"An obtuse angle"
+],
+"explanation": "A reflex angle is more than 180° and less than 360°."
+},
+"A robot arm moves past a straight angle but stops before 360°. What does that tell us?": {
+"prompt": "A robot arm turns past a straight angle (180°) but stops before 360°. What does that tell us?",
+"options": [
+"The angle is reflex, because it is more than 180° and less than 360°.",
+"The angle is acute, because it is more than 180° and less than 360°.",
+"The angle is right, because it is more than 180° and less than 360°.",
+"The angle is obtuse, because it is more than 180° and less than 360°."
+],
+"explanation": "This is right. The angle is more than 180° and less than 360°.",
+"why": [
+"",
+"This is wrong. An acute angle is less than 90°.",
+"This is wrong. A right angle is exactly 90°.",
+"This is wrong. An obtuse angle is less than 180°."
+]
+},
+"Where should the student place the small curve to mark ∠DBE?": {
+"prompt": "Where should you put the small curve to mark ∠DBE?",
+"options": [
+"At B, the vertex (corner).",
+"At D, the first letter.",
+"At E, the last letter.",
+"At any point on either arm."
+],
+"explanation": "An angle is marked with a small curve at its vertex. B is the vertex.",
+"why": [
+"",
+"The curve goes at the middle letter, B, not the first letter.",
+"The curve goes at the middle letter, B, not the last letter.",
+"The curve goes at the vertex, not anywhere on an arm."
+]
+},
+"Explain why the angle can be written as ∠DBE or ∠EBD.": {
+"prompt": "Explain why the angle can be written as ∠DBE or ∠EBD.",
+"explanation": "Check your answer with the points a teacher looks for.",
+"points": [
+"The vertex (the corner point) is B.",
+"The vertex must be the middle letter.",
+"Both ∠DBE and ∠EBD have B in the middle.",
+"A small curve at B marks the angle."
+]
+},
+"What can all children say when they have the same height?": {
+"prompt": "All children have the same height. How many taller neighbours can each child have?",
+"title": "Children of the Same Height",
+"options": [
+"0",
+"1",
+"2"
+],
+"explanation": "Children of the same height are not taller than each other."
+},
+"Five children stand in a line. A child at an end says that two neighbours are taller. Why is this claim wrong?": {
+"prompt": "Five children stand in a line. A child at the end says two neighbours are taller. Why is this wrong?",
+"options": [
+"An end child has only one neighbour.",
+"Both taller children are neighbours.",
+"The end child has two taller neighbours.",
+"Two children in this line can say 2."
+],
+"explanation": "An end child has only one neighbour. So the end child cannot say 2.",
+"why": [
+"",
+"It treats nearby taller children as neighbours.",
+"It forgets that an end child has only one neighbour.",
+"It is about other children, not the end child."
+]
+},
+"A tally has 2 crossed groups of five marks and 1 extra marks. How many students named the sweet?": {
+"prompt": "A tally has 2 groups of five marks and 1 more mark. How many students named the sweet?",
+"explanation": "Each group has 5 marks, so the formula is 5*g+r. With g=2 and r=1, 5*2+1=11 students.",
+"hint": "Type the number."
+},
+"A vertical bar is 2 cm long. At 10 marbles for each centimetre, how many marbles does it show?": {
+"prompt": "A bar is 2 cm long. Each centimetre shows 10 marbles. How many marbles does the bar show?",
+"explanation": "Multiply the bar length by 10: b*10 marbles.",
+"hint": "Type the number."
+},
+"A bar graph has 4 vertical bars. Every bar is 6 cm wide. What is the total width of all the bars in cm?": {
+"prompt": "A bar graph has 4 bars. Each bar is 6 cm wide. What is the total width of all the bars in cm?",
+"explanation": "Multiply the number of bars by the width of each bar: n*w cm.",
+"hint": "Type the number."
+},
+"A large table lists 10 mountain heights. Exactly 4 heights are below 2000 m. How many mountain heights in the table are 2000 m or more?": {
+"prompt": "A table lists 10 mountain heights. Exactly 4 heights are under 2000 m. How many heights are 2000 m or more?",
+"options": [
+"-6",
+"14",
+"40",
+"6"
+],
+"explanation": "Heights 2000 m or more = all heights minus heights under 2000 m. 10 - 4 = 6 heights."
+},
+"The complete land has area 100 square metres. There are four square flower beds, each with area 10 square metres. What area of the land remains in square metres?": {
+"prompt": "The whole land has an area of 100 square metres. There are four square flower beds. Each flower bed has an area of 10 square metres. What area of land is left, in square metres?",
+"explanation": "Remaining area = complete land - four flower beds = 100 - 4 x 10 = 60 square metres.",
+"hint": "Type the number."
+},
+"A rectangle of area 60 square cm is divided into 3 equal triangles. Enter the area of one triangle in square cm.": {
+"prompt": "A rectangle has an area of 60 square cm. It is cut into 3 equal triangles. Write the area of one triangle, in square cm.",
+"explanation": "The triangles fill the rectangle without gaps or overlaps, so each triangle has area 60 ÷ 3 square cm.",
+"hint": "Type the number."
+},
+"A chikki broken into ______ equal pieces has a one-third piece.": {
+"prompt": "A chikki is broken into ______ equal pieces. Each piece is one-third of the chikki.",
+"title": "One Third of Chikki",
+"explanation": "If you break a chikki into three equal pieces, each piece is one-third.",
+"hint": "How many equal pieces make one-third each?"
+},
+"A blue line from 0 to 8 cm is divided into 2 equal parts. How long is one part in cm?": {
+"prompt": "A blue line goes from 0 to 8 cm. It is cut into 2 equal parts. How long is one part, in cm?",
+"explanation": "Each part is 8 ÷ 2 = 4 cm.",
+"hint": "Type the number."
+},
+"One unit on a number line is divided into 3 equal parts. How many equal parts are there in one unit?": {
+"prompt": "One unit on a number line is cut into 3 equal parts. How many equal parts are in one unit?",
+"explanation": "The unit is cut into 3 equal parts. So the answer is 3.",
+"hint": "Type the number."
+},
+"A ribbon is 5 and 1/5 cm long. What is the whole-number part of its length in cm?": {
+"prompt": "A ribbon is 5 and 1/5 cm long. What is the whole-number part of the length in cm?",
+"explanation": "The whole-number part of the mixed number is w.",
+"hint": "Type the number."
+},
+"A bar is divided into 3*4 equal parts, and 11*4 parts are shaded. Divide both numbers by their highest common factor. How many shaded parts are in the lowest-terms numerator?": {
+"prompt": "A bar has 3*4 equal parts, and 11*4 of them are shaded. Divide both numbers by their highest common factor (the biggest number that goes into both). How many shaded parts are in the numerator in lowest terms?",
+"explanation": "Dividing the shaded parts by the highest common factor gives (11 × 4) ÷ 4 = 11. For example, 36/60 becomes 3/5.",
+"hint": "Type the number."
+},
+"A baker has 4/5 of a bag of flour. How many forty-fifths of a bag of flour is this?": {
+"prompt": "A baker has 4/5 of a bag of flour. How many forty-fifths of a bag is this?",
+"explanation": "Since 45 is a common multiple of 5 and 9, change 4/5 to 4*9/45. Thus the amount is 4*9 forty-fifths of a bag of flour.",
+"hint": "Type the number."
+},
+"Why do all marked points 4 cm from P fit one circle?": {
+"prompt": "Why are all the points 4 cm from P on one circle?",
+"title": "Points Around P",
+"options": [
+"They all have the same distance from P.",
+"They all lie on one straight line.",
+"They all have different distances from P.",
+"Their middle line has a fixed length."
+],
+"explanation": "All these points are 4 cm from P. So they make one circle."
+},
+"A square has sides of 4 cm. It is rotated without changing its size. What is the length of one side after rotation in cm?": {
+"prompt": "A square has sides of 4 cm. You turn it, but do not change its size. How long is one side now, in cm?",
+"explanation": "Turning does not change the side length. So one side is still 4 cm.",
+"hint": "Type the number."
+},
+"Riya uses a ruler to try different points. For one point A, both AB and AC are 4 cm. What is the total length of AB and AC in cm?": {
+"prompt": "Riya draws lines AB and AC from point A. Each line is 4 cm long. What is the total length of AB and AC in cm?",
+"explanation": "Total length = d + d = 2 x d. For d = 2, 3, 4, or 5, the answers are 4, 6, 8, or 10 cm.",
+"hint": "Type the number."
+},
+"A rangoli has 5 repeated sections, with 4 red petals in each section. How many red petals are there?": {
+"prompt": "A rangoli has 5 parts that repeat. Each part has 4 red petals. How many red petals are there in all?",
+"explanation": "The repeated sections have sections × petals = 20 red petals.",
+"hint": "Type the number."
+},
+"What happens to a circle after a rotation through any angle?": {
+"prompt": "What happens to a circle after a rotation (a turn) by any angle?",
+"title": "What Happens After Rotation?",
+"options": [
+"It looks exactly the same.",
+"It becomes a straight line.",
+"It becomes a different circle.",
+"It loses its symmetry."
+],
+"explanation": "A circle lands exactly on itself after any turn. This is rotational symmetry."
+},
+"A figure looks unchanged after a rotation of 15° about its centre. How many equal turns of 15° fit in one full turn?": {
+"prompt": "A shape turns 15° around its centre and looks the same. How many 15° turns make one full turn?",
+"explanation": "Having an angle of symmetry means that the figure has rotational symmetry. The number of equal turns is 360 ÷ 15 = 24.",
+"hint": "Type the number."
+},
+"Match each fold with its line of symmetry in a square.": {
+"prompt": "Match each fold to its line of symmetry in a square.",
+"explanation": "A square has three lines of symmetry: vertical, horizontal and diagonal.",
+"pairs": [
+[
+"Vertical fold",
+"Vertical line of symmetry"
+],
+[
+"Horizontal fold",
+"Horizontal line of symmetry"
+],
+[
+"Diagonal fold",
+"Diagonal line of symmetry"
+]
+]
+},
+"Put the windmill's symmetry angles in order from smallest to largest.": {
+"prompt": "A windmill has symmetry angles. Put them in order, smallest to largest.",
+"explanation": "The windmill's symmetry angles are 90°, 180°, 270° and 360°.",
+"items": [
+"90°",
+"180°",
+"270°",
+"360°"
+]
+},
+"Some figures have angles of symmetry but no lines of symmetry.": {
+"prompt": "Some shapes have angles of symmetry but no lines of symmetry.",
+"explanation": "Other shapes have angles of symmetry but no lines of symmetry."
+},
+"The plus sign is usually left out when writing positive numbers.": {
+"prompt": "We usually leave out the plus sign when we write positive numbers.",
+"title": "Writing Positive Numbers",
+"explanation": "Yes. We usually write positive numbers without a plus sign."
+},
+"A credit in a bank passbook shows that money has been:": {
+"prompt": "A credit in a bank book shows that money was:",
+"title": "What does a credit show?",
+"options": [
+"taken out",
+"added",
+"measured",
+"charged"
+],
+"explanation": "A credit shows that money was added to a bank account."
 }
 },
 "seen": [
@@ -3047,7 +3677,199 @@
 "3 students picked one sweet. What frequency do you write for that sweet on the vertical line?",
 "The jalebi bar is six units high. Another sweet has 4 students, so its bar is 4 units high. How many units higher is the jalebi bar?",
 "What helps control the size of a graph?",
-"A column graph has 4 vertical bars. Each pair of bars has a 4 cm gap between them. How wide are all the gaps together, in cm?"
+"A column graph has 4 vertical bars. Each pair of bars has a 4 cm gap between them. How wide are all the gaps together, in cm?",
+"Ordered data makes it easy to count how often each value occurs.",
+"Making a picture more appealing can never give people a misleading impression.",
+"Match each graph detail with its correct information.",
+"A jump size of 4 cm can land on 24 cm. If a marble makes 3 such jumps, how many cm does it travel? Choose one: 4*3, 4+3, or 3/4.",
+"What is the sum of the two factors of the prime number 7?",
+"The treasure piles have 45 marbles and 78 marbles, and 3 divides both numbers. How many groups of 3 marbles are there in the two piles together?",
+"Which is the prime factorisation of 56?",
+"The prime factorisation of the prime number 7 is just ______.",
+"Ordered data makes it easy to count how often each value appears.",
+"Making a picture look nicer can never give a wrong idea.",
+"Add the two factors of the prime number 7. What do you get?",
+"The prime factorisation of the prime number 7 is just ______.",
+"The prime factorisation of the number of marbles is 2 * 2 * 3. How many marbles are there?",
+"3 is a prime number. What prime number does its prime factorisation show?",
+"Only the last ______ digits matter when checking divisibility by 4.",
+"Match each divisibility test with its rule.",
+"Why is 8536 divisible by 4?",
+"Put the steps for checking divisibility by 8 in order.",
+"In the first box, 9 is the only multiple of 3. If 6 laddoos are put into groups of 3, how many groups are made?",
+"The number 25 is the only multiple of 5. If 20 laddoos are put into rows of 5, how many rows are made?",
+"Only the last ______ digits matter for divisibility by 4.",
+"Match each divisibility test with its rule.",
+"Why is 8536 divisible by 4?",
+"Put the steps for checking divisibility by 8 in order.",
+"The only number in a box that is not a square is 43. A square cloth has side 3 cm. What is its area in square cm?",
+"A number is written as the product of the prime factors 5 and 3. What is the number?",
+"The prime factorisation of 56 is 2 × 2 × ______ × 7.",
+"A rectangular bus ticket is 12 cm long and 9 cm wide. What is its perimeter in cm?",
+"A closed shape has four sides of 4 cm, 5 cm, 6 cm, and 7 cm. What is its perimeter in cm?",
+"How far does one complete round on Akshi’s outer track cover?",
+"Match each track fact to its measurement.",
+"A regular polygon has 4 equal sides, and each side is 5 cm long. What is its perimeter in cm?",
+"A box has many numbers. Only 43 is not a square. A square cloth has sides of 3 cm. What is its area in square cm?",
+"Prime factorisation of 56 is 2 × 2 × ______ × 7. What number goes in the blank?",
+"A closed shape (all sides joined) has four sides. They are 4 cm, 5 cm, 6 cm and 7 cm. What is its perimeter in cm?",
+"A regular polygon (all sides the same) has 4 sides. Each side is 5 cm long. What is its perimeter in cm?",
+"An equilateral triangle has three sides of 12 cm each. What is its perimeter in cm?",
+"The four square flower beds together have an area of 64 square metres.",
+"A rectangular laddoo tray is 8 cm long and 4 cm wide. Enter its area in square cm.",
+"A rectangular rug is 8 cm long and 3 cm wide. What is its area in square cm?",
+"Put the steps in order for comparing the areas of two triangles.",
+"One figure made with nine unit squares has a perimeter of 12 units.",
+"A rectangular garden has area 300 square metres and length 25 metres. What is its width?",
+"A rectangular art room is 8 cm long and 4 cm wide. What is its perimeter in cm?",
+"Four square flower beds together have an area of 64 square metres.",
+"A laddoo tray is a rectangle. It is 8 cm long and 4 cm wide. Type its area (the space inside it) in square cm.",
+"A rug is a rectangle. It is 8 cm long and 3 cm wide. What is its area in square cm?",
+"A garden is a rectangle. Its area is 300 square metres. Its length is 25 metres. What is its width?",
+"An art room is a rectangle. It is 8 cm long and 4 cm wide. What is its perimeter in cm?",
+"What is the perimeter of Akshi’s rectangular track?",
+"The rectangular garden has area 300 square metres and length 25 metres. Its width is ______ metres.",
+"One half is read as one upon two. If two children share 4 rotis equally, how much does each child get?",
+"Match each description to its matching fact.",
+"Match each part with its correct description.",
+"A bus is filled to 6/3 of its capacity. How many thirds of a bus are there beyond one full bus?",
+"After fractions have the same denominator, compare their numerators.",
+"A circle has centre P. Point Q is on the circle and Q is 5 cm from P. What is the radius of the circle in cm?",
+"A garden is shaped like a rectangle. Its area is 300 square metres. Its length is 25 metres. Its width is ______ metres.",
+"Match each description to the right fact.",
+"Match each item to its rule.",
+"When two fractions have the same denominator, compare their numerators.",
+"A circle has centre P. Point Q is on the circle. Q is 5 cm from P. What is the radius in cm?",
+"Point S is marked on the perpendicular to PQ.",
+"Match each square detail with its construction step.",
+"Through which point is a perpendicular to PQ also drawn?",
+"Point X can be placed at either end point A or D.",
+"Match each part of the construction with its detail.",
+"Which tool can simplify the construction?",
+"Finding the point with a ruler does not need trial and error.",
+"A toy house has 4 border lines. Every border line is 5 cm long. What is the total length of all the border lines in cm?",
+"Match each square part with its construction step.",
+"Match each part of the construction with its detail.",
+"Which tool makes the construction easier?",
+"Finding the point with a ruler does not need trial and error (trying again and again).",
+"A toy house has 4 border lines. Each border line is 5 cm long. How many cm long are all the border lines together?",
+"Riya uses a compass to draw a circle centred at B. She wants the circle to pass through A, and BA is 4 cm. What compass radius should she use in cm?",
+"A circle centred at C has radius 6 cm. Point A is where this circle meets the circle centred at B. What is the length of CA in cm?",
+"A rectangle with sides 2 cm and 10 cm is also constructed. Its shorter side is ______ cm.",
+"A butterfly picture has 3 matching colour spots in each of 4 repeating groups. How many colour spots are there?",
+"A windmill looks exactly the same after a 180° turn about its centre. How many degrees is that angle of symmetry?",
+"Put the five-arm symmetry angles in order from smallest to largest.",
+"The angle between adjacent arms is ______ in the symmetrical design.",
+"_____ digits can write numbers of any size in the Indian number system.",
+"Riya uses a compass to draw a circle. The centre is B. The circle must go through A. BA is 4 cm. What radius should she use, in cm?",
+"The centre of a circle is C. Its radius is 6 cm. Point A is on the circle. How long is CA, in cm?",
+"A rectangle has sides of 2 cm and 10 cm. Its shorter side is ______ cm.",
+"A butterfly picture has 4 groups of colour spots. Each group has 3 spots. How many spots are there in all?",
+"A windmill looks the same after a 180° turn. The turn is around its centre. What is this angle of symmetry, in degrees?",
+"In the Indian number system, numbers of any size use _____ digits.",
+"One lift is 3 floors above Floor 0, and another is 2 floors below Floor 0. How many floors apart are their floor numbers?",
+"Place A is 30 metres below sea level, where sea level is 0 metres. Place B is 60 metres above sea level. What is the difference between their heights in metres?",
+"Patterns occur in shopping, cooking, throwing a ball and playing games.",
+"A picnic planner puts food into equal groups of 1, 2, 4 and 8 boxes. How many boxes should the next group have?",
+"The shape sequences include only regular polygons from K2 to K6.",
+"A tile maker draws a regular hexagon and labels every corner. How many corner labels should the maker add?",
+"Explain how the odd-number and even-number sequences are different.",
+"Thirty-six dots can form only a square, not a triangle.",
+"One lift is 3 floors up from Floor 0. Another lift is 2 floors down from Floor 0. How many floors apart are they?",
+"Sea level is 0 metres. Place A is 30 metres below sea level. Place B is 60 metres above sea level. How many metres is the difference in height between A and B?",
+"Patterns are in shopping, cooking, throwing a ball and playing games.",
+"A picnic planner puts food in equal groups of 1, 2, 4 and 8 boxes. How many boxes should the next group have?",
+"Explain how the odd-number sequence and the even-number sequence are different.",
+"Put these regular polygons in order by their number of sides.",
+"Two {item} jaws have openings of {a} and {b} width units. What is the width of the larger opening in width units?",
+"Two rotating-arm models start on copied angles. Their starting arms match the angle rays. The same amount of turn lines up both pairs of arms. What does this show?",
+"A rotating-arm model is placed at a slit in paper. Its arms do not fit the slit. What must be true?",
+"During a school activity, an angle of {degrees} degrees is bisected. What is the measure of each new angle in degrees?",
+"Which angle is greater than a straight angle but less than 360°?",
+"A robot arm moves past a straight angle but stops before 360°. What does that tell us?",
+"Where should the student place the small curve to mark ∠DBE?",
+"A polygon is a flat shape with straight sides. Put these polygons in order. Start with the fewest sides.",
+"A {item} has two openings. They are {a} and {b} width units wide. How wide is the bigger opening, in width units?",
+"Two rotating-arm models start on copied angles. Both models turn by the same amount. Both pairs of arms then line up. What does this show?",
+"A rotating-arm model is put on a slit in paper. A slit is a thin cut. Its arms do not fit the slit. What must be true?",
+"An angle of {degrees} degrees is bisected. Bisected means cut into two equal parts. How many degrees is each new angle?",
+"Which angle is more than a straight angle (180°) but less than 360°?",
+"A robot arm turns past a straight angle (180°) but stops before 360°. What does that tell us?",
+"Where should you put the small curve to mark ∠DBE?",
+"Explain why the angle can be written as ∠DBE or ∠EBD.",
+"What can all children say when they have the same height?",
+"Five children stand in a line. A child at an end says that two neighbours are taller. Why is this claim wrong?",
+"A table has different numbers in its cells. What must be true?",
+"Put the steps for finding the digit sum of 248 in order.",
+"Which number is a supercell because its only adjacent cell contains 109?",
+"A tally has 2 crossed groups of five marks and 1 extra marks. How many students named the sweet?",
+"A vertical bar is 2 cm long. At 10 marbles for each centimetre, how many marbles does it show?",
+"Explain why the angle can be written as ∠DBE or ∠EBD.",
+"All children have the same height. How many taller neighbours can each child have?",
+"Five children stand in a line. A child at the end says two neighbours are taller. Why is this wrong?",
+"A tally has 2 groups of five marks and 1 more mark. How many students named the sweet?",
+"A bar is 2 cm long. Each centimetre shows 10 marbles. How many marbles does the bar show?",
+"A bar graph has 4 vertical bars. Every bar is 6 cm wide. What is the total width of all the bars in cm?",
+"A large table lists 10 mountain heights. Exactly 4 heights are below 2000 m. How many mountain heights in the table are 2000 m or more?",
+"In the idli-vada game, players say “vada” for multiples of 3.",
+"The numbers 3 and 3 are two of the first few prime numbers. What is their sum?",
+"A jump size of 1 is allowed in the new treasure game.",
+"Usha travels 900 m when she takes three rounds of the park. How far does she travel in one complete round in m?",
+"Toshi covers 1260 m in 4 rounds. How long is one round of his inner track in m?",
+"What is the area of the floor in the carpet example?",
+"A bar graph has 4 bars. Each bar is 6 cm wide. What is the total width of all the bars in cm?",
+"A table lists 10 mountain heights. Exactly 4 heights are under 2000 m. How many heights are 2000 m or more?",
+"The complete land has area 100 square metres. There are four square flower beds, each with area 10 square metres. What area of the land remains in square metres?",
+"A floor is covered with 4 rows and 4 columns of unit squares. What is the area of the floor in square cm?",
+"A rectangle of area 60 square cm is divided into 3 equal triangles. Enter the area of one triangle in square cm.",
+"How does the area of triangle BAD compare with rectangle ABCD?",
+"Which statement about Charan’s and Sharan’s houses is correct?",
+"A square on graph paper has exactly half inside the region. How should it be counted?",
+"A chikki broken into ______ equal pieces has a one-third piece.",
+"A blue line from 0 to 8 cm is divided into 2 equal parts. How long is one part in cm?",
+"The whole land has an area of 100 square metres. There are four square flower beds. Each flower bed has an area of 10 square metres. What area of land is left, in square metres?",
+"A rectangle has an area of 60 square cm. It is cut into 3 equal triangles. Write the area of one triangle, in square cm.",
+"A chikki is broken into ______ equal pieces. Each piece is one-third of the chikki.",
+"A blue line goes from 0 to 8 cm. It is cut into 2 equal parts. How long is one part, in cm?",
+"One unit on a number line is divided into 3 equal parts. How many equal parts are there in one unit?",
+"A ribbon is 5 and 1/5 cm long. What is the whole-number part of its length in cm?",
+"Equivalent fractions can show the same length with different fractional units.",
+"A bar is divided into 3*4 equal parts, and 11*4 parts are shaded. Divide both numbers by their highest common factor. How many shaded parts are in the lowest-terms numerator?",
+"A baker has 4/5 of a bag of flour. How many forty-fifths of a bag of flour is this?",
+"Why do all marked points 4 cm from P fit one circle?",
+"A square has sides of 4 cm. It is rotated without changing its size. What is the length of one side after rotation in cm?",
+"The farthest distance between X and Y is diagonal AC. If AC is 5 cm, what is the distance XY in cm?",
+"One unit on a number line is cut into 3 equal parts. How many equal parts are in one unit?",
+"A ribbon is 5 and 1/5 cm long. What is the whole-number part of the length in cm?",
+"A bar has 3*4 equal parts, and 11*4 of them are shaded. Divide both numbers by their highest common factor (the biggest number that goes into both). How many shaded parts are in the numerator in lowest terms?",
+"A baker has 4/5 of a bag of flour. How many forty-fifths of a bag is this?",
+"Why are all the points 4 cm from P on one circle?",
+"A square has sides of 4 cm. You turn it, but do not change its size. How long is one side now, in cm?",
+"Riya uses a ruler to try different points. For one point A, both AB and AC are 4 cm. What is the total length of AB and AC in cm?",
+"How far apart must the compass tip and pencil point be?",
+"A rangoli has 5 repeated sections, with 4 red petals in each section. How many red petals are there?",
+"A pinwheel's hexagon has 4 sides, and its hexagon pattern repeats 3 times. How many hexagon sides are in the repeated pattern?",
+"Which happens when a figure folds along its line of symmetry?",
+"Reflection leaves both sides of a line of symmetry in place.",
+"What does the windmill do after a turn of less than 90°?",
+"What happens to a circle after a rotation through any angle?",
+"Riya draws lines AB and AC from point A. Each line is 4 cm long. What is the total length of AB and AC in cm?",
+"A rangoli has 5 parts that repeat. Each part has 4 red petals. How many red petals are there in all?",
+"What happens to a circle after a rotation (a turn) by any angle?",
+"A figure looks unchanged after a rotation of 15° about its centre. How many equal turns of 15° fit in one full turn?",
+"Match each fold with its line of symmetry in a square.",
+"Put the windmill's symmetry angles in order from smallest to largest.",
+"Some figures have angles of symmetry but no lines of symmetry.",
+"A lift leaves the Toy Store and moves up two floors. Where does it reach?",
+"The plus sign is usually left out when writing positive numbers.",
+"A credit in a bank passbook shows that money has been:",
+"An account has 1500 rupees and a debit of 100 rupees is made. What is the new balance in rupees?",
+"A shape turns 15° around its centre and looks the same. How many 15° turns make one full turn?",
+"Match each fold to its line of symmetry in a square.",
+"A windmill has symmetry angles. Put them in order, smallest to largest.",
+"Some shapes have angles of symmetry but no lines of symmetry.",
+"We usually leave out the plus sign when we write positive numbers.",
+"A credit in a bank book shows that money was:"
 ],
 "broken": {
 "After the fold described in the case, what kind of angles are formed by the two matching edges?": "needs the fold from the case, which is not shown",
@@ -3063,7 +3885,18 @@
 "How far apart are adjacent central dotted lines in the four-arm figure?": "needs a figure the child cannot see",
 "Match each item with its correct description.": "needs Table 1, which the child cannot see",
 "A straight path has two end points, A and B. It can be extended beyond both ends. Which description fits?": "says a segment can go on past its ends, which is false, and the key picks a segment",
-"Match each idea with its correct description.": "Pair 'Mountain values' with 'Horizontal boxes' is not a real term or match in the lesson"
+"Match each idea with its correct description.": "Pair 'Mountain values' with 'Horizontal boxes' is not a real term or match in the lesson",
+"Match each graph detail with its correct information.": "needs a graph the child cannot see; some pairs make no sense",
+"The treasure piles have 45 marbles and 78 marbles, and 3 divides both numbers. How many groups of 3 marbles are there in the two piles together?": "explanation has wrong arithmetic: 78 divided by 3 is 26, not 39",
+"In the first box, 9 is the only multiple of 3. If 6 laddoos are put into groups of 3, how many groups are made?": "says 9 is the only multiple of 3, which is false; also refers to a box the child cannot see",
+"The number 25 is the only multiple of 5. If 20 laddoos are put into rows of 5, how many rows are made?": "says 25 is the only multiple of 5, which is false",
+"How far does one complete round on Akshi’s outer track cover?": "Needs Akshi's track size, which the child cannot see",
+"A bus is filled to 6/3 of its capacity. How many thirds of a bus are there beyond one full bus?": "explanation says 4 thirds and a placeholder 'n', but the prompt says 6/3",
+"A table has different numbers in its cells. What must be true?": "does not say what a supercell is",
+"What is the area of the floor in the carpet example?": "refers to a carpet example the child cannot see",
+"Which statement about Charan’s and Sharan’s houses is correct?": "needs house sizes that are not given",
+"How far apart must the compass tip and pencil point be?": "needs point P and a circle the child cannot see",
+"A pinwheel's hexagon has 4 sides, and its hexagon pattern repeats 3 times. How many hexagon sides are in the repeated pattern?": "says a hexagon has 4 sides, but it has 6"
 },
 "kept": {
 "A bus route is a ray whose initial point is the school. The first stop is {a} km from the school and a later stop is {b} km from the school, where {b} is greater than {a}. How many km farther from the school is the later stop?": "why not text",
@@ -3142,6 +3975,33 @@
 "Which named regular polygon has 3 sides?": "reviewer said the meaning changed",
 "A right angle measures 90 degrees. An acute angle measures {a} degrees. How many degrees smaller than a right angle is the acute angle?": "reviewer said the meaning changed",
 "A right angle measures 90 degrees. An obtuse angle measures {a} degrees. How many degrees larger than a right angle is the obtuse angle?": "prompt numbers changed",
-"A larger cell touches a corner cell only. Is it a supercell?": "blind reader got a different answer"
+"A larger cell touches a corner cell only. Is it a supercell?": "blind reader got a different answer",
+"A jump size of 4 cm can land on 24 cm. If a marble makes 3 such jumps, how many cm does it travel? Choose one: 4*3, 4+3, or 3/4.": "prompt numbers changed",
+"The prime factorisation of the number of marbles is 2 * 2 * 3. How many marbles are there?": "prompt much longer",
+"3 is a prime number. What prime number does its prime factorisation show?": "prompt numbers changed",
+"A number is written as the product of the prime factors 5 and 3. What is the number?": "reviewer said the meaning changed",
+"A rectangular bus ticket is 12 cm long and 9 cm wide. What is its perimeter in cm?": "reviewer said the meaning changed",
+"An equilateral triangle has three sides of 12 cm each. What is its perimeter in cm?": "prompt numbers changed",
+"Put the steps in order for comparing the areas of two triangles.": "items numbers changed",
+"One half is read as one upon two. If two children share 4 rotis equally, how much does each child get?": "prompt numbers changed",
+"What is the perimeter of Akshi’s rectangular track?": "blind reader got a different answer",
+"Point S is marked on the perpendicular to PQ.": "blind reader got a different answer",
+"Through which point is a perpendicular to PQ also drawn?": "blind reader got a different answer",
+"Point X can be placed at either end point A or D.": "blind reader got a different answer",
+"Put the five-arm symmetry angles in order from smallest to largest.": "prompt numbers changed",
+"Thirty-six dots can form only a square, not a triangle.": "prompt numbers changed",
+"The shape sequences include only regular polygons from K2 to K6.": "blind reader got a different answer",
+"A tile maker draws a regular hexagon and labels every corner. How many corner labels should the maker add?": "reviewer said the meaning changed",
+"Which number is a supercell because its only adjacent cell contains 109?": "blind reader got a different answer",
+"Usha travels 900 m when she takes three rounds of the park. How far does she travel in one complete round in m?": "prompt numbers changed",
+"Toshi covers 1260 m in 4 rounds. How long is one round of his inner track in m?": "reviewer said the meaning changed",
+"A floor is covered with 4 rows and 4 columns of unit squares. What is the area of the floor in square cm?": "prompt numbers changed",
+"How does the area of triangle BAD compare with rectangle ABCD?": "prompt much longer",
+"A square on graph paper has exactly half inside the region. How should it be counted?": "blind reader got a different answer",
+"Equivalent fractions can show the same length with different fractional units.": "reviewer said the meaning changed",
+"Which happens when a figure folds along its line of symmetry?": "reviewer said the meaning changed",
+"Reflection leaves both sides of a line of symmetry in place.": "reviewer said the meaning changed",
+"A lift leaves the Toy Store and moves up two floors. Where does it reach?": "blind reader got a different answer",
+"An account has 1500 rupees and a debit of 100 rupees is made. What is the new balance in rupees?": "reviewer said the meaning changed"
 }
 }

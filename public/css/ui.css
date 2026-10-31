@@ -1093,3 +1093,14 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 /* fun facts */
 .lesson:has(.activity--funfact) .mascot-strip { display: none; }
 .fun-fact { margin: 0 0 var(--s3); padding: var(--s3) var(--s4); border-radius: var(--radius-md); background: var(--primary-soft); text-align: left; line-height: 1.5; }
+
+/* a family's own book */
+.addbook { max-width: 640px; }
+.addbook__card { display: grid; gap: var(--s3); margin-top: var(--s3); padding: var(--s5); border-radius: var(--radius-lg); background: var(--surface); }
+.addbook__card > * { margin: 0; }
+.addbook__file { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.addbook__status { min-height: 1.5em; font-weight: 700; }
+.addbook__row { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); }
+.addbook .finished__bar span { width: 0; transition: width 0.2s; }
+.addbook .finished__bar[hidden] { display: none; }
+.grade-tab--add { border-style: dashed; background: transparent; box-shadow: none; }

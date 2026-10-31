@@ -74,7 +74,7 @@ def vision(image_path, prompt, tries=3):
 
 DEEPSEEK = 'opencode/deepseek-v4.1-flash-free'
 CHECKER = 'opencode/glm-5.3-flash-free'   # a different model reads the work, so the writer does not mark its own answers
-SLOTS = 3                                 # at most this many Haiku or opencode calls at once across every job on this machine
+SLOTS = 2                                 # at most this many Haiku or opencode calls at once across every job on this machine
 
 def _slot():
     """Hold one of SLOTS lock files; waits until one is free. The lock ends when the returned file is closed."""
@@ -91,6 +91,7 @@ def haiku(prompt, want_json=True, tries=2, on_retry=None):
     """Claude Haiku through the claude command, on Anirudh's subscription (he asked for this). It shares his Claude limits with
     his own sessions, so on any limit message it stops for an hour rather than use up what he needs. No tools, no project,
     no saved session. Any API key is removed from its environment so it can never bill one."""
+    if os.environ.get('LUMI_HAIKU') != '1': return None   # off unless asked for: it spends Anirudh's own Claude usage
     env = {k: v for k, v in os.environ.items() if k not in ('ANTHROPIC_API_KEY', 'CLAUDECODE', 'CLAUDE_CODE_ENTRYPOINT')}
     for t in range(tries):
         if os.path.exists(HAIKU_COOLDOWN) and time.time() - os.path.getmtime(HAIKU_COOLDOWN) < 3600: return None

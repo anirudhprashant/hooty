@@ -27,7 +27,8 @@ def build():
         if not os.path.isdir(f"{ROOT}/{s['work']}"): continue
         out = subprocess.run([sys.executable, f'{HERE}/assemble-pack.py'], cwd=ROOT, env={**os.environ, 'SPARKLE_SUBJECT': key}, capture_output=True, text=True)
         say(key, '|', (out.stdout.strip().splitlines() or [out.stderr[-200:]])[-1][:110])
-        if out.returncode: sys.exit(f'{key}: build failed\n{out.stderr[-500:]}')
+        if out.returncode:   # a book still being made can fail to assemble: the last good copy stays live
+            say(f'{key}: not rebuilt this time (still being made?)', out.stderr[-120:].replace('\n', ' ')); continue
     for f in sorted(glob.glob(f'{PUB}/content/packs/*/pack.json')):
         v = subprocess.run(['node', f'{HERE}/validate-pack.mjs', f], capture_output=True, text=True)
         if v.returncode: sys.exit(f'{f} does not validate:\n{v.stdout[-600:]}')

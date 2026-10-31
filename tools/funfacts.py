@@ -54,7 +54,7 @@ def save(pack, d):
 
 def apply(pack_id, pack):
     """No AI: put the checked facts on their lessons. Called by assemble-pack."""
-    facts = load(pack_id)['facts']; n = 0
+    d = load(pack_id); facts = {k: list(d['box'].get(k, [])) + d['facts'].get(k, []) for k in set(d['facts']) | set(d.get('box', {}))}; n = 0
     for u in pack['units']:
         for c in u['chapters']:
             for l in c['lessons']:

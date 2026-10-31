@@ -65,6 +65,12 @@ The aim is simple: a child should understand the idea, not just remember the sen
 
 Classes 3 to 5 study The World Around Us in place of Science and Social Science. Classes 1 and 2 have Maths, English and Hindi.
 
+## 📄 Bring your own textbook
+
+Tap **+ Add my book**, choose the PDF of any school book, and Lumi turns it into lessons in seconds, right there on the device. There's no AI and no account, and the file is never uploaded.
+
+Plain code finds the chapters, sections, key words, pictures and worked examples, then makes reading cards and questions from the sentences printed in the book, each with its page number. Text-based PDFs work best. Scanned photos of pages can't be read yet, and these lessons won't have the simulations or simpler English of the built-in books.
+
 ## 🔍 How we keep it true
 
 A wrong fact taught to a child is worse than no fact at all, so AI writes the first draft and then has to get past some strict checks:
