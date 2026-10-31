@@ -61,7 +61,9 @@ if __name__ == '__main__':
         _lock = open(os.path.expanduser('~/.cache/lumi-ingest-all.lock'), 'w')
         try: fcntl.flock(_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except OSError: sys.exit('a catalogue run is already going')
-        jobs = [(g, s) for g in CLASSES if g in CATALOG for s in ORDER if s in CATALOG[g]]
+        # Maths for every class first, so every class is on the site soon, then the other subjects class by class
+        all_jobs = [(g, s) for g in CLASSES if g in CATALOG for s in ORDER if s in CATALOG[g]]
+        jobs = [j for j in all_jobs if j == ('7', 'Social Science')] + [j for j in all_jobs if j[1] == 'Mathematics'] + [j for j in all_jobs if j[1] != 'Mathematics' and j != ('7', 'Social Science')]
     elif len(a) == 1: jobs = [(a[0], s) for s in ORDER if s in CATALOG[a[0]]]
     else: jobs = [(a[0], ' '.join(a[1:]))]
     for g, s in jobs:

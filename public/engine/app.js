@@ -1007,7 +1007,7 @@ function renderCelebration() {
   const facts = s.lesson.funFacts || [];
   if (facts.length) {
     const plays = l?.lessonsDone?.[s.lesson.lessonId]?.count || 1;
-    box.append(el('p', { class: 'fun-fact' }, [el('b', { text: `${bookWord(s.ctx?.bookLang, 'Did you know?')} ` }), facts[plays % facts.length]]));
+    box.append(el('p', { class: 'fun-fact' }, [el('b', { text: `${bookWord(packById(s.lesson.packId)?.language, 'Did you know?')} ` }), facts[plays % facts.length]]));
   }
   box.append(...finishedNotes(s.lesson));
 

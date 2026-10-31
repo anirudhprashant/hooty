@@ -1786,7 +1786,7 @@
       {
        "id": "social-science-g7-ch1-l5",
        "title": "The Peninsular Plateau",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -1839,6 +1839,38 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "social-science-g7-ch1-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Meena sees a river on the plateau. It flows east. Her friend says it will reach the Arabian Sea. Is her friend right?",
+         "steps": [
+          "The Arabian Sea lies to the west of the plateau. The Narmada and Tapti flow west into it.",
+          "Rivers like the Godavari flow east towards the Bay of Bengal.",
+          "So a river flowing east goes to the Bay of Bengal, not the Arabian Sea.",
+          "Meena is right, and her friend is wrong."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 17
+          },
+          {
+           "ch": 1,
+           "p": 17
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "social-science-g7-ch1-l5-a2",
          "difficulty": 1,
@@ -1855,24 +1887,6 @@
          ],
          "answer": 1,
          "explanation": "A plateau rises above its surroundings and has a mostly flat surface.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 16
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch1-l5-a3",
-         "difficulty": 1,
-         "tags": [
-          "ghats",
-          "hills"
-         ],
-         "prompt": "The Eastern Ghats are lower and broken into smaller hills.",
-         "answer": true,
-         "explanation": "The Eastern Ghats are lower and consist of smaller hills.",
          "src": [
           {
            "ch": 1,
@@ -1929,6 +1943,24 @@
          ]
         },
         {
+         "type": "truefalse",
+         "id": "social-science-g7-ch1-l5-a3",
+         "difficulty": 1,
+         "tags": [
+          "ghats",
+          "hills"
+         ],
+         "prompt": "The Eastern Ghats are lower and broken into smaller hills.",
+         "answer": true,
+         "explanation": "The Eastern Ghats are lower and consist of smaller hills.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 16
+          }
+         ]
+        },
+        {
          "type": "fillblank",
          "id": "social-science-g7-ch1-l5-a5",
          "difficulty": 2,
@@ -1946,24 +1978,6 @@
           {
            "ch": 1,
            "p": 17
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch1-l5-a7",
-         "difficulty": 2,
-         "tags": [
-          "rivers",
-          "plateau"
-         ],
-         "prompt": "Several rivers cross the plateau from east to west.",
-         "answer": false,
-         "explanation": "Several rivers cross the plateau from west to east.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 16
           }
          ]
         },
@@ -2012,6 +2026,112 @@
            "p": 17
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "The plateau is rich in minerals, forests and fertile land. Why would farmers want to settle there?",
+         "options": [
+          "Fertile soil helps crops grow well and feed people",
+          "Rocky land is the best place for growing crops",
+          "Thick forests have soil that can never grow crops",
+          "Flat land is always too dry to grow anything"
+         ],
+         "answer": 0,
+         "why": {
+          "Rocky land is the best place for growing crops": "Wrong: this confuses rocky land with fertile land, which is different.",
+          "Thick forests have soil that can never grow crops": "Wrong: this thinks forests have no useful soil, but the plateau is fertile.",
+          "Flat land is always too dry to grow anything": "Wrong: this thinks flat land is always dry, but fertile land can be flat."
+         },
+         "explanation": "Right: fertile soil gives plants good food, so crops grow well.",
+         "f": [
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 17
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "The Western Ghats are tall and run along the west coast. The Eastern Ghats are lower and broken into smaller hills. Which range is harder to cross?",
+         "options": [
+          "Eastern Ghats, because they have more small hills",
+          "Western Ghats, because they are tall like a wall",
+          "Eastern Ghats, because they are close to the sea",
+          "Western Ghats, because they are broken into hills"
+         ],
+         "answer": 1,
+         "why": {
+          "Eastern Ghats, because they have more small hills": "Wrong: many small hills are easier to pass than one tall wall.",
+          "Eastern Ghats, because they are close to the sea": "Wrong: being near the sea does not make a range harder to cross.",
+          "Western Ghats, because they are broken into hills": "Wrong: broken hills are the Eastern Ghats, not the Western Ghats."
+         },
+         "explanation": "Right: a tall range running like a wall is harder to cross.",
+         "f": [
+          "5.5",
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A bus climbs up from the coast onto the plateau. Then the road stays flat for many miles. Why?",
+         "options": [
+          "The road is in a deep valley below the land",
+          "The bus is going down towards the sea",
+          "The plateau rises above nearby land and is flat",
+          "The road runs beside the Bay of Bengal"
+         ],
+         "answer": 2,
+         "why": {
+          "The road is in a deep valley below the land": "Wrong: a valley is low land, but the bus climbed up.",
+          "The bus is going down towards the sea": "Wrong: the bus is going up, not down towards the sea.",
+          "The road runs beside the Bay of Bengal": "Wrong: being beside the sea does not make the land on top flat."
+         },
+         "explanation": "Right: a plateau is raised land with a mostly flat surface.",
+         "f": [
+          "5.1",
+          "5.2"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l5-landscapes-of-western-ghats--11bcdd.webp",
@@ -2028,7 +2148,7 @@
       {
        "id": "social-science-g7-ch1-l6",
        "title": "Coasts, Islands, Sundarbans and Northeast Hills",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -2087,6 +2207,33 @@
           {
            "ch": 1,
            "p": 23
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g7-ch1-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Meera lives in Kerala. Her cousin lives in Gujarat. Do they live on the same coast?",
+         "steps": [
+          "The West Coast stretches from Gujarat to Kerala.",
+          "Gujarat is one end of that coast, because the coast starts there.",
+          "Kerala is the other end, because the coast stops there.",
+          "So Meera and her cousin both live on the West Coast."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "6.2"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 19
           }
          ]
         },
@@ -2225,24 +2372,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "social-science-g7-ch1-l6-a7",
-         "difficulty": 2,
-         "tags": [
-          "andaman and nicobar islands",
-          "volcanic islands"
-         ],
-         "prompt": "The Andaman and Nicobar Islands include more than 500 volcanic islands.",
-         "answer": true,
-         "explanation": "These islands include more than 500 volcanic islands.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 21
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "social-science-g7-ch1-l6-a8",
          "difficulty": 3,
@@ -2296,6 +2425,166 @@
            "p": 22
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Rain falls on the Western Ghats. Rivers start there and flow down. Where will these rivers most likely meet the sea?",
+         "options": [
+          "At an estuary on the west coast",
+          "At a coral island in Lakshadweep",
+          "In the Northeast hills, far away",
+          "At the Sundarbans in the east"
+         ],
+         "answer": 0,
+         "why": {
+          "At a coral island in Lakshadweep": "Wrong: thinks rivers flow into islands made of coral, not into estuaries.",
+          "In the Northeast hills, far away": "Wrong: thinks the Western Ghats and the Northeast hills are the same place.",
+          "At the Sundarbans in the east": "Wrong: thinks all big rivers end in the Sundarbans."
+         },
+         "explanation": "Right: rivers from the Western Ghats flow into west-coast estuaries.",
+         "f": [
+          "6.3"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 19
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "evaluate"
+         ],
+         "prompt": "Ravi says jail in the Andamans was an easy holiday. Ana says it was very hard. Which reason best supports Ana?",
+         "options": [
+          "The Andamans include more than 500 volcanic islands.",
+          "Ana is older, so she must know more about it.",
+          "Freedom fighters were jailed there under very severe conditions.",
+          "Ravi said it was easy, so it must be easy."
+         ],
+         "answer": 2,
+         "why": {
+          "The Andamans include more than 500 volcanic islands.": "Wrong: counting islands does not show how hard life was.",
+          "Ana is older, so she must know more about it.": "Wrong: thinks age decides who is right, instead of evidence.",
+          "Ravi said it was easy, so it must be easy.": "Wrong: repeats Ravi's claim without any proof."
+         },
+         "explanation": "Right: severe conditions show that life there was very hard.",
+         "f": [
+          "6.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 22
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "A map shows the Northeast hills. Place A gets very heavy rain every year. Place B gets very little rain. Which place fits the Northeast hills?",
+         "options": [
+          "Place B, because hills are always the driest places.",
+          "Place A, because highest rainfall means little water.",
+          "Place B, because it is a dry place.",
+          "Place A, because it gets one of the highest rainfalls."
+         ],
+         "answer": 3,
+         "why": {
+          "Place B, because hills are always the driest places.": "Wrong: thinks hills are always dry, which is not true of the Northeast hills.",
+          "Place A, because highest rainfall means little water.": "Wrong: confuses very high rainfall with very little water.",
+          "Place B, because it is a dry place.": "Wrong: picks the dry place without checking the rainfall fact."
+         },
+         "explanation": "Right: the Northeast hills receive one of the highest rainfalls in the world.",
+         "f": [
+          "6.8"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 23
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check"
+         ],
+         "prompt": "Rahul writes: 'India's coastline is 7500 metres long.' Which reply fixes his mistake?",
+         "options": [
+          "7500 metres is right, because metres measure long distances.",
+          "It should be more than 7500 kilometres, which is much longer.",
+          "It should be more than 7500 kilometres, but metres are also right.",
+          "Metres and kilometres are the same, so Rahul is correct."
+         ],
+         "answer": 1,
+         "why": {
+          "7500 metres is right, because metres measure long distances.": "Wrong: thinks metres are the units used for long distances.",
+          "It should be more than 7500 kilometres, but metres are also right.": "Wrong: thinks both units are equally correct for this length.",
+          "Metres and kilometres are the same, so Rahul is correct.": "Wrong: thinks metres and kilometres mean the same thing."
+         },
+         "explanation": "Right: the coastline is more than 7500 kilometres, and a kilometre is far longer than a metre.",
+         "f": [
+          "6.1"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 19
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l6-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Anita says the Sundarbans lie in the Western Ghats. Which reason shows she is wrong?",
+         "options": [
+          "The Sundarbans lie in the delta of the Ganga and Brahmaputra.",
+          "The Western Ghats are in the Northeast, so the two are the same.",
+          "Rivers from the Western Ghats always flow to the Sundarbans.",
+          "Any river delta is always found inside the Western Ghats."
+         ],
+         "answer": 0,
+         "why": {
+          "The Western Ghats are in the Northeast, so the two are the same.": "Wrong: thinks two different regions are the same because both are hilly or mountainous.",
+          "Rivers from the Western Ghats always flow to the Sundarbans.": "Wrong: thinks rivers from the Western Ghats all reach the Sundarbans.",
+          "Any river delta is always found inside the Western Ghats.": "Wrong: thinks every delta must be inside the Western Ghats."
+         },
+         "explanation": "Right: the Sundarbans are in the delta of the Ganga and Brahmaputra, not in the Western Ghats.",
+         "f": [
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 22
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l6-view-in-the-conkan-british-l-5d6e5d.webp",
@@ -2312,7 +2601,7 @@
       {
        "id": "social-science-g7-ch1-exam",
        "title": "Test practice",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 19,
        "topicScene": "media/ch1-l1-indian-subcontinent-cia-abd281.webp",
        "sceneAlt": "A map of the Indian subcontinent showing India and its neighbouring countries.",
        "sceneCaption": "Map showing India and its neighbours within the Indian Subcontinent.",
@@ -2404,6 +2693,222 @@
           "Summer snowmelt feeds major Himalayan rivers.",
           "The Ganga, Indus and Brahmaputra are among these rivers.",
           "Meltwater supplies water from the mountains to river systems."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student's family moves from the Gangetic Plains to Ladakh. On arrival, they find that winter temperatures fall below minus 30°C and that rain is very rare. The rugged land looks like the moon. In the plains, rivers had enriched their fields with minerals, and flat land had helped roads and railways spread easily. Their new home has ancient monasteries and colourful festivals, and unusual animals live nearby.",
+         "prompt": "The family plans to grow the same crops in Ladakh that they grew on the plains. What is the most likely outcome?",
+         "options": [
+          "The crops will grow faster, because rivers in Ladakh enrich the soil with minerals.",
+          "The crops will grow well, because flat land suits farming in every region.",
+          "The crops will struggle, because very cold winters and scarce rain make growth hard.",
+          "The crops will be unaffected, because the plains and Ladakh share the same climate."
+         ],
+         "answer": 2,
+         "why": {
+          "The crops will grow faster, because rivers in Ladakh enrich the soil with minerals.": "Wrong: the soil-enriching rivers were in the plains, and Ladakh receives very little rain.",
+          "The crops will grow well, because flat land suits farming in every region.": "Wrong: Ladakh's terrain is rugged, so flat land is not its main feature.",
+          "The crops will be unaffected, because the plains and Ladakh share the same climate.": "Wrong: Ladakh is a cold desert, unlike the warmer, fertile plains."
+         },
+         "explanation": "Right: winters below minus 30°C and very little rain limit how well crops can grow."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student's family moves from the Gangetic Plains to Ladakh. On arrival, they find that winter temperatures fall below minus 30°C and that rain is very rare. The rugged land looks like the moon. In the plains, rivers had enriched their fields with minerals, and flat land had helped roads and railways spread easily. Their new home has ancient monasteries and colourful festivals, and unusual animals live nearby.",
+         "prompt": "Why did roads and railways spread easily across the Gangetic Plains?",
+         "options": [
+          "Because very little rain falls there, so roads and tracks last longer.",
+          "Because the rugged land forced builders to follow the rivers for travel.",
+          "Because the level ground let builders lay tracks with few obstacles.",
+          "Because a large part of India's population lives there, so builders had to lay roads."
+         ],
+         "answer": 2,
+         "why": {
+          "Because very little rain falls there, so roads and tracks last longer.": "Wrong: rainfall does not explain how easily tracks were laid.",
+          "Because the rugged land forced builders to follow the rivers for travel.": "Wrong: the plains are flat, not rugged, so this reverses the reason.",
+          "Because a large part of India's population lives there, so builders had to lay roads.": "Wrong: population size is a result of the plains' conditions, not the reason roads were built easily."
+         },
+         "explanation": "Right: flat land made it easy to build roads and railways."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch1-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the family may find it harder to grow food in Ladakh than in the Gangetic Plains.",
+         "answer": "In Ladakh, winter temperatures fall below minus 30°C and rainfall is very low, so crops have little water and face severe cold. The land is also rugged, with little flat ground. In the plains, rivers enrich the soil with minerals, making farming easier.",
+         "points": [
+          "Mentions winter temperatures below minus 30°C in Ladakh",
+          "Mentions very little rainfall in Ladakh",
+          "Mentions rugged terrain with little flat ground",
+          "Contrasts with soil enriched by rivers in the plains"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A family lives where the Thar's golden dunes meet a wide-open sky. Water is scarce here, so they scour their utensils with sand and reuse the water they used for rinsing. Their village has a taanka that stores rainwater. The Aravallis, among the world's oldest mountains, prevent the desert from spreading farther east. Mining and construction in the Aravallis have gone on for centuries.",
+         "prompt": "The family's taanka runs low during a long dry spell. Which step best helps the family make the stored water last?",
+         "options": [
+          "Scour the utensils with fresh stored water so they come out cleaner.",
+          "Rinse each utensil with plenty of clean water, then pour the rinse water away.",
+          "Use the water left from rinsing again, and keep the taanka's water for drinking and cooking.",
+          "Store more sand in the taanka so it keeps the rainwater cool and full."
+         ],
+         "answer": 2,
+         "why": {
+          "Scour the utensils with fresh stored water so they come out cleaner.": "Using stored water for scouring spends the water the taanka is meant to hold.",
+          "Rinse each utensil with plenty of clean water, then pour the rinse water away.": "Pouring rinse water away wastes water the family could use again.",
+          "Store more sand in the taanka so it keeps the rainwater cool and full.": "A taanka stores rainwater; adding sand does not help it hold more water."
+         },
+         "explanation": "Correct: reusing rinse water saves the stored water for essential needs."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A family lives where the Thar's golden dunes meet a wide-open sky. Water is scarce here, so they scour their utensils with sand and reuse the water they used for rinsing. Their village has a taanka that stores rainwater. The Aravallis, among the world's oldest mountains, prevent the desert from spreading farther east. Mining and construction in the Aravallis have gone on for centuries.",
+         "prompt": "Suppose mining steadily removed large parts of the Aravallis over many years. What would most likely happen next?",
+         "options": [
+          "The taanka would fill faster because mining adds rainwater to the ground.",
+          "The desert could move further toward the east as the hill barrier shrinks.",
+          "The Thar would shrink, since mountains pull desert sand into their slopes.",
+          "The dunes would stop forming, since the wind would have no hills to push against."
+         ],
+         "answer": 1,
+         "why": {
+          "The taanka would fill faster because mining adds rainwater to the ground.": "Mining does not add rainwater; the case gives no such cause.",
+          "The Thar would shrink, since mountains pull desert sand into their slopes.": "The Aravallis do not pull sand in; they stop the desert from spreading.",
+          "The dunes would stop forming, since the wind would have no hills to push against.": "Wind shapes sand into dunes; losing hills would not stop the wind from shaping them."
+         },
+         "explanation": "Correct: the Aravallis hold back the desert, so losing them would let it spread."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch1-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the Thar Desert is a natural barrier.",
+         "answer": "The Thar is a vast arid region where water is scarce and the terrain is rugged. Its harsh conditions make it very hard to cross or live in. Because travel and settlement are difficult, the desert acts as a natural barrier, separating places on either side of it.",
+         "points": [
+          "Harsh conditions such as scarce water and rugged terrain",
+          "Hard to cross or live in",
+          "Difficult travel and settlement make it a barrier",
+          "It separates places on either side of it"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Meera's family farms on the Deccan Plateau, a wide area of flat highlands between two mountain ranges. The soil is fertile, so their crops grow well. Her cousin Ravi lives on the western coast, behind a tall range that rises like a wall. Nearby, a company plans to cut down the dense forest to build a mine, which would also affect the tribal families who live there.",
+         "prompt": "If the company cuts down the forest to build the mine, what is most likely to happen to the tribal families who live there?",
+         "options": [
+          "They would lose their forest home and might have to move somewhere else.",
+          "Their land would become a peninsula, surrounded by water on three sides.",
+          "The tall coastal range would be lowered, so they could reach the sea more easily.",
+          "The mine would make the soil fertile, so their own crops would grow faster."
+         ],
+         "answer": 0,
+         "why": {
+          "Their land would become a peninsula, surrounded by water on three sides.": "Wrong: a peninsula is land surrounded by water on three sides, and cutting trees does not create one.",
+          "The tall coastal range would be lowered, so they could reach the sea more easily.": "Wrong: nothing in the case changes the height of the mountain ranges.",
+          "The mine would make the soil fertile, so their own crops would grow faster.": "Wrong: a mine does not add fertile soil to the land; the soil is already fertile."
+         },
+         "explanation": "Correct: clearing the forest takes away the home of the tribal communities who live there."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch1-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Meera's family farms on the Deccan Plateau, a wide area of flat highlands between two mountain ranges. The soil is fertile, so their crops grow well. Her cousin Ravi lives on the western coast, behind a tall range that rises like a wall. Nearby, a company plans to cut down the dense forest to build a mine, which would also affect the tribal families who live there.",
+         "prompt": "Meera's class is planning a trip from the western coast up to the Deccan Plateau. What should they expect?",
+         "options": [
+          "They must first get over a high mountain barrier before the level highlands begin.",
+          "An easy walk on level ground, because the coast is close to the plateau's edge.",
+          "A short walk over low, broken hills, because the highlands begin right at the sea.",
+          "A crossing of water on three sides, because they will reach a peninsula."
+         ],
+         "answer": 0,
+         "why": {
+          "An easy walk on level ground, because the coast is close to the plateau's edge.": "Wrong: a tall range separates the coast from the plateau, so the ground is not level all the way.",
+          "A short walk over low, broken hills, because the highlands begin right at the sea.": "Wrong: low, broken hills are the Eastern Ghats, which lie on the other side of the plateau.",
+          "A crossing of water on three sides, because they will reach a peninsula.": "Wrong: a peninsula is land surrounded by water, and the trip does not involve crossing water."
+         },
+         "explanation": "Correct: the tall Western Ghats run along the coast, so they must be crossed to reach the plateau."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch1-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between a plateau and a peninsula?",
+         "answer": "A plateau is land that rises above its surroundings and has a mostly flat surface. A peninsula is land surrounded by water on three sides. So a plateau is defined by height and flatness, while a peninsula is defined by the water around it.",
+         "points": [
+          "Plateau rises above its surroundings",
+          "Plateau has a mostly flat surface",
+          "Peninsula is surrounded by water on three sides",
+          "Plateau is defined by height and flatness; peninsula by water"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch1-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between the West Coast and the Sundarbans?",
+         "answer": "The West Coast is a long coastline stretching from Gujarat to Kerala, where rivers flow from the Western Ghats into estuaries. The Sundarbans lie in the delta of the Ganga and Brahmaputra. So the West Coast is a stretch of coast, while the Sundarbans is a delta built by two rivers.",
+         "points": [
+          "States that the West Coast is a coastline stretching from Gujarat to Kerala",
+          "States that the Sundarbans lie in the delta of the Ganga and Brahmaputra",
+          "Identifies the difference as a coastline versus a delta",
+          "Notes that west-coast rivers flow into estuaries, which the Sundarbans does not describe"
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         }
@@ -3945,7 +4450,7 @@
       {
        "id": "social-science-g7-ch2-l4",
        "title": "Measuring Pressure, Wind and Humidity",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -4015,6 +4520,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "social-science-g7-ch2-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why do some people feel tired and dizzy on a high mountain?",
+         "steps": [
+          "Going higher means less air sits above us.",
+          "So the atmospheric pressure becomes lower, and the air becomes thinner.",
+          "Thin air means less oxygen is available in each breath.",
+          "So people may feel breathless, dizzy or tired at high altitudes."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "social-science-g7-ch2-l4-a2",
          "difficulty": 1,
@@ -4032,24 +4584,6 @@
          ],
          "answer": 0,
          "explanation": "Atmospheric pressure comes from the weight of the air above and around us.",
-         "src": [
-          {
-           "ch": 2,
-           "p": 28
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch2-l4-a3",
-         "difficulty": 1,
-         "tags": [
-          "mountains",
-          "air"
-         ],
-         "prompt": "The air becomes thinner when you climb a mountain.",
-         "answer": true,
-         "explanation": "The air becomes thinner as you climb a mountain.",
          "src": [
           {
            "ch": 2,
@@ -4216,18 +4750,168 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "social-science-g7-ch2-l4-a9",
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l4-d1",
          "difficulty": 3,
          "tags": [
-          "hygrometer",
-          "humidity",
-          "pressure"
+          "deep",
+          "cause"
          ],
-         "prompt": "A hygrometer measures atmospheric pressure.",
-         "answer": false,
-         "explanation": "A hygrometer measures humidity. A barometer measures atmospheric pressure.",
+         "prompt": "A man climbs a tall mountain. At the top, he feels dizzy and tired. Why does he feel this way?",
+         "options": [
+          "The air up high is hotter, so it makes him feel dizzy.",
+          "The air up high is thinner, so each breath has less oxygen.",
+          "The air up high is heavier, so it presses him down.",
+          "The air up high has less water, so he feels tired."
+         ],
+         "answer": 1,
+         "why": {
+          "The air up high is hotter, so it makes him feel dizzy.": "He thinks heat causes dizziness, but the thin air is the real cause.",
+          "The air up high is heavier, so it presses him down.": "He thinks higher air is heavier, but less air sits above him up high.",
+          "The air up high has less water, so he feels tired.": "He thinks water in the air causes tiredness, but the problem is oxygen."
+         },
+         "explanation": "Correct: higher up the air is thinner, so less oxygen comes in each breath.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5"
+         ],
          "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Two barometers stand at the bottom and top of a mountain. Which one shows lower pressure, and why?",
+         "options": [
+          "The bottom one, because it is closer to the ground.",
+          "The top one, because thin air is pressed more tightly.",
+          "The top one, because less air is pressing down on it.",
+          "Both show the same, because air is everywhere."
+         ],
+         "answer": 2,
+         "why": {
+          "The bottom one, because it is closer to the ground.": "He thinks being close to the ground lowers pressure, but the air above matters.",
+          "The top one, because thin air is pressed more tightly.": "She thinks thin air presses harder, but thinner air means less pressure.",
+          "Both show the same, because air is everywhere.": "He thinks air is the same everywhere, but mountains change how much air is above."
+         },
+         "explanation": "Correct: at the top, less air sits above the barometer, so pressure is lower.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.7"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A sailor sees high pressure over one island. Another island has low pressure. Which way does the wind move?",
+         "options": [
+          "From the low-pressure island towards the high-pressure island.",
+          "From the high-pressure island towards the low-pressure island.",
+          "It will not move, because pressure only matters high in the sky.",
+          "Straight up from the sea, because the air there is lighter."
+         ],
+         "answer": 1,
+         "why": {
+          "From the low-pressure island towards the high-pressure island.": "She thinks wind goes towards the big push, but it moves the other way.",
+          "It will not move, because pressure only matters high in the sky.": "He thinks pressure only matters high in the sky, but wind still moves across the land and sea.",
+          "Straight up from the sea, because the air there is lighter.": "He thinks light air rises straight up, but the lesson says wind moves from high to low pressure."
+         },
+         "explanation": "Correct: wind moves from areas of high pressure towards areas of low pressure.",
+         "f": [
+          "4.1",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
+          {
+           "ch": 2,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch2-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A sailor looks at a map. A depression is marked far out at sea. Why should sailors check wind data?",
+         "options": [
+          "Wind moves towards low pressure, so it may blow towards the depression.",
+          "A depression is high pressure, so wind blows away from it.",
+          "A depression only changes water vapour, so wind data is not needed.",
+          "Wind data shows pressure, so sailors need no more checking."
+         ],
+         "answer": 0,
+         "why": {
+          "A depression is high pressure, so wind blows away from it.": "He thinks a depression is high pressure, but it is a low-pressure system.",
+          "A depression only changes water vapour, so wind data is not needed.": "He thinks water vapour decides the wind, but humidity does not control wind.",
+          "Wind data shows pressure, so sailors need no more checking.": "He thinks pressure gives all wind information, but sailors still need wind data."
+         },
+         "explanation": "Correct: wind moves from high pressure towards low pressure, like a depression.",
+         "f": [
+          "4.6",
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 28
+          },
           {
            "ch": 2,
            "p": 28
@@ -5188,7 +5872,7 @@
       {
        "id": "social-science-g7-ch2-exam",
        "title": "Test practice",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 7,
        "topicScene": "media/ch2-l1-2016-july-monsoon-clouds-in--fa96bf.webp",
        "sceneAlt": "Monsoon clouds hang above farmers working near Goa’s Western Ghats in India.",
        "sceneCaption": "Farmers work beneath monsoon clouds in Goa, India.",
@@ -5262,6 +5946,24 @@
           "Surrounding-temperature thermometer shows the current temperature",
           "Maximum and minimum thermometer records the highest and lowest temperatures of the day",
           "Maximum and minimum readings allow the temperature range or mean daily temperature to be calculated"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch2-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between a barometer and a hygrometer?",
+         "answer": "A barometer is the instrument used to measure atmospheric pressure, which is the pressure exerted by the weight of the air above and around us. A hygrometer is the instrument used to measure humidity, which is the amount of water vapour present in the air.",
+         "points": [
+          "A barometer measures atmospheric pressure",
+          "A hygrometer measures humidity",
+          "Pressure comes from the weight of air; humidity is water vapour in the air",
+          "Each instrument measures a different thing"
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         },
@@ -5624,7 +6326,7 @@
       {
        "id": "social-science-g7-ch3-l1",
        "title": "Weather, Seasons and Climate",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -5685,6 +6387,79 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "social-science-g7-ch3-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Maya wakes up cold. By lunchtime, it is hot and sunny. Why did the weather change so fast?",
+         "steps": [
+          "Weather is what the air is like at one time of day.",
+          "Weather can change many times within a single day.",
+          "Climate is the long-term pattern of weather in a place, not one day.",
+          "So Maya's quick change is weather, not climate."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "1.1",
+          "1.2"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 46
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "social-science-g7-ch3-l1-a8",
+         "difficulty": 2,
+         "tags": [
+          "seasons",
+          "climate",
+          "rituals",
+          "india"
+         ],
+         "title": "Seasons and Life",
+         "body": "Seasons are linked with both weather and climate. The seasonal pattern of a region is closely connected with its climate. Many parts of India divide the year into six ṛitus. Rituals and festivals are linked with these ṛitus. Plant and animal life follows the rhythm of the ṛitus or seasons.",
+         "keyPoints": [
+          "A region's seasons are closely connected with its climate.",
+          "Some Indian regions use six ṛitus.",
+          "Rituals, festivals and living things follow seasonal rhythms."
+         ],
+         "explanation": "These connections help us understand life around the seasons.",
+         "src": [
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 47
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "social-science-g7-ch3-l1-a2",
          "difficulty": 1,
@@ -5714,23 +6489,6 @@
            "ch": 3,
            "p": 46
           },
-          {
-           "ch": 3,
-           "p": 46
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch3-l1-a3",
-         "difficulty": 1,
-         "tags": [
-          "weather"
-         ],
-         "prompt": "Weather always stays the same for many years.",
-         "answer": false,
-         "explanation": "Weather changes from hour to hour and keeps changing. It does not always stay the same.",
-         "src": [
           {
            "ch": 3,
            "p": 46
@@ -5874,47 +6632,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "social-science-g7-ch3-l1-a8",
-         "difficulty": 2,
-         "tags": [
-          "seasons",
-          "climate",
-          "rituals",
-          "india"
-         ],
-         "title": "Seasons and Life",
-         "body": "Seasons are linked with both weather and climate. The seasonal pattern of a region is closely connected with its climate. Many parts of India divide the year into six ṛitus. Rituals and festivals are linked with these ṛitus. Plant and animal life follows the rhythm of the ṛitus or seasons.",
-         "keyPoints": [
-          "A region's seasons are closely connected with its climate.",
-          "Some Indian regions use six ṛitus.",
-          "Rituals, festivals and living things follow seasonal rhythms."
-         ],
-         "explanation": "These connections help us understand life around the seasons.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 46
-          },
-          {
-           "ch": 3,
-           "p": 46
-          },
-          {
-           "ch": 3,
-           "p": 46
-          },
-          {
-           "ch": 3,
-           "p": 46
-          },
-          {
-           "ch": 3,
-           "p": 47
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "social-science-g7-ch3-l1-a9",
          "difficulty": 3,
@@ -5943,6 +6660,112 @@
            "p": 47
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "cause-effect"
+         ],
+         "prompt": "Noor's class learns that the Earth goes around the Sun. Noor asks why the same season comes back every year. Which answer makes sense?",
+         "options": [
+          "The Earth keeps going around the Sun each year.",
+          "The Sun goes around the Earth each year.",
+          "Clouds cover the Sun in the same months each year.",
+          "Weather stops in one season and starts again."
+         ],
+         "answer": 0,
+         "why": {
+          "The Sun goes around the Earth each year.": "Wrong. This reverses the Earth and Sun. The Earth is the one that moves.",
+          "Clouds cover the Sun in the same months each year.": "Wrong. Clouds are weather. They do not make the yearly cycle.",
+          "Weather stops in one season and starts again.": "Wrong. Weather changes all the time. It does not stop in one season."
+         },
+         "explanation": "Right. Each trip around the Sun brings the seasons back again.",
+         "f": [
+          "1.3",
+          "1.4"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 46
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Town A had rain on Monday and sun on Tuesday. Town B has had rain every July for many years. Which town's pattern shows its climate?",
+         "options": [
+          "Town B, because its rain comes in a steady yearly pattern.",
+          "Town A, because its weather changed in two days.",
+          "Town A, because it had both rain and sun.",
+          "Town B, because it rained in July this year."
+         ],
+         "answer": 0,
+         "why": {
+          "Town A, because its weather changed in two days.": "Wrong. Quick changes are weather, not climate. This mixes up the two.",
+          "Town A, because it had both rain and sun.": "Wrong. Rain and sun in one week is weather, not a long pattern.",
+          "Town B, because it rained in July this year.": "Wrong. One year of rain is weather. Climate needs many years to show."
+         },
+         "explanation": "Right. Climate is a long pattern, and Town B repeats its rain each year.",
+         "f": [
+          "1.2"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 46
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "judge evidence"
+         ],
+         "prompt": "Ben says a very hot week proves that the climate has changed. Why is Ben's idea weak?",
+         "options": [
+          "A hot week is weather, not a long-term pattern.",
+          "Hot weeks never happen in any climate.",
+          "Climate changes only come from the Sun.",
+          "A hot week shows the Earth stopped moving."
+         ],
+         "answer": 0,
+         "why": {
+          "Hot weeks never happen in any climate.": "Wrong. Weather changes, so a hot week can happen. That alone does not show climate change.",
+          "Climate changes only come from the Sun.": "Wrong. Recent climate changes come from human actions, not only the Sun.",
+          "A hot week shows the Earth stopped moving.": "Wrong. The Earth still goes around the Sun. A hot week does not stop that."
+         },
+         "explanation": "Right. Climate is the long pattern. One hot week is only weather.",
+         "f": [
+          "1.2",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 47
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l1-orbital-relations-of-the-sol-af9589.webp",
@@ -5959,7 +6782,7 @@
       {
        "id": "social-science-g7-ch3-l2",
        "title": "Types of Climates in India",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -6018,18 +6841,68 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "social-science-g7-ch3-l2-a2",
+         "type": "worked",
+         "id": "social-science-g7-ch3-l2-t1",
          "difficulty": 1,
          "tags": [
-          "alpine",
-          "himalayan",
-          "winter"
+          "deep",
+          "think"
          ],
-         "prompt": "The Himalayan mountains have cold, snowy winters under an alpine climate.",
-         "answer": true,
-         "explanation": "Yes! Alpine areas have cold, snowy winters and cool summers.",
+         "kicker": "Let us think it through",
+         "prompt": "Riya packs for two trips. One is to the Himalayas. The other is to the Thar Desert. Why does she pack thicker clothes for the Himalayas?",
+         "steps": [
+          "The Himalayas have cold, snowy winters and cool summers.",
+          "Cold weather means thick clothes help a person stay warm.",
+          "The Thar Desert has extremely hot days, but its nights are cool.",
+          "So the Himalayas feel colder overall, and Riya needs thicker clothes there."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "2.1",
+          "2.4"
+         ],
          "src": [
+          {
+           "ch": 3,
+           "p": 48
+          },
+          {
+           "ch": 3,
+           "p": 48
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "social-science-g7-ch3-l2-a7",
+         "difficulty": 2,
+         "tags": [
+          "tropical",
+          "monsoon",
+          "rainfall",
+          "farming"
+         ],
+         "title": "Monsoon and the Tropical Climate",
+         "body": "A tropical climate has distinct wet and dry periods. Monsoon winds control these periods. The western coastal strip receives heavy rainfall during the monsoon months. A tropical wet climate is favourable for growing rice and spices. Eastern India and the southern peninsula have a tropical climate.",
+         "keyPoints": [
+          "Monsoon winds control wet and dry periods.",
+          "The western coast receives heavy monsoon rainfall.",
+          "Tropical wet climates suit rice and spices."
+         ],
+         "explanation": "You can now connect monsoons with rainfall and tropical farming.",
+         "src": [
+          {
+           "ch": 3,
+           "p": 48
+          },
+          {
+           "ch": 3,
+           "p": 48
+          },
+          {
+           "ch": 3,
+           "p": 48
+          },
           {
            "ch": 3,
            "p": 48
@@ -6063,16 +6936,16 @@
         },
         {
          "type": "truefalse",
-         "id": "social-science-g7-ch3-l2-a4",
+         "id": "social-science-g7-ch3-l2-a2",
          "difficulty": 1,
          "tags": [
-          "arid",
-          "thar",
-          "desert"
+          "alpine",
+          "himalayan",
+          "winter"
          ],
-         "prompt": "The Thar Desert has extremely hot days and cool nights.",
+         "prompt": "The Himalayan mountains have cold, snowy winters under an alpine climate.",
          "answer": true,
-         "explanation": "Correct! The Thar Desert also receives very little rainfall.",
+         "explanation": "Yes! Alpine areas have cold, snowy winters and cool summers.",
          "src": [
           {
            "ch": 3,
@@ -6133,43 +7006,6 @@
           ]
          ],
          "explanation": "Great matching! Each place has its own climate pattern.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 48
-          },
-          {
-           "ch": 3,
-           "p": 48
-          },
-          {
-           "ch": 3,
-           "p": 48
-          },
-          {
-           "ch": 3,
-           "p": 48
-          }
-         ]
-        },
-        {
-         "type": "concept",
-         "id": "social-science-g7-ch3-l2-a7",
-         "difficulty": 2,
-         "tags": [
-          "tropical",
-          "monsoon",
-          "rainfall",
-          "farming"
-         ],
-         "title": "Monsoon and the Tropical Climate",
-         "body": "A tropical climate has distinct wet and dry periods. Monsoon winds control these periods. The western coastal strip receives heavy rainfall during the monsoon months. A tropical wet climate is favourable for growing rice and spices. Eastern India and the southern peninsula have a tropical climate.",
-         "keyPoints": [
-          "Monsoon winds control wet and dry periods.",
-          "The western coast receives heavy monsoon rainfall.",
-          "Tropical wet climates suit rice and spices."
-         ],
-         "explanation": "You can now connect monsoons with rainfall and tropical farming.",
          "src": [
           {
            "ch": 3,
@@ -6276,6 +7112,112 @@
            "p": 48
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Asha lives in a hill town with moderately cold winters. Her cousin lives on the northern plains. Whose summers are hotter?",
+         "options": [
+          "Asha's, because hills are closer to the sun.",
+          "Asha's, because hilly areas get very hot summers.",
+          "Her cousin's, because the northern plains have very hot summers.",
+          "They are the same, because both places are in India."
+         ],
+         "answer": 2,
+         "why": {
+          "Asha's, because hills are closer to the sun.": "Wrong: she thinks higher land always means more heat.",
+          "Asha's, because hilly areas get very hot summers.": "Wrong: she mixes up hilly areas, which are not too hot, with very hot places.",
+          "They are the same, because both places are in India.": "Wrong: she thinks one country always has one single climate."
+         },
+         "explanation": "Right: the northern plains have very hot summers and cold winters.",
+         "f": [
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 48
+          },
+          {
+           "ch": 3,
+           "p": 48
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A farmer in the Thar Desert and a farmer on the western coast both want to grow rice. Which farmer will find it easier?",
+         "options": [
+          "The coast farmer, because its wet climate suits rice growing.",
+          "The desert farmer, because its strong sun helps every crop.",
+          "Both farmers, because rice grows well anywhere in India.",
+          "Neither farmer, because rice needs cold, snowy winters."
+         ],
+         "answer": 0,
+         "why": {
+          "The desert farmer, because its strong sun helps every crop.": "Wrong: she thinks strong sun alone is enough for a crop.",
+          "Both farmers, because rice grows well anywhere in India.": "Wrong: she thinks the climate of a place does not matter for crops.",
+          "Neither farmer, because rice needs cold, snowy winters.": "Wrong: she mixes up rice with the snowy climate of the mountains."
+         },
+         "explanation": "Right: the coast gets heavy monsoon rain, and wet tropical climates suit rice.",
+         "f": [
+          "2.5",
+          "2.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 48
+          },
+          {
+           "ch": 3,
+           "p": 48
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "cause"
+         ],
+         "prompt": "Leela's village gets heavy rain in June, but almost no rain in March. What causes this change?",
+         "options": [
+          "Monsoon winds that blow in some months and not others.",
+          "Snow melting from the mountains every June.",
+          "Cold winters that stop the rain from falling.",
+          "Hot summers that dry up all the rain."
+         ],
+         "answer": 0,
+         "why": {
+          "Snow melting from the mountains every June.": "Wrong: he thinks mountain snow feeds the rain in every village.",
+          "Cold winters that stop the rain from falling.": "Wrong: he thinks the cold season is what stops rain from falling.",
+          "Hot summers that dry up all the rain.": "Wrong: he thinks heat removes all the rain from the sky."
+         },
+         "explanation": "Right: a tropical climate has wet and dry periods controlled by monsoon winds.",
+         "f": [
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 48
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l2-india-map-of-k-ppen-climate--e84713.webp",
@@ -6292,7 +7234,7 @@
       {
        "id": "social-science-g7-ch3-l3",
        "title": "Factors Determining the Climate",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -6367,6 +7309,33 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "social-science-g7-ch3-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A climber reaches the top of a tall hill. The climber feels much colder there. Why?",
+         "steps": [
+          "The top of the hill is higher than the bottom.",
+          "Temperature gets lower as altitude goes up.",
+          "So the top is colder, because height changes the temperature.",
+          "Altitude, not nearness to the Equator, is the reason the top feels colder."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 50
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "social-science-g7-ch3-l3-a2",
          "difficulty": 1,
@@ -6384,25 +7353,6 @@
          ],
          "answer": 0,
          "explanation": "Places near the Equator are warmer because they are at low latitudes.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 49
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch3-l3-a3",
-         "difficulty": 1,
-         "tags": [
-          "polar regions",
-          "equatorial zone",
-          "heat"
-         ],
-         "prompt": "Polar regions receive more heat than the equatorial zone.",
-         "answer": false,
-         "explanation": "Polar regions receive less heat than the equatorial zone.",
          "src": [
           {
            "ch": 3,
@@ -6533,25 +7483,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "social-science-g7-ch3-l3-a8",
-         "difficulty": 3,
-         "tags": [
-          "himalayas",
-          "karakoram",
-          "cold desert winds"
-         ],
-         "prompt": "The Himalayas and Karakoram partly protect the Indian subcontinent from cold desert winds.",
-         "answer": true,
-         "explanation": "The Himalayas and Karakoram ranges provide this partial protection.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 52
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "social-science-g7-ch3-l3-a9",
          "difficulty": 3,
@@ -6579,6 +7510,102 @@
            "p": 53
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A family drives from the bottom of a hill to its top. What happens to the temperature?",
+         "options": [
+          "It gets warmer, because the top is closer to the sun.",
+          "It gets colder, because altitude goes up as they climb.",
+          "It stays the same, because the hill is on land.",
+          "It gets warmer first, then colder again as they climb."
+         ],
+         "answer": 1,
+         "why": {
+          "It gets warmer, because the top is closer to the sun.": "Wrong: it assumes a higher place must be warmer, which is not how altitude works.",
+          "It stays the same, because the hill is on land.": "Wrong: it thinks all land has the same temperature, but height changes it.",
+          "It gets warmer first, then colder again as they climb.": "Wrong: it thinks temperature rises and falls like a wave as you climb."
+         },
+         "explanation": "Right: temperature decreases as altitude increases, so the top is colder.",
+         "f": [
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 50
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Two cities are at the same latitude. City X is by the sea. City Y is far inland. Which city has more extreme temperatures?",
+         "options": [
+          "City X, since the sea is nearby.",
+          "City Y, since it is far from the sea.",
+          "Both, since they have the same latitude.",
+          "City X, since the sea always heats the air."
+         ],
+         "answer": 1,
+         "why": {
+          "City X, since the sea is nearby.": "Wrong: it thinks being near the sea makes temperatures extreme.",
+          "Both, since they have the same latitude.": "Wrong: it thinks the same latitude means the same temperatures, ignoring the coast.",
+          "City X, since the sea always heats the air.": "Wrong: it thinks the sea always heats the air, which is not the rule."
+         },
+         "explanation": "Right: moving inland from the coast makes temperatures more extreme.",
+         "f": [
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 51
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A village lies behind high mountain ranges. Cold desert winds blow toward the area. The village is less cold than nearby land. Why?",
+         "options": [
+          "The village is very near the Equator.",
+          "The sea is sending warm winds to the village.",
+          "The village is at a very high altitude, so it is warm.",
+          "High mountain ranges block some cold desert winds."
+         ],
+         "answer": 3,
+         "why": {
+          "The village is very near the Equator.": "Wrong: it thinks being near the Equator is the only reason for less cold.",
+          "The sea is sending warm winds to the village.": "Wrong: it thinks sea winds are the reason, but the mountains are what protect it.",
+          "The village is at a very high altitude, so it is warm.": "Wrong: it thinks high altitude makes a place warm, but temperature falls with height."
+         },
+         "explanation": "Right: the ranges protect the area partly from cold desert winds.",
+         "f": [
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 52
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l3-himalaya-composite-257c60.webp",
@@ -6595,7 +7622,7 @@
       {
        "id": "social-science-g7-ch3-l4",
        "title": "The Monsoons",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -6677,6 +7704,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "social-science-g7-ch3-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why does wet wind blow from the sea onto the land in summer?",
+         "steps": [
+          "In summer, land heats up faster than the ocean.",
+          "So the hot land creates a low-pressure area over it.",
+          "Air always flows from high pressure towards low pressure.",
+          "So moist ocean winds blow onto the land and bring heavy monsoon rain."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "4.3",
+          "4.4",
+          "4.5",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 54
+          },
+          {
+           "ch": 3,
+           "p": 54
+          },
+          {
+           "ch": 3,
+           "p": 54
+          },
+          {
+           "ch": 3,
+           "p": 54
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "social-science-g7-ch3-l4-a2",
          "difficulty": 1,
@@ -6694,26 +7763,6 @@
          ],
          "answer": 0,
          "explanation": "Monsoon means seasonal winds over a large area of the Indian Ocean region.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 54
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch3-l4-a3",
-         "difficulty": 1,
-         "tags": [
-          "land",
-          "ocean",
-          "temperature"
-         ],
-         "title": "Land and Ocean",
-         "prompt": "Land heats up and cools down faster than the ocean.",
-         "answer": true,
-         "explanation": "Yes! Land changes temperature faster than the ocean.",
          "src": [
           {
            "ch": 3,
@@ -6773,25 +7822,6 @@
           {
            "ch": 3,
            "p": 54
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch3-l4-a6",
-         "difficulty": 2,
-         "tags": [
-          "southwest-monsoon",
-          "wind-direction"
-         ],
-         "title": "Why Southwest Monsoon?",
-         "prompt": "The summer monsoon is called the southwest monsoon because of the wind direction.",
-         "answer": true,
-         "explanation": "Correct! Its name comes from the direction of the summer winds.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 55
           }
          ]
         },
@@ -6883,6 +7913,154 @@
            "p": 54
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A hot summer field lies next to the sea. The sea stays cooler than the field. Monsoon winds blow across the area. What will the wind most likely bring to the field?",
+         "options": [
+          "Dry air blowing from the field out to the sea",
+          "Wet air from the sea that brings heavy rain",
+          "Still air, because the field and sea are the same heat",
+          "Strong wind pushing out, because hot ground pushes air away"
+         ],
+         "answer": 1,
+         "why": {
+          "Dry air blowing from the field out to the sea": "Wrong. This copies the winter pattern, when dry air moves from the land to the sea.",
+          "Still air, because the field and sea are the same heat": "Wrong. This thinks land and sea heat the same, but the land heats up faster.",
+          "Strong wind pushing out, because hot ground pushes air away": "Wrong. This thinks hot ground is high pressure, but hot ground creates low pressure."
+         },
+         "explanation": "Right. The hot field is low pressure, so moist sea air flows in and brings heavy rain.",
+         "f": [
+          "4.4",
+          "4.5",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 54
+          },
+          {
+           "ch": 3,
+           "p": 54
+          },
+          {
+           "ch": 3,
+           "p": 54
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "In winter, the land cools faster than the ocean. A farmer checks the wind on a winter morning. What wind direction and weather should the farmer expect?",
+         "options": [
+          "Wind blows from the sea to the land, bringing heavy rain",
+          "Wind blows from the land to the sea, bringing heavy rain",
+          "Wind blows from the sea to the land, bringing dry weather",
+          "Wind blows from the land to the sea, bringing dry weather"
+         ],
+         "answer": 3,
+         "why": {
+          "Wind blows from the sea to the land, bringing heavy rain": "Wrong. This keeps the summer wind direction, but in winter the pattern reverses.",
+          "Wind blows from the land to the sea, bringing heavy rain": "Wrong. This thinks winter winds bring heavy rain, but they are mostly dry.",
+          "Wind blows from the sea to the land, bringing dry weather": "Wrong. This gets the direction backwards, because winter wind blows from the land."
+         },
+         "explanation": "Right. The land cools faster, so winds blow from the land to the sea and bring dry weather.",
+         "f": [
+          "4.7",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 54
+          },
+          {
+           "ch": 3,
+           "p": 54
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "read map"
+         ],
+         "prompt": "A map shows heavy rain on the western slopes of a mountain range. The eastern slopes are much drier. What best explains this difference?",
+         "options": [
+          "The eastern slopes are closer to the sun than the west",
+          "The western slopes are nearer the sea, so they always get more rain",
+          "The mountains block moist winds, so the western side gets more rain",
+          "The eastern slopes are higher, so the rain falls on the west first"
+         ],
+         "answer": 2,
+         "why": {
+          "The eastern slopes are closer to the sun than the west": "Wrong. This thinks distance from the sun decides rain, but the mountains explain the map.",
+          "The western slopes are nearer the sea, so they always get more rain": "Wrong. This thinks being near the sea always brings more rain, but the mountains change where rain falls.",
+          "The eastern slopes are higher, so the rain falls on the west first": "Wrong. This thinks height decides where rain falls, but the mountains block winds on the west side."
+         },
+         "explanation": "Right. The mountains stop the moist winds on the western side, so it gets more rain.",
+         "f": [
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 55
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply rule"
+         ],
+         "prompt": "Two rooms share an open door. Room X has high pressure air. Room Y has low pressure air. Which way will the air move through the door?",
+         "options": [
+          "From room X to room Y, because air flows from high to low pressure",
+          "From room Y to room X, because low pressure air is stronger",
+          "Air does not move, because both rooms are full of air",
+          "Air moves both ways at the same time through the door"
+         ],
+         "answer": 0,
+         "why": {
+          "From room Y to room X, because low pressure air is stronger": "Wrong. This reverses the rule and thinks low pressure is the stronger push.",
+          "Air does not move, because both rooms are full of air": "Wrong. This thinks air stays still when rooms are full of air, but pressure differences still move it.",
+          "Air moves both ways at the same time through the door": "Wrong. This thinks both rooms push equally, but one room has higher pressure."
+         },
+         "explanation": "Right. Room X has higher pressure, so air moves through the door into room Y.",
+         "f": [
+          "4.4",
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 54
+          },
+          {
+           "ch": 3,
+           "p": 54
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l4-monsoon-maharashtra-india-ra-ccf4ce.webp",
@@ -6899,7 +8077,7 @@
       {
        "id": "social-science-g7-ch3-l5",
        "title": "Climate, Our Lives and Disasters",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -6952,6 +8130,93 @@
           {
            "ch": 3,
            "p": 58
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g7-ch3-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "The monsoon rain did not come well this year. The village well is almost dry. What might happen next?",
+         "steps": [
+          "Poor monsoon rain means the fields get less water, so farming suffers.",
+          "Farm workers may move to cities, because there is less farm work in the village.",
+          "Poor rain can make food costlier, so families have less money to spend.",
+          "People may also walk far for water, so one poor rain harms many lives."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 58
+          },
+          {
+           "ch": 3,
+           "p": 58
+          },
+          {
+           "ch": 3,
+           "p": 58
+          },
+          {
+           "ch": 3,
+           "p": 58
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "social-science-g7-ch3-l5-a9",
+         "difficulty": 3,
+         "tags": [
+          "disasters",
+          "cyclone",
+          "flood",
+          "landslide"
+         ],
+         "title": "How Climate Disasters Happen",
+         "body": "Climate disasters can harm people, agriculture, infrastructure and local economies. A cyclone may form over the sea when intense low pressure attracts moist air. Its cloudless centre is called the eye. Floods cover normally dry land. Landslides are sudden collapses of rock, soil or debris. Forest fires spread rapidly across vegetation.",
+         "keyPoints": [
+          "Disasters harm lives, agriculture, infrastructure and local economies.",
+          "Cyclones have a cloudless centre called the eye.",
+          "Floods, landslides and forest fires happen in different ways."
+         ],
+         "explanation": "These ideas connect different climate disasters with their effects.",
+         "src": [
+          {
+           "ch": 3,
+           "p": 58
+          },
+          {
+           "ch": 3,
+           "p": 59
+          },
+          {
+           "ch": 3,
+           "p": 59
+          },
+          {
+           "ch": 3,
+           "p": 60
+          },
+          {
+           "ch": 3,
+           "p": 60
+          },
+          {
+           "ch": 3,
+           "p": 60
           }
          ]
         },
@@ -7021,28 +8286,6 @@
           {
            "ch": 3,
            "p": 58
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch3-l5-a5",
-         "difficulty": 2,
-         "tags": [
-          "landslide",
-          "flood"
-         ],
-         "prompt": "A landslide happens when flood water enters normally dry land.",
-         "answer": false,
-         "explanation": "That describes a flood. A landslide is the sudden collapse of rock, soil or debris.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 60
-          },
-          {
-           "ch": 3,
-           "p": 60
           }
          ]
         },
@@ -7144,47 +8387,130 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "social-science-g7-ch3-l5-a9",
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l5-d1",
          "difficulty": 3,
          "tags": [
-          "disasters",
-          "cyclone",
-          "flood",
-          "landslide"
+          "deep",
+          "predict"
          ],
-         "title": "How Climate Disasters Happen",
-         "body": "Climate disasters can harm people, agriculture, infrastructure and local economies. A cyclone may form over the sea when intense low pressure attracts moist air. Its cloudless centre is called the eye. Floods cover normally dry land. Landslides are sudden collapses of rock, soil or debris. Forest fires spread rapidly across vegetation.",
-         "keyPoints": [
-          "Disasters harm lives, agriculture, infrastructure and local economies.",
-          "Cyclones have a cloudless centre called the eye.",
-          "Floods, landslides and forest fires happen in different ways."
+         "prompt": "A village had poor monsoon rain this year. Its fields are very dry now. What is most likely to happen to the farmers?",
+         "options": [
+          "Their crops will grow faster in the dry fields.",
+          "Their crops will suffer, so they earn less money.",
+          "They will need fewer seeds, so they save money.",
+          "The rain will fill the fields with extra water."
          ],
-         "explanation": "These ideas connect different climate disasters with their effects.",
+         "answer": 1,
+         "why": {
+          "Their crops will grow faster in the dry fields.": "Mistake: thinking less water helps crops grow. Poor rain makes agriculture suffer.",
+          "They will need fewer seeds, so they save money.": "Mistake: thinking saving seeds saves money. The farmers' crops are still harmed.",
+          "The rain will fill the fields with extra water.": "Mistake: thinking poor rain adds water. Poor rain means less water arrives."
+         },
+         "explanation": "Right: poor monsoon rain makes agriculture suffer. Less farming means less money.",
+         "f": [
+          "5.2"
+         ],
          "src": [
           {
            "ch": 3,
            "p": 58
-          },
-          {
-           "ch": 3,
-           "p": 59
-          },
-          {
-           "ch": 3,
-           "p": 59
-          },
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "read source"
+         ],
+         "prompt": "A village sign shows river water on fields. Those fields are usually dry land. What does this sign tell us?",
+         "options": [
+          "The river overflowed onto dry land, so a flood happened.",
+          "The land turned into a lake and will stay that way forever.",
+          "A cyclone formed over the land and pushed the water up.",
+          "The river dried up and the water moved to the fields."
+         ],
+         "answer": 0,
+         "why": {
+          "The land turned into a lake and will stay that way forever.": "Mistake: thinking flood water always stays forever. The sign shows the water arrived, not that it stays.",
+          "A cyclone formed over the land and pushed the water up.": "Mistake: thinking cyclones cause every flood. The sign shows water spread over dry land.",
+          "The river dried up and the water moved to the fields.": "Mistake: thinking water moves to fields when a river dries up. The river overflowed; it did not dry."
+         },
+         "explanation": "Right: a flood is when water overflows onto normally dry land.",
+         "f": [
+          "5.11"
+         ],
+         "src": [
           {
            "ch": 3,
            "p": 60
-          },
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A family lives below a steep hill. After heavy rain, they move to a safer place. Why did they move?",
+         "options": [
+          "The hill was growing taller every year because of trees.",
+          "Soil and rock on the hill could suddenly collapse on their home.",
+          "They wanted a bigger house with a nicer view.",
+          "Heavy rain made the trees on the hill grow very fast."
+         ],
+         "answer": 1,
+         "why": {
+          "The hill was growing taller every year because of trees.": "Mistake: thinking hills grow taller. Their danger comes from falling soil, not height.",
+          "They wanted a bigger house with a nicer view.": "Mistake: thinking people move only for comfort. This family moved to stay safe.",
+          "Heavy rain made the trees on the hill grow very fast.": "Mistake: thinking fast-growing trees cause danger. The danger came from soil and rock."
+         },
+         "explanation": "Right: a landslide is the sudden collapse of rock, soil or debris.",
+         "f": [
+          "5.12"
+         ],
+         "src": [
           {
            "ch": 3,
            "p": 60
-          },
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A factory in a town needs steady weather and water each day. After many dry months, the factory slows its work. Why?",
+         "options": [
+          "Factories do not need water, so dry months do not matter.",
+          "Industry depends on steady weather and available water, so work slows.",
+          "Factories only make food, so only farms are affected.",
+          "Dry months make the factory's machines work faster."
+         ],
+         "answer": 1,
+         "why": {
+          "Factories do not need water, so dry months do not matter.": "Mistake: thinking factories never need water. Factories often depend on available water.",
+          "Factories only make food, so only farms are affected.": "Mistake: thinking only farms depend on water and weather. Factories depend on them too.",
+          "Dry months make the factory's machines work faster.": "Mistake: thinking dry weather makes machines faster. Factories need steady weather and water."
+         },
+         "explanation": "Right: industry often depends on predictable weather and available water.",
+         "f": [
+          "5.6"
+         ],
+         "src": [
           {
            "ch": 3,
-           "p": 60
+           "p": 58
           }
          ]
         }
@@ -7203,7 +8529,7 @@
       {
        "id": "social-science-g7-ch3-l6",
        "title": "Climate Change",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -7274,6 +8600,33 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "social-science-g7-ch3-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "One day in summer feels very hot. Is that climate change?",
+         "steps": [
+          "One hot day is weather, because it lasts only a short time.",
+          "Climate change means long-term changes in temperature and rain.",
+          "Long-term changes take many years to show clearly.",
+          "So one hot day alone does not prove climate change."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "6.1"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 60
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "social-science-g7-ch3-l6-a2",
          "difficulty": 1,
@@ -7291,25 +8644,6 @@
          ],
          "answer": 2,
          "explanation": "Climate change means significant, long-term changes in climate.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 60
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "social-science-g7-ch3-l6-a3",
-         "difficulty": 1,
-         "tags": [
-          "greenhouse effect",
-          "heat",
-          "life"
-         ],
-         "prompt": "The natural greenhouse effect warms Earth enough to support life.",
-         "answer": true,
-         "explanation": "The natural greenhouse effect traps heat and keeps Earth warm enough for life.",
          "src": [
           {
            "ch": 3,
@@ -7478,22 +8812,136 @@
         },
         {
          "type": "mcq",
-         "id": "social-science-g7-ch3-l6-a9",
+         "id": "social-science-g7-ch3-l6-d1",
          "difficulty": 3,
          "tags": [
-          "climate patterns",
-          "india",
-          "temperature"
+          "deep",
+          "predict"
          ],
-         "prompt": "Which statement matches both climate impacts and India's temperature?",
+         "prompt": "Ravi's village has always had rain in July. Now the rain comes in May. Farmers still plant in June, so their crops fail. Why?",
          "options": [
-          "Climate patterns are disrupted, and India's early-2025 temperature was 1 to 3°C above normal.",
-          "Climate patterns are supported, and India's early-2025 temperature was 1 to 3°C above normal.",
-          "Climate patterns are disrupted, and India's early-2025 temperature was 1 to 3°C below normal.",
-          "Climate patterns are unaffected, and India's early-2025 temperature was 1 to 3°C below normal."
+          "The farmers were lazy and did not water their crops enough.",
+          "Global warming disrupts rain patterns that plants and farmers had adapted to.",
+          "Rain in May is always bad for every kind of crop.",
+          "Crops need no water in June, so the rain was not needed."
+         ],
+         "answer": 1,
+         "why": {
+          "The farmers were lazy and did not water their crops enough.": "Blames the farmers, but the rain itself changed.",
+          "Rain in May is always bad for every kind of crop.": "Thinks rain in one month is bad for all crops, which is not true.",
+          "Crops need no water in June, so the rain was not needed.": "Thinks crops need no water in June, which misses the change in rain."
+         },
+         "explanation": "Right: global warming changes the rain times that crops depend on.",
+         "f": [
+          "6.10",
+          "6.1"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 60
+          },
+          {
+           "ch": 3,
+           "p": 60
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Long ago, the climate changed because of natural processes. Today, the climate is changing again. Why is today's change different?",
+         "options": [
+          "Today's change is faster only because more people now notice the weather.",
+          "Nature has stopped causing any change, so humans are the only cause.",
+          "Human activities now largely drive change, unlike the natural changes of the past.",
+          "Climate has always changed, so today's change is no different at all."
+         ],
+         "answer": 2,
+         "why": {
+          "Today's change is faster only because more people now notice the weather.": "Confuses noticing change with causing it. People noticing does not make it faster.",
+          "Nature has stopped causing any change, so humans are the only cause.": "Overstates: it says nature stopped and humans are the only cause.",
+          "Climate has always changed, so today's change is no different at all.": "Mixes up: a climate changing before does not mean today's change is the same."
+         },
+         "explanation": "Right: human activities largely drive today's change, unlike natural causes long ago.",
+         "f": [
+          "6.3",
+          "6.4"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 60
+          },
+          {
+           "ch": 3,
+           "p": 60
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "evidence"
+         ],
+         "prompt": "A news report says our town was very hot on one day. A climate study shows temperatures rising over many years. Which evidence best shows climate change?",
+         "options": [
+          "One very hot day, because it was the hottest day this year.",
+          "A hot day in the news, because newspapers report only big events.",
+          "Temperatures rising over many years, because climate change is long-term.",
+          "One cold week, because cold weeks show the Earth is cooling down."
+         ],
+         "answer": 2,
+         "why": {
+          "One very hot day, because it was the hottest day this year.": "Picks one day, but one day is weather, not long-term climate change.",
+          "A hot day in the news, because newspapers report only big events.": "Trusts one news story, but a single story cannot show a long-term change.",
+          "One cold week, because cold weeks show the Earth is cooling down.": "Thinks a cold week proves cooling, but one cold week is only weather."
+         },
+         "explanation": "Right: climate change is long-term, so many years of rising temperatures show it.",
+         "f": [
+          "6.1"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 60
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "Ananya says trapped heat is always bad for Earth. Her teacher says she is only partly right. Why?",
+         "options": [
+          "Some trapped heat is needed, but extra heat added very fast harms.",
+          "Trapped heat is always bad for every living thing on Earth.",
+          "Heat never gets trapped, so her idea has no real meaning at all.",
+          "Trapped heat only matters during the cold winter months, not summer."
          ],
          "answer": 0,
-         "explanation": "Global warming disrupts adapted climate patterns. India's average temperature was 1 to 3°C above normal.",
+         "why": {
+          "Trapped heat is always bad for every living thing on Earth.": "Thinks all trapped heat is bad, forgetting Earth needs some warmth to support life.",
+          "Heat never gets trapped, so her idea has no real meaning at all.": "Thinks heat is never trapped, which goes against how the natural greenhouse effect works.",
+          "Trapped heat only matters during the cold winter months, not summer.": "Thinks heat matters only in winter, which misses how trapped heat works."
+         },
+         "explanation": "Right: some trapped heat warms Earth for life, but sudden extra heat causes rapid warming.",
+         "f": [
+          "6.7",
+          "6.9"
+         ],
          "src": [
           {
            "ch": 3,
@@ -7516,6 +8964,209 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Megaurab09"
        }
+      },
+      {
+       "id": "social-science-g7-ch3-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 14,
+       "topicScene": "media/ch3-l1-orbital-relations-of-the-sol-af9589.webp",
+       "sceneAlt": "An illustration shows the positions of solstices, equinoxes, and seasons around Earth's orbit.",
+       "sceneCaption": "The picture connects Earth's orbit, solstices, equinoxes, and the changing seasons.",
+       "sceneCredit": {
+        "text": "Orbital relations of the Solstice, Equinox & Intervening Seasons by Colivine, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Orbital_relations_of_the_Solstice,_Equinox_%26_Intervening_Seasons.svg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Colivine"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In a village in India, farmers wait for the monsoon before they sow seeds. This year the rain arrived later than usual, and a farmer worried that his crop would suffer. The village elders said the weather changes from hour to hour, so one unusual day is not a pattern. The region's climate, the long-term pattern of its weather, still follows the same yearly rhythm. Soon afterwards, a festival linked with the season was celebrated as usual.",
+         "prompt": "The monsoon rain was late this year. Which statement best explains what the farmer should understand?",
+         "options": [
+          "Late rain shows the region's climate has permanently shifted, so the village should expect this every year.",
+          "One late season is a short-term weather change, while climate describes a region's weather over many years.",
+          "The Earth has moved closer to the Sun, so the monsoon will always arrive later from now on.",
+          "The farmer should check the rain only once a year, since weather matters only during festivals."
+         ],
+         "answer": 1,
+         "why": {
+          "Late rain shows the region's climate has permanently shifted, so the village should expect this every year.": "Wrong: this confuses one season's rain with climate. Recent climate changes come from human actions, not one late monsoon.",
+          "The Earth has moved closer to the Sun, so the monsoon will always arrive later from now on.": "Wrong: seasons come from the Earth revolving around the Sun, and one late monsoon does not change that.",
+          "The farmer should check the rain only once a year, since weather matters only during festivals.": "Wrong: weather changes from hour to hour and matters for farming, not only for festivals."
+         },
+         "explanation": "Correct: weather can change quickly, while climate is the long-term pattern of a region's weather."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In a village in India, farmers wait for the monsoon before they sow seeds. This year the rain arrived later than usual, and a farmer worried that his crop would suffer. The village elders said the weather changes from hour to hour, so one unusual day is not a pattern. The region's climate, the long-term pattern of its weather, still follows the same yearly rhythm. Soon afterwards, a festival linked with the season was celebrated as usual.",
+         "prompt": "Why was the festival still celebrated as usual even though the rain was late?",
+         "options": [
+          "The festival was moved to the day the rain started, so the farmers could join in.",
+          "The Earth stopped revolving around the Sun during the late rain, so the season paused.",
+          "The festival is tied to a season that recurs annually, so its timing rests on the season rather than one rain.",
+          "The late rain was counted as the start of a new season, so the festival came early."
+         ],
+         "answer": 2,
+         "why": {
+          "The festival was moved to the day the rain started, so the farmers could join in.": "Wrong: festivals are linked with seasons, not with the first day of rain.",
+          "The Earth stopped revolving around the Sun during the late rain, so the season paused.": "Wrong: the Earth keeps revolving around the Sun, and that movement is what causes seasons.",
+          "The late rain was counted as the start of a new season, so the festival came early.": "Wrong: one late rain does not start a new season; seasons follow their cycle."
+         },
+         "explanation": "Correct: the season returns each year, so the festival linked to it stays on schedule."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch3-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does the seasonal cycle affect the life of plants and animals and the festivals of the six ṛitus?",
+         "answer": "Seasons occur because the Earth revolves around the Sun, and they return in a cycle. Plant and animal life follows this rhythm, so living things change with each season. Many parts of India divide the year into six ṛitus, and festivals are linked with them.",
+         "points": [
+          "Seasons occur because the Earth revolves around the Sun",
+          "Seasons return in a cycle",
+          "Plant and animal life follows the seasonal rhythm",
+          "Many parts of India have six ṛitus, linked with rituals and festivals"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch3-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between a tropical climate and a subtropical climate?",
+         "answer": "Both names relate to the tropics, two special parallels of latitude. A tropical climate has distinct wet and dry periods controlled by monsoon winds, as in eastern India and the southern peninsula. A subtropical climate, like the northern plains, has very hot summers and cold winters.",
+         "points": [
+          "Both terms relate to the tropics, which are two parallels of latitude",
+          "Tropical climate has distinct wet and dry periods controlled by monsoon winds",
+          "Subtropical climate has very hot summers and cold winters",
+          "Examples: eastern India and southern peninsula (tropical) vs northern plains (subtropical)"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A family moved from a coastal town to a village far inland. In the village, summer afternoons feel much hotter, and winter nights feel much colder than they did by the sea. Their cousin lives on a mountain slope, where the air feels thin and chilly even at noon. He says he needs a jacket there, although the sky is clear and the sun is out.",
+         "prompt": "If the family moved back to the coastal town, what would most likely happen to the difference between summer and winter temperatures?",
+         "options": [
+          "Summers would become cooler, because the coast lies at a higher altitude than the village.",
+          "Winters would become much colder, because coastal air is thinner and lighter than inland air.",
+          "Seasonal temperature differences would shrink, since the sea keeps temperatures more moderate.",
+          "Seasonal temperature differences would grow, since the family would be farther from sea moisture."
+         ],
+         "answer": 2,
+         "why": {
+          "Summers would become cooler, because the coast lies at a higher altitude than the village.": "Wrong: the case never says the coast is higher than the village.",
+          "Winters would become much colder, because coastal air is thinner and lighter than inland air.": "Wrong: thin, light air comes with height, not with living near the coast.",
+          "Seasonal temperature differences would grow, since the family would be farther from sea moisture.": "Wrong: moving to the coast brings the family closer to the sea, not farther from it."
+         },
+         "explanation": "Right: temperatures become less extreme near the coast than far inland."
+        },
+        {
+         "type": "mcq",
+         "id": "social-science-g7-ch3-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A family moved from a coastal town to a village far inland. In the village, summer afternoons feel much hotter, and winter nights feel much colder than they did by the sea. Their cousin lives on a mountain slope, where the air feels thin and chilly even at noon. He says he needs a jacket there, although the sky is clear and the sun is out.",
+         "prompt": "The family plans to visit the cousin's slope in winter. What should they pack, and why?",
+         "options": [
+          "Pack only sunscreen and sandals, because strong sun keeps high places warm all day.",
+          "Pack warm layers, because the slope is high and cold increases with height.",
+          "Pack heavy rain gear only, because mountain air always brings rain from the sea.",
+          "Pack the same clothes as at the coast, because the slope shares coastal temperatures."
+         ],
+         "answer": 1,
+         "why": {
+          "Pack only sunscreen and sandals, because strong sun keeps high places warm all day.": "Wrong: strong sun does not keep a high place warm; the slope is cold.",
+          "Pack heavy rain gear only, because mountain air always brings rain from the sea.": "Wrong: rain depends on sea winds, and the case does not say the slope gets them.",
+          "Pack the same clothes as at the coast, because the slope shares coastal temperatures.": "Wrong: the slope does not share coastal temperatures, since temperatures are more extreme inland."
+         },
+         "explanation": "Right: higher ground is colder, so warm clothes are needed."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch3-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the Western Ghats give their western slopes much more rainfall.",
+         "answer": "Ocean winds carry moisture from the sea. The Western Ghats act as a natural barrier, so the moisture-carrying winds are held back on the western side. This moisture condenses over the land and falls as heavy rain, so the western slopes get much more rainfall than the rest of the area.",
+         "points": [
+          "Ocean winds carry moisture from the sea",
+          "The Western Ghats act as a natural barrier",
+          "The barrier holds back the moisture-carrying winds on the western side",
+          "The moisture condenses and falls as heavy rain on the western slopes"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch3-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between a cyclone and a flood?",
+         "answer": "A cyclone forms when intense low pressure over the sea attracts moist air. A flood occurs when water overflows into normally dry land. So a cyclone is a storm that forms over the sea, while a flood is water spreading over land that is usually dry.",
+         "points": [
+          "A cyclone forms over the sea from intense low pressure and moist air",
+          "A flood is water overflowing onto normally dry land",
+          "A cyclone is a storm system, while a flood is an overflow of water",
+          "Clear contrast of origin: a storm over the sea versus water spreading over land"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "social-science-g7-ch3-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the warming seen today is different from the climate change that happened during past millennia.",
+         "answer": "Natural processes drove climate change during past millennia, and carbon was released gradually. Since the 19th century, human activities have released enormous amounts of greenhouse gases in only a few centuries. This sudden increase traps extra heat, so global warming happens rapidly today.",
+         "points": [
+          "Past climate change was driven by natural processes",
+          "Carbon and gases were released gradually in the natural carbon cycle",
+          "Human activities since the 19th century released huge amounts of greenhouse gases quickly",
+          "This sudden increase traps extra heat, causing rapid global warming"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
