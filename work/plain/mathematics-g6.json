@@ -388,6 +388,277 @@
 "Both turns go the same way. So add the amounts.",
 "{a} + {b} = {answer} small turns, so the total is {answer} small turns."
 ]
+},
+"On a protractor, one arm of an angle passes through zero and the other reaches the {degrees}-degree mark. What is the measure of the angle in degrees?": {
+"prompt": "On a protractor, one arm of an angle is on the zero mark. The other arm reaches the {degrees}-degree mark. What is the angle in degrees?",
+"hint": "Look at the mark that the arm not on zero reaches.",
+"steps": [
+"One arm of the angle is on the zero mark.",
+"The other arm reaches the {markValue}-degree mark.",
+"The angle measures {answer} degrees."
+]
+},
+"If the third corner's measurement increases but stays below 360°, what angle type should it continue to have?": {
+"prompt": "The third corner gets bigger, but stays under 360°. What type of angle should it still be?",
+"options": [
+"Obtuse angle",
+"Straight angle",
+"Reflex angle",
+"Acute angle"
+],
+"explanation": "The third corner stays bigger than 180° and less than 360°.",
+"why": [
+"An obtuse angle is less than 180°.",
+"A straight angle is exactly 180°.",
+"",
+"An acute angle is less than 90°."
+]
+},
+"A blue heap has 7/5 of a bag of sand and a red heap has 2/9 of a bag of sand. By how many forty-fifths of a bag is the blue heap larger?": {
+"prompt": "A blue heap has 7/5 of a bag of sand. A red heap has 2/9 of a bag of sand. The blue heap is bigger by how many forty-fifths of a bag?",
+"options": [
+"-53/45",
+"53",
+"53/45",
+"0.2"
+],
+"explanation": "Change 7/5 to 7*9/45 and 2/9 to 2*5/45. Compare the new numerators and subtract them, giving (7*9-2*5)/45 forty-fifths of a bag."
+},
+"Why can an idea about a pattern in one everyday activity help us understand a pattern somewhere else?": {
+"prompt": "Why can an idea from one everyday pattern help us understand another?",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"Cooking can show a pattern, so we can start by noticing it.",
+"Mathematics also asks why a pattern happens.",
+"A good explanation can work in many other places.",
+"So mathematics helps us use pattern ideas in everyday life."
+],
+"kicker": "Let us think it through"
+},
+"A bead pattern repeats a group of {a} blue beads followed by a group of {b} red beads. How many beads are in one complete repeating group?": {
+"prompt": "A bead pattern repeats {a} blue beads, then {b} red beads. How many beads are in one repeating group?",
+"hint": "Add the blue beads and the red beads.",
+"steps": [
+"The group has {a} blue beads.",
+"It also has {b} red beads.",
+"{a} + {b} = {answer} beads."
+]
+},
+"A cooking pattern uses {first} grams in the first bowl and {increase} more grams in each following bowl. How many grams are used in bowl number {term}?": {
+"prompt": "A cook uses {first} grams in the first bowl. Each next bowl uses {increase} more grams. How many grams are in bowl number {term}?",
+"hint": "Start at the first bowl. Add the increase for each bowl after it.",
+"steps": [
+"The first bowl uses {first} grams.",
+"Bowl {term} adds {term} minus one increases of {increase} grams.",
+"{first} + ({term} minus one) x {increase} = {answer} grams."
+]
+},
+"During a school cricket activity, a child draws the complete graph K{vertices}. Every vertex is joined to every other vertex, so how many other vertices is one vertex joined to?": {
+"prompt": "Draw the complete graph K{vertices}. A vertex is a dot. Each vertex is joined to every other vertex. How many other vertices is one vertex joined to?",
+"hint": "Count all vertices except the one you start with.",
+"steps": [
+"The complete graph has {vertices} vertices in total.",
+"Each vertex is joined to all vertices except itself.",
+"{other_vertices} = {answer} other vertices."
+]
+},
+"A straight strip of paper is opened flat and then folded in half so the two parts match. What two angles are formed by the fold?": {
+"prompt": "You open a straight strip of paper flat. Then you fold it in half so both parts match. What two angles does the fold make?",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"When the strip is flat, it makes a straight angle.",
+"The fold splits the straight angle into two equal angles.",
+"Equal angles from a fold are called right angles.",
+"A straight angle has two right angles, so this fits."
+],
+"kicker": "Let us think it through"
+},
+"A market has {n} laddoo boxes. One chosen corner of each box is a right angle, and its two edges meet perpendicularly. Each right angle measures 90 degrees. What is the total measure of these {n} right angles in degrees?": {
+"prompt": "There are {n} laddoo boxes. Each box has one corner that is a right angle (90 degrees). What is the total of these {n} right angles, in degrees?",
+"hint": "Add 90 degrees once for each box corner.",
+"steps": [
+"There are {n} corners. Each is a right angle of {right} degrees.",
+"Multiply {right} degrees by the number of corners.",
+"{right} x {n} = {answer} degrees, so the total is {answer} degrees."
+]
+},
+"How does the carpenter distinguish an obtuse corner from a reflex corner when labeling the frames?": {
+"prompt": "How can you tell an obtuse angle from a reflex angle?",
+"explanation": "Check your answer with these points.",
+"points": [
+"Says the obtuse angle is more than 90° and less than 180°.",
+"Says the reflex angle is more than 180° and less than 360°.",
+"Uses the degree ranges to tell the two types apart."
+]
+},
+"Explain how a digit sum differs from placing a number in its correct position on a number line.": {
+"prompt": "Explain how a digit sum is different from placing a number on a number line.",
+"explanation": "Check your answer with the points a marker looks for.",
+"points": [
+"Says a digit sum is the total of all the digits.",
+"Says 68, 176 and 545 have the same digit sum.",
+"Says a number line puts each number in its correct position.",
+"Says the number line starts at 1, 2, 3 and goes on."
+]
+},
+"In the mountain bar graph, the tallest horizontal box is 50 cm long and the shortest is 10 cm long. How many cm longer is the tallest box than the shortest box?": {
+"prompt": "The longest bar is 50 cm long. The shortest bar is 10 cm long. How many cm longer is the longest bar than the shortest bar?",
+"explanation": "Difference in bar lengths = 50 - 10 = 40 cm. The bars make the lengths easy to compare.",
+"hint": "Type the number."
+},
+"A shape on graph paper has 3 rows with 2 counted squares in each row. Which calculation gives its estimated area in square units?": {
+"prompt": "A shape on graph paper has 3 rows. Each row has 2 squares you can count. What is its estimated area (how much space it covers) in square units?",
+"options": [
+"6",
+"5",
+"7",
+"12"
+],
+"explanation": "Each of the 3 rows has 2 squares. So the estimated area is 3 × 2 square units."
+},
+"A tile pattern has {c} tiles in each row, and the pattern is repeated for {r} rows. How many tiles are in the whole pattern?": {
+"prompt": "A tile pattern has {c} tiles in each row. It has {r} rows. How many tiles are in the whole pattern?",
+"steps": [
+"One row has {c} tiles.",
+"There are {r} equal rows. Multiply the tiles in one row by the number of rows.",
+"{c} x {r} = {answer} tiles."
+]
+},
+"Two equal groups of {a} dots are joined to show the next step of a doubling picture. How many dots are in the joined group?": {
+"prompt": "Two groups have {a} dots each. You join the two groups. How many dots are there in all?",
+"hint": "Each group has the same number of dots.",
+"steps": [
+"Each of the two groups has {a} dots.",
+"Doubling means having two equal groups.",
+"The joined group has {answer} dots."
+]
+},
+"On a cricket field, a right angle is split into {n} equal smaller angles by marking lines. What is the measure of each smaller angle in degrees?": {
+"prompt": "A right angle (a square corner, 90 degrees) is split into {n} equal smaller angles by marking lines. What is the size of each smaller angle in degrees?",
+"hint": "Share the degrees in a right angle equally.",
+"steps": [
+"A right angle measures 90 degrees.",
+"The 90 degrees are shared equally into {n} smaller angles.",
+"Each smaller angle is {answer} degrees."
+]
+},
+"What should the pupil do first when comparing the opening with another angle by superimposition?": {
+"prompt": "Superimposition means placing one angle on top of another. What should you do first?",
+"options": [
+"Overlap the vertex (corner), then check the arms.",
+"Overlap only the ends of the arms.",
+"Match the opening before you compare the angles.",
+"Put the circle's centre away from the vertex."
+],
+"explanation": "The vertex (corner) must overlap first when you place two angles on each other.",
+"why": [
+"",
+"Only the arm ends touch. The corners are not together.",
+"You compare the openings only after the angles are on each other.",
+"The centre of the circle must be on the vertex (corner)."
+]
+},
+"A shoe-size frequency table shows 4 students in one size group and 3 students in another size group. How many students are counted in the table?": {
+"prompt": "A shoe-size frequency table (a table of counts) shows 4 students in one size group. It shows 3 students in another size group. How many students are in the table in all?",
+"explanation": "Add the frequencies (the counts) to find the total. The formula is a+b. With a=4 and b=3, 4+3=7 students.",
+"hint": "Type the number."
+},
+"Data is a collection of facts, numbers, measures, ______ or descriptions that give information.": {
+"prompt": "Data is a group of facts, numbers, measures, ______ or descriptions. They give information.",
+"title": "What is data?",
+"explanation": "Well done! Observations are things you notice and write down.",
+"hint": "Think about what you notice and write down."
+},
+"A tray has 2 equal marbles shared equally among 36 children. The same-sized share is written as 3 out of an unknown number of equal shares. How many equal shares are in the denominator?": {
+"prompt": "2/36 of a marble is the same as 3/x of a marble. What is the denominator x (the bottom number)?",
+"explanation": "Equal fractions have the same value. So 2/36 = 3/x. Then x = (36 × 3) ÷ 2 = 54.",
+"hint": "Type the number."
+},
+"A cart has 3/5 of a bag of rice and 2/9 of another bag of rice. How many forty-fifths of a bag of rice are there altogether?": {
+"prompt": "A cart has 3/5 of a bag of rice. It also has 2/9 of another bag of rice. How many forty-fifths of a bag do you have in all?",
+"explanation": "Change 3/5 to 3*9/45 and 2/9 to 2*5/45. Add the numerators and keep 45, giving (3*9+2*5)/45 forty-fifths of a bag of rice.",
+"hint": "Type the number."
+},
+"A shop has 15/5 of a bag of laddoos and 27/9 of another bag of laddoos. How many whole bags of laddoos are there altogether?": {
+"prompt": "A shop has 15/5 of a bag of laddoos. It also has 27/9 of another bag. How many whole bags (no bits left over) do you have in all?",
+"explanation": "Change both fractional units to forty-fifths, add the numerators and keep 45. The numerator is a multiple of 45, so (15*9+27*5)/45 gives a whole number of bags in lowest terms.",
+"hint": "Type the number."
+},
+"There are 5 pictures. The last 2 picture is not symmetrical, and the others are symmetrical. How many pictures are symmetrical?": {
+"prompt": "There are 5 pictures. The last 2 pictures are not symmetrical (not the same on both sides). The other pictures are symmetrical. How many pictures are symmetrical?",
+"options": [
+"7",
+"10",
+"2",
+"3"
+],
+"explanation": "Subtract the picture that is not symmetrical: total - bad = 3 symmetrical pictures."
+},
+"The lift's up button moves it 6 floors and is then pressed again to move it 3 more floors. What is the total upward movement, in floors?": {
+"prompt": "A lift goes up 6 floors. Then it goes up 3 more floors. How many floors does it go up in all?",
+"explanation": "Combining the two button presses is addition: a + b. The total upward movement is 9 floors.",
+"hint": "Type the number."
+},
+"At a market, a display repeats a group of {k} mangoes in each of {n} rows. How many mangoes are in the display?": {
+"prompt": "A shop shows mangoes in {n} rows. Each row has {k} mangoes. How many mangoes are there in all?",
+"hint": "Use the number in each row to count all the mangoes.",
+"steps": [
+"Each row has {k} mangoes.",
+"There are {n} rows.",
+"{k} x {n} = {answer} mangoes."
+]
+},
+"A market tray holds {n} laddoos in each of {n} rows, making a square-number pattern. A helper removes {k} laddoos. How many laddoos remain in the tray?": {
+"prompt": "A tray has {n} rows. Each row has {n} laddoos. This makes a square number. A helper takes away {k} laddoos. How many laddoos are left?",
+"steps": [
+"The full tray has {n} rows. Each row has {n} laddoos.",
+"The square number total is {square} laddoos.",
+"Take away {k} laddoos. You get {remaining} laddoos.",
+"There are {answer} laddoos left."
+]
+},
+"A child draws square dot grids and wonders how adding odd numbers helps make bigger squares.": {
+"prompt": "A child draws square dot grids. The child wants to know how adding odd numbers makes bigger squares.",
+"explanation": "Think about it with Lumi.",
+"steps": [
+"The child draws a square grid. The child counts the dots.",
+"Each new layer has an odd number of dots. So each new layer makes a bigger square.",
+"So adding odd numbers gives square numbers.",
+"After six additions, the picture makes it easy to see."
+],
+"kicker": "Let us think about it."
+},
+"A chalk stroke starts at Point A, passes through Point B, and has no ending point. What is the stroke?": {
+"prompt": "A chalk mark starts at Point A. It goes through Point B. It has no end point. What is the mark?",
+"options": [
+"A ray with initial point A",
+"A line with initial point A",
+"A segment with initial point A",
+"A point with initial point A"
+],
+"explanation": "The mark starts at A. B is another point on it. So it is a ray.",
+"why": [
+"",
+"A line has no end. It goes on in both directions, not from one start point.",
+"A segment has two end points. This mark has no end point.",
+"A point has no length, so it cannot make a chalk mark."
+]
+},
+"A child places one drawn angle over another with the vertices overlapping. The arms of the first angle lie inside the arms of the second angle. Which opening is larger?": {
+"prompt": "A child puts one drawn angle over another. The two corners (vertices) are at the same spot. The first angle's arms are inside the second angle's arms. Which opening is larger?",
+"options": [
+"The second angle is larger.",
+"The first angle is larger.",
+"They must be equal.",
+"The overlay cannot compare them."
+],
+"explanation": "The second angle is larger, because a wider opening between the arms makes a larger angle.",
+"why": [
+"",
+"The first angle is smaller because its arms are inside the other angle.",
+"Equal openings need arms that match. These arms do not match.",
+"Superimposition (putting one on top) lets us compare the angles, so it shows the difference."
+]
 }
 },
 "seen": [
@@ -500,13 +771,92 @@
 "Laddoos are put in a square shape. There are {trays} rows. Each row has {per_row} laddoos. How many laddoos are there in all?",
 "A pattern has {polygon_terms} polygons. Each polygon is regular (all sides the same length). The first polygon has {first_sides} sides. Each next polygon has one more side. How many sides does the last polygon have?",
 "A mat is shaped like a polygon with {sides} sides. Put one laddoo on each corner. How many laddoos are used?",
-"A bus turns {a} small turns to the left. Then it turns {b} more small turns the same way. How many small turns does the bus turn in all?"
+"A bus turns {a} small turns to the left. Then it turns {b} more small turns the same way. How many small turns does the bus turn in all?",
+"On a protractor, one arm of an angle passes through zero and the other reaches the {degrees}-degree mark. What is the measure of the angle in degrees?",
+"A marble rolls in a curved bowl whose lip makes a reflex angle of {a} degrees. How many degrees short of 360 degrees is this angle?",
+"A child says, “Every angle bigger than a right angle is obtuse.” What is the best reply?",
+"Explain how superimposition can show whether two angles are equal, and what must happen to their vertices.",
+"If the third corner's measurement increases but stays below 360°, what angle type should it continue to have?",
+"Before the swap, why do four children say 1 while the tallest child says 0?",
+"A blue heap has 7/5 of a bag of sand and a red heap has 2/9 of a bag of sand. By how many forty-fifths of a bag is the blue heap larger?",
+"A radial-arm figure is drawn on two separate pieces of paper, with 5 arms on each. How many arms are drawn altogether?",
+"On a protractor, one arm of an angle is on the zero mark. The other arm reaches the {degrees}-degree mark. What is the angle in degrees?",
+"The third corner gets bigger, but stays under 360°. What type of angle should it still be?",
+"A blue heap has 7/5 of a bag of sand. A red heap has 2/9 of a bag of sand. The blue heap is bigger by how many forty-fifths of a bag?",
+"Why can an idea about a pattern in one everyday activity help us understand a pattern somewhere else?",
+"A bead pattern repeats a group of {a} blue beads followed by a group of {b} red beads. How many beads are in one complete repeating group?",
+"A cooking pattern uses {first} grams in the first bowl and {increase} more grams in each following bowl. How many grams are used in bowl number {term}?",
+"During a school cricket activity, a child draws the complete graph K{vertices}. Every vertex is joined to every other vertex, so how many other vertices is one vertex joined to?",
+"A straight strip of paper is opened flat and then folded in half so the two parts match. What two angles are formed by the fold?",
+"A market has {n} laddoo boxes. One chosen corner of each box is a right angle, and its two edges meet perpendicularly. Each right angle measures 90 degrees. What is the total measure of these {n} right angles in degrees?",
+"How does the carpenter distinguish an obtuse corner from a reflex corner when labeling the frames?",
+"In an arrangement of five children, at most how many children can say 2?",
+"Why can an idea from one everyday pattern help us understand another?",
+"A bead pattern repeats {a} blue beads, then {b} red beads. How many beads are in one repeating group?",
+"A cook uses {first} grams in the first bowl. Each next bowl uses {increase} more grams. How many grams are in bowl number {term}?",
+"Draw the complete graph K{vertices}. A vertex is a dot. Each vertex is joined to every other vertex. How many other vertices is one vertex joined to?",
+"You open a straight strip of paper flat. Then you fold it in half so both parts match. What two angles does the fold make?",
+"There are {n} laddoo boxes. Each box has one corner that is a right angle (90 degrees). What is the total of these {n} right angles, in degrees?",
+"How can you tell an obtuse angle from a reflex angle?",
+"In a school collection, one calendar repeat takes six years and includes one leap year. After {cycles} complete repeat periods, how many ordinary years are included altogether?",
+"Explain how a digit sum differs from placing a number in its correct position on a number line.",
+"In the mountain bar graph, the tallest horizontal box is 50 cm long and the shortest is 10 cm long. How many cm longer is the tallest box than the shortest box?",
+"A shape on graph paper has 3 rows with 2 counted squares in each row. Which calculation gives its estimated area in square units?",
+"A fraction is in lowest terms when its numerator and denominator have no common factor except ______.",
+"A tile pattern has {c} tiles in each row, and the pattern is repeated for {r} rows. How many tiles are in the whole pattern?",
+"Two equal groups of {a} dots are joined to show the next step of a doubling picture. How many dots are in the joined group?",
+"{n} line segments are drawn so that none of them share an end point. How many end points are there altogether?",
+"Explain how a digit sum is different from placing a number on a number line.",
+"The longest bar is 50 cm long. The shortest bar is 10 cm long. How many cm longer is the longest bar than the shortest bar?",
+"A shape on graph paper has 3 rows. Each row has 2 squares you can count. What is its estimated area (how much space it covers) in square units?",
+"A tile pattern has {c} tiles in each row. It has {r} rows. How many tiles are in the whole pattern?",
+"Two groups have {a} dots each. You join the two groups. How many dots are there in all?",
+"A line segment from Point A to Point B must reach farther on both sides. Which change fits the facts?",
+"On a cricket field, a right angle is split into {n} equal smaller angles by marking lines. What is the measure of each smaller angle in degrees?",
+"What should the pupil do first when comparing the opening with another angle by superimposition?",
+"A marker starts at 0 on a number line and is first placed at {n}. It then moves {jumps} jumps of {step} spaces; what is the digit sum of its final number?",
+"A frog starts at 0 on a number line and makes jumps of {step} spaces, marking 11 numbers including 0. What number is on the eleventh mark?",
+"A Collatz sequence starts at the even number {n}, and dividing it by 2 gives an odd number. Apply the even rule and then the odd rule. What number is reached?",
+"A shoe-size frequency table shows 4 students in one size group and 3 students in another size group. How many students are counted in the table?",
+"Data is a collection of facts, numbers, measures, ______ or descriptions that give information.",
+"A right angle (a square corner, 90 degrees) is split into {n} equal smaller angles by marking lines. What is the size of each smaller angle in degrees?",
+"Superimposition means placing one angle on top of another. What should you do first?",
+"A shoe-size frequency table (a table of counts) shows 4 students in one size group. It shows 3 students in another size group. How many students are in the table in all?",
+"Data is a group of facts, numbers, measures, ______ or descriptions. They give information.",
+"For 7 prime figs, the rectangular arrangement has one row. How many figs are in that row?",
+"Six equal parts of a whole chikki can make pieces with different shapes. If 3 whole chikkis are each broken into six equal pieces, how many one-sixth pieces are made?",
+"A tray has 2 equal marbles shared equally among 36 children. The same-sized share is written as 3 out of an unknown number of equal shares. How many equal shares are in the denominator?",
+"A cart has 3/5 of a bag of rice and 2/9 of another bag of rice. How many forty-fifths of a bag of rice are there altogether?",
+"A shop has 15/5 of a bag of laddoos and 27/9 of another bag of laddoos. How many whole bags of laddoos are there altogether?",
+"There are 5 pictures. The last 2 picture is not symmetrical, and the others are symmetrical. How many pictures are symmetrical?",
+"Which statement shows that the dotted line in Figure (a) is a line of symmetry?",
+"The lift's up button moves it 6 floors and is then pressed again to move it 3 more floors. What is the total upward movement, in floors?",
+"2/36 of a marble is the same as 3/x of a marble. What is the denominator x (the bottom number)?",
+"A cart has 3/5 of a bag of rice. It also has 2/9 of another bag of rice. How many forty-fifths of a bag do you have in all?",
+"A shop has 15/5 of a bag of laddoos. It also has 27/9 of another bag. How many whole bags (no bits left over) do you have in all?",
+"There are 5 pictures. The last 2 pictures are not symmetrical (not the same on both sides). The other pictures are symmetrical. How many pictures are symmetrical?",
+"A lift goes up 6 floors. Then it goes up 3 more floors. How many floors does it go up in all?",
+"At a market, a display repeats a group of {k} mangoes in each of {n} rows. How many mangoes are in the display?",
+"A market tray holds {n} laddoos in each of {n} rows, making a square-number pattern. A helper removes {k} laddoos. How many laddoos remain in the tray?",
+"A square picture has {rows} equal rows, with {cols} dots in every row. How many dots are there altogether?",
+"A child draws square dot grids and wonders how adding odd numbers helps make bigger squares.",
+"How does the Koch snowflake show a relationship between shape sequences and number sequences?",
+"On a cricket field, {n} separate rays and {m} separate line segments are drawn. How many points in total are initial points of rays or end points of line segments?",
+"A chalk stroke starts at Point A, passes through Point B, and has no ending point. What is the stroke?",
+"A child places one drawn angle over another with the vertices overlapping. The arms of the first angle lie inside the arms of the second angle. Which opening is larger?",
+"A shop shows mangoes in {n} rows. Each row has {k} mangoes. How many mangoes are there in all?",
+"A tray has {n} rows. Each row has {n} laddoos. This makes a square number. A helper takes away {k} laddoos. How many laddoos are left?",
+"A child draws square dot grids. The child wants to know how adding odd numbers makes bigger squares.",
+"A chalk mark starts at Point A. It goes through Point B. It has no end point. What is the mark?",
+"A child puts one drawn angle over another. The two corners (vertices) are at the same spot. The first angle's arms are inside the second angle's arms. Which opening is larger?"
 ],
 "broken": {
 "After the fold described in the case, what kind of angles are formed by the two matching edges?": "needs the fold from the case, which is not shown",
 "Why is the cell containing 626 a supercell?": "The question needs a table the child cannot see, and it does not define a supercell.",
 "The Bakśhālī manuscript used a special sign after a negative number around 250 CE. Brahmagupta gave equal treatment to positive numbers, negative numbers, and zero in 650 CE, forming what is now called a ring. About how many years apart were these events?": "It says Brahmagupta's date was 650 CE, but it is 628 CE, and the explanation uses different dates.",
-"The Nine Chapters on Mathematical Art was completed by the first or second century CE. Using 100 CE as the later end and Kautilya's date of about 350 BCE, about how many years separated the two events?": "The explanation's arithmetic (300 and 400) does not match the answer 450."
+"The Nine Chapters on Mathematical Art was completed by the first or second century CE. Using 100 CE as the later end and Kautilya's date of about 350 BCE, about how many years separated the two events?": "The explanation's arithmetic (300 and 400) does not match the answer 450.",
+"In an arrangement of five children, at most how many children can say 2?": "rule for what each child says is missing",
+"A line segment from Point A to Point B must reach farther on both sides. Which change fits the facts?": "explanation says a line segment can be extended, which is false"
 },
 "kept": {
 "A bus route is a ray whose initial point is the school. The first stop is {a} km from the school and a later stop is {b} km from the school, where {b} is greater than {a}. How many km farther from the school is the later stop?": "why not text",
@@ -531,6 +881,21 @@
 "In a school display, marbles form a triangle with {rows} rows containing 1, 2, and so on up to {rows} marbles. How many marbles are used?": "prompt numbers changed",
 "How can searching for patterns in shopping, weather and technology help people, and why can this activity be enjoyable?": "reviewer said the meaning changed",
 "Two line segments joining two points have lengths {a} cm and {b} cm, where {a} is greater than {b}. How many cm longer is the longer segment than the shorter segment?": "reviewer said the meaning changed",
-"At school, two classroom doors are opened from the same closed position by {a} and {b} equal small turns. How many small turns are in the greater angle?": "reviewer said the meaning changed"
+"At school, two classroom doors are opened from the same closed position by {a} and {b} equal small turns. How many small turns are in the greater angle?": "reviewer said the meaning changed",
+"A child says, “Every angle bigger than a right angle is obtuse.” What is the best reply?": "prompt numbers changed",
+"A radial-arm figure is drawn on two separate pieces of paper, with 5 arms on each. How many arms are drawn altogether?": "prompt numbers changed",
+"A marble rolls in a curved bowl whose lip makes a reflex angle of {a} degrees. How many degrees short of 360 degrees is this angle?": "reviewer said the meaning changed",
+"Explain how superimposition can show whether two angles are equal, and what must happen to their vertices.": "reviewer said the meaning changed",
+"In a school collection, one calendar repeat takes six years and includes one leap year. After {cycles} complete repeat periods, how many ordinary years are included altogether?": "prompt numbers changed",
+"A fraction is in lowest terms when its numerator and denominator have no common factor except ______.": "prompt long sentence",
+"{n} line segments are drawn so that none of them share an end point. How many end points are there altogether?": "reviewer said the meaning changed",
+"A marker starts at 0 on a number line and is first placed at {n}. It then moves {jumps} jumps of {step} spaces; what is the digit sum of its final number?": "prompt numbers changed",
+"A frog starts at 0 on a number line and makes jumps of {step} spaces, marking 11 numbers including 0. What number is on the eleventh mark?": "prompt numbers changed",
+"A Collatz sequence starts at the even number {n}, and dividing it by 2 gives an odd number. Apply the even rule and then the odd rule. What number is reached?": "prompt numbers changed",
+"For 7 prime figs, the rectangular arrangement has one row. How many figs are in that row?": "prompt numbers changed",
+"Six equal parts of a whole chikki can make pieces with different shapes. If 3 whole chikkis are each broken into six equal pieces, how many one-sixth pieces are made?": "prompt numbers changed",
+"On a cricket field, {n} separate rays and {m} separate line segments are drawn. How many points in total are initial points of rays or end points of line segments?": "prompt long sentence",
+"A square picture has {rows} equal rows, with {cols} dots in every row. How many dots are there altogether?": "reviewer said the meaning changed",
+"How does the Koch snowflake show a relationship between shape sequences and number sequences?": "reviewer said the meaning changed"
 }
 }

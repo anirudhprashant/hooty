@@ -630,6 +630,599 @@
 "A place is not a body feature that helps an animal survive.",
 "Legs are special body features, not places where animals live."
 ]
+},
+"What happens after large-scale tree cutting, and how long does restoration take?": {
+"prompt": "Many trees are cut down. What happens to forest cover? How long does a new forest take to grow?",
+"options": [
+"Forest cover goes up. A new forest grows fast.",
+"Forest cover goes down. A new forest grows fast.",
+"Forest cover stays the same. A new forest takes many years.",
+"Forest cover goes down. A new forest takes many years."
+],
+"explanation": "Cutting trees lowers forest cover. Growing a forest back takes many years."
+},
+"A child has learned something new while playing in the playground and now has another question.": {
+"prompt": "A child learns something new at the playground. Now the child has another question.",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"The child learns something new at the playground. Science can start there.",
+"This new thing makes the child ask another question.",
+"The new question may lead to another discovery. Each discovery adds a piece.",
+"The child should keep finding out. Science is like a big puzzle that never ends."
+],
+"kicker": "Let us think it through"
+},
+"A child first thinks science belongs only in outer space, then notices it in a kitchen. What should the child conclude?": {
+"prompt": "A child thinks science is only in outer space. Then the child sees science in a kitchen. What should the child think now?",
+"options": [
+"Science can be studied in many places.",
+"Science can be studied only in outer space.",
+"Science happens only where people expect it.",
+"Science is only in one kind of place."
+],
+"explanation": "This is right because science can be studied in outer space and in our kitchens.",
+"why": [
+"",
+"This is a mistake. It says outer space is the only place.",
+"This is a mistake. Discoveries can come from places we do not expect.",
+"This is a mistake. Science is not only in one kind of place."
+]
+},
+"Two plants have the same height. One has flowers, and one has no flowers. A child says, \"They must belong to the same group.\" Is this claim fair?": {
+"prompt": "Two plants are the same height. One has flowers. One has no flowers. A child says, 'They must be in the same group.' Is this fair?",
+"options": [
+"No; their flowers can set them apart.",
+"Yes; same height decides every group.",
+"No; every plant group needs different heights.",
+"Yes; flowers never matter for groups."
+],
+"explanation": "This is right because flowers can group plants, even if they are the same height.",
+"why": [
+"",
+"This mistake thinks height is the only rule for grouping.",
+"This mistake thinks every group must differ in every way.",
+"This mistake believes flowers are never useful."
+]
+},
+"A child wants to group a fish and a goat to explain their differences. Which rule is best?": {
+"prompt": "A child wants to show how a fish and a goat are different. Which rule is best?",
+"options": [
+"By the body parts they use to move.",
+"By how many legs they have.",
+"By the usual size of each animal.",
+"By the kind of food they usually eat."
+],
+"explanation": "This is right because different animals use different body parts to move.",
+"why": [
+"",
+"This counts only legs. It misses the fish's fins.",
+"This thinks size is the useful clue, not body parts.",
+"This says food explains how they move, not body parts."
+]
+},
+"The variety of plants and animals in a region is part of its biodiversity.": {
+"prompt": "All the kinds of plants and animals in a region are part of its biodiversity.",
+"explanation": "Yes. All the kinds of life in a region are part of its biodiversity."
+},
+"A child tests a piece of food with iodine and wonders what a colour change means.": {
+"prompt": "A child tests food with iodine. The child wants to know what a colour change means.",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"Two or three drops of diluted iodine are put on the food. This is a simple test for starch.",
+"If the food turns blue-black, it contains starch. Blue-black shows that starch is there.",
+"If the food is not blue-black, the child cannot say it has starch. Blue-black is needed to show starch.",
+"So the blue-black food has starch. The child cannot say the same for the other food."
+],
+"kicker": "Let us think it through"
+},
+"A child lays a scale diagonally above a pencil so it touches at only one end. What should the child do next?": {
+"prompt": "A child puts a ruler slanted over a pencil. It touches at one end only. What should the child do next?",
+"options": [
+"Put it next to the pencil, along its length.",
+"Keep it slanted, touching at one end only.",
+"Hold it above the pencil with a small gap.",
+"Move the pencil's tip away from the ruler."
+],
+"explanation": "The ruler must be next to the pencil and touch it along its length.",
+"why": [
+"",
+"This keeps the ruler slanted. It is not along the pencil.",
+"A gap means the ruler does not touch the pencil.",
+"Moving the tip away does not help."
+]
+},
+"Why do different countries use shared standard units, and what is the SI unit of length?": {
+"prompt": "Why do countries use the same units? What is the SI unit of length?",
+"explanation": "Check your answer with these points.",
+"points": [
+"Travel caused confusion about measures.",
+"The system used now is called SI units.",
+"The SI unit of length is the metre.",
+"The symbol for metre is m."
+]
+},
+"The friends begin taking distance observations from their separate houses. What should they do so that their observations can agree?": {
+"prompt": "Friends start measuring distances from their own houses. What should they do so their results agree?",
+"options": [
+"Use one shared reference point for every measurement.",
+"Keep measuring from each friend's own house.",
+"Change the reference point after each distance.",
+"Measure once from each house. Join the numbers together."
+],
+"explanation": "A shared reference point gives everyone the same starting point.",
+"why": [
+"",
+"Different houses make different starting points.",
+"Changing the point each time means no shared reference point.",
+"Joining separate results does not make them agree."
+]
+},
+"Which statement uses the facts correctly?": {
+"prompt": "Which statement is correct?",
+"title": "Choose the right idea",
+"options": [
+"Frosted glass is opaque.",
+"Metals are transparent materials.",
+"Some liquids mix fully with water. Others form a separate layer.",
+"You cannot see objects through translucent materials."
+],
+"explanation": "Some liquids mix fully with water. Others form a separate layer."
+},
+"What is a thermometer?": {
+"prompt": "What is a thermometer?",
+"title": "What Is a Thermometer?",
+"options": [
+"A tool that measures temperature",
+"The difference between two temperatures",
+"A measure of how hot or cold a body is",
+"A tool that runs on batteries"
+],
+"explanation": "A thermometer is a tool that measures temperature."
+},
+"You want to measure a human body and avoid mercury. Which choice fits?": {
+"prompt": "You want to take a person's temperature without mercury. Which choice fits?",
+"title": "Choose a Safe Thermometer",
+"options": [
+"A digital clinical thermometer",
+"A lab thermometer",
+"A temperature difference",
+"A body heat measure"
+],
+"explanation": "A digital clinical thermometer measures body temperature. It does not use mercury, so it is safe."
+},
+"One body is hotter than another. Which statement must be true?": {
+"prompt": "One body is hotter than another. Which statement is always true?",
+"title": "Which Body Is Hotter?",
+"options": [
+"The colder body has a higher temperature.",
+"Both bodies have the same temperature.",
+"The hotter body has a higher temperature.",
+"The difference means both bodies are equally hot."
+],
+"explanation": "A hotter body has a higher temperature than a colder body."
+},
+"Venus is called the Morning Star or Evening Star. Why does this name need care?": {
+"prompt": "Venus is called the Morning Star or the Evening Star. Why must we be careful with this name?",
+"title": "Why the Name Needs Care",
+"options": [
+"It shines in the morning and evening, but it is not a star.",
+"It looks red, so it is called the Red Planet.",
+"It looks blue because water covers much of it.",
+"It is one of the four outer planets."
+],
+"explanation": "The name tells how Venus looks. It does not say what Venus is."
+},
+"On a rainy day, a child sees a puddle and wants to understand rain better. Which question should the child ask?": {
+"prompt": "A child sees a puddle on a rainy day. The child wants to know more about rain. Which question should the child ask?",
+"options": [
+"Why and how does it rain?",
+"Why does water freeze when it gets cold?",
+"Why do we need food and water?",
+"How can we separate different materials?"
+],
+"explanation": "The puddle makes the child want to know about rain. So this question is right.",
+"why": [
+"",
+"This asks about cold water. It does not explain rain.",
+"This asks about food and water. It is not about rain.",
+"This asks about materials. It does not explain rain."
+]
+},
+"Four students have noticed different things about one question, but none has the full picture. What should they do next?": {
+"prompt": "Four students notice different things about one question. No student knows everything. What should they do next?",
+"options": [
+"Share notes and study together.",
+"Keep notes apart and study alone.",
+"Pick one clue and ignore the rest.",
+"Wait for one student to find it all."
+],
+"explanation": "Working together is right. Science is often done by big teams.",
+"why": [
+"",
+"Working alone means they do not share ideas.",
+"Ignoring clues wastes what the group has found.",
+"Waiting for one person does not use team work."
+]
+},
+"Imagine a leaf whose veins make a net. Which description shows its venation?": {
+"prompt": "Imagine a leaf. Its veins make a net. Which description shows its venation (the pattern of veins)?",
+"title": "A Leaf with a Net",
+"options": [
+"Veins joined in a net",
+"Veins running side by side",
+"One main root",
+"A bunch of thin roots of about the same size"
+],
+"explanation": "A pattern like a net is called reticulate venation."
+},
+"A desert has very little water. A plant with a fleshy stem lives there. A child says both its stem and its desert are adaptations. What is the best correction?": {
+"prompt": "A desert has very little water. A plant with a thick, juicy stem lives there. A child says its stem and its desert are both adaptations. What is the best fix?",
+"options": [
+"The stem is an adaptation, and the desert is its habitat.",
+"The stem is a habitat, and the desert is an adaptation.",
+"The stem and the desert are both adaptations.",
+"The stem and the desert are both habitats."
+],
+"explanation": "The juicy stem stores water. So it is an adaptation. The desert is where the plant lives. So it is its habitat.",
+"why": [
+"",
+"This mixes up adaptation and habitat.",
+"The stem helps the plant. The desert is where the plant lives.",
+"The stem stores water. The desert is where the plant lives."
+]
+},
+"Two regions grow different crops because their soil and climate differ. What food difference should we expect?": {
+"prompt": "Two regions grow different crops. Their soil and climate are different. What food difference should we expect?",
+"options": [
+"Their traditional foods must be exactly the same.",
+"Their foods can only come from one state.",
+"Their traditional foods may be different.",
+"Their food choices ignore culture."
+],
+"explanation": "Traditional foods may differ. They come from different local crops.",
+"why": [
+"This ignores the link between local crops and traditional food.",
+"This mixes up states with regions and says too much.",
+"",
+"Taste, culture and tradition can affect food choices."
+]
+},
+"A cook says oranges and iodised salt protect health, but dietary fibre has no nutrients. Why should dietary fibre still be part of food?": {
+"prompt": "A cook says oranges and iodised salt protect health. But dietary fibre has no nutrients. Why should dietary fibre still be part of our food?",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"Oranges contain vitamin C, and a lack of vitamin C causes scurvy, so this vitamin helps protect health.",
+"Iodised salt contains iodine salts, and iodine is listed as a mineral, so minerals also help protect health.",
+"Dietary fibre provides no nutrients, yet it is essential and helps food move smoothly through the body.",
+"Therefore, vitamins and minerals protect health, while dietary fibre has a different but essential job."
+],
+"kicker": "Let us think it through"
+},
+"A child puts two or three drops of diluted iodine solution on a food item. What result would show that the food contains starch?": {
+"prompt": "A child puts two or three drops of weak iodine liquid on food. What would show that the food has starch?",
+"options": [
+"A blue-black colour appears in the food.",
+"A violet colour appears in the food.",
+"An oily patch appears on the food.",
+"A blue colour appears in the food."
+],
+"explanation": "A blue-black colour means the food has starch.",
+"why": [
+"",
+"This mistake mixes up the violet colour of the protein test.",
+"This mistake thinks an oily patch is a colour change.",
+"This mistake gets confused by the blue colour."
+]
+},
+"Wood, cardboard, plastic and glass are ______ materials because the magnetic effect can pass through them.": {
+"prompt": "Wood, cardboard, plastic and glass are ______ materials. A magnet's pull goes through them.",
+"explanation": "A magnet's pull passes through these non-magnetic materials.",
+"hint": "These materials do not change the needle much."
+},
+"A child claims that a blue end on a magnet must be its North pole. What is the best response?": {
+"prompt": "A child says a blue end on a magnet must be the North pole. What is the best answer?",
+"options": [
+"It may be wrong, because blue may mark South.",
+"It is right, because blue always marks North.",
+"It may be wrong, because red may mark North.",
+"It is right, because white dots mark South."
+],
+"explanation": "This is right. The South pole may be painted blue. So blue does not always mean North.",
+"why": [
+"",
+"This mistake thinks blue is always the North pole.",
+"This mistake swaps the red and blue markings.",
+"This mistake swaps the meaning of the white dot."
+]
+},
+"What happens when the North pole of one magnet nears the South pole of another?": {
+"prompt": "One magnet's North pole comes near another's South pole. What happens?",
+"title": "North meets South",
+"options": [
+"They attract each other.",
+"They repel each other.",
+"They become one pole.",
+"They lose their poles."
+],
+"explanation": "A North pole attracts a South pole."
+},
+"Put these ideas in order to show how a standard unit helps.": {
+"prompt": "Put these steps in order. Show how a standard unit helps.",
+"title": "Using a Standard Unit",
+"explanation": "A standard unit gives everyone the same measurement.",
+"items": [
+"Choose a standard unit",
+"Measure the same length",
+"Everyone gets the same measurement"
+]
+},
+"Two children measure the distance to the same tree from their different houses. Why do their answers differ, and how can they make their measurements agree?": {
+"prompt": "Two children measure the distance to one tree. Each child starts from their own house. Why do their answers differ? How can they get the same answer?",
+"explanation": "Think about it with Lumi.",
+"steps": [
+"One child measures from one house. The other measures from another house.",
+"Their answers can differ. Each child has a different starting point.",
+"If both children start at the same house, their answers will match. They use the same starting point.",
+"The same starting point is the reference point for both. A reference point is where you start measuring."
+],
+"kicker": "Let us think about it."
+},
+"Two children measure the distance to the same object from their different houses. Why do their distance observations differ?": {
+"prompt": "Two children measure the distance to one object. Each child starts at their own house. Why do their results differ?",
+"options": [
+"They use different houses as starting points.",
+"They measure the same house in opposite ways.",
+"They change the reference point between checks.",
+"They add both distances before giving answers."
+],
+"explanation": "This is right. Each child measures from a different house.",
+"why": [
+"",
+"This mistake says the measuring direction changed. That is not the cause.",
+"This mistake says the reference point changed. But the children used different houses.",
+"This mistake says adding distances explains it. That is not true."
+]
+},
+"Put these steps in order to show why circular motion is periodic.": {
+"prompt": "Put these steps in order. They show why circular motion is periodic.",
+"explanation": "Circular motion goes around the same path again and again. Motion that repeats after the same time is periodic motion.",
+"items": [
+"The object moves around the circle.",
+"The object goes around the path again and again.",
+"The path repeats after the same amount of time."
+]
+},
+"After all five friends measure the same table, what should Deepa expect about their results?": {
+"prompt": "Five friends measure the same table with their handspans. What will their results be like?",
+"options": [
+"Their counts will probably be different.",
+"Their counts must all be the same.",
+"The friend with the longest handspan needs more handspans.",
+"The friend with the shortest handspan needs fewer handspans."
+],
+"explanation": "The friends had different handspan lengths.",
+"why": [
+"",
+"This ignores that the handspans are different lengths.",
+"A longer handspan makes the number needed smaller.",
+"A shorter handspan makes the number needed bigger."
+]
+},
+"Which combination is fully supported by the lesson?": {
+"prompt": "Which answer is completely correct, based on the lesson?",
+"options": [
+"Harappan pots were bright black; they stored oil.",
+"Harappan pots had red and black designs; they stored paper.",
+"Harappan pots had red and black designs; they stored oil.",
+"Harappan pots had red and black designs; they baked clay."
+],
+"explanation": "Harappan pots had a bright red surface with black designs. They stored oil."
+},
+"Our sense of touch can always tell us accurately how hot or cold something is.": {
+"prompt": "Our sense of touch can always tell us exactly how hot or cold something is.",
+"title": "Can we trust touch?",
+"explanation": "Touch cannot always tell us exactly. So we cannot always trust it."
+},
+"A digital clinical thermometer measures temperature when it touches your body.": {
+"prompt": "A digital clinical thermometer measures temperature when it touches your body.",
+"explanation": "Correct! A digital clinical thermometer measures temperature by touching the body."
+},
+"Why does water on a wide plate evaporate faster than water in a bottle cap?": {
+"prompt": "Why does water on a wide plate evaporate faster than water in a bottle cap?",
+"options": [
+"The plate makes more of the water open to air.",
+"The bottle cap gives water more sunlight.",
+"The plate holds more water.",
+"The cap moves more air."
+],
+"explanation": "Water evaporates faster when more of it is open to air."
+},
+"What can happen after some parts of a flower have dried?": {
+"prompt": "What can happen after some parts of a flower have dried?",
+"title": "After Flower Parts Dry",
+"options": [
+"The plant must die as soon as a flower dries.",
+"The plant may grow more, and other parts may form a pod or fruit.",
+"The other flower parts must become new seeds.",
+"The pod must form before any flower dries."
+],
+"explanation": "Some flower parts can dry while the plant keeps growing. Other parts can grow into a pod or fruit."
+},
+"A builder wants to use lots of rocks quickly. Which advice follows the lesson?": {
+"prompt": "A builder wants to use many rocks fast. Which advice matches the lesson?",
+"options": [
+"Use rocks carefully. They take thousands to millions of years to form.",
+"Use rocks freely. They form in a moment.",
+"Never use rocks. They contain no useful materials.",
+"Use only soil. Rocks cannot help build structures."
+],
+"explanation": "We must save rocks and use them carefully. They take a long time to form."
+},
+"What happens to frozen material in a comet when it nears the Sun?": {
+"prompt": "A comet is near the Sun. What happens to its frozen material?",
+"options": [
+"It starts to evaporate.",
+"It becomes solid.",
+"It turns into dust.",
+"It moves farther from the Sun."
+],
+"explanation": "The frozen material starts to evaporate when the comet is near the Sun."
+},
+"Which statement about exoplanets and life is correct?": {
+"prompt": "Which sentence about exoplanets and life is true?",
+"title": "Exoplanets and Life",
+"options": [
+"Exoplanets go around other stars, and signs of life have been found.",
+"Exoplanets are stars, and no signs of life have been found.",
+"Exoplanets belong to other galaxies, and no signs of life have been found.",
+"Exoplanets go around other stars, and no signs of life have been found."
+],
+"explanation": "Exoplanets go around other stars in our galaxy. No signs of life have been found in other places."
+},
+"A child sees a flower open and wonders how it knows when to open.": {
+"prompt": "A child sees a flower open. The child wonders how it knows when to open.",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"We ask how the flower knows when to open. Seeing this makes us wonder.",
+"We look closely at the flower. Looking helps us understand the world around us.",
+"We think about what we notice. Science grows through questions and exploring.",
+"So we keep our curiosity and keep exploring. Curiosity is the most important quality for science."
+],
+"kicker": "Let us think it through"
+},
+"A child sees a flower open and asks how it knows when to open. Which action best begins exploring that question?": {
+"prompt": "A child asks how a flower knows when to open. Which action starts to explore this question?",
+"options": [
+"Observe the flower and think about it.",
+"Guess once and do not watch it.",
+"Believe the flower never changes.",
+"Change the question and ignore it."
+],
+"explanation": "Observing and thinking help us understand the flower.",
+"why": [
+"",
+"One guess is not real exploring in science.",
+"This wrongly thinks that nothing changes.",
+"This skips the question instead of exploring it."
+]
+},
+"A discovery adds one piece to what is known, and then new questions appear. What does this show?": {
+"prompt": "A new discovery adds one piece of knowledge. Then new questions appear. What does this show?",
+"options": [
+"Science can keep growing and stay unfinished.",
+"Science is finished after the first new piece.",
+"Science grows only when old pieces go away.",
+"New questions show that science has stopped growing."
+],
+"explanation": "This is right. Science is like a big jigsaw puzzle that never ends.",
+"why": [
+"",
+"This is wrong. Each new discovery adds a piece. It does not finish the puzzle.",
+"This is wrong. New discoveries add pieces. They do not remove old ones.",
+"This is wrong. New questions lead to more things to find out."
+]
+},
+"Which action best shows that science is not only about memorising facts and figures?": {
+"prompt": "Which action shows that science is more than memorising facts and figures?",
+"options": [
+"Using science to separate different materials.",
+"Memorising facts about water and ice.",
+"Saying facts and figures out loud.",
+"Learning names without asking why."
+],
+"explanation": "Separating materials uses science to solve a question. It is not only remembering facts.",
+"why": [
+"",
+"Repeating facts is memorising. It does not show the bigger role of science.",
+"Saying it out loud is still only memorising.",
+"Learning names without asking why is only memorising."
+]
+},
+"A student wants to compare how leaves are arranged on two branches. What is the best way?": {
+"prompt": "A student wants to compare how the leaves are arranged on two branches. What is the best way?",
+"options": [
+"Look at both branches and compare leaf shapes and arrangement.",
+"Pick one leaf from each branch and hide the stems.",
+"Count only the flowers on both branches. Ignore the leaves.",
+"Touch the leaves so their shapes and places are clearer."
+],
+"explanation": "This is right. Leaves can be different in shape and in arrangement on stems or branches.",
+"why": [
+"",
+"This is wrong. One leaf cannot show how all the leaves are arranged.",
+"This is wrong. Flowers are not leaves.",
+"This is wrong. Touching the plant does not help us observe it."
+]
+},
+"A plant has a seed with two cotyledons. What is this plant called?": {
+"prompt": "A plant has a seed with two cotyledons. What is this plant called?",
+"title": "Two Cotyledons",
+"options": [
+"A monocotyledon",
+"A dicotyledon",
+"A taproot",
+"A fibrous root"
+],
+"explanation": "Plants with seeds that have two cotyledons are called dicotyledons."
+},
+"A plant is pulled up and has a bunch of similar-sized thin roots. What would its leaf veins generally be like?": {
+"prompt": "A plant is pulled up. It has many thin roots of about the same size. What are its leaf veins usually like?",
+"options": [
+"The veins make a net-like pattern.",
+"The veins run side by side.",
+"The veins all meet at one point.",
+"The veins form no clear pattern."
+],
+"explanation": "This mixes up fibrous roots with reticulate venation (net-like veins).",
+"why": [
+"This is wrong. Fibrous roots usually go with parallel veins.",
+"",
+"This makes up a leaf pattern. The roots do not show it.",
+"This thinks fibrous roots give no useful clue."
+]
+},
+"A child sees two camels in a wildlife park. One has one hump, long legs and wide hooves. The other has two humps and shorter legs. Which camel belongs to a hot desert, and which belongs to a cold desert?": {
+"prompt": "Look at two camels. One camel has one hump, long legs and wide hooves. The other camel has two humps and shorter legs. Which camel lives in a hot desert? Which camel lives in a cold desert?",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"The one-humped camel fits a hot desert. Hot-desert camels have one hump, long legs and wide hooves.",
+"The two-humped camel fits a cold desert. Cold-desert camels have two humps and shorter legs.",
+"Shorter legs suit the cold desert. They help the camel walk easily in the mountains.",
+"So each camel has features for its habitat (where it lives). These features help it survive there."
+],
+"kicker": "Let us think it through"
+},
+"A farmer reaches a region with a new soil and climate. What is the most sensible first step?": {
+"prompt": "A farmer moves to a region with new soil and climate. What is the best first step?",
+"options": [
+"Check crops suited to the new soil and climate.",
+"Choose the crop that people eat most nearby.",
+"Keep the crop used in the old region.",
+"Pick a crop from a tradition they know."
+],
+"explanation": "Crops grow well with the soil and climate of each region.",
+"why": [
+"",
+"What people eat does not decide which crop grows there.",
+"The old region's soil and climate may be different.",
+"Traditions can shape food. They are not the rule for growing crops."
+]
+},
+"Technological development is one reason cooking ______ have changed.": {
+"prompt": "New technology is one reason cooking ______ have changed.",
+"explanation": "New technology is one reason cooking practices have changed.",
+"hint": "Use the word for the ways people prepare food."
+},
+"Which pair gives protein-rich foods to help the body grow and repair itself?": {
+"prompt": "Protein helps the body grow and repair itself. Which pair has foods rich in protein?",
+"title": "Foods for Growth and Repair",
+"options": [
+"Milk products and pulses",
+"Common sugar and many oils",
+"Many oils and groundnuts",
+"Common sugar and pulses"
+],
+"explanation": "Milk products and pulses are good protein sources. Protein helps the body grow and repair itself."
 }
 },
 "seen": [
@@ -733,7 +1326,112 @@
 "A class asks a how-and-why question. The class explores it as a team. What might happen?",
 "According to the chapter, which action best protects our planet?",
 "A guide sees fish in water. The guide sees goats in grassy places. Which sentence is true?",
-"A place gives animals food, water, air and shelter. A camel lives in the same place. It has long legs and wide hooves. Which sentence is true?"
+"A place gives animals food, water, air and shelter. A camel lives in the same place. It has long legs and wide hooves. Which sentence is true?",
+"What happens after large-scale tree cutting, and how long does restoration take?",
+"A child has learned something new while playing in the playground and now has another question.",
+"A child first thinks science belongs only in outer space, then notices it in a kitchen. What should the child conclude?",
+"During a nature walk, a student sees grasses, bushes, large trees, flowers, birds, and a frog. What should the student notice, and how should the student behave?",
+"Two plants have the same height. One has flowers, and one has no flowers. A child says, \"They must belong to the same group.\" Is this claim fair?",
+"A child wants to group a fish and a goat to explain their differences. Which rule is best?",
+"The variety of plants and animals in a region is part of its biodiversity.",
+"A child tests a piece of food with iodine and wonders what a colour change means.",
+"Many trees are cut down. What happens to forest cover? How long does a new forest take to grow?",
+"A child learns something new at the playground. Now the child has another question.",
+"A child thinks science is only in outer space. Then the child sees science in a kitchen. What should the child think now?",
+"Two plants are the same height. One has flowers. One has no flowers. A child says, 'They must be in the same group.' Is this fair?",
+"A child wants to show how a fish and a goat are different. Which rule is best?",
+"All the kinds of plants and animals in a region are part of its biodiversity.",
+"A child tests food with iodine. The child wants to know what a colour change means.",
+"Which action gives the fairest check that one centimetre equals ten millimetres?",
+"A child lays a scale diagonally above a pencil so it touches at only one end. What should the child do next?",
+"Why do different countries use shared standard units, and what is the SI unit of length?",
+"The friends begin taking distance observations from their separate houses. What should they do so that their observations can agree?",
+"Which statement uses the facts correctly?",
+"What is a thermometer?",
+"You want to measure a human body and avoid mercury. Which choice fits?",
+"One body is hotter than another. Which statement must be true?",
+"A child puts a ruler slanted over a pencil. It touches at one end only. What should the child do next?",
+"Why do countries use the same units? What is the SI unit of length?",
+"Friends start measuring distances from their own houses. What should they do so their results agree?",
+"Which statement is correct?",
+"What is a thermometer?",
+"You want to take a person's temperature without mercury. Which choice fits?",
+"One body is hotter than another. Which statement is always true?",
+"Venus is called the Morning Star or Evening Star. Why does this name need care?",
+"On a rainy day, a child sees a puddle and wants to understand rain better. Which question should the child ask?",
+"Four students have noticed different things about one question, but none has the full picture. What should they do next?",
+"A weak-stemmed plant is placed near a support so it can reach upward. What is the likely result, and why?",
+"Imagine a leaf whose veins make a net. Which description shows its venation?",
+"A desert has very little water. A plant with a fleshy stem lives there. A child says both its stem and its desert are adaptations. What is the best correction?",
+"Two regions grow different crops because their soil and climate differ. What food difference should we expect?",
+"A cook says oranges and iodised salt protect health, but dietary fibre has no nutrients. Why should dietary fibre still be part of food?",
+"Venus is called the Morning Star or the Evening Star. Why must we be careful with this name?",
+"A child sees a puddle on a rainy day. The child wants to know more about rain. Which question should the child ask?",
+"Four students notice different things about one question. No student knows everything. What should they do next?",
+"Imagine a leaf. Its veins make a net. Which description shows its venation (the pattern of veins)?",
+"A desert has very little water. A plant with a thick, juicy stem lives there. A child says its stem and its desert are both adaptations. What is the best fix?",
+"Two regions grow different crops. Their soil and climate are different. What food difference should we expect?",
+"A cook says oranges and iodised salt protect health. But dietary fibre has no nutrients. Why should dietary fibre still be part of our food?",
+"A child puts two or three drops of diluted iodine solution on a food item. What result would show that the food contains starch?",
+"Which action best tests whether a broken magnet piece has regions where most filings stick?",
+"Wood, cardboard, plastic and glass are ______ materials because the magnetic effect can pass through them.",
+"A child claims that a blue end on a magnet must be its North pole. What is the best response?",
+"What happens when the North pole of one magnet nears the South pole of another?",
+"Put these ideas in order to show how a standard unit helps.",
+"Two children measure the distance to the same tree from their different houses. Why do their answers differ, and how can they make their measurements agree?",
+"Two children measure the distance to the same object from their different houses. Why do their distance observations differ?",
+"A child puts two or three drops of weak iodine liquid on food. What would show that the food has starch?",
+"Wood, cardboard, plastic and glass are ______ materials. A magnet's pull goes through them.",
+"A child says a blue end on a magnet must be the North pole. What is the best answer?",
+"One magnet's North pole comes near another's South pole. What happens?",
+"Put these steps in order. Show how a standard unit helps.",
+"Two children measure the distance to one tree. Each child starts from their own house. Why do their answers differ? How can they get the same answer?",
+"Two children measure the distance to one object. Each child starts at their own house. Why do their results differ?",
+"Put these steps in order to show why circular motion is periodic.",
+"After all five friends measure the same table, what should Deepa expect about their results?",
+"The passengers were at rest when a building outside the bus was the reference point.",
+"Which combination is fully supported by the lesson?",
+"Our sense of touch can always tell us accurately how hot or cold something is.",
+"A digital clinical thermometer measures temperature when it touches your body.",
+"Why does water on a wide plate evaporate faster than water in a bottle cap?",
+"What can happen after some parts of a flower have dried?",
+"Put these steps in order. They show why circular motion is periodic.",
+"Five friends measure the same table with their handspans. What will their results be like?",
+"Which answer is completely correct, based on the lesson?",
+"Our sense of touch can always tell us exactly how hot or cold something is.",
+"A digital clinical thermometer measures temperature when it touches your body.",
+"Why does water on a wide plate evaporate faster than water in a bottle cap?",
+"What can happen after some parts of a flower have dried?",
+"A builder wants to use lots of rocks quickly. Which advice follows the lesson?",
+"What happens to frozen material in a comet when it nears the Sun?",
+"Which statement about exoplanets and life is correct?",
+"A child sees a flower open and wonders how it knows when to open.",
+"A child sees a flower open and asks how it knows when to open. Which action best begins exploring that question?",
+"A discovery adds one piece to what is known, and then new questions appear. What does this show?",
+"Which action best shows that science is not only about memorising facts and figures?",
+"A student wants to compare how leaves are arranged on two branches. What is the best way?",
+"A builder wants to use many rocks fast. Which advice matches the lesson?",
+"A comet is near the Sun. What happens to its frozen material?",
+"Which sentence about exoplanets and life is true?",
+"A child sees a flower open. The child wonders how it knows when to open.",
+"A child asks how a flower knows when to open. Which action starts to explore this question?",
+"A new discovery adds one piece of knowledge. Then new questions appear. What does this show?",
+"Which action shows that science is more than memorising facts and figures?",
+"A student wants to compare how the leaves are arranged on two branches. What is the best way?",
+"A plant has a seed with two cotyledons. What is this plant called?",
+"A plant is pulled up and has a bunch of similar-sized thin roots. What would its leaf veins generally be like?",
+"A child sees two camels in a wildlife park. One has one hump, long legs and wide hooves. The other has two humps and shorter legs. Which camel belongs to a hot desert, and which belongs to a cold desert?",
+"A place has very little water. A gardener sees a fleshy-stem plant and a conical plant with sloping branches. Which plant has the stated way to store water?",
+"A town wants to protect animals in a river and animals in a forest. Which action best protects their habitats?",
+"A farmer reaches a region with a new soil and climate. What is the most sensible first step?",
+"Technological development is one reason cooking ______ have changed.",
+"Which pair gives protein-rich foods to help the body grow and repair itself?",
+"A plant has a seed with two cotyledons. What is this plant called?",
+"A plant is pulled up. It has many thin roots of about the same size. What are its leaf veins usually like?",
+"Look at two camels. One camel has one hump, long legs and wide hooves. The other camel has two humps and shorter legs. Which camel lives in a hot desert? Which camel lives in a cold desert?",
+"A farmer moves to a region with new soil and climate. What is the best first step?",
+"New technology is one reason cooking ______ have changed.",
+"Protein helps the body grow and repair itself. Which pair has foods rich in protein?"
 ],
 "broken": {
 "Which statement correctly describes the thermometer’s scale?": "needs a thermometer picture the child cannot see",
@@ -745,6 +1443,12 @@
 "A child needs tools for two measurements: a pencil and a tree's girth. Which choice is most suitable?": "reviewer said the meaning changed",
 "Which statement about light pollution and constellations is correct?": "prompt much longer",
 "A fish and a goat are moved to a place with deep water but very little grass. Which animal is better suited to move around there, and why?": "reviewer said the meaning changed",
-"Two friends measure the same table using their own handspans. Why might their results differ, and what should be used when everyone must get the same result?": "reviewer said the meaning changed"
+"Two friends measure the same table using their own handspans. Why might their results differ, and what should be used when everyone must get the same result?": "reviewer said the meaning changed",
+"During a nature walk, a student sees grasses, bushes, large trees, flowers, birds, and a frog. What should the student notice, and how should the student behave?": "reviewer said the meaning changed",
+"Which action gives the fairest check that one centimetre equals ten millimetres?": "prompt numbers changed",
+"A weak-stemmed plant is placed near a support so it can reach upward. What is the likely result, and why?": "reviewer said the meaning changed",
+"Which action best tests whether a broken magnet piece has regions where most filings stick?": "reviewer said the meaning changed",
+"The passengers were at rest when a building outside the bus was the reference point.": "blind reader got a different answer",
+"A town wants to protect animals in a river and animals in a forest. Which action best protects their habitats?": "reviewer said the meaning changed"
 }
 }

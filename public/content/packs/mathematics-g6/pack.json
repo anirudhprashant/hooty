@@ -918,14 +918,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "In a cricket practice pattern, each over has 6 balls and the same 2 runs are scored in every over. For 4 overs, how many runs are scored?",
-         "explanation": "Each over follows the same scoring pattern of 2 runs. There are 4 equal overs, so multiply the runs in one over by the number of overs. 2 x 4 = 8 runs.",
+         "prompt": "In cricket practice, each over has 6 balls. Every over scores 2 runs. How many runs are scored in 4 overs?",
+         "explanation": "Every over scores 2 runs. There are 4 equal overs, so multiply the runs in one over by the number of overs. 2 x 4 = 8 runs.",
          "steps": [
-          "Each over follows the same scoring pattern of 2 runs.",
+          "Every over scores 2 runs.",
           "There are 4 equal overs, so multiply the runs in one over by the number of overs.",
           "2 x 4 = 8 runs."
          ],
-         "hint": "Use the repeated number of runs in each over.",
+         "hint": "Use the runs scored in each over.",
          "derived": [
           "2 (generated problem)",
           "4 (generated problem)",
@@ -933,7 +933,7 @@
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "In a cricket practice pattern, each over has {balls} balls and the same {runs} runs are scored in every over. For {overs} overs, how many runs are scored?",
+          "template": "In cricket practice, each over has {balls} balls. Every over scores {runs} runs. How many runs are scored in {overs} overs?",
           "params": {
            "balls": [
             2,
@@ -962,7 +962,7 @@
            "one_over": "runs"
           },
           "steps": [
-           "Each over follows the same scoring pattern of {runs} runs.",
+           "Every over scores {runs} runs.",
            "There are {overs} equal overs, so multiply the runs in one over by the number of overs.",
            "{runs} x {overs} = {answer} runs."
           ],
@@ -2501,20 +2501,20 @@
           "practice",
           "computed"
          ],
-         "prompt": "At a market, laddoos are arranged in a square with 4 rows and 4 laddoos in every row. How many laddoos are displayed?",
-         "explanation": "There are 4 rows with 4 laddoos in each row. Equal rows are counted by multiplication. The market display has 16 laddoos.",
+         "prompt": "Laddoos are put in a square shape. There are 4 rows. Each row has 4 laddoos. How many laddoos are there in all?",
+         "explanation": "There are 4 rows. Each row has 4 laddoos. Equal rows are counted by multiplication. There are 16 laddoos in all.",
          "steps": [
-          "There are 4 rows with 4 laddoos in each row.",
+          "There are 4 rows. Each row has 4 laddoos.",
           "Equal rows are counted by multiplication.",
-          "The market display has 16 laddoos."
+          "There are 16 laddoos in all."
          ],
-         "hint": "Count one row and then count the equal rows.",
+         "hint": "Count one row. Every row has the same number.",
          "derived": [
           "16 (generated problem)",
           "4 (generated problem)"
          ],
          "gen": {
-          "template": "At a market, laddoos are arranged in a square with {trays} rows and {per_row} laddoos in every row. How many laddoos are displayed?",
+          "template": "Laddoos are put in a square shape. There are {trays} rows. Each row has {per_row} laddoos. How many laddoos are there in all?",
           "params": {
            "trays": [
             2,
@@ -2535,9 +2535,9 @@
            "total": "trays*per_row"
           },
           "steps": [
-           "There are {trays} rows with {per_row} laddoos in each row.",
+           "There are {trays} rows. Each row has {per_row} laddoos.",
            "Equal rows are counted by multiplication.",
-           "The market display has {answer} laddoos."
+           "There are {answer} laddoos in all."
           ],
           "model": {
            "type": "array",
@@ -2629,20 +2629,20 @@
           "practice",
           "computed"
          ],
-         "prompt": "At a school canteen, one tray has 4 laddoos and the next tray in a doubling picture has twice as many. How many laddoos are in the next tray?",
-         "explanation": "The first tray contains 4 laddoos. The next tray doubles this amount, so it contains two equal groups of 4. The next tray has 8 laddoos.",
+         "prompt": "A tray has 4 laddoos. The next tray has double the laddoos. How many laddoos are on the next tray?",
+         "explanation": "The first tray has 4 laddoos. The next tray has double, so it has two equal groups of 4. The next tray has 8 laddoos.",
          "steps": [
-          "The first tray contains 4 laddoos.",
-          "The next tray doubles this amount, so it contains two equal groups of 4.",
+          "The first tray has 4 laddoos.",
+          "The next tray has double, so it has two equal groups of 4.",
           "The next tray has 8 laddoos."
          ],
-         "hint": "Make two equal groups using the number in the first tray.",
+         "hint": "Make two equal groups using the number on the first tray.",
          "derived": [
           "4 (generated problem)",
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "At a school canteen, one tray has {start} laddoos and the next tray in a doubling picture has twice as many. How many laddoos are in the next tray?",
+          "template": "A tray has {start} laddoos. The next tray has double the laddoos. How many laddoos are on the next tray?",
           "params": {
            "start": [
             2,
@@ -2656,8 +2656,8 @@
            "doubled": "2*start"
           },
           "steps": [
-           "The first tray contains {start} laddoos.",
-           "The next tray doubles this amount, so it contains two equal groups of {start}.",
+           "The first tray has {start} laddoos.",
+           "The next tray has double, so it has two equal groups of {start}.",
            "The next tray has {answer} laddoos."
           ],
           "model": {
@@ -4006,14 +4006,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "A poster is 10 cm wide and contains 4 square tiles and 4 triangle tiles. A square has 4 sides and a triangle has 3 sides. How many sides are shown altogether?",
-         "explanation": "There are 4 squares with 4 sides each and 4 triangles with 3 sides each. Find each group of sides and then add the groups. 16 + 12 = 28 sides.",
+         "prompt": "A poster is 10 cm wide. It has 4 square tiles and 4 triangle tiles. A square has 4 sides. A triangle has 3 sides. How many sides are there in all?",
+         "explanation": "There are 4 squares. Each has 4 sides. There are 4 triangles. Each has 3 sides. Find the sides of each group. Then add the groups. 16 + 12 = 28 sides.",
          "steps": [
-          "There are 4 squares with 4 sides each and 4 triangles with 3 sides each.",
-          "Find each group of sides and then add the groups.",
+          "There are 4 squares. Each has 4 sides. There are 4 triangles. Each has 3 sides.",
+          "Find the sides of each group. Then add the groups.",
           "16 + 12 = 28 sides."
          ],
-         "hint": "Find the sides on all the squares and all the triangles.",
+         "hint": "Count the sides of all the squares. Count the sides of all the triangles.",
          "derived": [
           "10 (generated problem)",
           "12 (generated problem)",
@@ -4023,7 +4023,7 @@
           "4 (generated problem)"
          ],
          "gen": {
-          "template": "A poster is {design_width} cm wide and contains {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides and a triangle has 3 sides. How many sides are shown altogether?",
+          "template": "A poster is {design_width} cm wide. It has {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides. A triangle has 3 sides. How many sides are there in all?",
           "params": {
            "design_width": [
             5,
@@ -4049,8 +4049,8 @@
            "triangle_sides": "3*triangle_tiles"
           },
           "steps": [
-           "There are {square_tiles} squares with 4 sides each and {triangle_tiles} triangles with 3 sides each.",
-           "Find each group of sides and then add the groups.",
+           "There are {square_tiles} squares. Each has 4 sides. There are {triangle_tiles} triangles. Each has 3 sides.",
+           "Find the sides of each group. Then add the groups.",
            "{square_sides} + {triangle_sides} = {answer} sides."
           ],
           "model": {
@@ -4157,11 +4157,11 @@
          "tags": [
           "worked"
          ],
-         "prompt": "A regular-polygon sequence has 2 polygons. The first polygon has 5 sides, and each next polygon has one more side than the previous one. How many sides does the last polygon have?",
+         "prompt": "A pattern has 2 polygons. Each polygon is regular (all sides the same length). The first polygon has 5 sides. Each next polygon has one more side. How many sides does the last polygon have?",
          "steps": [
-          "The first polygon has 5 sides and the sequence has 2 polygons.",
-          "There are 1 one-side increases after the first polygon.",
-          "Adding those increases gives 6 sides for the last polygon.",
+          "The first polygon has 5 sides. There are 2 polygons.",
+          "The number of sides goes up 1 times.",
+          "Add those increases to the first polygon's sides. The last polygon has 6 sides.",
           "6 = 6 sides."
          ],
          "modelSpec": {
@@ -4177,7 +4177,7 @@
          },
          "result": "6",
          "gen": {
-          "template": "A regular-polygon sequence has {polygon_terms} polygons. The first polygon has {first_sides} sides, and each next polygon has one more side than the previous one. How many sides does the last polygon have?",
+          "template": "A pattern has {polygon_terms} polygons. Each polygon is regular (all sides the same length). The first polygon has {first_sides} sides. Each next polygon has one more side. How many sides does the last polygon have?",
           "params": {
            "polygon_terms": [
             2,
@@ -4199,9 +4199,9 @@
            "last_sides": "first_sides + polygon_terms - 1"
           },
           "steps": [
-           "The first polygon has {first_sides} sides and the sequence has {polygon_terms} polygons.",
-           "There are {increases} one-side increases after the first polygon.",
-           "Adding those increases gives {last_sides} sides for the last polygon.",
+           "The first polygon has {first_sides} sides. There are {polygon_terms} polygons.",
+           "The number of sides goes up {increases} times.",
+           "Add those increases to the first polygon's sides. The last polygon has {last_sides} sides.",
            "{last_sides} = {answer} sides."
           ],
           "model": {
@@ -4219,7 +4219,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Watch how it is solved.",
+         "explanation": "The first polygon has 5 sides. There are 2 polygons. The number of sides goes up 1 times. Add those increases to the first polygon's sides. The last polygon has 6 sides. 6 = 6 sides.",
          "f": [],
          "derived": [
           "1 (generated problem)",
@@ -5062,19 +5062,19 @@
           "practice",
           "computed"
          ],
-         "prompt": "At a school fair, one laddoo is placed at each corner of a regular polygon mat with 5 sides. How many laddoos are used?",
-         "explanation": "The mat has 5 sides. There is one corner for each side and one laddoo at each corner. 5 = 5 laddoos.",
+         "prompt": "A mat is shaped like a polygon with 5 sides. Put one laddoo on each corner. How many laddoos are used?",
+         "explanation": "The mat has 5 sides. Each side has one corner. Each corner gets one laddoo. 5 = 5 laddoos.",
          "steps": [
           "The mat has 5 sides.",
-          "There is one corner for each side and one laddoo at each corner.",
+          "Each side has one corner. Each corner gets one laddoo.",
           "5 = 5 laddoos."
          ],
-         "hint": "Remember that the number of corners equals the number of sides.",
+         "hint": "A polygon has as many corners as sides.",
          "derived": [
           "5 (generated problem)"
          ],
          "gen": {
-          "template": "At a school fair, one laddoo is placed at each corner of a regular polygon mat with {sides} sides. How many laddoos are used?",
+          "template": "A mat is shaped like a polygon with {sides} sides. Put one laddoo on each corner. How many laddoos are used?",
           "params": {
            "sides": [
             3,
@@ -5090,7 +5090,7 @@
           },
           "steps": [
            "The mat has {sides} sides.",
-           "There is one corner for each side and one laddoo at each corner.",
+           "Each side has one corner. Each corner gets one laddoo.",
            "{laddoos} = {answer} laddoos."
           ],
           "model": null,
@@ -7269,20 +7269,21 @@
           "deep",
           "diagnose"
          ],
-         "prompt": "A child says, “I can draw many different lines through the same Points A and B.” Which correction fits the facts?",
+         "prompt": "A child says, “I can draw many different lines through Points A and B.” Which correction is right?",
          "options": [
-          "Only one line can pass through Points A and B",
-          "Many lines can pass through Points A and B",
-          "Only one ray can pass through Points A and B",
-          "No line can pass through Points A and B"
+          "Only one line can go through Points A and B",
+          "Many lines can go through Points A and B",
+          "Only one ray can go through Points A and B",
+          "No line can go through Points A and B"
          ],
          "answer": 0,
          "why": {
-          "Many lines can pass through Points A and B": "This repeats the mistaken belief that the same two points allow many lines.",
-          "Only one ray can pass through Points A and B": "This confuses a line with a ray, whose starting point is its initial point.",
-          "No line can pass through Points A and B": "This wrongly treats two points as unable to determine a line."
+          "Only one line can go through Points A and B": "",
+          "Many lines can go through Points A and B": "This repeats the wrong idea that two points give many lines.",
+          "Only one ray can go through Points A and B": "This mixes up a line with a ray. A ray has one starting point.",
+          "No line can go through Points A and B": "This wrongly says two points cannot make a line."
          },
-         "explanation": "Two points determine only one line, so this correction is right.",
+         "explanation": "Two points give only one line, so this correction is right.",
          "f": [
           "1.10",
           "1.11"
@@ -7678,21 +7679,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "From the same starting ray, Ray A turns 3 equal small turns and Ray B turns 10 equal small turns. How many small turns greater is the angle formed by Ray B?",
-         "explanation": "Ray A turns 3 small turns and Ray B turns 10 small turns. The difference between the turning amounts is found by subtraction. 10 - 3 = 7 small turns, so Ray B's angle is 7 small turns greater.",
+         "prompt": "Ray A turns 3 small turns. Ray B turns 10 small turns. Both rays start at the same place. How many more small turns is the angle of Ray B?",
+         "explanation": "Ray A turns 3 small turns and Ray B turns 10 small turns. Find the difference. Use subtraction. 10 - 3 = 7 small turns. So Ray B's angle is 7 small turns bigger.",
          "steps": [
           "Ray A turns 3 small turns and Ray B turns 10 small turns.",
-          "The difference between the turning amounts is found by subtraction.",
-          "10 - 3 = 7 small turns, so Ray B's angle is 7 small turns greater."
+          "Find the difference. Use subtraction.",
+          "10 - 3 = 7 small turns. So Ray B's angle is 7 small turns bigger."
          ],
-         "hint": "Subtract the smaller turning amount from the larger turning amount.",
+         "hint": "Take the smaller number away from the bigger number.",
          "derived": [
           "10 (generated problem)",
           "3 (generated problem)",
           "7 (generated problem)"
          ],
          "gen": {
-          "template": "From the same starting ray, Ray A turns {a} equal small turns and Ray B turns {b} equal small turns. How many small turns greater is the angle formed by Ray B?",
+          "template": "Ray A turns {a} small turns. Ray B turns {b} small turns. Both rays start at the same place. How many more small turns is the angle of Ray B?",
           "params": {
            "a": [
             3,
@@ -7714,8 +7715,8 @@
           },
           "steps": [
            "Ray A turns {a} small turns and Ray B turns {b} small turns.",
-           "The difference between the turning amounts is found by subtraction.",
-           "{b} - {a} = {answer} small turns, so Ray B's angle is {answer} small turns greater."
+           "Find the difference. Use subtraction.",
+           "{b} - {a} = {answer} small turns. So Ray B's angle is {answer} small turns bigger."
           ],
           "model": {
            "type": "compare",
@@ -7769,21 +7770,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "A ray is rotated through 4 equal blocks of movement, and each block contains 2 equal small turns. How many small turns of rotation are made altogether?",
-         "explanation": "There are 4 equal blocks of movement. Each block contains 2 small turns, so multiply the number of blocks by the turns in one block. 4 x 2 = 8 small turns, so the total rotation is 8 small turns.",
+         "prompt": "A ray turns 4 times. Each time, it makes 2 small turns. How many small turns does it make in all?",
+         "explanation": "The ray turns 4 times. Each time it makes 2 small turns, so multiply. 4 x 2 = 8 small turns in all.",
          "steps": [
-          "There are 4 equal blocks of movement.",
-          "Each block contains 2 small turns, so multiply the number of blocks by the turns in one block.",
-          "4 x 2 = 8 small turns, so the total rotation is 8 small turns."
+          "The ray turns 4 times.",
+          "Each time it makes 2 small turns, so multiply.",
+          "4 x 2 = 8 small turns in all."
          ],
-         "hint": "Multiply the number of equal blocks by the small turns in each block.",
+         "hint": "Multiply the number of turns by the small turns each time.",
          "derived": [
           "2 (generated problem)",
           "4 (generated problem)",
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "A ray is rotated through {n} equal blocks of movement, and each block contains {k} equal small turns. How many small turns of rotation are made altogether?",
+          "template": "A ray turns {n} times. Each time, it makes {k} small turns. How many small turns does it make in all?",
           "params": {
            "n": [
             2,
@@ -7802,9 +7803,9 @@
            "total_turn": "n*k"
           },
           "steps": [
-           "There are {n} equal blocks of movement.",
-           "Each block contains {k} small turns, so multiply the number of blocks by the turns in one block.",
-           "{n} x {k} = {answer} small turns, so the total rotation is {answer} small turns."
+           "The ray turns {n} times.",
+           "Each time it makes {k} small turns, so multiply.",
+           "{n} x {k} = {answer} small turns in all."
           ],
           "model": {
            "type": "numberline",
@@ -8125,21 +8126,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "A bus turns 2 equal small turns left and then turns 5 more small turns in the same direction. How many small turns is the bus's total turn?",
-         "explanation": "The bus first turns 2 small turns and then turns 5 more small turns. The turns are in the same direction, so their amounts are added. 2 + 5 = 7 small turns, so the total turn is 7 small turns.",
+         "prompt": "A bus turns 2 small turns to the left. Then it turns 5 more small turns the same way. How many small turns does the bus turn in all?",
+         "explanation": "The bus first turns 2 small turns. Then it turns 5 more small turns. Both turns go the same way. So add the amounts. 2 + 5 = 7 small turns, so the total is 7 small turns.",
          "steps": [
-          "The bus first turns 2 small turns and then turns 5 more small turns.",
-          "The turns are in the same direction, so their amounts are added.",
-          "2 + 5 = 7 small turns, so the total turn is 7 small turns."
+          "The bus first turns 2 small turns. Then it turns 5 more small turns.",
+          "Both turns go the same way. So add the amounts.",
+          "2 + 5 = 7 small turns, so the total is 7 small turns."
          ],
-         "hint": "Add the two same-direction amounts of turning.",
+         "hint": "Add the two turns. Both turns go the same way.",
          "derived": [
           "2 (generated problem)",
           "5 (generated problem)",
           "7 (generated problem)"
          ],
          "gen": {
-          "template": "A bus turns {a} equal small turns left and then turns {b} more small turns in the same direction. How many small turns is the bus's total turn?",
+          "template": "A bus turns {a} small turns to the left. Then it turns {b} more small turns the same way. How many small turns does the bus turn in all?",
           "params": {
            "a": [
             2,
@@ -8158,9 +8159,9 @@
            "total_turn": "a+b"
           },
           "steps": [
-           "The bus first turns {a} small turns and then turns {b} more small turns.",
-           "The turns are in the same direction, so their amounts are added.",
-           "{a} + {b} = {answer} small turns, so the total turn is {answer} small turns."
+           "The bus first turns {a} small turns. Then it turns {b} more small turns.",
+           "Both turns go the same way. So add the amounts.",
+           "{a} + {b} = {answer} small turns, so the total is {answer} small turns."
           ],
           "model": {
            "type": "tape",
@@ -9133,19 +9134,19 @@
           "practice",
           "computed"
          ],
-         "prompt": "Two equal angles need equal amounts of rotation. If one rotating arm makes 3 whole turns to match the other, how many whole turns must the other arm make?",
-         "explanation": "The first rotating arm makes 3 whole turns. Equal angles must need equal amounts of rotation to match. The other arm also makes 3 whole turns.",
+         "prompt": "Two angles are equal. One arm turns 3 whole turns. How many whole turns must the other arm turn to match it?",
+         "explanation": "The first arm turns 3 whole turns. Equal angles need the same amount of turn. The other arm also turns 3 whole turns.",
          "steps": [
-          "The first rotating arm makes 3 whole turns.",
-          "Equal angles must need equal amounts of rotation to match.",
-          "The other arm also makes 3 whole turns."
+          "The first arm turns 3 whole turns.",
+          "Equal angles need the same amount of turn.",
+          "The other arm also turns 3 whole turns."
          ],
-         "hint": "Use the rule that equal angles need equal rotations.",
+         "hint": "Equal angles need equal turns.",
          "derived": [
           "3 (generated problem)"
          ],
          "gen": {
-          "template": "Two equal angles need equal amounts of rotation. If one rotating arm makes {a} whole turns to match the other, how many whole turns must the other arm make?",
+          "template": "Two angles are equal. One arm turns {a} whole turns. How many whole turns must the other arm turn to match it?",
           "params": {
            "a": [
             2,
@@ -9160,9 +9161,9 @@
            "turnsForEach": "a"
           },
           "steps": [
-           "The first rotating arm makes {a} whole turns.",
-           "Equal angles must need equal amounts of rotation to match.",
-           "The other arm also makes {answer} whole turns."
+           "The first arm turns {a} whole turns.",
+           "Equal angles need the same amount of turn.",
+           "The other arm also turns {answer} whole turns."
           ],
           "model": null,
           "hint": "Use the rule that equal angles need equal rotations.",
@@ -9280,14 +9281,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "At a market, a toy claw has an opening of 15 width units and another has an opening of 4 width units. How many width units wider is the larger opening?",
-         "explanation": "The larger opening measures 15 width units and the smaller measures 4 width units. Subtract the smaller opening from the larger opening. 15 - 4 = 11 width units.",
+         "prompt": "One toy claw has an opening 15 width units wide. Another has 4 width units. How many more width units is the bigger one?",
+         "explanation": "The bigger opening is 15 width units. The smaller is 4 width units. Subtract the smaller from the bigger. 15 - 4 = 11 width units.",
          "steps": [
-          "The larger opening measures 15 width units and the smaller measures 4 width units.",
-          "Subtract the smaller opening from the larger opening.",
+          "The bigger opening is 15 width units. The smaller is 4 width units.",
+          "Subtract the smaller from the bigger.",
           "15 - 4 = 11 width units."
          ],
-         "hint": "Find the difference between the larger and smaller openings.",
+         "hint": "Find the difference between the two openings.",
          "derived": [
           "11 (generated problem)",
           "15 (generated problem)",
@@ -9295,7 +9296,7 @@
           "4 (generated problem)"
          ],
          "gen": {
-          "template": "At a market, a {item} has an opening of {a} width units and another has an opening of {b} width units. How many width units wider is the larger opening?",
+          "template": "One {item} has an opening {a} width units wide. Another has {b} width units. How many more width units is the bigger one?",
           "params": {
            "item": [
             "bangle",
@@ -9323,8 +9324,8 @@
            "difference": "a-b"
           },
           "steps": [
-           "The larger opening measures {a} width units and the smaller measures {b} width units.",
-           "Subtract the smaller opening from the larger opening.",
+           "The bigger opening is {a} width units. The smaller is {b} width units.",
+           "Subtract the smaller from the bigger.",
            "{a} - {b} = {answer} width units."
           ],
           "model": {
@@ -9491,14 +9492,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "At a bus workshop, a rotating arm opens 12 width units, while two slits open 4 and 3 width units. Both slits must be widened to match the arm. How many width units should be added in total?",
-         "explanation": "The arm is wider than both slits, so the gaps are 12 - 4 and 12 - 3. Both slits must be widened, so add the two gaps. (12 - 4) + (12 - 3) = 17 width units.",
+         "prompt": "A turning arm opens 12 width units. Two slits open 4 and 3 width units. Both slits must get wider to match the arm. How many width units must you add in all?",
+         "explanation": "The arm is wider than both slits. So the gaps are 12 - 4 and 12 - 3. Both slits must get wider. So add the two gaps. (12 - 4) + (12 - 3) = 17 width units.",
          "steps": [
-          "The arm is wider than both slits, so the gaps are 12 - 4 and 12 - 3.",
-          "Both slits must be widened, so add the two gaps.",
+          "The arm is wider than both slits. So the gaps are 12 - 4 and 12 - 3.",
+          "Both slits must get wider. So add the two gaps.",
           "(12 - 4) + (12 - 3) = 17 width units."
          ],
-         "hint": "Find the gap from each slit to the arm's opening.",
+         "hint": "Find how much wider each slit must get.",
          "derived": [
           "12 (generated problem)",
           "17 (generated problem)",
@@ -9506,7 +9507,7 @@
           "4 (generated problem)"
          ],
          "gen": {
-          "template": "At a bus workshop, a rotating arm opens {a} width units, while two slits open {b} and {c} width units. Both slits must be widened to match the arm. How many width units should be added in total?",
+          "template": "A turning arm opens {a} width units. Two slits open {b} and {c} width units. Both slits must get wider to match the arm. How many width units must you add in all?",
           "params": {
            "a": [
             12,
@@ -9535,8 +9536,8 @@
            "totalWidening": "(a-b)+(a-c)"
           },
           "steps": [
-           "The arm is wider than both slits, so the gaps are {a} - {b} and {a} - {c}.",
-           "Both slits must be widened, so add the two gaps.",
+           "The arm is wider than both slits. So the gaps are {a} - {b} and {a} - {c}.",
+           "Both slits must get wider. So add the two gaps.",
            "({a} - {b}) + ({a} - {c}) = {answer} width units."
           ],
           "model": {
@@ -9655,20 +9656,21 @@
           "deep",
           "find flaw"
          ],
-         "prompt": "A child moves a transparent circle over two angles and says, “They are equal.” What check is missing?",
+         "prompt": "A child puts a clear circle over two angles. The child says, “They are equal.” What check is missing?",
          "options": [
-          "Both the vertices and arms must match exactly.",
-          "The circle must stay completely still.",
-          "Only the vertices need to overlap.",
-          "The marks on the circle decide equality."
+          "The vertex and both arms must match exactly.",
+          "The circle must stay still.",
+          "Only the vertex needs to match.",
+          "The marks on the circle decide if they are equal."
          ],
          "answer": 0,
          "why": {
-          "The circle must stay completely still.": "Moving the circle helps with comparison, but movement alone does not prove equality.",
-          "Only the vertices need to overlap.": "Overlapping the vertices is not enough because the matching rays must also overlap.",
-          "The marks on the circle decide equality.": "The marks show arm positions, but they do not by themselves prove equality."
+          "The vertex and both arms must match exactly.": "",
+          "The circle must stay still.": "Moving the circle helps you compare. But moving alone does not prove they are equal.",
+          "Only the vertex needs to match.": "Matching the vertex is not enough. The arms must match too.",
+          "The marks on the circle decide if they are equal.": "The marks show where the arms are. They do not prove equal angles by themselves."
          },
-         "explanation": "Equal angles need the same vertex and matching rays lying exactly on each other.",
+         "explanation": "Equal angles need the same vertex (the corner point) and arms that match exactly.",
          "f": [
           "3.7",
           "3.8",
@@ -13145,20 +13147,21 @@
           "case"
          ],
          "context": "A student needs the shortest path joining point A and point B. The student draws the path as line segment AB. The student also draws a line through point A and point B, because the line has no end and continues in both directions. The student draws a ray starting at point B. Its initial point is point B, and point C is another point on it.",
-         "prompt": "If the ray starts at point A instead of point B, while point C remains on it, what is point A called?",
+         "prompt": "A ray starts at point A instead of point B. Point C is still on the ray. What is point A called?",
          "options": [
           "The initial point of the ray.",
           "Another point on the ray.",
           "An end point of line segment AB.",
-          "A point that determines the line."
+          "A point that fixes the line."
          ],
          "answer": 0,
          "why": {
+          "The initial point of the ray.": "",
           "Another point on the ray.": "Point C is the other point named with the ray.",
           "An end point of line segment AB.": "Point A belongs to the ray, not the segment.",
-          "A point that determines the line.": "This role concerns two points and a line."
+          "A point that fixes the line.": "This is about two points and a line."
          },
-         "explanation": "The starting point of a ray is its initial point."
+         "explanation": "The point where a ray starts is its initial point."
         },
         {
          "type": "explain",
@@ -13343,20 +13346,21 @@
           "case"
          ],
          "context": "A carpenter draws a straight angle and adds a ray inside it. The ray divides the angle into two matching parts. The carpenter folds a sheet so its two edges meet at equal angles, then checks the crossing lines. The crossing lines are perpendicular, and the opening has the shape of the letter L.",
-         "prompt": "If the carpenter changes the crossing lines so that they meet at an acute angle, what should be concluded?",
+         "prompt": "Two lines cross. They are changed so they meet at an acute angle (less than 90 degrees). Which conclusion is right?",
          "options": [
           "The lines would not meet at right angles.",
-          "The lines would still meet at right angles because they cross.",
+          "The lines would still meet at right angles, because they cross.",
           "The lines would become straight angles.",
-          "The lines would meet at right angles because acute means sharp."
+          "The lines would meet at right angles, because acute means sharp."
          ],
          "answer": 0,
          "why": {
-          "The lines would still meet at right angles because they cross.": "Option 1: Crossing alone does not make lines perpendicular.",
+          "The lines would not meet at right angles.": "",
+          "The lines would still meet at right angles, because they cross.": "Option 1: Crossing does not make lines meet at right angles.",
           "The lines would become straight angles.": "Option 2: The lines still meet; they do not become straight angles.",
-          "The lines would meet at right angles because acute means sharp.": "Option 3: Acute means sharp, not right-angled."
+          "The lines would meet at right angles, because acute means sharp.": "Option 3: Acute means sharp, not a right angle."
          },
-         "explanation": "Option 0: Perpendicular lines must meet at right angles."
+         "explanation": "Option 0: Perpendicular lines must make right angles (90 degrees)."
         },
         {
          "type": "explain",
@@ -13403,7 +13407,7 @@
           "case"
          ],
          "context": "A carpenter makes three wooden frames for a classroom display. The first frame meets in a corner measuring exactly 90°. The second corner measures more than 90° but less than 180°. The third turns farther around, to a measurement greater than 180° but less than 360°. The carpenter measures all three corners in degrees and labels each one.",
-         "prompt": "If the carpenter changes the first corner so that it is greater than 90° but less than 180°, which angle type should be used?",
+         "prompt": "A carpenter changes the first corner. The new corner is bigger than 90° and smaller than 180°. Which type of angle is it?",
          "options": [
           "Acute angle",
           "Right angle",
@@ -13414,9 +13418,10 @@
          "why": {
           "Acute angle": "An acute angle is smaller than 90°.",
           "Right angle": "A right angle measures exactly 90°.",
-          "Reflex angle": "A reflex angle is greater than 180°."
+          "Obtuse angle": "",
+          "Reflex angle": "A reflex angle is bigger than 180°."
          },
-         "explanation": "An obtuse angle is greater than 90° and less than 180°."
+         "explanation": "An obtuse angle is bigger than 90° and smaller than 180°."
         },
         {
          "type": "mcq",
@@ -15905,7 +15910,7 @@
       {
        "id": "mathematics-g6-ch3-l5",
        "title": "Lesson 5: Clock Patterns and Mental Maths",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "concept",
@@ -16005,6 +16010,48 @@
          "explanation": "Now read on to find out."
         },
         {
+         "type": "worked",
+         "id": "mathematics-g6-ch3-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A shop gives boxes marked 25,000, 400 and 13,000. Can a child make both totals, 38,800 and 39,800?",
+         "steps": [
+          "Add 25,000 and 13,000 because addition is allowed with the boxes.",
+          "Add 400 two times because this makes the total 38,800.",
+          "Start again with 25,000 because the next target is 39,800.",
+          "Add 400 many times because repeated addition reaches 39,800."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "5.7",
+          "5.8",
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 65
+          },
+          {
+           "ch": 3,
+           "p": 65
+          },
+          {
+           "ch": 3,
+           "p": 66
+          },
+          {
+           "ch": 3,
+           "p": 66
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g6-ch3-l5-a2",
          "difficulty": 1,
@@ -16055,14 +16102,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "A bus is due at 3:2. The next matching-digit-pattern time is 3:5; how many minutes are there from 3:2 until 3:5?",
-         "explanation": "Convert both times to minutes after 12 o'clock: 182 and 185. Subtract: 185 - 182 = 3 minutes. 3 = 3 minutes.",
+         "prompt": "A bus is due at 3:2. The next time with the same digit pattern is 3:5. How many minutes are there from 3:2 until 3:5?",
+         "explanation": "Change both times to minutes after 12 o'clock: 182 and 185. Subtract: 185 - 182 = 3 minutes. 3 = 3 minutes.",
          "steps": [
-          "Convert both times to minutes after 12 o'clock: 182 and 185.",
+          "Change both times to minutes after 12 o'clock: 182 and 185.",
           "Subtract: 185 - 182 = 3 minutes.",
           "3 = 3 minutes."
          ],
-         "hint": "Convert both clock times to minutes after 12 o'clock.",
+         "hint": "Change both clock times into minutes after 12 o'clock.",
          "derived": [
           "12 (generated problem)",
           "182 (generated problem)",
@@ -16072,7 +16119,7 @@
           "5 (generated problem)"
          ],
          "gen": {
-          "template": "A bus is due at {h}:{m}. The next matching-digit-pattern time is {nh}:{nm}; how many minutes are there from {h}:{m} until {nh}:{nm}?",
+          "template": "A bus is due at {h}:{m}. The next time with the same digit pattern is {nh}:{nm}. How many minutes are there from {h}:{m} until {nh}:{nm}?",
           "params": {
            "h": [
             2,
@@ -16107,7 +16154,7 @@
            "gap": "next-current"
           },
           "steps": [
-           "Convert both times to minutes after 12 o'clock: {current} and {next}.",
+           "Change both times to minutes after 12 o'clock: {current} and {next}.",
            "Subtract: {next} - {current} = {gap} minutes.",
            "{gap} = {answer} minutes."
           ],
@@ -16259,14 +16306,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "A child watches the clock at 2:2; the next matching-digit-pattern time is 4:7. A bus leaves 10 minutes after that matching time, so how many minutes are there from 2:2 until the bus leaves?",
-         "explanation": "Convert both times to minutes after 12 o'clock: 122 and 247. Find the gap: 125 = 247 - 122 minutes. Add the extra wait: 125 + 10 = 135 minutes.",
+         "prompt": "A child looks at the clock at 2:2. The next time with the same digit pattern is 4:7. A bus leaves 10 minutes after that time. How many minutes are there from 2:2 until the bus leaves?",
+         "explanation": "Change both times to minutes after 12 o'clock: 122 and 247. Find the gap: 125 = 247 - 122 minutes. Add the extra wait: 125 + 10 = 135 minutes.",
          "steps": [
-          "Convert both times to minutes after 12 o'clock: 122 and 247.",
+          "Change both times to minutes after 12 o'clock: 122 and 247.",
           "Find the gap: 125 = 247 - 122 minutes.",
           "Add the extra wait: 125 + 10 = 135 minutes."
          ],
-         "hint": "Convert both clock times to minutes after 12 o'clock.",
+         "hint": "Change both clock times to minutes after 12 o'clock.",
          "derived": [
           "10 (generated problem)",
           "12 (generated problem)",
@@ -16279,7 +16326,7 @@
           "7 (generated problem)"
          ],
          "gen": {
-          "template": "A child watches the clock at {h}:{m}; the next matching-digit-pattern time is {nh}:{nm}. A bus leaves {wait} minutes after that matching time, so how many minutes are there from {h}:{m} until the bus leaves?",
+          "template": "A child looks at the clock at {h}:{m}. The next time with the same digit pattern is {nh}:{nm}. A bus leaves {wait} minutes after that time. How many minutes are there from {h}:{m} until the bus leaves?",
           "params": {
            "h": [
             2,
@@ -16319,7 +16366,7 @@
            "gap": "next-current"
           },
           "steps": [
-           "Convert both times to minutes after 12 o'clock: {current} and {next}.",
+           "Change both times to minutes after 12 o'clock: {current} and {next}.",
            "Find the gap: {gap} = {next} - {current} minutes.",
            "Add the extra wait: {gap} + {wait} = {answer} minutes."
           ],
@@ -16338,6 +16385,127 @@
            "p": 64
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict repeat"
+         ],
+         "prompt": "Last year’s calendar was different from this year’s. With only one leap year, when can the calendar repeat?",
+         "options": [
+          "After one year.",
+          "After five years.",
+          "After six years.",
+          "After twelve years."
+         ],
+         "answer": 2,
+         "why": {
+          "After one year.": " gives six years when there is one leap year.",
+          "After five years.": "Five years is the rule for two leap years.",
+          "After twelve years.": "Twelve years is not given by the calendar rule."
+         },
+         "explanation": "Seven years is not given by the calendar rule.",
+         "f": [
+          "5.4",
+          "5.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 64
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply rule"
+         ],
+         "prompt": "One leap year gives a six-year repeat. Two leap years can repeat sooner. After how many years?",
+         "options": [
+          "After one year.",
+          "After five years.",
+          "After six years.",
+          "After twelve years."
+         ],
+         "answer": 1,
+         "why": {
+          "After one year.": " gives five years when there are two leap years.",
+          "After six years.": "Seven years is not given by the calendar rule.",
+          "After twelve years.": "Twelve years is not given by the calendar rule."
+         },
+         "explanation": "Six years is the rule for one leap year.",
+         "f": [
+          "5.5",
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 73
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "plan sum"
+         ],
+         "prompt": "A shop needs 38,800 and 39,800. The boxes show 25,000, 400 and 13,000. Which plan works?",
+         "options": [
+          "Make 38,800 with 25,000, 13,000 and 400 twice. Then add 400 many times to 25,000.",
+          "Make 38,800 with 25,000, 13,000 and 400 once. Then add 400 many times to 25,000.",
+          "Make 38,800 with 25,000, 13,000 and 400 once. Then add 400 many times to 13,000.",
+          "Make 38,800 with 25,000, 13,000 and 400 twice. Then subtract 400 many times from 25,000."
+         ],
+         "answer": 0,
+         "why": {
+          "Make 38,800 with 25,000, 13,000 and 400 once. Then add 400 many times to 25,000.": "One 400 leaves the first total too small.",
+          "Make 38,800 with 25,000, 13,000 and 400 once. Then add 400 many times to 13,000.": "One 400 leaves the first total too small.",
+          "Make 38,800 with 25,000, 13,000 and 400 twice. Then subtract 400 many times from 25,000.": "Subtracting 400 from 25,000 moves away from 39,800."
+         },
+         "explanation": "The first sum makes 38,800. Repeated 400s raise 25,000 to 39,800.",
+         "f": [
+          "5.7",
+          "5.8",
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 65
+          },
+          {
+           "ch": 3,
+           "p": 65
+          },
+          {
+           "ch": 3,
+           "p": 66
+          },
+          {
+           "ch": 3,
+           "p": 66
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l5-clock-analog-clock.webp",
@@ -16354,7 +16522,7 @@
       {
        "id": "mathematics-g6-ch3-l6",
        "title": "Lesson 6: Number Patterns, Collatz and Games",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -16524,6 +16692,43 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g6-ch3-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Four Collatz samples reach 1. A child says this proves every sequence reaches 1. Is the child right?",
+         "steps": [
+          "All four samples reach 1, which supports Collatz’s conjecture.",
+          "Four samples cannot prove a claim about every possible sequence.",
+          "The conjecture says every sequence reaches 1, but this is still unknown.",
+          "Treat the samples as support, not proof for every sequence."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "6.4",
+          "6.5",
+          "6.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 69
+          }
+         ]
+        },
+        {
          "type": "fillblank",
          "id": "mathematics-g6-ch3-l6-a4",
          "difficulty": 1,
@@ -16540,6 +16745,29 @@
           {
            "ch": 3,
            "p": 69
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l6-a2",
+         "difficulty": 1,
+         "tags": [
+          "number-patterns"
+         ],
+         "prompt": "Which number pattern is shown in the lesson?",
+         "options": [
+          "A row containing eight 32s",
+          "A row containing eight 3s",
+          "A row containing eight 1s",
+          "A row containing eight 10s"
+         ],
+         "answer": 0,
+         "explanation": "the lesson describes a row containing eight copies of 32.",
+         "src": [
+          {
+           "ch": 3,
+           "p": 68
           }
          ]
         },
@@ -16688,23 +16916,6 @@
           {
            "ch": 3,
            "p": 71
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g6-ch3-l6-a6",
-         "difficulty": 2,
-         "tags": [
-          "collatz"
-         ],
-         "prompt": "All four sample Collatz sequences eventually reach 1.",
-         "answer": true,
-         "explanation": "All four sample sequences in the lesson end at 1.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 69
           }
          ]
         },
@@ -17291,6 +17502,263 @@
            "p": 73
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A Collatz sequence can contain 32 and 3. Which rule correctly gives the next step?",
+         "options": [
+          "Divide 32 by two; multiply 3 by three and add one.",
+          "Multiply 32 by two; multiply 3 by three and add one.",
+          "Divide 32 by two; multiply 3 by two and add one.",
+          "Add three to 32; multiply 3 by three and add one."
+         ],
+         "answer": 0,
+         "why": {
+          "Multiply 32 by two; multiply 3 by three and add one.": "This wrongly multiplies the even number 32 instead of dividing it.",
+          "Divide 32 by two; multiply 3 by two and add one.": "This wrongly divides the odd number 3 instead of multiplying it.",
+          "Add three to 32; multiply 3 by three and add one.": "This wrongly adds to the even number 32 instead of dividing it."
+         },
+         "explanation": "It applies division to even 32 and the odd rule to 3.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 68
+          },
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 69
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "evaluate"
+         ],
+         "prompt": "Four Collatz samples reach 1. A child says this proves the conjecture. What is the best reply?",
+         "options": [
+          "Samples support it, but whether every sequence reaches 1 remains unknown.",
+          "The samples prove that every possible Collatz sequence will reach 1.",
+          "The samples show that other Collatz sequences can never reach 1.",
+          "The samples show that Collatz never conjectured that sequences reach 1."
+         ],
+         "answer": 0,
+         "why": {
+          "The samples prove that every possible Collatz sequence will reach 1.": "Four samples cannot prove a claim about every possible sequence.",
+          "The samples show that other Collatz sequences can never reach 1.": "This wrongly says other sequences cannot reach 1, although samples do.",
+          "The samples show that Collatz never conjectured that sequences reach 1.": "This wrongly denies the conjecture Collatz actually made."
+         },
+         "explanation": "The samples support the idea, but the full conjecture remains unknown.",
+         "f": [
+          "6.4",
+          "6.5",
+          "6.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 69
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Paromita says her class has about 100 children. A friend says this means exactly 100 children. What is the mistake?",
+         "options": [
+          "An estimate gives a rough count, not an exact count.",
+          "The number 100 must be exact because it was estimated.",
+          "About 100 children cannot describe the size of a class.",
+          "Only number patterns can give information about a class size."
+         ],
+         "answer": 0,
+         "why": {
+          "The number 100 must be exact because it was estimated.": "This wrongly treats an estimate as an exact count.",
+          "About 100 children cannot describe the size of a class.": "The estimate does give a useful idea of the class size.",
+          "Only number patterns can give information about a class size.": "Numbers can support estimation even without an exact count."
+         },
+         "explanation": "An estimate is enough when an exact count is not needed.",
+         "f": [
+          "6.7",
+          "6.8",
+          "6.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "distinguish"
+         ],
+         "prompt": "In the first game, players add 1, 2 or 3. One player adds 10 to the previous number. Why is that move not allowed?",
+         "options": [
+          "The first game only allows adding 1, 2, or 3.",
+          "The first game only allows adding numbers from 1 to 10.",
+          "The first game only allows multiplying by 3 and adding 1.",
+          "The first game allows adding any number, including 10."
+         ],
+         "answer": 0,
+         "why": {
+          "The first game only allows adding numbers from 1 to 10.": "That rule belongs to the second game, not the first.",
+          "The first game only allows multiplying by 3 and adding 1.": "The odd Collatz rule does not control the first game.",
+          "The first game allows adding any number, including 10.": "The first game has a limit, so adding 10 is outside it."
+         },
+         "explanation": "The first game limits each move to adding 1, 2, or 3.",
+         "f": [
+          "6.9",
+          "6.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 71
+          },
+          {
+           "ch": 3,
+           "p": 71
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l6-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "identify"
+         ],
+         "prompt": "A child plans moves for a number game. Which plan shows computational thinking?",
+         "options": [
+          "Choose a move, add 1, 2, or 3, then check the total.",
+          "Pick any number, change it often, and never explain the choices.",
+          "Draw eight 32s in a row without using any rule.",
+          "Use one Collatz step for both even and odd numbers."
+         ],
+         "answer": 0,
+         "why": {
+          "Pick any number, change it often, and never explain the choices.": "Changing numbers without a plan does not show orderly steps.",
+          "Draw eight 32s in a row without using any rule.": "The row has no orderly steps for using the numbers.",
+          "Use one Collatz step for both even and odd numbers.": "This wrongly says even and odd numbers use the same step."
+         },
+         "explanation": "It uses clear, orderly steps to work with numbers.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.9",
+          "6.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 68
+          },
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 71
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l6-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Signs show prices, and puzzles give number clues. Which pair shows numbers doing useful work?",
+         "options": [
+          "A price sign informs shoppers, and a number puzzle supports play.",
+          "A price sign hides information, and a number puzzle stops all play.",
+          "A price sign needs Collatz steps, and a number puzzle needs odd steps.",
+          "A price sign counts eight 32s, and a number puzzle estimates children."
+         ],
+         "answer": 0,
+         "why": {
+          "A price sign hides information, and a number puzzle stops all play.": "Signs inform people, while number puzzles support play rather than stop it.",
+          "A price sign needs Collatz steps, and a number puzzle needs odd steps.": "Collatz is separate from the number uses in shops and puzzles.",
+          "A price sign counts eight 32s, and a number puzzle estimates children.": "This wrongly mixes a pattern count and an estimate with other uses."
+         },
+         "explanation": "Numbers convey information and can support puzzles and games.",
+         "f": [
+          "6.1",
+          "6.8",
+          "6.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 68
+          },
+          {
+           "ch": 3,
+           "p": 69
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l6-collatz-conjecture-tree-visu-324a27.webp",
@@ -17307,7 +17775,7 @@
       {
        "id": "mathematics-g6-ch3-exam",
        "title": "Test practice",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 18,
        "topicScene": "media/ch3-l1-row-of-religious-child-stude.webp",
        "sceneAlt": "A row of young Buddhist schoolchildren stands in Uttaradit, Thailand.",
        "sceneCaption": "A row of children standing together in Thailand.",
@@ -17384,30 +17852,6 @@
           "The number shows how many taller neighbours there are."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
-        },
-        {
-         "type": "mcq",
-         "id": "mathematics-g6-ch3-l2-x1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "While checking a table, a student notices that 626 is larger than the cells immediately to its left and right, 577 and 345, so it is a supercell. The cell containing 200 is next to 577, so 200 is not a supercell. Another cell contains 198, and its only adjacent cell contains 109, so 198 is a supercell. The student must then complete Table 2 using 1, 0, 6, 3 and 9.",
-         "prompt": "Why is the cell containing 626 a supercell?",
-         "options": [
-          "Its value is greater than both of the adjacent values shown, 577 and 345.",
-          "It is greater than 577, while the other adjacent value does not matter.",
-          "It is the greatest value in the whole table, so local comparisons are unnecessary.",
-          "It is a supercell because 200 is smaller than it."
-         ],
-         "answer": 0,
-         "why": {
-          "It is greater than 577, while the other adjacent value does not matter.": "Being larger than only one neighbour is insufficient.",
-          "It is the greatest value in the whole table, so local comparisons are unnecessary.": "Being largest is not the only way to qualify.",
-          "It is a supercell because 200 is smaller than it.": "The comparison must be with adjacent cells."
-         },
-         "explanation": "It exceeds both adjacent values."
         },
         {
          "type": "mcq",
@@ -17514,6 +17958,138 @@
           "States that 68, 176 and 545 have equal digit sums.",
           "Explains that number-line placement uses correct positions.",
           "Mentions that the number line starts at 1, 2, 3 and continues onwards."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Manish is comparing his birthday date, 20/12/2012, with Meghana’s birthday date, 11/02/2011, while thinking about clock patterns and calendars. A usual 12-hour clock can show times with matching digit patterns. Last year’s calendar was different from this year’s calendar. A calendar can repeat after six years when only one leap year is included, but after five years when two leap years are included. Manish also checks which thousands can be made in the mental-maths activity.",
+         "prompt": "What changes if the calendar comparison includes two leap years instead of one?",
+         "options": [
+          "It would repeat one year sooner.",
+          "It would repeat one year later.",
+          "It would repeat two years later.",
+          "It would repeat at the same time."
+         ],
+         "answer": 0,
+         "why": {
+          "It would repeat one year later.": "One leap year gives a six-year repeat period.",
+          "It would repeat two years later.": "The number of leap years is mistaken for added time.",
+          "It would repeat at the same time.": "The different repeat periods are treated as unchanged."
+         },
+         "explanation": "Two leap years give a five-year repeat period."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Manish is comparing his birthday date, 20/12/2012, with Meghana’s birthday date, 11/02/2011, while thinking about clock patterns and calendars. A usual 12-hour clock can show times with matching digit patterns. Last year’s calendar was different from this year’s calendar. A calendar can repeat after six years when only one leap year is included, but after five years when two leap years are included. Manish also checks which thousands can be made in the mental-maths activity.",
+         "prompt": "Meghana wants a difference made by adding and subtracting 25,000, 400 and 13,000 in the boxes. Which result should she accept?",
+         "options": [
+          "39,800",
+          "38,800",
+          "16,000",
+          "1,000"
+         ],
+         "answer": 0,
+         "why": {
+          "38,800": "38,800 is a number that can be made, but it is not the stated difference.",
+          "16,000": "16,000 is one of the sums, not the stated difference.",
+          "1,000": "1,000 is the only thousand that cannot be made."
+         },
+         "explanation": "39,800 is the stated difference made by adding and subtracting the box numbers."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g6-ch3-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why including two leap years makes the calendar repeat sooner than including only one leap year.",
+         "answer": "A calendar pattern with one leap year repeats after six years. If two leap years are included, the pattern repeats after five years. Therefore, changing the pattern from one leap year to two makes the calendar repeat one year sooner, rather than at the same time.",
+         "points": [
+          "States the six-year period for one leap year.",
+          "States the five-year period for two leap years.",
+          "Explains that the period becomes one year shorter.",
+          "Compares the two calendar patterns clearly."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a mathematics activity, Paromita looked at a number-pattern display. One row showed eight 32s. The class also tried Collatz sequences and learned how even and odd terms change. Later, the students played two number games: one used additions of 1, 2, or 3, while the other allowed additions from 1 to 10. Paromita estimated that about 100 children were in the class because an exact count was not needed.",
+         "prompt": "A Collatz sequence reaches an even term. What should the student do next?",
+         "options": [
+          "Divide that term by two.",
+          "Multiply that term by 3, then add 1.",
+          "Add 1 to that term.",
+          "Leave that term unchanged."
+         ],
+         "answer": 0,
+         "why": {
+          "Multiply that term by 3, then add 1.": "That is the rule for an odd term.",
+          "Add 1 to that term.": "The even-number rule does not use addition.",
+          "Leave that term unchanged.": "Each Collatz step changes the current term."
+         },
+         "explanation": "This matches the rule for even terms."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a mathematics activity, Paromita looked at a number-pattern display. One row showed eight 32s. The class also tried Collatz sequences and learned how even and odd terms change. Later, the students played two number games: one used additions of 1, 2, or 3, while the other allowed additions from 1 to 10. Paromita estimated that about 100 children were in the class because an exact count was not needed.",
+         "prompt": "Why is Paromita's estimate of about 100 children suitable in the case?",
+         "options": [
+          "About 100 is enough when the exact count is not needed.",
+          "About 100 means the class has exactly 100 children.",
+          "About 100 is useful only for finding number patterns.",
+          "About 100 is useful only for playing the number games."
+         ],
+         "answer": 0,
+         "why": {
+          "About 100 means the class has exactly 100 children.": "An estimate is not the same as an exact count.",
+          "About 100 is useful only for finding number patterns.": "Estimates are not limited to number patterns.",
+          "About 100 is useful only for playing the number games.": "Estimates are not limited to number games."
+         },
+         "explanation": "The situation does not require an exact count."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g6-ch3-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does forming and following orderly steps in the number games show computational thinking?",
+         "answer": "Computational thinking means forming orderly steps to use numbers. In the first game, the step is to add 1, 2, or 3 to the previous number. In the second game, the step is to add a number from 1 to 10. These clear rules guide each player's next move.",
+         "points": [
+          "Names orderly steps as computational thinking",
+          "Gives the first game's addition choices",
+          "Gives the second game's addition range",
+          "Explains that the rules guide players"
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         }
@@ -27405,8 +27981,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "The fraction 3/4 is changed to an equivalent fraction by multiplying its numerator and denominator by 2. How many equal parts are in the new denominator?",
-         "explanation": "Multiplying the denominator by 2 gives 4 × 2 = 8 equal parts in the new denominator.",
+         "prompt": "The fraction 3/4 becomes an equal fraction when you multiply the top and bottom by 2. How many equal parts are in the new denominator?",
+         "explanation": "Multiply the bottom number by 2: 4 × 2 = 8 equal parts.",
          "derived": [
           "2 (generated problem)",
           "3 (generated problem)",
@@ -35884,15 +36460,15 @@
           "negative-numbers",
           "zero"
          ],
-         "prompt": "Which statement best describes Brahmagupta's contribution to integer history?",
+         "prompt": "Which sentence best tells what Brahmagupta did for integers?",
          "options": [
-          "He completed the Nine Chapters on Mathematical Art.",
+          "He finished the Nine Chapters on Mathematical Art.",
           "He wrote about credit and debit around 300 BCE.",
-          "He gave equal treatment to positive numbers, negative numbers and zero in 628 CE.",
+          "He treated positive numbers, negative numbers and zero the same in 628 CE.",
           "He used a special sign after a negative number around 300 CE."
          ],
          "answer": 2,
-         "explanation": "Brahmagupta's equal treatment formed what is now called a ring.",
+         "explanation": "Brahmagupta treated all these numbers the same. This idea is now called a ring.",
          "src": [
           {
            "ch": 10,
@@ -35939,75 +36515,6 @@
            "ch": 10,
            "p": 266
           },
-          {
-           "ch": 10,
-           "p": 266
-          },
-          {
-           "ch": 10,
-           "p": 267
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "difficulty": 3,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "The Bakśhālī manuscript used a special sign after a negative number around 250 CE. Brahmagupta gave equal treatment to positive numbers, negative numbers, and zero in 650 CE, forming what is now called a ring. About how many years apart were these events?",
-         "explanation": "Using 300 CE for the Bakśhālī manuscript and 628 CE for Brahmagupta, the gap is y-b = 628-300 = 328 years.",
-         "derived": [
-          "250 (generated problem)",
-          "300 (generated problem)",
-          "328 (generated problem)",
-          "400 (generated problem)",
-          "628 (generated problem)",
-          "650 (generated problem)"
-         ],
-         "answers": [
-          "400"
-         ],
-         "hint": "Type the number.",
-         "id": "mathematics-g6-ch10-l6-c4",
-         "src": [
-          {
-           "ch": 10,
-           "p": 267
-          },
-          {
-           "ch": 10,
-           "p": 267
-          },
-          {
-           "ch": 10,
-           "p": 268
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "difficulty": 3,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "The Nine Chapters on Mathematical Art was completed by the first or second century CE. Using 100 CE as the later end and Kautilya's date of about 350 BCE, about how many years separated the two events?",
-         "explanation": "To go from 350 BCE to 100 CE, add the two year numbers: 100+k = 100+300 = 400 years.",
-         "derived": [
-          "100 (generated problem)",
-          "300 (generated problem)",
-          "350 (generated problem)",
-          "400 (generated problem)",
-          "450 (generated problem)"
-         ],
-         "answers": [
-          "450"
-         ],
-         "hint": "Type the number.",
-         "id": "mathematics-g6-ch10-l6-c5",
-         "src": [
           {
            "ch": 10,
            "p": 266

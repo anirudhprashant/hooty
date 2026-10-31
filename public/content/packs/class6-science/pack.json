@@ -322,18 +322,19 @@
           "deep",
           "predict"
          ],
-         "prompt": "A child looks at the night sky and wonders why the stars shine. What is the most likely next step in a scientific exploration?",
+         "prompt": "A child looks at the night sky. The child wonders why stars shine. What is a good next step in science?",
          "options": [
-          "Ask a question and observe the stars closely.",
-          "Decide the stars need no further study.",
-          "Look away and stop wondering about stars.",
-          "Choose an answer without any observation."
+          "Ask a question and watch the stars closely.",
+          "Decide the stars need no more study.",
+          "Look away and stop wondering.",
+          "Pick an answer without looking at stars."
          ],
          "answer": 0,
          "why": {
-          "Decide the stars need no further study.": "This wrongly treats a natural wonder as fully understood.",
-          "Look away and stop wondering about stars.": "This mistakes losing curiosity for good exploration.",
-          "Choose an answer without any observation.": "This skips the thinking and observing that science needs."
+          "Ask a question and watch the stars closely.": "",
+          "Decide the stars need no more study.": "This wrongly thinks we already know everything about stars.",
+          "Look away and stop wondering.": "This wrongly thinks stopping wondering is good science.",
+          "Pick an answer without looking at stars.": "This skips the watching and thinking that science needs."
          },
          "explanation": "Questions and observation help science explore the night sky.",
          "f": [
@@ -2833,20 +2834,21 @@
           "deep",
           "predict"
          ],
-         "prompt": "A class has asked a how-and-why question and explored it as a team. What is a likely result?",
+         "prompt": "A class asks a how-and-why question. The class explores it as a team. What might happen?",
          "options": [
-          "They may find solutions and discover more to explore.",
-          "They will end with no further scientific questions.",
-          "They will solve every mystery of the universe.",
-          "They will lose the joy of shared exploration."
+          "They may find answers and more to explore.",
+          "They will have no more questions about science.",
+          "They will solve every mystery in the universe.",
+          "They will lose the fun of exploring together."
          ],
          "answer": 0,
          "why": {
-          "They will end with no further scientific questions.": "This mistakes one solved question for the end of curiosity and exploration.",
-          "They will solve every mystery of the universe.": "This overstates what one class’s work can guarantee about every mystery.",
-          "They will lose the joy of shared exploration.": "This assumes teamwork removes the joy of a scientific journey."
+          "They may find answers and more to explore.": "",
+          "They will have no more questions about science.": "This wrongly thinks one answer ends all questions.",
+          "They will solve every mystery in the universe.": "This wrongly says one class can answer every mystery.",
+          "They will lose the fun of exploring together.": "This wrongly thinks teamwork takes away the fun."
          },
-         "explanation": "Learning science develops solution-finding, while many unknowns remain available to explore.",
+         "explanation": "Learning science helps us find answers. Many unknown things are still left to explore.",
          "f": [
           "6.3",
           "6.4",
@@ -2890,20 +2892,21 @@
           "deep",
           "find flaw"
          ],
-         "prompt": "A student claims, “I worked alone once, so science never needs a team.” What is the strongest reply?",
+         "prompt": "A student says: 'I worked alone once. So science never needs a team.' Which reply is best?",
          "options": [
-          "Scientific work is often shared in large teams.",
+          "Scientists often work in big teams.",
           "If one person starts, the work must stay alone.",
-          "Teamwork matters only after every answer is found.",
+          "Teamwork only matters after all answers are found.",
           "One person always knows the whole answer."
          ],
          "answer": 0,
          "why": {
-          "If one person starts, the work must stay alone.": "This confuses one person working alone with a rule for all scientific work.",
-          "Teamwork matters only after every answer is found.": "This places teamwork too late in the scientific process.",
-          "One person always knows the whole answer.": "This mistakes individual effort for complete scientific knowledge."
+          "Scientists often work in big teams.": "",
+          "If one person starts, the work must stay alone.": "This mixes up one person working alone with a rule for all science.",
+          "Teamwork only matters after all answers are found.": "This says teamwork comes too late in science work.",
+          "One person always knows the whole answer.": "This thinks one person's effort gives all the science knowledge."
          },
-         "explanation": "This is right because scientific work is rarely done by one person alone.",
+         "explanation": "This is right. Science is rarely done by one person alone.",
          "f": [
           "6.9",
           "6.10"
@@ -3143,7 +3146,7 @@
          "environment",
          "earth"
         ],
-        "prompt": "Which action best protects our planet, according to the chapter?",
+        "prompt": "According to the chapter, which action best protects our planet?",
         "options": [
          "Protect Earth's environment",
          "Ignore the environment",
@@ -3473,7 +3476,7 @@
           "biodiversity",
           "region"
          ],
-         "prompt": "You see many kinds of plants and animals in one region. What is this variety called?",
+         "prompt": "You see many kinds of plants and animals in one area. What is this called?",
          "options": [
           "Dependence",
           "Chirp",
@@ -3481,7 +3484,7 @@
           "Biodiversity"
          ],
          "answer": 3,
-         "explanation": "The variety of plants and animals in a region forms part of that region's biodiversity.",
+         "explanation": "The many kinds of plants and animals in an area make up its biodiversity.",
          "src": [
           {
            "ch": 2,
@@ -3497,20 +3500,21 @@
           "deep",
           "predict"
          ],
-         "prompt": "A frog moves from a pond edge onto damp land. Which prediction is fair?",
+         "prompt": "A frog moves from the edge of a pond onto wet ground. Which guess makes sense?",
          "options": [
-          "It can live in both places because frogs live on land and in water.",
-          "It can live only in the pond because frogs must always swim.",
-          "It can live only on land because frogs cannot stay in water.",
-          "It cannot live in either place because frogs must live in trees."
+          "It can live in both places, because frogs live on land and in water.",
+          "It can live only in the pond, because frogs must always swim.",
+          "It can live only on land, because frogs cannot stay in water.",
+          "It cannot live in either place, because frogs must live in trees."
          ],
          "answer": 0,
          "why": {
-          "It can live only in the pond because frogs must always swim.": "This mistake comes from thinking a frog must always be in water.",
-          "It can live only on land because frogs cannot stay in water.": "This mistake comes from thinking a frog cannot enter water.",
-          "It cannot live in either place because frogs must live in trees.": "This mistake comes from confusing a frog with an animal that lives in trees."
+          "It can live in both places, because frogs live on land and in water.": "",
+          "It can live only in the pond, because frogs must always swim.": "This answer is wrong. It thinks a frog must always be in water.",
+          "It can live only on land, because frogs cannot stay in water.": "This answer is wrong. It thinks a frog cannot go into water.",
+          "It cannot live in either place, because frogs must live in trees.": "This answer is wrong. It mixes up a frog with an animal that lives in trees."
          },
-         "explanation": "This is right because frogs can live both on land and in water.",
+         "explanation": "This is right. Frogs can live on land and in water.",
          "f": [
           "1.8"
          ],
@@ -4227,20 +4231,21 @@
           "deep",
           "apply"
          ],
-         "prompt": "After a class sorts many plants and animals into groups, what would show that the sorting helped their study?",
+         "prompt": "A class sorts many plants and animals into groups. What shows that sorting helped them study?",
          "options": [
-          "They can compare members within each group more clearly.",
-          "They can forget every difference between group members.",
-          "They can place all members into one larger group.",
-          "They can stop studying members inside each group."
+          "They can compare members in each group more clearly.",
+          "They can forget all differences between members.",
+          "They can put all members into one big group.",
+          "They can stop studying members in each group."
          ],
          "answer": 0,
          "why": {
-          "They can forget every difference between group members.": "This mistake assumes grouping removes all differences within groups.",
-          "They can place all members into one larger group.": "This mistake thinks grouping should join everything into one group.",
-          "They can stop studying members inside each group.": "This mistake treats stopping the study as a sign of greater understanding."
+          "They can compare members in each group more clearly.": "",
+          "They can forget all differences between members.": "This mistake thinks grouping removes all differences inside groups.",
+          "They can put all members into one big group.": "This mistake thinks grouping should put everything into one group.",
+          "They can stop studying members in each group.": "This mistake thinks stopping the study shows better understanding."
          },
-         "explanation": "This is right because grouping makes plants and animals easier to understand and study.",
+         "explanation": "This is right. Grouping makes plants and animals easier to understand and study.",
          "f": [
           "2.6"
          ],
@@ -5100,15 +5105,15 @@
           "goats",
           "surroundings"
          ],
-         "prompt": "A guide sees fish in water and goats in grassy areas. Which statement is correct?",
+         "prompt": "A guide sees fish in water. The guide sees goats in grassy places. Which sentence is true?",
          "options": [
           "Fish use streamlined bodies and fins in water.",
           "Goats use streamlined bodies and fins in water.",
-          "Both animals live in the same surroundings.",
-          "Plants and animals are the same in every region."
+          "Both animals live in the same places.",
+          "Plants and animals are the same in every place."
          ],
          "answer": 0,
-         "explanation": "Fish use streamlined bodies and fins in water. Goats live in grassy areas and use their legs.",
+         "explanation": "Fish use streamlined bodies and fins in water. Goats live in grassy places and use their legs.",
          "src": [
           {
            "ch": 2,
@@ -5237,7 +5242,7 @@
           "deep",
           "fair test"
          ],
-         "prompt": "Which is the fairest way to compare how fish and goats suit their surroundings?",
+         "prompt": "Which way is fairest to compare how fish and goats suit their surroundings?",
          "options": [
           "Watch each animal in its usual surroundings.",
           "Watch both animals in a dry, empty room.",
@@ -5246,11 +5251,12 @@
          ],
          "answer": 0,
          "why": {
-          "Watch both animals in a dry, empty room.": "This removes the water and grass that make the usual surroundings suitable.",
-          "Ask each animal to move without water or grass.": "This changes both animals' surroundings, so it cannot fairly test them there.",
-          "Compare them only by how fast they move.": "This compares speed alone and ignores how body parts and surroundings help."
+          "Watch each animal in its usual surroundings.": "",
+          "Watch both animals in a dry, empty room.": "This takes away the water and grass they need.",
+          "Ask each animal to move without water or grass.": "This changes both animals' surroundings. So the test is not fair.",
+          "Compare them only by how fast they move.": "This compares only speed. It ignores how body parts and surroundings help."
          },
-         "explanation": "This is right because it keeps each animal in suitable surroundings.",
+         "explanation": "This is right. It keeps each animal in surroundings that suit it.",
          "f": [
           "4.3",
           "4.9",
@@ -5284,20 +5290,21 @@
           "deep",
           "predict"
          ],
-         "prompt": "The Silent Valley movement opposed a hydroelectric dam. If it had failed, what could most likely have happened?",
+         "prompt": "The Silent Valley movement opposed a dam that makes power from water. If the movement had failed, what most likely could have happened?",
          "options": [
           "A dam could cross the Kunthipuzha river.",
-          "The Kunthipuzha river could have vanished.",
+          "The Kunthipuzha river could have disappeared.",
           "Silent Valley could have gained many more goats.",
-          "India's plant biodiversity could have vanished."
+          "India's plant biodiversity could have disappeared."
          ],
          "answer": 0,
          "why": {
-          "The Kunthipuzha river could have vanished.": "This mistake assumes a dam would remove the whole river.",
-          "Silent Valley could have gained many more goats.": "This mistake links a dam to goats without any stated connection.",
-          "India's plant biodiversity could have vanished.": "This mistake treats one dam as a cause of all India's plant biodiversity disappearing."
+          "A dam could cross the Kunthipuzha river.": "",
+          "The Kunthipuzha river could have disappeared.": "This mistake thinks a dam would remove the whole river.",
+          "Silent Valley could have gained many more goats.": "This mistake links a dam to goats. There is no link.",
+          "India's plant biodiversity could have disappeared.": "This mistake thinks one dam would make all of India's plant biodiversity disappear."
          },
-         "explanation": "This is right because the movement opposed a dam across the Kunthipuzha river.",
+         "explanation": "This is right. The movement opposed a dam across the Kunthipuzha river.",
          "f": [
           "4.7",
           "4.8"
@@ -5765,60 +5772,13 @@
         },
         {
          "type": "mcq",
-         "id": "science-ch2-l5-d4",
-         "difficulty": 3,
-         "tags": [
-          "deep",
-          "test claim"
-         ],
-         "prompt": "A student claims, “Every camel sweats.” Which observation would show that this claim is false?",
-         "options": [
-          "A camel is checked and has no sweat.",
-          "One camel has a single hump.",
-          "Two camels have two humps each.",
-          "A camel walks on shorter mountain legs."
-         ],
-         "answer": 0,
-         "why": {
-          "One camel has a single hump.": "The number of humps does not test whether a camel sweats.",
-          "Two camels have two humps each.": "The number of humps does not test whether a camel sweats.",
-          "A camel walks on shorter mountain legs.": "Shorter legs help in mountains but do not test whether a camel sweats."
-         },
-         "explanation": "Camels do not sweat, so this observation shows that the claim is false.",
-         "f": [
-          "5.5",
-          "5.6",
-          "5.7",
-          "5.8"
-         ],
-         "src": [
-          {
-           "ch": 2,
-           "p": 25
-          },
-          {
-           "ch": 2,
-           "p": 26
-          },
-          {
-           "ch": 2,
-           "p": 26
-          },
-          {
-           "ch": 2,
-           "p": 26
-          }
-         ]
-        },
-        {
-         "type": "mcq",
          "id": "science-ch2-l5-d5",
          "difficulty": 3,
          "tags": [
           "deep",
           "distinguish"
          ],
-         "prompt": "A place gives animals food, water, air and shelter. In the same place lives a camel with long legs and wide hooves. Which statement is correct?",
+         "prompt": "A place gives animals food, water, air and shelter. A camel lives in the same place. It has long legs and wide hooves. Which sentence is true?",
          "options": [
           "The place is a habitat; its legs are adaptations.",
           "The place is an adaptation; its legs are a habitat.",
@@ -5827,11 +5787,12 @@
          ],
          "answer": 0,
          "why": {
-          "The place is an adaptation; its legs are a habitat.": "This swaps the meanings of adaptation and habitat.",
-          "Both the place and its legs are adaptations.": "The place is not a special body feature that helps the camel survive.",
-          "Both the place and its legs are habitats.": "The legs are special features, not places where animals live."
+          "The place is a habitat; its legs are adaptations.": "",
+          "The place is an adaptation; its legs are a habitat.": "This mixes up habitat and adaptation.",
+          "Both the place and its legs are adaptations.": "A place is not a body feature that helps an animal survive.",
+          "Both the place and its legs are habitats.": "Legs are special body features, not places where animals live."
          },
-         "explanation": "The place provides survival needs, while special body features are adaptations.",
+         "explanation": "The place gives things animals need. Special body features are adaptations.",
          "f": [
           "5.4",
           "5.9",
@@ -6795,12 +6756,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "Why might a family's traditional food change when the family moves to a region with different soil and climate?",
+         "prompt": "A family moves to a region with different soil and weather. Why might its traditional food change?",
          "steps": [
-          "Compare the new soil and climate, because crops grow according to regional conditions.",
-          "Look at the crops grown there, because a state's traditional food is usually based on those crops.",
-          "Consider taste, culture and traditions, because they can also shape what people choose to eat.",
-          "Therefore, local farming often explains traditional food, while culture helps explain food choices."
+          "Compare the new soil and weather. Crops grow based on the conditions of the region.",
+          "Look at the crops grown there. A state's traditional food is usually based on those crops.",
+          "Think about taste, culture and traditions. They can also shape what people choose to eat.",
+          "So local farming often explains traditional food. Culture helps explain food choices."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -7210,12 +7171,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "How has the way a family grinds food and cooks a meal changed from earlier times to today?",
+         "prompt": "How has grinding food and cooking changed, from the past to today?",
          "steps": [
-          "Earlier, most people ground food by hand with a sil-batta, because that was the usual method.",
-          "Today, most people cook on a modern gas stove, because that is the common method now.",
-          "Today, an electrical grinder can also be used, because it makes grinding easier.",
-          "So cooking practices have changed, because technological development is one reason and better transport and communication have also helped."
+          "In the past, most people ground food by hand with a sil-batta. This was the usual way.",
+          "Today, most people cook on a gas stove. This is the common way now.",
+          "Today, people can also use an electric grinder. It makes grinding easier.",
+          "So the way people cook has changed. New technology is one reason. Better transport and communication also helped."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -7448,20 +7409,21 @@
           "deep",
           "predict"
          ],
-         "prompt": "A family plans an earlier-time display and a today display for grinding and cooking. Which pairing is best?",
+         "prompt": "A family makes two displays about grinding and cooking. One shows earlier times. One shows today. Which choice is right?",
          "options": [
-          "Earlier: sil-batta and chulha; today: electrical grinder and gas stove.",
-          "Earlier: electrical grinder and gas stove; today: sil-batta and chulha.",
-          "Earlier: sil-batta and gas stove; today: electrical grinder and chulha.",
-          "Earlier: chulha and gas stove; today: sil-batta and electrical grinder."
+          "Earlier: sil-batta and chulha. Today: electric grinder and gas stove.",
+          "Earlier: electric grinder and gas stove. Today: sil-batta and chulha.",
+          "Earlier: sil-batta and gas stove. Today: electric grinder and chulha.",
+          "Earlier: chulha and gas stove. Today: sil-batta and electric grinder."
          ],
          "answer": 0,
          "why": {
-          "Earlier: electrical grinder and gas stove; today: sil-batta and chulha.": "This mistake puts today's tools in the earlier time and earlier tools today.",
-          "Earlier: sil-batta and gas stove; today: electrical grinder and chulha.": "This mistake mixes the earlier hand-grinding tool with today's common stove.",
-          "Earlier: chulha and gas stove; today: sil-batta and electrical grinder.": "This mistake mixes the earlier stove with today's electrical grinder."
+          "Earlier: sil-batta and chulha. Today: electric grinder and gas stove.": "",
+          "Earlier: electric grinder and gas stove. Today: sil-batta and chulha.": "This mistake swaps the earlier and today tools.",
+          "Earlier: sil-batta and gas stove. Today: electric grinder and chulha.": "This mistake puts the gas stove in the earlier time. Gas stoves are used today.",
+          "Earlier: chulha and gas stove. Today: sil-batta and electric grinder.": "This mistake mixes the earlier stove with today's electric grinder."
          },
-         "explanation": "This is right because it matches the earlier tools with today's common tools.",
+         "explanation": "This is right. It matches earlier tools with tools used today.",
          "f": [
           "2.4",
           "2.5",
@@ -8111,7 +8073,7 @@
           "deep",
           "explain"
          ],
-         "prompt": "At the dinner table, a child says, “Protein comes only from animals.” Which reply best fixes the mistake?",
+         "prompt": "A child says: 'Protein comes only from animals.' Which reply is best?",
          "options": [
           "Protein can come from both plants and animals.",
           "Protein comes only from plant foods.",
@@ -8120,11 +8082,12 @@
          ],
          "answer": 0,
          "why": {
-          "Protein comes only from plant foods.": "This mistake treats plants as the only source of protein.",
-          "Protein comes only from animal foods.": "This mistake treats animals as the only source of protein.",
-          "Protein comes from neither plants nor animals.": "This wrongly denies both sources from which people obtain protein."
+          "Protein can come from both plants and animals.": "",
+          "Protein comes only from plant foods.": "This mistake thinks only plants give protein.",
+          "Protein comes only from animal foods.": "This mistake thinks only animals give protein.",
+          "Protein comes from neither plants nor animals.": "This wrongly says people get no protein from plants or animals."
          },
-         "explanation": "People obtain protein from both plants and animals.",
+         "explanation": "People get protein from both plants and animals.",
          "f": [
           "3.6"
          ],
@@ -8143,20 +8106,21 @@
           "deep",
           "fair test"
          ],
-         "prompt": "A class wants a fair test of whether a protein-rich snack helps growth and repair. What should they do?",
+         "prompt": "A class wants a fair test. The test checks if a protein-rich snack helps growth and repair. What should they do?",
          "options": [
-          "Keep other food the same; compare milk products with no snack.",
+          "Keep other food the same; compare milk with no snack.",
           "Keep other food the same; give both groups no snack.",
-          "Change all food for one group; compare milk products with pulses.",
-          "Change food and portions; compare milk products with common sugar."
+          "Change all food for one group; compare milk with dal.",
+          "Change food and amounts; compare milk with sugar."
          ],
          "answer": 0,
          "why": {
-          "Keep other food the same; give both groups no snack.": "Neither group gets the snack, so the snack is not compared.",
-          "Change all food for one group; compare milk products with pulses.": "Changing all the food hides the effect of the snack.",
-          "Change food and portions; compare milk products with common sugar.": "Changing both food and portions makes the test unfair."
+          "Keep other food the same; compare milk with no snack.": "",
+          "Keep other food the same; give both groups no snack.": "Neither group gets the snack. So the snack is not tested.",
+          "Change all food for one group; compare milk with dal.": "Changing all food hides the snack's effect.",
+          "Change food and amounts; compare milk with sugar.": "Changing food and amounts makes the test unfair."
          },
-         "explanation": "Keeping other food the same makes the protein-rich snack the main test change.",
+         "explanation": "Keep other food the same. Then the snack is the only thing that changes.",
          "f": [
           "3.5",
           "3.7"
@@ -8760,7 +8724,7 @@
           "deep",
           "classify"
          ],
-         "prompt": "Riya says oranges and iodised salt are both useful because one gives a vitamin and the other a mineral. Is her reasoning correct?",
+         "prompt": "Riya says oranges and iodised salt are both good for us. She says one gives a vitamin and the other a mineral. Is her reason correct?",
          "options": [
           "Yes; orange has vitamin C and salt has iodine.",
           "No; orange has iodine and salt has vitamin C.",
@@ -8769,11 +8733,12 @@
          ],
          "answer": 0,
          "why": {
+          "Yes; orange has vitamin C and salt has iodine.": "",
           "No; orange has iodine and salt has vitamin C.": "This swaps the vitamin and mineral in the two foods.",
-          "No; both foods have only dietary fibre.": "Dietary fibre provides no nutrients and is not stated to be in these foods.",
-          "No; both foods have only calcium and iron.": "This wrongly assumes that both foods supply all the listed minerals."
+          "No; both foods have only dietary fibre.": "Dietary fibre gives no nutrients. It is not said to be in these foods.",
+          "No; both foods have only calcium and iron.": "This wrongly thinks both foods give all the listed minerals."
          },
-         "explanation": "Oranges contain vitamin C, iodised salt contains iodine salts, and both types are protective nutrients.",
+         "explanation": "Oranges have vitamin C. Iodised salt has iodine. Both are protective nutrients, which keep us healthy.",
          "f": [
           "4.1",
           "4.3",
@@ -9326,12 +9291,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "A child often chooses a sugary, fatty snack, while another meal has nutrients, roughage and water in the right amounts. Which choice better supports the body, and why?",
+         "prompt": "A child often eats a sugary, fatty snack. Another meal has nutrients, roughage and water in good amounts. Which choice is better for the body, and why?",
          "steps": [
-          "The sugary, fatty snack is junk food because it has few useful nutrients.",
-          "Junk food is not healthy for the body, so it is not the better choice.",
-          "Eating it frequently can make the person obese, so the choice is even less suitable.",
-          "The other meal is balanced because it has nutrients, roughage and water in the right amounts, so it is the better choice."
+          "The sugary, fatty snack is junk food. It has few useful nutrients.",
+          "Junk food is not healthy. So it is not the better choice.",
+          "Eating it often can make a person obese (very fat). So it is an even worse choice.",
+          "The other meal is balanced. It has nutrients, roughage and water in good amounts. So it is the better choice."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -9553,15 +9518,15 @@
           "fssai",
           "nutrients"
          ],
-         "prompt": "Which pair correctly identifies fortified food and the agency regulating food quality in India?",
+         "prompt": "One pair names fortified food and the food-checking group in India. Which pair is right?",
          "options": [
           "The food is fortified; the FSSAI measures food miles.",
-          "The food is junk food; the FSSAI regulates food quality in India.",
+          "The food is junk food; the FSSAI checks food quality in India.",
           "The food has no added nutrients; the FSSAI supports local farmers.",
-          "The food is fortified; the FSSAI regulates food quality in India."
+          "The food is fortified; the FSSAI checks food quality in India."
          ],
          "answer": 3,
-         "explanation": "Adding nutrients during processing improves nutritional quality. Iodised salt is fortified, and FSSAI regulates food quality in India.",
+         "explanation": "Adding nutrients to food makes it healthier. Iodised salt is fortified. FSSAI checks food quality in India.",
          "src": [
           {
            "ch": 3,
@@ -9687,20 +9652,21 @@
           "deep",
           "predict"
          ],
-         "prompt": "A child often eats food high in sugar and fat but low in useful nutrients. What can happen over time, and why?",
+         "prompt": "A child often eats food with much sugar and fat. It has few useful nutrients. What can happen over time, and why?",
          "options": [
-          "The child can become obese from frequent eating",
-          "The child can stay lean despite frequent eating",
-          "The child can need less balanced food over time",
-          "The child can become healthier with frequent eating"
+          "The child can become obese from eating often.",
+          "The child can stay thin even if eating often.",
+          "The child can need less balanced food over time.",
+          "The child can become healthier from eating often."
          ],
          "answer": 0,
          "why": {
-          "The child can stay lean despite frequent eating": "This wrongly assumes frequent junk-food eating cannot lead to obesity.",
-          "The child can need less balanced food over time": "This wrongly suggests that less balanced food is needed after eating junk food.",
-          "The child can become healthier with frequent eating": "This wrongly treats frequent junk-food eating as making the body healthier."
+          "The child can become obese from eating often.": "",
+          "The child can stay thin even if eating often.": "This wrongly assumes junk food often cannot make a child obese.",
+          "The child can need less balanced food over time.": "This wrongly says a child needs less balanced food after junk food.",
+          "The child can become healthier from eating often.": "This wrongly says eating junk food often makes the body healthier."
          },
-         "explanation": "This is right because frequently eating junk food can make a person obese.",
+         "explanation": "This is right. Eating junk food often can make a person obese.",
          "f": [
           "6.4",
           "6.5",
@@ -9766,20 +9732,21 @@
           "deep",
           "choose wisely"
          ],
-         "prompt": "A child wants a food that can contribute significantly to normal body functioning. Should the child choose a millet or a sugary, fatty snack with few useful nutrients?",
+         "prompt": "A child wants food that helps the body work well. A sugary, fatty snack has few useful nutrients. Should the child choose millet or the snack?",
          "options": [
-          "Choose millet, because it supports a balanced diet",
-          "Choose the snack, because it has few useful nutrients",
-          "Choose the snack, because it supports normal body function",
-          "Choose millet, because sugar and fat are useful"
+          "Choose millet, because it helps with a balanced diet.",
+          "Choose the snack, because it has few useful nutrients.",
+          "Choose the snack, because it helps the body work well.",
+          "Choose millet, because sugar and fat are good for us."
          ],
          "answer": 0,
          "why": {
-          "Choose the snack, because it has few useful nutrients": "This wrongly treats having few useful nutrients as a good reason to choose the snack.",
-          "Choose the snack, because it supports normal body function": "This wrongly treats junk food as helpful for normal body functioning.",
-          "Choose millet, because sugar and fat are useful": "This wrongly treats sugar and fat as signs of a balanced diet."
+          "Choose millet, because it helps with a balanced diet.": "",
+          "Choose the snack, because it has few useful nutrients.": "This wrongly says few useful nutrients is a good reason to choose the snack.",
+          "Choose the snack, because it helps the body work well.": "This wrongly thinks junk food helps the body work well.",
+          "Choose millet, because sugar and fat are good for us.": "This wrongly thinks sugar and fat show a balanced diet."
          },
-         "explanation": "This is right because millets contribute significantly to a balanced diet and normal body functioning.",
+         "explanation": "This is right. Millets help make a balanced diet and keep the body working well.",
          "f": [
           "6.4",
           "6.5",
@@ -10599,20 +10566,21 @@
           "deep",
           "find flaw"
          ],
-         "prompt": "Someone claims, “Only magnets found in nature can pull iron.” Which observation best shows the claim is wrong?",
+         "prompt": "Someone says, \"Only natural magnets can pull iron.\" Natural magnets are found in nature. Which observation shows the claim is wrong?",
          "options": [
-          "An iron-made magnet pulls an iron nail.",
+          "A magnet made from iron pulls an iron nail.",
           "A wooden toy has a round magnet.",
           "A natural magnet pulls an iron nail.",
           "A paper sticker holds a plastic card."
          ],
          "answer": 0,
          "why": {
-          "A wooden toy has a round magnet.": "A round shape alone does not show that a made magnet can pull iron.",
-          "A natural magnet pulls an iron nail.": "This supports only the natural magnet and does not test the claim about all other magnets.",
-          "A paper sticker holds a plastic card.": "Stickers can contain artificial magnets, but this does not test whether they pull iron."
+          "A magnet made from iron pulls an iron nail.": "",
+          "A wooden toy has a round magnet.": "A round shape does not show that a made magnet can pull iron.",
+          "A natural magnet pulls an iron nail.": "This is only about a natural magnet. It does not test the claim about other magnets.",
+          "A paper sticker holds a plastic card.": "Stickers can have artificial magnets. But this does not test if they pull iron."
          },
-         "explanation": "People learned to make magnets from iron, and iron is magnetic material, so this weakens the claim.",
+         "explanation": "People learned to make magnets from iron. Iron is a magnetic material. This weakens the claim.",
          "f": [
           "1.2",
           "1.3",
@@ -12059,7 +12027,7 @@
           "deep",
           "predict"
          ],
-         "prompt": "An iron sewing needle is placed on a wooden table, but it is not stroked with a magnet. What is the best prediction?",
+         "prompt": "An iron sewing needle lies on a wooden table. Nobody rubs it with a magnet. What is the best prediction?",
          "options": [
           "No pins will stick to it.",
           "Every pin will stick to it.",
@@ -12068,11 +12036,12 @@
          ],
          "answer": 0,
          "why": {
-          "Every pin will stick to it.": "This mistake treats every iron needle as a magnet.",
-          "Some pins may stick to it.": "This mistake assumes that iron alone can attract pins.",
-          "It will spin freely in water.": "This mistake confuses an ordinary iron needle with a magnetic compass needle."
+          "No pins will stick to it.": "",
+          "Every pin will stick to it.": "This wrongly says every iron needle is a magnet.",
+          "Some pins may stick to it.": "This wrongly says iron alone can pull pins.",
+          "It will spin freely in water.": "This wrongly mixes up an iron needle and a compass needle."
          },
-         "explanation": "This is right because merely placing iron on wood does not magnetise the needle.",
+         "explanation": "This is right because putting iron on wood does not magnetise the needle.",
          "f": [
           "4.2",
           "4.4",
@@ -12138,20 +12107,21 @@
           "deep",
           "choose setup"
          ],
-         "prompt": "After confirming that the needle is magnetised, which setup makes the needle-and-cork compass?",
+         "prompt": "The needle is a magnet. Which setup makes a needle-and-cork compass?",
          "options": [
           "Pass it through cork horizontally, then float it in water.",
           "Pass it through cork vertically, then float it in water.",
           "Pass it through cork horizontally, then place it on wood.",
-          "Float the loose needle in water without cork."
+          "Float the needle in water with no cork."
          ],
          "answer": 0,
          "why": {
-          "Pass it through cork vertically, then float it in water.": "This mistake uses the wrong direction for passing the needle through the cork.",
-          "Pass it through cork horizontally, then place it on wood.": "This mistake leaves the compass on wood instead of floating it in water.",
-          "Float the loose needle in water without cork.": "This mistake omits the cork and does not follow the compass setup."
+          "Pass it through cork horizontally, then float it in water.": "",
+          "Pass it through cork vertically, then float it in water.": "This mistake pushes the needle through the cork the wrong way.",
+          "Pass it through cork horizontally, then place it on wood.": "This mistake puts it on wood, not in water.",
+          "Float the needle in water with no cork.": "This mistake leaves out the cork, so it is not the right setup."
          },
-         "explanation": "This is right because the magnetised needle goes through the cork horizontally and both are floated in water.",
+         "explanation": "This is right. The needle goes through the cork horizontally. Both then float in water.",
          "f": [
           "4.6",
           "4.7",
@@ -12351,12 +12321,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "A child places a sheet of cardboard between a magnet and a compass and wonders why the needle still moves.",
+         "prompt": "A child puts a piece of cardboard between a magnet and a compass. The needle still moves. Why?",
          "steps": [
-          "The compass needle is itself a magnet, so another magnet can affect it.",
-          "Cardboard causes no appreciable change in the needle's deflection, so it does not block the effect much.",
-          "The magnetic effect can pass through non-magnetic materials, which explains why the needle still responds.",
-          "Therefore, cardboard does not stop the magnet from affecting the compass needle."
+          "The compass needle is a magnet. So another magnet can move it.",
+          "Cardboard does not change how far the needle turns. So it does not block the effect much.",
+          "The magnet's pull can pass through non-magnetic things, like cardboard. That is why the needle still moves.",
+          "So cardboard does not stop the magnet from moving the needle."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -13859,20 +13829,21 @@
           "deep",
           "find flaw"
          ],
-         "prompt": "Two friends say, \"A handspan is a standard unit for measuring a table.\" What mistake are they making?",
+         "prompt": "Two friends say, 'A handspan is a standard unit to measure a table.' What mistake are they making?",
          "options": [
           "They think a table cannot be measured with handspans.",
           "They think the number of handspans never changes.",
-          "They think a measured length does not need a unit.",
-          "They ignore that friends' handspans can have different lengths."
+          "They think a length does not need a unit.",
+          "They ignore that people's handspans can be different sizes."
          ],
          "answer": 3,
          "why": {
-          "They think a table cannot be measured with handspans.": "A table was measured using handspans, so this claim is wrong.",
-          "They think the number of handspans never changes.": "The number of handspans can change when people's handspans differ.",
-          "They think a measured length does not need a unit.": "A measured length needs a unit as well as a number."
+          "They think a table cannot be measured with handspans.": "A table can be measured with handspans. So this is wrong.",
+          "They think the number of handspans never changes.": "The number of handspans can change if people's handspans differ.",
+          "They think a length does not need a unit.": "A length needs a unit and a number.",
+          "They ignore that people's handspans can be different sizes.": ""
          },
-         "explanation": "Their mistake is ignoring that handspan lengths can differ between people.",
+         "explanation": "Their mistake is ignoring that handspans differ between people.",
          "f": [
           "1.5",
           "1.6",
@@ -14280,20 +14251,21 @@
           "deep",
           "explain why"
          ],
-         "prompt": "Two people measure the same ribbon using different country units. Why did shared standard units help with travel?",
+         "prompt": "Two people measure the same ribbon. They use units from different countries. Why did shared standard units help people travel?",
          "options": [
           "People could compare measurements more easily.",
           "People could compare measurements less easily.",
-          "Shared units could keep measurement errors hidden.",
-          "Different measurements could look like the same one."
+          "Shared units could hide measuring mistakes.",
+          "Different measurements could look the same."
          ],
          "answer": 0,
          "why": {
-          "People could compare measurements less easily.": "This is backwards because shared units reduced measurement confusion.",
-          "Shared units could keep measurement errors hidden.": "This assumes shared units hide errors instead of reducing confusion.",
-          "Different measurements could look like the same one.": "This describes confusion before shared units were adopted."
+          "People could compare measurements more easily.": "",
+          "People could compare measurements less easily.": "This is backwards. Shared units cut down confusion.",
+          "Shared units could hide measuring mistakes.": "This wrongly says shared units hide mistakes, not cut confusion.",
+          "Different measurements could look the same.": "This describes the confusion before shared units were used."
          },
-         "explanation": "Shared standard units made measurements easier to compare across countries.",
+         "explanation": "Shared standard units made measurements easier to compare between countries.",
          "f": [
           "2.3"
          ],
@@ -15575,12 +15547,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "A child says, \"The passengers are not moving, but the bus is moving.\" How can both statements be true?",
+         "prompt": "A child says: 'The passengers are not moving. But the bus is moving.' How can both be true?",
          "steps": [
-          "Choose the bus as the reference point, because the chosen point helps us decide whether something is at rest.",
-          "The passengers stay in their seats and their positions do not change, so they are at rest relative to the bus.",
-          "Choose a building outside the bus, because it gives us a different reference point.",
-          "Relative to the building, both the passengers and the bus are moving, so both statements can be true."
+          "Choose the bus as the reference point. A reference point is what we compare with.",
+          "The passengers sit in their seats. Their place does not change. So they are at rest compared to the bus.",
+          "Choose a building outside the bus as a new reference point.",
+          "Compared to the building, the passengers and the bus are both moving. So both statements can be true."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -16370,13 +16342,13 @@
           "exam",
           "written"
          ],
-         "prompt": "Explain why children can give different distance observations and how they can make their observations agree.",
+         "prompt": "Explain why children can get different distance results. How can they make their results agree?",
          "answer": "Different houses serve as different points from which distances are measured, so the observations can differ. The children can make their observations agree by measuring from the same object or point. This common fixed point is called a reference point.",
          "points": [
           "Different houses give different starting points.",
-          "Different starting points can produce different observations.",
+          "Different starting points can give different results.",
           "Everyone should use the same object or point.",
-          "That common point is called a reference point."
+          "That shared point is called a reference point."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         }
@@ -20512,35 +20484,6 @@
            "p": 130
           }
          ]
-        },
-        {
-         "type": "mcq",
-         "id": "science-ch7-l5-a9",
-         "difficulty": 3,
-         "tags": [
-          "range",
-          "divisions",
-          "scale"
-         ],
-         "prompt": "Which statement correctly describes the thermometer’s scale?",
-         "options": [
-          "Its range is –10 °C to 110 °C, and each small division represents 10 °C.",
-          "Its range is 110 °C to –10 °C, and each small division represents 1 °C.",
-          "Its range is –10 °C to 110 °C, and each small division represents 1 °C.",
-          "Its range is –10 °C to 110 °C, and there are no small divisions."
-         ],
-         "answer": 2,
-         "explanation": "The shown range is –10 °C to 110 °C, and each small division represents 1 °C.",
-         "src": [
-          {
-           "ch": 7,
-           "p": 130
-          },
-          {
-           "ch": 7,
-           "p": 131
-          }
-         ]
         }
        ],
        "topicScene": "media/ch7-l5-total-immersion-mercury-ther.webp",
@@ -20784,10 +20727,10 @@
           "air",
           "temperature"
          ],
-         "prompt": "What information do weather reports give?",
+         "prompt": "Maximum means highest. Minimum means lowest. What do weather reports tell us?",
          "options": [
           "The maximum and minimum air temperatures for the day.",
-          "The exact temperature inside every room.",
+          "The exact temperature in every room.",
           "The temperature from every earlier day.",
           "The room temperature for the whole year."
          ],
@@ -32109,9 +32052,9 @@
          "planet",
          "star"
         ],
-        "prompt": "Venus is called the Morning Star or Evening Star, although it is not a star.",
+        "prompt": "Venus is called the Morning Star or Evening Star. But it is not a star.",
         "answer": true,
-        "explanation": "Venus shines brightly at dawn and dusk. It is one of the eight planets.",
+        "explanation": "Venus shines brightly in the morning and evening. It is one of the eight planets.",
         "src": [
          {
           "ch": 12,
