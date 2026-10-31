@@ -105,7 +105,7 @@ def push():
     if not os.path.isdir(f'{ROOT}/.git') or not git('remote').stdout.strip(): return
     git('add', '-A')
     if git('diff', '--cached', '--quiet').returncode:
-        git('commit', '-m', 'Publish: what is live now\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>')
+        git('commit', '-m', 'Publish: what is live now')
     r = git('push', '-q', 'origin', 'main')
     say('pushed to GitHub' if r.returncode == 0 else f'GitHub push failed: {r.stderr[:120]}')
 push()

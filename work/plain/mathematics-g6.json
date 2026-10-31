@@ -1991,6 +1991,445 @@
 "This changes the rule instead of using it.",
 "This hides dots that do not match. It does not test the square pattern."
 ]
+},
+"A pattern repeats one {dimensions}-dimensional shape {copies} times. How many dimensions are counted across all the copies?": {
+"prompt": "A pattern repeats one {dimensions}-dimensional shape {copies} times. How many dimensions are there in all?",
+"steps": [
+"One shape has {dimensions} dimensions. There are {copies} copies.",
+"Multiply the copies by the dimensions of one shape.",
+"{copies} x {dimensions} = {answer} dimensions."
+]
+},
+"Which is the basic pattern in mathematics?": {
+"prompt": "Which one is a basic pattern in mathematics?",
+"title": "A Basic Pattern",
+"options": [
+"Patterns of shapes",
+"Stacked squares",
+"Complete graphs from K2 to K6",
+"The Koch snowflake"
+],
+"explanation": "Patterns of shapes are basic patterns in mathematics. The others are examples."
+},
+"A child places some shapes in a pile without an order. What is missing before it can be treated as a shape sequence?": {
+"prompt": "A child puts some shapes in a pile. The shapes have no order. What is missing to make a shape sequence?",
+"options": [
+"An order that makes a pattern",
+"A label for each shape",
+"More dimensions for each shape",
+"A group of complete graphs"
+],
+"explanation": "A shape sequence needs an order that makes a pattern.",
+"why": [
+"",
+"Labels do not make an ordered pattern.",
+"More dimensions do not show an order or pattern.",
+"Complete graphs are not needed to find the missing order."
+]
+},
+"Put the Koch snowflake's line segment counts in order.": {
+"prompt": "Put the Koch snowflake's line segment counts in order, from smallest to biggest.",
+"explanation": "The first three shapes have 3, 12 and 48 line segments.",
+"items": [
+"3",
+"12",
+"48"
+]
+},
+"The Virahānka-number card ends at 5. Which number should come immediately next?": {
+"prompt": "The Virahānka-number list ends at 5. Which number comes next?",
+"options": [
+"The next number is 6.",
+"The next number is 7.",
+"The next number is 8.",
+"The next number is 13."
+],
+"explanation": "8 is the next term after 5 in the Virahānka numbers.",
+"why": [
+"6 is in the triangular numbers, not in this list.",
+"7 does not come after 5 in this list.",
+"",
+"13 comes later, after 8. So it is not the next one."
+]
+},
+"What does mathematics aim to do?": {
+"prompt": "What does mathematics try to do?",
+"options": [
+"Find patterns only",
+"Explain patterns only",
+"Find patterns and explain them",
+"Solve puzzles only"
+],
+"explanation": "Mathematics tries to find patterns and explain why they exist."
+},
+"The Koch snowflake has ______, 12 and 48 line segments in its first three shapes.": {
+"prompt": "The Koch snowflake has ______ line segments in its first shape. Its second and third shapes have 12 and 48.",
+"explanation": "The counts are 3, 12 and 48.",
+"hint": "Use the first count."
+},
+"Match each idea to its description.": {
+"prompt": "Match each word with its description.",
+"explanation": "Each description matches the matching fact from the chapter.",
+"pairs": [
+[
+"Geometry",
+"studies patterns in shapes"
+],
+[
+"Regular polygons",
+"all sides and angles are equal"
+],
+[
+"Closed figure",
+"same number of sides and corners"
+],
+[
+"Hexagonal numbers",
+"1, 7, 19 and 37"
+]
+]
+},
+"Match each description with its correct word.": {
+"prompt": "Match each description with the right word.",
+"title": "Match each description",
+"explanation": "A line segment has two end points. A line has no ends. A ray starts at its initial point.",
+"pairs": [
+[
+"Marks an exact place",
+"Point"
+],
+[
+"Has two end points",
+"Line segment"
+],
+[
+"Has no ends",
+"Line"
+],
+[
+"Starts a ray",
+"Initial point"
+],
+[
+"Makes only one line",
+"Two points"
+]
+]
+},
+"You open a pair of scissors a little, then open it wider. What happens to the angle?": {
+"prompt": "You open scissors a little. Then you open them wider. What happens to the angle?",
+"options": [
+"It becomes smaller.",
+"It stays the same.",
+"It becomes bigger.",
+"It disappears."
+],
+"explanation": "This is right. Opening the scissors wider makes a bigger angle.",
+"why": [
+"This thinks more turning gives a smaller angle.",
+"This ignores that more turning makes a bigger angle.",
+"",
+"This thinks opening the scissors removes the angle."
+]
+},
+"An angle has vertex B and rays BD and BE. A classmate says Angle DBE and Angle EBD name two different angles. What should you notice?": {
+"prompt": "An angle has vertex B. Its rays are BD and BE. A friend says Angle DBE and Angle EBD are two different angles. What should you notice?",
+"options": [
+"Both names keep B in the middle.",
+"Only the first name keeps B in the middle.",
+"Only the second name keeps B in the middle.",
+"Neither name keeps B in the middle."
+],
+"explanation": "This is right. Both names have vertex B in the middle.",
+"why": [
+"",
+"This misses that Angle EBD also has B in the middle.",
+"This misses that Angle DBE also has B in the middle.",
+"This is wrong. Both names have the vertex in the middle."
+]
+},
+"When two angles are superimposed, their ______ must overlap.": {
+"prompt": "When you put one angle on top of another, their ______ must overlap.",
+"title": "Overlapping corners",
+"explanation": "Yes. The vertices must overlap when you put two angles on top of each other.",
+"hint": "These are the corners of the angles."
+},
+"A straight angle measures 180 degrees. An obtuse angle measures {a} degrees. How many degrees smaller than the straight angle is the obtuse angle?": {
+"prompt": "A straight angle measures 180 degrees. An obtuse angle measures {a} degrees. How many degrees smaller is the obtuse angle than a straight angle?",
+"hint": "Take the obtuse angle away from the straight angle.",
+"steps": [
+"The obtuse angle measures {a} degrees.",
+"The straight angle measures {straight} degrees. Subtract the obtuse angle from it.",
+"{straight} - {a} = {answer} degrees. So the obtuse angle is {answer} degrees smaller than the straight angle."
+]
+},
+"Folding a paper strip makes {a} equal right angles in a row. Each right angle measures 90 degrees. What is the total measure in degrees of the {a} right angles?": {
+"prompt": "Folding a paper strip makes {a} equal right angles. Each right angle measures 90 degrees. How many degrees are there in all?",
+"hint": "Add 90 degrees once for each right angle.",
+"steps": [
+"Each of the {a} angles is a right angle. It measures {right} degrees.",
+"There are {a} right angles. So add {right} degrees, {a} times.",
+"{right} x {a} = {answer} degrees. So all the angles together measure {answer} degrees."
+]
+},
+"At school, a straight angle is split into {n} equal smaller angles. What is the measure of each smaller angle in degrees?": {
+"prompt": "A straight angle is split into {n} equal small angles. How many degrees is each small angle?",
+"hint": "Share the degrees in a straight angle equally.",
+"steps": [
+"A straight angle measures 180 degrees.",
+"Share the 180 degrees equally into {n} small angles.",
+"Each small angle measures {answer} degrees."
+]
+},
+"A robot arm first makes a 90° turn, then turns past 180° but before 360°. What kind of angle is at each stop?": {
+"prompt": "A robot arm turns 90°. Then it turns more than 180° but less than 360°. What kind of angle is at each stop?",
+"explanation": "Think it through with Lumi.",
+"steps": [
+"At the first stop, the arm turns 90°. That is a right angle, because a right angle measures 90°.",
+"Then it turns more, past 180° but before 360°.",
+"That turn is a reflex angle. A reflex angle is more than 180° and less than 360°.",
+"So the first turn is a right angle. The later turn is a reflex angle."
+],
+"kicker": "Let us think it through."
+},
+"Match each angle type with its measure or description.": {
+"prompt": "Match each angle with its measure or description.",
+"explanation": "Each pair shows the right size.",
+"pairs": [
+[
+"right angle",
+"90°"
+],
+[
+"straight angle",
+"180°"
+],
+[
+"obtuse angle",
+"more than 90° and less than 180°"
+],
+[
+"reflex angle",
+"more than 180° and less than 360°"
+]
+]
+},
+"A toy car's steering wheel is turned less than a right angle. How should the size be understood?": {
+"prompt": "A toy car's steering wheel turns less than a right angle. What kind of angle is this?",
+"options": [
+"It is acute, because it is less than 90°.",
+"It is obtuse, because it is less than 90°.",
+"It is right, because it is less than 90°.",
+"It is reflex, because it is less than 90°."
+],
+"explanation": "This is right. An acute angle is smaller than a right angle. A right angle is 90°.",
+"why": [
+"",
+"This mistake treats an angle below 90° as obtuse, but obtuse angles are above 90°.",
+"This mistake treats every smaller angle as a right angle, but right angles measure exactly 90°.",
+"This mistake treats an angle below 90° as reflex, but reflex angles are above 180°."
+]
+},
+"Explain how acute angles and obtuse angles are different from right angles.": {
+"prompt": "Explain how acute and obtuse angles are different from a right angle.",
+"explanation": "Check your answer with these points.",
+"points": [
+"Says a right angle is half of a straight angle.",
+"Says acute angles are smaller than a right angle.",
+"Says obtuse angles are bigger than a right angle but smaller than a straight angle.",
+"Uses the words 'sharp' and 'blunt' with the right meaning."
+]
+},
+"A child says ______ when neither neighbouring child is taller.": {
+"prompt": "A child says ______ when no neighbour is taller.",
+"title": "No Taller Neighbours",
+"explanation": "Neither neighbour is taller. So the child's number is 0.",
+"hint": "Think of the number for none."
+},
+"Match each description with the child's number.": {
+"prompt": "Match each sentence with the right number.",
+"title": "Match the Neighbours",
+"explanation": "Each number tells how many neighbours are taller.",
+"pairs": [
+[
+"Only one neighbour is taller.",
+"1"
+],
+[
+"Both neighbours are taller.",
+"2"
+],
+[
+"No neighbour is taller.",
+"0"
+]
+]
+},
+"Put the child numbers in order from fewer taller neighbours to more.": {
+"prompt": "Put the numbers in order. Start with fewer taller neighbours. End with more.",
+"title": "Order the Numbers",
+"explanation": "The order is 0, 1, then 2. The number of taller neighbours goes up.",
+"items": [
+"1",
+"0",
+"2"
+]
+},
+"On a number line, what number comes immediately before {n}?": {
+"prompt": "On a number line, what number comes just before {n}?",
+"hint": "Move one place to the left from the given number.",
+"steps": [
+"A number line shows numbers in order.",
+"To find the number just before {n}, move one place to the left.",
+"The number just before is {answer}."
+]
+},
+"What can happen to numbers with digit sum 14?": {
+"prompt": "What can happen to numbers with digit sum 14 (the digits added together)?",
+"title": "Make Numbers Bigger and Bigger",
+"options": [
+"They must all start with 1.",
+"They can get bigger and bigger.",
+"They must all be one-digit numbers.",
+"They must all have the same digits."
+],
+"explanation": "Numbers with digit sum 14 can be made bigger and bigger."
+},
+"Last year’s calendar was the same as this year’s calendar.": {
+"prompt": "Last year’s calendar was the same as this year’s calendar.",
+"title": "Compare Two Calendars",
+"explanation": "Last year’s calendar was different from this year’s calendar."
+},
+"A Collatz sequence contains the odd number {n}. What is the next number after multiplying by 3 and adding 1?": {
+"prompt": "A Collatz sequence has the odd number {n}. What is the next number? Multiply by 3, then add 1.",
+"hint": "Use the Collatz rule for odd numbers.",
+"steps": [
+"The number is {n}. It is odd.",
+"The odd-number rule gives {odd_step}.",
+"So the next number is {answer}."
+]
+},
+"Match each description with its correct detail.": {
+"prompt": "Match each name with the right detail.",
+"explanation": "Each pair is a rule or example from the lesson.",
+"pairs": [
+[
+"Even Collatz number",
+"Divide it by two"
+],
+[
+"Odd Collatz number",
+"Multiply by 3 and add 1"
+],
+[
+"Paromita’s class",
+"About 100 children"
+],
+[
+"First number game",
+"Add 1, 2 or 3"
+]
+]
+},
+"A collection of facts or information is called ______.": {
+"prompt": "A group of facts or information is called ______.",
+"title": "What Is Data?",
+"explanation": "The favourite colour list is data. It gives information.",
+"hint": "Think of a list of your classmates’ favourite colours."
+},
+"Match each example with the information it shows.": {
+"prompt": "Match each example with the information it gives.",
+"title": "Match Each Example",
+"explanation": "Each example matches one piece of information.",
+"pairs": [
+[
+"Favourite colour list",
+"Data about classmates’ choices"
+],
+[
+"Favourite game survey",
+"Every student’s favourite game"
+],
+[
+"Sweet tally mark",
+"One student who chose a sweet"
+],
+[
+"Shoe-size order",
+"Sizes from smallest to biggest"
+],
+[
+"Sweets table",
+"How many of each sweet to buy"
+]
+]
+},
+"Put these actions in the order they happen in the sweet survey.": {
+"prompt": "Put these steps in the right order. Use the sweet survey.",
+"title": "Put the Sweet Survey Steps in Order",
+"explanation": "The tally count comes first. Then come the frequencies and buying.",
+"items": [
+"Make one tally mark for each student who chose a sweet.",
+"When you reach five, draw a line through the first four marks.",
+"Read the frequencies (how often each sweet was chosen).",
+"Buy the right number of each sweet."
+]
+},
+"Navya and Naresh asked 20 students about their favourite games. How many game preferences did they record?": {
+"prompt": "Navya and Naresh asked 20 students about their favourite games. How many game preferences (favourite choices) did they write down?",
+"explanation": "Each student gives one preference. So the formula is n+0. With n=20, 20+0=20 game preferences.",
+"hint": "Type the number."
+},
+"Shri Nilesh made 6 tally marks for the students who named a sweet. How many tally marks did he make?": {
+"prompt": "Shri Nilesh made 6 tally marks for students who chose a sweet. How many tally marks did he make?",
+"explanation": "He made one tally mark for each student. So the formula is n+0. With n=6, 6+0=6 tally marks.",
+"hint": "Type the number."
+},
+"Bar graph bars may be drawn horizontally or vertically.": {
+"prompt": "Bar graph bars can be horizontal or vertical.",
+"title": "Ways to draw bars",
+"explanation": "Bar graph bars can go across (horizontal) or up (vertical)."
+},
+"Along which line should you write the frequencies?": {
+"prompt": "On which line should you write the frequencies?",
+"title": "Where do frequencies go?",
+"options": [
+"The horizontal line",
+"The vertical line",
+"The gap between bars",
+"The sweet names"
+],
+"explanation": "Write the frequencies on the vertical line. This shows how tall the bars are."
+},
+"For Smriti’s match scores, one unit of length can represent ______ runs.": {
+"prompt": "In Smriti’s match scores, one unit of length means ______ runs.",
+"title": "Smriti’s scale",
+"explanation": "In Smriti’s scores, one unit of length means ten runs.",
+"hint": "Look at the scale for match scores."
+},
+"A sweet was chosen by 3 students. What frequency should be written for that sweet on the vertical line?": {
+"prompt": "3 students picked one sweet. What frequency do you write for that sweet on the vertical line?",
+"explanation": "The frequency is the number of students. So f*1 = 3 students.",
+"hint": "Type the number."
+},
+"The jalebi bar must be six units high. Another sweet was chosen by 4 students, so its bar is 4 units high. How many units higher is the jalebi bar?": {
+"prompt": "The jalebi bar is six units high. Another sweet has 4 students, so its bar is 4 units high. How many units higher is the jalebi bar?",
+"explanation": "Find the difference between the bar heights: (6-f) = 2 units.",
+"hint": "Type the number."
+},
+"What helps control the size of a data presentation?": {
+"prompt": "What helps control the size of a graph?",
+"options": [
+"Choosing a good scale",
+"Using a large table of numbers",
+"Drawing each value as a horizontal box"
+],
+"explanation": "A good scale helps control the size of a graph."
+},
+"A column graph has 4 vertical bars. There is one equal gap of 4 cm between each pair of bars. What is the total width of all the gaps in cm?": {
+"prompt": "A column graph has 4 vertical bars. Each pair of bars has a 4 cm gap between them. How wide are all the gaps together, in cm?",
+"explanation": "There are 4 - 1 gaps. Total gap width = (4 - 1) x 4 = 12 cm. Equal gaps make the infographic easy to read. Information graphics are short for infographics.",
+"hint": "Type the number."
 }
 },
 "seen": [
@@ -2521,7 +2960,94 @@
 "What helps you see the sum of the first six odd numbers?",
 "A picture can help explain a number pattern.",
 "A child adds the first six odd numbers with beads. Which plan best shows why the total is a square number?",
-"A classmate adds odd numbers. They draw the total as a rectangle. What is the best next check?"
+"A classmate adds odd numbers. They draw the total as a rectangle. What is the best next check?",
+"A pattern repeats one {dimensions}-dimensional shape {copies} times. How many dimensions are counted across all the copies?",
+"Which is the basic pattern in mathematics?",
+"A child places some shapes in a pile without an order. What is missing before it can be treated as a shape sequence?",
+"Which named regular polygon has 3 sides?",
+"Put the Koch snowflake's line segment counts in order.",
+"The Koch snowflake's third shape has 12 line segments.",
+"The Virahānka-number card ends at 5. Which number should come immediately next?",
+"What does mathematics aim to do?",
+"A pattern repeats one {dimensions}-dimensional shape {copies} times. How many dimensions are there in all?",
+"Which one is a basic pattern in mathematics?",
+"A child puts some shapes in a pile. The shapes have no order. What is missing to make a shape sequence?",
+"Put the Koch snowflake's line segment counts in order, from smallest to biggest.",
+"The Virahānka-number list ends at 5. Which number comes next?",
+"What does mathematics try to do?",
+"The Koch snowflake has ______, 12 and 48 line segments in its first three shapes.",
+"Match each idea to its description.",
+"Match each description with its correct word.",
+"A straight path has two end points, A and B. It can be extended beyond both ends. Which description fits?",
+"You open a pair of scissors a little, then open it wider. What happens to the angle?",
+"An angle has vertex B and rays BD and BE. A classmate says Angle DBE and Angle EBD name two different angles. What should you notice?",
+"When two angles are superimposed, their ______ must overlap.",
+"A right angle measures 90 degrees. An acute angle measures {a} degrees. How many degrees smaller than a right angle is the acute angle?",
+"The Koch snowflake has ______ line segments in its first shape. Its second and third shapes have 12 and 48.",
+"Match each word with its description.",
+"Match each description with the right word.",
+"You open scissors a little. Then you open them wider. What happens to the angle?",
+"An angle has vertex B. Its rays are BD and BE. A friend says Angle DBE and Angle EBD are two different angles. What should you notice?",
+"When you put one angle on top of another, their ______ must overlap.",
+"A right angle measures 90 degrees. An obtuse angle measures {a} degrees. How many degrees larger than a right angle is the obtuse angle?",
+"A straight angle measures 180 degrees. An obtuse angle measures {a} degrees. How many degrees smaller than the straight angle is the obtuse angle?",
+"Folding a paper strip makes {a} equal right angles in a row. Each right angle measures 90 degrees. What is the total measure in degrees of the {a} right angles?",
+"At school, a straight angle is split into {n} equal smaller angles. What is the measure of each smaller angle in degrees?",
+"A robot arm first makes a 90° turn, then turns past 180° but before 360°. What kind of angle is at each stop?",
+"Match each angle type with its measure or description.",
+"A toy car's steering wheel is turned less than a right angle. How should the size be understood?",
+"Explain how acute angles and obtuse angles are different from right angles.",
+"A straight angle measures 180 degrees. An obtuse angle measures {a} degrees. How many degrees smaller is the obtuse angle than a straight angle?",
+"Folding a paper strip makes {a} equal right angles. Each right angle measures 90 degrees. How many degrees are there in all?",
+"A straight angle is split into {n} equal small angles. How many degrees is each small angle?",
+"A robot arm turns 90°. Then it turns more than 180° but less than 360°. What kind of angle is at each stop?",
+"Match each angle with its measure or description.",
+"A toy car's steering wheel turns less than a right angle. What kind of angle is this?",
+"Explain how acute and obtuse angles are different from a right angle.",
+"How does the student use the protractor to measure the cardboard angle?",
+"A child says ______ when neither neighbouring child is taller.",
+"Match each description with the child's number.",
+"Put the child numbers in order from fewer taller neighbours to more.",
+"A larger cell touches a corner cell only. Is it a supercell?",
+"On a number line, what number comes immediately before {n}?",
+"What can happen to numbers with digit sum 14?",
+"A row contains consecutive three-digit examples. One checked digit sum is 14. What should the learner check?",
+"A child says ______ when no neighbour is taller.",
+"Match each sentence with the right number.",
+"Put the numbers in order. Start with fewer taller neighbours. End with more.",
+"On a number line, what number comes just before {n}?",
+"What can happen to numbers with digit sum 14 (the digits added together)?",
+"Last year’s calendar was the same as this year’s calendar.",
+"A Collatz sequence contains the odd number {n}. What is the next number after multiplying by 3 and adding 1?",
+"Match each description with its correct detail.",
+"A collection of facts or information is called ______.",
+"Match each example with the information it shows.",
+"Put these actions in the order they happen in the sweet survey.",
+"Navya and Naresh asked 20 students about their favourite games. How many game preferences did they record?",
+"Shri Nilesh made 6 tally marks for the students who named a sweet. How many tally marks did he make?",
+"Last year’s calendar was the same as this year’s calendar.",
+"A Collatz sequence has the odd number {n}. What is the next number? Multiply by 3, then add 1.",
+"Match each name with the right detail.",
+"A group of facts or information is called ______.",
+"Match each example with the information it gives.",
+"Put these steps in the right order. Use the sweet survey.",
+"Navya and Naresh asked 20 students about their favourite games. How many game preferences (favourite choices) did they write down?",
+"Shri Nilesh made 6 tally marks for students who chose a sweet. How many tally marks did he make?",
+"Bar graph bars may be drawn horizontally or vertically.",
+"Along which line should you write the frequencies?",
+"For Smriti’s match scores, one unit of length can represent ______ runs.",
+"A sweet was chosen by 3 students. What frequency should be written for that sweet on the vertical line?",
+"The jalebi bar must be six units high. Another sweet was chosen by 4 students, so its bar is 4 units high. How many units higher is the jalebi bar?",
+"What helps control the size of a data presentation?",
+"Match each idea with its correct description.",
+"A column graph has 4 vertical bars. There is one equal gap of 4 cm between each pair of bars. What is the total width of all the gaps in cm?",
+"Bar graph bars can be horizontal or vertical.",
+"On which line should you write the frequencies?",
+"In Smriti’s match scores, one unit of length means ______ runs.",
+"3 students picked one sweet. What frequency do you write for that sweet on the vertical line?",
+"The jalebi bar is six units high. Another sweet has 4 students, so its bar is 4 units high. How many units higher is the jalebi bar?",
+"What helps control the size of a graph?",
+"A column graph has 4 vertical bars. Each pair of bars has a 4 cm gap between them. How wide are all the gaps together, in cm?"
 ],
 "broken": {
 "After the fold described in the case, what kind of angles are formed by the two matching edges?": "needs the fold from the case, which is not shown",
@@ -2535,7 +3061,9 @@
 "A thread diagram has 15 pegs and a thread-gap of 3 cm. How many cm of thread lie from the first peg to the last peg?": "answer key says 42 but the explanation gives 36; prompt says 15 pegs but explanation uses 13",
 "Charan’s house and Sharan’s house have equal areas. Whose house has the greater perimeter?": "equal areas do not show which perimeter is greater, and no perimeter numbers are given",
 "How far apart are adjacent central dotted lines in the four-arm figure?": "needs a figure the child cannot see",
-"Match each item with its correct description.": "needs Table 1, which the child cannot see"
+"Match each item with its correct description.": "needs Table 1, which the child cannot see",
+"A straight path has two end points, A and B. It can be extended beyond both ends. Which description fits?": "says a segment can go on past its ends, which is false, and the key picks a segment",
+"Match each idea with its correct description.": "Pair 'Mountain values' with 'Horizontal boxes' is not a real term or match in the lesson"
 },
 "kept": {
 "A bus route is a ray whose initial point is the school. The first stop is {a} km from the school and a later stop is {b} km from the school, where {b} is greater than {a}. How many km farther from the school is the later stop?": "why not text",
@@ -2610,6 +3138,10 @@
 "Number sequences can share a rule. Adding odd numbers gives square numbers. A picture can show this rule. Dots in a square grid help us see square numbers. The sum of the first six odd numbers can also be made clear. Counting numbers up and then down gives square numbers too.": "reviewer said the meaning changed",
 "A number line shows lengths from 0 to 1. The gap between them is one whole unit. You can divide this gap into equal parts. Two equal parts make halves. You can also divide one unit into three, five or eight equal parts. Marking these parts helps you place fractions between 0 and 1.": "body numbers changed",
 "How can points and paths show where a journey might begin and end?": "reviewer said the meaning changed",
-"Zero comes before 1 and means nothing. The number ray begins at 0 and continues right for ever. Ten digits can write numbers of any size in the Indian number system. Plus signs mark positive numbers, and minus signs mark negative numbers. Zero is neither positive nor negative. A lift moves up and down between floors. Going down two floors is written as – 2.": "body numbers changed"
+"Zero comes before 1 and means nothing. The number ray begins at 0 and continues right for ever. Ten digits can write numbers of any size in the Indian number system. Plus signs mark positive numbers, and minus signs mark negative numbers. Zero is neither positive nor negative. A lift moves up and down between floors. Going down two floors is written as – 2.": "body numbers changed",
+"Which named regular polygon has 3 sides?": "reviewer said the meaning changed",
+"A right angle measures 90 degrees. An acute angle measures {a} degrees. How many degrees smaller than a right angle is the acute angle?": "reviewer said the meaning changed",
+"A right angle measures 90 degrees. An obtuse angle measures {a} degrees. How many degrees larger than a right angle is the obtuse angle?": "prompt numbers changed",
+"A larger cell touches a corner cell only. Is it a supercell?": "blind reader got a different answer"
 }
 }
