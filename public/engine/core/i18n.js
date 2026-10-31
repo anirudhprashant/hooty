@@ -10,7 +10,7 @@ export const strings = {
     practiseTab: 'Practise',
     rewards: 'Rewards',
     stickers: 'Your stickers',
-    reviewN: 'Review {n}',
+    reviewN: 'Try again: {n}',
     parent: 'Grown-ups',
     settings: 'Settings',
     start: 'Start',
@@ -62,7 +62,7 @@ export const strings = {
     rewardUnlocked: 'New reward unlocked!',
     skills: 'Skills',
     dueToday: 'To review today',
-    startReview: 'Review {n} questions',
+    startReview: 'Try again: {n}',
   },
   hi: {
     appName: 'लूमी',

@@ -1033,3 +1033,59 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
   .celebrate .activity__actions { position: sticky; bottom: 0; z-index: 2; padding: var(--s3) 0; background: var(--surface); }
 }
 .sheet .term-hint { display: none; } /* the same hint is already on the card above */
+
+.empty__next { display: grid; gap: var(--s3); width: 100%; max-width: 460px; margin: var(--s4) auto 0; }
+
+/* ===== phones held sideways =================================================
+   Height is what runs out. The tabs move to a thin rail at the side, the top of the page tightens up, Start stays on the
+   first screen, and all the answers of a question fit together in two columns. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .shell:not(.shell--focus) { display: grid; grid-template-columns: calc(76px + env(safe-area-inset-left)) minmax(0, 1fr); }
+  .nav {
+    position: sticky; top: 0; left: auto; right: auto; bottom: auto; width: auto; height: 100dvh;
+    flex-direction: column; justify-content: center; gap: 2px;
+    padding: var(--s1) 4px var(--s1) max(4px, env(safe-area-inset-left));
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0; box-shadow: none; transform: none;
+  }
+  .nav__brand { display: none; }
+  .nav__item { flex: 1 1 0; max-height: 68px; min-height: 44px; flex-direction: column; justify-content: center; gap: 0; padding: 0; font-size: 0.6875rem; }
+  .nav__badge { position: absolute; top: 2px; left: 50%; margin: 0 0 0 8px; }
+  .main { padding-bottom: var(--s4); }
+  .main--focus { padding-bottom: var(--s3); }
+  .topbar { padding: var(--s2) 0 var(--s1); }
+  .tabs-block { display: flex; gap: var(--s2); align-items: center; margin-bottom: var(--s2); min-width: 0; }
+  .tabs-block .subject-tabs { margin: 0; padding: 2px 0 6px; min-width: 0; }
+  .tabs-block .subject-tabs:first-child { flex: 0 1 auto; max-width: 42%; }
+  .tabs-block .subject-tabs:last-child { flex: 1 1 0; }
+  .subject-tab { min-height: 40px; padding: 0 var(--s3); font-size: var(--fs-sm); }
+  .stage { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--s4); align-items: center; margin-top: 0; }
+  .stage__art { order: 2; min-height: 0; height: calc(100dvh - 130px); max-height: 300px; aspect-ratio: auto; }
+  .stage__copy { order: 1; padding: 0; gap: var(--s1); }
+  .stage__title { font-size: 1.75rem; }
+  .stage__sub { font-size: var(--fs-md); margin-bottom: var(--s2); }
+  .big-cta { min-height: 64px; padding: 8px 16px 8px 10px; }
+  .big-cta__play { width: 44px; height: 44px; flex-basis: 44px; }
+  .today { margin-top: var(--s4); grid-template-columns: repeat(3, 1fr); }
+
+  .lesson { display: block; max-width: none; padding-top: 0; }
+  .lesson__bar { padding-block: var(--s1); }
+  .lesson__scene, .mascot-strip { display: none; }
+  .lesson__stage { margin-top: 0; }
+  .lesson .activity { padding: var(--s3) var(--s4); }
+  .lesson .activity__prompt { font-size: 1.25rem; margin-bottom: var(--s2); }
+  .lesson .options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2); }
+  .lesson .option { min-height: 52px; padding: 6px var(--s3); font-size: 1rem; }
+  .lesson .option__key { width: 30px; height: 30px; flex-basis: 30px; }
+  .lesson .concept-card__title { font-size: 1.375rem; }
+  .lesson .concept-card__body, .passage__body { font-size: 1.0625rem; }
+  .lesson .activity__actions .btn { min-height: 48px; font-size: 1rem; }
+  .worked__problem { font-size: 1.125rem; }
+  .sheet { padding: var(--s2) var(--s3); }
+  .sheet__head { margin-bottom: 0; }
+  .sheet .activity__actions { margin-top: var(--s1); }
+  .celebrate__art { height: 90px; }
+  .celebrate .activity__actions { flex-wrap: wrap; }
+  .celebrate .activity__actions .btn--block { flex: 1 1 40%; width: auto; }
+  .empty img { height: 90px; }
+}
+@media (max-height: 500px) and (orientation: landscape) { .tabs-block .subject-tabs { mask-image: none; -webkit-mask-image: none; } }

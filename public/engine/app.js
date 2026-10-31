@@ -7,7 +7,7 @@ import { realise } from './core/gen.js';
 import { renderModel } from './core/models.js';
 import { state, boot, activeLearner, persist, addXP,
   heartsRegenerated, touchStreak, recordActivity, recordLesson, weakSpots,
-  dueCards, unlockReward, exportSave, importSave } from './core/state.js';
+  unlockReward, todayKey, exportSave, importSave } from './core/state.js';
 import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, themeCopy } from './core/theme.js';
 import { t, setLocale, getLocale, availableLocales } from './core/i18n.js';
 import { getActivityModule } from './activities/index.js';
@@ -284,7 +284,7 @@ function navBar() {
       'aria-current': item.id === active ? 'page' : undefined,
       onclick: () => go(item.id),
     }, [icon(item.icon, { size: 26 }), el('span', { text: item.label() })]);
-    if (item.id === 'practice' && due) b.append(el('span', { class: 'nav__badge', 'aria-label': `${due} to review`, text: String(due) }));
+    if (item.id === 'practice' && due) b.append(el('span', { class: 'nav__badge', 'aria-label': `${due} to try again`, text: String(due) }));
     nav.append(b);
   }
   return nav;
@@ -316,24 +316,24 @@ function activityIndex() {
   return map;
 }
 
-// Cards the Leitner boxes say are due, weakest first.
-function dueActivities(limit = 99) {
-  if (!activeLearner()) return [];
-  const index = activityIndex();
-  return dueCards(limit).map((c) => index.get(c.id)).filter(Boolean);
+// Practice is only for mistakes: questions whose latest answer was wrong. Right once and it is gone. Wrong again in a
+// practice session and it waits until tomorrow, so finishing practice really does finish it for today.
+const isMistake = (c) => (c.lapses || 0) > 0 && !c.box;
+function practiceSet(size = 10) {
+  const l = activeLearner();
+  if (!l) return [];
+  const index = activityIndex(), now = Date.now();
+  return Object.values(l.cards).filter((c) => isMistake(c) && (c.due || 0) <= now).sort((x, y) => (y.lapses || 0) - (x.lapses || 0))
+    .map((c) => index.get(c.id)).filter(Boolean).slice(0, size);
 }
 
-// A practice set: due cards first, topped up with anything tagged like a weak spot.
-function practiceSet(size = 10) {
-  const picked = dueActivities(size);
-  if (picked.length >= size) return picked.slice(0, size);
-  const have = new Set(picked.map((a) => a.cardId));
-  const weakTagSet = new Set(weakSpots(8).map((w) => w.tag));
-  for (const a of activityIndex().values()) {
-    if (picked.length >= size) break;
-    if (!have.has(a.cardId) && (a.tags || []).some((tg) => weakTagSet.has(tg))) picked.push(a);
-  }
-  return picked;
+// A short mixed quiz from what the child already got right, oldest first: remembering is what makes it stick.
+function quickQuiz(size = 5) {
+  const l = activeLearner();
+  if (!l) return [];
+  const index = activityIndex();
+  return Object.values(l.cards).filter((c) => c.box >= 1).sort((x, y) => (x.due || 0) - (y.due || 0))
+    .map((c) => index.get(c.id)).filter(Boolean).slice(0, size);
 }
 
 // --- screens ---------------------------------------------------------------
@@ -469,8 +469,8 @@ function screenHome() {
   const reviewCard = el('button', { class: 'feature', type: 'button', onclick: () => go('practice') }, [
     el('span', { class: 'feature__badge' }, [icon('practice', { size: 34 })]),
     el('span', {}, [
-      el('span', { class: 'feature__title', text: due.length ? `${due.length} to review` : 'All caught up' }),
-      el('span', { class: 'feature__sub', text: due.length ? 'Quick questions to lock it in.' : 'Nothing is due. Play a lesson to find more.' }),
+      el('span', { class: 'feature__title', text: due.length ? `${due.length} to try again` : 'No mistakes to fix' }),
+      el('span', { class: 'feature__sub', text: due.length ? 'Questions you got wrong.' : 'Questions you get wrong wait here.' }),
     ]),
   ]);
   const trailCard = el('button', { class: 'feature', type: 'button', onclick: () => go('path') }, [
@@ -967,6 +967,10 @@ function renderCelebration() {
     l.secondsLearned = (l.secondsLearned || 0) + Math.round((Date.now() - s.startedAt) / 1000);
   }
   if (!s.lesson.isPractice) recordLesson(s.lesson.lessonId, accuracy);
+  if (s.lesson.isFix && l) {
+    l.practiceDay = todayKey();
+    for (const a of s.lesson.activities) { const c = l.cards[a.cardId]; if (c && isMistake(c)) c.due = Date.now() + 86400000; }
+  }
   if (s.lesson.isBoss && s.lesson.chapterId && l) { l.post ||= {}; l.post[s.lesson.chapterId] ||= { pct: accuracy, title: packById(s.lesson.packId)?.units.flatMap((u) => u.chapters).find((c) => c.id === s.lesson.chapterId)?.title || '' }; }
   const xpGained = s.correct * 10;
   addXP(0);
@@ -983,7 +987,7 @@ function renderCelebration() {
   const praise = accuracy >= 90 ? 'Brilliant work!' : accuracy >= 60 ? 'Well done!' : 'Good effort. Practice makes it stick.';
   const box = el('div', { class: 'celebrate' }, [
     el('img', { class: 'celebrate__art', src: mascotImage(accuracy >= 60 ? 'happy' : 'idle') || '', alt: '' }),
-    el('h2', { class: 'celebrate__title', text: s.lesson.isPractice ? t('practiceDone') : (getTheme()?.copy?.celebrateTitle || t('lessonComplete')) }),
+    el('h2', { class: 'celebrate__title', text: s.lesson.isFix ? 'Practice complete!' : s.lesson.isPractice ? t('practiceDone') : (getTheme()?.copy?.celebrateTitle || t('lessonComplete')) }),
     el('div', { class: 'xp-pill' }, [icon('star', { size: 26 }), `+${xpGained} ${t('xp')}`]),
     el('p', { class: 'celebrate__body', text: praise }),
     el('div', { class: 'celebrate__stats' }, [
@@ -1003,7 +1007,7 @@ function renderCelebration() {
   }
 
   // Keep the momentum: the very next lesson is one tap away, so finishing is not a place to stop.
-  const upNext = s.lesson.isPractice ? null : nextLesson();
+  const upNext = s.lesson.isPractice && !s.lesson.isFix ? null : nextLesson();
   // Maths with generated problems: as many fresh rounds as the child wants, with new numbers each time.
   const gens = (s.lesson.activities || []).filter((a) => a.gen);
   const more = gens.length >= 3 ? el('button', { class: `btn${upNext ? ' btn--ghost' : ''} btn--block`, type: 'button', onclick: () => {
@@ -1096,37 +1100,40 @@ function showFeedback(s, activity, correct, response = {}) {
 }
 
 function screenPractice() {
+  const l = activeLearner();
   const wrap = el('div', { class: 'page screen' });
   const picked = practiceSet(10);
-  if (!picked.length) {
-    const mascot = mascotImage('happy');
-    wrap.append(el('div', { class: 'empty' }, [
-      mascot ? el('img', { src: mascot, alt: '' }) : null,
-      el('h3', { text: 'You are all caught up!' }),
-      el('p', { text: 'Nothing needs reviewing right now. Questions you get wrong come back here, and so do ones you have not seen for a while.' }),
-      el('button', { class: 'btn', type: 'button', onclick: () => go('path') }, ['Go to the trail']),
+  if (picked.length) {
+    const start = el('button', { class: 'btn big-cta', type: 'button', style: { width: '100%', maxWidth: '420px' } }, [
+      el('span', { class: 'big-cta__play' }, [icon('play', { size: 24 })]),
+      el('span', { class: 'big-cta__text' }, [el('span', { class: 'big-cta__label', text: t('startReview', { n: picked.length }) })]),
+    ]);
+    start.addEventListener('click', () => {
+      startLesson({ id: 'practice-' + Date.now(), lessonId: 'practice', title: t('practiseTab'), activities: picked, estimatedMinutes: 3, isPractice: true, isFix: true });
+    });
+    wrap.append(el('section', { class: 'review-card' }, [
+      el('span', { class: 'review-card__count', text: String(picked.length) }),
+      el('p', { class: 'review-card__label', text: picked.length === 1 ? 'question you got wrong. Try it again.' : 'questions you got wrong. Try them again.' }),
+      start,
     ]));
     return wrap;
   }
 
-  const weak = weakSpots(6);
-  const card = el('section', { class: 'review-card' }, [
-    el('span', { class: 'review-card__count', text: String(picked.length) }),
-    el('p', { class: 'review-card__label', text: picked.length === 1 ? 'question ready to review' : 'questions ready to review' }),
-  ]);
-  if (weak.length) {
-    card.append(el('div', { class: 'chip-list', 'aria-label': t('weakSpots') },
-      weak.map((w) => el('span', { class: 'chip' }, [w.tag, ' ', el('b', { text: `×${w.lapses}` })]))));
-  }
-  const start = el('button', { class: 'btn big-cta', type: 'button', style: { width: '100%', maxWidth: '420px' } }, [
-    el('span', { class: 'big-cta__play' }, [icon('play', { size: 24 })]),
-    el('span', { class: 'big-cta__text' }, [el('span', { class: 'big-cta__label', text: t('startReview', { n: picked.length }) })]),
-  ]);
-  start.addEventListener('click', () => {
-    startLesson({ id: 'practice-' + Date.now(), lessonId: 'practice', title: t('practiseTab'), activities: picked, estimatedMinutes: 3, isPractice: true });
-  });
-  card.append(start);
-  wrap.append(card);
+  const finished = l?.practiceDay === todayKey();
+  const later = Object.values(l?.cards || {}).filter(isMistake).length;
+  const mascot = mascotImage('happy');
+  const next = nextLesson();
+  const quiz = quickQuiz(5);
+  wrap.append(el('div', { class: 'empty' }, [
+    mascot ? el('img', { src: mascot, alt: '' }) : null,
+    el('h3', { text: finished ? 'Practice complete!' : 'No mistakes to fix' }),
+    el('p', { text: later ? `${later === 1 ? '1 tricky question comes' : `${later} tricky questions come`} back tomorrow. What next?`
+      : finished ? 'You fixed all your mistakes. What next?' : 'Any question you get wrong will wait for you here.' }),
+    el('div', { class: 'empty__next' }, [
+      next ? el('button', { class: 'btn btn--primary', type: 'button', onclick: () => startLesson(next) }, [`${t('nextLesson')}: ${next.title}`]) : null,
+      quiz.length >= 3 ? el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => startLesson({ id: 'quiz-' + Date.now(), lessonId: 'practice', title: 'Quick quiz', activities: quiz, estimatedMinutes: 2, isPractice: true }) }, [`Quick quiz: ${quiz.length} questions you know`]) : null,
+    ]),
+  ]));
   return wrap;
 }
 

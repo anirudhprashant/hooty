@@ -448,20 +448,21 @@
           "deep",
           "explain"
          ],
-         "prompt": "A child wants to join science but says, “I am not sure what to ask.” What should the child do first?",
+         "prompt": "A child wants to learn science but says, “I am not sure what to ask.” What should the child do first?",
          "options": [
-          "Keep curious and look for a question.",
+          "Stay curious and look for a question.",
           "Wait until every answer is already known.",
-          "Choose a question without any wondering.",
-          "Stop looking and avoid nature for good."
+          "Pick a question without any wondering.",
+          "Stop looking and stay away from nature."
          ],
          "answer": 0,
          "why": {
-          "Wait until every answer is already known.": "This wrongly thinks science begins only with known answers.",
-          "Choose a question without any wondering.": "This chooses a question without the curiosity that guides science.",
-          "Stop looking and avoid nature for good.": "This mistakes giving up curiosity for learning about nature."
+          "Stay curious and look for a question.": "",
+          "Wait until every answer is already known.": "This wrongly says science starts only with known answers.",
+          "Pick a question without any wondering.": "This picks a question without the curiosity that guides science.",
+          "Stop looking and stay away from nature.": "This gives up curiosity instead of learning about nature."
          },
-         "explanation": "Curiosity is the most important quality for science and can lead to questions.",
+         "explanation": "Curiosity is the most important thing in science. It leads to questions.",
          "f": [
           "1.4",
           "1.8",
@@ -3730,12 +3731,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "Three plants are mixed together: one is tall with a hard, thick, brown, woody stem, one has weak stems and needs support, and one grows along the ground. How should they be grouped?",
+         "prompt": "Three plants are mixed together. One is tall. Its stem is hard, thick, brown and woody. One has weak stems. It needs support. One grows along the ground. How should you group them?",
          "steps": [
-          "Group the plants by their stems and growth patterns, because different groups may use different features.",
-          "Put the tall plant with hard, thick, brown, woody stems with trees, because it matches their stem pattern.",
-          "Put the weak-stemmed plant with climbers, because weak stems need support to climb and grow.",
-          "Put the ground-growing plant with creepers, so the groups become clearer and easier to understand and study."
+          "Group the plants by their stems and how they grow. Different groups may look at different parts.",
+          "Put the tall plant with trees. It has a hard, thick, brown, woody stem like a tree.",
+          "Put the plant with weak stems with climbers. Weak stems need support to climb.",
+          "Put the plant that grows on the ground with creepers. This makes the groups clear and easy to study."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -4020,20 +4021,21 @@
           "deep",
           "compare"
          ],
-         "prompt": "A garden has one tall plant with a hard, thick, brown, woody stem and one small plant with a soft, green stem. Why should they be in different groups?",
+         "prompt": "One plant has a tall, hard, thick, brown stem. Another plant has a small, soft, green stem. Why are they in different groups?",
          "options": [
-          "Their stems differ in height, thickness, hardness, and colour.",
-          "Their stems are the same, so their groups must match.",
-          "Only flower presence can tell these two plants apart.",
+          "Their stems differ in height, thickness, hardness and colour.",
+          "Their stems are the same, so the groups must match.",
+          "Only flowers can tell these two plants apart.",
           "Their heights match, so stem features do not matter."
          ],
          "answer": 0,
          "why": {
-          "Their stems are the same, so their groups must match.": "This mistake assumes both plants have the same stem features.",
-          "Only flower presence can tell these two plants apart.": "This mistake thinks flower presence is the only useful feature.",
-          "Their heights match, so stem features do not matter.": "This mistake assumes matching height makes other features unimportant."
+          "Their stems differ in height, thickness, hardness and colour.": "",
+          "Their stems are the same, so the groups must match.": "This wrongly says both plants have the same stems.",
+          "Only flowers can tell these two plants apart.": "This wrongly says only flowers can tell them apart.",
+          "Their heights match, so stem features do not matter.": "This wrongly says matching height makes stems useless."
          },
-         "explanation": "This is right because the two plants differ in several stem features.",
+         "explanation": "The two plants have very different stems.",
          "f": [
           "2.1",
           "2.7",
@@ -7059,20 +7061,21 @@
           "deep",
           "classify"
          ],
-         "prompt": "A project compares traditional-food lists for Punjab and Karnataka with a crop list for Manipur. Which conclusion is careful?",
+         "prompt": "A project compares food lists from Punjab and Karnataka. It also has a crop list from Manipur. Which conclusion is careful?",
          "options": [
-          "Punjab's foods are also listed as Manipur crops.",
+          "Punjab's foods are also crops of Manipur.",
           "The two lists give different kinds of information.",
-          "Manipur's crops are all listed traditional foods.",
+          "All of Manipur's crops are traditional foods.",
           "All three lists show foods eaten in many states."
          ],
          "answer": 1,
          "why": {
-          "Punjab's foods are also listed as Manipur crops.": "The facts do not place Punjab's traditional foods among Manipur's listed crops.",
-          "Manipur's crops are all listed traditional foods.": "The project mistakes a crop list for a traditional-food list.",
-          "All three lists show foods eaten in many states.": "None of these lists says the foods are eaten in many states."
+          "Punjab's foods are also crops of Manipur.": "The facts do not put Punjab's foods in Manipur's crop list.",
+          "The two lists give different kinds of information.": "",
+          "All of Manipur's crops are traditional foods.": "The project mixes up a crop list with a food list.",
+          "All three lists show foods eaten in many states.": "No list says these foods are eaten in many states."
          },
-         "explanation": "Punjab and Karnataka list traditional foods, while Manipur's list names crops.",
+         "explanation": "Punjab and Karnataka list foods. Manipur's list names crops.",
          "f": [
           "1.10",
           "1.11",
@@ -7492,20 +7495,21 @@
           "deep",
           "fair test"
          ],
-         "prompt": "A student wants evidence that cooking practices have changed. Which investigation is fairest?",
+         "prompt": "A student wants proof that cooking has changed. Which way to check is most fair?",
          "options": [
-          "Compare the same tasks across earlier and today, using the tools used for each task.",
-          "Ask which foods people like, but do not check how those foods are prepared.",
-          "Compare tools for different foods, because different food choices make tool changes clear.",
-          "Compare only modern cooking tools, because earlier tools do not show what people used."
+          "Compare the same tasks in the old days and today. Use the tools for each task.",
+          "Ask which foods people like. Do not check how the food is made.",
+          "Compare tools for different foods. Different foods make tool changes clear.",
+          "Compare only new cooking tools. Old tools do not show what people used."
          ],
          "answer": 0,
          "why": {
-          "Ask which foods people like, but do not check how those foods are prepared.": "This mistake looks at food choices but ignores methods of preparation.",
-          "Compare tools for different foods, because different food choices make tool changes clear.": "This mistake allows food choices to differ, making the tool change less clear.",
-          "Compare only modern cooking tools, because earlier tools do not show what people used.": "This mistake leaves out earlier practices, so it cannot show a change."
+          "Compare the same tasks in the old days and today. Use the tools for each task.": "",
+          "Ask which foods people like. Do not check how the food is made.": "This mistake looks at food choices. It ignores how food is made.",
+          "Compare tools for different foods. Different foods make tool changes clear.": "This mistake lets food choices differ. Then the tool change is less clear.",
+          "Compare only new cooking tools. Old tools do not show what people used.": "This mistake leaves out old practices. So it cannot show a change."
          },
-         "explanation": "This is right because it compares how the same tasks were done at different times.",
+         "explanation": "This is right. It compares how people did the same tasks at different times.",
          "f": [
           "2.1",
           "2.2",
@@ -7554,20 +7558,21 @@
           "deep",
           "find flaw"
          ],
-         "prompt": "Someone says, “Technology is the only reason cooking practices have changed.” What is the best reply?",
+         "prompt": "Someone says, “Technology is the only reason cooking has changed.” What is the best reply?",
          "options": [
-          "Technology is one reason, but transport and communication also helped.",
-          "Technology had no role in changing cooking practices at all.",
-          "Transport and communication were the only reasons practices changed.",
-          "Traditional and modern cooking practices are always exactly the same."
+          "Technology is one reason; transport and communication also helped.",
+          "Technology played no part in changing cooking.",
+          "Transport and communication were the only reasons.",
+          "Old and new cooking are always exactly the same."
          ],
          "answer": 0,
          "why": {
-          "Technology had no role in changing cooking practices at all.": "This mistake denies the role of technological development in cooking practices.",
-          "Transport and communication were the only reasons practices changed.": "This mistake ignores technology while calling transport and communication only reasons.",
-          "Traditional and modern cooking practices are always exactly the same.": "This mistake denies the clear difference between traditional and modern practices."
+          "Technology is one reason; transport and communication also helped.": "",
+          "Technology played no part in changing cooking.": "This says technology did not change cooking at all.",
+          "Transport and communication were the only reasons.": "This forgets technology and names only transport and communication.",
+          "Old and new cooking are always exactly the same.": "This says old and new cooking are the same, which is false."
          },
-         "explanation": "This is right because technology is only one of the stated reasons for change.",
+         "explanation": "Technology is only one reason why cooking has changed.",
          "f": [
           "2.3",
           "2.8",
@@ -7596,20 +7601,21 @@
           "deep",
           "predict"
          ],
-         "prompt": "A cook hears about a different cooking method, and transport is better than before. What is a reasonable prediction?",
+         "prompt": "A cook hears about a new way to cook. Transport is better than before. What may happen next?",
          "options": [
-          "The cooking practice may change, because communication and transport can help change it.",
-          "The cooking practice must stay the same, because only new tools can change it.",
-          "The practice will become traditional, because hearing ideas always moves cooking backward.",
-          "The cook will stop cooking, because better transport makes cooking unnecessary."
+          "The cooking may change. Talking and travel can help change it.",
+          "The cooking must stay the same. Only new tools can change it.",
+          "The cooking will go back to old ways. New ideas always make cooking go back.",
+          "The cook will stop cooking. Better transport makes cooking unnecessary."
          ],
          "answer": 0,
          "why": {
-          "The cooking practice must stay the same, because only new tools can change it.": "This mistake thinks technological development is the only reason for change.",
-          "The practice will become traditional, because hearing ideas always moves cooking backward.": "This mistake assumes that learning about a method always leads back to older ways.",
-          "The cook will stop cooking, because better transport makes cooking unnecessary.": "This mistake thinks better transport removes the need to cook instead of helping change practices."
+          "The cooking may change. Talking and travel can help change it.": "",
+          "The cooking must stay the same. Only new tools can change it.": "This mistake thinks only new tools can change cooking.",
+          "The cooking will go back to old ways. New ideas always make cooking go back.": "This mistake thinks new ideas always bring back old ways.",
+          "The cook will stop cooking. Better transport makes cooking unnecessary.": "This mistake thinks better transport means people need not cook."
          },
-         "explanation": "This is right because transport and communication have helped change cooking practices.",
+         "explanation": "This is right. Travel and talking have helped change cooking.",
          "f": [
           "2.8",
           "2.9"
@@ -7633,20 +7639,21 @@
           "deep",
           "compare"
          ],
-         "prompt": "A display compares an earlier kitchen with a modern kitchen. Which evidence best shows the clear difference between cooking practices?",
+         "prompt": "A display shows an old kitchen and a new kitchen. Which fact best shows that cooking has changed?",
          "options": [
-          "The earlier side uses a chulha and sil-batta; the modern side uses a gas stove and electrical grinder.",
-          "Both sides use a chulha, because traditional and modern cooking practices are the same.",
-          "One side lists food choices; the other side lists only the foods people like.",
-          "Both sides use a gas stove, because the difference lies only in what people taste."
+          "Old side: chulha and sil-batta. New side: gas stove and electric grinder.",
+          "Both sides use a chulha. Old and new cooking are the same.",
+          "One side lists foods. The other lists only foods people like.",
+          "Both sides use a gas stove. Only the taste of food is different."
          ],
          "answer": 0,
          "why": {
-          "Both sides use a chulha, because traditional and modern cooking practices are the same.": "This mistake assumes both times used the same cooking tools.",
-          "One side lists food choices; the other side lists only the foods people like.": "This mistake shows food choices but misses the methods of preparing food.",
-          "Both sides use a gas stove, because the difference lies only in what people taste.": "This mistake claims only tastes differ while ignoring the different cooking tools."
+          "Old side: chulha and sil-batta. New side: gas stove and electric grinder.": "",
+          "Both sides use a chulha. Old and new cooking are the same.": "This mistake thinks both times used the same cooking tools.",
+          "One side lists foods. The other lists only foods people like.": "This mistake shows food choices but not how food is prepared.",
+          "Both sides use a gas stove. Only the taste of food is different.": "This mistake says only taste differs. It ignores the different cooking tools."
          },
-         "explanation": "This is right because it shows the earlier and modern tools used for cooking and grinding.",
+         "explanation": "This is right. It shows the old and new tools for cooking and grinding.",
          "f": [
           "2.3",
           "2.4",
@@ -7987,20 +7994,21 @@
           "deep",
           "explain"
          ],
-         "prompt": "In the kitchen, a child sees cooking oil and says, “It cannot be fat because it is liquid.” What is the best reply?",
+         "prompt": "A child sees cooking oil and says, “It cannot be fat because it is liquid.” What is the best reply?",
          "options": [
-          "Many oils belong to fat.",
-          "Only solid foods can be fat.",
+          "Many oils are fats.",
+          "Only solid food is fat.",
           "Every liquid food is fat.",
-          "No oil can belong to fat."
+          "No oil is fat."
          ],
          "answer": 0,
          "why": {
-          "Only solid foods can be fat.": "This wrongly assumes that fat must always be solid.",
-          "Every liquid food is fat.": "This wrongly assumes that every liquid food is fat.",
-          "No oil can belong to fat.": "This wrongly denies that oils can belong to fat."
+          "Many oils are fats.": "",
+          "Only solid food is fat.": "This wrongly says fat must always be solid.",
+          "Every liquid food is fat.": "This wrongly says every liquid food is fat.",
+          "No oil is fat.": "This wrongly says oils cannot be fat."
          },
-         "explanation": "Many oils belong to fat, even though oils can be liquid.",
+         "explanation": "Many oils are fats, even when they are liquid.",
          "f": [
           "3.2"
          ],
@@ -13898,20 +13906,21 @@
           "deep",
           "explain"
          ],
-         "prompt": "A child records a table's measurement as \"13 handspans.\" What does this show, and why is it not enough for everyone to compare fairly?",
+         "prompt": "A child writes a table's length as \"13 handspans.\" What does this show? Why can others not compare it fairly?",
          "options": [
-          "It shows 13 body-based units, but people's handspans can differ.",
-          "It shows 13 standard units, so all people will agree.",
-          "It shows a unit but no number, so nobody can read it.",
-          "It shows a number but no unit, so the table is unknown."
+          "It shows 13 handspans. But people's hands can be different sizes.",
+          "It shows 13 standard units. So all people will agree.",
+          "It shows a unit but no number. So nobody can read it.",
+          "It shows a number but no unit. So the table size is unknown."
          ],
          "answer": 0,
          "why": {
-          "It shows 13 standard units, so all people will agree.": "Handspans are body-based, so they are not the same standard unit for everyone.",
-          "It shows a unit but no number, so nobody can read it.": "The record includes 13 as well as handspans, so it does have a number.",
-          "It shows a number but no unit, so the table is unknown.": "The record includes handspans as well as 13, so it does have a unit."
+          "It shows 13 handspans. But people's hands can be different sizes.": "",
+          "It shows 13 standard units. So all people will agree.": "A handspan is a body unit. It is not the same for everyone.",
+          "It shows a unit but no number. So nobody can read it.": "The record has 13 and handspans. So it does have a number.",
+          "It shows a number but no unit. So the table size is unknown.": "The record has handspans and 13. So it does have a unit."
          },
-         "explanation": "The number is 13, the unit is handspan, and handspan lengths can differ between people.",
+         "explanation": "The number is 13. The unit is handspan. People's handspans can be different lengths.",
          "f": [
           "1.6",
           "1.7",
@@ -15925,12 +15934,12 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "A toy moves along a straight track, another keeps going around a circle, and a third keeps moving to and fro about one point. How can we tell their motion types apart and notice what they share?",
+         "prompt": "One toy moves on a straight track. One toy goes around a circle. One toy moves back and forth around one fixed point. How can you tell their motion types apart? What do they share?",
          "steps": [
-          "First, watch the first toy’s path, because a path along one straight line shows linear motion.",
-          "Next, watch the second toy’s path, because going around a circular path shows circular motion.",
-          "Then, watch the third toy’s movement, because moving to and fro about a fixed position shows oscillatory motion.",
-          "Finally, compare what repeats, because both circular and oscillatory motion are periodic."
+          "First, watch the first toy's path. A path on one straight line is linear motion.",
+          "Next, watch the second toy's path. Going around a circle is circular motion.",
+          "Then watch the third toy. Moving back and forth around one point is oscillatory motion.",
+          "Last, compare what repeats. Circular and oscillatory motion are both periodic."
          ],
          "explanation": "Think it through with Lumi.",
          "f": [
@@ -16121,15 +16130,15 @@
           "oscillatory",
           "periodic"
          ],
-         "prompt": "Which option correctly classifies motion and states which types are periodic?",
+         "prompt": "Which answer tells what linear motion is, and which motions are periodic?",
          "options": [
-          "Linear means circular motion; circular and oscillatory motions are periodic.",
+          "Linear means round motion; circular and oscillatory motions are periodic.",
           "Linear means oscillatory motion; circular and oscillatory motions are periodic.",
-          "Linear means fixed-position motion; circular and oscillatory motions are periodic.",
+          "Linear means staying still; circular and oscillatory motions are periodic.",
           "Linear means straight-line motion; circular and oscillatory motions are periodic."
          ],
          "answer": 3,
-         "explanation": "Linear motion follows a straight line. Circular and oscillatory motions are periodic.",
+         "explanation": "Linear motion goes in a straight line. Circular and oscillatory motions are periodic.",
          "src": [
           {
            "ch": 5,
@@ -16210,18 +16219,19 @@
           "case"
          ],
          "context": "Deepa's grandmother measured cloth using the length of her arm. When five friends tried measuring a table with their handspans, they found that their handspans had different lengths, and the number of handspans needed was different for everyone. Deepa's mother calls a handspan a balisht. A farmer can measure land by walking and counting his strides, or by using the length of his feet.",
-         "prompt": "What should the friends do if they want their measurements of the table to agree?",
+         "prompt": "The friends measure a table. They want the same answer. What should they do?",
          "options": [
-          "Use a standard unit so the measurement can agree for everyone.",
-          "Keep using each person's handspan because everyone has the same handspan length.",
-          "Compare only the numbers from personal handspans and ignore the units.",
-          "Let each person use a different body part and expect one shared result."
+          "Use a standard unit. Then everyone can get the same answer.",
+          "Keep using each person's handspan. Everyone has the same hand length.",
+          "Compare only the numbers from handspans. Ignore the units.",
+          "Let each person use a different body part. Expect one shared result."
          ],
          "answer": 0,
          "why": {
-          "Keep using each person's handspan because everyone has the same handspan length.": "The friends' handspans did not all have the same length.",
-          "Compare only the numbers from personal handspans and ignore the units.": "A measured length must have both a number and a unit.",
-          "Let each person use a different body part and expect one shared result.": "Different body-based units can produce different results."
+          "Use a standard unit. Then everyone can get the same answer.": "",
+          "Keep using each person's handspan. Everyone has the same hand length.": "The friends' handspans did not all have the same length.",
+          "Compare only the numbers from handspans. Ignore the units.": "A length needs both a number and a unit.",
+          "Let each person use a different body part. Expect one shared result.": "Different body units can give different results."
          },
          "explanation": "A standard unit should give the same result for everyone."
         },
@@ -16234,20 +16244,21 @@
           "case"
          ],
          "context": "Deepa's grandmother measured cloth using the length of her arm. When five friends tried measuring a table with their handspans, they found that their handspans had different lengths, and the number of handspans needed was different for everyone. Deepa's mother calls a handspan a balisht. A farmer can measure land by walking and counting his strides, or by using the length of his feet.",
-         "prompt": "Deepa's mother wants to measure the table again using a standard instrument rather than her handspan. What should she do?",
+         "prompt": "Deepa's mother wants to measure the table with a standard instrument. She does not want to use her handspan. What should she do?",
          "options": [
-          "Use a measuring tape instead of relying on her handspan.",
-          "Keep using her handspan and expect every person to get the same count.",
-          "Report only the number of handspans without naming the unit.",
-          "Use each visitor's foot length and expect all measurements to match."
+          "Use a measuring tape instead of her handspan.",
+          "Keep using her handspan and hope all counts match.",
+          "Give only the number of handspans, with no unit.",
+          "Use each visitor's foot and hope all lengths match."
          ],
          "answer": 0,
          "why": {
-          "Keep using her handspan and expect every person to get the same count.": "Continuing with a handspan can produce different counts.",
-          "Report only the number of handspans without naming the unit.": "A measured length needs both a number and a unit.",
-          "Use each visitor's foot length and expect all measurements to match.": "Foot lengths can also differ between people."
+          "Use a measuring tape instead of her handspan.": "",
+          "Keep using her handspan and hope all counts match.": "Using a handspan can give different counts.",
+          "Give only the number of handspans, with no unit.": "A length needs both a number and a unit.",
+          "Use each visitor's foot and hope all lengths match.": "Feet are also different for different people."
          },
-         "explanation": "A measuring tape is useful because body-based units can differ between people."
+         "explanation": "A measuring tape is good. Handspans are different for different people."
         },
         {
          "type": "explain",

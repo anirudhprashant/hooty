@@ -4254,14 +4254,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "A shape collection has 2 flat shapes with 2 dimensions each and 3 solid shapes with 3 dimensions each. How many dimensions are counted altogether?",
-         "explanation": "The flat shapes contribute 4 dimensions and the solid shapes contribute 9 dimensions. Add the dimensions contributed by the two groups. 4 + 9 = 13 dimensions.",
+         "prompt": "There are 2 flat shapes. Each flat shape has 2 dimensions. There are 3 solid shapes. Each solid shape has 3 dimensions. How many dimensions are counted in all?",
+         "explanation": "The flat shapes give 4 dimensions. The solid shapes give 9 dimensions. Add the dimensions from the two groups. 4 + 9 = 13 dimensions.",
          "steps": [
-          "The flat shapes contribute 4 dimensions and the solid shapes contribute 9 dimensions.",
-          "Add the dimensions contributed by the two groups.",
+          "The flat shapes give 4 dimensions. The solid shapes give 9 dimensions.",
+          "Add the dimensions from the two groups.",
           "4 + 9 = 13 dimensions."
          ],
-         "hint": "First find the dimensions contributed by each kind of shape.",
+         "hint": "First find the dimensions from each kind of shape.",
          "derived": [
           "13 (generated problem)",
           "2 (generated problem)",
@@ -4270,7 +4270,7 @@
           "9 (generated problem)"
          ],
          "gen": {
-          "template": "A shape collection has {flat_shapes} flat shapes with 2 dimensions each and {solid_shapes} solid shapes with 3 dimensions each. How many dimensions are counted altogether?",
+          "template": "There are {flat_shapes} flat shapes. Each flat shape has 2 dimensions. There are {solid_shapes} solid shapes. Each solid shape has 3 dimensions. How many dimensions are counted in all?",
           "params": {
            "flat_shapes": [
             2,
@@ -4290,8 +4290,8 @@
            "solid_dimensions": "3*solid_shapes"
           },
           "steps": [
-           "The flat shapes contribute {flat_dimensions} dimensions and the solid shapes contribute {solid_dimensions} dimensions.",
-           "Add the dimensions contributed by the two groups.",
+           "The flat shapes give {flat_dimensions} dimensions. The solid shapes give {solid_dimensions} dimensions.",
+           "Add the dimensions from the two groups.",
            "{flat_dimensions} + {solid_dimensions} = {answer} dimensions."
           ],
           "model": {
@@ -5284,10 +5284,10 @@
          "tags": [
           "worked"
          ],
-         "prompt": "In a cricket match, sign A is a regular polygon with 8 sides and sign B is a regular polygon with 4 sides. Each side of both signs is 6 cm long. How many more cm of border does sign A have than sign B?",
+         "prompt": "Sign A is a regular polygon with 8 sides. Sign B is a regular polygon with 4 sides. Each side of both signs is 6 cm long. How many more cm of border does sign A have than sign B?",
          "steps": [
           "Sign A has 4 more sides than sign B.",
-          "Each extra side adds 6 cm of border, so multiply the side difference by 6.",
+          "Each extra side adds 6 cm. So multiply the extra sides by 6.",
           "24 cm = 24 cm."
          ],
          "modelSpec": {
@@ -5297,7 +5297,7 @@
          },
          "result": "24",
          "gen": {
-          "template": "In a cricket match, sign A is a regular polygon with {a} sides and sign B is a regular polygon with {b} sides. Each side of both signs is {length} cm long. How many more cm of border does sign A have than sign B?",
+          "template": "Sign A is a regular polygon with {a} sides. Sign B is a regular polygon with {b} sides. Each side of both signs is {length} cm long. How many more cm of border does sign A have than sign B?",
           "params": {
            "a": [
             5,
@@ -5330,7 +5330,7 @@
           },
           "steps": [
            "Sign A has {side_difference} more sides than sign B.",
-           "Each extra side adds {length} cm of border, so multiply the side difference by {length}.",
+           "Each extra side adds {length} cm. So multiply the extra sides by {length}.",
            "{extra_length} cm = {answer} cm."
           ],
           "model": {
@@ -5342,7 +5342,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Watch how it is solved.",
+         "explanation": "Sign A has 4 more sides than sign B. Each extra side adds 6 cm. So multiply the extra sides by 6. 24 cm = 24 cm.",
          "f": [],
          "derived": [
           "24 (generated problem)",
@@ -6139,10 +6139,10 @@
          "tags": [
           "worked"
          ],
-         "prompt": "A line segment is made by joining two paths of 3 cm and 6 cm end to end in the same direction. How long is the whole line segment in cm?",
+         "prompt": "A line segment has two parts. One part is 3 cm long. The other part is 6 cm long. The parts join end to end in the same direction. How long is the whole line segment in cm?",
          "steps": [
-          "The two parts have lengths 3 cm and 6 cm.",
-          "The parts meet end to end, so add their lengths to find the whole length.",
+          "The two parts are 3 cm and 6 cm long.",
+          "The parts join end to end. Add their lengths to get the whole length.",
           "9 cm = 9 cm."
          ],
          "modelSpec": {
@@ -6161,7 +6161,7 @@
          },
          "result": "9",
          "gen": {
-          "template": "A line segment is made by joining two paths of {a} cm and {b} cm end to end in the same direction. How long is the whole line segment in cm?",
+          "template": "A line segment has two parts. One part is {a} cm long. The other part is {b} cm long. The parts join end to end in the same direction. How long is the whole line segment in cm?",
           "params": {
            "a": [
             3,
@@ -6180,8 +6180,8 @@
            "total": "a+b"
           },
           "steps": [
-           "The two parts have lengths {a} cm and {b} cm.",
-           "The parts meet end to end, so add their lengths to find the whole length.",
+           "The two parts are {a} cm and {b} cm long.",
+           "The parts join end to end. Add their lengths to get the whole length.",
            "{total} cm = {answer} cm."
           ],
           "model": {
@@ -6202,7 +6202,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Watch how it is solved.",
+         "explanation": "The two parts are 3 cm and 6 cm long. The parts join end to end. Add their lengths to get the whole length. 9 cm = 9 cm.",
          "f": [],
          "derived": [
           "3 (generated problem)",
@@ -7508,11 +7508,11 @@
          "tags": [
           "worked"
          ],
-         "prompt": "From the same starting ray, one ray turns 4 equal small turns and then turns 2 more small turns in the same direction. How many small turns from the starting ray is the resulting angle?",
+         "prompt": "A ray starts in one place. It turns 4 small turns. Then it turns 2 more small turns the same way. How many small turns from the start is the new angle?",
          "steps": [
-          "The first turning amount is 4 small turns, and the additional amount is 2 small turns.",
-          "Because both turns are in the same direction, add their amounts.",
-          "4 + 2 = 6 small turns, so the resulting angle is 6 small turns from the starting ray."
+          "The first turn is 4 small turns. The next turn is 2 small turns.",
+          "Both turns go the same way. So add them.",
+          "4 + 2 = 6 small turns. So the angle is 6 small turns from the start."
          ],
          "modelSpec": {
           "type": "tape",
@@ -7530,7 +7530,7 @@
          },
          "result": "6",
          "gen": {
-          "template": "From the same starting ray, one ray turns {a} equal small turns and then turns {b} more small turns in the same direction. How many small turns from the starting ray is the resulting angle?",
+          "template": "A ray starts in one place. It turns {a} small turns. Then it turns {b} more small turns the same way. How many small turns from the start is the new angle?",
           "params": {
            "a": [
             2,
@@ -7549,9 +7549,9 @@
            "total_turn": "a+b"
           },
           "steps": [
-           "The first turning amount is {a} small turns, and the additional amount is {b} small turns.",
-           "Because both turns are in the same direction, add their amounts.",
-           "{a} + {b} = {answer} small turns, so the resulting angle is {answer} small turns from the starting ray."
+           "The first turn is {a} small turns. The next turn is {b} small turns.",
+           "Both turns go the same way. So add them.",
+           "{a} + {b} = {answer} small turns. So the angle is {answer} small turns from the start."
           ],
           "model": {
            "type": "tape",
@@ -7571,7 +7571,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Watch how it is solved.",
+         "explanation": "The first turn is 4 small turns. The next turn is 2 small turns. Both turns go the same way. So add them. 4 + 2 = 6 small turns. So the angle is 6 small turns from the start.",
          "f": [],
          "derived": [
           "2 (generated problem)",
@@ -7929,21 +7929,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "At a market stall, one pair of scissors opens through 7 equal small turns and another pair opens through 12 equal small turns. How many more small turns does the wider opening have?",
-         "explanation": "The first pair of scissors opens through 7 small turns and the second through 12 small turns. The wider opening is found by subtracting the smaller amount from the larger amount. 12 - 7 = 5 small turns, so the wider opening has 5 more small turns.",
+         "prompt": "One pair of scissors opens 7 small turns. Another pair opens 12 small turns. How many more small turns does the wider opening have?",
+         "explanation": "The first pair opens 7 small turns. The second pair opens 12 small turns. Subtract the smaller opening from the larger opening. 12 - 7 = 5 small turns. So the wider opening has 5 more small turns.",
          "steps": [
-          "The first pair of scissors opens through 7 small turns and the second through 12 small turns.",
-          "The wider opening is found by subtracting the smaller amount from the larger amount.",
-          "12 - 7 = 5 small turns, so the wider opening has 5 more small turns."
+          "The first pair opens 7 small turns. The second pair opens 12 small turns.",
+          "Subtract the smaller opening from the larger opening.",
+          "12 - 7 = 5 small turns. So the wider opening has 5 more small turns."
          ],
-         "hint": "Subtract the smaller opening amount from the larger opening amount.",
+         "hint": "Subtract the smaller opening from the larger opening.",
          "derived": [
           "12 (generated problem)",
           "5 (generated problem)",
           "7 (generated problem)"
          ],
          "gen": {
-          "template": "At a market stall, one pair of scissors opens through {a} equal small turns and another pair opens through {b} equal small turns. How many more small turns does the wider opening have?",
+          "template": "One pair of scissors opens {a} small turns. Another pair opens {b} small turns. How many more small turns does the wider opening have?",
           "params": {
            "a": [
             3,
@@ -7964,9 +7964,9 @@
            "opening_difference": "b-a"
           },
           "steps": [
-           "The first pair of scissors opens through {a} small turns and the second through {b} small turns.",
-           "The wider opening is found by subtracting the smaller amount from the larger amount.",
-           "{b} - {a} = {answer} small turns, so the wider opening has {answer} more small turns."
+           "The first pair opens {a} small turns. The second pair opens {b} small turns.",
+           "Subtract the smaller opening from the larger opening.",
+           "{b} - {a} = {answer} small turns. So the wider opening has {answer} more small turns."
           ],
           "model": {
            "type": "compare",
@@ -8216,21 +8216,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "During each of 4 practice swings, a cricket bat turns through 5 equal small turns, always starting from the same position. How many small turns of rotation are made altogether?",
-         "explanation": "There are 4 equal practice swings. Each swing contains 5 small turns, so multiply the number of swings by the turns in one swing. 4 x 5 = 20 small turns, so the total rotation is 20 small turns.",
+         "prompt": "A cricket bat swings 4 times. Each swing makes 5 small turns. It starts from the same place each time. How many small turns in all?",
+         "explanation": "There are 4 swings. Each swing has 5 small turns. Multiply the swings by the turns in one swing. 4 x 5 = 20 small turns. So the total turn is 20 small turns.",
          "steps": [
-          "There are 4 equal practice swings.",
-          "Each swing contains 5 small turns, so multiply the number of swings by the turns in one swing.",
-          "4 x 5 = 20 small turns, so the total rotation is 20 small turns."
+          "There are 4 swings.",
+          "Each swing has 5 small turns. Multiply the swings by the turns in one swing.",
+          "4 x 5 = 20 small turns. So the total turn is 20 small turns."
          ],
-         "hint": "Multiply the number of swings by the small turns in each swing.",
+         "hint": "Multiply the swings by the small turns in one swing.",
          "derived": [
           "20 (generated problem)",
           "4 (generated problem)",
           "5 (generated problem)"
          ],
          "gen": {
-          "template": "During each of {n} practice swings, a cricket bat turns through {k} equal small turns, always starting from the same position. How many small turns of rotation are made altogether?",
+          "template": "A cricket bat swings {n} times. Each swing makes {k} small turns. It starts from the same place each time. How many small turns in all?",
           "params": {
            "n": [
             2,
@@ -8249,9 +8249,9 @@
            "total_turn": "n*k"
           },
           "steps": [
-           "There are {n} equal practice swings.",
-           "Each swing contains {k} small turns, so multiply the number of swings by the turns in one swing.",
-           "{n} x {k} = {answer} small turns, so the total rotation is {answer} small turns."
+           "There are {n} swings.",
+           "Each swing has {k} small turns. Multiply the swings by the turns in one swing.",
+           "{n} x {k} = {answer} small turns. So the total turn is {answer} small turns."
           ],
           "model": {
            "type": "numberline",
@@ -13120,20 +13120,21 @@
           "case"
          ],
          "context": "A student needs the shortest path joining point A and point B. The student draws the path as line segment AB. The student also draws a line through point A and point B, because the line has no end and continues in both directions. The student draws a ray starting at point B. Its initial point is point B, and point C is another point on it.",
-         "prompt": "If the student wants the path to extend beyond both end points of line segment AB, what should the student do?",
+         "prompt": "A line segment AB goes from point A to point B. Ravi wants the line to go past both A and B. What should he do?",
          "options": [
-          "Extend line segment AB beyond both of its end points.",
-          "Extend line segment AB beyond point A only.",
-          "Draw a ray starting at point A with point B on it.",
-          "Add point C between point A and point B."
+          "Make segment AB longer past both A and B.",
+          "Make segment AB longer past point A only.",
+          "Draw a ray from A that goes through B.",
+          "Put point C between point A and point B."
          ],
          "answer": 0,
          "why": {
-          "Extend line segment AB beyond point A only.": "A ray continues from its initial point.",
-          "Draw a ray starting at point A with point B on it.": "The extension would be in only one direction.",
-          "Add point C between point A and point B.": "Adding a point does not extend the segment."
+          "Make segment AB longer past both A and B.": "",
+          "Make segment AB longer past point A only.": "A ray goes on from its start point only.",
+          "Draw a ray from A that goes through B.": "This makes it longer on one side only.",
+          "Put point C between point A and point B.": "Adding a point does not make the segment longer."
          },
-         "explanation": "This extends the segment in both directions."
+         "explanation": "This makes the segment longer on both sides."
         },
         {
          "type": "mcq",
@@ -13332,30 +13333,6 @@
           "Different alignment shows a smaller or larger angle"
          ],
          "explanation": "Compare your answer with the points a marker looks for."
-        },
-        {
-         "type": "mcq",
-         "id": "mathematics-g6-ch2-l4-x1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "A carpenter draws a straight angle and adds a ray inside it. The ray divides the angle into two matching parts. The carpenter folds a sheet so its two edges meet at equal angles, then checks the crossing lines. The crossing lines are perpendicular, and the opening has the shape of the letter L.",
-         "prompt": "After the fold described in the case, what kind of angles are formed by the two matching edges?",
-         "options": [
-          "They are right angles because folding forms equal angles.",
-          "They are acute angles because they are smaller than a right angle.",
-          "They are obtuse angles because they are wider than a right angle.",
-          "They are straight angles because they came from a straight angle."
-         ],
-         "answer": 0,
-         "why": {
-          "They are acute angles because they are smaller than a right angle.": "Option 1: These angles are equal to a right angle, not smaller than it.",
-          "They are obtuse angles because they are wider than a right angle.": "Option 2: Obtuse angles are greater than a right angle.",
-          "They are straight angles because they came from a straight angle.": "Option 3: A straight angle is the original angle, not either folded part."
-         },
-         "explanation": "Option 0: Equal angles formed by folding are called right angles."
         },
         {
          "type": "mcq",
@@ -15061,7 +15038,7 @@
       {
        "id": "mathematics-g6-ch3-l3",
        "title": "Lesson 3: Number Lines and Digit Sums",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -15204,6 +15181,38 @@
           "4 (generated problem)",
           "42 (generated problem)",
           "6 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g6-ch3-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Three cards show 68, 176 and 545. Why do their digit sums match?",
+         "steps": [
+          "68 has digits 6 and 8, so add them.",
+          "6 + 8 equals 14, which is 68's digit sum.",
+          "176 gives 1 + 7 + 6 = 14 because every digit is added.",
+          "545 gives 5 + 4 + 5 = 14, so all three sums match."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 60
+          },
+          {
+           "ch": 3,
+           "p": 60
+          }
          ]
         },
         {
@@ -15698,6 +15707,186 @@
           {
            "ch": 3,
            "p": 59
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "number line"
+         ],
+         "prompt": "A number line starts at 1, then 2, then 3. What order do these numbers take?",
+         "options": [
+          "1, 2, 3, because counting moves forwards by one.",
+          "3, 2, 1, because counting moves backwards by one.",
+          "1, 3, 2, because counting skips the number 2.",
+          "2, 1, 3, because counting starts with the middle number."
+         ],
+         "answer": 0,
+         "why": {
+          "3, 2, 1, because counting moves backwards by one.": "This confuses forward counting with backward counting.",
+          "1, 3, 2, because counting skips the number 2.": "This wrongly skips 2 even though counting continues onwards.",
+          "2, 1, 3, because counting starts with the middle number.": "This wrongly puts 2 before the starting number 1."
+         },
+         "explanation": "This is right because counting begins at 1 and moves forwards.",
+         "f": [
+          "3.1",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 59
+          },
+          {
+           "ch": 3,
+           "p": 60
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "calculate"
+         ],
+         "prompt": "A child must find the digit sum of 176. Which working shows the correct method?",
+         "options": [
+          "1 + 7 + 6, because every digit is added.",
+          "1 + 7, because the last digit is left out.",
+          "1 + 6, because the middle digit is left out.",
+          "7 + 6, because the first digit is left out."
+         ],
+         "answer": 0,
+         "why": {
+          "1 + 7, because the last digit is left out.": "This wrongly leaves out the last digit of 176.",
+          "1 + 6, because the middle digit is left out.": "This wrongly leaves out the middle digit of 176.",
+          "7 + 6, because the first digit is left out.": "This wrongly leaves out the first digit of 176."
+         },
+         "explanation": "This is right because a digit sum adds every digit.",
+         "f": [
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 60
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Three number cards show 68, 176 and 545. What do their digit sums show?",
+         "options": [
+          "They are all 14.",
+          "They are all 3.",
+          "Only 68 has sum 14.",
+          "Only 545 has sum 14."
+         ],
+         "answer": 0,
+         "why": {
+          "They are all 3.": "This confuses a multiple of 3 with the actual digit sum.",
+          "Only 68 has sum 14.": "This wrongly ignores the digit sums of 176 and 545.",
+          "Only 545 has sum 14.": "This wrongly ignores the digit sums of 68 and 176."
+         },
+         "explanation": "Adding every digit gives 14 for all three numbers.",
+         "f": [
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 60
+          },
+          {
+           "ch": 3,
+           "p": 60
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "verify"
+         ],
+         "prompt": "A row contains consecutive three-digit examples. One checked digit sum is 14. What should the learner check?",
+         "options": [
+          "Whether 14 is a multiple of 3.",
+          "Whether 14 is a multiple of 14.",
+          "Whether 14 is a one-digit number.",
+          "Whether 14 is a three-digit number."
+         ],
+         "answer": 0,
+         "why": {
+          "Whether 14 is a multiple of 14.": "This misses the required rule about multiples of 3.",
+          "Whether 14 is a one-digit number.": "This checks the size of 14 instead of the digit-sum rule.",
+          "Whether 14 is a three-digit number.": "This checks the size of 14 instead of the digit-sum rule."
+         },
+         "explanation": "The row's digit sums should be multiples of 3.",
+         "f": [
+          "3.5",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 60
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "extend"
+         ],
+         "prompt": "Both 815 and 833 have digit sum 14. What is wrong with saying 833 is largest?",
+         "options": [
+          "Larger numbers with digit sum 14 can still be made.",
+          "Smaller numbers with digit sum 14 can still be made.",
+          "The two numbers do not have digit sum 14.",
+          "The digit sum changes when the number grows."
+         ],
+         "answer": 0,
+         "why": {
+          "Smaller numbers with digit sum 14 can still be made.": "This misses that numbers with digit sum 14 can become larger.",
+          "The two numbers do not have digit sum 14.": "This wrongly ignores the given digit sums of both numbers.",
+          "The digit sum changes when the number grows.": "This wrongly assumes a larger number must change its digit sum."
+         },
+         "explanation": "This is right because such numbers can be made increasingly large.",
+         "f": [
+          "3.8",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 73
+          },
+          {
+           "ch": 3,
+           "p": 73
           }
          ]
         }
@@ -17118,7 +17307,7 @@
       {
        "id": "mathematics-g6-ch3-exam",
        "title": "Test practice",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 10,
        "topicScene": "media/ch3-l1-row-of-religious-child-stude.webp",
        "sceneAlt": "A row of young Buddhist schoolchildren stands in Uttaradit, Thailand.",
        "sceneCaption": "A row of children standing together in Thailand.",
@@ -17259,6 +17448,72 @@
           "States that 626 exceeds both neighbours.",
           "Explains that 200 is smaller than 577.",
           "Uses the adjacent-cell comparison rule."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A class is preparing a number-line activity in which eleven numbers must be placed in their correct positions. Students begin at 1, 2, 3 and continue onwards, so the nine one-digit numbers come first. They then find digit sums for 68, 176 and 545 and discover that all three sums are the same. Finally, they use 248, 653, 356, 815 and 833 to explore numbers with digit sum 14 and try making such numbers increasingly large.",
+         "prompt": "The class starts its eleven-number number-line activity from 1 and continues onwards. What should happen when the one-digit numbers are reached?",
+         "options": [
+          "Each of the nine one-digit numbers takes one starting place.",
+          "The nine one-digit numbers are placed in reverse order.",
+          "The nine one-digit numbers are placed after the three-digit examples.",
+          "The nine one-digit numbers all share one starting place."
+         ],
+         "answer": 0,
+         "why": {
+          "The nine one-digit numbers are placed in reverse order.": "Continuing onwards requires increasing order, not reverse order.",
+          "The nine one-digit numbers are placed after the three-digit examples.": "One-digit numbers come before three-digit examples.",
+          "The nine one-digit numbers all share one starting place.": "Different numbers cannot occupy the same place."
+         },
+         "explanation": "One-digit numbers occupy consecutive starting places."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A class is preparing a number-line activity in which eleven numbers must be placed in their correct positions. Students begin at 1, 2, 3 and continue onwards, so the nine one-digit numbers come first. They then find digit sums for 68, 176 and 545 and discover that all three sums are the same. Finally, they use 248, 653, 356, 815 and 833 to explore numbers with digit sum 14 and try making such numbers increasingly large.",
+         "prompt": "Which ordering places all the listed examples with digit sum 14 from smallest to largest?",
+         "options": [
+          "248, 356, 653, 815, 833",
+          "248, 653, 356, 815, 833",
+          "248, 356, 815, 653, 833",
+          "248, 356, 653, 833, 815"
+         ],
+         "answer": 0,
+         "why": {
+          "248, 653, 356, 815, 833": "653 is incorrectly placed before 356.",
+          "248, 356, 815, 653, 833": "815 is incorrectly placed before 653.",
+          "248, 356, 653, 833, 815": "833 is incorrectly placed before 815."
+         },
+         "explanation": "The numbers increase at every step."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g6-ch3-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how a digit sum differs from placing a number in its correct position on a number line.",
+         "answer": "A digit sum is the total obtained by adding the digits of a number. The digit sums of 68, 176 and 545 are equal. Number-line placement is different: each number goes in its correct position among numbers written from 1, 2, 3 onwards.",
+         "points": [
+          "Defines a digit sum as the total of the digits.",
+          "States that 68, 176 and 545 have equal digit sums.",
+          "Explains that number-line placement uses correct positions.",
+          "Mentions that the number line starts at 1, 2, 3 and continues onwards."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         }
@@ -23968,8 +24223,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "A region is estimated with 12 squares on graph paper, while 5 marbles are used as circle units. Which calculation gives the square-based estimated area in square units?",
-         "explanation": "Squares are the best units for measuring area. The square-based estimated area is 12 square units.",
+         "prompt": "A shape is covered with 12 squares on graph paper. You also use 5 marbles as circle units. Which answer is the area in square units, using squares?",
+         "explanation": "Squares are good units to measure area. The area by squares is 12 square units.",
          "derived": [
           "12 (generated problem)",
           "17 (generated problem)",
@@ -35668,7 +35923,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "General integers were first conceived and used in Asia many centuries ago, and the earliest known uses of negative numbers occurred in accounting. Kautilya wrote about credit and debit around 300 BCE; about how many years before 1 CE was that?",
+         "prompt": "Negative numbers were first used in Asia long ago. People used them in accounts. Kautilya wrote about credit and debit around 300 BCE. How many years before 1 CE was that?",
          "explanation": "Kautilya wrote around 300 BCE, so the number of years before 1 CE is k = 300 years.",
          "derived": [
           "1 (generated problem)",
