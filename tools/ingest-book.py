@@ -184,7 +184,8 @@ def main():
     ap.add_argument('--jobs', type=int, default=3); ap.add_argument('--no-audio', action='store_true'); ap.add_argument('--extract-only', action='store_true')
     a = ap.parse_args()
     if a.resume:
-        slug = a.resume; a.name = a.name or json.load(open(f'{HERE}/subjects.json'))[slug]['name']
+        slug = a.resume; known = json.load(open(f'{HERE}/subjects.json'))[slug]; a.name = a.name or known['name']
+        a.grade = known.get('grade', a.grade); a.language = known.get('language', a.language); a.calc = a.calc or bool(known.get('calc'))   # a resume must not forget what the book is
         a.input = a.input or ''
     else:
         if not a.input or not a.name: ap.error('give a PDF (or zip, folder, URL) and --name')
