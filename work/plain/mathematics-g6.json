@@ -155,6 +155,239 @@
 "The parts join end to end. Add their lengths to get the whole length.",
 "{total} cm = {answer} cm."
 ]
+},
+"If the ray starts at point A instead of point B, while point C remains on it, what is point A called?": {
+"prompt": "A ray starts at point A instead of point B. Point C is still on the ray. What is point A called?",
+"options": [
+"The initial point of the ray.",
+"Another point on the ray.",
+"An end point of line segment AB.",
+"A point that fixes the line."
+],
+"explanation": "The point where a ray starts is its initial point.",
+"why": [
+"",
+"Point C is the other point named with the ray.",
+"Point A belongs to the ray, not the segment.",
+"This is about two points and a line."
+]
+},
+"If the carpenter changes the first corner so that it is greater than 90° but less than 180°, which angle type should be used?": {
+"prompt": "A carpenter changes the first corner. The new corner is bigger than 90° and smaller than 180°. Which type of angle is it?",
+"options": [
+"Acute angle",
+"Right angle",
+"Obtuse angle",
+"Reflex angle"
+],
+"explanation": "An obtuse angle is bigger than 90° and smaller than 180°.",
+"why": [
+"An acute angle is smaller than 90°.",
+"A right angle measures exactly 90°.",
+"",
+"A reflex angle is bigger than 180°."
+]
+},
+"A child watches the clock at {h}:{m}; the next matching-digit-pattern time is {nh}:{nm}. A bus leaves {wait} minutes after that matching time, so how many minutes are there from {h}:{m} until the bus leaves?": {
+"prompt": "A child looks at the clock at {h}:{m}. The next time with the same digit pattern is {nh}:{nm}. A bus leaves {wait} minutes after that time. How many minutes are there from {h}:{m} until the bus leaves?",
+"hint": "Change both clock times to minutes after 12 o'clock.",
+"steps": [
+"Change both times to minutes after 12 o'clock: {current} and {next}.",
+"Find the gap: {gap} = {next} - {current} minutes.",
+"Add the extra wait: {gap} + {wait} = {answer} minutes."
+]
+},
+"At a school canteen, one tray has {start} laddoos and the next tray in a doubling picture has twice as many. How many laddoos are in the next tray?": {
+"prompt": "A tray has {start} laddoos. The next tray has double the laddoos. How many laddoos are on the next tray?",
+"hint": "Make two equal groups using the number on the first tray.",
+"steps": [
+"The first tray has {start} laddoos.",
+"The next tray has double, so it has two equal groups of {start}.",
+"The next tray has {answer} laddoos."
+]
+},
+"A poster is {design_width} cm wide and contains {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides and a triangle has 3 sides. How many sides are shown altogether?": {
+"prompt": "A poster is {design_width} cm wide. It has {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides. A triangle has 3 sides. How many sides are there in all?",
+"hint": "Count the sides of all the squares. Count the sides of all the triangles.",
+"steps": [
+"There are {square_tiles} squares. Each has 4 sides. There are {triangle_tiles} triangles. Each has 3 sides.",
+"Find the sides of each group. Then add the groups.",
+"{square_sides} + {triangle_sides} = {answer} sides."
+]
+},
+"A child says, “I can draw many different lines through the same Points A and B.” Which correction fits the facts?": {
+"prompt": "A child says, “I can draw many different lines through Points A and B.” Which correction is right?",
+"options": [
+"Only one line can go through Points A and B",
+"Many lines can go through Points A and B",
+"Only one ray can go through Points A and B",
+"No line can go through Points A and B"
+],
+"explanation": "Two points give only one line, so this correction is right.",
+"why": [
+"",
+"This repeats the wrong idea that two points give many lines.",
+"This mixes up a line with a ray. A ray has one starting point.",
+"This wrongly says two points cannot make a line."
+]
+},
+"A ray is rotated through {n} equal blocks of movement, and each block contains {k} equal small turns. How many small turns of rotation are made altogether?": {
+"prompt": "A ray turns {n} times. Each time, it makes {k} small turns. How many small turns does it make in all?",
+"hint": "Multiply the number of turns by the small turns each time.",
+"steps": [
+"The ray turns {n} times.",
+"Each time it makes {k} small turns, so multiply.",
+"{n} x {k} = {answer} small turns in all."
+]
+},
+"Two equal angles need equal amounts of rotation. If one rotating arm makes {a} whole turns to match the other, how many whole turns must the other arm make?": {
+"prompt": "Two angles are equal. One arm turns {a} whole turns. How many whole turns must the other arm turn to match it?",
+"hint": "Equal angles need equal turns.",
+"steps": [
+"The first arm turns {a} whole turns.",
+"Equal angles need the same amount of turn.",
+"The other arm also turns {answer} whole turns."
+]
+},
+"At a market, a {item} has an opening of {a} width units and another has an opening of {b} width units. How many width units wider is the larger opening?": {
+"prompt": "One {item} has an opening {a} width units wide. Another has {b} width units. How many more width units is the bigger one?",
+"options": [
+"19",
+"11",
+"-11",
+"15"
+],
+"hint": "Find the difference between the two openings.",
+"steps": [
+"The bigger opening is {a} width units. The smaller is {b} width units.",
+"Subtract the smaller from the bigger.",
+"{a} - {b} = {answer} width units."
+],
+"why": [
+"You added the two openings. Find the difference instead.",
+"",
+"You subtracted in the wrong order.",
+"You gave the bigger opening without subtracting the smaller one."
+]
+},
+"If the carpenter changes the crossing lines so that they meet at an acute angle, what should be concluded?": {
+"prompt": "Two lines cross. They are changed so they meet at an acute angle (less than 90 degrees). Which conclusion is right?",
+"options": [
+"The lines would not meet at right angles.",
+"The lines would still meet at right angles, because they cross.",
+"The lines would become straight angles.",
+"The lines would meet at right angles, because acute means sharp."
+],
+"explanation": "Option 0: Perpendicular lines must make right angles (90 degrees).",
+"why": [
+"",
+"Option 1: Crossing does not make lines meet at right angles.",
+"Option 2: The lines still meet; they do not become straight angles.",
+"Option 3: Acute means sharp, not a right angle."
+]
+},
+"The fraction 3/4 is changed to an equivalent fraction by multiplying its numerator and denominator by 2. How many equal parts are in the new denominator?": {
+"prompt": "The fraction 3/4 becomes an equal fraction when you multiply the top and bottom by 2. How many equal parts are in the new denominator?",
+"explanation": "Multiply the bottom number by 2: 4 × 2 = 8 equal parts.",
+"hint": "Type the number."
+},
+"In a cricket practice pattern, each over has {balls} balls and the same {runs} runs are scored in every over. For {overs} overs, how many runs are scored?": {
+"prompt": "In cricket practice, each over has {balls} balls. Every over scores {runs} runs. How many runs are scored in {overs} overs?",
+"hint": "Use the runs scored in each over.",
+"steps": [
+"Every over scores {runs} runs.",
+"There are {overs} equal overs, so multiply the runs in one over by the number of overs.",
+"{runs} x {overs} = {answer} runs."
+]
+},
+"From the same starting ray, Ray A turns {a} equal small turns and Ray B turns {b} equal small turns. How many small turns greater is the angle formed by Ray B?": {
+"prompt": "Ray A turns {a} small turns. Ray B turns {b} small turns. Both rays start at the same place. How many more small turns is the angle of Ray B?",
+"hint": "Take the smaller number away from the bigger number.",
+"steps": [
+"Ray A turns {a} small turns and Ray B turns {b} small turns.",
+"Find the difference. Use subtraction.",
+"{b} - {a} = {answer} small turns. So Ray B's angle is {answer} small turns bigger."
+]
+},
+"At a bus workshop, a rotating arm opens {a} width units, while two slits open {b} and {c} width units. Both slits must be widened to match the arm. How many width units should be added in total?": {
+"prompt": "A turning arm opens {a} width units. Two slits open {b} and {c} width units. Both slits must get wider to match the arm. How many width units must you add in all?",
+"hint": "Find how much wider each slit must get.",
+"steps": [
+"The arm is wider than both slits. So the gaps are {a} - {b} and {a} - {c}.",
+"Both slits must get wider. So add the two gaps.",
+"({a} - {b}) + ({a} - {c}) = {answer} width units."
+]
+},
+"A child moves a transparent circle over two angles and says, “They are equal.” What check is missing?": {
+"prompt": "A child puts a clear circle over two angles. The child says, “They are equal.” What check is missing?",
+"options": [
+"The vertex and both arms must match exactly.",
+"The circle must stay still.",
+"Only the vertex needs to match.",
+"The marks on the circle decide if they are equal."
+],
+"explanation": "Equal angles need the same vertex (the corner point) and arms that match exactly.",
+"why": [
+"",
+"Moving the circle helps you compare. But moving alone does not prove they are equal.",
+"Matching the vertex is not enough. The arms must match too.",
+"The marks show where the arms are. They do not prove equal angles by themselves."
+]
+},
+"A bus is due at {h}:{m}. The next matching-digit-pattern time is {nh}:{nm}; how many minutes are there from {h}:{m} until {nh}:{nm}?": {
+"prompt": "A bus is due at {h}:{m}. The next time with the same digit pattern is {nh}:{nm}. How many minutes are there from {h}:{m} until {nh}:{nm}?",
+"hint": "Change both clock times into minutes after 12 o'clock.",
+"steps": [
+"Change both times to minutes after 12 o'clock: {current} and {next}.",
+"Subtract: {next} - {current} = {gap} minutes.",
+"{gap} = {answer} minutes."
+]
+},
+"Which statement best describes Brahmagupta's contribution to integer history?": {
+"prompt": "Which sentence best tells what Brahmagupta did for integers?",
+"options": [
+"He finished the Nine Chapters on Mathematical Art.",
+"He wrote about credit and debit around 300 BCE.",
+"He treated positive numbers, negative numbers and zero the same in 628 CE.",
+"He used a special sign after a negative number around 300 CE."
+],
+"explanation": "Brahmagupta treated all these numbers the same. This idea is now called a ring."
+},
+"At a market, laddoos are arranged in a square with {trays} rows and {per_row} laddoos in every row. How many laddoos are displayed?": {
+"prompt": "Laddoos are put in a square shape. There are {trays} rows. Each row has {per_row} laddoos. How many laddoos are there in all?",
+"hint": "Count one row. Every row has the same number.",
+"steps": [
+"There are {trays} rows. Each row has {per_row} laddoos.",
+"Equal rows are counted by multiplication.",
+"There are {answer} laddoos in all."
+]
+},
+"A regular-polygon sequence has {polygon_terms} polygons. The first polygon has {first_sides} sides, and each next polygon has one more side than the previous one. How many sides does the last polygon have?": {
+"prompt": "A pattern has {polygon_terms} polygons. Each polygon is regular (all sides the same length). The first polygon has {first_sides} sides. Each next polygon has one more side. How many sides does the last polygon have?",
+"steps": [
+"The first polygon has {first_sides} sides. There are {polygon_terms} polygons.",
+"The number of sides goes up {increases} times.",
+"Add those increases to the first polygon's sides. The last polygon has {last_sides} sides.",
+"{last_sides} = {answer} sides."
+]
+},
+"At a school fair, one laddoo is placed at each corner of a regular polygon mat with {sides} sides. How many laddoos are used?": {
+"prompt": "A mat is shaped like a polygon with {sides} sides. Put one laddoo on each corner. How many laddoos are used?",
+"hint": "A polygon has as many corners as sides.",
+"steps": [
+"The mat has {sides} sides.",
+"Each side has one corner. Each corner gets one laddoo.",
+"{laddoos} = {answer} laddoos."
+]
+},
+"A bus turns {a} equal small turns left and then turns {b} more small turns in the same direction. How many small turns is the bus's total turn?": {
+"prompt": "A bus turns {a} small turns to the left. Then it turns {b} more small turns the same way. How many small turns does the bus turn in all?",
+"hint": "Add the two turns. Both turns go the same way.",
+"steps": [
+"The bus first turns {a} small turns. Then it turns {b} more small turns.",
+"Both turns go the same way. So add the amounts.",
+"{a} + {b} = {answer} small turns, so the total is {answer} small turns."
+]
 }
 },
 "seen": [
@@ -206,10 +439,74 @@
 "A line segment AB goes from point A to point B. Ravi wants the line to go past both A and B. What should he do?",
 "Negative numbers were first used in Asia long ago. People used them in accounts. Kautilya wrote about credit and debit around 300 BCE. How many years before 1 CE was that?",
 "There are {flat_shapes} flat shapes. Each flat shape has 2 dimensions. There are {solid_shapes} solid shapes. Each solid shape has 3 dimensions. How many dimensions are counted in all?",
-"A line segment has two parts. One part is {a} cm long. The other part is {b} cm long. The parts join end to end in the same direction. How long is the whole line segment in cm?"
+"A line segment has two parts. One part is {a} cm long. The other part is {b} cm long. The parts join end to end in the same direction. How long is the whole line segment in cm?",
+"A child centres a transparent circle on an angle’s vertex and marks where the arms pass through the circle. Why are the marks made?",
+"Two angle drawings have their vertices on the same point, but one pair of arms does not lie on the other pair. Are the angles equal?",
+"If the ray starts at point A instead of point B, while point C remains on it, what is point A called?",
+"If the carpenter changes the first corner so that it is greater than 90° but less than 180°, which angle type should be used?",
+"A child watches the clock at {h}:{m}; the next matching-digit-pattern time is {nh}:{nm}. A bus leaves {wait} minutes after that matching time, so how many minutes are there from {h}:{m} until the bus leaves?",
+"Why is the cell containing 626 a supercell?",
+"The Bakśhālī manuscript used a special sign after a negative number around 250 CE. Brahmagupta gave equal treatment to positive numbers, negative numbers, and zero in 650 CE, forming what is now called a ring. About how many years apart were these events?",
+"The Nine Chapters on Mathematical Art was completed by the first or second century CE. Using 100 CE as the later end and Kautilya's date of about 350 BCE, about how many years separated the two events?",
+"A ray starts at point A instead of point B. Point C is still on the ray. What is point A called?",
+"A carpenter changes the first corner. The new corner is bigger than 90° and smaller than 180°. Which type of angle is it?",
+"A child looks at the clock at {h}:{m}. The next time with the same digit pattern is {nh}:{nm}. A bus leaves {wait} minutes after that time. How many minutes are there from {h}:{m} until the bus leaves?",
+"At a school canteen, one tray has {start} laddoos and the next tray in a doubling picture has twice as many. How many laddoos are in the next tray?",
+"A poster is {design_width} cm wide and contains {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides and a triangle has 3 sides. How many sides are shown altogether?",
+"If Ravi checks that the polygon sequence follows the full stated range, which polygon should be its final example?",
+"A child says, “I can draw many different lines through the same Points A and B.” Which correction fits the facts?",
+"A ray is rotated through {n} equal blocks of movement, and each block contains {k} equal small turns. How many small turns of rotation are made altogether?",
+"Two equal angles need equal amounts of rotation. If one rotating arm makes {a} whole turns to match the other, how many whole turns must the other arm make?",
+"At a market, a {item} has an opening of {a} width units and another has an opening of {b} width units. How many width units wider is the larger opening?",
+"At school, angle A is an obtuse angle of {a} degrees and angle B is an acute angle of {b} degrees. How many degrees larger is angle A than angle B?",
+"A tray has {start} laddoos. The next tray has double the laddoos. How many laddoos are on the next tray?",
+"A poster is {design_width} cm wide. It has {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides. A triangle has 3 sides. How many sides are there in all?",
+"A child says, “I can draw many different lines through Points A and B.” Which correction is right?",
+"A ray turns {n} times. Each time, it makes {k} small turns. How many small turns does it make in all?",
+"Two angles are equal. One arm turns {a} whole turns. How many whole turns must the other arm turn to match it?",
+"One {item} has an opening {a} width units wide. Another has {b} width units. How many more width units is the bigger one?",
+"If the carpenter changes the crossing lines so that they meet at an acute angle, what should be concluded?",
+"A row of three cells contains {a}, {b}, and {c} points, with {a} greater than {c} and {b} larger than both. How many more points is the middle supercell than its larger neighbour?",
+"A two-by-two table has {a} and {b} in the top row and {c} and {d} in the bottom row. The values {a} and {d} are each larger than {b} and {c}. What is the sum of the point values in the supercells?",
+"The fraction 3/4 is changed to an equivalent fraction by multiplying its numerator and denominator by 2. How many equal parts are in the new denominator?",
+"A fraction has numerator 5 and denominator 13. If it is in lowest terms, what is the only common factor of its numerator and denominator?",
+"Point D is found by drawing a perpendicular to BC at C in each of 2 rectangles. How many right angles at C are made altogether?",
+"In a cricket practice pattern, each over has {balls} balls and the same {runs} runs are scored in every over. For {overs} overs, how many runs are scored?",
+"In a market, {n} stalls are marked by points, and no three stall points lie on the same straight line. How many different straight lines are determined by pairs of stall points?",
+"Two lines cross. They are changed so they meet at an acute angle (less than 90 degrees). Which conclusion is right?",
+"The fraction 3/4 becomes an equal fraction when you multiply the top and bottom by 2. How many equal parts are in the new denominator?",
+"In cricket practice, each over has {balls} balls. Every over scores {runs} runs. How many runs are scored in {overs} overs?",
+"From the same starting ray, Ray A turns {a} equal small turns and Ray B turns {b} equal small turns. How many small turns greater is the angle formed by Ray B?",
+"At a bus workshop, a rotating arm opens {a} width units, while two slits open {b} and {c} width units. Both slits must be widened to match the arm. How many width units should be added in total?",
+"A child moves a transparent circle over two angles and says, “They are equal.” What check is missing?",
+"A bus is due at {h}:{m}. The next matching-digit-pattern time is {nh}:{nm}; how many minutes are there from {h}:{m} until {nh}:{nm}?",
+"A treasure pair has 3*4 marbles and 3*3 marbles. If 3 is used as a common jump size, how many groups of 3 marbles are there in the two piles together?",
+"Which statement best describes Brahmagupta's contribution to integer history?",
+"At a market, each stall has {r} trays, and each tray has {c} apples. There are {n} stalls, all following the same arrangement. How many apples are in all the stalls?",
+"During several cloudy days, a child notices that the weather changes in a repeated order. Which conclusion fits mathematics?",
+"Ray A turns {a} small turns. Ray B turns {b} small turns. Both rays start at the same place. How many more small turns is the angle of Ray B?",
+"A turning arm opens {a} width units. Two slits open {b} and {c} width units. Both slits must get wider to match the arm. How many width units must you add in all?",
+"A child puts a clear circle over two angles. The child says, “They are equal.” What check is missing?",
+"A bus is due at {h}:{m}. The next time with the same digit pattern is {nh}:{nm}. How many minutes are there from {h}:{m} until {nh}:{nm}?",
+"Which sentence best tells what Brahmagupta did for integers?",
+"At a market, laddoos are arranged in a square with {trays} rows and {per_row} laddoos in every row. How many laddoos are displayed?",
+"In a school display, marbles form a triangle with {rows} rows containing 1, 2, and so on up to {rows} marbles. How many marbles are used?",
+"A regular-polygon sequence has {polygon_terms} polygons. The first polygon has {first_sides} sides, and each next polygon has one more side than the previous one. How many sides does the last polygon have?",
+"At a school fair, one laddoo is placed at each corner of a regular polygon mat with {sides} sides. How many laddoos are used?",
+"How can searching for patterns in shopping, weather and technology help people, and why can this activity be enjoyable?",
+"Two line segments joining two points have lengths {a} cm and {b} cm, where {a} is greater than {b}. How many cm longer is the longer segment than the shorter segment?",
+"At school, two classroom doors are opened from the same closed position by {a} and {b} equal small turns. How many small turns are in the greater angle?",
+"A bus turns {a} equal small turns left and then turns {b} more small turns in the same direction. How many small turns is the bus's total turn?",
+"Laddoos are put in a square shape. There are {trays} rows. Each row has {per_row} laddoos. How many laddoos are there in all?",
+"A pattern has {polygon_terms} polygons. Each polygon is regular (all sides the same length). The first polygon has {first_sides} sides. Each next polygon has one more side. How many sides does the last polygon have?",
+"A mat is shaped like a polygon with {sides} sides. Put one laddoo on each corner. How many laddoos are used?",
+"A bus turns {a} small turns to the left. Then it turns {b} more small turns the same way. How many small turns does the bus turn in all?"
 ],
 "broken": {
-"After the fold described in the case, what kind of angles are formed by the two matching edges?": "needs the fold from the case, which is not shown"
+"After the fold described in the case, what kind of angles are formed by the two matching edges?": "needs the fold from the case, which is not shown",
+"Why is the cell containing 626 a supercell?": "The question needs a table the child cannot see, and it does not define a supercell.",
+"The Bakśhālī manuscript used a special sign after a negative number around 250 CE. Brahmagupta gave equal treatment to positive numbers, negative numbers, and zero in 650 CE, forming what is now called a ring. About how many years apart were these events?": "It says Brahmagupta's date was 650 CE, but it is 628 CE, and the explanation uses different dates.",
+"The Nine Chapters on Mathematical Art was completed by the first or second century CE. Using 100 CE as the later end and Kautilya's date of about 350 BCE, about how many years separated the two events?": "The explanation's arithmetic (300 and 400) does not match the answer 450."
 },
 "kept": {
 "A bus route is a ray whose initial point is the school. The first stop is {a} km from the school and a later stop is {b} km from the school, where {b} is greater than {a}. How many km farther from the school is the later stop?": "why not text",
@@ -220,6 +517,20 @@
 "In the case, what should the student do after noticing a pattern in the weather?": "why not text",
 "At school, a picture shows {buses} three-dimensional toy buses and {signs} two-dimensional bus signs. How many dimensions are counted in the picture altogether?": "prompt numbers changed",
 "A school arranges students in {n} rows, with 1 student in the first row, 2 in the second, and so on. The school then adds {k} more students. How many students are there altogether?": "prompt numbers changed",
-"A school bus has a badge made from the regular polygon in position {position} of the side-count sequence that starts at 3. How many sides does the badge have?": "prompt numbers changed"
+"A school bus has a badge made from the regular polygon in position {position} of the side-count sequence that starts at 3. How many sides does the badge have?": "prompt numbers changed",
+"A child centres a transparent circle on an angle’s vertex and marks where the arms pass through the circle. Why are the marks made?": "reviewer said the meaning changed",
+"Two angle drawings have their vertices on the same point, but one pair of arms does not lie on the other pair. Are the angles equal?": "blind reader got a different answer",
+"At school, angle A is an obtuse angle of {a} degrees and angle B is an acute angle of {b} degrees. How many degrees larger is angle A than angle B?": "reviewer said the meaning changed",
+"A row of three cells contains {a}, {b}, and {c} points, with {a} greater than {c} and {b} larger than both. How many more points is the middle supercell than its larger neighbour?": "prompt numbers changed",
+"A two-by-two table has {a} and {b} in the top row and {c} and {d} in the bottom row. The values {a} and {d} are each larger than {b} and {c}. What is the sum of the point values in the supercells?": "prompt numbers changed",
+"A fraction has numerator 5 and denominator 13. If it is in lowest terms, what is the only common factor of its numerator and denominator?": "prompt numbers changed",
+"In a market, {n} stalls are marked by points, and no three stall points lie on the same straight line. How many different straight lines are determined by pairs of stall points?": "reviewer said the meaning changed",
+"A treasure pair has 3*4 marbles and 3*3 marbles. If 3 is used as a common jump size, how many groups of 3 marbles are there in the two piles together?": "prompt numbers changed",
+"During several cloudy days, a child notices that the weather changes in a repeated order. Which conclusion fits mathematics?": "prompt long sentence",
+"At a market, each stall has {r} trays, and each tray has {c} apples. There are {n} stalls, all following the same arrangement. How many apples are in all the stalls?": "reviewer said the meaning changed",
+"In a school display, marbles form a triangle with {rows} rows containing 1, 2, and so on up to {rows} marbles. How many marbles are used?": "prompt numbers changed",
+"How can searching for patterns in shopping, weather and technology help people, and why can this activity be enjoyable?": "reviewer said the meaning changed",
+"Two line segments joining two points have lengths {a} cm and {b} cm, where {a} is greater than {b}. How many cm longer is the longer segment than the shorter segment?": "reviewer said the meaning changed",
+"At school, two classroom doors are opened from the same closed position by {a} and {b} equal small turns. How many small turns are in the greater angle?": "reviewer said the meaning changed"
 }
 }

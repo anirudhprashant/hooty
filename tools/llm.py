@@ -31,7 +31,10 @@ def _take_turn():
         f.seek(0); f.truncate(); f.write(str(time.time())); f.flush()
 
 def m27(prompt, want_json=True, tries=3, on_retry=None):
-    """Reply text, or the first JSON object in it. None if every try failed. DeepSeek writes first; MiniMax-M2.7 is the fallback."""
+    """Reply text, or the first JSON object in it. None if every try failed. Haiku writes first, then DeepSeek if it is free
+    again, and MiniMax-M2.7 is the last resort. The name stays because every tool calls it."""
+    got = haiku(prompt, want_json=want_json, tries=1)
+    if got is not None: return got
     if len(prompt) < 100000:   # the longest prompts do not fit on a command line
         got = opencode(prompt, DEEPSEEK, want_json=want_json, tries=1)
         if got is not None: return got
@@ -69,7 +72,7 @@ def vision(image_path, prompt, tries=3):
 
 DEEPSEEK = 'opencode/deepseek-v4.1-flash-free'
 CHECKER = 'opencode/glm-5.3-flash-free'   # a different model reads the work, so the writer does not mark its own answers
-SLOTS = 4                                 # at most this many opencode calls at once across every job on this machine
+SLOTS = 3                                 # at most this many Haiku or opencode calls at once across every job on this machine
 
 def _slot():
     """Hold one of SLOTS lock files; waits until one is free. The lock ends when the returned file is closed."""
@@ -81,13 +84,41 @@ def _slot():
             except OSError: f.close()
         time.sleep(2)
 
+HAIKU_COOLDOWN = LOCK + '.haiku-limit'
+def haiku(prompt, want_json=True, tries=2, on_retry=None):
+    """Claude Haiku through the claude command, on Anirudh's subscription (he asked for this). It shares his Claude limits with
+    his own sessions, so on any limit message it stops for an hour rather than use up what he needs. No tools, no project,
+    no saved session. Any API key is removed from its environment so it can never bill one."""
+    env = {k: v for k, v in os.environ.items() if k not in ('ANTHROPIC_API_KEY', 'CLAUDECODE', 'CLAUDE_CODE_ENTRYPOINT')}
+    for t in range(tries):
+        if os.path.exists(HAIKU_COOLDOWN) and time.time() - os.path.getmtime(HAIKU_COOLDOWN) < 3600: return None
+        try:
+            with _slot(), tempfile.TemporaryDirectory() as d:
+                r = subprocess.run(['claude', '-p', '--model', 'haiku', '--tools', '', '--setting-sources', '', '--strict-mcp-config', '--no-session-persistence', '--output-format', 'text'],
+                                   input=prompt, cwd=d, env=env, capture_output=True, text=True, timeout=600)
+            if re.search(r'(usage|rate|session|weekly) limit|limit reached|hit your limit|overloaded', r.stdout[:300] + r.stderr, re.I):
+                open(HAIKU_COOLDOWN, 'w').close(); print('Claude limit message, leaving Haiku alone for an hour:', (r.stdout + r.stderr)[:100], flush=True); return None
+            out = r.stdout.strip()
+            if not out: raise ValueError('empty reply: ' + r.stderr[-120:])
+            if not want_json: return out
+            return json.loads(re.search(r'\{.*\}', out, re.S).group(0))
+        except Exception as e:
+            if on_retry: on_retry(t + 1, str(e)[:80])
+            time.sleep(6 + t * 10)
+    return None
+
+COOLDOWN = LOCK + '.oc-limit'
 def opencode(prompt, model=DEEPSEEK, want_json=True, tries=3, on_retry=None):
     """A free model through opencode, on its own limit, not the shared MiniMax plan. A private server per call, in an empty
-    folder, so it cannot touch the shared opencode server or any project."""
+    folder, so it cannot touch the shared opencode server or any project. The free tier's limit covers all its models and
+    is shared with Anirudh's own opencode use: once it is hit, leave it alone for an hour and let MiniMax carry the work."""
     for t in range(tries):
+        if os.path.exists(COOLDOWN) and time.time() - os.path.getmtime(COOLDOWN) < 3600: return None
         try:
             with _slot(), tempfile.TemporaryDirectory() as d:
                 r = subprocess.run(['opencode', 'run', '--standalone', '-m', model, prompt], cwd=d, capture_output=True, text=True, timeout=600, stdin=subprocess.DEVNULL)
+            if 'usage limit' in r.stdout + r.stderr:
+                open(COOLDOWN, 'w').close(); print('opencode free limit reached, using MiniMax for an hour', flush=True); return None
             out = re.sub(r'\x1b\[[0-9;]*m', '', r.stdout).strip()
             if not out: raise ValueError('empty reply: ' + r.stderr[-120:])
             if not want_json: return out
@@ -97,4 +128,4 @@ def opencode(prompt, model=DEEPSEEK, want_json=True, tries=3, on_retry=None):
             time.sleep(6 + t * 10)
     return None
 def deepseek(prompt, **k): return opencode(prompt, DEEPSEEK, **k)
-def checker(prompt, **k): return opencode(prompt, CHECKER, **k) or opencode(prompt, DEEPSEEK, **k)
+def checker(prompt, **k): return m27(prompt, **k)   # a fresh session with a checker's prompt: it never sees the writer's reasoning

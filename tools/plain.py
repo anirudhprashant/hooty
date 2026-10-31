@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Plain English for every card: many children reading Lumi did not grow up speaking English.
 
-DeepSeek rewrites a batch of cards in very simple English and the code decides whether to accept each one. Numbers, blanks,
-answers and option order may not change, the text may not get harder, a different model must still reach the same answer
+A model rewrites a batch of cards in very simple English and the code decides whether to accept each one. Numbers, blanks,
+answers and option order may not change, the text may not get harder, a separate reader must still reach the same answer
 without seeing the original, and a reviewer compares old and new for lost or changed meaning. Anything that fails keeps its
 old wording. A question it calls nonsense is removed only if a second, independent read agrees.
 
@@ -262,7 +262,7 @@ def todo():
 def main():
     from concurrent.futures import ThreadPoolExecutor
     import subprocess, threading, time
-    from llm import deepseek, checker
+    from llm import m27, checker   # m27() writes with Haiku, falling back to DeepSeek and MiniMax
     sample = len(sys.argv) > 1 and sys.argv[1] == '--sample'
     rows = todo()
     if sample:
@@ -274,7 +274,7 @@ def main():
         mine = sorted([r for r in rows if r[0] == pid], key=lambda r: (r[1] < 3, r[2], -r[1]))
         d = load(pid)
         for i in range(0, len(mine), 8):
-            try: run_batch(pid, d, [r[3] for r in mine[i:i + 8]], deepseek, checker)
+            try: run_batch(pid, d, [r[3] for r in mine[i:i + 8]], m27, checker)
             except Exception as e: print('  failed:', pid, str(e)[:120], flush=True); time.sleep(60); continue
             save(pid, d); done[0] += 1
             print(f'{pid}: {min(i + 8, len(mine))}/{len(mine)} read, {len(d["cards"])} rewritten, {len(d["kept"])} kept, {len(d["broken"])} broken', flush=True)
