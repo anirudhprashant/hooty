@@ -30,7 +30,7 @@ The aim is simple: a child should understand the idea, not just remember the sen
 |---|---|
 | 🧲 **Play with the idea** | Simulations you can touch. Push two magnets together and watch them pull or push apart. |
 | 🧮 **Maths explained step by step** | Lumi solves one with you, with a picture drawn from the problem's own numbers. Then you try, with fresh numbers every time. |
-| 🤔 **Questions that make you think** | Predict what happens. Explain why. Spot the mistake. Every wrong answer tells you why it was tempting. |
+| 🤔 **Questions that make you think** | Predict what happens. Explain why. Spot the mistake. Many wrong answers tell you exactly why they were tempting. |
 | 💬 **Very simple English** | Short sentences and everyday words, for children still learning English. School words stay, because exams need them. |
 | 🎯 **Practice that means something** | Questions you got wrong wait for you. Get one right and it's gone. |
 | 📝 **Ready for school tests** | Case studies, assertion and reason, and written answers you can check against the points a marker looks for. |
@@ -58,7 +58,7 @@ The aim is simple: a child should understand the idea, not just remember the sen
 | Class | Mathematics | Science | Social Science | English | Hindi |
 |:-----:|:-----------:|:-------:|:--------------:|:-------:|:-----:|
 | **6** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **7** | ✅ | ✅ | 🛠️ | 🛠️ | 🛠️ |
+| **7** | ✅ | ✅ | 🛠️ part way | 🛠️ | 🛠️ |
 | **1 to 5, 8 to 10** | 🛠️ | 🛠️ | 🛠️ | 🛠️ | 🛠️ |
 
 ✅ on the site &nbsp;·&nbsp; 🛠️ being built, or waiting its turn
@@ -70,7 +70,7 @@ Classes 3 to 5 study The World Around Us in place of Science and Social Science.
 A wrong fact taught to a child is worse than no fact at all, so AI writes the first draft and then has to get past some strict checks:
 
 - 📖 Lesson facts trace back to the page of the textbook they came from.
-- 🧮 Maths answers are worked out by code, never by a model. A second reader must solve each problem without seeing the answer.
+- 🧮 In Maths problems with fresh numbers, the answer is worked out by code, not by a model. A second reader must also solve each one without seeing the answer.
 - 🔢 When a question is rewritten in simpler English, code checks that its numbers and answer did not change.
 - 🧪 Simulations are tested against what they are meant to show.
 - 🖼️ Pictures are freely licensed and credited on the lesson that uses them.
