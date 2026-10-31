@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0",
+  "id": "wizard-school",
+  "name": "Moonlit Academy",
+  "description": "An old school of magic: towers, candles, owls and spell books.",
+  "language": "en",
+  "dark": true,
+  "palette": {
+    "bg": "#14122B",
+    "bgAlt": "#1E1A3D",
+    "surface": "#25204A",
+    "surfaceAlt": "#322B5E",
+    "text": "#F6EEDC",
+    "textMuted": "#C9C0DC",
+    "primary": "#E8B53C",
+    "primaryText": "#241A05",
+    "primaryEdge": "#A9791A",
+    "secondary": "#F2A37A",
+    "success": "#2F9E78",
+    "successSoft": "#1D4238",
+    "danger": "#E8607A",
+    "dangerSoft": "#4A2036",
+    "hero": "#3A1F5F",
+    "heroText": "#FFF6E0",
+    "locked": "#3B3560"
+  },
+  "fonts": {
+    "display": "\"Fredoka\", \"Baloo 2\", system-ui, sans-serif",
+    "body": "\"Nunito\", system-ui, sans-serif"
+  },
+  "radii": {
+    "sm": "12px",
+    "md": "18px",
+    "lg": "26px",
+    "xl": "36px",
+    "pill": "999px"
+  },
+  "mascot": {
+    "idle": "../../characters/lumi/explorer-idle.webp",
+    "happy": "../../characters/lumi/explorer-happy.webp",
+    "wrong": "../../characters/lumi/explorer-wrong.webp",
+    "name": "Lumi"
+  },
+  "hero": "assets/hero.svg",
+  "preview": "assets/hero.svg",
+  "icon": "assets/icon.svg",
+  "rewards": [
+    {
+      "id": "academy-owl",
+      "name": "Wise Owl",
+      "art": "assets/reward-owl.svg",
+      "unlockAt": 50
+    },
+    {
+      "id": "academy-potion",
+      "name": "Glowing Potion",
+      "art": "assets/reward-potion.svg",
+      "unlockAt": 150
+    },
+    {
+      "id": "academy-spellbook",
+      "name": "Spell Book",
+      "art": "assets/reward-spellbook.svg",
+      "unlockAt": 300
+    },
+    {
+      "id": "explorer-compass",
+      "name": "Explorer Compass",
+      "art": "../../assets/stickers/compass.svg",
+      "unlockAt": 500
+    },
+    {
+      "id": "explorer-book",
+      "name": "Story Book",
+      "art": "../../assets/stickers/book.svg",
+      "unlockAt": 1000
+    },
+    {
+      "id": "explorer-flask",
+      "name": "Science Flask",
+      "art": "../../assets/stickers/flask.svg",
+      "unlockAt": 1700
+    },
+    {
+      "id": "explorer-globe",
+      "name": "Little Globe",
+      "art": "../../assets/stickers/globe.svg",
+      "unlockAt": 2600
+    },
+    {
+      "id": "explorer-telescope",
+      "name": "Star Telescope",
+      "art": "../../assets/stickers/telescope.svg",
+      "unlockAt": 3700
+    },
+    {
+      "id": "explorer-lantern",
+      "name": "Brave Lantern",
+      "art": "../../assets/stickers/lantern.svg",
+      "unlockAt": 5000
+    },
+    {
+      "id": "explorer-trophy",
+      "name": "Golden Trophy",
+      "art": "../../assets/stickers/trophy.svg",
+      "unlockAt": 6500
+    },
+    {
+      "id": "explorer-medal",
+      "name": "Champion Medal",
+      "art": "../../assets/stickers/medal.svg",
+      "unlockAt": 8200
+    },
+    {
+      "id": "explorer-starburst",
+      "name": "Superstar",
+      "art": "../../assets/stickers/starburst.svg",
+      "unlockAt": 10000
+    }
+  ],
+  "sounds": {},
+  "copy": {
+    "appName": "Moonlit Academy",
+    "start": "Begin the lesson",
+    "continue": "Continue",
+    "correct": [
+      "Yes!",
+      "The spell worked!",
+      "Well done!",
+      "Brilliant magic!"
+    ],
+    "wrong": [
+      "Almost! See why.",
+      "Not yet. Let us see why."
+    ],
+    "practiceWeak": "Practise your hard spells",
+    "celebrateTitle": "Lesson complete!"
+  },
+  "unitIcons": {
+    "history": "assets/unit-history.svg",
+    "geography": "assets/unit-geography.svg",
+    "civics": "assets/unit-civics.svg"
+  }
+}

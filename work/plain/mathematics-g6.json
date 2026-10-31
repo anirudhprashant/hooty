@@ -179,6 +179,65 @@
 "The parts meet end to end. Add their lengths to find the whole length.",
 "{total} cm = {answer} cm."
 ]
+},
+"A child watches the clock at {h}:{m}; the next matching-digit-pattern time is {nh}:{nm}. A bus leaves {wait} minutes after that matching time, so how many minutes are there from {h}:{m} until the bus leaves?": {
+"prompt": "A child looks at the clock at {h}:{m}. The next time with the same digit pattern is {nh}:{nm}. A bus leaves {wait} minutes after that time. How many minutes are there from {h}:{m} until the bus leaves?",
+"hint": "Write both clock times as minutes after 12 o’clock.",
+"steps": [
+"Write both clock times as minutes after 12 o’clock: {current} and {next}.",
+"Find the gap: {gap} = {next} - {current} minutes.",
+"Then add the wait: {gap} + {wait} = {answer} minutes."
+]
+},
+"The Nine Chapters on Mathematical Art was completed by the first or second century CE. Using 100 CE as the later end and Kautilya's date of about 350 BCE, about how many years separated the two events?": {
+"prompt": "The book was called Nine Chapters on Mathematical Art. It was finished in the first or second century CE. We use 100 CE as the later date. Kautilya lived about 350 BCE. About how many years apart were these events?",
+"explanation": "To go from 350 BCE to 100 CE, add the two year numbers: 100+k = 100+300 = 400 years.",
+"hint": "Type the number."
+},
+"At a school canteen, one tray has {start} laddoos and the next tray in a doubling picture has twice as many. How many laddoos are in the next tray?": {
+"prompt": "At a school canteen, one tray has {start} laddoos. The next tray in a doubling picture has twice as many. How many laddoos are in the next tray?",
+"hint": "Make two equal groups using the number in the first tray.",
+"steps": [
+"The first tray has {start} laddoos.",
+"The next tray has twice as many. Make two equal groups of {start}.",
+"The next tray has {answer} laddoos."
+]
+},
+"A poster is {design_width} cm wide and contains {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides and a triangle has 3 sides. How many sides are shown altogether?": {
+"prompt": "A poster is {design_width} cm wide. It has {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides. A triangle has 3 sides. How many sides are there altogether?",
+"hint": "Find the sides on each square and triangle. Then add them.",
+"steps": [
+"There are {square_tiles} squares with 4 sides each and {triangle_tiles} triangles with 3 sides each.",
+"Find each group of sides and then add the groups.",
+"{square_sides} + {triangle_sides} = {answer} sides."
+]
+},
+"A ray is rotated through {n} equal blocks of movement, and each block contains {k} equal small turns. How many small turns of rotation are made altogether?": {
+"prompt": "A ray turns in {n} equal blocks. Each block has {k} equal small turns. How many small turns does it make altogether?",
+"hint": "Multiply the number of blocks by the turns in each block.",
+"steps": [
+"There are {n} equal blocks of movement.",
+"Each block contains {k} small turns, so multiply the number of blocks by the turns in one block.",
+"{n} x {k} = {answer} small turns, so the total rotation is {answer} small turns."
+]
+},
+"Two equal angles need equal amounts of rotation. If one rotating arm makes {a} whole turns to match the other, how many whole turns must the other arm make?": {
+"prompt": "Two equal angles need equal amounts of rotation. One arm makes {a} whole turns to match the other. How many whole turns must the other arm make?",
+"hint": "Equal angles need equal rotations.",
+"steps": [
+"The first arm makes {a} whole turns.",
+"Equal angles need equal rotations.",
+"The other arm also makes {answer} whole turns."
+]
+},
+"At school, angle A is an obtuse angle of {a} degrees and angle B is an acute angle of {b} degrees. How many degrees larger is angle A than angle B?": {
+"prompt": "At school, angle A is an obtuse angle of {a} degrees. Angle B is an acute angle of {b} degrees. How many degrees larger is angle A than angle B?",
+"hint": "Compare the two angle measures and take the difference.",
+"steps": [
+"Angle A measures {a} degrees and angle B measures {b} degrees.",
+"Angle A is the larger angle.",
+"Subtract {b} from {a}: {a} - {b} = {answer} degrees."
+]
 }
 },
 "seen": [
@@ -225,7 +284,30 @@
 "A school puts students in {n} rows. The first row has 1 student. The second row has 2 students. This pattern continues. The school adds {k} more students. How many students are there altogether?",
 "A shape collection has {flat_shapes} flat shapes. Each flat shape has 2 dimensions. It also has {solid_shapes} solid shapes. Each solid shape has 3 dimensions. How many dimensions are there altogether?",
 "A school bus has a badge made from a regular polygon. The polygon is in position {position}. The side-count sequence starts at 3. How many sides does the badge have?",
-"A line segment is made by joining two parts end to end. The two parts are {a} cm and {b} cm long. The parts go in the same direction. How long is the whole line segment in cm?"
+"A line segment is made by joining two parts end to end. The two parts are {a} cm and {b} cm long. The parts go in the same direction. How long is the whole line segment in cm?",
+"A child centres a transparent circle on an angle’s vertex and marks where the arms pass through the circle. Why are the marks made?",
+"Two angle drawings have their vertices on the same point, but one pair of arms does not lie on the other pair. Are the angles equal?",
+"If the ray starts at point A instead of point B, while point C remains on it, what is point A called?",
+"If the carpenter changes the first corner so that it is greater than 90° but less than 180°, which angle type should be used?",
+"A child watches the clock at {h}:{m}; the next matching-digit-pattern time is {nh}:{nm}. A bus leaves {wait} minutes after that matching time, so how many minutes are there from {h}:{m} until the bus leaves?",
+"The Bakśhālī manuscript used a special sign after a negative number around 250 CE. Brahmagupta gave equal treatment to positive numbers, negative numbers, and zero in 650 CE, forming what is now called a ring. About how many years apart were these events?",
+"The Nine Chapters on Mathematical Art was completed by the first or second century CE. Using 100 CE as the later end and Kautilya's date of about 350 BCE, about how many years separated the two events?",
+"At a school canteen, one tray has {start} laddoos and the next tray in a doubling picture has twice as many. How many laddoos are in the next tray?",
+"A child looks at the clock at {h}:{m}. The next time with the same digit pattern is {nh}:{nm}. A bus leaves {wait} minutes after that time. How many minutes are there from {h}:{m} until the bus leaves?",
+"The book was called Nine Chapters on Mathematical Art. It was finished in the first or second century CE. We use 100 CE as the later date. Kautilya lived about 350 BCE. About how many years apart were these events?",
+"At a school canteen, one tray has {start} laddoos. The next tray in a doubling picture has twice as many. How many laddoos are in the next tray?",
+"A poster is {design_width} cm wide and contains {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides and a triangle has 3 sides. How many sides are shown altogether?",
+"If Ravi checks that the polygon sequence follows the full stated range, which polygon should be its final example?",
+"A child says, “I can draw many different lines through the same Points A and B.” Which correction fits the facts?",
+"A ray is rotated through {n} equal blocks of movement, and each block contains {k} equal small turns. How many small turns of rotation are made altogether?",
+"Two equal angles need equal amounts of rotation. If one rotating arm makes {a} whole turns to match the other, how many whole turns must the other arm make?",
+"At a market, a {item} has an opening of {a} width units and another has an opening of {b} width units. How many width units wider is the larger opening?",
+"At school, angle A is an obtuse angle of {a} degrees and angle B is an acute angle of {b} degrees. How many degrees larger is angle A than angle B?",
+"If the carpenter changes the crossing lines so that they meet at an acute angle, what should be concluded?",
+"A poster is {design_width} cm wide. It has {square_tiles} square tiles and {triangle_tiles} triangle tiles. A square has 4 sides. A triangle has 3 sides. How many sides are there altogether?",
+"A ray turns in {n} equal blocks. Each block has {k} equal small turns. How many small turns does it make altogether?",
+"Two equal angles need equal amounts of rotation. One arm makes {a} whole turns to match the other. How many whole turns must the other arm make?",
+"At school, angle A is an obtuse angle of {a} degrees. Angle B is an acute angle of {b} degrees. How many degrees larger is angle A than angle B?"
 ],
 "broken": {
 "After the fold described in the case, what kind of angles are formed by the two matching edges?": "The fold case is not shown."
@@ -240,6 +322,15 @@
 "Lina wants to study the branch connected with Ravi's display. Which response should she use?": "why count changed",
 "At school, a picture shows {buses} three-dimensional toy buses and {signs} two-dimensional bus signs. How many dimensions are counted in the picture altogether?": "prompt numbers changed",
 "A region is estimated with 12 squares on graph paper, while 5 marbles are used as circle units. Which calculation gives the square-based estimated area in square units?": "blind reader got a different answer",
-"If the student wants the path to extend beyond both end points of line segment AB, what should the student do?": "why count changed"
+"If the student wants the path to extend beyond both end points of line segment AB, what should the student do?": "why count changed",
+"A child centres a transparent circle on an angle’s vertex and marks where the arms pass through the circle. Why are the marks made?": "why count changed",
+"Two angle drawings have their vertices on the same point, but one pair of arms does not lie on the other pair. Are the angles equal?": "why count changed",
+"If the ray starts at point A instead of point B, while point C remains on it, what is point A called?": "why count changed",
+"If the carpenter changes the first corner so that it is greater than 90° but less than 180°, which angle type should be used?": "why count changed",
+"The Bakśhālī manuscript used a special sign after a negative number around 250 CE. Brahmagupta gave equal treatment to positive numbers, negative numbers, and zero in 650 CE, forming what is now called a ring. About how many years apart were these events?": "reviewer said the meaning changed",
+"If Ravi checks that the polygon sequence follows the full stated range, which polygon should be its final example?": "why count changed",
+"A child says, “I can draw many different lines through the same Points A and B.” Which correction fits the facts?": "why count changed",
+"At a market, a {item} has an opening of {a} width units and another has an opening of {b} width units. How many width units wider is the larger opening?": "prompt placeholders changed",
+"If the carpenter changes the crossing lines so that they meet at an acute angle, what should be concluded?": "why count changed"
 }
 }

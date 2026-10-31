@@ -13796,7 +13796,7 @@
       {
        "id": "mathematics-g6-ch3-l1",
        "title": "Lesson 1: Numbers and Taller Neighbours",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -13894,6 +13894,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g6-ch3-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Five children stand in a line from shortest to tallest. What does each child say, and why?",
+         "steps": [
+          "In this order, every child except the last has one taller neighbour.",
+          "The last child says 0 because its only neighbour is shorter.",
+          "The first four children say 1 because each has one taller neighbour.",
+          "So four children say 1 and the last child says 0."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "1.3",
+          "1.5",
+          "1.6",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g6-ch3-l1-a2",
          "difficulty": 1,
@@ -13910,29 +13952,6 @@
          ],
          "answer": 1,
          "explanation": "Only one neighbour is taller, so the child's number is 1.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 56
-          },
-          {
-           "ch": 3,
-           "p": 56
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g6-ch3-l1-a3",
-         "difficulty": 1,
-         "tags": [
-          "taller neighbours",
-          "numbers"
-         ],
-         "title": "Both Neighbours Taller",
-         "prompt": "A child says 2 when both neighbouring children are taller.",
-         "answer": true,
-         "explanation": "The number 2 shows that both neighbours are taller.",
          "src": [
           {
            "ch": 3,
@@ -14039,25 +14058,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g6-ch3-l1-a7",
-         "difficulty": 2,
-         "tags": [
-          "line",
-          "taller neighbours"
-         ],
-         "title": "Children at the Ends",
-         "prompt": "Children at the ends of a line can say 2.",
-         "answer": false,
-         "explanation": "Children at the ends of a line cannot say 2.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 73
-          }
-         ]
-        },
-        {
          "type": "dragorder",
          "id": "mathematics-g6-ch3-l1-a8",
          "difficulty": 3,
@@ -14120,6 +14120,137 @@
            "p": 73
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Five children stand in a line. A child at an end says that two neighbours are taller. Why is this claim wrong?",
+         "options": [
+          "An end child has only one neighbour.",
+          "The taller children are both neighbours.",
+          "The end child has two taller neighbours.",
+          "Two children in this line can say 2."
+         ],
+         "answer": 0,
+         "why": {
+          "The taller children are both neighbours.": "It treats nearby taller children as neighbouring children.",
+          "The end child has two taller neighbours.": "It forgets that an end child has only one neighbour.",
+          "Two children in this line can say 2.": "It answers about other children instead of the end child."
+         },
+         "explanation": "An end child has only one neighbour, so cannot say 2.",
+         "f": [
+          "1.4",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason backwards"
+         ],
+         "prompt": "At a playground, five children stand from tallest to shortest. The tallest stands first. What numbers can they say?",
+         "options": [
+          "The first says 0; four others say 1.",
+          "The first says 1; four others say 0.",
+          "The first says 2; four others say 1.",
+          "The first says 0; four others say 2."
+         ],
+         "answer": 0,
+         "why": {
+          "The first says 1; four others say 0.": "It wrongly treats the tallest child as having a taller neighbour.",
+          "The first says 2; four others say 1.": "An end child has only one neighbour, so cannot say 2.",
+          "The first says 0; four others say 2.": "The other four each have one taller neighbour, not two."
+         },
+         "explanation": "Only the first has no taller neighbour; the other four have one.",
+         "f": [
+          "1.3",
+          "1.5",
+          "1.6",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Five children wait in a queue. A middle child has two taller neighbours. An end child has one taller neighbour. Which child can say 2?",
+         "options": [
+          "The middle child can say 2; the end child says 1.",
+          "The end child can say 2; the middle child says 1.",
+          "Both children can say 2 because each has a taller neighbour.",
+          "Both children can say 1 because each has one taller neighbour."
+         ],
+         "answer": 0,
+         "why": {
+          "The end child can say 2; the middle child says 1.": "It ignores that only the middle child has two taller neighbours.",
+          "Both children can say 2 because each has a taller neighbour.": "It counts one taller neighbour as enough for every child.",
+          "Both children can say 1 because each has one taller neighbour.": "It treats one taller neighbour as the same number as two."
+         },
+         "explanation": "The middle child has two taller neighbours; the end child has one.",
+         "f": [
+          "1.3",
+          "1.4",
+          "1.6",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 56
+          },
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l1-row-of-religious-child-stude.webp",
@@ -14136,7 +14267,7 @@
       {
        "id": "mathematics-g6-ch3-l2",
        "title": "Lesson 2: Finding Supercells",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -14210,6 +14341,69 @@
           {
            "ch": 3,
            "p": 58
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g6-ch3-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A cell holds 200. Its neighbour holds 577. Is 200 a supercell?",
+         "steps": [
+          "First, check the number in the adjacent cell.",
+          "The adjacent cell holds 577, which is larger than 200.",
+          "Since 200 is smaller than its neighbour, 200 is not a supercell."
+         ],
+         "explanation": "Think it through with Lumi.",
+         "f": [
+          "2.3",
+          "2.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 57
+          },
+          {
+           "ch": 3,
+           "p": 58
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g6-ch3-l2-a6",
+         "difficulty": 2,
+         "tags": [
+          "number table",
+          "largest number",
+          "smallest number"
+         ],
+         "title": "Supercells in a Table",
+         "body": "In any finished table, the largest number is always a supercell. The smallest number can never be one. If every cell held a different number, at least one supercell would still exist. These rules help you check tables without examining every cell.",
+         "keyPoints": [
+          "The largest number in a table is always a supercell.",
+          "The smallest number can never be a supercell.",
+          "A table with different numbers must contain a supercell."
+         ],
+         "explanation": "A table with different numbers must contain at least one supercell.",
+         "src": [
+          {
+           "ch": 3,
+           "p": 73
+          },
+          {
+           "ch": 3,
+           "p": 73
+          },
+          {
+           "ch": 3,
+           "p": 73
           }
          ]
         },
@@ -14301,38 +14495,6 @@
           {
            "ch": 3,
            "p": 57
-          }
-         ]
-        },
-        {
-         "type": "concept",
-         "id": "mathematics-g6-ch3-l2-a6",
-         "difficulty": 2,
-         "tags": [
-          "number table",
-          "largest number",
-          "smallest number"
-         ],
-         "title": "Supercells in a Table",
-         "body": "In any finished table, the largest number is always a supercell. The smallest number can never be one. If every cell held a different number, at least one supercell would still exist. These rules help you check tables without examining every cell.",
-         "keyPoints": [
-          "The largest number in a table is always a supercell.",
-          "The smallest number can never be a supercell.",
-          "A table with different numbers must contain a supercell."
-         ],
-         "explanation": "A table with different numbers must contain at least one supercell.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 73
-          },
-          {
-           "ch": 3,
-           "p": 73
-          },
-          {
-           "ch": 3,
-           "p": 73
           }
          ]
         },
@@ -14780,6 +14942,75 @@
           "21"
          ],
          "id": "mathematics-g6-ch3-l2-c3",
+         "src": [
+          {
+           "ch": 3,
+           "p": 57
+          },
+          {
+           "ch": 3,
+           "p": 58
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason logically"
+         ],
+         "prompt": "A table has different numbers in its cells. What must be true?",
+         "options": [
+          "At least one cell in the table must be a supercell.",
+          "Every cell in the table must be a supercell.",
+          "No cell in the table can be a supercell.",
+          "Most cells in the table must be supercells."
+         ],
+         "answer": 0,
+         "why": {
+          "Every cell in the table must be a supercell.": "This mistake changes 'at least one' into 'every'.",
+          "No cell in the table can be a supercell.": "This mistake says the table can have no supercells.",
+          "Most cells in the table must be supercells.": "This mistake claims most cells must be supercells, which is not required."
+         },
+         "explanation": "A table with different numbers cannot have no supercells.",
+         "f": [
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 73
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check neighbours"
+         ],
+         "prompt": "A larger cell touches a corner cell only. Is it a supercell?",
+         "options": [
+          "We cannot tell, because the corner cell is not adjacent.",
+          "Yes, because a larger corner cell proves the cell is a supercell.",
+          "No, because a supercell must have a larger corner cell.",
+          "Yes, because cells touching at corners count as adjacent cells."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, because a larger corner cell proves the cell is a supercell.": "This mistake treats a corner cell as an adjacent cell.",
+          "No, because a supercell must have a larger corner cell.": "This mistake reverses the rule and asks for a larger neighbour.",
+          "Yes, because cells touching at corners count as adjacent cells.": "This mistake wrongly counts corner-touching cells as adjacent."
+         },
+         "explanation": "Only left, right, top, and bottom cells count as adjacent.",
+         "f": [
+          "2.1",
+          "2.5"
+         ],
          "src": [
           {
            "ch": 3,
@@ -16859,6 +17090,155 @@
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "creator": "Dkobak"
        }
+      },
+      {
+       "id": "mathematics-g6-ch3-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 7,
+       "topicScene": "media/ch3-l1-row-of-religious-child-stude.webp",
+       "sceneAlt": "A row of young Buddhist schoolchildren stands in Uttaradit, Thailand.",
+       "sceneCaption": "A row of children standing together in Thailand.",
+       "sceneCredit": {
+        "text": "Row of religious child student by ผู้สร้างสรรค์ผลงาน/ส่งข้อมูลเก็บในคลังข้อมูลเสรีวิกิมีเดียคอมมอนส์ - เทวประภาส ม, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Row_of_religious_child_student.JPG",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "ผู้สร้างสรรค์ผลงาน/ส่งข้อมูลเก็บในคลังข้อมูลเสรีวิกิมีเดียคอมมอนส์ - เทวประภาส ม"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Five children stand in a line, ordered from shortest to tallest. Each child says a number showing how many neighbouring children are taller. The four children before the tallest each have one taller neighbour, while the tallest has none. If the shortest and tallest children swap places, the children still remain in the same line, and everyone must use the new neighbours.",
+         "prompt": "Before the swap, why do four children say 1 while the tallest child says 0?",
+         "options": [
+          "One adjacent child is taller for each child except the tallest, who has none.",
+          "Every child has exactly one taller child somewhere in the line.",
+          "Each of the four shorter children has two taller neighbours.",
+          "The tallest child is treated as 1 because it has a neighbour."
+         ],
+         "answer": 0,
+         "why": {
+          "Every child has exactly one taller child somewhere in the line.": "A child counts only taller neighbours, not taller children anywhere in the line.",
+          "Each of the four shorter children has two taller neighbours.": "The shorter children do not each have taller children on both sides.",
+          "The tallest child is treated as 1 because it has a neighbour.": "The number shows how many neighbours are taller, so the tallest child says 0."
+         },
+         "explanation": "Each of the first four children has one taller neighbour, while the tallest has no taller neighbour."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Five children stand in a line, ordered from shortest to tallest. Each child says a number showing how many neighbouring children are taller. The four children before the tallest each have one taller neighbour, while the tallest has none. If the shortest and tallest children swap places, the children still remain in the same line, and everyone must use the new neighbours.",
+         "prompt": "After the swap, can either child at an end of the line say 2?",
+         "options": [
+          "An end child has only one neighbour, so that child cannot have two taller neighbours.",
+          "Both end children can say 2 because they are the tallest or shortest.",
+          "Only the tallest child can say 2, and it now stands at an end.",
+          "An end child can say 2 when its single neighbour is taller."
+         ],
+         "answer": 0,
+         "why": {
+          "Both end children can say 2 because they are the tallest or shortest.": "The shortest child is now between two taller children, not at an end.",
+          "Only the tallest child can say 2, and it now stands at an end.": "Being tallest does not make a child taller than both neighbours.",
+          "An end child can say 2 when its single neighbour is taller.": "Having one taller neighbour makes the child say 1, not 2."
+         },
+         "explanation": "A child at an end has only one neighbouring child and therefore cannot have two taller neighbours."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g6-ch3-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how each child’s number is decided in the line from shortest to tallest.",
+         "answer": "Each child counts only the neighbouring children who are taller. In the line from shortest to tallest, each of the first four children has one taller neighbour, so each says 1. The tallest child has no taller neighbour, so that child says 0.",
+         "points": [
+          "Count only taller neighbours.",
+          "The first four children each say 1.",
+          "The tallest child says 0.",
+          "The number shows how many taller neighbours there are."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "While checking a table, a student notices that 626 is larger than the cells immediately to its left and right, 577 and 345, so it is a supercell. The cell containing 200 is next to 577, so 200 is not a supercell. Another cell contains 198, and its only adjacent cell contains 109, so 198 is a supercell. The student must then complete Table 2 using 1, 0, 6, 3 and 9.",
+         "prompt": "Why is the cell containing 626 a supercell?",
+         "options": [
+          "Its value is greater than both of the adjacent values shown, 577 and 345.",
+          "It is greater than 577, while the other adjacent value does not matter.",
+          "It is the greatest value in the whole table, so local comparisons are unnecessary.",
+          "It is a supercell because 200 is smaller than it."
+         ],
+         "answer": 0,
+         "why": {
+          "It is greater than 577, while the other adjacent value does not matter.": "Being larger than only one neighbour is insufficient.",
+          "It is the greatest value in the whole table, so local comparisons are unnecessary.": "Being largest is not the only way to qualify.",
+          "It is a supercell because 200 is smaller than it.": "The comparison must be with adjacent cells."
+         },
+         "explanation": "It exceeds both adjacent values."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch3-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "While checking a table, a student notices that 626 is larger than the cells immediately to its left and right, 577 and 345, so it is a supercell. The cell containing 200 is next to 577, so 200 is not a supercell. Another cell contains 198, and its only adjacent cell contains 109, so 198 is a supercell. The student must then complete Table 2 using 1, 0, 6, 3 and 9.",
+         "prompt": "After Table 2 is completed using 1, 0, 6, 3 and 9, which conclusion is correct?",
+         "options": [
+          "The largest value, 96,310, must be a supercell.",
+          "The smallest value in the completed table must also be a supercell.",
+          "The completed table can contain no supercells.",
+          "A value is a supercell only if it exceeds every value in the table."
+         ],
+         "answer": 0,
+         "why": {
+          "The smallest value in the completed table must also be a supercell.": "The smallest number can never be a supercell.",
+          "The completed table can contain no supercells.": "Different numbers cannot produce a table with no supercells.",
+          "A value is a supercell only if it exceeds every value in the table.": "A supercell only needs to exceed its adjacent cells."
+         },
+         "explanation": "The largest number is always a supercell."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g6-ch3-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the cell containing 626 is a supercell while the cell containing 200 is not.",
+         "answer": "The cell containing 626 is a supercell because its adjacent cells contain 577 and 345, and 626 is larger than both. The cell containing 200 is adjacent to 577, and 200 is smaller than 577. Therefore, 200 is not larger than all its adjacent cells.",
+         "points": [
+          "Identifies 577 and 345 as adjacent to 626.",
+          "States that 626 exceeds both neighbours.",
+          "Explains that 200 is smaller than 577.",
+          "Uses the adjacent-cell comparison rule."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
