@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Plain English for every card: many children reading Lumi did not grow up speaking English.
 
-M2.7 rewrites a batch of cards in very simple English and the code decides whether to accept each one. Numbers, blanks,
-answers and option order may not change, the text may not get harder, a separate reader must still reach the same answer
+DeepSeek rewrites a batch of cards in very simple English and the code decides whether to accept each one. Numbers, blanks,
+answers and option order may not change, the text may not get harder, a different model must still reach the same answer
 without seeing the original, and a reviewer compares old and new for lost or changed meaning. Anything that fails keeps its
-old wording. A question M2.7 calls nonsense is removed only if a second, independent read agrees.
+old wording. A question it calls nonsense is removed only if a second, independent read agrees.
 
 Rewrites live in work/plain/<pack>.json keyed by the old text, so re-assembling a pack keeps them and new cards simply wait
 for the next run. tools/assemble-pack.py applies them. Safe to stop and restart.
@@ -30,13 +30,24 @@ RULES = """Write in very simple English for a child in India who is still learni
 - No idioms, no fancy words, no "which of the following", no "respectively", no "such that".
 - Use real things a child knows. Do not add a story that makes the sum harder to follow.
 - KEEP the school word the lesson is teaching (equator, factor, photosynthesis). The child needs it for school and exams. If a hard school word is not the point of the question, use a simple word instead.
-- The question must test exactly the same idea and be just as hard to THINK about. Only the English gets easier. Never give away the answer."""
+- Cut every word the sum or the idea does not need. Remove empty settings like "At school," or "In a market," when they add nothing.
+- Prefer a word a 7-year-old knows: "start" not "initial", "join" not "connect", "more" not "additional", "find" not "determine", "how many in all" not "altogether".
+- Say what a maths word means when the child may have forgotten it, in a few plain words: "an obtuse angle (bigger than 90 degrees)". Only if it does not give away the answer.
+- The question must test exactly the same idea and be just as hard to THINK about. Only the English gets easier. Never give away the answer.
+
+Examples of the change we want:
+BEFORE: A ray is rotated through {n} equal blocks of movement, and each block contains {k} equal small turns. How many small turns of rotation are made altogether?
+AFTER: A ray turns {n} times. Each time, it makes {k} small turns. How many small turns does it make in all?
+BEFORE: In a market, {n} stalls are marked by points, and no three stall points lie on the same straight line. How many different straight lines are determined by pairs of stall points?
+AFTER: Draw {n} dots. No three dots are on one straight line. Join every pair of dots with a straight line. How many lines do you draw?
+BEFORE: Which reply best challenges this claim?
+AFTER: Which answer shows that this idea is wrong?"""
 
 def words(t): return re.findall(r"[^\W\d_]+(?:'[^\W\d_]+)?", t or '')
 def sentences(t): return [s for s in re.split(r'(?<=[.?!])\s+|\n+', t or '') if s.strip()]
 def longest(t): return max([len(words(s)) for s in sentences(t)] or [0])
 def nums(t): return sorted(re.findall(r'\d+(?:[.,]\d+)*', t or ''))
-def slots(t): return sorted(re.findall(r'\{[^}]+\}', t or ''))
+def slots(t): return sorted(set(re.findall(r'\{[^}]+\}', t or '')))   # a program fills these, so saying one twice or once is fine
 def blanks(t): return len(re.findall(r'_{2,}', t or ''))
 HARD = re.compile(r"\b(which of the following|respectively|such that|whereas|hence|thus|therefore|whose|whom|altogether|arrangement|sensible|illustrate|nominal|however|although|despite|whereby|regarding|according to|in order to|determine|calculate|sum-based|estimated)\b", re.I)
 def score(t): return max(0, longest(t) - 10) + sum(len(w) >= 11 for w in words(t)) * 2 + len(HARD.findall(t or '')) * 3
@@ -99,8 +110,12 @@ def apply(pack_id, pack):
             if n.get('hint'): c['hint'] = n['hint']
             if n.get('options') and len(n['options']) == len(c.get('options') or []) and not g.get('options'): c['options'] = n['options']
         else:
+            old_options = c.get('options')
             for f, v in n.items():
                 if f in FIELDS or f in ('pairs', 'items'): c[f] = v
+            if isinstance(c.get('why'), list) and c.get('options'): c['why'] = dict(zip(c['options'], c['why']))
+            elif isinstance(c.get('why'), dict) and old_options and c.get('options'):   # rewrite left the notes alone: follow the new option text
+                c['why'] = {new: c['why'].get(old, '') for old, new in zip(old_options, c['options'])}
         changed += 1
     return changed, removed
 
@@ -112,6 +127,8 @@ def view(lesson, c):
         if c.get(f): v[f] = c[f]
     if g.get('template'): v['prompt'] = g['template']
     if g.get('steps'): v['steps'] = g['steps']; v.pop('explanation', None)
+    # notes on each option are stored by the option's text; the writer sees them as a list in option order
+    if isinstance(c.get('why'), dict) and c.get('options'): v['why'] = [c['why'].get(o, '') for o in c['options']]
     if c.get('pairs'): v['pairs'] = c['pairs']
     if c.get('items'): v['items'] = c['items']
     if c['type'] == 'fillblank': v['answers'] = c.get('answers')
@@ -146,7 +163,8 @@ def acceptable(old, new):
     for f in text_fields:
         a, b = old[f], new.get(f, a if False else old[f])
         if not isinstance(b, str) or not b.strip(): return f'{f} empty'
-        if nums(a) != nums(b): return f'{f} numbers changed'
+        # a number inside brackets is a reminder of what a word means ("obtuse (bigger than 90 degrees)")
+        if nums(a) != nums(re.sub(r'\([^)]*\)', '', b)) and nums(a) != nums(b): return f'{f} numbers changed'
         if slots(a) != slots(b): return f'{f} placeholders changed'
         if blanks(a) != blanks(b): return f'{f} blank changed'
         if len(words(b)) > len(words(a)) * 1.5 + 6: return f'{f} much longer'
@@ -154,53 +172,54 @@ def acceptable(old, new):
     for f in ('options', 'steps', 'why', 'keyPoints', 'points', 'items', 'pairs'):
         if f not in old: continue
         a, b = old[f], new.get(f, old[f])
+        if isinstance(a, dict) or not isinstance(a, list): continue
         if not isinstance(b, list) or len(a) != len(b): return f'{f} count changed'
         if f == 'pairs':
             if not all(isinstance(p, list) and len(p) == 2 and all(isinstance(x, str) and x.strip() for x in p) for p in b): return 'pairs shape'
             continue
-        if not all(isinstance(x, str) and x.strip() for x in b): return f'{f} not text'
-        if nums(' '.join(a)) != nums(' '.join(b)): return f'{f} numbers changed'
+        if not all(isinstance(x, str) and (x.strip() or f == 'why') for x in b): return f'{f} not text'   # some options have no note
+        if f != 'steps' and nums(' '.join(a)) != nums(' '.join(b)): return f'{f} numbers changed'
         if f in ('options',) and any(nums(x) != nums(y) for x, y in zip(a, b)): return 'an option number moved'
         if f == 'steps' and any(slots(x) != slots(y) for x, y in zip(a, b)): return 'step placeholders'
         if f == 'items': pass
     if old.get('answers') and new.get('answers', old['answers']) != old['answers']: return 'answers changed'
     return None
 
-def blind_ok(items, m27):
+def blind_ok(items, ask):
     """Someone who never saw the original reads the new question. They must reach the same answer."""
     if not items: return set()
     rows = '\n'.join(f"{i}. {q}" + (''.join(f'\n   {n}: {o}' for n, o in enumerate(opts)) if opts else ' (true or false?)') for i, (q, opts, _) in enumerate(items))
-    r = m27(f'Answer each school question. Reply ONLY JSON: {{"answers": [for each question in order, the option number, or true/false, or null if the question is unclear]}}\n\n{rows}')
+    r = ask(f'Answer each school question. Reply ONLY JSON: {{"answers": [for each question in order, the option number, or true/false, or null if the question is unclear]}}\n\n{rows}')
     got = r.get('answers') or []
     return {i for i, (q, o, want) in enumerate(items) if i < len(got) and got[i] == want and not isinstance(got[i], type(None))}
 
-def reviewed(pairs, m27):
+def reviewed(pairs, ask):
     """Second reader compares old and new. Returns the indexes that kept their meaning and got no harder."""
     rows = '\n\n'.join(f'{i}.\nOLD: {json.dumps(a, ensure_ascii=False)}\nNEW: {json.dumps(b, ensure_ascii=False)}' for i, (a, b) in enumerate(pairs))
-    r = m27(f'''A rewrite of school questions into simpler English must keep the meaning. It may not change what is being tested, drop a needed fact, add a new fact, give away the answer, or make a right option wrong.
+    r = ask(f'''A rewrite of school questions into simpler English must keep the meaning. It may not change what is being tested, drop a needed fact, add a new fact, give away the answer, or make a right option wrong.
 Reply ONLY JSON: {{"bad": [the numbers of rewrites that break any of these rules]}}. An empty list if all are fine.
 
 {rows}''')
     bad = {x for x in r.get('bad', []) if isinstance(x, int)}
     return set(range(len(pairs))) - bad
 
-def confirm_broken(c, reason, m27):
-    r = m27(f'''A checker says this school question is broken: "{reason}". Read it yourself. Is it really nonsense, false, or impossible to answer with only what is written here (for example it needs a table or picture that is not shown)? Do not be fussy; odd wording alone is not broken.
+def confirm_broken(c, reason, ask):
+    r = ask(f'''A checker says this school question is broken: "{reason}". Read it yourself. Is it really nonsense, false, or impossible to answer with only what is written here (for example it needs a table or picture that is not shown)? Do not be fussy; odd wording alone is not broken.
 Reply ONLY JSON: {{"broken": true or false}}
 
 {json.dumps(view(None, c), ensure_ascii=False)}''')
     return r.get('broken') is True
 
-def run_batch(pack_id, d, batch, m27):
+def run_batch(pack_id, d, batch, write, check):
     olds = [view(l, c) for l, _, c in batch]
-    r = m27(ASK.format(rules=RULES, cards=json.dumps(olds, ensure_ascii=False, indent=0)))
+    r = write(ASK.format(rules=RULES, cards=json.dumps(olds, ensure_ascii=False, indent=0)))
     news = r.get('cards') or []
     if len(news) != len(batch): print('  wrong count, skipped', flush=True); return
     cand = []
     for (l, _, c), old, new in zip(batch, olds, news):
         k = key(c); d['seen'].append(k)
         if isinstance(new, dict) and new.get('broken'):
-            if c.get('type') in QUESTION and confirm_broken(c, new['broken'], m27): d['broken'][k] = new['broken']; print('  BROKEN', k[:90], '|', new['broken'], flush=True)
+            if c.get('type') in QUESTION and confirm_broken(c, new['broken'], check): d['broken'][k] = new['broken']; print('  BROKEN', k[:90], '|', new['broken'], flush=True)
             continue
         if isinstance(new, dict): keep_good_helpers(old, new)
         why = acceptable(old, new)
@@ -214,8 +233,8 @@ def run_batch(pack_id, d, batch, m27):
     for i, (c, old, new) in enumerate(cand):
         if c['type'] == 'mcq' and not c.get('gen'): blind.append((new.get('prompt', old['prompt']), new.get('options', old['options']), c['answer'])); where.append(i)
         elif c['type'] == 'truefalse': blind.append((new.get('prompt', old['prompt']), None, c['answer'])); where.append(i)
-    passed = {where[i] for i in blind_ok(blind, m27)} if blind else set()
-    fine = reviewed([(o, n) for _, o, n in cand], m27)
+    passed = {where[i] for i in blind_ok(blind, check)} if blind else set()
+    fine = reviewed([(o, n) for _, o, n in cand], check)
     for i, (c, old, new) in enumerate(cand):
         k = key(c)
         if i in where and i not in passed: d['kept'][k] = 'blind reader got a different answer'; continue
@@ -241,26 +260,27 @@ def todo():
     return rows
 
 def main():
-    from llm import m27
-    sample = sys.argv[1] == '--sample' if len(sys.argv) > 1 else False
+    from concurrent.futures import ThreadPoolExecutor
+    import subprocess, threading, time
+    from llm import deepseek, checker
+    sample = len(sys.argv) > 1 and sys.argv[1] == '--sample'
     rows = todo()
     if sample:
-        pid, n = sys.argv[2], int(sys.argv[3]); rows = sorted([r for r in rows if r[0] == pid], key=lambda r: -r[1])[:n]
-    else:
-        # hard questions first across every book, then hard reading, then everything else
-        rows.sort(key=lambda r: (r[1] < 3, r[2], PACKS.index(r[0]), -r[1]))
+        rows = sorted([r for r in rows if r[0] == sys.argv[2]], key=lambda r: -r[1])[:int(sys.argv[3])]
     print(len(rows), 'cards to read', flush=True)
-    i = batches = 0
-    while i < len(rows):
-        pid = rows[i][0]; batch = []
-        while i < len(rows) and rows[i][0] == pid and len(batch) < 8: batch.append(rows[i][3]); i += 1
+    publishing = threading.Lock(); done = [0]
+    def pack_job(pid):
+        """One worker to a book, so its store has one writer. Hard questions first, then hard reading, then the rest."""
+        mine = sorted([r for r in rows if r[0] == pid], key=lambda r: (r[1] < 3, r[2], -r[1]))
         d = load(pid)
-        try: run_batch(pid, d, batch, m27)
-        except Exception as e: print('  failed:', str(e)[:120], flush=True); continue
-        save(pid, d)
-        batches += 1
-        if batches % 80 == 0 and not sample:   # children get the clearer wording as it is made, not all at the end
-            import subprocess; subprocess.run([sys.executable, f'{HERE}/publish.py'], cwd=ROOT, capture_output=True)
-        print(f'{i}/{len(rows)} {pid}: {len(d["cards"])} rewritten, {len(d["kept"])} kept, {len(d["broken"])} broken', flush=True)
+        for i in range(0, len(mine), 8):
+            try: run_batch(pid, d, [r[3] for r in mine[i:i + 8]], deepseek, checker)
+            except Exception as e: print('  failed:', pid, str(e)[:120], flush=True); time.sleep(60); continue
+            save(pid, d); done[0] += 1
+            print(f'{pid}: {min(i + 8, len(mine))}/{len(mine)} read, {len(d["cards"])} rewritten, {len(d["kept"])} kept, {len(d["broken"])} broken', flush=True)
+            if done[0] % 80 == 0 and not sample and publishing.acquire(blocking=False):   # children get clearer wording as it is made
+                try: subprocess.run([sys.executable, f'{HERE}/publish.py'], cwd=ROOT, capture_output=True)
+                finally: publishing.release()
+    with ThreadPoolExecutor(3) as ex: list(ex.map(pack_job, sorted({r[0] for r in rows}, key=PACKS.index)))
 
 if __name__ == '__main__': main()

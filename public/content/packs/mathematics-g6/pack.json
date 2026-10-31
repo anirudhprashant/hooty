@@ -1740,15 +1740,15 @@
           "practice",
           "computed"
          ],
-         "prompt": "A school puts students in 6 rows. The first row has 1 student. The second row has 2 students. This pattern continues. The school adds 5 more students. How many students are there altogether?",
-         "explanation": "The rows have 1, 2, 3, and more students. Add the row counts from 1 to 6. This gives 21 students. Now add 5 extra students. The total is 26 students. The answer is 26.",
+         "prompt": "A school arranges students in 6 rows, with 1 student in the first row, 2 in the second, and so on. The school then adds 5 more students. How many students are there altogether?",
+         "explanation": "The rows contain 1, 2, 3, and onward students, giving a triangular-number pattern. Add the row counts from 1 to 6; this gives 21 students. Now add 5 extra students to get 26 students. The total number of students is 26.",
          "steps": [
-          "The rows have 1, 2, 3, and more students.",
-          "Add the row counts from 1 to 6. This gives 21 students.",
-          "Now add 5 extra students. The total is 26 students.",
-          "The answer is 26."
+          "The rows contain 1, 2, 3, and onward students, giving a triangular-number pattern.",
+          "Add the row counts from 1 to 6; this gives 21 students.",
+          "Now add 5 extra students to get 26 students.",
+          "The total number of students is 26."
          ],
-         "hint": "First find the total for 6 rows. Then add the extra students.",
+         "hint": "First find the triangular number for 6 rows, then add the extra students.",
          "derived": [
           "1 (generated problem)",
           "2 (generated problem)",
@@ -1759,7 +1759,7 @@
           "6 (generated problem)"
          ],
          "gen": {
-          "template": "A school puts students in {n} rows. The first row has 1 student. The second row has 2 students. This pattern continues. The school adds {k} more students. How many students are there altogether?",
+          "template": "A school arranges students in {n} rows, with 1 student in the first row, 2 in the second, and so on. The school then adds {k} more students. How many students are there altogether?",
           "params": {
            "n": {
             "min": 2,
@@ -1777,10 +1777,10 @@
            "total": "n*(n+1)/2+k"
           },
           "steps": [
-           "The rows have 1, 2, 3, and more students.",
-           "Add the row counts from 1 to {n}. This gives {triangular} students.",
-           "Now add {k} extra students. The total is {total} students.",
-           "The answer is {answer}."
+           "The rows contain 1, 2, 3, and onward students, giving a triangular-number pattern.",
+           "Add the row counts from 1 to {n}; this gives {triangular} students.",
+           "Now add {k} extra students to get {total} students.",
+           "The total number of students is {answer}."
           ],
           "model": null,
           "hint": "First find the triangular number for {n} rows, then add the extra students.",
@@ -3309,7 +3309,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "At school, a child draws a square grid. It has 2 dots on each side. It shows the sum of the first 2 odd numbers. How many dots are in the grid?",
+         "prompt": "A square grid has 2 dots on each side. The grid shows the sum of the first 2 odd numbers. How many dots are in the grid in all?",
          "explanation": "The sum of the first 2 odd numbers is being shown. The picture is a square grid with 2 dots on each side. Multiply the number of rows by the number of dots in each row. 2 x 2 = 4 dots.",
          "steps": [
           "The sum of the first 2 odd numbers is being shown.",
@@ -3323,7 +3323,7 @@
           "4 (generated problem)"
          ],
          "gen": {
-          "template": "At school, a child draws a square grid. It has {n} dots on each side. It shows the sum of the first {n} odd numbers. How many dots are in the grid?",
+          "template": "A square grid has {n} dots on each side. The grid shows the sum of the first {n} odd numbers. How many dots are in the grid in all?",
           "params": {
            "n": [
             2,
@@ -4254,14 +4254,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "A shape collection has 2 flat shapes. Each flat shape has 2 dimensions. It also has 3 solid shapes. Each solid shape has 3 dimensions. How many dimensions are there altogether?",
+         "prompt": "A shape collection has 2 flat shapes with 2 dimensions each and 3 solid shapes with 3 dimensions each. How many dimensions are counted altogether?",
          "explanation": "The flat shapes contribute 4 dimensions and the solid shapes contribute 9 dimensions. Add the dimensions contributed by the two groups. 4 + 9 = 13 dimensions.",
          "steps": [
           "The flat shapes contribute 4 dimensions and the solid shapes contribute 9 dimensions.",
           "Add the dimensions contributed by the two groups.",
           "4 + 9 = 13 dimensions."
          ],
-         "hint": "First find the dimensions in each group.",
+         "hint": "First find the dimensions contributed by each kind of shape.",
          "derived": [
           "13 (generated problem)",
           "2 (generated problem)",
@@ -4270,7 +4270,7 @@
           "9 (generated problem)"
          ],
          "gen": {
-          "template": "A shape collection has {flat_shapes} flat shapes. Each flat shape has 2 dimensions. It also has {solid_shapes} solid shapes. Each solid shape has 3 dimensions. How many dimensions are there altogether?",
+          "template": "A shape collection has {flat_shapes} flat shapes with 2 dimensions each and {solid_shapes} solid shapes with 3 dimensions each. How many dimensions are counted altogether?",
           "params": {
            "flat_shapes": [
             2,
@@ -5116,11 +5116,11 @@
           "practice",
           "computed"
          ],
-         "prompt": "A school bus has a badge made from a regular polygon. The polygon is in position 4. The side-count sequence starts at 3. How many sides does the badge have?",
-         "explanation": "The first regular polygon has 3 sides. Position 4 comes after 3 increases of 1 side. 3 + 3 = 6 sides.",
+         "prompt": "A school bus has a badge made from the regular polygon in position 4 of the side-count sequence that starts at 3. How many sides does the badge have?",
+         "explanation": "The first regular polygon in the sequence has 3 sides. Position 4 is reached after 3 increases of 1 side. 3 + 3 = 6 sides.",
          "steps": [
-          "The first regular polygon has 3 sides.",
-          "Position 4 comes after 3 increases of 1 side.",
+          "The first regular polygon in the sequence has 3 sides.",
+          "Position 4 is reached after 3 increases of 1 side.",
           "3 + 3 = 6 sides."
          ],
          "hint": "Find the starting side count and then add one for each later position.",
@@ -5131,7 +5131,7 @@
           "6 (generated problem)"
          ],
          "gen": {
-          "template": "A school bus has a badge made from a regular polygon. The polygon is in position {position}. The side-count sequence starts at 3. How many sides does the badge have?",
+          "template": "A school bus has a badge made from the regular polygon in position {position} of the side-count sequence that starts at 3. How many sides does the badge have?",
           "params": {
            "position": {
             "min": 2,
@@ -5147,8 +5147,8 @@
            "sides": "position+2"
           },
           "steps": [
-           "The first regular polygon has {first_sides} sides.",
-           "Position {position} comes after {before_position} increases of 1 side.",
+           "The first regular polygon in the sequence has {first_sides} sides.",
+           "Position {position} is reached after {before_position} increases of 1 side.",
            "{first_sides} + {before_position} = {answer} sides."
           ],
           "model": {
@@ -5195,21 +5195,21 @@
           "practice",
           "computed"
          ],
-         "prompt": "In a cricket game, team A's badge is a regular polygon with 5 sides, and team B's badge is a regular polygon with 4 sides. How many more sides does team A's badge have than team B's?",
-         "explanation": "Team A's badge has 5 sides and team B's badge has 4 sides. To find how many more sides team A has, subtract 4 from 5. 1 = 1 sides.",
+         "prompt": "Team A has a badge. The badge is a regular polygon with 5 sides. Team B has a badge. It is a regular polygon with 4 sides. How many more sides does team A's badge have than team B's?",
+         "explanation": "Team A's badge has 5 sides. Team B's badge has 4 sides. Subtract 4 from 5 to find how many more sides team A has. 1 = 1 sides.",
          "steps": [
-          "Team A's badge has 5 sides and team B's badge has 4 sides.",
-          "To find how many more sides team A has, subtract 4 from 5.",
+          "Team A's badge has 5 sides. Team B's badge has 4 sides.",
+          "Subtract 4 from 5 to find how many more sides team A has.",
           "1 = 1 sides."
          ],
-         "hint": "Subtract the smaller side count from the larger side count.",
+         "hint": "Subtract the smaller number of sides from the larger number of sides.",
          "derived": [
           "1 (generated problem)",
           "4 (generated problem)",
           "5 (generated problem)"
          ],
          "gen": {
-          "template": "In a cricket game, team A's badge is a regular polygon with {a} sides, and team B's badge is a regular polygon with {b} sides. How many more sides does team A's badge have than team B's?",
+          "template": "Team A has a badge. The badge is a regular polygon with {a} sides. Team B has a badge. It is a regular polygon with {b} sides. How many more sides does team A's badge have than team B's?",
           "params": {
            "a": [
             4,
@@ -5232,8 +5232,8 @@
            "difference": "a-b"
           },
           "steps": [
-           "Team A's badge has {a} sides and team B's badge has {b} sides.",
-           "To find how many more sides team A has, subtract {b} from {a}.",
+           "Team A's badge has {a} sides. Team B's badge has {b} sides.",
+           "Subtract {b} from {a} to find how many more sides team A has.",
            "{difference} = {answer} sides."
           ],
           "model": {
@@ -5284,7 +5284,7 @@
          "tags": [
           "worked"
          ],
-         "prompt": "Sign A is a regular polygon with 8 sides. Sign B is a regular polygon with 4 sides. Each side of both signs is 6 cm long. How many more cm of border does sign A have?",
+         "prompt": "In a cricket match, sign A is a regular polygon with 8 sides and sign B is a regular polygon with 4 sides. Each side of both signs is 6 cm long. How many more cm of border does sign A have than sign B?",
          "steps": [
           "Sign A has 4 more sides than sign B.",
           "Each extra side adds 6 cm of border, so multiply the side difference by 6.",
@@ -5297,7 +5297,7 @@
          },
          "result": "24",
          "gen": {
-          "template": "Sign A is a regular polygon with {a} sides. Sign B is a regular polygon with {b} sides. Each side of both signs is {length} cm long. How many more cm of border does sign A have?",
+          "template": "In a cricket match, sign A is a regular polygon with {a} sides and sign B is a regular polygon with {b} sides. Each side of both signs is {length} cm long. How many more cm of border does sign A have than sign B?",
           "params": {
            "a": [
             5,
@@ -5342,7 +5342,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Sign A has 4 more sides than sign B. Each extra side adds 6 cm of border, so multiply the side difference by 6. 24 cm = 24 cm.",
+         "explanation": "Watch how it is solved.",
          "f": [],
          "derived": [
           "24 (generated problem)",
@@ -5611,15 +5611,15 @@
           "exam",
           "written"
          ],
-         "prompt": "The learner has a display with thirty-six dots. Explain how the learner can show the same number in two ways. Explain how the two shapes have different uses.",
+         "prompt": "Explain how the learner can use the thirty-six-dot display to show that the same number can be shown in different ways and play different roles.",
          "answer": "The learner can arrange the same thirty-six dots as a triangle and as a square. By placing the two arrangements together, the learner can show that the number remains 36 while the picture changes. This demonstrates that one number can have different representations and play different roles.",
          "points": [
-          "The learner uses exactly thirty-six dots",
-          "The learner makes one triangle and one square",
-          "The learner says the number stays the same",
-          "The learner explains the different uses of the two shapes"
+          "Uses exactly thirty-six dots",
+          "Shows both a triangular and a square arrangement",
+          "Makes clear that the number stays the same",
+          "Explains the different roles of the two representations"
          ],
-         "explanation": "Check your answer against the points."
+         "explanation": "Compare your answer with the points a marker looks for."
         },
         {
          "type": "explain",
@@ -5694,15 +5694,15 @@
           "exam",
           "written"
          ],
-         "prompt": "What is the difference between one-dimensional and three-dimensional shapes? What other numbers of dimensions can shapes have?",
+         "prompt": "How is a one-dimensional shape different from a three-dimensional shape? What other numbers of dimensions can a shape have?",
          "answer": "A one-dimensional shape has one dimension, while a three-dimensional shape has three dimensions. A two-dimensional shape has two dimensions. The lesson also allows shapes to have even more dimensions, so the possibilities are not limited to one, two, or three.",
          "points": [
-          "One-dimensional shapes have only length.",
-          "Three-dimensional shapes have length, width, and height.",
-          "Two-dimensional shapes are also possible.",
-          "Shapes can have more than three dimensions."
+          "Says that one dimension means one dimension.",
+          "Says that three dimensions means three dimensions.",
+          "Says that a shape can have two dimensions.",
+          "Says that a shape can have even more dimensions."
          ],
-         "explanation": "Compare your answer with the points a marker looks for."
+         "explanation": "Check your answer with the points a marker looks for."
         },
         {
          "type": "explain",
@@ -6139,10 +6139,10 @@
          "tags": [
           "worked"
          ],
-         "prompt": "A line segment is made by joining two parts end to end. The two parts are 3 cm and 6 cm long. The parts go in the same direction. How long is the whole line segment in cm?",
+         "prompt": "A line segment is made by joining two paths of 3 cm and 6 cm end to end in the same direction. How long is the whole line segment in cm?",
          "steps": [
           "The two parts have lengths 3 cm and 6 cm.",
-          "The parts meet end to end. Add their lengths to find the whole length.",
+          "The parts meet end to end, so add their lengths to find the whole length.",
           "9 cm = 9 cm."
          ],
          "modelSpec": {
@@ -6161,7 +6161,7 @@
          },
          "result": "9",
          "gen": {
-          "template": "A line segment is made by joining two parts end to end. The two parts are {a} cm and {b} cm long. The parts go in the same direction. How long is the whole line segment in cm?",
+          "template": "A line segment is made by joining two paths of {a} cm and {b} cm end to end in the same direction. How long is the whole line segment in cm?",
           "params": {
            "a": [
             3,
@@ -6181,7 +6181,7 @@
           },
           "steps": [
            "The two parts have lengths {a} cm and {b} cm.",
-           "The parts meet end to end. Add their lengths to find the whole length.",
+           "The parts meet end to end, so add their lengths to find the whole length.",
            "{total} cm = {answer} cm."
           ],
           "model": {
@@ -6202,7 +6202,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "The two parts have lengths 3 cm and 6 cm. The parts meet end to end. Add their lengths to find the whole length. 9 cm = 9 cm.",
+         "explanation": "Watch how it is solved.",
          "f": [],
          "derived": [
           "3 (generated problem)",
@@ -6713,11 +6713,11 @@
           "practice",
           "computed"
          ],
-         "prompt": "At school, points A and B are 5 cm apart on one straight line. Point C is 4 cm past B on the same line. What is the length in cm from A to C?",
-         "explanation": "The distance from A to B is 5 cm and the distance from B to C is 4 cm. The points lie in order on one line, so add the two distances. 9 cm = 9 cm.",
+         "prompt": "Point A and point B are 5 cm apart on a straight line. Point C is 4 cm past B on the same line. How long is the shortest line segment from A to C in cm?",
+         "explanation": "The distance from A to B is 5 cm. The distance from B to C is 4 cm. The points are in order on one line. So add the two distances. 9 cm = 9 cm.",
          "steps": [
-          "The distance from A to B is 5 cm and the distance from B to C is 4 cm.",
-          "The points lie in order on one line, so add the two distances.",
+          "The distance from A to B is 5 cm. The distance from B to C is 4 cm.",
+          "The points are in order on one line. So add the two distances.",
           "9 cm = 9 cm."
          ],
          "hint": "Add the distance from A to B and the distance from B to C.",
@@ -6727,7 +6727,7 @@
           "9 (generated problem)"
          ],
          "gen": {
-          "template": "At school, points A and B are {a} cm apart on one straight line. Point C is {b} cm past B on the same line. What is the length in cm from A to C?",
+          "template": "Point A and point B are {a} cm apart on a straight line. Point C is {b} cm past B on the same line. How long is the shortest line segment from A to C in cm?",
           "params": {
            "a": [
             3,
@@ -6746,8 +6746,8 @@
            "total": "a+b"
           },
           "steps": [
-           "The distance from A to B is {a} cm and the distance from B to C is {b} cm.",
-           "The points lie in order on one line, so add the two distances.",
+           "The distance from A to B is {a} cm. The distance from B to C is {b} cm.",
+           "The points are in order on one line. So add the two distances.",
            "{total} cm = {answer} cm."
           ],
           "model": {
@@ -7054,17 +7054,17 @@
          "tags": [
           "worked"
          ],
-         "prompt": "There are 7 marked points. No three lie on one straight line. There are 5 other straight lines. None joins two marked points. How many straight lines are there altogether?",
+         "prompt": "There are 7 marked points. No three points are on one straight line. There are also 5 other straight lines. These lines do not go through two marked points. How many straight lines are there in all?",
          "steps": [
-          "Grouping the 7 marked points in pairs gives 42 pair counts. Each pair is counted twice.",
-          "Divide by two to get 21 lines from the marked points.",
+          "Join every pair of the 7 points. You count 42 pairs. Each pair is counted twice.",
+          "Divide by 2. This gives 21 lines from the marked points.",
           "Add the 5 other lines. This gives 26 lines.",
           "26 = 26 lines."
          ],
          "modelSpec": null,
          "result": "26",
          "gen": {
-          "template": "There are {n} marked points. No three lie on one straight line. There are {m} other straight lines. None joins two marked points. How many straight lines are there altogether?",
+          "template": "There are {n} marked points. No three points are on one straight line. There are also {m} other straight lines. These lines do not go through two marked points. How many straight lines are there in all?",
           "params": {
            "n": {
             "min": 3,
@@ -7085,8 +7085,8 @@
            "total": "n*(n-1)/2+m"
           },
           "steps": [
-           "Grouping the {n} marked points in pairs gives {counted_twice} pair counts. Each pair is counted twice.",
-           "Divide by two to get {point_lines} lines from the marked points.",
+           "Join every pair of the {n} points. You count {counted_twice} pairs. Each pair is counted twice.",
+           "Divide by 2. This gives {point_lines} lines from the marked points.",
            "Add the {m} other lines. This gives {total} lines.",
            "{total} = {answer} lines."
           ],
@@ -7095,7 +7095,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Grouping the 7 marked points in pairs gives 42 pair counts. Each pair is counted twice. Divide by two to get 21 lines from the marked points. Add the 5 other lines. This gives 26 lines. 26 = 26 lines.",
+         "explanation": "Join every pair of the 7 points. You count 42 pairs. Each pair is counted twice. Divide by 2. This gives 21 lines from the marked points. Add the 5 other lines. This gives 26 lines. 26 = 26 lines.",
          "f": [],
          "derived": [
           "21 (generated problem)",
@@ -7508,11 +7508,11 @@
          "tags": [
           "worked"
          ],
-         "prompt": "One ray makes 4 equal small turns from the same start. It then makes 2 more small turns in the same direction. How many small turns is the final angle from the starting ray?",
+         "prompt": "From the same starting ray, one ray turns 4 equal small turns and then turns 2 more small turns in the same direction. How many small turns from the starting ray is the resulting angle?",
          "steps": [
-          "The first turn is 4 small turns. The extra turn is 2 small turns.",
-          "Both turns go in the same direction, so add their amounts.",
-          "4 + 2 = 6 small turns. The final angle is 6 small turns from the starting ray."
+          "The first turning amount is 4 small turns, and the additional amount is 2 small turns.",
+          "Because both turns are in the same direction, add their amounts.",
+          "4 + 2 = 6 small turns, so the resulting angle is 6 small turns from the starting ray."
          ],
          "modelSpec": {
           "type": "tape",
@@ -7530,7 +7530,7 @@
          },
          "result": "6",
          "gen": {
-          "template": "One ray makes {a} equal small turns from the same start. It then makes {b} more small turns in the same direction. How many small turns is the final angle from the starting ray?",
+          "template": "From the same starting ray, one ray turns {a} equal small turns and then turns {b} more small turns in the same direction. How many small turns from the starting ray is the resulting angle?",
           "params": {
            "a": [
             2,
@@ -7549,9 +7549,9 @@
            "total_turn": "a+b"
           },
           "steps": [
-           "The first turn is {a} small turns. The extra turn is {b} small turns.",
-           "Both turns go in the same direction, so add their amounts.",
-           "{a} + {b} = {answer} small turns. The final angle is {answer} small turns from the starting ray."
+           "The first turning amount is {a} small turns, and the additional amount is {b} small turns.",
+           "Because both turns are in the same direction, add their amounts.",
+           "{a} + {b} = {answer} small turns, so the resulting angle is {answer} small turns from the starting ray."
           ],
           "model": {
            "type": "tape",
@@ -7571,7 +7571,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "The first turn is 4 small turns. The extra turn is 2 small turns. Both turns go in the same direction, so add their amounts. 4 + 2 = 6 small turns. The final angle is 6 small turns from the starting ray.",
+         "explanation": "Watch how it is solved.",
          "f": [],
          "derived": [
           "2 (generated problem)",
@@ -7929,12 +7929,12 @@
           "practice",
           "computed"
          ],
-         "prompt": "One pair of scissors opens through 7 equal small turns. Another pair opens through 12 equal small turns. How many more small turns does the wider opening have?",
-         "explanation": "The first pair opens through 7 small turns. The second pair opens through 12 small turns. Subtract the smaller amount from the larger amount. 12 - 7 = 5 small turns. The wider opening has 5 more small turns.",
+         "prompt": "At a market stall, one pair of scissors opens through 7 equal small turns and another pair opens through 12 equal small turns. How many more small turns does the wider opening have?",
+         "explanation": "The first pair of scissors opens through 7 small turns and the second through 12 small turns. The wider opening is found by subtracting the smaller amount from the larger amount. 12 - 7 = 5 small turns, so the wider opening has 5 more small turns.",
          "steps": [
-          "The first pair opens through 7 small turns. The second pair opens through 12 small turns.",
-          "Subtract the smaller amount from the larger amount.",
-          "12 - 7 = 5 small turns. The wider opening has 5 more small turns."
+          "The first pair of scissors opens through 7 small turns and the second through 12 small turns.",
+          "The wider opening is found by subtracting the smaller amount from the larger amount.",
+          "12 - 7 = 5 small turns, so the wider opening has 5 more small turns."
          ],
          "hint": "Subtract the smaller opening amount from the larger opening amount.",
          "derived": [
@@ -7943,7 +7943,7 @@
           "7 (generated problem)"
          ],
          "gen": {
-          "template": "One pair of scissors opens through {a} equal small turns. Another pair opens through {b} equal small turns. How many more small turns does the wider opening have?",
+          "template": "At a market stall, one pair of scissors opens through {a} equal small turns and another pair opens through {b} equal small turns. How many more small turns does the wider opening have?",
           "params": {
            "a": [
             3,
@@ -7964,9 +7964,9 @@
            "opening_difference": "b-a"
           },
           "steps": [
-           "The first pair opens through {a} small turns. The second pair opens through {b} small turns.",
-           "Subtract the smaller amount from the larger amount.",
-           "{b} - {a} = {answer} small turns. The wider opening has {answer} more small turns."
+           "The first pair of scissors opens through {a} small turns and the second through {b} small turns.",
+           "The wider opening is found by subtracting the smaller amount from the larger amount.",
+           "{b} - {a} = {answer} small turns, so the wider opening has {answer} more small turns."
           ],
           "model": {
            "type": "compare",
@@ -8216,7 +8216,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "In each of 4 swings, the bat makes 5 equal small turns. It starts from the same place each time. How many small turns are there altogether?",
+         "prompt": "During each of 4 practice swings, a cricket bat turns through 5 equal small turns, always starting from the same position. How many small turns of rotation are made altogether?",
          "explanation": "There are 4 equal practice swings. Each swing contains 5 small turns, so multiply the number of swings by the turns in one swing. 4 x 5 = 20 small turns, so the total rotation is 20 small turns.",
          "steps": [
           "There are 4 equal practice swings.",
@@ -8230,7 +8230,7 @@
           "5 (generated problem)"
          ],
          "gen": {
-          "template": "In each of {n} swings, the bat makes {k} equal small turns. It starts from the same place each time. How many small turns are there altogether?",
+          "template": "During each of {n} practice swings, a cricket bat turns through {k} equal small turns, always starting from the same position. How many small turns of rotation are made altogether?",
           "params": {
            "n": [
             2,
@@ -8301,12 +8301,12 @@
          "tags": [
           "worked"
          ],
-         "prompt": "Ray A makes 4 equal groups of 3 small turns. Ray B makes 2 equal groups of 3 small turns. 4 is greater than 2. How many more small turns does Ray A make?",
+         "prompt": "Ray A turns 4 blocks. Each block has 3 small turns. Ray B turns 2 blocks. Each block has 3 small turns. 4 is more than 2. How many more small turns does Ray A turn?",
          "steps": [
-          "Ray A has 4 groups. Ray B has 2 groups. Each group has 3 small turns.",
-          "The difference in the number of groups is 4 - 2.",
-          "Multiply the difference by the number of small turns in one group.",
-          "12 - 6 = 6 small turns. Ray A's angle is 6 small turns greater."
+          "Ray A has 4 blocks. Ray B has 2 blocks. Each block has 3 small turns.",
+          "Find the difference in blocks: 4 - 2.",
+          "Multiply this difference by the small turns in one block.",
+          "12 - 6 = 6 small turns. Ray A's angle is 6 small turns more."
          ],
          "modelSpec": {
           "type": "compare",
@@ -8323,7 +8323,7 @@
          },
          "result": "6",
          "gen": {
-          "template": "Ray A makes {n} equal groups of {k} small turns. Ray B makes {m} equal groups of {k} small turns. {n} is greater than {m}. How many more small turns does Ray A make?",
+          "template": "Ray A turns {n} blocks. Each block has {k} small turns. Ray B turns {m} blocks. Each block has {k} small turns. {n} is more than {m}. How many more small turns does Ray A turn?",
           "params": {
            "n": [
             3,
@@ -8350,10 +8350,10 @@
            "difference": "k*(n-m)"
           },
           "steps": [
-           "Ray A has {n} groups. Ray B has {m} groups. Each group has {k} small turns.",
-           "The difference in the number of groups is {n} - {m}.",
-           "Multiply the difference by the number of small turns in one group.",
-           "{first_total} - {second_total} = {answer} small turns. Ray A's angle is {answer} small turns greater."
+           "Ray A has {n} blocks. Ray B has {m} blocks. Each block has {k} small turns.",
+           "Find the difference in blocks: {n} - {m}.",
+           "Multiply this difference by the small turns in one block.",
+           "{first_total} - {second_total} = {answer} small turns. Ray A's angle is {answer} small turns more."
           ],
           "model": {
            "type": "compare",
@@ -8372,7 +8372,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "Ray A has 4 groups. Ray B has 2 groups. Each group has 3 small turns. The difference in the number of groups is 4 - 2. Multiply the difference by the number of small turns in one group. 12 - 6 = 6 small turns. Ray A's angle is 6 small turns greater.",
+         "explanation": "Ray A has 4 blocks. Ray B has 2 blocks. Each block has 3 small turns. Find the difference in blocks: 4 - 2. Multiply this difference by the small turns in one block. 12 - 6 = 6 small turns. Ray A's angle is 6 small turns more.",
          "f": [],
          "derived": [
           "12 (generated problem)",
@@ -8424,15 +8424,15 @@
           "practice",
           "computed"
          ],
-         "prompt": "Ray A and Ray B have the same starting ray. Ray A turns 4 small turns. Then it turns 3 more in the same direction. Ray B turns 8 small turns. How many small turns are in the greater angle?",
-         "explanation": "Ray A turns 4 small turns, then 3 more. Ray B turns 8 small turns. Ray A turns in the same direction. 4 + 3 = 7 small turns. Compare 7 with 8. The greater turn makes the greater angle. The greater angle has 8 small turns.",
+         "prompt": "Ray A and Ray B start on the same ray. Ray A turns 4 small turns. Then it turns 3 more small turns the same way. Ray B turns 8 small turns. How many small turns are in the bigger angle?",
+         "explanation": "Ray A turns 4 small turns. Then it turns 3 more. Ray B turns 8 small turns. Ray A turns the same way both times. So 4 + 3 = 7 small turns. Compare 7 with 8. The bigger turn makes the bigger angle. The bigger angle has 8 small turns.",
          "steps": [
-          "Ray A turns 4 small turns, then 3 more. Ray B turns 8 small turns.",
-          "Ray A turns in the same direction. 4 + 3 = 7 small turns.",
-          "Compare 7 with 8. The greater turn makes the greater angle.",
-          "The greater angle has 8 small turns."
+          "Ray A turns 4 small turns. Then it turns 3 more. Ray B turns 8 small turns.",
+          "Ray A turns the same way both times. So 4 + 3 = 7 small turns.",
+          "Compare 7 with 8. The bigger turn makes the bigger angle.",
+          "The bigger angle has 8 small turns."
          ],
-         "hint": "Find Ray A's total turns. Then compare them with Ray B's turns.",
+         "hint": "First find Ray A's total turns. Then compare it with Ray B's turns.",
          "derived": [
           "3 (generated problem)",
           "4 (generated problem)",
@@ -8440,7 +8440,7 @@
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "Ray A and Ray B have the same starting ray. Ray A turns {a} small turns. Then it turns {b} more in the same direction. Ray B turns {c} small turns. How many small turns are in the greater angle?",
+          "template": "Ray A and Ray B start on the same ray. Ray A turns {a} small turns. Then it turns {b} more small turns the same way. Ray B turns {c} small turns. How many small turns are in the bigger angle?",
           "params": {
            "a": [
             3,
@@ -8467,10 +8467,10 @@
            "greater_angle": "max(a+b,c)"
           },
           "steps": [
-           "Ray A turns {a} small turns, then {b} more. Ray B turns {c} small turns.",
-           "Ray A turns in the same direction. {a} + {b} = {first_total} small turns.",
-           "Compare {first_total} with {c}. The greater turn makes the greater angle.",
-           "The greater angle has {answer} small turns."
+           "Ray A turns {a} small turns. Then it turns {b} more. Ray B turns {c} small turns.",
+           "Ray A turns the same way both times. So {a} + {b} = {first_total} small turns.",
+           "Compare {first_total} with {c}. The bigger turn makes the bigger angle.",
+           "The bigger angle has {answer} small turns."
           ],
           "model": {
            "type": "compare",
@@ -10823,11 +10823,11 @@
          "tags": [
           "worked"
          ],
-         "prompt": "In a cricket-field diagram, a straight angle is split into 30 degrees and 100 degrees. The acute part is below a right angle. The obtuse part is above a right angle. What is the sum, in degrees, of the two differences?",
+         "prompt": "In a cricket-field diagram, a straight angle is split into 30 degrees and 100 degrees. What is the sum in degrees of how far the acute part is below a right angle and how far the obtuse part is above it?",
          "steps": [
           "The acute part is 60 degrees below a right angle.",
           "The obtuse part is 10 degrees above a right angle.",
-          "60 + 10 = 70 degrees. So the sum of the two differences is 70 degrees."
+          "60 + 10 = 70 degrees, so the sum of the two differences is 70 degrees."
          ],
          "modelSpec": {
           "type": "compare",
@@ -10848,7 +10848,7 @@
          },
          "result": "70",
          "gen": {
-          "template": "In a cricket-field diagram, a straight angle is split into {a} degrees and {b} degrees. The acute part is below a right angle. The obtuse part is above a right angle. What is the sum, in degrees, of the two differences?",
+          "template": "In a cricket-field diagram, a straight angle is split into {a} degrees and {b} degrees. What is the sum in degrees of how far the acute part is below a right angle and how far the obtuse part is above it?",
           "params": {
            "a": [
             30,
@@ -10880,7 +10880,7 @@
           "steps": [
            "The acute part is {below} degrees below a right angle.",
            "The obtuse part is {above} degrees above a right angle.",
-           "{below} + {above} = {answer} degrees. So the sum of the two differences is {answer} degrees."
+           "{below} + {above} = {answer} degrees, so the sum of the two differences is {answer} degrees."
           ],
           "model": {
            "type": "compare",
@@ -10903,7 +10903,7 @@
           "wrong": [],
           "wrongWhy": []
          },
-         "explanation": "The acute part is 60 degrees below a right angle. The obtuse part is 10 degrees above a right angle. 60 + 10 = 70 degrees. So the sum of the two differences is 70 degrees.",
+         "explanation": "Watch how it is solved.",
          "f": [],
          "derived": [
           "10 (generated problem)",
@@ -12111,16 +12111,16 @@
          "tags": [
           "worked"
          ],
-         "prompt": "One side of an angle lines up with the 20-degree mark on a protractor. The other side lines up with the 80-degree mark. What is the angle measure in degrees?",
+         "prompt": "A protractor shows an angle. One arm is on the 20-degree mark. The other arm is on the 80-degree mark. How many degrees is the angle?",
          "steps": [
-          "The first side is at the 20-degree mark. The second is at the 80-degree mark.",
-          "The angle is the distance between the marks. Subtract the first mark from the second.",
+          "The first arm is at the 20-degree mark. The second arm is at the 80-degree mark.",
+          "The angle is the gap between the two marks. Subtract the first mark from the second.",
           "80 degrees minus 20 degrees gives 60 degrees."
          ],
          "modelSpec": null,
          "result": "60",
          "gen": {
-          "template": "One side of an angle lines up with the {a}-degree mark on a protractor. The other side lines up with the {b}-degree mark. What is the angle measure in degrees?",
+          "template": "A protractor shows an angle. One arm is on the {a}-degree mark. The other arm is on the {b}-degree mark. How many degrees is the angle?",
           "params": {
            "a": [
             10,
@@ -12145,8 +12145,8 @@
            "difference": "b-a"
           },
           "steps": [
-           "The first side is at the {start}-degree mark. The second is at the {end}-degree mark.",
-           "The angle is the distance between the marks. Subtract the first mark from the second.",
+           "The first arm is at the {start}-degree mark. The second arm is at the {end}-degree mark.",
+           "The angle is the gap between the two marks. Subtract the first mark from the second.",
            "{end} degrees minus {start} degrees gives {answer} degrees."
           ],
           "model": null,
@@ -12162,7 +12162,7 @@
            "You used the starting mark without finding the distance to the ending mark."
           ]
          },
-         "explanation": "The first side is at the 20-degree mark. The second is at the 80-degree mark. The angle is the distance between the marks. Subtract the first mark from the second. 80 degrees minus 20 degrees gives 60 degrees.",
+         "explanation": "The first arm is at the 20-degree mark. The second arm is at the 80-degree mark. The angle is the gap between the two marks. Subtract the first mark from the second. 80 degrees minus 20 degrees gives 60 degrees.",
          "f": [],
          "derived": [
           "100 (generated problem)",
@@ -13332,6 +13332,30 @@
           "Different alignment shows a smaller or larger angle"
          ],
          "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g6-ch2-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A carpenter draws a straight angle and adds a ray inside it. The ray divides the angle into two matching parts. The carpenter folds a sheet so its two edges meet at equal angles, then checks the crossing lines. The crossing lines are perpendicular, and the opening has the shape of the letter L.",
+         "prompt": "After the fold described in the case, what kind of angles are formed by the two matching edges?",
+         "options": [
+          "They are right angles because folding forms equal angles.",
+          "They are acute angles because they are smaller than a right angle.",
+          "They are obtuse angles because they are wider than a right angle.",
+          "They are straight angles because they came from a straight angle."
+         ],
+         "answer": 0,
+         "why": {
+          "They are acute angles because they are smaller than a right angle.": "Option 1: These angles are equal to a right angle, not smaller than it.",
+          "They are obtuse angles because they are wider than a right angle.": "Option 2: Obtuse angles are greater than a right angle.",
+          "They are straight angles because they came from a straight angle.": "Option 3: A straight angle is the original angle, not either folded part."
+         },
+         "explanation": "Option 0: Equal angles formed by folding are called right angles."
         },
         {
          "type": "mcq",
@@ -29901,15 +29925,15 @@
           "adjacent sides"
          ],
          "title": "Choose the Correct Method",
-         "prompt": "Which statement uses the facts about squares and compasses correctly?",
+         "prompt": "Which statement uses the square and compass facts correctly?",
          "options": [
-          "A square has equal adjacent sides. A compass can mark D so AD equals BC.",
-          "A square has equal opposite sides. AB must equal CD.",
-          "A rectangle can have four equal sides. AD need not equal BC.",
-          "A rectangle has equal adjacent sides. AD must be smaller than BC."
+          "Equal opposite sides make a square, and AB must equal CD.",
+          "Equal adjacent sides make a square, and a compass can mark D so AD equals BC.",
+          "All four equal sides leave a rectangle unchanged, and AD need not equal BC.",
+          "Equal adjacent sides leave a rectangle unchanged, and AD must be smaller than BC."
          ],
          "answer": 1,
-         "explanation": "A square has equal adjacent sides. A compass can mark D so AD equals BC.",
+         "explanation": "Equal adjacent sides make a square, and the compass can make AD equal BC.",
          "src": [
           {
            "ch": 8,
@@ -29919,13 +29943,7 @@
            "ch": 8,
            "p": 216
           }
-         ],
-         "why": {
-          "A square has equal adjacent sides. A compass can mark D so AD equals BC.": "This uses the correct facts about a square and a compass.",
-          "A square has equal opposite sides. AB must equal CD.": "Equal opposite sides alone do not make a square.",
-          "A rectangle can have four equal sides. AD need not equal BC.": "This is not the method for making the required square.",
-          "A rectangle has equal adjacent sides. AD must be smaller than BC.": "AD does not have to be smaller than BC."
-         }
+         ]
         },
         {
          "type": "fillblank",
@@ -35650,8 +35668,8 @@
           "practice",
           "computed"
          ],
-         "prompt": "People in Asia first used general integers many centuries ago. The earliest known use of negative numbers was in accounting. Kautilya wrote about credit and debit around 300 BCE. About how many years before 1 CE was that?",
-         "explanation": "Kautilya wrote around 300 BCE. That was about 300 years before 1 CE.",
+         "prompt": "General integers were first conceived and used in Asia many centuries ago, and the earliest known uses of negative numbers occurred in accounting. Kautilya wrote about credit and debit around 300 BCE; about how many years before 1 CE was that?",
+         "explanation": "Kautilya wrote around 300 BCE, so the number of years before 1 CE is k = 300 years.",
          "derived": [
           "1 (generated problem)",
           "300 (generated problem)"
