@@ -10,7 +10,7 @@ sheet, renders it, and keeps it only if MiniMax's vision model confirms it shows
   SPARKLE_SUBJECT=mathematics-g6 python3 tools/draw-diagrams.py 3          # one chapter
 
 English-language books only (a diagram's labels would otherwise need translating). The result is written as an
-images.json entry whose credit says it is a diagram drawn for Lumi, so it is never mistaken for a photograph.
+images.json entry whose credit says it is a diagram drawn for Hooty, so it is never mistaken for a photograph.
 The SVG is code, not a bitmap: it is checked to contain no scripts, links or external references.
 """
 import glob, hashlib, json, os, re, subprocess, sys, tempfile
@@ -92,7 +92,7 @@ If this topic cannot be shown as a clear diagram from the facts, reply {{"none":
             name = f"ch{n}-l{key[1:] if key.startswith('l') else key}-diagram-{hashlib.sha1(svg.encode()).hexdigest()[:6]}.svg"
             open(f'{MEDIA}/{name}', 'w', encoding='utf-8').write(svg)
             store[key] = {'file': f'media/{name}', 'alt': d.get('alt', title), 'caption': d.get('caption', ''),
-                          'credit': {'text': 'Diagram drawn for Lumi from the lesson text', 'url': ''}, 'kind': 'diagram'}
+                          'credit': {'text': 'Diagram drawn for Hooty from the lesson text', 'url': ''}, 'kind': 'diagram'}
             json.dump(store, open(out_path, 'w'), ensure_ascii=False, indent=1)
             return
     print('gave up', f'ch{n}-{key}', title, flush=True)

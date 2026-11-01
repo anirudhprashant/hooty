@@ -3,7 +3,7 @@
 
 export const strings = {
   en: {
-    appName: 'Lumi',
+    appName: 'Hooty',
     home: 'Home',
     path: 'Trail',
     practice: 'Practise weak spots',

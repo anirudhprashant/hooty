@@ -284,7 +284,7 @@ themes/enchanted-kingdom/
     "idle": "assets/mascot-idle.png",
     "happy": "assets/mascot-happy.png",
     "wrong": "assets/mascot-wrong.png",
-    "name": "Lumi"
+    "name": "Hooty"
   },
   "background": "assets/background.png",
   "rewards": [

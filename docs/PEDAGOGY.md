@@ -1,7 +1,7 @@
-# How a Lumi lesson teaches
+# How a Hooty lesson teaches
 
-The aim: a child who uses Lumi understands the idea and does well at school. Lessons are not built around exam papers, but no child
-should meet a style of question in school that Lumi never showed them.
+The aim: a child who uses Hooty understands the idea and does well at school. Lessons are not built around exam papers, but no child
+should meet a style of question in school that Hooty never showed them.
 
 ## The shape of a lesson
 

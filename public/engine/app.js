@@ -360,7 +360,7 @@ function nextRewardFor(l) {
   return rewards.find((r) => !l?.rewards?.includes(r.id) && (l?.xp || 0) < r.unlockAt) || null;
 }
 
-// The name Lumi greets the child with. Kept short, trimmed, and never empty.
+// The name Hooty greets the child with. Kept short, trimmed, and never empty.
 async function saveName(raw) {
   const l = activeLearner();
   if (!l) return;
@@ -374,7 +374,7 @@ async function saveName(raw) {
 function nameCard() {
   const input = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': 'Your name', placeholder: 'Type your name' });
   const form = el('form', { class: 'name-card' }, [
-    el('p', { class: 'name-card__ask', text: 'What should Lumi call you?' }),
+    el('p', { class: 'name-card__ask', text: 'What should Hooty call you?' }),
     el('div', { class: 'input-row' }, [input, el('button', { class: 'btn btn--primary', type: 'submit', text: 'Save' })]),
   ]);
   form.addEventListener('submit', async (e) => {
@@ -691,7 +691,7 @@ function screenLesson() {
   const lesson = router.lesson;
   const wrap = el('div', { class: 'screen lesson' });
   // Before a chapter is taught: a few of its challenge questions, to see what the child already knows. Compared with the challenge
-  // at the end, this is the before-and-after that shows whether Lumi taught anything. Trying before being taught helps too.
+  // at the end, this is the before-and-after that shows whether Hooty taught anything. Trying before being taught helps too.
   let activities = lesson.activities || [];
   const learner = activeLearner();
   const inChapter = lesson.chapterId && /-l1$/.test(lesson.lessonId || lesson.id || '') && !lesson.isPractice
@@ -727,7 +727,7 @@ function screenLesson() {
 
   // A picture of what this lesson is about, so the child sees the topic
   // before reading a word of it.
-  // The picture and Lumi share one column, so on wide screens they scroll as one piece and can never overlap.
+  // The picture and Hooty share one column, so on wide screens they scroll as one piece and can never overlap.
   const side = el('div', { class: 'lesson__side' });
   wrap.append(side);
   if (lesson.topicScene) {
@@ -800,7 +800,7 @@ function renderActivity() {
   stopSpeech();
   clear(s.stage);
   s.locked = false;
-  // The last answer's "Yes!" or "Oops" belongs to that question only: Lumi goes back to her calm self.
+  // The last answer's "Yes!" or "Oops" belongs to that question only: Hooty goes back to her calm self.
   s.bubble.textContent = s.lesson.title;
   s.bubble.classList.remove('is-wrong');
   s.mascotImg.src = mascotAvatar('idle') || '';
@@ -994,7 +994,7 @@ function renderCelebration() {
     if ((l?.xp || 0) >= (r.unlockAt || 0) && unlockReward(r.id)) unlocked.push(r);
   }
 
-  // The celebration brings its own Lumi: drop the topic picture and the speech strip so nothing from the last question lingers.
+  // The celebration brings its own Hooty: drop the topic picture and the speech strip so nothing from the last question lingers.
   s.wrap?.classList.add('is-finished');
 
   const praise = accuracy >= 90 ? 'Brilliant work!' : accuracy >= 60 ? 'Well done!' : 'Good effort. Practice makes it stick.';
@@ -1166,9 +1166,9 @@ function screenAddBook() {
   const meter = el('div', { class: 'finished__bar', hidden: true }, [bar]);
   const go2 = el('button', { class: 'btn btn--primary btn--block', type: 'button', disabled: true }, ['Make my lessons']);
   const WHY = {
-    'no-text': 'This PDF looks like photos of pages, with no text inside. Lumi needs a PDF whose words you can select.',
+    'no-text': 'This PDF looks like photos of pages, with no text inside. Hooty needs a PDF whose words you can select.',
     unreadable: 'The words in this PDF are stored in an old font code, so they come out as nonsense. Try a newer copy of the book.',
-    'no-lessons': 'Lumi could not find enough lessons in this PDF. Is it a textbook, and not an answer key or a workbook?',
+    'no-lessons': 'Hooty could not find enough lessons in this PDF. Is it a textbook, and not an answer key or a workbook?',
   };
   input.addEventListener('change', () => {
     go2.disabled = !input.files.length;
@@ -1195,7 +1195,7 @@ function screenAddBook() {
       go('path');
     } catch (e) {
       console.warn('book failed', e);
-      status.textContent = WHY[e.code] || (e.name === 'PasswordException' ? 'This PDF is locked with a password.' : 'Lumi could not read this file. Is it a PDF?');
+      status.textContent = WHY[e.code] || (e.name === 'PasswordException' ? 'This PDF is locked with a password.' : 'Hooty could not read this file. Is it a PDF?');
       go2.disabled = false; meter.hidden = true;
     }
   });
@@ -1204,7 +1204,7 @@ function screenAddBook() {
     el('p', { text: 'Choose the PDF of a school book. One file for the whole book, or one for each chapter. It stays on this device: nothing is uploaded.' }),
     el('label', { class: 'btn btn--ghost btn--block', for: 'book-file', text: 'Choose PDF' }),
     input, name, go2, meter, status,
-    el('p', { class: 'credit-note', text: 'Lumi makes reading cards and questions using the words printed in your book, with the page for each. Use books you have the right to use.' }),
+    el('p', { class: 'credit-note', text: 'Hooty makes reading cards and questions using the words printed in your book, with the page for each. Use books you have the right to use.' }),
   ]));
   const own = packIndex.filter((p) => p.local);
   if (own.length) wrap.append(el('section', { class: 'addbook__card' }, [
@@ -1349,7 +1349,7 @@ function screenParent() {
       const blob = new Blob([exportSave()], { type: 'application/json' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'lumi-progress.json';
+      a.download = 'hooty-progress.json';
       a.click();
     },
   }, [icon('download', { size: 22 }), t('exportData')]));
@@ -1357,7 +1357,7 @@ function screenParent() {
   fileInput.addEventListener('change', async () => {
     const f = fileInput.files?.[0];
     if (!f) return;
-    if (f.size > 5 * 1024 * 1024) { toast('That file is too big to be a Lumi save.'); return; }
+    if (f.size > 5 * 1024 * 1024) { toast('That file is too big to be a Hooty save.'); return; }
     try {
       await importSave(await f.text());
       toast('Progress imported.');
@@ -1598,8 +1598,8 @@ main().catch((err) => {
   console.error(err);
   clear(app);
   app.append(el('div', { class: 'empty fatal' }, [
-    el('h2', { text: 'Lumi could not start' }),
-    el('p', { text: navigator.onLine === false ? 'You seem to be offline. Connect to the internet once, then open Lumi again.' : 'Something went wrong while loading. Your progress is safe.' }),
+    el('h2', { text: 'Hooty could not start' }),
+    el('p', { text: navigator.onLine === false ? 'You seem to be offline. Connect to the internet once, then open Hooty again.' : 'Something went wrong while loading. Your progress is safe.' }),
     el('button', { class: 'btn btn--primary', type: 'button', onclick: () => location.reload() }, ['Try again']),
   ]));
 });

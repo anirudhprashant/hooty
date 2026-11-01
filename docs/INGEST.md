@@ -52,4 +52,4 @@ and only the chosen class's `pack.json` files are fetched.
 `tools/draw-diagrams.py` handles lessons that have no accurate photograph (number patterns, angles). MiniMax-M2.7 writes one SVG
 from the lesson's own fact sheet; it is rendered and MiniMax's vision model must score it 8 or more for correctness, labels
 and clarity. The SVG is checked to contain no scripts, links or external references, and its credit reads "Diagram drawn for
-Lumi from the lesson text". English books only.
+Hooty from the lesson text". English books only.

@@ -117,7 +117,7 @@ for u in pack['units']:
             if rec.get('think'):
                 th = rec['think']
                 at = next((i for i, a in enumerate(teach) if a['type'] == 'concept'), len(teach) - 1) + 1
-                teach.insert(at, {'type': 'worked', 'id': f"{lesson['id']}-t1", 'difficulty': 1, 'tags': ['deep', 'think'], 'kicker': 'Let us think it through', 'prompt': th['problem'], 'steps': th['steps'], 'explanation': 'Think it through with Lumi.', 'f': th.get('f', []), 'src': src(th.get('f', []))})
+                teach.insert(at, {'type': 'worked', 'id': f"{lesson['id']}-t1", 'difficulty': 1, 'tags': ['deep', 'think'], 'kicker': 'Let us think it through', 'prompt': th['problem'], 'steps': th['steps'], 'explanation': 'Think it through with Hooty.', 'f': th.get('f', []), 'src': src(th.get('f', []))})
             lesson['activities'] = teach + recall + comp + cards
         # Test practice: one extra stop per chapter with the styles of question school papers use. Lessons stay about learning.
         exam, hi = [], pack.get('language') == 'hi'

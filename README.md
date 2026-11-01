@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="public/characters/lumi/explorer-happy.webp" alt="Lumi, a cheerful young explorer in a blue coat, holding a scroll and punching the air" width="210">
+<img src="public/characters/lumi/explorer-happy.webp" alt="Hooty, a cheerful young explorer in a blue coat, holding a scroll and punching the air" width="210">
 
-# Lumi
+# Hooty
 
 ### Your school books, turned into an adventure ✨
 
 A free learning game for school children in India, built chapter by chapter from the NCERT textbooks.
 
-**[▶ Play Lumi](https://lumi.barestack.org/)**
+**[▶ Play Hooty](https://lumi.barestack.org/)**
 
 No sign-up. No ads. Nothing a child does ever leaves their device.
 
@@ -16,11 +16,11 @@ No sign-up. No ads. Nothing a child does ever leaves their device.
 
 <br>
 
-<img src="docs/readme/home.webp" alt="Lumi's home screen: a big Start button beside Lumi standing in front of a castle">
+<img src="docs/readme/home.webp" alt="Hooty's home screen: a big Start button beside Hooty standing in front of a castle">
 
-## 🌟 Meet Lumi
+## 🌟 Meet Hooty
 
-Lumi walks beside the child through every lesson. She asks a question that makes them curious, explains the idea in simple words, cheers when they get it, and shows them why when they don't.
+Hooty walks beside the child through every lesson. She asks a question that makes them curious, explains the idea in simple words, cheers when they get it, and shows them why when they don't.
 
 The aim is simple: a child should understand the idea, not just remember the sentence. And they should still be ready for their school exams.
 
@@ -29,12 +29,12 @@ The aim is simple: a child should understand the idea, not just remember the sen
 | | |
 |---|---|
 | 🧲 **Play with the idea** | Simulations you can touch. Push two magnets together and watch them pull or push apart. |
-| 🧮 **Maths explained step by step** | Lumi solves one with you, with a picture drawn from the problem's own numbers. Then you try, with fresh numbers every time. |
+| 🧮 **Maths explained step by step** | Hooty solves one with you, with a picture drawn from the problem's own numbers. Then you try, with fresh numbers every time. |
 | 🤔 **Questions that make you think** | Predict what happens. Explain why. Spot the mistake. Many wrong answers tell you exactly why they were tempting. |
 | 💬 **Very simple English** | Short sentences and everyday words, for children still learning English. School words stay, because exams need them. |
 | 🎯 **Practice that means something** | Questions you got wrong wait for you. Get one right and it's gone. |
 | 📝 **Ready for school tests** | Case studies, assertion and reason, and written answers you can check against the points a marker looks for. |
-| 🔊 **Read aloud** | Lumi can read lessons to you, in English and Hindi. |
+| 🔊 **Read aloud** | Hooty can read lessons to you, in English and Hindi. |
 | 🏰 **Worlds and stickers** | Earn stickers and choose your world: a kingdom, deep space, the jungle, a calm lagoon or a moonlit academy. |
 
 <table>
@@ -49,7 +49,7 @@ The aim is simple: a child should understand the idea, not just remember the sen
 </table>
 
 <div align="center">
-  <img src="docs/readme/landscape.webp" alt="Lumi on a phone held sideways" width="560"><br>
+  <img src="docs/readme/landscape.webp" alt="Hooty on a phone held sideways" width="560"><br>
   <sub>Made for phones and tablets, upright or sideways, and for computers too</sub>
 </div>
 
@@ -67,7 +67,7 @@ Classes 3 to 5 study The World Around Us in place of Science and Social Science.
 
 ## 📄 Bring your own textbook
 
-Tap **+ Add my book**, choose the PDF of any school book, and Lumi turns it into lessons in seconds, right there on the device. There's no AI and no account, and the file is never uploaded.
+Tap **+ Add my book**, choose the PDF of any school book, and Hooty turns it into lessons in seconds, right there on the device. There's no AI and no account, and the file is never uploaded.
 
 Plain code finds the chapters, sections, key words, pictures and worked examples, then makes reading cards and questions from the sentences printed in the book, each with its page number. Text-based PDFs work best. Scanned photos of pages can't be read yet, and these lessons won't have the simulations or simpler English of the built-in books.
 
@@ -107,7 +107,7 @@ To NCERT for the textbooks every lesson is built on, and to the photographers an
 
 <div align="center">
   <br>
-  <img src="public/characters/lumi/avatar-idle.webp" alt="Lumi's smiling face" width="84">
+  <img src="public/characters/lumi/avatar-idle.webp" alt="Hooty's smiling face" width="84">
   <br>
   <sub>Made with love, for every child who ever asked "but why?"</sub>
 </div>

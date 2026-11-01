@@ -1,7 +1,7 @@
 import { el, stopSpeech } from '../core/dom.js';
 import { bookWord } from '../core/bookwords.js';
 
-// A concept card is a short conversation: Lumi says one thing at a time and the
+// A concept card is a short conversation: Hooty says one thing at a time and the
 // child taps Next to hear the following line. The lines come from the card's own
 // paragraphs, then its key points, then its closing note, so authors write one card.
 export default {
@@ -14,7 +14,7 @@ export default {
     const root = el('div', { class: 'activity activity--concept' });
     const title = activity.title || activity.prompt || '';
 
-    // Reading stamina grows through the lesson: early cards give Lumi's lines one paragraph at a time,
+    // Reading stamina grows through the lesson: early cards give Hooty's lines one paragraph at a time,
     // later ones give two together, so the child reads a little more each time.
     const paras = String(activity.body || '').split(/\n\s*\n/).filter(Boolean);
     const chunk = (ctx.progress?.() ?? 0) < 0.34 ? 1 : 2;

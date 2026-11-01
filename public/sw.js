@@ -1,8 +1,8 @@
-// Service worker. Cache-first for the app shell, so Lumi works offline
+// Service worker. Cache-first for the app shell, so Hooty works offline
 // after the first visit. Never caches anything that identifies a child:
 // there is nothing to cache but static files.
 
-const CACHE = 'sparkle-45fd999b76';
+const CACHE = 'sparkle-88e3b9ad7b';
 
 const SHELL = [
   './',

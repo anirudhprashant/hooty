@@ -6,7 +6,7 @@ Topic pictures come from Wikimedia Commons (public domain, CC0, CC BY, CC BY-SA 
 `sceneCredit` {text, url, license}. The credit shows under the picture and in Settings > Picture credits.
 Source list: `public/content/packs/class6-sst/media/credits.json`. Pictures are resized to 1200px WebP.
 
-## Lumi (the guide) and the world scenes
+## Hooty (the guide) and the world scenes
 Generated with Google's image model through the Antigravity CLI (`agy`, model gemini-3.8-flash for the agent;
 the image tool reported gemini-3.1-flash-image). Style B: gouache and cut-paper collage, visible paper grain.
 - Reference image: `work/art/originals/style-b.png`. Poses are made by passing it as the reference:

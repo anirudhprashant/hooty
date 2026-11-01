@@ -50,7 +50,7 @@ Concept cards and glossary meanings are read aloud from pre-recorded clips (Micr
 (Microsoft rejects datacentre IPs such as oracle): `python tools/make-audio.py` in a venv with `edge-tts`.
 It writes `public/audio/*.mp3` and `manifest.json`; lines with no clip fall back to the browser voice.
 
-## Rewards and reading passages (added with the Lumi rename)
+## Rewards and reading passages (added with the Hooty rename)
 
 - **Explorer stickers.** The theme rewards end at 300 XP, so `tools/svg_stickers.py` draws nine more
   (compass, book, flask, globe, telescope, lantern, trophy, medal, starburst; 500 to 10,000 XP) into

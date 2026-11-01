@@ -2,7 +2,7 @@ import { el, stopSpeech } from '../core/dom.js';
 import { bookWord } from '../core/bookwords.js';
 
 // A written answer, the way school papers ask for one. The child answers in their own words, then sees a good answer and the
-// points a marker looks for, and ticks the ones they covered. Lumi does not pretend a computer can mark it; checking your
+// points a marker looks for, and ticks the ones they covered. Hooty does not pretend a computer can mark it; checking your
 // own answer against the points is itself strong practice. Nothing typed here is stored or sent anywhere.
 export default {
   type: 'explain',

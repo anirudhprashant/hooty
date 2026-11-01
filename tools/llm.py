@@ -37,7 +37,7 @@ def slow_down():
     g = min(60.0, max(gap() * 2, 20.0)); open(GAP_FILE, 'w').write(str(g)); print(f'plan limit hit: calls now {g:.0f}s apart', flush=True)
 
 def _take_turn():
-    """One call at a time across all jobs on this machine, spaced out, so Lumi can never starve the plan in a burst."""
+    """One call at a time across all jobs on this machine, spaced out, so Hooty can never starve the plan in a burst."""
     os.makedirs(os.path.dirname(LOCK), exist_ok=True)
     with open(LOCK, 'a+') as f:
         fcntl.flock(f, fcntl.LOCK_EX)

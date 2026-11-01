@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plain English for every card: many children reading Lumi did not grow up speaking English.
+"""Plain English for every card: many children reading Hooty did not grow up speaking English.
 
 A model rewrites a batch of cards in very simple English and the code decides whether to accept each one. Numbers, blanks,
 answers and option order may not change, the text may not get harder, a separate reader must still reach the same answer

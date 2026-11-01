@@ -369,7 +369,7 @@
   .lesson__bar { grid-area: bar; }
   .lesson__side { grid-area: side; position: sticky; top: 92px; display: grid; gap: var(--s3); align-self: start; min-width: 0; }
   .lesson__scene { margin: 0; }
-  /* leaves room under the picture for its caption and Lumi on a short laptop screen */
+  /* leaves room under the picture for its caption and Hooty on a short laptop screen */
   .lesson__scene-img { height: auto; aspect-ratio: 16 / 10; max-height: max(180px, calc(100vh - 360px)); }
   .mascot-strip { margin: var(--s2) 0 0; }
   .lesson__stage { grid-area: stage; }
@@ -739,7 +739,7 @@ body.hl-on .key {
 .credit-list { margin: 0 0 var(--s4); padding-left: 20px; font-size: var(--fs-sm); line-height: 1.6; }
 .lesson__scene-img { background: var(--surface-alt); }
 
-/* ===== Lumi, painted: tall figure on the stage, head-and-shoulders in the strip ===== */
+/* ===== Hooty, painted: tall figure on the stage, head-and-shoulders in the strip ===== */
 .stage__mascot { width: auto; height: 94%; max-width: 70%; aspect-ratio: auto; object-fit: contain; object-position: 50% 100%; filter: none; bottom: 0; }
 .mascot-strip__img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; object-position: 50% 8%; background: var(--surface); }
 .celebrate__art { width: auto; height: 240px; }
@@ -749,7 +749,7 @@ body.hl-on .key {
 .term-hint { display: flex; align-items: center; gap: var(--s2); margin: 0 0 var(--s3); padding: var(--s2) var(--s3); border-radius: var(--radius-md); background: var(--primary-soft); font-size: var(--fs-sm); font-weight: 700; }
 .stage__art { background-position: center; }
 
-/* ===== concept card as a conversation with Lumi ============================ */
+/* ===== concept card as a conversation with Hooty ============================ */
 .lesson:has(.activity--concept) .mascot-strip { display: none; }
 .concept-talk { display: flex; align-items: flex-start; gap: var(--s3); margin: var(--s3) 0 var(--s4); }
 .concept-talk__face { width: 84px; height: 84px; flex: 0 0 84px; border-radius: 50%; object-fit: cover; object-position: 50% 8%; background: var(--surface); box-shadow: 0 0 0 3px var(--primary-soft); transform-origin: 50% 50%; }
@@ -848,7 +848,7 @@ body.hl-on .key {
 @media (min-width: 960px) { .passage__body { font-size: 1.375rem; } .hook__text { font-size: 1.75rem; } .hook__face { width: 112px; height: 112px; flex-basis: 112px; } }
 .lesson:has(.activity--hook, .activity--passage) .mascot-strip { display: none; }
 
-/* every line in Lumi's bubble reads at the same size and weight: paragraphs, key points and the closing tip */
+/* every line in Hooty's bubble reads at the same size and weight: paragraphs, key points and the closing tip */
 .concept-talk__bubble .concept-card__note,
 .concept-talk__bubble .concept-card__points { font-size: 1.125rem; line-height: 1.7; font-weight: inherit; color: inherit; max-width: none; }
 @media (min-width: 960px) {
@@ -886,7 +886,7 @@ body.hl-on .key {
 .lesson.is-finished .lesson__scene,
 .lesson.is-finished .mascot-strip { display: none; }
 
-/* first-run "what should Lumi call you?" card */
+/* first-run "what should Hooty call you?" card */
 .name-card { margin: var(--s4) 0; padding: var(--s4); border-radius: var(--radius-lg, 24px); background: var(--surface); display: grid; gap: var(--s3); }
 .name-card__ask { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-md); }
 
@@ -958,7 +958,7 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .sheet__why { margin: var(--s2) 0 0; font-weight: 700; }
 @media (min-width: 700px) { .worked__problem { font-size: 1.5rem; } .worked__step { font-size: 1.1875rem; } }
 
-/* the first second: Lumi and a gentle bar, not a spinner */
+/* the first second: Hooty and a gentle bar, not a spinner */
 .boot__art { width: min(62vw, 260px); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-xl, 28px); }
 .boot__name { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 2rem; color: var(--text); }
 .boot__note { margin: 0; font-size: var(--fs-sm); color: var(--text-muted); }
@@ -966,7 +966,7 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .boot__bar span { display: block; width: 40%; height: 100%; border-radius: 99px; background: var(--primary, #ffc533); animation: boot-slide 1.1s ease-in-out infinite alternate; }
 @keyframes boot-slide { from { transform: translateX(-20%); } to { transform: translateX(170%); } }
 
-/* a worked example has its own picture: on phones and portrait tablets the topic picture and Lumi's strip would push it off screen */
+/* a worked example has its own picture: on phones and portrait tablets the topic picture and Hooty's strip would push it off screen */
 @media (max-width: 959px), (orientation: portrait) {
   .lesson:has(.activity--worked) .lesson__scene,
   .lesson:has(.activity--worked) .mascot-strip,

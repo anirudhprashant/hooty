@@ -183,7 +183,7 @@ for (; steps < 60; steps++) {
   const submit = page
     .locator('.activity__actions .btn--primary:not([disabled]), .input-row .btn--primary:not([disabled])')
     .first();
-  // A concept card is a conversation: tap Next through Lumi's lines until the button reads "Got it".
+  // A concept card is a conversation: tap Next through Hooty's lines until the button reads "Got it".
   for (let n = 0; n < 12 && state.kind === 'concept'; n++) {
     const b = page.locator('.activity--concept .btn--primary').first();
     if (!(await b.count()) || !/^\s*next\s*$/i.test((await b.textContent().catch(() => '')) || '')) break;

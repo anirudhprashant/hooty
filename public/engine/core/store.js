@@ -111,7 +111,7 @@ export function exportState(state) {
 export function importState(json) {
   const parsed = typeof json === 'string' ? JSON.parse(json) : json;
   if (!parsed || typeof parsed !== 'object' || !parsed.learners) {
-    throw new Error('Not a valid Lumi save file.');
+    throw new Error('Not a valid Hooty save file.');
   }
   return parsed;
 }

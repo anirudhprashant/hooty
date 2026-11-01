@@ -3,7 +3,7 @@ import { WIDGETS, W, H, s, slidersOf } from '../core/explorables.js';
 import { evaluate } from '../core/gen.js';
 import { icon } from '../core/icons.js';
 
-// A simulation to play with: move the sliders, watch what changes, and meet Lumi's challenges one by one. A challenge ticks itself
+// A simulation to play with: move the sliders, watch what changes, and meet Hooty's challenges one by one. A challenge ticks itself
 // when the child gets there, and then says what it means. Nothing is graded and nothing blocks moving on: this is for playing.
 export default {
   type: 'explore',

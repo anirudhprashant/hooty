@@ -4,10 +4,10 @@
 
 let ctx = null;
 let out = null;                 // master gain -> compressor -> speakers
-let speaking = () => false;     // set by the app: true while Lumi's voice is playing
+let speaking = () => false;     // set by the app: true while Hooty's voice is playing
 
 const NOTE = { C5: 523.25, D5: 587.33, E5: 659.25, G5: 783.99, A5: 880, C6: 1046.5, D6: 1174.66, E6: 1318.51, G6: 1567.98, C7: 2093 };
-// Loud enough to hear on a tablet speaker beside Lumi's voice, quiet enough not to startle.
+// Loud enough to hear on a tablet speaker beside Hooty's voice, quiet enough not to startle.
 export const MASTER = 1.6;
 const PENTA = [NOTE.C5, NOTE.D5, NOTE.E5, NOTE.G5, NOTE.A5, NOTE.C6, NOTE.D6];
 
@@ -132,7 +132,7 @@ export const VOICES = {
 export function sfx(name, arg) {
   const voice = VOICES[name];
   if (!voice || !unlockAudio() || ctx.state !== 'running') return;
-  // Small taps would talk over Lumi's voice; the meaningful sounds still play.
+  // Small taps would talk over Hooty's voice; the meaningful sounds still play.
   if (speaking() && ['tap', 'pop', 'next', 'back'].includes(name)) return;
   try { voice(ctx, out, arg); } catch { /* a sound must never break the lesson */ }
 }
