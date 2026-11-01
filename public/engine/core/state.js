@@ -35,6 +35,7 @@ function freshLearner(name = 'Learner') {
     cards: {},              // srs itemId -> card
     rewards: [],            // unlocked reward ids
     secondsLearned: 0,
+    days: {},               // 'YYYY-MM-DD' -> xp earned that day (last 60), for the Grown-ups week strip
     pre: {},                // chapterId -> { n, c } score before the chapter was taught
     post: {},               // chapterId -> { pct, title } first score on the chapter challenge
   };
@@ -55,6 +56,7 @@ function normaliseLearner(raw, id) {
     else if (v === null || typeof v === 'string') out[k] = v === null ? null : v.slice(0, 200);
   }
   out.name = String(l.name ?? 'Learner').slice(0, 24) || 'Learner';
+  out.days = Object.fromEntries(Object.entries(out.days).filter(([k, v]) => /^\d{4}-\d{2}-\d{2}$/.test(k) && Number.isFinite(v) && v >= 0).slice(-60));
   out.fontScale = Math.min(1.5, Math.max(0.85, out.fontScale || 1));
   // fields added after the first release
   if (typeof l.grade === 'string' || typeof l.grade === 'number') out.grade = String(l.grade).slice(0, 4);
@@ -152,6 +154,14 @@ export function addXP(amount) {
   if (!l) return;
   l.xp = Math.max(0, l.xp + amount);
   l.dailyXp = Math.max(0, l.dailyXp + amount);
+  if (amount > 0) {
+    // XP per day, kept for the Grown-ups week strip; older saves simply start the record now.
+    const days = l.days || (l.days = {});
+    const key = todayKey();
+    days[key] = (days[key] || 0) + amount;
+    const keys = Object.keys(days).sort();
+    for (const k of keys.slice(0, Math.max(0, keys.length - 60))) delete days[k];
+  }
 }
 
 export function loseHeart() {

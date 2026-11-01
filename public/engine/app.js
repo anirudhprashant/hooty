@@ -1287,12 +1287,14 @@ function screenParent() {
   const goalPct = Math.min(100, Math.round(((l?.dailyXp || 0) / goal) * 100));
   wrap.append(el('div', { class: 'stat-grid' }, [
     statCard(`${l?.dailyXp || 0}/${goal}`, t('goal'), goalPct),
-    statCard(String(l?.streak || 0), `${t('streak')} (best ${l?.bestStreak || 0})`),
+    statCard(String(l?.streak || 0), t('streak'), undefined, `Best: ${l?.bestStreak || 0}`),
     statCard(`${accuracy}%`, t('accurate')),
     statCard(`${minutes}m`, t('timeLearned')),
     statCard(String(Object.keys(l?.lessonsDone || {}).length), 'Lessons done'),
     statCard(String(totalAttempts), t('attempts')),
   ]));
+
+  wrap.append(weekStrip(l));
 
   // The honest measure: of the questions missed on the first try and tried again, how many does the child now get right?
   const retried = stats.filter((x) => x.first === false && x.seen > 1);
@@ -1369,10 +1371,34 @@ function screenParent() {
   return wrap;
 }
 
-function statCard(value, label, pct) {
+// The last seven days, one bar each; a day that met the goal is filled in the accent colour.
+function weekStrip(l) {
+  const goal = l?.dailyGoal || 50;
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(Date.now() - i * 86400000);
+    const key = todayKey(d);
+    const xp = key === todayKey() ? Math.max(l?.dailyXp || 0, l?.days?.[key] || 0) : (l?.days?.[key] || 0);
+    days.push({ xp, name: d.toLocaleDateString(undefined, { weekday: 'short', timeZone: 'UTC' }).slice(0, 3), today: i === 0 });
+  }
+  const top = Math.max(goal, ...days.map((x) => x.xp));
+  const met = days.filter((x) => x.xp >= goal).length;
+  return el('section', { class: 'growth-card week' }, [
+    el('h3', { class: 'section-title', text: 'Last 7 days' }),
+    el('p', { class: 'week__sum', text: met ? `Daily goal reached on ${met} of the last 7 days.` : 'Reach the daily goal to light up a day.' }),
+    el('div', { class: 'week__bars', role: 'img', 'aria-label': days.map((x) => `${x.name} ${x.xp} points`).join(', ') },
+      days.map((x) => el('div', { class: `week__day${x.xp >= goal ? ' is-met' : ''}${x.today ? ' is-today' : ''}` }, [
+        el('div', { class: 'week__bar' }, [el('span', { style: { height: x.xp ? Math.max(8, Math.round((x.xp / top) * 100)) + '%' : '0%' } })]),
+        el('span', { class: 'week__name', text: x.name }),
+      ]))),
+  ]);
+}
+
+function statCard(value, label, pct, note) {
   return el('div', { class: 'stat-card' }, [
     el('div', { class: 'stat-card__value', text: value }),
     el('div', { class: 'stat-card__label', text: label }),
+    note ? el('div', { class: 'stat-card__note', text: note }) : null,
     pct !== undefined ? el('div', { class: 'meter meter--primary' }, [el('span', { style: { width: pct + '%' } })]) : null,
   ]);
 }
