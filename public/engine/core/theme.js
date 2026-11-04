@@ -87,23 +87,23 @@ export function setGuide(g) { guide = g === 'lumi' ? 'lumi' : 'hooty'; }
 export function currentGuide() { return guide; }
 export function guideName() { return guide === 'lumi' ? 'Lumi' : 'Hooty'; }
 export function guideAvatarSrc(which, mood = 'idle') {
-  return which === 'lumi' ? `./characters/lumi/avatar-${mood}.webp` : `./characters/hooty/owl-avatar-${mood}.webp`;
+  return which === 'lumi' ? `./characters/lumi/avatar-${mood}.webp` : `./characters/hooty/snowy-avatar-${mood}.webp`;
 }
 
 export function mascotImage(mood = 'idle') {
   if (!current) return null;
-  if (guide === 'hooty') return themeAsset(`../../characters/hooty/owl-${mood === 'happy' || mood === 'wrong' ? mood : 'idle'}.webp`);
+  if (guide === 'hooty') return themeAsset(`../../characters/hooty/snowy-${mood === 'happy' || mood === 'wrong' ? mood : 'idle'}.webp`);
   if (!current.mascot) return null;
   const src = current.mascot[mood] || current.mascot.idle;
   return src ? themeAsset(src) : null;
 }
 
 // Round head-and-shoulders version of the same pose (avatar-<mood>.webp beside explorer-<mood>.webp, or
-// owl-avatar-<mood>.webp beside owl-<mood>.webp), padded so a circular frame never clips the hair or the ears.
+// snowy-avatar-<mood>.webp beside snowy-<mood>.webp), padded so a circular frame never clips the hair or the ears.
 export function mascotAvatar(mood = 'idle') {
   const full = mascotImage(mood);
   if (!full) return null;
-  return guide === 'hooty' ? full.replace(/owl-/, 'owl-avatar-') : full.replace(/explorer-/, 'avatar-');
+  return guide === 'hooty' ? full.replace(/snowy-/, 'snowy-avatar-') : full.replace(/explorer-/, 'avatar-');
 }
 
 export function themeCopy(tone, key, fallback = '') {

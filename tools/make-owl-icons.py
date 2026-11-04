@@ -5,7 +5,7 @@ import os, subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ICONS = os.path.join(ROOT, "public", "assets", "icons")
-OWL = os.path.join(ROOT, "public", "characters", "hooty", "owl-idle.webp")
+OWL = os.path.join(ROOT, "public", "characters", "hooty", "snowy-idle.webp")
 
 def run(*a): subprocess.run(["magick", *a], check=True)
 
