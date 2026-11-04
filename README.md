@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/characters/hooty/snowy-happy.webp" alt="Hooty, a friendly owl in a blue cape with a satchel and a scroll, wings raised in a cheer" width="260">
+<img src="public/characters/hooty/snowy2-happy.webp" alt="Hooty, a friendly owl in a blue cape with a satchel and a scroll, wings raised in a cheer" width="260">
 
 # Hooty
 
@@ -114,7 +114,7 @@ To NCERT for the textbooks every lesson is built on, and to the photographers an
 
 <div align="center">
   <br>
-  <img src="public/characters/hooty/snowy-avatar-idle.webp" alt="Hooty's smiling face" width="84">
+  <img src="public/characters/hooty/snowy2-avatar-idle.webp" alt="Hooty's smiling face" width="84">
   <br>
   <sub>Made with love, for every child who ever asked "but why?"</sub>
 </div>
