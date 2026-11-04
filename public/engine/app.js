@@ -8,7 +8,7 @@ import { renderModel } from './core/models.js';
 import { state, boot, activeLearner, persist, addXP,
   heartsRegenerated, touchStreak, recordActivity, recordLesson, weakSpots,
   unlockReward, todayKey, exportSave, importSave } from './core/state.js';
-import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, themeCopy } from './core/theme.js';
+import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, themeCopy, setGuide, guideAvatarSrc } from './core/theme.js';
 import { t, setLocale, getLocale, availableLocales } from './core/i18n.js';
 import { getActivityModule } from './activities/index.js';
 import { icon } from './core/icons.js';
@@ -48,6 +48,7 @@ function applyLearnerPrefs() {
   document.body.classList.toggle('dyslexia-font', !!l.dyslexiaFont);
   document.body.classList.toggle('hl-on', l.highlight !== false);
   setLocale(l.lang || 'en');
+  setGuide(l.guide);
 }
 
 async function setTheme(id) {
@@ -1458,12 +1459,24 @@ function screenSettings() {
     render();
   });
 
+  const guidePicker = el('div', { class: 'guide-picker', role: 'radiogroup', 'aria-label': 'Your guide' },
+    [['hooty', 'Hooty'], ['lumi', 'Lumi']].map(([id, label]) => {
+      const on = (l?.guide || 'hooty') === id;
+      const b = el('button', { class: `guide-pick${on ? ' is-on' : ''}`, type: 'button', role: 'radio', 'aria-checked': String(on), 'aria-label': label }, [
+        el('img', { src: guideAvatarSrc(id), alt: '', width: '64', height: '64' }),
+        el('span', { text: label }),
+      ]);
+      b.addEventListener('click', async () => { l.guide = id; setGuide(id); await persist(); sound('tap'); render(); });
+      return b;
+    }));
+
   wrap.append(el('div', { class: 'settings' }, [
     row('Your name', null, nameField),
     row(t('sound'), 'Taps, chimes and a fanfare when you finish', soundSwitch),
     row(t('textSize'), 'Make everything bigger or smaller', range),
     row('Highlight key words', 'Important words get a marker-pen colour', hlSwitch),
     row(t('dyslexiaFont'), 'Wider, clearer letters', dysSwitch),
+    row('Your guide', 'Who walks beside you through every lesson', guidePicker),
     row(t('language'), null, langSel),
   ]));
 

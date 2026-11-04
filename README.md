@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/characters/lumi/explorer-happy.webp" alt="Hooty, a cheerful young explorer in a blue coat, holding a scroll and punching the air" width="210">
+<img src="public/characters/hooty/owl-happy.webp" alt="Hooty, a friendly owl in a blue cape with a satchel and a scroll, wings raised in a cheer" width="260">
 
 # Hooty
 
@@ -18,9 +18,9 @@ No sign-up. No ads. Nothing a child does ever leaves their device.
 
 <img src="docs/readme/home.webp" alt="Hooty's home screen: a big Start button beside Hooty standing in front of a castle">
 
-## 🌟 Meet Hooty
+## 🌟 Meet your guide
 
-Hooty walks beside the child through every lesson. She asks a question that makes them curious, explains the idea in simple words, cheers when they get it, and shows them why when they don't.
+Hooty, the owl in the blue cape, walks beside the child through every lesson. Lumi, the young explorer, is there too, and each child can pick whichever guide they like in Settings. Either one asks a question that makes you curious, explains the idea in simple words, cheers when you get it, and shows you why when you don't.
 
 The aim is simple: a child should understand the idea, not just remember the sentence. And they should still be ready for their school exams.
 
@@ -114,7 +114,7 @@ To NCERT for the textbooks every lesson is built on, and to the photographers an
 
 <div align="center">
   <br>
-  <img src="public/characters/lumi/avatar-idle.webp" alt="Hooty's smiling face" width="84">
+  <img src="public/characters/hooty/owl-avatar-idle.webp" alt="Hooty's smiling face" width="84">
   <br>
   <sub>Made with love, for every child who ever asked "but why?"</sub>
 </div>

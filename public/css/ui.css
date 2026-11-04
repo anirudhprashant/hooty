@@ -1113,3 +1113,10 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .addbook .finished__bar span { width: 0; transition: width 0.2s; }
 .addbook .finished__bar[hidden] { display: none; }
 .grade-tab--add { border-style: dashed; background: transparent; box-shadow: none; }
+
+/* ===== choose your guide ====================================================== */
+.guide-picker { display: flex; gap: var(--s3); }
+.guide-pick { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: var(--s2) var(--s3); min-width: 88px; border-radius: var(--radius-lg); border: 3px solid transparent; background: var(--surface-alt, var(--surface)); color: var(--text); font: inherit; font-weight: 700; cursor: pointer; }
+.guide-pick img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; background: var(--bg); }
+.guide-pick.is-on { border-color: var(--primary); background: var(--primary-soft, var(--surface)); }
+.guide-pick:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
