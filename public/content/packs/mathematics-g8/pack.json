@@ -40330,7 +40330,7 @@
       {
        "id": "mathematics-g8-ch8-l1",
        "title": "Lesson 1: Fractions Become Percentages",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -40445,20 +40445,44 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g8-ch8-l1-a2",
+         "type": "worked",
+         "id": "mathematics-g8-ch8-l1-t1",
          "difficulty": 1,
          "tags": [
-          "percentages",
-          "hundred"
+          "deep",
+          "think"
          ],
-         "prompt": "The percentage 25% means 25 out of every 100.",
-         "answer": true,
-         "explanation": "Yes, this shows what 25% means.",
+         "kicker": "Let us think it through",
+         "prompt": "A bag contains 100 equal counters, and 25 are yellow. What percentage of the counters are yellow?",
+         "steps": [
+          "The bag has 100 equal counters, so the whole is 100 parts.",
+          "The yellow group has 25 counters out of those 100 parts.",
+          "The symbol % is read as per cent, meaning by the hundred.",
+          "Therefore, the yellow counters are 25 out of every 100, or 25%."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.3",
+          "1.4",
+          "1.9"
+         ],
          "src": [
           {
            "ch": 8,
            "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 18
           }
          ]
         },
@@ -40476,6 +40500,24 @@
          ],
          "hint": "Use the number before the percentage symbol.",
          "explanation": "The number before % tells you the part out of 100.",
+         "src": [
+          {
+           "ch": 8,
+           "p": 1
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g8-ch8-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "percentages",
+          "hundred"
+         ],
+         "prompt": "The percentage 25% means 25 out of every 100.",
+         "answer": true,
+         "explanation": "Yes, this shows what 25% means.",
          "src": [
           {
            "ch": 8,
@@ -40824,6 +40866,236 @@
            "p": 1
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "connect fraction"
+         ],
+         "prompt": "A box has 100 equal beads. Exactly 25 beads are yellow. Which fraction shows the yellow part?",
+         "options": [
+          "25 out of 100, because a percentage has denominator 100.",
+          "1 out of 100, because a percentage has denominator 100.",
+          "25 out of 25, because a percentage has denominator 100.",
+          "100 out of 25, because a percentage has denominator 100."
+         ],
+         "answer": 0,
+         "why": {
+          "1 out of 100, because a percentage has denominator 100.": "This wrongly changes the yellow group from 25 beads to one.",
+          "25 out of 25, because a percentage has denominator 100.": "This wrongly makes the whole equal to the yellow group.",
+          "100 out of 25, because a percentage has denominator 100.": "This wrongly swaps the yellow group with the whole."
+         },
+         "explanation": "This is right because 25 yellow beads are out of 100 beads.",
+         "f": [
+          "1.4",
+          "1.5",
+          "1.6",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 18
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply percentage"
+         ],
+         "prompt": "A book has 100 pages. Exactly 25 pages are marked. What percentage of the pages are marked?",
+         "options": [
+          "25%, because 25 pages are out of 100 pages.",
+          "1%, because one page is out of 100 pages.",
+          "25%, because all 100 pages are marked.",
+          "100%, because the book has 100 pages."
+         ],
+         "answer": 0,
+         "why": {
+          "1%, because one page is out of 100 pages.": "This wrongly uses only one marked page.",
+          "25%, because all 100 pages are marked.": "This wrongly says every page in the book is marked.",
+          "100%, because the book has 100 pages.": "This wrongly uses the whole book as the marked part."
+         },
+         "explanation": "This is right because 25 marked pages are out of 100 pages.",
+         "f": [
+          "1.1",
+          "1.3",
+          "1.4",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 18
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find error"
+         ],
+         "prompt": "“Per centum” comes from Latin. A child says it means 25 out of every 1. What is wrong?",
+         "options": [
+          "Per centum means by the hundred, so use 25 out of 100.",
+          "Per centum means by the one, so use 25 out of 1.",
+          "Per centum means by the 25, so use 25 out of 25.",
+          "Per centum means by the 100, so use 100 out of 25."
+         ],
+         "answer": 0,
+         "why": {
+          "Per centum means by the one, so use 25 out of 1.": "This wrongly changes the Latin meaning to by the one.",
+          "Per centum means by the 25, so use 25 out of 25.": "This wrongly changes the Latin meaning to by the 25.",
+          "Per centum means by the 100, so use 100 out of 25.": "This wrongly changes the meaning and swaps the numbers."
+         },
+         "explanation": "This is right because per centum means by the hundred.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "convert fraction"
+         ],
+         "prompt": "A fraction shows 25 red parts out of every 100 equal parts. How can that fraction be written as a percentage?",
+         "options": [
+          "25%, because the fraction has denominator 100.",
+          "1%, because the fraction has denominator 100.",
+          "25%, because every part of the fraction is red.",
+          "100%, because the fraction has denominator 100."
+         ],
+         "answer": 0,
+         "why": {
+          "1%, because the fraction has denominator 100.": "This wrongly changes the red group from 25 parts to one.",
+          "25%, because every part of the fraction is red.": "This wrongly says every part of the fraction is red.",
+          "100%, because the fraction has denominator 100.": "This wrongly uses the whole as the red part."
+         },
+         "explanation": "This is right because 25 out of 100 is written as 25%.",
+         "f": [
+          "1.4",
+          "1.5",
+          "1.6",
+          "1.7",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 18
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l1-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare forms"
+         ],
+         "prompt": "A sign says 25%. A fraction shows 25 out of 100. Do they show the same amount?",
+         "options": [
+          "Yes, because both mean 25 out of 100.",
+          "No, because a fraction always shows one whole unit.",
+          "No, because a percentage always shows one whole unit.",
+          "Yes, because they share the same numerator only."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because a fraction always shows one whole unit.": "This wrongly treats the fraction as one whole unit.",
+          "No, because a percentage always shows one whole unit.": "This wrongly treats the percentage as one whole unit.",
+          "Yes, because they share the same numerator only.": "This ignores the shared denominator of 100."
+         },
+         "explanation": "This is right because a percentage with denominator 100 means 25 out of 100.",
+         "f": [
+          "1.4",
+          "1.8",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 1
+          },
+          {
+           "ch": 8,
+           "p": 3
+          },
+          {
+           "ch": 8,
+           "p": 18
+          }
+         ]
         }
        ],
        "topicScene": "media/ch8-l1-prozente-angebot-107cdc.webp",
@@ -40840,7 +41112,7 @@
       {
        "id": "mathematics-g8-ch8-l2",
        "title": "Lesson 2: Why We Use Percentages",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -40950,6 +41222,53 @@
          "derived": [
           "100 (generated problem)",
           "5 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g8-ch8-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why is 100 a useful denominator when comparing two proportions?",
+         "steps": [
+          "Our number system is base 10.",
+          "This helps numbers such as 10, 100, and 1000 fit easily with decimals.",
+          "A denominator of 10 would be too small for many purposes.",
+          "So 100 gives enough detail and makes comparing two proportions easy."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.5",
+          "2.6"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          }
          ]
         },
         {
@@ -41577,6 +41896,211 @@
            "p": 4
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "interpret"
+         ],
+         "prompt": "The human body is about 60% water by weight. An estimated 52% of agricultural land worldwide is degraded. Which figure needs more caution?",
+         "options": [
+          "About 60%, because “about” shows the amount is approximate.",
+          "About 60%, because every human body has exactly that amount.",
+          "52%, because “estimated” shows the amount may change.",
+          "52%, because the amount of degraded land is always exact."
+         ],
+         "answer": 2,
+         "why": {
+          "About 60%, because “about” shows the amount is approximate.": "This notices approximation, but the estimated figure needs more caution.",
+          "About 60%, because every human body has exactly that amount.": "This wrongly treats every body as exactly 60% water.",
+          "52%, because the amount of degraded land is always exact.": "This wrongly claims that the estimated land figure is exact."
+         },
+         "explanation": "“Estimated” clearly shows that the figure may change.",
+         "f": [
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 5
+          },
+          {
+           "ch": 8,
+           "p": 5
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Two proportions need to be compared at once. A friend says tenths will always work. Which response is best?",
+         "options": [
+          "Tenths may be too small; 100 gives detail and stays easy.",
+          "Tenths may be too small; 100 hides too many important differences.",
+          "Tenths always work because base ten makes every need simple.",
+          "Hundreds always work, but tenths are impossible for anyone to understand."
+         ],
+         "answer": 0,
+         "why": {
+          "Tenths may be too small; 100 hides too many important differences.": "This wrongly says that 100 hides differences percentages should reveal.",
+          "Tenths always work because base ten makes every need simple.": "Base ten does not remove the need for enough detail.",
+          "Hundreds always work, but tenths are impossible for anyone to understand.": "Tenths are possible, and percentages are made for easy comparison."
+         },
+         "explanation": "Tenths can be too small, while 100 gives detail and stays easy.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.5",
+          "2.6"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "infer"
+         ],
+         "prompt": "You see an Italian manuscript with an expression for a percentage. What does this show about percentage ideas?",
+         "options": [
+          "Percentage ideas appeared in different writings, not only one form.",
+          "Percentage ideas appeared only where Italian manuscripts were used.",
+          "Percentage ideas appeared only after decimals became common.",
+          "Percentage ideas appeared because manuscripts replaced all older methods."
+         ],
+         "answer": 0,
+         "why": {
+          "Percentage ideas appeared only where Italian manuscripts were used.": "“Also used” does not mean percentage ideas appeared only there.",
+          "Percentage ideas appeared only after decimals became common.": "The facts do not connect the first appearance of decimals to percentages.",
+          "Percentage ideas appeared because manuscripts replaced all older methods.": "The facts do not say manuscripts replaced older percentage methods."
+         },
+         "explanation": "The manuscript is another sign that percentage ideas had different forms.",
+         "f": [
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 5
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "connect"
+         ],
+         "prompt": "Our number system is base 10. Numbers such as 10, 100, and 1000 fit easily with decimals. Why does this suit percentages?",
+         "options": [
+          "Per hundred uses 100, which fits easily with decimals.",
+          "Per hundred uses 10, so decimals become less useful.",
+          "Per hundred avoids 100, so decimals become less useful.",
+          "Per hundred uses 1000, which always fits more easily."
+         ],
+         "answer": 0,
+         "why": {
+          "Per hundred uses 10, so decimals become less useful.": "Per hundred uses 100, not 10, so this is wrong.",
+          "Per hundred avoids 100, so decimals become less useful.": "Per hundred does not avoid 100, so the reason is wrong.",
+          "Per hundred uses 1000, which always fits more easily.": "Per hundred uses 100, not 1000, for its denominator."
+         },
+         "explanation": "Per hundred uses 100, and 100 fits easily with decimals.",
+         "f": [
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l2-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "The human body is about 60% water by weight. An estimated 52% of agricultural land worldwide is degraded. What should a report do to compare them clearly?",
+         "options": [
+          "Show both percentages together, since they use the same scale.",
+          "Show only the body figure, since the land figure is less exact.",
+          "Show only the land figure, since body water changes every day.",
+          "Change both into tenths, since smaller denominators are always clearer."
+         ],
+         "answer": 0,
+         "why": {
+          "Show only the body figure, since the land figure is less exact.": "One estimate needs care, but the comparison should still show both.",
+          "Show only the land figure, since body water changes every day.": "The facts do not say body water changes every day.",
+          "Change both into tenths, since smaller denominators are always clearer.": "Tenths can be too small, and 100 gives enough detail."
+         },
+         "explanation": "Putting both percentages together makes the proportions easy to compare.",
+         "f": [
+          "2.1",
+          "2.5",
+          "2.6",
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 4
+          },
+          {
+           "ch": 8,
+           "p": 5
+          },
+          {
+           "ch": 8,
+           "p": 5
+          }
+         ]
         }
        ],
        "topicScene": "media/ch8-l2-percent-sign-e1629a.webp",
@@ -41593,7 +42117,7 @@
       {
        "id": "mathematics-g8-ch8-l3",
        "title": "Lesson 3: Finding a Percentage of a Quantity",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -41704,6 +42228,47 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g8-ch8-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Madhu eats 120 g of biscuits with 25% sugar. Madhav eats 95 g of biscuits with 33.25 g sugar. Who ate more sugar?",
+         "steps": [
+          "Madhu's 25% of 120 g biscuits gives 30 g sugar.",
+          "Madhav's 95 g biscuits contain 33.25 g sugar.",
+          "Since 33.25 g is greater than 30 g, Madhav ate more sugar."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          }
+         ]
+        },
+        {
          "type": "concept",
          "id": "mathematics-g8-ch8-l3-a5",
          "difficulty": 2,
@@ -41759,6 +42324,33 @@
          "hint": "Think of the biscuit quantity in the lesson.",
          "explanation": "Madhu ate 120 g of biscuits containing 25% sugar.",
          "src": [
+          {
+           "ch": 8,
+           "p": 6
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g8-ch8-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "madhav",
+          "madhu",
+          "sugar"
+         ],
+         "prompt": "Madhav ate more sugar than Madhu.",
+         "answer": true,
+         "explanation": "Madhav ate 33.25 g of sugar, while Madhu ate 30 g.",
+         "src": [
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          },
           {
            "ch": 8,
            "p": 6
@@ -42346,17 +42938,33 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g8-ch8-l3-a9",
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l3-d1",
          "difficulty": 3,
          "tags": [
-          "equal",
-          "biscuits",
-          "sugar"
+          "deep",
+          "compare"
          ],
-         "prompt": "If both people had 100 g of biscuits, Madhav would have eaten less sugar.",
-         "answer": false,
-         "explanation": "With equal 100 g amounts, Madhav would have eaten more sugar than Madhu.",
+         "prompt": "Two children each eat 100 g of biscuits. One eats 33.25 g sugar; the other eats 30 g. What is the correct comparison?",
+         "options": [
+          "More sugar, because 33.25 g is above 30 g.",
+          "Less sugar, because 30 g is above 33.25 g.",
+          "Equal sugar, because both biscuits weigh 100 g.",
+          "Unknown sugar, because both biscuits weigh 100 g."
+         ],
+         "answer": 0,
+         "why": {
+          "Less sugar, because 30 g is above 33.25 g.": "It reverses the comparison between 33.25 g and 30 g.",
+          "Equal sugar, because both biscuits weigh 100 g.": "It wrongly treats equal biscuit weights as equal sugar amounts.",
+          "Unknown sugar, because both biscuits weigh 100 g.": "It wrongly thinks equal biscuit weights leave sugar amounts unknown."
+         },
+         "explanation": "It compares the sugar amounts directly, and 33.25 g is larger.",
+         "f": [
+          "3.2",
+          "3.4",
+          "3.5",
+          "3.6"
+         ],
          "src": [
           {
            "ch": 8,
@@ -42365,6 +42973,145 @@
           {
            "ch": 8,
            "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "calculate"
+         ],
+         "prompt": "A packet of biscuits weighs 120 g. It contains 25% sugar. How much sugar is in the packet?",
+         "options": [
+          "25 g of sugar",
+          "30 g of sugar",
+          "120 g of sugar",
+          "95 g of sugar"
+         ],
+         "answer": 1,
+         "why": {
+          "25 g of sugar": "It mistakes the percentage number for the sugar amount.",
+          "120 g of sugar": "It mistakes the whole packet weight for the sugar amount.",
+          "95 g of sugar": "It uses another biscuit weight with no link to this packet."
+         },
+         "explanation": "Twenty-five per cent of 120 g gives 30 g sugar.",
+         "f": [
+          "3.3",
+          "3.4"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Madhu's 120 g biscuits contain 25% sugar, giving 30 g. Madhav's 95 g biscuits contain 33.25 g sugar. Why is \"Madhu ate more sugar\" wrong?",
+         "options": [
+          "Madhav's 33.25 g sugar is greater than 30 g.",
+          "Madhu's 30 g sugar is greater than 33.25 g.",
+          "Equal biscuit weights prove equal sugar amounts.",
+          "Bigger biscuit weights prove more sugar amounts."
+         ],
+         "answer": 0,
+         "why": {
+          "Madhu's 30 g sugar is greater than 33.25 g.": "It reverses the comparison between the two sugar amounts.",
+          "Equal biscuit weights prove equal sugar amounts.": "It confuses total biscuit weight with sugar amount.",
+          "Bigger biscuit weights prove more sugar amounts.": "It assumes more biscuits always mean more sugar."
+         },
+         "explanation": "It correctly compares 33.25 g with Madhu's 30 g.",
+         "f": [
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "One 120 g snack has 25% sugar and 30 g sugar. Another has 10% sugar and more sugar. What must be compared to find which has more sugar?",
+         "options": [
+          "The actual sugar amount in each snack.",
+          "The two sugar percentages alone.",
+          "The total snack weights alone.",
+          "The first snack's 30 g sugar."
+         ],
+         "answer": 0,
+         "why": {
+          "The two sugar percentages alone.": "It treats percentage labels as actual sugar amounts.",
+          "The total snack weights alone.": "It thinks total weights alone show the sugar amounts.",
+          "The first snack's 30 g sugar.": "It uses one known amount without comparing the unknown amount."
+         },
+         "explanation": "Percentages alone cannot compare sugar in different wholes.",
+         "f": [
+          "3.1",
+          "3.3",
+          "3.4",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 6
+          },
+          {
+           "ch": 8,
+           "p": 7
           }
          ]
         }
@@ -42383,7 +43130,7 @@
       {
        "id": "mathematics-g8-ch8-l4",
        "title": "Lesson 4: Comparing Scores and Measuring Change",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "concept",
@@ -42507,6 +43254,42 @@
          ],
          "prompt": "How can we compare scores fairly and measure what changed?",
          "explanation": "Now read on to find out."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g8-ch8-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Eesha scored 84% in English and 87.5% in Science. Which subject did she score higher in?",
+         "steps": [
+          "Both scores are percentages, so they use the same measuring scale.",
+          "The English score is 84%, while the Science score is 87.5%.",
+          "Because 87.5% is greater than 84%, Science has the higher score."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -43152,6 +43935,201 @@
           {
            "ch": 8,
            "p": 14
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare scores"
+         ],
+         "prompt": "A report card shows 84% in English and 87.5% in Science. Which subject has the higher score?",
+         "options": [
+          "English, because 84% is greater than 87.5%.",
+          "Science, because Science is usually the easier subject.",
+          "Science, because 87.5% is greater than 84%.",
+          "English, because English comes before Science."
+         ],
+         "answer": 2,
+         "why": {
+          "English, because 84% is greater than 87.5%.": "This reverses the order of the two percentages.",
+          "Science, because Science is usually the easier subject.": "Difficulty is not given by these score facts.",
+          "English, because English comes before Science.": "Subject order does not measure the size of a score."
+         },
+         "explanation": "87.5% is greater than 84%, so Science is higher.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare percentages"
+         ],
+         "prompt": "Two children took tests with different maximum marks. What should the teacher do before comparing their scores?",
+         "options": [
+          "Convert both scores into percentages, because the maximum marks differ.",
+          "Add both scores together, because a bigger total is always better.",
+          "Compare only the maximum marks, because they show the children's results.",
+          "Choose the test with more questions, because it gives a fairer result."
+         ],
+         "answer": 0,
+         "why": {
+          "Add both scores together, because a bigger total is always better.": "Adding scores wrongly treats different totals as comparable.",
+          "Compare only the maximum marks, because they show the children's results.": "Maximum marks are the scale, not the score earned.",
+          "Choose the test with more questions, because it gives a fairer result.": "Question count does not show how well either child scored."
+         },
+         "explanation": "Percentages make scores comparable when maximum marks differ.",
+         "f": [
+          "4.1",
+          "4.2"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "percentage shares"
+         ],
+         "prompt": "A label shows 84% for one ingredient and 12% for another. How should the other shares be found?",
+         "options": [
+          "Add 84% and 12% together.",
+          "Subtract 12% from 84%.",
+          "Subtract 84% and 12% from 100%.",
+          "Add 84% and 12% to 100%."
+         ],
+         "answer": 2,
+         "why": {
+          "Add 84% and 12% together.": "Adding the two shares finds their total, not what remains.",
+          "Subtract 12% from 84%.": "Subtracting one share from another does not find the remainder.",
+          "Add 84% and 12% to 100%.": "Adding both shares to 100% creates a total above the whole."
+         },
+         "explanation": "Subtracting both shares from 100% finds the remaining share.",
+         "f": [
+          "4.3",
+          "4.5",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 15
+          },
+          {
+           "ch": 8,
+           "p": 15
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "relative decrease"
+         ],
+         "prompt": "The theatre's footfall fell by 60 and 37.5%. How are these two facts connected?",
+         "options": [
+          "They describe two separate falls happening at different times.",
+          "They describe a rise in people and a rise in a percentage.",
+          "They describe one fall, first in people and then as a percentage.",
+          "They describe a percentage fall and a rise in people."
+         ],
+         "answer": 2,
+         "why": {
+          "They describe two separate falls happening at different times.": "The facts are two measures of one decrease, not separate events.",
+          "They describe a rise in people and a rise in a percentage.": "Both facts report a decrease, not an increase.",
+          "They describe a percentage fall and a rise in people.": "The footfall count fell, so it did not rise."
+         },
+         "explanation": "Both numbers describe the same fall in the theatre's footfall.",
+         "f": [
+          "4.7",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 16
+          },
+          {
+           "ch": 8,
+           "p": 16
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "percentage increase"
+         ],
+         "prompt": "The 1991 population was 165% of the 1961 population. What does this mean?",
+         "options": [
+          "The 1961 population was 65% higher than the 1991 population.",
+          "The 1991 population was 65% higher than the 1961 population.",
+          "The 1991 population was 165% lower than the 1961 population.",
+          "The 1991 and 1961 populations were exactly the same."
+         ],
+         "answer": 1,
+         "why": {
+          "The 1961 population was 65% higher than the 1991 population.": "This reverses which year had the larger population.",
+          "The 1991 population was 165% lower than the 1961 population.": "165% of a population is larger, not 165% lower.",
+          "The 1991 and 1961 populations were exactly the same.": "The same population would be 100%, not 165%."
+         },
+         "explanation": "Being 165% means having 65% more than the original.",
+         "f": [
+          "4.9",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 16
+          },
+          {
+           "ch": 8,
+           "p": 16
           }
          ]
         }
@@ -44772,6 +45750,263 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "creator": "Pselvaganapathy"
        }
+      },
+      {
+       "id": "mathematics-g8-ch8-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 12,
+       "topicScene": "media/ch8-l1-prozente-angebot-107cdc.webp",
+       "sceneAlt": "Percentage symbols are shown alongside seasonal discounts.",
+       "sceneCaption": "Seasonal discounts with percentage symbols clearly illustrate the meaning of per cent.",
+       "sceneCredit": {
+        "text": "Prozente Angebot by Erkaha, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Prozente_Angebot.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Erkaha"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student is sorting 100 badges and finds that 25 have a star. The student writes “25%” on the box because % is read as per cent. The teacher points out that the label means 25 for each 100 badges. The student also notices that a fraction can show a part of one unit and asks whether a percentage can be treated as a fraction.",
+         "prompt": "Why is 25% a suitable label for this box?",
+         "options": [
+          "It puts the marked badges in a by-the-hundred form.",
+          "It puts all the badges in a by-the-hundred form.",
+          "It puts the unmarked badges in a by-the-hundred form.",
+          "It puts one unit of the box in a by-the-hundred form."
+         ],
+         "answer": 0,
+         "why": {
+          "It puts all the badges in a by-the-hundred form.": "This would include the unmarked badges too.",
+          "It puts the unmarked badges in a by-the-hundred form.": "This describes only the unmarked badges.",
+          "It puts one unit of the box in a by-the-hundred form.": "This describes the whole box rather than the marked part."
+         },
+         "explanation": "This correctly uses 25 out of every 100."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student is sorting 100 badges and finds that 25 have a star. The student writes “25%” on the box because % is read as per cent. The teacher points out that the label means 25 for each 100 badges. The student also notices that a fraction can show a part of one unit and asks whether a percentage can be treated as a fraction.",
+         "prompt": "If another student says percentages are not fractions, which correction should the teacher give?",
+         "options": [
+          "Percentages are simply another kind of fraction.",
+          "Percentages are a different kind because their denominator is 1.",
+          "Percentages are a different kind because their numerator is 100.",
+          "Percentages are a different kind because they use the symbol %."
+         ],
+         "answer": 0,
+         "why": {
+          "Percentages are a different kind because their denominator is 1.": "Percentages have a denominator of 100, not 1.",
+          "Percentages are a different kind because their numerator is 100.": "The numerator can be 25, as in 25%.",
+          "Percentages are a different kind because they use the symbol %.": "The symbol is only how the percentage is shown."
+         },
+         "explanation": "This states the correct relationship between percentages and fractions."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l1-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): The percentage 25% means 25 out of every 100.\nReason (R): A percentage is a fraction whose denominator is 100.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The denominator of 100 explains why 25% is interpreted as 25 out of every 100."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l1-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Percentages are shown as fractions without a denominator.\nReason (R): Any fraction can be written as a percentage.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The reason is true, but percentages are shown as fractions with a denominator."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g8-ch8-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how a percentage is related to a fraction, using 25% as an example.",
+         "answer": "A fraction shows a part of one unit. A percentage is a fraction whose denominator is 100, so it shows a part per 100. For example, 25% means 25 out of every 100. Percentages are shown as fractions with a denominator, and they are simply another kind of fraction. Any fraction can be written as a percentage, while a percentage can be written as a fraction with denominator 100.",
+         "points": [
+          "Explains that a fraction shows a part of one unit.",
+          "Explains that a percentage has denominator 100.",
+          "Uses 25% as 25 out of every 100.",
+          "Explains that percentages are another kind of fraction."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school display, a student is comparing two facts: the human body is about 60% water by weight, and an estimated 52% of agricultural land worldwide is degraded. The student wants both proportions to be quick to understand and easy to compare. A class lesson suggests using a shared scale of 100 because it is round, gives enough detail, and suits our base-10 number system.",
+         "prompt": "How should the student present the two proportions so that they are easiest to compare at once?",
+         "options": [
+          "Put both on the same per-hundred scale.",
+          "Use a denominator of 10 for both.",
+          "Give each proportion a different denominator.",
+          "Write one as a decimal and leave the other as a percentage."
+         ],
+         "answer": 0,
+         "why": {
+          "Use a denominator of 10 for both.": "A denominator of 10 is too small for many purposes and could lose useful detail.",
+          "Give each proportion a different denominator.": "Different denominators would make direct comparison harder.",
+          "Write one as a decimal and leave the other as a percentage.": "A decimal beside a percentage would not place both proportions on one percentage scale."
+         },
+         "explanation": "This creates one common scale, allowing the proportions to be compared at once."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school display, a student is comparing two facts: the human body is about 60% water by weight, and an estimated 52% of agricultural land worldwide is degraded. The student wants both proportions to be quick to understand and easy to compare. A class lesson suggests using a shared scale of 100 because it is round, gives enough detail, and suits our base-10 number system.",
+         "prompt": "Why is a scale of 100 a practical choice for the student’s display?",
+         "options": [
+          "It is a round, mentally clear scale that still provides enough detail.",
+          "It is the only denominator that can be used in our base-10 number system.",
+          "It allows the student to avoid expressing the proportions per hundred.",
+          "It must be easier than every other scale because 10 and 1000 fit with decimals."
+         ],
+         "answer": 0,
+         "why": {
+          "It is the only denominator that can be used in our base-10 number system.": "Our number system is base 10, but this does not make 100 the only usable denominator.",
+          "It allows the student to avoid expressing the proportions per hundred.": "Percentages use 100 as their denominator, so avoiding it would not explain the choice.",
+          "It must be easier than every other scale because 10 and 1000 fit with decimals.": "The fact about 10 and 1000 fitting decimals does not prove that every other scale is harder."
+         },
+         "explanation": "The number 100 is round, easy to understand, and still gives enough detail."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l2-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Using 100 gives enough detail while remaining easy to grasp mentally.\nReason (R): A denominator of 10 would be large enough for every purpose.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 2,
+         "explanation": "The statement about 100 is true, but the statement about 10 is false because 10 would be too small for many purposes."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g8-ch8-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why percentages can help the student compare the body’s water content with the degraded agricultural land.",
+         "answer": "Percentages are useful here because they place different proportions on one common scale. The body’s 60% water by weight and the 52% of agricultural land that is degraded can both be read as parts out of 100. This makes the proportions quick to compare without giving each situation a separate scale. Using 100 also helps because it is round and easy to understand, while still providing enough detail to grasp mentally. It also suits our base-10 number system, in which numbers such as 10, 100, and 1000 fit easily with decimals.",
+         "points": [
+          "Both proportions are expressed on the same per-hundred scale.",
+          "The percentages can be compared directly at once.",
+          "100 is round, easy to understand, and gives enough detail.",
+          "The scale fits the base-10 number system and works easily with decimals."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l3-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Madhav ate more sugar than Madhu.\nReason (R): Madhav’s 95 g of biscuits contained 33.25 g of sugar, while Madhu’s 120 g contained 30 g of sugar.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The stated sugar amounts show that 33.25 g is greater than 30 g."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l3-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Percentages alone can be compared when they refer to different quantities or wholes.\nReason (R): Madhu’s biscuits weighed 120 g, while Madhav’s weighed 95 g.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The quantities were different, and percentages alone cannot be compared in that situation."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g8-ch8-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why Madhav ate more sugar than Madhu, even though the two biscuit amounts were different.",
+         "answer": "Madhav ate more sugar because the actual amount of sugar in each person’s biscuits must be compared, rather than percentages alone when they refer to different quantities or wholes. Madhu’s 120 g of biscuits contained 30 g of sugar, while Madhav’s 95 g of biscuits contained 33.25 g of sugar. Since 33.25 g is greater than 30 g, Madhav ate more sugar. The different biscuit amounts also show why a rough diagram or a direct comparison of the sugar amounts is helpful.",
+         "points": [
+          "Compares actual sugar amounts.",
+          "Uses 30 g and 33.25 g correctly.",
+          "Explains why percentages alone are insufficient.",
+          "Mentions the value of rough diagrams."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -45046,7 +46281,7 @@
       {
        "id": "mathematics-g8-ch9-l1",
        "title": "Doubling and Halving a Square",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -45165,6 +46400,43 @@
          "derived": [
           "16 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g8-ch9-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A square sheet must become a square pattern with twice the area. How can this be done?",
+         "steps": [
+          "First, avoid doubling every side, because it makes four times the area.",
+          "Build on the original diagonal, because it has twice the area.",
+          "Repeat it, because each new square has twice the previous area.",
+          "Thus, the areas double at every step of the sequence."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.2",
+          "1.3",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 33
+          },
+          {
+           "ch": 9,
+           "p": 33
+          },
+          {
+           "ch": 9,
+           "p": 35
+          }
          ]
         },
         {
@@ -46097,6 +47369,75 @@
            "p": 36
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A square tile has a diagonal drawn across it. A new square is built on that diagonal. How does its area compare?",
+         "options": [
+          "The new square has twice the old area.",
+          "The new square has four times the old area.",
+          "The new square has half the old area.",
+          "The new square keeps the old area."
+         ],
+         "answer": 0,
+         "why": {
+          "The new square has four times the old area.": "This mistake comes from doubling every side.",
+          "The new square has half the old area.": "This mistake reverses the doubling construction.",
+          "The new square keeps the old area.": "This mistake assumes the diagonal changes the area."
+         },
+         "explanation": "Right: a square built on the original diagonal has double the area.",
+         "f": [
+          "1.3"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 33
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A larger square card contains a tilted smaller square from the reversed construction. How does the smaller square’s area compare?",
+         "options": [
+          "Half the larger square’s area.",
+          "Twice the larger square’s area.",
+          "The same as the larger square’s area.",
+          "Four times the larger square’s area."
+         ],
+         "answer": 0,
+         "why": {
+          "Twice the larger square’s area.": "This reverses the area relationship in the wrong direction.",
+          "The same as the larger square’s area.": "This mistakes the tilted shape for an equal area.",
+          "Four times the larger square’s area.": "This confuses doubling every side with halving the area."
+         },
+         "explanation": "Right: reversing the doubling construction makes the smaller area half.",
+         "f": [
+          "1.11",
+          "1.12"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 36
+          },
+          {
+           "ch": 9,
+           "p": 36
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l2-diagram-of-the-algebraic-pro-52befa.webp",
@@ -46113,7 +47454,7 @@
       {
        "id": "mathematics-g8-ch9-l2",
        "title": "The Hypotenuse and √2",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -46232,6 +47573,53 @@
           "7 (generated problem)",
           "7.07 (generated problem)",
           "7.075 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g8-ch9-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A square floor tile has sides of 1 unit. How long is its diagonal?",
+         "steps": [
+          "We use two isosceles right triangles because they fit the unit square.",
+          "The diagonal is opposite each right angle, so it is the hypotenuse.",
+          "The square on the diagonal has area 2, so c² = 2.",
+          "Therefore, the diagonal has length √2 units."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.5",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          }
          ]
         },
         {
@@ -46913,6 +48301,142 @@
            "p": 39
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "calculate"
+         ],
+         "prompt": "One square tile has side 1 unit. What length is its diagonal?",
+         "options": [
+          "1 unit",
+          "√2 units",
+          "2 units",
+          "1.42 units"
+         ],
+         "answer": 1,
+         "why": {
+          "1 unit": "The side length is 1, but the diagonal is longer.",
+          "2 units": "The square on the diagonal has area 2, not length 2.",
+          "1.42 units": "1.42 is only a decimal bound, not the exact diagonal."
+         },
+         "explanation": "The diagonal is the hypotenuse, so c² = 2.",
+         "f": [
+          "2.1",
+          "2.3",
+          "2.5",
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "identify"
+         ],
+         "prompt": "A right triangle has equal sides of 1 unit. Which length is √2 units?",
+         "options": [
+          "The equal side of 1 unit",
+          "The side opposite the right angle",
+          "The area of the triangle",
+          "The square on that side"
+         ],
+         "answer": 1,
+         "why": {
+          "The equal side of 1 unit": "Each equal side has length 1, not √2.",
+          "The area of the triangle": "Area and hypotenuse length are different measurements.",
+          "The square on that side": "The square on the hypotenuse has area 2, not length √2."
+         },
+         "explanation": "The side opposite the right angle is the hypotenuse, so c² = 2.",
+         "f": [
+          "2.1",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply area"
+         ],
+         "prompt": "A square tile has side 1 unit. What is the area of a square drawn on its diagonal?",
+         "options": [
+          "1 square unit",
+          "2 square units",
+          "√2 square units",
+          "1.41 square units"
+         ],
+         "answer": 1,
+         "why": {
+          "1 square unit": "The original tile has area 1, but the new square has twice that area.",
+          "√2 square units": "The diagonal's length is √2, but the new square's area is 2.",
+          "1.41 square units": "1.41 is a bound for √2, not the area of the square."
+         },
+         "explanation": "The square on the diagonal has twice the tile's area, so it has area 2.",
+         "f": [
+          "2.3",
+          "2.5",
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 37
+          },
+          {
+           "ch": 9,
+           "p": 38
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l2-diagram-of-the-algebraic-pro-52befa.webp",
@@ -46929,7 +48453,7 @@
       {
        "id": "mathematics-g8-ch9-l3",
        "title": "The General Relation for Isosceles Right Triangles",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -47043,6 +48567,58 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g8-ch9-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A triangular frame has equal sides of 12 units. What range contains its hypotenuse?",
+         "steps": [
+          "Each equal side is 12 units, so a = 12.",
+          "The hypotenuse is c, and its square follows c² = 2a².",
+          "The notes give 16² = 256 and 17² = 289.",
+          "These values place the hypotenuse between 16 and 17 units."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.4",
+          "3.6",
+          "3.7",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          }
+         ]
+        },
+        {
          "type": "matchpairs",
          "id": "mathematics-g8-ch9-l3-a5",
          "difficulty": 1,
@@ -47110,18 +48686,21 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g8-ch9-l3-a3",
+         "type": "fillblank",
+         "id": "mathematics-g8-ch9-l3-a4",
          "difficulty": 1,
          "tags": [
-          "relation",
-          "sides",
-          "squares"
+          "equal sides",
+          "length",
+          "diagram"
          ],
-         "title": "Check the Relation",
-         "prompt": "The relation for the three sides is c² = a².",
-         "answer": false,
-         "explanation": "The correct relation is c² = 2a².",
+         "title": "Meaning of a",
+         "prompt": "In the general diagram, a is the length of each ______ side.",
+         "answers": [
+          "equal"
+         ],
+         "hint": "Use the word before 'side' in the lesson.",
+         "explanation": "Each equal side has length a in the general diagram.",
          "src": [
           {
            "ch": 9,
@@ -47649,6 +49228,174 @@
            "p": 40
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply formula"
+         ],
+         "prompt": "An isosceles right triangle has equal sides of 6 units. Which calculation finds its hypotenuse?",
+         "options": [
+          "Halve 6², then find c.",
+          "Double 6², then find c.",
+          "Add 2 to 6², then find c.",
+          "Add 6 to 6², then find c."
+         ],
+         "answer": 1,
+         "why": {
+          "Halve 6², then find c.": "This reverses the factor of 2.",
+          "Add 2 to 6², then find c.": "This adds a number instead of doubling a².",
+          "Add 6 to 6², then find c.": "This adds the side length instead of doubling its square."
+         },
+         "explanation": "This doubles a² because c² = 2a².",
+         "f": [
+          "3.4",
+          "3.5",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 41
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reverse formula"
+         ],
+         "prompt": "An isosceles right triangle has hypotenuse c and equal side a. Which step finds a?",
+         "options": [
+          "Double c², then find a.",
+          "Add c² and 2, then find a.",
+          "Divide c² by 2, then find a.",
+          "Keep c² unchanged, then find a."
+         ],
+         "answer": 2,
+         "why": {
+          "Double c², then find a.": "This multiplies by 2 instead of dividing.",
+          "Add c² and 2, then find a.": "This adds 2 instead of dividing by 2.",
+          "Keep c² unchanged, then find a.": "This leaves the squared length unchanged."
+         },
+         "explanation": "Dividing c² by 2 gives a², as the formula requires.",
+         "f": [
+          "3.4",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "connect squares"
+         ],
+         "prompt": "Square SQVU has twice the area of square PQRS. Which equation fits?",
+         "options": [
+          "a² = 2c²",
+          "c² = a²",
+          "a² = 2c",
+          "c² = 2a²"
+         ],
+         "answer": 3,
+         "why": {
+          "a² = 2c²": "This swaps the sides and reverses the area relation.",
+          "c² = a²": "This ignores that one square has twice the area.",
+          "a² = 2c": "This multiplies c, not c², by 2."
+         },
+         "explanation": "The square areas show that c² is twice a².",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reasoning"
+         ],
+         "prompt": "Each equal side is 12 units. The notes give 16² = 256 and 17² = 289. Which reasoning places the hypotenuse?",
+         "options": [
+          "Use both square values to place c between 16 and 17.",
+          "Use both square values to make c exactly 16.",
+          "Use both square values to make c exactly 17.",
+          "Use both square values to place c below 12."
+         ],
+         "answer": 0,
+         "why": {
+          "Use both square values to make c exactly 16.": "This turns a range into an exact value.",
+          "Use both square values to make c exactly 17.": "This ignores the upper end of the stated range.",
+          "Use both square values to place c below 12.": "This puts c below the equal sides, which the formula does not support."
+         },
+         "explanation": "The notes place c between 16 and 17 units.",
+         "f": [
+          "3.6",
+          "3.7",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          },
+          {
+           "ch": 9,
+           "p": 40
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l2-diagram-of-the-algebraic-pro-52befa.webp",
@@ -47665,7 +49412,7 @@
       {
        "id": "mathematics-g8-ch9-l4",
        "title": "Combining Two Different Squares",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -47714,6 +49461,53 @@
           {
            "ch": 9,
            "p": 42
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g8-ch9-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "You have two square pieces of paper with different sizes. How can you make one square with their combined area?",
+         "steps": [
+          "Make a right-angled triangle because sides a and b match the squares.",
+          "Square the hypotenuse, because its square has the two areas added.",
+          "Use the rectangle's diagonal as the square's side, giving the needed area.",
+          "So the final square combines the areas of the two different squares."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.5",
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 42
+          },
+          {
+           "ch": 9,
+           "p": 42
+          },
+          {
+           "ch": 9,
+           "p": 42
+          },
+          {
+           "ch": 9,
+           "p": 42
+          },
+          {
+           "ch": 9,
+           "p": 43
           }
          ]
         },
@@ -47899,6 +49693,90 @@
           {
            "ch": 9,
            "p": 42
+          },
+          {
+           "ch": 9,
+           "p": 42
+          },
+          {
+           "ch": 9,
+           "p": 42
+          },
+          {
+           "ch": 9,
+           "p": 42
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A right triangle has perpendicular sides a and b. What area does its hypotenuse square have?",
+         "options": [
+          "The sum of the two original square areas.",
+          "Twice the area of the larger original square.",
+          "The area of just the rectangle's diagonal.",
+          "The difference between the two original square areas."
+         ],
+         "answer": 0,
+         "why": {
+          "Twice the area of the larger original square.": "This is the rule for two copies of the same square.",
+          "The area of just the rectangle's diagonal.": "A diagonal is a length, not an area.",
+          "The difference between the two original square areas.": "The method adds the two areas instead of subtracting them."
+         },
+         "explanation": "The square on the hypotenuse has both original areas added.",
+         "f": [
+          "4.7",
+          "4.1"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 42
+          },
+          {
+           "ch": 9,
+           "p": 41
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "sequence"
+         ],
+         "prompt": "Which order follows Baudhāyana's method for combining different squares?",
+         "options": [
+          "Make the triangle, square the hypotenuse, then use the rectangle diagonal.",
+          "Square the hypotenuse, make the triangle, then use the rectangle diagonal.",
+          "Make the rectangle, square the hypotenuse, then use the triangle sides.",
+          "Use the rectangle diagonal, make the triangle, then square the hypotenuse."
+         ],
+         "answer": 0,
+         "why": {
+          "Square the hypotenuse, make the triangle, then use the rectangle diagonal.": "The right-angled triangle must be made before squaring the hypotenuse.",
+          "Make the rectangle, square the hypotenuse, then use the triangle sides.": "The rectangle step cannot replace the first triangle step.",
+          "Use the rectangle diagonal, make the triangle, then square the hypotenuse.": "The triangle must come before using the hypotenuse."
+         },
+         "explanation": "It starts with the triangle and ends with the rectangle's diagonal.",
+         "f": [
+          "4.4",
+          "4.5",
+          "4.7",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 41
           },
           {
            "ch": 9,
@@ -48815,6 +50693,262 @@
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "creator": "Dzonatanas"
        }
+      },
+      {
+       "id": "mathematics-g8-ch9-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 12,
+       "topicScene": "media/ch9-l2-diagram-of-the-algebraic-pro-52befa.webp",
+       "sceneAlt": "A diagram of the algebraic proof of the Pythagorean theorem.",
+       "sceneCaption": "A visual algebraic proof of the Pythagorean theorem.",
+       "sceneCredit": {
+        "text": "Diagram of the algebraic proof of Pythagorean theorem by ԱշոտՏՆՂ, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Diagram_of_the_algebraic_proof_of_Pythagorean_theorem.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "ԱշոտՏՆՂ"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l1-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A square built on the original square’s diagonal has twice the original area.\nReason (R): East-west and North-south lines meet at right angles.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 1,
+         "explanation": "Both statements are true, but the relationship between the guide lines does not explain the diagonal construction."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l1-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A tilted smaller square inside the larger square can halve the larger square’s area.\nReason (R): Halving a square can be done by reversing the doubling construction.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "Reversing the doubling construction explains why the tilted smaller square halves the larger square’s area."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g8-ch9-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why doubling every side does not double the area, and how a different construction does.",
+         "answer": "Doubling every side does not double the area of a square. The given fact is that doubling every side makes the new area four times the original area. To obtain a square with twice the original area, a different construction is needed: build a square on the original square’s diagonal. That diagonal square has twice the area of the original. Therefore, the student should not use the method of doubling every side when the goal is only to double the area; the student should use the diagonal construction instead.",
+         "points": [
+          "Doubling every side makes the area four times as large.",
+          "A square built on the original diagonal has twice the area.",
+          "The diagonal construction is the correct method for doubling the area."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student prepares a display about a square of side 1 unit. The square can be made from two isosceles right triangles. The student identifies the side opposite the right angle as the hypotenuse. The display compares square PEAR with square REST. REST has twice the area of PEAR, and the area calculation gives 2 square units for REST. The student labels the hypotenuse c and needs to explain the place of √2.",
+         "prompt": "If square REST has twice the area of square PEAR, what is the area of square PEAR?",
+         "options": [
+          "1 square unit",
+          "2 square units",
+          "1.41 square units",
+          "1.42 square units"
+         ],
+         "answer": 0,
+         "why": {
+          "2 square units": "This uses the area of REST instead of the area of PEAR.",
+          "1.41 square units": "The bounds describe the size of √2 and are not the area of PEAR.",
+          "1.42 square units": "The other bound also describes the size of √2 rather than the area of PEAR."
+         },
+         "explanation": "Since REST has twice PEAR's area, dividing 2 square units by two gives 1 square unit."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student prepares a display about a square of side 1 unit. The square can be made from two isosceles right triangles. The student identifies the side opposite the right angle as the hypotenuse. The display compares square PEAR with square REST. REST has twice the area of PEAR, and the area calculation gives 2 square units for REST. The student labels the hypotenuse c and needs to explain the place of √2.",
+         "prompt": "Which pair of bounds should the student use for a closer estimate of the hypotenuse?",
+         "options": [
+          "1.414 and 1.415",
+          "1.41 and 1.42",
+          "1 and 2",
+          "1.414 and 1.42"
+         ],
+         "answer": 0,
+         "why": {
+          "1.41 and 1.42": "These are the wider bounds and do not give the closer estimate.",
+          "1 and 2": "This pair is wider than the closer bounds for √2.",
+          "1.414 and 1.42": "This pair mixes one closer bound with a wider bound."
+         },
+         "explanation": "These are the stated closer bounds for √2."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l2-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): The square on the diagonal of the unit square has twice its area.\nReason (R): The unit square has area 1 square unit, so twice its area is 2 square units.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The reason calculates the area of the square on the diagonal and explains the assertion."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g8-ch9-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the hypotenuse of the unit isosceles right triangle satisfies c² = 2.",
+         "answer": "The unit square has side length 1 unit, so its area is 1 square unit. It can be made from two isosceles right triangles. The hypotenuse is the side opposite the right angle and is the diagonal of the unit square. The square on that diagonal has twice the area of the unit square, so its area is 2 square units. Since a square with side length c has area c², it follows that c² = 2, and the hypotenuse is represented by √2.",
+         "points": [
+          "The unit square has area 1 square unit.",
+          "The square on the diagonal has twice the unit square's area.",
+          "The hypotenuse is the side opposite the right angle.",
+          "A square with side c has area c², so c² = 2."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In the general diagram, the two equal sides have length a and the hypotenuse has length c. The area of square SQVU is twice the area of square PQRS. The designer uses the relationship between these squares to check the triangle’s side lengths. In one design, each equal side is 12 units. The chapter gives 16² = 256 and 17² = 289. A second design has two other sides of length 6, and its missing hypotenuse must also be checked.",
+         "prompt": "A designer changes the equal sides of the isosceles right triangle from 6 units to 12 units. Using the general relationship, what happens to the hypotenuse?",
+         "options": [
+          "It doubles.",
+          "It halves.",
+          "It stays the same.",
+          "It increases, but not by as much as doubling."
+         ],
+         "answer": 0,
+         "why": {
+          "It halves.": "Halving would move the hypotenuse in the wrong direction.",
+          "It stays the same.": "The relationship makes the hypotenuse change when a changes.",
+          "It increases, but not by as much as doubling.": "The hypotenuse increases by exactly as much as the equal side."
+         },
+         "explanation": "Doubling the equal-side length doubles the hypotenuse because c² = 2a²."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In the general diagram, the two equal sides have length a and the hypotenuse has length c. The area of square SQVU is twice the area of square PQRS. The designer uses the relationship between these squares to check the triangle’s side lengths. In one design, each equal side is 12 units. The chapter gives 16² = 256 and 17² = 289. A second design has two other sides of length 6, and its missing hypotenuse must also be checked.",
+         "prompt": "Which statement correctly expresses the relationship between the hypotenuse and an equal side in the general diagram?",
+         "options": [
+          "The square of the hypotenuse is twice the square of an equal side.",
+          "The square of an equal side is twice the square of the hypotenuse.",
+          "The hypotenuse is twice as long as an equal side.",
+          "The square of the hypotenuse equals the square of an equal side."
+         ],
+         "answer": 0,
+         "why": {
+          "The square of an equal side is twice the square of the hypotenuse.": "This reverses the roles of the hypotenuse and an equal side.",
+          "The hypotenuse is twice as long as an equal side.": "This confuses a squared relationship with a direct length relationship.",
+          "The square of the hypotenuse equals the square of an equal side.": "This omits the factor of 2 in the general relationship."
+         },
+         "explanation": "This restates c² = 2a² and matches the stated square-area relationship."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l3-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): For equal sides of length 12 units, the hypotenuse is longer than 16 units and shorter than 17 units.\nReason (R): The chapter’s values 16² = 256 and 17² = 289 show that 2(12²) lies between them.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The reason correctly explains why the hypotenuse lies between the two stated lengths."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch9-l3-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): For equal sides of length 12 units, the hypotenuse is exactly 16 units.\nReason (R): The hypotenuse is longer than 16 units and shorter than 17 units.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The assertion is false, but the reason is true."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g8-ch9-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the hypotenuse of an isosceles right triangle with equal sides of length 12 units lies between 16 and 17 units.",
+         "answer": "For equal sides of length 12 units, the general relationship gives c² = 2a². Therefore, the square of the hypotenuse is twice the square of 12. The chapter gives 16² = 256 and 17² = 289. Comparing these values shows that twice the square of 12 lies between the two stated squares, so the hypotenuse lies between 16 and 17 units. It is not exactly at either bound. The formula therefore locates the missing length between the two given whole-number lengths.",
+         "points": [
+          "Uses c² = 2a² for a = 12.",
+          "Mentions the given values 16² = 256 and 17² = 289.",
+          "Compares 2(12²) with the two given square values.",
+          "Concludes that c is between 16 and 17 units."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
