@@ -8,7 +8,7 @@
 
 A free learning game for school children in India, built chapter by chapter from the NCERT textbooks.
 
-**[▶ Play Hooty](https://lumi.barestack.org/)**
+**[▶ Play Hooty](https://hooty.org/)**
 
 No sign-up. No ads. Nothing a child does ever leaves their device.
 
@@ -58,8 +58,8 @@ The aim is simple: a child should understand the idea, not just remember the sen
 | Class | Mathematics | Science | Social Science | English | Hindi |
 |:-----:|:-----------:|:-------:|:--------------:|:-------:|:-----:|
 | **6** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **7** | ✅ | ✅ | 🛠️ part way | 🛠️ | 🛠️ |
-| **1 to 5, 8 to 10** | 🛠️ | 🛠️ | 🛠️ | 🛠️ | 🛠️ |
+| **7** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **1 to 5, 8 to 10** | 🛠️ (Class 8 first) | 🛠️ | 🛠️ | 🛠️ | 🛠️ |
 
 ✅ on the site &nbsp;·&nbsp; 🛠️ being built, or waiting its turn
 
