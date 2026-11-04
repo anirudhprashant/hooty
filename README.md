@@ -101,6 +101,13 @@ The read-aloud recordings and the textbooks themselves aren't kept in this repo.
 | `docs/INGEST.md` | How a book becomes a course |
 | `docs/CONTENT-PIPELINE.md` | How the facts get checked |
 
+## ⚖️ Licence
+
+Free to use, study, change and share. Not for sale, and not for making money. The code is under the
+[PolyForm Noncommercial licence](LICENSE) and Hooty's own writing and art under
+[CC BY-NC-SA 4.0](LICENSE-CONTENT.txt). [NOTICE.md](NOTICE.md) says exactly what is covered, and what belongs to
+others (the NCERT books and the pictures).
+
 ## 💛 Thank you
 
 To NCERT for the textbooks every lesson is built on, and to the photographers and contributors on Wikimedia Commons and Openverse whose pictures make the lessons come alive.
