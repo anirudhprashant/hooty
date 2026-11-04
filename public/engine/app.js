@@ -41,6 +41,9 @@ function sound(kind, arg) {
   if (kind === 'wrong' || kind === 'correct' || kind === 'win') haptic(kind);
 }
 
+// Hooty the owl is built and ready but off for now: while this is false everyone has Lumi and Settings shows no choice.
+const SHOW_GUIDE_PICKER = false;
+
 function applyLearnerPrefs() {
   const l = activeLearner();
   if (!l) return;
@@ -48,7 +51,7 @@ function applyLearnerPrefs() {
   document.body.classList.toggle('dyslexia-font', !!l.dyslexiaFont);
   document.body.classList.toggle('hl-on', l.highlight !== false);
   setLocale(l.lang || 'en');
-  setGuide(l.guide);
+  setGuide(l.guide2);
 }
 
 async function setTheme(id) {
@@ -1461,12 +1464,12 @@ function screenSettings() {
 
   const guidePicker = el('div', { class: 'guide-picker', role: 'radiogroup', 'aria-label': 'Your guide' },
     [['hooty', 'Hooty'], ['lumi', 'Lumi']].map(([id, label]) => {
-      const on = (l?.guide || 'hooty') === id;
+      const on = (l?.guide2 || 'lumi') === id;
       const b = el('button', { class: `guide-pick${on ? ' is-on' : ''}`, type: 'button', role: 'radio', 'aria-checked': String(on), 'aria-label': label }, [
         el('img', { src: guideAvatarSrc(id), alt: '', width: '64', height: '64' }),
         el('span', { text: label }),
       ]);
-      b.addEventListener('click', async () => { l.guide = id; setGuide(id); await persist(); sound('tap'); render(); });
+      b.addEventListener('click', async () => { l.guide2 = id; setGuide(id); await persist(); sound('tap'); render(); });
       return b;
     }));
 
@@ -1476,7 +1479,7 @@ function screenSettings() {
     row(t('textSize'), 'Make everything bigger or smaller', range),
     row('Highlight key words', 'Important words get a marker-pen colour', hlSwitch),
     row(t('dyslexiaFont'), 'Wider, clearer letters', dysSwitch),
-    row('Your guide', 'Who walks beside you through every lesson', guidePicker),
+    SHOW_GUIDE_PICKER ? row('Your guide', 'Who walks beside you through every lesson', guidePicker) : null,
     row(t('language'), null, langSel),
   ]));
 

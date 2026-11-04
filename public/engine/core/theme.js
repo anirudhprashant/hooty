@@ -80,30 +80,30 @@ export function assetFor(theme, path) {
   return `${base}/${theme.id}/${path}`;
 }
 
-// Two guides walk beside the child. Hooty the owl is the default; Lumi the explorer is the original, kept as a choice.
+// Two guides walk beside the child. Lumi the explorer is the default for now; Hooty the owl is ready but switched off (SHOW_GUIDE_PICKER in app.js).
 // The theme's own mascot paths still describe Lumi, so a theme can bring its own art without touching the owl.
-let guide = 'hooty';
-export function setGuide(g) { guide = g === 'lumi' ? 'lumi' : 'hooty'; }
+let guide = 'lumi';
+export function setGuide(g) { guide = g === 'hooty' ? 'hooty' : 'lumi'; }
 export function currentGuide() { return guide; }
 export function guideName() { return guide === 'lumi' ? 'Lumi' : 'Hooty'; }
 export function guideAvatarSrc(which, mood = 'idle') {
-  return which === 'lumi' ? `./characters/lumi/avatar-${mood}.webp` : `./characters/hooty/snowy2-avatar-${mood}.webp`;
+  return which === 'lumi' ? `./characters/lumi/avatar-${mood}.webp` : `./characters/hooty/snowy3-avatar-${mood}.webp`;
 }
 
 export function mascotImage(mood = 'idle') {
   if (!current) return null;
-  if (guide === 'hooty') return themeAsset(`../../characters/hooty/snowy2-${mood === 'happy' || mood === 'wrong' ? mood : 'idle'}.webp`);
+  if (guide === 'hooty') return themeAsset(`../../characters/hooty/snowy3-${mood === 'happy' || mood === 'wrong' ? mood : 'idle'}.webp`);
   if (!current.mascot) return null;
   const src = current.mascot[mood] || current.mascot.idle;
   return src ? themeAsset(src) : null;
 }
 
 // Round head-and-shoulders version of the same pose (avatar-<mood>.webp beside explorer-<mood>.webp, or
-// snowy2-avatar-<mood>.webp beside snowy2-<mood>.webp), padded so a circular frame never clips the hair or the ears.
+// snowy3-avatar-<mood>.webp beside snowy3-<mood>.webp), padded so a circular frame never clips the hair or the ears.
 export function mascotAvatar(mood = 'idle') {
   const full = mascotImage(mood);
   if (!full) return null;
-  return guide === 'hooty' ? full.replace(/snowy2-/, 'snowy2-avatar-') : full.replace(/explorer-/, 'avatar-');
+  return guide === 'hooty' ? full.replace(/snowy3-/, 'snowy3-avatar-') : full.replace(/explorer-/, 'avatar-');
 }
 
 export function themeCopy(tone, key, fallback = '') {
