@@ -35777,7 +35777,7 @@
       {
        "id": "mathematics-g8-ch7-l2",
        "title": "Ratios and Their Simplest Form",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -35907,6 +35907,36 @@
           "1 (generated problem)",
           "3 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Make equivalent fractions",
+         "tasks": [
+          {
+           "say": "Shade 6 of 8 equal parts.",
+           "when": "d == 8 and n == 6",
+           "then": "Six-eighths is the same as three-fourths."
+          },
+          {
+           "say": "Shade 3 of 12 equal parts.",
+           "when": "d == 12 and n == 3",
+           "then": "Three-twelfths is the same as one-fourth."
+          },
+          {
+           "say": "Shade 3 of 6 equal parts.",
+           "when": "d == 6 and n == 3",
+           "then": "Three-sixths is the same as one-half."
+          }
+         ],
+         "takeaway": "Equal fractions can be written in different forms, just as proportional ratios can be simplified by dividing both terms by the same factor.",
+         "explanation": "Equal fractions can be written in different forms, just as proportional ratios can be simplified by dividing both terms by the same factor."
         },
         {
          "type": "worked",
@@ -37869,7 +37899,7 @@
       {
        "id": "mathematics-g8-ch7-l4",
        "title": "Sharing a Whole in a Ratio",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -37982,6 +38012,36 @@
           "2 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Share a bar in a ratio",
+         "tasks": [
+          {
+           "say": "Make 4 equal parts and shade 3.",
+           "when": "d == 4 and n == 3",
+           "then": "The shaded and unshaded shares are in the ratio 3 : 1."
+          },
+          {
+           "say": "Make 8 equal parts and shade 6.",
+           "when": "d == 8 and n == 6",
+           "then": "Six parts to two parts is the same ratio as 3 : 1."
+          },
+          {
+           "say": "Make 7 equal parts and shade 4.",
+           "when": "d == 7 and n == 4",
+           "then": "The shaded and unshaded shares are in the ratio 4 : 3."
+          }
+         ],
+         "takeaway": "A whole can be split into equal groups and shared in a ratio.",
+         "explanation": "A whole can be split into equal groups and shared in a ratio."
         },
         {
          "type": "worked",
@@ -38779,7 +38839,7 @@
       {
        "id": "mathematics-g8-ch7-l5",
        "title": "Unit Conversions",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -39556,6 +39616,43 @@
          ],
          "answer": 0,
          "explanation": "Correct! The lesson gives 25 degrees Celsius as 77 degrees Fahrenheit.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 176
+          },
+          {
+           "ch": 7,
+           "p": 176
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch7-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "evaluate claim"
+         ],
+         "prompt": "The chapter shows 25 degrees Celsius equals 77 degrees Fahrenheit. A child says this proves a simple swap. Why is that weak?",
+         "options": [
+          "One equal pair cannot prove a rule for all temperatures.",
+          "A complicated conversion is only a unit label change.",
+          "The given pair proves that equal numbers always match.",
+          "Temperature follows the same conversion as square metres."
+         ],
+         "answer": 0,
+         "why": {
+          "A complicated conversion is only a unit label change.": "This ignores that Fahrenheit and Celsius conversion is more complicated.",
+          "The given pair proves that equal numbers always match.": "One matching pair cannot show that equal numbers always match.",
+          "Temperature follows the same conversion as square metres.": "This wrongly treats an area conversion as a temperature rule."
+         },
+         "explanation": "One example cannot prove how every other temperature converts.",
+         "f": [
+          "5.9",
+          "5.10"
+         ],
          "src": [
           {
            "ch": 7,
@@ -42284,6 +42381,793 @@
        }
       },
       {
+       "id": "mathematics-g8-ch8-l4",
+       "title": "Lesson 4: Comparing Scores and Measuring Change",
+       "estimatedMinutes": 7,
+       "activities": [
+        {
+         "type": "concept",
+         "id": "mathematics-g8-ch8-l4-a0",
+         "difficulty": 1,
+         "tags": [
+          "intro"
+         ],
+         "title": "Lesson 4: Comparing Scores and Measuring Change",
+         "body": "Comparisons are easier when the maximum marks are the same.\n\nBoth scores should be converted into percentages for comparison.\n\nEesha’s English score was 84%.",
+         "keyPoints": [
+          "Eesha’s Science score was 87.5%.",
+          "The percentages of all ingredients in a product should add up to 100%."
+         ],
+         "explanation": "Now try some questions.",
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 14
+          },
+          {
+           "ch": 8,
+           "p": 15
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g8-ch8-l4-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A basket of tomatoes cost 20 rupees. The price increased by 12 rupees. What is the new price in rupees?",
+         "steps": [
+          "The old price was 20 rupees.",
+          "The price increased by 12 rupees.",
+          "Add the old price and the increase: 20 rupees plus 12 rupees equals 32 rupees.",
+          "The new price is 32 rupees."
+         ],
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 20,
+            "label": "20 rupees"
+           },
+           {
+            "v": 12,
+            "label": "12 rupees"
+           }
+          ],
+          "total": "?"
+         },
+         "result": "32",
+         "gen": {
+          "template": "A basket of tomatoes cost {old} rupees. The price increased by 12 rupees. What is the new price in rupees?",
+          "params": {
+           "old": [
+            20,
+            30,
+            45
+           ]
+          },
+          "where": [],
+          "answer": "old+12",
+          "vals": {
+           "old": "old",
+           "increase": "12"
+          },
+          "steps": [
+           "The old price was {old} rupees.",
+           "The price increased by {increase} rupees.",
+           "Add the old price and the increase: {old} rupees plus {increase} rupees equals {answer} rupees.",
+           "The new price is {answer} rupees."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "old",
+             "label": "{old} rupees"
+            },
+            {
+             "v": "increase",
+             "label": "{increase} rupees"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the increase to the old price.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "12 (generated problem)",
+          "20 (generated problem)",
+          "32 (generated problem)"
+         ]
+        },
+        {
+         "type": "hook",
+         "id": "mathematics-g8-ch8-l4-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How can we compare scores fairly and measure what changed?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g8-ch8-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "comparisons",
+          "scores"
+         ],
+         "title": "Fair Comparisons",
+         "prompt": "Which condition makes score comparisons easier?",
+         "options": [
+          "Maximum marks match.",
+          "Maximum marks differ.",
+          "One score is missing.",
+          "Totals are different."
+         ],
+         "answer": 0,
+         "explanation": "Good choice! Comparisons are easier when the maximum marks are the same.",
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g8-ch8-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "scores",
+          "percentages"
+         ],
+         "prompt": "Both scores should be converted into percentages before comparison.",
+         "answer": true,
+         "explanation": "Yes! Converting both scores into percentages makes the comparison clearer.",
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "The theatre had 200 visitors. The footfall decreased by 60 visitors. How many visitors are there now?",
+         "explanation": "The theatre originally had 200 visitors. The footfall decreased by 60 visitors. Subtract the decrease from the old footfall: 200 visitors minus 60 visitors equals 140 visitors. There are now 140 visitors.",
+         "steps": [
+          "The theatre originally had 200 visitors.",
+          "The footfall decreased by 60 visitors.",
+          "Subtract the decrease from the old footfall: 200 visitors minus 60 visitors equals 140 visitors.",
+          "There are now 140 visitors."
+         ],
+         "hint": "Subtract the decrease from the old footfall.",
+         "derived": [
+          "140 (generated problem)",
+          "200 (generated problem)",
+          "60 (generated problem)"
+         ],
+         "gen": {
+          "template": "The theatre had {old} visitors. The footfall decreased by 60 visitors. How many visitors are there now?",
+          "params": {
+           "old": [
+            200,
+            250,
+            300
+           ]
+          },
+          "where": [],
+          "answer": "old-60",
+          "vals": {
+           "old": "old",
+           "decrease": "60",
+           "new_visitors": "old-60"
+          },
+          "steps": [
+           "The theatre originally had {old} visitors.",
+           "The footfall decreased by {decrease} visitors.",
+           "Subtract the decrease from the old footfall: {old} visitors minus {decrease} visitors equals {answer} visitors.",
+           "There are now {answer} visitors."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Before",
+             "v": "old"
+            },
+            {
+             "label": "Now",
+             "v": "new_visitors"
+            }
+           ]
+          },
+          "hint": "Subtract the decrease from the old footfall.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Before",
+            "v": 200
+           },
+           {
+            "label": "Now",
+            "v": 140
+           }
+          ]
+         },
+         "answers": [
+          "140"
+         ],
+         "id": "mathematics-g8-ch8-l4-c2",
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Ravi scored 10 marks out of 50, and Meena scored 5 marks out of 50. Their test has the same maximum marks. How many percentage points higher is Ravi's score?",
+         "explanation": "Ravi's score is 10 out of 50, and Meena's score is 5 out of 50. Their percentages are 20 percent and 10 percent. Because the maximum marks are the same, subtract the percentages directly: 20 percent minus 10 percent equals 10 percentage points. Ravi scored 10 percentage points higher.",
+         "steps": [
+          "Ravi's score is 10 out of 50, and Meena's score is 5 out of 50.",
+          "Their percentages are 20 percent and 10 percent.",
+          "Because the maximum marks are the same, subtract the percentages directly: 20 percent minus 10 percent equals 10 percentage points.",
+          "Ravi scored 10 percentage points higher."
+         ],
+         "hint": "Convert both scores to percentages using the same maximum marks, then subtract.",
+         "derived": [
+          "10 (generated problem)",
+          "20 (generated problem)",
+          "5 (generated problem)",
+          "50 (generated problem)"
+         ],
+         "gen": {
+          "template": "Ravi scored {a} marks out of {m}, and Meena scored {b} marks out of {m}. Their test has the same maximum marks. How many percentage points higher is Ravi's score?",
+          "params": {
+           "a": [
+            10,
+            15,
+            20
+           ],
+           "b": [
+            5,
+            10,
+            15
+           ],
+           "m": [
+            20,
+            40,
+            50
+           ]
+          },
+          "where": [
+           "a > b",
+           "100*(a-b) % m == 0"
+          ],
+          "answer": "100*(a-b)/m",
+          "vals": {
+           "ravi_percent": "100*a/m",
+           "meena_percent": "100*b/m",
+           "difference": "100*(a-b)/m"
+          },
+          "steps": [
+           "Ravi's score is {a} out of {m}, and Meena's score is {b} out of {m}.",
+           "Their percentages are {ravi_percent} percent and {meena_percent} percent.",
+           "Because the maximum marks are the same, subtract the percentages directly: {ravi_percent} percent minus {meena_percent} percent equals {answer} percentage points.",
+           "Ravi scored {answer} percentage points higher."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Ravi",
+             "v": "ravi_percent"
+            },
+            {
+             "label": "Meena",
+             "v": "meena_percent"
+            }
+           ]
+          },
+          "hint": "Convert both scores to percentages using the same maximum marks, then subtract.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Ravi",
+            "v": 20
+           },
+           {
+            "label": "Meena",
+            "v": 10
+           }
+          ]
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g8-ch8-l4-c3",
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Meena scored 20 marks out of 40 in a school test. What percentage did she score?",
+         "explanation": "Meena answered 20 marks correctly out of 40 marks. To find the percentage, multiply 20 by 100 and divide by 40. The percentage is 20 x 100 divided by 40 = 50 percent. Meena scored 50 percent.",
+         "steps": [
+          "Meena answered 20 marks correctly out of 40 marks.",
+          "To find the percentage, multiply 20 by 100 and divide by 40.",
+          "The percentage is 20 x 100 divided by 40 = 50 percent.",
+          "Meena scored 50 percent."
+         ],
+         "hint": "Multiply the marks scored by 100, then divide by the maximum marks.",
+         "derived": [
+          "100 (generated problem)",
+          "20 (generated problem)",
+          "40 (generated problem)",
+          "50 (generated problem)"
+         ],
+         "gen": {
+          "template": "Meena scored {score} marks out of {max_marks} in a school test. What percentage did she score?",
+          "params": {
+           "score": [
+            5,
+            10,
+            15,
+            20
+           ],
+           "max_marks": [
+            20,
+            40,
+            50
+           ]
+          },
+          "where": [],
+          "answer": "100*score/max_marks",
+          "vals": {
+           "percentage": "100*score/max_marks"
+          },
+          "steps": [
+           "Meena answered {score} marks correctly out of {max_marks} marks.",
+           "To find the percentage, multiply {score} by 100 and divide by {max_marks}.",
+           "The percentage is {score} x 100 divided by {max_marks} = {answer} percent.",
+           "Meena scored {answer} percent."
+          ],
+          "model": null,
+          "hint": "Multiply the marks scored by 100, then divide by the maximum marks.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "50"
+         ],
+         "id": "mathematics-g8-ch8-l4-c4",
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In 1961, a village had 60 people. In 1991, its population was 165 percent of the 1961 population. What was the population in 1991?",
+         "explanation": "The 1961 population was 60 people. The 1991 population was 165 percent of 60. Multiply 60 by 165 and divide by 100: 60 x 165 divided by 100 equals 99 people. The population in 1991 was 99 people.",
+         "steps": [
+          "The 1961 population was 60 people.",
+          "The 1991 population was 165 percent of 60.",
+          "Multiply 60 by 165 and divide by 100: 60 x 165 divided by 100 equals 99 people.",
+          "The population in 1991 was 99 people."
+         ],
+         "hint": "Find 165 percent of the 1961 population.",
+         "derived": [
+          "100 (generated problem)",
+          "165 (generated problem)",
+          "1961 (generated problem)",
+          "1991 (generated problem)",
+          "60 (generated problem)",
+          "99 (generated problem)"
+         ],
+         "gen": {
+          "template": "In 1961, a village had {p} people. In 1991, its population was 165 percent of the 1961 population. What was the population in 1991?",
+          "params": {
+           "p": [
+            20,
+            40,
+            60
+           ]
+          },
+          "where": [],
+          "answer": "p*165/100",
+          "vals": {
+           "population_1991": "p*165/100"
+          },
+          "steps": [
+           "The 1961 population was {p} people.",
+           "The 1991 population was 165 percent of {p}.",
+           "Multiply {p} by 165 and divide by 100: {p} x 165 divided by 100 equals {answer} people.",
+           "The population in 1991 was {answer} people."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "1961",
+             "v": "p"
+            },
+            {
+             "label": "1991",
+             "v": "population_1991"
+            }
+           ]
+          },
+          "hint": "Find 165 percent of the 1961 population.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "1961",
+            "v": 60
+           },
+           {
+            "label": "1991",
+            "v": 99
+           }
+          ]
+         },
+         "answers": [
+          "99"
+         ],
+         "id": "mathematics-g8-ch8-l4-c5",
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g8-ch8-l4-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "In 1961, a town had 60 people. The 1991 population was 165 percent of the 1961 population. How many more people lived in the town in 1991 than in 1961?",
+         "steps": [
+          "The 1961 population was 60 people.",
+          "The 1991 population was 165 percent of 60, so it was 99 people.",
+          "The increase was 99 people minus 60 people, which equals 39 people.",
+          "There were 39 more people in 1991 than in 1961."
+         ],
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "1961",
+            "v": 60
+           },
+           {
+            "label": "1991",
+            "v": 99
+           }
+          ]
+         },
+         "result": "39",
+         "gen": {
+          "template": "In 1961, a town had {p} people. The 1991 population was 165 percent of the 1961 population. How many more people lived in the town in 1991 than in 1961?",
+          "params": {
+           "p": [
+            20,
+            40,
+            60
+           ]
+          },
+          "where": [],
+          "answer": "p*165/100-p",
+          "vals": {
+           "population_1991": "p*165/100",
+           "increase": "p*165/100-p"
+          },
+          "steps": [
+           "The 1961 population was {p} people.",
+           "The 1991 population was 165 percent of {p}, so it was {population_1991} people.",
+           "The increase was {population_1991} people minus {p} people, which equals {answer} people.",
+           "There were {answer} more people in 1991 than in 1961."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "1961",
+             "v": "p"
+            },
+            {
+             "label": "1991",
+             "v": "population_1991"
+            }
+           ]
+          },
+          "hint": "First find the 1991 population, then subtract the 1961 population.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "165 (generated problem)",
+          "1961 (generated problem)",
+          "1991 (generated problem)",
+          "39 (generated problem)",
+          "60 (generated problem)",
+          "99 (generated problem)"
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Arjun scored 20 marks out of 20, and Priya scored 10 marks out of 40. By how many percentage points did Arjun score higher?",
+         "explanation": "Arjun scored 20 out of 20, and Priya scored 10 out of 40. Arjun's percentage is 100 percent, and Priya's percentage is 25 percent. Subtract Priya's percentage from Arjun's percentage: 100 percent minus 25 percent equals 75 percentage points. Arjun scored 75 percentage points higher.",
+         "steps": [
+          "Arjun scored 20 out of 20, and Priya scored 10 out of 40.",
+          "Arjun's percentage is 100 percent, and Priya's percentage is 25 percent.",
+          "Subtract Priya's percentage from Arjun's percentage: 100 percent minus 25 percent equals 75 percentage points.",
+          "Arjun scored 75 percentage points higher."
+         ],
+         "hint": "Convert each score to a percentage before comparing them.",
+         "derived": [
+          "10 (generated problem)",
+          "100 (generated problem)",
+          "20 (generated problem)",
+          "25 (generated problem)",
+          "40 (generated problem)",
+          "75 (generated problem)"
+         ],
+         "gen": {
+          "template": "Arjun scored {a} marks out of {m}, and Priya scored {b} marks out of {n}. By how many percentage points did Arjun score higher?",
+          "params": {
+           "a": [
+            15,
+            20
+           ],
+           "b": [
+            10,
+            12
+           ],
+           "m": [
+            20,
+            40
+           ],
+           "n": [
+            40,
+            50
+           ]
+          },
+          "where": [
+           "a/m > b/n"
+          ],
+          "answer": "100*a/m - 100*b/n",
+          "vals": {
+           "arjun_percent": "100*a/m",
+           "priya_percent": "100*b/n",
+           "difference": "100*a/m - 100*b/n"
+          },
+          "steps": [
+           "Arjun scored {a} out of {m}, and Priya scored {b} out of {n}.",
+           "Arjun's percentage is {arjun_percent} percent, and Priya's percentage is {priya_percent} percent.",
+           "Subtract Priya's percentage from Arjun's percentage: {arjun_percent} percent minus {priya_percent} percent equals {answer} percentage points.",
+           "Arjun scored {answer} percentage points higher."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Arjun",
+             "v": "arjun_percent"
+            },
+            {
+             "label": "Priya",
+             "v": "priya_percent"
+            }
+           ]
+          },
+          "hint": "Convert each score to a percentage before comparing them.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Arjun",
+            "v": 100
+           },
+           {
+            "label": "Priya",
+            "v": 25
+           }
+          ]
+         },
+         "answers": [
+          "75"
+         ],
+         "id": "mathematics-g8-ch8-l4-c6",
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A product contains 60 grams of ingredient A and 30 grams of ingredient B, and the whole product weighs 100 grams. What is the difference between the percentages of ingredients A and B?",
+         "explanation": "Ingredient A is 60 grams out of 100 grams, so its percentage is 60 percent. Ingredient B is 30 grams out of 100 grams, so its percentage is 30 percent. Subtract the two percentages: 60 percent minus 30 percent equals 30 percentage points. The difference between the ingredient percentages is 30 percentage points.",
+         "steps": [
+          "Ingredient A is 60 grams out of 100 grams, so its percentage is 60 percent.",
+          "Ingredient B is 30 grams out of 100 grams, so its percentage is 30 percent.",
+          "Subtract the two percentages: 60 percent minus 30 percent equals 30 percentage points.",
+          "The difference between the ingredient percentages is 30 percentage points."
+         ],
+         "hint": "Find each ingredient's percentage of the total, then subtract.",
+         "derived": [
+          "100 (generated problem)",
+          "30 (generated problem)",
+          "60 (generated problem)"
+         ],
+         "gen": {
+          "template": "A product contains {a} grams of ingredient A and {b} grams of ingredient B, and the whole product weighs {total} grams. What is the difference between the percentages of ingredients A and B?",
+          "params": {
+           "a": [
+            40,
+            50,
+            60
+           ],
+           "b": [
+            10,
+            20,
+            30
+           ],
+           "total": [
+            100,
+            200
+           ]
+          },
+          "where": [
+           "a > b",
+           "a + b <= total"
+          ],
+          "answer": "100*(a-b)/total",
+          "vals": {
+           "percent_a": "100*a/total",
+           "percent_b": "100*b/total",
+           "difference": "100*(a-b)/total"
+          },
+          "steps": [
+           "Ingredient A is {a} grams out of {total} grams, so its percentage is {percent_a} percent.",
+           "Ingredient B is {b} grams out of {total} grams, so its percentage is {percent_b} percent.",
+           "Subtract the two percentages: {percent_a} percent minus {percent_b} percent equals {answer} percentage points.",
+           "The difference between the ingredient percentages is {answer} percentage points."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Ingredient A",
+             "v": "percent_a"
+            },
+            {
+             "label": "Ingredient B",
+             "v": "percent_b"
+            }
+           ]
+          },
+          "hint": "Find each ingredient's percentage of the total, then subtract.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Ingredient A",
+            "v": 60
+           },
+           {
+            "label": "Ingredient B",
+            "v": 30
+           }
+          ]
+         },
+         "answers": [
+          "30"
+         ],
+         "id": "mathematics-g8-ch8-l4-c7",
+         "src": [
+          {
+           "ch": 8,
+           "p": 14
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch8-l1-prozente-angebot-107cdc.webp",
+       "sceneAlt": "Percentage symbols are shown alongside seasonal discounts.",
+       "sceneCaption": "Seasonal discounts with percentage symbols clearly illustrate the meaning of per cent.",
+       "sceneCredit": {
+        "text": "Prozente Angebot by Erkaha, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Prozente_Angebot.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Erkaha"
+       }
+      },
+      {
        "id": "mathematics-g8-ch8-l5",
        "title": "Lesson 5: Profit, Loss, Discount and Tax",
        "estimatedMinutes": 9,
@@ -43235,15 +44119,15 @@
          ]
         }
        ],
-       "topicScene": "media/ch8-l1-prozente-angebot-107cdc.webp",
-       "sceneAlt": "Percentage symbols are shown alongside seasonal discounts.",
-       "sceneCaption": "Seasonal discounts with percentage symbols clearly illustrate the meaning of per cent.",
+       "topicScene": "media/ch8-l5-two-cuts-of-cheese-marked-do-9960da.webp",
+       "sceneAlt": "Two cuts of cheese at a Moscow store are marked down by 50 percent to sell them before their expiry date.",
+       "sceneCaption": "Two cuts of cheese marked down 50 percent to move them before expiry date.",
        "sceneCredit": {
-        "text": "Prozente Angebot by Erkaha, CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Prozente_Angebot.jpg",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Erkaha"
+        "text": "Two cuts of cheese marked down 50 percent by Retired electrician, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Two_cuts_of_cheese_marked_down_50_percent.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Retired electrician"
        }
       },
       {
@@ -43878,15 +44762,15 @@
          ]
         }
        ],
-       "topicScene": "media/ch8-l1-prozente-angebot-107cdc.webp",
-       "sceneAlt": "Percentage symbols are shown alongside seasonal discounts.",
-       "sceneCaption": "Seasonal discounts with percentage symbols clearly illustrate the meaning of per cent.",
+       "topicScene": "media/ch8-l6-mnp-chettipet-indian-bank-0bf931.webp",
+       "sceneAlt": "The Indian Bank branch in Chettipet, Mannadipet Commune, Puducherry, India.",
+       "sceneCaption": "The Indian Bank branch in Chettipet, Puducherry, India.",
        "sceneCredit": {
-        "text": "Prozente Angebot by Erkaha, CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Prozente_Angebot.jpg",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Erkaha"
+        "text": "MNP-Chettipet-Indian-Bank by Pselvaganapathy, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:MNP-Chettipet-Indian-Bank.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Pselvaganapathy"
        }
       }
      ],
@@ -45214,7 +46098,17 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch9-l2-diagram-of-the-algebraic-pro-52befa.webp",
+       "sceneAlt": "A diagram of the algebraic proof of the Pythagorean theorem.",
+       "sceneCaption": "A visual algebraic proof of the Pythagorean theorem.",
+       "sceneCredit": {
+        "text": "Diagram of the algebraic proof of Pythagorean theorem by ԱշոտՏՆՂ, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Diagram_of_the_algebraic_proof_of_Pythagorean_theorem.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "ԱշոտՏՆՂ"
+       }
       },
       {
        "id": "mathematics-g8-ch9-l2",
@@ -46020,7 +46914,17 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch9-l2-diagram-of-the-algebraic-pro-52befa.webp",
+       "sceneAlt": "A diagram of the algebraic proof of the Pythagorean theorem.",
+       "sceneCaption": "A visual algebraic proof of the Pythagorean theorem.",
+       "sceneCredit": {
+        "text": "Diagram of the algebraic proof of Pythagorean theorem by ԱշոտՏՆՂ, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Diagram_of_the_algebraic_proof_of_Pythagorean_theorem.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "ԱշոտՏՆՂ"
+       }
       },
       {
        "id": "mathematics-g8-ch9-l3",
@@ -46746,7 +47650,17 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch9-l2-diagram-of-the-algebraic-pro-52befa.webp",
+       "sceneAlt": "A diagram of the algebraic proof of the Pythagorean theorem.",
+       "sceneCaption": "A visual algebraic proof of the Pythagorean theorem.",
+       "sceneCredit": {
+        "text": "Diagram of the algebraic proof of Pythagorean theorem by ԱշոտՏՆՂ, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Diagram_of_the_algebraic_proof_of_Pythagorean_theorem.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "ԱշոտՏՆՂ"
+       }
       },
       {
        "id": "mathematics-g8-ch9-l4",
@@ -47000,7 +47914,17 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch9-l4-root-rectangles-with-3-4-5-t-3cceac.webp",
+       "sceneAlt": "A geometric diagram shows a 3-4-5 right triangle with squares on its sides.",
+       "sceneCaption": "An alternate root-rectangle construction uses a 3-4-5 triangle and squares on its sides.",
+       "sceneCredit": {
+        "text": "Root rectangles with 3-4-5 triangle by Dicklyon, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Root_rectangles_with_3-4-5_triangle.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Dicklyon"
+       }
       },
       {
        "id": "mathematics-g8-ch9-l5",
@@ -47601,7 +48525,17 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch9-l5-pythagorean-theorem-proof-co-825061.webp",
+       "sceneAlt": "An animated geometric construction shows one step in a proof of the Pythagorean theorem.",
+       "sceneCaption": "A construction step in a proof of the Pythagorean theorem.",
+       "sceneCredit": {
+        "text": "Pythagorean Theorem Proof, Construction Step 1 by Addemf, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Pythagorean_Theorem_Proof,_Construction_Step_1.gif",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Addemf"
+       }
       },
       {
        "id": "mathematics-g8-ch9-l6",
@@ -47870,7 +48804,17 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch9-l6-right-triangle3-e4d37b.webp",
+       "sceneAlt": "A labeled right triangle has its right angle at C, legs a and b, hypotenuse c, angles alpha and beta, and an altitude drawn to the hypotenuse.",
+       "sceneCaption": "A clear labeled right triangle identifies the hypotenuse c and the other sides and angles.",
+       "sceneCredit": {
+        "text": "Right triangle3 by Dzonatanas, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Right_triangle3.png",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Dzonatanas"
+       }
       }
      ],
      "boss": {
@@ -48214,7 +49158,17 @@
          }
         ]
        }
-      ]
+      ],
+      "topicScene": "media/ch9-l2-diagram-of-the-algebraic-pro-52befa.webp",
+      "sceneAlt": "A diagram of the algebraic proof of the Pythagorean theorem.",
+      "sceneCaption": "A visual algebraic proof of the Pythagorean theorem.",
+      "sceneCredit": {
+       "text": "Diagram of the algebraic proof of Pythagorean theorem by ԱշոտՏՆՂ, CC BY-SA 4.0, via Wikimedia Commons",
+       "url": "https://commons.wikimedia.org/wiki/File:Diagram_of_the_algebraic_proof_of_Pythagorean_theorem.png",
+       "license": "CC BY-SA 4.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+       "creator": "ԱշոտՏՆՂ"
+      }
      }
     }
    ]
