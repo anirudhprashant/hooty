@@ -14969,7 +14969,7 @@
       {
        "id": "mathematics-g6-ch3-l2",
        "title": "Lesson 2: Finding Supercells",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -15298,6 +15298,324 @@
           {
            "ch": 3,
            "p": 73
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A cell contains 24, and the cell immediately to its right contains 14. How much larger is the supercell number?",
+         "explanation": "The cells are adjacent because they are immediately next to each other. The cell containing 24 is the supercell because 24 is larger than 14. Subtract the adjacent number: 24 - 14 = 10.",
+         "steps": [
+          "The cells are adjacent because they are immediately next to each other.",
+          "The cell containing 24 is the supercell because 24 is larger than 14.",
+          "Subtract the adjacent number: 24 - 14 = 10."
+         ],
+         "hint": "Compare the two numbers, then subtract the smaller from the larger.",
+         "derived": [
+          "10 (generated problem)",
+          "14 (generated problem)",
+          "24 (generated problem)"
+         ],
+         "gen": {
+          "template": "A cell contains {a}, and the cell immediately to its right contains {b}. How much larger is the supercell number?",
+          "params": {
+           "a": [
+            18,
+            24,
+            31
+           ],
+           "b": {
+            "min": 2,
+            "max": 15
+           }
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "a-b",
+          "vals": {},
+          "steps": [
+           "The cells are adjacent because they are immediately next to each other.",
+           "The cell containing {a} is the supercell because {a} is larger than {b}.",
+           "Subtract the adjacent number: {a} - {b} = {answer}."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Supercell cell",
+             "v": "a"
+            },
+            {
+             "label": "Adjacent cell",
+             "v": "b"
+            }
+           ]
+          },
+          "hint": "Compare the two numbers, then subtract the smaller from the larger.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Supercell cell",
+            "v": 24
+           },
+           {
+            "label": "Adjacent cell",
+            "v": 14
+           }
+          ]
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g6-ch3-l2-c1",
+         "src": [
+          {
+           "ch": 3,
+           "p": 57
+          },
+          {
+           "ch": 3,
+           "p": 58
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Two neighbouring cells contain 26 and 4. How many of the two cells are supercells?",
+         "explanation": "Compare the two neighbouring numbers. Only the cell containing 26 is larger than its adjacent number, so it is the supercell. The two cells contain 1 supercell in total.",
+         "steps": [
+          "Compare the two neighbouring numbers.",
+          "Only the cell containing 26 is larger than its adjacent number, so it is the supercell.",
+          "The two cells contain 1 supercell in total."
+         ],
+         "hint": "Compare the two neighbouring numbers.",
+         "derived": [
+          "0 (generated problem)",
+          "1 (generated problem)",
+          "2 (generated problem)",
+          "22 (generated problem)",
+          "26 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "Two neighbouring cells contain {a} and {b}. How many of the two cells are supercells?",
+          "params": {
+           "a": [
+            14,
+            19,
+            26
+           ],
+           "b": {
+            "min": 2,
+            "max": 10
+           }
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "1",
+          "vals": {},
+          "steps": [
+           "Compare the two neighbouring numbers.",
+           "Only the cell containing {a} is larger than its adjacent number, so it is the supercell.",
+           "The two cells contain {answer} supercell in total."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Left cell",
+             "v": "a"
+            },
+            {
+             "label": "Right cell",
+             "v": "b"
+            }
+           ]
+          },
+          "hint": "Compare the two neighbouring numbers.",
+          "wrong": [
+           "2",
+           "0",
+           "a-b"
+          ],
+          "wrongWhy": [
+           "You counted both cells, but the smaller cell has a larger neighbour.",
+           "You counted neither cell, even though one number is larger than its neighbour.",
+           "You gave the difference between the numbers instead of the number of supercells."
+          ]
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Left cell",
+            "v": 26
+           },
+           {
+            "label": "Right cell",
+            "v": 4
+           }
+          ]
+         },
+         "options": [
+          "1",
+          "0",
+          "2",
+          "22"
+         ],
+         "answer": 0,
+         "why": {
+          "0": "You counted neither cell, even though one number is larger than its neighbour.",
+          "2": "You counted both cells, but the smaller cell has a larger neighbour.",
+          "22": "You gave the difference between the numbers instead of the number of supercells."
+         },
+         "id": "mathematics-g6-ch3-l2-c2",
+         "src": [
+          {
+           "ch": 3,
+           "p": 57
+          },
+          {
+           "ch": 3,
+           "p": 58
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Three laddoo baskets stand in a row with 12, 6 and 24 laddoos from left to right. The middle basket has fewer laddoos than either end basket. How many laddoos are in the two supercell baskets altogether?",
+         "explanation": "The middle basket is adjacent to both end baskets. The end baskets with 12 and 24 are supercells because each is larger than 6. Add their laddoo counts: 12 + 24 = 36 laddoos.",
+         "steps": [
+          "The middle basket is adjacent to both end baskets.",
+          "The end baskets with 12 and 24 are supercells because each is larger than 6.",
+          "Add their laddoo counts: 12 + 24 = 36 laddoos."
+         ],
+         "hint": "Check which baskets have a number larger than their only neighbouring basket.",
+         "derived": [
+          "12 (generated problem)",
+          "24 (generated problem)",
+          "30 (generated problem)",
+          "36 (generated problem)",
+          "42 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "Three laddoo baskets stand in a row with {a}, {b} and {c} laddoos from left to right. The middle basket has fewer laddoos than either end basket. How many laddoos are in the two supercell baskets altogether?",
+          "params": {
+           "a": [
+            12,
+            18,
+            24
+           ],
+           "b": {
+            "min": 2,
+            "max": 9
+           },
+           "c": [
+            12,
+            18,
+            24
+           ]
+          },
+          "where": [
+           "a > b",
+           "c > b"
+          ],
+          "answer": "a+c",
+          "vals": {},
+          "steps": [
+           "The middle basket is adjacent to both end baskets.",
+           "The end baskets with {a} and {c} are supercells because each is larger than {b}.",
+           "Add their laddoo counts: {a} + {c} = {answer} laddoos."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Left basket",
+             "v": "a"
+            },
+            {
+             "label": "Middle basket",
+             "v": "b"
+            },
+            {
+             "label": "Right basket",
+             "v": "c"
+            }
+           ]
+          },
+          "hint": "Check which baskets have a number larger than their only neighbouring basket.",
+          "wrong": [
+           "b",
+           "a+b+c",
+           "a-b+c"
+          ],
+          "wrongWhy": [
+           "You chose the middle basket, but it is smaller than both neighbours.",
+           "You added all three baskets instead of only the supercell baskets.",
+           "You subtracted the middle count instead of adding the two supercell counts."
+          ]
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Left basket",
+            "v": 12
+           },
+           {
+            "label": "Middle basket",
+            "v": 6
+           },
+           {
+            "label": "Right basket",
+            "v": 24
+           }
+          ]
+         },
+         "options": [
+          "36",
+          "30",
+          "42",
+          "6"
+         ],
+         "answer": 0,
+         "why": {
+          "6": "You chose the middle basket, but it is smaller than both neighbours.",
+          "30": "You subtracted the middle count instead of adding the two supercell counts.",
+          "42": "You added all three baskets instead of only the supercell baskets."
+         },
+         "id": "mathematics-g6-ch3-l2-c3",
+         "src": [
+          {
+           "ch": 3,
+           "p": 57
+          },
+          {
+           "ch": 3,
+           "p": 58
           }
          ]
         },
@@ -22824,7 +23142,7 @@
       {
        "id": "mathematics-g6-ch5-l1",
        "title": "Common Multiples and Common Factors",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -22923,6 +23241,76 @@
         },
         {
          "type": "worked",
+         "id": "mathematics-g6-ch5-l1-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A frog makes jumps of 4 cm and lands exactly on 24 cm; how many jumps does it need?",
+         "steps": [
+          "The frog must cover 24 cm in all.",
+          "Each jump is 4 cm, so divide 24 by 4.",
+          "24 divided by 4 = 6, so the frog needs 6 jumps."
+         ],
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 24,
+          "step": 4,
+          "jumps": {
+           "start": 0,
+           "size": 4,
+           "count": 6
+          }
+         },
+         "result": "6",
+         "gen": {
+          "template": "A frog makes jumps of {k} cm and lands exactly on 24 cm; how many jumps does it need?",
+          "params": {
+           "k": [
+            2,
+            3,
+            4,
+            6,
+            8,
+            12
+           ]
+          },
+          "where": [
+           "24 % k == 0"
+          ],
+          "answer": "24//k",
+          "vals": {},
+          "steps": [
+           "The frog must cover 24 cm in all.",
+           "Each jump is {k} cm, so divide 24 by {k}.",
+           "24 divided by {k} = {answer}, so the frog needs {answer} jumps."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": 24,
+           "step": "k",
+           "jumps": {
+            "start": 0,
+            "size": "k",
+            "count": "24//k"
+           }
+          },
+          "hint": "Divide 24 by the size of one jump.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "24 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
          "id": "mathematics-g6-ch5-l1-t1",
          "difficulty": 1,
          "tags": [
@@ -22969,59 +23357,6 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g6-ch5-l1-a2",
-         "difficulty": 1,
-         "tags": [
-          "idli-vada",
-          "common multiples"
-         ],
-         "prompt": "Which number gets the name “idli-vada” first?",
-         "options": [
-          "3",
-          "5",
-          "14",
-          "15"
-         ],
-         "answer": 3,
-         "explanation": "15 is the first number that is a multiple of both 3 and 5.",
-         "src": [
-          {
-           "ch": 5,
-           "p": 107
-          },
-          {
-           "ch": 5,
-           "p": 107
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "id": "mathematics-g6-ch5-l1-a4",
-         "difficulty": 1,
-         "tags": [
-          "idli-vada",
-          "common multiples"
-         ],
-         "prompt": "The first number called “idli-vada” is ______.",
-         "answers": [
-          "15"
-         ],
-         "hint": "Look for the first multiple of both 3 and 5.",
-         "explanation": "15 is the first number that is a multiple of both 3 and 5.",
-         "src": [
-          {
-           "ch": 5,
-           "p": 107
-          },
-          {
-           "ch": 5,
-           "p": 107
-          }
-         ]
-        },
-        {
          "type": "truefalse",
          "id": "mathematics-g6-ch5-l1-a3",
          "difficulty": 1,
@@ -23040,6 +23375,170 @@
           {
            "ch": 5,
            "p": 107
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "The common factors of 14 and 36 are 1 and 2, and a frog uses their sum as its jump length; how far, in cm, does it travel in 6 jumps?",
+         "explanation": "The common factors are 1 and 2, so their sum is 3. Each jump is 3 cm, and the frog makes 6 jumps. 3 x 6 = 18, so the frog travels 18 cm.",
+         "steps": [
+          "The common factors are 1 and 2, so their sum is 3.",
+          "Each jump is 3 cm, and the frog makes 6 jumps.",
+          "3 x 6 = 18, so the frog travels 18 cm."
+         ],
+         "hint": "Add the common factors to get the jump length.",
+         "derived": [
+          "1 (generated problem)",
+          "14 (generated problem)",
+          "18 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "36 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "The common factors of 14 and 36 are 1 and 2, and a frog uses their sum as its jump length; how far, in cm, does it travel in {k} jumps?",
+          "params": {
+           "k": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "3*k",
+          "vals": {},
+          "steps": [
+           "The common factors are 1 and 2, so their sum is 3.",
+           "Each jump is 3 cm, and the frog makes {k} jumps.",
+           "3 x {k} = {answer}, so the frog travels {answer} cm."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "3*k",
+           "step": 3,
+           "jumps": {
+            "start": 0,
+            "size": 3,
+            "count": "k"
+           }
+          },
+          "hint": "Add the common factors to get the jump length.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 18,
+          "step": 3,
+          "jumps": {
+           "start": 0,
+           "size": 3,
+           "count": 6
+          }
+         },
+         "answers": [
+          "18"
+         ],
+         "id": "mathematics-g6-ch5-l1-c2",
+         "src": [
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A perfect number has factors that add to twice the number; for the perfect number 496, what is the sum of its factors?",
+         "explanation": "For a perfect number, the factors add to twice the number. Twice 496 means 2 x 496. 2 x 496 = 992, so the sum of the factors is 992.",
+         "steps": [
+          "For a perfect number, the factors add to twice the number.",
+          "Twice 496 means 2 x 496.",
+          "2 x 496 = 992, so the sum of the factors is 992."
+         ],
+         "hint": "Double the perfect number.",
+         "derived": [
+          "2 (generated problem)",
+          "496 (generated problem)",
+          "992 (generated problem)"
+         ],
+         "gen": {
+          "template": "A perfect number has factors that add to twice the number; for the perfect number {n}, what is the sum of its factors?",
+          "params": {
+           "n": [
+            6,
+            28,
+            496
+           ]
+          },
+          "where": [],
+          "answer": "2*n",
+          "vals": {},
+          "steps": [
+           "For a perfect number, the factors add to twice the number.",
+           "Twice {n} means 2 x {n}.",
+           "2 x {n} = {answer}, so the sum of the factors is {answer}."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "n",
+             "label": "{n}"
+            },
+            {
+             "v": "n",
+             "label": "{n}"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Double the perfect number.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 496,
+            "label": "496"
+           },
+           {
+            "v": 496,
+            "label": "496"
+           }
+          ],
+          "total": "?"
+         },
+         "answers": [
+          "992"
+         ],
+         "id": "mathematics-g6-ch5-l1-c3",
+         "src": [
+          {
+           "ch": 5,
+           "p": 111
           }
          ]
         },
@@ -23106,6 +23605,401 @@
          ]
         },
         {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A market stall gives a free sticker at every common multiple of 3 and 5, which is every 15th customer; how many stickers are given to the first 45 customers?",
+         "explanation": "Stickers go to customers 15, 30, 45, and so on. There is one sticker in every group of 15 customers. 45 divided by 15 = 3, so 3 stickers are given.",
+         "steps": [
+          "Stickers go to customers 15, 30, 45, and so on.",
+          "There is one sticker in every group of 15 customers.",
+          "45 divided by 15 = 3, so 3 stickers are given."
+         ],
+         "hint": "Find how many groups of 15 are in 45.",
+         "derived": [
+          "15 (generated problem)",
+          "3 (generated problem)",
+          "30 (generated problem)",
+          "45 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market stall gives a free sticker at every common multiple of 3 and 5, which is every 15th customer; how many stickers are given to the first {n} customers?",
+          "params": {
+           "n": [
+            30,
+            45,
+            60,
+            75,
+            90
+           ]
+          },
+          "where": [
+           "n % 15 == 0"
+          ],
+          "answer": "n//15",
+          "vals": {},
+          "steps": [
+           "Stickers go to customers 15, 30, 45, and so on.",
+           "There is one sticker in every group of 15 customers.",
+           "{n} divided by 15 = {answer}, so {answer} stickers are given."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "n",
+           "step": 15,
+           "jumps": {
+            "start": 0,
+            "size": 15,
+            "count": "n//15"
+           }
+          },
+          "hint": "Find how many groups of 15 are in {n}.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 45,
+          "step": 15,
+          "jumps": {
+           "start": 0,
+           "size": 15,
+           "count": 3
+          }
+         },
+         "answers": [
+          "3"
+         ],
+         "id": "mathematics-g6-ch5-l1-c4",
+         "src": [
+          {
+           "ch": 5,
+           "p": 107
+          },
+          {
+           "ch": 5,
+           "p": 108
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A shop packs laddoos in boxes of 3 and trays of 5, and the first number that fills both exactly is 15; what is the next such number after 15?",
+         "explanation": "The common multiples of 3 and 5 are 15, 30, 45, and so on. They are 15 apart, so the next one is 15 plus 15. 15 + 15 = 30, so the next number is 30.",
+         "steps": [
+          "The common multiples of 3 and 5 are 15, 30, 45, and so on.",
+          "They are 15 apart, so the next one is 15 plus 15.",
+          "15 + 15 = 30, so the next number is 30."
+         ],
+         "hint": "Add 15 to 15.",
+         "derived": [
+          "15 (generated problem)",
+          "3 (generated problem)",
+          "30 (generated problem)",
+          "45 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "A shop packs laddoos in boxes of 3 and trays of 5, and the first number that fills both exactly is 15; what is the next such number after {n}?",
+          "params": {
+           "n": [
+            15,
+            30,
+            45,
+            60,
+            75
+           ]
+          },
+          "where": [
+           "n % 15 == 0"
+          ],
+          "answer": "n+15",
+          "vals": {},
+          "steps": [
+           "The common multiples of 3 and 5 are 15, 30, 45, and so on.",
+           "They are 15 apart, so the next one is {n} plus 15.",
+           "{n} + 15 = {answer}, so the next number is {answer}."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "n+15",
+           "step": 15,
+           "jumps": {
+            "start": 0,
+            "size": 15,
+            "count": "n//15+1"
+           }
+          },
+          "hint": "Add 15 to {n}.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 30,
+          "step": 15,
+          "jumps": {
+           "start": 0,
+           "size": 15,
+           "count": 2
+          }
+         },
+         "answers": [
+          "30"
+         ],
+         "id": "mathematics-g6-ch5-l1-c5",
+         "src": [
+          {
+           "ch": 5,
+           "p": 107
+          },
+          {
+           "ch": 5,
+           "p": 107
+          },
+          {
+           "ch": 5,
+           "p": 108
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Two ribbons are 14 cm and 36 cm long, and their common factors are 1 and 2. A frog uses the larger common factor as its jump length; how far, in cm, does it travel in 4 jumps?",
+         "explanation": "The common factors are 1 and 2, so the larger one is 2. Each jump is 2 cm, and the frog makes 4 jumps. 2 x 4 = 8, so the frog travels 8 cm.",
+         "steps": [
+          "The common factors are 1 and 2, so the larger one is 2.",
+          "Each jump is 2 cm, and the frog makes 4 jumps.",
+          "2 x 4 = 8, so the frog travels 8 cm."
+         ],
+         "hint": "The larger common factor is 2, so multiply 2 by the number of jumps.",
+         "derived": [
+          "1 (generated problem)",
+          "14 (generated problem)",
+          "2 (generated problem)",
+          "36 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "Two ribbons are 14 cm and 36 cm long, and their common factors are 1 and 2. A frog uses the larger common factor as its jump length; how far, in cm, does it travel in {k} jumps?",
+          "params": {
+           "k": [
+            3,
+            4,
+            5,
+            6,
+            7
+           ]
+          },
+          "where": [],
+          "answer": "2*k",
+          "vals": {},
+          "steps": [
+           "The common factors are 1 and 2, so the larger one is 2.",
+           "Each jump is 2 cm, and the frog makes {k} jumps.",
+           "2 x {k} = {answer}, so the frog travels {answer} cm."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "2*k",
+           "step": 2,
+           "jumps": {
+            "start": 0,
+            "size": 2,
+            "count": "k"
+           }
+          },
+          "hint": "The larger common factor is 2, so multiply 2 by the number of jumps.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 8,
+          "step": 2,
+          "jumps": {
+           "start": 0,
+           "size": 2,
+           "count": 4
+          }
+         },
+         "answers": [
+          "8"
+         ],
+         "id": "mathematics-g6-ch5-l1-c6",
+         "src": [
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A puzzle card says the factors of a perfect number add to 992; what is the perfect number?",
+         "explanation": "For a perfect number, the factors add to twice the number. So the number is half of the sum 992. 992 divided by 2 = 496, so the perfect number is 496.",
+         "steps": [
+          "For a perfect number, the factors add to twice the number.",
+          "So the number is half of the sum 992.",
+          "992 divided by 2 = 496, so the perfect number is 496."
+         ],
+         "hint": "Halve the sum.",
+         "derived": [
+          "2 (generated problem)",
+          "496 (generated problem)",
+          "992 (generated problem)"
+         ],
+         "gen": {
+          "template": "A puzzle card says the factors of a perfect number add to {s}; what is the perfect number?",
+          "params": {
+           "s": [
+            12,
+            56,
+            992
+           ]
+          },
+          "where": [
+           "s % 2 == 0"
+          ],
+          "answer": "s//2",
+          "vals": {},
+          "steps": [
+           "For a perfect number, the factors add to twice the number.",
+           "So the number is half of the sum {s}.",
+           "{s} divided by 2 = {answer}, so the perfect number is {answer}."
+          ],
+          "model": null,
+          "hint": "Halve the sum.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "496"
+         ],
+         "id": "mathematics-g6-ch5-l1-c7",
+         "src": [
+          {
+           "ch": 5,
+           "p": 111
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g6-ch5-l1-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "The common factors of 14 and 36 are 1 and 2; a frog makes 3 jumps of the larger one and 2 jumps of the smaller one. How far does it travel in cm?",
+         "steps": [
+          "The common factors are 1 and 2, so the larger is 2 and the smaller is 1.",
+          "The 3 big jumps cover 2 x 3 = 6 cm.",
+          "The 2 small jumps cover 1 x 2 = 2 cm.",
+          "Adding them, 6 + 2 = 8 cm, so the frog travels 8 cm."
+         ],
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 6,
+            "label": "6 cm"
+           },
+           {
+            "v": 2,
+            "label": "2 cm"
+           }
+          ],
+          "total": "?"
+         },
+         "result": "8",
+         "gen": {
+          "template": "The common factors of 14 and 36 are 1 and 2; a frog makes {k} jumps of the larger one and {m} jumps of the smaller one. How far does it travel in cm?",
+          "params": {
+           "k": [
+            3,
+            4,
+            5
+           ],
+           "m": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "2*k + m",
+          "vals": {
+           "large_part": "2*k",
+           "small_part": "m"
+          },
+          "steps": [
+           "The common factors are 1 and 2, so the larger is 2 and the smaller is 1.",
+           "The {k} big jumps cover 2 x {k} = {large_part} cm.",
+           "The {m} small jumps cover 1 x {m} = {small_part} cm.",
+           "Adding them, {large_part} + {small_part} = {answer} cm, so the frog travels {answer} cm."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "2*k",
+             "label": "{large_part} cm"
+            },
+            {
+             "v": "m",
+             "label": "{small_part} cm"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Find the distance for the big jumps and for the small jumps, then add.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "1 (generated problem)",
+          "14 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "36 (generated problem)",
+          "6 (generated problem)",
+          "8 (generated problem)"
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g6-ch5-l1-a8",
          "difficulty": 3,
@@ -23130,87 +24024,85 @@
         },
         {
          "type": "fillblank",
-         "difficulty": 1,
+         "difficulty": 3,
          "tags": [
           "practice",
           "computed"
          ],
-         "prompt": "The number 120 is a common multiple of 3 and 3. How many complete groups of 3 are in 120?",
-         "explanation": "We are told that 120 is a common multiple of 3 and 3. To count the groups of 3, divide the common multiple 120 by 3. 120 ÷ 3 = 40 groups.",
+         "prompt": "In the idli-vada game, players say idli-vada at 15, 30, 45 and so on; what is the largest idli-vada number less than 40?",
+         "explanation": "The idli-vada numbers are the multiples of 15: 15, 30, 45, and so on. To stay below 40, count how many whole groups of 15 fit before 40. There are 2 whole groups of 15, and 15 x 2 = 30. So the largest idli-vada number less than 40 is 30.",
          "steps": [
-          "We are told that 120 is a common multiple of 3 and 3.",
-          "To count the groups of 3, divide the common multiple 120 by 3.",
-          "120 ÷ 3 = 40 groups."
+          "The idli-vada numbers are the multiples of 15: 15, 30, 45, and so on.",
+          "To stay below 40, count how many whole groups of 15 fit before 40.",
+          "There are 2 whole groups of 15, and 15 x 2 = 30.",
+          "So the largest idli-vada number less than 40 is 30."
          ],
-         "hint": "Divide the common multiple by the size of one group.",
+         "hint": "Find how many whole groups of 15 fit before 40.",
          "derived": [
-          "120 (generated problem)",
-          "3 (generated problem)",
-          "40 (generated problem)"
+          "15 (generated problem)",
+          "2 (generated problem)",
+          "30 (generated problem)",
+          "40 (generated problem)",
+          "45 (generated problem)"
          ],
          "gen": {
-          "template": "The number {n} is a common multiple of {a} and {b}. How many complete groups of {a} are in {n}?",
+          "template": "In the idli-vada game, players say idli-vada at 15, 30, 45 and so on; what is the largest idli-vada number less than {n}?",
           "params": {
            "n": [
-            30,
-            60,
-            120
-           ],
-           "a": [
-            2,
-            3,
-            5
-           ],
-           "b": [
-            3,
-            5,
-            6
+            40,
+            50,
+            70,
+            80,
+            100
            ]
           },
-          "where": [
-           "n % a == 0",
-           "n % b == 0"
-          ],
-          "answer": "n/a",
+          "where": [],
+          "answer": "15*((n-1)//15)",
           "vals": {
-           "groups": "n/a"
+           "groups": "(n-1)//15",
+           "last": "15*((n-1)//15)"
           },
           "steps": [
-           "We are told that {n} is a common multiple of {a} and {b}.",
-           "To count the groups of {a}, divide the common multiple {n} by {a}.",
-           "{n} ÷ {a} = {answer} groups."
+           "The idli-vada numbers are the multiples of 15: 15, 30, 45, and so on.",
+           "To stay below {n}, count how many whole groups of 15 fit before {n}.",
+           "There are {groups} whole groups of 15, and 15 x {groups} = {last}.",
+           "So the largest idli-vada number less than {n} is {answer}."
           ],
           "model": {
            "type": "numberline",
            "from": 0,
            "to": "n",
-           "step": "a",
+           "step": 15,
            "jumps": {
             "start": 0,
-            "size": "a",
-            "count": "n/a"
+            "size": 15,
+            "count": "(n-1)//15"
            }
           },
-          "hint": "Divide the common multiple by the size of one group.",
+          "hint": "Find how many whole groups of 15 fit before {n}.",
           "wrong": [],
           "wrongWhy": []
          },
          "modelSpec": {
           "type": "numberline",
           "from": 0,
-          "to": 120,
-          "step": 3,
+          "to": 40,
+          "step": 15,
           "jumps": {
            "start": 0,
-           "size": 3,
-           "count": 40
+           "size": 15,
+           "count": 2
           }
          },
          "answers": [
-          "40"
+          "30"
          ],
-         "id": "mathematics-g6-ch5-l1-c1",
+         "id": "mathematics-g6-ch5-l1-c8",
          "src": [
+          {
+           "ch": 5,
+           "p": 107
+          },
           {
            "ch": 5,
            "p": 108
@@ -23219,174 +24111,92 @@
         },
         {
          "type": "fillblank",
-         "difficulty": 1,
+         "difficulty": 3,
          "tags": [
           "practice",
           "computed"
          ],
-         "prompt": "Treasure A is 54 jumps away and treasure B is 72 jumps away. A jump of size 6 reaches both treasures. How many jumps of size 6 reach treasure A?",
-         "explanation": "Since the jump size 6 reaches both treasures, it is a common factor of 54 and 72. Count the jumps to treasure A by dividing 54 by 6. 54 ÷ 6 = 9 jumps.",
+         "prompt": "In the idli-vada game, players say idli-vada at every 15th number; how many idli-vada numbers are there from 45 to 105, including both ends?",
+         "explanation": "The idli-vada numbers are the common multiples of 3 and 5, spaced 15 apart. There are 7 idli-vada numbers up to 105 and 2 before 45. Subtract: 7 - 2 = 5, so there are 5 idli-vada numbers from 45 to 105.",
          "steps": [
-          "Since the jump size 6 reaches both treasures, it is a common factor of 54 and 72.",
-          "Count the jumps to treasure A by dividing 54 by 6.",
-          "54 ÷ 6 = 9 jumps."
+          "The idli-vada numbers are the common multiples of 3 and 5, spaced 15 apart.",
+          "There are 7 idli-vada numbers up to 105 and 2 before 45.",
+          "Subtract: 7 - 2 = 5, so there are 5 idli-vada numbers from 45 to 105."
          ],
-         "hint": "Divide the distance to treasure A by the jump size.",
+         "hint": "Count the idli-vada numbers up to 105, then remove those before 45.",
          "derived": [
-          "54 (generated problem)",
-          "6 (generated problem)",
-          "72 (generated problem)",
-          "9 (generated problem)"
+          "105 (generated problem)",
+          "15 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "45 (generated problem)",
+          "5 (generated problem)",
+          "7 (generated problem)"
          ],
          "gen": {
-          "template": "Treasure A is {a} jumps away and treasure B is {b} jumps away. A jump of size {d} reaches both treasures. How many jumps of size {d} reach treasure A?",
+          "template": "In the idli-vada game, players say idli-vada at every 15th number; how many idli-vada numbers are there from {a} to {b}, including both ends?",
           "params": {
            "a": [
-            18,
-            36,
-            54
+            15,
+            30,
+            45
            ],
            "b": [
-            24,
-            48,
-            72
-           ],
-           "d": [
-            2,
-            3,
-            6
-           ]
-          },
-          "where": [],
-          "answer": "a/d",
-          "vals": {
-           "jumps": "a/d"
-          },
-          "steps": [
-           "Since the jump size {d} reaches both treasures, it is a common factor of {a} and {b}.",
-           "Count the jumps to treasure A by dividing {a} by {d}.",
-           "{a} ÷ {d} = {answer} jumps."
-          ],
-          "model": {
-           "type": "numberline",
-           "from": 0,
-           "to": "a",
-           "step": "d",
-           "jumps": {
-            "start": 0,
-            "size": "d",
-            "count": "a/d"
-           }
-          },
-          "hint": "Divide the distance to treasure A by the jump size.",
-          "wrong": [],
-          "wrongWhy": []
-         },
-         "modelSpec": {
-          "type": "numberline",
-          "from": 0,
-          "to": 54,
-          "step": 6,
-          "jumps": {
-           "start": 0,
-           "size": 6,
-           "count": 9
-          }
-         },
-         "answers": [
-          "9"
-         ],
-         "id": "mathematics-g6-ch5-l1-c2",
-         "src": [
-          {
-           "ch": 5,
-           "p": 110
-          },
-          {
-           "ch": 5,
-           "p": 110
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "difficulty": 2,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "Bus numbers are given to every multiple of 4 from 4 through 24. How many bus numbers are given?",
-         "explanation": "The bus numbers are the multiples of 4 from 4 through 24. Counting from 0 to 24 in jumps of 4 gives one bus number for each jump. 24 ÷ 4 = 6 bus numbers.",
-         "steps": [
-          "The bus numbers are the multiples of 4 from 4 through 24.",
-          "Counting from 0 to 24 in jumps of 4 gives one bus number for each jump.",
-          "24 ÷ 4 = 6 bus numbers."
-         ],
-         "hint": "Count the jumps of size 4 needed to reach 24.",
-         "derived": [
-          "0 (generated problem)",
-          "24 (generated problem)",
-          "4 (generated problem)",
-          "6 (generated problem)"
-         ],
-         "gen": {
-          "template": "Bus numbers are given to every multiple of {d} from {d} through {n}. How many bus numbers are given?",
-          "params": {
-           "d": [
-            2,
-            3,
-            4
-           ],
-           "n": [
-            12,
-            18,
-            24
+            75,
+            90,
+            105
            ]
           },
           "where": [
-           "n % d == 0"
+           "a % 15 == 0",
+           "b % 15 == 0",
+           "a <= b"
           ],
-          "answer": "n/d",
+          "answer": "b//15 - a//15 + 1",
           "vals": {
-           "zero": "0",
-           "count": "n/d"
+           "b_count": "b//15",
+           "before": "a//15-1"
           },
           "steps": [
-           "The bus numbers are the multiples of {d} from {d} through {n}.",
-           "Counting from {zero} to {n} in jumps of {d} gives one bus number for each jump.",
-           "{n} ÷ {d} = {answer} bus numbers."
+           "The idli-vada numbers are the common multiples of 3 and 5, spaced 15 apart.",
+           "There are {b_count} idli-vada numbers up to {b} and {before} before {a}.",
+           "Subtract: {b_count} - {before} = {answer}, so there are {answer} idli-vada numbers from {a} to {b}."
           ],
           "model": {
            "type": "numberline",
-           "from": 0,
-           "to": "n",
-           "step": "d",
+           "from": "a",
+           "to": "b",
+           "step": 15,
            "jumps": {
-            "start": 0,
-            "size": "d",
-            "count": "n/d"
+            "start": "a",
+            "size": 15,
+            "count": "b//15-a//15+1"
            }
           },
-          "hint": "Count the jumps of size {d} needed to reach {n}.",
+          "hint": "Count the idli-vada numbers up to {b}, then remove those before {a}.",
           "wrong": [],
           "wrongWhy": []
          },
          "modelSpec": {
           "type": "numberline",
-          "from": 0,
-          "to": 24,
-          "step": 4,
+          "from": 45,
+          "to": 105,
+          "step": 15,
           "jumps": {
-           "start": 0,
-           "size": 4,
-           "count": 6
+           "start": 45,
+           "size": 15,
+           "count": 5
           }
          },
          "answers": [
-          "6"
+          "5"
          ],
-         "id": "mathematics-g6-ch5-l1-c3",
+         "id": "mathematics-g6-ch5-l1-c9",
          "src": [
+          {
+           "ch": 5,
+           "p": 107
+          },
           {
            "ch": 5,
            "p": 108
@@ -23566,7 +24376,7 @@
       {
        "id": "mathematics-g6-ch5-l2",
        "title": "Prime Numbers",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -23914,6 +24724,126 @@
           {
            "ch": 5,
            "p": 114
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "The number 3 is prime. How many factors does 3 have?",
+         "explanation": "3 is prime, so its factors are 1 and 3. These are the two factors of 3. The answer is 2 factors.",
+         "steps": [
+          "3 is prime, so its factors are 1 and 3.",
+          "These are the two factors of 3.",
+          "The answer is 2 factors."
+         ],
+         "hint": "List the factors of 3 and count them.",
+         "derived": [
+          "1 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)"
+         ],
+         "gen": {
+          "template": "The number {p} is prime. How many factors does {p} have?",
+          "params": {
+           "p": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13
+           ]
+          },
+          "where": [],
+          "answer": "2",
+          "vals": {},
+          "steps": [
+           "{p} is prime, so its factors are 1 and {p}.",
+           "These are the two factors of {p}.",
+           "The answer is {answer} factors."
+          ],
+          "model": null,
+          "hint": "List the factors of {p} and count them.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "2"
+         ],
+         "id": "mathematics-g6-ch5-l2-c1",
+         "src": [
+          {
+           "ch": 5,
+           "p": 112
+          },
+          {
+           "ch": 5,
+           "p": 112
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Ravi has 13 one-rupee notes, and 13 is a prime number. How many factors does the number of notes have?",
+         "explanation": "The number of notes is the prime number 13. Its factors are 1 and 13. The answer is 2 factors.",
+         "steps": [
+          "The number of notes is the prime number 13.",
+          "Its factors are 1 and 13.",
+          "The answer is 2 factors."
+         ],
+         "hint": "List the factors of 13.",
+         "derived": [
+          "1 (generated problem)",
+          "13 (generated problem)",
+          "2 (generated problem)"
+         ],
+         "gen": {
+          "template": "Ravi has {n} one-rupee notes, and {n} is a prime number. How many factors does the number of notes have?",
+          "params": {
+           "n": [
+            3,
+            5,
+            7,
+            11,
+            13,
+            17
+           ]
+          },
+          "where": [],
+          "answer": "2",
+          "vals": {},
+          "steps": [
+           "The number of notes is the prime number {n}.",
+           "Its factors are 1 and {n}.",
+           "The answer is {answer} factors."
+          ],
+          "model": null,
+          "hint": "List the factors of {n}.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "2"
+         ],
+         "id": "mathematics-g6-ch5-l2-c2",
+         "src": [
+          {
+           "ch": 5,
+           "p": 112
+          },
+          {
+           "ch": 5,
+           "p": 112
           }
          ]
         },
@@ -24320,94 +25250,88 @@
           "practice",
           "computed"
          ],
-         "prompt": "A treasure jump of size 3 is allowed. How many of 4 and 15 can it reach?",
-         "explanation": "The allowed jump size is 3. Check whether 3 divides 4 and whether it divides 15. The jump reaches 1 of the two numbers.",
+         "prompt": "Two co-prime treasure labels are 2 and 13. What is their first common multiple?",
+         "explanation": "The labels 2 and 13 have no common factor other than 1. For co-prime numbers, the first common multiple equals their product. 2 x 13 = 26 = 26.",
          "steps": [
-          "The allowed jump size is 3.",
-          "Check whether 3 divides 4 and whether it divides 15.",
-          "The jump reaches 1 of the two numbers."
+          "The labels 2 and 13 have no common factor other than 1.",
+          "For co-prime numbers, the first common multiple equals their product.",
+          "2 x 13 = 26 = 26."
          ],
-         "hint": "Divide each number by the jump size and count how many remainders are zero.",
+         "hint": "Use the rule for the first common multiple of co-prime numbers.",
          "derived": [
           "1 (generated problem)",
-          "15 (generated problem)",
-          "3 (generated problem)",
-          "4 (generated problem)"
+          "13 (generated problem)",
+          "2 (generated problem)",
+          "26 (generated problem)"
          ],
          "gen": {
-          "template": "A treasure jump of size {d} is allowed. How many of {a} and {b} can it reach?",
+          "template": "Two co-prime treasure labels are {a} and {b}. What is their first common multiple?",
           "params": {
-           "d": [
+           "a": [
             2,
             3,
             4,
             5
            ],
-           "a": [
-            4,
-            8,
-            9,
-            10
-           ],
            "b": [
-            6,
+            7,
             9,
-            10,
-            15
+            11,
+            13
            ]
           },
           "where": [],
-          "answer": "(a%d==0)+(b%d==0)",
+          "answer": "a*b",
           "vals": {
-           "reached_count": "(a%d==0)+(b%d==0)"
+           "product": "a*b"
           },
           "steps": [
-           "The allowed jump size is {d}.",
-           "Check whether {d} divides {a} and whether it divides {b}.",
-           "The jump reaches {answer} of the two numbers."
+           "The labels {a} and {b} have no common factor other than 1.",
+           "For co-prime numbers, the first common multiple equals their product.",
+           "{a} x {b} = {product} = {answer}."
           ],
           "model": {
-           "type": "compare",
-           "bars": [
-            {
-             "label": "First number",
-             "v": "a"
-            },
-            {
-             "label": "Second number",
-             "v": "b"
-            }
-           ]
+           "type": "numberline",
+           "from": 0,
+           "to": "a*b",
+           "step": "a",
+           "jumps": {
+            "start": 0,
+            "size": "a",
+            "count": "b"
+           }
           },
-          "hint": "Divide each number by the jump size and count how many remainders are zero.",
+          "hint": "Use the rule for the first common multiple of co-prime numbers.",
           "wrong": [],
           "wrongWhy": []
          },
          "modelSpec": {
-          "type": "compare",
-          "bars": [
-           {
-            "label": "First number",
-            "v": 4
-           },
-           {
-            "label": "Second number",
-            "v": 15
-           }
-          ]
+          "type": "numberline",
+          "from": 0,
+          "to": 26,
+          "step": 2,
+          "jumps": {
+           "start": 0,
+           "size": 2,
+           "count": 13
+          }
          },
          "answers": [
-          "1"
+          "26"
          ],
          "id": "mathematics-g6-ch5-l3-c1",
          "src": [
           {
            "ch": 5,
-           "p": 115
+           "p": 116
           },
           {
            "ch": 5,
-           "p": 115
+           "p": 116
+          },
+          {
+           "ch": 5,
+           "p": 116
           }
          ]
         },
