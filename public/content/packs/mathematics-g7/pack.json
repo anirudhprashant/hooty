@@ -3705,7 +3705,7 @@
       {
        "id": "mathematics-g7-ch1-l5",
        "title": "Patterns in Products",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -3752,6 +3752,61 @@
            "ch": 1,
            "p": 14
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch1-l5-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Two 2-digit numbers are 40 and 50. What is their product?",
+         "steps": [
+          "The two numbers are 40 and 50.",
+          "Multiplying the two 2-digit numbers gives a product of 3 or 4 digits.",
+          "40 x 50 = 2000."
+         ],
+         "modelSpec": null,
+         "result": "2000",
+         "gen": {
+          "template": "Two 2-digit numbers are {a} and {b}. What is their product?",
+          "params": {
+           "a": [
+            20,
+            30,
+            40
+           ],
+           "b": [
+            40,
+            50,
+            60
+           ]
+          },
+          "where": [],
+          "answer": "a*b",
+          "vals": {
+           "total": "a*b"
+          },
+          "steps": [
+           "The two numbers are {a} and {b}.",
+           "Multiplying the two 2-digit numbers gives a product of 3 or 4 digits.",
+           "{a} x {b} = {answer}."
+          ],
+          "model": null,
+          "hint": "Multiply the two numbers.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "2 (generated problem)",
+          "2000 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "40 (generated problem)",
+          "50 (generated problem)"
          ]
         },
         {
@@ -3917,103 +3972,332 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g7-ch1-l5-a8",
-         "difficulty": 3,
+         "type": "fillblank",
+         "difficulty": 2,
          "tags": [
-          "products",
-          "2-digit numbers",
-          "digit counts"
+          "practice",
+          "computed"
          ],
-         "prompt": "Every product of two 2-digit numbers is less than 10,000.",
-         "answer": true,
-         "explanation": "Correct! Such a product is always less than 10,000.",
+         "prompt": "At a market, 10 bags of sweets cost 5 rupees each. What is the total cost in rupees?",
+         "explanation": "The number of bags is 10. Because 5 is half of 10, halve 10 and then multiply by 10. 10 ÷ 2 = 5. 5 x 10 = 50 rupees.",
+         "steps": [
+          "The number of bags is 10.",
+          "Because 5 is half of 10, halve 10 and then multiply by 10.",
+          "10 ÷ 2 = 5.",
+          "5 x 10 = 50 rupees."
+         ],
+         "hint": "Halve the number of bags first.",
+         "derived": [
+          "10 (generated problem)",
+          "2 (generated problem)",
+          "5 (generated problem)",
+          "50 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a market, {a} bags of sweets cost 5 rupees each. What is the total cost in rupees?",
+          "params": {
+           "a": {
+            "min": 10,
+            "max": 40
+           }
+          },
+          "where": [
+           "a % 2 == 0"
+          ],
+          "answer": "(a/2)*10",
+          "vals": {
+           "half": "a/2",
+           "total": "(a/2)*10"
+          },
+          "steps": [
+           "The number of bags is {a}.",
+           "Because 5 is half of 10, halve {a} and then multiply by 10.",
+           "{a} ÷ 2 = {half}.",
+           "{half} x 10 = {answer} rupees."
+          ],
+          "model": null,
+          "hint": "Halve the number of bags first.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "50"
+         ],
+         "id": "mathematics-g7-ch1-l5-c2",
          "src": [
           {
            "ch": 1,
-           "p": 15
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "mathematics-g7-ch1-l5-a9",
-         "difficulty": 3,
-         "tags": [
-          "products",
-          "3-digit numbers",
-          "digit counts"
-         ],
-         "title": "Products of Two 3-Digit Numbers",
-         "prompt": "Which statement about products of two 3-digit numbers is correct?",
-         "options": [
-          "Cannot have only 4 digits",
-          "Can have only 4 digits",
-          "Always have exactly 5 digits",
-          "Always have exactly 6 digits"
-         ],
-         "answer": 0,
-         "explanation": "A product of two 3-digit numbers cannot have only 4 digits. This follows from the lesson's rule.",
-         "src": [
+           "p": 13
+          },
           {
            "ch": 1,
-           "p": 15
+           "p": 13
           }
          ]
         },
         {
          "type": "fillblank",
-         "difficulty": 1,
+         "difficulty": 2,
          "tags": [
           "practice",
           "computed"
          ],
-         "prompt": "What is the maximum number of digits in the product of a 4-digit number and a 3-digit number?",
-         "explanation": "A 4-digit number and a 3-digit number are multiplied. The maximum product has the sum of the digit counts. 4 + 3 = 7 digits.",
+         "prompt": "At a school fair, 32 trays each contain 25 laddoos. How many laddoos are there altogether?",
+         "explanation": "There are 32 trays with 25 laddoos in each tray. Since 25 is one fourth of 100, divide 32 by 4 and then multiply by 100. 32 ÷ 4 = 8. 8 x 100 = 800 laddoos.",
          "steps": [
-          "A 4-digit number and a 3-digit number are multiplied.",
-          "The maximum product has the sum of the digit counts.",
-          "4 + 3 = 7 digits."
+          "There are 32 trays with 25 laddoos in each tray.",
+          "Since 25 is one fourth of 100, divide 32 by 4 and then multiply by 100.",
+          "32 ÷ 4 = 8.",
+          "8 x 100 = 800 laddoos."
          ],
-         "hint": "Add the two digit counts.",
+         "hint": "Divide the number of trays by 4 first.",
          "derived": [
-          "3 (generated problem)",
+          "100 (generated problem)",
+          "25 (generated problem)",
+          "32 (generated problem)",
           "4 (generated problem)",
-          "7 (generated problem)"
+          "8 (generated problem)",
+          "800 (generated problem)"
          ],
          "gen": {
-          "template": "What is the maximum number of digits in the product of a {a}-digit number and a {b}-digit number?",
+          "template": "At a school fair, {a} trays each contain 25 laddoos. How many laddoos are there altogether?",
           "params": {
            "a": {
-            "min": 2,
-            "max": 4
-           },
-           "b": {
-            "min": 2,
-            "max": 4
+            "min": 20,
+            "max": 40
            }
           },
-          "where": [],
-          "answer": "a+b",
-          "vals": {},
+          "where": [
+           "a % 4 == 0"
+          ],
+          "answer": "(a/4)*100",
+          "vals": {
+           "quarter": "a/4",
+           "total": "(a/4)*100"
+          },
           "steps": [
-           "A {a}-digit number and a {b}-digit number are multiplied.",
-           "The maximum product has the sum of the digit counts.",
-           "{a} + {b} = {answer} digits."
+           "There are {a} trays with 25 laddoos in each tray.",
+           "Since 25 is one fourth of 100, divide {a} by 4 and then multiply by 100.",
+           "{a} ÷ 4 = {quarter}.",
+           "{quarter} x 100 = {answer} laddoos."
           ],
           "model": null,
-          "hint": "Add the two digit counts.",
+          "hint": "Divide the number of trays by 4 first.",
           "wrong": [],
           "wrongWhy": []
          },
          "answers": [
-          "7"
+          "800"
          ],
-         "id": "mathematics-g7-ch1-l5-c1",
+         "id": "mathematics-g7-ch1-l5-c3",
+         "src": [
+          {
+           "ch": 1,
+           "p": 14
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A bus route code has 2 digits, and a school roll number has 4 digits. What is the greatest possible number of digits in the product of these two numbers?",
+         "explanation": "The first number has 2 digits and the second has 4 digits. The greatest possible digit count is the sum of their digit counts. 2 + 4 = 6, so the answer is 6 digits.",
+         "steps": [
+          "The first number has 2 digits and the second has 4 digits.",
+          "The greatest possible digit count is the sum of their digit counts.",
+          "2 + 4 = 6, so the answer is 6 digits."
+         ],
+         "hint": "Add the two digit counts.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bus route code has {a} digits, and a school roll number has {b} digits. What is the greatest possible number of digits in the product of these two numbers?",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 5
+           },
+           "b": {
+            "min": 2,
+            "max": 5
+           }
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {
+           "total_digits": "a+b"
+          },
+          "steps": [
+           "The first number has {a} digits and the second has {b} digits.",
+           "The greatest possible digit count is the sum of their digit counts.",
+           "{a} + {b} = {total_digits}, so the answer is {answer} digits."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} digits"
+            },
+            {
+             "v": "b",
+             "label": "{b} digits"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the two digit counts.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 2,
+            "label": "2 digits"
+           },
+           {
+            "v": 4,
+            "label": "4 digits"
+           }
+          ],
+          "total": "?"
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g7-ch1-l5-c4",
          "src": [
           {
            "ch": 1,
            "p": 23
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch1-l5-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A school fair prepares 8668 boxes, and each box contains 25 laddoos. How many laddoos are prepared altogether?",
+         "steps": [
+          "There are 8668 boxes with 25 laddoos in every box.",
+          "Since 25 is one fourth of 100, divide 8668 by 4 to get 2167.",
+          "Multiply 2167 by 100 to find the total.",
+          "2167 x 100 = 216700 laddoos."
+         ],
+         "modelSpec": null,
+         "result": "216700",
+         "gen": {
+          "template": "A school fair prepares {a} boxes, and each box contains 25 laddoos. How many laddoos are prepared altogether?",
+          "params": {
+           "a": {
+            "min": 1000,
+            "max": 9999
+           }
+          },
+          "where": [
+           "a % 4 == 0"
+          ],
+          "answer": "(a/4)*100",
+          "vals": {
+           "quarter": "a/4",
+           "total": "(a/4)*100"
+          },
+          "steps": [
+           "There are {a} boxes with 25 laddoos in every box.",
+           "Since 25 is one fourth of 100, divide {a} by 4 to get {quarter}.",
+           "Multiply {quarter} by 100 to find the total.",
+           "{quarter} x 100 = {answer} laddoos."
+          ],
+          "model": null,
+          "hint": "Begin by dividing the number of boxes by 4.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "100 (generated problem)",
+          "2167 (generated problem)",
+          "216700 (generated problem)",
+          "25 (generated problem)",
+          "4 (generated problem)",
+          "8668 (generated problem)"
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a market, 230 large packets of snacks cost 5 rupees each. What is the total cost in rupees?",
+         "explanation": "The number of packets is 230. Halving 230 gives 115. Multiplying 115 by 10 is quicker than multiplying 230 by 5. 115 x 10 = 1150 rupees.",
+         "steps": [
+          "The number of packets is 230.",
+          "Halving 230 gives 115.",
+          "Multiplying 115 by 10 is quicker than multiplying 230 by 5.",
+          "115 x 10 = 1150 rupees."
+         ],
+         "hint": "Start by halving the number of packets.",
+         "derived": [
+          "10 (generated problem)",
+          "115 (generated problem)",
+          "1150 (generated problem)",
+          "230 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a market, {a} large packets of snacks cost 5 rupees each. What is the total cost in rupees?",
+          "params": {
+           "a": {
+            "min": 100,
+            "max": 999
+           }
+          },
+          "where": [
+           "a % 2 == 0"
+          ],
+          "answer": "(a/2)*10",
+          "vals": {
+           "half": "a/2",
+           "total": "(a/2)*10"
+          },
+          "steps": [
+           "The number of packets is {a}.",
+           "Halving {a} gives {half}.",
+           "Multiplying {half} by 10 is quicker than multiplying {a} by 5.",
+           "{half} x 10 = {answer} rupees."
+          ],
+          "model": null,
+          "hint": "Start by halving the number of packets.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "1150"
+         ],
+         "id": "mathematics-g7-ch1-l5-c5",
+         "src": [
+          {
+           "ch": 1,
+           "p": 13
+          },
+          {
+           "ch": 1,
+           "p": 13
           }
          ]
         },
@@ -4133,7 +4417,7 @@
       {
        "id": "mathematics-g7-ch1-l6",
        "title": "Large Number Facts and Thought Experiments",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -4495,6 +4779,127 @@
           {
            "ch": 1,
            "p": 19
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Each bus holds 6 people. How many people can 3 buses hold altogether?",
+         "explanation": "There are 3 buses, and each bus holds 6 people. Multiply the number of buses by the number in each bus: 3 x 6 = 18 people.",
+         "steps": [
+          "There are 3 buses, and each bus holds 6 people.",
+          "Multiply the number of buses by the number in each bus: 3 x 6 = 18 people."
+         ],
+         "hint": "Multiply the number of buses by the number of people in each bus.",
+         "derived": [
+          "18 (generated problem)",
+          "3 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "Each bus holds {b} people. How many people can {a} buses hold altogether?",
+          "params": {
+           "a": [
+            2,
+            3,
+            4
+           ],
+           "b": [
+            4,
+            6,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "a*b",
+          "vals": {},
+          "steps": [
+           "There are {a} buses, and each bus holds {b} people.",
+           "Multiply the number of buses by the number in each bus: {a} x {b} = {answer} people."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "a",
+           "size": "b"
+          },
+          "hint": "Multiply the number of buses by the number of people in each bus.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 6
+         },
+         "answers": [
+          "18"
+         ],
+         "id": "mathematics-g7-ch1-l6-c1",
+         "src": [
+          {
+           "ch": 1,
+           "p": 18
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "The Amazon sends 209000 litres of water into the Atlantic each second for 10 seconds. How many litres of water are sent in that time?",
+         "explanation": "The Amazon sends 209000 litres each second for 10 seconds. Multiply the amount sent each second by the total seconds: 209000 x 10 = 2090000 litres.",
+         "steps": [
+          "The Amazon sends 209000 litres each second for 10 seconds.",
+          "Multiply the amount sent each second by the total seconds: 209000 x 10 = 2090000 litres."
+         ],
+         "hint": "Multiply the number of litres each second by the number of seconds.",
+         "derived": [
+          "10 (generated problem)",
+          "209000 (generated problem)",
+          "2090000 (generated problem)"
+         ],
+         "gen": {
+          "template": "The Amazon sends {a} litres of water into the Atlantic each second for {b} seconds. How many litres of water are sent in that time?",
+          "params": {
+           "a": [
+            209000,
+            210000,
+            211000
+           ],
+           "b": [
+            10,
+            20,
+            30
+           ]
+          },
+          "where": [],
+          "answer": "a*b",
+          "vals": {},
+          "steps": [
+           "The Amazon sends {a} litres each second for {b} seconds.",
+           "Multiply the amount sent each second by the total seconds: {a} x {b} = {answer} litres."
+          ],
+          "model": null,
+          "hint": "Multiply the number of litres each second by the number of seconds.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "2090000"
+         ],
+         "id": "mathematics-g7-ch1-l6-c2",
+         "src": [
+          {
+           "ch": 1,
+           "p": 17
           }
          ]
         },
@@ -7842,15 +8247,15 @@
          ]
         }
        ],
-       "topicScene": "media/ch2-l2-marbles-943526928-ece2cd.webp",
-       "sceneAlt": "A group of Indian children play marbles outdoors.",
-       "sceneCaption": "Indian children play marbles together outdoors.",
+       "topicScene": "media/ch2-l3-teacher-at-blackboard-1924-b5d30f.webp",
+       "sceneAlt": "A teacher points to a blackboard in a classroom scene from a 1924 advertisement.",
+       "sceneCaption": "A teacher points to a classroom blackboard in a retouched 1924 advertisement.",
        "sceneCredit": {
-        "text": "Marbles (943526928) by nathalie_r, CC BY 2.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Marbles_(943526928).jpg",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-        "creator": "nathalie_r"
+        "text": "Teacher at blackboard (1924) by Anonymous Unknown author, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Teacher_at_blackboard_(1924).jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "Anonymous Unknown author"
        }
       },
       {
@@ -13018,7 +13423,7 @@
       {
        "id": "mathematics-g7-ch3-l2",
        "title": "Hundredths and More Precise Lengths",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -13064,6 +13469,63 @@
            "ch": 3,
            "p": 46
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch3-l2-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A length is 50 one-hundredths. How many one-tenths is the same length?",
+         "steps": [
+          "The given length is 50 one-hundredths.",
+          "Ten one-hundredths make one one-tenth, so divide the number of one-hundredths by 10.",
+          "So the same length is 5 one-tenths."
+         ],
+         "modelSpec": {
+          "type": "groups",
+          "groups": 5,
+          "size": 10
+         },
+         "result": "5",
+         "gen": {
+          "template": "A length is {n} one-hundredths. How many one-tenths is the same length?",
+          "params": {
+           "n": [
+            20,
+            30,
+            40,
+            50,
+            60
+           ]
+          },
+          "where": [
+           "n % 10 == 0"
+          ],
+          "answer": "n/10",
+          "vals": {},
+          "steps": [
+           "The given length is {n} one-hundredths.",
+           "Ten one-hundredths make one one-tenth, so divide the number of one-hundredths by 10.",
+           "So the same length is {answer} one-tenths."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n/10",
+           "size": "10"
+          },
+          "hint": "Group the one-hundredths into groups of ten.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "10 (generated problem)",
+          "5 (generated problem)",
+          "50 (generated problem)"
          ]
         },
         {
@@ -13159,23 +13621,71 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g7-ch3-l2-a6",
-         "difficulty": 2,
+         "type": "fillblank",
+         "difficulty": 1,
          "tags": [
-          "hundredths",
-          "lengths"
+          "practice",
+          "computed"
          ],
-         "prompt": "Which is the folded length?",
-         "options": [
-          "1 unit, 14 one-hundredths",
-          "14 tenths, 4 one-hundredths",
-          "4 units, 45 one-hundredths",
-          "one hundred, 4 one-hundredths"
+         "prompt": "How many one-hundredths are in 3 one-tenths?",
+         "explanation": "The given length is 3 one-tenths. Each one-tenth splits into ten one-hundredths, so multiply by 10. There are 30 one-hundredths in 3 one-tenths.",
+         "steps": [
+          "The given length is 3 one-tenths.",
+          "Each one-tenth splits into ten one-hundredths, so multiply by 10.",
+          "There are 30 one-hundredths in 3 one-tenths."
          ],
-         "answer": 2,
-         "explanation": "The folded length is written as 4 units and 45 one-hundredths.",
+         "hint": "Each one-tenth contains ten one-hundredths.",
+         "derived": [
+          "10 (generated problem)",
+          "3 (generated problem)",
+          "30 (generated problem)"
+         ],
+         "gen": {
+          "template": "How many one-hundredths are in {n} one-tenths?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "n*10",
+          "vals": {},
+          "steps": [
+           "The given length is {n} one-tenths.",
+           "Each one-tenth splits into ten one-hundredths, so multiply by 10.",
+           "There are {answer} one-hundredths in {n} one-tenths."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "10"
+          },
+          "hint": "Each one-tenth contains ten one-hundredths.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 10
+         },
+         "answers": [
+          "30"
+         ],
+         "id": "mathematics-g7-ch3-l2-c2",
          "src": [
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 46
+          },
           {
            "ch": 3,
            "p": 46
@@ -13183,16 +13693,236 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g7-ch3-l2-a8",
-         "difficulty": 3,
+         "type": "mcq",
+         "difficulty": 1,
          "tags": [
-          "hundredths",
-          "units"
+          "practice",
+          "computed"
          ],
-         "prompt": "Ten one-hundredths make one whole unit.",
-         "answer": false,
-         "explanation": "Ten one-hundredths make one one-tenth. One hundred one-hundredths make one whole unit.",
+         "prompt": "How many one-hundredths are in 2 whole units?",
+         "explanation": "The given length is 2 whole units. Each whole unit contains 100 one-hundredths, so multiply 2 by 100. There are 200 one-hundredths in 2 whole units.",
+         "steps": [
+          "The given length is 2 whole units.",
+          "Each whole unit contains 100 one-hundredths, so multiply 2 by 100.",
+          "There are 200 one-hundredths in 2 whole units."
+         ],
+         "hint": "Change each whole unit into one-hundredths.",
+         "derived": [
+          "100 (generated problem)",
+          "102 (generated problem)",
+          "2 (generated problem)",
+          "20 (generated problem)",
+          "200 (generated problem)"
+         ],
+         "gen": {
+          "template": "How many one-hundredths are in {n} whole units?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "n*100",
+          "vals": {},
+          "steps": [
+           "The given length is {n} whole units.",
+           "Each whole unit contains 100 one-hundredths, so multiply {n} by 100.",
+           "There are {answer} one-hundredths in {n} whole units."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "n*100",
+           "step": "100",
+           "jumps": {
+            "start": 0,
+            "size": "100",
+            "count": "n"
+           }
+          },
+          "hint": "Change each whole unit into one-hundredths.",
+          "wrong": [
+           "n*10",
+           "n",
+           "n+100"
+          ],
+          "wrongWhy": {
+           "n*10": "You used the size of a one-tenth instead of the size of a whole unit.",
+           "n": "You counted each whole unit as only one one-hundredth.",
+           "n+100": "You added one group of 100 instead of counting a group for every whole unit."
+          }
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 200,
+          "step": 100,
+          "jumps": {
+           "start": 0,
+           "size": 100,
+           "count": 2
+          }
+         },
+         "options": [
+          "2",
+          "102",
+          "200",
+          "20"
+         ],
+         "answer": 2,
+         "why": {},
+         "id": "mathematics-g7-ch3-l2-c3",
+         "src": [
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 46
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "4 groups of 100 one-hundredths make how many whole units?",
+         "explanation": "There are 4 groups, and each group has 100 one-hundredths. Each complete group makes one whole unit, so count the groups. The 4 groups make 4 whole units.",
+         "steps": [
+          "There are 4 groups, and each group has 100 one-hundredths.",
+          "Each complete group makes one whole unit, so count the groups.",
+          "The 4 groups make 4 whole units."
+         ],
+         "hint": "Each group of 100 one-hundredths makes one whole unit.",
+         "derived": [
+          "100 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "{n} groups of 100 one-hundredths make how many whole units?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "n",
+          "vals": {},
+          "steps": [
+           "There are {n} groups, and each group has 100 one-hundredths.",
+           "Each complete group makes one whole unit, so count the groups.",
+           "The {n} groups make {answer} whole units."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "n*100",
+           "step": "100",
+           "jumps": {
+            "start": 0,
+            "size": "100",
+            "count": "n"
+           }
+          },
+          "hint": "Each group of 100 one-hundredths makes one whole unit.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 400,
+          "step": 100,
+          "jumps": {
+           "start": 0,
+           "size": 100,
+           "count": 4
+          }
+         },
+         "answers": [
+          "4"
+         ],
+         "id": "mathematics-g7-ch3-l2-c4",
+         "src": [
+          {
+           "ch": 3,
+           "p": 46
+          },
+          {
+           "ch": 3,
+           "p": 46
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A bottle contains 20 one-hundredths of a litre. How many one-tenths of a litre is that?",
+         "explanation": "The bottle contains 20 one-hundredths of a litre. Ten one-hundredths make one one-tenth, so divide 20 by 10. The bottle contains 2 one-tenths of a litre.",
+         "steps": [
+          "The bottle contains 20 one-hundredths of a litre.",
+          "Ten one-hundredths make one one-tenth, so divide 20 by 10.",
+          "The bottle contains 2 one-tenths of a litre."
+         ],
+         "hint": "Group the one-hundredths into groups of ten.",
+         "derived": [
+          "10 (generated problem)",
+          "2 (generated problem)",
+          "20 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bottle contains {n} one-hundredths of a litre. How many one-tenths of a litre is that?",
+          "params": {
+           "n": [
+            20,
+            30,
+            40,
+            50,
+            60
+           ]
+          },
+          "where": [
+           "n % 10 == 0"
+          ],
+          "answer": "n/10",
+          "vals": {},
+          "steps": [
+           "The bottle contains {n} one-hundredths of a litre.",
+           "Ten one-hundredths make one one-tenth, so divide {n} by 10.",
+           "The bottle contains {answer} one-tenths of a litre."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n/10",
+           "size": "10"
+          },
+          "hint": "Group the one-hundredths into groups of ten.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 10
+         },
+         "answers": [
+          "2"
+         ],
+         "id": "mathematics-g7-ch3-l2-c5",
          "src": [
           {
            "ch": 3,
@@ -16015,15 +16745,15 @@
          ]
         }
        ],
-       "topicScene": "media/ch3-l1-glass-fabric-399450.webp",
-       "sceneAlt": "Two pieces of glass fabric with different thicknesses and orientations are shown with a ruler for scale.",
-       "sceneCaption": "Two glass fabrics with different thicknesses, alongside a ruler showing scale.",
+       "topicScene": "media/ch3-l5-balyakal-ruler-sheets-2-a83049.webp",
+       "sceneAlt": "Printable metric ruler worksheets for children offer centimeter, millimeter, and decimal-precision measuring tasks with answer keys.",
+       "sceneCaption": "Colorful ruler worksheets let children measure lengths using centimeters, millimeters, and decimals.",
        "sceneCredit": {
-        "text": "Glass fabric by Cjp24, Public domain, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Glass_fabric.jpg",
-        "license": "Public domain",
-        "licenseUrl": "",
-        "creator": "Cjp24"
+        "text": "Balyakal ruler-sheets 2 by Balyakal, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Balyakal_ruler-sheets_2.webp",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Balyakal"
        }
       },
       {
@@ -25257,7 +25987,7 @@
       {
        "id": "mathematics-g7-ch5-l2",
        "title": "5.2 Perpendicular Lines and 5.3 Between Lines",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -25323,6 +26053,75 @@
            "ch": 5,
            "p": 110
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch5-l2-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A drawing has 4 pairs of perpendicular lines. How many right angles are formed altogether?",
+         "steps": [
+          "Each pair of perpendicular lines forms 4 right angles.",
+          "Multiply the number of pairs by 4: 4 x 4 = 16.",
+          "Thus, 16 right angles are formed altogether."
+         ],
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 4,
+          "label": "4 right angles"
+         },
+         "result": "16",
+         "gen": {
+          "template": "A drawing has {n} pairs of perpendicular lines. How many right angles are formed altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "n*4",
+          "vals": {
+           "angles_per_pair": "4",
+           "total_right_angles": "n*4"
+          },
+          "steps": [
+           "Each pair of perpendicular lines forms {angles_per_pair} right angles.",
+           "Multiply the number of pairs by {angles_per_pair}: {n} x {angles_per_pair} = {total_right_angles}.",
+           "Thus, {answer} right angles are formed altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "4",
+           "label": "4 right angles"
+          },
+          "hint": "Find how many right angles each pair of perpendicular lines makes.",
+          "wrong": [
+           "2*n",
+           "n+4",
+           "n*n"
+          ],
+          "wrongWhy": {
+           "2*n": "You counted only the two lines in each pair.",
+           "n+4": "You added the number of pairs to four instead of multiplying.",
+           "n*n": "You counted a separate angle for every pair in a square array."
+          }
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "15 (generated problem)",
+          "16 (generated problem)",
+          "17 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
          ]
         },
         {
@@ -25451,17 +26250,69 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g7-ch5-l2-a4",
+         "type": "fillblank",
          "difficulty": 1,
          "tags": [
-          "parallel lines"
+          "practice",
+          "computed"
          ],
-         "title": "Extending parallel lines",
-         "prompt": "Parallel lines meet when they are extended at both ends.",
-         "answer": false,
-         "explanation": "Parallel lines stay apart, even when extended at both ends.",
+         "prompt": "A pattern has 2 pairs of parallel lines. How many parallel lines are used altogether?",
+         "explanation": "Each pair of parallel lines contains 2 lines. Multiply the number of pairs by 2: 2 x 2 = 4. Thus, 4 parallel lines are used altogether.",
+         "steps": [
+          "Each pair of parallel lines contains 2 lines.",
+          "Multiply the number of pairs by 2: 2 x 2 = 4.",
+          "Thus, 4 parallel lines are used altogether."
+         ],
+         "hint": "Find how many lines are in each pair of parallel lines.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "A pattern has {n} pairs of parallel lines. How many parallel lines are used altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "n*2",
+          "vals": {
+           "lines_per_pair": "2"
+          },
+          "steps": [
+           "Each pair of parallel lines contains {lines_per_pair} lines.",
+           "Multiply the number of pairs by {lines_per_pair}: {n} x {lines_per_pair} = {answer}.",
+           "Thus, {answer} parallel lines are used altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "2",
+           "label": "2 parallel lines"
+          },
+          "hint": "Find how many lines are in each pair of parallel lines.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 2,
+          "label": "2 parallel lines"
+         },
+         "answers": [
+          "4"
+         ],
+         "id": "mathematics-g7-ch5-l2-c2",
          "src": [
+          {
+           "ch": 5,
+           "p": 110
+          },
           {
            "ch": 5,
            "p": 110
@@ -25473,23 +26324,66 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g7-ch5-l2-a6",
-         "difficulty": 2,
+         "type": "fillblank",
+         "difficulty": 1,
          "tags": [
-          "segments",
-          "degrees"
+          "practice",
+          "computed"
          ],
-         "title": "Angle at endpoint F",
-         "prompt": "What is the angle where segments FG and FH meet?",
-         "options": [
-          "90 degrees",
-          "115.3 degrees",
-          "not given in the lesson",
-          "a right angle"
+         "prompt": "A worksheet shows 12 right angles, with four right angles coming from each pair of perpendicular lines. How many pairs of perpendicular lines are shown?",
+         "explanation": "Each perpendicular pair makes 4 right angles. Divide the total number of right angles by 4: 12 divided by 4 = 3. Thus, 3 pairs of perpendicular lines are shown.",
+         "steps": [
+          "Each perpendicular pair makes 4 right angles.",
+          "Divide the total number of right angles by 4: 12 divided by 4 = 3.",
+          "Thus, 3 pairs of perpendicular lines are shown."
          ],
-         "answer": 1,
-         "explanation": "The angle between segments FG and FH is 115.3 degrees.",
+         "hint": "Group the right angles into sets of four.",
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "A worksheet shows {n} right angles, with four right angles coming from each pair of perpendicular lines. How many pairs of perpendicular lines are shown?",
+          "params": {
+           "n": [
+            4,
+            8,
+            12
+           ]
+          },
+          "where": [
+           "n % 4 == 0"
+          ],
+          "answer": "n/4",
+          "vals": {
+           "right_angles_per_pair": "4"
+          },
+          "steps": [
+           "Each perpendicular pair makes {right_angles_per_pair} right angles.",
+           "Divide the total number of right angles by {right_angles_per_pair}: {n} divided by {right_angles_per_pair} = {answer}.",
+           "Thus, {answer} pairs of perpendicular lines are shown."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n/4",
+           "size": "4",
+           "label": "4 right angles"
+          },
+          "hint": "Group the right angles into sets of four.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 4,
+          "label": "4 right angles"
+         },
+         "answers": [
+          "3"
+         ],
+         "id": "mathematics-g7-ch5-l2-c3",
          "src": [
           {
            "ch": 5,
@@ -25498,6 +26392,91 @@
           {
            "ch": 5,
            "p": 109
+          },
+          {
+           "ch": 5,
+           "p": 109
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A tile pattern has 2 groups of 4 parallel lines. How many parallel lines are in the pattern?",
+         "explanation": "Each group contains 4 parallel lines. There are 2 equal groups, so 2 x 4 = 8. Thus, the pattern has 8 parallel lines.",
+         "steps": [
+          "Each group contains 4 parallel lines.",
+          "There are 2 equal groups, so 2 x 4 = 8.",
+          "Thus, the pattern has 8 parallel lines."
+         ],
+         "hint": "Find how many lines are in one group before counting all the groups.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A tile pattern has {n} groups of {k} parallel lines. How many parallel lines are in the pattern?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4
+           ],
+           "k": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "n*k",
+          "vals": {},
+          "steps": [
+           "Each group contains {k} parallel lines.",
+           "There are {n} equal groups, so {n} x {k} = {answer}.",
+           "Thus, the pattern has {answer} parallel lines."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "k",
+           "label": "k parallel lines"
+          },
+          "hint": "Find how many lines are in one group before counting all the groups.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 4,
+          "label": "k parallel lines"
+         },
+         "answers": [
+          "8"
+         ],
+         "id": "mathematics-g7-ch5-l2-c4",
+         "src": [
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
           }
          ]
         },
@@ -25559,6 +26538,319 @@
          ]
         },
         {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A school display has 4 pairs of perpendicular lines. How many right angles does the display have altogether?",
+         "explanation": "The display has 4 pairs of perpendicular lines. Each pair makes 4 right angles, so 4 x 4 = 16. Thus, the display has 16 right angles altogether.",
+         "steps": [
+          "The display has 4 pairs of perpendicular lines.",
+          "Each pair makes 4 right angles, so 4 x 4 = 16.",
+          "Thus, the display has 16 right angles altogether."
+         ],
+         "hint": "Each perpendicular pair makes four right angles.",
+         "derived": [
+          "16 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "A school display has {n} pairs of perpendicular lines. How many right angles does the display have altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "n*4",
+          "vals": {
+           "angles_per_pair": "4",
+           "total_right_angles": "n*4"
+          },
+          "steps": [
+           "The display has {n} pairs of perpendicular lines.",
+           "Each pair makes {angles_per_pair} right angles, so {n} x {angles_per_pair} = {total_right_angles}.",
+           "Thus, the display has {answer} right angles altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "4",
+           "label": "4 right angles"
+          },
+          "hint": "Each perpendicular pair makes four right angles.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 4,
+          "label": "4 right angles"
+         },
+         "answers": [
+          "16"
+         ],
+         "id": "mathematics-g7-ch5-l2-c5",
+         "src": [
+          {
+           "ch": 5,
+           "p": 109
+          },
+          {
+           "ch": 5,
+           "p": 109
+          },
+          {
+           "ch": 5,
+           "p": 109
+          },
+          {
+           "ch": 5,
+           "p": 109
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A market artist paints 2 groups of 2 parallel lines on a sign. How many parallel lines are painted altogether?",
+         "explanation": "Each of the 2 groups contains 2 parallel lines. Multiply the number of groups by the lines in each group: 2 x 2 = 4. Thus, 4 parallel lines are painted altogether.",
+         "steps": [
+          "Each of the 2 groups contains 2 parallel lines.",
+          "Multiply the number of groups by the lines in each group: 2 x 2 = 4.",
+          "Thus, 4 parallel lines are painted altogether."
+         ],
+         "hint": "First find the number of lines in one group.",
+         "derived": [
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market artist paints {n} groups of {k} parallel lines on a sign. How many parallel lines are painted altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4
+           ],
+           "k": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "n*k",
+          "vals": {
+           "total_lines": "n*k"
+          },
+          "steps": [
+           "Each of the {n} groups contains {k} parallel lines.",
+           "Multiply the number of groups by the lines in each group: {n} x {k} = {total_lines}.",
+           "Thus, {answer} parallel lines are painted altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "k",
+           "label": "k parallel lines"
+          },
+          "hint": "First find the number of lines in one group.",
+          "wrong": [
+           "n+k",
+           "n*k-k",
+           "2*n"
+          ],
+          "wrongWhy": {
+           "n+k": "You added the number of groups to the number of lines in one group.",
+           "n*k-k": "You left out the lines in one group.",
+           "2*n": "You used two lines for every group instead of using the number of lines in each group."
+          }
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 2,
+          "label": "k parallel lines"
+         },
+         "options": [
+          "3",
+          "5",
+          "4",
+          "2"
+         ],
+         "answer": 2,
+         "why": {},
+         "id": "mathematics-g7-ch5-l2-c6",
+         "src": [
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A bus office shows 6 pairs of parallel route lines on its posters. How many parallel lines are shown altogether?",
+         "explanation": "Each pair of parallel lines has 2 lines. Multiply the number of pairs by 2: 6 x 2 = 12. Thus, 12 parallel lines are shown altogether.",
+         "steps": [
+          "Each pair of parallel lines has 2 lines.",
+          "Multiply the number of pairs by 2: 6 x 2 = 12.",
+          "Thus, 12 parallel lines are shown altogether."
+         ],
+         "hint": "Each pair of parallel lines contains two lines.",
+         "derived": [
+          "12 (generated problem)",
+          "2 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bus office shows {n} pairs of parallel route lines on its posters. How many parallel lines are shown altogether?",
+          "params": {
+           "n": [
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "n*2",
+          "vals": {
+           "lines_per_pair": "2"
+          },
+          "steps": [
+           "Each pair of parallel lines has {lines_per_pair} lines.",
+           "Multiply the number of pairs by {lines_per_pair}: {n} x {lines_per_pair} = {answer}.",
+           "Thus, {answer} parallel lines are shown altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "2",
+           "label": "2 parallel lines"
+          },
+          "hint": "Each pair of parallel lines contains two lines.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 6,
+          "size": 2,
+          "label": "2 parallel lines"
+         },
+         "answers": [
+          "12"
+         ],
+         "id": "mathematics-g7-ch5-l2-c7",
+         "src": [
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          },
+          {
+           "ch": 5,
+           "p": 110
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch5-l2-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A market display has 3 groups of 3 parallel lines and 2 pairs of perpendicular lines. How many lines are used altogether?",
+         "steps": [
+          "The parallel groups contain 3 x 3 = 9 lines.",
+          "The perpendicular pairs contain 2 x 2 = 4 lines.",
+          "Add both amounts: 9 + 4 = 13 lines altogether."
+         ],
+         "modelSpec": null,
+         "result": "13",
+         "gen": {
+          "template": "A market display has {n} groups of {k} parallel lines and {m} pairs of perpendicular lines. How many lines are used altogether?",
+          "params": {
+           "n": [
+            2,
+            3
+           ],
+           "k": [
+            2,
+            3
+           ],
+           "m": [
+            2,
+            3
+           ]
+          },
+          "where": [],
+          "answer": "n*k+2*m",
+          "vals": {
+           "parallel_lines": "n*k",
+           "lines_per_pair": "2",
+           "perpendicular_lines": "2*m"
+          },
+          "steps": [
+           "The parallel groups contain {n} x {k} = {parallel_lines} lines.",
+           "The perpendicular pairs contain {m} x {lines_per_pair} = {perpendicular_lines} lines.",
+           "Add both amounts: {parallel_lines} + {perpendicular_lines} = {answer} lines altogether."
+          ],
+          "model": null,
+          "hint": "Find the lines in the parallel groups and in the perpendicular pairs separately.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "13 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "9 (generated problem)"
+         ]
+        },
+        {
          "type": "dragorder",
          "id": "mathematics-g7-ch5-l2-a8",
          "difficulty": 3,
@@ -25586,18 +26878,96 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g7-ch5-l2-a9",
+         "type": "mcq",
          "difficulty": 3,
          "tags": [
-          "parallel lines",
-          "plane"
+          "practice",
+          "computed"
          ],
-         "title": "Definition of parallel lines",
-         "prompt": "Parallel lines stay on the same plane and never meet.",
-         "answer": true,
-         "explanation": "Parallel lines lie on the same plane and do not meet.",
+         "prompt": "A school display has 4 pairs of perpendicular lines and 4 pairs of parallel lines. How many lines are used altogether?",
+         "explanation": "Every pair, whether perpendicular or parallel, contains 2 lines. There are 8 pairs altogether, so 8 x 2 = 16. Thus, 16 lines are used altogether.",
+         "steps": [
+          "Every pair, whether perpendicular or parallel, contains 2 lines.",
+          "There are 8 pairs altogether, so 8 x 2 = 16.",
+          "Thus, 16 lines are used altogether."
+         ],
+         "hint": "First find the total number of pairs of lines.",
+         "derived": [
+          "14 (generated problem)",
+          "16 (generated problem)",
+          "2 (generated problem)",
+          "32 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A school display has {n} pairs of perpendicular lines and {m} pairs of parallel lines. How many lines are used altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4
+           ],
+           "m": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "2*n+2*m",
+          "vals": {
+           "lines_per_pair": "2",
+           "total_pairs": "n+m",
+           "total_lines": "2*n+2*m"
+          },
+          "steps": [
+           "Every pair, whether perpendicular or parallel, contains {lines_per_pair} lines.",
+           "There are {total_pairs} pairs altogether, so {total_pairs} x {lines_per_pair} = {total_lines}.",
+           "Thus, {answer} lines are used altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n+m",
+           "size": "2",
+           "label": "2 lines per pair"
+          },
+          "hint": "First find the total number of pairs of lines.",
+          "wrong": [
+           "2*n*m",
+           "n+m",
+           "2*n+2*m-2"
+          ],
+          "wrongWhy": {
+           "2*n*m": "You multiplied the numbers of perpendicular and parallel pairs instead of finding their sum.",
+           "n+m": "You counted each pair as one line.",
+           "2*n+2*m-2": "You left out the two lines from one pair."
+          }
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 8,
+          "size": 2,
+          "label": "2 lines per pair"
+         },
+         "options": [
+          "16",
+          "32",
+          "8",
+          "14"
+         ],
+         "answer": 0,
+         "why": {},
+         "id": "mathematics-g7-ch5-l2-c8",
          "src": [
+          {
+           "ch": 5,
+           "p": 109
+          },
+          {
+           "ch": 5,
+           "p": 109
+          },
           {
            "ch": 5,
            "p": 110
@@ -25702,7 +27072,7 @@
       {
        "id": "mathematics-g7-ch5-l3",
        "title": "5.4 Parallel and Perpendicular Lines in Paper Folding",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -25761,6 +27131,59 @@
            "ch": 5,
            "p": 112
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch5-l3-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A vertical fold line crosses 2 horizontal fold lines. How many right-angle intersections are formed?",
+         "steps": [
+          "There are 2 horizontal fold lines.",
+          "A vertical line is perpendicular to every horizontal fold line, so each crossing forms a right angle.",
+          "Therefore, 2 right-angle intersections are formed."
+         ],
+         "modelSpec": {
+          "type": "array",
+          "rows": 2,
+          "cols": 1
+         },
+         "result": "2",
+         "gen": {
+          "template": "A vertical fold line crosses {n} horizontal fold lines. How many right-angle intersections are formed?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "n",
+          "vals": {
+           "right_angles": "n"
+          },
+          "steps": [
+           "There are {n} horizontal fold lines.",
+           "A vertical line is perpendicular to every horizontal fold line, so each crossing forms a right angle.",
+           "Therefore, {answer} right-angle intersections are formed."
+          ],
+          "model": {
+           "type": "array",
+           "rows": "n",
+           "cols": "1"
+          },
+          "hint": "Count one perpendicular intersection for each horizontal fold line.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "2 (generated problem)"
          ]
         },
         {
@@ -25855,23 +27278,67 @@
         },
         {
          "type": "fillblank",
-         "id": "mathematics-g7-ch5-l3-a4",
-         "difficulty": 2,
+         "difficulty": 1,
          "tags": [
-          "horizontal",
-          "fold",
-          "vertical"
+          "practice",
+          "computed"
          ],
-         "prompt": "The first horizontal fold line is ______ to the vertical sides.",
+         "prompt": "A square has 2 corners. How many right angles are formed by the adjacent edges at those corners?",
+         "explanation": "The square has 2 corners. Adjacent edges meet at each corner and form a right angle. Therefore, 2 right angles are formed.",
+         "steps": [
+          "The square has 2 corners.",
+          "Adjacent edges meet at each corner and form a right angle.",
+          "Therefore, 2 right angles are formed."
+         ],
+         "hint": "Each corner of a square is formed by two adjacent edges.",
+         "derived": [
+          "2 (generated problem)"
+         ],
+         "gen": {
+          "template": "A square has {n} corners. How many right angles are formed by the adjacent edges at those corners?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "n",
+          "vals": {
+           "right_angles": "n"
+          },
+          "steps": [
+           "The square has {n} corners.",
+           "Adjacent edges meet at each corner and form a right angle.",
+           "Therefore, {answer} right angles are formed."
+          ],
+          "model": {
+           "type": "array",
+           "rows": "n",
+           "cols": "1"
+          },
+          "hint": "Each corner of a square is formed by two adjacent edges.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "array",
+          "rows": 2,
+          "cols": 1
+         },
          "answers": [
-          "perpendicular"
+          "2"
          ],
-         "hint": "It forms a right angle with the vertical sides.",
-         "explanation": "The first horizontal fold line is perpendicular to the vertical sides.",
+         "id": "mathematics-g7-ch5-l3-c2",
          "src": [
           {
            "ch": 5,
            "p": 126
+          },
+          {
+           "ch": 5,
+           "p": 111
           }
          ]
         },
@@ -25933,28 +27400,136 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g7-ch5-l3-a6",
+         "type": "fillblank",
          "difficulty": 2,
          "tags": [
-          "vertical",
-          "horizontal",
-          "perpendicular"
+          "practice",
+          "computed"
          ],
-         "prompt": "A vertical fold line is ______ to the horizontal fold lines.",
-         "options": [
-          "parallel",
-          "perpendicular",
-          "diagonal",
-          "horizontal"
+         "prompt": "A bus route map has 2 vertical lines and 4 horizontal lines. Every vertical line is perpendicular to every horizontal line. How many right-angle intersections are shown?",
+         "explanation": "The map has 2 vertical lines and 4 horizontal lines. Each vertical line crosses each horizontal line at a right angle. Therefore, the number of right-angle intersections is 8.",
+         "steps": [
+          "The map has 2 vertical lines and 4 horizontal lines.",
+          "Each vertical line crosses each horizontal line at a right angle.",
+          "Therefore, the number of right-angle intersections is 8."
          ],
-         "answer": 1,
-         "explanation": "A vertical fold line is perpendicular to the horizontal fold lines.",
+         "hint": "Count the perpendicular crossings by multiplying the two numbers of lines.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bus route map has {n} vertical lines and {m} horizontal lines. Every vertical line is perpendicular to every horizontal line. How many right-angle intersections are shown?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4
+           ],
+           "m": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "n*m",
+          "vals": {
+           "intersections": "n*m"
+          },
+          "steps": [
+           "The map has {n} vertical lines and {m} horizontal lines.",
+           "Each vertical line crosses each horizontal line at a right angle.",
+           "Therefore, the number of right-angle intersections is {answer}."
+          ],
+          "model": {
+           "type": "array",
+           "rows": "n",
+           "cols": "m"
+          },
+          "hint": "Count the perpendicular crossings by multiplying the two numbers of lines.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "array",
+          "rows": 2,
+          "cols": 4
+         },
+         "answers": [
+          "8"
+         ],
+         "id": "mathematics-g7-ch5-l3-c3",
          "src": [
           {
            "ch": 5,
            "p": 126
+          },
+          {
+           "ch": 5,
+           "p": 112
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch5-l3-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A paper design has 4 horizontal parallel lines and 3 vertical parallel lines, with every vertical line perpendicular to every horizontal line. How many right-angle intersections are in the design?",
+         "steps": [
+          "There are 4 horizontal lines and 3 vertical lines.",
+          "Each horizontal line crosses all 3 vertical lines at right angles.",
+          "Multiplying the two numbers of lines gives 12 right-angle intersections."
+         ],
+         "modelSpec": {
+          "type": "array",
+          "rows": 4,
+          "cols": 3
+         },
+         "result": "12",
+         "gen": {
+          "template": "A paper design has {n} horizontal parallel lines and {m} vertical parallel lines, with every vertical line perpendicular to every horizontal line. How many right-angle intersections are in the design?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4
+           ],
+           "m": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "n*m",
+          "vals": {
+           "intersections": "n*m"
+          },
+          "steps": [
+           "There are {n} horizontal lines and {m} vertical lines.",
+           "Each horizontal line crosses all {m} vertical lines at right angles.",
+           "Multiplying the two numbers of lines gives {answer} right-angle intersections."
+          ],
+          "model": {
+           "type": "array",
+           "rows": "n",
+           "cols": "m"
+          },
+          "hint": "Find how many perpendicular crossings each horizontal line makes.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)"
          ]
         },
         {
@@ -25987,112 +27562,6 @@
            "ch": 5,
            "p": 126
           },
-          {
-           "ch": 5,
-           "p": 126
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g7-ch5-l3-a8",
-         "difficulty": 3,
-         "tags": [
-          "marks",
-          "square-angle",
-          "perpendicular"
-         ],
-         "prompt": "A square angle mark shows that two lines are parallel.",
-         "answer": false,
-         "explanation": "A square angle mark shows that two lines are perpendicular.",
-         "src": [
-          {
-           "ch": 5,
-           "p": 112
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "mathematics-g7-ch5-l3-a9",
-         "difficulty": 3,
-         "tags": [
-          "diagonal",
-          "fold",
-          "parallel"
-         ],
-         "prompt": "A diagonal fold can create a line that is ______.",
-         "options": [
-          "parallel to the diagonal",
-          "perpendicular to the diagonal",
-          "vertical to the diagonal",
-          "horizontal to the diagonal"
-         ],
-         "answer": 0,
-         "explanation": "A diagonal fold can create a line parallel to the diagonal.",
-         "src": [
-          {
-           "ch": 5,
-           "p": 111
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "difficulty": 2,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "A bus route map is drawn on a square sheet. A vertical fold line crosses 2 horizontal fold lines, and every crossing forms a right angle. How many right-angle meeting points are there?",
-         "explanation": "The vertical fold line crosses 2 horizontal fold lines. Each crossing gives one right-angle meeting point. There are 2 right-angle meeting points.",
-         "steps": [
-          "The vertical fold line crosses 2 horizontal fold lines.",
-          "Each crossing gives one right-angle meeting point.",
-          "There are 2 right-angle meeting points."
-         ],
-         "hint": "Count the horizontal fold lines crossed by the vertical fold line.",
-         "derived": [
-          "2 (generated problem)"
-         ],
-         "gen": {
-          "template": "A bus route map is drawn on a square sheet. A vertical fold line crosses {n} horizontal fold lines, and every crossing forms a right angle. How many right-angle meeting points are there?",
-          "params": {
-           "n": [
-            2,
-            3,
-            4
-           ]
-          },
-          "where": [],
-          "answer": "n",
-          "vals": {
-           "meetings": "n"
-          },
-          "steps": [
-           "The vertical fold line crosses {n} horizontal fold lines.",
-           "Each crossing gives one right-angle meeting point.",
-           "There are {answer} right-angle meeting points."
-          ],
-          "model": {
-           "type": "groups",
-           "groups": "n",
-           "size": "1"
-          },
-          "hint": "Count the horizontal fold lines crossed by the vertical fold line.",
-          "wrong": [],
-          "wrongWhy": []
-         },
-         "modelSpec": {
-          "type": "groups",
-          "groups": 2,
-          "size": 1
-         },
-         "answers": [
-          "2"
-         ],
-         "id": "mathematics-g7-ch5-l3-c1",
-         "src": [
           {
            "ch": 5,
            "p": 126
@@ -30451,7 +31920,7 @@
       {
        "id": "mathematics-g7-ch6-l2",
        "title": "Even Numbers and Odd Numbers",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -30510,6 +31979,63 @@
            "ch": 6,
            "p": 131
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch6-l2-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Arrange 9 mangoes in pairs. How many mangoes are left over?",
+         "steps": [
+          "There are 9 mangoes to arrange in pairs.",
+          "Make complete pairs and check how many mangoes remain.",
+          "The number left over is 1 mangoes."
+         ],
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 2
+         },
+         "result": "1",
+         "gen": {
+          "template": "Arrange {n} mangoes in pairs. How many mangoes are left over?",
+          "params": {
+           "n": [
+            5,
+            6,
+            7,
+            8,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "n % 2",
+          "vals": {
+           "pairs": "n // 2",
+           "leftover": "n % 2"
+          },
+          "steps": [
+           "There are {n} mangoes to arrange in pairs.",
+           "Make complete pairs and check how many mangoes remain.",
+           "The number left over is {answer} mangoes."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n // 2",
+           "size": 2
+          },
+          "hint": "Make as many complete pairs as possible and look for what remains.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "1 (generated problem)",
+          "9 (generated problem)"
          ]
         },
         {
@@ -30580,22 +32106,241 @@
         },
         {
          "type": "fillblank",
-         "id": "mathematics-g7-ch6-l2-a4",
-         "difficulty": 2,
+         "difficulty": 1,
          "tags": [
-          "odd",
-          "pairs"
+          "practice",
+          "computed"
          ],
-         "prompt": "An odd number is ______ more than a collection of pairs.",
+         "prompt": "There are 8 marbles on a table. How many complete pairs of marbles can be made?",
+         "explanation": "There are 8 marbles on the table. Each complete pair uses 2 marbles, so count how many pairs can be made. You can make 4 complete pairs.",
+         "steps": [
+          "There are 8 marbles on the table.",
+          "Each complete pair uses 2 marbles, so count how many pairs can be made.",
+          "You can make 4 complete pairs."
+         ],
+         "hint": "Put two marbles in each pair and count the complete pairs.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "There are {n} marbles on a table. How many complete pairs of marbles can be made?",
+          "params": {
+           "n": [
+            4,
+            6,
+            8,
+            10,
+            12
+           ]
+          },
+          "where": [],
+          "answer": "n // 2",
+          "vals": {
+           "pairs": "n // 2"
+          },
+          "steps": [
+           "There are {n} marbles on the table.",
+           "Each complete pair uses 2 marbles, so count how many pairs can be made.",
+           "You can make {answer} complete pairs."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n // 2",
+           "size": 2
+          },
+          "hint": "Put two marbles in each pair and count the complete pairs.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 2
+         },
          "answers": [
-          "one"
+          "4"
          ],
-         "hint": "Think about the number left over.",
-         "explanation": "An odd number is one more than a collection of pairs.",
+         "id": "mathematics-g7-ch6-l2-c2",
          "src": [
           {
            "ch": 6,
            "p": 129
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A red box contains 3 marbles and a blue box contains 9 marbles; both counts are odd. How many marbles are there altogether?",
+         "explanation": "The red box has 3 marbles and the blue box has 9 marbles. Adding two odd numbers gives an even total. There are 12 marbles altogether.",
+         "steps": [
+          "The red box has 3 marbles and the blue box has 9 marbles.",
+          "Adding two odd numbers gives an even total.",
+          "There are 12 marbles altogether."
+         ],
+         "hint": "Add the two odd counts.",
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "A red box contains {a} marbles and a blue box contains {b} marbles; both counts are odd. How many marbles are there altogether?",
+          "params": {
+           "a": [
+            3,
+            5,
+            7
+           ],
+           "b": [
+            5,
+            7,
+            9
+           ]
+          },
+          "where": [
+           "a % 2 == 1",
+           "b % 2 == 1"
+          ],
+          "answer": "a + b",
+          "vals": {
+           "total": "a + b"
+          },
+          "steps": [
+           "The red box has {a} marbles and the blue box has {b} marbles.",
+           "Adding two odd numbers gives an even total.",
+           "There are {answer} marbles altogether."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} red marbles"
+            },
+            {
+             "v": "b",
+             "label": "{b} blue marbles"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the two odd counts.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 3,
+            "label": "3 red marbles"
+           },
+           {
+            "v": 9,
+            "label": "9 blue marbles"
+           }
+          ],
+          "total": "?"
+         },
+         "answers": [
+          "12"
+         ],
+         "id": "mathematics-g7-ch6-l2-c3",
+         "src": [
+          {
+           "ch": 6,
+           "p": 130
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Two consecutive bus numbers are 6 and the number after it. What is the sum of the two bus numbers?",
+         "explanation": "The first bus number is 6 and the next bus number is 7. Add the two consecutive bus numbers. Their sum is 13.",
+         "steps": [
+          "The first bus number is 6 and the next bus number is 7.",
+          "Add the two consecutive bus numbers.",
+          "Their sum is 13."
+         ],
+         "hint": "The number after 6 is one greater.",
+         "derived": [
+          "13 (generated problem)",
+          "6 (generated problem)",
+          "7 (generated problem)"
+         ],
+         "gen": {
+          "template": "Two consecutive bus numbers are {n} and the number after it. What is the sum of the two bus numbers?",
+          "params": {
+           "n": {
+            "min": 2,
+            "max": 20
+           }
+          },
+          "where": [],
+          "answer": "n + (n + 1)",
+          "vals": {
+           "next": "n + 1",
+           "total": "n + (n + 1)"
+          },
+          "steps": [
+           "The first bus number is {n} and the next bus number is {next}.",
+           "Add the two consecutive bus numbers.",
+           "Their sum is {answer}."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "First bus",
+             "v": "n"
+            },
+            {
+             "label": "Next bus",
+             "v": "n + 1"
+            }
+           ]
+          },
+          "hint": "The number after {n} is one greater.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "First bus",
+            "v": 6
+           },
+           {
+            "label": "Next bus",
+            "v": 7
+           }
+          ]
+         },
+         "answers": [
+          "13"
+         ],
+         "id": "mathematics-g7-ch6-l2-c4",
+         "src": [
+          {
+           "ch": 6,
+           "p": 130
+          },
+          {
+           "ch": 6,
+           "p": 131
           }
          ]
         },
@@ -30649,28 +32394,420 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g7-ch6-l2-a6",
+         "type": "fillblank",
          "difficulty": 2,
          "tags": [
-          "parity",
-          "consecutive",
-          "sum"
+          "practice",
+          "computed"
          ],
-         "prompt": "What is the parity of the sum of two consecutive numbers?",
-         "options": [
-          "Even",
-          "Odd",
-          "It depends",
-          "Neither"
+         "prompt": "A market stall has 8 rupees in one pile and 12 rupees in another pile; both pile counts are even. How many rupees are there altogether?",
+         "explanation": "The two piles contain 8 rupees and 12 rupees. Adding even numbers always gives an even number. The total is 20 rupees.",
+         "steps": [
+          "The two piles contain 8 rupees and 12 rupees.",
+          "Adding even numbers always gives an even number.",
+          "The total is 20 rupees."
          ],
-         "answer": 1,
-         "explanation": "The sum of two consecutive numbers always has odd parity.",
+         "hint": "Add the two even amounts of rupees.",
+         "derived": [
+          "12 (generated problem)",
+          "20 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market stall has {a} rupees in one pile and {b} rupees in another pile; both pile counts are even. How many rupees are there altogether?",
+          "params": {
+           "a": [
+            4,
+            6,
+            8
+           ],
+           "b": [
+            10,
+            12,
+            14
+           ]
+          },
+          "where": [
+           "a % 2 == 0",
+           "b % 2 == 0"
+          ],
+          "answer": "a + b",
+          "vals": {
+           "total": "a + b"
+          },
+          "steps": [
+           "The two piles contain {a} rupees and {b} rupees.",
+           "Adding even numbers always gives an even number.",
+           "The total is {answer} rupees."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} rupees"
+            },
+            {
+             "v": "b",
+             "label": "{b} rupees"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the two even amounts of rupees.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 8,
+            "label": "8 rupees"
+           },
+           {
+            "v": 12,
+            "label": "12 rupees"
+           }
+          ],
+          "total": "?"
+         },
+         "answers": [
+          "20"
+         ],
+         "id": "mathematics-g7-ch6-l2-c5",
          "src": [
           {
            "ch": 6,
-           "p": 131
+           "p": 129
           }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At school, one group has 5 children and another group has 5 children; both group sizes are odd. How many children are there altogether?",
+         "explanation": "The groups contain 5 children and 5 children. The sum of two odd numbers is always even. There are 10 children altogether.",
+         "steps": [
+          "The groups contain 5 children and 5 children.",
+          "The sum of two odd numbers is always even.",
+          "There are 10 children altogether."
+         ],
+         "hint": "Add the sizes of the two odd groups.",
+         "derived": [
+          "10 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "At school, one group has {a} children and another group has {b} children; both group sizes are odd. How many children are there altogether?",
+          "params": {
+           "a": [
+            3,
+            5,
+            7
+           ],
+           "b": [
+            5,
+            7,
+            9
+           ]
+          },
+          "where": [
+           "a % 2 == 1",
+           "b % 2 == 1"
+          ],
+          "answer": "a + b",
+          "vals": {
+           "total": "a + b"
+          },
+          "steps": [
+           "The groups contain {a} children and {b} children.",
+           "The sum of two odd numbers is always even.",
+           "There are {answer} children altogether."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} children"
+            },
+            {
+             "v": "b",
+             "label": "{b} children"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the sizes of the two odd groups.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 5,
+            "label": "5 children"
+           },
+           {
+            "v": 5,
+            "label": "5 children"
+           }
+          ],
+          "total": "?"
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g7-ch6-l2-c6",
+         "src": [
+          {
+           "ch": 6,
+           "p": 130
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Three packets contain 5, 9, and 11 laddoos; each packet count is odd. If all the laddoos are arranged in pairs, how many laddoos are left over?",
+         "explanation": "The three packets contain 5, 9, and 11 laddoos, so there are 25 laddoos altogether. Three odd counts together cannot be arranged completely in pairs. After making complete pairs, 1 laddoo is left over.",
+         "steps": [
+          "The three packets contain 5, 9, and 11 laddoos, so there are 25 laddoos altogether.",
+          "Three odd counts together cannot be arranged completely in pairs.",
+          "After making complete pairs, 1 laddoo is left over."
+         ],
+         "hint": "First find the total number of laddoos, then arrange them in pairs.",
+         "derived": [
+          "1 (generated problem)",
+          "11 (generated problem)",
+          "25 (generated problem)",
+          "5 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "Three packets contain {a}, {b}, and {c} laddoos; each packet count is odd. If all the laddoos are arranged in pairs, how many laddoos are left over?",
+          "params": {
+           "a": [
+            3,
+            5,
+            7
+           ],
+           "b": [
+            3,
+            5,
+            9
+           ],
+           "c": [
+            5,
+            7,
+            11
+           ]
+          },
+          "where": [
+           "a % 2 == 1",
+           "b % 2 == 1",
+           "c % 2 == 1"
+          ],
+          "answer": "(a + b + c) % 2",
+          "vals": {
+           "total": "a + b + c",
+           "leftover": "(a + b + c) % 2"
+          },
+          "steps": [
+           "The three packets contain {a}, {b}, and {c} laddoos, so there are {total} laddoos altogether.",
+           "Three odd counts together cannot be arranged completely in pairs.",
+           "After making complete pairs, {answer} laddoo is left over."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Packet 1",
+             "v": "a"
+            },
+            {
+             "label": "Packet 2",
+             "v": "b"
+            },
+            {
+             "label": "Packet 3",
+             "v": "c"
+            }
+           ]
+          },
+          "hint": "First find the total number of laddoos, then arrange them in pairs.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Packet 1",
+            "v": 5
+           },
+           {
+            "label": "Packet 2",
+            "v": 9
+           },
+           {
+            "label": "Packet 3",
+            "v": 11
+           }
+          ]
+         },
+         "answers": [
+          "1"
+         ],
+         "id": "mathematics-g7-ch6-l2-c7",
+         "src": [
+          {
+           "ch": 6,
+           "p": 129
+          },
+          {
+           "ch": 6,
+           "p": 130
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch6-l2-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "One stall has 3, 7, and 5 laddoos in three odd-sized lots, while another has 5 and 9 laddoos in two odd-sized lots. If all 3, 7, 5, 5, and 9 laddoos are arranged in pairs, how many are left over?",
+         "steps": [
+          "The first stall has 15 laddoos and the second stall has 14 laddoos.",
+          "Together they have 29 laddoos, which is a sum of five odd counts.",
+          "After arranging as many pairs as possible, 1 laddoo is left over."
+         ],
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Lot 1",
+            "v": 3
+           },
+           {
+            "label": "Lot 2",
+            "v": 7
+           },
+           {
+            "label": "Lot 3",
+            "v": 5
+           },
+           {
+            "label": "Lot 4",
+            "v": 5
+           },
+           {
+            "label": "Lot 5",
+            "v": 9
+           }
+          ]
+         },
+         "result": "1",
+         "gen": {
+          "template": "One stall has {a}, {b}, and {c} laddoos in three odd-sized lots, while another has {d} and {e} laddoos in two odd-sized lots. If all {a}, {b}, {c}, {d}, and {e} laddoos are arranged in pairs, how many are left over?",
+          "params": {
+           "a": [
+            3,
+            5,
+            7
+           ],
+           "b": [
+            3,
+            7,
+            9
+           ],
+           "c": [
+            5,
+            9,
+            11
+           ],
+           "d": [
+            3,
+            5,
+            7
+           ],
+           "e": [
+            5,
+            7,
+            9
+           ]
+          },
+          "where": [
+           "a % 2 == 1",
+           "b % 2 == 1",
+           "c % 2 == 1",
+           "d % 2 == 1",
+           "e % 2 == 1"
+          ],
+          "answer": "(a + b + c + d + e) % 2",
+          "vals": {
+           "first": "a + b + c",
+           "second": "d + e",
+           "total": "a + b + c + d + e",
+           "leftover": "(a + b + c + d + e) % 2"
+          },
+          "steps": [
+           "The first stall has {first} laddoos and the second stall has {second} laddoos.",
+           "Together they have {total} laddoos, which is a sum of five odd counts.",
+           "After arranging as many pairs as possible, {answer} laddoo is left over."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Lot 1",
+             "v": "a"
+            },
+            {
+             "label": "Lot 2",
+             "v": "b"
+            },
+            {
+             "label": "Lot 3",
+             "v": "c"
+            },
+            {
+             "label": "Lot 4",
+             "v": "d"
+            },
+            {
+             "label": "Lot 5",
+             "v": "e"
+            }
+           ]
+          },
+          "hint": "Find the total in each stall, add the totals, and then check for pairs.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "1 (generated problem)",
+          "14 (generated problem)",
+          "15 (generated problem)",
+          "29 (generated problem)",
+          "3 (generated problem)",
+          "5 (generated problem)",
+          "7 (generated problem)",
+          "9 (generated problem)"
          ]
         },
         {
@@ -30724,144 +32861,81 @@
         },
         {
          "type": "fillblank",
-         "difficulty": 1,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "A plate has 3 laddoos, another has 7 laddoos, and a third has 5 laddoos. How many laddoos are left over when all of them are arranged in pairs?",
-         "explanation": "The three counts are 3, 7, and 5 laddoos. Their total is 15 laddoos, and three odd numbers cannot be completely arranged in pairs. Therefore, 1 laddoo is left over.",
-         "steps": [
-          "The three counts are 3, 7, and 5 laddoos.",
-          "Their total is 15 laddoos, and three odd numbers cannot be completely arranged in pairs.",
-          "Therefore, 1 laddoo is left over."
-         ],
-         "hint": "Add all three odd counts, then check how many cannot be paired.",
-         "derived": [
-          "1 (generated problem)",
-          "15 (generated problem)",
-          "3 (generated problem)",
-          "5 (generated problem)",
-          "7 (generated problem)"
-         ],
-         "gen": {
-          "template": "A plate has {a} laddoos, another has {b} laddoos, and a third has {c} laddoos. How many laddoos are left over when all of them are arranged in pairs?",
-          "params": {
-           "a": {
-            "min": 3,
-            "max": 11
-           },
-           "b": {
-            "min": 3,
-            "max": 11
-           },
-           "c": {
-            "min": 3,
-            "max": 11
-           }
-          },
-          "where": [
-           "a % 2 == 1",
-           "b % 2 == 1",
-           "c % 2 == 1"
-          ],
-          "answer": "1",
-          "vals": {
-           "total": "a+b+c",
-           "leftover": "1"
-          },
-          "steps": [
-           "The three counts are {a}, {b}, and {c} laddoos.",
-           "Their total is {total} laddoos, and three odd numbers cannot be completely arranged in pairs.",
-           "Therefore, {answer} laddoo is left over."
-          ],
-          "model": null,
-          "hint": "Add all three odd counts, then check how many cannot be paired.",
-          "wrong": [],
-          "wrongWhy": []
-         },
-         "answers": [
-          "1"
-         ],
-         "id": "mathematics-g7-ch6-l2-c1",
-         "src": [
-          {
-           "ch": 6,
-           "p": 130
-          },
-          {
-           "ch": 6,
-           "p": 129
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
          "difficulty": 3,
          "tags": [
           "practice",
           "computed"
          ],
-         "prompt": "A teacher joins two even strips of 6 cm and 6 cm. How many pairs of 2 cm can be made from the joined strip?",
-         "explanation": "Joining the strips gives a total length of 12 cm. Because both lengths are even, their total is even and can be arranged in pairs of 2 cm. The joined strip makes 6 pairs.",
+         "prompt": "There are 6 even-numbered marbles and 5 odd-numbered marbles. If all the marbles are arranged in pairs, how many marbles are left over?",
+         "explanation": "The two groups contain 6 and 5 marbles, so there are 11 marbles altogether. The even group leaves no leftover, while the odd group leaves one marble unpaired. After pairing all possible marbles, 1 marble is left over.",
          "steps": [
-          "Joining the strips gives a total length of 12 cm.",
-          "Because both lengths are even, their total is even and can be arranged in pairs of 2 cm.",
-          "The joined strip makes 6 pairs."
+          "The two groups contain 6 and 5 marbles, so there are 11 marbles altogether.",
+          "The even group leaves no leftover, while the odd group leaves one marble unpaired.",
+          "After pairing all possible marbles, 1 marble is left over."
          ],
-         "hint": "First find the joined length, then arrange it in pairs of 2 cm.",
+         "hint": "First add the even and odd groups, then check how many can be paired.",
          "derived": [
-          "12 (generated problem)",
-          "2 (generated problem)",
+          "1 (generated problem)",
+          "11 (generated problem)",
+          "5 (generated problem)",
           "6 (generated problem)"
          ],
          "gen": {
-          "template": "A teacher joins two even strips of {a} cm and {b} cm. How many pairs of 2 cm can be made from the joined strip?",
+          "template": "There are {e} even-numbered marbles and {o} odd-numbered marbles. If all the marbles are arranged in pairs, how many marbles are left over?",
           "params": {
-           "a": [
-            2,
+           "e": [
             4,
-            6
+            6,
+            8,
+            10
            ],
-           "b": [
-            2,
-            4,
-            6
+           "o": [
+            3,
+            5,
+            7
            ]
           },
           "where": [
-           "a % 2 == 0",
-           "b % 2 == 0"
+           "e % 2 == 0",
+           "o % 2 == 1"
           ],
-          "answer": "(a+b)/2",
+          "answer": "(e + o) % 2",
           "vals": {
-           "total": "a+b",
-           "pairs": "(a+b)/2"
+           "total": "e + o",
+           "leftover": "(e + o) % 2"
           },
           "steps": [
-           "Joining the strips gives a total length of {total} cm.",
-           "Because both lengths are even, their total is even and can be arranged in pairs of 2 cm.",
-           "The joined strip makes {answer} pairs."
+           "The two groups contain {e} and {o} marbles, so there are {total} marbles altogether.",
+           "The even group leaves no leftover, while the odd group leaves one marble unpaired.",
+           "After pairing all possible marbles, {answer} marble is left over."
           ],
           "model": {
            "type": "groups",
-           "groups": "(a+b)/2",
+           "groups": "(e + o) // 2",
            "size": 2
           },
-          "hint": "First find the joined length, then arrange it in pairs of 2 cm.",
+          "hint": "First add the even and odd groups, then check how many can be paired.",
           "wrong": [],
           "wrongWhy": []
          },
          "modelSpec": {
           "type": "groups",
-          "groups": 6,
+          "groups": 5,
           "size": 2
          },
          "answers": [
-          "6"
+          "1"
          ],
-         "id": "mathematics-g7-ch6-l2-c2",
+         "id": "mathematics-g7-ch6-l2-c8",
          "src": [
+          {
+           "ch": 6,
+           "p": 129
+          },
+          {
+           "ch": 6,
+           "p": 129
+          },
           {
            "ch": 6,
            "p": 129
@@ -37193,21 +39267,21 @@
          ]
         }
        ],
-       "topicScene": "media/ch7-l1-triangle-labels-d1c50c.webp",
-       "sceneAlt": "A triangle diagram labels its three vertices, three sides, and three corner angles.",
-       "sceneCaption": "A general triangle shows its vertices, sides, and angles.",
+       "topicScene": "media/ch7-l3-tape-measure-colored-466df7.webp",
+       "sceneAlt": "A colourful tape measure is shown clearly for measuring the lengths of three sides.",
+       "sceneCaption": "A colourful tape measure for checking lengths with a ruler.",
        "sceneCredit": {
-        "text": "Triangle-labels by MartinThoma, CC0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Triangle-labels.svg",
-        "license": "CC0",
-        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-        "creator": "MartinThoma"
+        "text": "Tape measure colored by Simon A. Eugster, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Tape_measure_colored.jpeg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Simon A. Eugster"
        }
       },
       {
        "id": "mathematics-g7-ch7-l4",
        "title": "Constructing from Sides and Angles",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -37266,6 +39340,76 @@
            "ch": 7,
            "p": 163
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch7-l4-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A triangle has angle A = 20° and angle B = 65°. What is the measure of angle C in degrees?",
+         "steps": [
+          "The known angles are 20° and 65°.",
+          "Their sum is 85°, so angle C is 95°.",
+          "Therefore, angle C = 95°."
+         ],
+         "modelSpec": null,
+         "result": "95",
+         "gen": {
+          "template": "A triangle has angle A = {a}° and angle B = {b}°. What is the measure of angle C in degrees?",
+          "params": {
+           "a": [
+            20,
+            30,
+            40
+           ],
+           "b": [
+            35,
+            55,
+            65
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a + b < straight_angle"
+          ],
+          "answer": "straight_angle-a-b",
+          "vals": {
+           "angle_sum": "a+b",
+           "third_angle": "straight_angle-angle_sum"
+          },
+          "steps": [
+           "The known angles are {a}° and {b}°.",
+           "Their sum is {angle_sum}°, so angle C is {third_angle}°.",
+           "Therefore, angle C = {answer}°."
+          ],
+          "model": null,
+          "hint": "Add the two known angles, then use the triangle angle rule.",
+          "wrong": [
+           "a+b",
+           "straight_angle-a",
+           "straight_angle-b"
+          ],
+          "wrongWhy": [
+           "You added the two angles but did not subtract them from a straight angle.",
+           "You subtracted only angle A from a straight angle.",
+           "You subtracted only angle B from a straight angle."
+          ]
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "115 (generated problem)",
+          "160 (generated problem)",
+          "20 (generated problem)",
+          "65 (generated problem)",
+          "85 (generated problem)",
+          "95 (generated problem)"
          ]
         },
         {
@@ -37352,42 +39496,217 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g7-ch7-l4-a3",
+         "type": "fillblank",
          "difficulty": 1,
          "tags": [
-          "included-side",
-          "angles"
+          "practice",
+          "computed"
          ],
-         "prompt": "The side touching both given angles is called the included side.",
-         "answer": true,
-         "explanation": "Both given angles touch this shared side. It is called the included side.",
+         "prompt": "A triangle has angle A = 35° and angle C = 40°. What is the measure of angle B in degrees?",
+         "explanation": "The known angles are 35° and 40°. Their sum is 75°, so angle B is 105°. Therefore, angle B = 105°.",
+         "steps": [
+          "The known angles are 35° and 40°.",
+          "Their sum is 75°, so angle B is 105°.",
+          "Therefore, angle B = 105°."
+         ],
+         "hint": "Find the sum of the two known angles.",
+         "derived": [
+          "105 (generated problem)",
+          "35 (generated problem)",
+          "40 (generated problem)",
+          "75 (generated problem)"
+         ],
+         "gen": {
+          "template": "A triangle has angle A = {a}° and angle C = {c}°. What is the measure of angle B in degrees?",
+          "params": {
+           "a": [
+            25,
+            35,
+            45
+           ],
+           "c": [
+            30,
+            40,
+            50
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a + c < straight_angle"
+          ],
+          "answer": "straight_angle-a-c",
+          "vals": {
+           "known_sum": "a+c",
+           "missing_angle": "straight_angle-known_sum"
+          },
+          "steps": [
+           "The known angles are {a}° and {c}°.",
+           "Their sum is {known_sum}°, so angle B is {missing_angle}°.",
+           "Therefore, angle B = {answer}°."
+          ],
+          "model": null,
+          "hint": "Find the sum of the two known angles.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "105"
+         ],
+         "id": "mathematics-g7-ch7-l4-c2",
          "src": [
           {
            "ch": 7,
-           "p": 161
+           "p": 160
           }
          ]
         },
         {
          "type": "fillblank",
-         "id": "mathematics-g7-ch7-l4-a5",
-         "difficulty": 2,
+         "difficulty": 1,
          "tags": [
-          "triangles",
-          "angles"
+          "practice",
+          "computed"
          ],
-         "title": "Check the Angle Limit",
-         "prompt": "A triangle is not possible if the included angle is at least ______°.",
+         "prompt": "A triangle is formed with AB = 4 cm, AC = 5 cm, and included angle A = 30°. What is the combined measure of angles B and C in degrees?",
+         "explanation": "The included angle A is 30°. Angles A, B, and C together make 180°. Therefore, angles B and C together measure 150°.",
+         "steps": [
+          "The included angle A is 30°.",
+          "Angles A, B, and C together make 180°.",
+          "Therefore, angles B and C together measure 150°."
+         ],
+         "hint": "Start with the straight-angle total and remove the included angle.",
+         "derived": [
+          "150 (generated problem)",
+          "180 (generated problem)",
+          "30 (generated problem)",
+          "4 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "A triangle is formed with AB = {s} cm, AC = {t} cm, and included angle A = {a}°. What is the combined measure of angles B and C in degrees?",
+          "params": {
+           "s": [
+            4,
+            5,
+            6
+           ],
+           "t": [
+            3,
+            4,
+            5
+           ],
+           "a": [
+            30,
+            40,
+            50
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a < straight_angle"
+          ],
+          "answer": "straight_angle-a",
+          "vals": {
+           "remaining_angles": "straight_angle-a"
+          },
+          "steps": [
+           "The included angle A is {a}°.",
+           "Angles A, B, and C together make {straight_angle}°.",
+           "Therefore, angles B and C together measure {answer}°."
+          ],
+          "model": null,
+          "hint": "Start with the straight-angle total and remove the included angle.",
+          "wrong": [],
+          "wrongWhy": []
+         },
          "answers": [
-          "180"
+          "150"
          ],
-         "hint": "Think of the angle limit for a triangle.",
-         "explanation": "At 180° or more, the included angle cannot belong to a triangle.",
+         "id": "mathematics-g7-ch7-l4-c3",
          "src": [
           {
            "ch": 7,
-           "p": 163
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A triangle is constructed with included side AB = 6 cm, angle A = 30°, and angle B = 40°. What is the measure of angle C in degrees?",
+         "explanation": "The constructed angles are 30° and 40°. Their sum is 70°, so the remaining angle C is 110°. Therefore, angle C = 110°.",
+         "steps": [
+          "The constructed angles are 30° and 40°.",
+          "Their sum is 70°, so the remaining angle C is 110°.",
+          "Therefore, angle C = 110°."
+         ],
+         "hint": "Add the two constructed angles before finding the third.",
+         "derived": [
+          "110 (generated problem)",
+          "30 (generated problem)",
+          "40 (generated problem)",
+          "6 (generated problem)",
+          "70 (generated problem)"
+         ],
+         "gen": {
+          "template": "A triangle is constructed with included side AB = {s} cm, angle A = {a}°, and angle B = {b}°. What is the measure of angle C in degrees?",
+          "params": {
+           "s": [
+            4,
+            5,
+            6
+           ],
+           "a": [
+            30,
+            40,
+            50
+           ],
+           "b": [
+            40,
+            50,
+            60
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a + b < straight_angle"
+          ],
+          "answer": "straight_angle-a-b",
+          "vals": {
+           "angle_sum": "a+b",
+           "third_angle": "straight_angle-angle_sum"
+          },
+          "steps": [
+           "The constructed angles are {a}° and {b}°.",
+           "Their sum is {angle_sum}°, so the remaining angle C is {third_angle}°.",
+           "Therefore, angle C = {answer}°."
+          ],
+          "model": null,
+          "hint": "Add the two constructed angles before finding the third.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "110"
+         ],
+         "id": "mathematics-g7-ch7-l4-c4",
+         "src": [
+          {
+           "ch": 7,
+           "p": 160
           }
          ]
         },
@@ -37454,6 +39773,469 @@
          ]
         },
         {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A triangular school poster has AB = 6 cm, angle A = 40°, and angle B = 45°. After constructing it, what is the measure of angle C in degrees?",
+         "explanation": "Draw AB as the included side and construct angle A = 40° at A. Construct angle B = 45° at B; the new arms meet at C. The first two angles add to 85°, so angle C = 95°.",
+         "steps": [
+          "Draw AB as the included side and construct angle A = 40° at A.",
+          "Construct angle B = 45° at B; the new arms meet at C.",
+          "The first two angles add to 85°, so angle C = 95°."
+         ],
+         "hint": "Construct the two angles on AB and find where their arms meet.",
+         "derived": [
+          "40 (generated problem)",
+          "45 (generated problem)",
+          "6 (generated problem)",
+          "85 (generated problem)",
+          "95 (generated problem)"
+         ],
+         "gen": {
+          "template": "A triangular school poster has AB = {s} cm, angle A = {a}°, and angle B = {b}°. After constructing it, what is the measure of angle C in degrees?",
+          "params": {
+           "s": [
+            5,
+            6,
+            7
+           ],
+           "a": [
+            30,
+            40,
+            50
+           ],
+           "b": [
+            45,
+            55,
+            65
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a + b < straight_angle"
+          ],
+          "answer": "straight_angle-a-b",
+          "vals": {
+           "angle_sum": "a+b",
+           "third_angle": "straight_angle-angle_sum"
+          },
+          "steps": [
+           "Draw AB as the included side and construct angle A = {a}° at A.",
+           "Construct angle B = {b}° at B; the new arms meet at C.",
+           "The first two angles add to {angle_sum}°, so angle C = {answer}°."
+          ],
+          "model": null,
+          "hint": "Construct the two angles on AB and find where their arms meet.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "95"
+         ],
+         "id": "mathematics-g7-ch7-l4-c5",
+         "src": [
+          {
+           "ch": 7,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A triangular cricket field has side BC = 12 m, angle A = 35°, and angle C = 50°. After constructing it, what is the measure of angle B in degrees?",
+         "explanation": "Draw BC as the given side and construct angle C = 50° at C. Construct angle A = 35° at A; the new arms meet at B. The known angles total 85°, so angle B = 95°.",
+         "steps": [
+          "Draw BC as the given side and construct angle C = 50° at C.",
+          "Construct angle A = 35° at A; the new arms meet at B.",
+          "The known angles total 85°, so angle B = 95°."
+         ],
+         "hint": "Use the given side and the two angles to locate the third vertex.",
+         "derived": [
+          "12 (generated problem)",
+          "35 (generated problem)",
+          "50 (generated problem)",
+          "85 (generated problem)",
+          "95 (generated problem)"
+         ],
+         "gen": {
+          "template": "A triangular cricket field has side BC = {s} m, angle A = {a}°, and angle C = {c}°. After constructing it, what is the measure of angle B in degrees?",
+          "params": {
+           "s": [
+            10,
+            12,
+            14
+           ],
+           "a": [
+            35,
+            45,
+            55
+           ],
+           "c": [
+            30,
+            40,
+            50
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a + c < straight_angle"
+          ],
+          "answer": "straight_angle-a-c",
+          "vals": {
+           "known_sum": "a+c",
+           "missing_angle": "straight_angle-known_sum"
+          },
+          "steps": [
+           "Draw BC as the given side and construct angle C = {c}° at C.",
+           "Construct angle A = {a}° at A; the new arms meet at B.",
+           "The known angles total {known_sum}°, so angle B = {answer}°."
+          ],
+          "model": null,
+          "hint": "Use the given side and the two angles to locate the third vertex.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "95"
+         ],
+         "id": "mathematics-g7-ch7-l4-c6",
+         "src": [
+          {
+           "ch": 7,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A triangular market awning has AB = 5 cm, AC = 4 cm, and included angle A = 40°. After constructing it, what is the combined measure of angles B and C in degrees?",
+         "explanation": "The included angle between AB and AC is 40°. The other two angles together fill the remaining part of a straight angle. Therefore, angles B and C together measure 140°.",
+         "steps": [
+          "The included angle between AB and AC is 40°.",
+          "The other two angles together fill the remaining part of a straight angle.",
+          "Therefore, angles B and C together measure 140°."
+         ],
+         "hint": "Use the included angle and the triangle angle rule.",
+         "derived": [
+          "140 (generated problem)",
+          "220 (generated problem)",
+          "4 (generated problem)",
+          "40 (generated problem)",
+          "5 (generated problem)",
+          "80 (generated problem)"
+         ],
+         "gen": {
+          "template": "A triangular market awning has AB = {s} cm, AC = {t} cm, and included angle A = {a}°. After constructing it, what is the combined measure of angles B and C in degrees?",
+          "params": {
+           "s": [
+            5,
+            6,
+            7
+           ],
+           "t": [
+            4,
+            5,
+            6
+           ],
+           "a": [
+            30,
+            40,
+            50
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a < straight_angle"
+          ],
+          "answer": "straight_angle-a",
+          "vals": {
+           "remaining_angles": "straight_angle-a"
+          },
+          "steps": [
+           "The included angle between AB and AC is {a}°.",
+           "The other two angles together fill the remaining part of a straight angle.",
+           "Therefore, angles B and C together measure {answer}°."
+          ],
+          "model": null,
+          "hint": "Use the included angle and the triangle angle rule.",
+          "wrong": [
+           "a",
+           "straight_angle+a",
+           "2*a"
+          ],
+          "wrongWhy": [
+           "You reported the included angle instead of the two remaining angles.",
+           "You added the included angle to a straight angle.",
+           "You doubled the included angle without using the triangle angle rule."
+          ]
+         },
+         "options": [
+          "140",
+          "220",
+          "80",
+          "40"
+         ],
+         "answer": 0,
+         "why": {
+          "40": "You reported the included angle instead of the two remaining angles.",
+          "80": "You doubled the included angle without using the triangle angle rule.",
+          "220": "You added the included angle to a straight angle."
+         },
+         "id": "mathematics-g7-ch7-l4-c7",
+         "src": [
+          {
+           "ch": 7,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A bus route is marked on a triangular map with included side AB = 4 km, angle A = 45°, and angle B = 40°. After constructing the map, what is the measure of angle C in degrees?",
+         "explanation": "Draw the included side AB and construct the two given angles. The new arms meet at C, making angle C the remaining angle. The given angles total 85°, so angle C = 95°.",
+         "steps": [
+          "Draw the included side AB and construct the two given angles.",
+          "The new arms meet at C, making angle C the remaining angle.",
+          "The given angles total 85°, so angle C = 95°."
+         ],
+         "hint": "Construct angles A and B on the included side AB.",
+         "derived": [
+          "4 (generated problem)",
+          "40 (generated problem)",
+          "45 (generated problem)",
+          "85 (generated problem)",
+          "95 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bus route is marked on a triangular map with included side AB = {s} km, angle A = {a}°, and angle B = {b}°. After constructing the map, what is the measure of angle C in degrees?",
+          "params": {
+           "s": [
+            3,
+            4,
+            5
+           ],
+           "a": [
+            35,
+            45,
+            55
+           ],
+           "b": [
+            40,
+            50,
+            60
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a + b < straight_angle"
+          ],
+          "answer": "straight_angle-a-b",
+          "vals": {
+           "angle_sum": "a+b",
+           "third_angle": "straight_angle-angle_sum"
+          },
+          "steps": [
+           "Draw the included side AB and construct the two given angles.",
+           "The new arms meet at C, making angle C the remaining angle.",
+           "The given angles total {angle_sum}°, so angle C = {answer}°."
+          ],
+          "model": null,
+          "hint": "Construct angles A and B on the included side AB.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "95"
+         ],
+         "id": "mathematics-g7-ch7-l4-c8",
+         "src": [
+          {
+           "ch": 7,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A triangular sign outside a laddoo shop has side BC = 8 cm, angle A = 30°, and angle C = 35°. After constructing the sign, what is the measure of angle B in degrees?",
+         "explanation": "Draw BC and construct the given angles at B's opposite vertex A and at C. The new line segments meet at B, so B is the third vertex. Angles A and C total 65°, so angle B = 115°.",
+         "steps": [
+          "Draw BC and construct the given angles at B's opposite vertex A and at C.",
+          "The new line segments meet at B, so B is the third vertex.",
+          "Angles A and C total 65°, so angle B = 115°."
+         ],
+         "hint": "Construct the two given angles from the given side and find the third vertex.",
+         "derived": [
+          "115 (generated problem)",
+          "30 (generated problem)",
+          "35 (generated problem)",
+          "65 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A triangular sign outside a laddoo shop has side BC = {s} cm, angle A = {a}°, and angle C = {c}°. After constructing the sign, what is the measure of angle B in degrees?",
+          "params": {
+           "s": [
+            6,
+            7,
+            8
+           ],
+           "a": [
+            30,
+            40,
+            50
+           ],
+           "c": [
+            35,
+            45,
+            55
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a + c < straight_angle"
+          ],
+          "answer": "straight_angle-a-c",
+          "vals": {
+           "known_sum": "a+c",
+           "missing_angle": "straight_angle-known_sum"
+          },
+          "steps": [
+           "Draw BC and construct the given angles at B's opposite vertex A and at C.",
+           "The new line segments meet at B, so B is the third vertex.",
+           "Angles A and C total {known_sum}°, so angle B = {answer}°."
+          ],
+          "model": null,
+          "hint": "Construct the two given angles from the given side and find the third vertex.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "115"
+         ],
+         "id": "mathematics-g7-ch7-l4-c9",
+         "src": [
+          {
+           "ch": 7,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch7-l4-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Draw AB = 6 cm, construct angle A = 20° and angle B = 55° on it, and let their new arms meet at C. What is the measure of angle C in degrees?",
+         "steps": [
+          "Construct angle A = 20° and angle B = 55° on the included side AB.",
+          "The new arms meet at C, so find C from the triangle angle rule.",
+          "The constructed angles total 75°, so angle C = 105°."
+         ],
+         "modelSpec": null,
+         "result": "105",
+         "gen": {
+          "template": "Draw AB = {s} cm, construct angle A = {a}° and angle B = {b}° on it, and let their new arms meet at C. What is the measure of angle C in degrees?",
+          "params": {
+           "s": [
+            5,
+            6,
+            7
+           ],
+           "a": [
+            20,
+            30,
+            40
+           ],
+           "b": [
+            35,
+            55,
+            65
+           ],
+           "straight_angle": {
+            "min": 180,
+            "max": 180
+           }
+          },
+          "where": [
+           "a + b < straight_angle"
+          ],
+          "answer": "straight_angle-a-b",
+          "vals": {
+           "angle_sum": "a+b",
+           "third_angle": "straight_angle-angle_sum"
+          },
+          "steps": [
+           "Construct angle A = {a}° and angle B = {b}° on the included side AB.",
+           "The new arms meet at C, so find C from the triangle angle rule.",
+           "The constructed angles total {angle_sum}°, so angle C = {answer}°."
+          ],
+          "model": null,
+          "hint": "First construct the two angles so that their arms intersect at C.",
+          "wrong": [
+           "a+b",
+           "straight_angle-a",
+           "straight_angle-b"
+          ],
+          "wrongWhy": [
+           "You added the angles but did not find the part of a straight angle left over.",
+           "You removed only angle A from a straight angle.",
+           "You removed only angle B from a straight angle."
+          ]
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "105 (generated problem)",
+          "125 (generated problem)",
+          "160 (generated problem)",
+          "20 (generated problem)",
+          "55 (generated problem)",
+          "6 (generated problem)",
+          "75 (generated problem)"
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g7-ch7-l4-a9",
          "difficulty": 3,
@@ -37480,62 +40262,6 @@
            "ch": 7,
            "p": 163
           },
-          {
-           "ch": 7,
-           "p": 163
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "difficulty": 2,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "A triangular bus sign has an included angle of 195°. By how many degrees is that angle too large to construct the triangle?",
-         "explanation": "The sign's included angle is 195 degrees. A triangle cannot have an included angle of at least 180 degrees. The angle is 15 degrees above 180 degrees.",
-         "steps": [
-          "The sign's included angle is 195 degrees.",
-          "A triangle cannot have an included angle of at least 180 degrees.",
-          "The angle is 15 degrees above 180 degrees."
-         ],
-         "hint": "Compare the sign's included angle with 180 degrees.",
-         "derived": [
-          "15 (generated problem)",
-          "180 (generated problem)",
-          "195 (generated problem)"
-         ],
-         "gen": {
-          "template": "A triangular bus sign has an included angle of {a}°. By how many degrees is that angle too large to construct the triangle?",
-          "params": {
-           "a": [
-            185,
-            190,
-            195,
-            200
-           ]
-          },
-          "where": [
-           "a >= 180"
-          ],
-          "answer": "a-180",
-          "vals": {},
-          "steps": [
-           "The sign's included angle is {a} degrees.",
-           "A triangle cannot have an included angle of at least 180 degrees.",
-           "The angle is {answer} degrees above 180 degrees."
-          ],
-          "model": null,
-          "hint": "Compare the sign's included angle with 180 degrees.",
-          "wrong": [],
-          "wrongWhy": []
-         },
-         "answers": [
-          "15"
-         ],
-         "id": "mathematics-g7-ch7-l4-c1",
-         "src": [
           {
            "ch": 7,
            "p": 163
@@ -37664,15 +40390,15 @@
          ]
         }
        ],
-       "topicScene": "media/ch7-l1-triangle-labels-d1c50c.webp",
-       "sceneAlt": "A triangle diagram labels its three vertices, three sides, and three corner angles.",
-       "sceneCaption": "A general triangle shows its vertices, sides, and angles.",
+       "topicScene": "media/ch7-l4-birla-industrial-technologic-4d30d4.webp",
+       "sceneAlt": "The bright mathematics gallery at Birla Industrial and Technological Museum in Kolkata displays exhibits about numbers and plane geometry.",
+       "sceneCaption": "Mathematical exhibits in Kolkata’s Birla Industrial and Technological Museum explore numbers and plane geometry.",
        "sceneCredit": {
-        "text": "Triangle-labels by MartinThoma, CC0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Triangle-labels.svg",
-        "license": "CC0",
-        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-        "creator": "MartinThoma"
+        "text": "Birla Industrial & Technological Museum - Mathematics Gallery - Kolkat by Biswarup Ganguly, CC BY 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Birla_Industrial_%26_Technological_Museum_-_Mathematics_Gallery_-_Kolkata_2011-03-03_1900.JPG",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "creator": "Biswarup Ganguly"
        }
       },
       {
@@ -46337,7 +49063,7 @@
       {
        "id": "mathematics-g7-ch9-l1",
        "title": "Lesson 1: Re-creating and Checking the Symbol",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -46403,6 +49129,74 @@
            "ch": 9,
            "p": 3
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch9-l1-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A symbol has arms 12 cm and 12 cm, with an angle of 16 degrees between them. How many measurements are needed to make an exact replica?",
+         "steps": [
+          "The symbol gives two arm-length measurements and one angle measurement.",
+          "All three measurements are needed for an exact replica.",
+          "2 + 1 = 3 measurements.",
+          "Thus, the answer is 3 measurements."
+         ],
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 1
+         },
+         "result": "3",
+         "gen": {
+          "template": "A symbol has arms {a} cm and {b} cm, with an angle of {c} degrees between them. How many measurements are needed to make an exact replica?",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 20
+           },
+           "b": {
+            "min": 2,
+            "max": 20
+           },
+           "c": {
+            "min": 2,
+            "max": 90
+           }
+          },
+          "where": [],
+          "answer": "3",
+          "vals": {
+           "arm_measurements": "2",
+           "angle_measurements": "1",
+           "total_measurements": "3"
+          },
+          "steps": [
+           "The symbol gives two arm-length measurements and one angle measurement.",
+           "All three measurements are needed for an exact replica.",
+           "{arm_measurements} + {angle_measurements} = {answer} measurements.",
+           "Thus, the answer is {answer} measurements."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "3",
+           "size": "1"
+          },
+          "hint": "List the two arm lengths and the angle.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "1 (generated problem)",
+          "12 (generated problem)",
+          "16 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)"
          ]
         },
         {
@@ -46500,18 +49294,259 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g7-ch9-l1-a3",
+         "type": "fillblank",
          "difficulty": 1,
          "tags": [
-          "tracing",
-          "checking"
+          "practice",
+          "computed"
          ],
-         "title": "Tracing as a Check",
-         "prompt": "Tracing one figure can help us check whether it fits another figure.",
-         "answer": true,
-         "explanation": "Tracing shows whether one figure fits another exactly.",
+         "prompt": "5 exact copies of a symbol are to be made. Each copy needs both arm lengths and the angle between them. How many measurements are needed altogether?",
+         "explanation": "Each exact copy needs both arm lengths and the angle. One symbol therefore needs 3 measurements. 5 x 3 = 15. Thus, the answer is 15 measurements.",
+         "steps": [
+          "Each exact copy needs both arm lengths and the angle.",
+          "One symbol therefore needs 3 measurements.",
+          "5 x 3 = 15.",
+          "Thus, the answer is 15 measurements."
+         ],
+         "hint": "Find the measurements needed for one exact copy first.",
+         "derived": [
+          "15 (generated problem)",
+          "3 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "{n} exact copies of a symbol are to be made. Each copy needs both arm lengths and the angle between them. How many measurements are needed altogether?",
+          "params": {
+           "n": {
+            "min": 2,
+            "max": 6
+           }
+          },
+          "where": [],
+          "answer": "3*n",
+          "vals": {
+           "measurements_each": "3",
+           "total_measurements": "3*n"
+          },
+          "steps": [
+           "Each exact copy needs both arm lengths and the angle.",
+           "One symbol therefore needs {measurements_each} measurements.",
+           "{n} x {measurements_each} = {answer}.",
+           "Thus, the answer is {answer} measurements."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "3"
+          },
+          "hint": "Find the measurements needed for one exact copy first.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 5,
+          "size": 3
+         },
+         "answers": [
+          "15"
+         ],
+         "id": "mathematics-g7-ch9-l1-c2",
          "src": [
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Two symbols have the same arms of 13 cm and 17 cm, but their angles are 69 degrees and 49 degrees. How many degrees must the first angle be reduced to match the second?",
+         "explanation": "Both symbols already have the same two arm lengths. Only the angle measurements are different. 69 - 49 = 20 degrees. Thus, the answer is 20 degrees.",
+         "steps": [
+          "Both symbols already have the same two arm lengths.",
+          "Only the angle measurements are different.",
+          "69 - 49 = 20 degrees.",
+          "Thus, the answer is 20 degrees."
+         ],
+         "hint": "Subtract the smaller angle from the larger angle.",
+         "derived": [
+          "13 (generated problem)",
+          "17 (generated problem)",
+          "20 (generated problem)",
+          "49 (generated problem)",
+          "69 (generated problem)"
+         ],
+         "gen": {
+          "template": "Two symbols have the same arms of {a} cm and {b} cm, but their angles are {c} degrees and {d} degrees. How many degrees must the first angle be reduced to match the second?",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 20
+           },
+           "b": {
+            "min": 2,
+            "max": 20
+           },
+           "c": {
+            "min": 2,
+            "max": 90
+           },
+           "d": {
+            "min": 2,
+            "max": 90
+           }
+          },
+          "where": [
+           "c > d"
+          ],
+          "answer": "c-d",
+          "vals": {
+           "reduction": "c-d"
+          },
+          "steps": [
+           "Both symbols already have the same two arm lengths.",
+           "Only the angle measurements are different.",
+           "{c} - {d} = {answer} degrees.",
+           "Thus, the answer is {answer} degrees."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "First angle",
+             "v": "c"
+            },
+            {
+             "label": "Second angle",
+             "v": "d"
+            }
+           ]
+          },
+          "hint": "Subtract the smaller angle from the larger angle.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "First angle",
+            "v": 69
+           },
+           {
+            "label": "Second angle",
+            "v": 49
+           }
+          ]
+         },
+         "answers": [
+          "20"
+         ],
+         "id": "mathematics-g7-ch9-l1-c3",
+         "src": [
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 3
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A big symbol has arms 3 cm and 18 cm and an angle of 53 degrees. Since tracing it is difficult, how many measurements should be recorded to make an exact smaller replica?",
+         "explanation": "The two arm lengths and the angle between them are given. Tracing a big symbol is difficult, so these three measurements are recorded instead. 2 + 1 = 3 measurements. Thus, the answer is 3 measurements.",
+         "steps": [
+          "The two arm lengths and the angle between them are given.",
+          "Tracing a big symbol is difficult, so these three measurements are recorded instead.",
+          "2 + 1 = 3 measurements.",
+          "Thus, the answer is 3 measurements."
+         ],
+         "hint": "Record each part of the symbol that fixes its shape and size.",
+         "derived": [
+          "1 (generated problem)",
+          "18 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "53 (generated problem)"
+         ],
+         "gen": {
+          "template": "A big symbol has arms {a} cm and {b} cm and an angle of {c} degrees. Since tracing it is difficult, how many measurements should be recorded to make an exact smaller replica?",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 30
+           },
+           "b": {
+            "min": 2,
+            "max": 30
+           },
+           "c": {
+            "min": 2,
+            "max": 90
+           }
+          },
+          "where": [],
+          "answer": "3",
+          "vals": {
+           "arm_measurements": "2",
+           "angle_measurements": "1",
+           "total_measurements": "3"
+          },
+          "steps": [
+           "The two arm lengths and the angle between them are given.",
+           "Tracing a big symbol is difficult, so these three measurements are recorded instead.",
+           "{arm_measurements} + {angle_measurements} = {answer} measurements.",
+           "Thus, the answer is {answer} measurements."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "3",
+           "size": "1"
+          },
+          "hint": "Record each part of the symbol that fixes its shape and size.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 1
+         },
+         "answers": [
+          "3"
+         ],
+         "id": "mathematics-g7-ch9-l1-c4",
+         "src": [
+          {
+           "ch": 9,
+           "p": 1
+          },
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 2
+          },
           {
            "ch": 9,
            "p": 2
@@ -46568,24 +49603,273 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g7-ch9-l1-a6",
+         "type": "fillblank",
          "difficulty": 2,
          "tags": [
-          "angle",
-          "arms",
-          "symbol"
+          "practice",
+          "computed"
          ],
-         "title": "What Else Is Needed?",
-         "prompt": "A treasure guide knows the two arm lengths. What else is needed?",
-         "options": [
-          "Only one arm length",
-          "Another arm length",
-          "The angle between the arms",
-          "The size of the symbol"
+         "prompt": "Two laddoo boxes have symbols with the same arms of 16 cm and 3 cm. Their angles are 55 degrees and 37 degrees. How many degrees must the first angle be reduced so that the symbols become congruent?",
+         "explanation": "The arm measurements already match in both laddoo-box symbols. The first angle must be reduced to the second angle measurement. 55 - 37 = 18 degrees. Thus, the answer is 18 degrees.",
+         "steps": [
+          "The arm measurements already match in both laddoo-box symbols.",
+          "The first angle must be reduced to the second angle measurement.",
+          "55 - 37 = 18 degrees.",
+          "Thus, the answer is 18 degrees."
          ],
-         "answer": 2,
-         "explanation": "The angle between the arms is needed with their lengths.",
+         "hint": "Find the difference between the two angle measurements.",
+         "derived": [
+          "16 (generated problem)",
+          "18 (generated problem)",
+          "3 (generated problem)",
+          "37 (generated problem)",
+          "55 (generated problem)"
+         ],
+         "gen": {
+          "template": "Two laddoo boxes have symbols with the same arms of {a} cm and {b} cm. Their angles are {c} degrees and {d} degrees. How many degrees must the first angle be reduced so that the symbols become congruent?",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 20
+           },
+           "b": {
+            "min": 2,
+            "max": 20
+           },
+           "c": {
+            "min": 2,
+            "max": 90
+           },
+           "d": {
+            "min": 2,
+            "max": 90
+           }
+          },
+          "where": [
+           "c > d"
+          ],
+          "answer": "c-d",
+          "vals": {
+           "reduction": "c-d"
+          },
+          "steps": [
+           "The arm measurements already match in both laddoo-box symbols.",
+           "The first angle must be reduced to the second angle measurement.",
+           "{c} - {d} = {answer} degrees.",
+           "Thus, the answer is {answer} degrees."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "First box angle",
+             "v": "c"
+            },
+            {
+             "label": "Second box angle",
+             "v": "d"
+            }
+           ]
+          },
+          "hint": "Find the difference between the two angle measurements.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "First box angle",
+            "v": 55
+           },
+           {
+            "label": "Second box angle",
+            "v": 37
+           }
+          ]
+         },
+         "answers": [
+          "18"
+         ],
+         "id": "mathematics-g7-ch9-l1-c5",
+         "src": [
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 3
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Ravi's marble symbol and Meena's marble symbol have the same angle of 72 degrees. Their other arms are both 13 cm, but one arm is 14 cm in Ravi's symbol and 2 cm in Meena's. How many cm must Ravi's arm be shortened to make the symbols congruent?",
+         "explanation": "The angle measurement and the second arm measurement already match. Only Ravi's first arm is too long. 14 - 2 = 12 cm. Thus, the answer is 12 cm.",
+         "steps": [
+          "The angle measurement and the second arm measurement already match.",
+          "Only Ravi's first arm is too long.",
+          "14 - 2 = 12 cm.",
+          "Thus, the answer is 12 cm."
+         ],
+         "hint": "Subtract Meena's arm length from Ravi's arm length.",
+         "derived": [
+          "12 (generated problem)",
+          "13 (generated problem)",
+          "14 (generated problem)",
+          "2 (generated problem)",
+          "72 (generated problem)"
+         ],
+         "gen": {
+          "template": "Ravi's marble symbol and Meena's marble symbol have the same angle of {c} degrees. Their other arms are both {b} cm, but one arm is {a} cm in Ravi's symbol and {d} cm in Meena's. How many cm must Ravi's arm be shortened to make the symbols congruent?",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 20
+           },
+           "b": {
+            "min": 2,
+            "max": 20
+           },
+           "c": {
+            "min": 2,
+            "max": 90
+           },
+           "d": {
+            "min": 2,
+            "max": 20
+           }
+          },
+          "where": [
+           "a > d"
+          ],
+          "answer": "a-d",
+          "vals": {
+           "shortening": "a-d"
+          },
+          "steps": [
+           "The angle measurement and the second arm measurement already match.",
+           "Only Ravi's first arm is too long.",
+           "{a} - {d} = {answer} cm.",
+           "Thus, the answer is {answer} cm."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Ravi's arm",
+             "v": "a"
+            },
+            {
+             "label": "Meena's arm",
+             "v": "d"
+            }
+           ]
+          },
+          "hint": "Subtract Meena's arm length from Ravi's arm length.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Ravi's arm",
+            "v": 14
+           },
+           {
+            "label": "Meena's arm",
+            "v": 2
+           }
+          ]
+         },
+         "answers": [
+          "12"
+         ],
+         "id": "mathematics-g7-ch9-l1-c6",
+         "src": [
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "The school art club must check 3 symbols. For each symbol, the children record both arm lengths and the angle between them. How many measurements do they record altogether?",
+         "explanation": "Each symbol is described by two arm lengths and one angle. One symbol needs 3 measurements. 3 x 3 = 9. Thus, the answer is 9 measurements.",
+         "steps": [
+          "Each symbol is described by two arm lengths and one angle.",
+          "One symbol needs 3 measurements.",
+          "3 x 3 = 9.",
+          "Thus, the answer is 9 measurements."
+         ],
+         "hint": "Find the number of measurements recorded for one symbol.",
+         "derived": [
+          "3 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "The school art club must check {n} symbols. For each symbol, the children record both arm lengths and the angle between them. How many measurements do they record altogether?",
+          "params": {
+           "n": {
+            "min": 2,
+            "max": 6
+           }
+          },
+          "where": [],
+          "answer": "3*n",
+          "vals": {
+           "measurements_each": "3",
+           "total_measurements": "3*n"
+          },
+          "steps": [
+           "Each symbol is described by two arm lengths and one angle.",
+           "One symbol needs {measurements_each} measurements.",
+           "{n} x {measurements_each} = {answer}.",
+           "Thus, the answer is {answer} measurements."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "3"
+          },
+          "hint": "Find the number of measurements recorded for one symbol.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 3
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g7-ch9-l1-c7",
          "src": [
           {
            "ch": 9,
@@ -46595,6 +49879,242 @@
            "ch": 9,
            "p": 2
           }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A cricket team checks 3 pairs of field symbols. Each pair may be rotated or flipped, but both arm lengths and the angle must still be checked. How many measurement checks are made altogether?",
+         "explanation": "Rotating or flipping a symbol does not remove the need to check its measurements. Each pair needs two arm-length checks and one angle check. 3 x 3 = 9. Thus, the answer is 9 measurement checks.",
+         "steps": [
+          "Rotating or flipping a symbol does not remove the need to check its measurements.",
+          "Each pair needs two arm-length checks and one angle check.",
+          "3 x 3 = 9.",
+          "Thus, the answer is 9 measurement checks."
+         ],
+         "hint": "Count the measurements checked for one pair first.",
+         "derived": [
+          "3 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "A cricket team checks {n} pairs of field symbols. Each pair may be rotated or flipped, but both arm lengths and the angle must still be checked. How many measurement checks are made altogether?",
+          "params": {
+           "n": {
+            "min": 2,
+            "max": 6
+           }
+          },
+          "where": [],
+          "answer": "3*n",
+          "vals": {
+           "checks_each_pair": "3",
+           "total_checks": "3*n"
+          },
+          "steps": [
+           "Rotating or flipping a symbol does not remove the need to check its measurements.",
+           "Each pair needs two arm-length checks and one angle check.",
+           "{n} x {checks_each_pair} = {answer}.",
+           "Thus, the answer is {answer} measurement checks."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "3"
+          },
+          "hint": "Count the measurements checked for one pair first.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 3
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g7-ch9-l1-c8",
+         "src": [
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a market, two sign symbols have arms 13 cm and 9 cm and an angle of 73 degrees, and one fits exactly over the other. How many measurements agree for the signs to be congruent?",
+         "explanation": "The exact overlay shows that the figures have the same shape and size. The two arm-length measurements and the angle measurement all agree. 2 + 1 = 3 matching measurements. Thus, the answer is 3 matching measurements.",
+         "steps": [
+          "The exact overlay shows that the figures have the same shape and size.",
+          "The two arm-length measurements and the angle measurement all agree.",
+          "2 + 1 = 3 matching measurements.",
+          "Thus, the answer is 3 matching measurements."
+         ],
+         "hint": "Check the two arm lengths and the angle.",
+         "derived": [
+          "1 (generated problem)",
+          "13 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "73 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a market, two sign symbols have arms {a} cm and {b} cm and an angle of {c} degrees, and one fits exactly over the other. How many measurements agree for the signs to be congruent?",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 20
+           },
+           "b": {
+            "min": 2,
+            "max": 20
+           },
+           "c": {
+            "min": 2,
+            "max": 90
+           }
+          },
+          "where": [],
+          "answer": "3",
+          "vals": {
+           "arm_measurements": "2",
+           "angle_measurements": "1",
+           "matching_measurements": "3"
+          },
+          "steps": [
+           "The exact overlay shows that the figures have the same shape and size.",
+           "The two arm-length measurements and the angle measurement all agree.",
+           "{arm_measurements} + {angle_measurements} = {answer} matching measurements.",
+           "Thus, the answer is {answer} matching measurements."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "First arm",
+             "v": "a"
+            },
+            {
+             "label": "Second arm",
+             "v": "b"
+            }
+           ]
+          },
+          "hint": "Check the two arm lengths and the angle.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "First arm",
+            "v": 13
+           },
+           {
+            "label": "Second arm",
+            "v": 9
+           }
+          ]
+         },
+         "answers": [
+          "3"
+         ],
+         "id": "mathematics-g7-ch9-l1-c9",
+         "src": [
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 2
+          },
+          {
+           "ch": 9,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch9-l1-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A market artist must correct the angles of 2 sign symbols. Each symbol has matching arm lengths, but its angle must be reduced from 67 degrees to 36 degrees. How many degrees must be reduced in total?",
+         "steps": [
+          "Each symbol needs an angle reduction of 67 - 36 degrees.",
+          "There are 2 symbols to correct.",
+          "2 x 31 = 62 degrees.",
+          "Thus, the answer is 62 degrees."
+         ],
+         "modelSpec": null,
+         "result": "62",
+         "gen": {
+          "template": "A market artist must correct the angles of {n} sign symbols. Each symbol has matching arm lengths, but its angle must be reduced from {c} degrees to {d} degrees. How many degrees must be reduced in total?",
+          "params": {
+           "n": {
+            "min": 2,
+            "max": 6
+           },
+           "c": {
+            "min": 2,
+            "max": 90
+           },
+           "d": {
+            "min": 2,
+            "max": 90
+           }
+          },
+          "where": [
+           "c > d"
+          ],
+          "answer": "n*(c-d)",
+          "vals": {
+           "reduction_each": "c-d",
+           "total_reduction": "n*(c-d)"
+          },
+          "steps": [
+           "Each symbol needs an angle reduction of {c} - {d} degrees.",
+           "There are {n} symbols to correct.",
+           "{n} x {reduction_each} = {answer} degrees.",
+           "Thus, the answer is {answer} degrees."
+          ],
+          "model": null,
+          "hint": "Find the reduction needed for one symbol first.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "2 (generated problem)",
+          "31 (generated problem)",
+          "36 (generated problem)",
+          "62 (generated problem)",
+          "67 (generated problem)"
          ]
         },
         {
@@ -51025,7 +54545,7 @@
       {
        "id": "mathematics-g7-ch9-l6",
        "title": "Lesson 6: Congruence in Real Life and Review",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -51091,6 +54611,67 @@
            "ch": 9,
            "p": 22
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g7-ch9-l6-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Triangle PQR has side lengths 3 cm, 7 cm, and 8 cm. A copy of the triangle is flipped over, and its side lengths remain 3 cm, 7 cm, and 8 cm. Write 1 if the two triangles are congruent and 0 if they are not.",
+         "steps": [
+          "The first triangle has side lengths 3 cm, 7 cm, and 8 cm, giving 18 cm altogether.",
+          "The flipped copy has the same three side lengths and the same shape.",
+          "Flipping changes the direction, not the shape or size, so the answer is 1."
+         ],
+         "modelSpec": null,
+         "result": "1",
+         "gen": {
+          "template": "Triangle PQR has side lengths {a} cm, {b} cm, and {c} cm. A copy of the triangle is flipped over, and its side lengths remain {a} cm, {b} cm, and {c} cm. Write 1 if the two triangles are congruent and 0 if they are not.",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 4
+           },
+           "b": {
+            "min": 5,
+            "max": 7
+           },
+           "c": {
+            "min": 8,
+            "max": 10
+           }
+          },
+          "where": [
+           "a + b > c",
+           "a + c > b",
+           "b + c > a"
+          ],
+          "answer": "1",
+          "vals": {
+           "sideTotal": "a+b+c"
+          },
+          "steps": [
+           "The first triangle has side lengths {a} cm, {b} cm, and {c} cm, giving {sideTotal} cm altogether.",
+           "The flipped copy has the same three side lengths and the same shape.",
+           "Flipping changes the direction, not the shape or size, so the answer is {answer}."
+          ],
+          "model": null,
+          "hint": "Check whether flipping changed the shape or the size.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "0 (generated problem)",
+          "1 (generated problem)",
+          "18 (generated problem)",
+          "3 (generated problem)",
+          "7 (generated problem)",
+          "8 (generated problem)"
          ]
         },
         {
@@ -51175,6 +54756,215 @@
          ]
         },
         {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Triangle PQR has side lengths 4 cm, 7 cm, and 10 cm. Triangle XYZ also has side lengths 4 cm, 7 cm, and 10 cm. What is the length in cm of the side in XYZ corresponding to the 10 cm side in PQR?",
+         "explanation": "The two triangles have side lengths 4 cm, 7 cm, and 10 cm. SSS guarantees that the triangles are congruent because all three corresponding sides match. The side corresponding to the 10 cm side has length 10 cm.",
+         "steps": [
+          "The two triangles have side lengths 4 cm, 7 cm, and 10 cm.",
+          "SSS guarantees that the triangles are congruent because all three corresponding sides match.",
+          "The side corresponding to the 10 cm side has length 10 cm."
+         ],
+         "hint": "Use SSS to match the three sides of the triangles.",
+         "derived": [
+          "10 (generated problem)",
+          "4 (generated problem)",
+          "7 (generated problem)"
+         ],
+         "gen": {
+          "template": "Triangle PQR has side lengths {a} cm, {b} cm, and {c} cm. Triangle XYZ also has side lengths {a} cm, {b} cm, and {c} cm. What is the length in cm of the side in XYZ corresponding to the {c} cm side in PQR?",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 4
+           },
+           "b": {
+            "min": 5,
+            "max": 7
+           },
+           "c": {
+            "min": 8,
+            "max": 10
+           }
+          },
+          "where": [
+           "a + b > c",
+           "a + c > b",
+           "b + c > a"
+          ],
+          "answer": "c",
+          "vals": {
+           "matchingSide": "c"
+          },
+          "steps": [
+           "The two triangles have side lengths {a} cm, {b} cm, and {c} cm.",
+           "SSS guarantees that the triangles are congruent because all three corresponding sides match.",
+           "The side corresponding to the {c} cm side has length {answer} cm."
+          ],
+          "model": null,
+          "hint": "Use SSS to match the three sides of the triangles.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g7-ch9-l6-c2",
+         "src": [
+          {
+           "ch": 9,
+           "p": 22
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Triangle PQR has sides PQ = 5 cm and QR = 11 cm, with included angle PQR = 70 degrees. Triangle XYZ has sides XY = 5 cm and YZ = 11 cm, with included angle XYZ = 70 degrees. Write 1 if the triangles are congruent and 0 if they are not.",
+         "explanation": "Both triangles have sides 5 cm and 11 cm, with a combined length of 16 cm. The 70-degree angle lies between these two sides in each triangle. SAS guarantees congruence, so the answer is 1.",
+         "steps": [
+          "Both triangles have sides 5 cm and 11 cm, with a combined length of 16 cm.",
+          "The 70-degree angle lies between these two sides in each triangle.",
+          "SAS guarantees congruence, so the answer is 1."
+         ],
+         "hint": "Compare the two sides and the angle between them.",
+         "derived": [
+          "0 (generated problem)",
+          "1 (generated problem)",
+          "11 (generated problem)",
+          "16 (generated problem)",
+          "5 (generated problem)",
+          "70 (generated problem)"
+         ],
+         "gen": {
+          "template": "Triangle PQR has sides PQ = {a} cm and QR = {b} cm, with included angle PQR = {c} degrees. Triangle XYZ has sides XY = {a} cm and YZ = {b} cm, with included angle XYZ = {c} degrees. Write 1 if the triangles are congruent and 0 if they are not.",
+          "params": {
+           "a": [
+            5,
+            6,
+            7,
+            8
+           ],
+           "b": [
+            9,
+            10,
+            11,
+            12
+           ],
+           "c": [
+            30,
+            50,
+            70
+           ]
+          },
+          "where": [],
+          "answer": "1",
+          "vals": {
+           "sidePairTotal": "a+b"
+          },
+          "steps": [
+           "Both triangles have sides {a} cm and {b} cm, with a combined length of {sidePairTotal} cm.",
+           "The {c}-degree angle lies between these two sides in each triangle.",
+           "SAS guarantees congruence, so the answer is {answer}."
+          ],
+          "model": null,
+          "hint": "Compare the two sides and the angle between them.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "1"
+         ],
+         "id": "mathematics-g7-ch9-l6-c3",
+         "src": [
+          {
+           "ch": 9,
+           "p": 22
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Triangle PQR has angles P = 50 degrees and Q = 70 degrees, with included side PQ = 5 cm. Triangle XYZ has angles X = 50 degrees and Y = 70 degrees, with included side XY = 5 cm. Write 1 if the triangles are congruent and 0 if they are not.",
+         "explanation": "Each triangle has angles 50 degrees and 70 degrees, making 120 degrees together. The side 5 cm lies between these two angles in both triangles. ASA guarantees congruence, so the answer is 1.",
+         "steps": [
+          "Each triangle has angles 50 degrees and 70 degrees, making 120 degrees together.",
+          "The side 5 cm lies between these two angles in both triangles.",
+          "ASA guarantees congruence, so the answer is 1."
+         ],
+         "hint": "Compare the two angles and the side between them.",
+         "derived": [
+          "0 (generated problem)",
+          "1 (generated problem)",
+          "120 (generated problem)",
+          "5 (generated problem)",
+          "50 (generated problem)",
+          "70 (generated problem)"
+         ],
+         "gen": {
+          "template": "Triangle PQR has angles P = {a} degrees and Q = {b} degrees, with included side PQ = {c} cm. Triangle XYZ has angles X = {a} degrees and Y = {b} degrees, with included side XY = {c} cm. Write 1 if the triangles are congruent and 0 if they are not.",
+          "params": {
+           "a": [
+            30,
+            40,
+            50
+           ],
+           "b": [
+            50,
+            60,
+            70
+           ],
+           "c": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+           ]
+          },
+          "where": [
+           "a + b < 180"
+          ],
+          "answer": "1",
+          "vals": {
+           "angleTotal": "a+b"
+          },
+          "steps": [
+           "Each triangle has angles {a} degrees and {b} degrees, making {angleTotal} degrees together.",
+           "The side {c} cm lies between these two angles in both triangles.",
+           "ASA guarantees congruence, so the answer is {answer}."
+          ],
+          "model": null,
+          "hint": "Compare the two angles and the side between them.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "1"
+         ],
+         "id": "mathematics-g7-ch9-l6-c4",
+         "src": [
+          {
+           "ch": 9,
+           "p": 22
+          }
+         ]
+        },
+        {
          "type": "matchpairs",
          "id": "mathematics-g7-ch9-l6-a4",
          "difficulty": 2,
@@ -51228,27 +55018,141 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g7-ch9-l6-a6",
+         "type": "fillblank",
          "difficulty": 2,
          "tags": [
-          "congruence",
-          "designs"
+          "practice",
+          "computed"
          ],
-         "title": "A Rotated Design",
-         "prompt": "A triangle design is rotated to fit another space. What must stay the same?",
-         "options": [
-          "Its shape and size",
-          "Its colour and shape",
-          "Its colour and size",
-          "Its colour and direction"
+         "prompt": "A market makes two right-angled triangular signs. Each sign has hypotenuse 8 cm, one leg 3 cm, and a right angle between its two legs. Write 1 if the signs are congruent and 0 if they are not.",
+         "explanation": "Both signs are right triangles, with hypotenuse 8 cm and leg 3 cm. The hypotenuse is longer than the leg by 5 cm. RHS guarantees congruence, so the answer is 1.",
+         "steps": [
+          "Both signs are right triangles, with hypotenuse 8 cm and leg 3 cm.",
+          "The hypotenuse is longer than the leg by 5 cm.",
+          "RHS guarantees congruence, so the answer is 1."
          ],
-         "answer": 0,
-         "explanation": "Rotating a figure may help it fit. Its shape and size stay the same.",
+         "hint": "Check the right angle, hypotenuse, and one leg in both signs.",
+         "derived": [
+          "0 (generated problem)",
+          "1 (generated problem)",
+          "3 (generated problem)",
+          "5 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market makes two right-angled triangular signs. Each sign has hypotenuse {a} cm, one leg {b} cm, and a right angle between its two legs. Write 1 if the signs are congruent and 0 if they are not.",
+          "params": {
+           "a": [
+            5,
+            6,
+            7,
+            8,
+            9
+           ],
+           "b": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "1",
+          "vals": {
+           "hypotenuseGap": "a-b"
+          },
+          "steps": [
+           "Both signs are right triangles, with hypotenuse {a} cm and leg {b} cm.",
+           "The hypotenuse is longer than the leg by {hypotenuseGap} cm.",
+           "RHS guarantees congruence, so the answer is {answer}."
+          ],
+          "model": null,
+          "hint": "Check the right angle, hypotenuse, and one leg in both signs.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "1"
+         ],
+         "id": "mathematics-g7-ch9-l6-c5",
          "src": [
           {
            "ch": 9,
-           "p": 2
+           "p": 22
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Two school paper triangles are ABC and DEF. Triangle ABC has angle A = 30 degrees, angle B = 60 degrees, and side BC = 5 cm. Triangle DEF has angle D = 30 degrees, angle E = 60 degrees, and side EF = 5 cm. Write 1 if they are congruent and 0 if they are not.",
+         "explanation": "In each triangle, angles 30 degrees and 60 degrees have a total of 90 degrees. The given side 5 cm is not between the two given angles. Congruence still holds in this situation, so the answer is 1.",
+         "steps": [
+          "In each triangle, angles 30 degrees and 60 degrees have a total of 90 degrees.",
+          "The given side 5 cm is not between the two given angles.",
+          "Congruence still holds in this situation, so the answer is 1."
+         ],
+         "hint": "Check whether the given side lies between the two given angles.",
+         "derived": [
+          "0 (generated problem)",
+          "1 (generated problem)",
+          "30 (generated problem)",
+          "5 (generated problem)",
+          "60 (generated problem)",
+          "90 (generated problem)"
+         ],
+         "gen": {
+          "template": "Two school paper triangles are ABC and DEF. Triangle ABC has angle A = {a} degrees, angle B = {b} degrees, and side BC = {c} cm. Triangle DEF has angle D = {a} degrees, angle E = {b} degrees, and side EF = {c} cm. Write 1 if they are congruent and 0 if they are not.",
+          "params": {
+           "a": [
+            30,
+            40,
+            50
+           ],
+           "b": [
+            50,
+            60,
+            70
+           ],
+           "c": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+           ]
+          },
+          "where": [
+           "a + b < 180"
+          ],
+          "answer": "1",
+          "vals": {
+           "angleTotal": "a+b"
+          },
+          "steps": [
+           "In each triangle, angles {a} degrees and {b} degrees have a total of {angleTotal} degrees.",
+           "The given side {c} cm is not between the two given angles.",
+           "Congruence still holds in this situation, so the answer is {answer}."
+          ],
+          "model": null,
+          "hint": "Check whether the given side lies between the two given angles.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "1"
+         ],
+         "id": "mathematics-g7-ch9-l6-c6",
+         "src": [
+          {
+           "ch": 9,
+           "p": 22
           },
           {
            "ch": 9,
@@ -51257,36 +55161,184 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g7-ch9-l6-a7",
-         "difficulty": 3,
+         "type": "fillblank",
+         "difficulty": 2,
          "tags": [
-          "conditions",
-          "triangles"
+          "practice",
+          "computed"
          ],
-         "title": "Choose the Condition",
-         "prompt": "The triangles have equal sides and the same included angle. Which condition guarantees congruence?",
-         "options": [
-          "SSS",
-          "SAS",
-          "ASA",
-          "RHS"
+         "prompt": "A market sign is triangular and has sides 4 cm, 7 cm, and 8 cm. A second triangular market sign is congruent to it by SSS and has sides 4 cm and 7 cm, with its third side unknown. What is the length of the unknown side in cm?",
+         "explanation": "The first market sign has side lengths 4 cm, 7 cm, and 8 cm. SSS matches its three sides with the sides of the second sign. The unknown third side is 8 cm, so the answer is 8 cm.",
+         "steps": [
+          "The first market sign has side lengths 4 cm, 7 cm, and 8 cm.",
+          "SSS matches its three sides with the sides of the second sign.",
+          "The unknown third side is 8 cm, so the answer is 8 cm."
          ],
-         "answer": 1,
-         "explanation": "The SAS condition guarantees congruence for these matching side-angle details.",
+         "hint": "Use SSS to match the third side of the second sign.",
+         "derived": [
+          "4 (generated problem)",
+          "7 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market sign is triangular and has sides {a} cm, {b} cm, and {c} cm. A second triangular market sign is congruent to it by SSS and has sides {a} cm and {b} cm, with its third side unknown. What is the length of the unknown side in cm?",
+          "params": {
+           "a": {
+            "min": 2,
+            "max": 4
+           },
+           "b": {
+            "min": 5,
+            "max": 7
+           },
+           "c": {
+            "min": 8,
+            "max": 10
+           }
+          },
+          "where": [
+           "a + b > c",
+           "a + c > b",
+           "b + c > a"
+          ],
+          "answer": "c",
+          "vals": {
+           "unknownSide": "c"
+          },
+          "steps": [
+           "The first market sign has side lengths {a} cm, {b} cm, and {c} cm.",
+           "SSS matches its three sides with the sides of the second sign.",
+           "The unknown third side is {unknownSide} cm, so the answer is {answer} cm."
+          ],
+          "model": null,
+          "hint": "Use SSS to match the third side of the second sign.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "8"
+         ],
+         "id": "mathematics-g7-ch9-l6-c7",
          "src": [
           {
            "ch": 9,
            "p": 22
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In triangle ABC, the sides opposite angles B and C are both 6 cm long. Angle B measures 30 degrees. What is the measure of angle C in degrees?",
+         "explanation": "The equal sides of length 6 cm are opposite angles B and C. Angles opposite equal sides in a triangle are equal. Therefore angle C equals angle B, so the answer is 30 degrees.",
+         "steps": [
+          "The equal sides of length 6 cm are opposite angles B and C.",
+          "Angles opposite equal sides in a triangle are equal.",
+          "Therefore angle C equals angle B, so the answer is 30 degrees."
+         ],
+         "hint": "Identify the angles opposite the two equal sides.",
+         "derived": [
+          "30 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "In triangle ABC, the sides opposite angles B and C are both {a} cm long. Angle B measures {b} degrees. What is the measure of angle C in degrees?",
+          "params": {
+           "a": [
+            3,
+            4,
+            5,
+            6
+           ],
+           "b": [
+            30,
+            40,
+            50,
+            60
+           ]
           },
+          "where": [
+           "b < 90"
+          ],
+          "answer": "b",
+          "vals": {
+           "equalSideLength": "a"
+          },
+          "steps": [
+           "The equal sides of length {a} cm are opposite angles B and C.",
+           "Angles opposite equal sides in a triangle are equal.",
+           "Therefore angle C equals angle B, so the answer is {answer} degrees."
+          ],
+          "model": null,
+          "hint": "Identify the angles opposite the two equal sides.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "30"
+         ],
+         "id": "mathematics-g7-ch9-l6-c8",
+         "src": [
           {
            "ch": 9,
            "p": 22
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A school badge is an equilateral triangle with side length 4 cm. What is the measure in degrees of each angle of the badge?",
+         "explanation": "An equilateral triangle has three equal sides. Every angle of an equilateral triangle measures 60 degrees. Therefore each angle of the badge is 60 degrees.",
+         "steps": [
+          "An equilateral triangle has three equal sides.",
+          "Every angle of an equilateral triangle measures 60 degrees.",
+          "Therefore each angle of the badge is 60 degrees."
+         ],
+         "hint": "Recall the special angle measure of an equilateral triangle.",
+         "derived": [
+          "4 (generated problem)",
+          "60 (generated problem)"
+         ],
+         "gen": {
+          "template": "A school badge is an equilateral triangle with side length {a} cm. What is the measure in degrees of each angle of the badge?",
+          "params": {
+           "a": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
           },
-          {
-           "ch": 9,
-           "p": 22
+          "where": [],
+          "answer": "60",
+          "vals": {
+           "oneAngle": "60"
           },
+          "steps": [
+           "An equilateral triangle has three equal sides.",
+           "Every angle of an equilateral triangle measures {oneAngle} degrees.",
+           "Therefore each angle of the badge is {answer} degrees."
+          ],
+          "model": null,
+          "hint": "Recall the special angle measure of an equilateral triangle.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "60"
+         ],
+         "id": "mathematics-g7-ch9-l6-c9",
+         "src": [
           {
            "ch": 9,
            "p": 22
