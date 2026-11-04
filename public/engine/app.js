@@ -8,7 +8,7 @@ import { renderModel } from './core/models.js';
 import { state, boot, activeLearner, persist, addXP,
   heartsRegenerated, touchStreak, recordActivity, recordLesson, weakSpots,
   unlockReward, todayKey, exportSave, importSave } from './core/state.js';
-import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, themeCopy, setGuide, guideAvatarSrc } from './core/theme.js';
+import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, themeCopy, setGuide, currentGuide, guideAvatarSrc } from './core/theme.js';
 import { t, setLocale, getLocale, availableLocales } from './core/i18n.js';
 import { getActivityModule } from './activities/index.js';
 import { icon } from './core/icons.js';
@@ -408,7 +408,7 @@ function screenHome() {
   const due = practiceSet(10);
 
   const stage = el('section', { class: 'stage' });
-  const art = el('div', { class: 'stage__art' });
+  const art = el('div', { class: `stage__art${currentGuide() === 'hooty' ? ' stage__art--night' : ''}` });
   const mascot = mascotImage('idle');
   if (mascot) art.append(el('img', { class: 'stage__mascot', src: mascot, alt: '' }));
 

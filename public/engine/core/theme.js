@@ -84,6 +84,7 @@ export function assetFor(theme, path) {
 // The theme's own mascot paths still describe Lumi, so a theme can bring its own art without touching the owl.
 let guide = 'hooty';
 export function setGuide(g) { guide = g === 'lumi' ? 'lumi' : 'hooty'; }
+export function currentGuide() { return guide; }
 export function guideName() { return guide === 'lumi' ? 'Lumi' : 'Hooty'; }
 export function guideAvatarSrc(which, mood = 'idle') {
   return which === 'lumi' ? `./characters/lumi/avatar-${mood}.webp` : `./characters/hooty/owl-avatar-${mood}.webp`;

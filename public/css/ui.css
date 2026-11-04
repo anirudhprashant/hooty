@@ -1120,3 +1120,10 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .guide-pick img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; background: var(--bg); }
 .guide-pick.is-on { border-color: var(--primary); background: var(--primary-soft, var(--surface)); }
 .guide-pick:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+
+/* Hooty's pale feathers need a darker scene: a night wash over the painting, and a soft warm glow behind the owl */
+.stage__art--night { position: relative; isolation: isolate; }
+.stage__art--night::before, .stage__art--night::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
+.stage__art--night::before { background: linear-gradient(180deg, #34207a 0%, #4a2d8c 42%, #245a4e 100%); mix-blend-mode: multiply; opacity: 0.74; }
+.stage__art--night::after { background: radial-gradient(ellipse 58% 52% at 50% 64%, rgba(255, 205, 110, 0.40), rgba(255, 205, 110, 0) 72%); }
+.stage__art--night .stage__mascot { z-index: 1; }
