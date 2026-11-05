@@ -610,6 +610,27 @@ export const WIDGETS = {
       return { kids, say: `Cut both into pieces of size 1/${den}: ${a1}/${d1} = ${n1}/${den} and ${a2}/${d2} = ${n2}/${den}, so ${a1}/${d1} + ${a2}/${d2} = ${sum}/${den}${sg > 1 && sum ? ` = ${simp}` : ''}${sum > den ? `, which is more than one whole` : sum === den ? ', exactly one whole' : ''}. ${cmp}.` };
     },
   },
+  placevalue: {
+    subject: 'maths', about: 'Build a large number from crores, lakhs, thousands and ones. It is written with Indian commas (12,34,567) and international commas (1,234,567), shown in a place-value chart, and named in both systems (lakh and crore, million). For large numbers, place value, the Indian and international number systems, number names, lakhs and crores.',
+    sliders: [['crores', 'Crores', 0, 9, 1, 0], ['lakhs', 'Lakhs', 0, 99, 1, 3], ['thousands', 'Thousands', 0, 99, 1, 45], ['ones', 'Ones (0 to 999)', 0, 999, 1, 678]],
+    draw(v) {
+      const n = v.crores * 1e7 + v.lakhs * 1e5 + v.thousands * 1e3 + v.ones, str = String(n);
+      const indian = str.length > 3 ? `${str.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ',')},${str.slice(-3)}` : str;
+      const intl = str.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      const U = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'], TY = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+      const two = (k) => (k < 20 ? U[k] : TY[Math.floor(k / 10)] + (k % 10 ? `-${U[k % 10]}` : ''));
+      const three = (k) => [k >= 100 ? `${U[Math.floor(k / 100)]} hundred` : '', two(k % 100)].filter(Boolean).join(' ');
+      const say = (parts) => parts.filter(([k]) => k).map(([k, w]) => `${w === 'ones' ? three(k) : `${three(k)} ${w}`}`).join(' ') || 'zero';
+      const nameIn = say([[v.crores, 'crore'], [v.lakhs, 'lakh'], [v.thousands, 'thousand'], [v.ones, 'ones']]);
+      const nameInt = say([[Math.floor(n / 1e9), 'billion'], [Math.floor(n / 1e6) % 1000, 'million'], [Math.floor(n / 1e3) % 1000, 'thousand'], [n % 1000, 'ones']]);
+      const kids = [T(300, 42, indian, { z: 30 }), T(300, 70, `International: ${intl}`, { z: 16, w: 600, f: '#6b5a8a' })];
+      const cols = [['Crore', 'crore'], ['Ten lakh', 'lakh'], ['Lakh', 'lakh'], ['Ten thousand', 'thousand'], ['Thousand', 'thousand'], ['Hundred', 'one'], ['Ten', 'one'], ['One', 'one']];
+      const fill = { crore: '#e8dbff', lakh: '#d6ecff', thousand: '#fff0c8', one: '#d9f5e8' }, digits = str.padStart(8, '0'), cw = 66, x0 = 300 - (cols.length * cw) / 2;
+      cols.forEach(([lab, g], i) => { const x = x0 + i * cw, lead = digits.slice(0, i + 1).replace(/0/g, '') === '' && i < 7; const words = lab.split(' '); kids.push(R(x, 100, cw - 6, 74, fill[g], { r: 8, w: 2 }), ...words.map((w, k) => T(x + (cw - 6) / 2, 116 + k * 13 - (words.length - 1) * 3, w, { z: 11, w: 600, f: '#6b5a8a' })), T(x + (cw - 6) / 2, 162, lead ? '' : digits[i], { z: 26, f: lead ? '#bbb' : INK })); });
+      kids.push(T(300, 214, nameIn, { z: nameIn.length > 60 ? 13 : 15 }), T(300, 240, `(international: ${nameInt})`, { z: nameInt.length > 60 ? 11 : 13, w: 600, f: '#6b5a8a' }));
+      return { kids, say: `${indian} in the Indian system (${nameIn}) is ${intl} in the international system (${nameInt}). Indian commas group in twos after the first three digits; international commas group in threes.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
