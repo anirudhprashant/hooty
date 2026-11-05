@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { WIDGETS, slidersOf } from '../public/engine/core/explorables.js';
 import { evaluate } from '../public/engine/core/gen.js';
 import { KITS } from './explore-kits.mjs';
+import { reachable } from './reach.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 import { execFileSync } from 'node:child_process';
@@ -19,17 +20,8 @@ const dry = process.argv.includes('--dry');
 const books = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const only = Number((process.argv.find((a) => a.startsWith('--ch=')) || '').slice(5)) || 0;   // one chapter, so parallel chapters never write each other's files
 
-// every slider position, capped, to prove a challenge can be reached
-function reachable(widget, params, when) {
-  const sl = slidersOf(widget, params), start = Object.fromEntries(sl.map((x) => [x[0], x[5]]));
-  if (evaluate(when, start) !== 0) return false;
-  let grid = [start];
-  for (const [key, , min, max, step] of sl) {
-    const vals = []; for (let x = min; x <= max + 1e-9; x += step) vals.push(+x.toFixed(4));
-    grid = grid.slice(0, 4000).flatMap((g) => vals.map((x) => ({ ...g, [key]: x })));
-  }
-  return grid.some((g) => evaluate(when, g) !== 0);
-}
+// a challenge must be false at the start and reachable with the sliders (tools/reach.mjs)
+const canReach = (widget, params, when) => reachable(slidersOf(widget, params), when);
 
 const score = (kit, title, text) => {
   let s = 0;
@@ -64,7 +56,7 @@ for (const slug of books) {
         const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || [])) : {};
         if (kit.usable && !kit.usable(params)) continue;
         const full = { ...(WIDGETS[id].params || {}), ...params };
-        const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params) : kit.tasks).filter((t) => { try { return reachable(id, full, t.when); } catch { return false; } });
+        const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params) : kit.tasks).filter((t) => { try { return canReach(id, full, t.when); } catch { return false; } });
         if (!tasks.length) continue;
         have[key] = { widget: id, ...(kit.params ? { params } : {}), title: kit.title, tasks, takeaway: kit.takeaway, auto: true };
         used[id] = (used[id] || 0) + 1; added++; tally[id] = (tally[id] || 0) + 1;
