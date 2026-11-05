@@ -29870,7 +29870,7 @@
       {
        "id": "science-ch9-l3",
        "title": "Making Salt and Evaporation",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -29938,6 +29938,31 @@
            "p": 168
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch9-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "Heat the water",
+         "tasks": [
+          {
+           "say": "Freeze the water.",
+           "when": "temp < 0",
+           "then": "Below 0 degrees water is ice: its particles can only jiggle in place."
+          },
+          {
+           "say": "Boil it.",
+           "when": "temp >= 100",
+           "then": "At 100 degrees water boils and its particles fly apart as steam."
+          }
+         ],
+         "takeaway": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.",
+         "explanation": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam."
         },
         {
          "type": "worked",
@@ -30748,7 +30773,7 @@
       {
        "id": "science-ch9-l5",
        "title": "Churning and Magnetic Separation",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -30833,6 +30858,31 @@
            "p": 175
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch9-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "magnets",
+         "params": {},
+         "title": "Push and pull",
+         "tasks": [
+          {
+           "say": "Make the magnets push each other away.",
+           "when": "flip == 1",
+           "then": "Like poles facing each other repel."
+          },
+          {
+           "say": "Bring them very close.",
+           "when": "gap <= 20",
+           "then": "Closer magnets pull or push much harder."
+          }
+         ],
+         "takeaway": "Unlike poles attract, like poles repel, and both get stronger when the magnets are close.",
+         "explanation": "Unlike poles attract, like poles repel, and both get stronger when the magnets are close."
         },
         {
          "type": "worked",

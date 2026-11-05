@@ -30,7 +30,7 @@
       {
        "id": "ch1-l1",
        "title": "Maps: your treasure guide",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -104,6 +104,26 @@
            "p": 9
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "ch1-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "mapscale",
+         "params": {},
+         "title": "Measure on the map",
+         "tasks": [
+          {
+           "say": "Show 400 km on the map.",
+           "when": "cm * km == 400",
+           "then": "Map distance x scale = real distance: 400 km."
+          }
+         ],
+         "takeaway": "Real distance = distance on the map x the scale.",
+         "explanation": "Real distance = distance on the map x the scale."
         },
         {
          "type": "mcq",
@@ -14648,7 +14668,7 @@
       {
        "id": "ch5-l4",
        "title": "Aśhoka, Bhārata and India's Ancient Geography",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -14741,6 +14761,46 @@
            "p": 80
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "ch5-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": -550,
+            "label": "In the 6th century BCE, a Persian emperor launched"
+           },
+           {
+            "year": -250,
+            "label": "The Indian emperor Aśhoka lived"
+           },
+           {
+            "year": 650,
+            "label": "Xuanzang travelled from China to India"
+           }
+          ]
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move to when this happened: The Indian emperor Aśhoka lived.",
+           "when": "y >= -250",
+           "then": "That was 250 BCE."
+          },
+          {
+           "say": "Go forward to the last event.",
+           "when": "y >= 650",
+           "then": "The latest event here is from 650 CE."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",

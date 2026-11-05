@@ -1616,7 +1616,7 @@
       {
        "id": "science-g7-ch1-l4",
        "title": "Living Things, Time and Shadows",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -1687,6 +1687,26 @@
            "p": 4
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch1-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "shadow",
+         "params": {},
+         "title": "Make a shadow",
+         "tasks": [
+          {
+           "say": "Make the shadow as big as you can.",
+           "when": "d == 10",
+           "then": "Closest to the lamp, the object blocks the most light."
+          }
+         ],
+         "takeaway": "Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.",
+         "explanation": "Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more."
         },
         {
          "type": "worked",
@@ -11863,7 +11883,7 @@
       {
        "id": "science-g7-ch4-l3",
        "title": "Metals as Heat and Electricity Conductors",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -11926,6 +11946,31 @@
            "p": 48
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "circuit",
+         "params": {},
+         "title": "Light the bulb",
+         "tasks": [
+          {
+           "say": "Light the bulb.",
+           "when": "closed == 1",
+           "then": "Closing the switch completes the circuit, so current flows."
+          },
+          {
+           "say": "Make the bulb brighter.",
+           "when": "closed == 1 and cells > bulbs",
+           "then": "More cells for each bulb push more current through it."
+          }
+         ],
+         "takeaway": "Current flows only round a closed circuit; more cells push more current.",
+         "explanation": "Current flows only round a closed circuit; more cells push more current."
         },
         {
          "type": "worked",
@@ -40377,7 +40422,7 @@
       {
        "id": "science-g7-ch12-l3",
        "title": "Revolution and the Changing Night Sky",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -40439,6 +40484,26 @@
            "p": 176
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch12-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seasons",
+         "params": {},
+         "title": "Go round the Sun",
+         "tasks": [
+          {
+           "say": "Go to December.",
+           "when": "month == 12",
+           "then": "Now the southern half leans toward the Sun: summer there, winter in India."
+          }
+         ],
+         "takeaway": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons.",
+         "explanation": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons."
         },
         {
          "type": "worked",
