@@ -216,7 +216,12 @@ def stage_deep():
     subprocess.run(['python3', f'{ROOT}/tools/deepen.py', str(N)], check=False)
 
 def stage_explore():
-    subprocess.run(['python3', f'{ROOT}/tools/add-explore.py', str(N)], check=False)
+    # Maths: simulations are matched to lessons by rule (tools/explore-kits.mjs), no model calls. Other subjects still ask the model.
+    if SUBJ['name'] == 'Mathematics':
+        slug = os.environ.get('SPARKLE_SUBJECT', '')
+        subprocess.run(['node', f'{ROOT}/tools/auto-explore.mjs', slug, f'--ch={N}'], check=False)
+    else:
+        subprocess.run(['python3', f'{ROOT}/tools/add-explore.py', str(N)], check=False)
 
 def stage_calc():
     if SUBJ.get('calc'): subprocess.run(['python3', f'{ROOT}/tools/calc-problems.py', str(N)], check=False)

@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+// Attach simulations to lessons by rule, with no model: each kit in tools/explore-kits.mjs says what words mean a lesson is
+// about its idea and which classes learn it. A lesson gets the best-scoring kit (title words count 3, fact words 1, at least 3
+// needed), at most two lessons per chapter share a simulation, and every challenge is checked: false at the start and reachable.
+// Lessons that already have a simulation are left alone.
+//   node tools/auto-explore.mjs mathematics-g8 [mathematics-g9 ...] [--ch=3] [--dry]
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { WIDGETS, slidersOf } from '../public/engine/core/explorables.js';
+import { evaluate } from '../public/engine/core/gen.js';
+import { KITS } from './explore-kits.mjs';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const SUBJECTS = JSON.parse(readFileSync(join(ROOT, 'tools/subjects.json'), 'utf8'));
+const dry = process.argv.includes('--dry');
+const books = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+const only = Number((process.argv.find((a) => a.startsWith('--ch=')) || '').slice(5)) || 0;   // one chapter, so parallel chapters never write each other's files
+
+// every slider position, capped, to prove a challenge can be reached
+function reachable(widget, params, when) {
+  const sl = slidersOf(widget, params), start = Object.fromEntries(sl.map((x) => [x[0], x[5]]));
+  if (evaluate(when, start) !== 0) return false;
+  let grid = [start];
+  for (const [key, , min, max, step] of sl) {
+    const vals = []; for (let x = min; x <= max + 1e-9; x += step) vals.push(+x.toFixed(4));
+    grid = grid.slice(0, 4000).flatMap((g) => vals.map((x) => ({ ...g, [key]: x })));
+  }
+  return grid.some((g) => evaluate(when, g) !== 0);
+}
+
+const score = (kit, title, text) => {
+  let s = 0;
+  for (const p of kit.match) { const re = new RegExp(p.source, 'i'); if (re.test(title)) s += 3; else if (re.test(text)) s += 1; }
+  return s;
+};
+
+let added = 0, looked = 0;
+const tally = {};
+for (const slug of books) {
+  const sub = SUBJECTS[slug];
+  if (!sub) { console.error(`unknown book ${slug}`); continue; }
+  const grade = Number(sub.grade) || 6, work = join(ROOT, sub.work);
+  for (const ch of readdirSync(work).filter((d) => /^ch\d\d$/.test(d) && (!only || Number(d.slice(2)) === only)).sort()) {
+    const factsFile = join(work, ch, 'facts.json'), out = join(work, ch, 'explore.json');
+    if (!existsSync(factsFile)) continue;
+    const facts = JSON.parse(readFileSync(factsFile, 'utf8')), have = existsSync(out) ? JSON.parse(readFileSync(out, 'utf8')) : {};
+    const used = {};
+    for (const v of Object.values(have)) if (v?.widget) used[v.widget] = (used[v.widget] || 0) + 1;
+    for (const lesson of facts.lessons || []) {
+      const key = lesson.id.slice(1);
+      if (have[key]?.widget) continue;
+      looked++;
+      const title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
+      const ranked = Object.entries(KITS)
+        .filter(([id, k]) => WIDGETS[id] && grade >= k.grades[0] && grade <= k.grades[1] && (used[id] || 0) < 2)
+        .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= 3).sort((a, b) => b[2] - a[2]);
+      for (const [id, kit] of ranked) {
+        const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase()) : {};
+        const full = { ...(WIDGETS[id].params || {}), ...params };
+        const tasks = kit.tasks.filter((t) => { try { return reachable(id, full, t.when); } catch { return false; } });
+        if (!tasks.length) continue;
+        have[key] = { widget: id, ...(kit.params ? { params } : {}), title: kit.title, tasks, takeaway: kit.takeaway, auto: true };
+        used[id] = (used[id] || 0) + 1; added++; tally[id] = (tally[id] || 0) + 1;
+        console.log(`${slug} ${ch} lesson ${key} "${title.slice(0, 50)}": ${id}`);
+        break;
+      }
+      if (!have[key]) have[key] = { widget: null };
+    }
+    if (!dry) writeFileSync(out, JSON.stringify(have, null, 1));
+  }
+}
+console.log(`\n${added} of ${looked} lessons without a simulation got one${dry ? ' (dry run, nothing written)' : ''}:`, tally);
