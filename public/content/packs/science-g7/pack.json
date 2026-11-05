@@ -21788,7 +21788,7 @@
       {
        "id": "science-g7-ch7-l1",
        "title": "Heat, Climate and the Start of Conduction",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -21852,6 +21852,31 @@
            "p": 91
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "conduction",
+         "params": {},
+         "title": "Heat the strip",
+         "tasks": [
+          {
+           "say": "Heat the copper strip until all four pins fall.",
+           "when": "material == 0 and t >= 40",
+           "then": "The pin nearest the candle fell first: heat travels along the metal."
+          },
+          {
+           "say": "Try wood for two minutes. Does any pin fall?",
+           "when": "material == 2 and t == 120",
+           "then": "None falls: wood is an insulator."
+          }
+         ],
+         "takeaway": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators.",
+         "explanation": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators."
         },
         {
          "type": "worked",
@@ -22237,7 +22262,7 @@
       {
        "id": "science-g7-ch7-l2",
        "title": "Conduction, Insulators and Warm Homes",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -22299,6 +22324,31 @@
            "p": 92
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "conduction",
+         "params": {},
+         "title": "Heat the strip",
+         "tasks": [
+          {
+           "say": "Heat the copper strip until all four pins fall.",
+           "when": "material == 0 and t >= 40",
+           "then": "The pin nearest the candle fell first: heat travels along the metal."
+          },
+          {
+           "say": "Try wood for two minutes. Does any pin fall?",
+           "when": "material == 2 and t == 120",
+           "then": "None falls: wood is an insulator."
+          }
+         ],
+         "takeaway": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators.",
+         "explanation": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators."
         },
         {
          "type": "worked",
@@ -22672,7 +22722,7 @@
       {
        "id": "science-g7-ch7-l3",
        "title": "Convection and Land and Sea Breezes",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -22743,6 +22793,31 @@
            "p": 93
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seabreeze",
+         "params": {},
+         "title": "Watch the coast breathe",
+         "tasks": [
+          {
+           "say": "Make a sea breeze.",
+           "when": "hour >= 10 and hour <= 17",
+           "then": "By day the land is hotter, so air rises over it and the sea air blows in."
+          },
+          {
+           "say": "Make a land breeze.",
+           "when": "hour >= 21 or hour <= 5",
+           "then": "At night the land is cooler, so the breeze blows out to sea."
+          }
+         ],
+         "takeaway": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.",
+         "explanation": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze."
         },
         {
          "type": "worked",
