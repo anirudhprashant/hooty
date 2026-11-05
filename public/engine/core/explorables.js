@@ -537,6 +537,51 @@ export const WIDGETS = {
       return { kids, say: `When x = ${v.x}, ${expr} = ${a} × ${v.x}${b ? ` + ${b}` : ''} = ${val}. Each blue bar is one x, so all ${a} bars grow when x grows; the ${b} small squares always stay ${b}.` };
     },
   },
+  ruler: {
+    subject: 'science', about: 'A pencil laid along a 15 cm ruler marked in centimetres and millimetres. Slide where it starts and how long it is, and read its length by subtracting the start from the end. For measuring length, standard units, centimetres and millimetres, measuring correctly from the zero mark.',
+    sliders: [['start', 'Where the pencil starts (cm mark)', 0, 4, 1, 2], ['len', 'Length of the pencil (mm)', 10, 110, 5, 55]],
+    draw(v) {
+      const u = 36, x0 = 30, y = 170, X = (mm) => x0 + (mm / 10) * u, kids = [R(x0 - 10, y, 15 * u + 20, 64, '#ffe9a8', { r: 6, w: 3 })];
+      for (let mm = 0; mm <= 150; mm++) { const big = mm % 10 === 0, mid = mm % 5 === 0; kids.push(L(X(mm), y, X(mm), y + (big ? 24 : mid ? 16 : 9), INK, big ? 2.5 : 1.2)); if (big) kids.push(T(X(mm), y + 44, mm / 10, { z: 15 })); }
+      kids.push(T(x0 + 15 * u - 2, y + 58, 'cm', { z: 12, a: 'end', w: 600 }));
+      const a = v.start * 10, b = a + v.len;
+      kids.push(s('polygon', { points: `${X(a)},${y - 30} ${X(b) - 24},${y - 30} ${X(b)},${y - 18} ${X(b) - 24},${y - 6} ${X(a)},${y - 6}`, fill: C.o, stroke: INK, 'stroke-width': 3, 'stroke-linejoin': 'round' }), R(X(a), y - 30, 18, 24, '#f4b6c2', { w: 3 }));
+      kids.push(L(X(a), y - 40, X(a), y + 2, C.b, 2.5, { 'stroke-dasharray': '4 4' }), L(X(b), y - 40, X(b), y + 2, C.b, 2.5, { 'stroke-dasharray': '4 4' }));
+      const cm = (mm) => num(mm / 10, 1);
+      kids.push(T(300, 70, `${cm(b)} cm − ${cm(a)} cm = ${cm(v.len)} cm`, { z: 24 }), T(300, 104, `= ${v.len} mm`, { z: 18, w: 600, f: '#058a68' }));
+      return { kids, say: `The pencil starts at ${cm(a)} cm and ends at ${cm(b)} cm, so it is ${cm(b)} − ${cm(a)} = ${cm(v.len)} cm long, which is ${v.len} mm (1 cm = 10 mm).${a ? ' Starting at 0 makes reading easier, but subtracting works from any mark.' : ''}` };
+    },
+  },
+  thermometer: {
+    subject: 'science', about: 'A thermometer whose reading you set. Param kind "clinical" shows 35 to 42 degrees Celsius in tenths, for body temperature and fever; "lab" shows -10 to 110 degrees, for ice, water and air. For temperature, thermometers, reading a scale, range and divisions, degrees Celsius.',
+    params: { kind: 'lab' },
+    dynamicSliders: (p) => (p.kind === 'clinical' ? [['t', 'Temperature (degrees C)', 35, 42, 0.1, 36]] : [['t', 'Temperature (degrees C)', -10, 110, 1, 25]]),
+    draw(v, p) {
+      const clin = p.kind === 'clinical', lo = clin ? 35 : -10, hi = clin ? 42 : 110, x0 = 40, x1 = 540, y = 130, X = (d) => x0 + ((d - lo) / (hi - lo)) * (x1 - x0);
+      const kids = [R(x0 - 22, y - 22, x1 - x0 + 44, 44, '#f3f7ff', { r: 22, w: 3 }), CIRC(x0 - 6, y, 26, '#e63946', { w: 3 }), R(x0, y - 8, X(v.t) - x0, 16, '#e63946', { r: 8, w: 0 })];
+      const step = clin ? 0.1 : 1, major = clin ? 1 : 10, midv = clin ? 0.5 : 5;
+      for (let d = lo; d <= hi + 1e-9; d = +(d + step).toFixed(2)) { const big = Math.abs(d / major - Math.round(d / major)) < 1e-6, mid = Math.abs(d / midv - Math.round(d / midv)) < 1e-6; kids.push(L(X(d), y + 24, X(d), y + 24 + (big ? 20 : mid ? 13 : 7), INK, big ? 2.5 : 1)); if (big) kids.push(T(X(d), y + 64, num(d, 1), { z: 14 })); }
+      kids.push(T(300, 54, `${num(v.t, 1)} °C`, { z: 30 }));
+      const what = clin ? (v.t >= 38 ? 'This is a fever.' : v.t >= 36.1 && v.t <= 37.5 ? 'This is a normal body temperature (about 37 °C).' : v.t < 36.1 ? 'This is lower than normal.' : 'Slightly above normal.') : (v.t <= 0 ? 'Water freezes into ice at 0 °C.' : v.t >= 100 ? 'Water boils at 100 °C.' : '');
+      return { kids, say: `The thermometer reads ${num(v.t, 1)} °C. Each small mark is ${clin ? '0.1' : '1'} degree. ${what}`.trim() };
+    },
+  },
+  coordplane: {
+    subject: 'maths', about: 'A point you move on a coordinate plane, showing its coordinates (x, y), which quadrant or axis it is on, its distance from the origin, and its mirror image in the y-axis. For coordinate geometry, the Cartesian plane, quadrants, ordered pairs, plotting points, distance from the origin.',
+    sliders: [['x', 'x (across)', -6, 6, 1, 2], ['y', 'y (up)', -4, 4, 1, 3]],
+    draw(v) {
+      const u = 34, P = plane(-8, 8, -4, 4, u, 300, 150), { X, Y } = P, { x, y } = v, d = Math.hypot(x, y);
+      const kids = [...P.kids, T(X(7.6), Y(0) - 8, 'x', { z: 15, a: 'end' }), T(X(0) + 10, Y(3.7), 'y', { z: 15, a: 'start' })];
+      for (const [q, qx, qy] of [['I', 6, 3.3], ['II', -6, 3.3], ['III', -6, -3.3], ['IV', 6, -3.3]]) kids.push(T(X(qx), Y(qy), q, { z: 20, f: '#c9b8e8' }));
+      kids.push(L(X(x), Y(0), X(x), Y(y), C.b, 2.5, { 'stroke-dasharray': '6 5' }), L(X(0), Y(y), X(x), Y(y), C.g, 2.5, { 'stroke-dasharray': '6 5' }), L(X(0), Y(0), X(x), Y(y), C.o, 3));
+      if (x) kids.push(CIRC(X(-x), Y(y), 7, '#fff', { w: 3, s: C.p }));
+      kids.push(CIRC(X(x), Y(y), 9, C.y, { w: 3 }), T(X(x) + (x >= 0 ? 12 : -12), Y(y) - 12, `(${x}, ${y})`, { z: 16, a: x >= 0 ? 'start' : 'end' }));
+      const where = x === 0 && y === 0 ? 'at the origin' : x === 0 ? 'on the y-axis' : y === 0 ? 'on the x-axis' : `in quadrant ${x > 0 ? (y > 0 ? 'I' : 'IV') : y > 0 ? 'II' : 'III'}`;
+      const dist = Math.abs(d - Math.round(d)) < 1e-9 ? `${Math.round(d)}` : `√${x * x + y * y} ≈ ${num(d, 2)}`;
+      const lr = x === 0 ? '' : x > 0 ? `${x} right` : `${-x} left`, ud = y === 0 ? '' : y > 0 ? `${y} up` : `${-y} down`, sq = (n) => (n < 0 ? `(${n})` : n);
+      return { kids, say: `The point (${x}, ${y}) is ${[lr, ud].filter(Boolean).join(' and ') || 'at the centre'}: it is ${where}. Its distance from the origin is √(${sq(x)}² + ${sq(y)}²) = ${dist}.${x ? ` Its mirror image in the y-axis (hollow dot) is (${-x}, ${y}).` : ''}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
