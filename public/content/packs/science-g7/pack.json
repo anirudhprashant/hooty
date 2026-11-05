@@ -32475,7 +32475,7 @@
       {
        "id": "science-g7-ch10-l2",
        "title": "Leaves Are Food Factories",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -32548,6 +32548,36 @@
            "p": 141
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "photosynthesis",
+         "params": {},
+         "title": "Run the leaf factory",
+         "tasks": [
+          {
+           "say": "Turn off the light.",
+           "when": "light == 0",
+           "then": "With no light, photosynthesis stops completely."
+          },
+          {
+           "say": "Make carbon dioxide the one holding the leaf back.",
+           "when": "co2 < light and co2 < water",
+           "then": "Now carbon dioxide is in shortest supply, so it sets the speed."
+          },
+          {
+           "say": "Run the leaf at full speed.",
+           "when": "light == 10 and co2 == 10 and water == 10",
+           "then": "All three inputs at the top: the most sugar and oxygen."
+          }
+         ],
+         "takeaway": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food.",
+         "explanation": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food."
         },
         {
          "type": "worked",
@@ -32955,7 +32985,7 @@
       {
        "id": "science-g7-ch10-l3",
        "title": "Air and Photosynthesis",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -33015,6 +33045,36 @@
            "p": 146
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "photosynthesis",
+         "params": {},
+         "title": "Run the leaf factory",
+         "tasks": [
+          {
+           "say": "Turn off the light.",
+           "when": "light == 0",
+           "then": "With no light, photosynthesis stops completely."
+          },
+          {
+           "say": "Make carbon dioxide the one holding the leaf back.",
+           "when": "co2 < light and co2 < water",
+           "then": "Now carbon dioxide is in shortest supply, so it sets the speed."
+          },
+          {
+           "say": "Run the leaf at full speed.",
+           "when": "light == 10 and co2 == 10 and water == 10",
+           "then": "All three inputs at the top: the most sugar and oxygen."
+          }
+         ],
+         "takeaway": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food.",
+         "explanation": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food."
         },
         {
          "type": "worked",
