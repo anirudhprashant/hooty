@@ -1548,7 +1548,7 @@
       {
        "id": "mathematics-g5-ch1-l3",
        "title": "Comparing Numbers and Rounding",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -1601,6 +1601,75 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch1-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Two card piles have 9,990 and 49,014 cards. Which pile has more cards, and why?",
+         "steps": [
+          "Start with the thousands place, because it shows the bigger place.",
+          "9,990 has 9 thousands, while 49,014 has 49 thousands.",
+          "49,014 has more thousands, so it has more cards.",
+          "The first claim ignores where the digits sit."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g5-ch1-l3-a6",
+         "difficulty": 2,
+         "tags": [
+          "rounding",
+          "rabbit",
+          "nearest hundred",
+          "nearest thousand"
+         ],
+         "title": "Rounding Around the Rabbit",
+         "body": "The rabbit needs 4 jumps to reach 2,350. Its food for the nearest-hundred activity is at a neighbouring hundred. Its food for the nearest-thousand activity is at a neighbouring thousand. These clues give examples of rounding to hundreds and thousands. Vijay and Suma got the same rounding result, so their rounded answers matched.",
+         "keyPoints": [
+          "The rabbit needs 4 jumps to reach 2,350.",
+          "Nearest-hundred food is at a neighbouring hundred.",
+          "Nearest-thousand food is at a neighbouring thousand."
+         ],
+         "explanation": "Rounding examples can use places, journeys, and friendly characters.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch1-l3-a2",
          "difficulty": 1,
@@ -1619,31 +1688,6 @@
          "explanation": "1,478 is smaller because it has fewer hundreds than 1,748.",
          "derived": [
           "1,478 < 1,748"
-         ],
-         "src": [
-          {
-           "ch": 1,
-           "p": 7
-          },
-          {
-           "ch": 1,
-           "p": 7
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch1-l3-a3",
-         "difficulty": 1,
-         "tags": [
-          "comparing numbers",
-          "place value"
-         ],
-         "prompt": "9,990 is greater than 49,014 because 9 is greater than 4.",
-         "answer": false,
-         "explanation": "49,014 is greater than 9,990. A place value chart shows the full numbers.",
-         "derived": [
-          "49,014 > 9,990"
          ],
          "src": [
           {
@@ -1702,43 +1746,6 @@
           {
            "ch": 1,
            "p": 7
-          }
-         ]
-        },
-        {
-         "type": "concept",
-         "id": "mathematics-g5-ch1-l3-a6",
-         "difficulty": 2,
-         "tags": [
-          "rounding",
-          "rabbit",
-          "nearest hundred",
-          "nearest thousand"
-         ],
-         "title": "Rounding Around the Rabbit",
-         "body": "The rabbit needs 4 jumps to reach 2,350. Its food for the nearest-hundred activity is at a neighbouring hundred. Its food for the nearest-thousand activity is at a neighbouring thousand. These clues give examples of rounding to hundreds and thousands. Vijay and Suma got the same rounding result, so their rounded answers matched.",
-         "keyPoints": [
-          "The rabbit needs 4 jumps to reach 2,350.",
-          "Nearest-hundred food is at a neighbouring hundred.",
-          "Nearest-thousand food is at a neighbouring thousand."
-         ],
-         "explanation": "Rounding examples can use places, journeys, and friendly characters.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 7
-          },
-          {
-           "ch": 1,
-           "p": 8
-          },
-          {
-           "ch": 1,
-           "p": 8
-          },
-          {
-           "ch": 1,
-           "p": 8
           }
          ]
         },
@@ -1939,6 +1946,122 @@
            "p": 7
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare numbers"
+         ],
+         "prompt": "A child says 9,990 is greater than 49,014. The reason is that 9 is greater than 4. What is the best reply?",
+         "options": [
+          "Compare thousands first; 49,014 has more thousands.",
+          "Compare ones first; 9,990 has more ones.",
+          "Compare hundreds first; 9,990 has more hundreds.",
+          "Compare tens first; 49,014 has more tens."
+         ],
+         "answer": 0,
+         "why": {
+          "Compare ones first; 9,990 has more ones.": "It wrongly treats the ones as more important than thousands.",
+          "Compare hundreds first; 9,990 has more hundreds.": "It wrongly stops at hundreds even when thousands differ.",
+          "Compare tens first; 49,014 has more tens.": "It wrongly treats the tens as more important than thousands."
+         },
+         "explanation": "It compares the first place where the numbers differ.",
+         "f": [
+          "3.1",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare places"
+         ],
+         "prompt": "A digit-swap game shows 48,247 and 10,593. Which place should be checked first to compare them?",
+         "options": [
+          "The thousands place, because it shows the bigger place.",
+          "The ones place, because it shows the last digit.",
+          "The tens place, because it sits after hundreds.",
+          "The hundreds place, because it holds the digit 5."
+         ],
+         "answer": 0,
+         "why": {
+          "The ones place, because it shows the last digit.": "The ones do not decide the comparison when thousands differ.",
+          "The tens place, because it sits after hundreds.": "The tens are checked only after the thousands match.",
+          "The hundreds place, because it holds the digit 5.": "The digit 5 is in the tens, not the hundreds."
+         },
+         "explanation": "The thousands differ, so compare 48 and 10 first.",
+         "f": [
+          "3.4",
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason about rounding"
+         ],
+         "prompt": "Vijay rounds 19, and Suma rounds 21, to the nearest ten. Why do they get the same result?",
+         "options": [
+          "Both numbers are near 20, so both round to 20.",
+          "Both numbers have exactly the same ones digit.",
+          "Both numbers are already multiples of ten.",
+          "Both numbers are nearest to 21 after rounding."
+         ],
+         "answer": 0,
+         "why": {
+          "Both numbers have exactly the same ones digit.": "This wrongly looks for equal ones digits.",
+          "Both numbers are already multiples of ten.": "This wrongly says they already have zero ones.",
+          "Both numbers are nearest to 21 after rounding.": "This wrongly says they are nearest to 21."
+         },
+         "explanation": "The nearest ten of both 19 and 21 is 20.",
+         "f": [
+          "3.11",
+          "3.12"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 9
+          },
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l1-harnai-bullock-cart-8327d3.webp",
@@ -1955,7 +2078,7 @@
       {
        "id": "mathematics-g5-ch1-l4",
        "title": "Travelling Now and Then",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -2088,6 +2211,73 @@
          "derived": [
           "16 (generated problem)",
           "4 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch1-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child has one hour for the same journey. Should the child walk, ride a horse, cycle, or take a train?",
+         "steps": [
+          "Compare the distance each choice covers in one hour.",
+          "Walking covers 3–5 km, while a horse covers 10–15 km, so the horse is faster.",
+          "Cycling covers 12–20 km, so it is faster than walking.",
+          "A train covers 40–160 km, so it is the fastest of these choices."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "travel",
+          "past",
+          "animals"
+         ],
+         "prompt": "Which animal did past travellers use?",
+         "options": [
+          "Horse",
+          "Bus",
+          "Ship",
+          "Aeroplane"
+         ],
+         "answer": 0,
+         "explanation": "Past travellers used horses along with other animals.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 9
+          }
          ]
         },
         {
@@ -2318,25 +2508,6 @@
          ],
          "answer": 0,
          "explanation": "An aircraft can travel 750–920 km in an hour.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 10
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch1-l4-a7",
-         "difficulty": 2,
-         "tags": [
-          "travel",
-          "train",
-          "speed"
-         ],
-         "prompt": "A person can generally travel 40–160 km by train in an hour.",
-         "answer": true,
-         "explanation": "The range of 40–160 km in an hour belongs to train travel.",
          "src": [
           {
            "ch": 1,
@@ -2975,6 +3146,206 @@
            "p": 10
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare speed"
+         ],
+         "prompt": "Walking covers 3–5 km in an hour. Cycling covers 12–20 km in an hour. A child wants to arrive sooner. Which should the child use?",
+         "options": [
+          "Use a bicycle, because it covers more ground each hour.",
+          "Walk instead, because walking covers more ground each hour.",
+          "Use a bicycle, because it covers less ground each hour.",
+          "Walk instead, because walking covers less ground each hour."
+         ],
+         "answer": 0,
+         "why": {
+          "Walk instead, because walking covers more ground each hour.": "This mistake treats a smaller rate as a faster rate.",
+          "Use a bicycle, because it covers less ground each hour.": "This mistake treats a larger rate as a slower rate.",
+          "Walk instead, because walking covers less ground each hour.": "This mistake thinks less ground covered means arriving sooner."
+         },
+         "explanation": "Correct: cycling covers 12–20 km each hour, more than walking.",
+         "f": [
+          "4.6",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare speed"
+         ],
+         "prompt": "A train covers 40–160 km in an hour. A cycle covers 12–20 km in an hour. For the same journey, which vehicle will usually arrive first?",
+         "options": [
+          "The train, because its hourly distance is higher.",
+          "The cycle, because its hourly distance is lower.",
+          "The train, because trains always travel slowly.",
+          "The cycle, because smaller distances are quicker."
+         ],
+         "answer": 0,
+         "why": {
+          "The cycle, because its hourly distance is lower.": "This mistake treats a lower rate as arriving first.",
+          "The train, because trains always travel slowly.": "This mistake relies on the wrong belief that trains are slow.",
+          "The cycle, because smaller distances are quicker.": "This mistake confuses a shorter distance with a faster speed."
+         },
+         "explanation": "Correct: the train covers 40–160 km each hour, more than a cycle.",
+         "f": [
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare speed"
+         ],
+         "prompt": "An aircraft covers 750–920 km in an hour. A spacecraft carries people to outer space. Its minimum speed is 28,000 km in an hour. Which covers much more ground in one hour?",
+         "options": [
+          "The spacecraft, because its hourly distance is much larger.",
+          "The aircraft, because its hourly distance is much smaller.",
+          "The spacecraft, because 920 km is greater than 28,000 km.",
+          "The aircraft, because 28,000 km is less than 750 km."
+         ],
+         "answer": 0,
+         "why": {
+          "The aircraft, because its hourly distance is much smaller.": "The aircraft's smaller rate shows that it covers less ground.",
+          "The spacecraft, because 920 km is greater than 28,000 km.": "This mistake compares the two numbers in the wrong direction.",
+          "The aircraft, because 28,000 km is less than 750 km.": "This mistake compares the two numbers in the wrong direction."
+         },
+         "explanation": "Correct: the spacecraft's minimum 28,000 km exceeds the aircraft's maximum 920 km.",
+         "f": [
+          "4.5",
+          "4.10",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 9
+          },
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply facts"
+         ],
+         "prompt": "Camels are used in deserts. Submarines go deep under water. A child plans to cross a desert by submarine. Why is this plan a poor match?",
+         "options": [
+          "Camels fit deserts, but submarines travel under water.",
+          "Camels fit deserts, but submarines travel above water.",
+          "Submarines fit deserts, but camels travel under water.",
+          "Submarines fit deserts, but camels travel above water."
+         ],
+         "answer": 0,
+         "why": {
+          "Camels fit deserts, but submarines travel above water.": "This mistake wrongly says submarines travel above water.",
+          "Submarines fit deserts, but camels travel under water.": "This mistake swaps camels with submarines.",
+          "Submarines fit deserts, but camels travel above water.": "This mistake swaps camels with submarines and changes their places."
+         },
+         "explanation": "Correct: camels suit deserts, while submarines travel under water.",
+         "f": [
+          "4.2",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 9
+          },
+          {
+           "ch": 1,
+           "p": 9
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Walking gives 3–5 km in an hour. A horse gives 10–15 km. A cycle gives 12–20 km. A train gives 40–160 km. A child must cover 40 km in one hour. Which choice can generally do it?",
+         "options": [
+          "Take the train, because it covers at least 40 km in an hour.",
+          "Take the bicycle, because it covers at least 40 km in an hour.",
+          "Take the horse, because it covers at least 40 km in an hour.",
+          "Keep walking, because it covers at least 40 km in an hour."
+         ],
+         "answer": 0,
+         "why": {
+          "Take the bicycle, because it covers at least 40 km in an hour.": "The bicycle's maximum 20 km is below 40 km.",
+          "Take the horse, because it covers at least 40 km in an hour.": "The horse's maximum 15 km is below 40 km.",
+          "Keep walking, because it covers at least 40 km in an hour.": "Walking's maximum 5 km is below 40 km."
+         },
+         "explanation": "Correct: the train's usual range starts at 40 km in an hour.",
+         "f": [
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l4-two-modes-of-transport-in-in-2f027e.webp",
@@ -2991,7 +3362,7 @@
       {
        "id": "mathematics-g5-ch1-l5",
        "title": "Large Numbers and Pastime Puzzles",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -3065,6 +3436,43 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch1-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child opens a book with around 200 pages. Each page has about 50 words. How can the child estimate the total number of words?",
+         "steps": [
+          "The book has around 200 pages, so there are many pages.",
+          "Each page has about 50 words, so every page adds words.",
+          "All pages add together, so the total is far above 50 words.",
+          "Therefore, the whole book has about 10,000 words."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.2",
+          "5.3",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch1-l5-a2",
          "difficulty": 1,
@@ -3081,24 +3489,6 @@
          ],
          "answer": 1,
          "explanation": "Transport distances can range from a 1-digit number to a 5-digit number.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 10
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch1-l5-a3",
-         "difficulty": 1,
-         "tags": [
-          "books",
-          "pages"
-         ],
-         "prompt": "A book has around 200 pages.",
-         "answer": true,
-         "explanation": "Yes. A book has around 200 pages.",
          "src": [
           {
            "ch": 1,
@@ -3200,28 +3590,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch1-l5-a7",
-         "difficulty": 3,
-         "tags": [
-          "pebbles",
-          "rules"
-         ],
-         "prompt": "A player may pick pebbles from either pile.",
-         "answer": true,
-         "explanation": "Yes. A player may pick from either pile, and the player taking the last pebble wins.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 12
-          },
-          {
-           "ch": 1,
-           "p": 12
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "mathematics-g5-ch1-l5-a8",
          "difficulty": 3,
@@ -3285,6 +3653,122 @@
            "p": 12
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "large numbers"
+         ],
+         "prompt": "Transport distances can range from 1 digit to 5 digits. A child says the 1-digit distance is larger. What correction is right?",
+         "options": [
+          "Use the 5-digit distance as larger.",
+          "Use the 1-digit distance as larger.",
+          "Treat both distances as equal.",
+          "Choose either distance as larger."
+         ],
+         "answer": 0,
+         "why": {
+          "Use the 1-digit distance as larger.": "This confuses more digits with a smaller number.",
+          "Treat both distances as equal.": "This ignores the different sizes of the two numbers.",
+          "Choose either distance as larger.": "This thinks there is no need to compare the distances."
+         },
+         "explanation": "Five digits show a number larger than one digit.",
+         "f": [
+          "5.1"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "word estimate"
+         ],
+         "prompt": "A book has around 200 pages. Each page has about 50 words. Which plan estimates the words in the whole book?",
+         "options": [
+          "Multiply pages by words on each page.",
+          "Add one page's words to page count.",
+          "Subtract page count from words per page.",
+          "Use page count as the word total."
+         ],
+         "answer": 0,
+         "why": {
+          "Add one page's words to page count.": "Adding one page's words to the page count misses the other pages.",
+          "Subtract page count from words per page.": "Subtracting pages from words per page does not give the total.",
+          "Use page count as the word total.": "The page count tells pages, not the number of words."
+         },
+         "explanation": "Multiplying the pages by words per page gives about 10,000 words.",
+         "f": [
+          "5.2",
+          "5.3",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          },
+          {
+           "ch": 1,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "pastime puzzle"
+         ],
+         "prompt": "The pebble game has two piles. Each pile holds 7 pebbles. A child thinks only the first pile may be used. What correction is right?",
+         "options": [
+          "Pick from either pile on each turn.",
+          "Pick only from the first pile.",
+          "Pick from both piles at once.",
+          "Pick from neither pile at all."
+         ],
+         "answer": 0,
+         "why": {
+          "Pick only from the first pile.": "This wrongly treats the second pile as unusable.",
+          "Pick from both piles at once.": "This thinks one move must take pebbles from both piles.",
+          "Pick from neither pile at all.": "This mistakes choosing a pile for taking pebbles."
+         },
+         "explanation": "The rules allow a player to pick from either pile.",
+         "f": [
+          "5.5",
+          "5.6",
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 12
+          },
+          {
+           "ch": 1,
+           "p": 12
+          },
+          {
+           "ch": 1,
+           "p": 12
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l5-2014-08-19-14-38-45-first-re-ddfb66.webp",
@@ -3301,7 +3785,7 @@
       {
        "id": "mathematics-g5-ch1-l6",
        "title": "The King’s Horses",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -3422,6 +3906,58 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch1-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "After two thefts, 18 horses remained. The caretaker rearranged them with 5 horses on each side. How many more horses can the thief steal before the king notices?",
+         "steps": [
+          "After the second theft, 18 horses remained.",
+          "Five horses on four sides make 20 side places.",
+          "Four corner horses are each counted twice.",
+          "So 2 more can go before the side count fails."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.2",
+          "6.4",
+          "6.6",
+          "6.7",
+          "6.9",
+          "6.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 15
+          },
+          {
+           "ch": 1,
+           "p": 15
+          },
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch1-l6-a2",
          "difficulty": 1,
@@ -3440,25 +3976,6 @@
          ],
          "answer": 0,
          "explanation": "The king had 20 horses of the best breed.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 15
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch1-l6-a3",
-         "difficulty": 1,
-         "tags": [
-          "caretaker",
-          "horses",
-          "stable"
-         ],
-         "prompt": "The caretaker cared for the horses in the royal stable.",
-         "answer": true,
-         "explanation": "The caretaker looked after the horses in the royal stable.",
          "src": [
           {
            "ch": 1,
@@ -3618,6 +4135,32 @@
          ]
         },
         {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l6-a5",
+         "difficulty": 2,
+         "tags": [
+          "caretaker",
+          "horses",
+          "punishment"
+         ],
+         "title": "Why the Horses Were Rearranged",
+         "prompt": "Why did the caretaker rearrange the horses?",
+         "options": [
+          "He feared punishment.",
+          "He wanted a cleaner stable.",
+          "The king had left him.",
+          "He found a new horse."
+         ],
+         "answer": 0,
+         "explanation": "The caretaker rearranged the horses because he feared punishment.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 15
+          }
+         ]
+        },
+        {
          "type": "fillblank",
          "difficulty": 2,
          "tags": [
@@ -3749,6 +4292,216 @@
           "22 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Five chairs stand along each side of a square table. One chair sits at each corner. How many chairs are there?",
+         "options": [
+          "Sixteen chairs",
+          "Twenty chairs",
+          "Eighteen chairs",
+          "Ten chairs"
+         ],
+         "answer": 0,
+         "why": {
+          "Twenty chairs": "This counts all four corner chairs twice.",
+          "Eighteen chairs": "This subtracts only two repeated corner counts.",
+          "Ten chairs": "This counts only two of the four sides."
+         },
+         "explanation": "Each of the four corner chairs is shared by two sides.",
+         "f": [
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Nineteen horses stand with five along each side. How can the side count show twenty?",
+         "options": [
+          "The four corner horses are counted twice.",
+          "The four middle horses are counted twice.",
+          "One empty place is counted as a horse.",
+          "One extra horse is counted inside the square."
+         ],
+         "answer": 0,
+         "why": {
+          "The four middle horses are counted twice.": "Only horses between corners should be counted twice.",
+          "One empty place is counted as a horse.": "Empty places do not stand on either side.",
+          "One extra horse is counted inside the square.": "An inside horse does not add to a side count."
+         },
+         "explanation": "A corner horse belongs to both sides that meet there.",
+         "f": [
+          "6.2",
+          "6.4",
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 15
+          },
+          {
+           "ch": 1,
+           "p": 15
+          },
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "The caretaker shows eighteen horses with five on each side. How many more can the thief steal before the king notices?",
+         "options": [
+          "Two more horses",
+          "One more horse",
+          "Three more horses",
+          "No more horses"
+         ],
+         "answer": 0,
+         "why": {
+          "One more horse": "This stops before both spare horses can be taken.",
+          "Three more horses": "Three more leave fifteen, too few for five on each side.",
+          "No more horses": "Sixteen horses can still make five on each side."
+         },
+         "explanation": "Two more leave sixteen, enough for five on each side.",
+         "f": [
+          "6.2",
+          "6.4",
+          "6.6",
+          "6.9",
+          "6.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 15
+          },
+          {
+           "ch": 1,
+           "p": 15
+          },
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "The caretaker must rearrange five horses on each side of a square. How many different horses are needed?",
+         "options": [
+          "Sixteen horses",
+          "Twenty horses",
+          "Eighteen horses",
+          "Fifteen horses"
+         ],
+         "answer": 0,
+         "why": {
+          "Twenty horses": "This counts every corner horse twice.",
+          "Eighteen horses": "This subtracts only two of the four shared corners.",
+          "Fifteen horses": "This is too few for five horses on every side."
+         },
+         "explanation": "The four shared corners make the side total four too high.",
+         "f": [
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l6-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "Sixteen horses are rearranged with five on each side. What total will the four side counts show?",
+         "options": [
+          "Sixteen horses",
+          "Eighteen horses",
+          "Twenty horses",
+          "Twenty-two horses"
+         ],
+         "answer": 2,
+         "why": {
+          "Sixteen horses": "The four shared corners add four extra counts.",
+          "Eighteen horses": "This ignores the extra count from shared corners.",
+          "Twenty-two horses": "This adds too many counts for the four shared corners."
+         },
+         "explanation": "This adds only two extra counts instead of four.",
+         "f": [
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 16
+          },
+          {
+           "ch": 1,
+           "p": 16
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l6-danish-royal-stables-82c8aa.webp",
@@ -3765,7 +4518,7 @@
       {
        "id": "mathematics-g5-ch1-exam",
        "title": "Test practice",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 19,
        "topicScene": "media/ch1-l1-harnai-bullock-cart-8327d3.webp",
        "sceneAlt": "Fishing boats return to Harnai port in Konkan while bullock carts carry fish to the beach for auction.",
        "sceneCaption": "Fishing boats return to Harnai port, where bullock carts carry their catch to beachside auctions.",
@@ -3906,6 +4659,172 @@
           "The number name includes a ten-thousand part.",
           "The column shows that place value.",
           "The remaining part is seven hundred forty-three."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school activity, a student uses a place value chart while checking numbers. The student thinks 9,990 is greater than 49,014, then works with digit-swap activities using 1,478, 10,593, and 48,247. A rabbit must reach 2,350 after 4 jumps, while 2,346 is rounded to the nearest ten. Food for its nearest-hundred activity is at a neighbouring hundred, and food for its nearest-thousand activity is at a neighbouring thousand. Vijay and Suma check whether 19 and 21 round to 20.",
+         "prompt": "The student claims that 9,990 is greater than 49,014 because 9 is greater than 4. What should the student do to check the comparison correctly?",
+         "options": [
+          "Align the digits by place value; 49,014 is greater than 9,990.",
+          "Compare only the first digits; 9,990 is greater because 9 is greater than 4.",
+          "Choose 9,990 because its hundreds digit is greater than the hundreds digit in 49,014.",
+          "Choose 9,990 because its tens digit is greater than the tens digit in 49,014."
+         ],
+         "answer": 0,
+         "why": {
+          "Compare only the first digits; 9,990 is greater because 9 is greater than 4.": "This ignores that the first digits belong to different place values.",
+          "Choose 9,990 because its hundreds digit is greater than the hundreds digit in 49,014.": "The hundreds digits cannot decide the comparison when a higher place differs.",
+          "Choose 9,990 because its tens digit is greater than the tens digit in 49,014.": "The tens digits cannot decide the comparison when a higher place differs."
+         },
+         "explanation": "This compares matching place values and reaches the correct result."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school activity, a student uses a place value chart while checking numbers. The student thinks 9,990 is greater than 49,014, then works with digit-swap activities using 1,478, 10,593, and 48,247. A rabbit must reach 2,350 after 4 jumps, while 2,346 is rounded to the nearest ten. Food for its nearest-hundred activity is at a neighbouring hundred, and food for its nearest-thousand activity is at a neighbouring thousand. Vijay and Suma check whether 19 and 21 round to 20.",
+         "prompt": "After 2,346 is rounded to the nearest ten, what should happen next in the rabbit’s journey and food activities?",
+         "options": [
+          "The rabbit reaches 2,350 in 4 jumps; food is at a neighbouring hundred and a neighbouring thousand.",
+          "The rabbit reaches 2,350 in 4 jumps; food is at a neighbouring hundred for both activities.",
+          "The rabbit reaches 2,350 in 4 jumps; food is at 2,350 for both activities.",
+          "The rabbit reaches 2,346 in 4 jumps; food is at a neighbouring hundred and a neighbouring thousand."
+         ],
+         "answer": 0,
+         "why": {
+          "The rabbit reaches 2,350 in 4 jumps; food is at a neighbouring hundred for both activities.": "The nearest-thousand activity needs a neighbouring thousand, not another hundred.",
+          "The rabbit reaches 2,350 in 4 jumps; food is at 2,350 for both activities.": "2,350 is the rabbit’s destination, not both food locations.",
+          "The rabbit reaches 2,346 in 4 jumps; food is at a neighbouring hundred and a neighbouring thousand.": "The rabbit’s destination should be 2,350, not 2,346."
+         },
+         "explanation": "This uses the rounded destination, jump count, and both food locations."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch1-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the student’s claim that 9,990 is greater than 49,014 is wrong, and state the correct comparison.",
+         "answer": "The claim is wrong because digits must be compared in the same place value, not by looking only at the first digit shown. When the numbers are aligned, 49,014 has 4 in the ten-thousands place, while 9,990 has no ten-thousands digit. Therefore, 49,014 is greater than 9,990.",
+         "points": [
+          "Compares digits in matching place values.",
+          "Identifies the ten-thousands place.",
+          "Explains why the first digits cannot be compared alone.",
+          "States that 49,014 is greater."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch1-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the family could change their travel plans if the railway is closed and the route continues deep underwater.",
+         "answer": "If the railway is closed, a bicycle would help the travellers continue because it covers 12–20 km in an hour. A horse covers 10–15 km, while walking covers only 3–5 km. If the route goes deep underwater, they should use a submarine instead.",
+         "points": [
+          "The train cannot be used where the railway is closed.",
+          "A bicycle is faster than a horse or walking.",
+          "A submarine is suitable for deep underwater travel."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch1-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Why does Mira's book have about 10,000 words altogether?",
+         "answer": "The book has around 200 pages. Each page contains about 50 words. Multiplying these gives about 10,000 words, so the total stated for the book is reasonable.",
+         "points": [
+          "The book has around 200 pages.",
+          "Each page has about 50 words.",
+          "Multiplying gives about 10,000 words."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "The king was fond of his 20 horses in the royal stable, where a caretaker cared for them. During the night, a thief stole one horse. Fearing punishment, the caretaker rearranged the horses. The king counted 5 horses along each side, and the caretaker’s count gave a total of 20 horses. The king returned to his palace after hearing the explanation. After another theft, 18 horses remained, and the caretaker arranged them with 5 horses on each side.",
+         "prompt": "Why did the caretaker rearrange the horses after the first theft?",
+         "options": [
+          "To keep the king’s count from revealing the missing horse.",
+          "To show the king that the horses needed different care.",
+          "To make the royal stable easier for the horses to move.",
+          "To let the king see every horse at the same time."
+         ],
+         "answer": 0,
+         "why": {
+          "To show the king that the horses needed different care.": "The case mentions no problem with the horses’ care.",
+          "To make the royal stable easier for the horses to move.": "His reason was fear of punishment, not difficulty moving.",
+          "To let the king see every horse at the same time.": "The arrangement supported the count of 20; it was not for displaying every horse."
+         },
+         "explanation": "He feared punishment and used the arrangement to support his total."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch1-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "The king was fond of his 20 horses in the royal stable, where a caretaker cared for them. During the night, a thief stole one horse. Fearing punishment, the caretaker rearranged the horses. The king counted 5 horses along each side, and the caretaker’s count gave a total of 20 horses. The king returned to his palace after hearing the explanation. After another theft, 18 horses remained, and the caretaker arranged them with 5 horses on each side.",
+         "prompt": "What is the strongest conclusion about how many more horses the thief can steal before the king notices?",
+         "options": [
+          "The case does not provide enough information for an exact number.",
+          "The king will notice immediately after another theft.",
+          "The thief can keep taking horses without any limit.",
+          "The caretaker will confess before another theft occurs."
+         ],
+         "answer": 0,
+         "why": {
+          "The king will notice immediately after another theft.": "Nothing says that another theft would cause immediate notice.",
+          "The thief can keep taking horses without any limit.": "Nothing says that stealing can continue without limit.",
+          "The caretaker will confess before another theft occurs.": "Nothing says that the caretaker intends to confess."
+         },
+         "explanation": "No stated rule explains exactly when the king will notice."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch1-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the caretaker rearranged the horses after the first theft.",
+         "answer": "The caretaker rearranged the horses because he feared punishment after one was stolen. By arranging them with 5 along each side, he supported his count of 20. The king believed the explanation and returned to his palace. The rearrangement therefore helped hide the fact that a horse was missing.",
+         "points": [
+          "One horse had been stolen.",
+          "The caretaker feared punishment.",
+          "He arranged 5 horses along each side.",
+          "The king accepted the explanation and returned to his palace."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         }
@@ -4220,7 +5139,7 @@
       {
        "id": "mathematics-g5-ch2-l1",
        "title": "Comparing wholes and meeting equivalent fractions",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -4355,6 +5274,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch2-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Tamanna, a Grade 5 student, compares red and blue fractions. Both wholes are the same size, and both shaded amounts are equal. What can she conclude?",
+         "steps": [
+          "Grid A is red and Grid B is blue because the activity gives those colors.",
+          "The wholes are the same size, so Tamanna can compare the shaded fractions.",
+          "The shaded amounts are equal, so the fractions name the same amount.",
+          "They are equivalent because equivalent fractions are different names for the same fraction."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 18
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch2-l1-a2",
          "difficulty": 1,
@@ -4380,15 +5346,19 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch2-l1-a3",
+         "type": "fillblank",
+         "id": "mathematics-g5-ch2-l1-a4",
          "difficulty": 1,
          "tags": [
           "equivalent-fractions"
          ],
-         "prompt": "Equivalent fractions can have different names but show the same fraction.",
-         "answer": true,
-         "explanation": "Yes. Equivalent fractions are different names for the same fraction.",
+         "title": "Complete the meaning",
+         "prompt": "Equivalent fractions are different names for the ______ fraction.",
+         "answers": [
+          "same"
+         ],
+         "hint": "Both names show the same amount.",
+         "explanation": "Different fraction names can show the same fraction.",
          "src": [
           {
            "ch": 2,
@@ -5144,6 +6114,179 @@
            "p": 18
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Grid A is red and Grid B is blue. Both wholes are the same size. Tamanna shades equal amounts. What can she conclude?",
+         "options": [
+          "The red and blue fractions are equivalent fractions.",
+          "The red fraction is larger than the blue fraction.",
+          "The blue fraction is larger than the red fraction.",
+          "The red and blue fractions cannot be compared."
+         ],
+         "answer": 0,
+         "why": {
+          "The red fraction is larger than the blue fraction.": "This mistake treats equal shaded amounts as if the red part were bigger.",
+          "The blue fraction is larger than the red fraction.": "This mistake treats equal shaded amounts as if the blue part were bigger.",
+          "The red and blue fractions cannot be compared.": "This mistake thinks different colors prevent comparison."
+         },
+         "explanation": "Equal shaded amounts in equal-sized wholes are equivalent fractions.",
+         "f": [
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 18
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Grid A is red and its whole is smaller than Grid B's. Tamanna wants to compare the fractions. What should she do first?",
+         "options": [
+          "Make the two wholes the same size.",
+          "Shade more red pieces before comparing.",
+          "Shade more blue pieces before comparing.",
+          "Compare the colors instead of the amounts."
+         ],
+         "answer": 0,
+         "why": {
+          "Shade more red pieces before comparing.": "This mistake thinks extra red shading can fix unequal wholes.",
+          "Shade more blue pieces before comparing.": "This mistake thinks extra blue shading can fix unequal wholes.",
+          "Compare the colors instead of the amounts.": "This mistake thinks color shows how much is shaded."
+         },
+         "explanation": "Fractions can be compared only when their wholes are the same size.",
+         "f": [
+          "1.2"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Grid A and Grid B have equal-sized wholes. Each grid uses equal pieces, but the piece sizes differ. Both shaded amounts match. Why can their fraction names differ?",
+         "options": [
+          "Different piece sizes can show the same shaded amount.",
+          "Different piece sizes must show different shaded amounts.",
+          "Different whole sizes can show the same shaded amount.",
+          "Different grid colors can show the same shaded amount."
+         ],
+         "answer": 0,
+         "why": {
+          "Different piece sizes must show different shaded amounts.": "This mistake thinks different piece sizes always make different amounts.",
+          "Different whole sizes can show the same shaded amount.": "This mistake ignores that both wholes are the same size.",
+          "Different grid colors can show the same shaded amount.": "This mistake thinks color changes the shaded amount."
+         },
+         "explanation": "Equivalent fractions can be made in different ways while keeping the same amount.",
+         "f": [
+          "1.2",
+          "1.7",
+          "1.8",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 18
+          },
+          {
+           "ch": 2,
+           "p": 18
+          },
+          {
+           "ch": 2,
+           "p": 18
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Grid A is red, Grid B is blue, and Grid C is yellow. Tamanna found a fraction in Grid A. Which action shows it in Grid C?",
+         "options": [
+          "Shade Grid C yellow and mark that fraction.",
+          "Shade Grid A red and mark that fraction.",
+          "Shade Grid B blue and mark that fraction.",
+          "Shade Grid C yellow and mark no fraction."
+         ],
+         "answer": 0,
+         "why": {
+          "Shade Grid A red and mark that fraction.": "This follows the red color but misses the request to show it in Grid C.",
+          "Shade Grid B blue and mark that fraction.": "This follows the blue color but misses the request to show it in Grid C.",
+          "Shade Grid C yellow and mark no fraction.": "This follows the yellow color but leaves the found fraction unmarked."
+         },
+         "explanation": "Grid C must be yellow, and the found fraction must be marked there.",
+         "f": [
+          "1.3",
+          "1.4",
+          "1.5",
+          "1.6"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l4-thepla-2-b1c7dc.webp",
@@ -5160,7 +6303,7 @@
       {
        "id": "mathematics-g5-ch2-l2",
        "title": "Making equivalent fractions",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -5281,6 +6424,53 @@
           "4 (generated problem)",
           "7 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch2-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can Sameer check that two fraction names show the same shaded part?",
+         "steps": [
+          "Divide the whole into equal parts, because equal parts make comparisons clear.",
+          "Shade the same region in each picture, because the shaded region shows what each fraction means.",
+          "Write the different fraction names in the boxes, because the names can change while the region stays the same.",
+          "The fractions are equivalent when they show the same shaded region."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.2",
+          "2.3",
+          "2.5",
+          "2.6",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 20
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          }
          ]
         },
         {
@@ -5604,6 +6794,85 @@
           "7 (generated problem)",
           "9 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Sameer divides a shape into equal horizontal strips. What should he compare to find equivalent fractions?",
+         "options": [
+          "The shaded parts in each picture",
+          "The number of letters in each fraction",
+          "The names of the shapes",
+          "The spaces below the pictures"
+         ],
+         "answer": 0,
+         "why": {
+          "The number of letters in each fraction": "Fraction names do not show how much of the whole is shaded.",
+          "The names of the shapes": "The shapes are not what equivalent fractions compare.",
+          "The spaces below the pictures": "Boxes are for writing answers, not checking shaded parts."
+         },
+         "explanation": "The shaded regions show whether both fractions represent the same part.",
+         "f": [
+          "2.2",
+          "2.3",
+          "2.5"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 20
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "spot flaw"
+         ],
+         "prompt": "A child says, \"Different names alone show equivalent fractions.\" Why is this claim flawed?",
+         "options": [
+          "Different names alone do not show equal shaded regions.",
+          "Equivalent fractions need different-sized wholes.",
+          "Equal parts must appear on different sides.",
+          "Fraction names must always be longer."
+         ],
+         "answer": 0,
+         "why": {
+          "Equivalent fractions need different-sized wholes.": "Equivalent fractions can use the same whole.",
+          "Equal parts must appear on different sides.": "The location of equal parts does not decide equivalence.",
+          "Fraction names must always be longer.": "Fraction names can be different lengths without being equivalent."
+         },
+         "explanation": "Equivalent fractions must show the same shaded region, not just different names.",
+         "f": [
+          "2.3",
+          "2.5"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l4-thepla-2-b1c7dc.webp",
@@ -5620,7 +6889,7 @@
       {
        "id": "mathematics-g5-ch2-l3",
        "title": "Comparing equal denominators and equal numerators",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "concept",
@@ -5668,6 +6937,48 @@
          ],
          "prompt": "Ready to discover which chikki fraction is bigger without counting every piece?",
          "explanation": "Now read on to find out."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch2-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Sevi and Shami divide a piece of chikki. Shami eats the rest and eats more than Sevi. How can fractions show this?",
+         "steps": [
+          "Use the same denominator for both shares because it helps us compare them.",
+          "Place the parts in a fraction kit because pictures show which amount is greater.",
+          "Write the greater share with > because the sign shows the larger amount.",
+          "The greater share belongs to Shami because he ate more than Sevi."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.3",
+          "3.4",
+          "3.8",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 23
+          },
+          {
+           "ch": 2,
+           "p": 23
+          },
+          {
+           "ch": 2,
+           "p": 23
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -5863,20 +7174,199 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch2-l3-a9",
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l3-d1",
          "difficulty": 3,
          "tags": [
-          "exercise",
-          "signs",
-          "fractions",
-          "comparison"
+          "deep",
+          "compare fractions"
          ],
-         "title": "Signs in the exercise",
-         "prompt": "The exercise asks for < and > signs between fractions.",
-         "answer": true,
-         "explanation": "The exercise asks for < and > signs between fractions.",
+         "prompt": "Two plates hold one fifth and four fifths of a snack. Which plate holds more?",
+         "options": [
+          "The one-fifth plate has more.",
+          "The four-fifths plate has more.",
+          "Both plates have equal amounts.",
+          "The fraction kit cannot compare them."
+         ],
+         "answer": 1,
+         "why": {
+          "The one-fifth plate has more.": "This uses the smaller numerator with the same denominator.",
+          "Both plates have equal amounts.": "The same denominator does not make different numerators equal.",
+          "The fraction kit cannot compare them.": "A fraction kit can compare the two amounts."
+         },
+         "explanation": "Four fifths is greater than one fifth with the same denominator.",
+         "f": [
+          "3.4",
+          "3.8"
+         ],
          "src": [
+          {
+           "ch": 2,
+           "p": 23
+          },
+          {
+           "ch": 2,
+           "p": 23
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "choose smaller"
+         ],
+         "prompt": "Two glasses have one sixth and one fifth of juice. Which glass has less?",
+         "options": [
+          "The one-sixth glass has less.",
+          "The one-fifth glass has less.",
+          "Both glasses have equal amounts.",
+          "The fraction kit cannot compare them."
+         ],
+         "answer": 0,
+         "why": {
+          "The one-fifth glass has less.": "This reverses the comparison between one sixth and one fifth.",
+          "Both glasses have equal amounts.": "Equal numerators do not make the amounts equal.",
+          "The fraction kit cannot compare them.": "A fraction kit can compare these amounts."
+         },
+         "explanation": "One sixth is smaller than one fifth.",
+         "f": [
+          "3.6",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 23
+          },
+          {
+           "ch": 2,
+           "p": 23
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "use pictures"
+         ],
+         "prompt": "Two trays hold four sixths and four fifths of food. Which tray holds more?",
+         "options": [
+          "The four-sixths tray has more.",
+          "The four-fifths tray has more.",
+          "Both trays have equal amounts.",
+          "The pictures cannot show this."
+         ],
+         "answer": 1,
+         "why": {
+          "The four-sixths tray has more.": "This mistakes the equal numerator for the greater amount.",
+          "Both trays have equal amounts.": "Equal numerators do not make the two amounts equal.",
+          "The pictures cannot show this.": "Pictures help us compare the two amounts."
+         },
+         "explanation": "Four fifths is greater because four sixths is less than four fifths.",
+         "f": [
+          "3.5",
+          "3.7",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 23
+          },
+          {
+           "ch": 2,
+           "p": 23
+          },
+          {
+           "ch": 2,
+           "p": 23
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain error"
+         ],
+         "prompt": "Two pieces of chikki have four sixths and four fifths. A child says the four-sixths piece is bigger. Why?",
+         "options": [
+          "The claim is right because both have four.",
+          "The claim is wrong because four sixths is less than four fifths.",
+          "The claim is wrong because both denominators are equal.",
+          "The claim is right because a smaller denominator is larger."
+         ],
+         "answer": 1,
+         "why": {
+          "The claim is right because both have four.": "This mistakes an equal numerator for an equal amount.",
+          "The claim is wrong because both denominators are equal.": "The denominators are different, and this reason does not compare the amounts.",
+          "The claim is right because a smaller denominator is larger.": "This mistakes smaller denominators for greater amounts."
+         },
+         "explanation": "Four sixths is less than four fifths, so the claim is wrong.",
+         "f": [
+          "3.7",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 23
+          },
+          {
+           "ch": 2,
+           "p": 23
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply comparison"
+         ],
+         "prompt": "Sevi ate four sixths of the chikki. Shami ate four fifths of the chikki. Who ate more?",
+         "options": [
+          "Sevi ate more chikki.",
+          "Shami ate more chikki.",
+          "They ate equal amounts.",
+          "The facts cannot compare them."
+         ],
+         "answer": 1,
+         "why": {
+          "Sevi ate more chikki.": "Four sixths is less than four fifths, so Sevi ate less.",
+          "They ate equal amounts.": "Equal numerators do not make the amounts equal.",
+          "The facts cannot compare them.": "The two fractions can be compared directly."
+         },
+         "explanation": "Four fifths is greater, and the facts say Shami ate more.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
           {
            "ch": 2,
            "p": 23
@@ -5898,7 +7388,7 @@
       {
        "id": "mathematics-g5-ch2-l4",
        "title": "Fractions greater than one",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -6011,22 +7501,39 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch2-l4-a2",
+         "type": "worked",
+         "id": "mathematics-g5-ch2-l4-t1",
          "difficulty": 1,
          "tags": [
-          "dadiji",
-          "pieces",
-          "halves"
+          "deep",
+          "think"
          ],
-         "title": "Dadiji's pieces",
-         "prompt": "Dadiji took seven pieces from parathas cut in half.",
-         "answer": true,
-         "explanation": "Seven pieces is the number Dadiji took. The parathas were cut in half.",
+         "kicker": "Let us think it through",
+         "prompt": "Maa took five pieces of a half paratha. How many parathas are there altogether?",
+         "steps": [
+          "Each piece is one half of a paratha.",
+          "Two half pieces make one whole paratha.",
+          "So four half pieces make two whole parathas.",
+          "The fifth half adds one more half, making two and a half parathas."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.4"
+         ],
          "src": [
           {
            "ch": 2,
-           "p": 25
+           "p": 24
+          },
+          {
+           "ch": 2,
+           "p": 24
+          },
+          {
+           "ch": 2,
+           "p": 24
           }
          ]
         },
@@ -6053,6 +7560,29 @@
           {
            "ch": 2,
            "p": 24
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g5-ch2-l4-a4",
+         "difficulty": 1,
+         "tags": [
+          "radhika",
+          "pieces",
+          "half"
+         ],
+         "title": "Radhika's pieces",
+         "prompt": "Radhika took ______ pieces of a half paratha.",
+         "answers": [
+          "six"
+         ],
+         "hint": "Count the pieces Radhika took.",
+         "explanation": "Radhika took six pieces of a half paratha.",
+         "src": [
+          {
+           "ch": 2,
+           "p": 25
           }
          ]
         },
@@ -6661,6 +8191,169 @@
            "p": 24
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Radhika took six pieces of a half paratha. Two halves make one whole paratha. How many whole parathas do her pieces make?",
+         "options": [
+          "Two whole parathas",
+          "Three whole parathas",
+          "Four whole parathas",
+          "Five whole parathas"
+         ],
+         "answer": 1,
+         "why": {
+          "Two whole parathas": "This counts only two pairs and leaves two pieces.",
+          "Four whole parathas": "This treats every half piece as a whole paratha.",
+          "Five whole parathas": "This adds one extra pair to the three correct pairs."
+         },
+         "explanation": "This uses all six pieces and groups them in pairs.",
+         "f": [
+          "4.5",
+          "4.6",
+          "4.3"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 25
+          },
+          {
+           "ch": 2,
+           "p": 25
+          },
+          {
+           "ch": 2,
+           "p": 24
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Dadiji took seven pieces from parathas cut in half. What total does she have?",
+         "options": [
+          "Two and a half parathas",
+          "Three and a half parathas",
+          "Four and a half parathas",
+          "Seven half-paratha pieces"
+         ],
+         "answer": 1,
+         "why": {
+          "Two and a half parathas": "This stops at five halves instead of using all seven.",
+          "Four and a half parathas": "This treats the seven pieces as four whole parathas.",
+          "Seven half-paratha pieces": "This keeps the pieces separate instead of making wholes."
+         },
+         "explanation": "Six halves make three wholes, and the seventh adds half.",
+         "f": [
+          "4.7",
+          "4.3",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 25
+          },
+          {
+           "ch": 2,
+           "p": 24
+          },
+          {
+           "ch": 2,
+           "p": 25
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "On another day, the father cut all the parathas into fourths. Nine quarter-paratha pieces are together. What total do they make?",
+         "options": [
+          "Two and one quarter parathas",
+          "Two and three quarter parathas",
+          "Three and one quarter parathas",
+          "Nine quarter parathas"
+         ],
+         "answer": 0,
+         "why": {
+          "Two and three quarter parathas": "This uses one quarter too many after making two wholes.",
+          "Three and one quarter parathas": "This makes three wholes but forgets the extra quarter.",
+          "Nine quarter parathas": "This counts the pieces without joining them into wholes."
+         },
+         "explanation": "Nine fourths equal two wholes and one fourth.",
+         "f": [
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 26
+          },
+          {
+           "ch": 2,
+           "p": 26
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "correct"
+         ],
+         "prompt": "A child says five half-paratha pieces make exactly three whole parathas. What is the best correction?",
+         "options": [
+          "They make two and a half parathas.",
+          "They make three and a half parathas.",
+          "They make exactly two whole parathas.",
+          "They make one and a half parathas."
+         ],
+         "answer": 0,
+         "why": {
+          "They make three and a half parathas.": "This adds a whole paratha that was not taken.",
+          "They make exactly two whole parathas.": "This leaves the extra half piece out.",
+          "They make one and a half parathas.": "This uses only three of the five half pieces."
+         },
+         "explanation": "Five halves make two and a half parathas, not three.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 24
+          },
+          {
+           "ch": 2,
+           "p": 24
+          },
+          {
+           "ch": 2,
+           "p": 24
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l4-thepla-2-b1c7dc.webp",
@@ -6677,7 +8370,7 @@
       {
        "id": "mathematics-g5-ch2-l5",
        "title": "Comparing fractions using a whole or half",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -6800,6 +8493,42 @@
           "4 (generated problem)",
           "5 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch2-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Two children eat different amounts of paratha. One eats five eighths. The other eats three sixths. Who eats less?",
+         "steps": [
+          "Picture both portions against one whole, because this gives a common size.",
+          "Compare the two portions, because the larger part covers more of the whole.",
+          "Five eighths is greater than three sixths, so three sixths is less."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 29
+          },
+          {
+           "ch": 2,
+           "p": 29
+          },
+          {
+           "ch": 2,
+           "p": 30
+          }
          ]
         },
         {
@@ -7478,6 +9207,85 @@
            "p": 31
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare fractions"
+         ],
+         "prompt": "At lunch, one child eats five eighths of a paratha. Another eats three sixths of a paratha. Who ate less?",
+         "options": [
+          "The child who ate five eighths of the paratha.",
+          "The child who ate three sixths of the paratha.",
+          "The children ate equal amounts of the paratha.",
+          "Neither child ate any of the paratha."
+         ],
+         "answer": 1,
+         "why": {
+          "The child who ate five eighths of the paratha.": "Five eighths is greater than three sixths, so this child ate more.",
+          "The children ate equal amounts of the paratha.": "Different fractions can cover different amounts of the same whole.",
+          "Neither child ate any of the paratha.": "Both fractions show eaten paratha, so neither amount is zero."
+         },
+         "explanation": "Three sixths is less than five eighths, so this child ate less.",
+         "f": [
+          "5.2",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 29
+          },
+          {
+           "ch": 2,
+           "p": 30
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "half comparison"
+         ],
+         "prompt": "One pizza piece is half. Another is five eighths. Which piece is larger?",
+         "options": [
+          "The five-eighths piece is larger than the half piece.",
+          "The half piece is larger than the five-eighths piece.",
+          "The pieces are equal because both parts use one whole.",
+          "The pieces cannot be compared without using a reference."
+         ],
+         "answer": 0,
+         "why": {
+          "The half piece is larger than the five-eighths piece.": "One half covers less of the whole than five eighths.",
+          "The pieces are equal because both parts use one whole.": "Using one whole does not mean the covered parts are equal.",
+          "The pieces cannot be compared without using a reference.": "A common reference is available, so refusing to compare is mistaken."
+         },
+         "explanation": "Five eighths covers more of the whole than one half.",
+         "f": [
+          "5.9",
+          "5.10",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 30
+          },
+          {
+           "ch": 2,
+           "p": 30
+          },
+          {
+           "ch": 2,
+           "p": 30
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l5-a-typical-plate-of-parantha--af4db4.webp",
@@ -7490,6 +9298,334 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Ravi Dwivedi"
        }
+      },
+      {
+       "id": "mathematics-g5-ch2-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 15,
+       "topicScene": "media/ch2-l4-thepla-2-b1c7dc.webp",
+       "sceneAlt": "A soft Indian flatbread called thepla, popular in Gujarat and among Jain communities.",
+       "sceneCaption": "Soft Gujarati thepla flatbread, popular in Gujarat and especially among the Jain community.",
+       "sceneCredit": {
+        "text": "Thepla 2 by Yakshitha, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Thepla_2.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Yakshitha"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Tamanna is a student of Grade 5. In an activity, Grid A must be shaded red, Grid B blue, and Grid C yellow. She must find and mark a fraction in the grids. Grid A and Grid B are wholes of the same size, but Grid C is a different size. A fraction kit has two different fraction pieces that can make a whole. The lesson explains that equivalent fractions are different names for the same fraction.",
+         "prompt": "Tamanna has marked a fraction in Grid A and a fraction in Grid B. What should she remember before comparing them?",
+         "options": [
+          "The two grids need equal-sized wholes.",
+          "The red and blue shades need to match.",
+          "The marked pieces need different names.",
+          "The yellow grid must also be used."
+         ],
+         "answer": 0,
+         "why": {
+          "The red and blue shades need to match.": "Shading colors do not affect fraction comparisons.",
+          "The marked pieces need different names.": "Different names may describe the same fraction.",
+          "The yellow grid must also be used.": "Another grid is not required for this comparison."
+         },
+         "explanation": "Fractions can be compared only when the wholes are the same size."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Tamanna is a student of Grade 5. In an activity, Grid A must be shaded red, Grid B blue, and Grid C yellow. She must find and mark a fraction in the grids. Grid A and Grid B are wholes of the same size, but Grid C is a different size. A fraction kit has two different fraction pieces that can make a whole. The lesson explains that equivalent fractions are different names for the same fraction.",
+         "prompt": "If Grid C were changed so that it matched the size of Grid A, what could Tamanna do next?",
+         "options": [
+          "She could compare the fraction in Grid C with the fraction in Grid A.",
+          "She would need to give Grid A and Grid C the same color.",
+          "She could compare them only if Grid C were also yellow.",
+          "She would have to make Grid C a different size."
+         ],
+         "answer": 0,
+         "why": {
+          "She would need to give Grid A and Grid C the same color.": "Color does not determine whether fractions can be compared.",
+          "She could compare them only if Grid C were also yellow.": "Yellow shading does not affect a fraction's value.",
+          "She would have to make Grid C a different size.": "Making the whole smaller would prevent the comparison."
+         },
+         "explanation": "Grid C and Grid A would then have equal-sized wholes."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch2-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How can the fraction kit and equivalent fractions help Tamanna explain her marked fractions?",
+         "answer": "Tamanna can use the fraction kit to show that different fraction pieces can help make one whole. She can also explain that equivalent fractions are different names for the same fraction. Together, these ideas help her describe how the marked fractions may be connected.",
+         "points": [
+          "Different fraction pieces can be used to make a whole.",
+          "A whole can be made from equal pieces of the same size.",
+          "Equivalent fractions have different names.",
+          "Equivalent fractions represent the same fraction."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Sameer has shaded one-third of several figures. He uses horizontal lines to divide each figure into more equal parts. The differently named fractions show the same shaded region, so they are equivalent fractions. Sameer writes the equivalent fractions in the boxes below the images and ticks the pairs that are equivalent. He also fills blank spaces so the fractions become equivalent.",
+         "prompt": "Sameer draws horizontal lines across one of the figures. What should the lines do for his method to work?",
+         "options": [
+          "Make all the resulting sections the same size",
+          "Give every section a different shaded region",
+          "Create sections of several different sizes",
+          "Hide the one-third that was already shaded"
+         ],
+         "answer": 0,
+         "why": {
+          "Give every section a different shaded region": "Different shaded regions would not show equivalent fractions.",
+          "Create sections of several different sizes": "Unequal sections do not support the equal-parts method.",
+          "Hide the one-third that was already shaded": "Hiding the shading would remove the region he is naming."
+         },
+         "explanation": "Equal sections support the method Sameer is using."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Sameer has shaded one-third of several figures. He uses horizontal lines to divide each figure into more equal parts. The differently named fractions show the same shaded region, so they are equivalent fractions. Sameer writes the equivalent fractions in the boxes below the images and ticks the pairs that are equivalent. He also fills blank spaces so the fractions become equivalent.",
+         "prompt": "One fraction in a pair is one-third, and the other has a different name but shows the same shaded region. What should Sameer write in the blank box?",
+         "options": [
+          "A fraction that names the matching region in another way",
+          "A fraction that names a region that does not match",
+          "A fraction based on sections of unequal sizes",
+          "Nothing, because fractions with different names cannot match"
+         ],
+         "answer": 0,
+         "why": {
+          "A fraction that names a region that does not match": "A fraction for a different region would not match the shading.",
+          "A fraction based on sections of unequal sizes": "The method uses equal sections when finding equivalents.",
+          "Nothing, because fractions with different names cannot match": "Different names can still represent the same shaded region."
+         },
+         "explanation": "It gives another name to the matching shaded region."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch2-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Why do horizontal lines help Sameer find equivalent fractions?",
+         "answer": "Horizontal lines help because they divide a whole into more equal parts. This supports finding fractions with different names for the same shaded region. When the parts are equal, the shaded one-third can be named by another equivalent fraction. These fractions show the same shaded region.",
+         "points": [
+          "Horizontal lines divide a whole into more equal parts.",
+          "Equal parts support finding equivalent fractions.",
+          "Different names can refer to the same shaded region.",
+          "The shaded one-third can have another equivalent fraction name."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Sevi and Shami divided a piece of chikki between themselves. Shami ate the remaining part of the chikki, and he ate more chikki than Sevi. The class uses a fraction kit to picture the comparison. It compares one sixth with one fifth and then four sixths with four fifths. The exercise asks for < or > signs between the fractions.",
+         "prompt": "If one sixth represents Sevi’s part and one fifth represents Shami’s part, which comparison fits the case?",
+         "options": [
+          "one sixth < one fifth",
+          "one sixth > one fifth",
+          "one sixth = one fifth",
+          "four sixths < one fifth"
+         ],
+         "answer": 0,
+         "why": {
+          "one sixth > one fifth": "This reverses the given comparison.",
+          "one sixth = one fifth": "The given facts do not say that the two fractions are equal.",
+          "four sixths < one fifth": "This changes the numerator and does not answer the question about one sixth and one fifth."
+         },
+         "explanation": "This matches the fact that one sixth is smaller than one fifth."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Sevi and Shami divided a piece of chikki between themselves. Shami ate the remaining part of the chikki, and he ate more chikki than Sevi. The class uses a fraction kit to picture the comparison. It compares one sixth with one fifth and then four sixths with four fifths. The exercise asks for < or > signs between the fractions.",
+         "prompt": "If the numerator changes to four, which comparison still fits Shami eating more?",
+         "options": [
+          "four sixths < four fifths",
+          "four sixths > four fifths",
+          "four sixths = four fifths",
+          "one sixth < one fifth"
+         ],
+         "answer": 0,
+         "why": {
+          "four sixths > four fifths": "This reverses the given comparison.",
+          "four sixths = four fifths": "The given facts do not say that these fractions are equal.",
+          "one sixth < one fifth": "This is the earlier comparison and does not use the changed numerator of four."
+         },
+         "explanation": "Four sixths is less than four fifths, so this sign is correct."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Maa took five half-paratha pieces, while Radhika took six. Maa’s pieces made two and a half parathas, and Radhika’s made three whole parathas. Dadiji took seven pieces from parathas cut in half. On another day, the father cut all the parathas into fourths, and nine quarter-paratha pieces made two and a quarter parathas. The family ordered two pizzas and cut each into equal slices. The exercise asks for fractions greater than one whole.",
+         "prompt": "Radhika’s six half-paratha pieces equal three whole parathas. Why?",
+         "options": [
+          "Two half-paratha pieces make one whole, so six pieces make three.",
+          "One half-paratha piece is counted as one whole, so six pieces make six wholes.",
+          "Each pair of half-paratha pieces is counted as one quarter, so six pieces make three quarters.",
+          "Three whole parathas contain six quarter-paratha pieces, so six half pieces make three."
+         ],
+         "answer": 0,
+         "why": {
+          "One half-paratha piece is counted as one whole, so six pieces make six wholes.": "This counts each half-piece as a whole paratha.",
+          "Each pair of half-paratha pieces is counted as one quarter, so six pieces make three quarters.": "This counts pairs of halves as quarters instead of wholes.",
+          "Three whole parathas contain six quarter-paratha pieces, so six half pieces make three.": "This mixes half-paratha pieces with quarter-paratha pieces."
+         },
+         "explanation": "This correctly joins each pair of halves into one whole."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Maa took five half-paratha pieces, while Radhika took six. Maa’s pieces made two and a half parathas, and Radhika’s made three whole parathas. Dadiji took seven pieces from parathas cut in half. On another day, the father cut all the parathas into fourths, and nine quarter-paratha pieces made two and a quarter parathas. The family ordered two pizzas and cut each into equal slices. The exercise asks for fractions greater than one whole.",
+         "prompt": "Dadiji has seven pieces from parathas cut in half. If the pieces are grouped into whole parathas and a remaining part, which arrangement is correct?",
+         "options": [
+          "Three whole parathas and one half paratha",
+          "Two whole parathas and three half parathas",
+          "Three whole parathas and four half parathas",
+          "Four whole parathas and one half paratha"
+         ],
+         "answer": 0,
+         "why": {
+          "Two whole parathas and three half parathas": "This leaves three half-pieces instead of grouping them into pairs.",
+          "Three whole parathas and four half parathas": "Seven pieces contain three pairs and one remaining half.",
+          "Four whole parathas and one half paratha": "This arrangement needs more than seven half-paratha pieces."
+         },
+         "explanation": "Six pieces form three wholes, and the seventh is one half."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch2-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why nine quarter-paratha pieces can be greater than one whole paratha.",
+         "answer": "The father cut the parathas into fourths, and nine pieces equal two and a quarter parathas. So there are two whole parathas and one quarter paratha. This shows that a fraction can have a numerator greater than its denominator and represent an amount greater than one whole.",
+         "points": [
+          "Identifies two whole parathas.",
+          "Identifies one quarter paratha.",
+          "Explains that a numerator greater than the denominator can give an amount greater than one whole."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At home, a child is checking two paratha portions against one whole. One portion is smaller than a whole, while another is larger than a whole. The family also asks who ate less paratha in another comparison. The child then uses one half as a reference and checks five eighths with three sixths. The child circles fractions equal to one half and marks those below half, then discusses how the comparison was worked out.",
+         "prompt": "After checking the two portions against one half, which fraction should the child circle as equal to one half?",
+         "options": [
+          "The smaller of the two compared fractions",
+          "The larger of the two compared fractions",
+          "The whole-paratha reference",
+          "The portion greater than one whole"
+         ],
+         "answer": 0,
+         "why": {
+          "The larger of the two compared fractions": "Five eighths is greater than three sixths, so it is not equal to one half.",
+          "The whole-paratha reference": "One whole is a reference for comparison, not a fraction equal to one half.",
+          "The portion greater than one whole": "A portion greater than one whole cannot be equal to one half."
+         },
+         "explanation": "Three sixths is the smaller fraction and is equal to one half."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch2-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At home, a child is checking two paratha portions against one whole. One portion is smaller than a whole, while another is larger than a whole. The family also asks who ate less paratha in another comparison. The child then uses one half as a reference and checks five eighths with three sixths. The child circles fractions equal to one half and marks those below half, then discusses how the comparison was worked out.",
+         "prompt": "If one whole is used as the reference, which description of the two paratha portions is correct?",
+         "options": [
+          "The first portion falls short of one whole; the second extends beyond one whole.",
+          "Both portions are exactly equal to one whole.",
+          "The first portion extends beyond one whole; the second falls short.",
+          "Neither portion should be compared with one whole."
+         ],
+         "answer": 0,
+         "why": {
+          "Both portions are exactly equal to one whole.": "The two portions are not both equal to one whole.",
+          "The first portion extends beyond one whole; the second falls short.": "This incorrectly swaps the portions that are less and greater than one whole.",
+          "Neither portion should be compared with one whole.": "Both portions are specifically being checked against one whole."
+         },
+         "explanation": "One portion is less than one whole, while the other is greater than one whole."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch2-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does the child use one half to decide which compared fraction is greater and which is equal to one half?",
+         "answer": "The child uses one half as the reference. Three sixths is exactly half, while five eighths is greater than three sixths. Therefore, five eighths is greater than one half, and three sixths is the fraction equal to one half.",
+         "points": [
+          "Uses one half as the reference.",
+          "Identifies three sixths as equal to one half.",
+          "States that five eighths is greater than three sixths.",
+          "Explains that five eighths is greater than one half."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -9746,7 +11882,7 @@
       {
        "id": "mathematics-g5-ch3-l3",
        "title": "Making an Angle Measuring Tool",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -9804,6 +11940,43 @@
           {
            "ch": 3,
            "p": 37
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch3-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child wants an angle tool that shows an eighth turn. What should the child do?",
+         "steps": [
+          "First, fold a circle into 8 equal parts to make equal-sized parts.",
+          "Attach a straw at the centre, because the tool turns from there.",
+          "Mark a starting point, so the straw has a clear beginning.",
+          "Finally, the straw can show an eighth turn, making an angle tool."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 36
+          },
+          {
+           "ch": 3,
+           "p": 36
+          },
+          {
+           "ch": 3,
+           "p": 36
           }
          ]
         },
@@ -9995,6 +12168,100 @@
            "p": 37
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply idea"
+         ],
+         "prompt": "A circle is folded into 8 equal parts. A straw is attached at the centre. A starting point is marked. What can the straw show?",
+         "options": [
+          "An eighth turn",
+          "A third turn",
+          "A one-sixth turn",
+          "A three-eighths turn"
+         ],
+         "answer": 0,
+         "why": {
+          "A third turn": "This confuses the straw's eighth turn with a third turn.",
+          "A one-sixth turn": "This confuses the straw's eighth turn with a one-sixth turn.",
+          "A three-eighths turn": "This confuses the straw's eighth turn with a three-eighths turn."
+         },
+         "explanation": "This is exactly the turn the straw can show.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 36
+          },
+          {
+           "ch": 3,
+           "p": 36
+          },
+          {
+           "ch": 3,
+           "p": 36
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "A child claims the second exercise also uses 8 equal parts. Another straw is attached at the centre. Cut-out parts are used. Which fact makes the claim wrong?",
+         "options": [
+          "The circle is folded again into 3 equal parts.",
+          "Another straw is attached at the centre.",
+          "The exercise uses cut-out parts of a circle.",
+          "A starting point is marked."
+         ],
+         "answer": 0,
+         "why": {
+          "Another straw is attached at the centre.": "Another straw does not describe the number of equal folds.",
+          "The exercise uses cut-out parts of a circle.": "Using cut-out parts does not describe the number of equal folds.",
+          "A starting point is marked.": "A starting point belongs to the first tool's setup."
+         },
+         "explanation": "The second fold makes 3 equal parts, not 8.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.4",
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 36
+          },
+          {
+           "ch": 3,
+           "p": 36
+          },
+          {
+           "ch": 3,
+           "p": 36
+          },
+          {
+           "ch": 3,
+           "p": 37
+          },
+          {
+           "ch": 3,
+           "p": 37
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l1-lascar-the-singapore-flyer-4-d1c798.webp",
@@ -10011,7 +12278,7 @@
       {
        "id": "mathematics-g5-ch3-l4",
        "title": "Measuring and Drawing Angles",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -10158,6 +12425,58 @@
           "40 (generated problem)",
           "56 (generated problem)",
           "80 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch3-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "An arrow turns, but you must show how much it turned.",
+         "steps": [
+          "First, guess the angle measure, because a guess starts the checking process.",
+          "Then use an angle-measuring tool, because the tool checks your guess.",
+          "Use a combination of tools if needed, because some turns need several measures.",
+          "Finally, draw the angle and describe its type, because the turn must be shown clearly."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.5",
+          "4.9",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 38
+          },
+          {
+           "ch": 3,
+           "p": 38
+          },
+          {
+           "ch": 3,
+           "p": 38
+          },
+          {
+           "ch": 3,
+           "p": 38
+          },
+          {
+           "ch": 3,
+           "p": 39
+          },
+          {
+           "ch": 3,
+           "p": 39
+          }
          ]
         },
         {
@@ -11086,6 +13405,75 @@
            "p": 38
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "One tool does not always check an arrow turn. Why might that be?",
+         "options": [
+          "Some turns need a combination of measuring tools.",
+          "Every arrow turn is already a right angle.",
+          "One guess can check the measure of any turn.",
+          "Angle types do not describe arrow turns."
+         ],
+         "answer": 0,
+         "why": {
+          "Every arrow turn is already a right angle.": "This mistakes every arrow turn for a right angle.",
+          "One guess can check the measure of any turn.": "This assumes a guess can verify every arrow turn.",
+          "Angle types do not describe arrow turns.": "This wrongly separates angle types from arrow turns."
+         },
+         "explanation": "Sometimes one turn needs more than one measuring tool.",
+         "f": [
+          "4.4",
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 38
+          },
+          {
+           "ch": 3,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check"
+         ],
+         "prompt": "A guess comes before a tool check. Is guessing enough alone?",
+         "options": [
+          "No. The tool must check the guessed measure.",
+          "Yes. The guess alone gives the exact measure.",
+          "Yes. The angle type replaces the tool check.",
+          "No. A guess should never be made at all."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes. The guess alone gives the exact measure.": "This assumes a guess is as exact as a measurement.",
+          "Yes. The angle type replaces the tool check.": "This assumes a type can check the angle's measure.",
+          "No. A guess should never be made at all.": "This misses that guessing can come before checking."
+         },
+         "explanation": "The guess is checked with an angle-measuring tool.",
+         "f": [
+          "4.1"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 38
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l4-protractor-rapporteur-degree-e9fd3a.webp",
@@ -11102,7 +13490,7 @@
       {
        "id": "mathematics-g5-ch3-l5",
        "title": "Clockwise and Anti-clockwise Turns",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -11210,6 +13598,43 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch3-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child faces North in a school corridor. The teacher gives two right angles clockwise. Which direction will the child face?",
+         "steps": [
+          "The child starts facing North, so we use North first.",
+          "Clockwise follows the clock hands, so we turn in that direction.",
+          "Two clockwise right angles from North lead South, so both turns count.",
+          "The child therefore finishes facing South."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.10",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 41
+          },
+          {
+           "ch": 3,
+           "p": 41
+          }
+         ]
+        },
+        {
          "type": "matchpairs",
          "id": "mathematics-g5-ch3-l5-a4",
          "difficulty": 1,
@@ -11265,24 +13690,6 @@
          ],
          "answer": 0,
          "explanation": "Clock-hand movement is called clockwise movement.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 40
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch3-l5-a3",
-         "difficulty": 1,
-         "tags": [
-          "anti-clockwise",
-          "opposite"
-         ],
-         "prompt": "The opposite of clockwise movement is called anti-clockwise movement.",
-         "answer": true,
-         "explanation": "Yes, anti-clockwise movement is the opposite of clockwise movement.",
          "src": [
           {
            "ch": 3,
@@ -11460,6 +13867,27 @@
           {
            "ch": 3,
            "p": 41
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g5-ch3-l5-a5",
+         "difficulty": 2,
+         "tags": [
+          "teacher",
+          "rotation"
+         ],
+         "prompt": "The teacher tells the children which ______ to rotate.",
+         "answers": [
+          "direction"
+         ],
+         "hint": "This word tells you where a turn goes.",
+         "explanation": "The teacher gives the direction in which the children should rotate.",
+         "src": [
+          {
+           "ch": 3,
+           "p": 40
           }
          ]
         },
@@ -11929,6 +14357,253 @@
            "p": 41
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict direction"
+         ],
+         "prompt": "A child faces North at a school gate. The teacher gives one right angle clockwise. Which direction will the child face?",
+         "options": [
+          "North",
+          "South",
+          "East",
+          "West"
+         ],
+         "answer": 2,
+         "why": {
+          "North": "He thinks one right angle does not change the direction.",
+          "South": "He follows anti-clockwise instead of clockwise.",
+          "West": "He turns opposite to the clock hands."
+         },
+         "explanation": "One clockwise right angle from North leads to East.",
+         "f": [
+          "5.1",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 41
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict direction"
+         ],
+         "prompt": "A child faces North beside a building. The teacher gives one right angle anti-clockwise. Which direction will the child face?",
+         "options": [
+          "North",
+          "South",
+          "East",
+          "West"
+         ],
+         "answer": 3,
+         "why": {
+          "North": "He thinks one right angle does not change the direction.",
+          "South": "He follows clockwise instead of anti-clockwise.",
+          "East": "He swaps East and West in his mind."
+         },
+         "explanation": "One anti-clockwise right angle from North leads to West.",
+         "f": [
+          "5.2",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 41
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict direction"
+         ],
+         "prompt": "A child faces South in a playground. The teacher gives one right angle anti-clockwise. Which direction will the child face?",
+         "options": [
+          "North",
+          "South",
+          "East",
+          "West"
+         ],
+         "answer": 2,
+         "why": {
+          "North": "He thinks anti-clockwise always leads back to North.",
+          "South": "He thinks one right angle does not change the direction.",
+          "West": "He follows clockwise instead of anti-clockwise."
+         },
+         "explanation": "One anti-clockwise right angle from South leads to East.",
+         "f": [
+          "5.2",
+          "5.10",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 41
+          },
+          {
+           "ch": 3,
+           "p": 41
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict direction"
+         ],
+         "prompt": "A child faces South in a corridor. The teacher gives two right angles clockwise. Which direction will the child face?",
+         "options": [
+          "North",
+          "South",
+          "East",
+          "West"
+         ],
+         "answer": 0,
+         "why": {
+          "South": "He counts only one of the two clockwise turns.",
+          "East": "He thinks two equal turns cancel each other.",
+          "West": "He uses anti-clockwise instead of clockwise."
+         },
+         "explanation": "Two clockwise right angles from South lead to North.",
+         "f": [
+          "5.1",
+          "5.10",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 41
+          },
+          {
+           "ch": 3,
+           "p": 41
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l5-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify movement"
+         ],
+         "prompt": "While opening a tap, its handle moves from top to right. Which movement is this?",
+         "options": [
+          "It goes from top to right, so it is clockwise.",
+          "It goes from top to right, so it is anti-clockwise.",
+          "It goes from right to top, so it is clockwise.",
+          "It goes from right to top, so it is anti-clockwise."
+         ],
+         "answer": 0,
+         "why": {
+          "It goes from top to right, so it is anti-clockwise.": "He reverses the meaning of clockwise and anti-clockwise.",
+          "It goes from right to top, so it is clockwise.": "He gets the label right but reverses the observed path.",
+          "It goes from right to top, so it is anti-clockwise.": "He reverses both the observed path and the direction label."
+         },
+         "explanation": "The path matches the clock hands, so the movement is clockwise.",
+         "f": [
+          "5.1",
+          "5.4",
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 40
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l5-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify movement"
+         ],
+         "prompt": "While unscrewing a jar lid, it moves from right to top. Which movement is this?",
+         "options": [
+          "It moves right to top, so it is anti-clockwise.",
+          "It moves right to top, so it is clockwise.",
+          "It moves top to right, so it is anti-clockwise.",
+          "It moves top to right, so it is clockwise."
+         ],
+         "answer": 0,
+         "why": {
+          "It moves right to top, so it is clockwise.": "He gets the label right but reverses the observed path.",
+          "It moves top to right, so it is anti-clockwise.": "He gets the label right but reverses the observed path.",
+          "It moves top to right, so it is clockwise.": "He reverses both the observed path and the direction label."
+         },
+         "explanation": "The path is opposite the clock hands, so the movement is anti-clockwise.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.5",
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 40
+          },
+          {
+           "ch": 3,
+           "p": 40
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l5-turn-to-right-at-liep-ja-tra-a211cf.webp",
@@ -11945,7 +14620,7 @@
       {
        "id": "mathematics-g5-ch3-exam",
        "title": "Test practice",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 18,
        "topicScene": "media/ch3-l1-lascar-the-singapore-flyer-4-d1c798.webp",
        "sceneAlt": "The Singapore Flyer is a giant observation wheel that rotates in Singapore.",
        "sceneCaption": "This giant wheel completes a full turn when it returns to its starting position.",
@@ -12044,6 +14719,245 @@
           "Full turn returns the object to its initial position",
           "Half turn can make a half-moon shape",
           "Half turn covers only part of the circle"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Learners are making a paper fan from a rectangular sheet of paper, folding it every 2 cm. They open the fan while keeping one side fixed so that the turns can be seen. They also build a house with notebook covers and mark its angles. One part of the house has a five-sided shape containing two right angles, two obtuse angles and one acute angle.",
+         "prompt": "A learner forgets the required spacing when making the rectangular paper fan. What should the learner do next?",
+         "options": [
+          "Make the folds again, 2 cm apart.",
+          "Make the folds again, with uneven spacing.",
+          "Make the folds again, but only along one edge.",
+          "Make the folds again, using a different measurement."
+         ],
+         "answer": 0,
+         "why": {
+          "Make the folds again, with uneven spacing.": "Uneven spacing does not follow the stated folding rule.",
+          "Make the folds again, but only along one edge.": "Folding only one edge misses the stated fan-making method.",
+          "Make the folds again, using a different measurement.": "A different measurement does not match the required 2 cm spacing."
+         },
+         "explanation": "This restores the required spacing of every 2 cm."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Learners are making a paper fan from a rectangular sheet of paper, folding it every 2 cm. They open the fan while keeping one side fixed so that the turns can be seen. They also build a house with notebook covers and mark its angles. One part of the house has a five-sided shape containing two right angles, two obtuse angles and one acute angle.",
+         "prompt": "In the house's five-sided shape, one of the two right angles is changed into an acute angle. What set of angles would then be marked?",
+         "options": [
+          "One right angle, two obtuse angles and two acute angles.",
+          "Two right angles, one obtuse angle and two acute angles.",
+          "Two right angles, two obtuse angles and no acute angles.",
+          "One right angle, one obtuse angle and three acute angles."
+         ],
+         "answer": 0,
+         "why": {
+          "Two right angles, one obtuse angle and two acute angles.": "An obtuse angle was not changed, so two should remain.",
+          "Two right angles, two obtuse angles and no acute angles.": "The changed angle becomes acute instead of being removed.",
+          "One right angle, one obtuse angle and three acute angles.": "Only one right angle changes, so the two obtuse angles remain."
+         },
+         "explanation": "One right angle changes, leaving one right, two obtuse and two acute angles."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch3-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the learners should fold and open the paper fan, and how they should classify its turns.",
+         "answer": "Fold the paper every 2 cm to make the fan. Keep one side fixed so its turns can be seen. A turn smaller than a quarter turn is acute, a quarter turn is right, and a turn larger than a quarter but smaller than a half is obtuse.",
+         "points": [
+          "Fold the rectangular paper every 2 cm.",
+          "Keep one side fixed while showing the turns.",
+          "Classify a turn smaller than a quarter as acute.",
+          "Classify quarter and larger-than-quarter turns correctly."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch3-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the learner makes the angle measuring tool and uses it to show an eighth turn.",
+         "answer": "The learner folds a circle into 8 equal parts, attaches a straw at the centre, and marks a starting point. The straw can then be used to show an eighth turn. These steps make the angle measuring tool from the equal parts of the circle and its centre straw.",
+         "points": [
+          "Folds the circle into 8 equal parts",
+          "Attaches a straw at the centre",
+          "Marks a starting point",
+          "Uses the straw to show an eighth turn"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During an activity, children look at angles in shapes and make initial guesses about them. They then check the guesses with an angle-measuring tool, and sometimes they need a combination of measures. The measured angles are described as acute, right or obtuse. In another activity, an arrow makes turns whose measures are written in turns. The children use a combination of measuring tools to verify those turns, then draw angles for the given turn measures using given lines.",
+         "prompt": "What should the children do after making an initial guess about an angle in a shape?",
+         "options": [
+          "Test the estimate with an angle-measuring tool.",
+          "Keep the estimate without checking it.",
+          "Check the estimate by describing the angle only.",
+          "Replace the angle in the shape with a drawn angle."
+         ],
+         "answer": 0,
+         "why": {
+          "Keep the estimate without checking it.": "A guess alone does not confirm the measure.",
+          "Check the estimate by describing the angle only.": "A description does not replace measuring the angle.",
+          "Replace the angle in the shape with a drawn angle.": "Drawing a new angle does not check the original angle."
+         },
+         "explanation": "The tool is used to check the guess."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During an activity, children look at angles in shapes and make initial guesses about them. They then check the guesses with an angle-measuring tool, and sometimes they need a combination of measures. The measured angles are described as acute, right or obtuse. In another activity, an arrow makes turns whose measures are written in turns. The children use a combination of measuring tools to verify those turns, then draw angles for the given turn measures using given lines.",
+         "prompt": "After verifying the arrow turns, what should the children do with the given turn measures and lines?",
+         "options": [
+          "Use the given lines to draw angles for the given turn measures.",
+          "Guess the angles and leave the given lines unused.",
+          "Measure another angle instead of following the turn measures.",
+          "Check the turns but do not draw the requested angles."
+         ],
+         "answer": 0,
+         "why": {
+          "Guess the angles and leave the given lines unused.": "Leaving the lines unused does not complete the drawing task.",
+          "Measure another angle instead of following the turn measures.": "Another angle would not represent the given turn measures.",
+          "Check the turns but do not draw the requested angles.": "Stopping after checking would leave the drawing task unfinished."
+         },
+         "explanation": "The final task asks for angles to be drawn using the given lines."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch3-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why children should check a guessed angle measure with an angle-measuring tool.",
+         "answer": "The guess gives children an idea of what to expect, but the angle-measuring tool checks the angle. If the guess is different, they can correct it. The checked angle can then be described as acute, right or obtuse.",
+         "points": [
+          "A guess is an initial idea",
+          "The tool checks the angle",
+          "A wrong guess can be corrected",
+          "The checked angle can be classified"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a classroom activity, the teacher showed pictures of creatures that had each made a quarter turn once. She reminded the children that clock-hand movement is clockwise movement, while the opposite movement is anti-clockwise movement. The children could observe each direction by opening a tap, unscrewing a lid, or loosening a nut. The teacher then gave directions to rotate, and the children completed a table showing the directions they would face.",
+         "prompt": "In the table case that starts at North and gives two right angles clockwise, what direction will the children face at the end?",
+         "options": [
+          "They will face South.",
+          "They will face East.",
+          "They will face West.",
+          "They will face North."
+         ],
+         "answer": 0,
+         "why": {
+          "They will face East.": "East is reached after only the first right angle.",
+          "They will face West.": "West would require an anti-clockwise turn from North.",
+          "They will face North.": "North is the starting direction, not the final direction."
+         },
+         "explanation": "Two clockwise right angles from North end at South."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a classroom activity, the teacher showed pictures of creatures that had each made a quarter turn once. She reminded the children that clock-hand movement is clockwise movement, while the opposite movement is anti-clockwise movement. The children could observe each direction by opening a tap, unscrewing a lid, or loosening a nut. The teacher then gave directions to rotate, and the children completed a table showing the directions they would face.",
+         "prompt": "In the table case that starts at South and gives two right angles anti-clockwise, what direction will the children face at the end?",
+         "options": [
+          "They will face North.",
+          "They will face South.",
+          "They will face East.",
+          "They will face West."
+         ],
+         "answer": 0,
+         "why": {
+          "They will face South.": "Two anti-clockwise right angles from South reach North.",
+          "They will face East.": "East is the direction after the first turn.",
+          "They will face West.": "West is not reached by two anti-clockwise right angles from South."
+         },
+         "explanation": "From South, the first anti-clockwise right angle reaches East."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch3-l5-x3",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a classroom activity, the teacher showed pictures of creatures that had each made a quarter turn once. She reminded the children that clock-hand movement is clockwise movement, while the opposite movement is anti-clockwise movement. The children could observe each direction by opening a tap, unscrewing a lid, or loosening a nut. The teacher then gave directions to rotate, and the children completed a table showing the directions they would face.",
+         "prompt": "If the first turn in the North table case is changed to an anti-clockwise right angle, what direction will the children face after that turn?",
+         "options": [
+          "They will face West.",
+          "They will face East.",
+          "They will face South.",
+          "They will face North."
+         ],
+         "answer": 0,
+         "why": {
+          "They will face East.": "A clockwise right angle from North would reach East.",
+          "They will face South.": "Two anti-clockwise right angles from North would end at South.",
+          "They will face North.": "North is the starting direction before the turn."
+         },
+         "explanation": "An anti-clockwise right angle from North reaches West."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch3-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how to complete the table case that starts at North and gives two right angles clockwise.",
+         "answer": "Start at North. The first right-angle clockwise turn takes the children to East. Make the second right-angle clockwise turn from East, and they will face South. Their final entry in the table should show South.",
+         "points": [
+          "The starting direction is North.",
+          "The first clockwise right angle reaches East.",
+          "The second clockwise right angle reaches South."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         }

@@ -23221,7 +23221,7 @@
       {
        "id": "mathematics-g6-ch5-l1",
        "title": "Common Multiples and Common Factors",
-       "estimatedMinutes": 14,
+       "estimatedMinutes": 16,
        "activities": [
         {
          "type": "hook",
@@ -23387,6 +23387,36 @@
           "4 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "worked",
@@ -24455,7 +24485,7 @@
       {
        "id": "mathematics-g6-ch5-l2",
        "title": "Prime Numbers",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -24536,6 +24566,36 @@
            "p": 113
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "worked",

@@ -30,7 +30,7 @@
       {
        "id": "mathematics-g8-ch1-l1",
        "title": "The Locker Puzzle and Factors",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -139,6 +139,36 @@
           "25 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch1-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "worked",
@@ -23370,7 +23400,7 @@
       {
        "id": "mathematics-g8-ch5-l2",
        "title": "Even Expressions and Divisibility Rules",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -23487,6 +23517,36 @@
           "2 (generated problem)",
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "worked",
@@ -24124,7 +24184,7 @@
       {
        "id": "mathematics-g8-ch5-l3",
        "title": "Remainders, Multiples and Consecutive Numbers",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -24233,6 +24293,36 @@
           "3 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "worked",
@@ -32481,7 +32571,7 @@
       {
        "id": "mathematics-g8-ch6-l5",
        "title": "Finding and Mending Algebra Mistakes",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -32595,6 +32685,31 @@
           "81 (generated problem)",
           "9 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch6-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "algebratiles",
+         "params": {},
+         "title": "Stretch the x bars",
+         "tasks": [
+          {
+           "say": "Make 3x + 2 equal 14.",
+           "when": "x == 4",
+           "then": "3 x 4 + 2 = 14."
+          },
+          {
+           "say": "Make the value bigger than 25.",
+           "when": "3 * x + 2 > 25",
+           "then": "The bars grow 3 at a time, because there are 3 of them."
+          }
+         ],
+         "takeaway": "A letter stands for a number: change x and every x in the expression changes with it.",
+         "explanation": "A letter stands for a number: change x and every x in the expression changes with it."
         },
         {
          "type": "fillblank",
@@ -74349,7 +74464,7 @@
       {
        "id": "mathematics-g8-ch13-l4",
        "title": "Calendar and Algebra Grids",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -74466,6 +74581,31 @@
           "17 (generated problem)",
           "7 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch13-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "algebratiles",
+         "params": {},
+         "title": "Stretch the x bars",
+         "tasks": [
+          {
+           "say": "Make 3x + 2 equal 14.",
+           "when": "x == 4",
+           "then": "3 x 4 + 2 = 14."
+          },
+          {
+           "say": "Make the value bigger than 25.",
+           "when": "3 * x + 2 > 25",
+           "then": "The bars grow 3 at a time, because there are 3 of them."
+          }
+         ],
+         "takeaway": "A letter stands for a number: change x and every x in the expression changes with it.",
+         "explanation": "A letter stands for a number: change x and every x in the expression changes with it."
         },
         {
          "type": "worked",
@@ -75559,7 +75699,7 @@
       {
        "id": "mathematics-g8-ch13-l6",
        "title": "Divisibility Tricks",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -75708,6 +75848,36 @@
           "5 (generated problem)",
           "9 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch13-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "worked",
