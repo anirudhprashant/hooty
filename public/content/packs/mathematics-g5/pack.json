@@ -19,8 +19,8 @@
  },
  "units": [
   {
-   "id": "mathematics-g5",
-   "title": "Mathematics",
+   "id": "mathematics-g5-s1",
+   "title": "Number Skills and Turns",
    "chapters": [
     {
      "id": "ch01-we-the-travellers-i",
@@ -15367,7 +15367,13 @@
        "creator": "Jorge Láscar from Australia"
       }
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "mathematics-g5-s2",
+   "title": "Sums, Distances and Multiplication",
+   "chapters": [
     {
      "id": "ch04-we-the-travellers-ii",
      "title": "We the Travellers — II",
@@ -32769,7 +32775,13 @@
        "creator": "FotoFree"
       }
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "mathematics-g5-s3",
+   "title": "Shapes, Weights and Division",
+   "chapters": [
     {
      "id": "ch07-shapes-and-patterns",
      "title": "Shapes and Patterns",
@@ -49255,7 +49267,13 @@
        "creator": "Timothy A. Gonsalves"
       }
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "mathematics-g5-s4",
+   "title": "Symmetry, Area and Time",
+   "chapters": [
     {
      "id": "ch10-symmetrical-designs",
      "title": "Symmetrical Designs",
@@ -68542,7 +68560,13 @@
        "creator": "Yann ( talk )"
       }
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "mathematics-g5-s5",
+   "title": "Factors, Places and Data",
+   "chapters": [
     {
      "id": "ch13-animal-jumps",
      "title": "Animal Jumps",
@@ -69300,7 +69324,7 @@
       {
        "id": "mathematics-g5-ch13-l2",
        "title": "Factors of 12 and First Jumps",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -69360,6 +69384,36 @@
            "p": 165
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch13-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "worked",
@@ -69738,7 +69792,7 @@
       {
        "id": "mathematics-g5-ch13-l3",
        "title": "Common Multiples and Animal Jumps",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -69787,23 +69841,61 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g5-ch13-l3-a2",
+         "type": "explore",
+         "id": "mathematics-g5-ch13-l3-play",
          "difficulty": 1,
          "tags": [
-          "common multiples",
-          "spider",
-          "grasshopper"
+          "explore"
          ],
-         "prompt": "Which numbers are common multiples of 3 and 6?",
-         "options": [
-          "6 and 12",
-          "3 and 6",
-          "4 and 8",
-          "8 and 16"
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
          ],
-         "answer": 0,
-         "explanation": "6 and 12 are common multiples of 3 and 6.",
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch13-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Robby and Deeku start at 0 on a cobbled road. Their jumps are 4 and 6. Can both reach the food at place 12?",
+         "steps": [
+          "Robby's jumps make multiples of 4, so he can land at 12.",
+          "Deeku's jumps make multiples of 6, so he can land at 12.",
+          "12 appears in both lists, because it fits each jump.",
+          "Therefore, 12 is a common multiple, and both can reach the food."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.8",
+          "3.9",
+          "3.10",
+          "3.11"
+         ],
          "src": [
           {
            "ch": 13,
@@ -69816,43 +69908,19 @@
           {
            "ch": 13,
            "p": 166
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch13-l3-a3",
-         "difficulty": 1,
-         "tags": [
-          "spider",
-          "jump pattern"
-         ],
-         "prompt": "The spider takes a jump of 3 every time.",
-         "answer": true,
-         "explanation": "Yes, the spider takes a jump of 3 every time.",
-         "src": [
+          },
           {
            "ch": 13,
-           "p": 166
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "id": "mathematics-g5-ch13-l3-a4",
-         "difficulty": 1,
-         "tags": [
-          "Robby",
-          "rabbit",
-          "jump pattern"
-         ],
-         "prompt": "Robby the rabbit takes a jump of ______ each time.",
-         "answers": [
-          "4"
-         ],
-         "hint": "Think about Robby’s jump.",
-         "explanation": "Robby the rabbit takes a jump of 4 each time.",
-         "src": [
+           "p": 167
+          },
+          {
+           "ch": 13,
+           "p": 167
+          },
+          {
+           "ch": 13,
+           "p": 167
+          },
           {
            "ch": 13,
            "p": 167
@@ -69894,6 +69962,61 @@
            "ch": 13,
            "p": 167
           },
+          {
+           "ch": 13,
+           "p": 167
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "common multiples",
+          "spider",
+          "grasshopper"
+         ],
+         "prompt": "Which numbers are common multiples of 3 and 6?",
+         "options": [
+          "6 and 12",
+          "3 and 6",
+          "4 and 8",
+          "8 and 16"
+         ],
+         "answer": 0,
+         "explanation": "6 and 12 are common multiples of 3 and 6.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 166
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g5-ch13-l3-a4",
+         "difficulty": 1,
+         "tags": [
+          "Robby",
+          "rabbit",
+          "jump pattern"
+         ],
+         "prompt": "Robby the rabbit takes a jump of ______ each time.",
+         "answers": [
+          "4"
+         ],
+         "hint": "Think about Robby’s jump.",
+         "explanation": "Robby the rabbit takes a jump of 4 each time.",
+         "src": [
           {
            "ch": 13,
            "p": 167
@@ -70111,6 +70234,268 @@
            "p": 167
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Robby starts at 0. He jumps 4 each time. Deeku jumps 6 each time. Where can they first land together?",
+         "options": [
+          "Place 4",
+          "Place 6",
+          "Place 12",
+          "Place 16"
+         ],
+         "answer": 2,
+         "why": {
+          "Place 4": "This only checks Robby's jump and forgets Deeku's jump.",
+          "Place 6": "This only checks Deeku's jump and forgets Robby's jump.",
+          "Place 16": "This only checks Robby's jump and forgets Deeku's jump."
+         },
+         "explanation": "12 is a common multiple of 4 and 6.",
+         "f": [
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.9",
+          "3.10",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 167
+          },
+          {
+           "ch": 13,
+           "p": 167
+          },
+          {
+           "ch": 13,
+           "p": 167
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "Robby starts at 0. His jump is 4 each time. Which place can he not reach with whole jumps?",
+         "options": [
+          "Place 4",
+          "Place 8",
+          "Place 12",
+          "Place 18"
+         ],
+         "answer": 3,
+         "why": {
+          "Place 4": "This forgets that 4 is a multiple of 4.",
+          "Place 8": "This forgets that 8 is a multiple of 4.",
+          "Place 12": "This forgets that 12 is a multiple of 4."
+         },
+         "explanation": "This treats 18 as a multiple of 4.",
+         "f": [
+          "3.5",
+          "3.9",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 167
+          },
+          {
+           "ch": 13,
+           "p": 167
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "Deeku starts at 0. His jump is 6 each time. Which place can he not reach with whole jumps?",
+         "options": [
+          "Place 4",
+          "Place 6",
+          "Place 12",
+          "Place 18"
+         ],
+         "answer": 0,
+         "why": {
+          "Place 6": "This forgets that 6 is a multiple of 6.",
+          "Place 12": "This forgets that 12 is a multiple of 6.",
+          "Place 18": "This forgets that 18 is a multiple of 6."
+         },
+         "explanation": "4 is not a multiple of 6, so Deeku cannot reach it.",
+         "f": [
+          "3.6",
+          "3.10",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 167
+          },
+          {
+           "ch": 13,
+           "p": 167
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A spider jumps 3 each time. A grasshopper jumps 6 each time. Which distance can they both cover with whole jumps?",
+         "options": [
+          "Distance 4",
+          "Distance 8",
+          "Distance 12",
+          "Distance 16"
+         ],
+         "answer": 2,
+         "why": {
+          "Distance 4": "This treats 4 as a common multiple, but it is not.",
+          "Distance 8": "This treats 8 as a common multiple, but it is not.",
+          "Distance 16": "This treats 16 as a common multiple, but it is not."
+         },
+         "explanation": "12 is a common multiple of 3 and 6.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 166
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "The multiples of 4 begin 4, 8, 12 and 16. The multiples of 6 begin 6, 12 and 18. Which pair contains numbers common to both lists?",
+         "options": [
+          "4 and 8",
+          "6 and 12",
+          "12 and 24",
+          "16 and 18"
+         ],
+         "answer": 2,
+         "why": {
+          "4 and 8": "This checks only the multiples of 4.",
+          "6 and 12": "This checks only the multiples of 6.",
+          "16 and 18": "Neither number fits both jump sizes."
+         },
+         "explanation": "Both 12 and 24 are common multiples of 4 and 6.",
+         "f": [
+          "3.5",
+          "3.6",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 166
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l3-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "12 and 24 are common multiples of 4 and 6. A child says there are no more. Which reason shows the mistake?",
+         "options": [
+          "The common-multiple pattern can continue.",
+          "The lists must stop at 18.",
+          "Only the first shared number counts.",
+          "12 and 24 use every multiple."
+         ],
+         "answer": 0,
+         "why": {
+          "The lists must stop at 18.": "This wrongly thinks the list of multiples must stop at 18.",
+          "Only the first shared number counts.": "This wrongly thinks only the first common multiple matters.",
+          "12 and 24 use every multiple.": "This wrongly thinks 12 and 24 use up all multiples."
+         },
+         "explanation": "The common-multiple pattern can continue, so the claim is wrong.",
+         "f": [
+          "3.4",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 166
+          },
+          {
+           "ch": 13,
+           "p": 166
+          }
+         ]
         }
        ],
        "topicScene": "media/ch13-l3-grasshopper-caught-in-a-spid-77336a.webp",
@@ -70127,7 +70512,7 @@
       {
        "id": "mathematics-g5-ch13-l4",
        "title": "Mowgli’s Trail and Common Factors",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -70235,6 +70620,43 @@
          "f": [],
          "derived": [
           "4 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch13-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Can Mowgli reach both 24 and 36 with jumps of 2?",
+         "steps": [
+          "Every jump starts at 0.",
+          "2 divides 24 exactly, so 2-jumps can reach 24.",
+          "2 also divides 36 exactly, so 2-jumps can reach 36.",
+          "Therefore, 2 is a common factor of 24 and 36."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.6",
+          "4.7",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          }
          ]
         },
         {
@@ -70947,6 +71369,221 @@
            "p": 169
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "common factor"
+         ],
+         "prompt": "Piles have 9, 21, 39, and 57 items. Which group size is a common factor?",
+         "options": [
+          "2 items in each group",
+          "3 items in each group",
+          "4 items in each group",
+          "14 items in each group"
+         ],
+         "answer": 1,
+         "why": {
+          "2 items in each group": "This assumes 2 divides every listed amount.",
+          "4 items in each group": "This assumes 4 divides every listed amount.",
+          "14 items in each group": "This wrongly uses 14 as a factor of every amount."
+         },
+         "explanation": "This is right because 3 divides 9, 21, 39, and 57 exactly.",
+         "f": [
+          "4.4",
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "From 0, hops move 3. Can 24 and 36 both be reached?",
+         "options": [
+          "Yes, because both numbers divide exactly by 3.",
+          "No, because 36 cannot be reached by 3-jumps.",
+          "No, because every jump must start at 24.",
+          "Yes, because every number is divisible by 3."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because 36 cannot be reached by 3-jumps.": "This wrongly thinks 36 does not divide exactly by 3.",
+          "No, because every jump must start at 24.": "This wrongly assumes the first jump must start at 24.",
+          "Yes, because every number is divisible by 3.": "This wrongly assumes every number divides exactly by 3."
+         },
+         "explanation": "24 and 36 divide exactly by 3, so both can be reached.",
+         "f": [
+          "4.5",
+          "4.6",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Four tables hold 4, 12, 14, and 50 plates. A child says, “2 cannot share all because 2 is not 14.” What is the best reply?",
+         "options": [
+          "2 divides 14 exactly, so it divides all four numbers.",
+          "14 is bigger than 2, so 2 cannot divide it.",
+          "A common factor must equal one of the numbers.",
+          "Only 1 and the number itself can be factors."
+         ],
+         "answer": 0,
+         "why": {
+          "14 is bigger than 2, so 2 cannot divide it.": "This wrongly thinks only numbers below 14 can divide 14.",
+          "A common factor must equal one of the numbers.": "This wrongly thinks a common factor must equal a number.",
+          "Only 1 and the number itself can be factors.": "This wrongly thinks every factor must be 1 or the number."
+         },
+         "explanation": "This is right because 2 divides 4, 12, 14, and 50 exactly.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.5",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "common factor"
+         ],
+         "prompt": "Bags hold 4 and 12 marbles. Which are common factors of both amounts?",
+         "options": [
+          "1, 2, and 4",
+          "1, 2, and 12",
+          "1, 4, and 12",
+          "2, 4, and 12"
+         ],
+         "answer": 0,
+         "why": {
+          "1, 2, and 12": "This wrongly includes 12, which cannot divide 4 exactly.",
+          "1, 4, and 12": "This wrongly includes 4, which cannot divide 12 exactly.",
+          "2, 4, and 12": "This wrongly includes 12, which cannot divide 4 exactly."
+         },
+         "explanation": "1, 2, and 4 each divide both 4 and 12 exactly.",
+         "f": [
+          "4.2",
+          "4.5",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Two games start at 0. One uses jumps of 2; another of 3. The targets are 24 and 36. What do both routes show about common factors?",
+         "options": [
+          "Both routes can reach 24 and 36.",
+          "Only the 2-jump route can reach both stops.",
+          "Only the 3-jump route can reach both stops.",
+          "Neither route can reach 24 and 36."
+         ],
+         "answer": 0,
+         "why": {
+          "Only the 2-jump route can reach both stops.": "This overlooks that 3-jumps also reach both stops.",
+          "Only the 3-jump route can reach both stops.": "This overlooks that 2-jumps also reach both stops.",
+          "Neither route can reach 24 and 36.": "This wrongly assumes neither jump size divides either stop."
+         },
+         "explanation": "Both jump sizes divide 24 and 36 exactly.",
+         "f": [
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          },
+          {
+           "ch": 13,
+           "p": 168
+          }
+         ]
         }
        ],
        "topicScene": "media/ch13-l3-grasshopper-caught-in-a-spid-77336a.webp",
@@ -70963,7 +71600,7 @@
       {
        "id": "mathematics-g5-ch13-l5",
        "title": "Hunting Days and Friends’ Places",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -71045,17 +71682,36 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch13-l5-a2",
+         "type": "worked",
+         "id": "mathematics-g5-ch13-l5-t1",
          "difficulty": 1,
          "tags": [
-          "factors",
-          "even numbers"
+          "deep",
+          "think"
          ],
-         "prompt": "Factors of even numbers must be even.",
-         "answer": false,
-         "explanation": "An even number can have odd factors too. So the statement is false.",
+         "kicker": "Let us think it through",
+         "prompt": "Sher Khan and Bagheera start hunting on the same day. Sher Khan hunts every third day, while Bagheera hunts every fifth day. When do they hunt together again?",
+         "steps": [
+          "Three days match Sher Khan's hunting cycle, so he hunts again.",
+          "Five days match Bagheera's hunting cycle, so he hunts again.",
+          "The next shared day must fit both cycles, and fifteen fits both.",
+          "Therefore, they hunt together again after fifteen days."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.7",
+          "5.8",
+          "5.9"
+         ],
          "src": [
+          {
+           "ch": 13,
+           "p": 169
+          },
+          {
+           "ch": 13,
+           "p": 169
+          },
           {
            "ch": 13,
            "p": 169
@@ -71089,16 +71745,15 @@
         },
         {
          "type": "truefalse",
-         "id": "mathematics-g5-ch13-l5-a4",
-         "difficulty": 2,
+         "id": "mathematics-g5-ch13-l5-a2",
+         "difficulty": 1,
          "tags": [
           "factors",
-          "odd numbers",
           "even numbers"
          ],
-         "prompt": "Factors of odd numbers cannot be even.",
-         "answer": true,
-         "explanation": "Every factor of an odd number is odd. So the statement is true.",
+         "prompt": "Factors of even numbers must be even.",
+         "answer": false,
+         "explanation": "An even number can have odd factors too. So the statement is false.",
          "src": [
           {
            "ch": 13,
@@ -71145,24 +71800,6 @@
          ],
          "answer": 0,
          "explanation": "The lesson states that this product is a common multiple.",
-         "src": [
-          {
-           "ch": 13,
-           "p": 169
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch13-l5-a7",
-         "difficulty": 2,
-         "tags": [
-          "factors",
-          "zero"
-         ],
-         "prompt": "0 cannot be a factor.",
-         "answer": true,
-         "explanation": "Zero cannot divide a number. So it cannot be a factor.",
          "src": [
           {
            "ch": 13,
@@ -71332,6 +71969,196 @@
            "p": 169
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "factor reasoning"
+         ],
+         "prompt": "Bagheera hunts every fifth day. Baloo's house is number 30. Which statement about five and thirty is correct?",
+         "options": [
+          "Five is a factor of thirty, and thirty is a multiple of five.",
+          "Five is not a factor, and thirty is not a multiple of five.",
+          "Five is a factor, but thirty is not a multiple of five.",
+          "Five is not a factor, but thirty is a multiple of five."
+         ],
+         "answer": 0,
+         "why": {
+          "Five is not a factor, and thirty is not a multiple of five.": "This child wrongly says odd five cannot divide or multiply to thirty.",
+          "Five is a factor, but thirty is not a multiple of five.": "This child wrongly says thirty cannot be an odd number's multiple.",
+          "Five is not a factor, but thirty is a multiple of five.": "This child wrongly says even thirty cannot have odd factor five."
+         },
+         "explanation": "Five divides thirty, and thirty is a multiple of five.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.8",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 169
+          },
+          {
+           "ch": 13,
+           "p": 169
+          },
+          {
+           "ch": 13,
+           "p": 169
+          },
+          {
+           "ch": 13,
+           "p": 169
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "factor reasoning"
+         ],
+         "prompt": "Sher Khan's house is at number 25. Baloo's house is at number 30. Kaa is at 21, and Akela is at 35. Which option is correct?",
+         "options": [
+          "Twenty-five has only odd factors; Sher Khan and Akela share five.",
+          "Twenty-five has only even factors; Sher Khan and Akela share five.",
+          "Twenty-five has only odd factors; Kaa and Baloo share five.",
+          "Twenty-five has only odd factors; Kaa and Akela share five."
+         ],
+         "answer": 0,
+         "why": {
+          "Twenty-five has only even factors; Sher Khan and Akela share five.": "This child wrongly thinks odd twenty-five has only even factors.",
+          "Twenty-five has only odd factors; Kaa and Baloo share five.": "This child wrongly says thirty is not divisible by five.",
+          "Twenty-five has only odd factors; Kaa and Akela share five.": "This child wrongly says twenty-one is divisible by five."
+         },
+         "explanation": "Twenty-five's factors are odd, and both 25 and 35 divide by five.",
+         "f": [
+          "5.3",
+          "5.10",
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 169
+          },
+          {
+           "ch": 13,
+           "p": 169
+          },
+          {
+           "ch": 13,
+           "p": 169
+          },
+          {
+           "ch": 13,
+           "p": 169
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "common multiples"
+         ],
+         "prompt": "Two friends sit on consecutive numbered seats. What is true about the product of their seat numbers?",
+         "options": [
+          "It is a common factor of both seat numbers.",
+          "It is a common multiple of both seat numbers.",
+          "It is a factor of only one seat number.",
+          "It is a multiple of neither seat number."
+         ],
+         "answer": 1,
+         "why": {
+          "It is a common factor of both seat numbers.": "This child reverses the meanings of factor and multiple.",
+          "It is a factor of only one seat number.": "This child thinks only the smaller seat number divides the product.",
+          "It is a multiple of neither seat number.": "This child thinks neither seat number divides the product."
+         },
+         "explanation": "Each seat number divides the product, making it a common multiple.",
+         "f": [
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 169
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "common factors"
+         ],
+         "prompt": "Two friends have boxes with consecutive number labels. What is their only common factor?",
+         "options": [
+          "They have no common factor.",
+          "They have only one as a common factor.",
+          "They have two as a common factor.",
+          "They share every factor of both numbers."
+         ],
+         "answer": 1,
+         "why": {
+          "They have no common factor.": "This child thinks consecutive numbers have no shared factor.",
+          "They have two as a common factor.": "This child thinks consecutive numbers also share two.",
+          "They share every factor of both numbers.": "This child thinks consecutive numbers share all their factors."
+         },
+         "explanation": "One is the only factor shared by consecutive numbers.",
+         "f": [
+          "5.5"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 169
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l5-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "zero factors"
+         ],
+         "prompt": "Zero is on the shopkeeper's factor list for every number. Which explanation shows why this is wrong?",
+         "options": [
+          "Zero cannot divide a number to give a whole-number answer.",
+          "Zero divides every number because dividing leaves zero.",
+          "Zero is a factor whenever the chosen number is zero.",
+          "Zero divides a number because zero times any number is zero."
+         ],
+         "answer": 0,
+         "why": {
+          "Zero divides every number because dividing leaves zero.": "This child confuses the result of dividing with the divisor.",
+          "Zero is a factor whenever the chosen number is zero.": "This child confuses having zero with dividing by zero.",
+          "Zero divides a number because zero times any number is zero.": "This child confuses multiplying by zero with dividing by zero."
+         },
+         "explanation": "Dividing by zero cannot give a whole-number answer.",
+         "f": [
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 169
+          }
+         ]
         }
        ],
        "topicScene": "media/ch13-l3-grasshopper-caught-in-a-spid-77336a.webp",
@@ -71348,7 +72175,7 @@
       {
        "id": "mathematics-g5-ch13-l6",
        "title": "Sorting the Numbers",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -71487,6 +72314,58 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch13-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "At school, some number-sorting box labels overlap. What should a careful child do?",
+         "steps": [
+          "First, 22 fits 2-only because 22 is divisible only by 2.",
+          "Next, 90 fits 2, 5 and 10 because it divides by each.",
+          "Then, 40 fits it because it divides by 2, 5 and 10.",
+          "So the teacher must check the overlapping final labels before sorting."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.3",
+          "6.5",
+          "6.6",
+          "6.8",
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch13-l6-a2",
          "difficulty": 1,
@@ -71621,29 +72500,6 @@
            "ch": 13,
            "p": 170
           },
-          {
-           "ch": 13,
-           "p": 170
-          },
-          {
-           "ch": 13,
-           "p": 170
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch13-l6-a5",
-         "difficulty": 2,
-         "tags": [
-          "numbers",
-          "divisible",
-          "groups"
-         ],
-         "prompt": "The number 40 belongs with numbers divisible by 2, 5 and 10.",
-         "answer": true,
-         "explanation": "40 is divisible by 2, 5 and 10.",
-         "src": [
           {
            "ch": 13,
            "p": 170
@@ -72122,6 +72978,324 @@
           "56 (generated problem)",
           "75 (generated problem)"
          ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g5-ch13-l6-a7",
+         "difficulty": 3,
+         "tags": [
+          "numbers",
+          "sorting",
+          "order"
+         ],
+         "prompt": "Put these numbers in ascending order.",
+         "items": [
+          "38",
+          "22",
+          "40",
+          "30"
+         ],
+         "explanation": "From smallest to largest, the order is 22, 30, 38 and 40.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classification"
+         ],
+         "prompt": "A toy shop has number cards marked 22, 38, and 66. Which box should take all three?",
+         "options": [
+          "Use the box for numbers divisible only by 2.",
+          "Use the box for numbers divisible only by 5.",
+          "Use the box for numbers divisible by 2, 5 and 10.",
+          "Use the box for numbers divisible only by 10."
+         ],
+         "answer": 0,
+         "why": {
+          "Use the box for numbers divisible only by 5.": "This confuses 2-only numbers with numbers divisible by 5.",
+          "Use the box for numbers divisible by 2, 5 and 10.": "None is divisible by 5 or 10, so this rule does not fit.",
+          "Use the box for numbers divisible only by 10.": "None is divisible by 10, so this rule does not fit."
+         },
+         "explanation": "Each is divisible by 2, but not by 5 or 10.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "error analysis"
+         ],
+         "prompt": "A game shows 75, 45, and 25 beside a 22 card. Why should the cards move?",
+         "options": [
+          "Use the rule for numbers divisible only by 5.",
+          "Use the rule for numbers divisible only by 2.",
+          "Use the rule for numbers divisible by 2, 5 and 10.",
+          "Use the rule for numbers divisible only by 10."
+         ],
+         "answer": 0,
+         "why": {
+          "Use the rule for numbers divisible only by 2.": "They are not divisible by 2, so this rule does not fit.",
+          "Use the rule for numbers divisible by 2, 5 and 10.": "They are not divisible by 2 or 10, so this rule does not fit.",
+          "Use the rule for numbers divisible only by 10.": "They are not divisible by 10, so this rule does not fit."
+         },
+         "explanation": "75, 45 and 25 divide by 5, but not by 2.",
+         "f": [
+          "6.2",
+          "6.4",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classification"
+         ],
+         "prompt": "At a sorting game, cards show 62, 40, 84, and 56. Which cards fit the 2-only box?",
+         "options": [
+          "62, 84 and 56",
+          "40, 84 and 56",
+          "62, 40 and 84",
+          "40, 62 and 56"
+         ],
+         "answer": 0,
+         "why": {
+          "40, 84 and 56": "This includes 40, which is also divisible by 5 and 10.",
+          "62, 40 and 84": "This includes 40, which is also divisible by 5 and 10.",
+          "40, 62 and 56": "This includes 40, which is also divisible by 5 and 10."
+         },
+         "explanation": "62, 84 and 56 are divisible only by 2.",
+         "f": [
+          "6.3",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "rule application"
+         ],
+         "prompt": "At a sorting game, cards show 84 and 30. Which boxes should take them?",
+         "options": [
+          "84 in 2-only; 30 in 2, 5 and 10.",
+          "84 in 5-only; 30 in 2-only.",
+          "84 in 10-only; 30 in 2-only.",
+          "30 in 2-only; 84 in 5-only."
+         ],
+         "answer": 0,
+         "why": {
+          "84 in 5-only; 30 in 2-only.": "This wrongly treats 84 as divisible only by 5.",
+          "84 in 10-only; 30 in 2-only.": "This wrongly treats 84 as divisible only by 10.",
+          "30 in 2-only; 84 in 5-only.": "This wrongly treats 30 as divisible only by 2."
+         },
+         "explanation": "84 fits 2-only; 30 fits 2, 5 and 10.",
+         "f": [
+          "6.1",
+          "6.3",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l6-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classification"
+         ],
+         "prompt": "A sorting game has cards 90, 30, and 40. Which cards fit the 2, 5 and 10 box?",
+         "options": [
+          "90, 30 and 40",
+          "90, 30 and 56",
+          "40, 56 and 62",
+          "75, 45 and 25"
+         ],
+         "answer": 0,
+         "why": {
+          "90, 30 and 56": "This leaves out 40, which is divisible by 2, 5 and 10.",
+          "40, 56 and 62": "This leaves out 90, which is divisible by 2, 5 and 10.",
+          "75, 45 and 25": "This wrongly uses cards that are divisible only by 5."
+         },
+         "explanation": "90, 30 and 40 are each divisible by 2, 5 and 10.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          },
+          {
+           "ch": 13,
+           "p": 170
+          }
+         ]
         }
        ],
        "topicScene": "media/ch13-l3-grasshopper-caught-in-a-spid-77336a.webp",
@@ -72138,7 +73312,7 @@
       {
        "id": "mathematics-g5-ch13-exam",
        "title": "Test practice",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 20,
        "topicScene": "media/ch13-l3-grasshopper-caught-in-a-spid-77336a.webp",
        "sceneAlt": "A grasshopper wanders into a spider web in Pennsylvania and quickly escapes.",
        "sceneCaption": "A grasshopper wanders into a spider web, then escapes quickly.",
@@ -72279,6 +73453,222 @@
           "Explains that each factor divides 12 completely.",
           "Explains that 12 is a multiple of its factors.",
           "Explains that 12 is a multiple of itself."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At the end of a cobbled road, food is available. Robby the rabbit and Deeku the deer both start at 0. Robby jumps 4 each time, while Deeku jumps 6 each time. A spider jumps 3 each time, and a grasshopper jumps 6 each time. They continue their patterns along the road, looking for common multiples where their jump positions match before reaching the food.",
+         "prompt": "Robby and Deeku are both at 12. After each makes one more jump, where will they be?",
+         "options": [
+          "Robby will be at 16 and Deeku will be at 18.",
+          "Robby will be at 18 and Deeku will be at 16.",
+          "Robby will be at 16 and Deeku will be at 12.",
+          "Robby and Deeku will both be at 18."
+         ],
+         "answer": 0,
+         "why": {
+          "Robby will be at 18 and Deeku will be at 16.": "Deeku moves from 12 to 18 with a jump of 6.",
+          "Robby will be at 16 and Deeku will be at 12.": "The jump sizes were reversed in this option.",
+          "Robby and Deeku will both be at 18.": "Deeku must move forward by 6 rather than stay at 12."
+         },
+         "explanation": "Robby moves from 12 to 16 with a jump of 4."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At the end of a cobbled road, food is available. Robby the rabbit and Deeku the deer both start at 0. Robby jumps 4 each time, while Deeku jumps 6 each time. A spider jumps 3 each time, and a grasshopper jumps 6 each time. They continue their patterns along the road, looking for common multiples where their jump positions match before reaching the food.",
+         "prompt": "If Robby changes to jumps of 3 while Deeku keeps jumping 6, what is their next shared landing after 6?",
+         "options": [
+          "4",
+          "8",
+          "12",
+          "16"
+         ],
+         "answer": 2,
+         "why": {
+          "4": "4 is not a multiple of 6.",
+          "8": "8 is not a multiple of 3 or 6.",
+          "16": "16 is not a multiple of 3 or 6."
+         },
+         "explanation": "6 and 12 are common multiples of 3 and 6."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch13-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why 12 and 24 are useful common multiples for Robby and Deeku.",
+         "answer": "12 and 24 are common multiples of 4 and 6. This means Robby, who jumps 4 each time, and Deeku, who jumps 6 each time, can both reach those positions using whole jumps. Their shared positions help them compare their progress along the cobbled road toward the food.",
+         "points": [
+          "Names 12 and 24.",
+          "Identifies 4 and 6 as the jump sizes being compared.",
+          "Explains that both animals can reach the positions using whole jumps.",
+          "Explains how shared positions help compare progress."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch13-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why jumps of 2 and jumps of 3 can both reach 24 and 36 from 0.",
+         "answer": "Both 2 and 3 divide 24 and 36 exactly, so each is a common factor of the pair. Because every jump begins at 0, using either jump size allows Mowgli to land on both targets. The targets do not need to be equal; they only need to be reached by the same jump size.",
+         "points": [
+          "2 divides both targets exactly.",
+          "3 divides both targets exactly.",
+          "Every jump starts from 0.",
+          "The same jump size can reach both targets."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Sher Khan the tiger and Bagheera the panther start hunting on the same day. Sher Khan hunts every third day, and Bagheera hunts every fifth day. Their friends’ houses are at these numbers: Sher Khan at 25, Baloo at 30, Kaa at 21, and Akela at 35. They check the house numbers and hunting intervals when planning their hunting days.",
+         "prompt": "Bagheera changes his hunting plan from every fifth day to every third day. What will happen to the animals’ hunting pattern?",
+         "options": [
+          "Both animals will have the same repeating cycle.",
+          "Sher Khan’s hunting interval will change to every fifth day.",
+          "Bagheera’s hunting interval will remain every fifth day.",
+          "Only their starting day will have matching intervals."
+         ],
+         "answer": 0,
+         "why": {
+          "Sher Khan’s hunting interval will change to every fifth day.": "Only Bagheera changes his plan; Sher Khan stays on every third day.",
+          "Bagheera’s hunting interval will remain every fifth day.": "The change makes Bagheera use every third day too.",
+          "Only their starting day will have matching intervals.": "Once the intervals match, later hunting days match as well."
+         },
+         "explanation": "Both animals will now repeat every third day."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Sher Khan the tiger and Bagheera the panther start hunting on the same day. Sher Khan hunts every third day, and Bagheera hunts every fifth day. Their friends’ houses are at these numbers: Sher Khan at 25, Baloo at 30, Kaa at 21, and Akela at 35. They check the house numbers and hunting intervals when planning their hunting days.",
+         "prompt": "Baloo at 30 says that multiples of odd numbers cannot be even and that every factor of an even number must be even. Which response corrects both claims?",
+         "options": [
+          "Both claims are false: 1 is an odd factor of 30, and 30 is an even multiple of 1.",
+          "Both claims are true: 30 is even and 1 is odd.",
+          "The first claim is false, but the second claim is true.",
+          "Both claims are false: 30 has no odd factors or odd-number multiples."
+         ],
+         "answer": 0,
+         "why": {
+          "Both claims are true: 30 is even and 1 is odd.": "The parity of 30 and 1 does not make either general claim true.",
+          "The first claim is false, but the second claim is true.": "The odd factor 1 also makes the second claim false.",
+          "Both claims are false: 30 has no odd factors or odd-number multiples.": "30 does have 1 as an odd factor and an odd-number multiple."
+         },
+         "explanation": "1 divides 30 exactly, and 30 is a multiple of the odd number 1."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch13-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How do factors and multiples help explain the hunting pattern shared by Sher Khan and Bagheera?",
+         "answer": "A factor divides a number exactly, while a multiple is the result of multiplication. Sher Khan’s hunting days repeat every 3 days and Bagheera’s every 5 days. A shared hunting day must therefore be a multiple of both 3 and 5.",
+         "points": [
+          "A factor divides a number exactly.",
+          "A multiple is obtained by multiplication.",
+          "Sher Khan’s hunting interval is 3 days.",
+          "Bagheera’s interval is 5 days, so a shared day must fit both."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student is sorting the four number sets from the lesson into four labelled boxes. The first set starts with 90, 22, 38 and 30; the next contains 75, 45, 66 and 78. Another set is 62, 40, 84 and 56, and the final list is 84, 56, 25, 95 and 55. The boxes are for numbers divisible only by 2, only by 5, by 2, 5 and 10, or only by 10. The student must place each number in the correct box.",
+         "prompt": "Using the first set, which number should the student put in the box for numbers divisible only by 2?",
+         "options": [
+          "Put 22 in that box.",
+          "Put 90 in that box.",
+          "Put 75 in that box.",
+          "Put 25 in that box."
+         ],
+         "answer": 0,
+         "why": {
+          "Put 90 in that box.": "90 is also divisible by 5 and 10.",
+          "Put 75 in that box.": "75 is divisible by 5 rather than 2.",
+          "Put 25 in that box.": "25 is divisible by 5 rather than 2."
+         },
+         "explanation": "22 is divisible by 2 but not by 5 or 10."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch13-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student is sorting the four number sets from the lesson into four labelled boxes. The first set starts with 90, 22, 38 and 30; the next contains 75, 45, 66 and 78. Another set is 62, 40, 84 and 56, and the final list is 84, 56, 25, 95 and 55. The boxes are for numbers divisible only by 2, only by 5, by 2, 5 and 10, or only by 10. The student must place each number in the correct box.",
+         "prompt": "When checking the final list, which number belongs in the box for numbers divisible only by 5?",
+         "options": [
+          "Choose 25.",
+          "Choose 84.",
+          "Choose 56.",
+          "Choose 40."
+         ],
+         "answer": 0,
+         "why": {
+          "Choose 84.": "84 is divisible by 2 rather than 5.",
+          "Choose 56.": "56 is divisible by 2 rather than 5.",
+          "Choose 40.": "40 is divisible by 2, 5 and 10."
+         },
+         "explanation": "25 is divisible by 5 but not by 2 or 10."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch13-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the four group labels are used when sorting the numbers.",
+         "answer": "The 2-only and 5-only boxes take numbers that pass one divisibility test without passing the others. The third box is for numbers divisible by 2, 5 and 10. Care is needed with the 10-only box, because divisibility by 10 also meets the tests for 2 and 5.",
+         "points": [
+          "Identifies the 2-only condition",
+          "Identifies the 5-only condition",
+          "Explains the combined 2, 5 and 10 condition",
+          "Recognises the possible overlap with the 10-only label"
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         }
@@ -74250,7 +75640,7 @@
       {
        "id": "mathematics-g5-ch14-l3",
        "title": "Zoo Trip and Bus Route",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -74305,6 +75695,42 @@
            "ch": 14,
            "p": 174
           },
+          {
+           "ch": 14,
+           "p": 174
+          },
+          {
+           "ch": 14,
+           "p": 174
+          },
+          {
+           "ch": 14,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch14-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "The bus leaves parking, goes north, then turns right. Which way now?",
+         "steps": [
+          "The bus starts at the parking area and first goes north.",
+          "Turning right from north leads east, because east is on the right.",
+          "So, after the turn, the bus travels east."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.6",
+          "3.7",
+          "3.8"
+         ],
+         "src": [
           {
            "ch": 14,
            "p": 174
@@ -74456,29 +75882,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch14-l3-a9",
-         "difficulty": 3,
-         "tags": [
-          "bus",
-          "parking area",
-          "north"
-         ],
-         "prompt": "The bus starts at the parking area before going north.",
-         "answer": true,
-         "explanation": "Yes, the bus starts at the parking area and first goes north.",
-         "src": [
-          {
-           "ch": 14,
-           "p": 174
-          },
-          {
-           "ch": 14,
-           "p": 174
-          }
-         ]
-        },
-        {
          "type": "fillblank",
          "difficulty": 1,
          "tags": [
@@ -74540,6 +75943,233 @@
            "p": 174
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "timing check"
+         ],
+         "prompt": "A child reaches the stop after 8:00 a.m. Was this on time?",
+         "options": [
+          "She does; reaching the stop after 8:00 a.m. is enough.",
+          "She does not; she reached the stop after 8:00 a.m.",
+          "She does not; the bus leaves after 8:00 a.m.",
+          "She does; she reached the stop before 8:00 a.m."
+         ],
+         "answer": 1,
+         "why": {
+          "She does; reaching the stop after 8:00 a.m. is enough.": "This mistakes a later arrival for meeting an earlier deadline.",
+          "She does not; the bus leaves after 8:00 a.m.": "This assumes an unstated bus departure time.",
+          "She does; she reached the stop before 8:00 a.m.": "This wrongly treats an after-time arrival as an on-time arrival."
+         },
+         "explanation": "She arrived after the required 8:00 a.m. time.",
+         "f": [
+          "3.1"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "route evidence"
+         ],
+         "prompt": "The school bus goes to Qutb Minar. Does it take the children straight to the zoo?",
+         "options": [
+          "No. The zoo uses the school bus instead of a metro train.",
+          "No. The metro train goes to Qutb Minar before the zoo visit.",
+          "No. The bus goes to Qutb Minar; the zoo uses metro.",
+          "No. The children walk to the zoo after visiting Qutb Minar."
+         ],
+         "answer": 2,
+         "why": {
+          "No. The zoo uses the school bus instead of a metro train.": "This swaps the school bus and metro train journeys.",
+          "No. The metro train goes to Qutb Minar before the zoo visit.": "This assigns the metro trip to the wrong destination.",
+          "No. The children walk to the zoo after visiting Qutb Minar.": "This replaces the stated metro train with walking."
+         },
+         "explanation": "The bus goes to Qutb Minar, while the zoo visit uses metro.",
+         "f": [
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 173
+          },
+          {
+           "ch": 14,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "claim correction"
+         ],
+         "prompt": "The map shows the bus route with dotted lines. Does that mean the metro uses them?",
+         "options": [
+          "Yes. Metro uses dotted lines, and the bus uses solid lines.",
+          "No. The dotted lines show where the children will visit.",
+          "No. The map marks the zoo visit with plain solid lines.",
+          "No. Dotted lines show the bus route, while metro reaches the zoo."
+         ],
+         "answer": 3,
+         "why": {
+          "Yes. Metro uses dotted lines, and the bus uses solid lines.": "This wrongly assigns dotted lines to metro and solid lines to bus.",
+          "No. The dotted lines show where the children will visit.": "This confuses a route marking with the places children visit.",
+          "No. The map marks the zoo visit with plain solid lines.": "This invents a solid-line marking for the zoo visit."
+         },
+         "explanation": "Dotted lines show the bus route; the zoo visit uses metro.",
+         "f": [
+          "3.3",
+          "3.4"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 173
+          },
+          {
+           "ch": 14,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "spatial reasoning"
+         ],
+         "prompt": "The model bus first goes north. After a right turn, which way does it face?",
+         "options": [
+          "It faces west, because a right turn from north is west.",
+          "It faces east, because a right turn from north is east.",
+          "It faces south, because a right turn from north is south.",
+          "It stays north, because a right turn does not change direction."
+         ],
+         "answer": 1,
+         "why": {
+          "It faces west, because a right turn from north is west.": "This confuses a right turn with a left turn.",
+          "It faces south, because a right turn from north is south.": "This confuses a right turn with a turn around.",
+          "It stays north, because a right turn does not change direction.": "This wrongly treats a turn as continuing straight."
+         },
+         "explanation": "Turning right from north makes the bus face east.",
+         "f": [
+          "3.7",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 174
+          },
+          {
+           "ch": 14,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "route reasoning"
+         ],
+         "prompt": "The bus starts at the parking area. Does it skip both pickup stops?",
+         "options": [
+          "No. It starts there and picks up children at one stop.",
+          "No. It starts there but picks up no children at all.",
+          "No. It starts there but still picks up children at both stops.",
+          "No. It starts there and picks up children before leaving parking."
+         ],
+         "answer": 2,
+         "why": {
+          "No. It starts there and picks up children at one stop.": "This mistakes starting point for the number of pickup stops.",
+          "No. It starts there but picks up no children at all.": "This wrongly assumes that starting at parking means no pickups.",
+          "No. It starts there and picks up children before leaving parking.": "This places pickup before the bus leaves its starting point."
+         },
+         "explanation": "Starting at parking does not remove the two pickup stops.",
+         "f": [
+          "3.5",
+          "3.6",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 173
+          },
+          {
+           "ch": 14,
+           "p": 174
+          },
+          {
+           "ch": 14,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l3-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "map evidence"
+         ],
+         "prompt": "The map includes Park Road and Rohan’s House. Are both pickup stops?",
+         "options": [
+          "No. Only Stop 1 and Stop 2 are named as pickup stops.",
+          "No. Park Road and Rohan’s House are both bus stops.",
+          "No. Rohan’s House is the only named pickup place.",
+          "No. Market Road and Shopping Centre are the two pickup stops."
+         ],
+         "answer": 0,
+         "why": {
+          "No. Park Road and Rohan’s House are both bus stops.": "This assumes every marked place is a pickup stop.",
+          "No. Rohan’s House is the only named pickup place.": "This mistakes one included house for a named pickup place.",
+          "No. Market Road and Shopping Centre are the two pickup stops.": "This mistakes included roads and places for pickup stops."
+         },
+         "explanation": "The facts name Stop 1 and Stop 2, not these map places.",
+         "f": [
+          "3.5",
+          "3.9",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 173
+          },
+          {
+           "ch": 14,
+           "p": 174
+          },
+          {
+           "ch": 14,
+           "p": 174
+          }
+         ]
         }
        ],
        "topicScene": "media/ch14-l3-qutb-minar-2011-949e66.webp",
@@ -74556,7 +76186,7 @@
       {
        "id": "mathematics-g5-ch14-l4",
        "title": "Delhi Metro Train Stations and Let Us Do",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -74625,6 +76255,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch14-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Children need to understand their zoo trip from the metro map. What should they look for?",
+         "steps": [
+          "They begin at Qutb Minar station, because their bus journey ends there.",
+          "They check the key, because it explains the map's symbols.",
+          "They compare coloured lines, because each colour shows a different route.",
+          "They get off at Supreme Court station. They reach the zoo from there."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 175
+          },
+          {
+           "ch": 14,
+           "p": 175
+          },
+          {
+           "ch": 14,
+           "p": 175
+          },
+          {
+           "ch": 14,
+           "p": 175
+          },
+          {
+           "ch": 14,
+           "p": 175
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch14-l4-a2",
          "difficulty": 1,
@@ -74642,25 +76319,6 @@
          ],
          "answer": 2,
          "explanation": "They get off the bus at the Qutb Minar metro station.",
-         "src": [
-          {
-           "ch": 14,
-           "p": 175
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch14-l4-a3",
-         "difficulty": 1,
-         "tags": [
-          "metro map",
-          "reference"
-         ],
-         "title": "A Helpful Map",
-         "prompt": "A metro map is provided for reference.",
-         "answer": true,
-         "explanation": "The lesson provides a metro map to help you.",
          "src": [
           {
            "ch": 14,
@@ -74765,25 +76423,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch14-l4-a7",
-         "difficulty": 2,
-         "tags": [
-          "coloured lines",
-          "routes"
-         ],
-         "title": "Different Colours",
-         "prompt": "Different coloured lines represent the same metro route.",
-         "answer": false,
-         "explanation": "Each coloured line represents a different metro route.",
-         "src": [
-          {
-           "ch": 14,
-           "p": 175
-          }
-         ]
-        },
-        {
          "type": "dragorder",
          "id": "mathematics-g5-ch14-l4-a8",
          "difficulty": 3,
@@ -74840,6 +76479,154 @@
            "p": 176
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "sequence"
+         ],
+         "prompt": "The bus ends at Qutb Minar station. The zoo comes after the metro ride. What is the correct order?",
+         "options": [
+          "Qutb Minar, then Supreme Court",
+          "Supreme Court, then Qutb Minar",
+          "Hauz Khas, then Supreme Court",
+          "Supreme Court, then Hauz Khas"
+         ],
+         "answer": 0,
+         "why": {
+          "Supreme Court, then Qutb Minar": "This reverses the bus and metro stops.",
+          "Hauz Khas, then Supreme Court": "This starts at the change station instead of the bus stop.",
+          "Supreme Court, then Hauz Khas": "This puts the zoo stop before the bus stop."
+         },
+         "explanation": "They leave the bus at Qutb Minar and the metro at Supreme Court.",
+         "f": [
+          "4.1",
+          "4.2"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 175
+          },
+          {
+           "ch": 14,
+           "p": 175
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "route change"
+         ],
+         "prompt": "A child starts on the Yellow Line. At Hauz Khas, what should the child do next?",
+         "options": [
+          "Change onto the Magenta Line",
+          "Change onto the Blue Line",
+          "Stay on the Yellow Line",
+          "Return back to the bus"
+         ],
+         "answer": 0,
+         "why": {
+          "Change onto the Blue Line": "The child may confuse Supreme Court's line with Lali's change.",
+          "Stay on the Yellow Line": "Staying on Yellow misses the change Lali suggested.",
+          "Return back to the bus": "Lali's change is between metro lines, not back to the bus."
+         },
+         "explanation": "Lali's plan says to change to Magenta at Hauz Khas.",
+         "f": [
+          "4.7",
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 175
+          },
+          {
+           "ch": 14,
+           "p": 176
+          },
+          {
+           "ch": 14,
+           "p": 176
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "map use"
+         ],
+         "prompt": "A child needs to understand a mark on the metro map. Which parts should they use together?",
+         "options": [
+          "The metro map and its key",
+          "The bus route and station key",
+          "The school map and its key",
+          "The station queue and route list"
+         ],
+         "answer": 0,
+         "why": {
+          "The bus route and station key": "A bus route and station key do not explain this metro mark.",
+          "The school map and its key": "The school map and its key do not explain a metro mark.",
+          "The station queue and route list": "A waiting queue and route list are not the map and symbol key."
+         },
+         "explanation": "The map gives the route, and the key explains its symbols.",
+         "f": [
+          "4.3",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 175
+          },
+          {
+           "ch": 14,
+           "p": 175
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "A child sees two coloured paths on the metro map. The child thinks both show one route. What is wrong?",
+         "options": [
+          "Different colours show different routes",
+          "Different colours show different station names",
+          "Different colours show different symbols",
+          "Different colours show different bus routes"
+         ],
+         "answer": 0,
+         "why": {
+          "Different colours show different station names": "The child is confusing route colours with station names.",
+          "Different colours show different symbols": "The child is confusing route colours with symbol meanings.",
+          "Different colours show different bus routes": "The child is confusing metro routes with bus routes."
+         },
+         "explanation": "Different coloured lines represent different metro routes.",
+         "f": [
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 175
+          }
+         ]
         }
        ],
        "topicScene": "media/ch14-l4-qutab-minar-hd-5cb70c.webp",
@@ -74856,7 +76643,7 @@
       {
        "id": "mathematics-g5-ch14-l5",
        "title": "Anthill in the Zoo",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -74977,6 +76764,58 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch14-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "An ant is on a dotted grid and must reach the laddoos. What distance and direction should it write?",
+         "steps": [
+          "The ant can crawl only along the dotted lines.",
+          "It moves from its starting position.",
+          "The one-centimetre marks help measure how far it travels.",
+          "The arrows give the direction: 2 cm east to the laddoos."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch14-l5-a2",
          "difficulty": 1,
@@ -75002,17 +76841,20 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch14-l5-a3",
+         "type": "fillblank",
+         "id": "mathematics-g5-ch14-l5-a4",
          "difficulty": 1,
          "tags": [
-          "arrows",
-          "directions",
-          "movement"
+          "laddoos",
+          "distance",
+          "east"
          ],
-         "prompt": "The arrows show the direction in which the ant can move.",
-         "answer": true,
-         "explanation": "The arrows guide the ant's allowed direction of movement.",
+         "prompt": "To reach the laddoos, the ant crawls ______ cm east.",
+         "answers": [
+          "2"
+         ],
+         "hint": "Use the distance given for the laddoos.",
+         "explanation": "The route to the laddoos is 2 cm east.",
          "src": [
           {
            "ch": 14,
@@ -75733,6 +77575,169 @@
            "p": 177
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "record distance"
+         ],
+         "prompt": "The ant follows an east-pointing arrow. It travels over two one-centimetre marks. What should it record?",
+         "options": [
+          "2 cm east",
+          "2 cm west",
+          "2 marks east",
+          "2 cm north"
+         ],
+         "answer": 0,
+         "why": {
+          "2 cm west": "The path goes east, so west gives the wrong direction.",
+          "2 marks east": "The route needs a distance in centimetres, not just marks.",
+          "2 cm north": "East is the stated direction, so north gives the wrong direction."
+         },
+         "explanation": "Two one-centimetre marks equal 2 cm, and east gives the direction.",
+         "f": [
+          "5.2",
+          "5.3",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "route length"
+         ],
+         "prompt": "The route to the bread needs two movements. The route to the apple needs three. Why does this not prove that the apple route is longer?",
+         "options": [
+          "More movements do not always mean a greater distance.",
+          "Fewer movements can never reach any food.",
+          "Each movement must cover exactly one centimetre.",
+          "The longest route always has more turns."
+         ],
+         "answer": 0,
+         "why": {
+          "Fewer movements can never reach any food.": "This wrongly says that a two-movement route cannot work.",
+          "Each movement must cover exactly one centimetre.": "The facts do not say that every movement covers one centimetre.",
+          "The longest route always has more turns.": "This wrongly uses turns instead of total distance."
+         },
+         "explanation": "Movement count alone does not show the total distance of each route.",
+         "f": [
+          "5.7",
+          "5.8",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "shortest route"
+         ],
+         "prompt": "Several routes reach the apple. Each movement covers one centimetre. Which route is the shortest route?",
+         "options": [
+          "The route with the fewest movements.",
+          "The route with the most movements.",
+          "The route written first on the grid.",
+          "The route that changes direction most often."
+         ],
+         "answer": 0,
+         "why": {
+          "The route with the most movements.": "More movements cover more distance when each movement is 1 cm.",
+          "The route written first on the grid.": "Writing a route first does not make it the shortest.",
+          "The route that changes direction most often.": "Changing direction often does not make a route shortest."
+         },
+         "explanation": "With 1 cm movements, the fewest movements give the shortest distance.",
+         "f": [
+          "5.9",
+          "5.10",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "distance direction"
+         ],
+         "prompt": "The route to the sugar needs a distance and a direction. A child writes only east. What is missing, and why?",
+         "options": [
+          "The distance, because a direction alone is not enough.",
+          "The arrow, because the distance already shows the way.",
+          "The starting point, because every route must begin there.",
+          "The bread route, because the sugar route needs two movements."
+         ],
+         "answer": 0,
+         "why": {
+          "The arrow, because the distance already shows the way.": "The arrow is already represented by the stated direction.",
+          "The starting point, because every route must begin there.": "A starting position does not replace the missing distance.",
+          "The bread route, because the sugar route needs two movements.": "Only the bread route needs two movements, not the sugar route."
+         },
+         "explanation": "The route needs both distance and direction, so east is incomplete.",
+         "f": [
+          "5.3",
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 177
+          },
+          {
+           "ch": 14,
+           "p": 177
+          }
+         ]
         }
        ],
        "topicScene": "media/ch14-l1-siberian-crane-grus-leucoger-3a1292.webp",
@@ -75749,7 +77754,7 @@
       {
        "id": "mathematics-g5-ch14-l6",
        "title": "Locating Animals in the Zoological Park",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -75866,6 +77871,53 @@
           "5 (generated problem)",
           "6 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch14-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "At the zoo, a child starts at zero. How can the child reach the tortoise on the map?",
+         "steps": [
+          "Start at zero because the route begins there.",
+          "Move four steps east because the first number is horizontal.",
+          "Move one step north because the second number is vertical.",
+          "End at (4,1), where the tortoise is marked."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6",
+          "6.8"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          }
          ]
         },
         {
@@ -76274,6 +78326,105 @@
            "p": 178
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "route planning"
+         ],
+         "prompt": "The panda is where the first row and first column meet. From zero, how should we walk to it?",
+         "options": [
+          "One north, then one east",
+          "Four east, then one north",
+          "Four north, then one east",
+          "One east, then one north"
+         ],
+         "answer": 3,
+         "why": {
+          "One north, then one east": "This starts north, but horizontal movement must come first.",
+          "Four east, then one north": "Four east reaches a later column, not the first column.",
+          "Four north, then one east": "Four north reaches a later row, not the first row."
+         },
+         "explanation": "East reaches the first column, and north reaches the first row.",
+         "f": [
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "grid movement"
+         ],
+         "prompt": "At zero, a child moves one step north, then one step east. Where is the child?",
+         "options": [
+          "First row, first column",
+          "First row, fourth column",
+          "Fourth row, first column",
+          "Fourth row, fourth column"
+         ],
+         "answer": 0,
+         "why": {
+          "First row, fourth column": "East is correct, but four would reach the fourth column.",
+          "Fourth row, first column": "The child wrongly counts four north steps instead of one.",
+          "Fourth row, fourth column": "The child wrongly counts four steps in both directions."
+         },
+         "explanation": "North reaches the first row, and east reaches the first column.",
+         "f": [
+          "6.3",
+          "6.4",
+          "6.5"
+         ],
+         "src": [
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          },
+          {
+           "ch": 14,
+           "p": 178
+          }
+         ]
         }
        ],
        "topicScene": "media/ch14-l6-giraffe-delhi-zoo-ad893d.webp",
@@ -76290,7 +78441,7 @@
       {
        "id": "mathematics-g5-ch14-exam",
        "title": "Test practice",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 20,
        "topicScene": "media/ch14-l1-siberian-crane-grus-leucoger-3a1292.webp",
        "sceneAlt": "A Siberian crane photographed in Keoladeo Ghana National Park at Bharatpur, Rajasthan, India.",
        "sceneCaption": "A Siberian crane from the Bharatpur sanctuary in Rajasthan, India.",
@@ -76431,6 +78582,198 @@
           "Shows that the blue tent is west of the road",
           "Shows that the green tent is closest to the lake",
           "Uses the girl at the centre as the reference for room directions"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A street map shows Park Road, Rohan’s House, Tinku’s House, Market Road, Shopping Centre and the parking area. Dotted lines show the school bus route. The bus starts from the parking area, first goes north and then takes a right turn. It picks up children at Stop 1 and Stop 2 and goes to the Qutb Minar in Delhi. The children will visit the zoo by a metro train. They must reach the nearby bus stop by 8:00 a.m.",
+         "prompt": "The bus has completed its first northward movement from the parking area. What should the student expect next?",
+         "options": [
+          "It will change direction and follow the next part of the dotted route.",
+          "It will return to the parking area before picking up children.",
+          "It will begin the children’s metro train journey.",
+          "It will pick up children before changing direction."
+         ],
+         "answer": 0,
+         "why": {
+          "It will return to the parking area before picking up children.": "Returning to the parking area is not the next stated step.",
+          "It will begin the children’s metro train journey.": "The metro train is used for the zoo visit.",
+          "It will pick up children before changing direction.": "The direction change comes before pickup at the stops."
+         },
+         "explanation": "The route calls for a turn after the first northward part."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A street map shows Park Road, Rohan’s House, Tinku’s House, Market Road, Shopping Centre and the parking area. Dotted lines show the school bus route. The bus starts from the parking area, first goes north and then takes a right turn. It picks up children at Stop 1 and Stop 2 and goes to the Qutb Minar in Delhi. The children will visit the zoo by a metro train. They must reach the nearby bus stop by 8:00 a.m.",
+         "prompt": "If the bus’s first direction were changed, what should the student notice?",
+         "options": [
+          "The journey would no longer match the dotted route from the parking area.",
+          "Park Road and Rohan’s House would disappear from the map.",
+          "Market Road and the Shopping Centre would change names.",
+          "Stop 1 and Stop 2 would move to another part of the map."
+         ],
+         "answer": 0,
+         "why": {
+          "Park Road and Rohan’s House would disappear from the map.": "Changing the route does not remove landmarks from the map.",
+          "Market Road and the Shopping Centre would change names.": "Changing the route does not rename roads or places.",
+          "Stop 1 and Stop 2 would move to another part of the map.": "Changing the route does not move the pickup points."
+         },
+         "explanation": "Changing the first direction would make the journey differ from the shown route."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch14-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How can the street map help a student follow the school bus route from the parking area?",
+         "answer": "Start at the parking area on the map. Follow the dotted lines because they show the bus route. Remember that the bus first goes north and then takes a right turn. Landmarks such as Park Road and the Shopping Centre help the student recognise the route.",
+         "points": [
+          "Locate the parking area as the starting point.",
+          "Use the dotted lines to trace the bus route.",
+          "Remember the northward movement and then the right turn.",
+          "Recognise landmarks such as Park Road and the Shopping Centre."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a school trip, the children get off the bus at Qutb Minar metro station. To reach the zoo, they plan to ride the metro and get off at Supreme Court station. A metro map and its key are available for reference. Lali says they should take the Yellow Line, change at Hauz Khas, and continue on the Magenta Line.",
+         "prompt": "If the children cannot understand the symbols on their metro map, what is the best first step?",
+         "options": [
+          "Read the map key first, then match the symbols to the coloured routes.",
+          "Choose any coloured route without checking the key.",
+          "Read only the station names and ignore the symbols.",
+          "Use the key to decide which bus reached Supreme Court."
+         ],
+         "answer": 0,
+         "why": {
+          "Choose any coloured route without checking the key.": "The map key should be used before choosing a route.",
+          "Read only the station names and ignore the symbols.": "Station names alone do not explain the symbols.",
+          "Use the key to decide which bus reached Supreme Court.": "The key explains metro map symbols, not the bus journey."
+         },
+         "explanation": "The key explains the symbols on the map."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch14-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does the metro map help the children travel from Qutb Minar to the zoo?",
+         "answer": "The map shows that Qutb Minar is on the Yellow Line and the Supreme Court is on the Blue Line. Lali’s route follows the Yellow Line and changes to the Magenta Line at Hauz Khas. The different colours help the children follow the correct route and know where to change.",
+         "points": [
+          "Qutb Minar is marked on the Yellow Line.",
+          "Supreme Court is marked on the Blue Line.",
+          "The route changes at Hauz Khas.",
+          "Different colours help passengers navigate."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school activity, an ant begins on a dotted grid. The arrows show the direction in which it may move. To reach the laddoos, it crawls 2 cm east. The sugar route must be written with a distance and direction, while the bread route takes two movements and the apple route takes three. The student must check other ways to the apple and use the one-centimetre marks to decide which route is shortest.",
+         "prompt": "A pupil says the ant can reach the bread in one movement. What should the student do?",
+         "options": [
+          "Correct the pupil: the route needs two movements.",
+          "Agree: the route needs one movement.",
+          "Agree: the route needs three movements.",
+          "Say: the route needs no movement."
+         ],
+         "answer": 0,
+         "why": {
+          "Agree: the route needs one movement.": "One movement does not complete the required route.",
+          "Agree: the route needs three movements.": "Three movements are not required for the bread.",
+          "Say: the route needs no movement.": "The ant must move to reach the bread."
+         },
+         "explanation": "The bread route requires two movements."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch14-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school activity, an ant begins on a dotted grid. The arrows show the direction in which it may move. To reach the laddoos, it crawls 2 cm east. The sugar route must be written with a distance and direction, while the bread route takes two movements and the apple route takes three. The student must check other ways to the apple and use the one-centimetre marks to decide which route is shortest.",
+         "prompt": "Which action best helps the student find the shortest permitted route to the apple?",
+         "options": [
+          "Measure each dotted-line route with the grid marks.",
+          "Choose the route with the most movements.",
+          "Count the routes without checking their distances.",
+          "Pick a route even if it ignores an arrow."
+         ],
+         "answer": 0,
+         "why": {
+          "Choose the route with the most movements.": "More movements do not prove that a route is shortest.",
+          "Count the routes without checking their distances.": "Distances must be checked to find the shortest route.",
+          "Pick a route even if it ignores an arrow.": "The ant must follow the arrows."
+         },
+         "explanation": "The one-centimetre marks help compare route distances."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch14-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the student must check several routes before choosing the shortest route to the apple.",
+         "answer": "To find the shortest route, the student should follow the dotted lines and the permitted arrows from the starting position. Each route’s distance and direction must be filled in. The one-centimetre marks help compare these distances, and other routes to the apple must also be checked before the shortest route is chosen.",
+         "points": [
+          "Routes begin at the ant’s starting position",
+          "Dotted lines and arrows must be followed",
+          "Distances and directions must be recorded",
+          "Other routes to the apple must be checked"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch14-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the panda's position is written as (1,1).",
+         "answer": "The panda is where the first row and the first column meet. A north step reaches the first row, while an east step reaches the first column. The meeting point of row one and column one is written as (1,1), so that is the panda's position.",
+         "points": [
+          "The panda is at the meeting point.",
+          "The first row is reached by moving north.",
+          "The first column is reached by moving east.",
+          "The meeting point is written as (1,1)."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         }
@@ -76701,7 +79044,7 @@
       {
        "id": "mathematics-g5-ch15-l1",
        "title": "Watching TV data",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -76768,16 +79111,27 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch15-l1-a2",
+         "type": "worked",
+         "id": "mathematics-g5-ch15-l1-t1",
          "difficulty": 1,
          "tags": [
-          "friends",
-          "data"
+          "deep",
+          "think"
          ],
-         "prompt": "Samaira and Kabir collected data from 35 friends.",
-         "answer": true,
-         "explanation": "They collected information about TV watching from 35 friends.",
+         "kicker": "Let us think it through",
+         "prompt": "Kabir says fewer children watch for two hours than half an hour. Can Samaira use the table to check him?",
+         "steps": [
+          "The table gives group sizes, so it can check Kabir's claim.",
+          "Compare the two-hour and half-hour groups, because Kabir claims one is smaller.",
+          "More children watch for two hours, so Kabir's claim is wrong."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.3",
+          "1.4",
+          "1.5",
+          "1.9"
+         ],
          "src": [
           {
            "ch": 15,
@@ -76785,7 +79139,48 @@
           },
           {
            "ch": 15,
-           "p": 179
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g5-ch15-l1-a6",
+         "difficulty": 2,
+         "tags": [
+          "table",
+          "hours",
+          "children",
+          "comparing"
+         ],
+         "title": "Reading the TV table",
+         "body": "A data table keeps related information together. In this table, one part shows the number of TV hours. Another part shows the number of children. You can compare the information for different times. The two-hour group has more children than the half-hour group.",
+         "keyPoints": [
+          "One part shows the number of TV hours.",
+          "Another part shows the number of children.",
+          "You can compare the groups using the table."
+         ],
+         "explanation": "Comparing the table helps you find which group has more children.",
+         "src": [
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 180
           }
          ]
         },
@@ -76839,6 +79234,28 @@
          ]
         },
         {
+         "type": "truefalse",
+         "id": "mathematics-g5-ch15-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "friends",
+          "data"
+         ],
+         "prompt": "Samaira and Kabir collected data from 35 friends.",
+         "answer": true,
+         "explanation": "They collected information about TV watching from 35 friends.",
+         "src": [
+          {
+           "ch": 15,
+           "p": 179
+          },
+          {
+           "ch": 15,
+           "p": 179
+          }
+         ]
+        },
+        {
          "type": "matchpairs",
          "id": "mathematics-g5-ch15-l1-a5",
          "difficulty": 2,
@@ -76877,58 +79294,6 @@
            "ch": 15,
            "p": 180
           },
-          {
-           "ch": 15,
-           "p": 180
-          }
-         ]
-        },
-        {
-         "type": "concept",
-         "id": "mathematics-g5-ch15-l1-a6",
-         "difficulty": 2,
-         "tags": [
-          "table",
-          "hours",
-          "children",
-          "comparing"
-         ],
-         "title": "Reading the TV table",
-         "body": "A data table keeps related information together. In this table, one part shows the number of TV hours. Another part shows the number of children. You can compare the information for different times. The two-hour group has more children than the half-hour group.",
-         "keyPoints": [
-          "One part shows the number of TV hours.",
-          "Another part shows the number of children.",
-          "You can compare the groups using the table."
-         ],
-         "explanation": "Comparing the table helps you find which group has more children.",
-         "src": [
-          {
-           "ch": 15,
-           "p": 180
-          },
-          {
-           "ch": 15,
-           "p": 180
-          },
-          {
-           "ch": 15,
-           "p": 180
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch15-l1-a7",
-         "difficulty": 2,
-         "tags": [
-          "table",
-          "children",
-          "hours"
-         ],
-         "prompt": "More children watch TV for half an hour than for two hours.",
-         "answer": false,
-         "explanation": "The table says the opposite. More children watch TV for two hours.",
-         "src": [
           {
            "ch": 15,
            "p": 180
@@ -76993,6 +79358,164 @@
            "p": 180
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "data table"
+         ],
+         "prompt": "Samaira and Kabir's table shows watching hours and numbers of children. A class wants a similar table. What should each row show?",
+         "options": [
+          "The number of children for each watching time.",
+          "The name of each child for each watching time.",
+          "The number of children for each friend's hobby.",
+          "The number of children for each watching place."
+         ],
+         "answer": 0,
+         "why": {
+          "The name of each child for each watching time.": "The table counts children rather than recording their names.",
+          "The number of children for each friend's hobby.": "A hobby is not the watching time recorded by the table.",
+          "The number of children for each watching place.": "A watching place is not a watching time."
+         },
+         "explanation": "Each row pairs a watching time with the number of children.",
+         "f": [
+          "1.3",
+          "1.4",
+          "1.5"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 179
+          },
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare data"
+         ],
+         "prompt": "The data compares two-hour and half-hour groups. Kabir says the two-hour group is smaller. Is Kabir right?",
+         "options": [
+          "No, the two-hour group has more children.",
+          "Yes, the two-hour group has fewer children.",
+          "No, both groups have exactly the same size.",
+          "Yes, the half-hour group has no children."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, the two-hour group has fewer children.": "This claim says the opposite of what the data shows.",
+          "No, both groups have exactly the same size.": "The two groups have different sizes, so their numbers are not equal.",
+          "Yes, the half-hour group has no children.": "The half-hour group has children, so it is not empty."
+         },
+         "explanation": "The data shows more children watch for two hours than half an hour.",
+         "f": [
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict change"
+         ],
+         "prompt": "A child moves from the half-hour group to the two-hour group. The two-hour group was larger before. What happens?",
+         "options": [
+          "The two-hour group gets farther ahead of the half-hour group.",
+          "The half-hour group gets farther ahead of the two-hour group.",
+          "The two-hour group becomes the same size as the half-hour group.",
+          "The two-hour group becomes smaller than the half-hour group."
+         ],
+         "answer": 0,
+         "why": {
+          "The half-hour group gets farther ahead of the two-hour group.": "This reverses the change caused by moving the child.",
+          "The two-hour group becomes the same size as the half-hour group.": "The two-hour group grows, so its lead grows too.",
+          "The two-hour group becomes smaller than the half-hour group.": "The two-hour group grows, so it does not become smaller."
+         },
+         "explanation": "Moving one child increases the larger group and decreases the smaller group.",
+         "f": [
+          "1.4",
+          "1.5",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "data purpose"
+         ],
+         "prompt": "Samaira and Kabir asked 35 friends and wrote their answers. Why record those answers in a notebook?",
+         "options": [
+          "To keep the information needed for their data table.",
+          "To change each friend's answer into a different answer.",
+          "To show that every friend watched TV for two hours.",
+          "To remove the need to count children by watching time."
+         ],
+         "answer": 0,
+         "why": {
+          "To change each friend's answer into a different answer.": "Recording answers does not change what the friends said.",
+          "To show that every friend watched TV for two hours.": "The table compares groups rather than showing one shared time.",
+          "To remove the need to count children by watching time.": "The table needs the numbers of children in each time group."
+         },
+         "explanation": "The notebook keeps the answers for making the data table.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 179
+          },
+          {
+           "ch": 15,
+           "p": 179
+          },
+          {
+           "ch": 15,
+           "p": 179
+          }
+         ]
         }
        ],
        "topicScene": "media/ch15-l1-image-from-rawpixel-id-76693-1d67b2.webp",
@@ -77009,7 +79532,7 @@
       {
        "id": "mathematics-g5-ch15-l2",
        "title": "Making pictographs",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -77139,6 +79662,63 @@
           "3 (generated problem)",
           "5 (generated problem)",
           "6 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch15-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can Joseph Uncle show many play items with few pictures?",
+         "steps": [
+          "Each icon stands for five items, because one icon was used for every five.",
+          "This helps with many items, because making a picture for each is not easy.",
+          "It also helps with a large number, because a scale uses fewer icons.",
+          "So he can record each kind with one icon for every five items."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.3",
+          "2.4",
+          "2.5",
+          "2.6",
+          "2.7",
+          "2.8",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 181
+          },
+          {
+           "ch": 15,
+           "p": 181
+          },
+          {
+           "ch": 15,
+           "p": 181
+          },
+          {
+           "ch": 15,
+           "p": 181
+          }
          ]
         },
         {
@@ -77994,6 +80574,75 @@
            "p": 181
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply scale"
+         ],
+         "prompt": "A shop has five toys of one kind. How many toy icons should it use?",
+         "options": [
+          "One icon.",
+          "Two icons.",
+          "Three icons.",
+          "Five icons."
+         ],
+         "answer": 0,
+         "why": {
+          "Two icons.": "Two icons would show more toys than the shop has.",
+          "Three icons.": "Three icons would show more toys than the shop has.",
+          "Five icons.": "Five icons would show more toys than the shop has."
+         },
+         "explanation": "One icon shows five toys because one icon represents every five items.",
+         "f": [
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 181
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "combine counts"
+         ],
+         "prompt": "A pictograph has one toy icon and one board-game icon. What do these two icons show together?",
+         "options": [
+          "Five toys and five board games.",
+          "One toy and one board game.",
+          "Five toys and one board game.",
+          "Three toys and three board games."
+         ],
+         "answer": 0,
+         "why": {
+          "One toy and one board game.": "This joins the two groups, but each icon shows only its own kind.",
+          "Five toys and one board game.": "One icon cannot show just one toy, because its scale is five items.",
+          "Three toys and three board games.": "The board-game icon also shows five items, not one board game."
+         },
+         "explanation": "Each icon shows five items of its own kind.",
+         "f": [
+          "2.2",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 180
+          },
+          {
+           "ch": 15,
+           "p": 181
+          }
+         ]
         }
        ],
        "topicScene": "media/ch15-l2-funskool-store-in-chennai-ta-010aeb.webp",
@@ -78010,7 +80659,7 @@
       {
        "id": "mathematics-g5-ch15-l3",
        "title": "Recording a day and a bar graph",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -78149,6 +80798,63 @@
          "derived": [
           "4 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch15-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Raman recorded his day in a table. Sheela recorded her day with bars. What did Sheela’s bars show?",
+         "steps": [
+          "Raman recorded his daily routine in a table because that was his chosen way to record it.",
+          "Sheela put activities on a horizontal base because each activity needed its own place.",
+          "Sheela drew vertical bars because each bar’s height shows the hours spent on an activity.",
+          "Her chart is a bar graph because it uses bars to show how much time was spent on each activity."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.2",
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.8",
+          "3.9",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 182
+          },
+          {
+           "ch": 15,
+           "p": 183
+          },
+          {
+           "ch": 15,
+           "p": 183
+          },
+          {
+           "ch": 15,
+           "p": 183
+          },
+          {
+           "ch": 15,
+           "p": 183
+          },
+          {
+           "ch": 15,
+           "p": 183
+          },
+          {
+           "ch": 15,
+           "p": 183
+          }
          ]
         },
         {
@@ -78975,6 +81681,85 @@
            "p": 182
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "interpret"
+         ],
+         "prompt": "A child draws bars for eating, playing, and studying. What do the bar heights compare?",
+         "options": [
+          "The time spent on each activity.",
+          "The names of the three activities.",
+          "The order of the three activities.",
+          "The number of bars used for each activity."
+         ],
+         "answer": 0,
+         "why": {
+          "The names of the three activities.": "This names the activities instead of showing their times.",
+          "The order of the three activities.": "This shows the order, but the bars show amounts of time.",
+          "The number of bars used for each activity.": "This counts bars instead of comparing the time spent on activities."
+         },
+         "explanation": "These bars show the time spent on each activity.",
+         "f": [
+          "3.8",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 183
+          },
+          {
+           "ch": 15,
+           "p": 183
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check"
+         ],
+         "prompt": "A chart puts activity names along its horizontal base. It puts hours on the horizontal side too. Is this layout correct?",
+         "options": [
+          "No. Hours belong on the vertical line, with activities on the base.",
+          "Yes. The horizontal line should show hours because it is the base.",
+          "No. Both hours and activities belong on the vertical line.",
+          "Yes. Each activity name should replace the hours on the vertical line."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes. The horizontal line should show hours because it is the base.": "This treats the base as the hour scale, but the base holds activities.",
+          "No. Both hours and activities belong on the vertical line.": "This puts both kinds of information in the wrong place.",
+          "Yes. Each activity name should replace the hours on the vertical line.": "This replaces the hours with activity names, which belong on the base."
+         },
+         "explanation": "A bar graph keeps activities on the base and hours on the vertical line.",
+         "f": [
+          "3.6",
+          "3.7",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 183
+          },
+          {
+           "ch": 15,
+           "p": 183
+          },
+          {
+           "ch": 15,
+           "p": 183
+          }
+         ]
         }
        ],
        "topicScene": "media/ch15-l1-image-from-rawpixel-id-76693-1d67b2.webp",
@@ -78991,7 +81776,7 @@
       {
        "id": "mathematics-g5-ch15-l4",
        "title": "Comparing index-finger lengths",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -79133,6 +81918,73 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch15-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Two friends put paper strips on their index fingers. How can we compare their finger lengths fairly?",
+         "steps": [
+          "Cut long strips from waste paper, because each friend needs one.",
+          "Give each friend one strip and put it on their index finger.",
+          "Tear off extras and keep widths equal, so strips compare by length.",
+          "Paste strips on the graph to find the longest and smallest fingers."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "4.6",
+          "4.9",
+          "4.10",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 185
+          },
+          {
+           "ch": 15,
+           "p": 185
+          },
+          {
+           "ch": 15,
+           "p": 185
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch15-l4-a2",
          "difficulty": 1,
@@ -79149,24 +82001,6 @@
          ],
          "answer": 2,
          "explanation": "The lesson says to cut long paper strips from waste paper.",
-         "src": [
-          {
-           "ch": 15,
-           "p": 184
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch15-l4-a3",
-         "difficulty": 1,
-         "tags": [
-          "paper strips",
-          "width"
-         ],
-         "prompt": "All the paper strips have the same width.",
-         "answer": true,
-         "explanation": "Yes, all the paper strips have the same width.",
          "src": [
           {
            "ch": 15,
@@ -79192,6 +82026,24 @@
           {
            "ch": 15,
            "p": 185
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g5-ch15-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "paper strips",
+          "width"
+         ],
+         "prompt": "All the paper strips have the same width.",
+         "answer": true,
+         "explanation": "Yes, all the paper strips have the same width.",
+         "src": [
+          {
+           "ch": 15,
+           "p": 184
           }
          ]
         },
@@ -80155,6 +83007,199 @@
            "p": 185
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare lengths"
+         ],
+         "prompt": "All paper strips have the same width. Each strip is torn to match an index finger. What do length differences show?",
+         "options": [
+          "The difference in the index-finger lengths",
+          "The difference in each friend's paper width",
+          "The difference in each friend's hand size",
+          "The difference in each friend's finger width"
+         ],
+         "answer": 0,
+         "why": {
+          "The difference in each friend's paper width": "Wrong: equal widths cannot explain the different strip lengths.",
+          "The difference in each friend's hand size": "Wrong: hand size is not shown by these paper strips.",
+          "The difference in each friend's finger width": "Wrong: finger width is not shown by these paper strips."
+         },
+         "explanation": "Right: equal widths make length differences show finger-length differences.",
+         "f": [
+          "4.3",
+          "4.4",
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "read graph"
+         ],
+         "prompt": "Paper strips of equal width are pasted on the graph in each friend's space. Which strip shows the longest index finger?",
+         "options": [
+          "The strip reaching the highest graph step",
+          "The strip reaching the lowest graph step",
+          "The widest strip on the graph",
+          "The shortest strip on the graph"
+         ],
+         "answer": 0,
+         "why": {
+          "The strip reaching the lowest graph step": "Wrong: the lowest strip shows the smallest index-finger length.",
+          "The widest strip on the graph": "Wrong: all the strips have the same width.",
+          "The shortest strip on the graph": "Wrong: the shortest strip shows the smallest index-finger length."
+         },
+         "explanation": "Right: the highest strip shows the greatest index-finger length.",
+         "f": [
+          "4.3",
+          "4.6",
+          "4.7",
+          "4.9",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 185
+          },
+          {
+           "ch": 15,
+           "p": 185
+          },
+          {
+           "ch": 15,
+           "p": 185
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "evaluate claim"
+         ],
+         "prompt": "A child says, 'The smallest finger must have the shortest strip, even if that strip is wider.' Why is this claim flawed?",
+         "options": [
+          "Different widths do not give a fair length comparison.",
+          "A strip must always be as wide as the finger.",
+          "Every finger needs two strips for a fair test.",
+          "The graph can compare fingers with different widths"
+         ],
+         "answer": 0,
+         "why": {
+          "A strip must always be as wide as the finger.": "Wrong: strip width need not match finger width.",
+          "Every finger needs two strips for a fair test.": "Wrong: one correctly torn strip is enough for each finger.",
+          "The graph can compare fingers with different widths": "Wrong: comparing graph lengths still needs equal strip widths."
+         },
+         "explanation": "Right: a fair comparison needs equal strip widths.",
+         "f": [
+          "4.3",
+          "4.4",
+          "4.5",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict length"
+         ],
+         "prompt": "One strip ends at a higher graph step than another. Both strips have the same width. Which index finger is longer?",
+         "options": [
+          "The finger matched to the higher strip",
+          "The finger matched to the lower strip",
+          "Both fingers have the same index-finger length",
+          "The wider strip shows the longer index finger"
+         ],
+         "answer": 0,
+         "why": {
+          "The finger matched to the lower strip": "Wrong: the lower strip represents a smaller index-finger length.",
+          "Both fingers have the same index-finger length": "Wrong: different heights on the graph show different lengths.",
+          "The wider strip shows the longer index finger": "Wrong: equal widths mean height, not width, shows length."
+         },
+         "explanation": "Right: the higher strip represents a longer index finger.",
+         "f": [
+          "4.3",
+          "4.6",
+          "4.9",
+          "4.10",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 184
+          },
+          {
+           "ch": 15,
+           "p": 185
+          },
+          {
+           "ch": 15,
+           "p": 185
+          },
+          {
+           "ch": 15,
+           "p": 185
+          }
+         ]
         }
        ],
        "topicScene": "media/ch15-l1-image-from-rawpixel-id-76693-1d67b2.webp",
@@ -80171,7 +83216,7 @@
       {
        "id": "mathematics-g5-ch15-l5",
        "title": "Food wastage in the canteen",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -80309,6 +83354,53 @@
          "derived": [
           "3 (generated problem)",
           "6 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch15-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Rani saw the dining hall display. Why was she shocked, and what could the wasted food have done?",
+         "steps": [
+          "Rani stays in a residential school.",
+          "The dining hall shows wasted food and the children it could feed.",
+          "One kilogram of food waste can feed three children.",
+          "So Rani was shocked because wasted food could feed children."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.5",
+          "5.9",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 185
+          },
+          {
+           "ch": 15,
+           "p": 185
+          },
+          {
+           "ch": 15,
+           "p": 186
+          },
+          {
+           "ch": 15,
+           "p": 186
+          },
+          {
+           "ch": 15,
+           "p": 186
+          }
          ]
         },
         {
@@ -80952,6 +84044,80 @@
            "p": 186
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "One kilogram of food is wasted at Rani's school. How many children can it feed?",
+         "options": [
+          "One child",
+          "Two children",
+          "Three children",
+          "Four children"
+         ],
+         "answer": 2,
+         "why": {
+          "One child": "One child misses the rule that one kilogram feeds three.",
+          "Two children": "Two children uses two children instead of the given three.",
+          "Four children": "Four children adds one child to the given three."
+         },
+         "explanation": "Three is right because one kilogram can feed three children.",
+         "f": [
+          "5.1",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 185
+          },
+          {
+           "ch": 15,
+           "p": 186
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Friday is marked on the canteen menu. Which food should Rani choose for that day?",
+         "options": [
+          "Monday's sandwich",
+          "Tuesday's paratha",
+          "Wednesday's khichdi",
+          "Friday's idli-sambar"
+         ],
+         "answer": 3,
+         "why": {
+          "Monday's sandwich": "Sandwich is wrong because it is paired with Monday.",
+          "Tuesday's paratha": "Paratha is wrong because it is paired with Tuesday.",
+          "Wednesday's khichdi": "Khichdi is wrong because it is paired with Wednesday."
+         },
+         "explanation": "Idli-sambar is right because it is paired with Friday.",
+         "f": [
+          "5.3",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 186
+          },
+          {
+           "ch": 15,
+           "p": 186
+          }
+         ]
         }
        ],
        "topicScene": "media/ch15-l5-water-buffalo-and-house-crow-4d88e7.webp",
@@ -81300,6 +84466,21 @@
          ]
         }
        ],
+       "topicScene": "media/ch15-l6-state-house-christmas-tree-l-2397c4.webp",
+       "sceneAlt": "Governor Patrick hosts area children for a reading of “The Night Before Christmas” during a Boston State House tree-lighting ceremony.",
+       "sceneCaption": "Children gather for a Christmas reading at the Massachusetts State House tree-lighting ceremony.",
+       "sceneCredit": {
+        "text": "State-house-christmas-tree-lighting 5541105248 o by Eric Haynes for the Office of the Governor of Massachusetts, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:State-house-christmas-tree-lighting_5541105248_o.jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "Eric Haynes for the Office of the Governor of Massachusetts"
+       }
+      },
+      {
+       "id": "mathematics-g5-ch15-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 21,
        "topicScene": "media/ch15-l1-image-from-rawpixel-id-76693-1d67b2.webp",
        "sceneAlt": "An illustration shows children sitting together and watching television.",
        "sceneCaption": "A simple, child-friendly illustration of children watching television.",
@@ -81309,7 +84490,404 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "creator": "Rawpixel"
-       }
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Samaira and Kabir decided to act like reporters and collect information from their friends. They gathered details from 35 friends and wrote them in a notebook. Their table shows both the number of hours spent watching TV and the number of children in each group. It includes half an hour, one hour, two hours, and more than two hours. Samaira noticed that more children watch TV for two hours than for half an hour.",
+         "prompt": "If the two-hour count fell while the half-hour count rose, what would happen to the difference between the two-hour count and the half-hour count?",
+         "options": [
+          "It would become smaller.",
+          "It would become larger.",
+          "It would stay the same.",
+          "It would always become zero."
+         ],
+         "answer": 0,
+         "why": {
+          "It would become larger.": "A rising half-hour count also reduces the difference.",
+          "It would stay the same.": "Because both counts change, the difference cannot stay the same.",
+          "It would always become zero.": "There is not enough information to show that the difference must become zero."
+         },
+         "explanation": "A falling two-hour count reduces the difference."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Samaira and Kabir decided to act like reporters and collect information from their friends. They gathered details from 35 friends and wrote them in a notebook. Their table shows both the number of hours spent watching TV and the number of children in each group. It includes half an hour, one hour, two hours, and more than two hours. Samaira noticed that more children watch TV for two hours than for half an hour.",
+         "prompt": "Kabir wants to check that all the collected friends are represented in the table. What should he do?",
+         "options": [
+          "Add the child counts from every group and check for a total of 35.",
+          "Add the viewing hours from every group and check for a total of 35.",
+          "Use only the one-hour and two-hour child counts and check for a total of 35.",
+          "Compare the two-hour and half-hour child counts and check for a total of 35."
+         ],
+         "answer": 0,
+         "why": {
+          "Add the viewing hours from every group and check for a total of 35.": "Adding viewing hours does not count the children.",
+          "Use only the one-hour and two-hour child counts and check for a total of 35.": "Using only some groups would leave out other children.",
+          "Compare the two-hour and half-hour child counts and check for a total of 35.": "Comparing two groups does not include every child in the total."
+         },
+         "explanation": "All the groups together should represent the 35 collected friends."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch15-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the table can show that more children watch TV for two hours than for half an hour.",
+         "answer": "The table lists the number of children for each amount of TV watching. To make the comparison, Samaira and Kabir can look at the child count for two hours and the child count for half an hour. The two-hour count is greater, so more children are in that group.",
+         "points": [
+          "The table gives a number of children for each viewing time.",
+          "The two relevant counts are for two hours and half an hour.",
+          "The two-hour child count is greater.",
+          "The greater count explains the observation."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Joseph Uncle takes stock of his play items a week before the summer break. His shop contains toys, board games and sports items, and there are too many items of each kind to show every one in a picture. Dipesh suggests using icons, with one icon for every five items of each kind, and records the stock on a scale. Deepti records two-wheelers on three different days, using one icon to show three two-wheelers.",
+         "prompt": "How should Dipesh represent five toys in the pictograph?",
+         "options": [
+          "With one icon standing for the whole group",
+          "With five separate icons, one for each toy",
+          "With one icon for every toy, plus one extra",
+          "Without an icon, because a picture is needed for every item"
+         ],
+         "answer": 0,
+         "why": {
+          "With five separate icons, one for each toy": "Five separate icons would ignore the scale.",
+          "With one icon for every toy, plus one extra": "The extra icon is not part of the stated scale.",
+          "Without an icon, because a picture is needed for every item": "No icon would ignore the icon method."
+         },
+         "explanation": "Correct: the scale groups five items under one icon."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Joseph Uncle takes stock of his play items a week before the summer break. His shop contains toys, board games and sports items, and there are too many items of each kind to show every one in a picture. Dipesh suggests using icons, with one icon for every five items of each kind, and records the stock on a scale. Deepti records two-wheelers on three different days, using one icon to show three two-wheelers.",
+         "prompt": "Why is Dipesh using a scale helpful when recording the shop's items?",
+         "options": [
+          "It allows the large stock to be shown with fewer icons.",
+          "It requires a separate picture for every item.",
+          "It means the two-wheelers should not be recorded.",
+          "It means only one kind of play item can be included."
+         ],
+         "answer": 0,
+         "why": {
+          "It requires a separate picture for every item.": "The method does not require a picture for every item.",
+          "It means the two-wheelers should not be recorded.": "Two-wheelers are still included in the record.",
+          "It means only one kind of play item can be included.": "The scale can be used for each kind of item."
+         },
+         "explanation": "Correct: a scale records large numbers with fewer icons."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch15-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why a scale is useful when Dipesh records the shop's play items.",
+         "answer": "A scale is useful because there are too many items of each kind to draw separately. Dipesh can group every five items under one icon. This reduces the number of pictures needed while still showing the stock of toys, board games and sports items.",
+         "points": [
+          "There are too many items of each kind.",
+          "One icon represents five items.",
+          "The scale reduces the number of pictures needed.",
+          "Toys, board games and sports items can all be recorded."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Raman and Sheela decided to record how they spent their day. Raman put his daily routine in a table, including sleeping, school, studying, eating, playing and other activities. Sheela recorded her routine with bars. Her chart had a vertical line showing hours, a horizontal base for the activities, and a vertical bar for each activity. Together, their records showed how their time was spent.",
+         "prompt": "Sheela recorded eating and playing. What should her chart contain for each activity?",
+         "options": [
+          "A separate vertical bar showing the hours spent on that activity",
+          "One horizontal bar shared by eating and playing",
+          "A vertical bar for eating but no bar for playing",
+          "A horizontal bar for each activity instead of a vertical bar"
+         ],
+         "answer": 0,
+         "why": {
+          "One horizontal bar shared by eating and playing": "A shared bar would not show each activity separately.",
+          "A vertical bar for eating but no bar for playing": "Both recorded activities should appear.",
+          "A horizontal bar for each activity instead of a vertical bar": "The hours must be shown with vertical bars."
+         },
+         "explanation": "Each recorded activity needs its own vertical bar."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Raman and Sheela decided to record how they spent their day. Raman put his daily routine in a table, including sleeping, school, studying, eating, playing and other activities. Sheela recorded her routine with bars. Her chart had a vertical line showing hours, a horizontal base for the activities, and a vertical bar for each activity. Together, their records showed how their time was spent.",
+         "prompt": "Raman wants to record a complete daily routine. What units should he use for the time spent on each activity?",
+         "options": [
+          "Both hours and minutes",
+          "Hours only",
+          "Minutes only",
+          "Activity names only"
+         ],
+         "answer": 0,
+         "why": {
+          "Hours only": "Hours alone do not show the complete recorded routine in the required form.",
+          "Minutes only": "Minutes alone do not show the complete recorded routine in the required form.",
+          "Activity names only": "Activity names do not record how much time was spent."
+         },
+         "explanation": "A daily routine can be recorded using both hours and minutes."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch15-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Why do Raman's table and Sheela's bar graph record daily routines in different ways?",
+         "answer": "Raman's table records the activities and the time spent on them. Sheela's graph uses a horizontal base for the different activities and vertical bars to show the number of hours spent. Both methods show how time was spent during each person's day.",
+         "points": [
+          "Raman uses a table.",
+          "Sheela uses vertical bars.",
+          "The base identifies the activities.",
+          "Both records show time spent."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch15-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Why should all the paper strips have the same width?",
+         "answer": "They should all have the same width because the graph compares index-finger lengths. If the widths were different, the strips would not provide a fair way to show which index finger is longest. The same width keeps the comparison consistent.",
+         "points": [
+          "The graph compares index-finger lengths.",
+          "Different widths would not give a fair comparison.",
+          "The same width keeps the comparison consistent."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Rani stays in a residential school. In the dining hall, she sees a graph showing which food item had the highest and least wastage, the total food wastage for the days, and the number of children the food could feed. The food is paired with days: sandwich on Monday, paratha on Tuesday, khichdi on Wednesday, puri-sabzi on Thursday, and idli-sambar with Friday. When Rani reads the graph, she is shocked by how much food is wasted.",
+         "prompt": "The graph includes one kilogram of sandwich waste for Monday. What does this tell Rani about children?",
+         "options": [
+          "That kilogram could feed three children.",
+          "That kilogram could feed one child.",
+          "That kilogram could feed four children.",
+          "That kilogram could not feed any children."
+         ],
+         "answer": 0,
+         "why": {
+          "That kilogram could feed one child.": "This incorrectly uses one child instead of three.",
+          "That kilogram could feed four children.": "This changes the stated feeding rate.",
+          "That kilogram could not feed any children.": "This ignores the connection between wasted food and children."
+         },
+         "explanation": "Correct: one kilogram of food waste can feed three children."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Rani stays in a residential school. In the dining hall, she sees a graph showing which food item had the highest and least wastage, the total food wastage for the days, and the number of children the food could feed. The food is paired with days: sandwich on Monday, paratha on Tuesday, khichdi on Wednesday, puri-sabzi on Thursday, and idli-sambar with Friday. When Rani reads the graph, she is shocked by how much food is wasted.",
+         "prompt": "The graph shows sandwich had the highest wastage and idli-sambar had the least wastage. What can Rani conclude?",
+         "options": [
+          "More children could be fed using sandwich waste than idli-sambar waste.",
+          "Fewer children could be fed using sandwich waste than idli-sambar waste.",
+          "The same number of children could be fed using either waste.",
+          "More children could be fed using idli-sambar waste than sandwich waste."
+         ],
+         "answer": 0,
+         "why": {
+          "Fewer children could be fed using sandwich waste than idli-sambar waste.": "This reverses the graph's highest and least information.",
+          "The same number of children could be fed using either waste.": "This assumes different food wastes feed equal numbers of children.",
+          "More children could be fed using idli-sambar waste than sandwich waste.": "This treats the least-wasted food as having more impact."
+         },
+         "explanation": "Correct: the highest wastage could feed more children than the least wastage."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l5-x3",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Rani stays in a residential school. In the dining hall, she sees a graph showing which food item had the highest and least wastage, the total food wastage for the days, and the number of children the food could feed. The food is paired with days: sandwich on Monday, paratha on Tuesday, khichdi on Wednesday, puri-sabzi on Thursday, and idli-sambar with Friday. When Rani reads the graph, she is shocked by how much food is wasted.",
+         "prompt": "If sandwich still has the highest wastage, what should the canteen do first?",
+         "options": [
+          "Reduce sandwich wastage.",
+          "Reduce idli-sambar wastage.",
+          "Reduce every food by the same amount.",
+          "Use only the total wastage and ignore the food items."
+         ],
+         "answer": 0,
+         "why": {
+          "Reduce idli-sambar wastage.": "This focuses on the least-wasted food instead.",
+          "Reduce every food by the same amount.": "This does not give priority to the highest wastage.",
+          "Use only the total wastage and ignore the food items.": "This ignores the graph's information about individual foods."
+         },
+         "explanation": "Correct: reducing the highest wastage tackles the greatest amount shown."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch15-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how Rani can use the graph and the dining hall display to understand food wastage.",
+         "answer": "Rani can use the graph to identify the foods with the highest and least wastage and to read each day's total. The dining hall display connects the wasted amount with the number of children it could feed. Knowing that one kilogram feeds three children helps her understand the impact.",
+         "points": [
+          "Identifies the food with the highest wastage.",
+          "Identifies the food with the least wastage.",
+          "Uses the total wastage for the days.",
+          "Explains the link between wasted food and children."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a class picture review, all the girls are wearing glasses, and more boys than girls are holding books. More children are holding books than are wearing caps. Some children wear both glasses and caps, while ten children wear caps on their heads. More than half of the children wear glasses. The picture compares boys wearing glasses with girls wearing glasses and shows that no child has all three items: a cap, a book and a backpack.",
+         "prompt": "A child who is wearing both glasses and a cap takes off the cap. Which change must happen?",
+         "options": [
+          "The number of children wearing caps decreases by one.",
+          "The number of children wearing glasses decreases by one.",
+          "The number of children holding books decreases by one.",
+          "The number of children wearing both glasses and caps increases by one."
+         ],
+         "answer": 0,
+         "why": {
+          "The number of children wearing glasses decreases by one.": "The child keeps wearing glasses, so that number does not change.",
+          "The number of children holding books decreases by one.": "No book was removed, so the book-holding number does not change.",
+          "The number of children wearing both glasses and caps increases by one.": "The child is no longer wearing both glasses and a cap."
+         },
+         "explanation": "Taking off a cap reduces the number wearing caps by one."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a class picture review, all the girls are wearing glasses, and more boys than girls are holding books. More children are holding books than are wearing caps. Some children wear both glasses and caps, while ten children wear caps on their heads. More than half of the children wear glasses. The picture compares boys wearing glasses with girls wearing glasses and shows that no child has all three items: a cap, a book and a backpack.",
+         "prompt": "A child wearing a cap and holding a book puts the book down. Which change must happen?",
+         "options": [
+          "The number of children holding books decreases by one.",
+          "The number of children holding books increases by one.",
+          "The number of children wearing caps decreases by one.",
+          "The number of children wearing both glasses and caps decreases by one."
+         ],
+         "answer": 0,
+         "why": {
+          "The number of children holding books increases by one.": "The child had already been holding the book.",
+          "The number of children wearing caps decreases by one.": "The cap remains on the child's head.",
+          "The number of children wearing both glasses and caps decreases by one.": "A child with a cap and a book does not also have glasses."
+         },
+         "explanation": "Putting down the book reduces the number holding books by one."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch15-l6-x3",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a class picture review, all the girls are wearing glasses, and more boys than girls are holding books. More children are holding books than are wearing caps. Some children wear both glasses and caps, while ten children wear caps on their heads. More than half of the children wear glasses. The picture compares boys wearing glasses with girls wearing glasses and shows that no child has all three items: a cap, a book and a backpack.",
+         "prompt": "If one girl removes her glasses, which statement must become false?",
+         "options": [
+          "Every girl in the picture still has glasses on.",
+          "More than half of the children have glasses.",
+          "More boys than girls are holding books.",
+          "The number of children holding books is greater than the number wearing caps."
+         ],
+         "answer": 0,
+         "why": {
+          "More than half of the children have glasses.": "Removing one pair of glasses does not necessarily make this statement false.",
+          "More boys than girls are holding books.": "The change does not affect which group is holding more books.",
+          "The number of children holding books is greater than the number wearing caps.": "The change does not affect the comparison between book holders and cap wearers."
+         },
+         "explanation": "The girl who removes her glasses no longer meets the condition."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch15-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does the comparison of boys and girls holding books differ from the comparison of children holding books and children wearing caps?",
+         "answer": "The first comparison is between boys and girls. It shows that more boys than girls hold books. The second comparison is between children holding books and children wearing caps. It shows that the book-holding group is larger, but it does not separate the children into boys and girls.",
+         "points": [
+          "The first comparison uses boys and girls.",
+          "More boys than girls hold books.",
+          "The second comparison uses two different groups.",
+          "It compares book holders with cap wearers."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
