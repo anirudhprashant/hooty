@@ -582,6 +582,34 @@ export const WIDGETS = {
       return { kids, say: `The point (${x}, ${y}) is ${[lr, ud].filter(Boolean).join(' and ') || 'at the centre'}: it is ${where}. Its distance from the origin is √(${sq(x)}² + ${sq(y)}²) = ${dist}.${x ? ` Its mirror image in the y-axis (hollow dot) is (${-x}, ${y}).` : ''}` };
     },
   },
+  fractionadd: {
+    subject: 'maths', about: 'Two fractions as bars, both re-cut into the same size of piece (a common denominator) and then added into a total bar, with which one is bigger. For adding and subtracting fractions, like and unlike denominators, comparing fractions, equivalent fractions, common denominators.',
+    sliders: [['a1', 'First: parts taken', 0, 12, 1, 1], ['d1', 'First: equal parts', 2, 12, 1, 2], ['a2', 'Second: parts taken', 0, 12, 1, 1], ['d2', 'Second: equal parts', 2, 12, 1, 3]],
+    draw(v) {
+      const g = (p, q) => (q ? g(q, p % q) : p), { a1, d1, a2, d2 } = v, den = (d1 * d2) / g(d1, d2), n1 = (a1 * den) / d1, n2 = (a2 * den) / d2, sum = n1 + n2;
+      const x0 = 30, bw = 380, kids = [], fine = den <= 24;
+      const bar = (y, n, d, cut, col, label) => {
+        const wholes = Math.max(1, Math.ceil(n / d)), h = 30;
+        for (let w = 0; w < wholes; w++) {
+          const by = y + w * (h + 6), filled = Math.min(d, n - w * d);
+          kids.push(R(x0, by, bw, h, '#fff', { w: 2.5 }), R(x0, by, (Math.max(0, filled) / d) * bw, h, col, { w: 0 }));
+          if (d <= 24) for (let i = 1; i < d; i++) kids.push(L(x0 + (i / d) * bw, by, x0 + (i / d) * bw, by + h, INK, 2));   // too many pieces would be a smudge
+          if (cut && fine) for (let i = 1; i < den; i++) if ((i * d) % den) kids.push(L(x0 + (i / den) * bw, by + 3, x0 + (i / den) * bw, by + h - 3, INK, 1, { 'stroke-dasharray': '3 3', opacity: 0.7 }));
+          kids.push(R(x0, by, bw, h, 'none', { w: 3 }));
+        }
+        kids.push(T(x0 + bw + 16, y + 21, label, { z: 18, a: 'start' }));
+        return wholes * (h + 6);
+      };
+      let y = 18;
+      y += bar(y, a1, d1, true, C.b, `${a1}/${d1} = ${n1}/${den}`) + 8;
+      y += bar(y, a2, d2, true, C.o, `${a2}/${d2} = ${n2}/${den}`) + 18;
+      kids.push(L(x0, y - 9, x0 + bw, y - 9, INK, 2));
+      const sg = g(sum, den) || 1, simp = den / sg === 1 ? `${sum / sg}` : `${sum / sg}/${den / sg}`;
+      bar(y, sum, den, false, C.g, `${sum}/${den}${sg > 1 && sum ? ` = ${simp}` : ''}`);
+      const cmp = n1 === n2 ? `${a1}/${d1} and ${a2}/${d2} are equal` : `${n1 > n2 ? `${a1}/${d1}` : `${a2}/${d2}`} is bigger`;
+      return { kids, say: `Cut both into pieces of size 1/${den}: ${a1}/${d1} = ${n1}/${den} and ${a2}/${d2} = ${n2}/${den}, so ${a1}/${d1} + ${a2}/${d2} = ${sum}/${den}${sg > 1 && sum ? ` = ${simp}` : ''}${sum > den ? `, which is more than one whole` : sum === den ? ', exactly one whole' : ''}. ${cmp}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
