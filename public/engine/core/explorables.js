@@ -631,6 +631,20 @@ export const WIDGETS = {
       return { kids, say: `${indian} in the Indian system (${nameIn}) is ${intl} in the international system (${nameInt}). Indian commas group in twos after the first three digits; international commas group in threes.` };
     },
   },
+  percent: {
+    subject: 'maths', about: 'A hundred-square grid with p squares shaded, the same amount as a fraction and a decimal, and p percent of an amount worked out on a bar. For percentages, per cent, converting fractions, decimals and percentages, percentage of a quantity, discount, profit and loss.',
+    sliders: [['p', 'Percent', 0, 100, 1, 25], ['whole', 'The whole amount', 20, 500, 10, 200]],
+    draw(v) {
+      const { p, whole } = v, g = (a, b) => (b ? g(b, a % b) : a), k = g(p, 100) || 1, cell = 22, gx = 24, gy = 24, kids = [];
+      for (let i = 0; i < 100; i++) kids.push(R(gx + (i % 10) * cell, gy + Math.floor(i / 10) * cell, cell, cell, i < p ? C.b : '#fff', { w: 1 }));
+      kids.push(R(gx, gy, 10 * cell, 10 * cell, 'none', { w: 3 }));
+      const part = (p * whole) / 100, frac = p === 0 ? '0' : p === 100 ? '1' : `${p / k}/${100 / k}`;
+      kids.push(T(275, 50, `${p}% = ${p}/100`, { a: 'start', z: 24 }), T(275, 84, frac === `${p}/100` ? `= ${num(p / 100, 2)}` : `= ${frac} = ${num(p / 100, 2)}`, { a: 'start', z: 20, w: 600 }));
+      kids.push(R(275, 130, 300, 34, '#fff', { w: 2.5, r: 6 }), R(275, 130, (300 * p) / 100, 34, C.o, { w: 0, r: 6 }), R(275, 130, 300, 34, 'none', { w: 2.5, r: 6 }));
+      kids.push(T(275, 190, `${p}% of ${whole} = ${p}/100 × ${whole}`, { a: 'start', z: 16, w: 600 }), T(275, 222, `= ${num(part, 2)}`, { a: 'start', z: 26, f: '#058a68' }));
+      return { kids, say: `${p}% means ${p} out of every 100, which is ${frac} or ${num(p / 100, 2)}. ${p}% of ${whole} is ${p} ÷ 100 × ${whole} = ${num(part, 2)}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
