@@ -15684,7 +15684,7 @@
       {
        "id": "science-ch5-l2",
        "title": "5.2 Standard Units of Length",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -15757,6 +15757,36 @@
            "p": 82
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ruler",
+         "params": {},
+         "title": "Measure the pencil",
+         "tasks": [
+          {
+           "say": "Line the pencil up with the zero mark.",
+           "when": "start == 0",
+           "then": "Starting at 0, you can read the length straight off the end."
+          },
+          {
+           "say": "Make a pencil exactly 10 cm long.",
+           "when": "len == 100",
+           "then": "10 cm = 100 mm."
+          },
+          {
+           "say": "Start at the 3 cm mark and make it 5 cm long.",
+           "when": "start == 3 and len == 50",
+           "then": "It ends at 8 cm: 8 - 3 = 5 cm."
+          }
+         ],
+         "takeaway": "Length = where it ends minus where it starts. 1 cm = 10 mm.",
+         "explanation": "Length = where it ends minus where it starts. 1 cm = 10 mm."
         },
         {
          "type": "worked",
@@ -16175,7 +16205,7 @@
       {
        "id": "science-ch5-l3",
        "title": "5.3 Measuring Length Correctly",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -16271,6 +16301,36 @@
            "p": 87
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ruler",
+         "params": {},
+         "title": "Measure the pencil",
+         "tasks": [
+          {
+           "say": "Line the pencil up with the zero mark.",
+           "when": "start == 0",
+           "then": "Starting at 0, you can read the length straight off the end."
+          },
+          {
+           "say": "Make a pencil exactly 10 cm long.",
+           "when": "len == 100",
+           "then": "10 cm = 100 mm."
+          },
+          {
+           "say": "Start at the 3 cm mark and make it 5 cm long.",
+           "when": "start == 3 and len == 50",
+           "then": "It ends at 8 cm: 8 - 3 = 5 cm."
+          }
+         ],
+         "takeaway": "Length = where it ends minus where it starts. 1 cm = 10 mm.",
+         "explanation": "Length = where it ends minus where it starts. 1 cm = 10 mm."
         },
         {
          "type": "worked",
@@ -22189,7 +22249,7 @@
       {
        "id": "science-ch7-l1",
        "title": "7.1 Hot or Cold? Can We Always Trust Touch?",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -22270,6 +22330,33 @@
            "p": 125
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "thermometer",
+         "params": {
+          "kind": "clinical"
+         },
+         "title": "Read the thermometer",
+         "tasks": [
+          {
+           "say": "Show normal body temperature.",
+           "when": "t >= 36.9 and t <= 37.1",
+           "then": "Normal body temperature is about 37 degrees Celsius."
+          },
+          {
+           "say": "Show a fever.",
+           "when": "t >= 38",
+           "then": "From about 38 degrees we call it a fever."
+          }
+         ],
+         "takeaway": "Find the value of one small mark first, then count the marks.",
+         "explanation": "Find the value of one small mark first, then count the marks."
         },
         {
          "type": "worked",
@@ -22645,7 +22732,7 @@
       {
        "id": "science-ch7-l2",
        "title": "7.2 Temperature and Different Kinds of Thermometers",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -22740,6 +22827,33 @@
            "p": 126
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "thermometer",
+         "params": {
+          "kind": "lab"
+         },
+         "title": "Read the thermometer",
+         "tasks": [
+          {
+           "say": "Show where water freezes.",
+           "when": "t <= 0 and t >= -1",
+           "then": "Water freezes at 0 degrees Celsius."
+          },
+          {
+           "say": "Show where water boils.",
+           "when": "t >= 100 and t <= 101",
+           "then": "Water boils at 100 degrees Celsius."
+          }
+         ],
+         "takeaway": "Find the value of one small mark first, then count the marks.",
+         "explanation": "Find the value of one small mark first, then count the marks."
         },
         {
          "type": "worked",

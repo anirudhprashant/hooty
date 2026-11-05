@@ -34744,7 +34744,7 @@
       {
        "id": "mathematics-g10-ch7-l1",
        "title": "7.1 Introduction: Points and coordinate geometry",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -34863,6 +34863,36 @@
           "3 (generated problem)",
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g10-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "coordplane",
+         "params": {},
+         "title": "Place the point",
+         "tasks": [
+          {
+           "say": "Put the point in the third quadrant.",
+           "when": "x < 0 and y < 0",
+           "then": "In quadrant III both coordinates are negative."
+          },
+          {
+           "say": "Put the point on the y-axis, 3 above the origin.",
+           "when": "x == 0 and y == 3",
+           "then": "Every point on the y-axis has x = 0."
+          },
+          {
+           "say": "Make the point exactly 5 units from the origin.",
+           "when": "x * x + y * y == 25",
+           "then": "For example (3, 4): 3 x 3 + 4 x 4 = 25, and the square root of 25 is 5."
+          }
+         ],
+         "takeaway": "A point is (across, up). The signs of x and y tell you its quadrant.",
+         "explanation": "A point is (across, up). The signs of x and y tell you its quadrant."
         },
         {
          "type": "worked",
