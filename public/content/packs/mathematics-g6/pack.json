@@ -41671,7 +41671,7 @@
       {
        "id": "mathematics-g6-ch7-l6",
        "title": "Comparing, Adding and Subtracting Fractions",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -41868,6 +41868,36 @@
           "3 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch7-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fractionadd",
+         "params": {},
+         "title": "Add the fraction bars",
+         "tasks": [
+          {
+           "say": "Show 1/2 + 1/4.",
+           "when": "a1 == 1 and d1 == 2 and a2 == 1 and d2 == 4",
+           "then": "1/2 is 2/4, so 1/2 + 1/4 = 3/4."
+          },
+          {
+           "say": "Make the two fractions equal, using different numbers of parts.",
+           "when": "a1 * d2 == a2 * d1 and d1 != d2 and a1 > 0",
+           "then": "Different-looking fractions can be the same amount: they are equivalent."
+          },
+          {
+           "say": "Make the total exactly one whole.",
+           "when": "a1 * d2 + a2 * d1 == d1 * d2 and a1 > 0 and a2 > 0",
+           "then": "The two pieces fill the bar exactly."
+          }
+         ],
+         "takeaway": "To add or compare fractions, cut them into the same size of piece first.",
+         "explanation": "To add or compare fractions, cut them into the same size of piece first."
         },
         {
          "type": "mcq",
