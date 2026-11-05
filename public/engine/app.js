@@ -1063,12 +1063,21 @@ function renderCelebration() {
     session = null;
     startLesson({ id: 'more-' + Date.now(), lessonId: 'practice', title: s.lesson.title, activities: pool, estimatedMinutes: 3, isPractice: true, topicScene: s.lesson.topicScene, sceneAlt: s.lesson.sceneAlt, sceneCredit: s.lesson.sceneCredit, sceneCaption: s.lesson.sceneCaption, packId: s.lesson.packId });
   } }, [t('moreProblems')]) : null;
+  // A hard lesson (under 60% right first time): the strongest next step is a short round of just the questions missed,
+  // so that is the main button. Maths problems come back with new numbers. Moving on stays one tap away.
+  const missed = s.lesson.isPractice ? [] : (s.lesson.activities || []).filter((a, i, all) => s.wrongIds.includes(a.id) && all.findIndex((b) => b.id === a.id) === i);
+  const replay = accuracy < 60 && missed.length ? el('button', { class: 'btn btn--primary btn--block', type: 'button', onclick: () => {
+    session = null;
+    startLesson({ id: 'replay-' + Date.now(), lessonId: 'practice', title: s.lesson.title, activities: missed, estimatedMinutes: Math.max(1, Math.round(missed.length / 2)), isPractice: true, packId: s.lesson.packId, topicScene: s.lesson.topicScene, sceneAlt: s.lesson.sceneAlt });
+  } }, [missed.length === 1 ? 'Try the one you missed' : `Try the ${missed.length} you missed`]) : null;
+  if (replay) box.querySelector('.celebrate__body').textContent = 'Good effort! Have another go at the ones that were tricky, and they will stick.';
   box.append(el('div', { class: 'activity__actions' }, [
-    upNext ? el('button', { class: 'btn btn--primary btn--block', type: 'button', onclick: () => { session = null; startLesson(upNext); } }, [
+    replay,
+    upNext ? el('button', { class: `btn${replay ? ' btn--ghost' : ' btn--primary'} btn--block`, type: 'button', onclick: () => { session = null; startLesson(upNext); } }, [
       el('span', { text: `${t('nextLesson')}: ${upNext.title}` }),
     ]) : null,
     more,
-    el('button', { class: `btn${upNext || more ? ' btn--ghost' : ''} btn--block`, type: 'button', text: t('backHome'), onclick: () => { session = null; go('home'); } }),
+    el('button', { class: `btn${upNext || more || replay ? ' btn--ghost' : ''} btn--block`, type: 'button', text: t('backHome'), onclick: () => { session = null; go('home'); } }),
     el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: t('path'), onclick: () => { session = null; go('path'); } }),
   ]));
 
