@@ -50940,7 +50940,7 @@
       {
        "id": "mathematics-g5-ch10-l3",
        "title": "Rotational Symmetry in Letters and Numbers",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -50998,6 +50998,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch10-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can I check if a turned paper letter looks the same?",
+         "steps": [
+          "Fix the centre of a paper H with a nail.",
+          "Add dots so you can track its orientation.",
+          "Turn it halfway and use tracing paper to compare.",
+          "The H matches its outline, so it has rotational symmetry."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 138
+          },
+          {
+           "ch": 10,
+           "p": 138
+          },
+          {
+           "ch": 10,
+           "p": 138
+          },
+          {
+           "ch": 10,
+           "p": 138
+          },
+          {
+           "ch": 10,
+           "p": 138
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch10-l3-a2",
          "difficulty": 1,
@@ -51015,25 +51062,6 @@
          ],
          "answer": 0,
          "explanation": "Well done! The dot helps you keep track of how the letter is facing.",
-         "src": [
-          {
-           "ch": 10,
-           "p": 138
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch10-l3-a3",
-         "difficulty": 1,
-         "tags": [
-          "centre point",
-          "nail",
-          "letters"
-         ],
-         "prompt": "You can fix a letter's centre point with a nail.",
-         "answer": true,
-         "explanation": "Correct. A nail fixes the centre point of the cut-out letter.",
          "src": [
           {
            "ch": 10,
@@ -51197,18 +51225,111 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch10-l3-a9",
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l3-d1",
          "difficulty": 3,
          "tags": [
-          "numbers",
-          "reflection symmetry",
-          "both symmetries"
+          "deep",
+          "plan"
          ],
-         "prompt": "The activity also asks whether shown numbers have reflection symmetry or both symmetries.",
-         "answer": true,
-         "explanation": "Correct. The shown numbers are checked for reflection symmetry or both symmetries.",
+         "prompt": "How should tracing paper check a turned cut-out letter?",
+         "options": [
+          "Trace it, turn it, and compare the outlines.",
+          "Trace it, fold it, and compare the colours.",
+          "Draw dots, turn it, and compare the colours.",
+          "Draw it again, and compare the page numbers."
+         ],
+         "answer": 0,
+         "why": {
+          "Trace it, fold it, and compare the colours.": "Folding and colour do not check a turned outline.",
+          "Draw dots, turn it, and compare the colours.": "Dots track facing, but colours do not check the shape.",
+          "Draw it again, and compare the page numbers.": "Page numbers do not show whether the outline matches."
+         },
+         "explanation": "Tracing and turning let you compare the letter's outlines.",
+         "f": [
+          "3.3"
+         ],
          "src": [
+          {
+           "ch": 10,
+           "p": 138
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "A digit turns around its centre and matches. What can be recorded?",
+         "options": [
+          "This digit has rotational symmetry.",
+          "This digit has reflection symmetry only.",
+          "This digit has neither kind of symmetry.",
+          "This digit needs more dots to gain symmetry."
+         ],
+         "answer": 0,
+         "why": {
+          "This digit has reflection symmetry only.": "A matching turn does not show reflection symmetry only.",
+          "This digit has neither kind of symmetry.": "Matching after a turn rules out having no symmetry.",
+          "This digit needs more dots to gain symmetry.": "Dots track orientation; they do not create symmetry."
+         },
+         "explanation": "A digit matching after a turn has rotational symmetry.",
+         "f": [
+          "3.2",
+          "3.3",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 138
+          },
+          {
+           "ch": 10,
+           "p": 138
+          },
+          {
+           "ch": 10,
+           "p": 138
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "A number matches when turned and mirrored. How should it be recorded?",
+         "options": [
+          "It has both rotational and reflection symmetry.",
+          "It has rotational symmetry, but no reflection symmetry.",
+          "It has reflection symmetry, but no rotational symmetry.",
+          "It has neither kind of symmetry."
+         ],
+         "answer": 0,
+         "why": {
+          "It has rotational symmetry, but no reflection symmetry.": "The matching reflection rules out having no reflection symmetry.",
+          "It has reflection symmetry, but no rotational symmetry.": "The matching turn rules out having no rotational symmetry.",
+          "It has neither kind of symmetry.": "Both matching tests rule out having neither symmetry."
+         },
+         "explanation": "Matching after turning and mirroring shows both symmetries.",
+         "f": [
+          "3.9",
+          "3.10",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 138
+          },
           {
            "ch": 10,
            "p": 138
@@ -51234,7 +51355,7 @@
       {
        "id": "mathematics-g5-ch10-l4",
        "title": "Making and Testing Designs",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -51331,18 +51452,51 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch10-l4-a2",
+         "type": "worked",
+         "id": "mathematics-g5-ch10-l4-t1",
          "difficulty": 1,
          "tags": [
-          "rotational",
-          "symmetry"
+          "deep",
+          "think"
          ],
-         "title": "Rotational Symmetry",
-         "prompt": "A design can be tested for rotational symmetry.",
-         "answer": true,
-         "explanation": "Yes, turning a design is one way to test it.",
+         "kicker": "Let us think it through",
+         "prompt": "You change a paper design by adding shapes. How can you test the new design?",
+         "steps": [
+          "Add the new shapes carefully, because each added shape changes the design.",
+          "Turn the finished design halfway, because this checks rotational symmetry.",
+          "The whole design matches after a half-turn, so it has rotational symmetry.",
+          "Check reflection symmetry too, and draw its lines because these checks differ."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "4.6"
+         ],
          "src": [
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          },
           {
            "ch": 10,
            "p": 139
@@ -51589,6 +51743,28 @@
            "ch": 10,
            "p": 139
           },
+          {
+           "ch": 10,
+           "p": 139
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g5-ch10-l4-a4",
+         "difficulty": 2,
+         "tags": [
+          "half-turn",
+          "symmetry"
+         ],
+         "title": "The Half-Turn Test",
+         "prompt": "The changed design should look the same after a ______.",
+         "answers": [
+          "half-turn"
+         ],
+         "hint": "Think about turning it halfway.",
+         "explanation": "The changed design should match after a half-turn.",
+         "src": [
           {
            "ch": 10,
            "p": 139
@@ -51954,6 +52130,174 @@
            "p": 139
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "test symmetry"
+         ],
+         "prompt": "A child adds shapes to a design. Can we now call the design rotationally symmetric?",
+         "options": [
+          "Only if the whole design matches after a half-turn.",
+          "Whenever the design uses exactly two different colours.",
+          "Whenever the shape also has reflection symmetry.",
+          "Whenever the design gains extra shapes."
+         ],
+         "answer": 0,
+         "why": {
+          "Whenever the design uses exactly two different colours.": "Two colours alone do not show a half-turn match.",
+          "Whenever the shape also has reflection symmetry.": "Reflection symmetry is a separate check from a half-turn.",
+          "Whenever the design gains extra shapes.": "Adding shapes does not guarantee that the design matches."
+         },
+         "explanation": "A half-turn match is the test for rotational symmetry.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "show symmetry"
+         ],
+         "prompt": "A changed design is being checked for reflection symmetry. No symmetry lines are drawn yet. What should the designer do next?",
+         "options": [
+          "The design's line or lines of symmetry.",
+          "The shapes added during the change.",
+          "A half-turn position for the design.",
+          "Every colour change in the design."
+         ],
+         "answer": 0,
+         "why": {
+          "The shapes added during the change.": "Added shapes do not show where the symmetry lines are.",
+          "A half-turn position for the design.": "A half-turn position is used for rotational symmetry.",
+          "Every colour change in the design.": "Colour changes do not show reflection symmetry."
+         },
+         "explanation": "Drawing symmetry lines shows where the reflection symmetry is.",
+         "f": [
+          "4.4",
+          "4.5",
+          "4.6",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain symmetry"
+         ],
+         "prompt": "A badge looks the same after a half-turn. What can we say about its design?",
+         "options": [
+          "The badge design has rotational symmetry.",
+          "The badge design has reflection symmetry.",
+          "The badge design must use two colours.",
+          "The badge design needs more added shapes."
+         ],
+         "answer": 0,
+         "why": {
+          "The badge design has reflection symmetry.": "A half-turn match does not answer the reflection symmetry question.",
+          "The badge design must use two colours.": "The fact does not say that two colours must be used.",
+          "The badge design needs more added shapes.": "The fact does not say that more shapes are needed."
+         },
+         "explanation": "Looking the same after a half-turn shows rotational symmetry.",
+         "f": [
+          "4.1",
+          "4.3",
+          "4.7"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "correct claim"
+         ],
+         "prompt": "A child says a half-turn match settles every symmetry check. What check should still be made?",
+         "options": [
+          "Whether the design also has reflection symmetry.",
+          "Whether the design uses exactly two colours.",
+          "Whether the shape matches during a full turn.",
+          "Whether more shapes can be added to it."
+         ],
+         "answer": 0,
+         "why": {
+          "Whether the design uses exactly two colours.": "Two colours are not required for this reflection check.",
+          "Whether the shape matches during a full turn.": "Counting full-turn matches does not check reflection symmetry.",
+          "Whether more shapes can be added to it.": "Adding shapes is not the remaining symmetry check."
+         },
+         "explanation": "The task asks separately whether the design also has reflection symmetry.",
+         "f": [
+          "4.7",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 139
+          },
+          {
+           "ch": 10,
+           "p": 139
+          }
+         ]
         }
        ],
        "topicScene": "media/ch10-l4-harmonious-patterns-8758c5.webp",
@@ -51970,7 +52314,7 @@
       {
        "id": "mathematics-g5-ch10-l5",
        "title": "Using Squares and Triangles",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -52093,6 +52437,63 @@
          "derived": [
           "16 (generated problem)",
           "4 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch10-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child makes a paper design and wants to sort it. How can symmetry checks help?",
+         "steps": [
+          "Check reflection symmetry, because mirror matching helps sort the design.",
+          "Check rotational symmetry, because a matching turn may also work.",
+          "Draw symmetry lines and find the matching turn, to record both checks.",
+          "Use the results to choose the only-one or both-symmetry group."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.3",
+          "5.5",
+          "5.7",
+          "5.8",
+          "5.9",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 140
+          },
+          {
+           "ch": 10,
+           "p": 140
+          },
+          {
+           "ch": 10,
+           "p": 140
+          },
+          {
+           "ch": 10,
+           "p": 140
+          },
+          {
+           "ch": 10,
+           "p": 140
+          },
+          {
+           "ch": 10,
+           "p": 140
+          },
+          {
+           "ch": 10,
+           "p": 140
+          }
          ]
         },
         {
@@ -52795,6 +53196,117 @@
            "p": 140
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "sort"
+         ],
+         "prompt": "A paper design has reflection symmetry. No turn makes it match. Which group fits?",
+         "options": [
+          "Only reflection symmetry designs.",
+          "Only rotational symmetry designs.",
+          "Designs with both symmetries.",
+          "Designs with neither symmetry."
+         ],
+         "answer": 0,
+         "why": {
+          "Only rotational symmetry designs.": "It needs a matching turn, which this design does not have.",
+          "Designs with both symmetries.": "Both symmetries require reflection and a matching turn.",
+          "Designs with neither symmetry.": "Neither is wrong because reflection symmetry is present."
+         },
+         "explanation": "It has reflection symmetry but no rotational symmetry.",
+         "f": [
+          "5.5",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 140
+          },
+          {
+           "ch": 10,
+           "p": 140
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "sort"
+         ],
+         "prompt": "A paper design matches after a turn. It has no reflection symmetry. Which group fits?",
+         "options": [
+          "Only reflection symmetry designs.",
+          "Only rotational symmetry designs.",
+          "Designs with both symmetries.",
+          "Designs with neither symmetry."
+         ],
+         "answer": 1,
+         "why": {
+          "Only reflection symmetry designs.": "Only reflection designs do not match after a turn.",
+          "Designs with both symmetries.": "Both symmetries would also need reflection symmetry.",
+          "Designs with neither symmetry.": "Neither is wrong because a matching turn gives rotational symmetry."
+         },
+         "explanation": "A matching turn and no reflection mean rotational symmetry only.",
+         "f": [
+          "5.5",
+          "5.8"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 140
+          },
+          {
+           "ch": 10,
+           "p": 140
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "sort"
+         ],
+         "prompt": "A new design has reflection symmetry and matches after a turn. Which group fits?",
+         "options": [
+          "Only reflection symmetry designs.",
+          "Only rotational symmetry designs.",
+          "Designs with both symmetries.",
+          "Designs with neither symmetry."
+         ],
+         "answer": 2,
+         "why": {
+          "Only reflection symmetry designs.": "Reflection symmetry alone does not give both symmetries.",
+          "Only rotational symmetry designs.": "A matching turn alone does not give reflection symmetry.",
+          "Designs with neither symmetry.": "Neither is wrong because both checks work."
+         },
+         "explanation": "It has both reflection symmetry and rotational symmetry.",
+         "f": [
+          "5.5",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 140
+          },
+          {
+           "ch": 10,
+           "p": 140
+          }
+         ]
         }
        ],
        "topicScene": "media/ch10-l5-rotational-symmetries-in-des-69ae4c.webp",
@@ -52811,7 +53323,7 @@
       {
        "id": "mathematics-g5-ch10-l6",
        "title": "Block Printing and Project Work",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -52942,6 +53454,38 @@
           "4 (generated problem)",
           "5 (generated problem)",
           "9 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch10-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A learner must fill a blank about design B after learning block printing. How can the learner find the answer?",
+         "steps": [
+          "Read the blank because it asks for turns of design B.",
+          "Do not use four as the answer, because four counts block uses.",
+          "Turn design B until it returns, because the blank asks when it matches again.",
+          "Count those turns and write the number, because that answers the blank."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 141
+          },
+          {
+           "ch": 10,
+           "p": 141
+          }
          ]
         },
         {
@@ -53754,7 +54298,7 @@
       {
        "id": "mathematics-g5-ch10-exam",
        "title": "Test practice",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 18,
        "topicScene": "media/ch10-l1-reflection-symmetry-034985.webp",
        "sceneAlt": "An illustration introduces the idea of reflection symmetry.",
        "sceneCaption": "A visual introduction to reflection symmetry.",
@@ -53834,30 +54378,6 @@
         },
         {
          "type": "mcq",
-         "id": "mathematics-g5-ch10-l2-x1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "Lali wants to make a firki for her friends. She begins with a square paper and folds it diagonally, then opens it and folds it the other way. When she opens the paper, an X shape appears. Lali cuts along the four lines of the X, stopping about halfway to the centre. She is ready to make the folded windmill and think about how it will move in the wind.",
-         "prompt": "What should Lali do next after cutting along the lines of the X?",
-         "options": [
-          "Fold each corner gently towards the centre, then fold every other corner towards the centre.",
-          "Push a pin through the centre before making any folds.",
-          "Cut the paper again along the outside edges.",
-          "Put the stick or straw through the open paper first."
-         ],
-         "answer": 0,
-         "why": {
-          "Push a pin through the centre before making any folds.": "The folds should come before pushing a pin through the paper.",
-          "Cut the paper again along the outside edges.": "The cutting is already complete; the next step is folding.",
-          "Put the stick or straw through the open paper first.": "The stick or straw is used after the paper has been folded and pinned."
-         },
-         "explanation": "This follows the next folding steps for making the firki."
-        },
-        {
-         "type": "mcq",
          "id": "mathematics-g5-ch10-l2-x2",
          "difficulty": 3,
          "tags": [
@@ -53895,6 +54415,173 @@
           "The paper is then folded in the other direction.",
           "Opening the paper reveals the X shape.",
           "The four X lines guide the cuts."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch10-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why dots are useful when checking rotational symmetry.",
+         "answer": "Dots help keep track of the orientation of the letters. When a letter is turned, the dots show how its orientation has changed, so the learner can check whether it looks the same in the new position.",
+         "points": [
+          "Dots track orientation",
+          "Turning changes the orientation",
+          "The appearance can then be compared"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch10-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How can the student test whether a changed design has rotational symmetry and check its other symmetry?",
+         "answer": "The student should rotate the changed design and check whether it looks the same after a half-turn. If it does, the change passes this rotational symmetry test. The student should also check whether the new design has reflection symmetry and draw its lines of symmetry if they exist.",
+         "points": [
+          "Tests the design after a half-turn.",
+          "Checks whether the design looks the same.",
+          "Identifies the rotational symmetry test.",
+          "Checks reflection symmetry and draws any symmetry lines."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner has cut out a square and an equilateral triangle with the same side length. The learner plans to make designs, draw their lines of symmetry, and check how each design behaves. Each design should be placed into one of three sorting groups: designs that match after turning, designs that match after reflection, and designs that match after doing both. A friend offers to help by checking the designs and recording the results.",
+         "prompt": "A design matches after a turn and also matches after reflection. Where should the learner place it?",
+         "options": [
+          "The group for designs that match after turning and reflection.",
+          "The group for designs checked only by turning.",
+          "The group for designs checked only by reflection.",
+          "The group for designs that match in neither check."
+         ],
+         "answer": 0,
+         "why": {
+          "The group for designs checked only by turning.": "A turn check alone does not show reflection symmetry.",
+          "The group for designs checked only by reflection.": "A reflection check alone does not show rotational symmetry.",
+          "The group for designs that match in neither check.": "Matching after a turn shows that the design has rotational symmetry."
+         },
+         "explanation": "Both checks succeed, so the design has both types."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner has cut out a square and an equilateral triangle with the same side length. The learner plans to make designs, draw their lines of symmetry, and check how each design behaves. Each design should be placed into one of three sorting groups: designs that match after turning, designs that match after reflection, and designs that match after doing both. A friend offers to help by checking the designs and recording the results.",
+         "prompt": "If a design matches after a turn but does not match after reflection, where should it go?",
+         "options": [
+          "The turning-only group.",
+          "The reflection-only group.",
+          "The turn-and-reflection group.",
+          "The neither-symmetries group."
+         ],
+         "answer": 0,
+         "why": {
+          "The reflection-only group.": "A failed reflection check rules out reflection symmetry.",
+          "The turn-and-reflection group.": "The design does not pass both symmetry checks.",
+          "The neither-symmetries group.": "The design matches after a turn, so it is not in the final group."
+         },
+         "explanation": "The matching turn shows rotational symmetry."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch10-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how to check and draw the symmetry of a design.",
+         "answer": "First, test whether the design matches when it is reflected, and draw every line where it does. Then turn the design through possible turns and note the turn at which it matches again. Record whether it has only rotational symmetry, only reflection symmetry, or both.",
+         "points": [
+          "The reflection check is completed.",
+          "The lines of symmetry are drawn.",
+          "Possible turns are tested.",
+          "The matching turn and symmetry types are recorded."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In a classroom activity, students examine block printing, a traditional craft of Rajasthan known for beautiful patterns and bright colours. They see that artisans use carved wooden blocks to print designs on fabric and that the art has been practised for centuries. The final print uses the block four times. Students check border shapes for reflection symmetry, mark shapes with rotational symmetry using a star, and create symmetrical patterns using vegetable blocks.",
+         "prompt": "The class is making the final fabric print described in the case. Which action follows the traditional method?",
+         "options": [
+          "Use a carved wooden block for the fabric design and repeat it four times for the final print.",
+          "Use a carved vegetable block for the fabric design and repeat it four times for the final print.",
+          "Use a plain wooden block for the fabric design and repeat it four times for the final print.",
+          "Use bright colours on the fabric but do not use a wooden block for the design."
+         ],
+         "answer": 0,
+         "why": {
+          "Use a carved vegetable block for the fabric design and repeat it four times for the final print.": "Vegetable blocks are used for creating symmetrical patterns in the project activity.",
+          "Use a plain wooden block for the fabric design and repeat it four times for the final print.": "A plain block does not follow the traditional method of using carved wooden blocks.",
+          "Use bright colours on the fabric but do not use a wooden block for the design.": "Bright colours are part of the craft, but the design is printed using carved wooden blocks."
+         },
+         "explanation": "The traditional method uses carved wooden blocks, and the final print uses the block four times."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch10-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In a classroom activity, students examine block printing, a traditional craft of Rajasthan known for beautiful patterns and bright colours. They see that artisans use carved wooden blocks to print designs on fabric and that the art has been practised for centuries. The final print uses the block four times. Students check border shapes for reflection symmetry, mark shapes with rotational symmetry using a star, and create symmetrical patterns using vegetable blocks.",
+         "prompt": "While checking the border shapes, a shape looks the same after it is turned. What should the student do?",
+         "options": [
+          "Place a star beside it to record that it matches again after turning.",
+          "Place a star beside it to record that it matches in a mirror.",
+          "Leave it unmarked because only mirror matches are recorded.",
+          "Mark every border shape with a star, regardless of how it turns."
+         ],
+         "answer": 0,
+         "why": {
+          "Place a star beside it to record that it matches in a mirror.": "A star records rotational symmetry, while a mirror match is checked separately.",
+          "Leave it unmarked because only mirror matches are recorded.": "A shape that matches again after turning must be marked with a star.",
+          "Mark every border shape with a star, regardless of how it turns.": "Only shapes that have rotational symmetry should receive a star."
+         },
+         "explanation": "Shapes with rotational symmetry are marked with a star."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch10-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does block printing make Rajasthan’s textiles special?",
+         "answer": "Block printing is a traditional craft of Rajasthan, and artisans use carved wooden blocks to print designs on fabric. The craft is known for beautiful patterns and bright colours, which make Rajasthan’s textiles special. Its long history also shows that this art has been practised for centuries.",
+         "points": [
+          "Identifies block printing as a traditional craft of Rajasthan.",
+          "Explains that carved wooden blocks print designs on fabric.",
+          "Links beautiful patterns and bright colours with special textiles.",
+          "Notes that the art has been practised for centuries."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         }
@@ -54171,7 +54858,7 @@
       {
        "id": "mathematics-g5-ch11-l1",
        "title": "The Quilt and Perimeter",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -54340,6 +55027,68 @@
           "17 (generated problem)",
           "4 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch11-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can two laces cover the old-clothes quilt cover's whole border?",
+         "steps": [
+          "Find the perimeter, because the lace must cover the whole border.",
+          "Use two laces, because Grandma has decided to use two.",
+          "Choose two different colours, because the two laces must differ in colour.",
+          "Together, the laces must match the perimeter, because the whole border needs lace."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.5",
+          "1.6",
+          "1.7",
+          "1.8"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 142
+          },
+          {
+           "ch": 11,
+           "p": 142
+          },
+          {
+           "ch": 11,
+           "p": 142
+          },
+          {
+           "ch": 11,
+           "p": 142
+          },
+          {
+           "ch": 11,
+           "p": 142
+          },
+          {
+           "ch": 11,
+           "p": 142
+          },
+          {
+           "ch": 11,
+           "p": 142
+          },
+          {
+           "ch": 11,
+           "p": 142
+          }
          ]
         },
         {
@@ -55442,6 +56191,80 @@
            "p": 142
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "diagnosis"
+         ],
+         "prompt": "The lace must cover the whole border. The child uses only the top edge. What is wrong?",
+         "options": [
+          "The bottom edge will still need lace.",
+          "The quilt will need no lace.",
+          "The inside will need lace too.",
+          "The laces will match in colour."
+         ],
+         "answer": 0,
+         "why": {
+          "The quilt will need no lace.": "This wrongly treats the border as something that needs no lace.",
+          "The inside will need lace too.": "This confuses the inside of the quilt with its border.",
+          "The laces will match in colour.": "This focuses on colour instead of missing border lace."
+         },
+         "explanation": "The bottom edge is also part of the border.",
+         "f": [
+          "1.4"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 142
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "application"
+         ],
+         "prompt": "A practice shape has equal sides. What must you measure for perimeter?",
+         "options": [
+          "The length around all its sides",
+          "The length of just one side",
+          "The space inside the shape",
+          "The height of one side"
+         ],
+         "answer": 0,
+         "why": {
+          "The length of just one side": "This measures only one part of the border.",
+          "The space inside the shape": "This mistakes the inside for the shape's border.",
+          "The height of one side": "This measures one side instead of the whole border."
+         },
+         "explanation": "The perimeter is the length of the whole border.",
+         "f": [
+          "1.7",
+          "1.8",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 142
+          },
+          {
+           "ch": 11,
+           "p": 142
+          },
+          {
+           "ch": 11,
+           "p": 142
+          }
+         ]
         }
        ],
        "topicScene": "media/ch11-l1-indian-summer-c9be98.webp",
@@ -55458,7 +56281,7 @@
       {
        "id": "mathematics-g5-ch11-l2",
        "title": "Covering Shapes and Finding Area",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -55595,6 +56418,77 @@
           "18 (generated problem)",
           "3 (generated problem)",
           "6 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch11-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can Adrit use squares and rectangles to find a table's area?",
+         "steps": [
+          "Adrit covers a table with squares and rectangles, because both can be tiles.",
+          "He fits the tiles without gaps or overlaps, because that makes a tiling.",
+          "The covered region is the area, because area means the covered region.",
+          "His tiled covering shows the area, because it fills the region."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.5",
+          "2.6",
+          "2.7",
+          "2.8",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 145
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l2-a2",
+         "difficulty": 1,
+         "tags": [
+          "shapes",
+          "preetha"
+         ],
+         "prompt": "Which shapes did Preetha use?",
+         "options": [
+          "Triangles and circles",
+          "Squares and rectangles",
+          "Triangles and squares",
+          "Circles and rectangles"
+         ],
+         "answer": 0,
+         "explanation": "Preetha covered the table with triangles and circles.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 143
+          }
          ]
         },
         {
@@ -55811,24 +56705,6 @@
          ],
          "answer": 0,
          "explanation": "Table 3's area is measured in square units.",
-         "src": [
-          {
-           "ch": 11,
-           "p": 143
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch11-l2-a7",
-         "difficulty": 2,
-         "tags": [
-          "area",
-          "rectangle units"
-         ],
-         "prompt": "Table 4's area is measured in rectangle units.",
-         "answer": true,
-         "explanation": "The lesson states that Table 4's area uses rectangle units.",
          "src": [
           {
            "ch": 11,
@@ -56543,6 +57419,246 @@
            "p": 145
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Preetha covers a table with triangles and circles. She says both are tiles. Why is she wrong?",
+         "options": [
+          "Circles cannot be tiling shapes, though triangles can.",
+          "Triangles cannot be tiling shapes, though circles can.",
+          "Both triangles and circles can be tiling shapes.",
+          "Neither triangles nor circles can be tiling shapes."
+         ],
+         "answer": 0,
+         "why": {
+          "Triangles cannot be tiling shapes, though circles can.": "This mistake thinks circles can be tiles but triangles cannot.",
+          "Both triangles and circles can be tiling shapes.": "This mistake treats every shape in a covering as a usable tile.",
+          "Neither triangles nor circles can be tiling shapes.": "This mistake thinks square tiles cannot be used."
+         },
+         "explanation": "This is right because circles are not allowed tiling shapes.",
+         "f": [
+          "2.4",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 145
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "repair"
+         ],
+         "prompt": "The picture shows grandmother's rug with square patches. The patches leave a small gap. What should she do?",
+         "options": [
+          "Move the tiles so they fit without gaps or overlaps.",
+          "Leave the gap because gaps do not change the area.",
+          "Overlap some tiles so the small gap is covered.",
+          "Count the gap as one more square tiling shape."
+         ],
+         "answer": 0,
+         "why": {
+          "Leave the gap because gaps do not change the area.": "This mistake thinks any covering of shapes is a tiling.",
+          "Overlap some tiles so the small gap is covered.": "This mistake thinks overlapping pieces are allowed in a tiling.",
+          "Count the gap as one more square tiling shape.": "This mistake treats an empty gap as a real square tile."
+         },
+         "explanation": "This is right because tiling pieces fit without gaps or overlaps.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.8",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 145
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "match"
+         ],
+         "prompt": "Table 1 uses triangle units. A child wants matching tiles. Which choice is correct?",
+         "options": [
+          "Use triangle tiles, because they match the area unit.",
+          "Use square tiles, because squares can also cover tables.",
+          "Use rectangle tiles, because rectangles can fill any region.",
+          "Use circle tiles, because circles can cover a table."
+         ],
+         "answer": 0,
+         "why": {
+          "Use square tiles, because squares can also cover tables.": "This mistake confuses usable square tiles with the matching unit.",
+          "Use rectangle tiles, because rectangles can fill any region.": "This mistake confuses usable rectangle tiles with the matching unit.",
+          "Use circle tiles, because circles can cover a table.": "This mistake thinks covering a table makes circles into tiles."
+         },
+         "explanation": "This is right because triangle tiles match Table 1's triangle units.",
+         "f": [
+          "2.4",
+          "2.9",
+          "2.10"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 145
+          },
+          {
+           "ch": 11,
+           "p": 143
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "match"
+         ],
+         "prompt": "Table 3 uses square units. A child wants matching tiles. Which choice is correct?",
+         "options": [
+          "Use square tiles, because they match the area unit.",
+          "Use triangle tiles, because triangles can fill a region.",
+          "Use rectangle tiles, because rectangles can cover tables.",
+          "Use circle tiles, because circles can cover tables."
+         ],
+         "answer": 0,
+         "why": {
+          "Use triangle tiles, because triangles can fill a region.": "This mistake confuses usable triangle tiles with the matching unit.",
+          "Use rectangle tiles, because rectangles can cover tables.": "This mistake confuses usable rectangle tiles with the matching unit.",
+          "Use circle tiles, because circles can cover tables.": "This mistake thinks covering a table makes circles into tiles."
+         },
+         "explanation": "This is right because square tiles match Table 3's square units.",
+         "f": [
+          "2.4",
+          "2.5",
+          "2.7",
+          "2.8",
+          "2.9",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 145
+          },
+          {
+           "ch": 11,
+           "p": 143
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l2-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "match"
+         ],
+         "prompt": "Table 4 uses rectangle units. A child wants matching tiles. Which choice is correct?",
+         "options": [
+          "Use rectangle tiles, because they match the area unit.",
+          "Use triangle tiles, because triangles can fill a region.",
+          "Use square tiles, because squares can also cover tables.",
+          "Use circle tiles, because circles can cover tables."
+         ],
+         "answer": 0,
+         "why": {
+          "Use triangle tiles, because triangles can fill a region.": "This mistake confuses usable triangle tiles with the matching unit.",
+          "Use square tiles, because squares can also cover tables.": "This mistake confuses usable square tiles with the matching unit.",
+          "Use circle tiles, because circles can cover tables.": "This mistake thinks covering a table makes circles into tiles."
+         },
+         "explanation": "This is right because rectangle tiles match Table 4's rectangle units.",
+         "f": [
+          "2.4",
+          "2.5",
+          "2.7",
+          "2.8",
+          "2.9",
+          "2.12"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 143
+          },
+          {
+           "ch": 11,
+           "p": 145
+          },
+          {
+           "ch": 11,
+           "p": 143
+          }
+         ]
         }
        ],
        "topicScene": "media/ch11-l2-tiling-4-uniform-tiekite-del-58949e.webp",
@@ -56559,7 +57675,7 @@
       {
        "id": "mathematics-g5-ch11-l3",
        "title": "Comparing and Measuring Areas",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -56665,6 +57781,48 @@
           "37 (generated problem)",
           "6 (generated problem)",
           "72 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch11-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Preetha's rectangle uses unit squares. How can she find its area?",
+         "steps": [
+          "Each unit square has an area of 1 unit square.",
+          "This tells us how much area each tile covers.",
+          "Rows and columns show how many unit squares there are.",
+          "Multiplying rows by columns gives the rectangle's area."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.3",
+          "3.9",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 144
+          },
+          {
+           "ch": 11,
+           "p": 145
+          },
+          {
+           "ch": 11,
+           "p": 151
+          },
+          {
+           "ch": 11,
+           "p": 151
+          }
          ]
         },
         {
@@ -57496,6 +58654,122 @@
           "6 (generated problem)",
           "7 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Unit squares form rows and columns. How is the rectangle's area found?",
+         "options": [
+          "Count every unit square in the rectangle.",
+          "Measure one side and use that length.",
+          "Count only the squares in the top row.",
+          "Count the empty spaces between the squares."
+         ],
+         "answer": 0,
+         "why": {
+          "Measure one side and use that length.": "This confuses area with length.",
+          "Count only the squares in the top row.": "This counts one row and misses the other rows.",
+          "Count the empty spaces between the squares.": "This mistakes gaps for part of the area."
+         },
+         "explanation": "This counts all the unit-square areas covering the rectangle.",
+         "f": [
+          "3.5",
+          "3.9",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 145
+          },
+          {
+           "ch": 11,
+           "p": 151
+          },
+          {
+           "ch": 11,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A child measures one side of a tiled rectangle. Why is this incomplete?",
+         "options": [
+          "It gives length, but area needs square units.",
+          "It gives area, but length needs square units.",
+          "It finds both area and length together.",
+          "It finds neither area nor any length."
+         ],
+         "answer": 0,
+         "why": {
+          "It gives area, but length needs square units.": "This wrongly says that length needs square units.",
+          "It finds both area and length together.": "Measuring one side does not give both measurements.",
+          "It finds neither area nor any length.": "A side can be measured, so this claim is false."
+         },
+         "explanation": "One side gives length, while area uses square units.",
+         "f": [
+          "3.3",
+          "3.4",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 145
+          },
+          {
+           "ch": 11,
+           "p": 145
+          },
+          {
+           "ch": 11,
+           "p": 145
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Mats use equal square patches. How can their areas be compared?",
+         "options": [
+          "Count how many equal patches each mat uses.",
+          "Measure only each mat's outer length.",
+          "Count only the patches along each edge.",
+          "Compare the sizes of the equal patches."
+         ],
+         "answer": 0,
+         "why": {
+          "Measure only each mat's outer length.": "Outer length does not tell how much area each mat covers.",
+          "Count only the patches along each edge.": "Edge patches miss patches inside the mat.",
+          "Compare the sizes of the equal patches.": "This compares patch sizes instead of the mats' coverage."
+         },
+         "explanation": "Equal patches cover equal areas, so their counts compare areas.",
+         "f": [
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 147
+          }
+         ]
         }
        ],
        "topicScene": "media/ch11-l3-honycomb-hexagons-to-42-squa-712116.webp",
@@ -57512,7 +58786,7 @@
       {
        "id": "mathematics-g5-ch11-l4",
        "title": "Comparing Shapes and Counting Patches",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -57652,6 +58926,63 @@
           "2 (generated problem)",
           "42 (generated problem)",
           "9 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch11-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "The grandmother makes another patchwork. It has 6 rows of 4 patches. What is its area?",
+         "steps": [
+          "The grandmother makes another patchwork, so we check its patches.",
+          "Each row has 4 patches, so 6 rows contain 24 patches.",
+          "The rectangle has length 6 and breadth 4, so we multiply for area.",
+          "Length 6 times breadth 4 gives an area of 24 square cm."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.9",
+          "4.10",
+          "4.11",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          }
          ]
         },
         {
@@ -58477,6 +59808,179 @@
           {
            "ch": 11,
            "p": 148
+          },
+          {
+           "ch": 11,
+           "p": 150
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "count patches"
+         ],
+         "prompt": "A patchwork has 6 rows of 4 patches. How many patches are there?",
+         "options": [
+          "24 patches",
+          "6 patches",
+          "4 patches",
+          "24 rows"
+         ],
+         "answer": 0,
+         "why": {
+          "6 patches": "This counts only the rows and misses the patches in each row.",
+          "4 patches": "This counts only one row and misses the other rows.",
+          "24 rows": "This confuses the number of patches with the number of rows."
+         },
+         "explanation": "Six rows of four patches make 24 patches.",
+         "f": [
+          "4.7",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find area"
+         ],
+         "prompt": "One side of the rectangle is 6. The other side is 4. What is its area?",
+         "options": [
+          "24 square cm",
+          "6 square cm",
+          "4 square cm",
+          "24 patches"
+         ],
+         "answer": 0,
+         "why": {
+          "6 square cm": "This uses only the length and ignores the breadth.",
+          "4 square cm": "This uses only the breadth and ignores the length.",
+          "24 patches": "This gives a patch count instead of an area."
+         },
+         "explanation": "Length 6 times breadth 4 gives an area of 24 square cm.",
+         "f": [
+          "4.9",
+          "4.10",
+          "4.11",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "choose operation"
+         ],
+         "prompt": "It has 6 rows of 4 patches. Which work finds the count?",
+         "options": [
+          "Multiply 6 by 4",
+          "Add 6 to 4",
+          "Subtract 4 from 6",
+          "Divide 6 by 4"
+         ],
+         "answer": 0,
+         "why": {
+          "Add 6 to 4": "Adding counts the rows and patches, not every patch.",
+          "Subtract 4 from 6": "Subtracting removes patches instead of counting them all.",
+          "Divide 6 by 4": "Dividing finds a share, not the total patch count."
+         },
+         "explanation": "Multiplying counts all 4 patches in each of 6 rows.",
+         "f": [
+          "4.7",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "match units"
+         ],
+         "prompt": "Grandmother counts patches and finds the rectangle's area. Which pair gives both results?",
+         "options": [
+          "24 patches; 24 square cm",
+          "24 square cm; 24 patches",
+          "6 patches; 24 square cm",
+          "4 patches; 24 square cm"
+         ],
+         "answer": 0,
+         "why": {
+          "24 square cm; 24 patches": "This swaps the patch count with the area.",
+          "6 patches; 24 square cm": "Six gives one side, not the total patch count.",
+          "4 patches; 24 square cm": "Four gives one row's patches, not the total patch count."
+         },
+         "explanation": "Counting gives 24 patches, while the rectangle's area gives 24 square cm.",
+         "f": [
+          "4.8",
+          "4.9",
+          "4.10",
+          "4.11",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
+          },
+          {
+           "ch": 11,
+           "p": 150
           },
           {
            "ch": 11,
@@ -59507,7 +61011,7 @@
       {
        "id": "mathematics-g5-ch11-l6",
        "title": "Using the Formulas and Playing the Game",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -59651,6 +61155,53 @@
           "2 (generated problem)",
           "34 (generated problem)",
           "5 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch11-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "The classroom floor needs both its area and perimeter. What should we do?",
+         "steps": [
+          "Measure the floor's length and breadth because both measurements are needed.",
+          "Use the length and breadth to find the area in square metres.",
+          "Use the same measurements to find the perimeter because it is also wanted.",
+          "Both results come from measuring the floor's length and breadth."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.5",
+          "6.6"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 151
+          },
+          {
+           "ch": 11,
+           "p": 151
+          },
+          {
+           "ch": 11,
+           "p": 151
+          },
+          {
+           "ch": 11,
+           "p": 153
+          },
+          {
+           "ch": 11,
+           "p": 153
+          }
          ]
         },
         {
@@ -60457,6 +62008,80 @@
            "p": 151
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find missing measurement"
+         ],
+         "prompt": "A garden has area 64 square m and length 16 m. What is missing before finding its perimeter?",
+         "options": [
+          "The garden's breadth",
+          "The garden's area",
+          "The garden's length",
+          "The garden's perimeter"
+         ],
+         "answer": 0,
+         "why": {
+          "The garden's area": "The garden's area is already known as 64 square m.",
+          "The garden's length": "The garden's length is already known as 16 m.",
+          "The garden's perimeter": "The perimeter is the result we want to find."
+         },
+         "explanation": "Area and length are known, so breadth is the missing measurement.",
+         "f": [
+          "6.6",
+          "6.8",
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 153
+          },
+          {
+           "ch": 11,
+           "p": 153
+          },
+          {
+           "ch": 11,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain flaw"
+         ],
+         "prompt": "A player says, 'Only the first player's tiles change the figure's perimeter.' Why is this wrong?",
+         "options": [
+          "Every player's tiles join the same figure.",
+          "Only the die can change the figure's perimeter.",
+          "The target changes before any tiles are added.",
+          "Each player uses a different figure."
+         ],
+         "answer": 0,
+         "why": {
+          "Only the die can change the figure's perimeter.": "The die helps choose tile numbers, but players add the tiles.",
+          "The target changes before any tiles are added.": "The target is the stopping point while players keep adding tiles.",
+          "Each player uses a different figure.": "The rules send all players to the same figure, not separate figures."
+         },
+         "explanation": "Players take turns adding tiles to the same figure, so all tiles matter.",
+         "f": [
+          "6.13"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 154
+          }
+         ]
         }
        ],
        "topicScene": "media/ch11-l6-pacific-partnership-2026-eng-c7edf9.webp",
@@ -60469,6 +62094,418 @@
         "licenseUrl": "",
         "creator": "U.S. Navy photo by Petty Officer 2nd Class Anthony Robledo"
        }
+      },
+      {
+       "id": "mathematics-g5-ch11-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 21,
+       "topicScene": "media/ch11-l1-indian-summer-c9be98.webp",
+       "sceneAlt": "A close-up photograph of Indian Summer, a patchwork quilt made by Bernadette Mayr.",
+       "sceneCaption": "A colourful patchwork quilt made from many pieces of fabric.",
+       "sceneCredit": {
+        "text": "Indian-Summer by Bernadette Mayr, CC BY-SA 3.0 de, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Indian-Summer.JPG",
+        "license": "CC BY-SA 3.0 de",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+        "creator": "Bernadette Mayr"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Preetha and Adrit’s grandmother made a quilt cover from old clothes. Now she wants to decorate the quilt cover with lace. The lace must cover the entire border of the quilt. She has decided to use two laces, and the two laces will have different colours. Their first perimeter exercise will use shapes whose sides are all equal.",
+         "prompt": "Why must the lace cover the entire border of the quilt?",
+         "options": [
+          "To cover every part of the quilt’s border",
+          "To cover the centre of the quilt",
+          "To make the two laces the same colour",
+          "To change the perimeter of the quilt"
+         ],
+         "answer": 0,
+         "why": {
+          "To cover the centre of the quilt": "Covering the centre would not follow the instruction.",
+          "To make the two laces the same colour": "The two laces are meant to have different colours.",
+          "To change the perimeter of the quilt": "Nothing in the case says the border length will change."
+         },
+         "explanation": "The case says the lace must cover the whole border."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Preetha and Adrit’s grandmother made a quilt cover from old clothes. Now she wants to decorate the quilt cover with lace. The lace must cover the entire border of the quilt. She has decided to use two laces, and the two laces will have different colours. Their first perimeter exercise will use shapes whose sides are all equal.",
+         "prompt": "Which measure would tell us the total length of lace needed around the quilt?",
+         "options": [
+          "The perimeter of the quilt",
+          "The colour of one lace",
+          "The centre of the quilt",
+          "The number of colours used"
+         ],
+         "answer": 0,
+         "why": {
+          "The colour of one lace": "A colour does not measure border length.",
+          "The centre of the quilt": "The lace is for the border, not the centre.",
+          "The number of colours used": "The number of colours does not give the border length."
+         },
+         "explanation": "Perimeter means the length of a shape’s border."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch11-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the perimeter is the same as the border length.",
+         "answer": "The perimeter is the length of a shape’s border. The border of the quilt is the part that the lace must cover completely. Therefore, the perimeter gives the total length of lace needed to cover the whole quilt border.",
+         "points": [
+          "Perimeter means border length.",
+          "The lace covers the quilt’s border.",
+          "The perimeter gives the total length needed.",
+          "The centre is not part of the lace border."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Grandmother is making a rug with square patches. The picture shows the rug she is making. Preetha and Adrit are trying to cover their table with different shapes. Preetha covered the table with triangles and circles, while Adrit covered it with squares and rectangles. An area is the region covered by triangles, squares, or rectangles. To find an area, the region is filled with tiling shapes that fit together without gaps or overlaps.",
+         "prompt": "Preetha shifts a triangle so that it covers part of another triangle. What has happened to the tiling?",
+         "options": [
+          "The shapes now overlap, so they no longer meet the tiling rule.",
+          "The shapes still form a tiling because overlapping does not matter.",
+          "An uncovered gap has been created even though the triangles overlap.",
+          "The area has become larger because the overlapping part is covered twice."
+         ],
+         "answer": 0,
+         "why": {
+          "The shapes still form a tiling because overlapping does not matter.": "The tiling rule does not allow overlaps.",
+          "An uncovered gap has been created even though the triangles overlap.": "Overlapping triangles do not automatically create a gap.",
+          "The area has become larger because the overlapping part is covered twice.": "Covering part twice does not make the covered region larger."
+         },
+         "explanation": "Overlapping means the tiles do not fit correctly."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Grandmother is making a rug with square patches. The picture shows the rug she is making. Preetha and Adrit are trying to cover their table with different shapes. Preetha covered the table with triangles and circles, while Adrit covered it with squares and rectangles. An area is the region covered by triangles, squares, or rectangles. To find an area, the region is filled with tiling shapes that fit together without gaps or overlaps.",
+         "prompt": "Adrit wants his square and rectangle tiles to give an exact area. What should he do before finding the area?",
+         "options": [
+          "Fill the table region so the tiles fit with neither uncovered space nor double covering.",
+          "Leave spaces between the tiles because gaps do not affect the result.",
+          "Place the tiles over one another so every part seems covered.",
+          "Use only one tile shape even when it cannot fill the whole region."
+         ],
+         "answer": 0,
+         "why": {
+          "Leave spaces between the tiles because gaps do not affect the result.": "Leaving gaps would leave part of the region uncovered.",
+          "Place the tiles over one another so every part seems covered.": "Overlapping tiles would cover some parts again.",
+          "Use only one tile shape even when it cannot fill the whole region.": "Using a shape that cannot fill the region would leave spaces."
+         },
+         "explanation": "An exact tiling covers the region without gaps or overlaps."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch11-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why tiling shapes must fit together without gaps or overlaps.",
+         "answer": "An exact tiling needs every part of the region covered once. If tiles overlap, some space is covered again, and if there are gaps, some space is not covered. Either problem means the shapes do not fit together correctly, so the tiling cannot be used to find the area reliably.",
+         "points": [
+          "The whole region must be covered.",
+          "Gaps leave part of the region uncovered.",
+          "Overlaps cover some space again.",
+          "Either problem breaks the tiling rule."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Preetha is playing with tiles beside mats made from square patches of equal size. She places a mat over a square grid, where unit squares form rows and columns. After counting the rows and columns, she multiplies them to find the mat's area. She also places a leaf on a square grid so that she can find its area in a similar way.",
+         "prompt": "What should Preetha do after counting the rows and columns of unit squares covering a mat?",
+         "options": [
+          "Multiply the number of rows by the number of columns.",
+          "Add the number of rows to the number of columns.",
+          "Subtract the number of columns from the number of rows.",
+          "Use only the smaller of the two counts."
+         ],
+         "answer": 0,
+         "why": {
+          "Add the number of rows to the number of columns.": "Adding the counts does not give the area.",
+          "Subtract the number of columns from the number of rows.": "Subtracting the counts does not give the area.",
+          "Use only the smaller of the two counts.": "Using only one count leaves out part of the rectangle."
+         },
+         "explanation": "Multiplication gives the area from the rows and columns."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Preetha is playing with tiles beside mats made from square patches of equal size. She places a mat over a square grid, where unit squares form rows and columns. After counting the rows and columns, she multiplies them to find the mat's area. She also places a leaf on a square grid so that she can find its area in a similar way.",
+         "prompt": "What would happen if one mat covered more unit squares than another mat?",
+         "options": [
+          "The mat covering more unit squares would have the larger area.",
+          "The mats would have equal areas because their patches are equal in size.",
+          "The mat covering fewer unit squares would have the larger area.",
+          "Their areas could not be compared using square grids."
+         ],
+         "answer": 0,
+         "why": {
+          "The mats would have equal areas because their patches are equal in size.": "Equal patch sizes do not mean equal numbers of patches.",
+          "The mat covering fewer unit squares would have the larger area.": "Fewer covered unit squares mean a smaller area.",
+          "Their areas could not be compared using square grids.": "Square grids allow the areas to be compared."
+         },
+         "explanation": "More unit squares mean a larger area."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch11-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why multiplying the number of rows by the number of columns gives the area of a rectangle tiled by unit squares.",
+         "answer": "Each unit square has an area of 1 unit square. When unit squares are arranged in rows and columns to tile a rectangle, multiplying the number of rows by the number of columns gives the number of unit squares. That number is the rectangle's area.",
+         "points": [
+          "A unit square has an area of 1 unit square.",
+          "Unit squares are arranged in rows and columns.",
+          "The product gives the number of unit squares.",
+          "The number of unit squares gives the area."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Grandmother is making another square patchwork with 6 rows and 4 patches in each row. There are 24 patches altogether. The patchwork rectangle has one side of length 6 and a non-equal side of length 4, giving an area of 24 square cm. Multiplying length and breadth gives area. While comparing the patchwork with other shapes, some have the same area, while others have the same perimeter. Each comparison needs the correct measurement.",
+         "prompt": "How many patches are there in Grandmother’s patchwork altogether?",
+         "options": [
+          "There are 24 patches in total.",
+          "There are 6 patches in total.",
+          "There are 4 patches in total.",
+          "There are 24 rows altogether."
+         ],
+         "answer": 0,
+         "why": {
+          "There are 6 patches in total.": "This counts only the number of rows.",
+          "There are 4 patches in total.": "This counts only the patches in one row.",
+          "There are 24 rows altogether.": "This confuses the number of rows with the number of patches."
+         },
+         "explanation": "This counts every patch in all 6 rows."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Grandmother is making another square patchwork with 6 rows and 4 patches in each row. There are 24 patches altogether. The patchwork rectangle has one side of length 6 and a non-equal side of length 4, giving an area of 24 square cm. Multiplying length and breadth gives area. While comparing the patchwork with other shapes, some have the same area, while others have the same perimeter. Each comparison needs the correct measurement.",
+         "prompt": "A different shape has the same perimeter as the patchwork rectangle. What should Grandmother find to complete the comparison?",
+         "options": [
+          "The area of the different shape.",
+          "The number of patches in the different shape.",
+          "The number of rows in the different shape.",
+          "The length of a side of the different shape."
+         ],
+         "answer": 0,
+         "why": {
+          "The number of patches in the different shape.": "A patch count does not measure the shape’s area.",
+          "The number of rows in the different shape.": "A row count does not measure the shape’s area.",
+          "The length of a side of the different shape.": "The length of a side does not give the shape’s whole area."
+         },
+         "explanation": "Shapes with the same perimeter require their areas to be found."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch11-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why 6 rows with 4 patches in each row gives 24 patches altogether.",
+         "answer": "The 6 rows each contain 4 patches. Counting by rows means 6 groups of 4 patches. Multiplying 6 by 4 gives 24, so every patch in the patchwork is included in the total.",
+         "points": [
+          "Identifies 6 groups of 4 patches",
+          "Uses multiplication to find the total",
+          "States that the total is 24 patches",
+          "Explains that every patch is counted"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A school display uses a patchwork measuring 6 cm long and 4 cm broad. A student calls it a square. Another student compares it with the example square, whose sides are 5 units and whose area is 25 square cm. The teacher asks the class to check the opposite sides, identify the shape, and explain how its area and perimeter are found.",
+         "prompt": "Which calculation should the class use to find the patchwork’s area?",
+         "options": [
+          "6 cm multiplied by 4 cm",
+          "6 cm added to 4 cm",
+          "Twice 6 cm plus twice 4 cm",
+          "5 units multiplied by 5 units"
+         ],
+         "answer": 0,
+         "why": {
+          "6 cm added to 4 cm": "Adding the measurements does not find area.",
+          "Twice 6 cm plus twice 4 cm": "The stated calculation finds the perimeter.",
+          "5 units multiplied by 5 units": "That calculation finds the example square’s area."
+         },
+         "explanation": "Area is length multiplied by breadth."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A school display uses a patchwork measuring 6 cm long and 4 cm broad. A student calls it a square. Another student compares it with the example square, whose sides are 5 units and whose area is 25 square cm. The teacher asks the class to check the opposite sides, identify the shape, and explain how its area and perimeter are found.",
+         "prompt": "If the patchwork’s breadth changed from 4 cm to 6 cm, what should the student conclude?",
+         "options": [
+          "The patchwork would be a square because all four sides would measure 6 cm.",
+          "The patchwork would remain only a rectangle because opposite sides have equal lengths.",
+          "The patchwork would stop being a rectangle because its length and breadth would match.",
+          "The patchwork would be a square because the example square has area 25 square cm."
+         ],
+         "answer": 0,
+         "why": {
+          "The patchwork would remain only a rectangle because opposite sides have equal lengths.": "Equal opposite sides alone do not show that all four sides are equal.",
+          "The patchwork would stop being a rectangle because its length and breadth would match.": "A shape with equal length and breadth can still be a rectangle.",
+          "The patchwork would be a square because the example square has area 25 square cm.": "The example square’s area does not determine the patchwork’s shape."
+         },
+         "explanation": "Four equal sides make a rectangle into a square."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch11-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Why is the patchwork a rectangle but not a square?",
+         "answer": "The patchwork has a length of 6 cm and a breadth of 4 cm. Its opposite sides have equal lengths, so it is a rectangle. A square must have four equal sides. Because 6 cm and 4 cm are not equal, the patchwork is not a square.",
+         "points": [
+          "States the length and breadth.",
+          "Uses the rule about equal opposite sides.",
+          "Identifies the patchwork as a rectangle.",
+          "Explains that a square needs four equal sides."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Area and perimeter are being investigated. The classroom floor's length and breadth will be measured with a scale or measuring tape, so its area in square metres and perimeter can be found. The notebook cover is another object to measure. A rectangular field is 42 m long, and a rectangular garden has area 64 square m and length 16 m. Later, pairs play with square tiles and a die. Each player picks tiles according to the die, taking turns until the target perimeter is reached.",
+         "prompt": "The rectangular garden has an area of 64 square m and a length of 16 m. What is its breadth?",
+         "options": [
+          "4 m",
+          "16 m",
+          "64 m",
+          "42 m"
+         ],
+         "answer": 0,
+         "why": {
+          "16 m": "This repeats the garden's length instead of finding the breadth.",
+          "64 m": "This uses the area as if it were the breadth.",
+          "42 m": "This uses the length of the rectangular field instead of the garden's length."
+         },
+         "explanation": "Correct: 64 divided by 16 gives a breadth of 4 m."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch11-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Area and perimeter are being investigated. The classroom floor's length and breadth will be measured with a scale or measuring tape, so its area in square metres and perimeter can be found. The notebook cover is another object to measure. A rectangular field is 42 m long, and a rectangular garden has area 64 square m and length 16 m. Later, pairs play with square tiles and a die. Each player picks tiles according to the die, taking turns until the target perimeter is reached.",
+         "prompt": "During the tile game, what should a player do when it is their turn?",
+         "options": [
+          "Use the number shown to decide how many tiles to take",
+          "Choose the same number of tiles every time",
+          "Use the length of the rectangular field to choose tiles",
+          "Use the breadth of the rectangular garden to choose tiles"
+         ],
+         "answer": 0,
+         "why": {
+          "Choose the same number of tiles every time": "This ignores the number shown on the die.",
+          "Use the length of the rectangular field to choose tiles": "The field's length belongs to the area-and-perimeter investigation.",
+          "Use the breadth of the rectangular garden to choose tiles": "The garden's breadth belongs to the area-and-perimeter investigation."
+         },
+         "explanation": "Correct: the number shown on the die determines how many tiles the player takes."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch11-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the length and breadth of each object are needed before its area and perimeter can be found. Use the classroom floor and the notebook cover in your explanation.",
+         "answer": "Length and breadth give the two measurements needed for the classroom floor and notebook cover. The area of the floor is recorded in square metres, and the perimeter is found from the same measured sides. Measuring first therefore supplies the information needed for both calculations.",
+         "points": [
+          "Identifies length and breadth as the needed measurements",
+          "Links the measurements to finding area",
+          "Links the measurements to finding perimeter"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -60719,7 +62756,7 @@
       {
        "id": "mathematics-g5-ch12-l1",
        "title": "Elapsed Time and Painting Times",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -60769,6 +62806,48 @@
            "ch": 12,
            "p": 155
           },
+          {
+           "ch": 12,
+           "p": 155
+          },
+          {
+           "ch": 12,
+           "p": 155
+          },
+          {
+           "ch": 12,
+           "p": 155
+          },
+          {
+           "ch": 12,
+           "p": 155
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch12-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Raghav, Rani, and Ritu start painting one picture together. Who will finish last?",
+         "steps": [
+          "Compare the times, because they all started painting together.",
+          "Two hours 10 minutes is longer than Raghav's 1 hour 20 minutes.",
+          "One hour 35 minutes is shorter than Raghav's 1 hour 20 minutes.",
+          "Rani will finish last, because 2 hours 10 minutes is longest."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.8",
+          "1.9",
+          "1.10",
+          "1.11"
+         ],
+         "src": [
           {
            "ch": 12,
            "p": 155
@@ -60997,6 +63076,53 @@
            "p": 155
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare times"
+         ],
+         "prompt": "Raghav, Rani, and Ritu each paint a picture. Whose painting time is longer than both others?",
+         "options": [
+          "Raghav, with 1 hour 20 minutes.",
+          "Rani, with 2 hours 10 minutes.",
+          "Ritu, with 1 hour 35 minutes.",
+          "Raghav, with 1 hour 35 minutes."
+         ],
+         "answer": 1,
+         "why": {
+          "Raghav, with 1 hour 20 minutes.": "Rani's 2 hours 10 minutes is longer than both other painting times.",
+          "Ritu, with 1 hour 35 minutes.": "Ritu's 1 hour 35 minutes is shorter than Rani's painting time.",
+          "Raghav, with 1 hour 35 minutes.": "This mixes Raghav's name with Ritu's painting time."
+         },
+         "explanation": "Raghav's 1 hour 20 minutes is shorter than both other times.",
+         "f": [
+          "1.8",
+          "1.9",
+          "1.10",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 155
+          },
+          {
+           "ch": 12,
+           "p": 155
+          },
+          {
+           "ch": 12,
+           "p": 155
+          },
+          {
+           "ch": 12,
+           "p": 155
+          }
+         ]
         }
        ],
        "topicScene": "media/ch12-l1-children-painting-1f7d0b.webp",
@@ -61013,7 +63139,7 @@
       {
        "id": "mathematics-g5-ch12-l2",
        "title": "Twelve-Hour and Twenty-Four-Hour Times",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "concept",
@@ -61907,6 +64033,253 @@
           "4 (generated problem)",
           "7 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "verify"
+         ],
+         "prompt": "A football match starts at 02:30 p.m. A clock shows 14:30. Does the clock match the match?",
+         "options": [
+          "Yes, because 14:30 means 02:30 p.m.",
+          "Yes, because 14:30 means 08:45 p.m.",
+          "No, because 14:30 means 05:30 p.m.",
+          "No, because 14:30 means 11:45 p.m."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, because 14:30 means 08:45 p.m.": "This uses 08:45 p.m., whose 24-hour time is 20:45.",
+          "No, because 14:30 means 05:30 p.m.": "This uses 05:30 p.m., whose 24-hour time is 17:30.",
+          "No, because 14:30 means 11:45 p.m.": "This uses 11:45 p.m., whose 24-hour time is 23:45."
+         },
+         "explanation": "14:30 is exactly 02:30 p.m. in 24-hour time.",
+         "f": [
+          "2.4",
+          "2.8",
+          "2.5",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "correct"
+         ],
+         "prompt": "The cinema lists the film at 20:45 in 24-hour time. A helper says it starts at 08:45 a.m. What should the helper write?",
+         "options": [
+          "08:45 p.m. on the cinema sign",
+          "08:45 a.m. on the cinema sign",
+          "05:30 p.m. on the cinema sign",
+          "11:45 p.m. on the cinema sign"
+         ],
+         "answer": 0,
+         "why": {
+          "08:45 a.m. on the cinema sign": "This keeps a.m., but 20:45 stands for p.m.",
+          "05:30 p.m. on the cinema sign": "05:30 p.m. is 17:30, not 20:45.",
+          "11:45 p.m. on the cinema sign": "11:45 p.m. is 23:45, not 20:45."
+         },
+         "explanation": "20:45 is the 24-hour form of 08:45 p.m.",
+         "f": [
+          "2.8",
+          "2.5",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "diagnose"
+         ],
+         "prompt": "A party clock shows 23:45 in 24-hour time. A child says this is 11:45 a.m. What should the child understand?",
+         "options": [
+          "23:45 means 11:45 p.m.",
+          "23:45 means 11:45 a.m.",
+          "23:45 means 05:30 p.m.",
+          "23:45 means 09:35 p.m."
+         ],
+         "answer": 0,
+         "why": {
+          "23:45 means 11:45 a.m.": "This mistakes p.m. for a.m.; 23:45 is later.",
+          "23:45 means 05:30 p.m.": "05:30 p.m. is 17:30, not 23:45.",
+          "23:45 means 09:35 p.m.": "09:35 p.m. is 21:35, not 23:45."
+         },
+         "explanation": "23:45 is the 24-hour form of 11:45 p.m.",
+         "f": [
+          "2.9",
+          "2.5",
+          "2.6"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "diagnose"
+         ],
+         "prompt": "The breakfast sign says 06:30. A helper calls it an evening time. What should the helper understand?",
+         "options": [
+          "06:30 means 06:30 a.m.",
+          "06:30 means 06:30 p.m.",
+          "06:30 means 07:30 p.m.",
+          "06:30 means 11:45 p.m."
+         ],
+         "answer": 0,
+         "why": {
+          "06:30 means 06:30 p.m.": "This swaps a.m. and p.m., making morning into evening.",
+          "06:30 means 07:30 p.m.": "07:30 p.m. is 19:30, not 06:30.",
+          "06:30 means 11:45 p.m.": "11:45 p.m. is 23:45, not 06:30."
+         },
+         "explanation": "06:30 is the 24-hour form of 06:30 a.m.",
+         "f": [
+          "2.7",
+          "2.11",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l2-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "A clock shows 05:30. One time is 05:30 a.m. and one is 05:30 p.m. Which is later?",
+         "options": [
+          "05:30 p.m. is the later time.",
+          "05:30 a.m. is the later time.",
+          "Both 05:30 times are equally late.",
+          "Neither 05:30 time is later than the other."
+         ],
+         "answer": 0,
+         "why": {
+          "05:30 a.m. is the later time.": "This confuses a.m. and p.m.; 05:30 a.m. is earlier.",
+          "Both 05:30 times are equally late.": "It ignores the difference between a.m. and p.m.",
+          "Neither 05:30 time is later than the other.": "It ignores the difference between a.m. and p.m. too."
+         },
+         "explanation": "05:30 p.m. is 17:30, which is later than 05:30 a.m.",
+         "f": [
+          "2.1",
+          "2.5"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l2-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Lunch is at 11:55 a.m. The night class starts at 11:45 p.m. Which starts later?",
+         "options": [
+          "The 11:45 p.m. class starts later.",
+          "The 11:55 a.m. lunch starts later.",
+          "The 11:45 a.m. class starts later.",
+          "The 11:55 p.m. lunch starts later."
+         ],
+         "answer": 0,
+         "why": {
+          "The 11:55 a.m. lunch starts later.": "It compares only the minutes; 55 is larger than 45.",
+          "The 11:45 a.m. class starts later.": "It mistakes p.m. for a.m. in the class time.",
+          "The 11:55 p.m. lunch starts later.": "It mistakes a.m. for p.m. in the lunch time."
+         },
+         "explanation": "11:45 p.m. is 23:45, so it is later than 11:55 a.m.",
+         "f": [
+          "2.3",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          }
+         ]
         }
        ],
        "topicScene": "media/ch12-l1-children-painting-1f7d0b.webp",
@@ -61923,7 +64296,7 @@
       {
        "id": "mathematics-g5-ch12-l3",
        "title": "The School Race and Seconds",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -62068,6 +64441,53 @@
           "360 (generated problem)",
           "6 (generated problem)",
           "60 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch12-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Akira, Sunita, and Mary each took 1 minute in the 200-metre walking race. Who won?",
+         "steps": [
+          "The school race was 200 metres, and it was a walking race.",
+          "Akira, Sunita, and Mary each took 1 minute.",
+          "Their times were equal, so none had a faster recorded time.",
+          "The facts therefore do not identify one winning child."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 157
+          }
          ]
         },
         {
@@ -62942,23 +65362,186 @@
            "p": 156
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Akira and Sunita each took 1 minute in the walking race. Who finished first?",
+         "options": [
+          "Neither child finished first; they tied together.",
+          "Akira finished first; Sunita came afterward.",
+          "Sunita finished first; Akira came afterward.",
+          "The picture proves who finished first."
+         ],
+         "answer": 0,
+         "why": {
+          "Akira finished first; Sunita came afterward.": "This mistake thinks the name order shows the finishing order.",
+          "Sunita finished first; Akira came afterward.": "This mistake guesses Sunita instead of comparing the times.",
+          "The picture proves who finished first.": "This mistake assumes a finishing order that the facts do not give."
+         },
+         "explanation": "This is right because both children had the same race time.",
+         "f": [
+          "3.2",
+          "3.3",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 157
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "convert"
+         ],
+         "prompt": "One minute contains 60 seconds. A race timer reaches 60 seconds. What time is shown?",
+         "options": [
+          "One minute, because 60 seconds make it.",
+          "One second, because the timer counted once.",
+          "200 metres, because the timer measures distance.",
+          "One race, because the timer counts races."
+         ],
+         "answer": 0,
+         "why": {
+          "One second, because the timer counted once.": "This mistake confuses one second with one minute.",
+          "200 metres, because the timer measures distance.": "This mistake confuses time with distance.",
+          "One race, because the timer counts races.": "This mistake confuses time with the number of races."
+         },
+         "explanation": "This is right because 60 seconds make one minute.",
+         "f": [
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 157
+          },
+          {
+           "ch": 12,
+           "p": 157
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "The race picture uses seconds as a new unit. Two times look alike without seconds. What helps show the faster child?",
+         "options": [
+          "Watching seconds, because they show small time differences.",
+          "Counting walking steps, because they show small time differences.",
+          "Reading the distance, because 200 metres shows small time differences.",
+          "Waiting one minute, because seconds cannot show differences."
+         ],
+         "answer": 0,
+         "why": {
+          "Counting walking steps, because they show small time differences.": "This mistake thinks walking steps show differences in race times.",
+          "Reading the distance, because 200 metres shows small time differences.": "This mistake confuses distance with race time.",
+          "Waiting one minute, because seconds cannot show differences.": "This mistake thinks minute readings show small differences better than seconds."
+         },
+         "explanation": "This is right because seconds help us notice small time differences.",
+         "f": [
+          "3.1",
+          "3.5",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 156
+          },
+          {
+           "ch": 12,
+           "p": 157
+          },
+          {
+           "ch": 12,
+           "p": 157
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "The chapter asks who won and how long the winner took. Each participant took 1 minute. What can the given facts show?",
+         "options": [
+          "One child won in 1 minute; the finishing order is known.",
+          "All children tied in 1 minute; their recorded times were equal.",
+          "One child won, but the winner's time is not known.",
+          "No child finished, because 1 minute was not long enough."
+         ],
+         "answer": 1,
+         "why": {
+          "One child won in 1 minute; the finishing order is known.": "This is right because every participant had the same recorded time.",
+          "One child won, but the winner's time is not known.": "This mistake leaves the time unknown even though it is given.",
+          "No child finished, because 1 minute was not long enough.": "This mistake wrongly treats 1 minute as too short to finish."
+         },
+         "explanation": "This mistake claims an order without different recorded times.",
+         "f": [
+          "3.8",
+          "3.9",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 157
+          },
+          {
+           "ch": 12,
+           "p": 157
+          },
+          {
+           "ch": 12,
+           "p": 157
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch12-l1-children-painting-1f7d0b.webp",
-       "sceneAlt": "Children create paintings for International Peace Day 2009 in Geneva.",
-       "sceneCaption": "Children paint together for International Peace Day 2009 in Geneva.",
+       "topicScene": "media/ch12-l3-200-metres-track-running-sta-4de4f3.webp",
+       "sceneAlt": "A marked starting line for a 200-metre track run.",
+       "sceneCaption": "The starting line of a 200-metre running track.",
        "sceneCredit": {
-        "text": "Children painting by Yann ( talk ), CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Children_painting.jpg",
+        "text": "200 metres track running start line by Santeri Viinamäki, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:200_metres_track_running_start_line.jpg",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Yann ( talk )"
+        "creator": "Santeri Viinamäki"
        }
       },
       {
        "id": "mathematics-g5-ch12-l4",
        "title": "Estimating and Measuring Short Times",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -63035,6 +65618,38 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g5-ch12-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Raghu read one sentence in 20 seconds. How can we check whether it belongs on a less-than-a-minute list?",
+         "steps": [
+          "Raghu's sentence reading took 20 seconds.",
+          "That is shorter than one minute, so it is a short time.",
+          "Therefore, his reading belongs in the list of events under a minute.",
+          "Using the given time checks the estimate instead of guessing."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.11",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 158
+          },
+          {
+           "ch": 12,
+           "p": 160
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g5-ch12-l4-a2",
          "difficulty": 1,
@@ -63051,25 +65666,6 @@
          ],
          "answer": 0,
          "explanation": "Switching lights on and off is included in the time estimate.",
-         "src": [
-          {
-           "ch": 12,
-           "p": 157
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch12-l4-a3",
-         "difficulty": 1,
-         "tags": [
-          "estimating",
-          "glass",
-          "tap"
-         ],
-         "prompt": "The lesson includes filling a glass from the tap.",
-         "answer": true,
-         "explanation": "Yes, filling a glass from the tap is included in the time estimate.",
          "src": [
           {
            "ch": 12,
@@ -63259,18 +65855,110 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g5-ch12-l4-a9",
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l4-d1",
          "difficulty": 3,
          "tags": [
-          "measuring",
-          "seconds",
-          "reading"
+          "deep",
+          "choose units"
          ],
-         "prompt": "Raghu took 20 minutes to read a sentence in his book.",
-         "answer": false,
-         "explanation": "Raghu took 20 seconds, not 20 minutes, to read the sentence.",
+         "prompt": "A child blinks once and checks the time. Which unit should the estimate use?",
+         "options": [
+          "seconds, because blinking is a quick action",
+          "minutes, because every action takes minutes",
+          "seconds, because counting is very slow",
+          "minutes, because blinking is a slow action"
+         ],
+         "answer": 0,
+         "why": {
+          "minutes, because every action takes minutes": "The child wrongly thinks that every action needs minutes.",
+          "seconds, because counting is very slow": "The child uses the count's speed instead of the blink's speed.",
+          "minutes, because blinking is a slow action": "The child wrongly calls a quick action slow."
+         },
+         "explanation": "Blinking is quick, so seconds are the sensible short-time unit.",
+         "f": [
+          "4.1"
+         ],
          "src": [
+          {
+           "ch": 12,
+           "p": 157
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason from facts"
+         ],
+         "prompt": "Washing hands finishes before a count from 1 to 20 does. Which estimate fits the washing?",
+         "options": [
+          "The washing takes under one minute.",
+          "The washing takes exactly one minute.",
+          "The washing takes over one minute.",
+          "The washing takes no time at all."
+         ],
+         "answer": 0,
+         "why": {
+          "The washing takes exactly one minute.": "The child wrongly assumes that every count lasts one minute.",
+          "The washing takes over one minute.": "The child reverses the meaning of finishing before the count.",
+          "The washing takes no time at all.": "The child confuses a finished action with no duration."
+         },
+         "explanation": "The washing ends before 20 seconds, so it is under one minute.",
+         "f": [
+          "4.3",
+          "4.10",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 157
+          },
+          {
+           "ch": 12,
+           "p": 157
+          },
+          {
+           "ch": 12,
+           "p": 158
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check a list"
+         ],
+         "prompt": "Raghu took 20 seconds to read a sentence. What should he do to add this event to the short-time list?",
+         "options": [
+          "Check that 20 seconds is under a minute.",
+          "Change 20 seconds into many minutes.",
+          "Leave the list because all readings are long.",
+          "Add it without checking the given time."
+         ],
+         "answer": 0,
+         "why": {
+          "Change 20 seconds into many minutes.": "This wrongly treats the given seconds as if they were minutes.",
+          "Leave the list because all readings are long.": "The child wrongly assumes that every reading takes a long time.",
+          "Add it without checking the given time.": "The child adds an estimate without checking the known time."
+         },
+         "explanation": "Checking shows that the reading belongs on the less-than-a-minute list.",
+         "f": [
+          "4.11",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 158
+          },
           {
            "ch": 12,
            "p": 160
@@ -63278,21 +65966,21 @@
          ]
         }
        ],
-       "topicScene": "media/ch12-l1-children-painting-1f7d0b.webp",
-       "sceneAlt": "Children create paintings for International Peace Day 2009 in Geneva.",
-       "sceneCaption": "Children paint together for International Peace Day 2009 in Geneva.",
+       "topicScene": "media/ch12-l4-a-digital-stopwatch-ab9f7f.webp",
+       "sceneAlt": "A digital stopwatch measures an elapsed time interval to one hundredth of a second.",
+       "sceneCaption": "A digital stopwatch measures elapsed time in hundredths of a second.",
        "sceneCredit": {
-        "text": "Children painting by Yann ( talk ), CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Children_painting.jpg",
+        "text": "A digital stopwatch by Stephanie cheks, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:A_digital_stopwatch.jpg",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Yann ( talk )"
+        "creator": "Stephanie cheks"
        }
       },
       {
        "id": "mathematics-g5-ch12-l5",
        "title": "Converting Hours, Minutes and Seconds",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -63404,6 +66092,38 @@
           "40 (generated problem)",
           "60 (generated problem)",
           "64 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch12-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A school bus waits 320 seconds before leaving. How long is that wait?",
+         "steps": [
+          "A minute has 60 seconds, so count 320 seconds in full-minute groups.",
+          "Five full groups make 5 minutes, because every group has 60 seconds.",
+          "The 20 seconds left cannot fill another minute, so they remain seconds.",
+          "Therefore, the waiting time is 5 minutes 20 seconds."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.5",
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 157
+          },
+          {
+           "ch": 12,
+           "p": 162
+          }
          ]
         },
         {
@@ -64212,23 +66932,253 @@
            "p": 162
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "convert"
+         ],
+         "prompt": "A school trip leaves in 2 hours. How many minutes must you wait?",
+         "options": [
+          "It leaves in 120 minutes.",
+          "It leaves in 60 minutes.",
+          "It leaves in 180 minutes.",
+          "It leaves in 248 minutes."
+         ],
+         "answer": 0,
+         "why": {
+          "It leaves in 60 minutes.": "This counts only one hour and misses the second hour.",
+          "It leaves in 180 minutes.": "This counts three hours instead of the stated two hours.",
+          "It leaves in 248 minutes.": "This mixes a seconds conversion with a minutes question."
+         },
+         "explanation": "Two hours contain two 60-minute parts, giving 120 minutes.",
+         "f": [
+          "5.1",
+          "5.2"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 161
+          },
+          {
+           "ch": 12,
+           "p": 161
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "A class lasts 2 hours. A trip lasts 3 hours. Which lasts longer, and by how much?",
+         "options": [
+          "The trip, by 60 minutes.",
+          "The class, by 60 minutes.",
+          "The trip, by 120 minutes.",
+          "The class, by 120 minutes."
+         ],
+         "answer": 0,
+         "why": {
+          "The class, by 60 minutes.": "The class lasts two hours, so it cannot be the longer one.",
+          "The trip, by 120 minutes.": "The difference is 180 minutes minus 120 minutes, which is 60 minutes.",
+          "The class, by 120 minutes.": "The class is shorter, and 120 minutes is its whole length."
+         },
+         "explanation": "Three hours are 180 minutes, while two hours are 120 minutes.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 161
+          },
+          {
+           "ch": 12,
+           "p": 161
+          },
+          {
+           "ch": 12,
+           "p": 161
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check"
+         ],
+         "prompt": "A sign says 700 seconds is 5 minutes 20 seconds. What is the flaw?",
+         "options": [
+          "It used 320 seconds instead of 700 seconds.",
+          "It used 225 seconds instead of 700 seconds.",
+          "It used 248 seconds instead of 700 seconds.",
+          "It used 613 seconds instead of 700 seconds."
+         ],
+         "answer": 0,
+         "why": {
+          "It used 225 seconds instead of 700 seconds.": "This is the conversion for 225 seconds, not 700 seconds.",
+          "It used 248 seconds instead of 700 seconds.": "This is the conversion for 248 seconds, not 700 seconds.",
+          "It used 613 seconds instead of 700 seconds.": "This is the conversion for 613 seconds, not 700 seconds."
+         },
+         "explanation": "The 5 minutes 20 seconds answer belongs to 320 seconds.",
+         "f": [
+          "5.6",
+          "5.7",
+          "5.8",
+          "5.10",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check"
+         ],
+         "prompt": "A note says 10 minutes 13 seconds equals 320 seconds. What is the flaw?",
+         "options": [
+          "That note uses 320 seconds, which equals 5 minutes 20 seconds.",
+          "That note uses 225 seconds, which equals 3 minutes 45 seconds.",
+          "That note uses 248 seconds, which equals 4 minutes 8 seconds.",
+          "That note uses 940 seconds, which equals 15 minutes 40 seconds."
+         ],
+         "answer": 0,
+         "why": {
+          "That note uses 225 seconds, which equals 3 minutes 45 seconds.": "The note mixed 10 minutes 13 seconds with the conversion for 225 seconds.",
+          "That note uses 248 seconds, which equals 4 minutes 8 seconds.": "The note mixed 10 minutes 13 seconds with the conversion for 248 seconds.",
+          "That note uses 940 seconds, which equals 15 minutes 40 seconds.": "The note mixed 10 minutes 13 seconds with the conversion for 940 seconds."
+         },
+         "explanation": "10 minutes 13 seconds equal 613 seconds, while 320 seconds equal 5 minutes 20 seconds.",
+         "f": [
+          "5.6",
+          "5.7",
+          "5.10",
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l5-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "A film lasts 15 minutes 40 seconds. A short clip lasts 4 minutes 8 seconds. Which is longer?",
+         "options": [
+          "The film, 940 seconds.",
+          "The clip, 248 seconds.",
+          "The film, 613 seconds.",
+          "The clip, 700 seconds."
+         ],
+         "answer": 0,
+         "why": {
+          "The clip, 248 seconds.": "The clip is shorter, and 248 seconds is its full length.",
+          "The film, 613 seconds.": "The film lasts 940 seconds, not 613 seconds.",
+          "The clip, 700 seconds.": "The clip is shorter; 700 seconds belongs to another time."
+         },
+         "explanation": "The film lasts 940 seconds, while the clip lasts 248 seconds.",
+         "f": [
+          "5.8",
+          "5.10",
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 162
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch12-l1-children-painting-1f7d0b.webp",
-       "sceneAlt": "Children create paintings for International Peace Day 2009 in Geneva.",
-       "sceneCaption": "Children paint together for International Peace Day 2009 in Geneva.",
+       "topicScene": "media/ch12-l5-analogclockanimation2-still--e1c86b.webp",
+       "sceneAlt": "A still frame from an animated analog clock showing 00:27, with distinct hour and minute markings.",
+       "sceneCaption": "Animated analog clock showing 00:27 with clear hour and minute markings.",
        "sceneCredit": {
-        "text": "Children painting by Yann ( talk ), CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Children_painting.jpg",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Yann ( talk )"
+        "text": "AnalogClockAnimation2 still frame by Jahobr, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:AnalogClockAnimation2_still_frame.svg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Jahobr"
        }
       },
       {
        "id": "mathematics-g5-ch12-l6",
        "title": "Finding Start Times and End Times",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -64334,6 +67284,38 @@
           "45 (generated problem)",
           "49 (generated problem)",
           "7 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g5-ch12-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Raghu leaves for Nana ji's house at 06:15 PM. His journey takes 1 hour 5 minutes. What is the end time?",
+         "steps": [
+          "Use 06:15 PM as the start time, because Raghu leaves then.",
+          "Add 1 hour, because one whole hour passes.",
+          "Add 5 more minutes, because five minutes remain.",
+          "The end time is 07:20 PM at Nana ji's house."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.2",
+          "6.3"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 162
+          },
+          {
+           "ch": 12,
+           "p": 163
+          }
          ]
         },
         {
@@ -64995,6 +67977,286 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Yann ( talk )"
        }
+      },
+      {
+       "id": "mathematics-g5-ch12-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 14,
+       "topicScene": "media/ch12-l1-children-painting-1f7d0b.webp",
+       "sceneAlt": "Children create paintings for International Peace Day 2009 in Geneva.",
+       "sceneCaption": "Children paint together for International Peace Day 2009 in Geneva.",
+       "sceneCredit": {
+        "text": "Children painting by Yann ( talk ), CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Children_painting.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Yann ( talk )"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A class uses the chapter's elapsed-time examples while practising questions. The first example starts at 01:15 p.m. and ends at 01:42 p.m.; the second runs from 03:18 p.m. to 08:18 p.m.; the third runs from 09:15 a.m. to 11:30 a.m. Raghav's Yoga times are also discussed. For painting, Raghav took 1 hour 20 minutes, Rani took 2 hours 10 minutes, and Ritu took 1 hour 35 minutes.",
+         "prompt": "If the three children started painting at the same time, who would finish last?",
+         "options": [
+          "Rani would finish last.",
+          "Ritu would finish last.",
+          "Raghav would finish last.",
+          "All three would finish at the same time."
+         ],
+         "answer": 0,
+         "why": {
+          "Ritu would finish last.": "Ritu's painting time is the shortest, so she would finish first.",
+          "Raghav would finish last.": "Raghav's painting time is shorter than Rani's.",
+          "All three would finish at the same time.": "Their painting times are different, so they would not finish together."
+         },
+         "explanation": "Rani's painting time is the longest of the three."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A class uses the chapter's elapsed-time examples while practising questions. The first example starts at 01:15 p.m. and ends at 01:42 p.m.; the second runs from 03:18 p.m. to 08:18 p.m.; the third runs from 09:15 a.m. to 11:30 a.m. Raghav's Yoga times are also discussed. For painting, Raghav took 1 hour 20 minutes, Rani took 2 hours 10 minutes, and Ritu took 1 hour 35 minutes.",
+         "prompt": "If all three started painting together and Ritu now took 1 hour 20 minutes, who would finish first and what would happen next?",
+         "options": [
+          "Raghav and Ritu would finish first together; Rani would finish next.",
+          "Raghav and Rani would finish first together; Ritu would finish next.",
+          "All three would finish first together.",
+          "Ritu would finish first alone; Rani would finish next."
+         ],
+         "answer": 0,
+         "why": {
+          "Raghav and Rani would finish first together; Ritu would finish next.": "Rani's 2 hours 10 minutes is longer than both other times.",
+          "All three would finish first together.": "Their painting times are still not all equal.",
+          "Ritu would finish first alone; Rani would finish next.": "Ritu would not finish alone because her time would equal Raghav's."
+         },
+         "explanation": "Ritu's changed time would equal Raghav's 1 hour 20 minutes."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A school-event helper is checking signs before activities begin. The first sign says 05:30 a.m., so the helper keeps that time on the 24-hour timetable. Another sign says 02:30 p.m. The helper must change this time for the timetable instead of leaving the afternoon time unchanged. Later, two signs show 11:55 a.m. and 08:45 p.m., and the helper prepares to record both on the 24-hour clock.",
+         "prompt": "The helper changes 02:30 p.m. for the 24-hour timetable. Which time should be written?",
+         "options": [
+          "14:30",
+          "02:30",
+          "17:30",
+          "21:35"
+         ],
+         "answer": 0,
+         "why": {
+          "02:30": "Leaving it unchanged would ignore the p.m. part.",
+          "17:30": "17:30 is the conversion for 05:30 p.m., not 02:30 p.m.",
+          "21:35": "21:35 is the conversion for 09:35 p.m., not 02:30 p.m."
+         },
+         "explanation": "02:30 p.m. is shown as 14:30 in 24-hour format."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A school-event helper is checking signs before activities begin. The first sign says 05:30 a.m., so the helper keeps that time on the 24-hour timetable. Another sign says 02:30 p.m. The helper must change this time for the timetable instead of leaving the afternoon time unchanged. Later, two signs show 11:55 a.m. and 08:45 p.m., and the helper prepares to record both on the 24-hour clock.",
+         "prompt": "The later sign showing 08:45 p.m. must be written in 24-hour format. What should the helper record?",
+         "options": [
+          "20:45",
+          "08:45",
+          "19:30",
+          "23:45"
+         ],
+         "answer": 0,
+         "why": {
+          "08:45": "08:45 is the conversion for 08:35 a.m., not 08:45 p.m.",
+          "19:30": "19:30 is the conversion for 07:30 p.m.",
+          "23:45": "23:45 is the conversion for 11:45 p.m."
+         },
+         "explanation": "08:45 p.m. is shown as 20:45 in 24-hour format."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch12-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the 24-hour format shows 05:30 a.m. and 05:30 p.m.",
+         "answer": "The tables give 05:30 for 05:30 a.m., so that morning time is written the same way in both formats. For 05:30 p.m., the 24-hour time is 17:30. Therefore, the afternoon time changes, while the morning time shown here does not.",
+         "points": [
+          "05:30 a.m. remains 05:30.",
+          "05:30 p.m. becomes 17:30.",
+          "The two times are handled differently.",
+          "The explanation gives both conversions."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At school, Akira, Sunita and Mary are taking part in a walking race of 200 metres. The race picture uses seconds as a new unit, and each participant took 1 minute. Since 1 minute contains 60 seconds, the class can express each recorded time in seconds. As the seconds hand moves, it shifts the minute hand. The class is checking the picture to identify the child who won and to state how much time the winning child took.",
+         "prompt": "The class wants to write each child's 1-minute race time in the picture's new unit. Which amount should it use?",
+         "options": [
+          "Sixty seconds",
+          "One second",
+          "One minute",
+          "Two hundred metres"
+         ],
+         "answer": 0,
+         "why": {
+          "One second": "One second is only a small part of one minute.",
+          "One minute": "The question asks for the amount in seconds, not minutes.",
+          "Two hundred metres": "200 metres measures the race's distance, not the time taken."
+         },
+         "explanation": "One minute contains 60 seconds, so the new amount is sixty seconds."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At school, Akira, Sunita and Mary are taking part in a walking race of 200 metres. The race picture uses seconds as a new unit, and each participant took 1 minute. Since 1 minute contains 60 seconds, the class can express each recorded time in seconds. As the seconds hand moves, it shifts the minute hand. The class is checking the picture to identify the child who won and to state how much time the winning child took.",
+         "prompt": "All three children took 1 minute. What can the class conclude when trying to identify one winning child?",
+         "options": [
+          "The equal times do not single out one child",
+          "Akira is the only child who can be named",
+          "Sunita is the only child who can be named",
+          "Mary is the only child who can be named"
+         ],
+         "answer": 0,
+         "why": {
+          "Akira is the only child who can be named": "The equal times do not give Akira a unique recorded advantage.",
+          "Sunita is the only child who can be named": "The equal times do not give Sunita a unique recorded advantage.",
+          "Mary is the only child who can be named": "The equal times do not give Mary a unique recorded advantage."
+         },
+         "explanation": "Every participant has the same recorded time of 1 minute."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch12-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why using seconds is useful when comparing the race times.",
+         "answer": "Seconds help us notice small differences in race times. Because one minute contains sixty seconds, the class can use the race picture's seconds unit to compare the participants' recorded times closely.",
+         "points": [
+          "Explains that seconds reveal small time differences.",
+          "States that one minute contains sixty seconds.",
+          "Explains that the recorded times can be compared using seconds."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Raghu is preparing an activity about estimating short times. He thinks about blinking, switching a light on and off, counting from 1 to 20, filling a glass from the tap, melting an ice-cube, making a phone call, sitting down on the floor, drinking a glass of water, snapping fingers, and washing hands. Raghu also reads a sentence from a book, and it takes 20 seconds.",
+         "prompt": "Raghu wants to know whether counting from 1 to 20 is a seconds activity or a minutes activity. Which estimate should he record?",
+         "options": [
+          "The activity takes seconds",
+          "The activity takes minutes",
+          "The activity takes both seconds and minutes",
+          "The activity takes neither seconds nor minutes"
+         ],
+         "answer": 0,
+         "why": {
+          "The activity takes minutes": "Wrong: the activity is not being estimated in minutes.",
+          "The activity takes both seconds and minutes": "Wrong: one estimate should use one suitable unit.",
+          "The activity takes neither seconds nor minutes": "Wrong: counting is part of the short-times activity."
+         },
+         "explanation": "Correct: counting from 1 to 20 is included for the seconds estimate."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g5-ch12-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Raghu is preparing an activity about estimating short times. He thinks about blinking, switching a light on and off, counting from 1 to 20, filling a glass from the tap, melting an ice-cube, making a phone call, sitting down on the floor, drinking a glass of water, snapping fingers, and washing hands. Raghu also reads a sentence from a book, and it takes 20 seconds.",
+         "prompt": "Raghu reads a sentence in 20 seconds. How should this event be placed when he lists events that take less than a minute?",
+         "options": [
+          "Include it in the less-than-a-minute list",
+          "Include it in the longer-than-a-minute list",
+          "Leave it off both lists",
+          "Place it in a many-minutes list"
+         ],
+         "answer": 0,
+         "why": {
+          "Include it in the longer-than-a-minute list": "Wrong: 20 seconds is not longer than a minute.",
+          "Leave it off both lists": "Wrong: the event clearly belongs in one of the lists.",
+          "Place it in a many-minutes list": "Wrong: 20 seconds does not take many minutes."
+         },
+         "explanation": "Correct: 20 seconds is less than a minute."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch12-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How can Raghu use the time he took to read a sentence when making his list of events that take less than a minute?",
+         "answer": "Raghu can compare the time for an activity with the length of a minute. If the activity takes 20 seconds, it belongs on the less-than-a-minute list because 20 seconds is shorter than a minute. He should use the result to decide whether the event should be listed there.",
+         "points": [
+          "Gives the reading time as 20 seconds.",
+          "Compares 20 seconds with a minute.",
+          "Places the event on the less-than-a-minute list.",
+          "Explains that the time is shorter than a minute."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g5-ch12-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why 320 seconds can be labelled as 5 minutes 20 seconds.",
+         "answer": "Since one minute equals 60 seconds, the conversion can be checked by grouping the duration into minutes and seconds. The given fact states that 320 seconds equal 5 minutes 20 seconds, so that is the correct label.",
+         "points": [
+          "Uses 60 seconds in one minute.",
+          "Identifies 5 minutes in the label.",
+          "Includes the remaining 20 seconds.",
+          "Matches 320 seconds correctly."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
