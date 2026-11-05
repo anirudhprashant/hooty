@@ -1,4 +1,5 @@
 import { el } from '../core/dom.js';
+import { matches } from '../core/answers.js';
 
 function normalise(s) {
   return String(s).normalize('NFC').toLowerCase().replace(/[.,!?;:'"()]/g, '').replace(/\s+/g, ' ').trim();
@@ -46,9 +47,8 @@ export default {
     return {
       root,
       check(response) {
-        const given = normalise(response.value || '');
-        const accepted = (activity.answers || []).map(normalise);
-        const correct = given.length > 0 && accepted.includes(given);
+        // fair marking: units the question uses, other ways of writing the number, and small typos are accepted (core/answers.js)
+        const correct = matches(response.value || '', activity.answers || [], activity.prompt || '');
         input.disabled = true;
         submit.disabled = true;
         if (hint) hint.disabled = true;

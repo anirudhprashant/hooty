@@ -20,7 +20,7 @@ export default {
 
     const options = el('div', { class: 'options', role: 'radiogroup', 'aria-label': activity.prompt || 'Choices' });
     const buttons = (activity.options || []).map((text, i) => {
-      const b = el('button', { class: 'option', type: 'button', role: 'radio', 'aria-checked': 'false' }, [
+      const b = el('button', { class: 'option', type: 'button', role: 'radio', 'aria-checked': 'false', 'data-choice': String(i) }, [
         el('span', { class: 'option__key', 'aria-hidden': 'true', text: String.fromCharCode(65 + i) }),
         el('span', { class: 'option__text', text }),
       ]);

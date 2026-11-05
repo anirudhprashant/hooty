@@ -1,4 +1,5 @@
 import { el } from '../core/dom.js';
+import { matches, closeWord } from '../core/answers.js';
 
 function normalise(s) {
   return String(s).toLowerCase().replace(/[.,!?;:'"()]/g, '').replace(/\s+/g, ' ').trim();
@@ -36,11 +37,12 @@ export default {
         const given = normalise(response.value || '');
         const answers = (activity.answers || []).map(normalise);
         // A typed answer counts as correct if every accepted answer word appears in it.
-        const correct = given.length > 0 && answers.some((a) => {
-          if (a === given) return true;
+        // Small typos are forgiven (core/answers.js): each key word may be a near miss.
+        const said = given.split(' ');
+        const correct = given.length > 0 && (matches(response.value || '', activity.answers || [], activity.prompt || '') || answers.some((a) => {
           const words = a.split(' ').filter((w) => w.length > 2);
-          return words.length > 0 && words.every((w) => given.includes(w));
-        });
+          return words.length > 0 && words.every((w) => given.includes(w) || said.some((g) => closeWord(g, w)));
+        }));
         input.disabled = true;
         submit.disabled = true;
         input.classList.add(correct ? 'text-input--correct' : 'text-input--wrong');

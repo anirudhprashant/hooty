@@ -17,6 +17,7 @@ export default {
         type: 'button',
         role: 'radio',
         'aria-checked': 'false',
+        'data-choice': String(i),
       }, [
         el('span', { class: 'option__key', 'aria-hidden': 'true', text: String.fromCharCode(65 + shown) }),
         el('span', { class: 'option__text', text }),

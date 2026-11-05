@@ -1127,3 +1127,10 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .stage__art--night::before { background: linear-gradient(180deg, #34207a 0%, #4a2d8c 42%, #245a4e 100%); mix-blend-mode: multiply; opacity: 0.74; }
 .stage__art--night::after { background: radial-gradient(ellipse 58% 52% at 50% 64%, rgba(255, 205, 110, 0.40), rgba(255, 205, 110, 0) 72%); }
 .stage__art--night .stage__mascot { z-index: 1; }
+
+/* ===== one more go after a hint ================================================= */
+.sheet--hint { background: var(--primary-soft, #fff4d6); }
+.sheet--hint .sheet__mark { background: var(--primary); color: var(--primary-text); }
+.sheet--hint .sheet__title { color: var(--text); }
+.option--out { opacity: 0.4; text-decoration: line-through; pointer-events: none; }
+.hint-note { margin: var(--s2) 0 var(--s3); padding: var(--s3) var(--s4); border-radius: var(--radius-md); background: var(--primary-soft, #fff4d6); line-height: 1.45; }

@@ -799,7 +799,8 @@ function renderActivity() {
   const s = session;
   if (!s) return;
   // A computed Maths problem draws new numbers every time it is shown (core/gen.js); anything else comes back as it is.
-  const activity = realise(s.queue[s.index]);
+  // A retry after a hint shows the very same question again, numbers and all; otherwise draw it afresh.
+  const activity = s.retry ? s.retry.activity : realise(s.queue[s.index]);
   s.current = activity;   // feedback must explain THIS draw of the numbers, not the stored example
   stopSpeech();
   clear(s.stage);
@@ -858,6 +859,7 @@ function renderActivity() {
     if (m) rendered.root.querySelector('.activity__prompt')?.after(el('figure', { class: 'model-fig' }, [m]));
   }
   markWords(rendered.root);
+  if (s.retry) applyHint(s, rendered.root, s.retry.hint);
   // Every new card starts at its top: a long passage leaves the page scrolled, and the next
   // card's picture and question would otherwise open half hidden under the header.
   window.scrollTo({ top: 0, behavior: 'instant' });
@@ -884,6 +886,29 @@ function handleSubmit(rendered, response) {
     rec.n += 1; if (correct) rec.c += 1;
     sound(correct ? 'pair' : 'pairwrong');
     showFeedback(s, activity, correct, response);
+    persist();
+    return;
+  }
+
+  // The second go after a hint. The first miss is already counted and the question is already in Practise; a right
+  // answer now earns half the points, and either way the full explanation follows.
+  if (s.retry) {
+    s.retry = null;
+    if (correct) addXP(5);
+    react(s, correct);
+    showFeedback(s, activity, correct, response);
+    persist();
+    return;
+  }
+
+  // A first miss on a question with a fair hint: count the mistake, then offer one more go with the hint.
+  const hint = correct ? null : hintFor(activity, response);
+  if (hint) {
+    s.total += 1;
+    s.wrongIds.push(activity.id);
+    recordActivity({ ...activity, lessonId: s.lesson.lessonId }, false);
+    react(s, false);
+    showHint(s, activity, hint);
     persist();
     return;
   }
@@ -924,6 +949,7 @@ function handleSubmit(rendered, response) {
 function advance() {
   const s = session;
   if (!s) return;
+  s.retry = null;
   s.index += 1;
 
   // A wrong item comes back later in the same session, once.
@@ -1094,6 +1120,79 @@ function highlightToggle() {
     toast(v ? 'Key words are highlighted.' : 'Highlighting is off.', 1600);
   });
   return b;
+}
+
+// Hooty's face, words and sound for an answer (the full feedback sheet is separate).
+function react(s, correct) {
+  if (correct) {
+    s.bubble.textContent = themeCopy('correct', 'correct', t('correct'));
+    s.bubble.classList.remove('is-wrong');
+    s.mascotImg.src = mascotAvatar('happy') || '';
+    s.mascotImg.classList.add('is-happy');
+    sound('correct', 1);
+    sparkle(s.wrap);
+  } else {
+    s.bubble.textContent = themeCopy('wrong', 'wrong', t('wrong'));
+    s.bubble.classList.add('is-wrong');
+    s.mascotImg.src = mascotAvatar('wrong') || '';
+    s.mascotImg.classList.add('is-wrong');
+    s.streak = 0;
+    sound('wrong');
+  }
+  setTimeout(() => s.mascotImg.classList.remove('is-happy', 'is-wrong'), 700);
+}
+
+// A hint for one more go, made by code from the question itself, or null when a second go would only be a guess
+// (true or false, two choices) or no fair hint exists. Returns { text, out: option numbers to cross out }.
+function hintFor(activity, response = {}) {
+  const type = activity.type;
+  if ((type === 'mcq' || type === 'listenpick') && Array.isArray(activity.options) && activity.options.length >= 3) {
+    const out = [response.choice];
+    if (activity.options.length >= 4) {
+      const other = activity.options.map((_, i) => i).find((i) => i !== activity.answer && i !== response.choice);
+      if (other != null) out.push(other);
+    }
+    const why = activity.why?.[activity.options[response.choice]];
+    return { text: why || `Not that one. ${out.length > 1 ? 'Two wrong answers are crossed out' : 'It is crossed out'}, so think again about what the question asks.`, out };
+  }
+  if (type === 'fillblank' || type === 'typeanswer') {
+    if (activity.steps?.length) return { text: `First step: ${activity.steps[0]}` };
+    const a = String((activity.answers || [])[0] ?? '').trim();
+    if (!a) return null;
+    if (/^-?\d+$/.test(a)) {
+      const n = Number(a), digits = String(Math.abs(n)).length, step = Math.max(5, 10 ** (digits - 1)), lo = Math.floor(n / step) * step;
+      return { text: `The answer is a whole number between ${lo} and ${lo + step}.` };
+    }
+    if (/^-?[\d./]+$/.test(a)) return null;
+    const words = a.split(/\s+/);
+    return { text: words.length > 1 ? `The answer is ${words.length} words and begins with "${a[0].toUpperCase()}".` : `The answer begins with "${a[0].toUpperCase()}" and has ${a.length} letters.` };
+  }
+  if (type === 'dragorder' && activity.items?.length > 2) return { text: `Start with "${activity.items[0]}".` };
+  return null;
+}
+
+function showHint(s, activity, hint) {
+  const sheet = el('div', { class: 'sheet sheet--hint', role: 'status' }, [
+    el('div', { class: 'sheet__head' }, [el('span', { class: 'sheet__mark' }, [icon('cross')]), el('h3', { class: 'sheet__title', text: 'Not quite. Have another go!' })]),
+    el('p', { class: 'sheet__body', text: hint.text }),
+  ]);
+  const again = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: 'Try again' });
+  again.addEventListener('click', () => { s.retry = { activity, hint }; renderActivity(); });
+  sheet.append(el('div', { class: 'activity__actions' }, [again]));
+  s.stage.append(sheet);
+  markWords(sheet);
+  again.focus({ preventScroll: true });
+  requestAnimationFrame(() => sheet.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
+}
+
+// On the second go: cross out the ruled-out choices and keep the hint in view above the question.
+function applyHint(s, root, hint) {
+  for (const i of hint.out || []) {
+    const b = root.querySelector(`.option[data-choice="${i}"]`);
+    if (b) { b.disabled = true; b.classList.add('option--out'); b.setAttribute('aria-label', `${b.textContent} (ruled out)`); }
+  }
+  root.querySelector('.activity__prompt')?.after(el('p', { class: 'hint-note', role: 'note' }, [el('b', { text: 'Hint: ' }), hint.text]));
+  s.bubble.textContent = 'Have another go!';
 }
 
 function showFeedback(s, activity, correct, response = {}) {
