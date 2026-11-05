@@ -501,6 +501,42 @@ export const WIDGETS = {
       return { kids, say: `Area of the triangle = ½ × base × height = ½ × ${b} × ${h} = ${num((b * h) / 2)} square units, exactly half of the rectangle (${b * h}). Slide the top corner along the dashed line: the shape changes but the area does not.` };
     },
   },
+  factors: {
+    subject: 'maths', about: 'A number shown as every rectangle of dots it can make: each rectangle is a factor pair. A prime number can only make one long row. Shows all factors and the prime factorisation. For factors, multiples, prime and composite numbers, prime factorisation, divisibility.',
+    sliders: [['n', 'Number', 2, 40, 1, 12]],
+    draw(v) {
+      const n = v.n, pairs = [];
+      for (let a = 1; a * a <= n; a++) if (n % a === 0) pairs.push([a, n / a]);
+      const rows = pairs.reduce((t, [a]) => t + a, 0), cell = Math.min(24, 490 / n, 256 / (rows + pairs.length)), kids = [];
+      let y = 24;
+      for (const [a, b] of pairs) {
+        kids.push(T(12, y + (a * cell) / 2 + 6, `${a} × ${b}`, { a: 'start', z: 17 }));
+        for (let r = 0; r < a; r++) for (let c = 0; c < b; c++) kids.push(CIRC(92 + c * cell + cell / 2, y + r * cell + cell / 2, cell * 0.38, pairs.length === 1 ? C.o : C.b, { w: 1 }));
+        y += a * cell + Math.max(8, cell * 0.8);
+      }
+      const fs = []; for (let d = 1; d <= n; d++) if (n % d === 0) fs.push(d);
+      const pf = []; let m = n; for (let d = 2; d * d <= m; d++) while (m % d === 0) { pf.push(d); m /= d; } if (m > 1) pf.push(m);
+      const prime = fs.length === 2;
+      return { kids, say: prime ? `${n} can only make one rectangle, 1 × ${n}. Its only factors are 1 and ${n}, so ${n} is a prime number.` : `${n} = ${pairs.map(([a, b]) => `${a} × ${b}`).join(' = ')}. Factors: ${fs.join(', ')} (${fs.length} of them), so ${n} is composite. In primes: ${n} = ${pf.join(' × ')}.` };
+    },
+  },
+  algebratiles: {
+    subject: 'maths', about: 'An expression a x + b drawn as algebra tiles: a long bars, each x units long, and b small unit squares. Change x and the bars stretch and the value updates. For algebraic expressions, variables, letter-numbers, evaluating expressions, like terms.',
+    params: { a: 3, b: 2 },
+    sliders: [['x', 'Value of x', 1, 10, 1, 2]],
+    draw(v, p) {
+      const { a, b } = p, u = 22, x0 = 30, kids = [];
+      for (let i = 0; i < a; i++) {
+        kids.push(R(x0, 26 + i * 34, v.x * u, 26, C.b, { r: 6, w: 2.5 }), T(x0 + (v.x * u) / 2, 26 + i * 34 + 19, 'x', { z: 16, f: '#fff' }));
+        for (let k = 1; k < v.x; k++) kids.push(L(x0 + k * u, 26 + i * 34 + 4, x0 + k * u, 26 + i * 34 + 22, '#ffffff', 1, { opacity: 0.45 }));
+      }
+      const yb = 36 + a * 34;
+      for (let j = 0; j < b; j++) kids.push(R(x0 + j * (u + 6), yb, u, u, C.y, { r: 4, w: 2.5 }));
+      const val = a * v.x + b, expr = `${a === 1 ? '' : a}x${b ? ` + ${b}` : ''}`;
+      kids.push(T(570, 120, expr, { a: 'end', z: 30 }), T(570, 160, `= ${a} × ${v.x}${b ? ` + ${b}` : ''}`, { a: 'end', z: 20, w: 600 }), T(570, 196, `= ${val}`, { a: 'end', z: 30, f: '#058a68' }));
+      return { kids, say: `When x = ${v.x}, ${expr} = ${a} × ${v.x}${b ? ` + ${b}` : ''} = ${val}. Each blue bar is one x, so all ${a} bars grow when x grows; the ${b} small squares always stay ${b}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
