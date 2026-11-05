@@ -343,7 +343,7 @@ export const KITS = {
     ],
   },
   conduction: {
-    grades: [6, 8], match: [/\bconduction\b/, /\bconductors?\b/, /\binsulators?\b/, /heat travels/, /\bwax\b.*\bpins?\b/],
+    grades: [6, 8], match: [/\bconduction\b/, /conductors? of heat/, /heat (conduction|insulat)/, /heat travels/, /\bwax\b.*\bpins?\b/],
     title: 'Heat the strip', takeaway: 'In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators.',
     tasks: [
       { say: 'Heat the copper strip until all four pins fall.', when: 'material == 0 and t >= 40', then: 'The pin nearest the candle fell first: heat travels along the metal.' },
