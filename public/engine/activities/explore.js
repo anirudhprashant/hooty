@@ -40,7 +40,7 @@ export default {
       if (!cur) return;
       let hit = false;
       try { hit = evaluate(cur.when, v) !== 0; } catch { hit = false; }
-      if (hit) { cur.done = true; ctx.sfx?.(tasks.every((t) => t.done) ? 'halfway' : 'pair'); paintTasks(); }
+      if (hit) { cur.done = true; ctx.sfx?.(tasks.every((t) => t.done) ? 'halfway' : 'pair'); paintTasks(); check(); }   // one move can finish the next challenge too
     };
     const controls = sl.map(([key, label, min, max, step]) => {
       const out = el('output', { class: 'explore__val', text: String(v[key]) });

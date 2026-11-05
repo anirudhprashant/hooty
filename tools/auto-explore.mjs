@@ -12,7 +12,9 @@ import { evaluate } from '../public/engine/core/gen.js';
 import { KITS } from './explore-kits.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SUBJECTS = JSON.parse(readFileSync(join(ROOT, 'tools/subjects.json'), 'utf8'));
+import { execFileSync } from 'node:child_process';
+// the same book list the Python tools use (tools/subjects.py: two built-ins plus tools/subjects.json)
+const SUBJECTS = JSON.parse(execFileSync('python3', ['-c', 'import sys,json; sys.path.insert(0, "tools"); from subjects import SUBJECTS; print(json.dumps(SUBJECTS))'], { cwd: ROOT, encoding: 'utf8' }));
 const dry = process.argv.includes('--dry');
 const books = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const only = Number((process.argv.find((a) => a.startsWith('--ch=')) || '').slice(5)) || 0;   // one chapter, so parallel chapters never write each other's files
@@ -31,16 +33,19 @@ function reachable(widget, params, when) {
 
 const score = (kit, title, text) => {
   let s = 0;
-  for (const p of kit.match) { const re = new RegExp(p.source, 'i'); if (re.test(title)) s += 3; else if (re.test(text)) s += 1; }
+  for (const p of kit.match) { const re = new RegExp(p.source, 'i'); if (re.test(title)) s += 3; else if (!kit.titleOnly && re.test(text)) s += 1; }
   return s;
 };
 
+// which simulations suit which kind of book
+const KIND = { Mathematics: ['maths'], Science: ['science'], 'Social Science': ['social'], 'The World Around Us': ['science', 'social'], Physics: ['science', 'maths'], Chemistry: ['science'], Biology: ['science'], Geography: ['social'], History: ['social'] };
 let added = 0, looked = 0;
 const tally = {};
 for (const slug of books) {
   const sub = SUBJECTS[slug];
   if (!sub) { console.error(`unknown book ${slug}`); continue; }
-  const grade = Number(sub.grade) || 6, work = join(ROOT, sub.work);
+  const grade = Number(sub.grade) || 6, work = join(ROOT, sub.work), kinds = KIND[sub.name] || [];
+  if (!kinds.length || sub.language && sub.language !== 'en') continue;   // literature and Hindi books have no simulations
   for (const ch of readdirSync(work).filter((d) => /^ch\d\d$/.test(d) && (!only || Number(d.slice(2)) === only)).sort()) {
     const factsFile = join(work, ch, 'facts.json'), out = join(work, ch, 'explore.json');
     if (!existsSync(factsFile)) continue;
@@ -53,12 +58,13 @@ for (const slug of books) {
       looked++;
       const title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
       const ranked = Object.entries(KITS)
-        .filter(([id, k]) => WIDGETS[id] && grade >= k.grades[0] && grade <= k.grades[1] && (used[id] || 0) < 2)
-        .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= 3).sort((a, b) => b[2] - a[2]);
+        .filter(([id, k]) => WIDGETS[id] && kinds.includes(WIDGETS[id].subject) && grade >= k.grades[0] && grade <= k.grades[1] && (used[id] || 0) < (k.perChapter || 2))
+        .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= (x[1].minScore || 3)).sort((a, b) => b[2] - a[2]);
       for (const [id, kit] of ranked) {
-        const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase()) : {};
+        const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || [])) : {};
+        if (kit.usable && !kit.usable(params)) continue;
         const full = { ...(WIDGETS[id].params || {}), ...params };
-        const tasks = kit.tasks.filter((t) => { try { return reachable(id, full, t.when); } catch { return false; } });
+        const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params) : kit.tasks).filter((t) => { try { return reachable(id, full, t.when); } catch { return false; } });
         if (!tasks.length) continue;
         have[key] = { widget: id, ...(kit.params ? { params } : {}), title: kit.title, tasks, takeaway: kit.takeaway, auto: true };
         used[id] = (used[id] || 0) + 1; added++; tally[id] = (tally[id] || 0) + 1;

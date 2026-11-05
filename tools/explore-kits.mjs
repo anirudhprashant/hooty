@@ -164,4 +164,160 @@ export const KITS = {
     title: 'Read the bar graph', takeaway: 'Bars compare amounts, and the scale tells you what each mark is worth.',
     tasks: [{ say: 'Make Monday and Wednesday equal.', when: 'a == c', then: 'Equal bars mean equal amounts.' }],
   },
+  // ---- science ----
+  particles: {
+    grades: [6, 9], titleOnly: true, match: [/states? of matter/, /melting|boiling|freez|evaporat|condens/, /\bparticles?\b/, /\bice\b.*\bsteam\b/],
+    title: 'Heat the water', takeaway: 'Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.',
+    tasks: [
+      { say: 'Freeze the water.', when: 'temp < 0', then: 'Below 0 degrees water is ice: its particles can only jiggle in place.' },
+      { say: 'Boil it.', when: 'temp >= 100', then: 'At 100 degrees water boils and its particles fly apart as steam.' },
+    ],
+  },
+  reflection: {
+    grades: [6, 10], match: [/reflect/, /\bmirrors?\b/, /angle of incidence/, /\bnormal\b/],
+    title: 'Bounce the light', takeaway: 'Light leaves a mirror at the same angle it arrives: angle in equals angle out.',
+    tasks: [
+      { say: 'Shine the ray straight at the mirror.', when: 'i == 0', then: 'Straight in, straight back out: both angles are 0.' },
+      { say: 'Make the incoming angle 60 degrees.', when: 'i == 60', then: 'The reflected ray also leaves at 60 degrees.' },
+    ],
+  },
+  pendulum: {
+    grades: [6, 9], match: [/pendulum/, /oscillat/, /periodic motion/, /time period/],
+    title: 'Swing the pendulum', takeaway: 'A longer string makes each swing take longer; a shorter string swings faster.',
+    tasks: [
+      { say: 'Make the string as long as it goes.', when: 'len == 100', then: 'The longest string swings the slowest.' },
+      { say: 'Make the string short.', when: 'len <= 20', then: 'A short pendulum swings quickly.' },
+    ],
+  },
+  daynight: {
+    grades: [6, 8], match: [/day and night/, /rotation of (the )?earth/, /earth (rotates|spins)/, /\bsunrise\b|\bsunset\b/],
+    title: 'Spin the Earth', takeaway: 'The Earth spins once a day, so each place turns into the sunlight and out of it again.',
+    tasks: [
+      { say: 'Turn to midnight.', when: 'hour == 0 or hour == 24', then: 'Your place has turned away from the Sun.' },
+      { say: 'Find sunrise.', when: 'hour == 6', then: 'At sunrise your place is turning into the sunlight.' },
+    ],
+  },
+  seasons: {
+    grades: [6, 9], titleOnly: true, match: [/\bseasons?\b/, /revolution/, /\btilt(ed)?\b/, /\baxis\b/, /\bsummer\b|\bwinter\b/],
+    title: 'Go round the Sun', takeaway: 'The tilted Earth leans each half toward the Sun in turn, which makes the seasons.',
+    tasks: [{ say: 'Go to December.', when: 'month == 12', then: 'Now the southern half leans toward the Sun: summer there, winter in India.' }],
+  },
+  circuit: {
+    grades: [6, 10], match: [/circuit/, /\belectric(ity|al)?\b/, /\bbulbs?\b/, /\bswitch(es)?\b/, /\bconductors?\b/, /\bcurrent\b/],
+    title: 'Light the bulb', takeaway: 'Current flows only round a closed circuit; more cells push more current.',
+    tasks: [
+      { say: 'Light the bulb.', when: 'closed == 1', then: 'Closing the switch completes the circuit, so current flows.' },
+      { say: 'Make the bulb brighter.', when: 'closed == 1 and cells > bulbs', then: 'More cells for each bulb push more current through it.' },
+    ],
+  },
+  floatsink: {
+    grades: [6, 9], match: [/\bfloat/, /\bsinks?\b|\bsinking\b/, /\bdens(e|ity)\b/, /buoyan/],
+    title: 'Float or sink?', takeaway: 'Things lighter than water for their size float; denser things sink.',
+    tasks: [{ say: 'Make the block sink.', when: 'd > 10', then: 'It is now denser than water, so it sinks.' }],
+  },
+  magnets: {
+    grades: [6, 7], match: [/magnet/, /\bpoles?\b/, /attract|repel/],
+    title: 'Push and pull', takeaway: 'Unlike poles attract, like poles repel, and both get stronger when the magnets are close.',
+    tasks: [
+      { say: 'Make the magnets push each other away.', when: 'flip == 1', then: 'Like poles facing each other repel.' },
+      { say: 'Bring them very close.', when: 'gap <= 20', then: 'Closer magnets pull or push much harder.' },
+    ],
+  },
+  speed: {
+    grades: [6, 9], match: [/\bspeed\b/, /\bvelocity\b/, /uniform motion/, /km\/h|m\/s/, /distance (travelled|covered)/],
+    title: 'Race the cars', takeaway: 'Distance = speed x time.',
+    tasks: [
+      { say: 'Make the two cars cover the same distance.', when: 'a == b', then: 'Same speed for the same time means the same distance.' },
+      { say: 'Make the red car cover 200 m.', when: 'a * t == 200', then: 'Speed x time = distance, so this gives 200 m.' },
+    ],
+  },
+  shadow: {
+    grades: [6, 7], match: [/shadows?/, /\bopaque\b|\btranslucent\b|\btransparent\b/, /light travels in (a )?straight/],
+    title: 'Make a shadow', takeaway: 'Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.',
+    tasks: [{ say: 'Make the shadow as big as you can.', when: 'd == 10', then: 'Closest to the lamp, the object blocks the most light.' }],
+  },
+  eclipse: {
+    grades: [6, 8], match: [/eclipse/, /phases of the moon/],
+    title: 'Line them up', takeaway: 'An eclipse happens when the Sun, Earth and Moon line up.',
+    tasks: [
+      { say: 'Make a solar eclipse.', when: 'moon == 180', then: 'The Moon is between the Sun and the Earth and blocks the Sun.' },
+      { say: 'Make a lunar eclipse.', when: 'moon == 0 or moon == 360', then: 'The Earth is in the middle, so its shadow falls on the Moon.' },
+    ],
+  },
+  watercycle: {
+    grades: [6, 7], match: [/water cycle/, /evaporat/, /condens/, /precipitat/],
+    title: 'Follow a drop', takeaway: 'Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle.',
+    tasks: [{ say: 'Follow the water until it falls as rain.', when: 'step == 3', then: 'Drops in the clouds grow heavy and fall.' }, { say: 'Finish the cycle.', when: 'step == 4', then: 'Rivers carry the water back to the sea, ready to start again.' }],
+  },
+  neutral: {
+    grades: [6, 10], titleOnly: true, match: [/\bacids?\b|\bacidic\b/, /\bbases?\b|\bbasic\b/, /neutrali[sz]/, /indicator|litmus/],
+    title: 'Mix acid and base', takeaway: 'Equal amounts of acid and base cancel out and make a neutral solution.',
+    tasks: [{ say: 'Make the solution neutral.', when: 'acid == base', then: 'Equal drops cancel out: neutral.' }, { say: 'Make it basic.', when: 'base > acid', then: 'More base than acid: litmus turns blue.' }],
+  },
+  // ---- geography and history ----
+  timezone: {
+    grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
+    title: 'Travel round the world', takeaway: 'Every 15 degrees of longitude is one hour of time.',
+    tasks: [
+      { say: 'Go to 90 degrees east.', when: 'lon == 90', then: '90 divided by 15 is 6, so it is 6 hours ahead of Greenwich.' },
+      { say: 'Go to 45 degrees west.', when: 'lon == -45', then: '45 divided by 15 is 3, so it is 3 hours behind Greenwich.' },
+    ],
+  },
+  latlong: {
+    grades: [6, 8], match: [/latitudes?/, /longitudes?/, /equator/, /tropics? of/, /prime meridian/, /arctic circle|antarctic circle/],
+    title: 'Find a place on the grid', takeaway: 'Latitude tells you how far north or south, longitude how far east or west.',
+    tasks: [{ say: 'Stand on the Equator.', when: 'lat == 0', then: 'The Equator is latitude 0, halfway between the poles.' }, { say: 'Stand on the Prime Meridian.', when: 'lon == 0', then: 'Longitude 0 runs through Greenwich.' }],
+  },
+  mapscale: {
+    grades: [6, 8], match: [/\bscale\b/, /distance on (a |the )?map|map distance/, /\bmaps?\b/],
+    title: 'Measure on the map', takeaway: 'Real distance = distance on the map x the scale.',
+    tasks: [{ say: 'Show 400 km on the map.', when: 'cm * km == 400', then: 'Map distance x scale = real distance: 400 km.' }],
+  },
+  timeline: {
+    grades: [6, 8], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/],
+    // the lesson's own dates if it has three, otherwise the whole chapter's dates when this lesson mentions one of them
+    params: (text, facts, chapter) => { const own = datedEvents(facts || []); if (own.length) return { events: own }; return { events: datedEvents(facts || [], 1).length ? datedEvents(chapter || []) : [] }; },
+    usable: (p) => p.events.length >= 3, minScore: 1, perChapter: 1,
+    title: 'Walk through time', takeaway: 'Put events in order, and remember that BCE years count down towards 1 CE.',
+    tasks: (p) => {
+      const ev = [...p.events].sort((a, b) => a.year - b.year), yr = (y) => (y < 0 ? `${-y} BCE` : `${y} CE`);
+      return [
+        { say: `Move to when this happened: ${ev[1].label.replace(/[.]+$/, '')}.`, when: `y >= ${ev[1].year}`, then: `That was ${yr(ev[1].year)}.` },
+        { say: 'Go forward to the last event.', when: `y >= ${ev[ev.length - 1].year}`, then: `The latest event here is from ${yr(ev[ev.length - 1].year)}.` },
+      ];
+    },
+  },
 };
+
+// Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
+// Labels are the fact itself with the date phrase taken off and cut at a whole word, so they read as a short event.
+const DATE_TAIL = /[,]?\s*(?:\b(?:in|around|about|by|from|of|during|until|till|after|before|between|the|latter|early|late|part)\b\s*)*(?:\d{1,4}(?:\s*(?:or|and|to|-)\s*\d{1,4})?\s*(?:BCE|BC|CE|AD)?|\d{1,2}(?:st|nd|rd|th) centur(?:y|ies)(?: (?:BCE|BC|CE|AD))?)\b.*$/i;
+function label(sentence) {
+  let c = sentence.replace(/\s+/g, ' ').trim().replace(/[.!]+$/, '');
+  const cut = c.replace(DATE_TAIL, '').trim();
+  if (cut.split(' ').length >= 3) c = cut;
+  c = c.split(/[;:]/)[0].replace(/[,]\s*$/, '').trim();
+  if (c.length > 52) c = c.slice(0, 52).replace(/\s+\S*$/, '').replace(/[,]$/, '');
+  for (let prev = ''; prev !== c;) { prev = c; c = c.replace(/\s+(the|a|an|of|in|to|and|from|by|was|were|is|are|with|at|on)$/i, ''); }
+  return c;
+}
+export function datedEvents(facts, need = 3) {
+  let out = [];
+  const seen = new Set();
+  for (const f of facts) {
+    const t = f.say || '';
+    let y = null, m;
+    if ((m = t.match(/(\d{1,4})\s*(BCE|BC)\b/))) y = -Number(m[1]);
+    else if ((m = t.match(/(\d{1,4})\s*(CE|AD)\b/))) y = Number(m[1]);
+    else if ((m = t.match(/(\d{1,2})(st|nd|rd|th) century (BCE|BC)/i))) y = -(Number(m[1]) * 100 - 50);
+    else if ((m = t.match(/(\d{1,2})(st|nd|rd|th) century( CE| AD)?/i))) y = Number(m[1]) * 100 - 50;
+    else if ((m = t.match(/\b(?:in|around|by|from|of|year|until|till|after|before) (1[0-9]{3}|20[0-2][0-9])\b/))) y = Number(m[1]);
+    if (y === null || y === 0 || seen.has(y)) continue;
+    if (/^(this|these|that|those|it|its|they|their|he|she|his|her|here|there)\b/i.test(t.trim())) continue;   // needs the sentence before it to make sense
+    seen.add(y); out.push({ year: y, label: label(t) });
+  }
+  // one era per timeline: ancient and modern dates together squash one end flat, so keep the larger group
+  const old = out.filter((e) => e.year < 1000), recent = out.filter((e) => e.year >= 1000);
+  if (old.length && recent.length) out = old.length >= recent.length ? old : recent;
+  return out.length >= need ? out.sort((a, b) => a.year - b.year).slice(0, 7) : [];
+}

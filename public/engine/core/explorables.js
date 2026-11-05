@@ -210,7 +210,10 @@ export const WIDGETS = {
       const [, , lo, hi] = sl[0], X = (y) => 30 + ((y - lo) / (hi - lo)) * 540, kids = [L(30, 180, 570, 180, INK, 6)];
       const events = (p.events || []).slice().sort((a, b) => a.year - b.year);
       if (lo < 0 && hi > 0) { kids.push(L(X(0), 165, X(0), 195, C.p, 4), T(X(0), 215, 'BCE | CE', { z: 14 })); }
-      events.forEach((e, i) => { const past = v.y >= e.year; kids.push(CIRC(X(e.year), 180, 9, past ? C.g : '#fff', { w: 3 })); if (past) kids.push(T(Math.min(520, Math.max(80, X(e.year))), 40 + (i % 5) * 25, e.label.slice(0, 32), { z: 14 })); });
+      events.forEach((e) => kids.push(CIRC(X(e.year), 180, 9, v.y >= e.year ? C.g : '#fff', { w: 3 })));
+      // the events reached so far, newest last, as dated lines across the top (at most four, each cut at a whole word)
+      const fit = (str) => (str.length > 54 ? `${str.slice(0, 54).replace(/\s+\S*$/, '')}...` : str);
+      events.filter((e) => v.y >= e.year).slice(-4).forEach((e, i) => kids.push(T(30, 34 + i * 26, `${year(e.year)}: ${fit(e.label)}`, { z: 14, a: 'start', w: 600 })));
       kids.push(L(X(v.y), 150, X(v.y), 210, C.o, 5));
       const last = events.filter((e) => e.year <= v.y).pop();
       return { kids, say: `${year(v.y)}.${last ? ` Most recent event: ${last.label} (${year(last.year)}).` : ' No event yet.'}` };
