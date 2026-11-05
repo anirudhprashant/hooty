@@ -333,6 +333,15 @@ export const KITS = {
       { say: 'Let Saturn finish one orbit.', when: 'days >= 10750', then: 'Saturn takes about 29 and a half Earth years.' },
     ],
   },
+  photosynthesis: {
+    grades: [6, 10], match: [/photosynth/, /chlorophyll/, /food factor(y|ies)/, /\bstomata\b/, /plants? make (their )?(own )?food/],
+    title: 'Run the leaf factory', takeaway: 'A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food.',
+    tasks: [
+      { say: 'Turn off the light.', when: 'light == 0', then: 'With no light, photosynthesis stops completely.' },
+      { say: 'Make carbon dioxide the one holding the leaf back.', when: 'co2 < light and co2 < water', then: 'Now carbon dioxide is in shortest supply, so it sets the speed.' },
+      { say: 'Run the leaf at full speed.', when: 'light == 10 and co2 == 10 and water == 10', then: 'All three inputs at the top: the most sugar and oxygen.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

@@ -664,6 +664,25 @@ export const WIDGETS = {
       return { kids, say: `${v.days} days have passed. Earth has gone round the Sun ${laps(365)}, Mercury ${laps(88)}, Mars ${laps(687)} and Jupiter ${laps(4333)}. The further a planet is from the Sun, the longer its year.` };
     },
   },
+  photosynthesis: {
+    subject: 'science', about: 'A leaf making food from light, carbon dioxide and water. Each input is a slider; the leaf works only as fast as its scarcest input allows (the limiting factor), shown by the oxygen bubbles it gives off and the sugar it makes. No light, no food. For photosynthesis, leaves as food factories, chlorophyll, stomata, oxygen and carbon dioxide.',
+    sliders: [['light', 'Sunlight', 0, 10, 1, 3], ['co2', 'Carbon dioxide', 0, 10, 1, 6], ['water', 'Water', 0, 10, 1, 8]],
+    draw(v) {
+      const rate = Math.min(v.light, v.co2, v.water), names = { light: 'sunlight', co2: 'carbon dioxide', water: 'water' };
+      const limit = Object.keys(names).filter((k) => v[k] === rate);
+      const kids = [CIRC(70, 60, 30, v.light ? '#ffcc33' : '#d9d9d9', { s: v.light ? '#ffb000' : '#aaa', w: 3 })];
+      for (let i = 0; i < v.light; i++) { const a = rad(18 + (i - (v.light - 1) / 2) * 8); kids.push(L(70 + 38 * Math.cos(a), 60 + 38 * Math.sin(a), 70 + 115 * Math.cos(a), 60 + 115 * Math.sin(a), '#ffcc33', 3)); }   // rays fan out towards the leaf
+      kids.push(s('path', { d: 'M 300 250 C 200 230 190 120 300 60 C 410 120 400 230 300 250 Z', fill: rate ? '#3fb36b' : '#8fbf9f', stroke: INK, 'stroke-width': 4 }), L(300, 250, 300, 70, '#246b40', 3), L(300, 290, 300, 250, '#7a5230', 6));
+      for (let i = 1; i <= 4; i++) kids.push(L(300, 250 - i * 40, 300 - 45 + i * 4, 250 - i * 40 - 30, '#246b40', 2), L(300, 250 - i * 40, 300 + 45 - i * 4, 250 - i * 40 - 30, '#246b40', 2));
+      for (let i = 0; i < v.co2; i++) kids.push(T(150 + (i % 2) * 22, 130 + i * 14, 'CO₂', { z: 11, w: 600, f: '#6b5a8a' }));
+      for (let i = 0; i < v.water; i++) kids.push(CIRC(282 - (i % 2) * 10, 285 - i * 3, 4, '#3a86ff', { w: 0 }));
+      if (v.water) kids.push(T(262, 292, 'water from the roots', { a: 'end', z: 11, w: 600, f: '#1f63d9' }));
+      for (let i = 0; i < rate; i++) kids.push(CIRC(400 + (i % 3) * 18, 210 - i * 18, 6 + (i % 2), '#e9f7ff', { s: '#7fbfff', w: 2 }));
+      kids.push(T(400, 30, rate ? `O₂ bubbles: ${rate} a minute` : 'No bubbles', { a: 'start', z: 14 }), T(520, 280, rate ? `sugar made: ${rate}` : 'no sugar made', { a: 'end', z: 13, w: 600, f: '#7a5230' }));
+      const say = !v.light ? 'With no light, the leaf cannot make food at all, however much carbon dioxide and water it has.' : rate === 10 ? 'Everything is at the top, so the leaf works at full speed: the most sugar and oxygen. Carbon dioxide + water, with light, become sugar + oxygen.' : `The leaf makes food at speed ${rate} out of 10. It is held back by ${limit.map((k) => names[k]).join(' and ')}, ${limit.length > 1 ? 'the inputs' : 'the input'} in shortest supply. Carbon dioxide + water, with light, become sugar + oxygen.`;
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
