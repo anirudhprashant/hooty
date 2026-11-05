@@ -26,6 +26,19 @@ function arc(cx, cy, r, a0, a1) {   // angles in degrees, counter-clockwise from
   return `M ${x0} ${y0} A ${r} ${r} 0 ${a1 - a0 > 180 ? 1 : 0} 0 ${x1} ${y1}`;
 }
 
+// A coordinate plane with a light grid and numbered axes. Returns the maps from maths to screen and the drawn parts.
+function plane(xmin, xmax, ymin, ymax, u, ox, oy) {
+  const X = (x) => ox + x * u, Y = (y) => oy - y * u, kids = [];
+  for (let x = xmin; x <= xmax; x++) kids.push(L(X(x), Y(ymin), X(x), Y(ymax), x === 0 ? INK : '#ddd6ee', x === 0 ? 3 : 1.5));
+  for (let y = ymin; y <= ymax; y++) kids.push(L(X(xmin), Y(y), X(xmax), Y(y), y === 0 ? INK : '#ddd6ee', y === 0 ? 3 : 1.5));
+  for (let x = xmin; x <= xmax; x++) if (x && x % 2 === 0) kids.push(T(X(x), Y(0) + 17, x, { z: 12, w: 600, f: '#6b5a8a' }));
+  for (let y = ymin; y <= ymax; y++) if (y && y % 2 === 0) kids.push(T(X(0) - 8, Y(y) + 4, y, { z: 12, w: 600, f: '#6b5a8a', a: 'end' }));
+  return { X, Y, kids };
+}
+const clipTo = (id, x, y, w, h, kids) => [s('clipPath', { id }, R(x, y, w, h, '#000', { w: 0 })), s('g', { 'clip-path': `url(#${id})` }, kids)];
+function seeded(seed) { let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
+
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
@@ -327,6 +340,162 @@ export const WIDGETS = {
       const d = v.acid - v.base, col = d > 0 ? '#e63946' : d < 0 ? '#3a86ff' : '#9d6bb8', name = d > 0 ? 'acidic' : d < 0 ? 'basic' : 'neutral';
       return { kids: [s('path', { d: 'M 210 40 V 260 Q 210 280 230 280 H 370 Q 390 280 390 260 V 40', fill: '#fff', stroke: INK, 'stroke-width': 5 }), R(213, 110, 174, 167, col, { w: 0, r: 8, x: { opacity: 0.8 } })],
         say: `${v.acid} drops of acid and ${v.base} of base: the solution is ${name}, so litmus shows ${d > 0 ? 'red' : d < 0 ? 'blue' : 'neither colour change'}.` };
+    },
+  },
+  linegraph: {
+    subject: 'maths', about: 'A straight line y = m x + c on a coordinate grid, with a rise-over-run step. m is the slope (steepness) and c is where the line crosses the y-axis. For graphs of linear equations, slope, coordinate geometry, y = mx + c.',
+    sliders: [['m', 'Slope (m)', -4, 4, 0.5, 1], ['c', 'Crosses the y-axis at (c)', -3, 3, 1, 1]],
+    draw(v) {
+      const u = 34, P = plane(-8, 8, -4, 4, u, 300, 150), { X, Y } = P, m = v.m, c = v.c;
+      const sp = m === 0 ? '' : m === 1 ? 'x' : m === -1 ? '-x' : `${num(m)}x`;
+      const eq = sp && c ? `${sp} ${signed(c)}` : sp || String(num(c));
+      const kids = [...P.kids, ...clipTo('xp-line', X(-8), Y(4), 16 * u, 8 * u, [L(X(-8), Y(-8 * m + c), X(8), Y(8 * m + c), C.o, 6)])];
+      if (m !== 0) kids.push(L(X(0), Y(c), X(1), Y(c), C.b, 4, { 'stroke-dasharray': '6 5' }), L(X(1), Y(c), X(1), Y(c + m), C.g, 5), T(X(0.5), Y(c) + (m > 0 ? 22 : -10), '1', { z: 16, f: C.b }), T(X(1) + 8, Y(c + m / 2) + 5, `${num(Math.abs(m))} ${m > 0 ? 'up' : 'down'}`, { z: 13, f: '#058a68', a: 'start' }));
+      kids.push(CIRC(X(0), Y(c), 7, C.y, { w: 3 }));
+      return { kids, say: `y = ${eq}. ${m === 0 ? 'The slope is 0, so the line is flat.' : `For every 1 step right, the line goes ${num(Math.abs(m))} ${m > 0 ? 'up' : 'down'}.`} It crosses the y-axis at ${num(c)}.` };
+    },
+  },
+  parabola: {
+    subject: 'maths', about: 'A parabola y = a(x - h)^2 + k. a opens it up or down and makes it wide or narrow, h slides it sideways, k lifts it. Shows the vertex, the axis of symmetry and where it crosses the x-axis. For quadratic equations, quadratic graphs, squares, roots.',
+    sliders: [['a', 'Opening (a)', -2, 2, 0.5, 1], ['h', 'Slide right (h)', -4, 4, 1, 0], ['k', 'Lift up (k)', -4, 4, 1, -2]],
+    draw(v) {
+      const u = 26, P = plane(-10, 10, -4, 7, u, 300, 190), { X, Y } = P, { a, h, k } = v, pts = [];
+      for (let x = -10; x <= 10.001; x += 0.2) pts.push(`${X(x).toFixed(1)},${Y(a * (x - h) ** 2 + k).toFixed(1)}`);
+      const kids = [...P.kids, ...clipTo('xp-par', X(-10), Y(7), 20 * u, 11 * u, [s('polyline', { points: pts.join(' '), fill: 'none', stroke: C.p, 'stroke-width': 6, 'stroke-linejoin': 'round' })])];
+      const hx = h === 0 ? 'x' : `(x ${h < 0 ? '+' : '-'} ${Math.abs(h)})`;
+      let say;
+      if (a === 0) say = `With a = 0 there is no curve: y = ${num(k)}, a flat line.`;
+      else {
+        kids.push(L(X(h), Y(7), X(h), Y(-4), C.o, 2.5, { 'stroke-dasharray': '7 6' }), CIRC(X(h), Y(k), 7, C.y, { w: 3 }));
+        const d = -k / a, sq = Math.sqrt(Math.max(d, 0)); let roots;
+        if (d > 1e-9) { kids.push(CIRC(X(h - sq), Y(0), 6, C.g, { w: 2.5 }), CIRC(X(h + sq), Y(0), 6, C.g, { w: 2.5 })); roots = `It crosses the x-axis at x = ${num(h - sq)} and x = ${num(h + sq)}.`; }
+        else if (Math.abs(d) <= 1e-9) { kids.push(CIRC(X(h), Y(0), 6, C.g, { w: 2.5 })); roots = `It just touches the x-axis at x = ${num(h)}.`; }
+        else roots = 'It never reaches the x-axis, so there are no roots.';
+        say = `y = ${a === 1 ? '' : a === -1 ? '-' : num(a)}${hx === 'x' ? 'x²' : `${hx}²`}${k ? ` ${signed(k)}` : ''}. It opens ${a > 0 ? 'upwards' : 'downwards'}, the vertex is (${h}, ${k}). ${roots}`;
+      }
+      return { kids, say };
+    },
+  },
+  pythagoras: {
+    subject: 'maths', about: 'A right-angled triangle with a square drawn on each side. The two small squares always add up to the big one: a^2 + b^2 = c^2. For the Pythagoras theorem, squares and square roots, right triangles, areas.',
+    sliders: [['a', 'Short side a', 1, 8, 1, 3], ['b', 'Short side b', 1, 8, 1, 4]],
+    draw(v) {
+      const { a, b } = v, u = Math.min(24, 560 / (2 * a + b), 280 / (a + 2 * b)), c = Math.hypot(a, b), rx = 300 - (b * u) / 2, ry = 150 + (a * u) / 2, au = a * u, bu = b * u;
+      const kids = [], poly = (pts, f) => s('polygon', { points: pts.map((p) => p.join(',')).join(' '), fill: f, stroke: INK, 'stroke-width': 3, 'stroke-linejoin': 'round' });
+      kids.push(poly([[rx, ry], [rx, ry - au], [rx - au, ry - au], [rx - au, ry]], C.sky), poly([[rx, ry], [rx + bu, ry], [rx + bu, ry + bu], [rx, ry + bu]], '#ffe3a3'));
+      kids.push(poly([[rx, ry - au], [rx + bu, ry], [rx + bu + au, ry - bu], [rx + au, ry - au - bu]].map(([x, y], i) => (i === 3 ? [rx + au, ry - au - bu] : i === 2 ? [rx + bu + au, ry - bu] : [x, y])), '#c9f0dc'));
+      for (let i = 1; i < a; i++) { kids.push(L(rx - i * u, ry, rx - i * u, ry - au, INK, 0.8, { opacity: 0.35 }), L(rx, ry - i * u, rx - au, ry - i * u, INK, 0.8, { opacity: 0.35 })); }
+      for (let i = 1; i < b; i++) { kids.push(L(rx + i * u, ry, rx + i * u, ry + bu, INK, 0.8, { opacity: 0.35 }), L(rx, ry + i * u, rx + bu, ry + i * u, INK, 0.8, { opacity: 0.35 })); }
+      kids.push(poly([[rx, ry], [rx + bu, ry], [rx, ry - au]], C.cream), R(rx, ry - 12, 12, 12, 'none', { w: 2 }));
+      kids.push(T(rx - au / 2, ry - au / 2 + 6, `${a * a}`, { z: 20 }), T(rx + bu / 2, ry + bu / 2 + 6, `${b * b}`, { z: 20 }), T(rx + (bu + au) / 2 + 0, ry - (au + bu) / 2 - 0 + 6 + (au - bu) / 2 * 0, `${num(a * a + b * b)}`, { z: 22 }));
+      const whole = Math.abs(c - Math.round(c)) < 1e-9;
+      return { kids, say: `${a}² + ${b}² = ${a * a} + ${b * b} = ${a * a + b * b}. So the long side c has c² = ${a * a + b * b}, and c = ${whole ? Math.round(c) : `about ${num(c, 2)}`}.${whole ? ` ${a}, ${b}, ${Math.round(c)} is a Pythagorean triple!` : ''}` };
+    },
+  },
+  trig: {
+    subject: 'maths', about: 'A right triangle inside a circle of radius 1 whose angle you turn from 0 to 90 degrees. The height is sin, the width is cos, and tan is the length of the line standing on the right edge. For trigonometry, sine, cosine, tangent, trigonometric ratios, angles of elevation.',
+    sliders: [['t', 'Angle in degrees', 0, 90, 5, 30]],
+    draw(v) {
+      const r = 120, cx = 150, cy = 215, th = rad(v.t), px = cx + r * Math.cos(th), py = cy - r * Math.sin(th), sin = Math.sin(th), cos = Math.cos(th), tan = v.t === 90 ? null : Math.tan(th);
+      const kids = [s('path', { d: `M ${cx + r} ${cy} A ${r} ${r} 0 0 0 ${cx} ${cy - r}`, fill: 'none', stroke: '#c9b8e8', 'stroke-width': 3 }), L(cx - 10, cy, cx + r + 40, cy, INK, 3), L(cx, cy + 10, cx, cy - r - 25, INK, 3), L(cx + r, cy, cx + r, cy - r - 30, '#c9b8e8', 2, { 'stroke-dasharray': '5 5' })];
+      kids.push(s('polygon', { points: `${cx},${cy} ${px},${cy} ${px},${py}`, fill: C.cream, stroke: 'none' }), L(cx, cy, px, cy, C.g, 7), L(px, cy, px, py, C.o, 7), L(cx, cy, px, py, INK, 4));
+      if (tan !== null && v.t > 0) kids.push(L(cx + r, cy, cx + r, Math.max(cy - r * tan, cy - r - 30), C.b, 7));
+      kids.push(CIRC(px, py, 8, C.y, { w: 3 }), s('path', { d: `M ${cx + 34} ${cy} A 34 34 0 0 0 ${cx + 34 * Math.cos(th)} ${cy - 34 * Math.sin(th)}`, fill: 'none', stroke: INK, 'stroke-width': 3 }));
+      kids.push(T(370, 100, `sin ${v.t}° = ${num(sin, 3)}`, { a: 'start', f: '#d9531e', z: 22 }), T(370, 150, `cos ${v.t}° = ${num(cos, 3)}`, { a: 'start', f: '#058a68', z: 22 }), T(370, 200, `tan ${v.t}° = ${tan === null ? 'not defined' : num(tan, 3)}`, { a: 'start', f: '#1f63d9', z: 22 }));
+      kids.push(T(370, 240, 'height  ·  width  ·  steepness', { a: 'start', z: 13, w: 600, f: '#6b5a8a' }));
+      return { kids, say: `At ${v.t}°: sin (the height) is ${num(sin, 3)}, cos (the width) is ${num(cos, 3)}${tan === null ? ', and tan is not defined because the line goes straight up' : `, and tan (the steepness) is ${num(tan, 3)}`}. Notice sin² + cos² = ${num(sin * sin + cos * cos, 2)}.` };
+    },
+  },
+  probability: {
+    subject: 'maths', about: 'Flipping a coin or rolling a die many times, with a graph of the fraction of times the event happens settling towards the true chance. Param kind is "coin" (chance of heads is 1/2) or "dice" (chance of a six is 1/6). For probability, chance, experiments, fairness.',
+    params: { kind: 'coin' },
+    sliders: [['n', 'Number of tries', 5, 500, 5, 10]],
+    draw(v, p) {
+      const dice = p.kind === 'dice', sides = dice ? 6 : 2, rnd = seeded(2026), hit = [];
+      for (let i = 0; i < 500; i++) hit.push(Math.floor(rnd() * sides) === 0 ? 1 : 0);
+      const X = (i) => 50 + (i / v.n) * 520, Y = (f) => 260 - f * 220, pr = 1 / sides, kids = [L(50, Y(0), 575, Y(0), INK, 3), L(50, Y(0), 50, Y(1), INK, 3), L(50, Y(pr), 575, Y(pr), C.o, 3, { 'stroke-dasharray': '8 6' }), T(560, Y(pr) - 8, dice ? 'true chance 1/6' : 'true chance 1/2', { a: 'end', z: 13, f: '#d9531e' }), T(34, Y(1) + 4, '1', { z: 13, a: 'end' }), T(34, Y(0) + 4, '0', { z: 13, a: 'end' }), T(310, 288, 'number of tries', { z: 13, w: 600, f: '#6b5a8a' }), T(570, 280, v.n, { z: 13, a: 'end' })];
+      let h = 0; const pts = [];
+      for (let i = 0; i < v.n; i++) { h += hit[i]; pts.push(`${X(i + 1).toFixed(1)},${Y(h / (i + 1)).toFixed(1)}`); }
+      kids.push(s('polyline', { points: pts.join(' '), fill: 'none', stroke: C.b, 'stroke-width': 4, 'stroke-linejoin': 'round' }));
+      const frac = h / v.n;
+      return { kids, say: `After ${v.n} ${dice ? 'rolls' : 'flips'}: ${h} ${dice ? 'sixes' : 'heads'}, which is ${num(frac, 3)} of the tries. The true chance is ${dice ? '1/6 = 0.167' : '1/2 = 0.5'}. The more you try, the closer the blue line gets to it.` };
+    },
+  },
+  similar: {
+    subject: 'maths', about: 'A small triangle with sides 3, 4 and 5 and a bigger copy made by a scale factor. Lengths grow by the scale factor, angles stay the same, and the area grows by the scale factor squared. For similar figures, scaling, enlargement, ratio and proportion, similar triangles.',
+    sliders: [['k', 'Scale factor', 0.5, 3, 0.5, 2]],
+    draw(v) {
+      const u = 16, k = v.k, x0 = 40, y0 = 268, tri = (x, sc, f) => s('polygon', { points: `${x},${y0} ${x + 4 * u * sc},${y0} ${x},${y0 - 3 * u * sc}`, fill: f, stroke: INK, 'stroke-width': 3, 'stroke-linejoin': 'round' });
+      const x1 = 200, kids = [tri(x0, 1, C.sky), tri(x1, k, '#ffe3a3'), R(x0, y0 - 12, 12, 12, 'none', { w: 2 }), R(x1, y0 - 12, 12, 12, 'none', { w: 2 }),
+        T(x0 + 2 * u, y0 + 20, '4', { z: 15 }), T(x0 - 14, y0 - 1.5 * u, '3', { z: 15 }), T(x0 + 2.4 * u + 8, y0 - 1.5 * u - 6, '5', { z: 15 }),
+        T(x1 + 2 * u * k, y0 + 20, num(4 * k), { z: 15 }), T(x1 - 18, y0 - 1.5 * u * k, num(3 * k), { z: 15 }), T(x1 + 2 * u * k + 10, y0 - 1.5 * u * k - 8, num(5 * k), { z: 15 })];
+      return { kids, say: `Every length is ${num(k)} times as long (3, 4, 5 become ${num(3 * k)}, ${num(4 * k)}, ${num(5 * k)}), and every angle stays the same. The area is ${num(k)} × ${num(k)} = ${num(k * k)} times as big: ${num(6 * k * k)} instead of 6.` };
+    },
+  },
+  circle: {
+    subject: 'maths', about: 'A circle whose radius you change, with its circumference unrolled next to the diameter to show the circumference is a little more than 3 diameters (pi). Shows circumference and area. For circles, pi, circumference, area of a circle, radius and diameter.',
+    sliders: [['r', 'Radius', 1, 8, 1, 4]],
+    draw(v) {
+      const u = 9, r = v.r, d = 2 * r * u, cx = 300, cy = 100, total = Math.PI * d, x0 = (600 - total) / 2, kids = [CIRC(cx, cy, r * u, C.sky, { w: 4 }), L(cx - r * u, cy, cx + r * u, cy, C.o, 5), CIRC(cx, cy, 5, INK)];
+      kids.push(T(cx, cy - 8, `${2 * r}`, { z: 16, f: '#d9531e' }));
+      const cols = [C.y, C.g, C.b];
+      for (let i = 0; i < 3; i++) kids.push(R(x0 + i * d, 215, d, 34, cols[i], { w: 3 }), T(x0 + i * d + d / 2, 238, 'd', { z: 17 }));
+      kids.push(R(x0 + 3 * d, 215, (Math.PI - 3) * d, 34, C.p, { w: 3 }), T(300, 275, `circumference = ${num(2 * Math.PI * r, 1)}  (3 diameters and a bit more)`, { z: 15, w: 600 }));
+      return { kids, say: `Radius ${r}, diameter ${2 * r}. Circumference = 2 × π × ${r} ≈ ${num(2 * Math.PI * r, 1)}, a bit more than 3 diameters. Area = π × ${r}² ≈ ${num(Math.PI * r * r, 1)}.` };
+    },
+  },
+  dotplot: {
+    subject: 'maths', about: 'Five numbers as dots on a number line from 0 to 10, with the mean (balance point) and the median (middle value) marked, and the range. Change any number and watch what moves. For data handling, statistics, mean, median, mode, range, average.',
+    sliders: [['v1', 'Number 1', 0, 10, 1, 2], ['v2', 'Number 2', 0, 10, 1, 4], ['v3', 'Number 3', 0, 10, 1, 5], ['v4', 'Number 4', 0, 10, 1, 6], ['v5', 'Number 5', 0, 10, 1, 8]],
+    draw(v) {
+      const vals = [v.v1, v.v2, v.v3, v.v4, v.v5], sorted = [...vals].sort((x, y) => x - y), mean = vals.reduce((x, y) => x + y, 0) / 5, med = sorted[2], X = (n) => 50 + n * 50, y = 190;
+      const kids = [L(X(0), y, X(10), y, INK, 4)];
+      for (let n = 0; n <= 10; n++) kids.push(L(X(n), y - 7, X(n), y + 7, INK, 2), T(X(n), y + 30, n, { z: 15 }));
+      const seen = {};
+      for (const val of sorted) { seen[val] = (seen[val] || 0) + 1; kids.push(CIRC(X(val), y - 20 - (seen[val] - 1) * 34, 15, C.b, { w: 3 })); }
+      kids.push(CIRC(X(med), y - 20 - ((seen[med] || 1) - 1) * 34, 20, 'none', { s: C.y, w: 5 }), s('polygon', { points: `${X(mean)},${y + 40} ${X(mean) - 14},${y + 70} ${X(mean) + 14},${y + 70}`, fill: C.o, stroke: INK, 'stroke-width': 3 }), T(X(mean), y + 90, 'mean', { z: 14, f: '#d9531e' }));
+      return { kids, say: `Numbers in order: ${sorted.join(', ')}. Mean = ${num(vals.reduce((x, y2) => x + y2, 0))} ÷ 5 = ${num(mean, 2)} (the balance point). Median = ${med} (the middle one, ringed). Range = ${sorted[4]} − ${sorted[0]} = ${sorted[4] - sorted[0]}.` };
+    },
+  },
+  squarecube: {
+    subject: 'maths', about: 'A square grid of n by n and a cube built from n by n by n small cubes, with the counts. For perfect squares, perfect cubes, squares and square roots, cubes and cube roots, powers, exponents.',
+    sliders: [['n', 'Side length n', 1, 7, 1, 3]],
+    draw(v) {
+      const n = v.n, E = 100, dx = E * 0.866, dy = E * 0.5, cx = 430, cy = 255, kids = [], gx = 70, gy = 100, cell = E / n;
+      kids.push(R(gx, gy, E, E, C.sky, { w: 3 }));
+      for (let i = 1; i < n; i++) kids.push(L(gx + i * cell, gy, gx + i * cell, gy + E, INK, 1.2), L(gx, gy + i * cell, gx + E, gy + i * cell, INK, 1.2));
+      const P = (x, y) => `${(cx + x).toFixed(1)},${(cy - y).toFixed(1)}`;
+      kids.push(s('polygon', { points: [P(0, 0), P(dx, dy), P(dx, dy + E), P(0, E)].join(' '), fill: '#ffe3a3', stroke: INK, 'stroke-width': 3 }), s('polygon', { points: [P(0, 0), P(-dx, dy), P(-dx, dy + E), P(0, E)].join(' '), fill: C.sky, stroke: INK, 'stroke-width': 3 }), s('polygon', { points: [P(0, E), P(dx, dy + E), P(0, 2 * dy + E), P(-dx, dy + E)].join(' '), fill: '#c9f0dc', stroke: INK, 'stroke-width': 3 }));
+      for (let i = 1; i < n; i++) {
+        const f = i / n;
+        kids.push(L(cx + dx * f, cy - dy * f, cx + dx * f, cy - dy * f - E, INK, 1.2), L(cx, cy - E * f, cx + dx, cy - dy - E * f, INK, 1.2));
+        kids.push(L(cx - dx * f, cy - dy * f, cx - dx * f, cy - dy * f - E, INK, 1.2), L(cx, cy - E * f, cx - dx, cy - dy - E * f, INK, 1.2));
+        kids.push(L(cx + dx * f, cy - dy * f - E, cx + dx * f - dx, cy - dy * f - E - dy, INK, 1.2), L(cx - dx * f, cy - dy * f - E, cx - dx * f + dx, cy - dy * f - E - dy, INK, 1.2));
+      }
+      kids.push(T(gx + E / 2, gy + E + 28, `${n} × ${n} = ${n * n}`, { z: 20 }), T(cx, cy + 32, `${n} × ${n} × ${n} = ${n ** 3}`, { z: 20 }));
+      return { kids, say: `A square with side ${n} has ${n}² = ${n * n} small squares, so ${n * n} is a perfect square and its square root is ${n}. A cube with side ${n} has ${n}³ = ${n ** 3} small cubes, so ${n ** 3} is a perfect cube and its cube root is ${n}.` };
+    },
+  },
+  ap: {
+    subject: 'maths', about: 'An arithmetic progression drawn as bars: first term a, common difference d, and how many terms. Shows each term, the nth term a + (n - 1)d and the sum of the terms. For arithmetic progressions, sequences and series, nth term, sum of n terms.',
+    sliders: [['a', 'First term (a)', -5, 10, 1, 2], ['d', 'Difference (d)', -3, 5, 1, 3], ['n', 'Number of terms (n)', 1, 10, 1, 5]],
+    draw(v) {
+      const { a, d, n } = v, terms = Array.from({ length: n }, (_, i) => a + i * d), big = Math.max(1, ...terms.map(Math.abs)), k = 105 / big, y0 = 170, bw = Math.min(44, 520 / n - 8), x0 = (600 - n * (bw + 8)) / 2;
+      const kids = [L(20, y0, 580, y0, INK, 3)];
+      terms.forEach((t, i) => { const x = x0 + i * (bw + 8), h = t * k; kids.push(R(x, h >= 0 ? y0 - h : y0, bw, Math.abs(h), t >= 0 ? C.b : C.o, { w: 2.5, r: 4 }), T(x + bw / 2, h >= 0 ? y0 - h - 8 : y0 - h + 20, t, { z: 15 })); });
+      const sum = (n / 2) * (2 * a + (n - 1) * d), last = a + (n - 1) * d;
+      return { kids, say: `Terms: ${terms.join(', ')}. Each term ${d === 0 ? 'stays the same' : `${d > 0 ? 'adds' : 'takes away'} ${Math.abs(d)}`}. The ${n}th term = ${a} + (${n} − 1) × ${d} = ${last}. Sum of the ${n} terms = ${n}/2 × (${a} + ${last}) = ${num(sum)}.` };
+    },
+  },
+  triarea: {
+    subject: 'maths', about: 'A triangle whose top corner slides along a line parallel to the base, so the shape changes but the area stays the same, next to the rectangle of the same base and height that is twice as big. For area of a triangle, base and height, area of parallelograms and triangles.',
+    sliders: [['b', 'Base', 2, 10, 1, 6], ['h', 'Height', 2, 6, 1, 4], ['p', 'Slide the top corner', -4, 12, 1, 3]],
+    draw(v) {
+      const { b, h, p } = v, u = 26, minX = Math.min(0, p), maxX = Math.max(b, p), x0 = 300 - ((minX + maxX) / 2) * u, y0 = 250, X = (x) => x0 + x * u, Y = (y) => y0 - y * u;
+      const kids = [R(X(0), Y(h), b * u, h * u, 'none', { w: 2.5, s: '#c9b8e8', x: { 'stroke-dasharray': '8 6' } }), L(X(Math.min(-4, minX) - 0.5), Y(h), X(Math.max(maxX, 12) + 0.5), Y(h), C.o, 2.5, { 'stroke-dasharray': '4 6' }),
+        s('polygon', { points: `${X(0)},${Y(0)} ${X(b)},${Y(0)} ${X(p)},${Y(h)}`, fill: '#ffe3a3', stroke: INK, 'stroke-width': 4, 'stroke-linejoin': 'round' }), L(X(p), Y(h), X(p), Y(0), C.g, 3, { 'stroke-dasharray': '6 5' }), CIRC(X(p), Y(h), 8, C.y, { w: 3 }),
+        T(X(b / 2), Y(0) + 24, `base ${b}`, { z: 15 }), T(X(p) + 10, Y(h / 2), `height ${h}`, { z: 15, a: 'start', f: '#058a68' })];
+      return { kids, say: `Area of the triangle = ½ × base × height = ½ × ${b} × ${h} = ${num((b * h) / 2)} square units, exactly half of the rectangle (${b * h}). Slide the top corner along the dashed line: the shape changes but the area does not.` };
     },
   },
 };
