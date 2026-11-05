@@ -9,7 +9,7 @@ live site really serves everything. Stops without uploading if a pack does not v
 SPARKLE_DEPLOY  rsync target   (set in tools/local.env)
 SPARKLE_URL     live site      (set in tools/local.env)
 """
-import glob, hashlib, json, os, random, re, subprocess, sys, urllib.request
+import shutil, glob, hashlib, json, os, random, re, subprocess, sys, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE); PUB = f'{ROOT}/public'
 sys.path.insert(0, HERE)
 from subjects import SUBJECTS
@@ -29,6 +29,16 @@ def build():
         say(key, '|', (out.stdout.strip().splitlines() or [out.stderr[-200:]])[-1][:110])
         if out.returncode:   # a book still being made can fail to assemble: the last good copy stays live
             say(f'{key}: not rebuilt this time (still being made?)', out.stderr[-120:].replace('\n', ' ')); continue
+    # A book that has only just started has no finished chapter yet: keep it off the site until it has one,
+    # instead of letting its empty pack stop every publish.
+    idx_path = f'{PUB}/content/index.json'; idx = json.load(open(idx_path))
+    for f in sorted(glob.glob(f'{PUB}/content/packs/*/pack.json')):
+        pk = json.load(open(f))
+        if not any(c for u in pk.get('units') or [] for c in u.get('chapters') or []):
+            say(f"{pk.get('id', f)}: no finished chapter yet, left off the site")
+            idx['packs'] = [x for x in idx['packs'] if x['id'] != pk.get('id')]
+            shutil.rmtree(os.path.dirname(f), ignore_errors=True)
+    json.dump(idx, open(idx_path, 'w'), indent=2, ensure_ascii=False)
     for f in sorted(glob.glob(f'{PUB}/content/packs/*/pack.json')):
         v = subprocess.run(['node', f'{HERE}/validate-pack.mjs', f], capture_output=True, text=True)
         if v.returncode: sys.exit(f'{f} does not validate:\n{v.stdout[-600:]}')
