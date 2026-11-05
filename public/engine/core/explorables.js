@@ -645,6 +645,25 @@ export const WIDGETS = {
       return { kids, say: `${p}% means ${p} out of every 100, which is ${frac} or ${num(p / 100, 2)}. ${p}% of ${whole} is ${p} ÷ 100 × ${whole} = ${num(part, 2)}.` };
     },
   },
+  solarsystem: {
+    subject: 'science', about: 'The eight planets going round the Sun at their real speeds as time passes (distances not to scale). Mercury races round in 88 days, Earth in a year, Saturn in about 29 years. For the solar system, planets, orbits, revolution, years on other planets.',
+    sliders: [['days', 'Days that pass', 0, 12000, 10, 0]],
+    draw(v) {
+      const cx = 300, cy = 150, P = [['Mercury', 88, 34, 4, '#b5a99a'], ['Venus', 225, 52, 6, '#e8c07d'], ['Earth', 365, 72, 6.5, '#3a86ff'], ['Mars', 687, 92, 5, '#e2583e'], ['Jupiter', 4333, 150, 13, '#d9a066'], ['Saturn', 10759, 196, 11, '#e6cf8f'], ['Uranus', 30687, 236, 8, '#7fd1d8'], ['Neptune', 60190, 272, 8, '#4a63d9']];
+      const kids = [R(0, 0, W, H, '#0e1233', { w: 0 })];
+      for (const [, , r] of P) kids.push(s('ellipse', { cx, cy, rx: r, ry: r * 0.44, fill: 'none', stroke: '#3c4479', 'stroke-width': 1.5 }));
+      kids.push(CIRC(cx, cy, 16, '#ffcc33', { s: '#ffb000', w: 3 }));
+      const start = [20, 140, 250, 330, 100, 210, 300, 60];   // spread out at day 0 so the names never pile up
+      for (const [k, [name, per, r, size, col]] of P.entries()) {
+        const a = (2 * Math.PI * v.days) / per + (start[k] * Math.PI) / 180, x = cx + r * Math.cos(a), y = cy + r * 0.44 * Math.sin(a);
+        kids.push(CIRC(x, y, size, col, { s: '#0e1233', w: 1.5 }));
+        if (r >= 72) kids.push(T(x, y - size - 5, name, { z: 11, w: 600, f: '#dfe3ff' }));
+      }
+      kids.push(T(12, 22, `${v.days} days = ${num(v.days / 365, 1)} Earth year${num(v.days / 365, 1) === '1' ? '' : 's'}`, { a: 'start', z: 15, f: '#ffffff' }), T(588, 290, 'distances not to scale', { a: 'end', z: 11, w: 600, f: '#9aa3d6' }));
+      const laps = (per) => { const n = num(v.days / per, 1); return n === '1' ? 'once' : n === '0' ? '0 times' : `${n} times`; };
+      return { kids, say: `${v.days} days have passed. Earth has gone round the Sun ${laps(365)}, Mercury ${laps(88)}, Mars ${laps(687)} and Jupiter ${laps(4333)}. The further a planet is from the Sun, the longer its year.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
