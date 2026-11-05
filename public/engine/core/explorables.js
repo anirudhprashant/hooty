@@ -683,6 +683,42 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  conduction: {
+    subject: 'science', about: 'The wax-and-pins experiment: a strip heated by a candle at one end, with four pins stuck on by wax. Heat travels along the strip and the pins drop one by one, fast on copper, slower on steel, and not at all on wood in two minutes. For conduction, conductors and insulators, heat transfer.',
+    sliders: [['material', 'Strip: 0 copper, 1 steel, 2 wood', 0, 2, 1, 0], ['t', 'Seconds of heating', 0, 120, 5, 0]],
+    draw(v) {
+      const mats = [['copper', 0.1, '#d98c5f'], ['steel', 0.04, '#9aa5b1'], ['wood', 0.003, '#b07a45']], [name, speed, col] = mats[v.material];
+      const reach = Math.min(4.6, v.t * speed), x0 = 110, len = 440, X = (d) => x0 + (d / 5) * len, kids = [];
+      kids.push(R(30, 250, 560, 10, '#e8e0f0', { w: 0 }), R(70, 210, 18, 40, '#fff6dd', { w: 2 }), s('path', { d: 'M 79 210 Q 64 186 79 166 Q 94 186 79 210 Z', fill: v.t ? '#ff9d2e' : '#ccc', stroke: INK, 'stroke-width': 2 }));
+      kids.push(R(x0 - 30, 150, len + 30, 18, col, { w: 3, r: 3 }));
+      if (reach > 0) kids.push(s('rect', { x: x0 - 30, y: 150, width: 30 + (reach / 5) * len, height: 18, fill: 'url(#heatgrad)', rx: 3 }), s('defs', {}, [s('linearGradient', { id: 'heatgrad' }, [s('stop', { offset: '0%', 'stop-color': '#ff3b2f', 'stop-opacity': 0.95 }), s('stop', { offset: '100%', 'stop-color': '#ff3b2f', 'stop-opacity': 0 })])]));
+      let fallen = 0;
+      ['I', 'II', 'III', 'IV'].forEach((lab, i) => {
+        const d = i + 1, down = reach >= d, x = X(d);
+        if (down) fallen++;
+        const py = down ? 238 : 182;
+        kids.push(L(x, py - 22, x, py + 8, INK, 3), CIRC(x, py - 24, 6, '#5a6b7c', { w: 1.5 }), T(x, 140, lab, { z: 14, w: 600, f: '#6b5a8a' }));
+        if (!down) kids.push(R(x - 8, 168, 16, 10, '#fff3a6', { w: 1.5, r: 3 }));
+      });
+      kids.push(T(300, 40, `${name} strip, ${v.t} seconds`, { z: 20 }), T(300, 72, fallen ? `${fallen} pin${fallen > 1 ? 's' : ''} fallen` : 'no pins fallen yet', { z: 16, w: 600, f: '#058a68' }));
+      return { kids, say: `After ${v.t} seconds on the ${name} strip, ${fallen ? `${fallen} pin${fallen > 1 ? 's have' : ' has'} fallen, nearest the candle first` : 'no pin has fallen yet'}. ${v.material === 2 ? 'Wood is an insulator: heat hardly travels through it.' : `${name[0].toUpperCase()}${name.slice(1)} is a metal, a conductor: heat travels along it from the hot end.`}` };
+    },
+  },
+  seabreeze: {
+    subject: 'science', about: 'A coast through the day and night. By day the land heats up faster than the sea, warm air rises over the land and cool air flows in from the sea (a sea breeze); at night the land cools faster and the breeze blows from land to sea (a land breeze). For convection, land and sea breezes, wind, heat transfer by air.',
+    sliders: [['hour', 'Time of day (hour)', 0, 23, 1, 7]],
+    draw(v) {
+      const h = v.hour, day = h >= 10 && h <= 17, night = h >= 21 || h <= 5, kids = [R(0, 0, W, H, day || (!night && h > 5 && h < 21) ? '#d9efff' : '#1d2350', { w: 0 })];
+      kids.push(s('path', { d: 'M 0 210 L 270 210 Q 300 212 320 230 L 320 300 L 0 300 Z', fill: '#c8a26b', stroke: INK, 'stroke-width': 2 }), R(320, 230, 280, 70, '#3a86ff', { w: 0 }), T(130, 270, day ? 'land: hotter' : night ? 'land: cooler' : 'land', { z: 14, w: 600 }), T(460, 270, day ? 'sea: cooler' : night ? 'sea: warmer' : 'sea', { z: 14, w: 600, f: '#fff' }));
+      kids.push(day || (!night && h > 5 && h < 21) ? CIRC(520, 50, 26, '#ffcc33', { s: '#ffb000', w: 3 }) : CIRC(520, 50, 22, '#f2f2f2', { s: '#ccc', w: 2 }));
+      const arrow = (x1, y1, x2, y2) => { const a = Math.atan2(y2 - y1, x2 - x1); return [L(x1, y1, x2, y2, night ? '#ffffff' : '#e2583e', 5), s('polygon', { points: `${x2},${y2} ${x2 - 14 * Math.cos(a - 0.45)},${y2 - 14 * Math.sin(a - 0.45)} ${x2 - 14 * Math.cos(a + 0.45)},${y2 - 14 * Math.sin(a + 0.45)}`, fill: night ? '#ffffff' : '#e2583e' })]; };
+      if (day) kids.push(...arrow(470, 190, 200, 190), ...arrow(160, 180, 160, 90), ...arrow(200, 70, 470, 70), ...arrow(510, 90, 510, 170));
+      else if (night) kids.push(...arrow(150, 190, 430, 190), ...arrow(470, 180, 470, 90), ...arrow(430, 70, 160, 70), ...arrow(120, 90, 120, 170));
+      kids.push(T(20, 28, `${String(h).padStart(2, '0')}:00`, { a: 'start', z: 18, f: day || (!night && h > 5 && h < 21) ? INK : '#fff' }));
+      const say = day ? 'Daytime: the land heats up faster than the sea. Warm air over the land rises and cooler air from the sea flows in to take its place: a sea breeze.' : night ? 'Night: the land cools down faster than the sea. Warm air over the sea rises and cooler air from the land flows out to sea: a land breeze.' : 'Morning or evening: land and sea are at about the same temperature, so the breeze is weak while it changes direction.';
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

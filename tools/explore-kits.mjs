@@ -342,6 +342,22 @@ export const KITS = {
       { say: 'Run the leaf at full speed.', when: 'light == 10 and co2 == 10 and water == 10', then: 'All three inputs at the top: the most sugar and oxygen.' },
     ],
   },
+  conduction: {
+    grades: [6, 8], match: [/\bconduction\b/, /\bconductors?\b/, /\binsulators?\b/, /heat travels/, /\bwax\b.*\bpins?\b/],
+    title: 'Heat the strip', takeaway: 'In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators.',
+    tasks: [
+      { say: 'Heat the copper strip until all four pins fall.', when: 'material == 0 and t >= 40', then: 'The pin nearest the candle fell first: heat travels along the metal.' },
+      { say: 'Try wood for two minutes. Does any pin fall?', when: 'material == 2 and t == 120', then: 'None falls: wood is an insulator.' },
+    ],
+  },
+  seabreeze: {
+    grades: [6, 8], match: [/sea breezes?|land breezes?/, /\bconvection\b/],
+    title: 'Watch the coast breathe', takeaway: 'Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.',
+    tasks: [
+      { say: 'Make a sea breeze.', when: 'hour >= 10 and hour <= 17', then: 'By day the land is hotter, so air rises over it and the sea air blows in.' },
+      { say: 'Make a land breeze.', when: 'hour >= 21 or hour <= 5', then: 'At night the land is cooler, so the breeze blows out to sea.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
