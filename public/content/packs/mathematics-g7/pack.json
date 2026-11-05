@@ -30,7 +30,7 @@
       {
        "id": "mathematics-g7-ch1-l1",
        "title": "What Is One Lakh?",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -151,6 +151,31 @@
           "5 (generated problem)",
           "50 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch1-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "placevalue",
+         "params": {},
+         "title": "Build a big number",
+         "tasks": [
+          {
+           "say": "Make one lakh.",
+           "when": "crores == 0 and lakhs == 1 and thousands == 0 and ones == 0",
+           "then": "1,00,000 in the Indian system is 100,000: a hundred thousand."
+          },
+          {
+           "say": "Make ten lakh.",
+           "when": "crores == 0 and lakhs == 10 and thousands == 0 and ones == 0",
+           "then": "10,00,000 is 1,000,000: ten lakh is one million."
+          }
+         ],
+         "takeaway": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million.",
+         "explanation": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million."
         },
         {
          "type": "worked",
@@ -2017,7 +2042,7 @@
       {
        "id": "mathematics-g7-ch1-l3",
        "title": "Lakhs, Crores and Arabs",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -2131,6 +2156,31 @@
           "3 (generated problem)",
           "300 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch1-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "placevalue",
+         "params": {},
+         "title": "Build a big number",
+         "tasks": [
+          {
+           "say": "Make one lakh.",
+           "when": "crores == 0 and lakhs == 1 and thousands == 0 and ones == 0",
+           "then": "1,00,000 in the Indian system is 100,000: a hundred thousand."
+          },
+          {
+           "say": "Make ten lakh.",
+           "when": "crores == 0 and lakhs == 10 and thousands == 0 and ones == 0",
+           "then": "10,00,000 is 1,000,000: ten lakh is one million."
+          }
+         ],
+         "takeaway": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million.",
+         "explanation": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million."
         },
         {
          "type": "worked",
