@@ -2251,7 +2251,7 @@
       {
        "id": "mathematics-g8-ch1-l4",
        "title": "Square Roots",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -2360,6 +2360,31 @@
           "10 (generated problem)",
           "100 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch1-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "squarecube",
+         "params": {},
+         "title": "Squares and cubes",
+         "tasks": [
+          {
+           "say": "Find the side that makes 64 small cubes.",
+           "when": "n == 4",
+           "then": "4 x 4 x 4 = 64, so the cube root of 64 is 4."
+          },
+          {
+           "say": "Make the square have 49 small squares.",
+           "when": "n == 7",
+           "then": "7 x 7 = 49, so the square root of 49 is 7."
+          }
+         ],
+         "takeaway": "n x n makes a square number and n x n x n makes a cube number; going back gives the square root or cube root.",
+         "explanation": "n x n makes a square number and n x n x n makes a cube number; going back gives the square root or cube root."
         },
         {
          "type": "worked",
@@ -3938,7 +3963,7 @@
       {
        "id": "mathematics-g8-ch1-l6",
        "title": "Cube Roots and a Pinch of History",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -4059,6 +4084,31 @@
           "125 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch1-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "squarecube",
+         "params": {},
+         "title": "Squares and cubes",
+         "tasks": [
+          {
+           "say": "Find the side that makes 64 small cubes.",
+           "when": "n == 4",
+           "then": "4 x 4 x 4 = 64, so the cube root of 64 is 4."
+          },
+          {
+           "say": "Make the square have 49 small squares.",
+           "when": "n == 7",
+           "then": "7 x 7 = 49, so the square root of 49 is 7."
+          }
+         ],
+         "takeaway": "n x n makes a square number and n x n x n makes a cube number; going back gives the square root or cube root.",
+         "explanation": "n x n makes a square number and n x n x n makes a cube number; going back gives the square root or cube root."
         },
         {
          "type": "worked",
@@ -18395,7 +18445,7 @@
       {
        "id": "mathematics-g8-ch4-l2",
        "title": "Angles in a Quadrilateral",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -18524,6 +18574,36 @@
           "80 (generated problem)",
           "90 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",
@@ -34509,7 +34589,7 @@
       {
        "id": "mathematics-g8-ch7-l1",
        "title": "Similarity in Change",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -34649,6 +34729,31 @@
           "4 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "similar",
+         "params": {},
+         "title": "Grow the triangle",
+         "tasks": [
+          {
+           "say": "Make the copy smaller than the original.",
+           "when": "k < 1",
+           "then": "A scale factor below 1 shrinks the shape but keeps its angles."
+          },
+          {
+           "say": "Make the area 9 times bigger.",
+           "when": "k == 3",
+           "then": "3 x 3 = 9: the area grows by the square of the scale factor."
+          }
+         ],
+         "takeaway": "Similar shapes have the same angles; lengths grow by the scale factor and area by its square.",
+         "explanation": "Similar shapes have the same angles; lengths grow by the scale factor and area by its square."
         },
         {
          "type": "worked",
@@ -40342,7 +40447,7 @@
       {
        "id": "mathematics-g8-ch8-l1",
        "title": "Lesson 1: Fractions Become Percentages",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -40455,6 +40560,31 @@
           "100 (generated problem)",
           "75 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch8-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Shade the fraction",
+         "tasks": [
+          {
+           "say": "Show one half.",
+           "when": "n * 2 == d",
+           "then": "Any fraction whose top is half its bottom equals one half."
+          },
+          {
+           "say": "Show a fraction bigger than one whole.",
+           "when": "n > d",
+           "then": "When the top is bigger than the bottom you have more than a whole."
+          }
+         ],
+         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
+         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
         },
         {
          "type": "worked",
@@ -47956,7 +48086,7 @@
       {
        "id": "mathematics-g8-ch9-l2",
        "title": "The Hypotenuse and √2",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -48076,6 +48206,36 @@
           "7.07 (generated problem)",
           "7.075 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch9-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pythagoras",
+         "params": {},
+         "title": "Squares on the sides",
+         "tasks": [
+          {
+           "say": "Swap the sides: make a = 4 and b = 3.",
+           "when": "a == 4 and b == 3",
+           "then": "Swapping the short sides does not change the long side: it is still 5."
+          },
+          {
+           "say": "Find another whole-number triangle: make the sides 6 and 8.",
+           "when": "a == 6 and b == 8",
+           "then": "36 + 64 = 100 = 10 x 10. Doubling a triple gives another triple."
+          },
+          {
+           "say": "Make both short sides equal.",
+           "when": "a == b",
+           "then": "Then c x c = 2 x a x a, so the long side is a times about 1.414."
+          }
+         ],
+         "takeaway": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side.",
+         "explanation": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side."
         },
         {
          "type": "worked",
@@ -49914,7 +50074,7 @@
       {
        "id": "mathematics-g8-ch9-l4",
        "title": "Combining Two Different Squares",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -49965,6 +50125,36 @@
            "p": 42
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pythagoras",
+         "params": {},
+         "title": "Squares on the sides",
+         "tasks": [
+          {
+           "say": "Swap the sides: make a = 4 and b = 3.",
+           "when": "a == 4 and b == 3",
+           "then": "Swapping the short sides does not change the long side: it is still 5."
+          },
+          {
+           "say": "Find another whole-number triangle: make the sides 6 and 8.",
+           "when": "a == 6 and b == 8",
+           "then": "36 + 64 = 100 = 10 x 10. Doubling a triple gives another triple."
+          },
+          {
+           "say": "Make both short sides equal.",
+           "when": "a == b",
+           "then": "Then c x c = 2 x a x a, so the long side is a times about 1.414."
+          }
+         ],
+         "takeaway": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side.",
+         "explanation": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side."
         },
         {
          "type": "worked",
@@ -66870,7 +67060,7 @@
       {
        "id": "mathematics-g8-ch12-l3",
        "title": "Median and Missing Values",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -66921,6 +67111,31 @@
            "p": 109
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch12-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "dotplot",
+         "params": {},
+         "title": "Mean, median and range",
+         "tasks": [
+          {
+           "say": "Change only Number 5 to 10. Which moved: the mean or the median?",
+           "when": "v5 == 10",
+           "then": "The mean moved to 5.4 but the median stayed at 5: one big value pulls the mean, not the median."
+          },
+          {
+           "say": "Make the mean exactly 6.",
+           "when": "v1 + v2 + v3 + v4 + v5 == 30",
+           "then": "Mean = total divided by 5, so the five numbers must add up to 30."
+          }
+         ],
+         "takeaway": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are.",
+         "explanation": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are."
         },
         {
          "type": "worked",
@@ -70613,7 +70828,7 @@
       {
        "id": "mathematics-g8-ch13-l1",
        "title": "Think of a Number Tricks",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -70757,6 +70972,26 @@
           "7 (generated problem)",
           "9 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch13-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "balance",
+         "params": {},
+         "title": "Balance the scale",
+         "tasks": [
+          {
+           "say": "Find the x that balances 2x + 3 = 11.",
+           "when": "x == 4",
+           "then": "2 x 4 + 3 = 11, so x = 4."
+          }
+         ],
+         "takeaway": "Solving an equation means finding the value that makes both sides equal.",
+         "explanation": "Solving an equation means finding the value that makes both sides equal."
         },
         {
          "type": "worked",
@@ -77153,7 +77388,7 @@
       {
        "id": "mathematics-g8-ch14-l1",
        "title": "Rectangles, Squares and Perimeter",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -77212,6 +77447,31 @@
            "p": 150
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch14-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "rectangle",
+         "params": {},
+         "title": "Build the rectangle",
+         "tasks": [
+          {
+           "say": "Make a square.",
+           "when": "l == b",
+           "then": "A square is a rectangle whose sides are equal."
+          },
+          {
+           "say": "Make a different rectangle with area 24.",
+           "when": "l * b == 24",
+           "then": "Different rectangles can share an area: 24 = 6 x 4 = 8 x 3 = 12 x 2."
+          }
+         ],
+         "takeaway": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width)).",
+         "explanation": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width))."
         },
         {
          "type": "worked",
@@ -77552,7 +77812,7 @@
       {
        "id": "mathematics-g8-ch14-l2",
        "title": "Triangles and Their Area",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -77676,6 +77936,31 @@
           "4 (generated problem)",
           "9 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch14-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "triarea",
+         "params": {},
+         "title": "Slide the corner",
+         "tasks": [
+          {
+           "say": "Slide the top corner past the end of the base.",
+           "when": "p < 0 or p > b",
+           "then": "The height is still measured straight down to the base line, so the area does not change."
+          },
+          {
+           "say": "Make the area 20 square units.",
+           "when": "b * h == 40",
+           "then": "Half of base x height = 20, so base x height must be 40."
+          }
+         ],
+         "takeaway": "A triangle is half of the rectangle with the same base and height, wherever its top corner sits.",
+         "explanation": "A triangle is half of the rectangle with the same base and height, wherever its top corner sits."
         },
         {
          "type": "worked",
@@ -78756,7 +79041,7 @@
       {
        "id": "mathematics-g8-ch14-l3",
        "title": "Triangle Applications and Parallel Lines",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -78863,6 +79148,31 @@
          "derived": [
           "15 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch14-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "rectangle",
+         "params": {},
+         "title": "Build the rectangle",
+         "tasks": [
+          {
+           "say": "Make a square.",
+           "when": "l == b",
+           "then": "A square is a rectangle whose sides are equal."
+          },
+          {
+           "say": "Make a different rectangle with area 24.",
+           "when": "l * b == 24",
+           "then": "Different rectangles can share an area: 24 = 6 x 4 = 8 x 3 = 12 x 2."
+          }
+         ],
+         "takeaway": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width)).",
+         "explanation": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width))."
         },
         {
          "type": "worked",

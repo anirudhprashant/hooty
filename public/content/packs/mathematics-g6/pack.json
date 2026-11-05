@@ -15671,7 +15671,7 @@
       {
        "id": "mathematics-g6-ch3-l3",
        "title": "Lesson 3: Number Lines and Digit Sums",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -15815,6 +15815,31 @@
           "42 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch3-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "integers",
+         "params": {},
+         "title": "Jump on the number line",
+         "tasks": [
+          {
+           "say": "Land exactly on zero.",
+           "when": "start + add == 0",
+           "then": "A number plus its opposite is zero."
+          },
+          {
+           "say": "Land below -5.",
+           "when": "start + add < -5",
+           "then": "Adding a negative number moves you further left."
+          }
+         ],
+         "takeaway": "Adding a positive number moves right, adding a negative number moves left.",
+         "explanation": "Adding a positive number moves right, adding a negative number moves left."
         },
         {
          "type": "worked",
@@ -16538,7 +16563,7 @@
       {
        "id": "mathematics-g6-ch3-l5",
        "title": "Lesson 5: Clock Patterns and Mental Maths",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "concept",
@@ -16626,6 +16651,33 @@
           "12 (generated problem)",
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch3-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "square"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "hook",
@@ -17150,7 +17202,7 @@
       {
        "id": "mathematics-g6-ch3-l6",
        "title": "Lesson 6: Number Patterns, Collatz and Games",
-       "estimatedMinutes": 14,
+       "estimatedMinutes": 16,
        "activities": [
         {
          "type": "hook",
@@ -17318,6 +17370,33 @@
           "2 (generated problem)",
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch3-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "odd"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
@@ -32831,7 +32910,7 @@
       {
        "id": "mathematics-g6-ch6-l5",
        "title": "Area of a triangle",
-       "estimatedMinutes": 14,
+       "estimatedMinutes": 15,
        "activities": [
         {
          "type": "hook",
@@ -32985,6 +33064,31 @@
          "derived": [
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch6-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "triarea",
+         "params": {},
+         "title": "Slide the corner",
+         "tasks": [
+          {
+           "say": "Slide the top corner past the end of the base.",
+           "when": "p < 0 or p > b",
+           "then": "The height is still measured straight down to the base line, so the area does not change."
+          },
+          {
+           "say": "Make the area 20 square units.",
+           "when": "b * h == 40",
+           "then": "Half of base x height = 20, so base x height must be 40."
+          }
+         ],
+         "takeaway": "A triangle is half of the rectangle with the same base and height, wherever its top corner sits.",
+         "explanation": "A triangle is half of the rectangle with the same base and height, wherever its top corner sits."
         },
         {
          "type": "worked",
@@ -38504,7 +38608,7 @@
       {
        "id": "mathematics-g6-ch7-l3",
        "title": "Marking Fractions on a Number Line",
-       "estimatedMinutes": 15,
+       "estimatedMinutes": 17,
        "activities": [
         {
          "type": "hook",
@@ -38636,6 +38740,31 @@
          "derived": [
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "integers",
+         "params": {},
+         "title": "Jump on the number line",
+         "tasks": [
+          {
+           "say": "Land exactly on zero.",
+           "when": "start + add == 0",
+           "then": "A number plus its opposite is zero."
+          },
+          {
+           "say": "Land below -5.",
+           "when": "start + add < -5",
+           "then": "Adding a negative number moves you further left."
+          }
+         ],
+         "takeaway": "Adding a positive number moves right, adding a negative number moves left.",
+         "explanation": "Adding a positive number moves right, adding a negative number moves left."
         },
         {
          "type": "worked",
@@ -51273,7 +51402,7 @@
       {
        "id": "mathematics-g6-ch9-l3",
        "title": "Reflection and Making Symmetrical Shapes",
-       "estimatedMinutes": 14,
+       "estimatedMinutes": 16,
        "activities": [
         {
          "type": "hook",
@@ -51415,6 +51544,26 @@
           "1 (generated problem)",
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch9-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "symmetry",
+         "params": {},
+         "title": "Lines of symmetry",
+         "tasks": [
+          {
+           "say": "Make a shape with 6 lines of symmetry.",
+           "when": "n == 6",
+           "then": "A regular hexagon has 6 sides and 6 lines of symmetry."
+          }
+         ],
+         "takeaway": "A regular shape has as many lines of symmetry as it has sides.",
+         "explanation": "A regular shape has as many lines of symmetry as it has sides."
         },
         {
          "type": "worked",

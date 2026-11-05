@@ -10385,7 +10385,7 @@
       {
        "id": "mathematics-g9-ch2-l5",
        "title": "Lesson 5: Finding linear relationships",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -10526,6 +10526,36 @@
           "30 (generated problem)",
           "60 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch2-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "linegraph",
+         "params": {},
+         "title": "Steer the straight line",
+         "tasks": [
+          {
+           "say": "Make the line flat.",
+           "when": "m == 0",
+           "then": "A flat line has slope 0: y stays the same however x changes."
+          },
+          {
+           "say": "Make the line go downhill from left to right.",
+           "when": "m < 0",
+           "then": "A negative slope means y falls as x grows."
+          },
+          {
+           "say": "Build y = 2x - 2: climb 2 for every 1 across, crossing the y-axis at -2.",
+           "when": "m == 2 and c == -2",
+           "then": "You built y = 2x - 2."
+          }
+         ],
+         "takeaway": "m sets how steep the line is and c sets where it crosses the y-axis: y = mx + c.",
+         "explanation": "m sets how steep the line is and c sets where it crosses the y-axis: y = mx + c."
         },
         {
          "type": "worked",
@@ -11555,7 +11585,7 @@
       {
        "id": "mathematics-g9-ch2-l6",
        "title": "Lesson 6: Visualising linear relationships",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -11679,6 +11709,36 @@
           "3 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch2-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "linegraph",
+         "params": {},
+         "title": "Steer the straight line",
+         "tasks": [
+          {
+           "say": "Make the line flat.",
+           "when": "m == 0",
+           "then": "A flat line has slope 0: y stays the same however x changes."
+          },
+          {
+           "say": "Make the line go downhill from left to right.",
+           "when": "m < 0",
+           "then": "A negative slope means y falls as x grows."
+          },
+          {
+           "say": "Build y = 2x - 2: climb 2 for every 1 across, crossing the y-axis at -2.",
+           "when": "m == 2 and c == -2",
+           "then": "You built y = 2x - 2."
+          }
+         ],
+         "takeaway": "m sets how steep the line is and c sets where it crosses the y-axis: y = mx + c.",
+         "explanation": "m sets how steep the line is and c sets where it crosses the y-axis: y = mx + c."
         },
         {
          "type": "worked",
@@ -31086,7 +31146,7 @@
       {
        "id": "mathematics-g9-ch6-l1",
        "title": "Lesson 1: Perimeter and the C/D ratio",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -31210,6 +31270,31 @@
           "16 (generated problem)",
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch6-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "circle",
+         "params": {},
+         "title": "Unroll the circle",
+         "tasks": [
+          {
+           "say": "Double the radius to 8.",
+           "when": "r == 8",
+           "then": "The circumference doubled too, but the area became 4 times as big."
+          },
+          {
+           "say": "Make the smallest circle.",
+           "when": "r == 1",
+           "then": "Even a tiny circle is still about 3.14 diameters round."
+          }
+         ],
+         "takeaway": "Every circle goes round about 3.14 diameters, which is π. Circumference = 2πr and area = πr².",
+         "explanation": "Every circle goes round about 3.14 diameters, which is π. Circumference = 2πr and area = πr²."
         },
         {
          "type": "worked",
@@ -32201,7 +32286,7 @@
       {
        "id": "mathematics-g9-ch6-l2",
        "title": "Lesson 2: The story and nature of pi",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -32264,6 +32349,31 @@
            "p": 122
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "circle",
+         "params": {},
+         "title": "Unroll the circle",
+         "tasks": [
+          {
+           "say": "Double the radius to 8.",
+           "when": "r == 8",
+           "then": "The circumference doubled too, but the area became 4 times as big."
+          },
+          {
+           "say": "Make the smallest circle.",
+           "when": "r == 1",
+           "then": "Even a tiny circle is still about 3.14 diameters round."
+          }
+         ],
+         "takeaway": "Every circle goes round about 3.14 diameters, which is π. Circumference = 2πr and area = πr².",
+         "explanation": "Every circle goes round about 3.14 diameters, which is π. Circumference = 2πr and area = πr²."
         },
         {
          "type": "worked",
@@ -36266,7 +36376,7 @@
       {
        "id": "mathematics-g9-ch7-l1",
        "title": "Probability and uncertainty",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -36385,6 +36495,33 @@
           "4 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "probability",
+         "params": {
+          "kind": "coin"
+         },
+         "title": "Try it many times",
+         "tasks": [
+          {
+           "say": "Try 100 times.",
+           "when": "n >= 100",
+           "then": "Look how the blue line has started to settle."
+          },
+          {
+           "say": "Try 500 times.",
+           "when": "n == 500",
+           "then": "With many tries the fraction gets very close to the true chance."
+          }
+         ],
+         "takeaway": "A few tries can land anywhere, but many tries settle close to the true chance.",
+         "explanation": "A few tries can land anywhere, but many tries settle close to the true chance."
         },
         {
          "type": "worked",
@@ -37246,7 +37383,7 @@
       {
        "id": "mathematics-g9-ch7-l2",
        "title": "Randomness and the probability scale",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -37301,6 +37438,33 @@
            "p": 157
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "probability",
+         "params": {
+          "kind": "dice"
+         },
+         "title": "Try it many times",
+         "tasks": [
+          {
+           "say": "Try 100 times.",
+           "when": "n >= 100",
+           "then": "Look how the blue line has started to settle."
+          },
+          {
+           "say": "Try 500 times.",
+           "when": "n == 500",
+           "then": "With many tries the fraction gets very close to the true chance."
+          }
+         ],
+         "takeaway": "A few tries can land anywhere, but many tries settle close to the true chance.",
+         "explanation": "A few tries can land anywhere, but many tries settle close to the true chance."
         },
         {
          "type": "worked",
@@ -51719,7 +51883,7 @@
       {
        "id": "mathematics-g9-ch9-l4",
        "title": "The Converse of the Baudhāyana–Pythagoras Theorem",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -51774,6 +51938,36 @@
            "p": 4
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pythagoras",
+         "params": {},
+         "title": "Squares on the sides",
+         "tasks": [
+          {
+           "say": "Swap the sides: make a = 4 and b = 3.",
+           "when": "a == 4 and b == 3",
+           "then": "Swapping the short sides does not change the long side: it is still 5."
+          },
+          {
+           "say": "Find another whole-number triangle: make the sides 6 and 8.",
+           "when": "a == 6 and b == 8",
+           "then": "36 + 64 = 100 = 10 x 10. Doubling a triple gives another triple."
+          },
+          {
+           "say": "Make both short sides equal.",
+           "when": "a == b",
+           "then": "Then c x c = 2 x a x a, so the long side is a times about 1.414."
+          }
+         ],
+         "takeaway": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side.",
+         "explanation": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side."
         },
         {
          "type": "worked",
@@ -55058,7 +55252,7 @@
       {
        "id": "mathematics-g9-ch10-l1",
        "title": "Average of Averages",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -55199,6 +55393,31 @@
           "30 (generated problem)",
           "52 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch10-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "dotplot",
+         "params": {},
+         "title": "Mean, median and range",
+         "tasks": [
+          {
+           "say": "Change only Number 5 to 10. Which moved: the mean or the median?",
+           "when": "v5 == 10",
+           "then": "The mean moved to 5.4 but the median stayed at 5: one big value pulls the mean, not the median."
+          },
+          {
+           "say": "Make the mean exactly 6.",
+           "when": "v1 + v2 + v3 + v4 + v5 == 30",
+           "then": "Mean = total divided by 5, so the five numbers must add up to 30."
+          }
+         ],
+         "takeaway": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are.",
+         "explanation": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are."
         },
         {
          "type": "worked",
@@ -72875,7 +73094,7 @@
       {
        "id": "mathematics-g9-ch13-l1",
        "title": "Linear equations and standard form",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -72950,6 +73169,36 @@
            "p": 86
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch13-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "linegraph",
+         "params": {},
+         "title": "Steer the straight line",
+         "tasks": [
+          {
+           "say": "Make the line flat.",
+           "when": "m == 0",
+           "then": "A flat line has slope 0: y stays the same however x changes."
+          },
+          {
+           "say": "Make the line go downhill from left to right.",
+           "when": "m < 0",
+           "then": "A negative slope means y falls as x grows."
+          },
+          {
+           "say": "Build y = 2x - 2: climb 2 for every 1 across, crossing the y-axis at -2.",
+           "when": "m == 2 and c == -2",
+           "then": "You built y = 2x - 2."
+          }
+         ],
+         "takeaway": "m sets how steep the line is and c sets where it crosses the y-axis: y = mx + c.",
+         "explanation": "m sets how steep the line is and c sets where it crosses the y-axis: y = mx + c."
         },
         {
          "type": "worked",
@@ -74533,7 +74782,7 @@
       {
        "id": "mathematics-g9-ch13-l3",
        "title": "Slope and slope-intercept form",
-       "estimatedMinutes": 13,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -74670,6 +74919,36 @@
           "4 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch13-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "linegraph",
+         "params": {},
+         "title": "Steer the straight line",
+         "tasks": [
+          {
+           "say": "Make the line flat.",
+           "when": "m == 0",
+           "then": "A flat line has slope 0: y stays the same however x changes."
+          },
+          {
+           "say": "Make the line go downhill from left to right.",
+           "when": "m < 0",
+           "then": "A negative slope means y falls as x grows."
+          },
+          {
+           "say": "Build y = 2x - 2: climb 2 for every 1 across, crossing the y-axis at -2.",
+           "when": "m == 2 and c == -2",
+           "then": "You built y = 2x - 2."
+          }
+         ],
+         "takeaway": "m sets how steep the line is and c sets where it crosses the y-axis: y = mx + c.",
+         "explanation": "m sets how steep the line is and c sets where it crosses the y-axis: y = mx + c."
         },
         {
          "type": "worked",

@@ -3705,7 +3705,7 @@
       {
        "id": "mathematics-g7-ch1-l5",
        "title": "Patterns in Products",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -3808,6 +3808,33 @@
           "40 (generated problem)",
           "50 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch1-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "square"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
@@ -22770,7 +22797,7 @@
       {
        "id": "mathematics-g7-ch4-l5",
        "title": "Lesson 5: Finding Formulas and Describing Patterns",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -22883,6 +22910,33 @@
           "5 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch4-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "square"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
@@ -23311,7 +23365,7 @@
       {
        "id": "mathematics-g7-ch4-l6",
        "title": "Lesson 6: Calendar and Matchstick Patterns",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -23460,6 +23514,33 @@
           "7 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch4-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "square"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
@@ -25987,7 +26068,7 @@
       {
        "id": "mathematics-g7-ch5-l2",
        "title": "5.2 Perpendicular Lines and 5.3 Between Lines",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -26123,6 +26204,36 @@
           "4 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",
@@ -27625,7 +27736,7 @@
       {
        "id": "mathematics-g7-ch5-l4",
        "title": "5.5 Transversals and 5.6 Corresponding Angles",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -27739,6 +27850,36 @@
           "20 (generated problem)",
           "3 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch5-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",
@@ -31920,7 +32061,7 @@
       {
        "id": "mathematics-g7-ch6-l2",
        "title": "Even Numbers and Odd Numbers",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -32037,6 +32178,33 @@
           "1 (generated problem)",
           "9 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "odd"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
@@ -39281,7 +39449,7 @@
       {
        "id": "mathematics-g7-ch7-l4",
        "title": "Constructing from Sides and Angles",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -39411,6 +39579,36 @@
           "85 (generated problem)",
           "95 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",
@@ -51026,7 +51224,7 @@
       {
        "id": "mathematics-g7-ch9-l3",
        "title": "Lesson 3: Angles, SAS and SSA",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -51182,6 +51380,36 @@
           "70 (generated problem)",
           "80 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch9-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",
@@ -58766,7 +58994,7 @@
       {
        "id": "mathematics-g7-ch10-l3",
        "title": "Multiplying integers with tokens",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -58886,6 +59114,31 @@
           "2 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "integers",
+         "params": {},
+         "title": "Jump on the number line",
+         "tasks": [
+          {
+           "say": "Land exactly on zero.",
+           "when": "start + add == 0",
+           "then": "A number plus its opposite is zero."
+          },
+          {
+           "say": "Land below -5.",
+           "when": "start + add < -5",
+           "then": "Adding a negative number moves you further left."
+          }
+         ],
+         "takeaway": "Adding a positive number moves right, adding a negative number moves left.",
+         "explanation": "Adding a positive number moves right, adding a negative number moves left."
         },
         {
          "type": "worked",
@@ -59747,7 +60000,7 @@
       {
        "id": "mathematics-g7-ch10-l4",
        "title": "Patterns and signs in integer multiplication",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -59870,6 +60123,33 @@
           "4 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch10-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "square"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
@@ -67219,7 +67499,7 @@
       {
        "id": "mathematics-g7-ch11-l6",
        "title": "Lesson 6: Patterns and Efficient Procedures",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -67274,6 +67554,33 @@
            "p": 61
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch11-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "power2"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
@@ -68535,7 +68842,7 @@
       {
        "id": "mathematics-g7-ch12-l1",
        "title": "Decimals: A Quick Recap",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -68627,6 +68934,26 @@
           "2.4 (generated problem)",
           "24 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch12-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "decimal",
+         "params": {},
+         "title": "Build the decimal",
+         "tasks": [
+          {
+           "say": "Build 2.05.",
+           "when": "o == 2 and t == 0 and h == 5",
+           "then": "2 ones, 0 tenths and 5 hundredths is 2.05."
+          }
+         ],
+         "takeaway": "Ten hundredths make a tenth and ten tenths make one.",
+         "explanation": "Ten hundredths make a tenth and ten tenths make one."
         },
         {
          "type": "worked",
@@ -77963,7 +78290,7 @@
       {
        "id": "mathematics-g7-ch13-l4",
        "title": "Ends, Variability and Central Tendency",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -78012,6 +78339,31 @@
            "p": 105
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch13-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "dotplot",
+         "params": {},
+         "title": "Mean, median and range",
+         "tasks": [
+          {
+           "say": "Change only Number 5 to 10. Which moved: the mean or the median?",
+           "when": "v5 == 10",
+           "then": "The mean moved to 5.4 but the median stayed at 5: one big value pulls the mean, not the median."
+          },
+          {
+           "say": "Make the mean exactly 6.",
+           "when": "v1 + v2 + v3 + v4 + v5 == 30",
+           "then": "Mean = total divided by 5, so the five numbers must add up to 30."
+          }
+         ],
+         "takeaway": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are.",
+         "explanation": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are."
         },
         {
          "type": "worked",
@@ -82508,7 +82860,7 @@
       {
        "id": "mathematics-g7-ch14-l2",
        "title": "Right Angles and Ancient Rope Methods",
-       "estimatedMinutes": 13,
+       "estimatedMinutes": 15,
        "activities": [
         {
          "type": "hook",
@@ -82611,6 +82963,36 @@
           "3 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch14-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",
@@ -83660,7 +84042,7 @@
       {
        "id": "mathematics-g7-ch14-l3",
        "title": "Bisecting and Copying Angles",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -83777,6 +84159,36 @@
           "20 (generated problem)",
           "40 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch14-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",
@@ -88968,7 +89380,7 @@
       {
        "id": "mathematics-g7-ch15-l2",
        "title": "Matchstick Patterns and Equations",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -89087,6 +89499,33 @@
           "3 (generated problem)",
           "7 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch15-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "square"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "truefalse",
