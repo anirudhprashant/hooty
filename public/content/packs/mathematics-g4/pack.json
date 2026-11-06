@@ -41353,7 +41353,7 @@
       {
        "id": "mathematics-g4-ch7-l4",
        "title": "Add Up",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -41471,6 +41471,33 @@
           "4 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g4-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "column",
+         "params": {
+          "kind": "add"
+         },
+         "title": "Add and subtract in columns",
+         "tasks": [
+          {
+           "say": "Add 438 and 476, one column at a time.",
+           "when": "a == 438 and b == 476 and step == 3",
+           "then": "438 + 476 = 914, and regrouping carried a 1 twice."
+          },
+          {
+           "say": "Add 185 and 125.",
+           "when": "a == 185 and b == 125 and step == 3",
+           "then": "185 + 125 = 310: 10 ones and 10 tens both regrouped."
+          }
+         ],
+         "takeaway": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column.",
+         "explanation": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column."
         },
         {
          "type": "fillblank",
@@ -42417,7 +42444,7 @@
       {
        "id": "mathematics-g4-ch7-l5",
        "title": "Subtract It",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -42548,6 +42575,33 @@
           "6 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g4-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "column",
+         "params": {
+          "kind": "sub"
+         },
+         "title": "Add and subtract in columns",
+         "tasks": [
+          {
+           "say": "Take away 215 from 438.",
+           "when": "a == 438 and b == 215 and step == 3",
+           "then": "438 − 215 = 223: that is how many children are still waiting."
+          },
+          {
+           "say": "Find a take-away that needs regrouping: 83 − 46.",
+           "when": "a == 83 and b == 46 and step == 3",
+           "then": "3 ones is less than 6, so regroup 1 ten as 10 ones: 83 − 46 = 37."
+          }
+         ],
+         "takeaway": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column.",
+         "explanation": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column."
         },
         {
          "type": "concept",
