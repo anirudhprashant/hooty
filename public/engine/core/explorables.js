@@ -1238,6 +1238,23 @@ export const WIDGETS = {
       return { kids, say: v.a === v.b ? `${v.a} and ${v.b} are equal: ${why}.` : `${Math.max(v.a, v.b)} is more than ${Math.min(v.a, v.b)}: ${why}. So ${v.a} ${v.a > v.b ? 'is more than' : 'is less than'} ${v.b}.` };
     },
   },
+  addpyramid: {
+    subject: 'maths', about: 'An addition pyramid: four numbers in the bottom row, and every number above is the sum of the two numbers below it, up to the top. With 3, 9, 6, 5 the next row is 12, 15, 11. For addition pyramids, adding pairs, number pyramids, addition facts and fact families.',
+    sliders: [['a', 'First number', 0, 20, 1, 3], ['b', 'Second number', 0, 20, 1, 9], ['c', 'Third number', 0, 20, 1, 6], ['d', 'Fourth number', 0, 20, 1, 5]],
+    draw(v) {
+      const rows = [[v.a, v.b, v.c, v.d]];
+      while (rows[rows.length - 1].length > 1) { const r = rows[rows.length - 1]; rows.push(r.slice(1).map((x, i) => r[i] + x)); }
+      const w = 66, gap = 4, h = 40, cx = 170, cols = ['#7fb3d5', '#5fc9b8', '#f2a33a', '#e2583e'], kids = [], eq = [];
+      rows.forEach((r, lv) => r.forEach((n, i) => {
+        const x = cx - (r.length * (w + gap) - gap) / 2 + i * (w + gap), y = 224 - lv * 54;
+        kids.push(R(x, y, w, h, cols[lv], { w: 2.5, r: 6 }), T(x + w / 2, y + 27, String(n), { z: 20, w: 700, f: lv === 3 ? '#ffffff' : INK }));
+        if (lv > 0) eq.push(`${rows[lv - 1][i]} + ${rows[lv - 1][i + 1]} = ${n}`);
+      }));
+      eq.forEach((t, i) => kids.push(T(470, 66 + i * 26, t, { z: 14, w: 600, f: i >= 5 ? '#c0392b' : i >= 3 ? '#c2510e' : INK })));
+      const top = rows[3][0];
+      return { kids, say: `Each number is the sum of the two below it: ${rows[0][0]} + ${rows[0][1]} = ${rows[1][0]}, ${rows[0][1]} + ${rows[0][2]} = ${rows[1][1]}, ${rows[0][2]} + ${rows[0][3]} = ${rows[1][2]}. Then ${rows[1][0]} + ${rows[1][1]} = ${rows[2][0]}, ${rows[1][1]} + ${rows[1][2]} = ${rows[2][1]}, and the top is ${rows[2][0]} + ${rows[2][1]} = ${top}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

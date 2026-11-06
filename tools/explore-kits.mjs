@@ -603,6 +603,15 @@ export const KITS = {
       { say: 'Make the two numbers equal.', when: 'a == b', then: 'The same tens and the same ones: they are equal.' },
     ],
   },
+  addpyramid: {
+    grades: [2, 3], match: [/\bpyramids?\b/, /\bfact famil(y|ies)\b/, /\baddition facts?\b/, /\bpyramid sums?\b/],
+    title: 'Build the addition pyramid', takeaway: 'Each number in a pyramid is the sum of the two numbers just below it.',
+    tasks: [
+      { say: 'Build the pyramid from 3, 9, 6 and 5. What is at the top?', when: 'a == 3 and b == 9 and c == 6 and d == 5', then: '3 + 9 = 12, 9 + 6 = 15, 6 + 5 = 11; then 12 + 15 = 27 and 15 + 11 = 26; the top is 53.' },
+      { say: 'Make a pyramid whose second row is 20, 20, 20.', when: 'a + b == 20 and b + c == 20 and c + d == 20', then: 'Each pair adds to 20, so the second row is 20, 20, 20.' },
+      { say: 'Put 0 in the whole bottom row. What happens?', when: 'a == 0 and b == 0 and c == 0 and d == 0', then: 'Adding zeros always gives 0, all the way to the top.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
