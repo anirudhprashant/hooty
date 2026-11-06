@@ -374,6 +374,14 @@ export const KITS = {
       { say: 'Wait until all the water is through the gravel.', when: 't >= 4', then: 'All 100 ml is through the gravel, while clay has let through only a little.' },
     ],
   },
+  airpath: {
+    grades: [6, 8], match: [/respiratory system/, /\blungs?\b/, /alveoli/, /\bnostrils?\b/, /windpipe|trachea/, /how (humans|we) breathe/],
+    title: 'Follow a breath', takeaway: 'Air goes in through the nostrils, down the windpipe into the lungs, and in the alveoli oxygen passes into the blood.',
+    tasks: [
+      { say: 'Find where dust is trapped.', when: 'step == 2', then: 'Tiny hair and mucus in the nasal passages trap dust and dirt.' },
+      { say: 'Find where oxygen goes into the blood.', when: 'step == 5', then: 'In the alveoli, tiny balloon-like sacs at the end of the branches.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

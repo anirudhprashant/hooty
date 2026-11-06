@@ -749,6 +749,27 @@ export const WIDGETS = {
       return { kids, say: v.t ? `After ${v.t} minute${v.t > 1 ? 's' : ''}, about ${Math.min(100, 30 * v.t)} ml has seeped through the gravel, ${Math.min(100, 12 * v.t)} ml through the sand and ${Math.min(100, 2 * v.t)} ml through the clay. Bigger gaps between particles let water through faster.` : 'The same 100 ml of water has just been poured onto gravel, sand and clay.' };
     },
   },
+  airpath: {
+    subject: 'science', about: 'Follow a breath of air through the respiratory system step by step: nostrils, nasal passages (hair and mucus trap dust), windpipe, the two branches into the lungs, the tiny air sacs called alveoli where oxygen goes into the blood and carbon dioxide comes out, and breathing out. The rib cage protects the lungs. For breathing, the respiratory system, lungs, alveoli.',
+    sliders: [['step', 'Step along the path', 1, 6, 1, 1]],
+    draw(v) {
+      const on = (k) => (v.step === k ? C.o : '#e8dff5'), edge = (k) => (v.step === k ? INK : '#9b8db8'), kids = [];
+      kids.push(CIRC(170, 50, 34, '#ffe0c7', { w: 3 }), s('path', { d: 'M 160 58 Q 170 74 180 58', fill: on(1), stroke: edge(1), 'stroke-width': 3 }));
+      kids.push(s('path', { d: 'M 170 70 L 170 92', stroke: v.step === 2 ? C.o : '#c9b8e8', 'stroke-width': 10, 'stroke-linecap': 'round', fill: 'none' }));
+      kids.push(L(170, 92, 170, 150, v.step === 3 ? C.o : '#c9b8e8', 12));
+      kids.push(s('ellipse', { cx: 120, cy: 210, rx: 42, ry: 62, fill: v.step >= 4 && v.step <= 5 ? '#ffd2c2' : '#f6c9c9', stroke: INK, 'stroke-width': 3 }), s('ellipse', { cx: 220, cy: 210, rx: 42, ry: 62, fill: v.step >= 4 && v.step <= 5 ? '#ffd2c2' : '#f6c9c9', stroke: INK, 'stroke-width': 3 }));
+      // the rib cage over the lungs, which it protects
+      for (let r = 0; r < 5; r++) kids.push(s('path', { d: `M 80 ${165 + r * 22} Q 170 ${150 + r * 22} 260 ${165 + r * 22}`, fill: 'none', stroke: '#b9a27a', 'stroke-width': 4, opacity: 0.55 }));
+      kids.push(s('path', { d: 'M 170 150 L 130 185 M 170 150 L 210 185 M 130 185 L 115 215 M 130 185 L 140 225 M 210 185 L 225 215 M 210 185 L 200 225', fill: 'none', stroke: v.step === 4 ? C.o : '#a58fcf', 'stroke-width': 5, 'stroke-linecap': 'round' }));
+      kids.push(CIRC(470, 150, 92, '#fff', { w: 3, s: v.step === 5 ? C.o : '#c9b8e8' }), T(470, 52, 'zoom: alveoli', { z: 12, w: 600, f: '#6b5a8a' }));
+      for (let k = 0; k < 7; k++) { const a = (k / 7) * Math.PI * 2; kids.push(CIRC(470 + 46 * Math.cos(a), 150 + 46 * Math.sin(a), 22, '#ffd2c2', { w: 2.5 })); }
+      if (v.step === 5) kids.push(T(470, 262, 'O₂ → blood', { z: 13, w: 700, f: '#c0392b' }), T(470, 280, 'CO₂ ← blood', { z: 13, w: 700, f: '#1f63d9' }));
+      if (v.step === 6) kids.push(L(200, 40, 280, 20, C.b, 4), T(286, 20, 'out', { a: 'start', z: 14, f: '#1f63d9' }));
+      const say = ['', 'Air comes in through the two nostrils.', 'In the nasal passages, tiny hair and mucus trap dust and dirt from the air.', 'The air travels down the windpipe.', 'The windpipe divides into branches, one into each lung. The rib cage protects the lungs.', 'The branches end in tiny balloon-like sacs called alveoli. Here oxygen passes into the blood and carbon dioxide passes out of it.', 'The air, now carrying more carbon dioxide, is breathed out.'][v.step];
+      kids.push(T(300, 290, `Step ${v.step} of 6`, { z: 13, w: 600, f: '#6b5a8a' }));
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
