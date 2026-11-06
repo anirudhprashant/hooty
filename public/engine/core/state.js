@@ -35,6 +35,7 @@ function freshLearner(name = 'Learner') {
     activityStats: {},      // activityId -> { seen, correct, wrong, tags: [] }
     cards: {},              // srs itemId -> card
     rewards: [],            // unlocked reward ids
+    board: [],              // stickers placed on the sticker board, 'id@x,y' with x and y in percent
     secondsLearned: 0,
     days: {},               // 'YYYY-MM-DD' -> xp earned that day (last 60), for the Grown-ups week strip
     pre: {},                // chapterId -> { n, c } score before the chapter was taught
@@ -58,6 +59,7 @@ function normaliseLearner(raw, id) {
   }
   out.name = String(l.name ?? 'Learner').slice(0, 24) || 'Learner';
   out.days = Object.fromEntries(Object.entries(out.days).filter(([k, v]) => /^\d{4}-\d{2}-\d{2}$/.test(k) && Number.isFinite(v) && v >= 0).slice(-60));
+  out.board = out.board.filter((b) => /^[\w-]{1,40}@\d{1,3},\d{1,3}$/.test(b)).slice(0, 40);
   if (out.guide2 !== 'hooty') out.guide2 = 'lumi';
   out.fontScale = Math.min(1.5, Math.max(0.85, out.fontScale || 1));
   // fields added after the first release

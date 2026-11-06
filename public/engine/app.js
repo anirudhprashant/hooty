@@ -213,7 +213,7 @@ function subjectTabs() {
     row.append(el('button', { class: 'subject-tab grade-tab grade-tab--add', type: 'button', onclick: () => go('addbook') }, ['+ Add my book']));
     wrap.append(row); swipe(row);
   }
-  if (mine.length > 1) {
+  if (mine.length >= 1) {
     const row = el('div', { class: 'subject-tabs', role: 'tablist', 'aria-label': 'Subject' }, mine.map((p) => el('button', {
       class: `subject-tab${p.id === cur?.id ? ' is-on' : ''}`, type: 'button', role: 'tab', 'aria-selected': String(p.id === cur?.id),
       onclick: async () => {
@@ -1337,6 +1337,50 @@ function screenAddBook() {
 
 // --- rewards and worlds ----------------------------------------------------
 
+// The sticker board: earned stickers can be put anywhere on the child's chosen world, moved with a finger and kept.
+// Saved on the learner as 'id@x,y' strings, x and y in percent of the board.
+const parseBoard = (l) => (l?.board || []).map((b) => { const m = /^([\w-]+)@(\d+),(\d+)$/.exec(b); return m ? { id: m[1], x: +m[2], y: +m[3] } : null; }).filter(Boolean);
+function stickerBoard(l, rewards) {
+  const owned = rewards.filter((r) => l?.rewards?.includes(r.id)), byId = Object.fromEntries(owned.map((r) => [r.id, r]));
+  let items = parseBoard(l).filter((i) => byId[i.id]), selected = -1;
+  const save = async () => { if (l) { l.board = items.map((i) => `${i.id}@${Math.round(i.x)},${Math.round(i.y)}`); await persist(); } };
+  const stage = el('div', { class: 'board__stage', role: 'group', 'aria-label': 'Sticker board' });
+  const removeBtn = el('button', { class: 'btn btn--ghost', type: 'button', hidden: true, onclick: async () => { if (selected >= 0) { items.splice(selected, 1); selected = -1; await save(); draw(); } } }, ['Take it off']);
+  const clearBtn = el('button', { class: 'btn btn--ghost', type: 'button', onclick: async () => { items = []; selected = -1; await save(); draw(); } }, ['Clear the board']);
+  const hint = el('p', { class: 'section-sub' });
+  const draw = () => {
+    clear(stage);
+    items.forEach((it, i) => {
+      const node = el('img', { class: `board__sticker${i === selected ? ' is-selected' : ''}`, src: themeAsset(byId[it.id].art), alt: byId[it.id].name, draggable: 'false', style: { left: it.x + '%', top: it.y + '%' } });
+      node.addEventListener('pointerdown', (e) => {
+        e.preventDefault(); node.setPointerCapture(e.pointerId);
+        const box = stage.getBoundingClientRect(), x0 = e.clientX, y0 = e.clientY, sx = it.x, sy = it.y; let moved = false;
+        const move = (ev) => {
+          if (Math.hypot(ev.clientX - x0, ev.clientY - y0) > 5) moved = true;
+          if (!moved) return;
+          it.x = Math.min(96, Math.max(4, sx + ((ev.clientX - x0) / box.width) * 100)); it.y = Math.min(94, Math.max(6, sy + ((ev.clientY - y0) / box.height) * 100));
+          node.style.left = it.x + '%'; node.style.top = it.y + '%';
+        };
+        const up = async () => {
+          node.removeEventListener('pointermove', move); node.removeEventListener('pointerup', up); node.removeEventListener('pointercancel', up);
+          if (moved) { items.push(items.splice(i, 1)[0]); selected = -1; await save(); draw(); sound('tap'); }
+          else { selected = selected === i ? -1 : i; draw(); }
+        };
+        node.addEventListener('pointermove', move); node.addEventListener('pointerup', up); node.addEventListener('pointercancel', up);
+      });
+      stage.append(node);
+    });
+    removeBtn.hidden = selected < 0; clearBtn.hidden = !items.length;
+    hint.textContent = !owned.length ? 'Collect a sticker and you can stick it here.' : !items.length ? 'Tap a sticker below to stick it on the board.' : 'Drag a sticker to move it. Tap one to take it off.';
+  };
+  const tray = el('div', { class: 'board__tray' }, owned.map((r) => el('button', {
+    class: 'board__pick', type: 'button', 'aria-label': `Stick ${r.name}`,
+    onclick: async () => { if (items.length >= 40) { toast('The board is full. Take a sticker off first.'); return; } items.push({ id: r.id, x: 25 + Math.random() * 50, y: 25 + Math.random() * 50 }); selected = -1; sound('tap'); await save(); draw(); },
+  }, [el('img', { src: themeAsset(r.art), alt: '' })])));
+  draw();
+  return el('section', { class: 'board' }, [el('h2', { class: 'section-title', text: 'Your sticker board' }), hint, stage, owned.length ? tray : null, el('div', { class: 'board__actions' }, [removeBtn, clearBtn])]);
+}
+
 function screenRewards() {
   const l = activeLearner();
   const wrap = el('div', { class: 'page screen' });
@@ -1355,6 +1399,7 @@ function screenRewards() {
     ]));
   }
   wrap.append(grid);
+  wrap.append(stickerBoard(l, rewards));
 
   wrap.append(el('h2', { class: 'section-title', text: t('chooseTheme') }));
   wrap.append(el('p', { class: 'section-sub', text: t('chooseThemeSub') }));
