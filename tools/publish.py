@@ -120,3 +120,9 @@ def push():
     r = git('push', '-q', 'origin', 'main')
     say('pushed to GitHub' if r.returncode == 0 else f'GitHub push failed: {r.stderr[:120]}')
 push()
+# the working files are not in the public repo (NCERT-derived): save them to the private one as well, never fatal
+try:
+    r = subprocess.run([os.path.join(ROOT, 'tools', 'backup-work.sh')], capture_output=True, text=True, timeout=600)
+    say(r.stdout.strip() or 'backup-work: no output')
+except Exception as e:
+    say(f'backup-work skipped: {e}')
