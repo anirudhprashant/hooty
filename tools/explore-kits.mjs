@@ -548,6 +548,15 @@ export const KITS = {
       { say: 'Make more than one whole.', when: 'piece == 1 and count == 5', then: 'Five quarters are one and a quarter: more than the whole.' },
     ],
   },
+  halfdouble: {
+    grades: [3, 3], match: [/\bhalf and double\b/, /\bdouble\b/, /half of\b|half as many/, /\bhalving\b|\bdoubling\b/],
+    title: 'Half and double', takeaway: 'Double is twice as many and half is one of two equal shares; an odd number has no whole half.',
+    tasks: [
+      { say: 'Show that 3 is half of 6.', when: 'n == 6 and who == 0', then: 'Half of 6 is 3, and 6 is double 3.' },
+      { say: 'Find double 4.', when: 'n == 4 and who == 1', then: 'Double 4 is 8: twice as many.' },
+      { say: 'Try to find half of 13. What happens?', when: 'n == 13 and who == 0', then: '13 is odd: one marble is left over, so it has no whole half.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

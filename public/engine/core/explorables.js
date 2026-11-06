@@ -1142,6 +1142,23 @@ export const WIDGETS = {
       return { kids, say: `${count} ${nm} ${kg ? 'packet' : 'vessel'}${count === 1 ? '' : 's'} make ${words}${q === 4 ? `: exactly one ${unit}` : `, which is ${q < 4 ? 'less' : 'more'} than one ${unit}`}. ${v.piece === 0 ? `Two half-${unit}s equal one ${unit}.` : `Four quarter-${unit}s equal one ${unit}.`}` };
     },
   },
+  halfdouble: {
+    subject: 'maths', about: 'Two children and their marbles: the first child has some marbles, the second has half as many or double as many. Half of 6 is 3 and 6 is double 3; an odd number such as 5 or 13 cannot be shared into two equal whole halves. For half, double, halving and doubling, odd and even, comparing numbers of things.',
+    sliders: [['n', 'Marbles the first child has', 1, 20, 1, 6], ['who', 'Second child has: 0 half, 1 double', 0, 1, 1, 0]],
+    draw(v) {
+      const kids = [], r = 8, sp = 21, dots = (count, y, col, x0 = 30) => { for (let i = 0; i < count; i++) kids.push(CIRC(x0 + (i % 10) * sp, y + Math.floor(i / 10) * sp, r, col, { w: 1.5 })); };
+      const odd = v.n % 2 === 1, second = v.who === 0 ? Math.floor(v.n / 2) : v.n * 2;
+      kids.push(T(30, 40, `First child: ${v.n}`, { a: 'start', z: 15, w: 700, f: '#1f63d9' }));
+      dots(v.n, 62, '#1f63d9');
+      const y2 = 62 + Math.ceil(v.n / 10) * sp + 44;
+      kids.push(T(30, y2 - 22, v.who === 0 ? (odd ? 'Half is not a whole number' : `Second child (half): ${second}`) : `Second child (double): ${second}`, { a: 'start', z: 15, w: 700, f: odd && v.who === 0 ? '#c0392b' : '#c2510e' }));
+      if (!(v.who === 0 && odd)) dots(second, y2, '#f2a33a');
+      else { dots(second, y2, '#f2a33a'); kids.push(CIRC(30 + (second % 10) * sp + 0, y2 + Math.floor(second / 10) * sp, r, 'none', { s: '#c0392b', w: 2, x: { 'stroke-dasharray': '3 3' } }), T(30 + (second % 10) * sp + 20, y2 + Math.floor(second / 10) * sp + 5, 'one left over', { a: 'start', z: 12, w: 600, f: '#c0392b' })); }
+      const lines = v.who === 0 ? (odd ? [`${v.n} is odd`, 'it cannot be shared', 'into two equal halves'] : [`half of ${v.n} is ${second}`, `${v.n} is double ${second}`]) : [`double ${v.n} is ${second}`, `${v.n} is half of ${second}`];
+      lines.forEach((t, i) => kids.push(T(470, 70 + i * 34, t, { z: 17, w: 700, f: i === 0 ? '#058a68' : INK })));
+      return { kids, say: v.who === 0 ? (odd ? `${v.n} is an odd number: share it between two and one marble is left over, so it has no whole half.` : `Half of ${v.n} is ${second}, and ${v.n} is double ${second}.`) : `Double ${v.n} is ${second}: twice as many. And ${v.n} is half of ${second}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
