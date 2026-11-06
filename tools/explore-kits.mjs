@@ -146,12 +146,12 @@ export const KITS = {
     ],
   },
   symmetry: {
-    grades: [6, 7], match: [/symmetr/, /mirror line/],
+    grades: [4, 7], match: [/(?<!rotational )symmetr/, /mirror line/],
     title: 'Lines of symmetry', takeaway: 'A regular shape has as many lines of symmetry as it has sides.',
     tasks: [{ say: 'Make a shape with 6 lines of symmetry.', when: 'n == 6', then: 'A regular hexagon has 6 sides and 6 lines of symmetry.' }],
   },
   rotation: {
-    grades: [6, 8], match: [/rotation/, /rotational/, /\bturn(ing)? symmetry\b/],
+    grades: [5, 8], match: [/rotation/, /rotational/, /\bturn(ing)? symmetry\b/],
     title: 'Turn the shape', takeaway: 'The number of times a shape looks the same in one full turn is its order of rotational symmetry.',
     tasks: [{ say: 'Turn the shape until it looks the same again.', when: 'turn == 120', then: 'A three-armed shape matches itself every 120 degrees, so its order is 3.' }],
   },
@@ -403,7 +403,7 @@ export const KITS = {
   },
   solids: {
     grades: [4, 8], match: [/\bfaces?\b.*\b(edges?|corners?|vertices)\b|\bedges?\b.*\bfaces?\b/, /\bprisms?\b/, /(?<!number )\bpyramids?\b/, /\bcuboids?\b/, /3d shapes?|three-dimensional/],
-    title: 'Turn the shape', takeaway: 'Count faces, corners and edges: for each of these shapes faces + corners \u2212 edges = 2.',
+    title: 'Spin the solid', takeaway: 'Count faces, corners and edges: for each of these shapes faces + corners \u2212 edges = 2.',
     tasks: [
       { say: 'Find a shape with 5 faces.', when: 'shape == 2 or shape == 3', then: 'The triangular prism and the square pyramid both have 5 faces.' },
       { say: 'Find the shape with only 6 edges.', when: 'shape == 4', then: 'The triangular pyramid: 4 faces, 4 corners, 6 edges.' },
@@ -424,6 +424,23 @@ export const KITS = {
     tasks: [
       { say: 'Walk to the flower.', when: 'right == 2 and up == 3', then: '2 right and 3 up: 5 steps, row 4, column 3.' },
       { say: 'Now find the mango.', when: 'right == 3 and up == 1', then: '3 right and 1 up: 4 steps, row 2, column 4.' },
+    ],
+  },
+  jumps: {
+    grades: [3, 5], match: [/common multiples?/, /skip count/, /\bjumps?\b/],
+    title: 'Who lands together?', takeaway: 'An animal lands on the multiples of its jump; where two land together are common multiples.',
+    tasks: [
+      { say: 'Make the frog and the squirrel jump. Where do they first land together?', when: '(a == 0 and b == 1) or (a == 1 and b == 0)', then: 'On 12: the first common multiple of 3 and 4.' },
+      { say: 'Find two animals whose first common landing is 24.', when: '(a == 2 and b == 3) or (a == 3 and b == 2) or (a == 0 and b == 3) or (a == 3 and b == 0)', then: '6 and 8, or 3 and 8, both meet first at 24.' },
+    ],
+  },
+  clock: {
+    grades: [3, 6], match: [/\bclocks?\b/, /\ba\.?m\.?\b.*\bp\.?m\.?\b|\bam\b.*\bpm\b/, /hours? and minutes?/, /24-hour|\bo.clock\b/, /half past|quarter (past|to)/, /hours in a day/],
+    title: 'Set the clock', takeaway: 'AM is from midnight to noon and PM from noon to midnight; a 24-hour clock counts on past 12, so 8:00 PM is 20:00.',
+    tasks: [
+      { say: 'Set the clock to 8:00 PM.', when: 'hour == 20 and minute == 0', then: 'The digital clock shows 20:00.' },
+      { say: 'Show quarter to midnight.', when: 'hour == 23 and minute == 45', then: '11:45 PM is 23:45 on a 24-hour clock.' },
+      { say: 'Show midnight.', when: 'hour == 0 and minute == 0', then: '12:00 AM is 00:00.' },
     ],
   },
   // ---- geography and history ----

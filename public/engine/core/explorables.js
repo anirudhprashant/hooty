@@ -876,6 +876,38 @@ export const WIDGETS = {
       return { kids, say: `${steps ? `${v.right} step${v.right === 1 ? '' : 's'} right and ${v.up} step${v.up === 1 ? '' : 's'} up` : 'Start'}: you are in row ${v.up + 1}, column ${v.right + 1}${here ? `, on the ${here[0]}` : ''}. ${steps} step${steps === 1 ? '' : 's'} in all, with no diagonal moves.` };
     },
   },
+  jumps: {
+    subject: 'maths', about: 'Two animals jump along a number line from 0: a frog jumps 3, a squirrel 4, a rabbit 6 and a kangaroo 8. Each lands on the multiples of its jump; where both land are the common multiples. For multiples, common multiples, skip counting, times tables.',
+    sliders: [['a', 'First animal: frog, squirrel, rabbit, kangaroo', 0, 3, 1, 0], ['b', 'Second animal: frog, squirrel, rabbit, kangaroo', 0, 3, 1, 1]],
+    draw(v) {
+      const zoo = [['frog', 3, '#2fa84f'], ['squirrel', 4, '#c2510e'], ['rabbit', 6, '#6b45c8'], ['kangaroo', 8, '#1f63d9']], top = 48;
+      const [an, ja, ca] = zoo[v.a], [bn, jb, cb] = zoo[v.b], x = (n) => 30 + (n / top) * 540, y = 160, kids = [L(x(0), y, x(top), y, INK, 3)];
+      for (let n = 0; n <= top; n++) kids.push(L(x(n), y - (n % 6 ? 5 : 9), x(n), y + (n % 6 ? 5 : 9), INK, n % 6 ? 1.2 : 2), ...(n % 6 ? [] : [T(x(n), y + (v.a === v.b ? 28 : 34 + jb * 7), String(n), { z: 12, w: 600 })]));
+      const arcs = (j, col, up) => { for (let n = 0; n + j <= top; n += j) kids.push(s('path', { d: `M ${x(n)} ${y} Q ${(x(n) + x(n + j)) / 2} ${y + (up ? -1 : 1) * (14 + j * 7)} ${x(n + j)} ${y}`, fill: 'none', stroke: col, 'stroke-width': 2.5 })); };
+      arcs(ja, ca, true); if (v.b !== v.a) arcs(jb, cb, false);
+      const both = []; for (let n = 1; n <= top; n++) if (n % ja === 0 && n % jb === 0) both.push(n);
+      for (const n of both) kids.push(CIRC(x(n), y, 9, '#ffcc33', { w: 2.5 }));
+      kids.push(T(20, 30, `${an} jumps ${ja}`, { a: 'start', z: 16, w: 700, f: ca }), T(20, 286, v.a === v.b ? 'pick a different second animal' : `${bn} jumps ${jb}`, { a: 'start', z: 16, w: 700, f: v.a === v.b ? '#6b5a8a' : cb }), T(580, 30, both.length ? `both land on ${both.join(', ')}` : '', { a: 'end', z: 14, w: 700, f: '#a86b00' }));
+      return { kids, say: v.a === v.b ? `The ${an} lands on the multiples of ${ja}: ${Array.from({ length: Math.floor(top / ja) }, (_, i) => (i + 1) * ja).join(', ')}.` : `The ${an} lands on multiples of ${ja} and the ${bn} on multiples of ${jb}. Up to ${top}, they both land on ${both.join(', ')}: these are common multiples of ${ja} and ${jb}, and the first is ${both[0]}.` };
+    },
+  },
+  clock: {
+    subject: 'maths', about: 'Set an analogue clock and see the same time as AM/PM and on a 24-hour digital clock: 8:00 PM is 20:00, 12:00 AM is 00:00. For telling time, hours and minutes, AM and PM, 24-hour clock, quarter and half past.',
+    sliders: [['hour', 'Hour of the day (0 = midnight)', 0, 23, 1, 8], ['minute', 'Minutes', 0, 55, 5, 0]],
+    draw(v) {
+      const cx = 160, cy = 150, rr = 105, h12 = v.hour % 12 === 0 ? 12 : v.hour % 12, ampm = v.hour < 12 ? 'AM' : 'PM', pad = (n) => String(n).padStart(2, '0'), kids = [];
+      const night = v.hour < 6 || v.hour >= 19;
+      kids.push(CIRC(cx, cy, rr, '#ffffff', { w: 4 }));
+      for (let i = 1; i <= 12; i++) { const t = (i / 12) * Math.PI * 2; kids.push(T(cx + 82 * Math.sin(t), cy - 82 * Math.cos(t) + 6, String(i), { z: 16, w: 700 })); }
+      for (let i = 0; i < 60; i++) { const t = (i / 60) * Math.PI * 2, r1 = i % 5 ? 98 : 93; kids.push(L(cx + r1 * Math.sin(t), cy - r1 * Math.cos(t), cx + rr * Math.sin(t), cy - rr * Math.cos(t), INK, i % 5 ? 1 : 2.5)); }
+      const ha = ((h12 % 12) + v.minute / 60) / 12 * Math.PI * 2, ma = (v.minute / 60) * Math.PI * 2;
+      kids.push(L(cx, cy, cx + 55 * Math.sin(ha), cy - 55 * Math.cos(ha), INK, 7), L(cx, cy, cx + 82 * Math.sin(ma), cy - 82 * Math.cos(ma), C.o, 4), CIRC(cx, cy, 6, INK, { w: 0 }));
+      kids.push(T(440, 70, night ? '\u{1F319}' : '☀️', { z: 34 }), T(440, 128, `${h12}:${pad(v.minute)} ${ampm}`, { z: 26, w: 700 }));
+      kids.push(R(350, 158, 180, 58, '#1d2350', { w: 3, r: 8 }), T(440, 198, `${pad(v.hour)}:${pad(v.minute)}`, { z: 30, w: 700, f: '#7dffb0' }), T(440, 240, '24-hour digital clock', { z: 12, w: 600, f: '#6b5a8a' }));
+      const words = v.minute === 0 ? `${h12} o’clock` : v.minute === 15 ? `quarter past ${h12}` : v.minute === 30 ? `half past ${h12}` : v.minute === 45 ? `quarter to ${h12 % 12 + 1}` : `${v.minute} minutes past ${h12}`;
+      return { kids, say: `It is ${words}, ${h12}:${pad(v.minute)} ${ampm}${v.hour === 12 && v.minute === 0 ? ' (noon)' : v.hour === 0 && v.minute === 0 ? ' (midnight)' : ''}. A 24-hour digital clock shows ${pad(v.hour)}:${pad(v.minute)}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
