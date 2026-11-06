@@ -30,7 +30,7 @@
       {
        "id": "mathematics-g3-ch1-l1",
        "title": "Lesson 1: Keeping Track of Cows",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -172,6 +172,58 @@
           "10 (generated problem)",
           "3 (generated problem)",
           "7 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch1-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Deba and Deep cannot count. How can they keep track of their cows?",
+         "steps": [
+          "They used marks because they could not count.",
+          "They made a mark for each cow leaving the gate.",
+          "They struck out a mark whenever a cow came back.",
+          "Every mark was crossed out, so all their cows had returned."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.4",
+          "1.5",
+          "1.6",
+          "1.7",
+          "1.8",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          }
          ]
         },
         {
@@ -927,6 +979,85 @@
            "p": 1
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A family makes a mark for each cow leaving a gate. No marks are crossed out. What does this show?",
+         "options": [
+          "No cow has come back through the gate.",
+          "Every cow has come back through the gate.",
+          "No cow left through the gate at all.",
+          "Some cows have already come back home."
+         ],
+         "answer": 0,
+         "why": {
+          "Every cow has come back through the gate.": "This swaps the leaving marks with the returning marks.",
+          "No cow left through the gate at all.": "It mistakes un-crossed marks for marks that were never made.",
+          "Some cows have already come back home.": "Crossed-out marks show cows that have already returned."
+         },
+         "explanation": "Each un-crossed mark means that cow has not returned through the gate.",
+         "f": [
+          "1.6",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A family makes marks for cows leaving. It forgets to cross out returning cows. What will the wall show?",
+         "options": [
+          "Many marks will remain after all the cows return.",
+          "No marks will remain after all the cows return.",
+          "Only marks for cows that never left will remain.",
+          "Every mark will be crossed out after the cows return."
+         ],
+         "answer": 0,
+         "why": {
+          "No marks will remain after all the cows return.": "It assumes returning cows cross out their own marks.",
+          "Only marks for cows that never left will remain.": "It forgets that every leaving cow was given a mark.",
+          "Every mark will be crossed out after the cows return.": "It assumes a return crosses out a mark without being told."
+         },
+         "explanation": "Cows that returned did not have their marks crossed out.",
+         "f": [
+          "1.6",
+          "1.7",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l1-grazing-on-the-hillock-villa-385c17.webp",
@@ -943,7 +1074,7 @@
       {
        "id": "mathematics-g3-ch1-l2",
        "title": "Lesson 2: Animals and Their Names",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -1088,25 +1219,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch1-l2-a3",
-         "difficulty": 1,
-         "tags": [
-          "cows",
-          "sheep",
-          "hemant"
-         ],
-         "prompt": "Hemant had 36 sheep and 23 cows.",
-         "answer": false,
-         "explanation": "Hemant had 36 cows and 23 sheep. Good job checking each group!",
-         "src": [
-          {
-           "ch": 1,
-           "p": 2
-          }
-         ]
-        },
-        {
          "type": "fillblank",
          "id": "mathematics-g3-ch1-l2-a2",
          "difficulty": 1,
@@ -1129,6 +1241,40 @@
           {
            "ch": 1,
            "p": 2
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l2-a4",
+         "difficulty": 1,
+         "tags": [
+          "animal names",
+          "letters"
+         ],
+         "prompt": "Which animal name has the fewest letters?",
+         "options": [
+          "ox",
+          "dog",
+          "tiger",
+          "elephant"
+         ],
+         "answer": 0,
+         "explanation": "Ox has the fewest letters in this group. You compared each name carefully!",
+         "derived": [
+          "ox has 2 letters = o + x",
+          "dog has 3 letters = d + o + g",
+          "tiger has 5 letters = t + i + g + e + r",
+          "elephant has 8 letters = e + l + e + p + h + a + n + t"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 4
           }
          ]
         },
@@ -1982,6 +2128,117 @@
            "p": 2
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Hemant has 36 cows and 23 sheep. Which method helps him keep track?",
+         "options": [
+          "Use one mark for each group",
+          "Use the name of one animal",
+          "Make two teams first",
+          "Count only the letters"
+         ],
+         "answer": 0,
+         "why": {
+          "Use the name of one animal": "One animal's name cannot show how many groups he counted.",
+          "Make two teams first": "Making teams is for playing, not for keeping track.",
+          "Count only the letters": "Counting letters does not count the animals."
+         },
+         "explanation": "Marks help Hemant keep track of the groups he counts.",
+         "f": [
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 2
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "The animals choose a first captain. Which name should they choose?",
+         "options": [
+          "Elephant, because it has the most letters.",
+          "Monkey, because it has the most letters.",
+          "Tiger, because it has the most letters.",
+          "Snake, because it has the most letters."
+         ],
+         "answer": 0,
+         "why": {
+          "Monkey, because it has the most letters.": "Monkey is long, but it does not have the most letters.",
+          "Tiger, because it has the most letters.": "Tiger is not the longest animal name in the list.",
+          "Snake, because it has the most letters.": "Snake is not the longest animal name in the list."
+         },
+         "explanation": "Elephant has the longest name and the most letters.",
+         "f": [
+          "2.6",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 3
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "The animals choose a second captain. Which name should they choose?",
+         "options": [
+          "Ox, because it has the fewest letters.",
+          "Rat, because it has the fewest letters.",
+          "Dog, because it has the fewest letters.",
+          "Goat, because it has the fewest letters."
+         ],
+         "answer": 0,
+         "why": {
+          "Rat, because it has the fewest letters.": "Rat is short, but it does not have the fewest letters.",
+          "Dog, because it has the fewest letters.": "Dog is short, but it does not have the fewest letters.",
+          "Goat, because it has the fewest letters.": "Goat is short, but it does not have the fewest letters."
+         },
+         "explanation": "Ox has the shortest name and the fewest letters.",
+         "f": [
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 3
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l2-indian-scops-owls-otus-bakka-1b70e2.webp",
@@ -1998,7 +2255,7 @@
       {
        "id": "mathematics-g3-ch1-l3",
        "title": "Lesson 3: Names and Number Names",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -2076,6 +2333,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g3-ch1-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Teji and Jojo have friends' names on a list. How can they find the shortest and longest names?",
+         "steps": [
+          "Teji and Jojo look at their friends' names.",
+          "They count letters because shortest names have the fewest letters.",
+          "They compare totals because longest names have the most letters.",
+          "They also compare starting-letter totals to find the most used letter."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g3-ch1-l3-a2",
          "difficulty": 1,
@@ -2093,25 +2397,6 @@
          ],
          "answer": 0,
          "explanation": "The names task asks you to write down some friends' names.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 4
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch1-l3-a3",
-         "difficulty": 1,
-         "tags": [
-          "names",
-          "shortest"
-         ],
-         "title": "Shortest Names",
-         "prompt": "The names task includes finding the shortest names.",
-         "answer": true,
-         "explanation": "Yes, finding the shortest names is one part of this task.",
          "src": [
           {
            "ch": 1,
@@ -2161,6 +2446,25 @@
           {
            "ch": 1,
            "p": 5
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch1-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "names",
+          "shortest"
+         ],
+         "title": "Shortest Names",
+         "prompt": "The names task includes finding the shortest names.",
+         "answer": true,
+         "explanation": "Yes, finding the shortest names is one part of this task.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 4
           }
          ]
         },
@@ -2250,18 +2554,137 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch1-l3-a8",
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l3-d1",
          "difficulty": 3,
          "tags": [
-          "teji",
-          "jojo",
-          "ending-letters"
+          "deep",
+          "compare lengths"
          ],
-         "title": "Ending Letters",
-         "prompt": "Teji's name ends with the same letter as Jojo's name.",
-         "answer": false,
-         "explanation": "Teji ends with i, while Jojo ends with o.",
+         "prompt": "Teji says counting first letters will find the shortest names. What should she do instead?",
+         "options": [
+          "Count the first letter of each name again",
+          "Count the letters in each name",
+          "Count the last letter of each name",
+          "Count how many names are on the list"
+         ],
+         "answer": 1,
+         "why": {
+          "Count the first letter of each name again": "This confuses the first letter with the whole name length.",
+          "Count the last letter of each name": "This confuses the last letter with the whole name length.",
+          "Count how many names are on the list": "This counts how many names there are, not their lengths."
+         },
+         "explanation": "Counting all letters compares the full length of each name.",
+         "f": [
+          "3.1",
+          "3.2"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare starting letters"
+         ],
+         "prompt": "Children write each friend's name on a class list. How can they find the most used starting letter?",
+         "options": [
+          "Choose the first letter on the list",
+          "Choose the longest name on the list",
+          "Tally each first letter and compare totals",
+          "Tally each last letter and compare totals"
+         ],
+         "answer": 2,
+         "why": {
+          "Choose the first letter on the list": "The first name may not use the most common letter.",
+          "Choose the longest name on the list": "The longest name does not show the most used starting letter.",
+          "Tally each last letter and compare totals": "This confuses ending letters with starting letters."
+         },
+         "explanation": "Tallying first letters shows which starting letter is used most.",
+         "f": [
+          "3.4",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check ending letters"
+         ],
+         "prompt": "Jojo is checking which names end with the same letter as his. What should he compare?",
+         "options": [
+          "The number of letters in every name",
+          "The first letter of every name",
+          "The number cards under every name",
+          "The last letter of every name"
+         ],
+         "answer": 3,
+         "why": {
+          "The number of letters in every name": "Name length does not show which names share an ending.",
+          "The first letter of every name": "This confuses starting letters with ending letters.",
+          "The number cards under every name": "Number cards cannot show the ending letter of a name."
+         },
+         "explanation": "Matching last letters finds names with the same ending letter.",
+         "f": [
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 4
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "number names"
+         ],
+         "prompt": "Teji made 43 with number cards. How can she check the length of its number name?",
+         "options": [
+          "Count the number cards she used",
+          "Count the first letters of the names",
+          "Count the letters in the number name",
+          "Count the friend names on the list"
+         ],
+         "answer": 2,
+         "why": {
+          "Count the number cards she used": "Number cards build the number, not the words for its name.",
+          "Count the first letters of the names": "Starting letters belong to the friends' names task.",
+          "Count the friend names on the list": "Friend names are not the number name of 43."
+         },
+         "explanation": "Counting its number-name letters checks the length asked for.",
+         "f": [
+          "3.10",
+          "3.11"
+         ],
          "src": [
           {
            "ch": 1,
@@ -2288,7 +2711,7 @@
       {
        "id": "mathematics-g3-ch1-l4",
        "title": "Lesson 4: Puzzles with Number Names",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -2410,6 +2833,38 @@
           "24 (generated problem)",
           "3 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch1-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Ravi says, “Fifty-six is the only number with an 8-letter name.” How should the teacher turn this into a fair puzzle?",
+         "steps": [
+          "Fifty-six has 8 letters, so Ravi’s example is true.",
+          "The task also asks for other numbers with 8-letter names from 1 to 99.",
+          "The teacher should ask children to search that whole group, because one example is not enough.",
+          "Then children can find matches instead of guessing."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.2"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 5
+          },
+          {
+           "ch": 1,
+           "p": 5
+          }
          ]
         },
         {
@@ -3086,6 +3541,80 @@
            "p": 6
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Fifty-six has an 8-letter name. A child says it is the only one. What should the teacher ask next?",
+         "options": [
+          "Find other numbers with 8-letter names.",
+          "Find names with fewer than 8 letters.",
+          "Find names with only two words.",
+          "Find the longest names in the group."
+         ],
+         "answer": 0,
+         "why": {
+          "Find names with fewer than 8 letters.": "This confuses the 8-letter search with a search for shorter names.",
+          "Find names with only two words.": "This mixes up the 8-letter search with the first puzzle’s two-word clue.",
+          "Find the longest names in the group.": "This confuses the 8-letter search with the longest-name task."
+         },
+         "explanation": "This follows the task of finding other numbers with 8-letter names.",
+         "f": [
+          "4.1",
+          "4.2"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 5
+          },
+          {
+           "ch": 1,
+           "p": 5
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "choose method"
+         ],
+         "prompt": "A child finds a two-word number name. The child says it must be the longest. What should the teacher do next?",
+         "options": [
+          "Compare all names from 1 to 99.",
+          "Check only names with 8 letters.",
+          "Choose the name with two words.",
+          "Choose the name nearest to 100."
+         ],
+         "answer": 0,
+         "why": {
+          "Check only names with 8 letters.": "The child mistakes an 8-letter name for a longest name.",
+          "Choose the name with two words.": "The child thinks two words proves a name is longest.",
+          "Choose the name nearest to 100.": "The child thinks being near 100 proves a name is longest."
+         },
+         "explanation": "The task is to write the names with the longest lengths.",
+         "f": [
+          "4.3",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 6
+          },
+          {
+           "ch": 1,
+           "p": 6
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l1-grazing-on-the-hillock-villa-385c17.webp",
@@ -3102,7 +3631,7 @@
       {
        "id": "mathematics-g3-ch1-l5",
        "title": "Lesson 5: Sorting Cards and Objects",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -3253,6 +3782,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g3-ch1-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Children have cards showing household objects. How can they sort the object names into two correct groups?",
+         "steps": [
+          "Check if each object needs electricity, because that gives one sorting rule.",
+          "Put objects that need electricity together, because they share that property.",
+          "Put the others together, because they do not need electricity.",
+          "Each group is correct, because every object follows the same rule."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.6",
+          "5.7",
+          "5.8",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
+        },
+        {
          "type": "matchpairs",
          "id": "mathematics-g3-ch1-l5-a4",
          "difficulty": 1,
@@ -3314,29 +3885,6 @@
           {
            "ch": 1,
            "p": 6
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch1-l5-a3",
-         "difficulty": 1,
-         "tags": [
-          "cards",
-          "different",
-          "sorting"
-         ],
-         "prompt": "Jojo arranges the same picture cards differently.",
-         "answer": true,
-         "explanation": "Jojo arranges the same cards differently.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 6
-          },
-          {
-           "ch": 1,
-           "p": 7
           }
          ]
         },
@@ -3621,6 +4169,32 @@
            "ch": 1,
            "p": 6
           },
+          {
+           "ch": 1,
+           "p": 6
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g3-ch1-l5-a5",
+         "difficulty": 2,
+         "tags": [
+          "cards",
+          "different",
+          "sorting"
+         ],
+         "prompt": "Jojo arranges the same cards ______.",
+         "answers": [
+          "differently"
+         ],
+         "hint": "How does Jojo change the arrangement?",
+         "explanation": "Jojo uses the same cards, but changes their arrangement.",
+         "src": [
           {
            "ch": 1,
            "p": 6
@@ -4139,23 +4713,201 @@
            "p": 7
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "grouping"
+         ],
+         "prompt": "Teji puts cards into eaters and non-eaters. Which statement explains why this sorting works?",
+         "options": [
+          "Each group shares one common property.",
+          "Each group contains the same number of cards.",
+          "Each group contains only things found at home.",
+          "Each group contains objects that look exactly alike."
+         ],
+         "answer": 0,
+         "why": {
+          "Each group contains the same number of cards.": "This counts cards instead of checking what they share.",
+          "Each group contains only things found at home.": "This uses a place instead of checking what they share.",
+          "Each group contains objects that look exactly alike.": "This uses appearance instead of checking what they share."
+         },
+         "explanation": "This is right because each group shares one common property.",
+         "f": [
+          "5.2",
+          "5.3",
+          "5.5"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 6
+          },
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Jojo arranges the same cards in a new way. A child says the cards look different. Why is this claim weak?",
+         "options": [
+          "Different looks do not prove a common property.",
+          "Different looks show that every card needs electricity.",
+          "Different looks mean both groups share one property.",
+          "Different looks prove that both groups are identical."
+         ],
+         "answer": 0,
+         "why": {
+          "Different looks show that every card needs electricity.": "This jumps to electricity without knowing Jojo's sorting rule.",
+          "Different looks mean both groups share one property.": "This mixes different groups and misses their separate properties.",
+          "Different looks prove that both groups are identical.": "This confuses different cards with different groups."
+         },
+         "explanation": "This is right because different looks do not show what each group shares.",
+         "f": [
+          "5.4",
+          "5.5",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check claim"
+         ],
+         "prompt": "A child says all household objects need electricity. They are at home, too. What is wrong?",
+         "options": [
+          "Some household objects do not need electricity.",
+          "All household objects are used only inside the home.",
+          "Household objects never belong in two groups.",
+          "Every home gives electricity to each object."
+         ],
+         "answer": 0,
+         "why": {
+          "All household objects are used only inside the home.": "This assumes a place tells us whether electricity is needed.",
+          "Household objects never belong in two groups.": "This forgets that objects can be placed by need.",
+          "Every home gives electricity to each object.": "This invents a rule that homes give electricity to objects."
+         },
+         "explanation": "This is right because some objects do not need electricity.",
+         "f": [
+          "5.6",
+          "5.8",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Teji sorts cards by eating. Jojo sorts them by electricity. Why can the groups differ?",
+         "options": [
+          "The sorting rules look at different properties.",
+          "The same card can belong in either group.",
+          "All household objects must use electricity.",
+          "The two groups must always contain equal cards."
+         ],
+         "answer": 0,
+         "why": {
+          "The same card can belong in either group.": "This ignores that the two rules use different properties.",
+          "All household objects must use electricity.": "This assumes every object needs electricity.",
+          "The two groups must always contain equal cards.": "This confuses equal group sizes with correct sorting."
+         },
+         "explanation": "This is right because eating and electricity are different sorting properties.",
+         "f": [
+          "5.3",
+          "5.4",
+          "5.8",
+          "5.9",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch1-l1-grazing-on-the-hillock-villa-385c17.webp",
-       "sceneAlt": "Cattle graze on a hillock in Saligao village near Bardez, Goa.",
-       "sceneCaption": "Cows graze on a sunny hillock in Saligao village, Goa.",
+       "topicScene": "media/ch1-l5-cateatingyogurt-0beb49.webp",
+       "sceneAlt": "A cat eats yogurt in Israel in a photograph taken on 28 November 2023.",
+       "sceneCaption": "A cat eating yogurt in Israel.",
        "sceneCredit": {
-        "text": "Grazing on the hillock. Village scenes. Saligao village. Bardez, Goa,  by Fredericknoronha, CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Grazing_on_the_hillock._Village_scenes._Saligao_village._Bardez,_Goa,_India._09.jpg",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Fredericknoronha"
+        "text": "Cateatingyogurt by עמית לונן, CC BY 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Cateatingyogurt.jpg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "creator": "עמית לונן"
        }
       },
       {
        "id": "mathematics-g3-ch1-l6",
        "title": "Lesson 6: Different Hair Styles",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -4278,17 +5030,56 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch1-l6-a2",
+         "type": "worked",
+         "id": "mathematics-g3-ch1-l6-t1",
          "difficulty": 1,
          "tags": [
-          "school",
-          "mala"
+          "deep",
+          "think"
          ],
-         "prompt": "Mala is going to school.",
-         "answer": true,
-         "explanation": "Yes, Mala is going to school. This is the start of our story.",
+         "kicker": "Let us think it through",
+         "prompt": "Mala’s mother combed her hair. Mala has two ponytails. How can her class record and group the children’s hair styles?",
+         "steps": [
+          "Look at the class children, because their hair styles need comparing.",
+          "Write down each observation, because the class must record its information.",
+          "Use the table headings, because they show each style and its count.",
+          "Give each child one group, because each object belongs to only one."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.6",
+          "6.7",
+          "6.10"
+         ],
          "src": [
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
           {
            "ch": 1,
            "p": 8
@@ -4334,6 +5125,24 @@
          ],
          "hint": "Think about the person who looked after Mala’s hair.",
          "explanation": "Mala’s mother has combed her hair.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch1-l6-a2",
+         "difficulty": 1,
+         "tags": [
+          "school",
+          "mala"
+         ],
+         "prompt": "Mala is going to school.",
+         "answer": true,
+         "explanation": "Yes, Mala is going to school. This is the start of our story.",
          "src": [
           {
            "ch": 1,
@@ -5174,8 +5983,213 @@
            "p": 8
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply idea"
+         ],
+         "prompt": "Mala sees other children at school. A classmate says, \"I only need to look at my own hair.\" Is that enough for the class activity? Why?",
+         "options": [
+          "No, every class child’s hair style must be seen.",
+          "No, only Mala’s hair style must be seen.",
+          "Yes, one hair style shows how all children comb.",
+          "Yes, Mala’s two ponytails describe the whole class."
+         ],
+         "answer": 0,
+         "why": {
+          "No, only Mala’s hair style must be seen.": "It wrongly says only Mala’s hair style matters.",
+          "Yes, one hair style shows how all children comb.": "One child’s style cannot describe every child’s different style.",
+          "Yes, Mala’s two ponytails describe the whole class.": "Mala’s two ponytails do not describe every child in class."
+         },
+         "explanation": "The task asks them to look at all the children in class.",
+         "f": [
+          "6.3",
+          "6.4",
+          "6.5"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "infer"
+         ],
+         "prompt": "Mala’s mother combed her hair. Mala has two ponytails. What can the class table say about that hair style?",
+         "options": [
+          "At least Mala, because she has that style.",
+          "Only Mala, because no other child can have it.",
+          "Every child, because they all use that style.",
+          "No child, because her mother combed her hair."
+         ],
+         "answer": 0,
+         "why": {
+          "Only Mala, because no other child can have it.": "It assumes no other child can have the same hair style.",
+          "Every child, because they all use that style.": "It wrongly treats one hair style as the style of everyone.",
+          "No child, because her mother combed her hair.": "It ignores that Mala actually has two ponytails."
+         },
+         "explanation": "Mala has that style, so her count must include her.",
+         "f": [
+          "6.2",
+          "6.3",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "All children in the class comb their hair in different ways. A child says, \"They all have one hair style.\" What is wrong with the claim?",
+         "options": [
+          "The children do not all share one hair style.",
+          "The children cannot look at each other at school.",
+          "The children may write only one table row.",
+          "The children must all have two ponytails at school."
+         ],
+         "answer": 0,
+         "why": {
+          "The children cannot look at each other at school.": "This wrongly says the class activity forbids looking.",
+          "The children may write only one table row.": "Different hair styles can need more than one table row.",
+          "The children must all have two ponytails at school.": "Two ponytails belong to Mala, not to every child."
+         },
+         "explanation": "The fact says their combing ways are all different.",
+         "f": [
+          "6.5"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "grouping rule"
+         ],
+         "prompt": "The teacher puts class children into two groups. A child says, \"I can be in both groups.\" Is that allowed, and why?",
+         "options": [
+          "No, each object must belong to one group only.",
+          "No, each group must contain the same children.",
+          "Yes, because two groups can share one child.",
+          "Yes, because every group can have extra children."
+         ],
+         "answer": 0,
+         "why": {
+          "No, each group must contain the same children.": "This wrongly makes both groups contain exactly the same children.",
+          "Yes, because two groups can share one child.": "This wrongly allows one child to belong to both groups.",
+          "Yes, because every group can have extra children.": "This wrongly allows extra children outside the two groups."
+         },
+         "explanation": "Each object must belong to one of the two groups.",
+         "f": [
+          "6.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l6-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "evaluate grouping"
+         ],
+         "prompt": "The teacher asks children to suggest more things and place them in groups. A child says, \"Only the first grouping method works.\" How should the teacher respond?",
+         "options": [
+          "Other methods work if every object stays in one group.",
+          "Other methods work if every object can join both groups.",
+          "Other methods work when all objects stay in one group.",
+          "Other methods cannot work because groups must stay unchanged."
+         ],
+         "answer": 0,
+         "why": {
+          "Other methods work if every object can join both groups.": "It wrongly allows objects to belong to both groups.",
+          "Other methods work when all objects stay in one group.": "It wrongly puts all objects into just one group.",
+          "Other methods cannot work because groups must stay unchanged.": "It wrongly says grouping methods cannot be changed."
+         },
+         "explanation": "It is valid when each object belongs to one of two groups.",
+         "f": [
+          "6.8",
+          "6.9",
+          "6.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          },
+          {
+           "ch": 1,
+           "p": 8
+          }
+         ]
         }
        ],
+       "topicScene": "media/ch1-l6-tamil-nadu-school-kids-e46f62.webp",
+       "sceneAlt": "School children show their classroom and lessons at a rural school in Kanchipuram district, Tamil Nadu.",
+       "sceneCaption": "School children show their classroom and lessons at a rural school in Tamil Nadu.",
+       "sceneCredit": {
+        "text": "Tamil Nadu school kids by McKay Savage from London, UK, CC BY 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Tamil_Nadu_school_kids.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "creator": "McKay Savage from London, UK"
+       }
+      },
+      {
+       "id": "mathematics-g3-ch1-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 20,
        "topicScene": "media/ch1-l1-grazing-on-the-hillock-villa-385c17.webp",
        "sceneAlt": "Cattle graze on a hillock in Saligao village near Bardez, Goa.",
        "sceneCaption": "Cows graze on a sunny hillock in Saligao village, Goa.",
@@ -5185,7 +6199,333 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Fredericknoronha"
-       }
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In Tarakeshwar, Deba and Deep took a cowherd family's cows out for grazing every day. They returned with all their cows but could not count. A friend suggested making a mark for every cow leaving the gate and striking out a mark whenever one returned. They followed this idea, and all marks were struck out. After a few years, two marks remained although no cows were outside. The missing cows were found in a nearby field.",
+         "prompt": "If Deba and Deep forgot to strike out the marks when cows returned, what would remain on the wall?",
+         "options": [
+          "All departure marks would still be there.",
+          "No marks would be left.",
+          "Only the last cow's mark would be left.",
+          "Two marks would be left."
+         ],
+         "answer": 0,
+         "why": {
+          "No marks would be left.": "This wrongly assumes that returning cows clear the marks by themselves.",
+          "Only the last cow's mark would be left.": "This wrongly treats each new mark as replacing earlier marks.",
+          "Two marks would be left.": "This guesses that only two marks would remain without following the rule."
+         },
+         "explanation": "Forgetting to strike out marks leaves every departure mark on the wall."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In Tarakeshwar, Deba and Deep took a cowherd family's cows out for grazing every day. They returned with all their cows but could not count. A friend suggested making a mark for every cow leaving the gate and striking out a mark whenever one returned. They followed this idea, and all marks were struck out. After a few years, two marks remained although no cows were outside. The missing cows were found in a nearby field.",
+         "prompt": "Why did striking out a mark when a cow returned help Deba and Deep?",
+         "options": [
+          "It allowed them to match each returning cow with a mark from its departure.",
+          "It turned the marks into numbers that they could read.",
+          "It proved that the cows had returned at the same time.",
+          "It showed the field where the cows had grazed."
+         ],
+         "answer": 0,
+         "why": {
+          "It turned the marks into numbers that they could read.": "The marks were never changed into numbers they could read.",
+          "It proved that the cows had returned at the same time.": "The method did not show the exact time that cows returned together.",
+          "It showed the field where the cows had grazed.": "The method did not record the place where the cows had grazed."
+         },
+         "explanation": "Each departure mark was cleared only when its cow returned."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l1-x3",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In Tarakeshwar, Deba and Deep took a cowherd family's cows out for grazing every day. They returned with all their cows but could not count. A friend suggested making a mark for every cow leaving the gate and striking out a mark whenever one returned. They followed this idea, and all marks were struck out. After a few years, two marks remained although no cows were outside. The missing cows were found in a nearby field.",
+         "prompt": "When two marks remain but no cows are outside, what should Deba and Deep do?",
+         "options": [
+          "Check the nearby field for cows that failed to return.",
+          "Wait beside the gate because every cow must return.",
+          "Make new marks so that the remaining marks cannot be noticed.",
+          "Erase the remaining marks and stop checking."
+         ],
+         "answer": 0,
+         "why": {
+          "Wait beside the gate because every cow must return.": "Waiting would ignore the evidence shown by the remaining marks.",
+          "Make new marks so that the remaining marks cannot be noticed.": "Making more marks would hide the evidence instead of helping find the cows.",
+          "Erase the remaining marks and stop checking.": "Erasing the marks would remove the clue that some cows were missing."
+         },
+         "explanation": "The remaining marks show that cows had not returned, and the missing cows were found in a nearby field."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch1-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how Deba and Deep's method helped them know whether any cows were missing.",
+         "answer": "Deba and Deep made a mark whenever a cow left the gate. When that cow returned, they struck out its mark. If all marks were gone, every cow that had left had returned. If marks remained while no cows were outside, some cows were still missing.",
+         "points": [
+          "A mark is made whenever a cow leaves.",
+          "A mark is struck out when that cow returns.",
+          "No remaining marks means every cow returned.",
+          "Remaining marks show that some cows were missing."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch1-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How should Hemant use marks to keep track of his cows and sheep while counting without using numbers?",
+         "answer": "Hemant should make a separate set of marks for the cows and another set for the sheep. He can make one mark for each animal and use different marks for the two kinds. This lets him keep track of each group and count the animals without needing to say numbers.",
+         "points": [
+          "Keeps cows and sheep in separate groups",
+          "Uses one mark for each animal",
+          "Uses different marks for the two kinds",
+          "Counts without saying numbers"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During Lesson 3, the children write down some friends’ names. They look for the shortest and longest names and write the starting letter of their own name. Teji and Jojo compare how many names begin with each letter, find the most used starting letter, and count the names beginning with it. They also count names with the same ending letter and find letters that start no names. Teji makes her roll number 43 with number cards, while Jojo makes 17.",
+         "prompt": "If more names begin with J than with T, what should the children do before deciding which starting letter is used most?",
+         "options": [
+          "Count the names beginning with every starting letter and compare those counts.",
+          "Count only the names beginning with J, because J already has more names.",
+          "Find the shortest and longest names, then use their starting letters.",
+          "Count names with the same ending letter and choose the largest count."
+         ],
+         "answer": 0,
+         "why": {
+          "Count only the names beginning with J, because J already has more names.": "Counting only J could hide a letter used by even more names.",
+          "Find the shortest and longest names, then use their starting letters.": "Shortest and longest names do not show which starting letter is used most.",
+          "Count names with the same ending letter and choose the largest count.": "The task asks about starting letters, not ending letters."
+         },
+         "explanation": "Every starting letter must be checked before the most used one can be identified."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During Lesson 3, the children write down some friends’ names. They look for the shortest and longest names and write the starting letter of their own name. Teji and Jojo compare how many names begin with each letter, find the most used starting letter, and count the names beginning with it. They also count names with the same ending letter and find letters that start no names. Teji makes her roll number 43 with number cards, while Jojo makes 17.",
+         "prompt": "If the class changes its task to counting names with the same ending letter, what should Jojo do?",
+         "options": [
+          "Write the last letter of his name, then count the names ending with that letter.",
+          "Write the first letter of his name, then count the names ending with that letter.",
+          "Write the last letter of his name, then count the names beginning with that letter.",
+          "Write the first letter of his name, then count only the shortest and longest names."
+         ],
+         "answer": 0,
+         "why": {
+          "Write the first letter of his name, then count the names ending with that letter.": "Using the first letter would mix up starting and ending letters.",
+          "Write the last letter of his name, then count the names beginning with that letter.": "Jojo must match the last letter, not the first letter.",
+          "Write the first letter of his name, then count only the shortest and longest names.": "Counting only the shortest and longest names would not count all matching names."
+         },
+         "explanation": "The ending letter is the last letter of the name."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch1-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the children can find the most used starting letter and then count the names that begin with it.",
+         "answer": "They should write the starting letter of every name and tally how many names have each letter. They compare the tallies to find the letter used most. Then they count all the names beginning with that letter and record the total.",
+         "points": [
+          "The first letter of every name is identified.",
+          "The names are counted for each starting letter.",
+          "The starting-letter counts are compared.",
+          "All names beginning with the most used letter are counted."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch1-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between the longest and shortest place names, and give the correct details for each.",
+         "answer": "Venkatanarasimharajuvaripeta has the longest name. It is an Indian place in Andhra Pradesh near the border of Tamil Nadu. Ib in Odisha and Od in Gujarat are named as the places with India's shortest names. Thus, their names are much shorter than the longest place name.",
+         "points": [
+          "Identifies Venkatanarasimharajuvaripeta as the longest name",
+          "Gives Andhra Pradesh as its location",
+          "Mentions the nearby border of Tamil Nadu",
+          "Identifies Ib in Odisha and Od in Gujarat as the shortest names"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During the lesson, Teji and Jojo have picture cards, while the chapter shows pictures of household objects. Teji sorts the cards into things that eat food and things that do not eat food. Jojo arranges the same cards differently, so children examine Jojo’s groups and ask what is common in each. Later, children write the object names into groups for things that need electricity and things that do not need electricity.",
+         "prompt": "Why do children ask what is common in each of Jojo’s groups?",
+         "options": [
+          "To work out the sorting rule Jojo used.",
+          "To learn whether the cards can be sorted again.",
+          "To find the names of all the household objects.",
+          "To decide which group has more cards."
+         ],
+         "answer": 0,
+         "why": {
+          "To learn whether the cards can be sorted again.": "The cards have already been sorted differently.",
+          "To find the names of all the household objects.": "Writing object names is a later activity.",
+          "To decide which group has more cards.": "The children are not asked to compare group sizes."
+         },
+         "explanation": "The shared property reveals the sorting rule."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During the lesson, Teji and Jojo have picture cards, while the chapter shows pictures of household objects. Teji sorts the cards into things that eat food and things that do not eat food. Jojo arranges the same cards differently, so children examine Jojo’s groups and ask what is common in each. Later, children write the object names into groups for things that need electricity and things that do not need electricity.",
+         "prompt": "If Teji changes the first sorting rule to the electricity rule, what would happen?",
+         "options": [
+          "The two groups would divide objects according to their need for electricity.",
+          "Only one group would remain because both rules separate the same things.",
+          "The two groups would still divide objects according to whether they eat food.",
+          "The object names would replace the two groups entirely."
+         ],
+         "answer": 0,
+         "why": {
+          "Only one group would remain because both rules separate the same things.": "The changed rule still makes two groups.",
+          "The two groups would still divide objects according to whether they eat food.": "This would describe the original food-based sorting.",
+          "The object names would replace the two groups entirely.": "Writing names does not replace sorting groups."
+         },
+         "explanation": "The electricity rule separates things that need electricity from those that do not."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch1-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between sorting by food and sorting by electricity.",
+         "answer": "The food rule sorts things by whether they eat food. The electricity rule sorts things by whether they need electricity. Because the same cards or objects can be arranged in different ways, each pair of groups shows a different shared property.",
+         "points": [
+          "The food rule uses whether things eat food.",
+          "The electricity rule uses whether things need electricity.",
+          "Each pair of groups follows a different sorting rule.",
+          "The same items can be arranged differently."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Mala is going to school. Her mother has combed her hair, and Mala has two ponytails. Children look at the children in their class and write down the information. All children comb their hair in different ways. The writing table has columns for Hair Style and Number of Children. The teacher can ask children to suggest more things and place them in groups. Other grouping methods can be discussed if every object belongs to one of two groups.",
+         "prompt": "After looking around the class, what should Mala do to complete the task?",
+         "options": [
+          "Observe the hairstyles and record what she finds.",
+          "Only observe her own hair and record nothing else.",
+          "Choose hairstyles without looking at the children.",
+          "Wait for the teacher to record all the information."
+         ],
+         "answer": 0,
+         "why": {
+          "Only observe her own hair and record nothing else.": "The task requires information about the children in the class.",
+          "Choose hairstyles without looking at the children.": "The children must observe the other children before recording.",
+          "Wait for the teacher to record all the information.": "The children are asked to collect and write the information."
+         },
+         "explanation": "This follows the instruction to look and write down the information."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch1-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Mala is going to school. Her mother has combed her hair, and Mala has two ponytails. Children look at the children in their class and write down the information. All children comb their hair in different ways. The writing table has columns for Hair Style and Number of Children. The teacher can ask children to suggest more things and place them in groups. Other grouping methods can be discussed if every object belongs to one of two groups.",
+         "prompt": "Which grouping method follows the rule for the two groups?",
+         "options": [
+          "Make two groups and place each child in exactly one.",
+          "Make two groups but leave some children out.",
+          "Make two groups and place every child in both.",
+          "Make one group containing every child."
+         ],
+         "answer": 0,
+         "why": {
+          "Make two groups but leave some children out.": "Leaving children out breaks the rule.",
+          "Make two groups and place every child in both.": "Placing every child in both breaks the rule.",
+          "Make one group containing every child.": "The rule requires two groups rather than one."
+         },
+         "explanation": "Every child is placed in one of the two groups."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch1-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How can the teacher discuss grouping with the children while following the rule for groups?",
+         "answer": "The teacher can ask the children to suggest more things and place them in groups. The teacher can also discuss other possible grouping methods. A method follows the rule when it uses two groups and every object, including every child, belongs to one of those groups.",
+         "points": [
+          "The teacher asks children to suggest more things.",
+          "Suggested things can be placed in groups.",
+          "Other grouping methods can be discussed.",
+          "Every object belongs to one of the two groups."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -5480,7 +6820,7 @@
       {
        "id": "mathematics-g3-ch2-l1",
        "title": "Shapes and Funny Faces",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -5596,6 +6936,48 @@
          "f": [],
          "derived": [
           "6 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch2-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child has an old cube box and an old cuboid box. The child wants to make a pig face and a cat face. Which box should be used for each face?",
+         "steps": [
+          "The pig face goes on the cube, because a pig face is drawn on a cube.",
+          "The cat face goes on the cuboid, because a cat face is drawn on a cuboid.",
+          "The cat gets long whiskers, because the cat face has long whiskers.",
+          "Use the cube for the pig and the cuboid for the cat."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.2",
+          "1.7",
+          "1.8",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          }
          ]
         },
         {
@@ -6509,6 +7891,271 @@
            "p": 9
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "One box is a cube. Another box is a cone. The child wants a pig face. Which box should be used, and what should its eyes look like?",
+         "options": [
+          "Use the cube and draw narrow eyes.",
+          "Use the cone and draw narrow eyes.",
+          "Use the cube and draw wide ears.",
+          "Use the cone and draw a pointed beak."
+         ],
+         "answer": 0,
+         "why": {
+          "Use the cone and draw narrow eyes.": "The cone is for a bird face, not a pig face.",
+          "Use the cube and draw wide ears.": "Wide ears belong to a puppy face, not a pig face.",
+          "Use the cone and draw a pointed beak.": "The cone and pointed beak belong to a bird face."
+         },
+         "explanation": "The pig face belongs on a cube and has narrow eyes.",
+         "f": [
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.5",
+          "1.6"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "match"
+         ],
+         "prompt": "A child has a cone and a cuboid. They want to draw a bird face. Which object should be used, and what should be added?",
+         "options": [
+          "Use the cone and add a pointed beak.",
+          "Use the cuboid and add a pointed beak.",
+          "Use the cone and add long whiskers.",
+          "Use the cuboid and add wide ears."
+         ],
+         "answer": 0,
+         "why": {
+          "Use the cuboid and add a pointed beak.": "The cuboid is for a cat face, not a bird face.",
+          "Use the cone and add long whiskers.": "Long whiskers belong to a cat face, not a bird face.",
+          "Use the cuboid and add wide ears.": "Wide ears belong to a puppy face, not a bird face."
+         },
+         "explanation": "A bird face is drawn on a cone and has a pointed beak.",
+         "f": [
+          "1.4",
+          "1.5",
+          "1.6",
+          "1.7",
+          "1.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "One box is a cube. Another box is a cuboid. The child wants a cat face. Which box should be used, and what should be added?",
+         "options": [
+          "Use the cuboid and add long whiskers.",
+          "Use the cube and add long whiskers.",
+          "Use the cuboid and add a pointed beak.",
+          "Use the cone and add narrow eyes."
+         ],
+         "answer": 0,
+         "why": {
+          "Use the cube and add long whiskers.": "The cube is used for a pig face, not a cat face.",
+          "Use the cuboid and add a pointed beak.": "A pointed beak belongs to a bird face, not a cat face.",
+          "Use the cone and add narrow eyes.": "The cone is for the bird, and narrow eyes are for the pig."
+         },
+         "explanation": "A cat face is drawn on a cuboid and has long whiskers.",
+         "f": [
+          "1.2",
+          "1.3",
+          "1.5",
+          "1.6",
+          "1.7",
+          "1.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Old boxes and bottles can be used for craft work. A child says every animal face fits every shape. Which correction is best?",
+         "options": [
+          "Pig faces need cubes; cat faces need cuboids.",
+          "Bird faces need cubes; pig faces need cones.",
+          "Cat faces need cubes; bird faces need cuboids.",
+          "Puppy faces need cones; cat faces need cubes."
+         ],
+         "answer": 0,
+         "why": {
+          "Bird faces need cubes; pig faces need cones.": "This swaps the bird's cone and the pig's cube.",
+          "Cat faces need cubes; bird faces need cuboids.": "This swaps the cat's cuboid and the bird's cone.",
+          "Puppy faces need cones; cat faces need cubes.": "The cat face belongs on a cuboid, not a cube."
+         },
+         "explanation": "The pig is drawn on a cube, and the cat is on a cuboid.",
+         "f": [
+          "1.2",
+          "1.5",
+          "1.7",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l1-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A child says a cat face should have wide ears because a puppy face has wide ears. What is wrong with the claim?",
+         "options": [
+          "The cat face has long whiskers, not wide ears.",
+          "The cat face has narrow eyes, not wide ears.",
+          "The cat face has a pointed beak, not wide ears.",
+          "The cat face is on a cube, not a cuboid."
+         ],
+         "answer": 0,
+         "why": {
+          "The cat face has narrow eyes, not wide ears.": "Narrow eyes belong to the pig face, not the cat.",
+          "The cat face has a pointed beak, not wide ears.": "A pointed beak belongs to the bird face, not the cat.",
+          "The cat face is on a cube, not a cuboid.": "The cat face is drawn on a cuboid, not a cube."
+         },
+         "explanation": "Wide ears belong to the puppy, while the cat has long whiskers.",
+         "f": [
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.6",
+          "1.7",
+          "1.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l3-john-and-eliza-hertford-hous-afc9a9.webp",
@@ -6525,7 +8172,7 @@
       {
        "id": "mathematics-g3-ch2-l2",
        "title": "Shapes All Around Us",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -6633,6 +8280,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g3-ch2-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Children collect objects to make a house. How can they describe one object clearly?",
+         "steps": [
+          "They name its shape, because the name starts a clear description.",
+          "They discuss faces and edges, because these parts show the shape.",
+          "They sort edges as straight or curved, because each edge needs checking.",
+          "They describe positions and visible parts, so another child can picture it."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.7",
+          "2.8",
+          "2.9",
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g3-ch2-l2-a2",
          "difficulty": 1,
@@ -6657,25 +8351,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch2-l2-a3",
-         "difficulty": 1,
-         "tags": [
-          "house",
-          "objects"
-         ],
-         "title": "Building a House",
-         "prompt": "Children collect objects to make a house.",
-         "answer": true,
-         "explanation": "Yes, the children collect objects to make a house.",
-         "src": [
-          {
-           "ch": 2,
-           "p": 10
-          }
-         ]
-        },
-        {
          "type": "fillblank",
          "id": "mathematics-g3-ch2-l2-a4",
          "difficulty": 1,
@@ -6690,6 +8365,25 @@
          ],
          "hint": "It is the toy that Devika bought.",
          "explanation": "Devika went to a shop and bought a toy engine.",
+         "src": [
+          {
+           "ch": 2,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch2-l2-a3",
+         "difficulty": 1,
+         "tags": [
+          "house",
+          "objects"
+         ],
+         "title": "Building a House",
+         "prompt": "Children collect objects to make a house.",
+         "answer": true,
+         "explanation": "Yes, the children collect objects to make a house.",
          "src": [
           {
            "ch": 2,
@@ -7292,6 +8986,223 @@
            "p": 10
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "spatial reasoning"
+         ],
+         "prompt": "One shape is on top of an orange cylinder. It is also under a pink cone. Where is that shape?",
+         "options": [
+          "Between the orange cylinder and pink cone.",
+          "On top of the cylinder and cone.",
+          "Under the cylinder and cone.",
+          "Beside the cylinder and cone."
+         ],
+         "answer": 0,
+         "why": {
+          "On top of the cylinder and cone.": "This mistake puts the shape above both shapes.",
+          "Under the cylinder and cone.": "This mistake puts the shape below both shapes.",
+          "Beside the cylinder and cone.": "This mistake puts the shape beside the shapes."
+         },
+         "explanation": "This is right because the shape is above the cylinder and below the cone.",
+         "f": [
+          "2.5",
+          "2.6"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A red cuboid is below a yellow cuboid. It is above the red cuboid but below the yellow cuboid. Is it between them?",
+         "options": [
+          "Yes, because it sits between them.",
+          "No, because between means beside.",
+          "Yes, because it is above both cuboids.",
+          "No, because between means under both."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because between means beside.": "This mistake thinks that between means beside.",
+          "Yes, because it is above both cuboids.": "This mistake ignores that it is below the yellow cuboid.",
+          "No, because between means under both.": "This mistake thinks that between means under both cuboids."
+         },
+         "explanation": "This is right because it is above the lower cuboid and below the higher one.",
+         "f": [
+          "2.4"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 9
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "counting"
+         ],
+         "prompt": "Jaya has red and yellow cuboids in her rocket. How can she find how many of each she used?",
+         "options": [
+          "Count each kind of shape separately.",
+          "Count all shapes together as one group.",
+          "Name the shapes without counting them.",
+          "Choose the shape used most often."
+         ],
+         "answer": 0,
+         "why": {
+          "Count all shapes together as one group.": "This mistake gives one total instead of a count for each kind.",
+          "Name the shapes without counting them.": "This mistake does not show how many shapes there are.",
+          "Choose the shape used most often.": "This mistake chooses a shape instead of counting every kind."
+         },
+         "explanation": "This is right because the activity asks how many of each shape.",
+         "f": [
+          "2.1",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 9
+          },
+          {
+           "ch": 2,
+           "p": 9
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "A child says every edge of an orange cylinder is straight. How should the child check?",
+         "options": [
+          "Check each edge and mark it straight or curved.",
+          "Call every edge straight because the shape is solid.",
+          "Call every edge curved because the shape is round.",
+          "Count the faces instead of checking the edges."
+         ],
+         "answer": 0,
+         "why": {
+          "Call every edge straight because the shape is solid.": "This mistake assumes that a solid shape has only straight edges.",
+          "Call every edge curved because the shape is round.": "This mistake assumes that a round shape has only curved edges.",
+          "Count the faces instead of checking the edges.": "This mistake counts faces instead of checking each edge."
+         },
+         "explanation": "This is right because each edge must be checked.",
+         "f": [
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l2-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "describe"
+         ],
+         "prompt": "Children collect objects for a house. One child names an object and says the friend can picture it. What is missing?",
+         "options": [
+          "Details about the object's faces and edges.",
+          "Details about the object's colour and price.",
+          "Names of the shapes used by friends.",
+          "Counts of the rooms inside the house."
+         ],
+         "answer": 0,
+         "why": {
+          "Details about the object's colour and price.": "This mistake focuses on details outside the shape lesson.",
+          "Names of the shapes used by friends.": "This mistake does not describe the object that was named.",
+          "Counts of the rooms inside the house.": "This mistake counts rooms instead of describing the shape."
+         },
+         "explanation": "This is right because faces and edges help describe the shape.",
+         "f": [
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l2-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Devika bought a toy engine. She draws it from far away. What should the drawing show?",
+         "options": [
+          "The visible parts and where the shapes sit.",
+          "The hidden parts of every shape only.",
+          "The names of all the shapes used.",
+          "The number of faces on every shape."
+         ],
+         "answer": 0,
+         "why": {
+          "The hidden parts of every shape only.": "This mistake shows parts that cannot be seen from far away.",
+          "The names of all the shapes used.": "This mistake uses names instead of showing the far-away view.",
+          "The number of faces on every shape.": "This mistake counts faces instead of showing what can be seen."
+         },
+         "explanation": "This is right because the view and the arrangement both matter.",
+         "f": [
+          "2.10",
+          "2.11",
+          "2.12"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l3-john-and-eliza-hertford-hous-afc9a9.webp",
@@ -7308,7 +9219,7 @@
       {
        "id": "mathematics-g3-ch2-l3",
        "title": "Toys, Houses and Building",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -7448,6 +9359,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g3-ch2-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Jaya is building a house with three shapes. How can the other children build the same house without seeing it?",
+         "steps": [
+          "Jaya chooses any three shapes, because one student chooses the shapes.",
+          "She describes the construction sequence, because the others cannot see the original.",
+          "She explains the order of joining, because the sequence guides their building.",
+          "The others join the same shapes, because they must build the same shape."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.6",
+          "3.9",
+          "3.10",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          }
+         ]
+        },
+        {
          "type": "concept",
          "id": "mathematics-g3-ch2-l3-a8",
          "difficulty": 2,
@@ -7560,25 +9513,6 @@
            "ch": 2,
            "p": 10
           },
-          {
-           "ch": 2,
-           "p": 10
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch2-l3-a3",
-         "difficulty": 1,
-         "tags": [
-          "houses",
-          "shapes"
-         ],
-         "title": "Jaya’s houses",
-         "prompt": "Jaya made houses using different shapes.",
-         "answer": true,
-         "explanation": "Yes. Jaya used different shapes to make houses.",
-         "src": [
           {
            "ch": 2,
            "p": 10
@@ -7910,6 +9844,28 @@
         },
         {
          "type": "fillblank",
+         "id": "mathematics-g3-ch2-l3-a5",
+         "difficulty": 2,
+         "tags": [
+          "engine",
+          "parts"
+         ],
+         "title": "Devika’s toy engine",
+         "prompt": "Devika’s toy engine has many ______.",
+         "answers": [
+          "parts"
+         ],
+         "hint": "Look at Devika’s toy engine.",
+         "explanation": "Devika’s toy engine has many parts.",
+         "src": [
+          {
+           "ch": 2,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
          "difficulty": 2,
          "tags": [
           "practice",
@@ -8233,6 +10189,132 @@
            "p": 11
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "Jaya made a house using different shapes. One shape is a cube. What can she say about it?",
+         "options": [
+          "It is also a type of cuboid.",
+          "It is only a type of cube.",
+          "It cannot help make a house.",
+          "It must join with three other shapes."
+         ],
+         "answer": 0,
+         "why": {
+          "It is only a type of cube.": "This wrongly treats a cube as separate from cuboid.",
+          "It cannot help make a house.": "This wrongly says shapes cannot be used for houses.",
+          "It must join with three other shapes.": "This wrongly adds a fourth shape to the chosen three."
+         },
+         "explanation": "A cube is a special kind of cuboid.",
+         "f": [
+          "3.5",
+          "3.7",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 11
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "Devika's engine has many parts. The shop has more toys. Can the shop's count tell Devika the engine's part count?",
+         "options": [
+          "No, she must count the engine parts herself.",
+          "Yes, more toys means more engine parts.",
+          "Yes, the shop count includes every engine part.",
+          "No, the engine has fewer parts than toys."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, more toys means more engine parts.": "The shop's toy count does not count the engine's parts.",
+          "Yes, the shop count includes every engine part.": "The shop count does not include the engine's parts.",
+          "No, the engine has fewer parts than toys.": "The engine's part count is not given by the toy count."
+         },
+         "explanation": "The activity asks for the number of parts in Devika's engine.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          },
+          {
+           "ch": 2,
+           "p": 10
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "In the construction game, the original shape is hidden. Why must the student describe the sequence?",
+         "options": [
+          "It tells the others how to build the same shape.",
+          "It lets the others see the hidden original.",
+          "It makes the chosen shapes change themselves.",
+          "It lets the others use any shapes."
+         ],
+         "answer": 0,
+         "why": {
+          "It lets the others see the hidden original.": "A description does not show the hidden original to the others.",
+          "It makes the chosen shapes change themselves.": "Shapes do not change during the construction game.",
+          "It lets the others use any shapes.": "Any shapes would not guarantee the same construction."
+         },
+         "explanation": "The sequence tells the others how to make the same shape.",
+         "f": [
+          "3.9",
+          "3.10",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l3-john-and-eliza-hertford-hous-afc9a9.webp",
@@ -8249,7 +10331,7 @@
       {
        "id": "mathematics-g3-ch2-l4",
        "title": "Finding and Sorting Shapes",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -8412,6 +10494,63 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g3-ch2-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child finds a mixed pile of classroom objects. How can the child sort it by shape?",
+         "steps": [
+          "Look at each object because sorting starts by seeing its shape.",
+          "Turn each shape because it can look different in another direction.",
+          "Mark cylinders with crosses and box cuboids because the rules differ.",
+          "Name the most and least often shapes because both are needed."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.6",
+          "4.7",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g3-ch2-l4-a2",
          "difficulty": 1,
@@ -8436,20 +10575,23 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch2-l4-a3",
+         "type": "fillblank",
+         "id": "mathematics-g3-ch2-l4-a4",
          "difficulty": 1,
          "tags": [
           "shapes",
-          "classroom"
+          "tasks"
          ],
-         "prompt": "Children name the classroom shape they find least often.",
-         "answer": true,
-         "explanation": "Yes. You name the classroom shape you find least often.",
+         "prompt": "The task asks children to draw a box around ______.",
+         "answers": [
+          "cuboids"
+         ],
+         "hint": "Look for the box-sorting task.",
+         "explanation": "The box task is for cuboids, so fill in “cuboids”.",
          "src": [
           {
            "ch": 2,
-           "p": 11
+           "p": 12
           }
          ]
         },
@@ -9220,23 +11362,240 @@
            "p": 12
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Cylinders fill the fullest basket. Every other shape group is smaller. Which shape is found most often?",
+         "options": [
+          "the cylinders",
+          "the spheres",
+          "the cubes",
+          "the cones"
+         ],
+         "answer": 0,
+         "why": {
+          "the spheres": "This mistake counts the smaller sphere group as the largest.",
+          "the cubes": "This mistake counts the smaller cube group as the largest.",
+          "the cones": "This mistake counts the smaller cone group as the largest."
+         },
+         "explanation": "This is right because the fullest basket has the most cylinders.",
+         "f": [
+          "4.2",
+          "4.3"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "The cuboid group has fewer objects than every other shape group. Which shape is found least often?",
+         "options": [
+          "the cuboid",
+          "the cylinder",
+          "the sphere",
+          "the cone"
+         ],
+         "answer": 0,
+         "why": {
+          "the cylinder": "This mistake counts the larger cylinder group as the smallest.",
+          "the sphere": "This mistake counts the larger sphere group as the smallest.",
+          "the cone": "This mistake counts the larger cone group as the smallest."
+         },
+         "explanation": "This is right because fewer cuboids are found than any other shape.",
+         "f": [
+          "4.2",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A cylinder is turned sideways on the desk. The task marks every cylinder. What should the child do?",
+         "options": [
+          "put a cross against it",
+          "draw a box around it",
+          "draw a circle around it",
+          "write its name beside it"
+         ],
+         "answer": 0,
+         "why": {
+          "draw a box around it": "Boxes are for cuboids, so this mixes up the marking rules.",
+          "draw a circle around it": "Circles are not the rule, so this invents another mark.",
+          "write its name beside it": "Sharing names is not marking, so this confuses the task."
+         },
+         "explanation": "This is right because turning a cylinder does not stop it being a cylinder.",
+         "f": [
+          "4.6",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A cuboid is turned in a new direction. The task marks every cuboid. What should the child do?",
+         "options": [
+          "put a cross against it",
+          "draw a box around it",
+          "leave the cuboid unmarked",
+          "write its name beside it"
+         ],
+         "answer": 1,
+         "why": {
+          "put a cross against it": "Crosses mark cylinders, so this mixes up the marking rules.",
+          "leave the cuboid unmarked": "This mistake thinks turning creates a new shape.",
+          "write its name beside it": "Sharing a name does not replace the box task."
+         },
+         "explanation": "This is right because turning a cuboid does not stop it being a cuboid.",
+         "f": [
+          "4.7",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "The teacher asks for shapes with no edges. Which shape should the child name?",
+         "options": [
+          "a sphere",
+          "a cylinder",
+          "a cube",
+          "a cuboid"
+         ],
+         "answer": 0,
+         "why": {
+          "a cylinder": "A cylinder has edges, so this choice does not fit.",
+          "a cube": "A cube has edges, so this choice does not fit.",
+          "a cuboid": "A cuboid has edges, so this choice does not fit."
+         },
+         "explanation": "This is right because a sphere has no edges.",
+         "f": [
+          "4.2",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 12
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l4-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A classroom toy shows a cube part and a cylinder part. What should the child do?",
+         "options": [
+          "name both shapes",
+          "name only the cube",
+          "name only the cylinder",
+          "choose no shape at all"
+         ],
+         "answer": 0,
+         "why": {
+          "name only the cube": "This mistake misses the cylinder part.",
+          "name only the cylinder": "This mistake misses the cube part.",
+          "choose no shape at all": "This mistake believes an object can have only one shape."
+         },
+         "explanation": "This is right because the toy is made from more than one shape.",
+         "f": [
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 11
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch2-l3-john-and-eliza-hertford-hous-afc9a9.webp",
-       "sceneAlt": "A large historic house displays Greek Revival features and later Victorian decorations.",
-       "sceneCaption": "A recognizable family house showing different architectural features and decorative shapes.",
+       "topicScene": "media/ch2-l4-solidshapes-471d06.webp",
+       "sceneAlt": "A labelled picture of eight three-dimensional solids, including a sphere, cube, cylinder and cone.",
+       "sceneCaption": "Eight colourful three-dimensional shapes for children to identify and sort.",
        "sceneCredit": {
-        "text": "John and Eliza Hertford House by Jim Evans, CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:John_and_Eliza_Hertford_House.jpg",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Jim Evans"
+        "text": "SolidShapes by Caduser2003 at ml.wikipedia, CC BY-SA 2.5, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:SolidShapes.png",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "creator": "Caduser2003 at ml.wikipedia"
        }
       },
       {
        "id": "mathematics-g3-ch2-l5",
        "title": "Making Models and Joining Cubes",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -9393,6 +11752,43 @@
           "2 (generated problem)",
           "3 (generated problem)",
           "5 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch2-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child rolls a die. The counter moves to the picture linked with the number. What should happen if that move would cross the Finish square?",
+         "steps": [
+          "The die gives a number, so the counter must move to its linked picture.",
+          "A move is possible only when it does not cross the Finish square.",
+          "Here the move would cross Finish, so the rule stops it.",
+          "Therefore, the child should not make that move."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.4",
+          "5.5",
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 13
+          },
+          {
+           "ch": 2,
+           "p": 13
+          },
+          {
+           "ch": 2,
+           "p": 13
+          }
          ]
         },
         {
@@ -10312,8 +12708,97 @@
            "p": 15
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "rule application"
+         ],
+         "prompt": "A child rolls a die. The number has a linked picture. The move would cross the Finish square. What should the child do?",
+         "options": [
+          "Move to the linked picture and cross the Finish square.",
+          "Move to the linked picture only if it does not cross Finish.",
+          "Stay on the counter and ignore the number on the die.",
+          "Choose a different picture for the same die number."
+         ],
+         "answer": 1,
+         "why": {
+          "Move to the linked picture and cross the Finish square.": "This breaks the rule that a move cannot cross Finish.",
+          "Stay on the counter and ignore the number on the die.": "The die number still tells the counter where to move.",
+          "Choose a different picture for the same die number.": "The picture is linked with the number, not chosen freely."
+         },
+         "explanation": "This follows both the picture rule and the Finish rule.",
+         "f": [
+          "5.4",
+          "5.5",
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 13
+          },
+          {
+           "ch": 2,
+           "p": 13
+          },
+          {
+           "ch": 2,
+           "p": 13
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "game reasoning"
+         ],
+         "prompt": "Child A reaches the finish mark first. Child B reaches it later. What is the result of the game?",
+         "options": [
+          "Child A is the winner of the game.",
+          "Child B is the winner of the game.",
+          "Both children win the game together.",
+          "Neither child wins after reaching the mark."
+         ],
+         "answer": 0,
+         "why": {
+          "Child B is the winner of the game.": "Child B reached the finish mark after Child A.",
+          "Both children win the game together.": "The winning rule does not say that both children win.",
+          "Neither child wins after reaching the mark.": "Reaching the finish mark means that a child can win."
+         },
+         "explanation": "The first child to reach the finish mark wins the game.",
+         "f": [
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 13
+          }
+         ]
         }
        ],
+       "topicScene": "media/ch2-l5-hand-in-hand-clay-pot-making-1907b4.webp",
+       "sceneAlt": "A clay pot-making family enterprise shows men at work alongside groups of children in Tamil Nadu.",
+       "sceneCaption": "Men make clay pots as part of a family enterprise in Tamil Nadu.",
+       "sceneCredit": {
+        "text": "Hand in Hand - clay pot making family enterprise 01 (3976635462) by McKay Savage from London, UK, CC BY 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Hand_in_Hand_-_clay_pot_making_family_enterprise_01_(3976635462).jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "creator": "McKay Savage from London, UK"
+       }
+      },
+      {
+       "id": "mathematics-g3-ch2-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 16,
        "topicScene": "media/ch2-l3-john-and-eliza-hertford-hous-afc9a9.webp",
        "sceneAlt": "A large historic house displays Greek Revival features and later Victorian decorations.",
        "sceneCaption": "A recognizable family house showing different architectural features and decorative shapes.",
@@ -10323,7 +12808,345 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Jim Evans"
-       }
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A child makes funny faces for craft work. First, the child draws a pig face on an old box called a cube, giving the pig narrow eyes. Next, the child puts a bird face on a cone and gives it a pointed beak. The child also draws a cat face on a cuboid, with long whiskers added to the face. Another child makes a puppy face with wide ears. The old boxes and bottles have faces drawn on them.",
+         "prompt": "If the child changes the shape under the pig face from a cube to a cone, which face and feature fit the new shape?",
+         "options": [
+          "Pig face with narrow eyes",
+          "Bird face with a pointed beak",
+          "Cat face with long whiskers",
+          "Puppy face with wide ears"
+         ],
+         "answer": 1,
+         "why": {
+          "Pig face with narrow eyes": "A pig face is drawn on a cube.",
+          "Cat face with long whiskers": "A cat face is drawn on a cuboid and has long whiskers.",
+          "Puppy face with wide ears": "A puppy face has wide ears, but it is not the face given on a cone."
+         },
+         "explanation": "A bird face is drawn on a cone and has a pointed beak."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A child makes funny faces for craft work. First, the child draws a pig face on an old box called a cube, giving the pig narrow eyes. Next, the child puts a bird face on a cone and gives it a pointed beak. The child also draws a cat face on a cuboid, with long whiskers added to the face. Another child makes a puppy face with wide ears. The old boxes and bottles have faces drawn on them.",
+         "prompt": "The child wants to make the cat face on a cuboid like the one in the case. Which detail should be drawn to show that it is the cat face?",
+         "options": [
+          "Narrow eyes",
+          "A pointed beak",
+          "Long whiskers",
+          "Wide ears"
+         ],
+         "answer": 2,
+         "why": {
+          "Narrow eyes": "Narrow eyes belong to the pig face.",
+          "A pointed beak": "A pointed beak belongs to the bird face.",
+          "Wide ears": "Wide ears belong to the puppy face."
+         },
+         "explanation": "The cat face on a cuboid has long whiskers."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Jaya is building a rocket with different shapes. The activity asks which shapes she used and how many of each she used. Children find the shape between the red and yellow cuboids, the shape on top of the orange cylinder, and the shape under the pink cone. They collect objects for a house and discuss faces, edges, and arrangement. They think about what they can see from far away. Devika went to a shop and bought a toy engine.",
+         "prompt": "To find the shape between the red and yellow cuboids, what should Jaya do?",
+         "options": [
+          "Look at the positions of the shapes around the two cuboids.",
+          "Count all the shapes in the rocket without checking their positions.",
+          "Name every face and edge on every shape in the rocket.",
+          "Choose the shapes with straight edges instead of checking the arrangement."
+         ],
+         "answer": 0,
+         "why": {
+          "Count all the shapes in the rocket without checking their positions.": "Counting does not identify what is between two shapes.",
+          "Name every face and edge on every shape in the rocket.": "Naming faces and edges does not answer the position question.",
+          "Choose the shapes with straight edges instead of checking the arrangement.": "Straight or curved edges do not show the shape’s position."
+         },
+         "explanation": "The question depends on where the shapes are placed."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Jaya is building a rocket with different shapes. The activity asks which shapes she used and how many of each she used. Children find the shape between the red and yellow cuboids, the shape on top of the orange cylinder, and the shape under the pink cone. They collect objects for a house and discuss faces, edges, and arrangement. They think about what they can see from far away. Devika went to a shop and bought a toy engine.",
+         "prompt": "What should Devika do with the toy engine to use it in this lesson?",
+         "options": [
+          "Inspect it for shapes, then discuss their faces and edges.",
+          "Inspect it for shapes, but only count how many it has.",
+          "Use only what can be seen from far away and skip close looking.",
+          "Rearrange it without naming or examining any shapes."
+         ],
+         "answer": 0,
+         "why": {
+          "Inspect it for shapes, but only count how many it has.": "Counting alone leaves out the shape discussion.",
+          "Use only what can be seen from far away and skip close looking.": "Looking only from far away misses the close inspection.",
+          "Rearrange it without naming or examining any shapes.": "Rearranging without examining does not use the engine to discuss shapes."
+         },
+         "explanation": "The lesson includes naming shapes and discussing their faces and edges."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l2-x3",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Jaya is building a rocket with different shapes. The activity asks which shapes she used and how many of each she used. Children find the shape between the red and yellow cuboids, the shape on top of the orange cylinder, and the shape under the pink cone. They collect objects for a house and discuss faces, edges, and arrangement. They think about what they can see from far away. Devika went to a shop and bought a toy engine.",
+         "prompt": "How should children describe how the objects for their house have been arranged?",
+         "options": [
+          "Explain where each object has been placed compared with the others.",
+          "Count the objects without saying where any of them are placed.",
+          "Name the faces on the objects but ignore their positions.",
+          "Discuss straight and curved edges without describing the arrangement."
+         ],
+         "answer": 0,
+         "why": {
+          "Count the objects without saying where any of them are placed.": "Counting does not describe positions.",
+          "Name the faces on the objects but ignore their positions.": "Naming faces does not explain the arrangement.",
+          "Discuss straight and curved edges without describing the arrangement.": "Discussing edges does not show where objects have been placed."
+         },
+         "explanation": "An arrangement is described by the positions of the objects."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch2-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does looking at Jaya’s rocket help children answer the shape questions?",
+         "answer": "Looking at the rocket lets children list the different shapes Jaya used and count each kind. Checking the arrangement also helps them name the shape between the red and yellow cuboids, the shape above the orange cylinder, and the shape below the pink cone.",
+         "points": [
+          "Lists the shapes Jaya used.",
+          "Counts how many of each shape were used.",
+          "Checks the shape between the two cuboids.",
+          "Checks the shapes above the cylinder and below the cone."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Devika’s toy engine has many parts, so children count and fill in the engine parts. The toy shop has more toys made from different shapes. Jaya made houses with different shapes. In the construction game, children work in groups of four or five. One child chooses any three shapes, joins them, and describes the sequence. The others rebuild the same shape without seeing it. In the example, the cylinder is of the cuboid and the cone is on the cylinder.",
+         "prompt": "One child describes the example using the cuboid, cylinder, and cone. Which description would help the others rebuild it?",
+         "options": [
+          "Join the cylinder to the cuboid first, then place the cone on top of the cylinder.",
+          "Place the cone on top of the cylinder first, then join the cylinder to the cuboid.",
+          "Join the cylinder to the cuboid, but omit the cone because it is not needed.",
+          "Place the cone on top of the cylinder, but do not join the cylinder to the cuboid."
+         ],
+         "answer": 0,
+         "why": {
+          "Place the cone on top of the cylinder first, then join the cylinder to the cuboid.": "The cone is described before the cylinder is joined to the cuboid.",
+          "Join the cylinder to the cuboid, but omit the cone because it is not needed.": "The example includes the cone on the cylinder.",
+          "Place the cone on top of the cylinder, but do not join the cylinder to the cuboid.": "The example also connects the cylinder with the cuboid."
+         },
+         "explanation": "This gives the same joining order as the example."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Devika’s toy engine has many parts, so children count and fill in the engine parts. The toy shop has more toys made from different shapes. Jaya made houses with different shapes. In the construction game, children work in groups of four or five. One child chooses any three shapes, joins them, and describes the sequence. The others rebuild the same shape without seeing it. In the example, the cylinder is of the cuboid and the cone is on the cylinder.",
+         "prompt": "Four children are playing the construction game. One child has chosen three shapes and described their sequence. What should the other three children do next?",
+         "options": [
+          "Use the description to build the same shape without seeing the original.",
+          "Wait for a fifth child to join before beginning any construction.",
+          "Choose three different shapes and make another construction instead.",
+          "Ask the first child to show the original rather than describing it."
+         ],
+         "answer": 0,
+         "why": {
+          "Wait for a fifth child to join before beginning any construction.": "A group of four is allowed, so they should not wait for another child.",
+          "Choose three different shapes and make another construction instead.": "They must rebuild the same shape, not make a different one.",
+          "Ask the first child to show the original rather than describing it.": "They are not allowed to see the original construction."
+         },
+         "explanation": "The other children must copy the described construction without seeing it."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch2-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does the construction game help children use different shapes, and what must the other children do after the sequence is described?",
+         "answer": "Different shapes are used to construct houses, towers, and rockets. One student selects any three shapes, joins them, and tells the group the sequence. The other members must rebuild the same shape without seeing the original, so they depend on the description.",
+         "points": [
+          "Different shapes are used for houses, towers, and rockets.",
+          "One student chooses and joins any three shapes.",
+          "The student describes the sequence of construction.",
+          "The other children rebuild without seeing the original."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "The children search the classroom for objects that look like a cylinder, sphere, cube, cuboid and cone. They find more examples of some shapes than others. They put crosses against cylinders, draw boxes around cuboids and think about shapes with no edges. They share examples, notice an object made from more than one shape, and talk about opposite faces. They turn the shapes to observe them in different orientations, then name the shapes found most and least often.",
+         "prompt": "If the teacher changes the task so that spheres, rather than cylinders, should be crossed, what should the children do next?",
+         "options": [
+          "They should cross objects that look like spheres.",
+          "They should cross objects that look like cuboids.",
+          "They should draw boxes around objects that look like cylinders.",
+          "They should draw boxes around objects that look like cones."
+         ],
+         "answer": 0,
+         "why": {
+          "They should cross objects that look like cuboids.": "The other options keep the old marking action.",
+          "They should draw boxes around objects that look like cylinders.": "They confuse spheres with other shapes.",
+          "They should draw boxes around objects that look like cones.": "They confuse the required action."
+         },
+         "explanation": "This follows the new instruction."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "The children search the classroom for objects that look like a cylinder, sphere, cube, cuboid and cone. They find more examples of some shapes than others. They put crosses against cylinders, draw boxes around cuboids and think about shapes with no edges. They share examples, notice an object made from more than one shape, and talk about opposite faces. They turn the shapes to observe them in different orientations, then name the shapes found most and least often.",
+         "prompt": "After sharing examples, the children agree that there are more cylinders than cones. What should they name?",
+         "options": [
+          "They should name the cone as the least common shape.",
+          "They should name the cylinder as the least common shape.",
+          "They should name the sphere as the most common shape.",
+          "They should name the cuboid as the most common shape."
+         ],
+         "answer": 0,
+         "why": {
+          "They should name the cylinder as the least common shape.": "They reverse the most and least common shapes.",
+          "They should name the sphere as the most common shape.": "The case gives no reason to choose the sphere.",
+          "They should name the cuboid as the most common shape.": "The case gives no reason to choose the cuboid."
+         },
+         "explanation": "The cone has fewer examples than the cylinder."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch2-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does turning a shape and observing it in different orientations help children talk about opposite faces?",
+         "answer": "Turning the shape lets the children observe it in different orientations. This helps them look at its faces from different positions and discuss which faces are opposite in cubes, cuboids and cylinders.",
+         "points": [
+          "Turns the shape",
+          "Observes different orientations",
+          "Looks at the faces",
+          "Identifies opposite faces"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During the lesson, children made a shape with clay and sticks and tried making other shapes in the same way. At another table, they joined three cubes in different ways and described how the shapes were arranged. Later, a child rolled the die in the border game. The counter moved to the picture linked with the number on the die. The Finish square was ahead, so the children checked whether the next move could land there without crossing it.",
+         "prompt": "In the border game, the next move would land on the Finish square without crossing it. What should happen?",
+         "options": [
+          "That child reaches the finish mark and wins the border game.",
+          "That child must move past the Finish square to keep playing.",
+          "No child may move because the Finish square cannot be used.",
+          "That child stays in place until another child rolls the die."
+         ],
+         "answer": 0,
+         "why": {
+          "That child must move past the Finish square to keep playing.": "Reaching the finish mark makes that child the winner.",
+          "No child may move because the Finish square cannot be used.": "The Finish square can be reached in the border game.",
+          "That child stays in place until another child rolls the die.": "The number on the die determines which picture the counter reaches."
+         },
+         "explanation": "Landing on Finish does not cross the Finish square."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch2-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During the lesson, children made a shape with clay and sticks and tried making other shapes in the same way. At another table, they joined three cubes in different ways and described how the shapes were arranged. Later, a child rolled the die in the border game. The counter moved to the picture linked with the number on the die. The Finish square was ahead, so the children checked whether the next move could land there without crossing it.",
+         "prompt": "The children have joined three cubes one way and described it. What should they do next?",
+         "options": [
+          "Roll the die and move the counter to a picture.",
+          "Make the clay-and-stick model again without using cubes.",
+          "Join the cubes in another way and explain how that shape is arranged.",
+          "Use the number on the die to decide which cube joining to make."
+         ],
+         "answer": 2,
+         "why": {
+          "Roll the die and move the counter to a picture.": "Rolling the die and moving the counter belong to the border game.",
+          "Make the clay-and-stick model again without using cubes.": "The clay-and-stick activity is separate from the cube task.",
+          "Use the number on the die to decide which cube joining to make.": "The die number does not determine how cubes should be joined."
+         },
+         "explanation": "The task asks for different ways of joining three cubes and describing their arrangements."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch2-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does a move in the border game work, and how is the winner chosen?",
+         "answer": "A child rolls the die and looks at the number shown. The counter moves to the picture linked with that number. The move is possible only if it does not cross the Finish square. The first child to reach the finish mark wins the game.",
+         "points": [
+          "The child rolls the die.",
+          "The counter moves to the linked picture.",
+          "A move cannot cross the Finish square.",
+          "The first child to reach the finish mark wins."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -10617,8 +13440,18 @@
       {
        "id": "mathematics-g3-ch3-l1",
        "title": "How People Began to Count",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch3-l1-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How did people first learn to count the things around them?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "mathematics-g3-ch3-l1-a1",
@@ -10730,6 +13563,68 @@
          "derived": [
           "25 (generated problem)",
           "5 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch3-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can one number system write any number and also show nothing?",
+         "steps": [
+          "People first made cave and tree-bark marks to keep records.",
+          "Groups had known sizes, so people used fives, tens, twenties and sixties.",
+          "The ancient Indians made ten symbols because this method writes any number.",
+          "The symbol 0 means nothing and makes the numeral system work."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.5",
+          "1.6",
+          "1.10",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          }
          ]
         },
         {
@@ -11474,14 +14369,113 @@
            "p": 16
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A child wants to keep a record of objects. What should the child make first?",
+         "options": [
+          "Make marks on a wall or tree bark",
+          "Make groups of five with no marks",
+          "Write only the symbol 0 for them",
+          "Use ten new symbols for every object"
+         ],
+         "answer": 0,
+         "why": {
+          "Make groups of five with no marks": "This overlooks the cave and tree marks people made.",
+          "Write only the symbol 0 for them": "This mistakes later grouping for the first counting step.",
+          "Use ten new symbols for every object": "This mistakes zero for a complete way to record objects."
+         },
+         "explanation": "This matches the marks early people made.",
+         "f": [
+          "1.2",
+          "1.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A child has many objects to count. What can make the record shorter?",
+         "options": [
+          "Group the objects into known sizes",
+          "Make one separate mark for each object",
+          "Write 0 beside each counted object",
+          "Give every object its own new symbol"
+         ],
+         "answer": 0,
+         "why": {
+          "Make one separate mark for each object": "This forgets that people grouped their records.",
+          "Write 0 beside each counted object": "This mistakes zero for a way to mark objects.",
+          "Give every object its own new symbol": "This assumes each object needs its own symbol."
+         },
+         "explanation": "This is how people grouped their records.",
+         "f": [
+          "1.4",
+          "1.5",
+          "1.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          },
+          {
+           "ch": 3,
+           "p": 16
+          }
+         ]
         }
-       ]
+       ],
+       "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
+       "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCredit": {
+        "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "creator": "Raveesh Vyas"
+       }
       },
       {
        "id": "mathematics-g3-ch3-l2",
        "title": "Making One Hundred",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch3-l2-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How can we make exactly one hundred in different ways?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "mathematics-g3-ch3-l2-a1",
@@ -12147,14 +15141,118 @@
            "p": 19
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "combine groups"
+         ],
+         "prompt": "Ten bundles each hold ten sticks. What can the child make?",
+         "options": [
+          "One bundle of 10 sticks.",
+          "Ten bundles of 100 sticks.",
+          "One packet of 100 bindis.",
+          "One bundle of 100 sticks."
+         ],
+         "answer": 3,
+         "why": {
+          "One bundle of 10 sticks.": "This keeps the size of one small bundle.",
+          "Ten bundles of 100 sticks.": "This makes ten large bundles instead of one.",
+          "One packet of 100 bindis.": "This changes the sticks into bindis."
+         },
+         "explanation": "Ten bundles of ten sticks can make one bundle of 100.",
+         "f": [
+          "2.3",
+          "2.9",
+          "2.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 18
+          },
+          {
+           "ch": 3,
+           "p": 21
+          },
+          {
+           "ch": 3,
+           "p": 18
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare totals"
+         ],
+         "prompt": "One box has ten packets of ten bindis. Another has beads that make 100. What do both boxes show?",
+         "options": [
+          "Both boxes show ten beads.",
+          "Both boxes show seventy beads.",
+          "Both boxes show one hundred.",
+          "Both boxes show thirty beads."
+         ],
+         "answer": 2,
+         "why": {
+          "Both boxes show ten beads.": "This counts one group instead of every group.",
+          "Both boxes show seventy beads.": "This uses the first part of the 70-and-30 pair.",
+          "Both boxes show thirty beads.": "This uses the second part of the 70-and-30 pair."
+         },
+         "explanation": "Ten packets make 100, and the other beads also make 100.",
+         "f": [
+          "2.5",
+          "2.6",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 18
+          },
+          {
+           "ch": 3,
+           "p": 19
+          },
+          {
+           "ch": 3,
+           "p": 19
+          }
+         ]
         }
-       ]
+       ],
+       "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
+       "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCredit": {
+        "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "creator": "Raveesh Vyas"
+       }
       },
       {
        "id": "mathematics-g3-ch3-l3",
        "title": "Writing Numbers Above One Hundred",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch3-l3-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Ready to discover how we write numbers bigger than one hundred?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "mathematics-g3-ch3-l3-a1",
@@ -12246,6 +15344,38 @@
           "100 (generated problem)",
           "105 (generated problem)",
           "5 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch3-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "When writing numbers above one hundred, the talking Pot is given 100. What number will it say?",
+         "steps": [
+          "The talking Pot says one more than the number it gets.",
+          "It gets 100, so it needs one more.",
+          "One hundred and one means 100 and 1.",
+          "Therefore, the Pot says 101."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.4",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 21
+          },
+          {
+           "ch": 3,
+           "p": 23
+          }
          ]
         },
         {
@@ -12952,14 +16082,103 @@
           "5 (generated problem)",
           "9 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "number line"
+         ],
+         "prompt": "One line shows 100, 110, 120 and 150. Another shows 100, 110, 120, 130, 140 and 150. Where does 130 belong?",
+         "options": [
+          "between 120 and 140",
+          "between 100 and 110",
+          "between 140 and 150",
+          "between 130 and 150"
+         ],
+         "answer": 0,
+         "why": {
+          "between 100 and 110": "This places 130 before 120, not after it.",
+          "between 140 and 150": "This places 130 after 140, but 140 comes later.",
+          "between 130 and 150": "This skips 140 and puts 130 too late."
+         },
+         "explanation": "The second line places 130 between 120 and 140.",
+         "f": [
+          "3.7",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 23
+          },
+          {
+           "ch": 3,
+           "p": 26
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "matching"
+         ],
+         "prompt": "The matching exercise shows 101, 116, 110, 100 and 140. A child needs one hundred and sixteen. Which number matches?",
+         "options": [
+          "101",
+          "116",
+          "110",
+          "140"
+         ],
+         "answer": 1,
+         "why": {
+          "101": "This is one hundred and one, not one hundred and sixteen.",
+          "110": "This is one hundred and ten, not one hundred and sixteen.",
+          "140": "This does not match the sixteen part."
+         },
+         "explanation": "This matches one hundred and sixteen.",
+         "f": [
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 23
+          }
+         ]
         }
-       ]
+       ],
+       "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
+       "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCredit": {
+        "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "creator": "Raveesh Vyas"
+       }
       },
       {
        "id": "mathematics-g3-ch3-l4",
        "title": "Claps, Snaps and Pats",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch3-l4-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Can you discover how claps, snaps, and pats turn into numbers?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "mathematics-g3-ch3-l4-a1",
@@ -13101,16 +16320,41 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch3-l4-a3",
+         "type": "worked",
+         "id": "mathematics-g3-ch3-l4-t1",
          "difficulty": 1,
          "tags": [
-          "pats"
+          "deep",
+          "think"
          ],
-         "prompt": "Two pats represent 2.",
-         "answer": true,
-         "explanation": "Two pats represent 2, so the statement is true.",
+         "kicker": "Let us think it through",
+         "prompt": "A child claps once, snaps twice, and pats three times. What number is shown?",
+         "steps": [
+          "One clap means 100, so the claps show 100.",
+          "One snap means 10, so two snaps show 20.",
+          "One pat means 1, so three pats show 3.",
+          "So 100, 20, and 3 make 123: one hundred and twenty three."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.7"
+         ],
          "src": [
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          },
           {
            "ch": 3,
            "p": 24
@@ -13150,6 +16394,56 @@
            "ch": 3,
            "p": 24
           },
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch3-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "pats"
+         ],
+         "prompt": "Two pats represent 2.",
+         "answer": true,
+         "explanation": "Two pats represent 2, so the statement is true.",
+         "src": [
+          {
+           "ch": 3,
+           "p": 24
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "claps",
+          "snaps",
+          "pats"
+         ],
+         "prompt": "One clap represents which amount?",
+         "options": [
+          "10",
+          "1",
+          "100",
+          "20"
+         ],
+         "answer": 2,
+         "explanation": "One clap represents 100, so choose 100.",
+         "src": [
           {
            "ch": 3,
            "p": 24
@@ -13346,27 +16640,6 @@
            "ch": 3,
            "p": 24
           },
-          {
-           "ch": 3,
-           "p": 24
-          },
-          {
-           "ch": 3,
-           "p": 24
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch3-l4-a7",
-         "difficulty": 2,
-         "tags": [
-          "number-names"
-         ],
-         "prompt": "One hundred and 52 is one hundred and fifty one.",
-         "answer": false,
-         "explanation": "One hundred and 52 is one hundred and fifty two.",
-         "src": [
           {
            "ch": 3,
            "p": 24
@@ -13979,14 +17252,160 @@
            "p": 24
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A child has one hundred and fifty. Which action adds fifty to reach 200?",
+         "options": [
+          "five pats",
+          "five claps",
+          "one clap",
+          "five snaps"
+         ],
+         "answer": 3,
+         "why": {
+          "five pats": "This treats the snap value like a pat.",
+          "five claps": "This treats the snap value like a clap.",
+          "one clap": "One clap shows 100, not fifty."
+         },
+         "explanation": "Five snaps show 50, and 150 plus 50 makes 200.",
+         "f": [
+          "4.2",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 25
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A child has one hundred and forty. Which action adds sixty to reach 200?",
+         "options": [
+          "six pats",
+          "six snaps",
+          "six claps",
+          "two claps"
+         ],
+         "answer": 1,
+         "why": {
+          "six pats": "This treats the snap value like a pat.",
+          "six claps": "This treats the snap value like a clap.",
+          "two claps": "Two claps show 200, but do not add sixty."
+         },
+         "explanation": "Six snaps show 60, and 140 plus 60 makes 200.",
+         "f": [
+          "4.2",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 25
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "A child shows one hundred and fifty two with one clap, five snaps, and one pat. What mistake did the child make?",
+         "options": [
+          "five snaps should be two snaps",
+          "one clap should be two claps",
+          "one pat should be two pats",
+          "one pat should be five pats"
+         ],
+         "answer": 2,
+         "why": {
+          "five snaps should be two snaps": "This changes the fifty part into twenty.",
+          "one clap should be two claps": "This changes the hundred part into two hundred.",
+          "one pat should be five pats": "This changes the ones part into five."
+         },
+         "explanation": "One pat is missing, so the pattern shows 151, not 152.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.9",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          }
+         ]
         }
-       ]
+       ],
+       "topicScene": "media/ch3-l4-ghanaian-children-playing-am-017eb1.webp",
+       "sceneAlt": "Ghanaian children play their usual game by clapping their hands and jumping.",
+       "sceneCaption": "Ghanaian children clap their hands and jump during their usual game.",
+       "sceneCredit": {
+        "text": "Ghanaian Children Playing Ampei 02 by Tahiru Rajab, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Ghanaian_Children_Playing_Ampei_02.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Tahiru Rajab"
+       }
       },
       {
        "id": "mathematics-g3-ch3-l5",
        "title": "Jumping and Showing Numbers",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 13,
        "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch3-l5-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Can we turn jumps and matchsticks into fun ways to discover numbers?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "mathematics-g3-ch3-l5-a1",
@@ -14112,6 +17531,68 @@
           "1 (generated problem)",
           "6 (generated problem)",
           "7 (generated problem)"
+         ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g3-ch3-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberjump",
+         "params": {},
+         "title": "Hop along the number line",
+         "tasks": [
+          {
+           "say": "Go back from 52 in jumps of 10, three times.",
+           "when": "start == 52 and jump == 10 and hops == 3 and back == 1",
+           "then": "52, 42, 32, 22: jumping back takes away."
+          },
+          {
+           "say": "Find a start and jump that reach exactly 100 after 5 jumps.",
+           "when": "back == 0 and hops == 5 and start + 5 * jump == 100",
+           "then": "Five equal jumps land on 100: for example from 0 in jumps of 20."
+          }
+         ],
+         "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
+         "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch3-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child starts at 150. How many jumps of 5 reach 170?",
+         "steps": [
+          "Each jump in the first game adds 5.",
+          "The number sentence says 170 is 30 more than 150, so the gap is 30.",
+          "Six jumps of 5 add 30, because 6 times 5 is 30.",
+          "So the child reaches 170 after six jumps."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          }
          ]
         },
         {
@@ -14914,14 +18395,160 @@
            "p": 26
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "count jumps"
+         ],
+         "prompt": "A counter jumps from 125 by 5. How many jumps reach 145?",
+         "options": [
+          "Two jumps",
+          "Three jumps",
+          "Four jumps",
+          "Five jumps"
+         ],
+         "answer": 2,
+         "why": {
+          "Two jumps": "Two jumps add 10, which only reaches 135.",
+          "Three jumps": "Three jumps add 15, which only reaches 140.",
+          "Five jumps": "Five jumps add 25, so they go past 145."
+         },
+         "explanation": "Four jumps add 20, and 125 plus 20 is 145.",
+         "f": [
+          "5.1",
+          "5.9",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "count on"
+         ],
+         "prompt": "A counter jumps 20 from 125. Which number comes next?",
+         "options": [
+          "125 stays the same",
+          "145 is reached",
+          "160 is reached",
+          "170 is reached"
+         ],
+         "answer": 1,
+         "why": {
+          "125 stays the same": "125 is the starting number, so it is not the next landing.",
+          "160 is reached": "160 is 35 more than 125, so it needs more than one jump.",
+          "170 is reached": "170 is 45 more than 125, so it needs more than one jump."
+         },
+         "explanation": "One jump of 20 adds 20, and 125 plus 20 is 145.",
+         "f": [
+          "5.2",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 27
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check claim"
+         ],
+         "prompt": "170 is on a number line. Is it 30 more than 160?",
+         "options": [
+          "No. 170 is 30 more than 150.",
+          "Yes. 170 is 30 more than 160.",
+          "No. 170 is 20 more than 150.",
+          "Yes. 170 is 30 less than 160."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes. 170 is 30 more than 160.": "It changes the starting number from 150 to 160.",
+          "No. 170 is 20 more than 150.": "It uses the jump size 20 instead of the given 30.",
+          "Yes. 170 is 30 less than 160.": "It turns more into less and says the wrong comparison."
+         },
+         "explanation": "The given sentence pairs 170 with 150, not 160.",
+         "f": [
+          "5.2",
+          "5.4",
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          }
+         ]
         }
-       ]
+       ],
+       "topicScene": "media/ch3-l5-hopscotch-in-california-620e66.webp",
+       "sceneAlt": "A girl is caught mid-jump while playing hopscotch outside in California, with more courts behind her.",
+       "sceneCaption": "A girl jumps during a hopscotch game in California.",
+       "sceneCredit": {
+        "text": "Hopscotch in California by Dave Parker, CC BY 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Hopscotch_in_California.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "creator": "Dave Parker"
+       }
       },
       {
        "id": "mathematics-g3-ch3-l6",
        "title": "Marking Numbers on Number Lines",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 12,
        "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch3-l6-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Where will each number land on a number line?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "mathematics-g3-ch3-l6-a1",
@@ -15065,6 +18692,108 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch3-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberjump",
+         "params": {},
+         "title": "Hop along the number line",
+         "tasks": [
+          {
+           "say": "Go back from 52 in jumps of 10, three times.",
+           "when": "start == 52 and jump == 10 and hops == 3 and back == 1",
+           "then": "52, 42, 32, 22: jumping back takes away."
+          },
+          {
+           "say": "Find a start and jump that reach exactly 100 after 5 jumps.",
+           "when": "back == 0 and hops == 5 and start + 5 * jump == 100",
+           "then": "Five equal jumps land on 100: for example from 0 in jumps of 20."
+          }
+         ],
+         "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
+         "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch3-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Friends are making number lines from marking lists. Where should each listed number be marked?",
+         "steps": [
+          "Mark 109, 112, 124, 134, and 146 on the first line, because they belong to the first list.",
+          "Mark 155, 163, 178, 189, and 198 on the second line, because they belong to the second list.",
+          "Mark 125, 142, 153, 174, and 199 on the third line, because they belong to the third list.",
+          "Check every mark against its list, because this catches numbers placed on the wrong line."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9",
+          "6.10",
+          "6.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          }
+         ]
+        },
+        {
          "type": "fillblank",
          "id": "mathematics-g3-ch3-l6-a3",
          "difficulty": 1,
@@ -15103,17 +18832,23 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch3-l6-a4",
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l6-a2",
          "difficulty": 1,
          "tags": [
-          "second list",
+          "first list",
           "number line"
          ],
-         "title": "Check the Second List",
-         "prompt": "The number 178 is included on the second marking list.",
-         "answer": true,
-         "explanation": "The second marking list includes 178.",
+         "title": "Choose a First-List Number",
+         "prompt": "Which number is included on the first marking list?",
+         "options": [
+          "109",
+          "125",
+          "155",
+          "198"
+         ],
+         "answer": 0,
+         "explanation": "109 is one of the numbers on the first marking list.",
          "src": [
           {
            "ch": 3,
@@ -15730,6 +19465,511 @@
            "p": 28
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "complete marks"
+         ],
+         "prompt": "The first list is 109, 112, 124, 134, 146. A line shows 109, 112, and 124. Which two marks are missing?",
+         "options": [
+          "134 and 146",
+          "155 and 163",
+          "125 and 142",
+          "178 and 189"
+         ],
+         "answer": 0,
+         "why": {
+          "155 and 163": "These numbers belong to the second list, not the first.",
+          "125 and 142": "These numbers belong to the third list, not the first.",
+          "178 and 189": "These numbers belong to the second list, not the first."
+         },
+         "explanation": "These are the missing numbers from the first list.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "repair a list"
+         ],
+         "prompt": "The first list is 109, 112, 124, 134, 146. A child puts 155 there. Which change makes the list right?",
+         "options": [
+          "Replace 155 with 146",
+          "Replace 155 with 163",
+          "Replace 124 with 198",
+          "Replace 124 with 199"
+         ],
+         "answer": 0,
+         "why": {
+          "Replace 155 with 163": "163 belongs to the second list, not the first.",
+          "Replace 124 with 198": "198 belongs to the second list, not the first.",
+          "Replace 124 with 199": "199 belongs to the third list, not the first."
+         },
+         "explanation": "The first list keeps 124 and uses 146 instead of 155.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9",
+          "6.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "match lists"
+         ],
+         "prompt": "The first list is 109, 112, 124, 134, 146. The second list is 155, 163, 178, 189, 198. The third list is 125, 142, 153, 174, 199. Which pair has one third-list number and one second-list number?",
+         "options": [
+          "125 and 155",
+          "109 and 142",
+          "124 and 163",
+          "134 and 153"
+         ],
+         "answer": 0,
+         "why": {
+          "109 and 142": "109 comes from the first list, not the second or third.",
+          "124 and 163": "124 comes from the first list, not the second or third.",
+          "134 and 153": "134 comes from the first list, not the second or third."
+         },
+         "explanation": "125 comes from the third list, and 155 comes from the second.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9",
+          "6.10",
+          "6.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "The first list is 109, 112, 124, 134, 146. The second list is 155, 163, 178, 189, 198. The third list is 125, 142, 153, 174, 199. A child says 142 belongs in the first list. What is the best reply?",
+         "options": [
+          "Leave 142 in the third list.",
+          "Move 142 to the second list.",
+          "Move 142 to no list.",
+          "Add 142 to the first list too."
+         ],
+         "answer": 0,
+         "why": {
+          "Move 142 to the second list.": "142 belongs to the third list, not the second.",
+          "Move 142 to no list.": "The third list already gives 142 a place.",
+          "Add 142 to the first list too.": "The first list does not include 142."
+         },
+         "explanation": "142 is already on the third list.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6",
+          "6.7",
+          "6.8",
+          "6.9",
+          "6.10",
+          "6.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          },
+          {
+           "ch": 3,
+           "p": 28
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
+       "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCredit": {
+        "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "creator": "Raveesh Vyas"
+       }
+      },
+      {
+       "id": "mathematics-g3-ch3-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 14,
+       "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
+       "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCredit": {
+        "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "creator": "Raveesh Vyas"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Tens of thousands of years ago, people began counting. They made marks on cave walls and tree bark. They grouped records in fives, tens, twenties and sixties. Ancient Indians made a ten-symbol method for writing any number. The symbol ‘0’ means nothing or the absence of something, and number zero made the numeral system work. It made possible the invention of TVs and computers. It helped make mobile phones possible and is now used everywhere in the world.",
+         "prompt": "If the symbol ‘0’ were removed from the number-writing method, what would happen?",
+         "options": [
+          "The method for writing numbers would break down.",
+          "People could still group records in fives.",
+          "The method would become easier to use.",
+          "TVs and computers would still be invented in the same way."
+         ],
+         "answer": 0,
+         "why": {
+          "People could still group records in fives.": "Grouping records does not replace the numeral system.",
+          "The method would become easier to use.": "Removing a needed symbol would not simplify the method.",
+          "TVs and computers would still be invented in the same way.": "The method helped make these inventions possible."
+         },
+         "explanation": "Zero makes the numeral system work."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Tens of thousands of years ago, people began counting. They made marks on cave walls and tree bark. They grouped records in fives, tens, twenties and sixties. Ancient Indians made a ten-symbol method for writing any number. The symbol ‘0’ means nothing or the absence of something, and number zero made the numeral system work. It made possible the invention of TVs and computers. It helped make mobile phones possible and is now used everywhere in the world.",
+         "prompt": "If a place did not use the ten-symbol method, which result would follow most directly from the case?",
+         "options": [
+          "TVs and computers might not have been invented.",
+          "Mobile phones would still have been made in the same way.",
+          "People would stop grouping their records.",
+          "The method would still be used everywhere in the world."
+         ],
+         "answer": 0,
+         "why": {
+          "Mobile phones would still have been made in the same way.": "The method helped make mobile phones possible.",
+          "People would stop grouping their records.": "The change does not remove the practice of grouping.",
+          "The method would still be used everywhere in the world.": "This contradicts the stated change."
+         },
+         "explanation": "The method made their invention possible."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch3-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the number zero was important to the number-writing method.",
+         "answer": "Zero means nothing or the absence of something. The number zero makes the numeral system work, so without it the method for writing any number would fail. This is important because the method is used everywhere and helped make TVs, computers and mobile phones possible.",
+         "points": [
+          "Zero means nothing or the absence of something.",
+          "Zero makes the numeral system work.",
+          "Without zero, the number-writing method cannot work.",
+          "The method helped make modern devices possible."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch3-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how ten bundles of ten sticks can become one bundle of 100 sticks.",
+         "answer": "Each bundle contains ten sticks, and there are ten bundles. Combining all ten bundles gives one hundred sticks altogether. Tying them together changes the grouping, not the total, so the new bundle contains one hundred sticks.",
+         "points": [
+          "Each bundle has ten sticks.",
+          "There are ten bundles.",
+          "All the bundles contain one hundred sticks altogether.",
+          "The new grouping has the same total."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch3-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between the two number lines?",
+         "answer": "The two lines differ in the marks they show. Both show 100, 110, 120 and 150. The longer line also shows 130 and 140. Therefore, use the longer line to check 140, because the shorter line does not show that mark.",
+         "points": [
+          "Both lines show 100, 110, 120 and 150.",
+          "The longer line also shows 130 and 140.",
+          "140 appears on the longer line.",
+          "The longer line helps check the card marked 140."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch3-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How do one hundred and fifty plus fifty and one hundred and forty plus sixty both make 200?",
+         "answer": "One hundred and fifty plus fifty makes 200, and one hundred and forty plus sixty also makes 200. In each case, the two parts combine to the same total. Two claps can show either result because two claps represent 200.",
+         "points": [
+          "One hundred and fifty plus fifty makes 200.",
+          "One hundred and forty plus sixty makes 200.",
+          "Both pairs of amounts have the same total.",
+          "Two claps represent the total of 200."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A class is setting up two jumping games. The first game uses jumps of 5, while the second uses jumps of 20. Students also study a one-less and one-more table containing 160, 129, 187, 134, and 158, with 158 last. Matchstick bundles can show 125, a ginladi can show 145, and a number line can show 170. Finally, they read the sentence “30 more than 150.”",
+         "prompt": "If the teacher swaps the jump rules between the two games, what will the first game use?",
+         "options": [
+          "The second game's jump of 20",
+          "The first game's jump of 5",
+          "One less than the current jump",
+          "One more than the current jump"
+         ],
+         "answer": 0,
+         "why": {
+          "The first game's jump of 5": "This keeps the first game on its original jump of 5.",
+          "One less than the current jump": "One less and one more belong to the table idea, not the jump rules.",
+          "One more than the current jump": "One less and one more belong to the table idea, not the jump rules."
+         },
+         "explanation": "Swapping the rules gives the first game the second game's jump of 20."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch3-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A class is setting up two jumping games. The first game uses jumps of 5, while the second uses jumps of 20. Students also study a one-less and one-more table containing 160, 129, 187, 134, and 158, with 158 last. Matchstick bundles can show 125, a ginladi can show 145, and a number line can show 170. Finally, they read the sentence “30 more than 150.”",
+         "prompt": "The teacher replaces the matchstick model with a ginladi model. Which choice describes the replacement correctly?",
+         "options": [
+          "Use the ginladi with the larger total",
+          "Use the ginladi with the smaller total",
+          "Use matchstick bundles with the larger total",
+          "Use matchstick bundles with the smaller total"
+         ],
+         "answer": 0,
+         "why": {
+          "Use the ginladi with the smaller total": "The ginladi is not used for the smaller total.",
+          "Use matchstick bundles with the larger total": "The larger total is made with a ginladi, not matchstick bundles.",
+          "Use matchstick bundles with the smaller total": "Keeping matchstick bundles would not make the requested replacement."
+         },
+         "explanation": "The ginladi is used for 145, which is larger than 125."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch3-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Why does swapping the rules change which jump each game uses?",
+         "answer": "The second game uses jumps of 20, so swapping the rules makes it use jumps of 5. The first game then uses jumps of 20. The jump sizes stay the same, but each game receives the other game's rule.",
+         "points": [
+          "The first game receives the jump of 20.",
+          "The second game receives the jump of 5.",
+          "The two jump sizes remain unchanged."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
         }
        ]
       }
@@ -16048,7 +20288,17 @@
          }
         ]
        }
-      ]
+      ],
+      "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
+      "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
+      "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+      "sceneCredit": {
+       "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
+       "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
+       "license": "CC BY-SA 2.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+       "creator": "Raveesh Vyas"
+      }
      }
     }
    ]
