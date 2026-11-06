@@ -1084,6 +1084,21 @@ export const WIDGETS = {
       return { kids, say: v.shape === 1 ? (v.w === v.h ? `Both sticks are ${v.w} long, so the four sides are equal: this is a square, with 4 square corners.` : `The sides are ${v.w} and ${v.h} sticks. Opposite sides are equal and all 4 corners are square corners: this is a rectangle. Make both the same and it becomes a square.`) : v.shape === 0 ? 'A triangle has 3 sides and 3 corners.' : 'A circle has no straight sides and no corners. Folding it in half twice makes two lines that meet at its centre.' };
     },
   },
+  arrays: {
+    subject: 'maths', about: 'Equal groups in rows: g groups with e in each, counted by repeated addition (3 + 3 + 3), written as a multiplication fact (3 x 3 = 9) and shared back out as division (9 / 3 = 3). Turn the groups round and the total stays the same. For multiplication, times tables, equal groups, repeated addition, sharing, division facts, arrays.',
+    sliders: [['g', 'Number of groups', 1, 10, 1, 3], ['e', 'In each group', 1, 10, 1, 3]],
+    draw(v) {
+      const total = v.g * v.e, cell = Math.min(340 / v.e, 230 / v.g, 36), x0 = 30, y0 = 40, hue = (r) => ['#e2583e', '#f2a33a', '#2fa84f', '#1f63d9', '#6b45c8'][r % 5], kids = [];
+      for (let r = 0; r < v.g; r++) {
+        kids.push(R(x0 - 4, y0 + r * cell - 1, v.e * cell + 6, cell - 2, 'none', { s: hue(r), w: 1.5, r: 6, x: { opacity: 0.55 } }));
+        for (let c = 0; c < v.e; c++) kids.push(CIRC(x0 + c * cell + cell / 2 - 1, y0 + r * cell + cell / 2 - 1, cell * 0.34, hue(r), { w: 1 }));
+      }
+      const sum = v.g <= 6 ? Array(v.g).fill(v.e).join(' + ') : `${v.g} groups of ${v.e}`;
+      kids.push(T(480, 66, `${v.g} × ${v.e} = ${total}`, { z: 30, w: 700 }), T(480, 108, `${v.g} group${v.g === 1 ? '' : 's'} of ${v.e}`, { z: 14, w: 600, f: '#6b5a8a' }), T(480, 142, v.g > 1 ? `${sum} = ${total}` : `${v.e} = ${total}`, { z: 14, w: 600 }), T(480, 192, `${total} ÷ ${v.g} = ${v.e}`, { z: 18, w: 700, f: '#058a68' }), T(480, 220, `${total} ÷ ${v.e} = ${v.g}`, { z: 18, w: 700, f: '#058a68' }));
+      const one = v.g === 1;
+      return { kids, say: `${v.g} group${one ? '' : 's'} of ${v.e} make${one ? 's' : ''} ${total}: ${v.g} \u00d7 ${v.e} = ${total}. ${one ? `One group of ${v.e} is just ${total}` : `Shared equally into ${v.g} groups, ${total} gives ${v.e} each`}: ${total} \u00f7 ${v.g} = ${v.e}. Turn it round and ${v.e} \u00d7 ${v.g} is also ${total}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

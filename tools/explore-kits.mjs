@@ -502,7 +502,7 @@ export const KITS = {
     ],
   },
   between: {
-    grades: [3, 3], match: [/number lines?/, /how far/, /\b(from|to) [1-9]00\b|\bfive hundred\b/, /\b[1-9]\d\d\b.*\bnumber line|\bnumber line.*\b[1-9]\d\d\b/],
+    grades: [3, 3], minScore: 4, match: [/\b[1-9]\d\d\b/, /number lines?/, /how far/, /\b(from|to) [1-9]00\b|\bfive hundred\b/, /\b[1-9]\d\d\b.*\bnumber line|\bnumber line.*\b[1-9]\d\d\b/],
     title: 'Place it between the hundreds', takeaway: 'A three-digit number sits between two hundreds: how far it is from each tells you where it belongs.',
     tasks: [
       { say: 'Place 387. How far is it from 400?', when: 'n == 387', then: '13 more makes 400: 387 is 87 more than 300.' },
@@ -517,6 +517,15 @@ export const KITS = {
       { say: 'Make a square.', when: 'shape == 1 and w == h', then: 'All four sides are the same length: a square.' },
       { say: 'Make a rectangle that is 6 sticks wide and 3 high.', when: 'shape == 1 and w == 6 and h == 3', then: 'Opposite sides are equal, but the sides are not all the same: a rectangle.' },
       { say: 'Now try a triangle. How many sides and corners?', when: 'shape == 0', then: '3 sides and 3 corners.' },
+    ],
+  },
+  arrays: {
+    grades: [3, 3], match: [/multiplication/, /\btimes\b/, /equal groups?|groups? of|counting groups/, /repeated addition/, /\bdivision\b|\bdivide/, /\u00f7/],
+    title: 'Groups and rows', takeaway: 'Equal groups can be counted by adding, written as a multiplication fact and shared back out with division.',
+    tasks: [
+      { say: 'Make 3 groups of 3. What is 3 \u00d7 3?', when: 'g == 3 and e == 3', then: '3 + 3 + 3 = 9, so 3 \u00d7 3 = 9.' },
+      { say: 'Make 6 groups of 3, then try 3 groups of 6.', when: 'g == 3 and e == 6', then: '6 \u00d7 3 and 3 \u00d7 6 both make 18: turning it round does not change the total.' },
+      { say: 'Make 24 jalebis: 6 groups of 4.', when: 'g == 6 and e == 4', then: '6 \u00d7 4 = 24, and 24 \u00f7 6 = 4 each.' },
     ],
   },
   // ---- geography and history ----
