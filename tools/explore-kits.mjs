@@ -481,6 +481,16 @@ export const KITS = {
       { say: 'Show 14 using one ten and four ones.', when: 'th == 0 and hu == 0 and te == 1 and on == 4', then: '14 ones can be grouped as 1 ten and 4 ones.' },
     ],
   },
+  column: {
+    grades: [3, 5], match: [/regroup/, /\bcarry|\bcarrying\b/, /\bborrow/, /take away|taking away/, /\badd up\b|subtract it/, /column (addition|subtraction)/],
+    params: (text) => ({ kind: /subtract|take away|taking away|borrow|\bleft\b/.test(text) && !/\badd up\b/.test(text) ? 'sub' : 'add' }),
+    title: 'Add and subtract in columns', takeaway: 'Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column.',
+    tasks: (p) => (p.kind === 'sub'
+      ? [{ say: 'Take away 215 from 438.', when: 'a == 438 and b == 215 and step == 3', then: '438 \u2212 215 = 223: that is how many children are still waiting.' },
+         { say: 'Find a take-away that needs regrouping: 83 \u2212 46.', when: 'a == 83 and b == 46 and step == 3', then: '3 ones is less than 6, so regroup 1 ten as 10 ones: 83 \u2212 46 = 37.' }]
+      : [{ say: 'Add 438 and 476, one column at a time.', when: 'a == 438 and b == 476 and step == 3', then: '438 + 476 = 914, and regrouping carried a 1 twice.' },
+         { say: 'Add 185 and 125.', when: 'a == 185 and b == 125 and step == 3', then: '185 + 125 = 310: 10 ones and 10 tens both regrouped.' }]),
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

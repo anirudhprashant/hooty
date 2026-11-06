@@ -990,6 +990,42 @@ export const WIDGETS = {
       return { kids, say: total ? `${parts.join(', ')} make ${total}.${v.on >= 10 ? ` ${v.on} ones can be grouped as 1 ten and ${nm(v.on - 10, 'one')}.` : ''}` : 'Add some blocks to make a number.' };
     },
   },
+  column: {
+    subject: 'maths', about: 'Add or subtract three-digit numbers in columns, one column at a time from the ones: carrying 1 ten or 1 hundred when a column reaches 10 (regrouping), or borrowing when the top digit is too small. Param kind "add" or "sub". For addition, subtraction, regrouping, carrying, column method, taking away.',
+    params: { kind: 'add' },
+    dynamicSliders: (p) => (p.kind === 'sub' ? [['a', 'Start with', 0, 999, 1, 438], ['b', 'Take away', 0, 999, 1, 215], ['step', 'Columns done', 0, 3, 1, 1]] : [['a', 'First number', 0, 499, 1, 438], ['b', 'Second number', 0, 499, 1, 476], ['step', 'Columns done', 0, 3, 1, 1]]),
+    draw(v, p) {
+      const sub = p.kind === 'sub', kids = [], cx = [95, 165, 235], nm = ['ones', 'tens', 'hundreds'];
+      const A = [v.a % 10, Math.floor(v.a / 10) % 10, Math.floor(v.a / 100)], B = [v.b % 10, Math.floor(v.b / 10) % 10, Math.floor(v.b / 100)];
+      if (sub && v.b > v.a) return { kids: [T(300, 150, `${v.b} is more than ${v.a}`, { z: 20, f: '#c0392b' }), T(300, 184, 'you cannot take away more than you have', { z: 14, w: 600, f: '#6b5a8a' })], say: `You cannot take ${v.b} away from ${v.a}: it is more than you have. Make the second number smaller.` };
+      // work each column from the ones: carry (add) or borrow (subtract) moves to the next column
+      const res = [0, 0, 0], mark = [0, 0, 0];
+      let c = 0;
+      for (let i = 0; i < 3; i++) {
+        if (sub) { let top = A[i] - c; c = 0; if (top < B[i]) { top += 10; c = 1; } res[i] = top - B[i]; mark[i] = c; }
+        else { const t = A[i] + B[i] + c; res[i] = t % 10; c = t >= 10 ? 1 : 0; mark[i] = c; }
+      }
+      const total = sub ? v.a - v.b : v.a + v.b, lead = (i) => i === 2 && !res[2] && !A[2] && !B[2];
+      kids.push(T(60, 84, sub ? '' : '', { z: 10 }), L(50, 196, 280, 196, INK, 4), T(62, 178, sub ? '−' : '+', { z: 34, w: 700, f: C.o }));
+      for (let i = 0; i < 3; i++) {
+        const x = cx[2 - i];
+        kids.push(T(x, 112, A[i] || i === 0 || v.a >= 10 ** i ? String(A[i]) : '', { z: 34, w: 700 }), T(x, 168, B[i] || i === 0 || v.b >= 10 ** i ? String(B[i]) : '', { z: 34, w: 700, f: '#1f63d9' }), T(x, 40, nm[i], { z: 11, w: 600, f: '#6b5a8a' }));
+      }
+      for (let i = 0; i < 3; i++) {
+        if (v.step > i) {
+          const x = cx[2 - i];
+          if (!lead(i)) kids.push(T(x, 246, String(res[i]), { z: 34, w: 700, f: '#058a68' }), R(x - 30, 214, 60, 44, 'none', { s: '#058a68', w: 2.5, r: 6 }));
+          if (mark[i] && i < 2) kids.push(T(cx[2 - i - 1], 80, sub ? '−1' : '1', { z: 18, w: 700, f: '#c2510e' }), T(x + 26, 100, sub ? '+10' : '', { z: 12, w: 700, f: '#c2510e' }));
+        }
+      }
+      const i = Math.min(v.step, 3) - 1, lines = [];
+      for (let k = 0; k <= i; k++) lines.push(sub ? `${nm[k]}: ${A[k] - (k && mark[k - 1] ? 1 : 0) + (mark[k] ? 10 : 0)} − ${B[k]} = ${res[k]}` : `${nm[k]}: ${A[k]} + ${B[k]}${k && mark[k - 1] ? ' + 1' : ''} = ${A[k] + B[k] + (k && mark[k - 1] ? 1 : 0)}${mark[k] ? `, write ${res[k]} and carry 1` : ''}`);
+      lines.forEach((t, k) => kids.push(T(310, 76 + k * 30, t, { a: 'start', z: 12, w: 600 })));
+      kids.push(T(440, 262, v.step >= 3 ? `${v.a} ${sub ? '−' : '+'} ${v.b} = ${total}` : '', { z: 22, w: 700, f: '#058a68' }));
+      const done = v.step >= 3;
+      return { kids, say: v.step === 0 ? `${v.a} ${sub ? 'take away' : 'plus'} ${v.b}: start with the ones.` : done ? `${v.a} ${sub ? '−' : '+'} ${v.b} = ${total}.${mark[0] || mark[1] ? (sub ? ' Regrouping 1 ten as 10 ones (or 1 hundred as 10 tens) made the subtraction possible.' : ' Regrouping 10 ones as 1 ten (or 10 tens as 1 hundred) carried the 1 along.') : ' No regrouping was needed.'}` : `After the ${nm.slice(0, v.step).join(' and ')} column${v.step > 1 ? 's' : ''}: ${lines[lines.length - 1]}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
