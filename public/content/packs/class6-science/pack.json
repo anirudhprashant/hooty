@@ -20023,7 +20023,7 @@
       {
        "id": "science-ch6-l4",
        "title": "4. Seeing Through and Dissolving Materials",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -20112,6 +20112,31 @@
            "p": 109
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch6-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seethrough",
+         "params": {},
+         "title": "Look through it",
+         "tasks": [
+          {
+           "say": "Find a sheet that makes the star blurry.",
+           "when": "m == 3 or m == 4",
+           "then": "Butter paper and frosted glass are translucent."
+          },
+          {
+           "say": "Find a sheet that hides the star completely.",
+           "when": "m >= 5",
+           "then": "Wood, cardboard and metal are opaque."
+          }
+         ],
+         "takeaway": "Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all.",
+         "explanation": "Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all."
         },
         {
          "type": "worked",
