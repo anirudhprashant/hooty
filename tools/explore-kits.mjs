@@ -401,6 +401,15 @@ export const KITS = {
       { say: 'Find a sheet that hides the star completely.', when: 'm >= 5', then: 'Wood, cardboard and metal are opaque.' },
     ],
   },
+  solids: {
+    grades: [4, 8], match: [/\bfaces?\b.*\b(edges?|corners?|vertices)\b|\bedges?\b.*\bfaces?\b/, /\bprisms?\b/, /(?<!number )\bpyramids?\b/, /\bcuboids?\b/, /3d shapes?|three-dimensional/],
+    title: 'Turn the shape', takeaway: 'Count faces, corners and edges: for each of these shapes faces + corners \u2212 edges = 2.',
+    tasks: [
+      { say: 'Find a shape with 5 faces.', when: 'shape == 2 or shape == 3', then: 'The triangular prism and the square pyramid both have 5 faces.' },
+      { say: 'Find the shape with only 6 edges.', when: 'shape == 4', then: 'The triangular pyramid: 4 faces, 4 corners, 6 edges.' },
+      { say: 'Turn the cuboid right round to the back.', when: 'shape == 1 and turn >= 180', then: 'Turning it changes how it looks, never how many faces, corners and edges it has.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

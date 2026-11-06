@@ -816,6 +816,32 @@ export const WIDGETS = {
       return { kids, say: [`Through ${name} the star is seen clearly: ${name} is transparent.`, `Through ${name} the star can be seen, but not clearly: ${name} is translucent.`, `Through ${name} the star cannot be seen at all: ${name} is opaque.`][kind] };
     },
   },
+  solids: {
+    subject: 'maths', about: 'Turn a 3D shape (cube, cuboid, triangular prism, square pyramid, triangular pyramid) and count its faces, corners and edges. The counts come from the shape itself, and F + V - E is always 2. For 3D shapes, faces, edges, vertices or corners, prisms and pyramids, nets.',
+    sliders: [['shape', 'Shape: cube, cuboid, triangular prism, square pyramid, triangular pyramid', 0, 4, 1, 0], ['turn', 'Turn it (degrees)', 0, 345, 15, 30]],
+    draw(v) {
+      const tri = [[0, -1], [0.87, 0.5], [-0.87, 0.5]], box = (a, b, c) => [[-a, -b, -c], [a, -b, -c], [a, b, -c], [-a, b, -c], [-a, -b, c], [a, -b, c], [a, b, c], [-a, b, c]];
+      const boxFaces = [[0, 1, 2, 3], [4, 5, 6, 7], [0, 1, 5, 4], [1, 2, 6, 5], [2, 3, 7, 6], [3, 0, 4, 7]];
+      const shapes = [
+        ['cube', box(1, 1, 1), boxFaces],
+        ['cuboid', box(1.5, 0.8, 0.8), boxFaces],
+        ['triangular prism', [...tri.map(([u, w]) => [-1.3, w * 0.9, u * 0.9]), ...tri.map(([u, w]) => [1.3, w * 0.9, u * 0.9])], [[0, 1, 2], [3, 4, 5], [0, 1, 4, 3], [1, 2, 5, 4], [2, 0, 3, 5]]],
+        ['square pyramid', [[-1, 0.8, -1], [1, 0.8, -1], [1, 0.8, 1], [-1, 0.8, 1], [0, -1.1, 0]], [[0, 1, 2, 3], [0, 1, 4], [1, 2, 4], [2, 3, 4], [3, 0, 4]]],
+        ['triangular pyramid', [...tri.map(([x, z]) => [x * 1.2, 0.7, z * 1.2]), [0, -1.1, 0]], [[0, 1, 2], [0, 1, 3], [1, 2, 3], [2, 0, 3]]],
+      ];
+      const [name, pts, faces] = shapes[v.shape], edges = new Set();
+      for (const f of faces) f.forEach((a, i) => { const b = f[(i + 1) % f.length]; edges.add(a < b ? `${a}-${b}` : `${b}-${a}`); });
+      const F = faces.length, V = pts.length, E = edges.size, a = (v.turn * Math.PI) / 180, tilt = 0.6;
+      const proj = ([x, y, z]) => { const x1 = x * Math.cos(a) + z * Math.sin(a), z1 = -x * Math.sin(a) + z * Math.cos(a); const y1 = y * Math.cos(tilt) - z1 * Math.sin(tilt); return [200 + x1 * 80, 150 + y1 * 80]; };
+      const P = pts.map(proj), kids = [];
+      for (const f of faces) kids.push(s('polygon', { points: f.map((i) => P[i].join(',')).join(' '), fill: C.p, 'fill-opacity': 0.12, stroke: 'none' }));
+      for (const e of edges) { const [i, j] = e.split('-').map(Number); kids.push(L(P[i][0], P[i][1], P[j][0], P[j][1], INK, 3)); }
+      for (const p of P) kids.push(CIRC(p[0], p[1], 5.5, C.o, { w: 1.5 }));
+      kids.push(T(470, 40, name, { z: 18 }), T(470, 92, `faces: ${F}`, { z: 17, w: 600, f: '#6b45c8' }), T(470, 128, `corners: ${V}`, { z: 17, w: 600, f: '#c2510e' }), T(470, 164, `edges: ${E}`, { z: 17, w: 600 }));
+      kids.push(T(470, 222, `${F} + ${V} − ${E} = ${F + V - E}`, { z: 17, w: 700, f: '#058a68' }));
+      return { kids, say: `A ${name} has ${F} faces, ${V} corners and ${E} edges. Faces + corners − edges = ${F} + ${V} − ${E} = ${F + V - E}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
