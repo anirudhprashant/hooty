@@ -537,6 +537,16 @@ export const KITS = {
       { say: 'Make a length longer than one metre.', when: 'piece == 1 and count == 3', then: 'Three half-metres are one and a half metres, longer than one metre.' },
     ],
   },
+  wholeparts: {
+    grades: [3, 3], match: [/\blitres?\b/, /\bkilograms?\b|\bkg\b/, /half[- ]litre|quarter[- ]litre|half kilogram|quarter kilogram/, /\bcapacity\b/],
+    params: (text) => ({ kind: /kilogram|\bkg\b|\bweigh/.test(text) && !/\blitre/.test(text.slice(0, 80)) ? 'kg' : 'litre' }),
+    title: 'Make one whole', takeaway: 'Two halves or four quarters make one whole litre or one whole kilogram.',
+    tasks: (p) => [
+      { say: `Use half-${p.kind === 'kg' ? 'kilogram' : 'litre'}s to make exactly one ${p.kind === 'kg' ? 'kilogram' : 'litre'}.`, when: 'piece == 0 and count == 2', then: `Two halves make one whole ${p.kind === 'kg' ? 'kilogram' : 'litre'}.` },
+      { say: 'Now do it with quarters.', when: 'piece == 1 and count == 4', then: 'Four quarters make one whole.' },
+      { say: 'Make more than one whole.', when: 'piece == 1 and count == 5', then: 'Five quarters are one and a quarter: more than the whole.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

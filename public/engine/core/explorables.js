@@ -1115,6 +1115,33 @@ export const WIDGETS = {
       return { kids, say: `${count} ${name} rope${count === 1 ? '' : 's'} laid end to end ${count === 1 ? 'is' : 'make'} ${words}${q === 4 ? ': exactly one metre' : `, which is ${q < 4 ? 'shorter than' : 'longer than'} one metre`}. ${v.piece === 1 ? 'Folding a metre in half makes a half-metre.' : v.piece === 2 ? 'Folding the half-metre in half again makes a quarter-metre: four of them make one metre.' : 'This is the whole metre.'}` };
     },
   },
+  wholeparts: {
+    subject: 'maths', about: 'Make one litre from half-litre mugs and quarter-litre glasses poured into a one-litre bottle, or one kilogram from half-kilogram and quarter-kilogram packets on a pan balance against a one-kilogram packet. Param kind "litre" or "kg". For capacity, litres, weight, kilograms, half and quarter, comparing amounts.',
+    params: { kind: 'litre' },
+    sliders: [['piece', 'Pieces: 0 halves, 1 quarters', 0, 1, 1, 0], ['count', 'How many', 1, 8, 1, 1]],
+    draw(v, p) {
+      const kg = p.kind === 'kg', unit = kg ? 'kilogram' : 'litre', ab = kg ? 'kg' : 'l', qs = v.piece === 0 ? 2 : 1, count = Math.min(v.count, Math.floor(8 / qs)), q = count * qs, kids = [];
+      const words = ['', `a quarter of a ${unit}`, `half a ${unit}`, `three quarters of a ${unit}`, `one ${unit}`, `one and a quarter ${unit}s`, `one and a half ${unit}s`, `one and three quarters ${unit}s`, `two ${unit}s`][q];
+      if (kg) {
+        const tilt = Math.max(-1, Math.min(1, (q - 4) / 4)) * 12, a = (tilt * Math.PI) / 180, cx = 140, cy = 90, arm = 80, lx = cx - arm * Math.cos(a), ly = cy - arm * Math.sin(a), rx = cx + arm * Math.cos(a), ry = cy + arm * Math.sin(a);
+        kids.push(s('polygon', { points: `${cx - 24},250 ${cx + 24},250 ${cx},${cy}`, fill: '#d8cff0', stroke: INK, 'stroke-width': 3 }), L(lx, ly, rx, ry, INK, 6));
+        for (const [px, py] of [[lx, ly], [rx, ry]]) kids.push(L(px, py, px - 36, py + 52, INK, 1.5), L(px, py, px + 36, py + 52, INK, 1.5), s('path', { d: `M ${px - 48} ${py + 52} Q ${px} ${py + 76} ${px + 48} ${py + 52} Z`, fill: '#f3f0ff', stroke: INK, 'stroke-width': 3 }));
+        kids.push(R(lx - 28, ly + 22, 56, 30, '#8a6bd1', { w: 2.5, r: 5 }), T(lx, ly + 43, `1 ${ab}`, { z: 14, w: 700, f: '#fff' }));
+        for (let i = 0; i < count; i++) kids.push(R(rx - 34 + (i % 4) * 18, ry + 44 - Math.floor(i / 4) * 12, 16, 10, v.piece === 0 ? '#e2583e' : '#f2a33a', { w: 1.5, r: 2 }));
+      } else {
+        const bx = 55, by = 50, bw = 100, bh = 200, lvl = Math.min(q, 4) / 4;
+        kids.push(R(bx, by, bw, bh, '#ffffff', { w: 3, r: 10 }), R(bx + 3, by + bh - 3 - lvl * (bh - 6), bw - 6, lvl * (bh - 6), '#7fbfff', { w: 0 }));
+        for (const [k, lab] of [[1, '¼'], [2, '½'], [3, '¾'], [4, '1 l']]) kids.push(L(bx + bw - 18, by + bh - 3 - (k / 4) * (bh - 6), bx + bw, by + bh - 3 - (k / 4) * (bh - 6), INK, 2), T(bx - 16, by + bh - 3 - (k / 4) * (bh - 6) + 5, lab, { z: 13, w: 700 }));
+        if (q > 4) kids.push(T(bx + bw / 2, by + 36, 'overflowing!', { z: 14, w: 700, f: '#c0392b' }));
+      }
+      // the pieces laid out on the right: bigger for halves, smaller for quarters
+      const w = v.piece === 0 ? 62 : 44, h = v.piece === 0 ? 56 : 40;
+      for (let i = 0; i < count; i++) { const x = 270 + (i % 4) * (w + 12), y = 60 + Math.floor(i / 4) * (h + 18); kids.push(R(x, y, w, h, v.piece === 0 ? '#e2583e' : '#f2a33a', { w: 2.5, r: 8 }), T(x + w / 2, y + h / 2 + 5, v.piece === 0 ? `½ ${ab}` : `¼ ${ab}`, { z: v.piece === 0 ? 17 : 14, w: 700, f: '#fff' })); }
+      kids.push(T(430, 226, words, { z: 18, w: 700, f: q === 4 ? '#058a68' : q > 4 ? '#c2510e' : INK }), T(430, 250, q < 4 ? `less than one ${unit}` : q === 4 ? `exactly one ${unit}` : `more than one ${unit}`, { z: 13, w: 600, f: '#6b5a8a' }));
+      const nm = v.piece === 0 ? `half-${unit}` : `quarter-${unit}`;
+      return { kids, say: `${count} ${nm} ${kg ? 'packet' : 'vessel'}${count === 1 ? '' : 's'} make ${words}${q === 4 ? `: exactly one ${unit}` : `, which is ${q < 4 ? 'less' : 'more'} than one ${unit}`}. ${v.piece === 0 ? `Two half-${unit}s equal one ${unit}.` : `Four quarter-${unit}s equal one ${unit}.`}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
