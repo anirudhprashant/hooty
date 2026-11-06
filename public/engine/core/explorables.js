@@ -1184,6 +1184,28 @@ export const WIDGETS = {
       return { kids, say: `A ${names[v.shape]} has ${flat} flat face${flat === 1 ? '' : 's'}, ${curved} curved surface${curved === 1 ? '' : 's'} and ${corners} corner${corners === 1 ? '' : 's'}.${sayLook}` };
     },
   },
+  numberchart: {
+    subject: 'maths', about: 'A number chart from 1 to 100, ten in a row. Pick where to start, how big each step is (forward to count on, negative to count back) and how many numbers, and the chart shades the pattern: 1, 4, 7 jumps by 3; 1, 12, 23 slants down the chart; counting by 10 goes straight down a column. For number charts, number patterns, counting forward and backward, skip counting, what comes before and after.',
+    sliders: [['start', 'Start at', 1, 99, 1, 1], ['step', 'Step (negative counts back)', -12, 12, 1, 3], ['n', 'How many numbers', 2, 12, 1, 6]],
+    draw(v) {
+      const cell = 27, x0 = 24, y0 = 14, seq = [];
+      for (let i = 0; i < v.n; i++) { const val = v.start + i * v.step; if (val < 1 || val > 100) break; seq.push(val); }
+      const at = (val) => [x0 + ((val - 1) % 10) * cell, y0 + Math.floor((val - 1) / 10) * cell], kids = [], on = new Set(seq);
+      for (let val = 1; val <= 100; val++) {
+        const [x, y] = at(val), idx = seq.indexOf(val);
+        kids.push(R(x, y, cell - 2, cell - 2, idx >= 0 ? (idx === 0 ? '#2fa84f' : '#ffcc33') : (Math.floor((val - 1) / 10) % 2 ? '#f3f0ff' : '#ffffff'), { w: 1, r: 4 }), T(x + (cell - 2) / 2, y + cell / 2 + 3, String(val), { z: 11, w: on.has(val) ? 700 : 500, f: idx === 0 ? '#ffffff' : INK }));
+      }
+      if ([9, 10, 11].includes(Math.abs(v.step))) for (let i = 1; i < seq.length; i++) { const [ax, ay] = at(seq[i - 1]), [bx, by] = at(seq[i]); kids.push(L(ax + cell / 2 - 1, ay + cell / 2 - 1, bx + cell / 2 - 1, by + cell / 2 - 1, '#c2510e', 2, { opacity: 0.6 })); }
+      const rule = v.step === 0 ? 'the same number again' : v.step > 0 ? `add ${v.step} each time` : `take away ${-v.step} each time`;
+      const shape = Math.abs(v.step) === 10 ? 'straight down a column' : Math.abs(v.step) === 1 ? 'along a row' : Math.abs(v.step) === 11 ? 'slanting across the chart' : Math.abs(v.step) === 9 ? 'slanting the other way' : '';
+      kids.push(T(450, 60, seq.length > 1 ? rule : 'start somewhere', { z: 17, w: 700, f: '#058a68' }));
+      const line = seq.join(', ');
+      kids.push(T(450, 100, line.length > 34 ? line.slice(0, line.lastIndexOf(',', 34)) + ',' : line, { z: 14, w: 700 }), ...(line.length > 34 ? [T(450, 122, line.slice(line.lastIndexOf(',', 34) + 2), { z: 14, w: 700 })] : []));
+      if (shape) kids.push(T(450, 164, `on the chart it goes ${shape}`, { z: 13, w: 600, f: '#6b5a8a' }));
+      if (seq.length < v.n) kids.push(T(450, 200, 'the next one is off the chart', { z: 13, w: 600, f: '#c0392b' }));
+      return { kids, say: seq.length < 2 ? `Start at ${v.start}.` : `Starting at ${v.start}, ${rule}: ${line}.${shape ? ` On the chart this goes ${shape}.` : ''}${seq.length < v.n ? ' The next one would be off the chart.' : ''}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

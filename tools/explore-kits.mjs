@@ -568,6 +568,16 @@ export const KITS = {
       { say: 'Show the flat faces of the cube. How many are there?', when: 'shape == 0 and look == 1', then: 'A cube has 6 flat faces, like a gift box.' },
     ],
   },
+  numberchart: {
+    grades: [2, 2], perChapter: { 2: 3 }, match: [/number charts?|hundred chart/, /number patterns?/, /counting backwards?|count backwards?|backward sequence/, /\bjump(s|ing|y)?\b|skip count/],
+    title: 'Colour the pattern on the chart', takeaway: 'Number patterns make shapes on a chart: counting by 10 goes straight down, and 1, 12, 23 slants.',
+    tasks: [
+      { say: 'Show the pattern 1, 4, 7 and keep going.', when: 'start == 1 and step == 3 and n >= 5', then: 'Add 3 each time: 1, 4, 7, 10, 13.' },
+      { say: 'Find the pattern that begins 1, 12, 23.', when: 'start == 1 and step == 11 and n >= 4', then: 'Add 11 each time: it slants down the chart.' },
+      { say: 'Count backwards from 10: 10, 9, 8.', when: 'start == 10 and step == -1 and n >= 5', then: 'Each step takes away 1: 10, 9, 8, 7, 6.' },
+      { say: 'Make the numbers go straight down a column.', when: 'step == 10 and n >= 4', then: 'Adding 10 moves one row down and keeps the same column.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
