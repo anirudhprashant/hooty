@@ -1206,6 +1206,19 @@ export const WIDGETS = {
       return { kids, say: seq.length < 2 ? `Start at ${v.start}.` : `Starting at ${v.start}, ${rule}: ${line}.${shape ? ` On the chart this goes ${shape}.` : ''}${seq.length < v.n ? ' The next one would be off the chart.' : ''}` };
     },
   },
+  threadline: {
+    subject: 'maths', about: 'A thread held between two hands. Pull it tight and it is a straight line: standing (vertical) when it points up and down, sleeping (horizontal) when it lies flat, slanting in between. Bring the hands closer and the thread droops into a curved line. For types of lines, straight and curved lines, vertical, horizontal, slanting.',
+    sliders: [['tilt', 'Tilt the thread (degrees from lying flat)', 0, 90, 15, 90], ['slack', 'Bring the hands closer (0 = pulled tight)', 0, 6, 1, 0]],
+    draw(v) {
+      const a = (v.tilt * Math.PI) / 180, dx = Math.cos(a), dy = -Math.sin(a), cx = 190, cy = 150, dd = 250 - v.slack * 32;
+      const p1 = [cx - (dx * dd) / 2, cy - (dy * dd) / 2], p2 = [cx + (dx * dd) / 2, cy + (dy * dd) / 2], bulge = v.slack * 24, ctl = [cx + Math.sin(a) * bulge, cy + Math.cos(a) * bulge];
+      const name = v.slack > 0 ? 'a curved line' : v.tilt === 90 ? 'a standing (vertical) line' : v.tilt === 0 ? 'a sleeping (horizontal) line' : 'a slanting line';
+      const kids = [s('path', { d: `M ${p1[0]} ${p1[1]} Q ${ctl[0] * 2 - (p1[0] + p2[0]) / 2} ${ctl[1] * 2 - (p1[1] + p2[1]) / 2} ${p2[0]} ${p2[1]}`, fill: 'none', stroke: '#c2510e', 'stroke-width': 5, 'stroke-linecap': 'round' })];
+      for (const [px, py] of [p1, p2]) kids.push(CIRC(px, py, 15, '#f2c9a0', { w: 3 }));
+      kids.push(T(486, 110, name, { z: 20, w: 700, f: v.slack > 0 ? '#1f6fb8' : '#058a68' }), T(486, 146, v.slack > 0 ? 'the thread is loose' : 'the thread is pulled tight', { z: 14, w: 600, f: '#6b5a8a' }), T(486, 172, v.slack > 0 ? 'so it is not straight' : 'so it is a straight line', { z: 14, w: 600, f: '#6b5a8a' }));
+      return { kids, say: v.slack > 0 ? 'With the hands brought closer the thread is loose and droops: it is a curved line, not a straight one.' : v.tilt === 90 ? 'Pulled tight and pointing up and down, the thread is a straight line. A standing line is also called a vertical line.' : v.tilt === 0 ? 'Pulled tight and lying flat, the thread is a straight line. A sleeping line is also called a horizontal line.' : 'Pulled tight but tilted between standing and sleeping, the thread is a slanting line, which is still straight.' };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

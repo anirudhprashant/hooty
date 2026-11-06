@@ -578,6 +578,16 @@ export const KITS = {
       { say: 'Make the numbers go straight down a column.', when: 'step == 10 and n >= 4', then: 'Adding 10 moves one row down and keeps the same column.' },
     ],
   },
+  threadline: {
+    grades: [2, 2], perChapter: { 2: 3 }, match: [/\bslanting\b/, /\bvertical\b|standing line/, /\bhorizontal\b|sleeping/, /\bcurved lines?\b/, /is straight|\bthread\b|straight lines?/],
+    title: 'Pull the thread', takeaway: 'A tight thread is a straight line: standing, sleeping or slanting. A loose thread makes a curved line.',
+    tasks: [
+      { say: 'Pull the thread tight so it points up and down.', when: 'tilt == 90 and slack == 0', then: 'A standing line, also called a vertical line.' },
+      { say: 'Now make a sleeping line.', when: 'tilt == 0 and slack == 0', then: 'A sleeping line lies flat: a horizontal line.' },
+      { say: 'Make a slanting line.', when: 'tilt == 45 and slack == 0', then: 'Between standing and sleeping, a slanting line is still straight.' },
+      { say: 'Bring your hands closer. What happens to the thread?', when: 'slack >= 3', then: 'It droops into a curved line: it is not straight any more.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
