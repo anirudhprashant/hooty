@@ -30301,7 +30301,7 @@
       {
        "id": "science-g7-ch9-l4",
        "title": "Lesson 4: How Humans Breathe",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -30364,6 +30364,31 @@
            "p": 129
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "airpath",
+         "params": {},
+         "title": "Follow a breath",
+         "tasks": [
+          {
+           "say": "Find where dust is trapped.",
+           "when": "step == 2",
+           "then": "Tiny hair and mucus in the nasal passages trap dust and dirt."
+          },
+          {
+           "say": "Find where oxygen goes into the blood.",
+           "when": "step == 5",
+           "then": "In the alveoli, tiny balloon-like sacs at the end of the branches."
+          }
+         ],
+         "takeaway": "Air goes in through the nostrils, down the windpipe into the lungs, and in the alveoli oxygen passes into the blood.",
+         "explanation": "Air goes in through the nostrils, down the windpipe into the lungs, and in the alveoli oxygen passes into the blood."
         },
         {
          "type": "worked",
