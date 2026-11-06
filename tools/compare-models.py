@@ -25,7 +25,7 @@ def arg(name, default):
 pos = [a for i, a in enumerate(sys.argv[1:], 1) if not a.startswith('--') and sys.argv[i - 1] not in ('--lessons', '--models')]
 if len(pos) < 2 or pos[0] not in SUBJECTS: sys.exit(__doc__)
 slug, chapter, k = pos[0], int(pos[1]), int(arg('--lessons', 3))
-models = arg('--models', 'm27,od-flash,od-eco').split(',')
+models = arg('--models', 'od-flash,od-eco,m27').split(',')
 work = f"{ROOT}/{SUBJECTS[slug]['work']}/ch{chapter:02d}"
 facts = json.load(open(f'{work}/facts.json'))
 lessons = facts['lessons']
@@ -34,15 +34,19 @@ sample = list({l['id']: l for l in sample}.values())
 stamp = time.strftime('%Y%m%d-%H%M'); base = f'{ROOT}/work/compare/{stamp}'
 print(f"{slug} chapter {chapter}: {len(sample)} lessons ({', '.join(l['title'][:28] for l in sample)}); models: {', '.join(models)}\n", flush=True)
 
+REFEREE = 'opendesign/glm-5.3-flash'   # a different model family from every writer here, and not on the MiniMax plan
+
 def referee(q, sheet):
     opts = '\n'.join(f'{i}: {o}' for i, o in enumerate(q['options']))
     p = f'Using these facts and sensible reasoning, answer the question.\n\nFACTS:\n{sheet}\n\nQUESTION: {q["prompt"]}\n{opts}\n\nReply with ONLY the number of the best option.'
-    r = llm.opencode(p, llm.CHECKER, want_json=False, tries=1) or llm.m27(p, want_json=False, minimax_only=True)
+    r = llm.opencode(p, REFEREE, want_json=False, tries=1) or llm.opencode(p, llm.CHECKER, want_json=False, tries=1)
     m = re.search(r'\d', str(r or ''))
     return None if not m else int(m.group(0)) == q['answer']
 
 rows = []
 for m in models:
+    if m == 'm27' and llm.minimax_cooling():
+        print('m27       skipped: MiniMax hit its plan limit in the last 30 minutes, so it cannot be tested fairly now; run it again later with --models m27', flush=True); continue
     d = f'{base}/{m}'; os.makedirs(d, exist_ok=True)
     json.dump({**facts, 'lessons': sample}, open(f'{d}/facts.json', 'w'), ensure_ascii=False)
     env = {**os.environ, 'SPARKLE_SUBJECT': slug, 'DEEPEN_DIR': d, 'LUMI_MODEL': m, 'LUMI_FALLBACK': ''}

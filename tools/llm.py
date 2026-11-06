@@ -29,6 +29,13 @@ def gap():
     except (OSError, ValueError): pass
     return BASE_GAP
 
+def minimax_cooling():
+    """True for 30 minutes after MiniMax last hit its plan limit (slow_down() refreshes the gap file at most every 15 minutes while it
+    stays limited), when a fallback model is set. After that MiniMax is tried again, so it takes the work back as soon as it recovers."""
+    try:
+        return bool(FALLBACK) and time.time() - os.path.getmtime(GAP_FILE) < 1800 and float(open(GAP_FILE).read()) >= 20
+    except (OSError, ValueError): return False
+
 def slow_down():
     # Several jobs hit the same limit at once: that is one event, so the gap doubles once per quarter hour, not once per job.
     try:
@@ -60,6 +67,9 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
         if len(prompt) < 100000:   # the longest prompts do not fit on a command line
             got = opencode(prompt, DEEPSEEK, want_json=want_json, tries=1)
             if got is not None: return got
+    if minimax_cooling() and len(prompt) < 100000:   # MiniMax hit its plan limit lately: do not queue behind it, go straight to the fallback
+        got = opencode(prompt, FALLBACK, want_json=want_json, tries=1)
+        if got is not None: return got
     for t in range(tries):
         try:
             _take_turn()
