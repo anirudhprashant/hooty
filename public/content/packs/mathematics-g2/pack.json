@@ -5629,7 +5629,7 @@
       {
        "id": "mathematics-g2-ch1-l6",
        "title": "Flash Cards, Calendar and Numbers",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -5686,6 +5686,91 @@
            "ch": 1,
            "p": 13
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch1-l6-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Place the 8 card in the tens place and the 5 card in the ones place. What two-digit number do you make?",
+         "steps": [
+          "The cards show 8 in the tens place and 5 in the ones place.",
+          "A tens card is worth ten times its digit, so 10 x 8 = 80.",
+          "Add the ones value: 80 + 5 = 85.",
+          "The two-digit number is 85."
+         ],
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 80,
+            "label": "80 from the tens card"
+           },
+           {
+            "v": 5,
+            "label": "5 from the ones card"
+           }
+          ],
+          "total": "?"
+         },
+         "result": "85",
+         "gen": {
+          "template": "Place the {tens} card in the tens place and the {ones} card in the ones place. What two-digit number do you make?",
+          "params": {
+           "tens": [
+            2,
+            4,
+            6,
+            8
+           ],
+           "ones": [
+            2,
+            5,
+            7,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "10*tens+ones",
+          "vals": {
+           "tens_value": "10*tens",
+           "number": "tens_value+ones"
+          },
+          "steps": [
+           "The cards show {tens} in the tens place and {ones} in the ones place.",
+           "A tens card is worth ten times its digit, so 10 x {tens} = {tens_value}.",
+           "Add the ones value: {tens_value} + {ones} = {answer}.",
+           "The two-digit number is {answer}."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "tens_value",
+             "label": "{tens_value} from the tens card"
+            },
+            {
+             "v": "ones",
+             "label": "{ones} from the ones card"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "First find the value of the tens card.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "10 (generated problem)",
+          "5 (generated problem)",
+          "8 (generated problem)",
+          "80 (generated problem)",
+          "85 (generated problem)"
          ]
         },
         {
@@ -5781,17 +5866,73 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g2-ch1-l6-a3",
-         "difficulty": 2,
+         "type": "fillblank",
+         "difficulty": 1,
          "tags": [
-          "flash cards",
-          "tens",
-          "ones"
+          "practice",
+          "computed"
          ],
-         "prompt": "The cards can be placed only at the ones place.",
-         "answer": false,
-         "explanation": "The cards can sit at both the tens place and the ones place.",
+         "prompt": "The rule asks for a number greater than 50. The chosen number is 51. How many more than 50 is it?",
+         "explanation": "The chosen number is 51, and it must be greater than 50. To find how much greater it is, subtract the smaller number from the larger number. 51 - 50 = 1, so the answer is 1.",
+         "steps": [
+          "The chosen number is 51, and it must be greater than 50.",
+          "To find how much greater it is, subtract the smaller number from the larger number.",
+          "51 - 50 = 1, so the answer is 1."
+         ],
+         "hint": "Compare the chosen number with 50 by subtraction.",
+         "derived": [
+          "1 (generated problem)",
+          "50 (generated problem)",
+          "51 (generated problem)"
+         ],
+         "gen": {
+          "template": "The rule asks for a number greater than 50. The chosen number is {n}. How many more than 50 is it?",
+          "params": {
+           "n": {
+            "min": 51,
+            "max": 99
+           }
+          },
+          "where": [],
+          "answer": "n-50",
+          "vals": {
+           "difference": "n-50"
+          },
+          "steps": [
+           "The chosen number is {n}, and it must be greater than 50.",
+           "To find how much greater it is, subtract the smaller number from the larger number.",
+           "{n} - 50 = {answer}, so the answer is {answer}."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 50,
+           "to": "n",
+           "step": 1,
+           "jumps": {
+            "start": 50,
+            "size": 1,
+            "count": "n-50"
+           }
+          },
+          "hint": "Compare the chosen number with 50 by subtraction.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 50,
+          "to": 51,
+          "step": 1,
+          "jumps": {
+           "start": 50,
+           "size": 1,
+           "count": 1
+          }
+         },
+         "answers": [
+          "1"
+         ],
+         "id": "mathematics-g2-ch1-l6-c2",
          "src": [
           {
            "ch": 1,
@@ -5801,18 +5942,76 @@
         },
         {
          "type": "fillblank",
-         "id": "mathematics-g2-ch1-l6-a4",
-         "difficulty": 2,
+         "difficulty": 1,
          "tags": [
-          "number rules",
-          "numbers"
+          "practice",
+          "computed"
          ],
-         "prompt": "One rule asks for a number greater than ______.",
+         "prompt": "The rule asks for a number between 47 and 59. Counting from 47 through 58, how many numbers do you count?",
+         "explanation": "Count 47 and then count forward one number at a time until 58. The number of steps after 47 is 58 - 47 = 11. Including 47 itself gives 11 + 1 = 12 numbers.",
+         "steps": [
+          "Count 47 and then count forward one number at a time until 58.",
+          "The number of steps after 47 is 58 - 47 = 11.",
+          "Including 47 itself gives 11 + 1 = 12 numbers."
+         ],
+         "hint": "Count 47 as the first number.",
+         "derived": [
+          "1 (generated problem)",
+          "11 (generated problem)",
+          "12 (generated problem)",
+          "47 (generated problem)",
+          "58 (generated problem)",
+          "59 (generated problem)"
+         ],
+         "gen": {
+          "template": "The rule asks for a number between 47 and 59. Counting from 47 through {n}, how many numbers do you count?",
+          "params": {
+           "n": {
+            "min": 48,
+            "max": 59
+           }
+          },
+          "where": [],
+          "answer": "n-46",
+          "vals": {
+           "count": "n-47",
+           "total_count": "n-46"
+          },
+          "steps": [
+           "Count 47 and then count forward one number at a time until {n}.",
+           "The number of steps after 47 is {n} - 47 = {count}.",
+           "Including 47 itself gives {count} + 1 = {answer} numbers."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 47,
+           "to": "n",
+           "step": 1,
+           "jumps": {
+            "start": 47,
+            "size": 1,
+            "count": "n-47"
+           }
+          },
+          "hint": "Count 47 as the first number.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 47,
+          "to": 58,
+          "step": 1,
+          "jumps": {
+           "start": 47,
+           "size": 1,
+           "count": 11
+          }
+         },
          "answers": [
-          "50"
+          "12"
          ],
-         "hint": "This number is part of the rule.",
-         "explanation": "The rule asks for a number greater than 50.",
+         "id": "mathematics-g2-ch1-l6-c3",
          "src": [
           {
            "ch": 1,
@@ -5894,31 +6093,314 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "mathematics-g2-ch1-l6-a8",
-         "difficulty": 3,
+         "type": "truefalse",
+         "id": "mathematics-g2-ch1-l6-a3",
+         "difficulty": 2,
          "tags": [
-          "path game",
-          "decreasing order"
+          "flash cards",
+          "tens",
+          "ones"
          ],
-         "prompt": "How do the numbers change in the path game?",
-         "options": [
-          "They decrease through every number",
-          "They increase through every number",
-          "They stay the same",
-          "Only the largest and smallest appear"
-         ],
-         "answer": 0,
-         "explanation": "The path starts with the largest number and ends with the smallest.",
+         "prompt": "The cards can be placed only at the ones place.",
+         "answer": false,
+         "explanation": "The cards can sit at both the tens place and the ones place.",
          "src": [
           {
            "ch": 1,
-           "p": 13
+           "p": 12
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A school bus shows the two-digit number 75. Its tens digit is 7. What is its ones digit?",
+         "explanation": "The whole bus number is 75, and its tens digit is 7. The tens digit contributes 10 x 7 = 70. Remove the tens value from the whole number: 75 - 70 = 5. The ones digit is 5.",
+         "steps": [
+          "The whole bus number is 75, and its tens digit is 7.",
+          "The tens digit contributes 10 x 7 = 70.",
+          "Remove the tens value from the whole number: 75 - 70 = 5.",
+          "The ones digit is 5."
+         ],
+         "hint": "First find the value of the tens digit.",
+         "derived": [
+          "10 (generated problem)",
+          "5 (generated problem)",
+          "7 (generated problem)",
+          "70 (generated problem)",
+          "75 (generated problem)"
+         ],
+         "gen": {
+          "template": "A school bus shows the two-digit number {n}. Its tens digit is {t}. What is its ones digit?",
+          "params": {
+           "n": {
+            "min": 10,
+            "max": 99
+           },
+           "t": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+           ]
           },
+          "where": [
+           "n >= 10*t",
+           "n <= 10*t+9"
+          ],
+          "answer": "n-10*t",
+          "vals": {
+           "tens_value": "10*t",
+           "ones_digit": "n-10*t"
+          },
+          "steps": [
+           "The whole bus number is {n}, and its tens digit is {t}.",
+           "The tens digit contributes 10 x {t} = {tens_value}.",
+           "Remove the tens value from the whole number: {n} - {tens_value} = {answer}.",
+           "The ones digit is {answer}."
+          ],
+          "model": null,
+          "hint": "First find the value of the tens digit.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "5"
+         ],
+         "id": "mathematics-g2-ch1-l6-c4",
+         "src": [
           {
            "ch": 1,
-           "p": 13
+           "p": 12
           }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In the August calendar, a school event is on day 2, and a market is on day 30. How many days are there from 2 up to but not including 30?",
+         "explanation": "The first date is August 2, and the later date is August 30. Count each move from one day to the next without counting the final date. 30 - 2 = 28, so there are 28 days.",
+         "steps": [
+          "The first date is August 2, and the later date is August 30.",
+          "Count each move from one day to the next without counting the final date.",
+          "30 - 2 = 28, so there are 28 days."
+         ],
+         "hint": "Count the day-to-day steps from the first date to the second date.",
+         "derived": [
+          "2 (generated problem)",
+          "28 (generated problem)",
+          "30 (generated problem)"
+         ],
+         "gen": {
+          "template": "In the August calendar, a school event is on day {start}, and a market is on day {end}. How many days are there from {start} up to but not including {end}?",
+          "params": {
+           "start": [
+            2,
+            5,
+            8,
+            11
+           ],
+           "end": [
+            12,
+            18,
+            24,
+            30
+           ]
+          },
+          "where": [
+           "end > start"
+          ],
+          "answer": "end-start",
+          "vals": {
+           "days": "end-start"
+          },
+          "steps": [
+           "The first date is August {start}, and the later date is August {end}.",
+           "Count each move from one day to the next without counting the final date.",
+           "{end} - {start} = {answer}, so there are {answer} days."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": "start",
+           "to": "end",
+           "step": 1,
+           "jumps": {
+            "start": "start",
+            "size": 1,
+            "count": "end-start"
+           }
+          },
+          "hint": "Count the day-to-day steps from the first date to the second date.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 2,
+          "to": 30,
+          "step": 1,
+          "jumps": {
+           "start": 2,
+           "size": 1,
+           "count": 28
+          }
+         },
+         "answers": [
+          "28"
+         ],
+         "id": "mathematics-g2-ch1-l6-c5",
+         "src": [
+          {
+           "ch": 1,
+           "p": 12
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In a cricket match, the rule asks for a number greater than 50. The score card shows 59. By how much does it exceed 50?",
+         "explanation": "The cricket score is 59, and the rule says it must be greater than 50. Subtract the smaller number from the larger number to find the excess. 59 - 50 = 9, so it exceeds 50 by 9.",
+         "steps": [
+          "The cricket score is 59, and the rule says it must be greater than 50.",
+          "Subtract the smaller number from the larger number to find the excess.",
+          "59 - 50 = 9, so it exceeds 50 by 9."
+         ],
+         "hint": "Subtract the rule's starting number from the score.",
+         "derived": [
+          "50 (generated problem)",
+          "59 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "In a cricket match, the rule asks for a number greater than 50. The score card shows {n}. By how much does it exceed 50?",
+          "params": {
+           "n": {
+            "min": 51,
+            "max": 99
+           }
+          },
+          "where": [],
+          "answer": "n-50",
+          "vals": {
+           "excess": "n-50"
+          },
+          "steps": [
+           "The cricket score is {n}, and the rule says it must be greater than 50.",
+           "Subtract the smaller number from the larger number to find the excess.",
+           "{n} - 50 = {answer}, so it exceeds 50 by {answer}."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 50,
+           "to": "n",
+           "step": 1,
+           "jumps": {
+            "start": 50,
+            "size": 1,
+            "count": "n-50"
+           }
+          },
+          "hint": "Subtract the rule's starting number from the score.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 50,
+          "to": 59,
+          "step": 1,
+          "jumps": {
+           "start": 50,
+           "size": 1,
+           "count": 9
+          }
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g2-ch1-l6-c6",
+         "src": [
+          {
+           "ch": 1,
+           "p": 12
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch1-l6-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "The path game starts at the largest two-digit number. After 12 jumps down by one, make 3 more jumps down by one. Which number do you reach?",
+         "steps": [
+          "The largest two-digit number is 99, so the path begins there.",
+          "After the first set of jumps, 99 - 12 = 87.",
+          "Continue down by one for each remaining jump: 87 - 3 = 84.",
+          "The path reaches 84."
+         ],
+         "modelSpec": null,
+         "result": "84",
+         "gen": {
+          "template": "The path game starts at the largest two-digit number. After {first} jumps down by one, make {second} more jumps down by one. Which number do you reach?",
+          "params": {
+           "first": [
+            2,
+            5,
+            8,
+            12
+           ],
+           "second": [
+            3,
+            6,
+            9
+           ]
+          },
+          "where": [
+           "first + second <= 89"
+          ],
+          "answer": "99-first-second",
+          "vals": {
+           "after_first": "99-first",
+           "final_number": "after_first-second"
+          },
+          "steps": [
+           "The largest two-digit number is 99, so the path begins there.",
+           "After the first set of jumps, 99 - {first} = {after_first}.",
+           "Continue down by one for each remaining jump: {after_first} - {second} = {answer}.",
+           "The path reaches {answer}."
+          ],
+          "model": null,
+          "hint": "Find the number reached after the first set of jumps.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "84 (generated problem)",
+          "87 (generated problem)",
+          "99 (generated problem)"
          ]
         },
         {
@@ -14204,7 +14686,7 @@
       {
        "id": "mathematics-g2-ch3-l3",
        "title": "Forward Number Patterns",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -14279,6 +14761,113 @@
            "p": 25
           }
          ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch3-l3-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Jumpy starts at 5 and jumps forward 3 spaces. Which number does he land on next?",
+         "steps": [
+          "Jumpy begins at 5.",
+          "Each forward jump moves him by 3.",
+          "One more jump gives 8.",
+          "The answer is 8."
+         ],
+         "modelSpec": {
+          "type": "numberline",
+          "from": 5,
+          "to": 8,
+          "step": 3,
+          "jumps": {
+           "start": 5,
+           "size": 3,
+           "count": 1
+          }
+         },
+         "result": "8",
+         "gen": {
+          "template": "Jumpy starts at {start} and jumps forward {step} spaces. Which number does he land on next?",
+          "params": {
+           "start": [
+            1,
+            2,
+            4,
+            5
+           ],
+           "step": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "start+step",
+          "vals": {
+           "jump": "step",
+           "next": "start+step"
+          },
+          "steps": [
+           "Jumpy begins at {start}.",
+           "Each forward jump moves him by {step}.",
+           "One more jump gives {next}.",
+           "The answer is {answer}."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": "start",
+           "to": "start+step",
+           "step": "step",
+           "jumps": {
+            "start": "start",
+            "size": "step",
+            "count": 1
+           }
+          },
+          "hint": "Add the jump size to the starting number.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "3 (generated problem)",
+          "5 (generated problem)",
+          "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g2-ch3-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberchart",
+         "params": {},
+         "title": "Colour the pattern on the chart",
+         "tasks": [
+          {
+           "say": "Find the pattern that begins 1, 12, 23.",
+           "when": "start == 1 and step == 11 and n >= 4",
+           "then": "Add 11 each time: it slants down the chart."
+          },
+          {
+           "say": "Count backwards from 10: 10, 9, 8.",
+           "when": "start == 10 and step == -1 and n >= 5",
+           "then": "Each step takes away 1: 10, 9, 8, 7, 6."
+          },
+          {
+           "say": "Make the numbers go straight down a column.",
+           "when": "step == 10 and n >= 4",
+           "then": "Adding 10 moves one row down and keeps the same column."
+          }
+         ],
+         "takeaway": "Number patterns make shapes on a chart: counting by 10 goes straight down, and 1, 12, 23 slants.",
+         "explanation": "Number patterns make shapes on a chart: counting by 10 goes straight down, and 1, 12, 23 slants."
         },
         {
          "type": "worked",
@@ -14459,87 +15048,186 @@
           "practice",
           "computed"
          ],
-         "prompt": "At a market, shelf labels run from 10 to 20 in jumps of 5. How many labels does Jumpy step on?",
-         "explanation": "Jumpy begins on the label 10. The labels he steps on are 10, 15, and then continue by 5. There are 2 jumps and one starting label, so he steps on 3 labels.",
+         "prompt": "Ravi starts with 6 marbles and jumps forward by 3 marbles for each new group. How many marbles are in the group after two jumps?",
+         "explanation": "Ravi begins with 6 marbles. After one jump, he has 9 marbles. After a second jump, he has 12 marbles. The answer is 12 marbles.",
          "steps": [
-          "Jumpy begins on the label 10.",
-          "The labels he steps on are 10, 15, and then continue by 5.",
-          "There are 2 jumps and one starting label, so he steps on 3 labels."
+          "Ravi begins with 6 marbles.",
+          "After one jump, he has 9 marbles.",
+          "After a second jump, he has 12 marbles.",
+          "The answer is 12 marbles."
          ],
-         "hint": "Count the jumps and remember that the first label is also stepped on.",
+         "hint": "Make one jump and record the number.",
          "derived": [
-          "10 (generated problem)",
-          "15 (generated problem)",
-          "2 (generated problem)",
-          "20 (generated problem)",
+          "12 (generated problem)",
           "3 (generated problem)",
-          "5 (generated problem)"
+          "6 (generated problem)",
+          "9 (generated problem)"
          ],
          "gen": {
-          "template": "At a market, shelf labels run from {start} to {last} in jumps of {step}. How many labels does Jumpy step on?",
+          "template": "Ravi starts with {start} marbles and jumps forward by {step} marbles for each new group. How many marbles are in the group after two jumps?",
           "params": {
            "start": [
             2,
-            5,
-            10
+            4,
+            6,
+            8
            ],
            "step": [
             2,
             3,
             4,
             5
-           ],
-           "last": [
-            10,
-            12,
-            15,
-            20
            ]
           },
-          "where": [
-           "last > start",
-           "(last-start) % step == 0"
-          ],
-          "answer": "(last-start)/step+1",
+          "where": [],
+          "answer": "start+2*step",
           "vals": {
-           "next": "start+step",
-           "jump_count": "(last-start)/step"
+           "firstJump": "start+step",
+           "secondJump": "start+2*step"
           },
           "steps": [
-           "Jumpy begins on the label {start}.",
-           "The labels he steps on are {start}, {next}, and then continue by {step}.",
-           "There are {jump_count} jumps and one starting label, so he steps on {answer} labels."
+           "Ravi begins with {start} marbles.",
+           "After one jump, he has {firstJump} marbles.",
+           "After a second jump, he has {secondJump} marbles.",
+           "The answer is {answer} marbles."
           ],
           "model": {
            "type": "numberline",
            "from": "start",
-           "to": "last",
+           "to": "start+2*step",
            "step": "step",
            "jumps": {
             "start": "start",
             "size": "step",
-            "count": "(last-start)/step"
+            "count": 2
            }
           },
-          "hint": "Count the jumps and remember that the first label is also stepped on.",
+          "hint": "Make one jump and record the number.",
           "wrong": [],
           "wrongWhy": []
          },
          "modelSpec": {
           "type": "numberline",
-          "from": 10,
-          "to": 20,
-          "step": 5,
+          "from": 6,
+          "to": 12,
+          "step": 3,
           "jumps": {
-           "start": 10,
-           "size": 5,
+           "start": 6,
+           "size": 3,
            "count": 2
           }
          },
          "answers": [
-          "3"
+          "12"
          ],
-         "id": "mathematics-g2-ch3-l3-c1",
+         "id": "mathematics-g2-ch3-l3-c2",
+         "src": [
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At school, Jumpy starts at 4 and jumps 3 spaces until he reaches 19. How many numbers does he step on, counting the first and last?",
+         "explanation": "Jumpy starts at 4 and finishes at 19. The distance covered is 15. Each jump covers 3, so there are 5 jumps. Counting the first number as well gives 6 numbers, so the answer is 6.",
+         "steps": [
+          "Jumpy starts at 4 and finishes at 19.",
+          "The distance covered is 15.",
+          "Each jump covers 3, so there are 5 jumps.",
+          "Counting the first number as well gives 6 numbers, so the answer is 6."
+         ],
+         "hint": "Find the distance from the start to the end.",
+         "derived": [
+          "15 (generated problem)",
+          "19 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "5 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "At school, Jumpy starts at {start} and jumps {step} spaces until he reaches {end}. How many numbers does he step on, counting the first and last?",
+          "params": {
+           "start": [
+            2,
+            4,
+            6
+           ],
+           "step": [
+            2,
+            3,
+            4
+           ],
+           "end": {
+            "min": 10,
+            "max": 20
+           }
+          },
+          "where": [
+           "end > start",
+           "(end - start) % step == 0"
+          ],
+          "answer": "(end-start)/step+1",
+          "vals": {
+           "distance": "end-start",
+           "numberOfJumps": "distance/step",
+           "landings": "numberOfJumps+1"
+          },
+          "steps": [
+           "Jumpy starts at {start} and finishes at {end}.",
+           "The distance covered is {distance}.",
+           "Each jump covers {step}, so there are {numberOfJumps} jumps.",
+           "Counting the first number as well gives {landings} numbers, so the answer is {answer}."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": "start",
+           "to": "end",
+           "step": "step",
+           "jumps": {
+            "start": "start",
+            "size": "step",
+            "count": "(end-start)/step"
+           }
+          },
+          "hint": "Find the distance from the start to the end.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 4,
+          "to": 19,
+          "step": 3,
+          "jumps": {
+           "start": 4,
+           "size": 3,
+           "count": 5
+          }
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g2-ch3-l3-c3",
          "src": [
           {
            "ch": 3,
@@ -14564,90 +15252,84 @@
          ]
         },
         {
-         "type": "fillblank",
+         "type": "worked",
+         "id": "mathematics-g2-ch3-l3-w2",
          "difficulty": 3,
          "tags": [
-          "practice",
-          "computed"
+          "worked"
          ],
-         "prompt": "Jumpy starts at 0 on a number line, makes 2 jumps of 3 spaces, and then makes 2 jumps of 2 spaces. What number does he land on?",
-         "explanation": "In the first part, Jumpy makes 2 jumps of 3 spaces. He travels 6 spaces and lands at 6. In the second part, he makes 2 jumps of 2 spaces and travels 4 more spaces. His final landing number is 6 + 4 = 10.",
+         "prompt": "The number strip runs from 1 through 20, one number at a time. Jumpy starts at 14 and makes jumps of 3 spaces. Which number does he reach after two jumps?",
          "steps": [
-          "In the first part, Jumpy makes 2 jumps of 3 spaces.",
-          "He travels 6 spaces and lands at 6.",
-          "In the second part, he makes 2 jumps of 2 spaces and travels 4 more spaces.",
-          "His final landing number is 6 + 4 = 10."
+          "Jumpy begins at 14.",
+          "His first jump takes him to 17.",
+          "His second jump takes him to 20.",
+          "The answer is 20."
          ],
-         "hint": "Find where he lands after each part of the journey.",
-         "derived": [
-          "0 (generated problem)",
-          "10 (generated problem)",
-          "2 (generated problem)",
-          "3 (generated problem)",
-          "4 (generated problem)",
-          "6 (generated problem)"
-         ],
+         "modelSpec": {
+          "type": "numberline",
+          "from": 14,
+          "to": 20,
+          "step": 3,
+          "jumps": {
+           "start": 14,
+           "size": 3,
+           "count": 2
+          }
+         },
+         "result": "20",
          "gen": {
-          "template": "Jumpy starts at 0 on a number line, makes {a} jumps of {b} spaces, and then makes {c} jumps of {d} spaces. What number does he land on?",
+          "template": "The number strip runs from 1 through 20, one number at a time. Jumpy starts at {start} and makes jumps of {step} spaces. Which number does he reach after two jumps?",
           "params": {
-           "a": [
-            2,
-            3,
-            4
+           "start": [
+            8,
+            10,
+            12,
+            14
            ],
-           "b": [
+           "step": [
             2,
             3,
             4,
             5
-           ],
-           "c": [
-            2,
-            3
-           ],
-           "d": [
-            2,
-            3,
-            4
            ]
           },
           "where": [
-           "b != d",
-           "a*b+c*d <= 40"
+           "start + 2 * step <= 20"
           ],
-          "answer": "a*b+c*d",
+          "answer": "start+2*step",
           "vals": {
-           "first": "a*b",
-           "second": "c*d"
+           "firstJump": "start+step",
+           "secondJump": "firstJump+step"
           },
           "steps": [
-           "In the first part, Jumpy makes {a} jumps of {b} spaces.",
-           "He travels {first} spaces and lands at {first}.",
-           "In the second part, he makes {c} jumps of {d} spaces and travels {second} more spaces.",
-           "His final landing number is {first} + {second} = {answer}."
+           "Jumpy begins at {start}.",
+           "His first jump takes him to {firstJump}.",
+           "His second jump takes him to {secondJump}.",
+           "The answer is {answer}."
           ],
-          "model": null,
-          "hint": "Find where he lands after each part of the journey.",
+          "model": {
+           "type": "numberline",
+           "from": "start",
+           "to": "start+2*step",
+           "step": "step",
+           "jumps": {
+            "start": "start",
+            "size": "step",
+            "count": 2
+           }
+          },
+          "hint": "Make one jump, then make a second jump.",
           "wrong": [],
           "wrongWhy": []
          },
-         "answers": [
-          "10"
-         ],
-         "id": "mathematics-g2-ch3-l3-c2",
-         "src": [
-          {
-           "ch": 3,
-           "p": 25
-          },
-          {
-           "ch": 3,
-           "p": 25
-          },
-          {
-           "ch": 3,
-           "p": 25
-          }
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "1 (generated problem)",
+          "14 (generated problem)",
+          "17 (generated problem)",
+          "20 (generated problem)",
+          "3 (generated problem)"
          ]
         },
         {
@@ -16114,7 +16796,7 @@
       {
        "id": "mathematics-g2-ch3-l5",
        "title": "Counting Backwards and Talking",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -16223,6 +16905,36 @@
           "8 (generated problem)",
           "9 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g2-ch3-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberchart",
+         "params": {},
+         "title": "Colour the pattern on the chart",
+         "tasks": [
+          {
+           "say": "Find the pattern that begins 1, 12, 23.",
+           "when": "start == 1 and step == 11 and n >= 4",
+           "then": "Add 11 each time: it slants down the chart."
+          },
+          {
+           "say": "Count backwards from 10: 10, 9, 8.",
+           "when": "start == 10 and step == -1 and n >= 5",
+           "then": "Each step takes away 1: 10, 9, 8, 7, 6."
+          },
+          {
+           "say": "Make the numbers go straight down a column.",
+           "when": "step == 10 and n >= 4",
+           "then": "Adding 10 moves one row down and keeps the same column."
+          }
+         ],
+         "takeaway": "Number patterns make shapes on a chart: counting by 10 goes straight down, and 1, 12, 23 slants.",
+         "explanation": "Number patterns make shapes on a chart: counting by 10 goes straight down, and 1, 12, 23 slants."
         },
         {
          "type": "worked",
@@ -16635,7 +17347,7 @@
       {
        "id": "mathematics-g2-ch3-l6",
        "title": "Number Charts, Patterns and Bingo",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -16758,6 +17470,36 @@
           "23 (generated problem)",
           "34 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g2-ch3-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberchart",
+         "params": {},
+         "title": "Colour the pattern on the chart",
+         "tasks": [
+          {
+           "say": "Find the pattern that begins 1, 12, 23.",
+           "when": "start == 1 and step == 11 and n >= 4",
+           "then": "Add 11 each time: it slants down the chart."
+          },
+          {
+           "say": "Count backwards from 10: 10, 9, 8.",
+           "when": "start == 10 and step == -1 and n >= 5",
+           "then": "Each step takes away 1: 10, 9, 8, 7, 6."
+          },
+          {
+           "say": "Make the numbers go straight down a column.",
+           "when": "step == 10 and n >= 4",
+           "then": "Adding 10 moves one row down and keeps the same column."
+          }
+         ],
+         "takeaway": "Number patterns make shapes on a chart: counting by 10 goes straight down, and 1, 12, 23 slants.",
+         "explanation": "Number patterns make shapes on a chart: counting by 10 goes straight down, and 1, 12, 23 slants."
         },
         {
          "type": "worked",
@@ -17955,6 +18697,5002 @@
        "license": "CC BY 4.0",
        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
        "creator": "Aliva Sahoo"
+      }
+     }
+    },
+    {
+     "id": "ch04-fun-with-shadows",
+     "title": "Fun with Shadows",
+     "summary": "In this chapter: shadow story and shadow role-play; torch lights and tracing shapes; hide-and-seek with shapes; catch the corner.",
+     "lessons": [
+      {
+       "id": "mathematics-g2-ch4-l1",
+       "title": "Shadow Story and Shadow Role-Play",
+       "estimatedMinutes": 6,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g2-ch4-l1-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "When do shadows appear, and what makes them disappear?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g2-ch4-l1-a1",
+         "difficulty": 1,
+         "tags": [
+          "shadow play",
+          "togalu",
+          "animal shadows",
+          "puppetry"
+         ],
+         "title": "Discover Togalu",
+         "body": "Nakul and his friends saw Togalu at a village fair. They were all fascinated by the shadow play. They wanted to make shadows too. They made different animal shadows. Puppetry is an art form practised in Karnataka. The puppets depict scenes from Indian epics. The role-play uses animal shadows. The children also create the animals’ sounds. You can try making shadows too.",
+         "keyPoints": [
+          "Togalu was seen at a village fair.",
+          "The children made different animal shadows.",
+          "Puppetry shows scenes from Indian epics."
+         ],
+         "explanation": "You can explore shadows, animal sounds, and stories from Indian epics.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 32
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch4-l1-w1",
+         "difficulty": 2,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "At the village fair, 4 children each made 3 animal shadows. How many animal shadows did they make altogether?",
+         "steps": [
+          "Each of the 4 children made 3 animal shadows.",
+          "There are 4 equal groups with 3 shadows in each group.",
+          "Multiplying the groups gives 12 = 12 animal shadows."
+         ],
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 3
+         },
+         "result": "12",
+         "gen": {
+          "template": "At the village fair, {n} children each made {k} animal shadows. How many animal shadows did they make altogether?",
+          "params": {
+           "n": [
+            3,
+            4,
+            5
+           ],
+           "k": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "n*k",
+          "vals": {
+           "total": "n*k"
+          },
+          "steps": [
+           "Each of the {n} children made {k} animal shadows.",
+           "There are {n} equal groups with {k} shadows in each group.",
+           "Multiplying the groups gives {total} = {answer} animal shadows."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "k"
+          },
+          "hint": "",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)"
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch4-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "togalu",
+          "village fair",
+          "shadow play"
+         ],
+         "title": "Where Was Togalu Seen?",
+         "prompt": "Where did Nakul and his friends see Togalu Gombeyaata?",
+         "options": [
+          "At a village fair",
+          "At a village school",
+          "At a village home",
+          "At a village shop"
+         ],
+         "answer": 0,
+         "explanation": "They saw Togalu Gombeyaata at a village fair.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 32
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g2-ch4-l1-a3",
+         "difficulty": 1,
+         "tags": [
+          "animal shadows",
+          "togalu"
+         ],
+         "title": "Shadows Made by Friends",
+         "prompt": "Nakul and his friends made different animal shadows.",
+         "answer": true,
+         "explanation": "They made shadows of different animals.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g2-ch4-l1-a5",
+         "difficulty": 2,
+         "tags": [
+          "togalu",
+          "village fair",
+          "animal shadows",
+          "animal sounds"
+         ],
+         "title": "Match the Clues",
+         "prompt": "Match each clue to its word from the lesson.",
+         "pairs": [
+          [
+           "Play seen",
+           "Togalu Gombeyaata"
+          ],
+          [
+           "Fair place",
+           "Village fair"
+          ],
+          [
+           "Shadows made",
+           "Different animal shadows"
+          ],
+          [
+           "Sounds created",
+           "Animals’ sounds"
+          ]
+         ],
+         "explanation": "Each pair matches a detail about Togalu and the role-play.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 33
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a market shadow-play stall, 12 animal-shadow cards are shared equally among 2 friends. How many cards does each friend get?",
+         "explanation": "There are 12 animal-shadow cards and 2 friends. The cards are shared equally, so each friend gets the same number. Dividing the cards equally gives 6 = 6 cards for each friend.",
+         "steps": [
+          "There are 12 animal-shadow cards and 2 friends.",
+          "The cards are shared equally, so each friend gets the same number.",
+          "Dividing the cards equally gives 6 = 6 cards for each friend."
+         ],
+         "hint": "Work out the first step.",
+         "derived": [
+          "12 (generated problem)",
+          "2 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a market shadow-play stall, {total} animal-shadow cards are shared equally among {n} friends. How many cards does each friend get?",
+          "params": {
+           "total": [
+            6,
+            8,
+            10,
+            12
+           ],
+           "n": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "total % n == 0"
+          ],
+          "answer": "total/n",
+          "vals": {
+           "each": "total/n"
+          },
+          "steps": [
+           "There are {total} animal-shadow cards and {n} friends.",
+           "The cards are shared equally, so each friend gets the same number.",
+           "Dividing the cards equally gives {each} = {answer} cards for each friend."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "total/n"
+          },
+          "hint": "",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 6
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g2-ch4-l1-c2",
+         "src": [
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch4-l1-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "At the market shadow-play stall, there are 4 animal shadows and 3 puppet scenes. The children make one animal sound for each shadow and one puppet sound for each scene, repeating every sound 2 times. How many sounds are made?",
+         "steps": [
+          "There are 4 animal shadows and 3 puppet scenes, making 7 displays altogether.",
+          "Every sound is repeated 2 times.",
+          "Multiplying the displays by the repetitions gives 14 = 14 sounds."
+         ],
+         "modelSpec": null,
+         "result": "14",
+         "gen": {
+          "template": "At the market shadow-play stall, there are {a} animal shadows and {b} puppet scenes. The children make one animal sound for each shadow and one puppet sound for each scene, repeating every sound {k} times. How many sounds are made?",
+          "params": {
+           "a": [
+            2,
+            3,
+            4
+           ],
+           "b": [
+            2,
+            3,
+            4
+           ],
+           "k": [
+            2,
+            3
+           ]
+          },
+          "where": [],
+          "answer": "(a+b)*k",
+          "vals": {
+           "displays": "a+b",
+           "total": "(a+b)*k"
+          },
+          "steps": [
+           "There are {a} animal shadows and {b} puppet scenes, making {displays} displays altogether.",
+           "Every sound is repeated {k} times.",
+           "Multiplying the displays by the repetitions gives {total} = {answer} sounds."
+          ],
+          "model": null,
+          "hint": "",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "14 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "7 (generated problem)"
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g2-ch4-l1-a8",
+         "difficulty": 3,
+         "tags": [
+          "shadow play",
+          "togalu",
+          "animal shadows"
+         ],
+         "title": "The Shadow Story Begins",
+         "prompt": "Put the story events in the correct order.",
+         "items": [
+          "They saw a shadow play.",
+          "They became fascinated by the shadow play.",
+          "They wanted to make shadows too.",
+          "They made different animal shadows."
+         ],
+         "explanation": "They first saw the play, then wanted to make shadows.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At school, 3 children each make 4 animal shadows. Later, 2 shadows vanish. How many animal shadows are left?",
+         "explanation": "Each of the 3 children makes 4 animal shadows, making 12 shadows in all. Then 2 shadows vanish, so we subtract them from the total. The number left is 10 = 10 animal shadows.",
+         "steps": [
+          "Each of the 3 children makes 4 animal shadows, making 12 shadows in all.",
+          "Then 2 shadows vanish, so we subtract them from the total.",
+          "The number left is 10 = 10 animal shadows."
+         ],
+         "hint": "Work out the first step.",
+         "derived": [
+          "10 (generated problem)",
+          "12 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "At school, {n} children each make {k} animal shadows. Later, {r} shadows vanish. How many animal shadows are left?",
+          "params": {
+           "n": [
+            3,
+            4
+           ],
+           "k": [
+            3,
+            4
+           ],
+           "r": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "n*k > r"
+          ],
+          "answer": "n*k-r",
+          "vals": {
+           "initial": "n*k",
+           "remaining": "n*k-r"
+          },
+          "steps": [
+           "Each of the {n} children makes {k} animal shadows, making {initial} shadows in all.",
+           "Then {r} shadows vanish, so we subtract them from the total.",
+           "The number left is {remaining} = {answer} animal shadows."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "k"
+          },
+          "hint": "",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 4
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g2-ch4-l1-c3",
+         "src": [
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 33
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A bus brings 5 children to the village fair. Each child makes 2 animal shadows. Later, each of 2 children makes one more shadow. How many animal shadows are made altogether?",
+         "explanation": "The 5 children each make 2 shadows, so they make 10 shadows first. Each of 2 children makes one more shadow, adding 2 shadows. Adding the extra shadows gives 12 = 12 animal shadows altogether.",
+         "steps": [
+          "The 5 children each make 2 shadows, so they make 10 shadows first.",
+          "Each of 2 children makes one more shadow, adding 2 shadows.",
+          "Adding the extra shadows gives 12 = 12 animal shadows altogether."
+         ],
+         "hint": "First find the shadows made before the extra shadows are added.",
+         "derived": [
+          "10 (generated problem)",
+          "12 (generated problem)",
+          "2 (generated problem)",
+          "20 (generated problem)",
+          "5 (generated problem)",
+          "8 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bus brings {a} children to the village fair. Each child makes {k} animal shadows. Later, each of {b} children makes one more shadow. How many animal shadows are made altogether?",
+          "params": {
+           "a": [
+            3,
+            4,
+            5
+           ],
+           "k": [
+            2,
+            3
+           ],
+           "b": [
+            2,
+            3
+           ]
+          },
+          "where": [
+           "b <= a"
+          ],
+          "answer": "a*k+b",
+          "vals": {
+           "initial": "a*k",
+           "total": "a*k+b"
+          },
+          "steps": [
+           "The {a} children each make {k} shadows, so they make {initial} shadows first.",
+           "Each of {b} children makes one more shadow, adding {b} shadows.",
+           "Adding the extra shadows gives {total} = {answer} animal shadows altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "a",
+           "size": "k"
+          },
+          "hint": "First find the shadows made before the extra shadows are added.",
+          "wrong": [
+           "a+k+b",
+           "a*k-b",
+           "a*(k+b)"
+          ],
+          "wrongWhy": [
+           "You added the number of children instead of multiplying the first group.",
+           "You subtracted the extra shadows instead of adding them.",
+           "You included the extra children in the multiplication."
+          ]
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 5,
+          "size": 2
+         },
+         "options": [
+          "8",
+          "20",
+          "9",
+          "12"
+         ],
+         "answer": 3,
+         "why": {
+          "8": "You subtracted the extra shadows instead of adding them.",
+          "9": "You added the number of children instead of multiplying the first group.",
+          "20": "You included the extra children in the multiplication."
+         },
+         "id": "mathematics-g2-ch4-l1-c4",
+         "src": [
+          {
+           "ch": 4,
+           "p": 32
+          },
+          {
+           "ch": 4,
+           "p": 32
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch4-l1-leather-puppets-of-karnataka-dbc1a8.webp",
+       "sceneAlt": "Leather puppets are used in a Togalu Gombeyaata shadow-play demonstration in Karnataka, India.",
+       "sceneCaption": "Leather puppets used in a Togalu Gombeyaata shadow-play demonstration in Karnataka.",
+       "sceneCredit": {
+        "text": "Leather puppets of Karnataka by Amarrg, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Leather_puppets_of_Karnataka.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Amarrg"
+       }
+      },
+      {
+       "id": "mathematics-g2-ch4-l2",
+       "title": "Torch Lights and Tracing Shapes",
+       "estimatedMinutes": 8,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g2-ch4-l2-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "What can we discover when we shine a torch on objects?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g2-ch4-l2-a1",
+         "difficulty": 1,
+         "tags": [
+          "torch",
+          "shadows",
+          "tracing"
+         ],
+         "title": "Light, Shadows and Shapes",
+         "body": "Shine a torch light on objects around you. Notice the shapes of objects' shadows. Then move the torch and see whether the shadow size changes. Think about when shadows look longest and shortest. Discuss what you notice at different times of day. You can also trace objects and draw the shapes you get.",
+         "keyPoints": [
+          "Shine the torch light on objects around you.",
+          "Observe shadow shapes and shadow size.",
+          "Trace objects and draw their shapes."
+         ],
+         "explanation": "These are the main actions in this lesson.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch4-l2-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A child traces 2 erasers and 5 leaves. How many shapes are traced altogether?",
+         "steps": [
+          "The child traces 2 eraser shapes and 5 leaf shapes.",
+          "We add the two groups of shapes: 2 + 5.",
+          "2 + 5 = 7 shapes."
+         ],
+         "modelSpec": null,
+         "result": "7",
+         "gen": {
+          "template": "A child traces {a} erasers and {b} leaves. How many shapes are traced altogether?",
+          "params": {
+           "a": [
+            2,
+            3,
+            4
+           ],
+           "b": [
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [
+           "a + b > 0"
+          ],
+          "answer": "a+b",
+          "vals": {},
+          "steps": [
+           "The child traces {a} eraser shapes and {b} leaf shapes.",
+           "We add the two groups of shapes: {a} + {b}.",
+           "{a} + {b} = {answer} shapes."
+          ],
+          "model": null,
+          "hint": "Add the number of eraser shapes and leaf shapes.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "2 (generated problem)",
+          "5 (generated problem)",
+          "7 (generated problem)"
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g2-ch4-l2-a6",
+         "difficulty": 2,
+         "tags": [
+          "tracing",
+          "shapes",
+          "objects"
+         ],
+         "title": "Trace and Draw",
+         "body": "Trace the shape of an object around you. The lesson lists an eraser, leaf, matchbox, sharpener and pencil colour as examples. After tracing, draw the shape you get. You can think of names for objects that have the same trace.",
+         "keyPoints": [
+          "Trace the shape of an object.",
+          "Draw the shape after tracing.",
+          "Name objects with the same trace."
+         ],
+         "explanation": "Tracing and drawing help you explore different shapes.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g2-ch4-l2-a4",
+         "difficulty": 1,
+         "tags": [
+          "tracing",
+          "objects"
+         ],
+         "title": "Objects to Trace",
+         "prompt": "Match each object with its tracing task.",
+         "pairs": [
+          [
+           "eraser",
+           "Trace the eraser"
+          ],
+          [
+           "leaf",
+           "Trace the leaf"
+          ],
+          [
+           "matchbox",
+           "Trace the matchbox"
+          ],
+          [
+           "sharpener",
+           "Trace the sharpener"
+          ]
+         ],
+         "explanation": "An eraser, leaf, matchbox and sharpener are all objects to trace.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch4-l2-a2",
+         "difficulty": 1,
+         "tags": [
+          "torch",
+          "objects"
+         ],
+         "title": "Where Should You Shine the Torch?",
+         "prompt": "Which objects should you shine the torch light on?",
+         "options": [
+          "Objects around you",
+          "Traced shapes nearby",
+          "Names of nearby objects"
+         ],
+         "answer": 0,
+         "explanation": "The lesson says to shine the torch light on objects around you.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 33
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g2-ch4-l2-a3",
+         "difficulty": 1,
+         "tags": [
+          "shadows",
+          "observation"
+         ],
+         "title": "Observe Shadow Shapes",
+         "prompt": "You should observe the shapes of objects' shadows.",
+         "answer": true,
+         "explanation": "Observing shadow shapes helps you notice what your torch light shows.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 33
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A torch makes 4 rows of 3 traced shapes. How many traced shapes are there altogether?",
+         "explanation": "There are 4 equal rows of traced shapes. Each row has 3 shapes, so multiply 4 rows by 3 shapes. 4 x 3 = 12 shapes.",
+         "steps": [
+          "There are 4 equal rows of traced shapes.",
+          "Each row has 3 shapes, so multiply 4 rows by 3 shapes.",
+          "4 x 3 = 12 shapes."
+         ],
+         "hint": "Count each row and multiply it by the number of rows.",
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "A torch makes {a} rows of {b} traced shapes. How many traced shapes are there altogether?",
+          "params": {
+           "a": [
+            2,
+            3,
+            4
+           ],
+           "b": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "a * b > 0"
+          ],
+          "answer": "a*b",
+          "vals": {},
+          "steps": [
+           "There are {a} equal rows of traced shapes.",
+           "Each row has {b} shapes, so multiply {a} rows by {b} shapes.",
+           "{a} x {b} = {answer} shapes."
+          ],
+          "model": {
+           "type": "array",
+           "rows": "a",
+           "cols": "b"
+          },
+          "hint": "Count each row and multiply it by the number of rows.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "array",
+          "rows": 4,
+          "cols": 3
+         },
+         "answers": [
+          "12"
+         ],
+         "id": "mathematics-g2-ch4-l2-c2",
+         "src": [
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A child traces 4 matchboxes and 2 pencils. How many shapes are traced in all?",
+         "explanation": "There are 4 matchbox shapes and 2 pencil shapes. We add both groups of shapes. 4 + 2 = 6 shapes.",
+         "steps": [
+          "There are 4 matchbox shapes and 2 pencil shapes.",
+          "We add both groups of shapes.",
+          "4 + 2 = 6 shapes."
+         ],
+         "hint": "Combine the two groups of traced shapes.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "A child traces {a} matchboxes and {b} pencils. How many shapes are traced in all?",
+          "params": {
+           "a": [
+            2,
+            3,
+            4
+           ],
+           "b": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "a + b > 0"
+          ],
+          "answer": "a+b",
+          "vals": {},
+          "steps": [
+           "There are {a} matchbox shapes and {b} pencil shapes.",
+           "We add both groups of shapes.",
+           "{a} + {b} = {answer} shapes."
+          ],
+          "model": null,
+          "hint": "Combine the two groups of traced shapes.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g2-ch4-l2-c3",
+         "src": [
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g2-ch4-l2-a5",
+         "difficulty": 2,
+         "tags": [
+          "tracing",
+          "eraser"
+         ],
+         "title": "One Tracing Object",
+         "prompt": "One object you can trace is a ______.",
+         "answers": [
+          "eraser"
+         ],
+         "hint": "It is one of the listed objects to trace.",
+         "explanation": "An eraser is one of the objects listed for tracing.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In the school art room, there are 5 erasers and 4 sharpener shapes to trace. How many shapes will the children trace altogether?",
+         "explanation": "The school art room has 5 erasers and 4 sharpeners to trace. We combine the two groups of shapes. 5 + 4 = 9 shapes.",
+         "steps": [
+          "The school art room has 5 erasers and 4 sharpeners to trace.",
+          "We combine the two groups of shapes.",
+          "5 + 4 = 9 shapes."
+         ],
+         "hint": "Add the erasers and sharpener shapes that will be traced.",
+         "derived": [
+          "4 (generated problem)",
+          "5 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "In the school art room, there are {a} erasers and {b} sharpener shapes to trace. How many shapes will the children trace altogether?",
+          "params": {
+           "a": [
+            3,
+            4,
+            5
+           ],
+           "b": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "a + b > 0"
+          ],
+          "answer": "a+b",
+          "vals": {},
+          "steps": [
+           "The school art room has {a} erasers and {b} sharpeners to trace.",
+           "We combine the two groups of shapes.",
+           "{a} + {b} = {answer} shapes."
+          ],
+          "model": null,
+          "hint": "Add the erasers and sharpener shapes that will be traced.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g2-ch4-l2-c4",
+         "src": [
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a market, a torch shines on a bus. The bus shadow is 8 cm and the scooter shadow is 4 cm. How many cm longer is the bus shadow?",
+         "explanation": "The bus shadow is 8 cm. The scooter shadow is 4 cm. We find how much longer the bus shadow is: 8 - 4 = 4 cm.",
+         "steps": [
+          "The bus shadow is 8 cm.",
+          "The scooter shadow is 4 cm.",
+          "We find how much longer the bus shadow is: 8 - 4 = 4 cm."
+         ],
+         "hint": "Subtract the scooter shadow length from the bus shadow length.",
+         "derived": [
+          "12 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a market, a torch shines on a bus. The bus shadow is {long_shadow} cm and the scooter shadow is {short_shadow} cm. How many cm longer is the bus shadow?",
+          "params": {
+           "long_shadow": [
+            8,
+            10,
+            12
+           ],
+           "short_shadow": {
+            "min": 2,
+            "max": 5
+           }
+          },
+          "where": [
+           "long_shadow > short_shadow"
+          ],
+          "answer": "long_shadow-short_shadow",
+          "vals": {},
+          "steps": [
+           "The bus shadow is {long_shadow} cm.",
+           "The scooter shadow is {short_shadow} cm.",
+           "We find how much longer the bus shadow is: {long_shadow} - {short_shadow} = {answer} cm."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Bus shadow",
+             "v": "long_shadow"
+            },
+            {
+             "label": "Scooter shadow",
+             "v": "short_shadow"
+            }
+           ]
+          },
+          "hint": "Subtract the scooter shadow length from the bus shadow length.",
+          "wrong": [
+           "short_shadow-long_shadow",
+           "long_shadow+short_shadow",
+           "2*(long_shadow-short_shadow)"
+          ],
+          "wrongWhy": [
+           "You subtracted in the wrong order.",
+           "You added the two shadow lengths instead of subtracting.",
+           "You doubled the difference instead of finding the difference once."
+          ]
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Bus shadow",
+            "v": 8
+           },
+           {
+            "label": "Scooter shadow",
+            "v": 4
+           }
+          ]
+         },
+         "options": [
+          "4",
+          "12",
+          "-4",
+          "8"
+         ],
+         "answer": 0,
+         "why": {
+          "8": "You doubled the difference instead of finding the difference once.",
+          "12": "You added the two shadow lengths instead of subtracting.",
+          "-4": "You subtracted in the wrong order."
+         },
+         "id": "mathematics-g2-ch4-l2-c5",
+         "src": [
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "During cricket practice, each of 3 children traces 4 shadow shapes. How many shadow shapes are traced altogether?",
+         "explanation": "There are 3 children at cricket practice. Each child traces 4 shadow shapes. We multiply the children by the shapes each child traces: 3 x 4 = 12 shapes.",
+         "steps": [
+          "There are 3 children at cricket practice.",
+          "Each child traces 4 shadow shapes.",
+          "We multiply the children by the shapes each child traces: 3 x 4 = 12 shapes."
+         ],
+         "hint": "Multiply the number of children by the number of shapes each child traces.",
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "During cricket practice, each of {a} children traces {b} shadow shapes. How many shadow shapes are traced altogether?",
+          "params": {
+           "a": [
+            2,
+            3,
+            4
+           ],
+           "b": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "a * b > 0"
+          ],
+          "answer": "a*b",
+          "vals": {},
+          "steps": [
+           "There are {a} children at cricket practice.",
+           "Each child traces {b} shadow shapes.",
+           "We multiply the children by the shapes each child traces: {a} x {b} = {answer} shapes."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "a",
+           "size": "b"
+          },
+          "hint": "Multiply the number of children by the number of shapes each child traces.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 4
+         },
+         "answers": [
+          "12"
+         ],
+         "id": "mathematics-g2-ch4-l2-c6",
+         "src": [
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 33
+          },
+          {
+           "ch": 4,
+           "p": 34
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A shopkeeper has 12 matchboxes. The class traces 2 of them. How many matchboxes are left?",
+         "explanation": "The shopkeeper has 12 matchboxes. The class traces 2 matchboxes, so subtract them from the total. 12 - 2 = 10 matchboxes left.",
+         "steps": [
+          "The shopkeeper has 12 matchboxes.",
+          "The class traces 2 matchboxes, so subtract them from the total.",
+          "12 - 2 = 10 matchboxes left."
+         ],
+         "hint": "Take away the traced matchboxes from the total number of matchboxes.",
+         "derived": [
+          "10 (generated problem)",
+          "12 (generated problem)",
+          "2 (generated problem)"
+         ],
+         "gen": {
+          "template": "A shopkeeper has {a} matchboxes. The class traces {b} of them. How many matchboxes are left?",
+          "params": {
+           "a": [
+            8,
+            10,
+            12
+           ],
+           "b": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "b < a"
+          ],
+          "answer": "a-b",
+          "vals": {},
+          "steps": [
+           "The shopkeeper has {a} matchboxes.",
+           "The class traces {b} matchboxes, so subtract them from the total.",
+           "{a} - {b} = {answer} matchboxes left."
+          ],
+          "model": null,
+          "hint": "Take away the traced matchboxes from the total number of matchboxes.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g2-ch4-l2-c7",
+         "src": [
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          },
+          {
+           "ch": 4,
+           "p": 34
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch4-l2-shadows-of-paper-decorations-2df169.webp",
+       "sceneAlt": "A torch casts clear shadows of paper decorations onto a wall, and moving the torch changes the shadows’ positions.",
+       "sceneCaption": "Moving a torch changes the positions of paper decorations’ shadows on a wall.",
+       "sceneCredit": {
+        "text": "Shadows of paper decorations - 4 by Annatsach, CC BY 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Shadows_of_paper_decorations_-_4.jpg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "creator": "Annatsach"
+       }
+      },
+      {
+       "id": "mathematics-g2-ch4-l3",
+       "title": "Hide-and-Seek with Shapes",
+       "estimatedMinutes": 8,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g2-ch4-l3-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Which shape will you choose to hide, and where will you hide?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g2-ch4-l3-a1",
+         "difficulty": 1,
+         "tags": [
+          "hide-and-seek",
+          "circle",
+          "rectangle",
+          "shapes"
+         ],
+         "title": "Shapes Join a Hide-and-Seek Game",
+         "body": "Rectangle and Circle play hide and seek. Rectangle hides from Circle. Circle asks where it should hide. It is asked about the photo frame and TV. The circle is caught behind the shoe box. Triangle and Square join when the door bell rings. Now all play together. Colour triangles red and circles green. You can make your own shape design too.",
+         "keyPoints": [
+          "Rectangle hides from Circle.",
+          "Triangle and Square join the game.",
+          "Triangles are red, and circles are green."
+         ],
+         "explanation": "The shapes play together, follow colouring rules, and make new designs.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          },
+          {
+           "ch": 4,
+           "p": 35
+          },
+          {
+           "ch": 4,
+           "p": 35
+          },
+          {
+           "ch": 4,
+           "p": 35
+          },
+          {
+           "ch": 4,
+           "p": 36
+          },
+          {
+           "ch": 4,
+           "p": 36
+          },
+          {
+           "ch": 4,
+           "p": 36
+          },
+          {
+           "ch": 4,
+           "p": 36
+          },
+          {
+           "ch": 4,
+           "p": 37
+          },
+          {
+           "ch": 4,
+           "p": 37
+          },
+          {
+           "ch": 4,
+           "p": 37
+          },
+          {
+           "ch": 4,
+           "p": 37
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch4-l3-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A shape game has 4 triangles and 4 circles playing together. How many shapes are playing together?",
+         "steps": [
+          "The game has 4 triangles and 4 circles.",
+          "Add the two groups to find all the shapes playing together.",
+          "4 + 4 = 8 shapes."
+         ],
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Triangles",
+            "v": 4
+           },
+           {
+            "label": "Circles",
+            "v": 4
+           }
+          ]
+         },
+         "result": "8",
+         "gen": {
+          "template": "A shape game has {triangles} triangles and {circles} circles playing together. How many shapes are playing together?",
+          "params": {
+           "triangles": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ],
+           "circles": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "triangles+circles",
+          "vals": {
+           "total_shapes": "triangles+circles"
+          },
+          "steps": [
+           "The game has {triangles} triangles and {circles} circles.",
+           "Add the two groups to find all the shapes playing together.",
+           "{triangles} + {circles} = {answer} shapes."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Triangles",
+             "v": "triangles"
+            },
+            {
+             "label": "Circles",
+             "v": "circles"
+            }
+           ]
+          },
+          "hint": "Count the triangles and circles, then add the two groups.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch4-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "hide-and-seek",
+          "rectangle",
+          "circle"
+         ],
+         "title": "Who Is Hiding?",
+         "prompt": "Which shape is hiding from Circle?",
+         "options": [
+          "Rectangle",
+          "Triangle",
+          "Square",
+          "Photo frame"
+         ],
+         "answer": 0,
+         "explanation": "Rectangle is hiding from Circle.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          },
+          {
+           "ch": 4,
+           "p": 35
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g2-ch4-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "hide-and-seek",
+          "rectangle",
+          "circle"
+         ],
+         "title": "Who Hides from Whom?",
+         "prompt": "Circle is hiding from Rectangle.",
+         "answer": false,
+         "explanation": "Rectangle is hiding from Circle, not the other way round.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At the start, 8 shapes are playing hide-and-seek. 5 shapes are hiding from the others. How many shapes are still playing and seeking?",
+         "explanation": "There are 8 shapes altogether, with 5 hiding. Subtract the hiding shapes from all the shapes to find the shapes still playing. 8 - 5 = 3 shapes.",
+         "steps": [
+          "There are 8 shapes altogether, with 5 hiding.",
+          "Subtract the hiding shapes from all the shapes to find the shapes still playing.",
+          "8 - 5 = 3 shapes."
+         ],
+         "hint": "Take the number of hiding shapes away from the number playing.",
+         "derived": [
+          "3 (generated problem)",
+          "5 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "At the start, {all_shapes} shapes are playing hide-and-seek. {hidden_shapes} shapes are hiding from the others. How many shapes are still playing and seeking?",
+          "params": {
+           "all_shapes": [
+            8,
+            9,
+            10,
+            11,
+            12
+           ],
+           "hidden_shapes": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [
+           "all_shapes > hidden_shapes"
+          ],
+          "answer": "all_shapes-hidden_shapes",
+          "vals": {
+           "playing_shapes": "all_shapes-hidden_shapes"
+          },
+          "steps": [
+           "There are {all_shapes} shapes altogether, with {hidden_shapes} hiding.",
+           "Subtract the hiding shapes from all the shapes to find the shapes still playing.",
+           "{all_shapes} - {hidden_shapes} = {answer} shapes."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Hiding",
+             "v": "hidden_shapes"
+            },
+            {
+             "label": "Playing",
+             "v": "playing_shapes"
+            }
+           ]
+          },
+          "hint": "Take the number of hiding shapes away from the number playing.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Hiding",
+            "v": 5
+           },
+           {
+            "label": "Playing",
+            "v": 3
+           }
+          ]
+         },
+         "answers": [
+          "3"
+         ],
+         "id": "mathematics-g2-ch4-l3-c2",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A design has 5 triangles, and the lesson says triangles should be coloured red. How many triangles in the design are red?",
+         "explanation": "The design contains 5 triangles. The colour rule says that triangles should be coloured red. All the triangles are red, so 5 = 5 triangles are red.",
+         "steps": [
+          "The design contains 5 triangles.",
+          "The colour rule says that triangles should be coloured red.",
+          "All the triangles are red, so 5 = 5 triangles are red."
+         ],
+         "hint": "Use the colour rule for triangles and count the triangles in the design.",
+         "derived": [
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "A design has {red_triangles} triangles, and the lesson says triangles should be coloured red. How many triangles in the design are red?",
+          "params": {
+           "red_triangles": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "red_triangles",
+          "vals": {
+           "red_count": "red_triangles"
+          },
+          "steps": [
+           "The design contains {red_triangles} triangles.",
+           "The colour rule says that triangles should be coloured red.",
+           "All the triangles are red, so {red_triangles} = {answer} triangles are red."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": 1,
+           "size": "red_triangles"
+          },
+          "hint": "Use the colour rule for triangles and count the triangles in the design.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 1,
+          "size": 5
+         },
+         "answers": [
+          "5"
+         ],
+         "id": "mathematics-g2-ch4-l3-c3",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "When the doorbell rings, 5 triangles and 4 squares join the game. How many new shapes join the game?",
+         "explanation": "The new players are 5 triangles and 4 squares. Add the two groups to find how many shapes join. 5 + 4 = 9 shapes.",
+         "steps": [
+          "The new players are 5 triangles and 4 squares.",
+          "Add the two groups to find how many shapes join.",
+          "5 + 4 = 9 shapes."
+         ],
+         "hint": "Add the number of triangles to the number of squares.",
+         "derived": [
+          "4 (generated problem)",
+          "5 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "When the doorbell rings, {triangles} triangles and {squares} squares join the game. How many new shapes join the game?",
+          "params": {
+           "triangles": [
+            2,
+            3,
+            4,
+            5
+           ],
+           "squares": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "triangles+squares",
+          "vals": {
+           "new_shapes": "triangles+squares"
+          },
+          "steps": [
+           "The new players are {triangles} triangles and {squares} squares.",
+           "Add the two groups to find how many shapes join.",
+           "{triangles} + {squares} = {answer} shapes."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Triangles",
+             "v": "triangles"
+            },
+            {
+             "label": "Squares",
+             "v": "squares"
+            }
+           ]
+          },
+          "hint": "Add the number of triangles to the number of squares.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Triangles",
+            "v": 5
+           },
+           {
+            "label": "Squares",
+            "v": 4
+           }
+          ]
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g2-ch4-l3-c4",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch4-l3-a7",
+         "difficulty": 2,
+         "tags": [
+          "door-bell",
+          "triangle",
+          "square",
+          "game"
+         ],
+         "title": "Who Joins the Game?",
+         "prompt": "Which shapes come when the door bell rings?",
+         "options": [
+          "Triangle and Square",
+          "Rectangle and Circle",
+          "Triangle and Rectangle",
+          "Circle and Square"
+         ],
+         "answer": 0,
+         "explanation": "Triangle and Square come when the door bell rings.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 36
+          },
+          {
+           "ch": 4,
+           "p": 36
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At school, a child makes a design with 3 triangles and 3 squares. How many shapes are in the school design?",
+         "explanation": "The school design has 3 triangles and 3 squares. Add the shapes to find the total in the design. 3 + 3 = 6 shapes.",
+         "steps": [
+          "The school design has 3 triangles and 3 squares.",
+          "Add the shapes to find the total in the design.",
+          "3 + 3 = 6 shapes."
+         ],
+         "hint": "Add the number of triangles and squares in the design.",
+         "derived": [
+          "3 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "At school, a child makes a design with {triangles} triangles and {squares} squares. How many shapes are in the school design?",
+          "params": {
+           "triangles": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ],
+           "squares": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "triangles+squares",
+          "vals": {
+           "design_shapes": "triangles+squares"
+          },
+          "steps": [
+           "The school design has {triangles} triangles and {squares} squares.",
+           "Add the shapes to find the total in the design.",
+           "{triangles} + {squares} = {answer} shapes."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Triangles",
+             "v": "triangles"
+            },
+            {
+             "label": "Squares",
+             "v": "squares"
+            }
+           ]
+          },
+          "hint": "Add the number of triangles and squares in the design.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Triangles",
+            "v": 3
+           },
+           {
+            "label": "Squares",
+            "v": 3
+           }
+          ]
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g2-ch4-l3-c5",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A bus has 6 circular wheels and 2 rectangular windows. How many shapes can we count on the bus?",
+         "explanation": "The bus has 6 circular wheels and 2 rectangular windows. Add the wheels and windows to count every shape on the bus. 6 + 2 = 8 shapes.",
+         "steps": [
+          "The bus has 6 circular wheels and 2 rectangular windows.",
+          "Add the wheels and windows to count every shape on the bus.",
+          "6 + 2 = 8 shapes."
+         ],
+         "hint": "Count the circular wheels and rectangular windows, then add them.",
+         "derived": [
+          "12 (generated problem)",
+          "2 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bus has {wheels} circular wheels and {windows} rectangular windows. How many shapes can we count on the bus?",
+          "params": {
+           "wheels": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ],
+           "windows": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [
+           "wheels > windows"
+          ],
+          "answer": "wheels+windows",
+          "vals": {},
+          "steps": [
+           "The bus has {wheels} circular wheels and {windows} rectangular windows.",
+           "Add the wheels and windows to count every shape on the bus.",
+           "{wheels} + {windows} = {answer} shapes."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Circular wheels",
+             "v": "wheels"
+            },
+            {
+             "label": "Rectangular windows",
+             "v": "windows"
+            }
+           ]
+          },
+          "hint": "Count the circular wheels and rectangular windows, then add them.",
+          "wrong": [
+           "windows-wheels",
+           "wheels*windows",
+           "wheels"
+          ],
+          "wrongWhy": [
+           "You subtracted the windows instead of adding the shapes.",
+           "You multiplied the number of wheels and windows instead of adding them.",
+           "You counted only the wheels and forgot the windows."
+          ]
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Circular wheels",
+            "v": 6
+           },
+           {
+            "label": "Rectangular windows",
+            "v": 2
+           }
+          ]
+         },
+         "options": [
+          "6",
+          "8",
+          "12",
+          "-4"
+         ],
+         "answer": 1,
+         "why": {
+          "6": "You counted only the wheels and forgot the windows.",
+          "12": "You multiplied the number of wheels and windows instead of adding them.",
+          "-4": "You subtracted the windows instead of adding the shapes."
+         },
+         "id": "mathematics-g2-ch4-l3-c6",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A party tray has 2 circle-shaped laddoos and 2 rectangle-shaped biscuits. How many snacks are on the tray?",
+         "explanation": "There are 2 circle-shaped laddoos and 2 rectangle-shaped biscuits. Add the two kinds of snacks to find the total. 2 + 2 = 4 snacks.",
+         "steps": [
+          "There are 2 circle-shaped laddoos and 2 rectangle-shaped biscuits.",
+          "Add the two kinds of snacks to find the total.",
+          "2 + 2 = 4 snacks."
+         ],
+         "hint": "Add the circle-shaped laddoos and rectangle-shaped biscuits.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "A party tray has {circle_laddoos} circle-shaped laddoos and {rectangle_biscuits} rectangle-shaped biscuits. How many snacks are on the tray?",
+          "params": {
+           "circle_laddoos": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ],
+           "rectangle_biscuits": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "circle_laddoos+rectangle_biscuits",
+          "vals": {
+           "total_snacks": "circle_laddoos+rectangle_biscuits"
+          },
+          "steps": [
+           "There are {circle_laddoos} circle-shaped laddoos and {rectangle_biscuits} rectangle-shaped biscuits.",
+           "Add the two kinds of snacks to find the total.",
+           "{circle_laddoos} + {rectangle_biscuits} = {answer} snacks."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Circle laddoos",
+             "v": "circle_laddoos"
+            },
+            {
+             "label": "Rectangle biscuits",
+             "v": "rectangle_biscuits"
+            }
+           ]
+          },
+          "hint": "Add the circle-shaped laddoos and rectangle-shaped biscuits.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Circle laddoos",
+            "v": 2
+           },
+           {
+            "label": "Rectangle biscuits",
+            "v": 2
+           }
+          ]
+         },
+         "answers": [
+          "4"
+         ],
+         "id": "mathematics-g2-ch4-l3-c7",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A cricket team makes 8 triangle flags and 2 circle badges. How many more flags than badges are made?",
+         "explanation": "There are 8 triangle flags and 2 circle badges. Subtract the smaller group, the badges, from the larger group, the flags. 8 - 2 = 6 more flags.",
+         "steps": [
+          "There are 8 triangle flags and 2 circle badges.",
+          "Subtract the smaller group, the badges, from the larger group, the flags.",
+          "8 - 2 = 6 more flags."
+         ],
+         "hint": "Find how many flags there are and take away the number of badges.",
+         "derived": [
+          "2 (generated problem)",
+          "6 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A cricket team makes {triangles} triangle flags and {circles} circle badges. How many more flags than badges are made?",
+          "params": {
+           "triangles": [
+            5,
+            6,
+            7,
+            8,
+            9
+           ],
+           "circles": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [
+           "triangles > circles"
+          ],
+          "answer": "triangles-circles",
+          "vals": {
+           "difference": "triangles-circles"
+          },
+          "steps": [
+           "There are {triangles} triangle flags and {circles} circle badges.",
+           "Subtract the smaller group, the badges, from the larger group, the flags.",
+           "{triangles} - {circles} = {answer} more flags."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Triangle flags",
+             "v": "triangles"
+            },
+            {
+             "label": "Circle badges",
+             "v": "circles"
+            }
+           ]
+          },
+          "hint": "Find how many flags there are and take away the number of badges.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Triangle flags",
+            "v": 8
+           },
+           {
+            "label": "Circle badges",
+            "v": 2
+           }
+          ]
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g2-ch4-l3-c8",
+         "src": [
+          {
+           "ch": 4,
+           "p": 35
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch4-l3-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A design has 4 triangles and 3 circles. Triangles are coloured red and circles are coloured green. How many shapes in the design have a colour from the lesson?",
+         "steps": [
+          "The design has 4 triangles, which are coloured red.",
+          "The design has 3 circles, which are coloured green.",
+          "Add the red triangles and green circles to find all the coloured shapes.",
+          "4 + 3 = 7 coloured shapes."
+         ],
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Red triangles",
+            "v": 4
+           },
+           {
+            "label": "Green circles",
+            "v": 3
+           }
+          ]
+         },
+         "result": "7",
+         "gen": {
+          "template": "A design has {red_triangles} triangles and {green_circles} circles. Triangles are coloured red and circles are coloured green. How many shapes in the design have a colour from the lesson?",
+          "params": {
+           "red_triangles": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ],
+           "green_circles": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "red_triangles+green_circles",
+          "vals": {
+           "coloured_shapes": "red_triangles+green_circles"
+          },
+          "steps": [
+           "The design has {red_triangles} triangles, which are coloured red.",
+           "The design has {green_circles} circles, which are coloured green.",
+           "Add the red triangles and green circles to find all the coloured shapes.",
+           "{red_triangles} + {green_circles} = {answer} coloured shapes."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Red triangles",
+             "v": "red_triangles"
+            },
+            {
+             "label": "Green circles",
+             "v": "green_circles"
+            }
+           ]
+          },
+          "hint": "Count the red triangles and the green circles, then add them.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "7 (generated problem)"
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g2-ch4-l3-a9",
+         "difficulty": 3,
+         "tags": [
+          "colouring",
+          "triangle",
+          "design"
+         ],
+         "title": "Colour the Triangles",
+         "prompt": "Colour all the triangles ______.",
+         "answers": [
+          "red"
+         ],
+         "hint": "The lesson gives one colour for triangles.",
+         "explanation": "Triangles should be coloured red.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 37
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch4-l1-leather-puppets-of-karnataka-dbc1a8.webp",
+       "sceneAlt": "Leather puppets are used in a Togalu Gombeyaata shadow-play demonstration in Karnataka, India.",
+       "sceneCaption": "Leather puppets used in a Togalu Gombeyaata shadow-play demonstration in Karnataka.",
+       "sceneCredit": {
+        "text": "Leather puppets of Karnataka by Amarrg, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Leather_puppets_of_Karnataka.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Amarrg"
+       }
+      },
+      {
+       "id": "mathematics-g2-ch4-l4",
+       "title": "Catch the Corner",
+       "estimatedMinutes": 10,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g2-ch4-l4-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Can we catch every corner before the clapping stops?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g2-ch4-l4-a1",
+         "difficulty": 1,
+         "tags": [
+          "game",
+          "naveen",
+          "clapping",
+          "corners"
+         ],
+         "title": "The Clapping Game",
+         "body": "Naveen faces the wall and claps while his friends run along the table. Everyone stops when Naveen stops clapping. The child not at a corner is out. Another child claps next, and the game continues. The chapter asks for names near the table's corners. It also asks where Wasim stands and if the game can use a round table.",
+         "keyPoints": [
+          "Naveen claps while his friends run along the table.",
+          "Everybody stops when Naveen stops clapping.",
+          "A child not at a corner is out."
+         ],
+         "explanation": "These rules explain how the clapping game continues.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch4-l4-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Naveen stops clapping when 8 children are standing equally at the four corners of a table. How many children are at each corner?",
+         "steps": [
+          "There are 8 children and four corner places.",
+          "Dividing equally among the four corners gives 8 ÷ 4 = 2.",
+          "So there are 2 children at each corner."
+         ],
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 2
+         },
+         "result": "2",
+         "gen": {
+          "template": "Naveen stops clapping when {n} children are standing equally at the four corners of a table. How many children are at each corner?",
+          "params": {
+           "n": [
+            8,
+            12,
+            16,
+            20
+           ]
+          },
+          "where": [
+           "n % 4 == 0"
+          ],
+          "answer": "n/4",
+          "vals": {
+           "each": "n/4"
+          },
+          "steps": [
+           "There are {n} children and four corner places.",
+           "Dividing equally among the four corners gives {n} ÷ 4 = {each}.",
+           "So there are {answer} children at each corner."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "4",
+           "size": "n/4"
+          },
+          "hint": "Share the children equally among the four corners.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g2-ch4-l4-a5",
+         "difficulty": 2,
+         "tags": [
+          "edges",
+          "straight",
+          "curved",
+          "objects"
+         ],
+         "title": "Straight and Curved Edges",
+         "body": "Straight edges go in a straight line. Curved edges bend round. Objects around us can have straight edges. Many objects have curved edges. Some objects have both kinds of edges. Look around you for these edges. The chapter asks you to find objects with both kinds of edges.",
+         "keyPoints": [
+          "Straight edges do not bend.",
+          "Curved edges bend round.",
+          "Some objects have straight and curved edges."
+         ],
+         "explanation": "Straight and curved edges can appear on the same object.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch4-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "naveen",
+          "wall",
+          "clapping"
+         ],
+         "title": "What Naveen Faces",
+         "prompt": "What is Naveen facing while he claps?",
+         "options": [
+          "the wall",
+          "the table",
+          "his friends",
+          "the corner"
+         ],
+         "answer": 0,
+         "explanation": "Naveen faces the wall while he claps.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g2-ch4-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "wasim",
+          "naveen",
+          "chapter"
+         ],
+         "title": "Who Is Asked About?",
+         "prompt": "The chapter asks where Naveen is standing.",
+         "answer": false,
+         "explanation": "The chapter asks where Wasim is standing.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Naveen stops clapping. There are 12 children playing, and 4 children are at the corners of the table. How many children are out because they are not at a corner?",
+         "explanation": "There are 12 children altogether, and 4 are at corners. The children not at corners are out, so 12 − 4 = 8. There are 8 children out.",
+         "steps": [
+          "There are 12 children altogether, and 4 are at corners.",
+          "The children not at corners are out, so 12 − 4 = 8.",
+          "There are 8 children out."
+         ],
+         "hint": "Take away the children at the corners from all the children.",
+         "derived": [
+          "12 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "Naveen stops clapping. There are {total} children playing, and {at_corners} children are at the corners of the table. How many children are out because they are not at a corner?",
+          "params": {
+           "total": [
+            8,
+            10,
+            12
+           ],
+           "at_corners": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "at_corners < total"
+          ],
+          "answer": "total-at_corners",
+          "vals": {
+           "out": "total-at_corners"
+          },
+          "steps": [
+           "There are {total} children altogether, and {at_corners} are at corners.",
+           "The children not at corners are out, so {total} − {at_corners} = {out}.",
+           "There are {answer} children out."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "At corners",
+             "v": "at_corners"
+            },
+            {
+             "label": "Not at corners",
+             "v": "total-at_corners"
+            }
+           ]
+          },
+          "hint": "Take away the children at the corners from all the children.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "At corners",
+            "v": 4
+           },
+           {
+            "label": "Not at corners",
+            "v": 8
+           }
+          ]
+         },
+         "answers": [
+          "8"
+         ],
+         "id": "mathematics-g2-ch4-l4-c2",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A picture of an object has 3 straight edges and 3 curved edges. How many edges does the object have altogether?",
+         "explanation": "The picture shows 3 straight edges and 3 curved edges. To find all the edges, add both kinds: 3 + 3 = 6. The object has 6 edges altogether.",
+         "steps": [
+          "The picture shows 3 straight edges and 3 curved edges.",
+          "To find all the edges, add both kinds: 3 + 3 = 6.",
+          "The object has 6 edges altogether."
+         ],
+         "hint": "Add the straight edges and the curved edges.",
+         "derived": [
+          "3 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "A picture of an object has {straight} straight edges and {curved} curved edges. How many edges does the object have altogether?",
+          "params": {
+           "straight": [
+            2,
+            3,
+            4
+           ],
+           "curved": [
+            2,
+            3
+           ]
+          },
+          "where": [],
+          "answer": "straight+curved",
+          "vals": {
+           "total_edges": "straight+curved"
+          },
+          "steps": [
+           "The picture shows {straight} straight edges and {curved} curved edges.",
+           "To find all the edges, add both kinds: {straight} + {curved} = {total_edges}.",
+           "The object has {answer} edges altogether."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Straight edges",
+             "v": "straight"
+            },
+            {
+             "label": "Curved edges",
+             "v": "curved"
+            }
+           ]
+          },
+          "hint": "Add the straight edges and the curved edges.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Straight edges",
+            "v": 3
+           },
+           {
+            "label": "Curved edges",
+            "v": 3
+           }
+          ]
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g2-ch4-l4-c3",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g2-ch4-l4-a4",
+         "difficulty": 2,
+         "tags": [
+          "game",
+          "corners",
+          "clapping"
+         ],
+         "title": "Match the Clapping Game",
+         "prompt": "Match each part of the game or chapter with its answer.",
+         "pairs": [
+          [
+           "The chapter asks",
+           "for names near the corners"
+          ],
+          [
+           "Naveen stops clapping",
+           "Everybody stops"
+          ],
+          [
+           "The child not at a corner",
+           "is out"
+          ],
+          [
+           "The next child",
+           "claps next"
+          ]
+         ],
+         "explanation": "Each part of the game has a clear result.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Naveen places 16 laddoos at the four corners of a tray, with the same number at every corner. How many laddoos are at each corner?",
+         "explanation": "There are 16 laddoos and four corners. Sharing them equally gives 16 ÷ 4 = 4. There are 4 laddoos at each corner.",
+         "steps": [
+          "There are 16 laddoos and four corners.",
+          "Sharing them equally gives 16 ÷ 4 = 4.",
+          "There are 4 laddoos at each corner."
+         ],
+         "hint": "Share the laddoos equally among the four corners.",
+         "derived": [
+          "16 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "Naveen places {n} laddoos at the four corners of a tray, with the same number at every corner. How many laddoos are at each corner?",
+          "params": {
+           "n": [
+            8,
+            12,
+            16,
+            20
+           ]
+          },
+          "where": [
+           "n % 4 == 0"
+          ],
+          "answer": "n/4",
+          "vals": {
+           "each": "n/4"
+          },
+          "steps": [
+           "There are {n} laddoos and four corners.",
+           "Sharing them equally gives {n} ÷ 4 = {each}.",
+           "There are {answer} laddoos at each corner."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "4",
+           "size": "n/4"
+          },
+          "hint": "Share the laddoos equally among the four corners.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 4
+         },
+         "answers": [
+          "4"
+         ],
+         "id": "mathematics-g2-ch4-l4-c4",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Naveen claps while 12 children, each holding a marble, run around a table. When he stops, 3 children are at the corners. How many children are out because they are not at a corner?",
+         "explanation": "There are 12 children playing with marbles. Of these, 3 children reached corners, so 12 − 3 = 9. There are 9 children out.",
+         "steps": [
+          "There are 12 children playing with marbles.",
+          "Of these, 3 children reached corners, so 12 − 3 = 9.",
+          "There are 9 children out."
+         ],
+         "hint": "Find the difference between all the children and the children at corners.",
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "Naveen claps while {total} children, each holding a marble, run around a table. When he stops, {at_corners} children are at the corners. How many children are out because they are not at a corner?",
+          "params": {
+           "total": [
+            8,
+            10,
+            12
+           ],
+           "at_corners": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "at_corners < total"
+          ],
+          "answer": "total-at_corners",
+          "vals": {
+           "out": "total-at_corners"
+          },
+          "steps": [
+           "There are {total} children playing with marbles.",
+           "Of these, {at_corners} children reached corners, so {total} − {at_corners} = {out}.",
+           "There are {answer} children out."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "At corners",
+             "v": "at_corners"
+            },
+            {
+             "label": "Not at corners",
+             "v": "total-at_corners"
+            }
+           ]
+          },
+          "hint": "Find the difference between all the children and the children at corners.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "At corners",
+            "v": 3
+           },
+           {
+            "label": "Not at corners",
+            "v": 9
+           }
+          ]
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g2-ch4-l4-c5",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A school uses 4 rectangular tables for the Catch the Corner game. Each table has four corners. How many corner places are there on all the tables?",
+         "explanation": "Each of the 4 tables has four corners. All the tables have 4 × 4 = 16 corner places. There are 16 corner places altogether.",
+         "steps": [
+          "Each of the 4 tables has four corners.",
+          "All the tables have 4 × 4 = 16 corner places.",
+          "There are 16 corner places altogether."
+         ],
+         "hint": "Find the four corners on each table and then count them for all the tables.",
+         "derived": [
+          "16 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "A school uses {tables} rectangular tables for the Catch the Corner game. Each table has four corners. How many corner places are there on all the tables?",
+          "params": {
+           "tables": {
+            "min": 2,
+            "max": 6
+           }
+          },
+          "where": [],
+          "answer": "tables*4",
+          "vals": {
+           "corners": "tables*4"
+          },
+          "steps": [
+           "Each of the {tables} tables has four corners.",
+           "All the tables have {tables} × 4 = {corners} corner places.",
+           "There are {answer} corner places altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "tables",
+           "size": "4"
+          },
+          "hint": "Find the four corners on each table and then count them for all the tables.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 4
+         },
+         "answers": [
+          "16"
+         ],
+         "id": "mathematics-g2-ch4-l4-c6",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a market, 2 different objects show only straight edges and 2 different objects show only curved edges. How many different objects are shown altogether?",
+         "explanation": "The display has 2 objects with only straight edges. It also has 2 objects with only curved edges. Adding the two groups gives 2 + 2 = 4, so 4 objects are shown.",
+         "steps": [
+          "The display has 2 objects with only straight edges.",
+          "It also has 2 objects with only curved edges.",
+          "Adding the two groups gives 2 + 2 = 4, so 4 objects are shown."
+         ],
+         "hint": "Add the two groups of different objects.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a market, {straight} different objects show only straight edges and {curved} different objects show only curved edges. How many different objects are shown altogether?",
+          "params": {
+           "straight": {
+            "min": 2,
+            "max": 5
+           },
+           "curved": {
+            "min": 2,
+            "max": 5
+           }
+          },
+          "where": [],
+          "answer": "straight+curved",
+          "vals": {
+           "total": "straight+curved"
+          },
+          "steps": [
+           "The display has {straight} objects with only straight edges.",
+           "It also has {curved} objects with only curved edges.",
+           "Adding the two groups gives {straight} + {curved} = {total}, so {answer} objects are shown."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Only straight edges",
+             "v": "straight"
+            },
+            {
+             "label": "Only curved edges",
+             "v": "curved"
+            }
+           ]
+          },
+          "hint": "Add the two groups of different objects.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Only straight edges",
+            "v": 2
+           },
+           {
+            "label": "Only curved edges",
+            "v": 2
+           }
+          ]
+         },
+         "answers": [
+          "4"
+         ],
+         "id": "mathematics-g2-ch4-l4-c7",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch4-l4-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "At a market, 2 rectangular tables are used for Catch the Corner. In each round, one child stands at every corner of every table. The game continues for 3 rounds. How many corner places are filled over all the rounds?",
+         "steps": [
+          "Each table has four corners, so one round uses 2 × 4 = 8 corner places.",
+          "The game lasts 3 rounds.",
+          "Over all the rounds, 8 × 3 = 24 corner places are filled."
+         ],
+         "modelSpec": {
+          "type": "groups",
+          "groups": 6,
+          "size": 4
+         },
+         "result": "24",
+         "gen": {
+          "template": "At a market, {tables} rectangular tables are used for Catch the Corner. In each round, one child stands at every corner of every table. The game continues for {rounds} rounds. How many corner places are filled over all the rounds?",
+          "params": {
+           "tables": [
+            2,
+            3
+           ],
+           "rounds": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "tables*rounds <= 8"
+          ],
+          "answer": "tables*4*rounds",
+          "vals": {
+           "corners_each_round": "tables*4",
+           "corner_places": "tables*4*rounds"
+          },
+          "steps": [
+           "Each table has four corners, so one round uses {tables} × 4 = {corners_each_round} corner places.",
+           "The game lasts {rounds} rounds.",
+           "Over all the rounds, {corners_each_round} × {rounds} = {answer} corner places are filled."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "tables*rounds",
+           "size": "4"
+          },
+          "hint": "First count the corners used in one round.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "2 (generated problem)",
+          "24 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g2-ch4-l4-a9",
+         "difficulty": 3,
+         "tags": [
+          "game",
+          "naveen",
+          "clapping",
+          "stopping"
+         ],
+         "title": "Order the Game",
+         "prompt": "Put the events in order.",
+         "items": [
+          "Naveen faces the wall.",
+          "His friends run along the table.",
+          "Naveen stops clapping.",
+          "Everybody stops.",
+          "The game continues."
+         ],
+         "explanation": "Everybody stops when Naveen stops clapping. The next child claps, and the game continues.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "There are 8 children playing Catch the Corner. When Naveen stops clapping, 2 children are not at a corner, so they are out. The remaining children clap next and then play 3 more rounds, with one clap from each remaining child in every round. How many claps do the remaining children make altogether?",
+         "explanation": "The children who remain are the 8 children minus the 2 children who go out: 6. Each remaining child claps once next and once in each of 3 more rounds, making 3 + 1 = 4 claps. Multiplying gives 6 × 4 = 24 claps in all.",
+         "steps": [
+          "The children who remain are the 8 children minus the 2 children who go out: 6.",
+          "Each remaining child claps once next and once in each of 3 more rounds, making 3 + 1 = 4 claps.",
+          "Multiplying gives 6 × 4 = 24 claps in all."
+         ],
+         "hint": "First find how many children remain after the others go out.",
+         "derived": [
+          "1 (generated problem)",
+          "2 (generated problem)",
+          "24 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "There are {total} children playing Catch the Corner. When Naveen stops clapping, {out} children are not at a corner, so they are out. The remaining children clap next and then play {rounds} more rounds, with one clap from each remaining child in every round. How many claps do the remaining children make altogether?",
+          "params": {
+           "total": [
+            6,
+            8,
+            10
+           ],
+           "out": [
+            2,
+            3,
+            4
+           ],
+           "rounds": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "out < total"
+          ],
+          "answer": "(total-out)*(rounds+1)",
+          "vals": {
+           "remaining": "total-out",
+           "claps_each": "rounds+1"
+          },
+          "steps": [
+           "The children who remain are the {total} children minus the {out} children who go out: {remaining}.",
+           "Each remaining child claps once next and once in each of {rounds} more rounds, making {rounds} + 1 = {claps_each} claps.",
+           "Multiplying gives {remaining} × {claps_each} = {answer} claps in all."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "rounds+1",
+           "size": "total-out"
+          },
+          "hint": "First find how many children remain after the others go out.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 6
+         },
+         "answers": [
+          "24"
+         ],
+         "id": "mathematics-g2-ch4-l4-c8",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A market display shows 2 identical toy shapes. Each shape has 3 straight edges and 2 curved edges. How many edges are on all 2 shapes altogether?",
+         "explanation": "One shape has 3 straight edges and 2 curved edges. The number of edges on one shape is 3 + 2 = 5. For all 2 shapes, 2 × 5 = 10 edges altogether.",
+         "steps": [
+          "One shape has 3 straight edges and 2 curved edges.",
+          "The number of edges on one shape is 3 + 2 = 5.",
+          "For all 2 shapes, 2 × 5 = 10 edges altogether."
+         ],
+         "hint": "First count the straight and curved edges on one shape.",
+         "derived": [
+          "10 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market display shows {objects} identical toy shapes. Each shape has {straight} straight edges and {curved} curved edges. How many edges are on all {objects} shapes altogether?",
+          "params": {
+           "objects": [
+            2,
+            3,
+            4,
+            5
+           ],
+           "straight": [
+            2,
+            3
+           ],
+           "curved": [
+            2,
+            3
+           ]
+          },
+          "where": [],
+          "answer": "objects*(straight+curved)",
+          "vals": {
+           "edges_each": "straight+curved"
+          },
+          "steps": [
+           "One shape has {straight} straight edges and {curved} curved edges.",
+           "The number of edges on one shape is {straight} + {curved} = {edges_each}.",
+           "For all {objects} shapes, {objects} × {edges_each} = {answer} edges altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "objects",
+           "size": "straight+curved"
+          },
+          "hint": "First count the straight and curved edges on one shape.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 5
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g2-ch4-l4-c9",
+         "src": [
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 38
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch4-l1-leather-puppets-of-karnataka-dbc1a8.webp",
+       "sceneAlt": "Leather puppets are used in a Togalu Gombeyaata shadow-play demonstration in Karnataka, India.",
+       "sceneCaption": "Leather puppets used in a Togalu Gombeyaata shadow-play demonstration in Karnataka.",
+       "sceneCredit": {
+        "text": "Leather puppets of Karnataka by Amarrg, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Leather_puppets_of_Karnataka.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Amarrg"
+       }
+      },
+      {
+       "id": "mathematics-g2-ch4-l5",
+       "title": "Origami Fun",
+       "estimatedMinutes": 9,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g2-ch4-l5-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Can a flat paper become a playful dog with just a few folds?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g2-ch4-l5-a1",
+         "difficulty": 1,
+         "tags": [
+          "origami",
+          "paper",
+          "folding"
+         ],
+         "title": "Fold, Open and Discover",
+         "body": "Origami means making shapes by folding paper. Start with paper. Fold it to make a square. Fold paper in half by joining two corners. Fold it into a triangle, then unfold it. Fold the third corner upwards to make the nose and eyes. The paper dog is ready! Try folding to get a shape with four sides. The lesson asks about corners. Explore objects and count edges, corners and sides.",
+         "keyPoints": [
+          "Paper is folded to make shapes.",
+          "The paper dog has a nose and eyes.",
+          "Objects can help us count edges, corners and sides."
+         ],
+         "explanation": "You can explore shapes by folding paper and by counting.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch4-l5-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "There are 5 square paper sheets on the table. How many corners do all the sheets have in all?",
+         "steps": [
+          "Each square sheet has 4 corners, and there are 5 sheets.",
+          "Multiply the number of sheets by the number of corners on each sheet.",
+          "5 x 4 = 20 corners in all."
+         ],
+         "modelSpec": {
+          "type": "groups",
+          "groups": 5,
+          "size": 4
+         },
+         "result": "20",
+         "gen": {
+          "template": "There are {n} square paper sheets on the table. How many corners do all the sheets have in all?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "4*n",
+          "vals": {
+           "corners_each": "4",
+           "total_corners": "n*corners_each"
+          },
+          "steps": [
+           "Each square sheet has {corners_each} corners, and there are {n} sheets.",
+           "Multiply the number of sheets by the number of corners on each sheet.",
+           "{n} x {corners_each} = {answer} corners in all."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "corners_each"
+          },
+          "hint": "Count the corners on one square sheet.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "20 (generated problem)",
+          "4 (generated problem)",
+          "5 (generated problem)"
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch4-l5-a2",
+         "difficulty": 1,
+         "tags": [
+          "paper",
+          "square",
+          "folding"
+         ],
+         "title": "The First Fold",
+         "prompt": "What do you do with the paper at the start?",
+         "options": [
+          "Make a square with it.",
+          "Make the nose and eyes.",
+          "Unfold the triangle.",
+          "Count objects and sides."
+         ],
+         "answer": 0,
+         "explanation": "You first fold the paper to make a square.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g2-ch4-l5-a3",
+         "difficulty": 1,
+         "tags": [
+          "shape",
+          "tick",
+          "folding"
+         ],
+         "title": "Tick the Shape",
+         "prompt": "Children tick the shape they get.",
+         "answer": true,
+         "explanation": "Yes, the children tick the shape they make.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "After 4 square sheets are each folded in half by joining two corners, they become triangles. How many corners do all the triangles have in all?",
+         "explanation": "Each folded triangle has 3 corners, and there are 4 triangles. Multiply the number of triangles by the number of corners on each triangle. 4 x 3 = 12 corners in all.",
+         "steps": [
+          "Each folded triangle has 3 corners, and there are 4 triangles.",
+          "Multiply the number of triangles by the number of corners on each triangle.",
+          "4 x 3 = 12 corners in all."
+         ],
+         "hint": "Count the corners on one folded triangle.",
+         "derived": [
+          "12 (generated problem)",
+          "16 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "After {n} square sheets are each folded in half by joining two corners, they become triangles. How many corners do all the triangles have in all?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "3*n",
+          "vals": {
+           "triangle_corners": "3",
+           "total_corners": "n*triangle_corners"
+          },
+          "steps": [
+           "Each folded triangle has {triangle_corners} corners, and there are {n} triangles.",
+           "Multiply the number of triangles by the number of corners on each triangle.",
+           "{n} x {triangle_corners} = {answer} corners in all."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "triangle_corners"
+          },
+          "hint": "Count the corners on one folded triangle.",
+          "wrong": [
+           "4*n",
+           "2*n",
+           "n+2"
+          ],
+          "wrongWhy": [
+           "You counted the corners of the square instead of the folded triangle.",
+           "You counted only the two corners that were joined.",
+           "You added one extra corner to the number of triangles."
+          ]
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 3
+         },
+         "options": [
+          "8",
+          "6",
+          "12",
+          "16"
+         ],
+         "answer": 2,
+         "why": {
+          "6": "You added one extra corner to the number of triangles.",
+          "8": "You counted only the two corners that were joined.",
+          "16": "You counted the corners of the square instead of the folded triangle."
+         },
+         "id": "mathematics-g2-ch4-l5-c2",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Children use paper to make 3 rectangular shapes. How many sides do all the rectangular shapes have in all?",
+         "explanation": "Each rectangular shape has 4 sides, and there are 3 shapes. Multiply the number of rectangles by the number of sides on each one. 3 x 4 = 12 sides in all.",
+         "steps": [
+          "Each rectangular shape has 4 sides, and there are 3 shapes.",
+          "Multiply the number of rectangles by the number of sides on each one.",
+          "3 x 4 = 12 sides in all."
+         ],
+         "hint": "Count the sides on one rectangle.",
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "Children use paper to make {n} rectangular shapes. How many sides do all the rectangular shapes have in all?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "4*n",
+          "vals": {
+           "sides_each": "4",
+           "total_sides": "n*sides_each"
+          },
+          "steps": [
+           "Each rectangular shape has {sides_each} sides, and there are {n} shapes.",
+           "Multiply the number of rectangles by the number of sides on each one.",
+           "{n} x {sides_each} = {answer} sides in all."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "sides_each"
+          },
+          "hint": "Count the sides on one rectangle.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 4
+         },
+         "answers": [
+          "12"
+         ],
+         "id": "mathematics-g2-ch4-l5-c3",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Meena unfolds 4 square paper sheets and places them on her desk. How many edges do all the sheets have in all?",
+         "explanation": "Each unfolded square has 4 edges, and there are 4 sheets. Multiply the number of sheets by the number of edges on each sheet. 4 x 4 = 16 edges in all.",
+         "steps": [
+          "Each unfolded square has 4 edges, and there are 4 sheets.",
+          "Multiply the number of sheets by the number of edges on each sheet.",
+          "4 x 4 = 16 edges in all."
+         ],
+         "hint": "Count the edges on one square sheet.",
+         "derived": [
+          "16 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "Meena unfolds {n} square paper sheets and places them on her desk. How many edges do all the sheets have in all?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "4*n",
+          "vals": {
+           "edges_each": "4",
+           "total_edges": "n*edges_each"
+          },
+          "steps": [
+           "Each unfolded square has {edges_each} edges, and there are {n} sheets.",
+           "Multiply the number of sheets by the number of edges on each sheet.",
+           "{n} x {edges_each} = {answer} edges in all."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "edges_each"
+          },
+          "hint": "Count the edges on one square sheet.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 4
+         },
+         "answers": [
+          "16"
+         ],
+         "id": "mathematics-g2-ch4-l5-c4",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g2-ch4-l5-a6",
+         "difficulty": 2,
+         "tags": [
+          "paper",
+          "folding",
+          "corners",
+          "sides"
+         ],
+         "title": "Match the Actions",
+         "prompt": "Match each action with its result.",
+         "pairs": [
+          [
+           "Make a square",
+           "Fold the paper"
+          ],
+          [
+           "Join two corners",
+           "Fold in half"
+          ],
+          [
+           "Fold into a triangle",
+           "Then unfold"
+          ],
+          [
+           "Fold the third corner upwards",
+           "Make the nose and eyes"
+          ],
+          [
+           "Explore objects",
+           "Count edges, corners and sides"
+          ]
+         ],
+         "explanation": "Each action has a matching result in the lesson.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g2-ch4-l5-a4",
+         "difficulty": 2,
+         "tags": [
+          "triangle",
+          "unfold",
+          "paper"
+         ],
+         "title": "Open the Fold",
+         "prompt": "After folding the paper into a triangle, you ______ it.",
+         "answers": [
+          "unfold"
+         ],
+         "hint": "Open the triangle fold again.",
+         "explanation": "You unfold the paper after making the triangle.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A market seller wraps 6 gifts in square paper sheets. How many corners do all the sheets have altogether?",
+         "explanation": "Each square wrapping sheet has 4 corners, and there are 6 sheets. Multiply the number of sheets by the number of corners on each sheet. 6 x 4 = 24 corners altogether.",
+         "steps": [
+          "Each square wrapping sheet has 4 corners, and there are 6 sheets.",
+          "Multiply the number of sheets by the number of corners on each sheet.",
+          "6 x 4 = 24 corners altogether."
+         ],
+         "hint": "Count the corners on one square sheet.",
+         "derived": [
+          "24 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market seller wraps {n} gifts in square paper sheets. How many corners do all the sheets have altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "4*n",
+          "vals": {
+           "corners_each": "4",
+           "total_corners": "n*corners_each"
+          },
+          "steps": [
+           "Each square wrapping sheet has {corners_each} corners, and there are {n} sheets.",
+           "Multiply the number of sheets by the number of corners on each sheet.",
+           "{n} x {corners_each} = {answer} corners altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "corners_each"
+          },
+          "hint": "Count the corners on one square sheet.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 6,
+          "size": 4
+         },
+         "answers": [
+          "24"
+         ],
+         "id": "mathematics-g2-ch4-l5-c5",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At school, 2 children each fold a square sheet in half by joining two corners to make a triangle. How many corners do all the triangles have altogether?",
+         "explanation": "Each child makes one triangle with 3 corners. There are 2 triangles, so multiply 2 by 3. 2 x 3 = 6 corners altogether.",
+         "steps": [
+          "Each child makes one triangle with 3 corners.",
+          "There are 2 triangles, so multiply 2 by 3.",
+          "2 x 3 = 6 corners altogether."
+         ],
+         "hint": "Count the corners on one folded triangle.",
+         "derived": [
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "At school, {n} children each fold a square sheet in half by joining two corners to make a triangle. How many corners do all the triangles have altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "3*n",
+          "vals": {
+           "triangle_corners": "3",
+           "total_corners": "n*triangle_corners"
+          },
+          "steps": [
+           "Each child makes one triangle with {triangle_corners} corners.",
+           "There are {n} triangles, so multiply {n} by {triangle_corners}.",
+           "{n} x {triangle_corners} = {answer} corners altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "triangle_corners"
+          },
+          "hint": "Count the corners on one folded triangle.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 3
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g2-ch4-l5-c6",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "For a bus trip, the teacher makes 5 rectangular paper signs. How many sides do all the signs have altogether?",
+         "explanation": "Each rectangular paper sign has 4 sides, and there are 5 signs. Multiply the number of signs by the number of sides on each sign. 5 x 4 = 20 sides altogether.",
+         "steps": [
+          "Each rectangular paper sign has 4 sides, and there are 5 signs.",
+          "Multiply the number of signs by the number of sides on each sign.",
+          "5 x 4 = 20 sides altogether."
+         ],
+         "hint": "Count the sides on one rectangular sign.",
+         "derived": [
+          "20 (generated problem)",
+          "4 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "For a bus trip, the teacher makes {n} rectangular paper signs. How many sides do all the signs have altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "4*n",
+          "vals": {
+           "sides_each": "4",
+           "total_sides": "n*sides_each"
+          },
+          "steps": [
+           "Each rectangular paper sign has {sides_each} sides, and there are {n} signs.",
+           "Multiply the number of signs by the number of sides on each sign.",
+           "{n} x {sides_each} = {answer} sides altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "sides_each"
+          },
+          "hint": "Count the sides on one rectangular sign.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 5,
+          "size": 4
+         },
+         "answers": [
+          "20"
+         ],
+         "id": "mathematics-g2-ch4-l5-c7",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At the market, 6 laddoos are each placed in a square paper tray. How many corners do all the trays have altogether?",
+         "explanation": "Each square paper tray has 4 corners, and there are 6 trays. Multiply the number of trays by the number of corners on each tray. 6 x 4 = 24 corners altogether.",
+         "steps": [
+          "Each square paper tray has 4 corners, and there are 6 trays.",
+          "Multiply the number of trays by the number of corners on each tray.",
+          "6 x 4 = 24 corners altogether."
+         ],
+         "hint": "Count the corners on one square tray.",
+         "derived": [
+          "24 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "At the market, {n} laddoos are each placed in a square paper tray. How many corners do all the trays have altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "4*n",
+          "vals": {
+           "corners_each": "4",
+           "total_corners": "n*corners_each"
+          },
+          "steps": [
+           "Each square paper tray has {corners_each} corners, and there are {n} trays.",
+           "Multiply the number of trays by the number of corners on each tray.",
+           "{n} x {corners_each} = {answer} corners altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "n",
+           "size": "corners_each"
+          },
+          "hint": "Count the corners on one square tray.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 6,
+          "size": 4
+         },
+         "answers": [
+          "24"
+         ],
+         "id": "mathematics-g2-ch4-l5-c8",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a cricket match, 5 square paper flags are each folded in half into a triangle. How many fewer corners do the triangles have than the square flags altogether?",
+         "explanation": "A square flag has 4 corners, while a folded triangle has 3 corners. One triangle has 4 - 3 = 1 fewer corner. There are 5 flags, so 5 x 1 = 5 fewer corners altogether.",
+         "steps": [
+          "A square flag has 4 corners, while a folded triangle has 3 corners.",
+          "One triangle has 4 - 3 = 1 fewer corner.",
+          "There are 5 flags, so 5 x 1 = 5 fewer corners altogether."
+         ],
+         "hint": "Find how many fewer corners one triangle has than one square.",
+         "derived": [
+          "1 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a cricket match, {n} square paper flags are each folded in half into a triangle. How many fewer corners do the triangles have than the square flags altogether?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "n",
+          "vals": {
+           "square_corners": "4",
+           "triangle_corners": "3",
+           "difference_each": "square_corners-triangle_corners",
+           "total_difference": "n*difference_each"
+          },
+          "steps": [
+           "A square flag has {square_corners} corners, while a folded triangle has {triangle_corners} corners.",
+           "One triangle has {square_corners} - {triangle_corners} = {difference_each} fewer corner.",
+           "There are {n} flags, so {n} x {difference_each} = {answer} fewer corners altogether."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Square flags",
+             "v": "n*square_corners"
+            },
+            {
+             "label": "Folded triangles",
+             "v": "n*triangle_corners"
+            }
+           ]
+          },
+          "hint": "Find how many fewer corners one triangle has than one square.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Square flags",
+            "v": 20
+           },
+           {
+            "label": "Folded triangles",
+            "v": 15
+           }
+          ]
+         },
+         "answers": [
+          "5"
+         ],
+         "id": "mathematics-g2-ch4-l5-c9",
+         "src": [
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          },
+          {
+           "ch": 4,
+           "p": 39
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch4-l5-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "For each of 4 square paper sheets, imagine both the folded triangle and the unfolded square. How many corners are there altogether across these two views?",
+         "steps": [
+          "A square has 4 corners, and a folded triangle has 3 corners.",
+          "For one sheet, add the two views: 4 + 3 = 7 corners.",
+          "For 4 sheets, multiply 4 x 7 = 28 corners altogether."
+         ],
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Square view",
+            "v": 4
+           },
+           {
+            "label": "Triangle view",
+            "v": 3
+           }
+          ]
+         },
+         "result": "28",
+         "gen": {
+          "template": "For each of {n} square paper sheets, imagine both the folded triangle and the unfolded square. How many corners are there altogether across these two views?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "7*n",
+          "vals": {
+           "square_corners": "4",
+           "triangle_corners": "3",
+           "corners_per_sheet": "square_corners+triangle_corners",
+           "total_corners": "n*corners_per_sheet"
+          },
+          "steps": [
+           "A square has {square_corners} corners, and a folded triangle has {triangle_corners} corners.",
+           "For one sheet, add the two views: {square_corners} + {triangle_corners} = {corners_per_sheet} corners.",
+           "For {n} sheets, multiply {n} x {corners_per_sheet} = {answer} corners altogether."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Square view",
+             "v": "square_corners"
+            },
+            {
+             "label": "Triangle view",
+             "v": "triangle_corners"
+            }
+           ]
+          },
+          "hint": "Add the corners on one square and one triangle.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "28 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "7 (generated problem)"
+         ]
+        }
+       ],
+       "topicScene": "media/ch4-l1-leather-puppets-of-karnataka-dbc1a8.webp",
+       "sceneAlt": "Leather puppets are used in a Togalu Gombeyaata shadow-play demonstration in Karnataka, India.",
+       "sceneCaption": "Leather puppets used in a Togalu Gombeyaata shadow-play demonstration in Karnataka.",
+       "sceneCredit": {
+        "text": "Leather puppets of Karnataka by Amarrg, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Leather_puppets_of_Karnataka.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Amarrg"
+       }
+      },
+      {
+       "id": "mathematics-g2-ch4-l6",
+       "title": "Patterns and Number Paths",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g2-ch4-l6-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How could we help Kikku find the next number path?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g2-ch4-l6-a1",
+         "difficulty": 1,
+         "tags": [
+          "patterns",
+          "mehandi",
+          "number paths"
+         ],
+         "title": "Patterns All Around Us",
+         "body": "Patterns can be made in many ways. Stamp different-shaped objects or trace your hand to make mehandi designs. You can also collect leaves, make patterns, and create a wall hanging with cutouts and help from elders. Number patterns can be extended. Kikku jumps on the fourth tile. Draw circles on the next tiles. His mother jumps on the sixth tile, so put × marks on her next tiles.",
+         "keyPoints": [
+          "Stamp objects, trace hands, collect leaves, and use cutouts.",
+          "Number patterns can be extended.",
+          "Use circles for Kikku and × marks for his mother."
+         ],
+         "explanation": "These actions all make or extend patterns.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 40
+          },
+          {
+           "ch": 4,
+           "p": 40
+          },
+          {
+           "ch": 4,
+           "p": 40
+          },
+          {
+           "ch": 4,
+           "p": 41
+          },
+          {
+           "ch": 4,
+           "p": 41
+          },
+          {
+           "ch": 4,
+           "p": 42
+          },
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 43
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch4-l6-a2",
+         "difficulty": 1,
+         "tags": [
+          "patterns",
+          "radha",
+          "mehandi"
+         ],
+         "title": "Radha's Pattern",
+         "prompt": "Which activity is Radha doing?",
+         "options": [
+          "Applying mehandi on her hands",
+          "Collecting leaves for a pattern",
+          "Stamping objects to make designs",
+          "Making a wall hanging with cutouts"
+         ],
+         "answer": 0,
+         "explanation": "Radha is applying mehandi on her hands.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 40
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g2-ch4-l6-a3",
+         "difficulty": 1,
+         "tags": [
+          "patterns",
+          "leaves",
+          "cutouts"
+         ],
+         "title": "Make a Pattern",
+         "prompt": "Match each action with what children can make.",
+         "pairs": [
+          [
+           "Stamp different-shaped objects",
+           "Make designs"
+          ],
+          [
+           "Trace a hand",
+           "Make a mehandi design"
+          ],
+          [
+           "Collect leaves",
+           "Make a pattern"
+          ],
+          [
+           "Use cutouts with help from elders",
+           "Make a wall hanging"
+          ]
+         ],
+         "explanation": "Each pair joins an action with the pattern or object it makes.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 40
+          },
+          {
+           "ch": 4,
+           "p": 40
+          },
+          {
+           "ch": 4,
+           "p": 41
+          },
+          {
+           "ch": 4,
+           "p": 41
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g2-ch4-l6-a4",
+         "difficulty": 1,
+         "tags": [
+          "number paths",
+          "kikku"
+         ],
+         "title": "Kikku's Jump",
+         "prompt": "Kikku jumps on the fourth tile.",
+         "answer": true,
+         "explanation": "Kikku jumps on the fourth tile before he forgets where to jump next.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 43
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g2-ch4-l6-a5",
+         "difficulty": 2,
+         "tags": [
+          "number paths",
+          "kikku's mother"
+         ],
+         "title": "Mother's Jump",
+         "prompt": "Kikku's mother jumps on the fourth tile.",
+         "answer": false,
+         "explanation": "Kikku's mother jumps on the sixth tile, not the fourth.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 43
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g2-ch4-l6-a6",
+         "difficulty": 2,
+         "tags": [
+          "number paths",
+          "kikku"
+         ],
+         "title": "Find the Missing Number Word",
+         "prompt": "Kikku jumps on the ______ tile.",
+         "answers": [
+          "fourth"
+         ],
+         "hint": "Look at Kikku's number path.",
+         "explanation": "Kikku jumps on the fourth tile.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 43
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch4-l6-a7",
+         "difficulty": 2,
+         "tags": [
+          "patterns",
+          "hand tracing",
+          "mehandi"
+         ],
+         "title": "Trace a Hand",
+         "prompt": "What can children make by tracing their hand?",
+         "options": [
+          "A leaf pattern",
+          "A mehandi design",
+          "A number pattern",
+          "A wall hanging"
+         ],
+         "answer": 1,
+         "explanation": "Tracing a hand helps make a mehandi pattern or design.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 40
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g2-ch4-l6-a8",
+         "difficulty": 3,
+         "tags": [
+          "number paths",
+          "tiles",
+          "marks"
+         ],
+         "title": "Help Kikku's Family",
+         "prompt": "Put Kikku and his mother's tile steps in order.",
+         "items": [
+          "Kikku jumps on the fourth tile",
+          "Draw a circle on the next tiles",
+          "Kikku's mother jumps on the sixth tile",
+          "Put a × on the next tiles to help Kikku's mother"
+         ],
+         "explanation": "The steps move from Kikku's fourth tile to his mother's sixth tile.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 43
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch4-l6-a9",
+         "difficulty": 3,
+         "tags": [
+          "number paths",
+          "tiles",
+          "marks"
+         ],
+         "title": "Choose the Helpful Mark",
+         "prompt": "Kikku's mother jumps on the sixth tile. What should you put on the next tiles?",
+         "options": [
+          "A circle mark",
+          "A leaf mark",
+          "A stamp mark",
+          "An × mark"
+         ],
+         "answer": 3,
+         "explanation": "An × mark helps Kikku's mother on the next tiles.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 43
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch4-l1-leather-puppets-of-karnataka-dbc1a8.webp",
+       "sceneAlt": "Leather puppets are used in a Togalu Gombeyaata shadow-play demonstration in Karnataka, India.",
+       "sceneCaption": "Leather puppets used in a Togalu Gombeyaata shadow-play demonstration in Karnataka.",
+       "sceneCredit": {
+        "text": "Leather puppets of Karnataka by Amarrg, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Leather_puppets_of_Karnataka.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Amarrg"
+       }
+      }
+     ],
+     "boss": {
+      "id": "mathematics-g2-ch4-boss",
+      "title": "Chapter challenge: Fun with Shadows",
+      "estimatedMinutes": 4,
+      "activities": [
+       {
+        "type": "mcq",
+        "id": "mathematics-g2-ch4-boss-a1",
+        "difficulty": 2,
+        "tags": [
+         "togalu",
+         "village-fair"
+        ],
+        "prompt": "What did Nakul and his friends see at the village fair?",
+        "options": [
+         "Togalu Gombeyaata",
+         "A paper-folding game",
+         "A shape-stamping game",
+         "A clapping game"
+        ],
+        "answer": 0,
+        "explanation": "Togalu Gombeyaata was a shadow play seen at a village fair.",
+        "src": [
+         {
+          "ch": 4,
+          "p": 32
+         },
+         {
+          "ch": 4,
+          "p": 32
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "mathematics-g2-ch4-boss-a2",
+        "difficulty": 2,
+        "tags": [
+         "togalu",
+         "friends"
+        ],
+        "prompt": "Nakul and his friends felt bored by Togalu.",
+        "answer": false,
+        "explanation": "They were fascinated by the shadow play, not bored.",
+        "src": [
+         {
+          "ch": 4,
+          "p": 32
+         },
+         {
+          "ch": 4,
+          "p": 32
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "mathematics-g2-ch4-boss-a3",
+        "difficulty": 2,
+        "tags": [
+         "shadow-play",
+         "puppets",
+         "sounds"
+        ],
+        "prompt": "Match each part of the story with what happened.",
+        "pairs": [
+         [
+          "Nakul and his friends",
+          "Saw a shadow play"
+         ],
+         [
+          "Togalu Gombeyaata",
+          "Seen at a village fair"
+         ],
+         [
+          "The role-play",
+          "Uses shadows of different animals"
+         ],
+         [
+          "The children",
+          "Create the animals' sounds"
+         ],
+         [
+          "The puppets",
+          "Depict scenes from Indian epics"
+         ]
+        ],
+        "explanation": "These pairs show the people, places and parts of the shadow play.",
+        "src": [
+         {
+          "ch": 4,
+          "p": 32
+         },
+         {
+          "ch": 4,
+          "p": 32
+         },
+         {
+          "ch": 4,
+          "p": 33
+         },
+         {
+          "ch": 4,
+          "p": 33
+         },
+         {
+          "ch": 4,
+          "p": 32
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "mathematics-g2-ch4-boss-a4",
+        "difficulty": 2,
+        "tags": [
+         "puppetry",
+         "karnataka"
+        ],
+        "prompt": "Puppetry is an art form practised in ______.",
+        "answers": [
+         "Karnataka"
+        ],
+        "hint": "Name the place where puppetry is practised.",
+        "explanation": "Puppetry is an art form practised in Karnataka.",
+        "src": [
+         {
+          "ch": 4,
+          "p": 32
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "mathematics-g2-ch4-boss-a5",
+        "difficulty": 3,
+        "tags": [
+         "torch-light",
+         "shadows",
+         "observation"
+        ],
+        "prompt": "What should children do with a torch light?",
+        "options": [
+         "Shine it on nearby objects",
+         "Trace the shapes on paper",
+         "Colour all circles green",
+         "Clap beside the table"
+        ],
+        "answer": 0,
+        "explanation": "The torch light should shine on nearby objects so children can observe their shadows.",
+        "src": [
+         {
+          "ch": 4,
+          "p": 33
+         },
+         {
+          "ch": 4,
+          "p": 33
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "mathematics-g2-ch4-boss-a6",
+        "difficulty": 3,
+        "tags": [
+         "shadows",
+         "questions"
+        ],
+        "prompt": "The chapter asks when a shadow vanishes.",
+        "answer": true,
+        "explanation": "The chapter asks when a shadow disappears.",
+        "src": [
+         {
+          "ch": 4,
+          "p": 33
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "mathematics-g2-ch4-boss-a8",
+        "difficulty": 3,
+        "tags": [
+         "shapes",
+         "hide-and-seek"
+        ],
+        "prompt": "Match each part of the game with what happened.",
+        "pairs": [
+         [
+          "Circle and Rectangle",
+          "Play hide and seek"
+         ],
+         [
+          "Rectangle",
+          "Hides from Circle"
+         ],
+         [
+          "Triangle and Square",
+          "Come when the door bell rings"
+         ],
+         [
+          "The hidden circle",
+          "Is caught behind the shoe box"
+         ],
+         [
+          "Everyone",
+          "Plays together now"
+         ]
+        ],
+        "explanation": "This pair shows how the shapes join the hide-and-seek game.",
+        "src": [
+         {
+          "ch": 4,
+          "p": 35
+         },
+         {
+          "ch": 4,
+          "p": 35
+         },
+         {
+          "ch": 4,
+          "p": 36
+         },
+         {
+          "ch": 4,
+          "p": 36
+         },
+         {
+          "ch": 4,
+          "p": 37
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "mathematics-g2-ch4-boss-a10",
+        "difficulty": 3,
+        "tags": [
+         "patterns",
+         "mehandi",
+         "designs"
+        ],
+        "prompt": "Match each action or person with what happens.",
+        "pairs": [
+         [
+          "Radha",
+          "Applies mehandi on her hands"
+         ],
+         [
+          "Tracing a hand",
+          "Makes a mehandi pattern or design"
+         ],
+         [
+          "Collecting leaves",
+          "Makes a leaf pattern"
+         ],
+         [
+          "Cutouts with elders' help",
+          "Make a wall hanging"
+         ],
+         [
+          "Different-shaped objects",
+          "Make stamped designs"
+         ]
+        ],
+        "explanation": "Each pair matches a creative action with the design it can make.",
+        "src": [
+         {
+          "ch": 4,
+          "p": 40
+         },
+         {
+          "ch": 4,
+          "p": 40
+         },
+         {
+          "ch": 4,
+          "p": 40
+         },
+         {
+          "ch": 4,
+          "p": 41
+         },
+         {
+          "ch": 4,
+          "p": 41
+         }
+        ]
+       }
+      ],
+      "topicScene": "media/ch4-l1-leather-puppets-of-karnataka-dbc1a8.webp",
+      "sceneAlt": "Leather puppets are used in a Togalu Gombeyaata shadow-play demonstration in Karnataka, India.",
+      "sceneCaption": "Leather puppets used in a Togalu Gombeyaata shadow-play demonstration in Karnataka.",
+      "sceneCredit": {
+       "text": "Leather puppets of Karnataka by Amarrg, CC BY-SA 3.0, via Wikimedia Commons",
+       "url": "https://commons.wikimedia.org/wiki/File:Leather_puppets_of_Karnataka.jpg",
+       "license": "CC BY-SA 3.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+       "creator": "Amarrg"
       }
      }
     }
