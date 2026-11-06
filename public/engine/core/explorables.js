@@ -1099,6 +1099,22 @@ export const WIDGETS = {
       return { kids, say: `${v.g} group${one ? '' : 's'} of ${v.e} make${one ? 's' : ''} ${total}: ${v.g} \u00d7 ${v.e} = ${total}. ${one ? `One group of ${v.e} is just ${total}` : `Shared equally into ${v.g} groups, ${total} gives ${v.e} each`}: ${total} \u00f7 ${v.g} = ${v.e}. Turn it round and ${v.e} \u00d7 ${v.g} is also ${total}.` };
     },
   },
+  metrerope: {
+    subject: 'maths', about: 'A one-metre rod above ropes you lay end to end: a whole metre, a half-metre (the rope folded in half) or a quarter-metre (folded in half again). Lay several and see how long they make compared with one metre. For measuring length, metre, half a metre, quarter of a metre, comparing lengths, longer and shorter.',
+    sliders: [['piece', 'Rope: 0 whole metre, 1 half-metre, 2 quarter-metre', 0, 2, 1, 1], ['count', 'How many ropes end to end', 1, 8, 1, 1]],
+    draw(v) {
+      const qs = [4, 2, 1][v.piece], name = ['one-metre', 'half-metre', 'quarter-metre'][v.piece], px = 270, kids = [];
+      const count = Math.min(v.count, Math.floor(8 / qs)), q = count * qs, x0 = 30, len = (n) => (n / 4) * px;
+      kids.push(R(x0, 60, len(4), 18, '#e8d7a8', { w: 3, r: 4 }), T(x0 + len(4) / 2, 52, 'metre rod: 1 metre', { z: 14, w: 700 }));
+      for (const k of [1, 2, 3]) kids.push(L(x0 + len(k), 60, x0 + len(k), 78, '#a98c4a', 2));
+      kids.push(L(x0 + len(4), 40, x0 + len(4), 164, '#c0392b', 2, { 'stroke-dasharray': '6 5' }), T(x0 + len(4), 180, '1 metre', { z: 12, w: 700, f: '#c0392b' }));
+      const cols = ['#e2583e', '#f2a33a', '#2fa84f', '#1f63d9', '#6b45c8', '#e2583e', '#f2a33a', '#2fa84f'];
+      for (let i = 0; i < count; i++) { const a = x0 + len(i * qs), w = len(qs); kids.push(R(a, 130, w, 22, cols[i % 8], { w: 2.5, r: 6 }), CIRC(a, 141, 5, INK, { w: 0 }), CIRC(a + w, 141, 5, INK, { w: 0 })); }
+      const words = ['', 'a quarter of a metre', 'half a metre', 'three quarters of a metre', 'one metre', 'one and a quarter metres', 'one and a half metres', 'one and three quarters metres', 'two metres'][q];
+      kids.push(T(300, 30, `${count} ${name} rope${count === 1 ? '' : 's'}`, { a: 'middle', z: 18 }), T(300, 224, words, { z: 20, w: 700, f: q === 4 ? '#058a68' : q > 4 ? '#c2510e' : INK }), T(300, 248, q < 4 ? 'shorter than one metre' : q === 4 ? 'exactly one metre' : 'longer than one metre', { z: 13, w: 600, f: '#6b5a8a' }));
+      return { kids, say: `${count} ${name} rope${count === 1 ? '' : 's'} laid end to end ${count === 1 ? 'is' : 'make'} ${words}${q === 4 ? ': exactly one metre' : `, which is ${q < 4 ? 'shorter than' : 'longer than'} one metre`}. ${v.piece === 1 ? 'Folding a metre in half makes a half-metre.' : v.piece === 2 ? 'Folding the half-metre in half again makes a quarter-metre: four of them make one metre.' : 'This is the whole metre.'}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

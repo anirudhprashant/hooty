@@ -528,6 +528,15 @@ export const KITS = {
       { say: 'Make 24 jalebis: 6 groups of 4.', when: 'g == 6 and e == 4', then: '6 \u00d7 4 = 24, and 24 \u00f7 6 = 4 each.' },
     ],
   },
+  metrerope: {
+    grades: [3, 3], match: [/\bmetres?\b/, /metre rope|metre rod/, /half[- ]metre|quarter[- ]metre|half a metre/, /hand ?spans?|footsteps?/, /measuring length/],
+    title: 'Lay the metre ropes', takeaway: 'A metre folded in half is a half-metre, and in half again a quarter-metre: two halves or four quarters make one metre.',
+    tasks: [
+      { say: 'Lay half-metre ropes end to end until you have exactly one metre.', when: 'piece == 1 and count == 2', then: 'Two half-metres make one metre.' },
+      { say: 'Now do it with quarter-metre ropes.', when: 'piece == 2 and count == 4', then: 'Four quarter-metres make one metre.' },
+      { say: 'Make a length longer than one metre.', when: 'piece == 1 and count == 3', then: 'Three half-metres are one and a half metres, longer than one metre.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
