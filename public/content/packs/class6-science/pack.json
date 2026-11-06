@@ -29525,7 +29525,7 @@
       {
        "id": "science-ch9-l2",
        "title": "Winnowing, Threshers and Sieving",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -29625,6 +29625,28 @@
            "p": 177
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch9-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "separate",
+         "params": {
+          "kind": "winnow"
+         },
+         "title": "Separate the mixture",
+         "tasks": [
+          {
+           "say": "Blow enough wind to carry the husk away from the grain.",
+           "when": "wind >= 6",
+           "then": "The light husk blows away and the heavy grain falls close: winnowing."
+          }
+         ],
+         "takeaway": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink.",
+         "explanation": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink."
         },
         {
          "type": "worked",
@@ -30405,7 +30427,7 @@
       {
        "id": "science-ch9-l4",
        "title": "Decantation, Sedimentation and Filtration",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -30505,6 +30527,33 @@
            "p": 172
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "separate",
+         "params": {
+          "kind": "settle"
+         },
+         "title": "Separate the mixture",
+         "tasks": [
+          {
+           "say": "Let the tea stand until the leaves settle.",
+           "when": "min >= 6",
+           "then": "The leaves have sunk to the bottom: sedimentation."
+          },
+          {
+           "say": "Now pour off the tea.",
+           "when": "min >= 6 and tilt == 1",
+           "then": "Pouring the liquid off the settled leaves is decantation."
+          }
+         ],
+         "takeaway": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink.",
+         "explanation": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink."
         },
         {
          "type": "worked",
