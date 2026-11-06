@@ -29,7 +29,7 @@ const score = (kit, title, text) => {
   return s;
 };
 
-// which simulations suit which kind of book
+// which simulations suit which kind of book (a kit's `subjects` adds more, e.g. the ruler is in maths and science books)
 const KIND = { Mathematics: ['maths'], Science: ['science'], 'Social Science': ['social'], 'The World Around Us': ['science', 'social'], Physics: ['science', 'maths'], Chemistry: ['science'], Biology: ['science'], Geography: ['social'], History: ['social'] };
 let added = 0, looked = 0;
 const tally = {};
@@ -50,7 +50,7 @@ for (const slug of books) {
       looked++;
       const title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
       const ranked = Object.entries(KITS)
-        .filter(([id, k]) => WIDGETS[id] && kinds.includes(WIDGETS[id].subject) && grade >= k.grades[0] && grade <= k.grades[1] && (used[id] || 0) < (k.perChapter || 2))
+        .filter(([id, k]) => WIDGETS[id] && [WIDGETS[id].subject, ...(k.subjects || [])].some((x) => kinds.includes(x)) && grade >= k.grades[0] && grade <= k.grades[1] && (used[id] || 0) < (k.perChapter || 2))
         .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= (x[1].minScore || 3)).sort((a, b) => b[2] - a[2]);
       for (const [id, kit] of ranked) {
         const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || [])) : {};

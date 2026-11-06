@@ -107,7 +107,7 @@ export const KITS = {
     ],
   },
   fraction: {
-    grades: [6, 8], match: [/fractions?/, /numerator/, /denominator/],
+    grades: [4, 8], match: [/fractions?/, /numerator/, /denominator/],
     title: 'Shade the fraction', takeaway: 'The bottom number says how many equal parts, the top says how many are taken.',
     tasks: [
       { say: 'Show one half.', when: 'n * 2 == d', then: 'Any fraction whose top is half its bottom equals one half.' },
@@ -136,8 +136,9 @@ export const KITS = {
     tasks: [{ say: 'Find the x that balances 2x + 3 = 11.', when: 'x == 4', then: '2 x 4 + 3 = 11, so x = 4.' }],
   },
   pattern: {
-    grades: [6, 7], match: [/patterns?/, /sequences?/, /square numbers/, /triangular numbers/, /odd numbers/, /even numbers/, /powers? of 2/],
-    params: (text) => ({ rule: /triangular/.test(text) ? 'triangle' : /\bodd\b/.test(text) ? 'odd' : /\beven\b/.test(text) ? 'even' : /powers? of (2|two)|doubl/.test(text) ? 'power2' : 'square' }),
+    grades: [4, 7], match: [/patterns?/, /sequences?/, /square numbers/, /triangular numbers/, /odd numbers/, /even numbers/, /powers? of 2/],
+    params: (text) => ({ rule: /triangular/.test(text) ? 'triangle' : /\bodd\b/.test(text) ? 'odd' : /\beven\b/.test(text) ? 'even' : /powers? of (2|two)|doubl/.test(text) ? 'power2' : /square/.test(text) ? 'square' : null }),
+    usable: (p) => !!p.rule,   // only a lesson that names its rule: a bare 'pattern' (money, mats) gets nothing
     title: 'Grow the pattern', takeaway: 'A pattern follows a rule, so you can predict any term without drawing it.',
     tasks: [
       { say: 'Show term 5.', when: 'n == 5', then: 'Count the dots and look for the rule that builds each term.' },
@@ -191,7 +192,7 @@ export const KITS = {
     ],
   },
   ruler: {
-    grades: [6, 7], match: [/measur(e|ing) (the )?length/, /standard units?/, /\bruler\b|\bscale\b.*\bcm\b|measuring tape/, /centimetres?|millimetres?/, /measuring length correctly/],
+    subjects: ['maths'], grades: [4, 7], match: [/measur(e|ing) (the )?length/, /standard units?/, /\bruler\b|\bscale\b.*\bcm\b|measuring tape/, /centimetres?|millimetres?/, /measuring length correctly/],
     title: 'Measure the pencil', takeaway: 'Length = where it ends minus where it starts. 1 cm = 10 mm.',
     tasks: [
       { say: 'Line the pencil up with the zero mark.', when: 'start == 0', then: 'Starting at 0, you can read the length straight off the end.' },
