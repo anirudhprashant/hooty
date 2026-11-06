@@ -31824,7 +31824,7 @@
       {
        "id": "mathematics-g3-ch6-l1",
        "title": "Counting Torans, Bangles and Toffees",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -31965,6 +31965,48 @@
           "3 (generated problem)",
           "30 (generated problem)",
           "31 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch6-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can Jojo count all the bangles without missing any?",
+         "steps": [
+          "He starts at 10 and adds ten each time because the count increases by tens.",
+          "He keeps doing this until 270 because the bangle count continues by tens to 270.",
+          "He then counts 271 to 280 one by one because these are the last ten.",
+          "So the total count is 280 bangles altogether."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.3",
+          "1.4",
+          "1.5",
+          "1.6"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 65
+          },
+          {
+           "ch": 6,
+           "p": 65
+          },
+          {
+           "ch": 6,
+           "p": 65
+          },
+          {
+           "ch": 6,
+           "p": 65
+          }
          ]
         },
         {
@@ -32322,6 +32364,80 @@
            "ch": 6,
            "p": 65
           },
+          {
+           "ch": 6,
+           "p": 65
+          },
+          {
+           "ch": 6,
+           "p": 65
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply rule"
+         ],
+         "prompt": "The bangle count reaches 270. How should the child count the last ten?",
+         "options": [
+          "One by one from 271 to 280",
+          "By tens from 271 to 280",
+          "By tens from 270 to 280",
+          "One by one from 270 to 280"
+         ],
+         "answer": 0,
+         "why": {
+          "By tens from 271 to 280": "Counting by tens does not match the last-ten rule.",
+          "By tens from 270 to 280": "Starting at 270 by tens does not follow the rule.",
+          "One by one from 270 to 280": "Starting at 270 counts the 270 again."
+         },
+         "explanation": "The last ten are counted one by one from 271 to 280.",
+         "f": [
+          "1.5",
+          "1.6"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 65
+          },
+          {
+           "ch": 6,
+           "p": 65
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fix error"
+         ],
+         "prompt": "A child says 299 is one more than 299. How should the child fix this?",
+         "options": [
+          "Add one to 299",
+          "Subtract one from 299",
+          "Add ten to 299",
+          "Keep the number 299"
+         ],
+         "answer": 0,
+         "why": {
+          "Subtract one from 299": "Subtracting one gives 298, which is smaller.",
+          "Add ten to 299": "Adding ten does not make one more.",
+          "Keep the number 299": "Keeping 299 does not move to the next number."
+         },
+         "explanation": "Adding one to 299 gives 300.",
+         "f": [
+          "1.9",
+          "1.11"
+         ],
+         "src": [
           {
            "ch": 6,
            "p": 65
@@ -33388,7 +33504,7 @@
       {
        "id": "mathematics-g3-ch6-l3",
        "title": "The Guessing Game and Magical Count",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -33430,6 +33546,48 @@
            "ch": 6,
            "p": 69
           },
+          {
+           "ch": 6,
+           "p": 70
+          },
+          {
+           "ch": 6,
+           "p": 70
+          },
+          {
+           "ch": 6,
+           "p": 70
+          },
+          {
+           "ch": 6,
+           "p": 70
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch6-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A friend asks me to use Magical Count. How do I make each new number name?",
+         "steps": [
+          "Write any number name, because any number name can be used.",
+          "Count all its letters, because the count is the next step.",
+          "Write the new number name, because it is recorded next.",
+          "Repeat these steps, because the Magical Count process repeats."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.8"
+         ],
+         "src": [
           {
            "ch": 6,
            "p": 70
@@ -33735,6 +33893,201 @@
            "p": 69
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Any number name can be used for Magical Count. Which words in \"two hundred and four\" should be counted?",
+         "options": [
+          "Count two and hundred only.",
+          "Count two and four only.",
+          "Count two, hundred, and, four.",
+          "Count hundred, and, and four."
+         ],
+         "answer": 2,
+         "why": {
+          "Count two and hundred only.": "Every word in the name contributes letters to the count.",
+          "Count two and four only.": "This leaves out \"and\" and \"four.\"",
+          "Count hundred, and, and four.": "This leaves out \"two\" and counts \"and\" twice."
+         },
+         "explanation": "This leaves out \"hundred\" and \"and.\"",
+         "f": [
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 70
+          },
+          {
+           "ch": 6,
+           "p": 70
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "The examples include three number names. Which pair has the closest letter counts?",
+         "options": [
+          "One hundred and eighty seven and two hundred and thirty five.",
+          "Two hundred and thirty five and two hundred and four.",
+          "One hundred and eighty seven and two hundred and four.",
+          "All three example names have equal letter counts."
+         ],
+         "answer": 0,
+         "why": {
+          "Two hundred and thirty five and two hundred and four.": "These two names have a larger gap in their letters.",
+          "One hundred and eighty seven and two hundred and four.": "These two names have the largest gap in their letters.",
+          "All three example names have equal letter counts.": "The three example names do not have equal letter counts."
+         },
+         "explanation": "Their letter counts differ by only one letter.",
+         "f": [
+          "3.9",
+          "3.10",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 70
+          },
+          {
+           "ch": 6,
+           "p": 70
+          },
+          {
+           "ch": 6,
+           "p": 70
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "deduce"
+         ],
+         "prompt": "Teji's number is between 200 and 210. It is more than the guess. What happens after guessing 200?",
+         "options": [
+          "The hidden number must be above 200.",
+          "The hidden number must be below 200.",
+          "The hidden number must equal 200.",
+          "The hidden number must be above 210."
+         ],
+         "answer": 0,
+         "why": {
+          "The hidden number must be below 200.": "This turns the clue about more into less.",
+          "The hidden number must equal 200.": "More than the guess does not allow equal.",
+          "The hidden number must be above 210.": "The number cannot go above 210."
+         },
+         "explanation": "More than 200 means the hidden number is higher.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 69
+          },
+          {
+           "ch": 6,
+           "p": 69
+          },
+          {
+           "ch": 6,
+           "p": 69
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "spot flaw"
+         ],
+         "prompt": "Teji's number is from 200 to 210. The number is more than the guess. Can 210 be the guess?",
+         "options": [
+          "No, because the clues disagree.",
+          "Yes, because 210 is inside the range.",
+          "No, because 210 is inside the range.",
+          "Yes, because 210 is the largest number."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, because 210 is inside the range.": "Being inside the range does not satisfy the more-than clue.",
+          "No, because 210 is inside the range.": "This notices the range but forgets the more-than clue.",
+          "Yes, because 210 is the largest number.": "Being the largest number does not allow a larger number."
+         },
+         "explanation": "A number above 210 cannot also be in the range.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 69
+          },
+          {
+           "ch": 6,
+           "p": 69
+          },
+          {
+           "ch": 6,
+           "p": 69
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "distinguish"
+         ],
+         "prompt": "Magical Count counts letters, not words. What is left out in \"two hundred and four\"?",
+         "options": [
+          "The spaces between the words.",
+          "The small letters in the name.",
+          "The large letters in the name.",
+          "The whole words inside the name."
+         ],
+         "answer": 0,
+         "why": {
+          "The small letters in the name.": "Small letters still count as letters.",
+          "The large letters in the name.": "Large letters still count as letters.",
+          "The whole words inside the name.": "The rule counts letters, not whole words."
+         },
+         "explanation": "Spaces are not letters in the number name.",
+         "f": [
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 70
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l1-bangles-in-jodhpur-2fb8d4.webp",
@@ -33751,7 +34104,7 @@
       {
        "id": "mathematics-g3-ch6-l4",
        "title": "Number Lines and the Sweet Shop",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -34217,6 +34570,191 @@
            "p": 71
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "In a number-line game, 216, 243 and 257 are marked. A child says 216 is greatest. Why is that claim wrong?",
+         "options": [
+          "First does not mean greatest on a number line.",
+          "More digits do not make a number greater.",
+          "It is less than both 243 and 257.",
+          "It sits above 257 on the number line."
+         ],
+         "answer": 2,
+         "why": {
+          "First does not mean greatest on a number line.": "This mixes up first place with the greatest number.",
+          "More digits do not make a number greater.": "This thinks digit count decides which number is greater.",
+          "It sits above 257 on the number line.": "This mixes up left and right on the number line."
+         },
+         "explanation": "Both 243 and 257 are greater than 216.",
+         "f": [
+          "4.1"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 71
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "order"
+         ],
+         "prompt": "A number line marks 423, 487, 438, 476 and 500. Which order goes from least to greatest?",
+         "options": [
+          "423, 438, 476, 487, 500",
+          "423, 476, 438, 487, 500",
+          "438, 423, 476, 487, 500",
+          "487, 423, 438, 476, 500"
+         ],
+         "answer": 0,
+         "why": {
+          "423, 476, 438, 487, 500": "This puts 476 before 438, but 438 is smaller.",
+          "438, 423, 476, 487, 500": "This puts 438 before 423, but 423 is smaller.",
+          "487, 423, 438, 476, 500": "This puts 487 first, but 423 is the smallest."
+         },
+         "explanation": "Each number comes after every number smaller than it.",
+         "f": [
+          "4.5",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 72
+          },
+          {
+           "ch": 6,
+           "p": 72
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "count"
+         ],
+         "prompt": "A number line shows 370, 380, 387 and 390. How many marked numbers lie between 380 and 390?",
+         "options": [
+          "One marked number.",
+          "Two marked numbers.",
+          "Three marked numbers.",
+          "Four marked numbers."
+         ],
+         "answer": 0,
+         "why": {
+          "Two marked numbers.": "This counts 390 as inside, but it is the end.",
+          "Three marked numbers.": "This counts an end mark as inside.",
+          "Four marked numbers.": "This counts every mark, including both ends."
+         },
+         "explanation": "Only 387 lies between 380 and 390.",
+         "f": [
+          "4.3"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 71
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "A number line shows 329, 332, 337, 375 and 387. Which marked number is closest to 400?",
+         "options": [
+          "329, because it comes first.",
+          "332, because it follows 329.",
+          "375, because it comes before 387.",
+          "387, because it is closest."
+         ],
+         "answer": 3,
+         "why": {
+          "329, because it comes first.": "Coming first does not make a number closest to 400.",
+          "332, because it follows 329.": "Being near 329 does not make it near 400.",
+          "375, because it comes before 387.": "Being before 387 does not make it near 400."
+         },
+         "explanation": "387 has the smallest gap to 400 among these numbers.",
+         "f": [
+          "4.2",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 71
+          },
+          {
+           "ch": 6,
+           "p": 71
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reasoning"
+         ],
+         "prompt": "Teji and Jojo count mysore pak at Farooq Chacha's sweet shop. They count one tray. What should they count to find the total?",
+         "options": [
+          "The mysore pak in all the trays.",
+          "The mysore pak in one small plate.",
+          "The number written on the shop sign.",
+          "The number of trays that are empty."
+         ],
+         "answer": 0,
+         "why": {
+          "The mysore pak in one small plate.": "One tray does not include the pak in all the other trays.",
+          "The number written on the shop sign.": "A sign number does not count the mysore pak itself.",
+          "The number of trays that are empty.": "Empty trays add no mysore pak to the total."
+         },
+         "explanation": "The total needs the mysore pak from every tray.",
+         "f": [
+          "4.7",
+          "4.8",
+          "4.9",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 72
+          },
+          {
+           "ch": 6,
+           "p": 72
+          },
+          {
+           "ch": 6,
+           "p": 72
+          },
+          {
+           "ch": 6,
+           "p": 72
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l4-indian-sweet-shop-808604.webp",
@@ -34233,7 +34771,7 @@
       {
        "id": "mathematics-g3-ch6-l5",
        "title": "House Numbers and Box Patterns",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -34383,6 +34921,47 @@
           "100 (generated problem)",
           "107 (generated problem)",
           "7 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch6-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Teji and Jojo stand at house 211. How do they reach house 212?",
+         "steps": [
+          "House 211 is above house 201, so they know the floor rule.",
+          "They move one house right, because 212 is reached that way.",
+          "They reach house 212, in the column to the right of 211."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.4",
+          "5.5",
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 73
+          },
+          {
+           "ch": 6,
+           "p": 74
+          },
+          {
+           "ch": 6,
+           "p": 74
+          },
+          {
+           "ch": 6,
+           "p": 75
+          }
          ]
         },
         {
@@ -34871,6 +35450,100 @@
           "57 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "floor-column pattern"
+         ],
+         "prompt": "House 201 is on a lower floor. House 211 is above it. House 212 is one house right of 211. Which house is on the upper floor and right column?",
+         "options": [
+          "House 201.",
+          "House 211.",
+          "House 212.",
+          "House 105."
+         ],
+         "answer": 2,
+         "why": {
+          "House 201.": "It is on the lower floor, not the upper floor.",
+          "House 211.": "It is above 201, but it is not the column to the right.",
+          "House 105.": "It belongs to the other house-number pattern."
+         },
+         "explanation": "It has the upper floor and the column right of 211.",
+         "f": [
+          "5.4",
+          "5.5",
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 74
+          },
+          {
+           "ch": 6,
+           "p": 74
+          },
+          {
+           "ch": 6,
+           "p": 75
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "number comparison"
+         ],
+         "prompt": "Each house gets sweets matching its house number. Which house gets the most sweets?",
+         "options": [
+          "House 212.",
+          "House 211.",
+          "House 113.",
+          "House 105."
+         ],
+         "answer": 0,
+         "why": {
+          "House 211.": "House 211 is smaller than house 212.",
+          "House 113.": "House 113 is smaller than the other house numbers.",
+          "House 105.": "House 105 is smaller than the other house numbers."
+         },
+         "explanation": "House 212 has the greatest number among these houses.",
+         "f": [
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 73
+          },
+          {
+           "ch": 6,
+           "p": 73
+          },
+          {
+           "ch": 6,
+           "p": 74
+          },
+          {
+           "ch": 6,
+           "p": 74
+          },
+          {
+           "ch": 6,
+           "p": 76
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l5-1700-east-56th-56th-street-i-598d0b.webp",
@@ -34887,7 +35560,7 @@
       {
        "id": "mathematics-g3-ch6-l6",
        "title": "Comparing Large Numbers",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -35070,17 +35743,35 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g3-ch6-l6-a2",
+         "type": "worked",
+         "id": "mathematics-g3-ch6-l6-t1",
          "difficulty": 1,
          "tags": [
-          "laddoos",
-          "more than"
+          "deep",
+          "think"
          ],
-         "prompt": "487 laddoos is more than 423 laddoos.",
-         "answer": true,
-         "explanation": "Yes! 487 laddoos is more than 423 laddoos.",
+         "kicker": "Let us think it through",
+         "prompt": "Two trays hold 487 and 423 laddoos. Which tray has more laddoos?",
+         "steps": [
+          "487 is more than 423, so 487 is the bigger amount.",
+          "The greater-than sign opens toward the bigger number.",
+          "Therefore, its open mouth points toward 487."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.3",
+          "6.5"
+         ],
          "src": [
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          },
           {
            "ch": 6,
            "p": 79
@@ -35288,6 +35979,34 @@
            "ch": 6,
            "p": 79
           },
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l6-a6",
+         "difficulty": 2,
+         "tags": [
+          "hundreds",
+          "place value"
+         ],
+         "prompt": "What do 209 and 290 have in common?",
+         "options": [
+          "Three hundreds each",
+          "Nine ones each",
+          "Nine tens each",
+          "Two hundreds each"
+         ],
+         "answer": 3,
+         "explanation": "Both 209 and 290 have two hundreds. Their hundreds are equal.",
+         "src": [
           {
            "ch": 6,
            "p": 79
@@ -35808,6 +36527,211 @@
            "p": 79
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Two trays hold 487 and 423 laddoos. A sign compares them. Which number should its open mouth point to?",
+         "options": [
+          "487, because it is the bigger number.",
+          "423, because it is the bigger number.",
+          "Both, because the numbers are equal.",
+          "Neither, because the numbers are different."
+         ],
+         "answer": 0,
+         "why": {
+          "423, because it is the bigger number.": "This mistake chooses 423 instead of the bigger number.",
+          "Both, because the numbers are equal.": "This mistake treats two different numbers as equal.",
+          "Neither, because the numbers are different.": "This mistake thinks different numbers cannot be compared."
+         },
+         "explanation": "This is right because 487 is more than 423.",
+         "f": [
+          "6.1",
+          "6.5"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "choose sign"
+         ],
+         "prompt": "One tray has 321 laddoos. Another tray has 231 laddoos. Which sign belongs between them?",
+         "options": [
+          "Use the greater-than sign (>).",
+          "Use the less-than sign (<).",
+          "Use the equal sign (=).",
+          "Use no sign at all."
+         ],
+         "answer": 0,
+         "why": {
+          "Use the less-than sign (<).": "This mistake reverses the correct comparison.",
+          "Use the equal sign (=).": "This mistake treats different numbers as equal.",
+          "Use no sign at all.": "This mistake forgets that a comparison needs a sign."
+         },
+         "explanation": "This is right because 321 is more than 231.",
+         "f": [
+          "6.7",
+          "6.8"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A child says 209 is more than 290. Both have two hundreds. Which reason fixes the claim?",
+         "options": [
+          "Both have two hundreds; 9 ones are less than 9 tens.",
+          "Both have two hundreds; 9 tens are less than 9 ones.",
+          "The larger ones digit makes 209 bigger than 290.",
+          "The larger last digit makes 290 smaller than 209."
+         ],
+         "answer": 0,
+         "why": {
+          "Both have two hundreds; 9 tens are less than 9 ones.": "This mistake reverses 9 tens and 9 ones.",
+          "The larger ones digit makes 209 bigger than 290.": "This mistake treats the ones digit as the whole number.",
+          "The larger last digit makes 290 smaller than 209.": "This mistake treats the ones digit like the tens digit."
+         },
+         "explanation": "This is right because 9 ones are less than 9 tens.",
+         "f": [
+          "6.9",
+          "6.10",
+          "6.11",
+          "6.12"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A board places 209 on the left and 290 on the right. Which sign and mouth direction are correct?",
+         "options": [
+          "Use >, with its mouth pointing right.",
+          "Use <, with its mouth pointing right.",
+          "Use >, with its mouth pointing left.",
+          "Use <, with its mouth pointing left."
+         ],
+         "answer": 1,
+         "why": {
+          "Use >, with its mouth pointing right.": "This is right because 290 is bigger and sits right.",
+          "Use >, with its mouth pointing left.": "This mistake turns the open mouth the wrong way.",
+          "Use <, with its mouth pointing left.": "This mistake turns both the sign and mouth wrongly."
+         },
+         "explanation": "This mistake uses the wrong sign for 209 and 290.",
+         "f": [
+          "6.5",
+          "6.11",
+          "6.12"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l6-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "correct"
+         ],
+         "prompt": "A child says 321 is less than 231. Its middle digit is 2. Which reason fixes the claim?",
+         "options": [
+          "Three hundreds are more than two hundreds.",
+          "Two hundreds are more than three hundreds.",
+          "The equal ones digits make the numbers equal.",
+          "The smaller middle digit makes 321 smaller than 231."
+         ],
+         "answer": 0,
+         "why": {
+          "Two hundreds are more than three hundreds.": "This mistake reverses the hundreds.",
+          "The equal ones digits make the numbers equal.": "This mistake treats equal ones digits as equal numbers.",
+          "The smaller middle digit makes 321 smaller than 231.": "This mistake ignores the hundreds when comparing place values."
+         },
+         "explanation": "This is right because three hundreds are more than two hundreds.",
+         "f": [
+          "6.6",
+          "6.7",
+          "6.8"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          },
+          {
+           "ch": 6,
+           "p": 79
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l6-candy-graph-experiment-8197cf.webp",
@@ -35820,6 +36744,377 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Mvolz"
        }
+      },
+      {
+       "id": "mathematics-g3-ch6-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 18,
+       "topicScene": "media/ch6-l1-bangles-in-jodhpur-2fb8d4.webp",
+       "sceneAlt": "Glass bangles are stacked for sale in a local market near the Clock Tower in Jodhpur, India.",
+       "sceneCaption": "Glass bangles are stacked for sale near the Clock Tower in Jodhpur, India.",
+       "sceneCredit": {
+        "text": "Bangles in Jodhpur by Pradeep717, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Bangles_in_Jodhpur.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Pradeep717"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Jojo is counting triangular torans and bangles for a celebration. The triangular torans are more than one hundred, and there are 250 altogether. The bangles total 280. Counting begins with 10 and increases by tens until 270. The last ten bangles are then counted one by one after 270. Jojo also holds two toffees while checking the count, and he practices counting on from 298.",
+         "prompt": "After the count by tens reaches 270, what number should Jojo say next?",
+         "options": [
+          "271",
+          "270",
+          "280",
+          "10"
+         ],
+         "answer": 0,
+         "why": {
+          "270": "270 would repeat the number already counted.",
+          "280": "280 would skip the next number.",
+          "10": "10 would restart the count."
+         },
+         "explanation": "271 immediately follows 270."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Jojo is counting triangular torans and bangles for a celebration. The triangular torans are more than one hundred, and there are 250 altogether. The bangles total 280. Counting begins with 10 and increases by tens until 270. The last ten bangles are then counted one by one after 270. Jojo also holds two toffees while checking the count, and he practices counting on from 298.",
+         "prompt": "Jojo is counting on from 299. What should he say after adding one?",
+         "options": [
+          "Say 300",
+          "Say 299 again",
+          "Go back to 298",
+          "Start again at 10"
+         ],
+         "answer": 0,
+         "why": {
+          "Say 299 again": "299 would repeat the same number.",
+          "Go back to 298": "298 would count backward.",
+          "Start again at 10": "10 would restart the counting on."
+         },
+         "explanation": "One more than 299 is 300."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner is working with number sentences and the number slider. “Two hundred and 35 more” is written as 200 + 35, while “Fifteen less than 250” is written as 250 – 15. The sentence “Three hundred and 16 more” is also used. The learner sees that 235 lies between 200 and 250. On the slider, examples include increasing 285 by one, increasing 147 by ten, decreasing 367 by 2, decreasing 289 by 10, and increasing 290 by 20.",
+         "prompt": "The learner must show fifteen less than 250. Which action should they take?",
+         "options": [
+          "Subtract 15 from 250.",
+          "Add 15 to 250.",
+          "Subtract 35 from 200.",
+          "Add 35 to 250."
+         ],
+         "answer": 0,
+         "why": {
+          "Add 15 to 250.": "This treats “less” as “more.”",
+          "Subtract 35 from 200.": "This subtracts the wrong amount from the wrong number.",
+          "Add 35 to 250.": "This adds an amount when the learner should subtract."
+         },
+         "explanation": "This correctly shows a decrease of 15 from 250."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch6-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the two number sentences for two hundred and 35 more and fifteen less than 250 can both be checked with 235.",
+         "answer": "Adding 35 to 200 gives 235, and taking 15 away from 250 also gives 235. The two number sentences therefore lead to the same number. The fact that 235 lies between 200 and 250 also supports this check.",
+         "points": [
+          "35 is added to 200.",
+          "15 is subtracted from 250.",
+          "Both results are 235.",
+          "235 lies between 200 and 250."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Teji plays the guessing game with friends. He has thought of a number between 200 and 210, and his number is more than the guess. The game uses the numbers from 200 to 210. Teji starts Magical Count with “two hundred and four.” He counts the letters in that name, writes the name of the new number, and repeats. “Two hundred and thirty five” and “one hundred and eighty seven” are example number names.",
+         "prompt": "The children guess 200. What must be true about Teji's number?",
+         "options": [
+          "It must be greater than 200.",
+          "It must be less than 200.",
+          "It must be equal to 200.",
+          "It must be greater than 210."
+         ],
+         "answer": 0,
+         "why": {
+          "It must be less than 200.": "This would contradict the rule that his number is more than 200.",
+          "It must be equal to 200.": "Being more than the guess means it cannot equal 200.",
+          "It must be greater than 210.": "His number is between 200 and 210, not above 210."
+         },
+         "explanation": "The case says his number is more than the guess."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Teji plays the guessing game with friends. He has thought of a number between 200 and 210, and his number is more than the guess. The game uses the numbers from 200 to 210. Teji starts Magical Count with “two hundred and four.” He counts the letters in that name, writes the name of the new number, and repeats. “Two hundred and thirty five” and “one hundred and eighty seven” are example number names.",
+         "prompt": "If Teji wants to use “one hundred and eighty seven” in Magical Count, what should he do?",
+         "options": [
+          "Use it, because any number name may be written.",
+          "Refuse it, because the guessing game uses only 200 to 210.",
+          "Use it only if it is Teji's number.",
+          "Replace it with “two hundred and four” before using it."
+         ],
+         "answer": 0,
+         "why": {
+          "Refuse it, because the guessing game uses only 200 to 210.": "The range from 200 to 210 applies to the guessing game.",
+          "Use it only if it is Teji's number.": "The number name does not have to be Teji's number.",
+          "Replace it with “two hundred and four” before using it.": "No replacement is needed because any number name may be used."
+         },
+         "explanation": "Any number name can be written for Magical Count."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch6-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does Magical Count continue after Teji writes a number name?",
+         "answer": "After Teji writes a number name, he counts the letters in that name. He then writes the name of the new number and repeats the Magical Count process. He can begin with any number name, so the process is not limited to the names used as examples.",
+         "points": [
+          "Counts the letters in the written name.",
+          "Writes the name of the new number.",
+          "Repeats the Magical Count process.",
+          "Recognises that any number name may be used."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Teji and Jojo do number-line work. One line shows 216, 243 and 257; another shows 329, 332, 337, 375 and 387; one shows 370, 380, 387 and 390. They see 423, 487, 438 and 476, with Five Hundred, written as 500, marked. The exercise asks how far 387 is from 400. Hungry after all the running around, they go to Farooq Chacha’s sweet shop to count mysore pak in one tray and the total number of mysore pak.",
+         "prompt": "How should Teji and Jojo calculate how far 387 is from 400?",
+         "options": [
+          "400 − 387",
+          "387 − 400",
+          "400 + 387",
+          "390 − 387"
+         ],
+         "answer": 0,
+         "why": {
+          "387 − 400": "This reverses the subtraction and gives a negative distance.",
+          "400 + 387": "Adding the values finds a sum rather than the gap between them.",
+          "390 − 387": "This calculation uses 390 instead of the value paired with 400."
+         },
+         "explanation": "The distance is found by subtracting the smaller value from the larger value."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Teji and Jojo do number-line work. One line shows 216, 243 and 257; another shows 329, 332, 337, 375 and 387; one shows 370, 380, 387 and 390. They see 423, 487, 438 and 476, with Five Hundred, written as 500, marked. The exercise asks how far 387 is from 400. Hungry after all the running around, they go to Farooq Chacha’s sweet shop to count mysore pak in one tray and the total number of mysore pak.",
+         "prompt": "At Farooq Chacha’s sweet shop, what should Teji and Jojo do to find the total number of mysore pak?",
+         "options": [
+          "Find the number in one tray, then combine all the counts to find the overall total.",
+          "Find the number in one tray and treat it as the overall total.",
+          "Combine only some of the counts.",
+          "Repeat the one-tray count instead of combining all the counts."
+         ],
+         "answer": 0,
+         "why": {
+          "Find the number in one tray and treat it as the overall total.": "The count in one tray may not represent all the mysore pak.",
+          "Combine only some of the counts.": "Leaving out some counts makes the total incorrect.",
+          "Repeat the one-tray count instead of combining all the counts.": "Counting the same tray twice does not give the true total."
+         },
+         "explanation": "The task needs both a one-tray count and the overall total."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch6-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the two number lines that include 387 are different.",
+         "answer": "One line includes 329, 332, 337, 375 and 387. The other includes 370, 380, 387 and 390. Both contain 387, but the other marked values are different, so the lines give different values to compare with 387.",
+         "points": [
+          "The first line includes 329, 332, 337, 375 and 387.",
+          "The second line includes 370, 380, 387 and 390.",
+          "Both number lines include 387.",
+          "The other marked values are different."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Teji and Jojo saw a big apartment. Its delivery list has twelve house numbers. They must give each house's floor and column, and they discuss how numbers change. One floor above 105 is 115; 113 is ten floors above 13; one floor above 201 is 211; 212 is one house right of 211. Each house has matching sweets. Packing uses hundred-boxes, ten-boxes and loose packets; small boxes of ten fit in a big box of one hundred.",
+         "prompt": "If Teji needs the house one floor above 201, which house number should she write on the delivery list?",
+         "options": [
+          "Write 115.",
+          "Write 211.",
+          "Write 212.",
+          "Write 201."
+         ],
+         "answer": 1,
+         "why": {
+          "Write 115.": "115 is one floor above 105, not above 201.",
+          "Write 212.": "212 is one house to the right of 211.",
+          "Write 201.": "201 is the starting house, not the one above it."
+         },
+         "explanation": "211 is one floor above 201."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Teji and Jojo saw a big apartment. Its delivery list has twelve house numbers. They must give each house's floor and column, and they discuss how numbers change. One floor above 105 is 115; 113 is ten floors above 13; one floor above 201 is 211; 212 is one house right of 211. Each house has matching sweets. Packing uses hundred-boxes, ten-boxes and loose packets; small boxes of ten fit in a big box of one hundred.",
+         "prompt": "The sweets matching house 212 are ready. Which packing plan follows the box pattern?",
+         "options": [
+          "Pack groups of ten in small boxes, place these inside big one-hundred boxes, and use loose packets for what remains.",
+          "Pack groups of one hundred in small boxes, place these inside big ten-boxes, and use loose packets for what remains.",
+          "Pack groups of ten in big one-hundred boxes, place small ten-boxes inside them, and use loose packets for what remains.",
+          "Pack groups of ten in small boxes, place these inside loose packets, and use big one-hundred boxes for what remains."
+         ],
+         "answer": 0,
+         "why": {
+          "Pack groups of one hundred in small boxes, place these inside big ten-boxes, and use loose packets for what remains.": "It swaps the capacities: big boxes are for one hundred, small boxes for ten.",
+          "Pack groups of ten in big one-hundred boxes, place small ten-boxes inside them, and use loose packets for what remains.": "It mixes direct packing with the small-box nesting, confusing the roles of the boxes.",
+          "Pack groups of ten in small boxes, place these inside loose packets, and use big one-hundred boxes for what remains.": "Loose packets are for sweets not placed in boxes, not containers for the small boxes."
+         },
+         "explanation": "This follows the stated sizes and nesting: small boxes go inside big boxes."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch6-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how house numbers change when Teji and Jojo move upward or to the right in the apartment.",
+         "answer": "Moving one floor upward adds ten to the house number: 105 becomes 115, and 201 becomes 211. Moving ten floors upward from 13 reaches 113. Moving one house to the right adds one, as shown by 211 becoming 212. Vertical moves change floors, while rightward moves change columns.",
+         "points": [
+          "One floor upward adds ten.",
+          "105 becomes 115, and 201 becomes 211.",
+          "Ten floors above 13 is 113.",
+          "One house right changes 211 to 212."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a laddoo-counting stall, one tray holds 487 laddoos and another holds 423 laddoos. A sign must show which tray has more. Later, the helper compares 321 laddoos with 231 laddoos, then places 209 laddoos beside 290 laddoos. The helper checks the hundreds and the tens before choosing each sign.",
+         "prompt": "Which sign should the helper use for 487 laddoos and 423 laddoos?",
+         "options": [
+          "Use >, since 487 is more than 423.",
+          "Use <, since 487 is more than 423.",
+          "Use >, since 423 is more than 487.",
+          "Use <, since 423 is more than 487."
+         ],
+         "answer": 0,
+         "why": {
+          "Use <, since 487 is more than 423.": "The sign is reversed even though 487 is correctly identified as more.",
+          "Use >, since 423 is more than 487.": "The sign is correct, but the wrong number is called more.",
+          "Use <, since 423 is more than 487.": "Both the sign and the number chosen as more are wrong."
+         },
+         "explanation": "The greater-than sign is correct because 487 is more than 423."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch6-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a laddoo-counting stall, one tray holds 487 laddoos and another holds 423 laddoos. A sign must show which tray has more. Later, the helper compares 321 laddoos with 231 laddoos, then places 209 laddoos beside 290 laddoos. The helper checks the hundreds and the tens before choosing each sign.",
+         "prompt": "When comparing 209 and 290, which choice gives the correct sign and reason?",
+         "options": [
+          "Use <, because 9 ones are less than 9 tens.",
+          "Use >, because 9 ones are less than 9 tens.",
+          "Use <, because 9 tens are less than 9 ones.",
+          "Use >, because 9 tens are less than 9 ones."
+         ],
+         "answer": 0,
+         "why": {
+          "Use >, because 9 ones are less than 9 tens.": "The reason is correct, but the sign is reversed.",
+          "Use <, because 9 tens are less than 9 ones.": "The sign is correct, but the tens and ones are reversed.",
+          "Use >, because 9 tens are less than 9 ones.": "Both the sign and the comparison of the place values are wrong."
+         },
+         "explanation": "This gives both the correct sign and the correct comparison."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch6-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how comparing 487 and 423 helps the helper choose the correct sign.",
+         "answer": "The number 487 is more than 423, so the sign should be greater than. The open mouth points to 487 because it is the bigger number. The number 423 is less than 487, so a less-than sign would compare them in the wrong order.",
+         "points": [
+          "States that 487 is more than 423.",
+          "Chooses the greater-than sign.",
+          "Explains that the open mouth points to 487.",
+          "Explains that 423 is less than 487."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -36082,6 +37377,3723 @@
        "license": "CC BY-SA 4.0",
        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
        "creator": "Pradeep717"
+      }
+     }
+    },
+    {
+     "id": "ch07-raksha-bandhan",
+     "title": "Raksha Bandhan",
+     "summary": "In this chapter: making rakhis for raksha bandhan; counting and sharing laddoos; sharing sweets and counting groups; plants, chickens and skip jumping.",
+     "lessons": [
+      {
+       "id": "mathematics-g3-ch7-l1",
+       "title": "Making Rakhis for Raksha Bandhan",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch7-l1-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How many Rakhis can we make to surprise everyone?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g3-ch7-l1-a1",
+         "difficulty": 1,
+         "tags": [
+          "rakhis",
+          "festival",
+          "house"
+         ],
+         "title": "Getting Ready for Raksha Bandhan",
+         "body": "Tomorrow is Gopal’s favourite festival. The family is preparing for Raksha Bandhan. Their teacher has taught Gopal and Dhara to make Rakhis. The children have cleaned and decorated their house. Atya is their father’s sister. Each Rakhi needs one flower, two threads and four beads. Ten Rakhis need flowers, threads and beads. There are 30 flowers, 30 threads and 30 beads.",
+         "keyPoints": [
+          "Tomorrow is Gopal’s favourite festival.",
+          "Each Rakhi uses one flower, two threads and four beads.",
+          "There are 30 flowers, 30 threads and 30 beads."
+         ],
+         "explanation": "These facts help you plan and make Rakhis.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 82
+          },
+          {
+           "ch": 7,
+           "p": 82
+          },
+          {
+           "ch": 7,
+           "p": 82
+          },
+          {
+           "ch": 7,
+           "p": 83
+          },
+          {
+           "ch": 7,
+           "p": 83
+          },
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 85
+          },
+          {
+           "ch": 7,
+           "p": 85
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch7-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "rakhis",
+          "flowers",
+          "threads",
+          "beads"
+         ],
+         "prompt": "Which materials make one Rakhi?",
+         "options": [
+          "one flower, two threads, four beads",
+          "one thread, two flowers, four beads",
+          "one flower, four threads, two beads",
+          "two flowers, one thread, four beads"
+         ],
+         "answer": 0,
+         "explanation": "One flower, two threads and four beads make one Rakhi.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 84
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch7-l1-a3",
+         "difficulty": 1,
+         "tags": [
+          "atya",
+          "family"
+         ],
+         "prompt": "Atya is Gopal and Dhara’s father’s sister.",
+         "answer": true,
+         "explanation": "Yes. Atya is the children’s father’s sister.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 82
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g3-ch7-l1-a4",
+         "difficulty": 2,
+         "tags": [
+          "rakhis",
+          "flower"
+         ],
+         "prompt": "Each Rakhi uses one ______.",
+         "answers": [
+          "flower"
+         ],
+         "hint": "Think about the decoration on a Rakhi.",
+         "explanation": "One flower is used for each Rakhi.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 84
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g3-ch7-l1-a5",
+         "difficulty": 2,
+         "tags": [
+          "rakhis",
+          "flowers",
+          "threads",
+          "beads"
+         ],
+         "prompt": "Match each material to the number used for one Rakhi.",
+         "pairs": [
+          [
+           "flowers",
+           "one"
+          ],
+          [
+           "threads",
+           "two"
+          ],
+          [
+           "beads",
+           "four"
+          ]
+         ],
+         "explanation": "One flower, two threads and four beads are used for each Rakhi.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 84
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch7-l1-a6",
+         "difficulty": 2,
+         "tags": [
+          "teacher",
+          "rakhis",
+          "house"
+         ],
+         "prompt": "What has their teacher taught the children?",
+         "options": [
+          "to make Rakhis",
+          "to clean the house",
+          "to decorate the house",
+          "to count flowers"
+         ],
+         "answer": 0,
+         "explanation": "Their teacher has taught them to make Rakhis.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 82
+          },
+          {
+           "ch": 7,
+           "p": 83
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch7-l1-a7",
+         "difficulty": 3,
+         "tags": [
+          "beads",
+          "rakhis"
+         ],
+         "prompt": "Thirty beads are enough for ten Rakhis.",
+         "answer": false,
+         "explanation": "Ten Rakhis need 40 beads, but only 30 beads are available.",
+         "derived": [
+          "40 beads = 10 × 4"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 85
+          },
+          {
+           "ch": 7,
+           "p": 85
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g3-ch7-l1-a9",
+         "difficulty": 3,
+         "tags": [
+          "rakhis",
+          "flowers",
+          "threads",
+          "beads"
+         ],
+         "prompt": "Put the numbers from smallest to largest.",
+         "items": [
+          "one",
+          "two",
+          "four",
+          "ten"
+         ],
+         "explanation": "The numbers from smallest to largest are one, two, four and ten.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 84
+          },
+          {
+           "ch": 7,
+           "p": 85
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch7-l1-raksha02-8ae2e0.webp",
+       "sceneAlt": "A bunch of colourful rakhis prepared for the Raksha Bandhan festival.",
+       "sceneCaption": "A bunch of rakhis prepared for the Raksha Bandhan festival.",
+       "sceneCredit": {
+        "text": "Raksha02 by Suyash Dwivedi, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Raksha02.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Suyash Dwivedi"
+       }
+      },
+      {
+       "id": "mathematics-g3-ch7-l2",
+       "title": "Counting and Sharing Laddoos",
+       "estimatedMinutes": 9,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch7-l2-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How can we count laddoos and share them fairly with friends?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g3-ch7-l2-a1",
+         "difficulty": 1,
+         "tags": [
+          "laddoos",
+          "multiplication",
+          "division"
+         ],
+         "title": "Count, Multiply and Share",
+         "body": "The shopkeeper arranges laddoos in a box. The first box is counted as three plus three plus three. This gives 3 × 3 = 9. Two boxes have 9 + 9 = 18. The laddoos can be shared among nine people. Each person gets two laddoos. Multiplication tells us about equal groups. Division tells us how to share them equally.",
+         "keyPoints": [
+          "The first box has 9 laddoos.",
+          "Two boxes have 18 laddoos.",
+          "Each person gets 2 laddoos."
+         ],
+         "explanation": "You can count equal groups, find a total and share equally.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 87
+          },
+          {
+           "ch": 7,
+           "p": 87
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch7-l2-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A box has 3 rows with 4 laddoos in each row. How many laddoos are in the box?",
+         "steps": [
+          "The box has 3 rows and 4 laddoos in each row.",
+          "We need the total number of laddoos, so we multiply rows by the number in each row.",
+          "3 x 4 = 12 laddoos."
+         ],
+         "modelSpec": {
+          "type": "array",
+          "rows": 3,
+          "cols": 4
+         },
+         "result": "12",
+         "gen": {
+          "template": "A box has {rows} rows with {cols} laddoos in each row. How many laddoos are in the box?",
+          "params": {
+           "rows": [
+            2,
+            3,
+            4,
+            5
+           ],
+           "cols": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "rows*cols",
+          "vals": {},
+          "steps": [
+           "The box has {rows} rows and {cols} laddoos in each row.",
+           "We need the total number of laddoos, so we multiply rows by the number in each row.",
+           "{rows} x {cols} = {answer} laddoos."
+          ],
+          "model": {
+           "type": "array",
+           "rows": "rows",
+           "cols": "cols"
+          },
+          "hint": "Multiply the number of rows by the number of laddoos in each row.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)"
+         ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g3-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "arrays",
+         "params": {},
+         "title": "Groups and rows",
+         "tasks": [
+          {
+           "say": "Make 6 groups of 3, then try 3 groups of 6.",
+           "when": "g == 3 and e == 6",
+           "then": "6 × 3 and 3 × 6 both make 18: turning it round does not change the total."
+          },
+          {
+           "say": "Make 24 jalebis: 6 groups of 4.",
+           "when": "g == 6 and e == 4",
+           "then": "6 × 4 = 24, and 24 ÷ 6 = 4 each."
+          }
+         ],
+         "takeaway": "Equal groups can be counted by adding, written as a multiplication fact and shared back out with division.",
+         "explanation": "Equal groups can be counted by adding, written as a multiplication fact and shared back out with division."
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch7-l2-a3",
+         "difficulty": 1,
+         "tags": [
+          "laddoos",
+          "multiplication"
+         ],
+         "prompt": "The first box has 3 × 3 laddoos.",
+         "answer": true,
+         "explanation": "Yes. Three times three equals nine.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "There are 2 equal boxes, and each box has 2 laddoos. How many laddoos are in all the boxes?",
+         "explanation": "There are 2 boxes with 2 laddoos in each box. We need the total number of laddoos, so we multiply the number of boxes by the amount in one box. 2 x 2 = 4 laddoos.",
+         "steps": [
+          "There are 2 boxes with 2 laddoos in each box.",
+          "We need the total number of laddoos, so we multiply the number of boxes by the amount in one box.",
+          "2 x 2 = 4 laddoos."
+         ],
+         "hint": "Multiply the number of boxes by the number of laddoos in one box.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "There are {boxes} equal boxes, and each box has {each} laddoos. How many laddoos are in all the boxes?",
+          "params": {
+           "boxes": [
+            2,
+            3,
+            4,
+            5
+           ],
+           "each": [
+            2,
+            3,
+            6,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "boxes*each",
+          "vals": {},
+          "steps": [
+           "There are {boxes} boxes with {each} laddoos in each box.",
+           "We need the total number of laddoos, so we multiply the number of boxes by the amount in one box.",
+           "{boxes} x {each} = {answer} laddoos."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "boxes",
+           "size": "each"
+          },
+          "hint": "Multiply the number of boxes by the number of laddoos in one box.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 2
+         },
+         "answers": [
+          "4"
+         ],
+         "id": "mathematics-g3-ch7-l2-c2",
+         "src": [
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A pile of 18 laddoos is shared equally among 2 children. How many laddoos does each child get?",
+         "explanation": "There are 18 laddoos and 2 children. We need one equal share, so we divide the total by the number of children. 18 ÷ 2 = 9 laddoos each.",
+         "steps": [
+          "There are 18 laddoos and 2 children.",
+          "We need one equal share, so we divide the total by the number of children.",
+          "18 ÷ 2 = 9 laddoos each."
+         ],
+         "hint": "Divide the total number of laddoos by the number of children.",
+         "derived": [
+          "18 (generated problem)",
+          "2 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "A pile of {total} laddoos is shared equally among {people} children. How many laddoos does each child get?",
+          "params": {
+           "total": [
+            12,
+            18,
+            24,
+            36
+           ],
+           "people": [
+            2,
+            3,
+            4,
+            6
+           ]
+          },
+          "where": [
+           "total % people == 0"
+          ],
+          "answer": "total/people",
+          "vals": {},
+          "steps": [
+           "There are {total} laddoos and {people} children.",
+           "We need one equal share, so we divide the total by the number of children.",
+           "{total} ÷ {people} = {answer} laddoos each."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "people",
+           "size": "total/people"
+          },
+          "hint": "Divide the total number of laddoos by the number of children.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 9
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g3-ch7-l2-c3",
+         "src": [
+          {
+           "ch": 7,
+           "p": 87
+          },
+          {
+           "ch": 7,
+           "p": 87
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g3-ch7-l2-a6",
+         "difficulty": 2,
+         "tags": [
+          "laddoos",
+          "sharing"
+         ],
+         "title": "From Box to Sharing",
+         "prompt": "Put these actions in the order they happen.",
+         "items": [
+          "Arrange the laddoos in a box",
+          "Count the first box in groups of three",
+          "Find the total for two boxes",
+          "Share the laddoos among nine people"
+         ],
+         "explanation": "First count one box. Then find the total and share it equally.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 87
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At the market, one laddoo costs 3 rupees. If Meena buys 3 laddoos, how much does she pay in rupees?",
+         "explanation": "One laddoo costs 3 rupees and Meena buys 3 laddoos. We need the total cost, so we multiply the price of one laddoo by the number bought. 3 x 3 = 9 rupees.",
+         "steps": [
+          "One laddoo costs 3 rupees and Meena buys 3 laddoos.",
+          "We need the total cost, so we multiply the price of one laddoo by the number bought.",
+          "3 x 3 = 9 rupees."
+         ],
+         "hint": "Multiply the price of one laddoo by the number of laddoos bought.",
+         "derived": [
+          "3 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "At the market, one laddoo costs {price} rupees. If Meena buys {count} laddoos, how much does she pay in rupees?",
+          "params": {
+           "price": [
+            2,
+            3,
+            5,
+            7
+           ],
+           "count": [
+            2,
+            3,
+            4,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "price*count",
+          "vals": {},
+          "steps": [
+           "One laddoo costs {price} rupees and Meena buys {count} laddoos.",
+           "We need the total cost, so we multiply the price of one laddoo by the number bought.",
+           "{price} x {count} = {answer} rupees."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "count",
+           "size": "price"
+          },
+          "hint": "Multiply the price of one laddoo by the number of laddoos bought.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 3,
+          "size": 3
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g3-ch7-l2-c4",
+         "src": [
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "The shopkeeper puts 3 laddoos in each of 2 boxes. How many laddoos does he arrange altogether?",
+         "explanation": "The shopkeeper has 2 boxes with 3 laddoos in each box. We need the total number of laddoos, so we multiply the number of boxes by the amount in one box. 2 x 3 = 6 laddoos.",
+         "steps": [
+          "The shopkeeper has 2 boxes with 3 laddoos in each box.",
+          "We need the total number of laddoos, so we multiply the number of boxes by the amount in one box.",
+          "2 x 3 = 6 laddoos."
+         ],
+         "hint": "Multiply the number of boxes by the number of laddoos in each box.",
+         "derived": [
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "The shopkeeper puts {perBox} laddoos in each of {boxes} boxes. How many laddoos does he arrange altogether?",
+          "params": {
+           "boxes": [
+            2,
+            3,
+            4,
+            5
+           ],
+           "perBox": [
+            2,
+            3,
+            6,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "boxes*perBox",
+          "vals": {},
+          "steps": [
+           "The shopkeeper has {boxes} boxes with {perBox} laddoos in each box.",
+           "We need the total number of laddoos, so we multiply the number of boxes by the amount in one box.",
+           "{boxes} x {perBox} = {answer} laddoos."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "boxes",
+           "size": "perBox"
+          },
+          "hint": "Multiply the number of boxes by the number of laddoos in each box.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 3
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g3-ch7-l2-c5",
+         "src": [
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "There are 2 shelves, and each shelf holds 9 marbles. How many marbles are on all the shelves?",
+         "explanation": "There are 2 shelves with 9 marbles on each shelf. We need the total number of marbles, so we multiply the number of shelves by the amount on one shelf. 2 x 9 = 18 marbles.",
+         "steps": [
+          "There are 2 shelves with 9 marbles on each shelf.",
+          "We need the total number of marbles, so we multiply the number of shelves by the amount on one shelf.",
+          "2 x 9 = 18 marbles."
+         ],
+         "hint": "Multiply the number of shelves by the number of marbles on one shelf.",
+         "derived": [
+          "18 (generated problem)",
+          "2 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "There are {shelves} shelves, and each shelf holds {marbles} marbles. How many marbles are on all the shelves?",
+          "params": {
+           "shelves": [
+            2,
+            3,
+            4,
+            6
+           ],
+           "marbles": [
+            2,
+            3,
+            5,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "shelves*marbles",
+          "vals": {},
+          "steps": [
+           "There are {shelves} shelves with {marbles} marbles on each shelf.",
+           "We need the total number of marbles, so we multiply the number of shelves by the amount on one shelf.",
+           "{shelves} x {marbles} = {answer} marbles."
+          ],
+          "model": {
+           "type": "array",
+           "rows": "shelves",
+           "cols": "marbles"
+          },
+          "hint": "Multiply the number of shelves by the number of marbles on one shelf.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "array",
+          "rows": 2,
+          "cols": 9
+         },
+         "answers": [
+          "18"
+         ],
+         "id": "mathematics-g3-ch7-l2-c6",
+         "src": [
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A total of 18 children are shared equally among 2 buses. If every bus carries the same number of children, how many children are in each bus?",
+         "explanation": "There are 18 children and 2 buses. We need the number of children in one equal bus group, so we divide the total by the number of buses. 18 ÷ 2 = 9 children per bus.",
+         "steps": [
+          "There are 18 children and 2 buses.",
+          "We need the number of children in one equal bus group, so we divide the total by the number of buses.",
+          "18 ÷ 2 = 9 children per bus."
+         ],
+         "hint": "Divide the number of children by the number of buses.",
+         "derived": [
+          "18 (generated problem)",
+          "2 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "A total of {total} children are shared equally among {buses} buses. If every bus carries the same number of children, how many children are in each bus?",
+          "params": {
+           "total": [
+            12,
+            18,
+            24,
+            36
+           ],
+           "buses": [
+            2,
+            3,
+            4,
+            6
+           ]
+          },
+          "where": [
+           "total % buses == 0"
+          ],
+          "answer": "total/buses",
+          "vals": {},
+          "steps": [
+           "There are {total} children and {buses} buses.",
+           "We need the number of children in one equal bus group, so we divide the total by the number of buses.",
+           "{total} ÷ {buses} = {answer} children per bus."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "buses",
+           "size": "total/buses"
+          },
+          "hint": "Divide the number of children by the number of buses.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 9
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g3-ch7-l2-c7",
+         "src": [
+          {
+           "ch": 7,
+           "p": 87
+          },
+          {
+           "ch": 7,
+           "p": 87
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At school, 36 laddoos are shared equally among 6 children. How many laddoos does each child receive?",
+         "explanation": "There are 36 laddoos to share among 6 children. One equal share is found by dividing the total number of laddoos by the number of children. 36 ÷ 6 = 6 laddoos each.",
+         "steps": [
+          "There are 36 laddoos to share among 6 children.",
+          "One equal share is found by dividing the total number of laddoos by the number of children.",
+          "36 ÷ 6 = 6 laddoos each."
+         ],
+         "hint": "Divide the laddoos equally by the number of children.",
+         "derived": [
+          "36 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "At school, {total} laddoos are shared equally among {children} children. How many laddoos does each child receive?",
+          "params": {
+           "total": [
+            12,
+            18,
+            24,
+            36
+           ],
+           "children": [
+            2,
+            3,
+            6
+           ]
+          },
+          "where": [
+           "total % children == 0"
+          ],
+          "answer": "total/children",
+          "vals": {},
+          "steps": [
+           "There are {total} laddoos to share among {children} children.",
+           "One equal share is found by dividing the total number of laddoos by the number of children.",
+           "{total} ÷ {children} = {answer} laddoos each."
+          ],
+          "model": null,
+          "hint": "Divide the laddoos equally by the number of children.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g3-ch7-l2-c8",
+         "src": [
+          {
+           "ch": 7,
+           "p": 87
+          },
+          {
+           "ch": 7,
+           "p": 87
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch7-l2-a8",
+         "difficulty": 3,
+         "tags": [
+          "laddoos",
+          "multiplication"
+         ],
+         "title": "Check the Box Total",
+         "prompt": "The first box has 9 + 9 laddoos.",
+         "answer": false,
+         "explanation": "The first box has 3 × 3 laddoos. The two boxes have 9 + 9.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          },
+          {
+           "ch": 7,
+           "p": 86
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch7-l2-sweet-shop-ff625e.webp",
+       "sceneAlt": "A golden laddu rests in a bride’s palm among Indian sweets that represent offerings, blessings, and love.",
+       "sceneCaption": "A golden laddu in a bride’s palm symbolizes Indian sweets as offerings, blessings, and festive love.",
+       "sceneCredit": {
+        "text": "Sweet shop by Anushka10patel, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Sweet_shop.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Anushka10patel"
+       }
+      },
+      {
+       "id": "mathematics-g3-ch7-l3",
+       "title": "Sharing Sweets and Counting Groups",
+       "estimatedMinutes": 6,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch7-l3-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How can we share sweets fairly and count groups quickly?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g3-ch7-l3-a1",
+         "difficulty": 1,
+         "tags": [
+          "sharing",
+          "sweets",
+          "groups",
+          "cycles"
+         ],
+         "title": "Sharing and Counting",
+         "body": "Sharing means giving the same amount to each person. Fifteen pedas shared equally among five people give three pedas each. The kaju katlis are also shared equally among five people. A cycle needs two wheels, so 12 wheels make six cycles. Jalebis are counted in six groups of four. Dhara’s family has nine members, but 24 jalebis cannot give four to everyone.",
+         "keyPoints": [
+          "Equal sharing gives the same amount to each person.",
+          "Fifteen pedas give three pedas to each of five people.",
+          "Dhara’s family needs 36 jalebis for four each."
+         ],
+         "explanation": "You can check a sharing answer by multiplying each person’s amount by the number of people.",
+         "derived": [
+          "3 pedas each = 15 / 5",
+          "6 cycles = 12 / 2",
+          "36 jalebis needed = 9 × 4"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 88
+          },
+          {
+           "ch": 7,
+           "p": 91
+          },
+          {
+           "ch": 7,
+           "p": 91
+          },
+          {
+           "ch": 7,
+           "p": 91
+          },
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          }
+         ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g3-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "arrays",
+         "params": {},
+         "title": "Groups and rows",
+         "tasks": [
+          {
+           "say": "Make 6 groups of 3, then try 3 groups of 6.",
+           "when": "g == 3 and e == 6",
+           "then": "6 × 3 and 3 × 6 both make 18: turning it round does not change the total."
+          },
+          {
+           "say": "Make 24 jalebis: 6 groups of 4.",
+           "when": "g == 6 and e == 4",
+           "then": "6 × 4 = 24, and 24 ÷ 6 = 4 each."
+          }
+         ],
+         "takeaway": "Equal groups can be counted by adding, written as a multiplication fact and shared back out with division.",
+         "explanation": "Equal groups can be counted by adding, written as a multiplication fact and shared back out with division."
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch7-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "sharing",
+          "pedas"
+         ],
+         "prompt": "The 15 pedas are shared equally among five people.",
+         "answer": true,
+         "explanation": "Equal sharing gives each person the same number of pedas.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 91
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g3-ch7-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "sharing",
+          "pedas"
+         ],
+         "prompt": "Each person gets ______ pedas when 15 pedas are shared among five people.",
+         "answers": [
+          "3"
+         ],
+         "hint": "Share 15 equally among five people.",
+         "explanation": "15 divided by 5 equals 3, so each person gets 3 pedas.",
+         "derived": [
+          "3 pedas each = 15 / 5"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 91
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g3-ch7-l3-a5",
+         "difficulty": 2,
+         "tags": [
+          "sharing",
+          "jalebis",
+          "cycles"
+         ],
+         "prompt": "Match each clue with its matching number.",
+         "pairs": [
+          [
+           "Pedas shared among 5 people",
+           "3 pedas each"
+          ],
+          [
+           "Wheels in the cycle problem",
+           "6 cycles"
+          ],
+          [
+           "Groups of 4 jalebis",
+           "24 jalebis"
+          ],
+          [
+           "Dhara’s family members",
+           "36 jalebis needed"
+          ]
+         ],
+         "explanation": "Divide for sharing and counting. Multiply family members by four for jalebis.",
+         "derived": [
+          "3 pedas each = 15 / 5",
+          "6 cycles = 12 / 2",
+          "36 jalebis needed = 9 × 4"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 91
+          },
+          {
+           "ch": 7,
+           "p": 91
+          },
+          {
+           "ch": 7,
+           "p": 91
+          },
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g3-ch7-l3-a6",
+         "difficulty": 2,
+         "tags": [
+          "cycles",
+          "wheels",
+          "counting"
+         ],
+         "prompt": "Put the cycle calculation steps in order.",
+         "items": [
+          "Start with 12 wheels.",
+          "Use 2 wheels for each cycle.",
+          "Find 6 cycles."
+         ],
+         "explanation": "12 divided by 2 equals 6, so the wheels make six cycles.",
+         "derived": [
+          "6 cycles = 12 / 2"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 91
+          },
+          {
+           "ch": 7,
+           "p": 91
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch7-l3-a7",
+         "difficulty": 3,
+         "tags": [
+          "jalebis",
+          "family",
+          "multiplication"
+         ],
+         "title": "Jalebis for Everyone",
+         "prompt": "Dhara’s family has nine members. How many jalebis give four to everyone?",
+         "options": [
+          "12",
+          "15",
+          "24",
+          "36"
+         ],
+         "answer": 3,
+         "explanation": "Nine people need 9 × 4 = 36 jalebis.",
+         "derived": [
+          "36 jalebis needed = 9 × 4"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch7-l3-a8",
+         "difficulty": 3,
+         "tags": [
+          "jalebis",
+          "family",
+          "sharing"
+         ],
+         "prompt": "The 24 jalebis give four jalebis to each of nine family members.",
+         "answer": false,
+         "explanation": "Nine people need 36 jalebis, but only 24 were bought.",
+         "derived": [
+          "36 jalebis needed = 9 × 4",
+          "12 jalebis short = 36 - 24"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g3-ch7-l3-a9",
+         "difficulty": 3,
+         "tags": [
+          "jalebis",
+          "family",
+          "division"
+         ],
+         "prompt": "Buying 24 jalebis gives four each to ______ family members.",
+         "answers": [
+          "6"
+         ],
+         "hint": "Compare 24 with four jalebis for each person.",
+         "explanation": "24 divided by 4 equals 6, so six family members can each get four.",
+         "derived": [
+          "6 family members = 24 / 4"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 92
+          },
+          {
+           "ch": 7,
+           "p": 92
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch7-l3-kaju-katli-indian-sweets-mad-5e57a3.webp",
+       "sceneAlt": "Kaju katli made from cashew nut paste sits in a vessel and is garnished with edible silver foil.",
+       "sceneCaption": "Kaju katli made from cashew paste and garnished with edible silver vark.",
+       "sceneCredit": {
+        "text": "Kaju katli ~ Indian sweets made from cashewnut paste kept in a vessel  by Jagisnowjughead, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Kaju_katli_~_Indian_sweets_made_from_cashewnut_paste_kept_in_a_vessel_on_a_abstract_background.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Jagisnowjughead"
+       }
+      },
+      {
+       "id": "mathematics-g3-ch7-l4",
+       "title": "Plants, Chickens and Skip Jumping",
+       "estimatedMinutes": 6,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch7-l4-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How can chickens and Dhara’s jumps help us learn to count?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g3-ch7-l4-a1",
+         "difficulty": 1,
+         "tags": [
+          "chickens",
+          "multiplication",
+          "skip jumping"
+         ],
+         "title": "Chickens and Skip Jumping",
+         "body": "Children see many chickens on the farm. One time two is two. Two times two is four. Three times two is six. Four, five and six times two are facts to complete. Dhara starts at zero and jumps to three. Dhara jumps from three to six, and then to nine. Dhara is skip jumping by three.",
+         "keyPoints": [
+          "Many chickens are on the farm.",
+          "Multiplication facts with two are practised.",
+          "Dhara skip jumps by three from zero to nine."
+         ],
+         "explanation": "You are learning about chickens, multiplication and Dhara’s jumps.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 95
+          },
+          {
+           "ch": 7,
+           "p": 95
+          },
+          {
+           "ch": 7,
+           "p": 95
+          }
+         ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g3-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberjump",
+         "params": {},
+         "title": "Hop along the number line",
+         "tasks": [
+          {
+           "say": "Go back from 52 in jumps of 10, three times.",
+           "when": "start == 52 and jump == 10 and hops == 3 and back == 1",
+           "then": "52, 42, 32, 22: jumping back takes away."
+          },
+          {
+           "say": "Find a start and jump that reach exactly 100 after 5 jumps.",
+           "when": "back == 0 and hops == 5 and start + 5 * jump == 100",
+           "then": "Five equal jumps land on 100: for example from 0 in jumps of 20."
+          }
+         ],
+         "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
+         "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch7-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "chickens",
+          "farm"
+         ],
+         "title": "What Do the Children See?",
+         "prompt": "What do the children see on the farm?",
+         "options": [
+          "A shop",
+          "Many chickens",
+          "A pond",
+          "A classroom"
+         ],
+         "answer": 1,
+         "explanation": "Well done! The children see many chickens on the farm.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 94
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch7-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "skip jumping",
+          "zero",
+          "three"
+         ],
+         "title": "Dhara’s First Jump",
+         "prompt": "Dhara starts at zero and jumps to three.",
+         "answer": true,
+         "explanation": "Correct! Dhara starts from zero and jumps to three.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 95
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g3-ch7-l4-a4",
+         "difficulty": 1,
+         "tags": [
+          "skip jumping",
+          "six",
+          "nine"
+         ],
+         "title": "Dhara’s Next Jump",
+         "prompt": "Dhara jumps from three to ______, and then to nine.",
+         "answers": [
+          "six"
+         ],
+         "hint": "Look at the next jump in Dhara’s counting.",
+         "explanation": "Great! Dhara jumps from three to six, and then to nine.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 95
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch7-l4-a5",
+         "difficulty": 2,
+         "tags": [
+          "skip jumping",
+          "three"
+         ],
+         "title": "How Is Dhara Jumping?",
+         "prompt": "How is Dhara skip jumping?",
+         "options": [
+          "By two",
+          "By four",
+          "By three",
+          "By five"
+         ],
+         "answer": 2,
+         "explanation": "You got it! Dhara is skip jumping by three.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 95
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g3-ch7-l4-a6",
+         "difficulty": 2,
+         "tags": [
+          "multiplication",
+          "two",
+          "four",
+          "six",
+          "eight"
+         ],
+         "title": "Match the Multiplication Facts",
+         "prompt": "Match each multiplication fact to its answer.",
+         "pairs": [
+          [
+           "One time two",
+           "two"
+          ],
+          [
+           "Two times two",
+           "four"
+          ],
+          [
+           "Three times two",
+           "six"
+          ],
+          [
+           "Four times two",
+           "eight"
+          ]
+         ],
+         "derived": [
+          "four times two = eight"
+         ],
+         "explanation": "Excellent! You matched the multiplication facts with their answers.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g3-ch7-l4-a7",
+         "difficulty": 2,
+         "tags": [
+          "skip jumping",
+          "zero",
+          "three",
+          "six",
+          "nine"
+         ],
+         "title": "Order Dhara’s Jumps",
+         "prompt": "Put Dhara’s jumps in the correct order.",
+         "items": [
+          "zero",
+          "three",
+          "six",
+          "nine"
+         ],
+         "explanation": "Well done! Dhara jumps from zero to three, six and nine.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 95
+          },
+          {
+           "ch": 7,
+           "p": 95
+          },
+          {
+           "ch": 7,
+           "p": 95
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch7-l4-a8",
+         "difficulty": 3,
+         "tags": [
+          "multiplication",
+          "four",
+          "two"
+         ],
+         "title": "Complete the Fact",
+         "prompt": "What is four times two?",
+         "options": [
+          "6",
+          "8",
+          "10",
+          "12"
+         ],
+         "answer": 1,
+         "derived": [
+          "four times two = 8",
+          "five times two = 10",
+          "six times two = 12"
+         ],
+         "explanation": "Good work! Four times two is eight.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          },
+          {
+           "ch": 7,
+           "p": 94
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g3-ch7-l4-a9",
+         "difficulty": 3,
+         "tags": [
+          "multiplication",
+          "six",
+          "twelve"
+         ],
+         "title": "Finish the Multiplication Fact",
+         "prompt": "Six times two is ______.",
+         "answers": [
+          "twelve"
+         ],
+         "hint": "Count six groups of two.",
+         "explanation": "Excellent! Six times two is twelve.",
+         "derived": [
+          "six times two = twelve"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 94
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch7-l4-feeding-the-chickens-3541288-f5eaa1.webp",
+       "sceneAlt": "Chickens gather to be fed on a farm.",
+       "sceneCaption": "Children feed chickens at a farm.",
+       "sceneCredit": {
+        "text": "Feeding the Chickens (35412883672) by Mike Prince from Bangalore, India, CC BY 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Feeding_the_Chickens_(35412883672).jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "creator": "Mike Prince from Bangalore, India"
+       }
+      },
+      {
+       "id": "mathematics-g3-ch7-l5",
+       "title": "Skip-Jumping Games and Sticks",
+       "estimatedMinutes": 10,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch7-l5-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How can we hop to the flower using as few jumps as possible?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g3-ch7-l5-a1",
+         "difficulty": 1,
+         "tags": [
+          "skip-jumping",
+          "number-pattern",
+          "sticks"
+         ],
+         "title": "Skip-Jumping Games and Sticks",
+         "body": "The chapter asks how many steps forward Dhara jumps. The pattern begins with three, six and nine. Skip jumping by six is practised on the number track. Recorded jumps are 32, 40, 48 and 56. Atya places a flower on number 12. Players cannot jump directly to it. The player with the smallest number of jumps wins. Sticks show repeated addition.",
+         "keyPoints": [
+          "The pattern begins with three, six and nine.",
+          "Players cannot jump directly to the flower.",
+          "Sticks show repeated addition."
+         ],
+         "explanation": "These ideas help you play the jumping game and read stick arrangements.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 96
+          },
+          {
+           "ch": 7,
+           "p": 96
+          },
+          {
+           "ch": 7,
+           "p": 96
+          },
+          {
+           "ch": 7,
+           "p": 97
+          },
+          {
+           "ch": 7,
+           "p": 97
+          },
+          {
+           "ch": 7,
+           "p": 97
+          },
+          {
+           "ch": 7,
+           "p": 97
+          },
+          {
+           "ch": 7,
+           "p": 98
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch7-l5-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Dhara makes 2 skip-jumps of 3 places on the number track. What number does she land on after the last jump?",
+         "steps": [
+          "Each jump moves 3 places forward.",
+          "Count by 3 for 2 jumps, so we add 3 2 times.",
+          "The last landing is 6, so the answer is 6."
+         ],
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 6,
+          "step": 3,
+          "jumps": {
+           "start": 0,
+           "size": 3,
+           "count": 2
+          }
+         },
+         "result": "6",
+         "gen": {
+          "template": "Dhara makes {jumps} skip-jumps of {size} places on the number track. What number does she land on after the last jump?",
+          "params": {
+           "jumps": [
+            2,
+            3,
+            4
+           ],
+           "size": [
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "jumps*size",
+          "vals": {
+           "total": "jumps*size"
+          },
+          "steps": [
+           "Each jump moves {size} places forward.",
+           "Count by {size} for {jumps} jumps, so we add {size} {jumps} times.",
+           "The last landing is {total}, so the answer is {answer}."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "jumps*size",
+           "step": "size",
+           "jumps": {
+            "start": 0,
+            "size": "size",
+            "count": "jumps"
+           }
+          },
+          "hint": "Count forward by the size of each jump.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "6 (generated problem)"
+         ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g3-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberjump",
+         "params": {},
+         "title": "Hop along the number line",
+         "tasks": [
+          {
+           "say": "Go back from 52 in jumps of 10, three times.",
+           "when": "start == 52 and jump == 10 and hops == 3 and back == 1",
+           "then": "52, 42, 32, 22: jumping back takes away."
+          },
+          {
+           "say": "Find a start and jump that reach exactly 100 after 5 jumps.",
+           "when": "back == 0 and hops == 5 and start + 5 * jump == 100",
+           "then": "Five equal jumps land on 100: for example from 0 in jumps of 20."
+          }
+         ],
+         "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
+         "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch7-l5-a2",
+         "difficulty": 1,
+         "tags": [
+          "number-pattern",
+          "skip-jumping"
+         ],
+         "prompt": "Which numbers begin the number pattern?",
+         "options": [
+          "Three, six and nine",
+          "Six, nine and twelve",
+          "Five, ten and fifteen",
+          "One, two and three"
+         ],
+         "answer": 0,
+         "explanation": "The number pattern begins with three, six and nine.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 96
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Atya arranges 2 rows of 5 sticks. How many sticks are there altogether?",
+         "explanation": "There are 2 rows and each row has 5 sticks. Equal rows show repeated addition, so we add 5 2 times. The total number of sticks is 10.",
+         "steps": [
+          "There are 2 rows and each row has 5 sticks.",
+          "Equal rows show repeated addition, so we add 5 2 times.",
+          "The total number of sticks is 10."
+         ],
+         "hint": "Count each row of sticks and add the equal groups.",
+         "derived": [
+          "10 (generated problem)",
+          "2 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "Atya arranges {groups} rows of {size} sticks. How many sticks are there altogether?",
+          "params": {
+           "groups": [
+            2,
+            3,
+            4,
+            5
+           ],
+           "size": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "groups*size",
+          "vals": {
+           "total": "groups*size"
+          },
+          "steps": [
+           "There are {groups} rows and each row has {size} sticks.",
+           "Equal rows show repeated addition, so we add {size} {groups} times.",
+           "The total number of sticks is {answer}."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "groups",
+           "size": "size"
+          },
+          "hint": "Count each row of sticks and add the equal groups.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 5
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g3-ch7-l5-c2",
+         "src": [
+          {
+           "ch": 7,
+           "p": 98
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "One time five is five. What is 5 times five?",
+         "explanation": "There are 5 equal groups of five. Counting by five 5 times gives 25. The answer is 25.",
+         "steps": [
+          "There are 5 equal groups of five.",
+          "Counting by five 5 times gives 25.",
+          "The answer is 25."
+         ],
+         "hint": "Picture 5 equal groups of five.",
+         "derived": [
+          "0 (generated problem)",
+          "10 (generated problem)",
+          "25 (generated problem)",
+          "26 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "One time five is five. What is {times} times five?",
+          "params": {
+           "times": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "5*times",
+          "vals": {
+           "total": "5*times"
+          },
+          "steps": [
+           "There are {times} equal groups of five.",
+           "Counting by five {times} times gives {total}.",
+           "The answer is {answer}."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "times",
+           "size": "5"
+          },
+          "hint": "Picture {times} equal groups of five.",
+          "wrong": [
+           "times+5",
+           "5-times",
+           "times*5+1"
+          ],
+          "wrongWhy": [
+           "You added the number of times instead of counting five each time.",
+           "You took away instead of multiplying.",
+           "You added an extra one after counting the groups."
+          ]
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 5,
+          "size": 5
+         },
+         "options": [
+          "0",
+          "26",
+          "25",
+          "10"
+         ],
+         "answer": 2,
+         "why": {
+          "0": "You took away instead of multiplying.",
+          "10": "You added the number of times instead of counting five each time.",
+          "26": "You added an extra one after counting the groups."
+         },
+         "id": "mathematics-g3-ch7-l5-c3",
+         "src": [
+          {
+           "ch": 7,
+           "p": 98
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch7-l5-a4",
+         "difficulty": 2,
+         "tags": [
+          "flower",
+          "number-track"
+         ],
+         "prompt": "Atya places a flower on number 15.",
+         "answer": false,
+         "explanation": "Atya places the flower on number 12, not number 15.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 97
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a market stall, each laddoo delivery adds 6 laddoos. After 3 deliveries, how many laddoos has the seller counted?",
+         "explanation": "Each delivery adds 6 laddoos. Count by 6 for 3 deliveries, so add 6 3 times. The seller has counted 18 laddoos.",
+         "steps": [
+          "Each delivery adds 6 laddoos.",
+          "Count by 6 for 3 deliveries, so add 6 3 times.",
+          "The seller has counted 18 laddoos."
+         ],
+         "hint": "Skip-count by six for the number of deliveries.",
+         "derived": [
+          "18 (generated problem)",
+          "3 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a market stall, each laddoo delivery adds {jump} laddoos. After {jumps} deliveries, how many laddoos has the seller counted?",
+          "params": {
+           "jump": {
+            "min": 6,
+            "max": 6
+           },
+           "jumps": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "jump*jumps",
+          "vals": {
+           "total": "jump*jumps"
+          },
+          "steps": [
+           "Each delivery adds {jump} laddoos.",
+           "Count by {jump} for {jumps} deliveries, so add {jump} {jumps} times.",
+           "The seller has counted {answer} laddoos."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "jump*jumps",
+           "step": "jump",
+           "jumps": {
+            "start": 0,
+            "size": "jump",
+            "count": "jumps"
+           }
+          },
+          "hint": "Skip-count by six for the number of deliveries.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 18,
+          "step": 6,
+          "jumps": {
+           "start": 0,
+           "size": 6,
+           "count": 3
+          }
+         },
+         "answers": [
+          "18"
+         ],
+         "id": "mathematics-g3-ch7-l5-c4",
+         "src": [
+          {
+           "ch": 7,
+           "p": 96
+          },
+          {
+           "ch": 7,
+           "p": 97
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "There are 4 pots of marbles, and each pot has 3 marbles. How many marbles are there in all the pots?",
+         "explanation": "There are 4 pots with 3 marbles in each pot. Repeated addition adds 3 4 times. There are 12 marbles altogether.",
+         "steps": [
+          "There are 4 pots with 3 marbles in each pot.",
+          "Repeated addition adds 3 4 times.",
+          "There are 12 marbles altogether."
+         ],
+         "hint": "Add the equal number of marbles in each pot.",
+         "derived": [
+          "12 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "There are {groups} pots of marbles, and each pot has {size} marbles. How many marbles are there in all the pots?",
+          "params": {
+           "groups": [
+            2,
+            3,
+            4,
+            5
+           ],
+           "size": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "groups*size",
+          "vals": {
+           "total": "groups*size"
+          },
+          "steps": [
+           "There are {groups} pots with {size} marbles in each pot.",
+           "Repeated addition adds {size} {groups} times.",
+           "There are {answer} marbles altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "groups",
+           "size": "size"
+          },
+          "hint": "Add the equal number of marbles in each pot.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 3
+         },
+         "answers": [
+          "12"
+         ],
+         "id": "mathematics-g3-ch7-l5-c5",
+         "src": [
+          {
+           "ch": 7,
+           "p": 98
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a shop, 2 packets each hold one five-rupee coin. How many rupees are in the packets altogether?",
+         "explanation": "Each packet contains one five-rupee coin. There are 2 equal packets, so count five rupees 2 times. The packets contain 10 rupees altogether.",
+         "steps": [
+          "Each packet contains one five-rupee coin.",
+          "There are 2 equal packets, so count five rupees 2 times.",
+          "The packets contain 10 rupees altogether."
+         ],
+         "hint": "Count five rupees for every packet.",
+         "derived": [
+          "10 (generated problem)",
+          "2 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a shop, {packs} packets each hold one five-rupee coin. How many rupees are in the packets altogether?",
+          "params": {
+           "packs": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "5*packs",
+          "vals": {
+           "total": "5*packs"
+          },
+          "steps": [
+           "Each packet contains one five-rupee coin.",
+           "There are {packs} equal packets, so count five rupees {packs} times.",
+           "The packets contain {answer} rupees altogether."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "packs",
+           "size": "5"
+          },
+          "hint": "Count five rupees for every packet.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 2,
+          "size": 5
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g3-ch7-l5-c6",
+         "src": [
+          {
+           "ch": 7,
+           "p": 98
+          },
+          {
+           "ch": 7,
+           "p": 98
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Atya places a flower on number 18 on the number track. Dhara jumps by 6 each time and cannot jump directly to the flower. How many jumps does Dhara need to reach it?",
+         "explanation": "The flower is at 18, and every jump moves 6 places. Count the jumps needed to reach 18; this is 3. The answer is 3 jumps.",
+         "steps": [
+          "The flower is at 18, and every jump moves 6 places.",
+          "Count the jumps needed to reach 18; this is 3.",
+          "The answer is 3 jumps."
+         ],
+         "hint": "Count the jumps of six from zero up to the flower.",
+         "derived": [
+          "18 (generated problem)",
+          "3 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "Atya places a flower on number {flower} on the number track. Dhara jumps by {jump} each time and cannot jump directly to the flower. How many jumps does Dhara need to reach it?",
+          "params": {
+           "flower": [
+            12,
+            18,
+            24
+           ],
+           "jump": {
+            "min": 6,
+            "max": 6
+           }
+          },
+          "where": [
+           "flower % jump == 0"
+          ],
+          "answer": "flower/jump",
+          "vals": {
+           "count": "flower/jump"
+          },
+          "steps": [
+           "The flower is at {flower}, and every jump moves {jump} places.",
+           "Count the jumps needed to reach {flower}; this is {count}.",
+           "The answer is {answer} jumps."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "flower",
+           "step": "jump",
+           "jumps": {
+            "start": 0,
+            "size": "jump",
+            "count": "flower/jump"
+           }
+          },
+          "hint": "Count the jumps of six from zero up to the flower.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 18,
+          "step": 6,
+          "jumps": {
+           "start": 0,
+           "size": 6,
+           "count": 3
+          }
+         },
+         "answers": [
+          "3"
+         ],
+         "id": "mathematics-g3-ch7-l5-c7",
+         "src": [
+          {
+           "ch": 7,
+           "p": 97
+          },
+          {
+           "ch": 7,
+           "p": 97
+          },
+          {
+           "ch": 7,
+           "p": 97
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch7-l5-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A market seller has 4 trays with 2 laddoos on each tray, then puts 4 extra laddoos beside the trays. How many laddoos are there altogether?",
+         "steps": [
+          "The 4 trays hold 8 laddoos altogether.",
+          "Adding 4 extra laddoos gives 12 laddoos.",
+          "The answer is 12 laddoos."
+         ],
+         "modelSpec": {
+          "type": "groups",
+          "groups": 4,
+          "size": 2
+         },
+         "result": "12",
+         "gen": {
+          "template": "A market seller has {groups} trays with {size} laddoos on each tray, then puts {extra} extra laddoos beside the trays. How many laddoos are there altogether?",
+          "params": {
+           "groups": [
+            2,
+            3,
+            4,
+            5
+           ],
+           "size": [
+            2,
+            3,
+            4,
+            5
+           ],
+           "extra": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "groups*size+extra",
+          "vals": {
+           "base": "groups*size",
+           "total": "groups*size+extra"
+          },
+          "steps": [
+           "The {groups} trays hold {base} laddoos altogether.",
+           "Adding {extra} extra laddoos gives {total} laddoos.",
+           "The answer is {answer} laddoos."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "groups",
+           "size": "size"
+          },
+          "hint": "First count all the laddoos on the trays, then add the extra laddoos.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "12 (generated problem)",
+          "2 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g3-ch7-l5-a7",
+         "difficulty": 3,
+         "tags": [
+          "recorded-jumps",
+          "number-track"
+         ],
+         "prompt": "The recorded jumps are 32, 40, ______ and 56.",
+         "answers": [
+          "48"
+         ],
+         "hint": "Find the missing recorded jump.",
+         "explanation": "The recorded jumps are 32, 40, 48 and 56.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 97
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g3-ch7-l5-a8",
+         "difficulty": 3,
+         "tags": [
+          "sticks",
+          "repeated-addition"
+         ],
+         "prompt": "Put the stick facts in order from one time to three times.",
+         "items": [
+          "One time five equals five",
+          "Two times five equals ten",
+          "Three times five equals fifteen"
+         ],
+         "explanation": "The sticks show repeated addition from one time to three times.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 98
+          },
+          {
+           "ch": 7,
+           "p": 98
+          },
+          {
+           "ch": 7,
+           "p": 98
+          },
+          {
+           "ch": 7,
+           "p": 98
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Dhara's flower is on number 36. She jumps 6 places at a time, while Atya reaches the flower in 2 jumps. How many more jumps does Dhara need than Atya?",
+         "explanation": "Dhara jumps 6 places each time, so she needs 6 jumps to reach 36. Atya takes 2 jumps, so the difference is 4 jumps. The answer is 4 more jumps.",
+         "steps": [
+          "Dhara jumps 6 places each time, so she needs 6 jumps to reach 36.",
+          "Atya takes 2 jumps, so the difference is 4 jumps.",
+          "The answer is 4 more jumps."
+         ],
+         "hint": "First find how many jumps of six reach the flower, then compare with Atya's jumps.",
+         "derived": [
+          "2 (generated problem)",
+          "36 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "Dhara's flower is on number {target}. She jumps {size} places at a time, while Atya reaches the flower in {other} jumps. How many more jumps does Dhara need than Atya?",
+          "params": {
+           "target": [
+            24,
+            30,
+            36
+           ],
+           "size": {
+            "min": 6,
+            "max": 6
+           },
+           "other": [
+            1,
+            2,
+            3
+           ]
+          },
+          "where": [
+           "target % size == 0",
+           "other < target / size"
+          ],
+          "answer": "target/size-other",
+          "vals": {
+           "dhara": "target/size",
+           "difference": "target/size-other"
+          },
+          "steps": [
+           "Dhara jumps {size} places each time, so she needs {dhara} jumps to reach {target}.",
+           "Atya takes {other} jumps, so the difference is {difference} jumps.",
+           "The answer is {answer} more jumps."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "target",
+           "step": "size",
+           "jumps": {
+            "start": 0,
+            "size": "size",
+            "count": "target/size"
+           }
+          },
+          "hint": "First find how many jumps of six reach the flower, then compare with Atya's jumps.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 36,
+          "step": 6,
+          "jumps": {
+           "start": 0,
+           "size": 6,
+           "count": 6
+          }
+         },
+         "answers": [
+          "4"
+         ],
+         "id": "mathematics-g3-ch7-l5-c8",
+         "src": [
+          {
+           "ch": 7,
+           "p": 97
+          },
+          {
+           "ch": 7,
+           "p": 97
+          },
+          {
+           "ch": 7,
+           "p": 97
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In a cricket game, Dhara makes 3 jumps of 6 runs, and Atya makes 4 jumps of 4 runs. How many more runs does Dhara travel?",
+         "explanation": "Dhara's total is 18 runs because she makes 3 jumps of 6. Atya's total is 16 runs because she makes 4 jumps of 4. The difference is 2, so Dhara travels 2 more runs.",
+         "steps": [
+          "Dhara's total is 18 runs because she makes 3 jumps of 6.",
+          "Atya's total is 16 runs because she makes 4 jumps of 4.",
+          "The difference is 2, so Dhara travels 2 more runs."
+         ],
+         "hint": "Find each player's total runs, then subtract the smaller total from the larger total.",
+         "derived": [
+          "16 (generated problem)",
+          "18 (generated problem)",
+          "2 (generated problem)",
+          "3 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "In a cricket game, Dhara makes {a} jumps of {b} runs, and Atya makes {c} jumps of {d} runs. How many more runs does Dhara travel?",
+          "params": {
+           "a": [
+            2,
+            3,
+            4
+           ],
+           "b": [
+            3,
+            4,
+            5,
+            6
+           ],
+           "c": [
+            2,
+            3,
+            4
+           ],
+           "d": [
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [
+           "a*b > c*d"
+          ],
+          "answer": "a*b-c*d",
+          "vals": {
+           "dhar_total": "a*b",
+           "atya_total": "c*d",
+           "difference": "a*b-c*d"
+          },
+          "steps": [
+           "Dhara's total is {dhar_total} runs because she makes {a} jumps of {b}.",
+           "Atya's total is {atya_total} runs because she makes {c} jumps of {d}.",
+           "The difference is {difference}, so Dhara travels {answer} more runs."
+          ],
+          "model": {
+           "type": "numberline",
+           "from": 0,
+           "to": "a*b",
+           "step": "b",
+           "jumps": {
+            "start": 0,
+            "size": "b",
+            "count": "a"
+           }
+          },
+          "hint": "Find each player's total runs, then subtract the smaller total from the larger total.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "numberline",
+          "from": 0,
+          "to": 18,
+          "step": 6,
+          "jumps": {
+           "start": 0,
+           "size": 6,
+           "count": 3
+          }
+         },
+         "answers": [
+          "2"
+         ],
+         "id": "mathematics-g3-ch7-l5-c9",
+         "src": [
+          {
+           "ch": 7,
+           "p": 96
+          },
+          {
+           "ch": 7,
+           "p": 97
+          },
+          {
+           "ch": 7,
+           "p": 98
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch7-l1-raksha02-8ae2e0.webp",
+       "sceneAlt": "A bunch of colourful rakhis prepared for the Raksha Bandhan festival.",
+       "sceneCaption": "A bunch of rakhis prepared for the Raksha Bandhan festival.",
+       "sceneCredit": {
+        "text": "Raksha02 by Suyash Dwivedi, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Raksha02.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Suyash Dwivedi"
+       }
+      },
+      {
+       "id": "mathematics-g3-ch7-l6",
+       "title": "Real-Life Maths and Number Cards",
+       "estimatedMinutes": 6,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g3-ch7-l6-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Can number cards help us solve tricky real-life maths puzzles?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g3-ch7-l6-a1",
+         "difficulty": 1,
+         "tags": [
+          "maths",
+          "number cards",
+          "spokes",
+          "cost",
+          "sea shells"
+         ],
+         "title": "Maths in everyday life",
+         "body": "Maths uses number cards for costs and quantities. Cards can be ordered from smallest to largest. The ten cards run from 1 to 10. A rath needs spokes for 20 wheels, with five spokes per wheel. One wall-hanging costs 42 rupees. One rabdi cup costs 75 rupees, and Preeti buys five rabdi cups. Dhruv collected 112 sea-shells. Each necklace uses 28 shells. The fifth envelope holds cards 5 and 9.",
+         "keyPoints": [
+          "20 wheels need spokes",
+          "One rabdi cup costs 75 rupees",
+          "Number cards run from 1 to 10"
+         ],
+         "explanation": "Each number connects to a real-life example.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 101
+          },
+          {
+           "ch": 7,
+           "p": 101
+          },
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 106
+          },
+          {
+           "ch": 7,
+           "p": 106
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch7-l6-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "The rath has 10 wheels, and each wheel needs 2 spokes. How many spokes are needed altogether?",
+         "steps": [
+          "There are 10 wheels on the rath.",
+          "Each wheel needs 2 spokes, so multiply the number of wheels by the number of spokes for one wheel.",
+          "10 x 2 = 20 spokes."
+         ],
+         "modelSpec": {
+          "type": "array",
+          "rows": 2,
+          "cols": 10
+         },
+         "result": "20",
+         "gen": {
+          "template": "The rath has {wheels} wheels, and each wheel needs {spokes} spokes. How many spokes are needed altogether?",
+          "params": {
+           "wheels": [
+            4,
+            6,
+            8,
+            10,
+            12
+           ],
+           "spokes": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "wheels * spokes",
+          "vals": {
+           "total_spokes": "wheels * spokes"
+          },
+          "steps": [
+           "There are {wheels} wheels on the rath.",
+           "Each wheel needs {spokes} spokes, so multiply the number of wheels by the number of spokes for one wheel.",
+           "{wheels} x {spokes} = {answer} spokes."
+          ],
+          "model": {
+           "type": "array",
+           "rows": "spokes",
+           "cols": "wheels"
+          },
+          "hint": "Multiply the number of wheels by the number of spokes needed for one wheel.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "10 (generated problem)",
+          "2 (generated problem)",
+          "20 (generated problem)"
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g3-ch7-l6-a2",
+         "difficulty": 1,
+         "tags": [
+          "spokes",
+          "wheels",
+          "total"
+         ],
+         "title": "Find the total",
+         "prompt": "How is the total number of spokes for 30 wheels shown?",
+         "options": [
+          "20 × 5",
+          "30 × 5",
+          "30 + 5",
+          "30 − 5"
+         ],
+         "answer": 1,
+         "explanation": "The total for 30 wheels is shown as 30 × 5.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 101
+          },
+          {
+           "ch": 7,
+           "p": 101
+          },
+          {
+           "ch": 7,
+           "p": 101
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "One wall-hanging costs 42 rupees. If 5 wall-hangings are bought, what is the total cost in rupees?",
+         "explanation": "The cost of one wall-hanging is 42 rupees. There are 5 wall-hangings, so multiply 5 by 42. 5 x 42 = 210 rupees.",
+         "steps": [
+          "The cost of one wall-hanging is 42 rupees.",
+          "There are 5 wall-hangings, so multiply 5 by 42.",
+          "5 x 42 = 210 rupees."
+         ],
+         "hint": "Multiply the number of wall-hangings by 42.",
+         "derived": [
+          "210 (generated problem)",
+          "42 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "One wall-hanging costs 42 rupees. If {n} wall-hangings are bought, what is the total cost in rupees?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "n * 42",
+          "vals": {
+           "total_cost": "n * 42"
+          },
+          "steps": [
+           "The cost of one wall-hanging is 42 rupees.",
+           "There are {n} wall-hangings, so multiply {n} by 42.",
+           "{n} x 42 = {answer} rupees."
+          ],
+          "model": null,
+          "hint": "Multiply the number of wall-hangings by 42.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "210"
+         ],
+         "id": "mathematics-g3-ch7-l6-c2",
+         "src": [
+          {
+           "ch": 7,
+           "p": 104
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Dhruv has 84 sea-shells, and each necklace uses 28 shells. How many complete necklaces can he make?",
+         "explanation": "There are 84 shells, and one necklace uses 28 shells. Divide the shells into equal groups of 28 to count the necklaces. 84 ÷ 28 = 3 complete necklaces.",
+         "steps": [
+          "There are 84 shells, and one necklace uses 28 shells.",
+          "Divide the shells into equal groups of 28 to count the necklaces.",
+          "84 ÷ 28 = 3 complete necklaces."
+         ],
+         "hint": "Divide the available shells by the number of shells used for one necklace.",
+         "derived": [
+          "28 (generated problem)",
+          "3 (generated problem)",
+          "84 (generated problem)"
+         ],
+         "gen": {
+          "template": "Dhruv has {shells} sea-shells, and each necklace uses {per_necklace} shells. How many complete necklaces can he make?",
+          "params": {
+           "shells": [
+            84,
+            112,
+            140,
+            168,
+            196
+           ],
+           "per_necklace": [
+            14,
+            28,
+            42,
+            56,
+            70
+           ]
+          },
+          "where": [
+           "shells % per_necklace == 0"
+          ],
+          "answer": "shells / per_necklace",
+          "vals": {
+           "necklaces": "shells / per_necklace"
+          },
+          "steps": [
+           "There are {shells} shells, and one necklace uses {per_necklace} shells.",
+           "Divide the shells into equal groups of {per_necklace} to count the necklaces.",
+           "{shells} ÷ {per_necklace} = {answer} complete necklaces."
+          ],
+          "model": null,
+          "hint": "Divide the available shells by the number of shells used for one necklace.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "3"
+         ],
+         "id": "mathematics-g3-ch7-l6-c3",
+         "src": [
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 104
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch7-l6-a4",
+         "difficulty": 2,
+         "tags": [
+          "rabdi cup",
+          "cost",
+          "rupees"
+         ],
+         "title": "Check the price",
+         "prompt": "One rabdi cup costs 42 rupees.",
+         "answer": false,
+         "explanation": "One rabdi cup costs 75 rupees, not 42 rupees.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 104
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g3-ch7-l6-a5",
+         "difficulty": 2,
+         "tags": [
+          "wall-hanging",
+          "rabdi cup",
+          "necklace",
+          "envelope",
+          "number cards"
+         ],
+         "title": "Match each item",
+         "prompt": "Match each item to its amount.",
+         "pairs": [
+          [
+           "one wall-hanging",
+           "42 rupees"
+          ],
+          [
+           "one rabdi cup",
+           "75 rupees"
+          ],
+          [
+           "one necklace",
+           "28 shells"
+          ],
+          [
+           "the fifth envelope",
+           "cards 5 and 9"
+          ]
+         ],
+         "explanation": "Each item is matched with the amount given in the lesson.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 104
+          },
+          {
+           "ch": 7,
+           "p": 106
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a cricket match, a bus has 8 wheels, and each wheel needs 4 spokes. How many spokes are needed for the bus?",
+         "explanation": "The bus has 8 wheels. Each wheel needs 4 spokes, so multiply the number of wheels by the number for one wheel. 8 x 4 = 32 spokes.",
+         "steps": [
+          "The bus has 8 wheels.",
+          "Each wheel needs 4 spokes, so multiply the number of wheels by the number for one wheel.",
+          "8 x 4 = 32 spokes."
+         ],
+         "hint": "Multiply the number of wheels by the number of spokes for one wheel.",
+         "derived": [
+          "32 (generated problem)",
+          "4 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a cricket match, a bus has {wheels} wheels, and each wheel needs {spokes} spokes. How many spokes are needed for the bus?",
+          "params": {
+           "wheels": [
+            4,
+            6,
+            8,
+            10,
+            12
+           ],
+           "spokes": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "wheels * spokes",
+          "vals": {
+           "total_spokes": "wheels * spokes"
+          },
+          "steps": [
+           "The bus has {wheels} wheels.",
+           "Each wheel needs {spokes} spokes, so multiply the number of wheels by the number for one wheel.",
+           "{wheels} x {spokes} = {answer} spokes."
+          ],
+          "model": {
+           "type": "groups",
+           "groups": "wheels",
+           "size": "spokes"
+          },
+          "hint": "Multiply the number of wheels by the number of spokes for one wheel.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "groups",
+          "groups": 8,
+          "size": 4
+         },
+         "answers": [
+          "32"
+         ],
+         "id": "mathematics-g3-ch7-l6-c4",
+         "src": [
+          {
+           "ch": 7,
+           "p": 101
+          },
+          {
+           "ch": 7,
+           "p": 101
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch7-l6-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Preeti buys 4 wall-hangings at 42 rupees each and one rabdi cup at 75 rupees. How much does she spend in rupees?",
+         "steps": [
+          "The 4 wall-hangings cost 4 x 42 = 168 rupees.",
+          "Add the 75-rupee rabdi cup to the wall-hanging cost.",
+          "168 + 75 = 243 rupees."
+         ],
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 168,
+            "label": "168 rupees"
+           },
+           {
+            "v": 75,
+            "label": "75 rupees"
+           }
+          ],
+          "total": "?"
+         },
+         "result": "243",
+         "gen": {
+          "template": "Preeti buys {n} wall-hangings at 42 rupees each and one rabdi cup at 75 rupees. How much does she spend in rupees?",
+          "params": {
+           "n": [
+            2,
+            3,
+            4,
+            5,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "n * 42 + 75",
+          "vals": {
+           "wall_cost": "n * 42",
+           "cup_cost": "75",
+           "total_cost": "n * 42 + 75"
+          },
+          "steps": [
+           "The {n} wall-hangings cost {n} x 42 = {wall_cost} rupees.",
+           "Add the 75-rupee rabdi cup to the wall-hanging cost.",
+           "{wall_cost} + {cup_cost} = {answer} rupees."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "n * 42",
+             "label": "{wall_cost} rupees"
+            },
+            {
+             "v": "75",
+             "label": "{cup_cost} rupees"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "First find the cost of the wall-hangings.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "168 (generated problem)",
+          "243 (generated problem)",
+          "4 (generated problem)",
+          "42 (generated problem)",
+          "75 (generated problem)"
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g3-ch7-l6-a7",
+         "difficulty": 3,
+         "tags": [
+          "number cards",
+          "smallest",
+          "largest"
+         ],
+         "title": "Order the number cards",
+         "prompt": "Put these number cards from smallest to largest.",
+         "items": [
+          "10",
+          "1",
+          "5",
+          "9"
+         ],
+         "explanation": "The order is 1, 5, 9, 10.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 106
+          },
+          {
+           "ch": 7,
+           "p": 106
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch7-l1-raksha02-8ae2e0.webp",
+       "sceneAlt": "A bunch of colourful rakhis prepared for the Raksha Bandhan festival.",
+       "sceneCaption": "A bunch of rakhis prepared for the Raksha Bandhan festival.",
+       "sceneCredit": {
+        "text": "Raksha02 by Suyash Dwivedi, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Raksha02.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Suyash Dwivedi"
+       }
+      }
+     ],
+     "boss": {
+      "id": "mathematics-g3-ch7-boss",
+      "title": "Chapter challenge: Raksha Bandhan",
+      "estimatedMinutes": 5,
+      "activities": [
+       {
+        "type": "mcq",
+        "id": "mathematics-g3-ch7-boss-a1",
+        "difficulty": 2,
+        "tags": [
+         "festival",
+         "rakhi",
+         "family"
+        ],
+        "prompt": "Which statement about the festival is true?",
+        "options": [
+         "Gopal's favourite festival is tomorrow.",
+         "Their beloved Atya is their aunt.",
+         "Each Rakhi uses four threads.",
+         "The house has not been cleaned."
+        ],
+        "answer": 1,
+        "explanation": "Atya is their father's sister. The house is already cleaned and decorated.",
+        "src": [
+         {
+          "ch": 7,
+          "p": 82
+         },
+         {
+          "ch": 7,
+          "p": 82
+         },
+         {
+          "ch": 7,
+          "p": 82
+         },
+         {
+          "ch": 7,
+          "p": 84
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "mathematics-g3-ch7-boss-a2",
+        "difficulty": 2,
+        "tags": [
+         "rakhi",
+         "beads"
+        ],
+        "prompt": "Each Rakhi uses two beads.",
+        "answer": false,
+        "explanation": "Each Rakhi uses four beads, not two beads.",
+        "src": [
+         {
+          "ch": 7,
+          "p": 84
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "mathematics-g3-ch7-boss-a3",
+        "difficulty": 2,
+        "tags": [
+         "rakhi",
+         "threads"
+        ],
+        "prompt": "Each Rakhi uses ______ threads.",
+        "answers": [
+         "two"
+        ],
+        "hint": "Check the threads needed for one Rakhi.",
+        "explanation": "The lesson says each Rakhi uses two threads.",
+        "src": [
+         {
+          "ch": 7,
+          "p": 84
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "mathematics-g3-ch7-boss-a4",
+        "difficulty": 2,
+        "tags": [
+         "family",
+         "laddoos",
+         "sea-shells",
+         "wall-hanging"
+        ],
+        "prompt": "Match each item with its partner.",
+        "pairs": [
+         [
+          "Festival being prepared",
+          "Raksha Bandhan"
+         ],
+         [
+          "Gopal and Dhara's aunt",
+          "Atya"
+         ],
+         [
+          "Laddoos",
+          "box"
+         ],
+         [
+          "One necklace",
+          "28 sea-shells"
+         ],
+         [
+          "One wall-hanging",
+          "42 rupees"
+         ]
+        ],
+        "explanation": "Atya is their aunt. The shopkeeper uses a box for laddoos.",
+        "src": [
+         {
+          "ch": 7,
+          "p": 82
+         },
+         {
+          "ch": 7,
+          "p": 83
+         },
+         {
+          "ch": 7,
+          "p": 86
+         },
+         {
+          "ch": 7,
+          "p": 104
+         },
+         {
+          "ch": 7,
+          "p": 104
+         }
+        ]
+       },
+       {
+        "type": "dragorder",
+        "id": "mathematics-g3-ch7-boss-a5",
+        "difficulty": 2,
+        "tags": [
+         "skip-jumping",
+         "number-pattern"
+        ],
+        "prompt": "Put Dhara's skip-jump numbers in order.",
+        "items": [
+         "zero",
+         "three",
+         "six",
+         "nine"
+        ],
+        "explanation": "Dhara starts at zero. She jumps by three to reach nine.",
+        "src": [
+         {
+          "ch": 7,
+          "p": 95
+         },
+         {
+          "ch": 7,
+          "p": 95
+         },
+         {
+          "ch": 7,
+          "p": 95
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "mathematics-g3-ch7-boss-a6",
+        "difficulty": 2,
+        "tags": [
+         "laddoos",
+         "multiplication"
+        ],
+        "prompt": "How many laddoos are in two boxes?",
+        "options": [
+         "9",
+         "18",
+         "15",
+         "21"
+        ],
+        "answer": 1,
+        "explanation": "Two boxes have 9 + 9 = 18 laddoos.",
+        "src": [
+         {
+          "ch": 7,
+          "p": 86
+         },
+         {
+          "ch": 7,
+          "p": 86
+         },
+         {
+          "ch": 7,
+          "p": 86
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "mathematics-g3-ch7-boss-a7",
+        "difficulty": 3,
+        "tags": [
+         "laddoos",
+         "division",
+         "sharing"
+        ],
+        "prompt": "Sharing 18 laddoos among nine people gives ______ each.",
+        "answers": [
+         "two"
+        ],
+        "hint": "Use 18 ÷ 9.",
+        "explanation": "The division fact is 18 ÷ 9 = 2 laddoos.",
+        "src": [
+         {
+          "ch": 7,
+          "p": 87
+         },
+         {
+          "ch": 7,
+          "p": 87
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "mathematics-g3-ch7-boss-a8",
+        "difficulty": 2,
+        "tags": [
+         "jalebis",
+         "family",
+         "sharing"
+        ],
+        "prompt": "Dhara's family has nine members, and everyone gets four jalebis.",
+        "answer": true,
+        "explanation": "Her family has nine members. Everyone should get four jalebis each.",
+        "src": [
+         {
+          "ch": 7,
+          "p": 92
+         },
+         {
+          "ch": 7,
+          "p": 92
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "mathematics-g3-ch7-boss-a9",
+        "difficulty": 3,
+        "tags": [
+         "multiplication",
+         "tables",
+         "numbers"
+        ],
+        "prompt": "Match each multiplication fact with its answer.",
+        "pairs": [
+         [
+          "3 × 3",
+          "9"
+         ],
+         [
+          "2 × 9",
+          "18"
+         ],
+         [
+          "3 × 5",
+          "15"
+         ],
+         [
+          "10 × 10",
+          "100"
+         ],
+         [
+          "2 × 5",
+          "10"
+         ]
+        ],
+        "explanation": "Each pair shows a multiplication fact from the chapter.",
+        "src": [
+         {
+          "ch": 7,
+          "p": 86
+         },
+         {
+          "ch": 7,
+          "p": 86
+         },
+         {
+          "ch": 7,
+          "p": 98
+         },
+         {
+          "ch": 7,
+          "p": 98
+         },
+         {
+          "ch": 7,
+          "p": 99
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "mathematics-g3-ch7-boss-a10",
+        "difficulty": 3,
+        "tags": [
+         "sea-shells",
+         "necklace",
+         "multiplication"
+        ],
+        "prompt": "Dhruv needs one necklace for each of his three friends. How many shells are needed?",
+        "options": [
+         "28",
+         "84",
+         "56",
+         "112"
+        ],
+        "answer": 1,
+        "explanation": "Three necklaces need 3 × 28 = 84 sea-shells.",
+        "derived": [
+         "3 × 28 = 84 sea-shells"
+        ],
+        "src": [
+         {
+          "ch": 7,
+          "p": 104
+         },
+         {
+          "ch": 7,
+          "p": 104
+         },
+         {
+          "ch": 7,
+          "p": 104
+         }
+        ]
+       }
+      ],
+      "topicScene": "media/ch7-l1-raksha02-8ae2e0.webp",
+      "sceneAlt": "A bunch of colourful rakhis prepared for the Raksha Bandhan festival.",
+      "sceneCaption": "A bunch of rakhis prepared for the Raksha Bandhan festival.",
+      "sceneCredit": {
+       "text": "Raksha02 by Suyash Dwivedi, CC BY-SA 4.0, via Wikimedia Commons",
+       "url": "https://commons.wikimedia.org/wiki/File:Raksha02.jpg",
+       "license": "CC BY-SA 4.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+       "creator": "Suyash Dwivedi"
       }
      }
     }
