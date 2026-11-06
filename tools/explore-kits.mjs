@@ -453,6 +453,24 @@ export const KITS = {
       { say: 'Make it with three different pack sizes.', when: '500 * h + 250 * q + 100 * t + 50 * f == 1000 and ((h > 0) + (q > 0) + (t > 0) + (f > 0)) >= 3', then: 'Lots of different packs add up to the same 1000.' },
     ],
   },
+  calendar: {
+    grades: [3, 6], match: [/leap years?/, /\bcalendars?\b/, /\bfebruary\b/, /days of the week/, /\bdd\/mm\/yyyy\b/],
+    title: 'Flip the calendar', takeaway: 'February has 29 days only in a leap year, which comes every four years and has 366 days.',
+    tasks: [
+      { say: 'Show February 2024. How many days does it have?', when: 'year == 2024 and month == 2', then: '29 days: 2024 is a leap year.' },
+      { say: 'Find the next February with 29 days after 2024.', when: 'year == 2028 and month == 2', then: 'Leap years come every four years: 2020, 2024, 2028.' },
+      { say: 'Show July 2024. What day is 1 July?', when: 'year == 2024 and month == 7', then: 'A Monday, so the next Mondays are 8 July and 15 July.' },
+    ],
+  },
+  money: {
+    grades: [3, 5], match: [/\bmoney\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b/, /\bbalances? to customers\b/],
+    title: 'Pay the exact amount', takeaway: 'The same amount can be made with different notes and coins; big notes first uses the fewest.',
+    tasks: [
+      { say: 'Make \u20b936.', when: 'amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36', then: 'For example 3 \u00d7 \u20b910 + 1 \u00d7 \u20b95 + 1 \u00d7 \u20b91.' },
+      { say: 'Make \u20b9163 with just 6 notes and coins.', when: 'amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6', then: '\u20b9100 + \u20b950 + \u20b910 + \u20b91 + \u20b91 + \u20b91: big notes first.' },
+      { say: 'Make \u20b9183 a different way, using no \u20b9100 note.', when: 'amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0', then: 'Lots of ways make the same amount.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

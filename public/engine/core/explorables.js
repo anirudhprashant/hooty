@@ -935,6 +935,44 @@ export const WIDGETS = {
       return { kids, say: total === 1000 ? `${used} = 1000 ${unit} = ${big}. ${ml ? 'The bottle is full.' : 'The pans balance.'}` : total ? `${used} = ${total} ${unit}. ${total > 1000 ? `That is more than ${big}.` : `${1000 - total} ${unit} more makes ${big}.`}` : `Add packs to make ${big}, which is 1000 ${unit}.` };
     },
   },
+  calendar: {
+    subject: 'maths', about: 'A real calendar: pick a year and a month and see its days laid out by weekday. February has 29 days in a leap year (every four years: 2016, 2020, 2024, 2028) and 28 otherwise; a leap year has 366 days. For calendars, dates, days of the week, months, leap years.',
+    sliders: [['year', 'Year', 2016, 2032, 1, 2025], ['month', 'Month', 1, 12, 1, 2]],
+    draw(v) {
+      const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], wk = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      const leap = (v.year % 4 === 0 && v.year % 100 !== 0) || v.year % 400 === 0, first = new Date(Date.UTC(v.year, v.month - 1, 1)).getUTCDay(), days = new Date(Date.UTC(v.year, v.month, 0)).getUTCDate();
+      const x0 = 40, y0 = 70, cw = 46, ch = 34, kids = [T(x0 + 3.5 * cw, 32, `${names[v.month - 1]} ${v.year}`, { z: 20 })];
+      wk.forEach((d, i) => kids.push(T(x0 + i * cw + cw / 2, y0 - 8, d, { z: 12, w: 700, f: i === 0 ? '#c0392b' : '#6b5a8a' })));
+      for (let d = 1; d <= days; d++) {
+        const k = first + d - 1, c = k % 7, r = Math.floor(k / 7), extra = v.month === 2 && d === 29;
+        kids.push(R(x0 + c * cw + 2, y0 + r * ch + 2, cw - 4, ch - 4, extra ? '#ffcc33' : '#f3f0ff', { w: extra ? 2.5 : 1, r: 5 }), T(x0 + c * cw + cw / 2, y0 + r * ch + ch / 2 + 5, String(d), { z: 14, w: 600, f: c === 0 ? '#c0392b' : INK }));
+      }
+      kids.push(T(470, 90, `${days} days`, { z: 22, w: 700, f: '#c2510e' }), T(470, 130, leap ? `${v.year} is a leap year` : `${v.year} is not a leap year`, { z: 15, w: 700, f: leap ? '#058a68' : INK }), T(470, 158, `${leap ? 366 : 365} days in the year`, { z: 14, w: 600, f: '#6b5a8a' }), T(470, 200, `1 ${names[v.month - 1]} is a ${['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][first]}`, { z: 13, w: 600 }));
+      return { kids, say: `${names[v.month - 1]} ${v.year} has ${days} days and starts on a ${['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][first]}. ${v.month === 2 ? (leap ? `${v.year} is a leap year, so February has an extra day, the 29th.` : `${v.year} is not a leap year, so February has 28 days.`) : `${v.year} has ${leap ? 366 : 365} days${leap ? ': it is a leap year' : ''}.`}` };
+    },
+  },
+  money: {
+    subject: 'maths', about: 'Make an amount of money from Rs 100, Rs 50 and Rs 10 notes and Rs 5 and Rs 1 coins: Rs 36, Rs 125, Rs 163 or Rs 183. There is more than one way to make the same amount. For money, rupees, counting money, notes and coins, shopping and change.',
+    sliders: [['amt', 'Amount to make: 36, 125, 163, 183', 0, 3, 1, 0], ['h', 'Rs 100 notes', 0, 2, 1, 0], ['f', 'Rs 50 notes', 0, 3, 1, 0], ['t', 'Rs 10 notes', 0, 9, 1, 0], ['v', 'Rs 5 coins', 0, 9, 1, 0], ['o', 'Rs 1 coins', 0, 9, 1, 0]],
+    draw(v) {
+      const want = [36, 125, 163, 183][v.amt], pieces = [[100, v.h, '#7fb3d5', true], [50, v.f, '#5fc9b8', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [1, v.o, '#c8c8c8', false]];
+      const got = pieces.reduce((a, [val, n]) => a + val * n, 0), kids = [T(300, 32, `Make ₹${want}`, { z: 22 })];
+      // lay the notes and coins out in rows, smaller when there are many so they stay above the total
+      const many = pieces.reduce((a, [, n]) => a + n, 0), sc = many > 24 ? 0.6 : many > 14 ? 0.78 : 1, shown = [];
+      let x = 30, y = 60;
+      for (const [val, n, col, note] of pieces) for (let i = 0; i < n; i++) {
+        if (x > 30 + 490 / sc) { x = 30; y += 54; }
+        if (note) shown.push(R(x, y, 74, 40, col, { w: 2, r: 4 }), T(x + 37, y + 26, `₹${val}`, { z: 14, w: 700 }));
+        else shown.push(CIRC(x + 20, y + 20, 19, col, { w: 2 }), T(x + 20, y + 26, `₹${val}`, { z: 12, w: 700 }));
+        x += note ? 82 : 46;
+      }
+      kids.push(s('g', { transform: `translate(30 60) scale(${sc}) translate(-30 -60)` }, shown));
+      const left = want - got, count = pieces.reduce((a, [, n]) => a + n, 0);
+      kids.push(T(300, 262, `₹${got}`, { z: 24, w: 700, f: left === 0 ? '#058a68' : left < 0 ? '#c0392b' : INK }), T(300, 290, left === 0 ? `exactly ₹${want} with ${count} note${count === 1 ? '' : 's'} and coin${count === 1 ? '' : 's'}` : left > 0 ? `₹${left} more to go` : `₹${-left} too much`, { z: 14, w: 700, f: '#6b5a8a' }));
+      const used = pieces.filter(([, n]) => n).map(([val, n]) => `${n} × ₹${val}`).join(' + ');
+      return { kids, say: got ? `${used} = ₹${got}. ${left === 0 ? `That makes ₹${want}.` : left > 0 ? `₹${left} more makes ₹${want}.` : `That is ₹${-left} more than ₹${want}.`}` : `Add notes and coins to make ₹${want}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
