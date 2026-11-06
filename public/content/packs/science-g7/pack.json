@@ -23201,7 +23201,7 @@
       {
        "id": "science-g7-ch7-l4",
        "title": "Radiation and Heat Transfer Together",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -23265,6 +23265,31 @@
            "p": 97
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "radiation",
+         "params": {},
+         "title": "Paint the can",
+         "tasks": [
+          {
+           "say": "Paint the can black and leave it 20 minutes.",
+           "when": "colour == 3 and t >= 20",
+           "then": "The black can is much hotter: dark colours absorb more heat."
+          },
+          {
+           "say": "Paint it white too. Which can is hotter now?",
+           "when": "colour == 0 and t >= 20",
+           "then": "Neither: both reflect most of the heat. That is why light clothes keep us cool in summer."
+          }
+         ],
+         "takeaway": "Dark surfaces absorb more of the Sun’s heat; light ones reflect it.",
+         "explanation": "Dark surfaces absorb more of the Sun’s heat; light ones reflect it."
         },
         {
          "type": "worked",
@@ -24271,7 +24296,7 @@
       {
        "id": "science-g7-ch7-l6",
        "title": "Seepage, Groundwater and Water Conservation",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -24340,6 +24365,31 @@
            "p": 101
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch7-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seepage",
+         "params": {},
+         "title": "Pour the water",
+         "tasks": [
+          {
+           "say": "Let 3 minutes pass.",
+           "when": "t == 3",
+           "then": "Gravel has let through the most water: its particles have the widest gaps."
+          },
+          {
+           "say": "Wait until all the water is through the gravel.",
+           "when": "t >= 4",
+           "then": "All 100 ml is through the gravel, while clay has let through only a little."
+          }
+         ],
+         "takeaway": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles.",
+         "explanation": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles."
         },
         {
          "type": "worked",
