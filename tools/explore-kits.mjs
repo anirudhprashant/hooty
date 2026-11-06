@@ -474,9 +474,10 @@ export const KITS = {
     ],
   },
   blocks: {
-    grades: [2, 5], match: [/dienes/, /ten ones make|ones make one ten|tens make one hundred|hundreds make one thousand/, /building thousand|^(?!.*(adding|subtracting|taking away)).*blocks/, /\btens\b.*\bones\b/],
+    grades: [2, 5], perChapter: { 2: 3 }, match: [/ten strips?|\bstrips?\b.*\bunits\b/, /dienes/, /ten ones make|ones make one ten|tens make one hundred|hundreds make one thousand/, /building thousand|^(?!.*(adding|subtracting|taking away)).*blocks/, /\btens\b.*\bones\b/],
     title: 'Build it with blocks', takeaway: '10 ones make 1 ten, 10 tens make 1 hundred and 10 hundreds make 1 thousand.',
     tasks: [
+      { say: 'Make 100 using only ten strips.', when: 'th == 0 and hu == 0 and te == 10 and on == 0', then: 'Ten tens make one hundred.' },
       { say: 'Make 34.', when: 'th == 0 and hu == 0 and te == 3 and on == 4', then: '3 tens and 4 ones make 34.' },
       { say: 'Make 250.', when: 'th == 0 and hu == 2 and te == 5 and on == 0', then: '2 hundreds, 5 tens and no ones make 250.' },
       { say: 'Make 106 and notice the empty tens.', when: 'th == 0 and hu == 1 and te == 0 and on == 6', then: '1 hundred, no tens and 6 ones make 106.' },
@@ -586,6 +587,15 @@ export const KITS = {
       { say: 'Now make a sleeping line.', when: 'tilt == 0 and slack == 0', then: 'A sleeping line lies flat: a horizontal line.' },
       { say: 'Make a slanting line.', when: 'tilt == 45 and slack == 0', then: 'Between standing and sleeping, a slanting line is still straight.' },
       { say: 'Bring your hands closer. What happens to the thread?', when: 'slack >= 3', then: 'It droops into a curved line: it is not straight any more.' },
+    ],
+  },
+  compare2: {
+    grades: [2, 2], match: [/\bmore and less\b/, /\bmore than\b|\bless than\b/, /compar(e|ing) (the )?(two )?numbers?/, /\bgreater\b|\bsmaller\b/],
+    title: 'Which is more?', takeaway: 'Compare the tens first; if they are the same, the ones decide.',
+    tasks: [
+      { say: 'Show 47 and 43. Which is more?', when: 'a == 47 and b == 43', then: 'Both have 4 tens, but 7 ones is more than 3 ones, so 47 is more.' },
+      { say: 'Find two numbers where the tens decide it.', when: 'a == 52 and b == 38', then: '5 tens is more than 3 tens, so 52 is more, whatever the ones are.' },
+      { say: 'Make the two numbers equal.', when: 'a == b', then: 'The same tens and the same ones: they are equal.' },
     ],
   },
   // ---- geography and history ----

@@ -975,7 +975,7 @@ export const WIDGETS = {
   },
   blocks: {
     subject: 'maths', about: 'Dienes blocks: a cube for 1000, a flat for 100, a rod for 10 and a unit for 1. Build a number from thousands, hundreds, tens and ones, and see 10 ones swap for 1 ten, 10 tens for 1 hundred, 10 hundreds for 1 thousand. For place value, tens and ones, hundreds, thousands, grouping, regrouping.',
-    sliders: [['th', 'Thousands', 0, 3, 1, 0], ['hu', 'Hundreds', 0, 9, 1, 2], ['te', 'Tens', 0, 9, 1, 3], ['on', 'Ones', 0, 19, 1, 4]],
+    sliders: [['th', 'Thousands', 0, 3, 1, 0], ['hu', 'Hundreds', 0, 9, 1, 2], ['te', 'Tens', 0, 12, 1, 3], ['on', 'Ones', 0, 19, 1, 4]],
     draw(v) {
       const total = 1000 * v.th + 100 * v.hu + 10 * v.te + v.on, kids = [];
       // each kind of block in its own column: a thousand is a big square, a hundred a flat, a ten a rod, a one a dot
@@ -983,11 +983,12 @@ export const WIDGETS = {
       for (let i = 0; i < v.hu; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(24 + c * 34, 70 + r * 34, 30, 30, '#7fb3d5', { w: 2, r: 3 })); for (let g = 1; g < 3; g++) kids.push(L(24 + c * 34 + g * 10, 70 + r * 34, 24 + c * 34 + g * 10, 100 + r * 34, '#4f84ad', 1), L(24 + c * 34, 70 + r * 34 + g * 10, 54 + c * 34, 70 + r * 34 + g * 10, '#4f84ad', 1)); }
       for (let i = 0; i < v.te; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(200 + c * 14, 70 + r * 66, 11, 60, '#5fc9b8', { w: 2, r: 2 })); for (let g = 1; g < 6; g++) kids.push(L(200 + c * 14, 70 + r * 66 + g * 10, 211 + c * 14, 70 + r * 66 + g * 10, '#2f8f82', 1)); }
       for (let i = 0; i < v.on; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(300 + c * 16, 70 + r * 16, 12, 12, '#f2a33a', { w: 2, r: 2 })); }
-      kids.push(T(60, 224, 'hundreds', { z: 11, w: 600, f: '#6b5a8a' }), T(228, 224, 'tens', { z: 11, w: 600, f: '#6b5a8a' }), T(335, 224, 'ones', { z: 11, w: 600, f: '#6b5a8a' }));
+      kids.push(T(60, 290, 'hundreds', { z: 11, w: 600, f: '#6b5a8a' }), T(228, 290, 'tens', { z: 11, w: 600, f: '#6b5a8a' }), T(335, 290, 'ones', { z: 11, w: 600, f: '#6b5a8a' }));
       kids.push(T(480, 90, String(total), { z: 40, w: 700 }), T(480, 128, `${v.th ? v.th + ' thousand' + (v.th > 1 ? 's' : '') + ', ' : ''}${v.hu} hundred${v.hu === 1 ? '' : 's'}`, { z: 13, w: 600, f: '#4f84ad' }), T(480, 148, `${v.te} ten${v.te === 1 ? '' : 's'}, ${v.on} one${v.on === 1 ? '' : 's'}`, { z: 13, w: 600, f: '#2f8f82' }));
       if (v.on >= 10) kids.push(T(480, 190, `${v.on} ones = 1 ten and ${v.on - 10} one${v.on - 10 === 1 ? '' : 's'}`, { z: 14, w: 700, f: '#c2510e' }));
+      if (v.te >= 10) kids.push(T(480, 216, `${v.te} tens = 1 hundred${v.te > 10 ? ` and ${v.te - 10} ten${v.te - 10 === 1 ? '' : 's'}` : ''}`, { z: 14, w: 700, f: '#c2510e' }));
       const nm = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`, parts = [v.th && nm(v.th, 'thousand'), v.hu && nm(v.hu, 'hundred'), v.te && nm(v.te, 'ten'), v.on && nm(v.on, 'one')].filter(Boolean);
-      return { kids, say: total ? `${parts.join(', ')} make ${total}.${v.on >= 10 ? ` ${v.on} ones can be grouped as 1 ten and ${nm(v.on - 10, 'one')}.` : ''}` : 'Add some blocks to make a number.' };
+      return { kids, say: total ? `${parts.join(', ')} make ${total}.${v.on >= 10 ? ` ${v.on} ones can be grouped as 1 ten and ${nm(v.on - 10, 'one')}.` : ''}${v.te >= 10 ? ` ${v.te} tens can be grouped as 1 hundred${v.te > 10 ? ` and ${nm(v.te - 10, 'ten')}` : ''}.` : ''}` : 'Add some blocks to make a number.' };
     },
   },
   column: {
@@ -1217,6 +1218,24 @@ export const WIDGETS = {
       for (const [px, py] of [p1, p2]) kids.push(CIRC(px, py, 15, '#f2c9a0', { w: 3 }));
       kids.push(T(486, 110, name, { z: 20, w: 700, f: v.slack > 0 ? '#1f6fb8' : '#058a68' }), T(486, 146, v.slack > 0 ? 'the thread is loose' : 'the thread is pulled tight', { z: 14, w: 600, f: '#6b5a8a' }), T(486, 172, v.slack > 0 ? 'so it is not straight' : 'so it is a straight line', { z: 14, w: 600, f: '#6b5a8a' }));
       return { kids, say: v.slack > 0 ? 'With the hands brought closer the thread is loose and droops: it is a curved line, not a straight one.' : v.tilt === 90 ? 'Pulled tight and pointing up and down, the thread is a straight line. A standing line is also called a vertical line.' : v.tilt === 0 ? 'Pulled tight and lying flat, the thread is a straight line. A sleeping line is also called a horizontal line.' : 'Pulled tight but tilted between standing and sleeping, the thread is a slanting line, which is still straight.' };
+    },
+  },
+  compare2: {
+    subject: 'maths', about: 'Compare two numbers up to 99 shown as tens rods and ones dots: compare the tens first, and if they are the same look at the ones. 47 is more than 43 because both have 4 tens but 7 ones is more than 3 ones. For comparing numbers, more than, less than, equal, greater and smaller, tens and ones.',
+    sliders: [['a', 'First number', 10, 99, 1, 43], ['b', 'Second number', 10, 99, 1, 47]],
+    draw(v) {
+      const kids = [], show = (n, x0, col) => {
+        const te = Math.floor(n / 10), on = n % 10;
+        for (let i = 0; i < te; i++) kids.push(R(x0 + i * 15, 56, 12, 70, col[0], { w: 1.8, r: 2 }));
+        for (let i = 0; i < on; i++) kids.push(CIRC(x0 + 7 + (i % 5) * 20, 150 + Math.floor(i / 5) * 22, 8, col[1], { w: 1.8 }));
+        kids.push(T(x0 + 65, 38, String(n), { z: 26, w: 700 }), T(x0 + 65, 216, `${te} ten${te === 1 ? '' : 's'}, ${on} one${on === 1 ? '' : 's'}`, { z: 13, w: 600, f: '#6b5a8a' }));
+      };
+      show(v.a, 30, ['#5fc9b8', '#f2a33a']); show(v.b, 340, ['#5fc9b8', '#f2a33a']);
+      const sym = v.a === v.b ? '=' : v.a > v.b ? '>' : '<', ta = Math.floor(v.a / 10), tb = Math.floor(v.b / 10);
+      kids.push(T(300, 100, sym, { z: 54, w: 700, f: '#6b45c8' }));
+      const why = v.a === v.b ? 'the same tens and the same ones: they are equal' : ta !== tb ? `compare the tens first: ${Math.max(ta, tb)} tens is more than ${Math.min(ta, tb)} tens` : `the tens are the same, so look at the ones: ${Math.max(v.a, v.b) % 10} ones is more than ${Math.min(v.a, v.b) % 10} ones`;
+      kids.push(T(300, 262, why, { z: 14, w: 700, f: '#058a68' }));
+      return { kids, say: v.a === v.b ? `${v.a} and ${v.b} are equal: ${why}.` : `${Math.max(v.a, v.b)} is more than ${Math.min(v.a, v.b)}: ${why}. So ${v.a} ${v.a > v.b ? 'is more than' : 'is less than'} ${v.b}.` };
     },
   },
 };
