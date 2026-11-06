@@ -50,8 +50,10 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
     """Reply text, or the first JSON object in it. None if every try failed. Haiku writes first, then DeepSeek if it is free
     again, and MiniMax-M2.7 is the last resort. The name stays because every tool calls it. minimax_only gets a second opinion
     from a different model."""
-    if os.environ.get('LUMI_MODEL') == 'm31':   # a trial of MiniMax-M3.1-Flash for the whole job
-        return opencode(prompt, M31, want_json=want_json, tries=tries, on_retry=on_retry)
+    trial = os.environ.get('LUMI_MODEL', '')
+    if trial in TRIALS:   # one named model for the whole job: how tools/compare-models.py runs a side by side
+        return opencode(prompt, TRIALS[trial], want_json=want_json, tries=tries, on_retry=on_retry)
+    if trial == 'm27': minimax_only = True
     if not minimax_only:
         got = haiku(prompt, want_json=want_json, tries=1)
         if got is not None: return got
@@ -63,7 +65,11 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
             _take_turn()
             r = _remote('m27.py', prompt, 900)
             while '429' in r.stderr:      # plan limit: wait for it to reset, so jobs pause and nothing is marked failed or written empty
-                slow_down(); print('MiniMax limit reached, waiting 20 minutes', flush=True); time.sleep(1200)
+                slow_down()
+                if FALLBACK:   # the plan is out: another model carries this call, so the job does not sit idle
+                    got = opencode(prompt, FALLBACK, want_json=want_json, tries=1)
+                    if got is not None: return got
+                print('MiniMax limit reached, waiting 20 minutes', flush=True); time.sleep(1200)
                 _take_turn(); r = _remote('m27.py', prompt, 900)
             out = r.stdout.strip()
             if not out: raise ValueError('empty reply')
@@ -75,6 +81,7 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
         except Exception as e:
             if on_retry: on_retry(t + 1, str(e)[:80])
             time.sleep(6 + t * 6)
+    if FALLBACK and len(prompt) < 100000: return opencode(prompt, FALLBACK, want_json=want_json, tries=1)   # MiniMax kept failing
     return None
 
 def vision(image_path, prompt, tries=3):
@@ -130,6 +137,12 @@ def haiku(prompt, want_json=True, tries=2, on_retry=None):
 
 COOLDOWN = LOCK + '.oc-limit'
 M31 = 'minimax-coding-plan/MiniMax-M3.1-Flash'
+# Open Design's DeepSeek models, set up in Anirudh's opencode (provider "opendesign"). Anirudh's rule (7 Nov 2026): if MiniMax is down or
+# not good enough, use these; compare them side by side with tools/compare-models.py and keep the better one as LUMI_FALLBACK.
+OD_FLASH = 'opendesign/deepseek-v4.1-flash'
+OD_ECO = 'opendesign/deepseek-v4.1-flash-eco'
+TRIALS = {'m31': M31, 'od-flash': OD_FLASH, 'od-eco': OD_ECO}   # LUMI_MODEL=<name> sends the whole job to that model ('m27' = MiniMax only)
+FALLBACK = os.environ.get('LUMI_FALLBACK', OD_FLASH)           # used when MiniMax hits its plan limit or keeps failing; '' turns it off
 def opencode(prompt, model=DEEPSEEK, want_json=True, tries=3, on_retry=None):
     """A free model through opencode, on its own limit, not the shared MiniMax plan. A private server per call, in an empty
     folder, so it cannot touch the shared opencode server or any project. The free tier's limit covers all its models and
