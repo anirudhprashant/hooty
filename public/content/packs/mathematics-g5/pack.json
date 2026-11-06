@@ -51090,7 +51090,7 @@
       {
        "id": "mathematics-g5-ch10-l3",
        "title": "Rotational Symmetry in Letters and Numbers",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -51146,6 +51146,26 @@
            "p": 138
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "rotation",
+         "params": {},
+         "title": "Turn the shape",
+         "tasks": [
+          {
+           "say": "Turn the shape until it looks the same again.",
+           "when": "turn == 120",
+           "then": "A three-armed shape matches itself every 120 degrees, so its order is 3."
+          }
+         ],
+         "takeaway": "The number of times a shape looks the same in one full turn is its order of rotational symmetry.",
+         "explanation": "The number of times a shape looks the same in one full turn is its order of rotational symmetry."
         },
         {
          "type": "worked",

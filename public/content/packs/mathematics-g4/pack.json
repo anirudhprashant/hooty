@@ -642,7 +642,7 @@
          ],
          "widget": "solids",
          "params": {},
-         "title": "Turn the shape",
+         "title": "Spin the solid",
          "tasks": [
           {
            "say": "Find a shape with 5 faces.",
@@ -1882,7 +1882,7 @@
          ],
          "widget": "solids",
          "params": {},
-         "title": "Turn the shape",
+         "title": "Spin the solid",
          "tasks": [
           {
            "say": "Find a shape with 5 faces.",
@@ -50775,7 +50775,7 @@
       {
        "id": "mathematics-g4-ch9-l1",
        "title": "Animal Jumps and Common Multiples",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -50909,6 +50909,26 @@
           "7 (generated problem)",
           "9 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g4-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "jumps",
+         "params": {},
+         "title": "Who lands together?",
+         "tasks": [
+          {
+           "say": "Find two animals whose first common landing is 24.",
+           "when": "(a == 2 and b == 3) or (a == 3 and b == 2) or (a == 0 and b == 3) or (a == 3 and b == 0)",
+           "then": "6 and 8, or 3 and 8, both meet first at 24."
+          }
+         ],
+         "takeaway": "An animal lands on the multiples of its jump; where two land together are common multiples.",
+         "explanation": "An animal lands on the multiples of its jump; where two land together are common multiples."
         },
         {
          "type": "worked",
@@ -52780,7 +52800,7 @@
       {
        "id": "mathematics-g4-ch9-l3",
        "title": "The Doubling Magic",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -52908,6 +52928,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g4-ch9-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Anvi takes out 23 flowers and asks the children to watch. What doubling and halving check can they make in row 8?",
+         "steps": [
+          "Anvi takes out 23 flowers and asks the children to watch.",
+          "Row 8 shows 8 and 16, so doubling can check the change.",
+          "Doubling 8 gives 16 because it makes the amount twice as large.",
+          "Halving 16 gives 8, so both strategies check each other."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.4",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 134
+          },
+          {
+           "ch": 9,
+           "p": 134
+          },
+          {
+           "ch": 9,
+           "p": 136
+          },
+          {
+           "ch": 9,
+           "p": 134
+          }
+         ]
+        },
+        {
          "type": "concept",
          "id": "mathematics-g4-ch9-l3-a5",
          "difficulty": 2,
@@ -52950,24 +53012,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g4-ch9-l3-a2",
-         "difficulty": 1,
-         "tags": [
-          "anvi",
-          "flowers"
-         ],
-         "prompt": "Anvi takes out 32 flowers.",
-         "answer": false,
-         "explanation": "Anvi takes out 23 flowers, not 32.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 134
-          }
-         ]
-        },
-        {
          "type": "fillblank",
          "id": "mathematics-g4-ch9-l3-a3",
          "difficulty": 1,
@@ -52985,6 +53029,24 @@
           {
            "ch": 9,
            "p": 136
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch9-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "anvi",
+          "flowers"
+         ],
+         "prompt": "Anvi takes out 32 flowers.",
+         "answer": false,
+         "explanation": "Anvi takes out 23 flowers, not 32.",
+         "src": [
+          {
+           "ch": 9,
+           "p": 134
           }
          ]
         },
@@ -53767,6 +53829,253 @@
           "3 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Row 8 begins with products 8, 16, 24 and 32. Doubling and halving are useful maths strategies. Which product is twice 8?",
+         "options": [
+          "8",
+          "16",
+          "24",
+          "32"
+         ],
+         "answer": 1,
+         "why": {
+          "8": "This mistake keeps the starting amount instead of doubling it.",
+          "24": "This mistake jumps to a later product without doubling correctly.",
+          "32": "This mistake treats a later product as the doubled amount."
+         },
+         "explanation": "This is right because doubling 8 gives 16.",
+         "f": [
+          "3.4",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 136
+          },
+          {
+           "ch": 9,
+           "p": 134
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Row 8's first ones digits are 8, 6, 4, 2 and 0. A child claims row 8 contains a ones digit of 1. Why is the claim wrong?",
+         "options": [
+          "The listed ones digits skip 1.",
+          "The listed ones digits include 1.",
+          "Every product in row 8 ends in 0.",
+          "Every product in row 8 ends in 8."
+         ],
+         "answer": 0,
+         "why": {
+          "The listed ones digits include 1.": "This mistake assumes the pattern must include 1.",
+          "Every product in row 8 ends in 0.": "This mistake thinks zero is the only possible ones digit.",
+          "Every product in row 8 ends in 8.": "This mistake thinks eight is the only possible ones digit."
+         },
+         "explanation": "The listed ones digits skip 1, so this is right.",
+         "f": [
+          "3.4",
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 136
+          },
+          {
+           "ch": 9,
+           "p": 136
+          },
+          {
+           "ch": 9,
+           "p": 136
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Each square multiplies its row number by its column number. Row 8 begins with products 8, 16, 24 and 32. How can a child find the next product?",
+         "options": [
+          "Multiply row 8 by the next column number.",
+          "Multiply the last product by row 8.",
+          "Half the last product in row 8.",
+          "Add each row number to its column number."
+         ],
+         "answer": 0,
+         "why": {
+          "Multiply the last product by row 8.": "It multiplies by the row again instead of using the next column.",
+          "Half the last product in row 8.": "This mistake halves a product instead of following the chart rule.",
+          "Add each row number to its column number.": "This mistake adds the row and column instead of multiplying them."
+         },
+         "explanation": "This is right because each square uses its row and column.",
+         "f": [
+          "3.3",
+          "3.4"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 136
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "An array shows multiplication as rows and columns. Children can count in rows and columns. A child wants the next square in row 8. What should they do?",
+         "options": [
+          "Count across to the next column.",
+          "Count down to the next row.",
+          "Count backwards along row 8.",
+          "Count the flowers one by one."
+         ],
+         "answer": 0,
+         "why": {
+          "Count down to the next row.": "This mistake changes rows instead of staying in row 8.",
+          "Count backwards along row 8.": "This mistake moves backward instead of toward the next column.",
+          "Count the flowers one by one.": "This mistake ignores the array's rows and columns."
+         },
+         "explanation": "Count across because row 8 stays fixed as the column moves forward.",
+         "f": [
+          "3.4",
+          "3.8",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 136
+          },
+          {
+           "ch": 9,
+           "p": 133
+          },
+          {
+           "ch": 9,
+           "p": 133
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "evaluate"
+         ],
+         "prompt": "Zero appears twice as the ones digit in row 8. Row 8 begins with products 8, 16, 24 and 32. A child says every square in row 8 ends in zero. What is the best reply?",
+         "options": [
+          "No, row 8 also has other ones digits.",
+          "Yes, two zeroes mean every square ends in zero.",
+          "No, zeroes never appear as ones digits.",
+          "Yes, every product in an array ends in zero."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, two zeroes mean every square ends in zero.": "This mistake treats two zeroes as proof about every square.",
+          "No, zeroes never appear as ones digits.": "This mistake denies the zeroes that appear in row 8.",
+          "Yes, every product in an array ends in zero.": "This mistake changes one row into a claim about every array."
+         },
+         "explanation": "This is right because listed digits include 8, 6, 4 and 2.",
+         "f": [
+          "3.4",
+          "3.5",
+          "3.7",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 136
+          },
+          {
+           "ch": 9,
+           "p": 136
+          },
+          {
+           "ch": 9,
+           "p": 136
+          },
+          {
+           "ch": 9,
+           "p": 133
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l3-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "doubling"
+         ],
+         "prompt": "Doubling and halving are useful maths strategies. Row 8 begins with products 8, 16, 24 and 32. A child has 8 flowers and wants 16 flowers. What should they do?",
+         "options": [
+          "Double the 8 flowers.",
+          "Half the 8 flowers.",
+          "Keep the 8 flowers.",
+          "Take 1 flower away."
+         ],
+         "answer": 0,
+         "why": {
+          "Half the 8 flowers.": "Halving 8 gives less than 8, not the wanted 16.",
+          "Keep the 8 flowers.": "Keeping 8 leaves the same amount, not the wanted 16.",
+          "Take 1 flower away.": "Taking one away gives less than 8, not the wanted 16."
+         },
+         "explanation": "Doubling 8 gives 16, so this reaches the wanted amount.",
+         "f": [
+          "3.1",
+          "3.4",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 134
+          },
+          {
+           "ch": 9,
+           "p": 136
+          },
+          {
+           "ch": 9,
+           "p": 134
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l1-storks-darling-254707483-3e507a.webp",
@@ -53783,7 +54092,7 @@
       {
        "id": "mathematics-g4-ch9-l4",
        "title": "Multiples of Tens and Division",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -54377,6 +54686,75 @@
           "4 (generated problem)",
           "40 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "multiplication"
+         ],
+         "prompt": "A tricycle has 3 wheels. Ten tricycles have how many wheels together?",
+         "options": [
+          "3 wheels",
+          "24 wheels",
+          "30 wheels",
+          "40 wheels"
+         ],
+         "answer": 2,
+         "why": {
+          "3 wheels": "You counted the wheels in only one tricycle.",
+          "24 wheels": "You used the rods needed for 3 carts.",
+          "40 wheels": "You used 4 wheels for each vehicle."
+         },
+         "explanation": "Ten groups of 3 wheels give 30 wheels.",
+         "f": [
+          "4.1"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 137
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "partial quotients"
+         ],
+         "prompt": "Fifty-eight wheels can make 19 tempos. How many wheels does each tempo get?",
+         "options": [
+          "3 wheels",
+          "4 wheels",
+          "19 wheels",
+          "58 wheels"
+         ],
+         "answer": 0,
+         "why": {
+          "4 wheels": "You used 4 as the group size instead of dividing the wheels.",
+          "19 wheels": "You copied the number of tempos instead of finding wheels for one.",
+          "58 wheels": "You copied the total wheels instead of finding one group."
+         },
+         "explanation": "Divide 58 by 19 tempos, and each tempo gets 3 wheels.",
+         "f": [
+          "4.11",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l4-ansan-lake-park-spring-2013--5f02b3.webp",
@@ -54393,7 +54771,7 @@
       {
        "id": "mathematics-g4-ch9-l5",
        "title": "Multiples of 100, More Multiplication and More Division",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -54506,6 +54884,37 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g4-ch9-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "There are 100 autorickshaws. Each carries 8 passengers. How many passengers can they carry altogether?",
+         "steps": [
+          "Each autorickshaw makes one group of 8 passengers.",
+          "There are 100 equal groups because there are 100 autorickshaws.",
+          "8 × 100 = 800, so the total is 800 passengers."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.4",
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 143
+          },
+          {
+           "ch": 9,
+           "p": 144
+          }
+         ]
+        },
+        {
          "type": "concept",
          "id": "mathematics-g4-ch9-l5-a5",
          "difficulty": 2,
@@ -54533,24 +54942,6 @@
           {
            "ch": 9,
            "p": 139
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g4-ch9-l5-a2",
-         "difficulty": 1,
-         "tags": [
-          "cars",
-          "passengers"
-         ],
-         "prompt": "Each of the 100 cars has 4 people in it.",
-         "answer": true,
-         "explanation": "Yes. Each of the 100 cars has 4 people in it.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 142
           }
          ]
         },
@@ -54600,6 +54991,24 @@
           {
            "ch": 9,
            "p": 144
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch9-l5-a2",
+         "difficulty": 1,
+         "tags": [
+          "cars",
+          "passengers"
+         ],
+         "prompt": "Each of the 100 cars has 4 people in it.",
+         "answer": true,
+         "explanation": "Yes. Each of the 100 cars has 4 people in it.",
+         "src": [
+          {
+           "ch": 9,
+           "p": 142
           }
          ]
         },
@@ -55284,6 +55693,216 @@
           "25 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Each of 100 bikes has 2 people. Each of 100 cars has 4 people. Which group has twice as many people?",
+         "options": [
+          "The cars, because 4 is twice 2.",
+          "The bikes, because 2 is twice 4.",
+          "The cars, because 100 is twice 4.",
+          "The bikes, because 100 is twice 2."
+         ],
+         "answer": 0,
+         "why": {
+          "The bikes, because 2 is twice 4.": "Two is smaller than four, so bikes have fewer people.",
+          "The cars, because 100 is twice 4.": "The vehicle counts are equal, so 100 is not twice 4.",
+          "The bikes, because 100 is twice 2.": "The vehicle counts are equal, so 100 is not twice 2."
+         },
+         "explanation": "Both groups have 100 vehicles, and each car holds twice the people.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.3"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 142
+          },
+          {
+           "ch": 9,
+           "p": 142
+          },
+          {
+           "ch": 9,
+           "p": 142
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reasoning"
+         ],
+         "prompt": "Each autorickshaw can carry 8 passengers. There are 125 autorickshaws. Which thinking finds the passenger total?",
+         "options": [
+          "Count 8 passengers for each of 125 autorickshaws.",
+          "Count 125 passengers for each of 8 autorickshaws.",
+          "Add 8 and 125 to find the passenger total.",
+          "Subtract 125 from 8 to find the passenger total."
+         ],
+         "answer": 0,
+         "why": {
+          "Count 125 passengers for each of 8 autorickshaws.": "It swaps the number of vehicles with the passengers in each vehicle.",
+          "Add 8 and 125 to find the passenger total.": "Adding the counts does not multiply the passengers in every autorickshaw.",
+          "Subtract 125 from 8 to find the passenger total.": "Subtracting the counts does not find the passenger total."
+         },
+         "explanation": "It counts the 8 passengers in each of the 125 autorickshaws.",
+         "f": [
+          "5.4",
+          "5.5"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 143
+          },
+          {
+           "ch": 9,
+           "p": 144
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "division"
+         ],
+         "prompt": "Each box holds 6 kulhads. There are 108 kulhads to pack. How many boxes are needed?",
+         "options": [
+          "5 boxes are needed.",
+          "9 boxes are needed.",
+          "12 boxes are needed.",
+          "18 boxes are needed."
+         ],
+         "answer": 3,
+         "why": {
+          "5 boxes are needed.": "Five groups of 6 cannot hold all 108 kulhads.",
+          "9 boxes are needed.": "Nine groups of 6 cannot hold all 108 kulhads.",
+          "12 boxes are needed.": "Twelve groups of 6 cannot hold all 108 kulhads."
+         },
+         "explanation": "Eighteen groups of 6 make 108, so every kulhad fits.",
+         "f": [
+          "5.8",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 144
+          },
+          {
+           "ch": 9,
+           "p": 145
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "division"
+         ],
+         "prompt": "There are 108 people to ferry in 9 boats. Each boat gets the same number. How many people are in each boat?",
+         "options": [
+          "5 people in each boat.",
+          "9 people in each boat.",
+          "12 people in each boat.",
+          "18 people in each boat."
+         ],
+         "answer": 2,
+         "why": {
+          "5 people in each boat.": "Five in each boat ferries 45, leaving 18 people without places.",
+          "9 people in each boat.": "Nine counts the boats, not the people in each boat.",
+          "18 people in each boat.": "Eighteen is the remaining people, not the number in each boat."
+         },
+         "explanation": "Nine boats with 12 people each can ferry all 108 people.",
+         "f": [
+          "5.9",
+          "5.10",
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 145
+          },
+          {
+           "ch": 9,
+           "p": 145
+          },
+          {
+           "ch": 9,
+           "p": 145
+          },
+          {
+           "ch": 9,
+           "p": 145
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l5-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Putting 5 people in each boat ferries 45 people in 9 boats. What is wrong with this plan for 108 people?",
+         "options": [
+          "No places are left for the other 18 people.",
+          "Five people in each boat is already too many.",
+          "Eighteen people should ride in only one boat.",
+          "Nine boats cannot carry people at all."
+         ],
+         "answer": 0,
+         "why": {
+          "Five people in each boat is already too many.": "Five in each boat ferries 45, so it is not too many.",
+          "Eighteen people should ride in only one boat.": "The remaining 18 are adjusted among all 9 boats.",
+          "Nine boats cannot carry people at all.": "The boats already ferry 45 people, so they can carry people."
+         },
+         "explanation": "The plan carries 45 people, but 18 people still need places.",
+         "f": [
+          "5.9",
+          "5.10",
+          "5.11",
+          "5.12"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 145
+          },
+          {
+           "ch": 9,
+           "p": 145
+          },
+          {
+           "ch": 9,
+           "p": 145
+          },
+          {
+           "ch": 9,
+           "p": 145
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l5-tvs-tuktuk-in-chennai-d7e52a.webp",
@@ -55300,7 +55919,7 @@
       {
        "id": "mathematics-g4-ch9-l6",
        "title": "Patterns in Division and Number Statements",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -56182,6 +56801,48 @@
           "20 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "division patterns"
+         ],
+         "prompt": "A shop has 800 rubber bands. Each packet has 4 bands. If the dividend becomes 10 times, what happens to the quotient?",
+         "options": [
+          "It stays the same.",
+          "It becomes 5 times larger.",
+          "It becomes 10 times larger.",
+          "It becomes twice as large."
+         ],
+         "answer": 2,
+         "why": {
+          "It stays the same.": "This thinks an unchanged divisor means an unchanged quotient.",
+          "It becomes 5 times larger.": "This confuses changing by 10 times with changing by 5 times.",
+          "It becomes twice as large.": "This uses doubling instead of multiplying by 10."
+         },
+         "explanation": "A 10-times dividend gives a 10-times quotient, so this is right.",
+         "f": [
+          "6.4",
+          "6.5",
+          "6.12"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 146
+          },
+          {
+           "ch": 9,
+           "p": 146
+          },
+          {
+           "ch": 9,
+           "p": 147
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l6-car-with-marks-on-ground-and-90d195.webp",
@@ -56194,6 +56855,143 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "creator": "Oliver H"
        }
+      },
+      {
+       "id": "mathematics-g4-ch9-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 11,
+       "topicScene": "media/ch9-l1-storks-darling-254707483-3e507a.webp",
+       "sceneAlt": "A curious pond frog rests on a tree trunk while other frogs have jumped away.",
+       "sceneCaption": "A curious pond frog stays on a tree trunk while his friends jump away.",
+       "sceneCredit": {
+        "text": "Storks Darling (254707483) by Paul Garais, CC BY 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Storks_Darling_(254707483).jpeg",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "creator": "Paul Garais"
+       },
+       "activities": [
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch9-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Why does 80 ÷ 5 find the number of hibiscus flowers?",
+         "answer": "The division works because each hibiscus flower has the same number of petals: 5. The 80 petals are the total, so dividing the total by the petals in one flower gives the number of flowers. Therefore, 80 ÷ 5 shows how many hibiscus flowers made the 80 petals.",
+         "points": [
+          "80 is the total number of petals.",
+          "One hibiscus flower has 5 petals.",
+          "The total is divided by the petals in one flower.",
+          "The result gives the number of hibiscus flowers."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch9-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How are doubling and halving useful when checking products in row 8?",
+         "answer": "Each product in row 8 is made by multiplying 8 by a column number. Doubling can help find a related product, such as 8 becoming 16. Halving can check a product by finding the step before it, such as 32 going back to 16. Both are useful checking strategies.",
+         "points": [
+          "Explains how doubling finds a related product.",
+          "Explains how halving checks the previous step.",
+          "Uses an example from row 8.",
+          "Describes both as checking strategies."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A display combines vehicles, cupcakes and carts. Ten tricycles use 10 × 3 wheels, and ten cars use 10 × 4. Radha has 18 boxes with 4 cupcakes each. Twenty carts need 160 bamboo rods, while three carts need 24. For twenty-three carts, work starts with 23 × 8. The student compares 6 × 8 with 60 × 8 and 10 × 4 with 30 × 4, then uses partial quotients for the cart division.",
+         "prompt": "Radha decides to use 8 of her 18 boxes. How many cupcakes will those boxes contain?",
+         "options": [
+          "32 cupcakes",
+          "40 cupcakes",
+          "24 cupcakes",
+          "4 cupcakes"
+         ],
+         "answer": 0,
+         "why": {
+          "40 cupcakes": "40 cupcakes is the amount in ten boxes.",
+          "24 cupcakes": "24 is the number of rods needed for three carts.",
+          "4 cupcakes": "4 counts the cupcakes in only one box."
+         },
+         "explanation": "Eight boxes of 4 cupcakes contain 32 cupcakes."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch9-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A display combines vehicles, cupcakes and carts. Ten tricycles use 10 × 3 wheels, and ten cars use 10 × 4. Radha has 18 boxes with 4 cupcakes each. Twenty carts need 160 bamboo rods, while three carts need 24. For twenty-three carts, work starts with 23 × 8. The student compares 6 × 8 with 60 × 8 and 10 × 4 with 30 × 4, then uses partial quotients for the cart division.",
+         "prompt": "If the twenty-three carts are split into twenty carts and three carts, what should the student do next?",
+         "options": [
+          "Add the rods for twenty carts to the rods for three carts.",
+          "Subtract the rods for three carts from the rods for twenty carts.",
+          "Use only the rods for twenty carts and ignore the three carts.",
+          "Use only the rods for three carts and ignore the twenty carts."
+         ],
+         "answer": 0,
+         "why": {
+          "Subtract the rods for three carts from the rods for twenty carts.": "Subtraction would leave out the rods needed for the three carts.",
+          "Use only the rods for twenty carts and ignore the three carts.": "This ignores the three carts in the group.",
+          "Use only the rods for three carts and ignore the twenty carts.": "This ignores the twenty carts in the group."
+         },
+         "explanation": "The two groups together cover all twenty-three carts."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch9-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does changing 6 × 8 to 60 × 8 change the product?",
+         "answer": "The first factor changes from 6 to 60, while the second factor stays 8. Because 60 is ten times 6, the number of groups of 8 is multiplied by ten. Therefore, 60 × 8 is ten times as large as 6 × 8.",
+         "points": [
+          "The second factor remains 8.",
+          "60 is ten times 6.",
+          "The first factor is multiplied by ten.",
+          "The whole product becomes ten times as large."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch9-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how 160 passengers can travel in 20 electric autorickshaws, and how the total for 125 autorickshaws is written.",
+         "answer": "Each electric autorickshaw carries 8 passengers. Therefore, 160 passengers need 160 ÷ 8 = 20 autorickshaws. The case records 125 autorickshaws as 125 × 8, while 100 autorickshaws carry 800 passengers. Both calculations multiply the number of autorickshaws by 8.",
+         "points": [
+          "Each autorickshaw carries 8 passengers.",
+          "160 ÷ 8 gives 20 autorickshaws.",
+          "125 × 8 records the passenger total.",
+          "800 passengers are carried in 100 autorickshaws."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -56492,6 +57290,5559 @@
        "license": "CC BY 3.0",
        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
        "creator": "Paul Garais"
+      }
+     }
+    },
+    {
+     "id": "ch10-elephants-tigers-and-leopards",
+     "title": "Elephants, Tigers, and Leopards",
+     "summary": "In this chapter: nim game; addition chart; reverse and add; how many animals?.",
+     "lessons": [
+      {
+       "id": "mathematics-g4-ch10-l1",
+       "title": "NIM Game",
+       "estimatedMinutes": 8,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g4-ch10-l1-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Can you discover a winning strategy for reaching the target first?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g4-ch10-l1-a1",
+         "difficulty": 1,
+         "tags": [
+          "nim",
+          "rules",
+          "winning"
+         ],
+         "title": "How to Play NIM",
+         "body": "In NIM, each player adds either 1 or 2 to reach the target. Player 1 starts by choosing 1 or 2, and Player 2 can also choose either 1 or 2. Every choice is added to the previous total. The first player to reach 10 wins. Good players can find a number that guarantees a win. Practise when the other player has reached 6, 7 or 8.",
+         "keyPoints": [
+          "Each player adds either 1 or 2.",
+          "The first player to reach 10 wins.",
+          "A good player can find a number that guarantees a win."
+         ],
+         "explanation": "These rules help you choose your next number wisely.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l1-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "The target is 10 points. The current total is 8 points. How many points must be added to reach 10 points?",
+         "steps": [
+          "The current total is 8 points and the target is 10 points.",
+          "Subtract the current total from the target to find the missing points.",
+          "10 - 8 = 2 points.",
+          "The answer is 2 points."
+         ],
+         "modelSpec": null,
+         "result": "2",
+         "gen": {
+          "template": "The target is 10 points. The current total is {s} points. How many points must be added to reach 10 points?",
+          "params": {
+           "s": [
+            2,
+            4,
+            6,
+            8,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "10-s",
+          "vals": {
+           "gap": "10-s"
+          },
+          "steps": [
+           "The current total is {s} points and the target is 10 points.",
+           "Subtract the current total from the target to find the missing points.",
+           "10 - {s} = {gap} points.",
+           "The answer is {answer} points."
+          ],
+          "model": null,
+          "hint": "Subtract the current total from the target.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "10 (generated problem)",
+          "2 (generated problem)",
+          "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch10-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "players",
+          "starting"
+         ],
+         "prompt": "Player 1 starts by choosing either 1 or 2.",
+         "answer": true,
+         "explanation": "Yes. Player 1 makes the first choice, and either 1 or 2 is allowed.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch10-l1-a3",
+         "difficulty": 1,
+         "tags": [
+          "players",
+          "choices"
+         ],
+         "prompt": "What can Player 2 choose on a turn?",
+         "options": [
+          "1 or 2",
+          "1 or 3",
+          "2 or 3",
+          "3 or 4"
+         ],
+         "answer": 0,
+         "explanation": "Player 2 can also choose either 1 or 2.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g4-ch10-l1-a4",
+         "difficulty": 1,
+         "tags": [
+          "players",
+          "starting"
+         ],
+         "prompt": "Player ______ starts the game by choosing 1 or 2.",
+         "answers": [
+          "1"
+         ],
+         "hint": "Think about who plays first.",
+         "explanation": "Player 1 starts by choosing either 1 or 2.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "The current total is 8 points. If the player adds 1 point, what is the new total in points?",
+         "explanation": "The current total is 8 points. Adding 1 point means adding one to the current total. 8 + 1 = 9 points. The answer is 9 points.",
+         "steps": [
+          "The current total is 8 points.",
+          "Adding 1 point means adding one to the current total.",
+          "8 + 1 = 9 points.",
+          "The answer is 9 points."
+         ],
+         "hint": "Add 1 to the current total.",
+         "derived": [
+          "1 (generated problem)",
+          "8 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "The current total is {s} points. If the player adds 1 point, what is the new total in points?",
+          "params": {
+           "s": [
+            2,
+            4,
+            6,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "s+1",
+          "vals": {
+           "new_total": "s+1"
+          },
+          "steps": [
+           "The current total is {s} points.",
+           "Adding 1 point means adding one to the current total.",
+           "{s} + 1 = {new_total} points.",
+           "The answer is {answer} points."
+          ],
+          "model": null,
+          "hint": "Add 1 to the current total.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g4-ch10-l1-c2",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "The current total is 2 points. If the player adds 2 points, what is the new total in points?",
+         "explanation": "The current total is 2 points. Adding 2 points means adding two to the current total. 2 + 2 = 4 points. The answer is 4 points.",
+         "steps": [
+          "The current total is 2 points.",
+          "Adding 2 points means adding two to the current total.",
+          "2 + 2 = 4 points.",
+          "The answer is 4 points."
+         ],
+         "hint": "Add 2 to the current total.",
+         "derived": [
+          "2 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "The current total is {s} points. If the player adds 2 points, what is the new total in points?",
+          "params": {
+           "s": [
+            2,
+            4,
+            6
+           ]
+          },
+          "where": [],
+          "answer": "s+2",
+          "vals": {
+           "new_total": "s+2"
+          },
+          "steps": [
+           "The current total is {s} points.",
+           "Adding 2 points means adding two to the current total.",
+           "{s} + 2 = {new_total} points.",
+           "The answer is {answer} points."
+          ],
+          "model": null,
+          "hint": "Add 2 to the current total.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "4"
+         ],
+         "id": "mathematics-g4-ch10-l1-c3",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g4-ch10-l1-a5",
+         "difficulty": 2,
+         "tags": [
+          "players",
+          "winning",
+          "rules"
+         ],
+         "prompt": "Match each part of the game with its rule.",
+         "pairs": [
+          [
+           "Player 1",
+           "Starts by choosing 1 or 2"
+          ],
+          [
+           "Player 2",
+           "Can also choose 1 or 2"
+          ],
+          [
+           "Winner",
+           "First player to reach 10"
+          ]
+         ],
+         "explanation": "Player 1 starts, Player 2 also chooses, and the first to reach 10 wins.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In a game, the target is 10 rupees. A player has 4 rupees in the game. How many more rupees must be added to reach 10 rupees?",
+         "explanation": "The player has 4 rupees and the target is 10 rupees. The missing amount is the target minus the amount already in the game. 10 - 4 = 6 rupees. The answer is 6 rupees.",
+         "steps": [
+          "The player has 4 rupees and the target is 10 rupees.",
+          "The missing amount is the target minus the amount already in the game.",
+          "10 - 4 = 6 rupees.",
+          "The answer is 6 rupees."
+         ],
+         "hint": "Subtract the money already in the game from 10 rupees.",
+         "derived": [
+          "10 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "In a game, the target is 10 rupees. A player has {r} rupees in the game. How many more rupees must be added to reach 10 rupees?",
+          "params": {
+           "r": [
+            2,
+            4,
+            6,
+            8,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "10-r",
+          "vals": {
+           "remaining": "10-r"
+          },
+          "steps": [
+           "The player has {r} rupees and the target is 10 rupees.",
+           "The missing amount is the target minus the amount already in the game.",
+           "10 - {r} = {remaining} rupees.",
+           "The answer is {answer} rupees."
+          ],
+          "model": null,
+          "hint": "Subtract the money already in the game from 10 rupees.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "6"
+         ],
+         "id": "mathematics-g4-ch10-l1-c4",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A marble game has a target of 10 marbles. The current pile is 9 marbles. If the player adds 1 marble, what is the new total in marbles?",
+         "explanation": "The current pile is 9 marbles. The player adds 1 marble to the pile. 9 + 1 = 10 marbles. The answer is 10 marbles.",
+         "steps": [
+          "The current pile is 9 marbles.",
+          "The player adds 1 marble to the pile.",
+          "9 + 1 = 10 marbles.",
+          "The answer is 10 marbles."
+         ],
+         "hint": "Add 1 marble to the current pile.",
+         "derived": [
+          "1 (generated problem)",
+          "10 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "A marble game has a target of 10 marbles. The current pile is {m} marbles. If the player adds 1 marble, what is the new total in marbles?",
+          "params": {
+           "m": [
+            2,
+            4,
+            6,
+            8,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "m+1",
+          "vals": {
+           "new_total": "m+1"
+          },
+          "steps": [
+           "The current pile is {m} marbles.",
+           "The player adds 1 marble to the pile.",
+           "{m} + 1 = {new_total} marbles.",
+           "The answer is {answer} marbles."
+          ],
+          "model": null,
+          "hint": "Add 1 marble to the current pile.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "10"
+         ],
+         "id": "mathematics-g4-ch10-l1-c5",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A bus game has a target of 10 stops. A toy bus has travelled 6 stops. If the toy bus moves 2 more stops, how many stops has it travelled altogether?",
+         "explanation": "The toy bus has travelled 6 stops. It moves 2 more stops. 6 + 2 = 8 stops. The answer is 8 stops.",
+         "steps": [
+          "The toy bus has travelled 6 stops.",
+          "It moves 2 more stops.",
+          "6 + 2 = 8 stops.",
+          "The answer is 8 stops."
+         ],
+         "hint": "Add the 2 new stops to the stops already travelled.",
+         "derived": [
+          "10 (generated problem)",
+          "2 (generated problem)",
+          "6 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bus game has a target of 10 stops. A toy bus has travelled {b} stops. If the toy bus moves 2 more stops, how many stops has it travelled altogether?",
+          "params": {
+           "b": [
+            2,
+            4,
+            6,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "b+2",
+          "vals": {
+           "new_total": "b+2"
+          },
+          "steps": [
+           "The toy bus has travelled {b} stops.",
+           "It moves 2 more stops.",
+           "{b} + 2 = {new_total} stops.",
+           "The answer is {answer} stops."
+          ],
+          "model": null,
+          "hint": "Add the 2 new stops to the stops already travelled.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "8"
+         ],
+         "id": "mathematics-g4-ch10-l1-c6",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In a cricket game, the target is 10 runs. Player 2 has 9 runs. How many runs must Player 2 add to reach 10 runs?",
+         "explanation": "Player 2 has 9 runs and the target is 10 runs. The runs still needed are the target minus the current score. 10 - 9 = 1 runs. The answer is 1 runs.",
+         "steps": [
+          "Player 2 has 9 runs and the target is 10 runs.",
+          "The runs still needed are the target minus the current score.",
+          "10 - 9 = 1 runs.",
+          "The answer is 1 runs."
+         ],
+         "hint": "Find the runs missing from the target score.",
+         "derived": [
+          "1 (generated problem)",
+          "10 (generated problem)",
+          "2 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "In a cricket game, the target is 10 runs. Player 2 has {r} runs. How many runs must Player 2 add to reach 10 runs?",
+          "params": {
+           "r": [
+            2,
+            4,
+            6,
+            8,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "10-r",
+          "vals": {
+           "needed": "10-r"
+          },
+          "steps": [
+           "Player 2 has {r} runs and the target is 10 runs.",
+           "The runs still needed are the target minus the current score.",
+           "10 - {r} = {needed} runs.",
+           "The answer is {answer} runs."
+          ],
+          "model": null,
+          "hint": "Find the runs missing from the target score.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "1"
+         ],
+         "id": "mathematics-g4-ch10-l1-c7",
+         "src": [
+          {
+           "ch": 10,
+           "p": 149
+          },
+          {
+           "ch": 10,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l1-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "At a market stall game, the target is 10 points. The other player has reached 8 points. The next player adds 2 points, and then the other player adds 1 point. What is the total after these two moves?",
+         "steps": [
+          "The other player has reached 8 points.",
+          "The first move makes the total 10 points.",
+          "The second move makes the total 11 points.",
+          "The answer is 11 points."
+         ],
+         "modelSpec": null,
+         "result": "11",
+         "gen": {
+          "template": "At a market stall game, the target is 10 points. The other player has reached {r} points. The next player adds 2 points, and then the other player adds 1 point. What is the total after these two moves?",
+          "params": {
+           "r": [
+            6,
+            7,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "r+3",
+          "vals": {
+           "after_first": "r+2",
+           "after_second": "r+3"
+          },
+          "steps": [
+           "The other player has reached {r} points.",
+           "The first move makes the total {after_first} points.",
+           "The second move makes the total {after_second} points.",
+           "The answer is {answer} points."
+          ],
+          "model": null,
+          "hint": "Add the two moves one at a time.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "1 (generated problem)",
+          "10 (generated problem)",
+          "11 (generated problem)",
+          "2 (generated problem)",
+          "8 (generated problem)"
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l1-defense-gov-news-photo-10101-bb3edd.webp",
+       "sceneAlt": "A U.S. Navy petty officer plays a mathematics game with children at an elementary school in San Antonio, Philippines.",
+       "sceneCaption": "A sailor plays a mathematics game with children during a community relations event at an elementary school in the Philippines.",
+       "sceneCredit": {
+        "text": "Defense.gov News Photo 101013-N-3620B-047 - U.S. Navy Petty Officer 3r by Petty Officer 3rd Class Bryan Blair, U.S. Navy, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Defense.gov_News_Photo_101013-N-3620B-047_-_U.S._Navy_Petty_Officer_3rd_Class_Johan_Olarte_plays_a_mathematics_game_with_children_during_a_community_relations_event_at_San_Nicolas_Elementary.jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "Petty Officer 3rd Class Bryan Blair, U.S. Navy"
+       }
+      },
+      {
+       "id": "mathematics-g4-ch10-l2",
+       "title": "Addition Chart",
+       "estimatedMinutes": 9,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g4-ch10-l2-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "What surprises might you find when you explore an addition chart?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g4-ch10-l2-a1",
+         "difficulty": 1,
+         "tags": [
+          "addition",
+          "chart",
+          "sums",
+          "patterns",
+          "9"
+         ],
+         "title": "Explore an Addition Chart",
+         "body": "An addition chart is a table for exploring sums. Look for patterns as you move across its rows and columns. Watch the cells containing number 9, then count how often number 9 appears. Some rows or columns may hold only even numbers or only odd numbers. The red window frame helps you add pairs. You can move it and explore more.",
+         "keyPoints": [
+          "Explore sums in a table",
+          "Observe and count number 9",
+          "Notice even and odd number patterns"
+         ],
+         "explanation": "These clues guide your exploration of sums, patterns, and frames.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l2-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "In an addition chart, a red-framed row contains 3 and 8. What is the sum of the two entries, in chart points?",
+         "steps": [
+          "The highlighted row contains 3 and 8.",
+          "The task asks for their sum, so add the two chart entries.",
+          "3 + 8 = 11 chart points."
+         ],
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 3,
+            "label": "3 chart points"
+           },
+           {
+            "v": 8,
+            "label": "8 chart points"
+           }
+          ],
+          "total": "?"
+         },
+         "result": "11",
+         "gen": {
+          "template": "In an addition chart, a red-framed row contains {a} and {b}. What is the sum of the two entries, in chart points?",
+          "params": {
+           "a": [
+            2,
+            3,
+            5,
+            7
+           ],
+           "b": [
+            4,
+            6,
+            8,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {},
+          "steps": [
+           "The highlighted row contains {a} and {b}.",
+           "The task asks for their sum, so add the two chart entries.",
+           "{a} + {b} = {answer} chart points."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} chart points"
+            },
+            {
+             "v": "b",
+             "label": "{b} chart points"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the two entries in the highlighted row.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "11 (generated problem)",
+          "3 (generated problem)",
+          "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g4-ch10-l2-a6",
+         "difficulty": 2,
+         "tags": [
+          "red-frame",
+          "blue-frame",
+          "rows",
+          "columns",
+          "diagonals"
+         ],
+         "title": "Explore with the Window Frames",
+         "body": "Use the frames to explore the chart. Add the two numbers in each row of the red frame. Add the two numbers in each column of the red frame. Add the numbers on each marked diagonal. You can move the red window frame to other places. The blue window frame also shows patterns and relationships.",
+         "keyPoints": [
+          "Add numbers in red rows and columns",
+          "Add numbers on marked diagonals",
+          "Move the red window frame",
+          "Find patterns in the blue window frame"
+         ],
+         "explanation": "Each frame gives you a new way to explore the chart.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch10-l2-a2",
+         "difficulty": 1,
+         "tags": [
+          "addition",
+          "chart",
+          "sums"
+         ],
+         "prompt": "An addition chart is not a table for exploring sums.",
+         "answer": false,
+         "explanation": "Not quite. The addition chart is a table for exploring sums.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 150
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In an addition chart, a red-framed column contains 9 and 6. What is the sum of the two entries, in chart points?",
+         "explanation": "The highlighted column contains 9 and 6. To find their sum, combine the two chart entries. 9 + 6 = 15 chart points.",
+         "steps": [
+          "The highlighted column contains 9 and 6.",
+          "To find their sum, combine the two chart entries.",
+          "9 + 6 = 15 chart points."
+         ],
+         "hint": "Add the two entries in the highlighted column.",
+         "derived": [
+          "15 (generated problem)",
+          "3 (generated problem)",
+          "6 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "In an addition chart, a red-framed column contains {a} and {b}. What is the sum of the two entries, in chart points?",
+          "params": {
+           "a": [
+            3,
+            5,
+            7,
+            9
+           ],
+           "b": [
+            2,
+            4,
+            6,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {},
+          "steps": [
+           "The highlighted column contains {a} and {b}.",
+           "To find their sum, combine the two chart entries.",
+           "{a} + {b} = {answer} chart points."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} chart points"
+            },
+            {
+             "v": "b",
+             "label": "{b} chart points"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the two entries in the highlighted column.",
+          "wrong": [
+           "a-b",
+           "b-a",
+           "max(a,b)"
+          ],
+          "wrongWhy": [
+           "You found the difference instead of the sum.",
+           "You subtracted in the wrong order instead of adding.",
+           "You used only the larger entry instead of adding both."
+          ]
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 9,
+            "label": "9 chart points"
+           },
+           {
+            "v": 6,
+            "label": "6 chart points"
+           }
+          ],
+          "total": "?"
+         },
+         "options": [
+          "15",
+          "9",
+          "3",
+          "-3"
+         ],
+         "answer": 0,
+         "why": {
+          "3": "You found the difference instead of the sum.",
+          "9": "You used only the larger entry instead of adding both.",
+          "-3": "You subtracted in the wrong order instead of adding."
+         },
+         "id": "mathematics-g4-ch10-l2-c2",
+         "src": [
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A marked diagonal in the addition chart contains 2 and 7. What is the sum of the two diagonal entries, in chart points?",
+         "explanation": "The marked diagonal contains 2 and 7. The task asks for the sum of the diagonal entries. 2 + 7 = 9 chart points.",
+         "steps": [
+          "The marked diagonal contains 2 and 7.",
+          "The task asks for the sum of the diagonal entries.",
+          "2 + 7 = 9 chart points."
+         ],
+         "hint": "Add the two numbers on the marked diagonal.",
+         "derived": [
+          "2 (generated problem)",
+          "7 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "A marked diagonal in the addition chart contains {a} and {b}. What is the sum of the two diagonal entries, in chart points?",
+          "params": {
+           "a": [
+            2,
+            4,
+            6,
+            8
+           ],
+           "b": [
+            3,
+            5,
+            7,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {},
+          "steps": [
+           "The marked diagonal contains {a} and {b}.",
+           "The task asks for the sum of the diagonal entries.",
+           "{a} + {b} = {answer} chart points."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} chart points"
+            },
+            {
+             "v": "b",
+             "label": "{b} chart points"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the two numbers on the marked diagonal.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 2,
+            "label": "2 chart points"
+           },
+           {
+            "v": 7,
+            "label": "7 chart points"
+           }
+          ],
+          "total": "?"
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g4-ch10-l2-c3",
+         "src": [
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g4-ch10-l2-a5",
+         "difficulty": 2,
+         "tags": [
+          "chart",
+          "9",
+          "red-frame",
+          "blue-frame"
+         ],
+         "prompt": "Match each chart clue to its task.",
+         "pairs": [
+          [
+           "addition chart",
+           "a table for exploring sums"
+          ],
+          [
+           "number 9 cells",
+           "count appearances of number 9"
+          ],
+          [
+           "red frame row",
+           "add both row numbers"
+          ],
+          [
+           "red frame column",
+           "add both column numbers"
+          ],
+          [
+           "blue window frame",
+           "find patterns and relationships"
+          ]
+         ],
+         "explanation": "Each clue matches the chart part and task described in the lesson.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a laddoo stall, a red-framed row shows 6 laddoos in one tray and 3 laddoos in another tray. What is the total number of laddoos in the two trays?",
+         "explanation": "The two trays contain 6 and 3 laddoos. We need the total, so add the two tray amounts. 6 + 3 = 9 laddoos.",
+         "steps": [
+          "The two trays contain 6 and 3 laddoos.",
+          "We need the total, so add the two tray amounts.",
+          "6 + 3 = 9 laddoos."
+         ],
+         "hint": "Add the numbers of laddoos in the two trays.",
+         "derived": [
+          "3 (generated problem)",
+          "6 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a laddoo stall, a red-framed row shows {a} laddoos in one tray and {b} laddoos in another tray. What is the total number of laddoos in the two trays?",
+          "params": {
+           "a": [
+            6,
+            8,
+            10,
+            12
+           ],
+           "b": [
+            3,
+            5,
+            7,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {},
+          "steps": [
+           "The two trays contain {a} and {b} laddoos.",
+           "We need the total, so add the two tray amounts.",
+           "{a} + {b} = {answer} laddoos."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} laddoos"
+            },
+            {
+             "v": "b",
+             "label": "{b} laddoos"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the numbers of laddoos in the two trays.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 6,
+            "label": "6 laddoos"
+           },
+           {
+            "v": 3,
+            "label": "3 laddoos"
+           }
+          ],
+          "total": "?"
+         },
+         "answers": [
+          "9"
+         ],
+         "id": "mathematics-g4-ch10-l2-c4",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A marble-count addition chart has 5 marbles in the top entry of a red-framed column and 6 marbles in the bottom entry. What is the total number of marbles in the two column entries?",
+         "explanation": "The red-framed column contains 5 and 6 marbles. The total is found by adding the two column entries. 5 + 6 = 11 marbles.",
+         "steps": [
+          "The red-framed column contains 5 and 6 marbles.",
+          "The total is found by adding the two column entries.",
+          "5 + 6 = 11 marbles."
+         ],
+         "hint": "Add the top and bottom marble amounts.",
+         "derived": [
+          "1 (generated problem)",
+          "11 (generated problem)",
+          "12 (generated problem)",
+          "5 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "A marble-count addition chart has {a} marbles in the top entry of a red-framed column and {b} marbles in the bottom entry. What is the total number of marbles in the two column entries?",
+          "params": {
+           "a": [
+            5,
+            7,
+            9,
+            11
+           ],
+           "b": [
+            4,
+            6,
+            8,
+            10
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {},
+          "steps": [
+           "The red-framed column contains {a} and {b} marbles.",
+           "The total is found by adding the two column entries.",
+           "{a} + {b} = {answer} marbles."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} marbles"
+            },
+            {
+             "v": "b",
+             "label": "{b} marbles"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the top and bottom marble amounts.",
+          "wrong": [
+           "a-b",
+           "max(a,b)",
+           "a+b+1"
+          ],
+          "wrongWhy": [
+           "You subtracted instead of finding the total.",
+           "You used only the larger marble amount.",
+           "You added one marble that was not in either entry."
+          ]
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 5,
+            "label": "5 marbles"
+           },
+           {
+            "v": 6,
+            "label": "6 marbles"
+           }
+          ],
+          "total": "?"
+         },
+         "options": [
+          "6",
+          "-1",
+          "12",
+          "11"
+         ],
+         "answer": 3,
+         "why": {
+          "6": "You used only the larger marble amount.",
+          "12": "You added one marble that was not in either entry.",
+          "-1": "You subtracted instead of finding the total."
+         },
+         "id": "mathematics-g4-ch10-l2-c5",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In a bus-count addition chart, the marked diagonal shows 6 buses and 9 buses. What is the total number of buses shown on the two diagonal entries?",
+         "explanation": "The marked diagonal shows 6 and 9 buses. To find the total, add the two diagonal counts. 6 + 9 = 15 buses.",
+         "steps": [
+          "The marked diagonal shows 6 and 9 buses.",
+          "To find the total, add the two diagonal counts.",
+          "6 + 9 = 15 buses."
+         ],
+         "hint": "Add the two bus counts on the diagonal.",
+         "derived": [
+          "15 (generated problem)",
+          "6 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "In a bus-count addition chart, the marked diagonal shows {a} buses and {b} buses. What is the total number of buses shown on the two diagonal entries?",
+          "params": {
+           "a": [
+            4,
+            6,
+            8,
+            10
+           ],
+           "b": [
+            3,
+            5,
+            7,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {},
+          "steps": [
+           "The marked diagonal shows {a} and {b} buses.",
+           "To find the total, add the two diagonal counts.",
+           "{a} + {b} = {answer} buses."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} buses"
+            },
+            {
+             "v": "b",
+             "label": "{b} buses"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "Add the two bus counts on the diagonal.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 6,
+            "label": "6 buses"
+           },
+           {
+            "v": 9,
+            "label": "9 buses"
+           }
+          ],
+          "total": "?"
+         },
+         "answers": [
+          "15"
+         ],
+         "id": "mathematics-g4-ch10-l2-c6",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l2-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A red window frame first covers row entries 5 and 6. It is then moved to a blue-framed column where one marked cell contains 4. What is the total of the first pair and that moved marked cell, in chart points?",
+         "steps": [
+          "The first position of the red frame covers 5 and 6.",
+          "Add those entries to get 11.",
+          "The moved frame has a marked cell containing 4.",
+          "Add that cell to the first total: 11 + 4 = 15 chart points."
+         ],
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 11,
+            "label": "first pair total"
+           },
+           {
+            "v": 4,
+            "label": "moved marked cell"
+           }
+          ],
+          "total": "?"
+         },
+         "result": "15",
+         "gen": {
+          "template": "A red window frame first covers row entries {a} and {b}. It is then moved to a blue-framed column where one marked cell contains {c}. What is the total of the first pair and that moved marked cell, in chart points?",
+          "params": {
+           "a": [
+            3,
+            5,
+            7,
+            9
+           ],
+           "b": [
+            2,
+            4,
+            6,
+            8
+           ],
+           "c": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "a+b+c",
+          "vals": {
+           "first_total": "a+b",
+           "total": "a+b+c"
+          },
+          "steps": [
+           "The first position of the red frame covers {a} and {b}.",
+           "Add those entries to get {first_total}.",
+           "The moved frame has a marked cell containing {c}.",
+           "Add that cell to the first total: {first_total} + {c} = {answer} chart points."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a+b",
+             "label": "first pair total"
+            },
+            {
+             "v": "c",
+             "label": "moved marked cell"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "First add the two entries covered before the frame is moved.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "11 (generated problem)",
+          "15 (generated problem)",
+          "4 (generated problem)",
+          "5 (generated problem)",
+          "6 (generated problem)"
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch10-l2-a7",
+         "difficulty": 3,
+         "tags": [
+          "red-frame",
+          "rows"
+         ],
+         "prompt": "A guide points to a red-frame row. What should you do?",
+         "options": [
+          "Add the two row numbers",
+          "Count the number 9 cells",
+          "Move the blue window frame",
+          "Add the marked diagonal numbers"
+         ],
+         "answer": 0,
+         "explanation": "In a red-frame row, you add the two numbers together.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch10-l2-a8",
+         "difficulty": 3,
+         "tags": [
+          "red-frame",
+          "patterns"
+         ],
+         "prompt": "The red window frame is fixed and cannot move.",
+         "answer": false,
+         "explanation": "The red window frame can move to other places. So it is not fixed.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In a school addition chart, one marked diagonal contains 8 and 3, and a separate red-framed cell contains 5. What is the total of the diagonal and the red-framed cell, in chart points?",
+         "explanation": "The diagonal contains 8 and 3, and the extra red-framed cell contains 5. Add the diagonal entries to get 11. Add the extra cell to that total: 11 + 5 = 16 chart points.",
+         "steps": [
+          "The diagonal contains 8 and 3, and the extra red-framed cell contains 5.",
+          "Add the diagonal entries to get 11.",
+          "Add the extra cell to that total: 11 + 5 = 16 chart points."
+         ],
+         "hint": "First add the two entries on the diagonal.",
+         "derived": [
+          "11 (generated problem)",
+          "16 (generated problem)",
+          "3 (generated problem)",
+          "5 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "In a school addition chart, one marked diagonal contains {a} and {b}, and a separate red-framed cell contains {c}. What is the total of the diagonal and the red-framed cell, in chart points?",
+          "params": {
+           "a": [
+            2,
+            4,
+            6,
+            8
+           ],
+           "b": [
+            3,
+            5,
+            7,
+            9
+           ],
+           "c": [
+            2,
+            3,
+            4,
+            5
+           ]
+          },
+          "where": [],
+          "answer": "a+b+c",
+          "vals": {
+           "diagonal_total": "a+b",
+           "total": "a+b+c"
+          },
+          "steps": [
+           "The diagonal contains {a} and {b}, and the extra red-framed cell contains {c}.",
+           "Add the diagonal entries to get {diagonal_total}.",
+           "Add the extra cell to that total: {diagonal_total} + {c} = {answer} chart points."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a+b",
+             "label": "diagonal total"
+            },
+            {
+             "v": "c",
+             "label": "red-framed cell"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "First add the two entries on the diagonal.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 11,
+            "label": "diagonal total"
+           },
+           {
+            "v": 5,
+            "label": "red-framed cell"
+           }
+          ],
+          "total": "?"
+         },
+         "answers": [
+          "16"
+         ],
+         "id": "mathematics-g4-ch10-l2-c7",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A market addition chart has row and column labels from 2 through 6, and each cell shows the sum of its labels. If one laddoo is added for every cell containing 9, how many laddoos will there be after adding 8 extra laddoos?",
+         "explanation": "The chart contains 4 cells with the target number 9. One laddoo is added for each of those cells, and then 8 extra laddoos are added. 4 + 8 = 12 laddoos.",
+         "steps": [
+          "The chart contains 4 cells with the target number 9.",
+          "One laddoo is added for each of those cells, and then 8 extra laddoos are added.",
+          "4 + 8 = 12 laddoos."
+         ],
+         "hint": "First count the cells containing the target number.",
+         "derived": [
+          "11 (generated problem)",
+          "12 (generated problem)",
+          "13 (generated problem)",
+          "2 (generated problem)",
+          "4 (generated problem)",
+          "6 (generated problem)",
+          "8 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market addition chart has row and column labels from 2 through 6, and each cell shows the sum of its labels. If one laddoo is added for every cell containing {target}, how many laddoos will there be after adding {d} extra laddoos?",
+          "params": {
+           "target": {
+            "min": 9,
+            "max": 9
+           },
+           "d": [
+            5,
+            6,
+            7,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "d+4",
+          "vals": {
+           "nine_cells": "4",
+           "total": "d+4"
+          },
+          "steps": [
+           "The chart contains {nine_cells} cells with the target number {target}.",
+           "One laddoo is added for each of those cells, and then {d} extra laddoos are added.",
+           "{nine_cells} + {d} = {answer} laddoos."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "nine_cells",
+             "label": "{nine_cells} laddoos from chart cells"
+            },
+            {
+             "v": "d",
+             "label": "{d} extra laddoos"
+            }
+           ],
+           "total": "?"
+          },
+          "hint": "First count the cells containing the target number.",
+          "wrong": [
+           "d",
+           "d+3",
+           "d+5"
+          ],
+          "wrongWhy": [
+           "You forgot the laddoos from the matching chart cells.",
+           "You counted one matching cell too few.",
+           "You counted one extra cell that did not contain the target."
+          ]
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 4,
+            "label": "4 laddoos from chart cells"
+           },
+           {
+            "v": 8,
+            "label": "8 extra laddoos"
+           }
+          ],
+          "total": "?"
+         },
+         "options": [
+          "12",
+          "11",
+          "13",
+          "8"
+         ],
+         "answer": 0,
+         "why": {
+          "8": "You forgot the laddoos from the matching chart cells.",
+          "11": "You counted one matching cell too few.",
+          "13": "You counted one extra cell that did not contain the target."
+         },
+         "id": "mathematics-g4-ch10-l2-c8",
+         "src": [
+          {
+           "ch": 10,
+           "p": 150
+          },
+          {
+           "ch": 10,
+           "p": 150
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l2-table3-93dd73.webp",
+       "sceneAlt": "A table showing addition modulo 16, with numbers arranged in rows and columns.",
+       "sceneCaption": "An addition table showing sums calculated modulo 16.",
+       "sceneCredit": {
+        "text": "Table3 by Dohduhdah, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Table3.jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "Dohduhdah"
+       }
+      },
+      {
+       "id": "mathematics-g4-ch10-l3",
+       "title": "Reverse and Add",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g4-ch10-l3-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "What happens when we turn a number backward and add it?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g4-ch10-l3-a1",
+         "difficulty": 1,
+         "tags": [
+          "reverse",
+          "add",
+          "numbers"
+         ],
+         "title": "Reverse and Add",
+         "body": "Start with a two-digit number. Reverse its digits to make another number. Then add the original number and its reversed number. For example, 27 becomes 72, and their sum is 99. You can use this method with different two-digit numbers. You can also check whether a three-digit sum is possible.",
+         "keyPoints": [
+          "Reverse the digits.",
+          "Add the number and its reverse.",
+          "Check whether a three-digit sum is possible."
+         ],
+         "explanation": "Reversing and adding helps you find special sums.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch10-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "reverse",
+          "digits"
+         ],
+         "title": "Reverse the Digits",
+         "prompt": "What do you get when you reverse the digits of 27?",
+         "options": [
+          "72",
+          "27",
+          "99",
+          "55"
+         ],
+         "answer": 0,
+         "explanation": "The digits of 27 are reversed to make 72.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch10-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "add",
+          "sum"
+         ],
+         "title": "Check the Sum",
+         "prompt": "Adding 27 and its reverse makes 99.",
+         "answer": true,
+         "explanation": "Yes. The reverse of 27 is 72, and 27 + 72 makes 99.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g4-ch10-l3-a4",
+         "difficulty": 1,
+         "tags": [
+          "reverse",
+          "add",
+          "sum"
+         ],
+         "title": "Find the Sum",
+         "prompt": "Adding 27 and its reverse makes ______.",
+         "answers": [
+          "99"
+         ],
+         "hint": "Reverse 27 first.",
+         "explanation": "The reverse is 72. Adding 27 and 72 makes 99.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g4-ch10-l3-a5",
+         "difficulty": 2,
+         "tags": [
+          "reverse",
+          "sum",
+          "matching"
+         ],
+         "title": "Match the Parts",
+         "prompt": "Match each part of the example to its result.",
+         "pairs": [
+          [
+           "Starting number",
+           "27"
+          ],
+          [
+           "Reversed number",
+           "72"
+          ],
+          [
+           "Sum with reverse",
+           "99"
+          ]
+         ],
+         "explanation": "The example starts with 27, reverses it to 72, and adds them to make 99.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g4-ch10-l3-a7",
+         "difficulty": 2,
+         "tags": [
+          "reverse",
+          "add",
+          "three-digit"
+         ],
+         "title": "Checking Reverse-and-Add Sums",
+         "body": "You can use the reverse-and-add method with different two-digit numbers. Some numbers belong on the 55-list or the 88-list. These lists group numbers by the sum made with their reverse. You can also check whether a three-digit sum is possible. The smallest possible three-digit sum is another question to solve.",
+         "keyPoints": [
+          "Use different two-digit numbers.",
+          "Check the sum made with each reverse.",
+          "Look for the smallest possible three-digit sum."
+         ],
+         "explanation": "Different sums need different lists and checks.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g4-ch10-l3-a8",
+         "difficulty": 3,
+         "tags": [
+          "three-digit",
+          "sum"
+         ],
+         "title": "Three-Digit Sums",
+         "prompt": "The lesson also asks for the ______ possible three-digit sum.",
+         "answers": [
+          "smallest"
+         ],
+         "hint": "Find the sum that is not larger than others.",
+         "explanation": "The smallest possible three-digit sum is also asked for.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g4-ch10-l3-a9",
+         "difficulty": 3,
+         "tags": [
+          "reverse",
+          "add",
+          "steps"
+         ],
+         "title": "Order the Steps",
+         "prompt": "Put the reverse-and-add steps for 27 in order.",
+         "items": [
+          "Start with 27",
+          "Reverse the digits to make 72",
+          "Add 27 and 72 to make 99"
+         ],
+         "explanation": "Start with 27, reverse it to 72, then add the two numbers to make 99.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          },
+          {
+           "ch": 10,
+           "p": 151
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l1-defense-gov-news-photo-10101-bb3edd.webp",
+       "sceneAlt": "A U.S. Navy petty officer plays a mathematics game with children at an elementary school in San Antonio, Philippines.",
+       "sceneCaption": "A sailor plays a mathematics game with children during a community relations event at an elementary school in the Philippines.",
+       "sceneCredit": {
+        "text": "Defense.gov News Photo 101013-N-3620B-047 - U.S. Navy Petty Officer 3r by Petty Officer 3rd Class Bryan Blair, U.S. Navy, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Defense.gov_News_Photo_101013-N-3620B-047_-_U.S._Navy_Petty_Officer_3rd_Class_Johan_Olarte_plays_a_mathematics_game_with_children_during_a_community_relations_event_at_San_Nicolas_Elementary.jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "Petty Officer 3rd Class Bryan Blair, U.S. Navy"
+       }
+      },
+      {
+       "id": "mathematics-g4-ch10-l4",
+       "title": "How Many Animals?",
+       "estimatedMinutes": 10,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g4-ch10-l4-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How many amazing animals can we count in India’s different states?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g4-ch10-l4-a1",
+         "difficulty": 1,
+         "tags": [
+          "biodiversity",
+          "elephants",
+          "leopards",
+          "tigers"
+         ],
+         "title": "Animal Numbers",
+         "body": "India is rich in biodiversity. Karnataka has 6049 elephants. Kerala has 3054 elephants. Together, these states have 9103 elephants. Leopards are found in Gujarat, Karnataka and Madhya Pradesh. Maharashtra has 444 tigers. Madhya Pradesh and Uttarakhand have more tigers than Maharashtra. You can find their combined tiger population by addition.",
+         "keyPoints": [
+          "India is rich in biodiversity.",
+          "Karnataka and Kerala have 9103 elephants together.",
+          "Gujarat, Karnataka and Madhya Pradesh have 4303 leopards altogether.",
+          "Maharashtra has 444 tigers."
+         ],
+         "explanation": "These animal counts help you compare and combine numbers.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 152
+          },
+          {
+           "ch": 10,
+           "p": 152
+          },
+          {
+           "ch": 10,
+           "p": 152
+          },
+          {
+           "ch": 10,
+           "p": 152
+          },
+          {
+           "ch": 10,
+           "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l4-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Karnataka has 2400 elephants and Kerala has 900 elephants. How many elephants do they have together?",
+         "steps": [
+          "Karnataka has 2400 elephants and Kerala has 900 elephants.",
+          "We need the combined number, so we add the two populations.",
+          "2400 + 900 = 3300 elephants.",
+          "So, they have 3300 elephants together."
+         ],
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 2400,
+            "label": "2400 elephants"
+           },
+           {
+            "v": 900,
+            "label": "900 elephants"
+           }
+          ],
+          "total": "total"
+         },
+         "result": "3300",
+         "gen": {
+          "template": "Karnataka has {a} elephants and Kerala has {b} elephants. How many elephants do they have together?",
+          "params": {
+           "a": [
+            1200,
+            1800,
+            2400,
+            3000
+           ],
+           "b": [
+            900,
+            1500,
+            2100,
+            2700
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {
+           "total": "a+b"
+          },
+          "steps": [
+           "Karnataka has {a} elephants and Kerala has {b} elephants.",
+           "We need the combined number, so we add the two populations.",
+           "{a} + {b} = {answer} elephants.",
+           "So, they have {answer} elephants together."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} elephants"
+            },
+            {
+             "v": "b",
+             "label": "{b} elephants"
+            }
+           ],
+           "total": "total"
+          },
+          "hint": "Add the numbers of elephants in the two states.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "2400 (generated problem)",
+          "3300 (generated problem)",
+          "900 (generated problem)"
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g4-ch10-l4-a7",
+         "difficulty": 2,
+         "tags": [
+          "tigers",
+          "addition",
+          "maharashtra"
+         ],
+         "title": "Finding Tiger Numbers",
+         "body": "The tiger counts begin with Maharashtra's 444 tigers. Madhya Pradesh has 341 more, so add 341. Uttarakhand has 116 more, so add 116. First find each state's count. Then add Maharashtra, Madhya Pradesh and Uttarakhand. This gives their combined tiger population.",
+         "keyPoints": [
+          "Maharashtra has 444 tigers.",
+          "Madhya Pradesh has 341 more tigers than Maharashtra.",
+          "Uttarakhand has 116 more tigers than Maharashtra."
+         ],
+         "explanation": "Start with the known count, then add the extra tigers.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch10-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "elephants",
+          "karnataka"
+         ],
+         "prompt": "How many elephants does Karnataka have?",
+         "options": [
+          "6049",
+          "3054",
+          "9103",
+          "1355"
+         ],
+         "answer": 0,
+         "explanation": "Karnataka has 6049 elephants. Nice counting!",
+         "src": [
+          {
+           "ch": 10,
+           "p": 152
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch10-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "elephants",
+          "kerala",
+          "karnataka"
+         ],
+         "prompt": "Kerala has more elephants than Karnataka.",
+         "answer": false,
+         "explanation": "Kerala has 3054 elephants, while Karnataka has 6049.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 152
+          },
+          {
+           "ch": 10,
+           "p": 152
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Gujarat has 1455 leopards and Karnataka has 1000 leopards. How many more leopards does Gujarat have than Karnataka?",
+         "explanation": "Gujarat has 1455 leopards and Karnataka has 1000 leopards. We need to find how many more, so we subtract Karnataka's number from Gujarat's number. 1455 - 1000 = 455. So, Gujarat has 455 more leopards.",
+         "steps": [
+          "Gujarat has 1455 leopards and Karnataka has 1000 leopards.",
+          "We need to find how many more, so we subtract Karnataka's number from Gujarat's number.",
+          "1455 - 1000 = 455.",
+          "So, Gujarat has 455 more leopards."
+         ],
+         "hint": "Find the difference by subtracting the smaller number from the larger number.",
+         "derived": [
+          "1000 (generated problem)",
+          "1455 (generated problem)",
+          "455 (generated problem)"
+         ],
+         "gen": {
+          "template": "Gujarat has {a} leopards and Karnataka has {b} leopards. How many more leopards does Gujarat have than Karnataka?",
+          "params": {
+           "a": [
+            1355,
+            1455,
+            1555,
+            1655
+           ],
+           "b": [
+            1000,
+            1100,
+            1200,
+            1300
+           ]
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "a-b",
+          "vals": {
+           "difference": "a-b"
+          },
+          "steps": [
+           "Gujarat has {a} leopards and Karnataka has {b} leopards.",
+           "We need to find how many more, so we subtract Karnataka's number from Gujarat's number.",
+           "{a} - {b} = {answer}.",
+           "So, Gujarat has {answer} more leopards."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Gujarat",
+             "v": "a"
+            },
+            {
+             "label": "Karnataka",
+             "v": "b"
+            }
+           ]
+          },
+          "hint": "Find the difference by subtracting the smaller number from the larger number.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Gujarat",
+            "v": 1455
+           },
+           {
+            "label": "Karnataka",
+            "v": 1000
+           }
+          ]
+         },
+         "answers": [
+          "455"
+         ],
+         "id": "mathematics-g4-ch10-l4-c2",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Maharashtra has 300 tigers. Madhya Pradesh has 341 more tigers than Maharashtra. How many tigers does Madhya Pradesh have?",
+         "explanation": "Maharashtra has 300 tigers. Madhya Pradesh has 341 more tigers, so add 341 to 300. 300 + 341 = 641. So, Madhya Pradesh has 641 tigers.",
+         "steps": [
+          "Maharashtra has 300 tigers.",
+          "Madhya Pradesh has 341 more tigers, so add 341 to 300.",
+          "300 + 341 = 641.",
+          "So, Madhya Pradesh has 641 tigers."
+         ],
+         "hint": "Add the extra tigers in Madhya Pradesh to the number in Maharashtra.",
+         "derived": [
+          "300 (generated problem)",
+          "341 (generated problem)",
+          "641 (generated problem)"
+         ],
+         "gen": {
+          "template": "Maharashtra has {a} tigers. Madhya Pradesh has {b} more tigers than Maharashtra. How many tigers does Madhya Pradesh have?",
+          "params": {
+           "a": [
+            300,
+            444,
+            500,
+            600
+           ],
+           "b": [
+            100,
+            200,
+            341,
+            450
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {
+           "mp": "a+b"
+          },
+          "steps": [
+           "Maharashtra has {a} tigers.",
+           "Madhya Pradesh has {b} more tigers, so add {b} to {a}.",
+           "{a} + {b} = {answer}.",
+           "So, Madhya Pradesh has {answer} tigers."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} tigers in Maharashtra"
+            },
+            {
+             "v": "b",
+             "label": "{b} extra tigers"
+            }
+           ],
+           "total": "mp"
+          },
+          "hint": "Add the extra tigers in Madhya Pradesh to the number in Maharashtra.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 300,
+            "label": "300 tigers in Maharashtra"
+           },
+           {
+            "v": 341,
+            "label": "341 extra tigers"
+           }
+          ],
+          "total": "mp"
+         },
+         "answers": [
+          "641"
+         ],
+         "id": "mathematics-g4-ch10-l4-c3",
+         "src": [
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Madhya Pradesh has 1000 tigers and Uttarakhand has 800 tigers. How many tigers do the two states have together?",
+         "explanation": "Madhya Pradesh has 1000 tigers and Uttarakhand has 800 tigers. To find the combined population, add the two numbers. 1000 + 800 = 1800. So, the two states have 1800 tigers together.",
+         "steps": [
+          "Madhya Pradesh has 1000 tigers and Uttarakhand has 800 tigers.",
+          "To find the combined population, add the two numbers.",
+          "1000 + 800 = 1800.",
+          "So, the two states have 1800 tigers together."
+         ],
+         "hint": "Add the tiger populations of Madhya Pradesh and Uttarakhand.",
+         "derived": [
+          "1000 (generated problem)",
+          "1800 (generated problem)",
+          "800 (generated problem)"
+         ],
+         "gen": {
+          "template": "Madhya Pradesh has {a} tigers and Uttarakhand has {b} tigers. How many tigers do the two states have together?",
+          "params": {
+           "a": [
+            785,
+            800,
+            900,
+            1000
+           ],
+           "b": [
+            560,
+            600,
+            700,
+            800
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {
+           "total": "a+b"
+          },
+          "steps": [
+           "Madhya Pradesh has {a} tigers and Uttarakhand has {b} tigers.",
+           "To find the combined population, add the two numbers.",
+           "{a} + {b} = {answer}.",
+           "So, the two states have {answer} tigers together."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} tigers"
+            },
+            {
+             "v": "b",
+             "label": "{b} tigers"
+            }
+           ],
+           "total": "total"
+          },
+          "hint": "Add the tiger populations of Madhya Pradesh and Uttarakhand.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 1000,
+            "label": "1000 tigers"
+           },
+           {
+            "v": 800,
+            "label": "800 tigers"
+           }
+          ],
+          "total": "total"
+         },
+         "answers": [
+          "1800"
+         ],
+         "id": "mathematics-g4-ch10-l4-c4",
+         "src": [
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g4-ch10-l4-a6",
+         "difficulty": 2,
+         "tags": [
+          "leopards",
+          "states"
+         ],
+         "prompt": "Match each state to its leopard count.",
+         "pairs": [
+          [
+           "Gujarat",
+           "1355"
+          ],
+          [
+           "Karnataka",
+           "1131"
+          ],
+          [
+           "Madhya Pradesh",
+           "1817"
+          ]
+         ],
+         "explanation": "The leopard counts match each state in the lesson.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g4-ch10-l4-a4",
+         "difficulty": 2,
+         "tags": [
+          "elephants",
+          "addition"
+         ],
+         "prompt": "Karnataka and Kerala have ______ elephants together.",
+         "answers": [
+          "9103"
+         ],
+         "hint": "Add their two elephant counts.",
+         "explanation": "Adding 6049 and 3054 gives 9103 elephants.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 152
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A school display has 12 tiger pictures and 32 leopard pictures. How many animal pictures are on the display altogether?",
+         "explanation": "The display has 12 tiger pictures and 32 leopard pictures. We want the total number of pictures, so we add the two groups. 12 + 32 = 44. There are 44 animal pictures altogether.",
+         "steps": [
+          "The display has 12 tiger pictures and 32 leopard pictures.",
+          "We want the total number of pictures, so we add the two groups.",
+          "12 + 32 = 44.",
+          "There are 44 animal pictures altogether."
+         ],
+         "hint": "Add the tiger pictures and the leopard pictures.",
+         "derived": [
+          "12 (generated problem)",
+          "32 (generated problem)",
+          "44 (generated problem)"
+         ],
+         "gen": {
+          "template": "A school display has {a} tiger pictures and {b} leopard pictures. How many animal pictures are on the display altogether?",
+          "params": {
+           "a": [
+            12,
+            18,
+            24,
+            30
+           ],
+           "b": [
+            15,
+            20,
+            25,
+            32
+           ]
+          },
+          "where": [],
+          "answer": "a+b",
+          "vals": {
+           "total": "a+b"
+          },
+          "steps": [
+           "The display has {a} tiger pictures and {b} leopard pictures.",
+           "We want the total number of pictures, so we add the two groups.",
+           "{a} + {b} = {answer}.",
+           "There are {answer} animal pictures altogether."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} tiger pictures"
+            },
+            {
+             "v": "b",
+             "label": "{b} leopard pictures"
+            }
+           ],
+           "total": "total"
+          },
+          "hint": "Add the tiger pictures and the leopard pictures.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 12,
+            "label": "12 tiger pictures"
+           },
+           {
+            "v": 32,
+            "label": "32 leopard pictures"
+           }
+          ],
+          "total": "total"
+         },
+         "answers": [
+          "44"
+         ],
+         "id": "mathematics-g4-ch10-l4-c5",
+         "src": [
+          {
+           "ch": 10,
+           "p": 152
+          },
+          {
+           "ch": 10,
+           "p": 152
+          },
+          {
+           "ch": 10,
+           "p": 152
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A zoo shop has 85 animal cards and sells 30 of them. How many animal cards remain?",
+         "explanation": "The zoo shop starts with 85 animal cards. It sells 30 cards, so take away 30 from 85. 85 - 30 = 55. So, 55 animal cards remain.",
+         "steps": [
+          "The zoo shop starts with 85 animal cards.",
+          "It sells 30 cards, so take away 30 from 85.",
+          "85 - 30 = 55.",
+          "So, 55 animal cards remain."
+         ],
+         "hint": "Subtract the number sold from the number of cards the shop had.",
+         "derived": [
+          "30 (generated problem)",
+          "55 (generated problem)",
+          "85 (generated problem)"
+         ],
+         "gen": {
+          "template": "A zoo shop has {a} animal cards and sells {b} of them. How many animal cards remain?",
+          "params": {
+           "a": [
+            40,
+            55,
+            70,
+            85
+           ],
+           "b": [
+            12,
+            18,
+            24,
+            30
+           ]
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "a-b",
+          "vals": {
+           "remaining": "a-b"
+          },
+          "steps": [
+           "The zoo shop starts with {a} animal cards.",
+           "It sells {b} cards, so take away {b} from {a}.",
+           "{a} - {b} = {answer}.",
+           "So, {answer} animal cards remain."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "b",
+             "label": "{b} cards sold"
+            },
+            {
+             "v": "a-b",
+             "label": "cards remaining"
+            }
+           ],
+           "total": "a"
+          },
+          "hint": "Subtract the number sold from the number of cards the shop had.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 30,
+            "label": "30 cards sold"
+           },
+           {
+            "v": 55,
+            "label": "cards remaining"
+           }
+          ],
+          "total": "a"
+         },
+         "answers": [
+          "55"
+         ],
+         "id": "mathematics-g4-ch10-l4-c6",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A zoo display has 100 animal pictures. Of these, 45 are elephant pictures and the rest are leopard pictures. How many leopard pictures are there?",
+         "explanation": "There are 100 animal pictures in the display. 45 of them are elephant pictures. To find the leopard pictures, subtract 45 from 100. 100 - 45 = 55. There are 55 leopard pictures.",
+         "steps": [
+          "There are 100 animal pictures in the display.",
+          "45 of them are elephant pictures.",
+          "To find the leopard pictures, subtract 45 from 100.",
+          "100 - 45 = 55.",
+          "There are 55 leopard pictures."
+         ],
+         "hint": "Take the elephant pictures away from all the animal pictures.",
+         "derived": [
+          "100 (generated problem)",
+          "45 (generated problem)",
+          "55 (generated problem)"
+         ],
+         "gen": {
+          "template": "A zoo display has {total} animal pictures. Of these, {a} are elephant pictures and the rest are leopard pictures. How many leopard pictures are there?",
+          "params": {
+           "total": [
+            80,
+            100,
+            120,
+            140
+           ],
+           "a": [
+            30,
+            45,
+            60,
+            75
+           ]
+          },
+          "where": [
+           "total > a"
+          ],
+          "answer": "total-a",
+          "vals": {
+           "leopards": "total-a"
+          },
+          "steps": [
+           "There are {total} animal pictures in the display.",
+           "{a} of them are elephant pictures.",
+           "To find the leopard pictures, subtract {a} from {total}.",
+           "{total} - {a} = {answer}.",
+           "There are {answer} leopard pictures."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} elephant pictures"
+            },
+            {
+             "v": "leopards",
+             "label": "leopard pictures"
+            }
+           ],
+           "total": "total"
+          },
+          "hint": "Take the elephant pictures away from all the animal pictures.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 45,
+            "label": "45 elephant pictures"
+           },
+           {
+            "v": 55,
+            "label": "leopard pictures"
+           }
+          ],
+          "total": "total"
+         },
+         "answers": [
+          "55"
+         ],
+         "id": "mathematics-g4-ch10-l4-c7",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A bus taking children to the zoo carries 22 tiger toys and 9 leopard toys. How many more tiger toys than leopard toys are on the bus?",
+         "explanation": "The bus carries 22 tiger toys and 9 leopard toys. We need the difference between the two groups. 22 - 9 = 13. So, there are 13 more tiger toys.",
+         "steps": [
+          "The bus carries 22 tiger toys and 9 leopard toys.",
+          "We need the difference between the two groups.",
+          "22 - 9 = 13.",
+          "So, there are 13 more tiger toys."
+         ],
+         "hint": "Subtract the number of leopard toys from the number of tiger toys.",
+         "derived": [
+          "13 (generated problem)",
+          "22 (generated problem)",
+          "9 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bus taking children to the zoo carries {a} tiger toys and {b} leopard toys. How many more tiger toys than leopard toys are on the bus?",
+          "params": {
+           "a": [
+            18,
+            22,
+            27,
+            31
+           ],
+           "b": [
+            9,
+            13,
+            16,
+            20
+           ]
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "a-b",
+          "vals": {
+           "difference": "a-b"
+          },
+          "steps": [
+           "The bus carries {a} tiger toys and {b} leopard toys.",
+           "We need the difference between the two groups.",
+           "{a} - {b} = {answer}.",
+           "So, there are {answer} more tiger toys."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Tiger toys",
+             "v": "a"
+            },
+            {
+             "label": "Leopard toys",
+             "v": "b"
+            }
+           ]
+          },
+          "hint": "Subtract the number of leopard toys from the number of tiger toys.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Tiger toys",
+            "v": 22
+           },
+           {
+            "label": "Leopard toys",
+            "v": 9
+           }
+          ]
+         },
+         "answers": [
+          "13"
+         ],
+         "id": "mathematics-g4-ch10-l4-c8",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A market stall has 75 animal badges. A shopkeeper gives 25 badges to customers. How many badges are left at the stall?",
+         "explanation": "The stall has 75 animal badges at the start. The shopkeeper gives away 25 badges. To find what remains, subtract 25 from 75. 75 - 25 = 50. There are 50 badges left.",
+         "steps": [
+          "The stall has 75 animal badges at the start.",
+          "The shopkeeper gives away 25 badges.",
+          "To find what remains, subtract 25 from 75.",
+          "75 - 25 = 50.",
+          "There are 50 badges left."
+         ],
+         "hint": "Subtract the badges given away from the badges at the stall.",
+         "derived": [
+          "25 (generated problem)",
+          "50 (generated problem)",
+          "75 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market stall has {total} animal badges. A shopkeeper gives {a} badges to customers. How many badges are left at the stall?",
+          "params": {
+           "total": [
+            60,
+            75,
+            90,
+            110
+           ],
+           "a": [
+            18,
+            25,
+            32,
+            40
+           ]
+          },
+          "where": [
+           "total > a"
+          ],
+          "answer": "total-a",
+          "vals": {
+           "remaining": "total-a"
+          },
+          "steps": [
+           "The stall has {total} animal badges at the start.",
+           "The shopkeeper gives away {a} badges.",
+           "To find what remains, subtract {a} from {total}.",
+           "{total} - {a} = {answer}.",
+           "There are {answer} badges left."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "{a} badges given away"
+            },
+            {
+             "v": "remaining",
+             "label": "badges left"
+            }
+           ],
+           "total": "total"
+          },
+          "hint": "Subtract the badges given away from the badges at the stall.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 25,
+            "label": "25 badges given away"
+           },
+           {
+            "v": 50,
+            "label": "badges left"
+           }
+          ],
+          "total": "total"
+         },
+         "answers": [
+          "50"
+         ],
+         "id": "mathematics-g4-ch10-l4-c9",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l4-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Karnataka has 7000 elephants. Kerala has 2000 fewer elephants than Karnataka. How many elephants do Karnataka and Kerala have together?",
+         "steps": [
+          "Karnataka has 7000 elephants.",
+          "Kerala has 7000 - 2000 elephants.",
+          "Now add Karnataka and Kerala: 7000 + (7000 - 2000) = 12000.",
+          "So, the two states have 12000 elephants together."
+         ],
+         "modelSpec": {
+          "type": "tape",
+          "parts": [
+           {
+            "v": 7000,
+            "label": "Karnataka elephants"
+           },
+           {
+            "v": 5000,
+            "label": "Kerala elephants"
+           }
+          ],
+          "total": "combined"
+         },
+         "result": "12000",
+         "gen": {
+          "template": "Karnataka has {a} elephants. Kerala has {b} fewer elephants than Karnataka. How many elephants do Karnataka and Kerala have together?",
+          "params": {
+           "a": [
+            5000,
+            5500,
+            6049,
+            7000
+           ],
+           "b": [
+            1000,
+            1500,
+            2000,
+            2500
+           ]
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "a+(a-b)",
+          "vals": {
+           "kerala": "a-b",
+           "combined": "a+kerala"
+          },
+          "steps": [
+           "Karnataka has {a} elephants.",
+           "Kerala has {a} - {b} elephants.",
+           "Now add Karnataka and Kerala: {a} + ({a} - {b}) = {answer}.",
+           "So, the two states have {answer} elephants together."
+          ],
+          "model": {
+           "type": "tape",
+           "parts": [
+            {
+             "v": "a",
+             "label": "Karnataka elephants"
+            },
+            {
+             "v": "kerala",
+             "label": "Kerala elephants"
+            }
+           ],
+           "total": "combined"
+          },
+          "hint": "First find Kerala's population, then add it to Karnataka's population.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "12000 (generated problem)",
+          "2000 (generated problem)",
+          "7000 (generated problem)"
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l4-elephants-lunch-by-the-roads-0033be.webp",
+       "sceneAlt": "A mother elephant and her kid eat lunch beside the road at Bandipur National Park near the Kerala–Karnataka border.",
+       "sceneCaption": "An elephant mother and calf enjoy lunch beside the road in Bandipur National Park.",
+       "sceneCredit": {
+        "text": "Elephants - lunch by the roadside at Bandipur National Park by ShilpiC17, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Elephants_-_lunch_by_the_roadside_at_Bandipur_National_Park.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "ShilpiC17"
+       }
+      },
+      {
+       "id": "mathematics-g4-ch10-l5",
+       "title": "More or Less?",
+       "estimatedMinutes": 8,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g4-ch10-l5-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Which state has more elephants, and how will you find out?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g4-ch10-l5-a1",
+         "difficulty": 1,
+         "tags": [
+          "more",
+          "less",
+          "elephants",
+          "leopards",
+          "map",
+          "census"
+         ],
+         "title": "Compare the numbers",
+         "body": "More means a larger number. Less means a smaller number. Assam has 5719 elephants, while Meghalaya has 1754. Assam has 3965 more elephants than Meghalaya. There were 8820 leopards in Central India and the Eastern Ghats. A census is a count. The leopard information comes from the 2022 census. The 2022 leopard population was 749 more than in 2018. The map asks for tiger, elephant and leopard numbers by state.",
+         "keyPoints": [
+          "More means a larger number.",
+          "Less means a smaller number.",
+          "Assam has 3965 more elephants than Meghalaya."
+         ],
+         "explanation": "Use the counts to compare amounts and check their difference.",
+         "derived": [
+          "5719 - 1754 = 3965"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l5-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "Meghalaya has 8 elephants and Assam has 15 elephants. How many more elephants does Assam have than Meghalaya?",
+         "steps": [
+          "Meghalaya has 8 elephants and Assam has 15 elephants.",
+          "Assam has more elephants because 15 is greater than 8.",
+          "15 - 8 = 7 elephants."
+         ],
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Meghalaya",
+            "v": 8
+           },
+           {
+            "label": "Assam",
+            "v": 15
+           }
+          ]
+         },
+         "result": "7",
+         "gen": {
+          "template": "Meghalaya has {m} elephants and Assam has {a} elephants. How many more elephants does Assam have than Meghalaya?",
+          "params": {
+           "m": [
+            6,
+            8,
+            10
+           ],
+           "a": [
+            12,
+            15,
+            18
+           ]
+          },
+          "where": [
+           "a > m"
+          ],
+          "answer": "a-m",
+          "vals": {},
+          "steps": [
+           "Meghalaya has {m} elephants and Assam has {a} elephants.",
+           "Assam has more elephants because {a} is greater than {m}.",
+           "{a} - {m} = {answer} elephants."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Meghalaya",
+             "v": "m"
+            },
+            {
+             "label": "Assam",
+             "v": "a"
+            }
+           ]
+          },
+          "hint": "Compare the two elephant numbers, then subtract the smaller number from the larger number.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "15 (generated problem)",
+          "7 (generated problem)",
+          "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch10-l5-a3",
+         "difficulty": 1,
+         "tags": [
+          "elephants",
+          "meghalaya"
+         ],
+         "prompt": "Meghalaya has 1754 elephants.",
+         "answer": true,
+         "explanation": "Meghalaya has 1754 elephants, so the statement is correct.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 155
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "One bus carries 10 children and another bus carries 7 children. How many fewer children does the bus with 7 children carry than the bus with 10 children?",
+         "explanation": "The first bus carries 10 children and the second carries 7 children. The first bus has more children, so find the difference. 10 - 7 = 3 fewer children.",
+         "steps": [
+          "The first bus carries 10 children and the second carries 7 children.",
+          "The first bus has more children, so find the difference.",
+          "10 - 7 = 3 fewer children."
+         ],
+         "hint": "Find how much larger the bigger bus count is than the smaller bus count.",
+         "derived": [
+          "10 (generated problem)",
+          "17 (generated problem)",
+          "3 (generated problem)",
+          "7 (generated problem)"
+         ],
+         "gen": {
+          "template": "One bus carries {a} children and another bus carries {b} children. How many fewer children does the bus with {b} children carry than the bus with {a} children?",
+          "params": {
+           "a": [
+            10,
+            12,
+            14
+           ],
+           "b": [
+            6,
+            7,
+            8
+           ]
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "a-b",
+          "vals": {},
+          "steps": [
+           "The first bus carries {a} children and the second carries {b} children.",
+           "The first bus has more children, so find the difference.",
+           "{a} - {b} = {answer} fewer children."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "First bus",
+             "v": "a"
+            },
+            {
+             "label": "Second bus",
+             "v": "b"
+            }
+           ]
+          },
+          "hint": "Find how much larger the bigger bus count is than the smaller bus count.",
+          "wrong": [
+           "a+b",
+           "b-a",
+           "b"
+          ],
+          "wrongWhy": [
+           "You added the two bus counts instead of finding the difference.",
+           "You subtracted the smaller count from the wrong starting number.",
+           "You used only the smaller count instead of finding the difference."
+          ]
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "First bus",
+            "v": 10
+           },
+           {
+            "label": "Second bus",
+            "v": 7
+           }
+          ]
+         },
+         "options": [
+          "-3",
+          "7",
+          "3",
+          "17"
+         ],
+         "answer": 2,
+         "why": {
+          "7": "You used only the smaller count instead of finding the difference.",
+          "17": "You added the two bus counts instead of finding the difference.",
+          "-3": "You subtracted the smaller count from the wrong starting number."
+         },
+         "id": "mathematics-g4-ch10-l5-c2",
+         "src": [
+          {
+           "ch": 10,
+           "p": 155
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g4-ch10-l5-a5",
+         "difficulty": 2,
+         "tags": [
+          "elephants",
+          "leopards",
+          "assam",
+          "meghalaya",
+          "census"
+         ],
+         "title": "Match the details",
+         "prompt": "Match each item with its matching detail.",
+         "pairs": [
+          [
+           "Assam",
+           "5719 elephants"
+          ],
+          [
+           "Meghalaya",
+           "1754 elephants"
+          ],
+          [
+           "Central India and the Eastern Ghats",
+           "8820 leopards"
+          ],
+          [
+           "Leopard information",
+           "2022 census"
+          ]
+         ],
+         "explanation": "The numbers show elephant and leopard counts. The leopard details come from the 2022 census.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A toy costs 15 rupees and a book costs 8 rupees. How many more rupees does the toy cost than the book?",
+         "explanation": "The toy costs 15 rupees and the book costs 8 rupees. The toy costs more, so subtract the smaller price from the larger price. 15 - 8 = 7 rupees.",
+         "steps": [
+          "The toy costs 15 rupees and the book costs 8 rupees.",
+          "The toy costs more, so subtract the smaller price from the larger price.",
+          "15 - 8 = 7 rupees."
+         ],
+         "hint": "Find the difference between the two prices.",
+         "derived": [
+          "15 (generated problem)",
+          "7 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A toy costs {a} rupees and a book costs {b} rupees. How many more rupees does the toy cost than the book?",
+          "params": {
+           "a": [
+            15,
+            20,
+            25
+           ],
+           "b": [
+            5,
+            8,
+            10
+           ]
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "a-b",
+          "vals": {},
+          "steps": [
+           "The toy costs {a} rupees and the book costs {b} rupees.",
+           "The toy costs more, so subtract the smaller price from the larger price.",
+           "{a} - {b} = {answer} rupees."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Toy",
+             "v": "a"
+            },
+            {
+             "label": "Book",
+             "v": "b"
+            }
+           ]
+          },
+          "hint": "Find the difference between the two prices.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Toy",
+            "v": 15
+           },
+           {
+            "label": "Book",
+            "v": 8
+           }
+          ]
+         },
+         "answers": [
+          "7"
+         ],
+         "id": "mathematics-g4-ch10-l5-c3",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A bag has 15 marbles. It has 3 more marbles than another bag. How many marbles are in the other bag?",
+         "explanation": "The first bag has 15 marbles, which is 3 more than the other bag. To find the smaller amount, subtract 3 from 15. 15 - 3 = 12 marbles.",
+         "steps": [
+          "The first bag has 15 marbles, which is 3 more than the other bag.",
+          "To find the smaller amount, subtract 3 from 15.",
+          "15 - 3 = 12 marbles."
+         ],
+         "hint": "The other bag has the smaller number, so subtract the extra marbles from the number in the first bag.",
+         "derived": [
+          "12 (generated problem)",
+          "15 (generated problem)",
+          "3 (generated problem)"
+         ],
+         "gen": {
+          "template": "A bag has {a} marbles. It has {d} more marbles than another bag. How many marbles are in the other bag?",
+          "params": {
+           "a": [
+            12,
+            15,
+            18
+           ],
+           "d": [
+            2,
+            3,
+            4
+           ]
+          },
+          "where": [
+           "a > d"
+          ],
+          "answer": "a-d",
+          "vals": {},
+          "steps": [
+           "The first bag has {a} marbles, which is {d} more than the other bag.",
+           "To find the smaller amount, subtract {d} from {a}.",
+           "{a} - {d} = {answer} marbles."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "First bag",
+             "v": "a"
+            },
+            {
+             "label": "Other bag",
+             "v": "a-d"
+            }
+           ]
+          },
+          "hint": "The other bag has the smaller number, so subtract the extra marbles from the number in the first bag.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "First bag",
+            "v": 15
+           },
+           {
+            "label": "Other bag",
+            "v": 12
+           }
+          ]
+         },
+         "answers": [
+          "12"
+         ],
+         "id": "mathematics-g4-ch10-l5-c4",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A depot has 14 buses and another depot has 10 buses. How many fewer buses does the depot with 10 buses have than the depot with 14 buses?",
+         "explanation": "The depots have 14 buses and 10 buses. The depot with 10 buses has fewer buses, so find the difference. 14 - 10 = 4 fewer buses.",
+         "steps": [
+          "The depots have 14 buses and 10 buses.",
+          "The depot with 10 buses has fewer buses, so find the difference.",
+          "14 - 10 = 4 fewer buses."
+         ],
+         "hint": "Subtract the smaller number of buses from the larger number.",
+         "derived": [
+          "10 (generated problem)",
+          "14 (generated problem)",
+          "4 (generated problem)"
+         ],
+         "gen": {
+          "template": "A depot has {a} buses and another depot has {b} buses. How many fewer buses does the depot with {b} buses have than the depot with {a} buses?",
+          "params": {
+           "a": [
+            14,
+            16,
+            18
+           ],
+           "b": [
+            8,
+            9,
+            10
+           ]
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "a-b",
+          "vals": {},
+          "steps": [
+           "The depots have {a} buses and {b} buses.",
+           "The depot with {b} buses has fewer buses, so find the difference.",
+           "{a} - {b} = {answer} fewer buses."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "First depot",
+             "v": "a"
+            },
+            {
+             "label": "Second depot",
+             "v": "b"
+            }
+           ]
+          },
+          "hint": "Subtract the smaller number of buses from the larger number.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "First depot",
+            "v": 14
+           },
+           {
+            "label": "Second depot",
+            "v": 10
+           }
+          ]
+         },
+         "answers": [
+          "4"
+         ],
+         "id": "mathematics-g4-ch10-l5-c5",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "One ribbon is 30 cm long and another ribbon is 15 cm long. How many centimetres shorter is the second ribbon than the first?",
+         "explanation": "The first ribbon is 30 cm long and the second is 15 cm long. The second ribbon is shorter, so subtract its length from the longer length. 30 - 15 = 15 cm shorter.",
+         "steps": [
+          "The first ribbon is 30 cm long and the second is 15 cm long.",
+          "The second ribbon is shorter, so subtract its length from the longer length.",
+          "30 - 15 = 15 cm shorter."
+         ],
+         "hint": "Find the difference between the two lengths.",
+         "derived": [
+          "15 (generated problem)",
+          "30 (generated problem)"
+         ],
+         "gen": {
+          "template": "One ribbon is {a} cm long and another ribbon is {b} cm long. How many centimetres shorter is the second ribbon than the first?",
+          "params": {
+           "a": [
+            20,
+            25,
+            30
+           ],
+           "b": [
+            10,
+            12,
+            15
+           ]
+          },
+          "where": [
+           "a > b"
+          ],
+          "answer": "a-b",
+          "vals": {},
+          "steps": [
+           "The first ribbon is {a} cm long and the second is {b} cm long.",
+           "The second ribbon is shorter, so subtract its length from the longer length.",
+           "{a} - {b} = {answer} cm shorter."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "First ribbon",
+             "v": "a"
+            },
+            {
+             "label": "Second ribbon",
+             "v": "b"
+            }
+           ]
+          },
+          "hint": "Find the difference between the two lengths.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "First ribbon",
+            "v": 30
+           },
+           {
+            "label": "Second ribbon",
+            "v": 15
+           }
+          ]
+         },
+         "answers": [
+          "15"
+         ],
+         "id": "mathematics-g4-ch10-l5-c6",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l5-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "There were 20 leopards in Central India and the Eastern Ghats in 2022. This was 4 more than in 2018. In 2018, 5 were in Central India. How many were in the Eastern Ghats in 2018?",
+         "steps": [
+          "The 2022 total was 20, which was 4 more than the 2018 total.",
+          "The 2018 total was 20 - 4 = 16.",
+          "Eastern Ghats had 16 - 5 = 11 leopards in 2018."
+         ],
+         "modelSpec": null,
+         "result": "11",
+         "gen": {
+          "template": "There were {n} leopards in Central India and the Eastern Ghats in 2022. This was {d} more than in 2018. In 2018, {p} were in Central India. How many were in the Eastern Ghats in 2018?",
+          "params": {
+           "n": [
+            20,
+            25,
+            30
+           ],
+           "d": [
+            2,
+            3,
+            4
+           ],
+           "p": [
+            5,
+            8,
+            10
+           ]
+          },
+          "where": [
+           "p < n-d"
+          ],
+          "answer": "n-d-p",
+          "vals": {
+           "total2018": "n-d",
+           "eastern2018": "n-d-p"
+          },
+          "steps": [
+           "The 2022 total was {n}, which was {d} more than the 2018 total.",
+           "The 2018 total was {n} - {d} = {total2018}.",
+           "Eastern Ghats had {total2018} - {p} = {answer} leopards in 2018."
+          ],
+          "model": null,
+          "hint": "First find the total number of leopards in 2018, then subtract the number in Central India.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "11 (generated problem)",
+          "16 (generated problem)",
+          "20 (generated problem)",
+          "2018 (generated problem)",
+          "2022 (generated problem)",
+          "4 (generated problem)",
+          "5 (generated problem)"
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g4-ch10-l5-a8",
+         "difficulty": 3,
+         "tags": [
+          "elephants",
+          "assam",
+          "meghalaya",
+          "difference"
+         ],
+         "title": "Find how many more",
+         "prompt": "Put the steps in order to find how many more elephants Assam has.",
+         "items": [
+          "Start with Assam’s 5719 elephants.",
+          "Subtract Meghalaya’s 1754 elephants.",
+          "Find the difference: 3965 elephants."
+         ],
+         "explanation": "The difference tells how many more elephants Assam has than Meghalaya.",
+         "derived": [
+          "5719 - 1754 = 3965"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch10-l5-a9",
+         "difficulty": 3,
+         "tags": [
+          "map",
+          "leopards",
+          "census",
+          "more"
+         ],
+         "title": "Map and leopard change",
+         "prompt": "Which choice describes the map and the change from 2018 to 2022?",
+         "options": [
+          "3 animal types; 749 more",
+          "2 animal types; 749 less",
+          "4 animal types; 3965 more",
+          "3 animal types; 8820 more"
+         ],
+         "answer": 0,
+         "explanation": "The map covers three animal types. The 2022 leopard population was 749 more than in 2018.",
+         "derived": [
+          "Tigers, elephants and leopards = 3 animal types"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "Assam has 120 elephants, Meghalaya has 90 elephants, and another region has 70 elephants. How many more elephants are in Assam and Meghalaya together than in the other region?",
+         "explanation": "Assam has 120 elephants and Meghalaya has 90 elephants. First find their combined number: 120 + 90 = 210. Now find how many more that is than 70: 210 - 70 = 140 elephants.",
+         "steps": [
+          "Assam has 120 elephants and Meghalaya has 90 elephants.",
+          "First find their combined number: 120 + 90 = 210.",
+          "Now find how many more that is than 70: 210 - 70 = 140 elephants."
+         ],
+         "hint": "First add the elephants in Assam and Meghalaya, then compare that total with the other region.",
+         "derived": [
+          "120 (generated problem)",
+          "140 (generated problem)",
+          "210 (generated problem)",
+          "70 (generated problem)",
+          "90 (generated problem)"
+         ],
+         "gen": {
+          "template": "Assam has {a} elephants, Meghalaya has {b} elephants, and another region has {c} elephants. How many more elephants are in Assam and Meghalaya together than in the other region?",
+          "params": {
+           "a": [
+            100,
+            120,
+            140
+           ],
+           "b": [
+            80,
+            90,
+            100
+           ],
+           "c": [
+            50,
+            60,
+            70
+           ]
+          },
+          "where": [
+           "a + b > c"
+          ],
+          "answer": "a+b-c",
+          "vals": {
+           "together": "a+b",
+           "difference": "a+b-c"
+          },
+          "steps": [
+           "Assam has {a} elephants and Meghalaya has {b} elephants.",
+           "First find their combined number: {a} + {b} = {together}.",
+           "Now find how many more that is than {c}: {together} - {c} = {answer} elephants."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Assam and Meghalaya",
+             "v": "a+b"
+            },
+            {
+             "label": "Other region",
+             "v": "c"
+            }
+           ]
+          },
+          "hint": "First add the elephants in Assam and Meghalaya, then compare that total with the other region.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Assam and Meghalaya",
+            "v": 210
+           },
+           {
+            "label": "Other region",
+            "v": 70
+           }
+          ]
+         },
+         "answers": [
+          "140"
+         ],
+         "id": "mathematics-g4-ch10-l5-c7",
+         "src": [
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 155
+          },
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l5-herd-of-indian-elephants-73cf12.webp",
+       "sceneAlt": "A group of wild Indian elephants stands together in Munnar, Kerala.",
+       "sceneCaption": "Wild Indian elephants gather as a herd in Munnar, Kerala.",
+       "sceneCredit": {
+        "text": "Herd of Indian Elephants by Gauravrathore1313, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Herd_of_Indian_Elephants.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Gauravrathore1313"
+       }
+      },
+      {
+       "id": "mathematics-g4-ch10-l6",
+       "title": "Let Us Do and Let Us Solve",
+       "estimatedMinutes": 9,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "mathematics-g4-ch10-l6-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Can you discover clever ways to solve these puzzling number problems?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g4-ch10-l6-a1",
+         "difficulty": 1,
+         "tags": [
+          "vehicles",
+          "juice",
+          "visitors",
+          "comparison"
+         ],
+         "title": "Spot the Differences",
+         "body": "You can solve these problems by comparing numbers and noticing relationships. Vehicles were registered in 2022. Bus numbers are 253 above jeep numbers. Tractor numbers are 5247 below bus numbers. Taxi numbers are 1579 above tractor numbers. Juice and visitor counts also have clear differences. Arrange vehicle numbers from lowest to highest. Easy comparisons can save you from long calculations.",
+         "keyPoints": [
+          "Buses have 253 more vehicles than jeeps.",
+          "Taxi numbers are 1579 above tractor numbers.",
+          "Orange juice has 1257 more bottles than guava juice."
+         ],
+         "explanation": "Notice each difference and compare it carefully.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 157
+          },
+          {
+           "ch": 10,
+           "p": 162
+          },
+          {
+           "ch": 10,
+           "p": 162
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l6-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A town has 3 jeeps. There are 253 more buses than jeeps. How many buses are there?",
+         "steps": [
+          "The town has 3 jeeps.",
+          "Buses are 253 more, so add 253 to the number of jeeps to get 256 buses.",
+          "The answer is 256 buses."
+         ],
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Jeeps",
+            "v": 3
+           },
+           {
+            "label": "Buses",
+            "v": 256
+           }
+          ]
+         },
+         "result": "256",
+         "gen": {
+          "template": "A town has {jeeps} jeeps. There are 253 more buses than jeeps. How many buses are there?",
+          "params": {
+           "jeeps": [
+            3,
+            5,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "jeeps+253",
+          "vals": {
+           "buses": "jeeps+253"
+          },
+          "steps": [
+           "The town has {jeeps} jeeps.",
+           "Buses are 253 more, so add 253 to the number of jeeps to get {buses} buses.",
+           "The answer is {answer} buses."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Jeeps",
+             "v": "jeeps"
+            },
+            {
+             "label": "Buses",
+             "v": "buses"
+            }
+           ]
+          },
+          "hint": "Start with the number of jeeps and add 253.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "253 (generated problem)",
+          "256 (generated problem)",
+          "3 (generated problem)"
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch10-l6-a3",
+         "difficulty": 1,
+         "tags": [
+          "taxis",
+          "tractors",
+          "vehicles"
+         ],
+         "prompt": "The number of taxis is 1579 more than the number of tractors.",
+         "answer": true,
+         "explanation": "Taxi numbers are 1579 above tractor numbers.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A shop has 3 pineapple juice bottles. There are 759 more guava juice bottles than pineapple juice bottles. How many guava juice bottles are there?",
+         "explanation": "The shop has 3 pineapple juice bottles. There are 759 more guava juice bottles, so add 759 to get 762 guava juice bottles. The answer is 762 guava juice bottles.",
+         "steps": [
+          "The shop has 3 pineapple juice bottles.",
+          "There are 759 more guava juice bottles, so add 759 to get 762 guava juice bottles.",
+          "The answer is 762 guava juice bottles."
+         ],
+         "hint": "Start with the pineapple juice bottles and add 759.",
+         "derived": [
+          "3 (generated problem)",
+          "759 (generated problem)",
+          "762 (generated problem)"
+         ],
+         "gen": {
+          "template": "A shop has {pineapple} pineapple juice bottles. There are 759 more guava juice bottles than pineapple juice bottles. How many guava juice bottles are there?",
+          "params": {
+           "pineapple": [
+            3,
+            5,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "pineapple+759",
+          "vals": {
+           "guava": "pineapple+759"
+          },
+          "steps": [
+           "The shop has {pineapple} pineapple juice bottles.",
+           "There are 759 more guava juice bottles, so add 759 to get {guava} guava juice bottles.",
+           "The answer is {answer} guava juice bottles."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Pineapple",
+             "v": "pineapple"
+            },
+            {
+             "label": "Guava",
+             "v": "guava"
+            }
+           ]
+          },
+          "hint": "Start with the pineapple juice bottles and add 759.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Pineapple",
+            "v": 3
+           },
+           {
+            "label": "Guava",
+            "v": 762
+           }
+          ]
+         },
+         "answers": [
+          "762"
+         ],
+         "id": "mathematics-g4-ch10-l6-c2",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A shop has 6 guava juice bottles. There are 1257 more orange juice bottles than guava juice bottles. How many orange juice bottles are there?",
+         "explanation": "The shop has 6 guava juice bottles. Orange juice bottles are 1257 more, so add 1257 to get 1263 orange juice bottles. The answer is 1263 orange juice bottles.",
+         "steps": [
+          "The shop has 6 guava juice bottles.",
+          "Orange juice bottles are 1257 more, so add 1257 to get 1263 orange juice bottles.",
+          "The answer is 1263 orange juice bottles."
+         ],
+         "hint": "Start with the guava juice bottles and add 1257.",
+         "derived": [
+          "1257 (generated problem)",
+          "1263 (generated problem)",
+          "6 (generated problem)"
+         ],
+         "gen": {
+          "template": "A shop has {guava} guava juice bottles. There are 1257 more orange juice bottles than guava juice bottles. How many orange juice bottles are there?",
+          "params": {
+           "guava": [
+            4,
+            6,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "guava+1257",
+          "vals": {
+           "orange": "guava+1257"
+          },
+          "steps": [
+           "The shop has {guava} guava juice bottles.",
+           "Orange juice bottles are 1257 more, so add 1257 to get {orange} orange juice bottles.",
+           "The answer is {answer} orange juice bottles."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Guava",
+             "v": "guava"
+            },
+            {
+             "label": "Orange",
+             "v": "orange"
+            }
+           ]
+          },
+          "hint": "Start with the guava juice bottles and add 1257.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Guava",
+            "v": 6
+           },
+           {
+            "label": "Orange",
+            "v": 1263
+           }
+          ]
+         },
+         "answers": [
+          "1263"
+         ],
+         "id": "mathematics-g4-ch10-l6-c3",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A school recorded 30 visitors in October. There were 1587 more visitors in November than in October. How many visitors were there in November?",
+         "explanation": "The school recorded 30 visitors in October. November had 1587 more visitors, so add 1587 to get 1617 visitors. The answer is 1617 visitors.",
+         "steps": [
+          "The school recorded 30 visitors in October.",
+          "November had 1587 more visitors, so add 1587 to get 1617 visitors.",
+          "The answer is 1617 visitors."
+         ],
+         "hint": "Start with the October visitors and add 1587.",
+         "derived": [
+          "1587 (generated problem)",
+          "1617 (generated problem)",
+          "30 (generated problem)"
+         ],
+         "gen": {
+          "template": "A school recorded {october} visitors in October. There were 1587 more visitors in November than in October. How many visitors were there in November?",
+          "params": {
+           "october": [
+            10,
+            20,
+            30
+           ]
+          },
+          "where": [],
+          "answer": "october+1587",
+          "vals": {
+           "november": "october+1587"
+          },
+          "steps": [
+           "The school recorded {october} visitors in October.",
+           "November had 1587 more visitors, so add 1587 to get {november} visitors.",
+           "The answer is {answer} visitors."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "October",
+             "v": "october"
+            },
+            {
+             "label": "November",
+             "v": "november"
+            }
+           ]
+          },
+          "hint": "Start with the October visitors and add 1587.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "October",
+            "v": 30
+           },
+           {
+            "label": "November",
+            "v": 1617
+           }
+          ]
+         },
+         "answers": [
+          "1617"
+         ],
+         "id": "mathematics-g4-ch10-l6-c4",
+         "src": [
+          {
+           "ch": 10,
+           "p": 157
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "mathematics-g4-ch10-l6-a6",
+         "difficulty": 2,
+         "tags": [
+          "buses",
+          "juice",
+          "visitors",
+          "differences"
+         ],
+         "prompt": "Match each difference to the pair it describes.",
+         "pairs": [
+          [
+           "More buses than jeeps by",
+           "253"
+          ],
+          [
+           "Fewer orange bottles than passion fruit bottles by",
+           "1417"
+          ],
+          [
+           "More visitors in November than October by",
+           "1587"
+          ]
+         ],
+         "explanation": "These are the exact differences for buses, juice bottles, and visitors.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 157
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In 2022, a bus stand had 5 tractors. There were 1579 more taxis than tractors. How many taxis were there?",
+         "explanation": "The bus stand had 5 tractors in 2022. There were 1579 more taxis, so add 1579 to the number of tractors to get 1584 taxis. The answer is 1584 taxis.",
+         "steps": [
+          "The bus stand had 5 tractors in 2022.",
+          "There were 1579 more taxis, so add 1579 to the number of tractors to get 1584 taxis.",
+          "The answer is 1584 taxis."
+         ],
+         "hint": "Start with the number of tractors and add 1579.",
+         "derived": [
+          "1579 (generated problem)",
+          "1584 (generated problem)",
+          "2022 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "In 2022, a bus stand had {tractors} tractors. There were 1579 more taxis than tractors. How many taxis were there?",
+          "params": {
+           "tractors": [
+            3,
+            5,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "tractors+1579",
+          "vals": {
+           "taxis": "tractors+1579"
+          },
+          "steps": [
+           "The bus stand had {tractors} tractors in 2022.",
+           "There were 1579 more taxis, so add 1579 to the number of tractors to get {taxis} taxis.",
+           "The answer is {answer} taxis."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Tractors",
+             "v": "tractors"
+            },
+            {
+             "label": "Taxis",
+             "v": "taxis"
+            }
+           ]
+          },
+          "hint": "Start with the number of tractors and add 1579.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Tractors",
+            "v": 5
+           },
+           {
+            "label": "Taxis",
+            "v": 1584
+           }
+          ]
+         },
+         "answers": [
+          "1584"
+         ],
+         "id": "mathematics-g4-ch10-l6-c5",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "At a juice stall, one group has 2 guava and 5 orange bottles, and another has 8 pineapple and 7 passion fruit bottles. By how many bottles do the two groups differ?",
+         "explanation": "The first group has 2 guava and 5 orange bottles, so its total is 7. The second group has 8 pineapple and 7 passion fruit bottles, so its total is 15. Subtract the smaller total from the larger total to get 8 bottles. The answer is 8 bottles.",
+         "steps": [
+          "The first group has 2 guava and 5 orange bottles, so its total is 7.",
+          "The second group has 8 pineapple and 7 passion fruit bottles, so its total is 15.",
+          "Subtract the smaller total from the larger total to get 8 bottles.",
+          "The answer is 8 bottles."
+         ],
+         "hint": "Find the total in each group first.",
+         "derived": [
+          "15 (generated problem)",
+          "2 (generated problem)",
+          "5 (generated problem)",
+          "7 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "At a juice stall, one group has {a} guava and {b} orange bottles, and another has {c} pineapple and {d} passion fruit bottles. By how many bottles do the two groups differ?",
+          "params": {
+           "a": [
+            2,
+            4,
+            6
+           ],
+           "b": [
+            3,
+            5,
+            7
+           ],
+           "c": [
+            4,
+            6,
+            8
+           ],
+           "d": [
+            5,
+            7,
+            9
+           ]
+          },
+          "where": [],
+          "answer": "abs((a+b)-(c+d))",
+          "vals": {
+           "first": "a+b",
+           "second": "c+d",
+           "difference": "abs(first-second)"
+          },
+          "steps": [
+           "The first group has {a} guava and {b} orange bottles, so its total is {first}.",
+           "The second group has {c} pineapple and {d} passion fruit bottles, so its total is {second}.",
+           "Subtract the smaller total from the larger total to get {difference} bottles.",
+           "The answer is {answer} bottles."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "First group",
+             "v": "a+b"
+            },
+            {
+             "label": "Second group",
+             "v": "c+d"
+            }
+           ]
+          },
+          "hint": "Find the total in each group first.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "First group",
+            "v": 7
+           },
+           {
+            "label": "Second group",
+            "v": 15
+           }
+          ]
+         },
+         "answers": [
+          "8"
+         ],
+         "id": "mathematics-g4-ch10-l6-c6",
+         "src": [
+          {
+           "ch": 10,
+           "p": 162
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 2,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A juice shop has 1425 passion fruit bottles and 1417 fewer orange juice bottles than passion fruit bottles. How many orange juice bottles are there?",
+         "explanation": "The juice shop has 1425 passion fruit bottles. There are 1417 fewer orange juice bottles, so subtract 1417 to get 8 orange juice bottles. The answer is 8 orange juice bottles.",
+         "steps": [
+          "The juice shop has 1425 passion fruit bottles.",
+          "There are 1417 fewer orange juice bottles, so subtract 1417 to get 8 orange juice bottles.",
+          "The answer is 8 orange juice bottles."
+         ],
+         "hint": "Start with the passion fruit bottles and subtract 1417.",
+         "derived": [
+          "1417 (generated problem)",
+          "1425 (generated problem)",
+          "8 (generated problem)"
+         ],
+         "gen": {
+          "template": "A juice shop has {passion} passion fruit bottles and 1417 fewer orange juice bottles than passion fruit bottles. How many orange juice bottles are there?",
+          "params": {
+           "passion": [
+            1419,
+            1425,
+            1430
+           ]
+          },
+          "where": [],
+          "answer": "passion-1417",
+          "vals": {
+           "orange": "passion-1417"
+          },
+          "steps": [
+           "The juice shop has {passion} passion fruit bottles.",
+           "There are 1417 fewer orange juice bottles, so subtract 1417 to get {orange} orange juice bottles.",
+           "The answer is {answer} orange juice bottles."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Passion fruit",
+             "v": "passion"
+            },
+            {
+             "label": "Orange",
+             "v": "orange"
+            }
+           ]
+          },
+          "hint": "Start with the passion fruit bottles and subtract 1417.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Passion fruit",
+            "v": 1425
+           },
+           {
+            "label": "Orange",
+            "v": 8
+           }
+          ]
+         },
+         "answers": [
+          "8"
+         ],
+         "id": "mathematics-g4-ch10-l6-c7",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch10-l6-w2",
+         "difficulty": 3,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "A shop has 2 guava juice bottles and 5 orange juice bottles. It also has 6 passion fruit bottles. What is the difference between the combined number of guava and orange juice bottles and the number of passion fruit bottles?",
+         "steps": [
+          "The shop has 2 guava juice bottles and 5 orange juice bottles.",
+          "Add the guava and orange counts to get 7 bottles.",
+          "Compare 7 with the 6 passion fruit bottles and subtract the smaller count from the larger to get 1.",
+          "The answer is 1 bottles."
+         ],
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Guava and orange",
+            "v": 7
+           },
+           {
+            "label": "Passion fruit",
+            "v": 6
+           }
+          ]
+         },
+         "result": "1",
+         "gen": {
+          "template": "A shop has {guava} guava juice bottles and {orange} orange juice bottles. It also has {passion} passion fruit bottles. What is the difference between the combined number of guava and orange juice bottles and the number of passion fruit bottles?",
+          "params": {
+           "guava": [
+            2,
+            4,
+            6
+           ],
+           "orange": [
+            3,
+            5,
+            7
+           ],
+           "passion": [
+            4,
+            6,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "abs(guava+orange-passion)",
+          "vals": {
+           "combined": "guava+orange",
+           "difference": "abs(combined-passion)"
+          },
+          "steps": [
+           "The shop has {guava} guava juice bottles and {orange} orange juice bottles.",
+           "Add the guava and orange counts to get {combined} bottles.",
+           "Compare {combined} with the {passion} passion fruit bottles and subtract the smaller count from the larger to get {difference}.",
+           "The answer is {answer} bottles."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Guava and orange",
+             "v": "guava+orange"
+            },
+            {
+             "label": "Passion fruit",
+             "v": "passion"
+            }
+           ]
+          },
+          "hint": "First combine the guava and orange juice bottles.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "1 (generated problem)",
+          "2 (generated problem)",
+          "5 (generated problem)",
+          "6 (generated problem)",
+          "7 (generated problem)"
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "mathematics-g4-ch10-l6-a7",
+         "difficulty": 3,
+         "tags": [
+          "vehicles",
+          "numbers",
+          "order"
+         ],
+         "prompt": "Put the vehicle types in order from lowest to highest numbers.",
+         "items": [
+          "Tractors",
+          "Taxis",
+          "Jeeps",
+          "Buses"
+         ],
+         "explanation": "Tractors are lowest. Taxis are 1579 above tractors. Buses are 3668 above taxis. Jeeps are 253 below buses, but still above taxis.",
+         "derived": [
+          "buses - taxis = 5247 - 1579 = 3668"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 162
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch10-l6-a8",
+         "difficulty": 3,
+         "tags": [
+          "guava",
+          "passion fruit",
+          "juice"
+         ],
+         "prompt": "Guava juice bottles are 1417 fewer than passion fruit juice bottles.",
+         "answer": false,
+         "explanation": "Orange bottles are 1417 fewer than passion fruit bottles. Guava bottles are 1257 fewer than orange bottles, so guava bottles are even fewer.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "In 2022, a garage had 5040 jeeps. There were 253 more buses than jeeps, and the number of tractors was 5247 less than the number of buses. How many tractors were there?",
+         "explanation": "The garage had 5040 jeeps. Add 253 to find the number of buses: 5293 buses. Subtract 5247 from the number of buses to find 46 tractors. The answer is 46 tractors.",
+         "steps": [
+          "The garage had 5040 jeeps.",
+          "Add 253 to find the number of buses: 5293 buses.",
+          "Subtract 5247 from the number of buses to find 46 tractors.",
+          "The answer is 46 tractors."
+         ],
+         "hint": "First find the number of buses from the number of jeeps.",
+         "derived": [
+          "2022 (generated problem)",
+          "253 (generated problem)",
+          "46 (generated problem)",
+          "5040 (generated problem)",
+          "5247 (generated problem)",
+          "5293 (generated problem)"
+         ],
+         "gen": {
+          "template": "In 2022, a garage had {jeeps} jeeps. There were 253 more buses than jeeps, and the number of tractors was 5247 less than the number of buses. How many tractors were there?",
+          "params": {
+           "jeeps": {
+            "min": 5000,
+            "max": 5100
+           }
+          },
+          "where": [],
+          "answer": "jeeps+253-5247",
+          "vals": {
+           "buses": "jeeps+253",
+           "tractors": "buses-5247"
+          },
+          "steps": [
+           "The garage had {jeeps} jeeps.",
+           "Add 253 to find the number of buses: {buses} buses.",
+           "Subtract 5247 from the number of buses to find {tractors} tractors.",
+           "The answer is {answer} tractors."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Jeeps",
+             "v": "jeeps"
+            },
+            {
+             "label": "Buses",
+             "v": "buses"
+            },
+            {
+             "label": "Tractors",
+             "v": "tractors"
+            }
+           ]
+          },
+          "hint": "First find the number of buses from the number of jeeps.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Jeeps",
+            "v": 5040
+           },
+           {
+            "label": "Buses",
+            "v": 5293
+           },
+           {
+            "label": "Tractors",
+            "v": 46
+           }
+          ]
+         },
+         "answers": [
+          "46"
+         ],
+         "id": "mathematics-g4-ch10-l6-c8",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 3,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A market had 5 pineapple juice bottles. There were 759 more guava juice bottles, and 1257 more orange juice bottles than guava juice bottles. How many orange juice bottles were there?",
+         "explanation": "The market had 5 pineapple juice bottles. Add 759 to find 764 guava juice bottles. Add 1257 to the number of guava juice bottles to find 2021 orange juice bottles. The answer is 2021 orange juice bottles.",
+         "steps": [
+          "The market had 5 pineapple juice bottles.",
+          "Add 759 to find 764 guava juice bottles.",
+          "Add 1257 to the number of guava juice bottles to find 2021 orange juice bottles.",
+          "The answer is 2021 orange juice bottles."
+         ],
+         "hint": "First find the number of guava juice bottles from the pineapple juice bottles.",
+         "derived": [
+          "1257 (generated problem)",
+          "2021 (generated problem)",
+          "5 (generated problem)",
+          "759 (generated problem)",
+          "764 (generated problem)"
+         ],
+         "gen": {
+          "template": "A market had {pineapple} pineapple juice bottles. There were 759 more guava juice bottles, and 1257 more orange juice bottles than guava juice bottles. How many orange juice bottles were there?",
+          "params": {
+           "pineapple": [
+            3,
+            5,
+            8
+           ]
+          },
+          "where": [],
+          "answer": "pineapple+759+1257",
+          "vals": {
+           "guava": "pineapple+759",
+           "orange": "guava+1257"
+          },
+          "steps": [
+           "The market had {pineapple} pineapple juice bottles.",
+           "Add 759 to find {guava} guava juice bottles.",
+           "Add 1257 to the number of guava juice bottles to find {orange} orange juice bottles.",
+           "The answer is {answer} orange juice bottles."
+          ],
+          "model": {
+           "type": "compare",
+           "bars": [
+            {
+             "label": "Pineapple",
+             "v": "pineapple"
+            },
+            {
+             "label": "Guava",
+             "v": "guava"
+            },
+            {
+             "label": "Orange",
+             "v": "orange"
+            }
+           ]
+          },
+          "hint": "First find the number of guava juice bottles from the pineapple juice bottles.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "modelSpec": {
+          "type": "compare",
+          "bars": [
+           {
+            "label": "Pineapple",
+            "v": 5
+           },
+           {
+            "label": "Guava",
+            "v": 764
+           },
+           {
+            "label": "Orange",
+            "v": 2021
+           }
+          ]
+         },
+         "answers": [
+          "2021"
+         ],
+         "id": "mathematics-g4-ch10-l6-c9",
+         "src": [
+          {
+           "ch": 10,
+           "p": 158
+          },
+          {
+           "ch": 10,
+           "p": 158
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l1-defense-gov-news-photo-10101-bb3edd.webp",
+       "sceneAlt": "A U.S. Navy petty officer plays a mathematics game with children at an elementary school in San Antonio, Philippines.",
+       "sceneCaption": "A sailor plays a mathematics game with children during a community relations event at an elementary school in the Philippines.",
+       "sceneCredit": {
+        "text": "Defense.gov News Photo 101013-N-3620B-047 - U.S. Navy Petty Officer 3r by Petty Officer 3rd Class Bryan Blair, U.S. Navy, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Defense.gov_News_Photo_101013-N-3620B-047_-_U.S._Navy_Petty_Officer_3rd_Class_Johan_Olarte_plays_a_mathematics_game_with_children_during_a_community_relations_event_at_San_Nicolas_Elementary.jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "Petty Officer 3rd Class Bryan Blair, U.S. Navy"
+       }
+      }
+     ],
+     "boss": {
+      "id": "mathematics-g4-ch10-boss",
+      "title": "Chapter challenge: Elephants, Tigers, and Leopards",
+      "estimatedMinutes": 5,
+      "activities": [
+       {
+        "type": "mcq",
+        "id": "mathematics-g4-ch10-boss-a1",
+        "difficulty": 2,
+        "tags": [
+         "game",
+         "players"
+        ],
+        "prompt": "Who starts the game?",
+        "options": [
+         "Only Player 1",
+         "Only Player 2",
+         "Both players",
+         "Neither player"
+        ],
+        "answer": 0,
+        "explanation": "Player 1 starts by choosing either 1 or 2.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 149
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "mathematics-g4-ch10-boss-a2",
+        "difficulty": 2,
+        "tags": [
+         "game",
+         "players"
+        ],
+        "prompt": "Player 2 cannot choose 1.",
+        "answer": false,
+        "explanation": "Player 2 can also choose either 1 or 2.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 149
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "mathematics-g4-ch10-boss-a3",
+        "difficulty": 2,
+        "tags": [
+         "elephants",
+         "assam",
+         "meghalaya"
+        ],
+        "prompt": "Assam has ______ more elephants than Meghalaya.",
+        "answers": [
+         "3965"
+        ],
+        "hint": "Compare the elephant counts of both states.",
+        "explanation": "Assam has 3965 more elephants than Meghalaya.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 155
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "mathematics-g4-ch10-boss-a4",
+        "difficulty": 2,
+        "tags": [
+         "addition chart",
+         "sums"
+        ],
+        "prompt": "What is the addition chart used for?",
+        "options": [
+         "Exploring sums",
+         "Counting tigers",
+         "Reversing digits",
+         "Registering vehicles"
+        ],
+        "answer": 0,
+        "explanation": "The addition chart is a table for exploring sums.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 150
+         }
+        ]
+       },
+       {
+        "type": "dragorder",
+        "id": "mathematics-g4-ch10-boss-a5",
+        "difficulty": 2,
+        "tags": [
+         "game",
+         "practice cases"
+        ],
+        "prompt": "Put the practice-case totals in order from lowest to highest.",
+        "items": [
+         "6",
+         "7",
+         "8"
+        ],
+        "explanation": "The practice cases begin at totals of 6, 7 and 8.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 149
+         },
+         {
+          "ch": 10,
+          "p": 149
+         },
+         {
+          "ch": 10,
+          "p": 149
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "mathematics-g4-ch10-boss-a6",
+        "difficulty": 3,
+        "tags": [
+         "reverse and add",
+         "digits"
+        ],
+        "prompt": "The digits of 27 are reversed to make ______.",
+        "answers": [
+         "72"
+        ],
+        "hint": "Swap the two digits.",
+        "explanation": "Swapping the digits of 27 makes 72.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 151
+         },
+         {
+          "ch": 10,
+          "p": 151
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "mathematics-g4-ch10-boss-a7",
+        "difficulty": 3,
+        "tags": [
+         "reverse and add",
+         "sums"
+        ],
+        "prompt": "Adding 27 and 72 makes 99.",
+        "answer": true,
+        "explanation": "The two numbers are reverses, and their sum is 99.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 151
+         },
+         {
+          "ch": 10,
+          "p": 151
+         },
+         {
+          "ch": 10,
+          "p": 151
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "mathematics-g4-ch10-boss-a8",
+        "difficulty": 3,
+        "tags": [
+         "elephants",
+         "karnataka",
+         "kerala"
+        ],
+        "prompt": "How many elephants do Karnataka and Kerala have together?",
+        "options": [
+         "9103",
+         "6049",
+         "5719",
+         "3054"
+        ],
+        "answer": 0,
+        "explanation": "Karnataka and Kerala have 9103 elephants together.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 152
+         },
+         {
+          "ch": 10,
+          "p": 152
+         },
+         {
+          "ch": 10,
+          "p": 152
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "mathematics-g4-ch10-boss-a9",
+        "difficulty": 3,
+        "tags": [
+         "tigers",
+         "madhya pradesh"
+        ],
+        "prompt": "How many tigers does Madhya Pradesh have?",
+        "options": [
+         "444",
+         "785",
+         "116",
+         "341"
+        ],
+        "answer": 1,
+        "explanation": "Maharashtra has 444 tigers, and Madhya Pradesh has 341 more.",
+        "derived": [
+         "785 tigers = 444 + 341"
+        ],
+        "src": [
+         {
+          "ch": 10,
+          "p": 154
+         },
+         {
+          "ch": 10,
+          "p": 154
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "mathematics-g4-ch10-boss-a10",
+        "difficulty": 3,
+        "tags": [
+         "vehicles",
+         "juice"
+        ],
+        "prompt": "Match each vehicle or juice with its comparison.",
+        "pairs": [
+         [
+          "Buses",
+          "253 more than jeeps"
+         ],
+         [
+          "Tractors",
+          "5247 less than buses"
+         ],
+         [
+          "Taxis",
+          "1579 more than tractors"
+         ],
+         [
+          "Guava juice",
+          "759 more than pineapple juice"
+         ],
+         [
+          "Orange juice",
+          "1257 more than guava juice"
+         ]
+        ],
+        "explanation": "Each pair shows the exact comparison given in the lesson.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 158
+         },
+         {
+          "ch": 10,
+          "p": 158
+         },
+         {
+          "ch": 10,
+          "p": 158
+         },
+         {
+          "ch": 10,
+          "p": 158
+         },
+         {
+          "ch": 10,
+          "p": 158
+         }
+        ]
+       }
+      ],
+      "topicScene": "media/ch10-l1-defense-gov-news-photo-10101-bb3edd.webp",
+      "sceneAlt": "A U.S. Navy petty officer plays a mathematics game with children at an elementary school in San Antonio, Philippines.",
+      "sceneCaption": "A sailor plays a mathematics game with children during a community relations event at an elementary school in the Philippines.",
+      "sceneCredit": {
+       "text": "Defense.gov News Photo 101013-N-3620B-047 - U.S. Navy Petty Officer 3r by Petty Officer 3rd Class Bryan Blair, U.S. Navy, Public domain, via Wikimedia Commons",
+       "url": "https://commons.wikimedia.org/wiki/File:Defense.gov_News_Photo_101013-N-3620B-047_-_U.S._Navy_Petty_Officer_3rd_Class_Johan_Olarte_plays_a_mathematics_game_with_children_during_a_community_relations_event_at_San_Nicolas_Elementary.jpg",
+       "license": "Public domain",
+       "licenseUrl": "",
+       "creator": "Petty Officer 3rd Class Bryan Blair, U.S. Navy"
       }
      }
     }
