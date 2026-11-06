@@ -800,6 +800,22 @@ export const WIDGETS = {
       return { kids, say: w ? `With wind strength ${w}, the heavy grains fall almost straight down while the light husk is blown ${w > 6 ? 'far' : 'a little'} away. Winnowing separates the heavier and lighter parts of a mixture.` : 'With no wind, grain and husk fall into the same heap. Blow some air!' };
     },
   },
+  seethrough: {
+    subject: 'science', about: 'Hold different sheets between your eye and a picture. Through transparent materials (glass, water, cellophane) the picture is clear; through translucent ones (butter paper, frosted glass) it is seen but not clearly; through opaque ones (wood, cardboard, metal) it cannot be seen at all. For transparent, translucent and opaque materials, light, properties of materials.',
+    sliders: [['m', 'Pick a sheet', 0, 7, 1, 0]],
+    draw(v) {
+      const mats = [['glass', 0, '#cfeaf7'], ['water', 0, '#9fd3f2'], ['cellophane paper', 0, '#f7c9e4'], ['butter paper', 1, '#f4ecd6'], ['frosted glass', 1, '#e3eef3'], ['wood', 2, '#b07a45'], ['cardboard', 2, '#c9a46a'], ['metal', 2, '#9aa5b1']];
+      const [name, kind, col] = mats[v.m], word = ['transparent', 'translucent', 'opaque'][kind];
+      const star = (op, blur) => s('g', { opacity: op, filter: blur ? 'url(#seeblur)' : null }, [s('polygon', { points: '450,90 466,135 514,135 476,163 490,208 450,181 410,208 424,163 386,135 434,135', fill: '#ffcc33', stroke: INK, 'stroke-width': 3 })]);
+      const kids = [s('defs', {}, [s('filter', { id: 'seeblur' }, [s('feGaussianBlur', { stdDeviation: 7 })])]), star(1, kind === 1)];
+      // the eye on the left, the sheet in the middle, the picture behind it
+      kids.push(s('ellipse', { cx: 80, cy: 150, rx: 34, ry: 20, fill: '#fff', stroke: INK, 'stroke-width': 3 }), CIRC(92, 150, 10, '#3a2560', { w: 0 }), L(116, 150, 240, 150, '#9b8db8', 2, { 'stroke-dasharray': '6 6' }));
+      kids.push(R(250, 40, 40, 220, col, { w: 3, r: 4, x: { opacity: kind === 2 ? 1 : kind === 1 ? 0.92 : 0.55 } }));
+      if (kind === 2) kids.push(R(330, 60, 240, 180, '#ffffff', { w: 0 }), T(450, 156, '?', { z: 54, f: '#c9b8e8' }));
+      kids.push(T(270, 284, name, { z: 15, w: 600 }), T(450, 284, word, { z: 16, w: 700, f: ['#058a68', '#c27c0e', '#c0392b'][kind] }));
+      return { kids, say: [`Through ${name} the star is seen clearly: ${name} is transparent.`, `Through ${name} the star can be seen, but not clearly: ${name} is translucent.`, `Through ${name} the star cannot be seen at all: ${name} is opaque.`][kind] };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
