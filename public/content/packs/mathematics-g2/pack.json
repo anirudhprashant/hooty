@@ -30,7 +30,7 @@
       {
        "id": "mathematics-g2-ch1-l1",
        "title": "Counting at the Beach",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -151,6 +151,63 @@
          "f": [],
          "derived": [
           "9 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch1-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Surbhi has seashells for necklaces. Her mother makes groups of shells. How should Surbhi count them?",
+         "steps": [
+          "Surbhi can count every shell one by one, because each shell is one object.",
+          "She can also count the shells in groups, because groups hold many shells.",
+          "Her mother makes groups for necklaces, so counting in groups fits the task.",
+          "Each necklace uses ten shells, so each necklace group needs ten shells."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.7",
+          "1.8",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 2
+          },
+          {
+           "ch": 1,
+           "p": 2
+          },
+          {
+           "ch": 1,
+           "p": 2
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
          ]
         },
         {
@@ -828,6 +885,248 @@
            "p": 2
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Surbhi is making shell necklaces. Each shell necklace uses ten shells. What should she check?",
+         "options": [
+          "Check each group has ten shells.",
+          "Give each necklace just one shell.",
+          "Use each group without checking shells.",
+          "Count all necklaces but check no shells."
+         ],
+         "answer": 0,
+         "why": {
+          "Give each necklace just one shell.": "This mistake thinks one shell is enough for a necklace.",
+          "Use each group without checking shells.": "This mistake thinks any group can be used, but ten are needed.",
+          "Count all necklaces but check no shells.": "This mistake counts necklaces instead of checking their shells."
+         },
+         "explanation": "This is right because each necklace needs ten shells.",
+         "f": [
+          "1.4",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 2
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "The balloons are shown in groups. Surbhi wants to count them. What should she count?",
+         "options": [
+          "All the balloons inside every group.",
+          "Just one balloon from every group.",
+          "Only the number of balloon groups.",
+          "A different balloon from each group twice."
+         ],
+         "answer": 0,
+         "why": {
+          "Just one balloon from every group.": "This mistake treats one balloon as the whole group.",
+          "Only the number of balloon groups.": "This mistake counts containers instead of the balloons inside.",
+          "A different balloon from each group twice.": "This mistake counts some balloons twice and misses others."
+         },
+         "explanation": "This is right because a full group includes every balloon.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.5"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "The bananas are shown in bunches. Surbhi wants the total. What should she count?",
+         "options": [
+          "Every banana in all the bunches.",
+          "Only one banana from each bunch.",
+          "Only the number of banana bunches.",
+          "Only the bananas outside the bunches."
+         ],
+         "answer": 0,
+         "why": {
+          "Only one banana from each bunch.": "This mistake misses the other bananas in each bunch.",
+          "Only the number of banana bunches.": "This mistake treats each bunch as one banana.",
+          "Only the bananas outside the bunches.": "This mistake misses all the bananas inside the bunches."
+         },
+         "explanation": "This is right because every banana inside every bunch adds to the total.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "choose"
+         ],
+         "prompt": "The tongue twister says Surbhi sells seashells at the seashore. She wants to count her shells. Which plan works?",
+         "options": [
+          "Count every shell, or count them in groups.",
+          "Count every group, but never count its shells.",
+          "Count every shell, but never use groups.",
+          "Count one shell, then stop counting."
+         ],
+         "answer": 0,
+         "why": {
+          "Count every group, but never count its shells.": "This mistake thinks counting groups does not need the shells.",
+          "Count every shell, but never use groups.": "This mistake wrongly believes that groups cannot be used.",
+          "Count one shell, then stop counting.": "This mistake stops before all the shells are counted."
+         },
+         "explanation": "This is right because shells can be counted one by one or in groups.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l1-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Children are encouraged to count in groups. A child says groups only work for toys. How can Surbhi show the child?",
+         "options": [
+          "Count her seashells in small groups.",
+          "Count only the shells one by one.",
+          "Make some groups but leave them uncounted.",
+          "Tell the child not to count shells."
+         ],
+         "answer": 0,
+         "why": {
+          "Count only the shells one by one.": "This mistake thinks one-by-one counting rules out groups.",
+          "Make some groups but leave them uncounted.": "This mistake thinks making groups is the same as counting.",
+          "Tell the child not to count shells.": "This mistake thinks shells cannot be counted at all."
+         },
+         "explanation": "This is right because seashells can be counted in groups too.",
+         "f": [
+          "1.2",
+          "1.3",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l1-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Each shell necklace uses ten shells. A child counts only the necklaces. Why is that not enough?",
+         "options": [
+          "Ten shells in each necklace must be checked.",
+          "The number of necklaces is always ten.",
+          "Every group of necklaces has ten shells.",
+          "Ten shells can make any number of necklaces."
+         ],
+         "answer": 0,
+         "why": {
+          "The number of necklaces is always ten.": "This mistake confuses necklaces with shells.",
+          "Every group of necklaces has ten shells.": "This mistake assumes all necklaces together form one shell group.",
+          "Ten shells can make any number of necklaces.": "This mistake thinks ten shells can make any number of necklaces."
+         },
+         "explanation": "Counting necklaces alone cannot check that each one has ten shells.",
+         "f": [
+          "1.4",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 2
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l1-ghanaian-bone-and-shell-bead-6bd48d.webp",
@@ -844,7 +1143,7 @@
       {
        "id": "mathematics-g2-ch1-l2",
        "title": "Chikoos, Block Sticks and Ten Strips",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -977,21 +1276,44 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g2-ch1-l2-a2",
+         "type": "worked",
+         "id": "mathematics-g2-ch1-l2-t1",
          "difficulty": 1,
          "tags": [
-          "objects",
-          "packs",
-          "ten"
+          "deep",
+          "think"
          ],
-         "prompt": "One activity asks for objects that come in packs of ten.",
-         "answer": true,
-         "explanation": "Yes. Finding objects in packs of ten is part of the activity.",
+         "kicker": "Let us think it through",
+         "prompt": "Manoj helps his father sell chikoos. The chikoos are arranged in trays, and some trays hold ten chikoos. How can Manoj count them well?",
+         "steps": [
+          "Manoj helps his father sell chikoos, so he needs to count them.",
+          "The chikoos are in trays, so the trays can organize the counting.",
+          "Some trays hold ten chikoos, so each tray can be one group.",
+          "Counting groups of ten helps Manoj develop number sense."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.2",
+          "2.3",
+          "2.4",
+          "2.11"
+         ],
          "src": [
           {
            "ch": 1,
            "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 5
           }
          ]
         },
@@ -1221,6 +1543,35 @@
           {
            "ch": 1,
            "p": 5
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l2-a5",
+         "difficulty": 2,
+         "tags": [
+          "block stick",
+          "blocks",
+          "number"
+         ],
+         "prompt": "What does one block stick show?",
+         "options": [
+          "A number of blocks",
+          "A number of units",
+          "A group of many chikoos",
+          "A table for children"
+         ],
+         "answer": 0,
+         "explanation": "A block stick shows a number of blocks.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
           }
          ]
         },
@@ -1718,23 +2069,255 @@
            "p": 3
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "At a shop, some objects come in packs of ten. How can the child count using groups?",
+         "options": [
+          "Count each full pack as one group.",
+          "Count one item from every pack.",
+          "Open every pack and count all items.",
+          "Ignore full packs and count loose items."
+         ],
+         "answer": 0,
+         "why": {
+          "Count one item from every pack.": "This mistakes one sample for the whole amount.",
+          "Open every pack and count all items.": "This ignores the easier groups of ten.",
+          "Ignore full packs and count loose items.": "This counts only objects outside their groups."
+         },
+         "explanation": "Grouping full packs helps the child see number.",
+         "f": [
+          "2.1",
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 5
+          },
+          {
+           "ch": 1,
+           "p": 5
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Manoj's father sells chikoos. The chikoos are arranged in trays. Some chikoos are in trays of ten. How can Manoj count using the trays?",
+         "options": [
+          "Count each tray of ten as one group.",
+          "Count only chikoos outside the trays.",
+          "Choose one tray and guess the rest.",
+          "Move all chikoos into one tray."
+         ],
+         "answer": 0,
+         "why": {
+          "Count only chikoos outside the trays.": "This ignores the chikoos that are neatly grouped.",
+          "Choose one tray and guess the rest.": "This replaces counting with an unsupported guess.",
+          "Move all chikoos into one tray.": "This changes the groups instead of using them."
+         },
+         "explanation": "Each tray of ten is already a useful group.",
+         "f": [
+          "2.2",
+          "2.3",
+          "2.4"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 3
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "count"
+         ],
+         "prompt": "A child sees one block stick with joined blocks. How can the child find the number of blocks?",
+         "options": [
+          "Count the blocks from one end.",
+          "Count only the spaces between blocks.",
+          "Count a nearby ten strip instead.",
+          "Count the whole block stick once."
+         ],
+         "answer": 0,
+         "why": {
+          "Count only the spaces between blocks.": "Spaces are not blocks, so this counts the wrong things.",
+          "Count a nearby ten strip instead.": "A ten strip is different from this block stick.",
+          "Count the whole block stick once.": "The stick is one object, but it holds many blocks."
+         },
+         "explanation": "Each visible block must be counted to find the number.",
+         "f": [
+          "2.5",
+          "2.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "observe"
+         ],
+         "prompt": "One ten strip is shown with joined units. How can the child find how many units it has?",
+         "options": [
+          "Count each unit on the ten strip.",
+          "Count only the gaps between units.",
+          "Count the whole ten strip once.",
+          "Choose any number without looking."
+         ],
+         "answer": 0,
+         "why": {
+          "Count only the gaps between units.": "The gaps are not units, so this counts the wrong things.",
+          "Count the whole ten strip once.": "The strip holds many units, not just one.",
+          "Choose any number without looking.": "A guess cannot show how many units are really there."
+         },
+         "explanation": "Counting the units gives the number shown on the strip.",
+         "f": [
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l2-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "complete"
+         ],
+         "prompt": "Children are asked to complete a table. It has rows for sticks, bundles of sticks, and similar materials. What should they do next?",
+         "options": [
+          "Count each row and write the number.",
+          "Fill every row with the same number.",
+          "Count only the bundles of sticks.",
+          "Leave rows empty when materials differ."
+         ],
+         "answer": 0,
+         "why": {
+          "Fill every row with the same number.": "Different materials do not need the same amount.",
+          "Count only the bundles of sticks.": "This ignores the rows for sticks and other materials.",
+          "Leave rows empty when materials differ.": "The task asks children to complete, not leave, every row."
+         },
+         "explanation": "Each row needs a count that fits its own material.",
+         "f": [
+          "2.9",
+          "2.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 5
+          },
+          {
+           "ch": 1,
+           "p": 5
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l2-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A child groups sticks and bundles before counting objects. Why might this help the child learn numbers?",
+         "options": [
+          "Groups make the amount easier to see.",
+          "Bundles remove the need to count.",
+          "Groups only make the counting slower.",
+          "Bundles work only with special sticks."
+         ],
+         "answer": 0,
+         "why": {
+          "Bundles remove the need to count.": "Bundles still need counting, so counting is not removed.",
+          "Groups only make the counting slower.": "Grouping can make counting easier, not only slower.",
+          "Bundles work only with special sticks.": "Similar materials can also be grouped, not only sticks."
+         },
+         "explanation": "Grouping helps the child notice and understand amounts.",
+         "f": [
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 5
+          },
+          {
+           "ch": 1,
+           "p": 5
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch1-l1-ghanaian-bone-and-shell-bead-6bd48d.webp",
-       "sceneAlt": "A traditional Ghanaian necklace made with bone and shell beads.",
-       "sceneCaption": "A traditional Ghanaian necklace made with bone and shell beads.",
+       "topicScene": "media/ch1-l2-dienes-blocks-used-by-a-8-ye-3150b3.webp",
+       "sceneAlt": "An eight-year-old student uses purple plastic Dienes, or base ten, equipment in a classroom.",
+       "sceneCaption": "Purple plastic Dienes blocks are used by an eight-year-old student in a classroom.",
        "sceneCredit": {
-        "text": "Ghanaian bone and shell bead necklace by Warmglow, CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Ghanaian_bone_and_shell_bead_necklace.jpg",
+        "text": "Dienes blocks used by a 8 year-old student by Annielogue, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Dienes_blocks_used_by_a_8_year-old_student.png",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Warmglow"
+        "creator": "Annielogue"
        }
       },
       {
        "id": "mathematics-g2-ch1-l3",
        "title": "Making 100 with Ten Strips",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -1844,6 +2427,43 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g2-ch1-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child has seven yellow and three red strips. How can units show the same total?",
+         "steps": [
+          "Seven yellow strips make 70 yellow units because each strip has ten.",
+          "Three red strips make 30 red units for the same reason.",
+          "Together they make 100 units because 70 plus 30 equals 100.",
+          "Units or ten strips show the same total because the amounts match."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 6
+          },
+          {
+           "ch": 1,
+           "p": 6
+          },
+          {
+           "ch": 1,
+           "p": 6
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g2-ch1-l3-a2",
          "difficulty": 1,
@@ -1868,16 +2488,19 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g2-ch1-l3-a3",
+         "type": "fillblank",
+         "id": "mathematics-g2-ch1-l3-a4",
          "difficulty": 1,
          "tags": [
-          "units",
-          "total"
+          "100",
+          "ten strips"
          ],
-         "prompt": "The total can be shown using units.",
-         "answer": true,
-         "explanation": "Your book shows the total using units or ten strips.",
+         "prompt": "Seven yellow ten strips and three red ten strips make ______.",
+         "answers": [
+          "100"
+         ],
+         "hint": "Use the example with yellow and red strips.",
+         "explanation": "The example uses seven yellow strips and three red strips.",
          "src": [
           {
            "ch": 1,
@@ -2643,23 +3266,213 @@
            "p": 7
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "represent"
+         ],
+         "prompt": "Seven yellow strips and three red strips fill the grid. Which unit split shows the same total?",
+         "options": [
+          "Use 70 yellow units and 30 red units.",
+          "Use 7 yellow units and 3 red units.",
+          "Use 70 red units and 30 yellow units.",
+          "Use 3 yellow units and 7 red units."
+         ],
+         "answer": 0,
+         "why": {
+          "Use 7 yellow units and 3 red units.": "It treats each ten strip as only one unit.",
+          "Use 70 red units and 30 yellow units.": "It keeps the totals but swaps the colors.",
+          "Use 3 yellow units and 7 red units.": "It keeps the strip counts but swaps the colors."
+         },
+         "explanation": "Each ten strip gives ten units, so this split matches the strips.",
+         "f": [
+          "3.1",
+          "3.2"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 6
+          },
+          {
+           "ch": 1,
+           "p": 6
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "convert"
+         ],
+         "prompt": "A child has 70 yellow units and 30 red units. Which strips show the same total?",
+         "options": [
+          "Use seven yellow strips and three red strips.",
+          "Use seven red strips and three yellow strips.",
+          "Use ten yellow strips and ten red strips.",
+          "Use one yellow strip and one red strip."
+         ],
+         "answer": 0,
+         "why": {
+          "Use seven red strips and three yellow strips.": "It matches the unit counts but swaps the colors.",
+          "Use ten yellow strips and ten red strips.": "It thinks ten strips of each color make only one grid.",
+          "Use one yellow strip and one red strip.": "It counts the strips but forgets that each has ten units."
+         },
+         "explanation": "Seven yellow and three red strips match the two unit groups.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 6
+          },
+          {
+           "ch": 1,
+           "p": 6
+          },
+          {
+           "ch": 1,
+           "p": 6
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "subtract"
+         ],
+         "prompt": "Six children play this game. One child becomes the banker. How many children are not bankers?",
+         "options": [
+          "Five children are not bankers.",
+          "Six children are not bankers.",
+          "Two children are not bankers.",
+          "Ten children are not bankers."
+         ],
+         "answer": 0,
+         "why": {
+          "Six children are not bankers.": "It counts the banker again as a non-banker.",
+          "Two children are not bankers.": "It counts the banker twice instead of removing one child.",
+          "Ten children are not bankers.": "It treats ten as the group size, though only six children play."
+         },
+         "explanation": "One banker is left out, so five of the six children are not bankers.",
+         "f": [
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "multiply"
+         ],
+         "prompt": "Five children play. Each child rolls two dice. How many dice are used altogether?",
+         "options": [
+          "Ten dice are used altogether.",
+          "Five dice are used altogether.",
+          "Two dice are used altogether.",
+          "Seven dice are used altogether."
+         ],
+         "answer": 0,
+         "why": {
+          "Five dice are used altogether.": "It counts one die for each child and forgets the second die.",
+          "Two dice are used altogether.": "It counts only one player's pair of dice.",
+          "Seven dice are used altogether.": "It adds the children and dice instead of making five pairs."
+         },
+         "explanation": "Five pairs of two dice make ten dice altogether.",
+         "f": [
+          "3.5",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check"
+         ],
+         "prompt": "Six ten strips cannot fill the 100 units grid. What must be done to finish the grid?",
+         "options": [
+          "Collect more strips until there are ten.",
+          "Keep six strips because six can fill it.",
+          "Use units only and collect no strips.",
+          "Make every strip a different color."
+         ],
+         "answer": 0,
+         "why": {
+          "Keep six strips because six can fill it.": "It mistakes six collected strips for the full ten strips.",
+          "Use units only and collect no strips.": "It ignores that ten ten strips are collected for the grid.",
+          "Make every strip a different color.": "It thinks changing colors changes how many strips are needed."
+         },
+         "explanation": "The players need ten ten strips to complete the grid.",
+         "f": [
+          "3.4",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 6
+          },
+          {
+           "ch": 1,
+           "p": 7
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch1-l1-ghanaian-bone-and-shell-bead-6bd48d.webp",
-       "sceneAlt": "A traditional Ghanaian necklace made with bone and shell beads.",
-       "sceneCaption": "A traditional Ghanaian necklace made with bone and shell beads.",
+       "topicScene": "media/ch1-l3-zr100-dienes-material-c1776d.webp",
+       "sceneAlt": "A collection of unit cubes and ten rods illustrates the number 44.",
+       "sceneCaption": "Unit cubes and ten rods illustrate how a number can be understood as tens and ones.",
        "sceneCredit": {
-        "text": "Ghanaian bone and shell bead necklace by Warmglow, CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Ghanaian_bone_and_shell_bead_necklace.jpg",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Warmglow"
+        "text": "ZR100 (Dienes-Material) by Rhetos, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:ZR100_(Dienes-Material).jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Rhetos"
        }
       },
       {
        "id": "mathematics-g2-ch1-l4",
        "title": "Tens, Ones and Orange Trays",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -3389,23 +4202,55 @@
            "p": 10
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "One box has 43 oranges. Another box has 34 oranges. Which box has more?",
+         "options": [
+          "The 43-orange box, because 4 tens beat 3 tens.",
+          "The 34-orange box, because 3 ones beat 4 ones.",
+          "The 43-orange box, because 3 tens beat 4 tens.",
+          "The 34-orange box, because 4 tens beat 3 tens."
+         ],
+         "answer": 0,
+         "why": {
+          "The 34-orange box, because 3 ones beat 4 ones.": "It counts only the ones and gets their order backwards.",
+          "The 43-orange box, because 3 tens beat 4 tens.": "It swaps the tens and ones places.",
+          "The 34-orange box, because 4 tens beat 3 tens.": "It ignores that 4 tens are more than 3 tens."
+         },
+         "explanation": "The 4 tens are more than the 3 tens in 34.",
+         "f": [
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 10
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch1-l1-ghanaian-bone-and-shell-bead-6bd48d.webp",
-       "sceneAlt": "A traditional Ghanaian necklace made with bone and shell beads.",
-       "sceneCaption": "A traditional Ghanaian necklace made with bone and shell beads.",
+       "topicScene": "media/ch1-l4-gratnells-extra-deep-storage-4f6217.webp",
+       "sceneAlt": "An orange plastic school tray is a familiar classroom storage tray.",
+       "sceneCaption": "This orange school tray connects directly to the lesson’s classroom setting.",
        "sceneCredit": {
-        "text": "Ghanaian bone and shell bead necklace by Warmglow, CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Ghanaian_bone_and_shell_bead_necklace.jpg",
+        "text": "Gratnells Extra Deep Storage Tray by Gratnells, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Gratnells_Extra_Deep_Storage_Tray.jpg",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Warmglow"
+        "creator": "Gratnells"
        }
       },
       {
        "id": "mathematics-g2-ch1-l5",
        "title": "Comparing More and Less",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -3548,6 +4393,43 @@
           "3 (generated problem)",
           "5 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch1-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "One basket has 47 oranges. Another basket has 43 oranges. Which basket has more oranges?",
+         "steps": [
+          "Both numbers have four tens, so the tens are equal.",
+          "47 has seven ones, while 43 has three ones.",
+          "Seven ones are more than three ones, so 47 is more than 43.",
+          "The basket with 47 oranges has more oranges."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.4",
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 11
+          },
+          {
+           "ch": 1,
+           "p": 11
+          },
+          {
+           "ch": 1,
+           "p": 11
+          }
          ]
         },
         {
@@ -4583,23 +5465,171 @@
            "p": 11
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare quantities"
+         ],
+         "prompt": "One box has 47 toy cars. Another has 43 toy cars. Which box has more cars?",
+         "options": [
+          "The box with 47 cars has more.",
+          "The box with 43 cars has more.",
+          "Both boxes have the same number.",
+          "The box with fewer cars has more."
+         ],
+         "answer": 0,
+         "why": {
+          "The box with 43 cars has more.": "It swaps the numbers and ignores the extra ones.",
+          "Both boxes have the same number.": "It misses that seven ones are more than three ones.",
+          "The box with fewer cars has more.": "It confuses more with less."
+         },
+         "explanation": "47 has seven ones, while 43 has three ones.",
+         "f": [
+          "5.1",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 11
+          },
+          {
+           "ch": 1,
+           "p": 11
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare ones"
+         ],
+         "prompt": "Two piles of blocks each show four tens. One shows three ones. The other shows seven ones. Which pile has more blocks?",
+         "options": [
+          "The pile with seven ones.",
+          "The pile with three ones.",
+          "Both piles have equal ones.",
+          "Each pile has four tens."
+         ],
+         "answer": 0,
+         "why": {
+          "The pile with three ones.": "It treats the smaller ones count as more.",
+          "Both piles have equal ones.": "It thinks equal tens make equal ones.",
+          "Each pile has four tens.": "It uses the shared tens to answer."
+         },
+         "explanation": "Seven ones are more than three ones.",
+         "f": [
+          "5.1",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 11
+          },
+          {
+           "ch": 1,
+           "p": 11
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain error"
+         ],
+         "prompt": "43 oranges and 47 oranges each have four tens. A child says they are equal. Why is this wrong?",
+         "options": [
+          "47 has seven ones, not three.",
+          "43 has seven ones, not three.",
+          "Both numbers have four tens.",
+          "47 has three tens, not four."
+         ],
+         "answer": 0,
+         "why": {
+          "43 has seven ones, not three.": "It swaps the ones counts.",
+          "Both numbers have four tens.": "It uses equal tens and ignores the ones.",
+          "47 has three tens, not four.": "It gives 47 the wrong tens count."
+         },
+         "explanation": "47 has seven ones, while 43 has three ones.",
+         "f": [
+          "5.1",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 11
+          },
+          {
+           "ch": 1,
+           "p": 11
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "identify less"
+         ],
+         "prompt": "One shop has 47 orange stickers. Another has 43 orange stickers. Which shop has less?",
+         "options": [
+          "The shop with 43 stickers.",
+          "The shop with 47 stickers.",
+          "Both shops have the same amount.",
+          "Neither shop has less."
+         ],
+         "answer": 0,
+         "why": {
+          "The shop with 47 stickers.": "It swaps the amounts.",
+          "Both shops have the same amount.": "It thinks the two amounts are equal.",
+          "Neither shop has less.": "It does not understand the word less."
+         },
+         "explanation": "43 is less because it has three ones, not seven.",
+         "f": [
+          "5.1",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 11
+          },
+          {
+           "ch": 1,
+           "p": 11
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch1-l1-ghanaian-bone-and-shell-bead-6bd48d.webp",
-       "sceneAlt": "A traditional Ghanaian necklace made with bone and shell beads.",
-       "sceneCaption": "A traditional Ghanaian necklace made with bone and shell beads.",
+       "topicScene": "media/ch1-l5-orange-vendor-in-bangalore-a28e94.webp",
+       "sceneAlt": "A woman sells pineapples and a man sells Indian oranges arranged in pyramids at a street market in Bangalore.",
+       "sceneCaption": "Indian oranges are arranged in pyramids at a street market in Bangalore.",
        "sceneCredit": {
-        "text": "Ghanaian bone and shell bead necklace by Warmglow, CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Ghanaian_bone_and_shell_bead_necklace.jpg",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Warmglow"
+        "text": "Orange vendor in Bangalore by Matthew Logelin, CC BY 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Orange_vendor_in_Bangalore.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "creator": "Matthew Logelin"
        }
       },
       {
        "id": "mathematics-g2-ch1-l6",
        "title": "Flash Cards, Calendar and Numbers",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -4655,6 +5685,74 @@
           {
            "ch": 1,
            "p": 13
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch1-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Two cards make 47. You swap them. Why can another number appear?",
+         "steps": [
+          "The cards can sit at the tens and ones places.",
+          "Swapping puts each digit in the other place.",
+          "That changes the number made by the two cards.",
+          "So the same cards can make another number."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.2",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 12
+          },
+          {
+           "ch": 1,
+           "p": 12
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "mathematics-g2-ch1-l6-a7",
+         "difficulty": 2,
+         "tags": [
+          "calendar",
+          "onam",
+          "digits"
+         ],
+         "title": "Calendar, Onam and Digits",
+         "body": "The lesson shows a calendar for August. On this calendar, look for the month of August. It also shows Onam in Kerala, celebrated through a famous snake boat race. The way of writing numbers with digits 0 and 1–9 began in India. Here, digits means the number symbols shown in the lesson. The path game moves through every number in decreasing order.",
+         "keyPoints": [
+          "The calendar shows August.",
+          "Onam in Kerala has a famous snake boat race.",
+          "The number digits shown began in India."
+         ],
+         "explanation": "Look for the calendar, Onam, and the number symbols.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 13
+          },
+          {
+           "ch": 1,
+           "p": 14
+          },
+          {
+           "ch": 1,
+           "p": 14
+          },
+          {
+           "ch": 1,
+           "p": 15
           }
          ]
         },
@@ -4796,42 +5894,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "mathematics-g2-ch1-l6-a7",
-         "difficulty": 2,
-         "tags": [
-          "calendar",
-          "onam",
-          "digits"
-         ],
-         "title": "Calendar, Onam and Digits",
-         "body": "The lesson shows a calendar for August. On this calendar, look for the month of August. It also shows Onam in Kerala, celebrated through a famous snake boat race. The way of writing numbers with digits 0 and 1–9 began in India. Here, digits means the number symbols shown in the lesson. The path game moves through every number in decreasing order.",
-         "keyPoints": [
-          "The calendar shows August.",
-          "Onam in Kerala has a famous snake boat race.",
-          "The number digits shown began in India."
-         ],
-         "explanation": "Look for the calendar, Onam, and the number symbols.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 13
-          },
-          {
-           "ch": 1,
-           "p": 14
-          },
-          {
-           "ch": 1,
-           "p": 14
-          },
-          {
-           "ch": 1,
-           "p": 15
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "mathematics-g2-ch1-l6-a8",
          "difficulty": 3,
@@ -4858,6 +5920,75 @@
            "p": 13
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check a claim"
+         ],
+         "prompt": "A child says 50 is greater than 50. Is this claim right?",
+         "options": [
+          "No, 50 is equal to 50.",
+          "Yes, 50 is above 50.",
+          "No, 50 has two digits.",
+          "Yes, 50 has five tens."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, 50 is above 50.": "Wrong, because equal numbers are not greater than each other.",
+          "No, 50 has two digits.": "Wrong, because having two digits does not make a number greater.",
+          "Yes, 50 has five tens.": "Wrong, because the tens place does not change the comparison."
+         },
+         "explanation": "Right, because a number cannot be greater than itself.",
+         "f": [
+          "6.3"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 12
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain swapping"
+         ],
+         "prompt": "Two cards make 47. You swap them. What must change?",
+         "options": [
+          "The digits change places.",
+          "The cards change size.",
+          "The cards lose digits.",
+          "The game rule changes."
+         ],
+         "answer": 0,
+         "why": {
+          "The cards change size.": "Wrong, because swapping does not change the card sizes.",
+          "The cards lose digits.": "Wrong, because swapping keeps both digits on the cards.",
+          "The game rule changes.": "Wrong, because swapping does not change the game rule."
+         },
+         "explanation": "Right, because swapping puts each digit in the other place.",
+         "f": [
+          "6.2",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 12
+          },
+          {
+           "ch": 1,
+           "p": 12
+          }
+         ]
         }
        ],
        "topicScene": "media/ch1-l1-ghanaian-bone-and-shell-bead-6bd48d.webp",
@@ -4870,6 +6001,376 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Warmglow"
        }
+      },
+      {
+       "id": "mathematics-g2-ch1-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 18,
+       "topicScene": "media/ch1-l1-ghanaian-bone-and-shell-bead-6bd48d.webp",
+       "sceneAlt": "A traditional Ghanaian necklace made with bone and shell beads.",
+       "sceneCaption": "A traditional Ghanaian necklace made with bone and shell beads.",
+       "sceneCredit": {
+        "text": "Ghanaian bone and shell bead necklace by Warmglow, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Ghanaian_bone_and_shell_bead_necklace.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Warmglow"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At the seashore, Surbhi has collected some seashells. She wants to help her mother make bracelets and necklaces. Her mother has made groups of shells for necklaces, and each shell necklace uses ten shells. Surbhi counts the shells one by one and also counts them in groups. Nearby balloons are shown in groups, while bananas are shown in bunches. The tongue twister says that she sells seashells at the seashore.",
+         "prompt": "Surbhi is ready to help make the necklaces. What should she do next?",
+         "options": [
+          "Count the shell groups and check that every necklace is made from ten shells.",
+          "Count only the loose shells and ignore the groups her mother prepared.",
+          "Count the groups of shells but forget how many shells belong in a necklace.",
+          "Count the balloon groups instead of the shell groups."
+         ],
+         "answer": 0,
+         "why": {
+          "Count only the loose shells and ignore the groups her mother prepared.": "Counting one by one is valid, but ignoring the groups does not use the available organization.",
+          "Count the groups of shells but forget how many shells belong in a necklace.": "Grouping alone is not enough because each necklace must still use ten shells.",
+          "Count the balloon groups instead of the shell groups.": "Balloons are grouped, but Surbhi needs to organize seashells for necklaces."
+         },
+         "explanation": "This uses both the prepared shell groups and the ten-shell necklace rule."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At the seashore, Surbhi has collected some seashells. She wants to help her mother make bracelets and necklaces. Her mother has made groups of shells for necklaces, and each shell necklace uses ten shells. Surbhi counts the shells one by one and also counts them in groups. Nearby balloons are shown in groups, while bananas are shown in bunches. The tongue twister says that she sells seashells at the seashore.",
+         "prompt": "Why does Surbhi count the shells in groups as well as one by one?",
+         "options": [
+          "To check the individual shells and organize the prepared groups for necklaces.",
+          "To include the balloons and bananas in the total number of shells.",
+          "To choose one counting method and avoid using the other method.",
+          "To make necklaces using balloon groups instead of seashells."
+         ],
+         "answer": 0,
+         "why": {
+          "To include the balloons and bananas in the total number of shells.": "Balloons and bananas are separate objects from the collected seashells.",
+          "To choose one counting method and avoid using the other method.": "There is no need to avoid one counting method when both can be used.",
+          "To make necklaces using balloon groups instead of seashells.": "Necklaces are made with shells, not balloons."
+         },
+         "explanation": "Both counting methods help Surbhi check and organize the seashells."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch1-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does counting the seashells one by one and in groups help Surbhi?",
+         "answer": "Surbhi can count every shell separately to check that none is missed. She can also count the groups her mother prepared, which helps organize the shells for making necklaces. Both ways are useful because beach objects can be counted one by one or in groups.",
+         "points": [
+          "Mentions counting every shell separately.",
+          "Mentions counting the prepared groups.",
+          "Connects grouping with organizing shells for necklaces.",
+          "Explains that both counting methods can be used."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Children look for objects that come in packs of ten. Manoj helps his father sell chikoos, and some chikoos are placed in trays of ten. At a table, children examine a block stick shown with a number of blocks and a ten strip shown with a number of units. They complete a table about the quantities. Sticks, bundles of sticks or similar material can be used because grouping such materials helps develop number sense among children.",
+         "prompt": "Manoj has trays of ten for the chikoos. How should he count a full tray while helping his father?",
+         "options": [
+          "As one group of ten chikoos.",
+          "As one group of ten trays.",
+          "As one loose chiko in each tray.",
+          "As ten separate trays of one chiko."
+         ],
+         "answer": 0,
+         "why": {
+          "As one group of ten trays.": "This changes the counted item from chikoos to trays.",
+          "As one loose chiko in each tray.": "This mistakes the whole group for a single chiko.",
+          "As ten separate trays of one chiko.": "This reverses the grouping and loses the group of ten."
+         },
+         "explanation": "A full tray represents one group of ten chikoos."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Children look for objects that come in packs of ten. Manoj helps his father sell chikoos, and some chikoos are placed in trays of ten. At a table, children examine a block stick shown with a number of blocks and a ten strip shown with a number of units. They complete a table about the quantities. Sticks, bundles of sticks or similar material can be used because grouping such materials helps develop number sense among children.",
+         "prompt": "Why might the teacher ask children to use sticks, bundles of sticks or similar material for the table?",
+         "options": [
+          "The groups give children a way to think about amounts.",
+          "The groups show that all amounts must be equal.",
+          "The groups allow children to avoid counting altogether.",
+          "The groups are only useful for keeping materials apart."
+         ],
+         "answer": 0,
+         "why": {
+          "The groups show that all amounts must be equal.": "Grouping does not mean that different quantities must match.",
+          "The groups allow children to avoid counting altogether.": "Grouping supports number sense rather than removing counting.",
+          "The groups are only useful for keeping materials apart.": "The groups are used to think about amounts, not only to separate materials."
+         },
+         "explanation": "Grouping supports thinking about quantities and number sense."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch1-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does a block stick differ from a ten strip, and how can both be used in the table?",
+         "answer": "A block stick is shown with a number of blocks, while a ten strip is shown with a number of units. Children count the blocks or units shown and use those quantities to complete the table. Both can also represent grouping in the activity.",
+         "points": [
+          "Identifies blocks as the parts of a block stick.",
+          "Identifies units as the parts of a ten strip.",
+          "Uses the shown quantities to complete the table.",
+          "Recognizes both materials as ways to group."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Rajma and chana are set out as units for a group game. A group of six sits together, and one member is chosen as the banker. Everyone rolls two dice and takes units from the bank. Players exchange ten units for a ten strip, then collect ten ten strips to complete the 100 units grid. One possible arrangement uses seven yellow ten strips and three red ten strips.",
+         "prompt": "Rajma and chana have used seven yellow ten strips and three red ten strips. What total do they show now?",
+         "options": [
+          "A total of 70 units",
+          "A total of 30 units",
+          "A total of 100 units",
+          "A total of ten units"
+         ],
+         "answer": 2,
+         "why": {
+          "A total of 70 units": "This counts only the yellow units and misses the red units.",
+          "A total of 30 units": "This counts only the red units and misses the yellow units.",
+          "A total of ten units": "Ten strips show much more than just the ten units in one strip."
+         },
+         "explanation": "Each strip shows ten units, so all ten strips together make 100 units."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Rajma and chana are set out as units for a group game. A group of six sits together, and one member is chosen as the banker. Everyone rolls two dice and takes units from the bank. Players exchange ten units for a ten strip, then collect ten ten strips to complete the 100 units grid. One possible arrangement uses seven yellow ten strips and three red ten strips.",
+         "prompt": "In a group of six, what should happen after one member becomes the banker?",
+         "options": [
+          "Each team member should roll two dice.",
+          "Only the banker should roll two dice.",
+          "The banker should roll just one die.",
+          "No team member should roll any dice."
+         ],
+         "answer": 0,
+         "why": {
+          "Only the banker should roll two dice.": "The banker is also a team member, so the banker rolls two dice too.",
+          "The banker should roll just one die.": "The game says that each team member rolls two dice.",
+          "No team member should roll any dice.": "The game requires each team member to roll two dice."
+         },
+         "explanation": "Every member of the team rolls two dice."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch1-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the units and the ten strips show the same total in the example.",
+         "answer": "Seven yellow ten strips stand for 70 yellow units, and three red ten strips stand for 30 red units. Together, the strips show 100. The units show 100 one unit at a time. Both ways therefore show the same total on the 100 units grid.",
+         "points": [
+          "Seven yellow strips show 70 units.",
+          "Three red strips show 30 units.",
+          "Together they show 100.",
+          "Units and strips show the same total."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a shop, two baskets of oranges are waiting to be compared. One basket contains 43 oranges and the other contains 47 oranges. The child notices that both numbers have four tens. The child also sees that 43 has three ones, while 47 has seven ones. The child says the groups must be equal because their tens match. The child wants to check this idea.",
+         "prompt": "What should the child do to check which basket has more oranges?",
+         "options": [
+          "Count the oranges in each basket, then compare the two totals.",
+          "Compare only the tens and stop after finding them equal.",
+          "Make another estimate and do not count the objects.",
+          "Choose a basket by appearance without counting the objects."
+         ],
+         "answer": 0,
+         "why": {
+          "Compare only the tens and stop after finding them equal.": "The tens match, so comparing only them cannot show the difference.",
+          "Make another estimate and do not count the objects.": "Another estimate does not check the first estimate.",
+          "Choose a basket by appearance without counting the objects.": "Appearance alone does not show how many oranges are in each basket."
+         },
+         "explanation": "Correct: counting checks the estimate with the actual objects."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a shop, two baskets of oranges are waiting to be compared. One basket contains 43 oranges and the other contains 47 oranges. The child notices that both numbers have four tens. The child also sees that 43 has three ones, while 47 has seven ones. The child says the groups must be equal because their tens match. The child wants to check this idea.",
+         "prompt": "Why does comparing only the tens fail to show which basket has more oranges?",
+         "options": [
+          "The equal tens hide a difference in the ones parts.",
+          "The 47 basket has more tens because its ones part is larger.",
+          "The 43 basket has more ones because three is larger than seven.",
+          "Matching tens mean matching totals, so no more counting is needed."
+         ],
+         "answer": 0,
+         "why": {
+          "The 47 basket has more tens because its ones part is larger.": "Seven ones do not create extra tens.",
+          "The 43 basket has more ones because three is larger than seven.": "Three is less than seven, not larger.",
+          "Matching tens mean matching totals, so no more counting is needed.": "Equal tens do not mean equal totals."
+         },
+         "explanation": "Correct: both have four tens, but their ones are different."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l5-x3",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a shop, two baskets of oranges are waiting to be compared. One basket contains 43 oranges and the other contains 47 oranges. The child notices that both numbers have four tens. The child also sees that 43 has three ones, while 47 has seven ones. The child says the groups must be equal because their tens match. The child wants to check this idea.",
+         "prompt": "If the child first estimates that the 43-orange basket has more, what should counting show?",
+         "options": [
+          "The basket with 47 oranges actually has more.",
+          "The basket with 43 oranges still has more.",
+          "Both baskets have the same total.",
+          "The basket with 47 oranges has fewer oranges."
+         ],
+         "answer": 0,
+         "why": {
+          "The basket with 43 oranges still has more.": "The first estimate can be wrong; counting shows that 47 is larger.",
+          "Both baskets have the same total.": "The tens match, but the ones do not.",
+          "The basket with 47 oranges has fewer oranges.": "47 is more than 43, not smaller."
+         },
+         "explanation": "Correct: counting confirms that 47 is more than 43."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch1-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why 47 is more than 43.",
+         "answer": "Both numbers have four tens, so that part is the same. The difference comes from the ones: 43 has three ones, while 47 has seven ones. Since 47 has more ones, it is more than 43.",
+         "points": [
+          "Both numbers have four tens.",
+          "43 has three ones.",
+          "47 has seven ones.",
+          "47 is more because its ones part is larger."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Flash cards used digits 0 to 9 and were placed at the tens and ones places. Rules asked for numbers greater than 50, between 47 and 59, and the smallest and largest two-digit numbers. Swapping two cards made another number. The path game went downward from the largest through every number to the smallest. The chapter showed an August calendar. Onam in Kerala is celebrated through a famous snake boat race. Writing with 0 and 1–9 began in India.",
+         "prompt": "The group must choose a number greater than 50 and also between 47 and 59. Which number should they choose?",
+         "options": [
+          "59",
+          "47",
+          "50",
+          "0"
+         ],
+         "answer": 0,
+         "why": {
+          "47": "47 is within the interval, but it is not above 50.",
+          "50": "50 is not greater than 50.",
+          "0": "0 is a one-digit number outside the interval."
+         },
+         "explanation": "59 is above 50 and within the stated interval."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch1-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Flash cards used digits 0 to 9 and were placed at the tens and ones places. Rules asked for numbers greater than 50, between 47 and 59, and the smallest and largest two-digit numbers. Swapping two cards made another number. The path game went downward from the largest through every number to the smallest. The chapter showed an August calendar. Onam in Kerala is celebrated through a famous snake boat race. Writing with 0 and 1–9 began in India.",
+         "prompt": "Which item from the lesson should be paired with Onam in Kerala?",
+         "options": [
+          "A famous snake boat race in Kerala",
+          "A path that decreases through every number",
+          "A calendar showing August",
+          "Two flash cards that make another number"
+         ],
+         "answer": 0,
+         "why": {
+          "A path that decreases through every number": "The decreasing path belongs to the number game.",
+          "A calendar showing August": "August is the month shown in the chapter's calendar.",
+          "Two flash cards that make another number": "Swapping cards belongs to the flash-card activity."
+         },
+         "explanation": "This is linked to the celebration of Onam in Kerala."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch1-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the rule for a number greater than 50 differs from the rule for a number between 47 and 59.",
+         "answer": "A number greater than 50 must be above 50. A number between 47 and 59 must lie in that stated range. A number such as 59 can therefore meet both rules, while a number in the range below 50 does not.",
+         "points": [
+          "Greater than 50 means above 50.",
+          "Between 47 and 59 means within that stated range.",
+          "A number can meet both rules."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -5163,7 +6664,7 @@
       {
        "id": "mathematics-g2-ch2-l1",
        "title": "Musical Instruments and Their Shapes",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -5290,6 +6791,53 @@
           "4 (generated problem)",
           "5 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch2-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child looks at a picture of a drum, a guitar, and a shehnai. The child must notice shapes and sort the instruments. Which group fits each one?",
+         "steps": [
+          "Look at the picture carefully, because instruments can be matched with solid shapes.",
+          "The drum goes with beaten instruments, because a drum is played by beating it.",
+          "The guitar goes with string instruments, because a guitar is played using its strings.",
+          "So the shehnai joins blown-air instruments, because air is blown into it."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.5",
+          "1.9",
+          "1.10",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 18
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          }
          ]
         },
         {
@@ -6191,6 +7739,169 @@
            "p": 18
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "A guitar and a sitar are played using their strings. A child sorts instruments into playing groups. Which group should hold the guitar and sitar?",
+         "options": [
+          "The group for string instruments.",
+          "The group for beaten instruments.",
+          "The group for blown-air instruments.",
+          "The group for mixed instruments."
+         ],
+         "answer": 0,
+         "why": {
+          "The group for beaten instruments.": "This mistake confuses using strings with beating.",
+          "The group for blown-air instruments.": "This mistake confuses using strings with blowing air.",
+          "The group for mixed instruments.": "This mistake treats matching ways as a mixed group."
+         },
+         "explanation": "This is right because guitar and sitar are played using strings.",
+         "f": [
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A drum and a tabla are played by beating them. A shehnai and a flute are played by blowing air into them. A child puts a flute with a tabla. Why should the child move it?",
+         "options": [
+          "Tabla is beaten, but flute uses air.",
+          "Flute is beaten, but tabla uses air.",
+          "Both are played by using strings.",
+          "Both are played by beating them."
+         ],
+         "answer": 0,
+         "why": {
+          "Flute is beaten, but tabla uses air.": "This mistake reverses how the tabla and flute are played.",
+          "Both are played by using strings.": "This mistake puts two instruments in the string group.",
+          "Both are played by beating them.": "This mistake calls the flute beaten even though air is blown into it."
+         },
+         "explanation": "This is right because tabla is beaten and flute uses blown air.",
+         "f": [
+          "1.9",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "correct error"
+         ],
+         "prompt": "A drum and a tabla are played by beating them. A guitar and a sitar are played using their strings. A shehnai and a flute are played by blowing air into them. A child mixes up the groups. Which sorting rule is correct?",
+         "options": [
+          "Strings for guitar and sitar.",
+          "Strings for drums and tablas.",
+          "Air for guitar and sitar.",
+          "Beating for shehnai and flute."
+         ],
+         "answer": 0,
+         "why": {
+          "Strings for drums and tablas.": "This mistake puts beaten instruments in the string group.",
+          "Air for guitar and sitar.": "This mistake puts string instruments in the blown-air group.",
+          "Beating for shehnai and flute.": "This mistake puts blown-air instruments in the beaten group."
+         },
+         "explanation": "This is right because guitar and sitar are played using strings.",
+         "f": [
+          "1.9",
+          "1.10",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "We can talk about musical instruments that are available locally. We can also talk about the way musical instruments are played. A child chooses one local instrument. Which question helps most with the playing talk?",
+         "options": [
+          "Is it beaten, blown into, or played with strings?",
+          "Is it matched to a drum, matka, or shehnai?",
+          "Is it matched to a guitar, sitar, or tabla?",
+          "Is it only looked at, without learning its way?"
+         ],
+         "answer": 0,
+         "why": {
+          "Is it matched to a drum, matka, or shehnai?": "This mistake focuses on shape matching instead of how it is played.",
+          "Is it matched to a guitar, sitar, or tabla?": "This mistake treats instrument names as shape matches instead of playing ways.",
+          "Is it only looked at, without learning its way?": "This mistake stops at looking and does not discuss how it is played."
+         },
+         "explanation": "This is right because it asks about the playing ways in the lesson.",
+         "f": [
+          "1.7",
+          "1.8",
+          "1.9",
+          "1.10",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          },
+          {
+           "ch": 2,
+           "p": 17
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l1-himachali-dhol-used-in-tradi-25ac82.webp",
@@ -6207,7 +7918,7 @@
       {
        "id": "mathematics-g2-ch2-l2",
        "title": "Decorating a Gift Box",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -6303,6 +8014,47 @@
          "explanation": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none."
         },
         {
+         "type": "worked",
+         "id": "mathematics-g2-ch2-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Heena plans to decorate the faces and corners. How many stars and balls will she need?",
+         "steps": [
+          "Every face gets one star, because each face needs one.",
+          "The box has 6 faces, so 6 stars are needed.",
+          "All 8 corners can hold balls, so 8 pompom balls are needed."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.3",
+          "2.4",
+          "2.8",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 20
+          },
+          {
+           "ch": 2,
+           "p": 20
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g2-ch2-l2-a2",
          "difficulty": 1,
@@ -6346,28 +8098,6 @@
          ],
          "answer": 0,
          "explanation": "Each face gets one star, and the box has 6 faces.",
-         "src": [
-          {
-           "ch": 2,
-           "p": 19
-          },
-          {
-           "ch": 2,
-           "p": 19
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g2-ch2-l2-a4",
-         "difficulty": 1,
-         "tags": [
-          "ribbons",
-          "sides"
-         ],
-         "prompt": "Heena puts the ribbons on the sides of the box.",
-         "answer": true,
-         "explanation": "Yes! She puts ribbons on the sides. Some are short, and some are long.",
          "src": [
           {
            "ch": 2,
@@ -6508,24 +8238,31 @@
         },
         {
          "type": "mcq",
-         "id": "mathematics-g2-ch2-l2-a9",
+         "id": "mathematics-g2-ch2-l2-d1",
          "difficulty": 3,
          "tags": [
-          "table",
-          "stars",
-          "ribbons",
-          "pompom balls",
-          "corners"
+          "deep",
+          "count"
          ],
-         "prompt": "Which table question asks for pompom balls for the corners?",
+         "prompt": "A friend's box has 6 faces. One star goes on each face. How many stars?",
          "options": [
-          "How many stars are needed for the faces?",
-          "How many ribbons are needed for the edges or sides?",
-          "How many pompom balls are needed for the corners?",
-          "How many stars are needed for the corners?"
+          "1 star",
+          "6 stars",
+          "8 stars",
+          "12 stars"
          ],
-         "answer": 2,
-         "explanation": "The table asks for pompom balls for the corners, where the colourful balls go.",
+         "answer": 1,
+         "why": {
+          "1 star": "This counts one star for the whole box.",
+          "8 stars": "Eight is the number of corners, not faces.",
+          "12 stars": "Twelve ribbons go on each side or edge."
+         },
+         "explanation": "There are 6 faces, and each face needs one star.",
+         "f": [
+          "2.3",
+          "2.4",
+          "2.10"
+         ],
          "src": [
           {
            "ch": 2,
@@ -6534,6 +8271,155 @@
           {
            "ch": 2,
            "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 20
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Stars cover 6 faces. Balls cover 8 corners. Which is used more?",
+         "options": [
+          "More stars, because 6 is more than 8.",
+          "More stars, because 8 is more than 6.",
+          "More balls, because 8 is more than 6.",
+          "More balls, because 6 is more than 8."
+         ],
+         "answer": 2,
+         "why": {
+          "More stars, because 6 is more than 8.": "This reverses the comparison; 6 is less than 8.",
+          "More stars, because 8 is more than 6.": "The 8 refers to balls, so stars do not use more.",
+          "More balls, because 6 is more than 8.": "This reverses the comparison; 8 is greater than 6."
+         },
+         "explanation": "Balls are used on 8 corners, while stars are used on 6 faces.",
+         "f": [
+          "2.3",
+          "2.4",
+          "2.8",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 20
+          },
+          {
+           "ch": 2,
+           "p": 20
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Heena finds short and long ribbons. What should she do with them?",
+         "options": [
+          "Use both kinds on the box's sides.",
+          "Keep both kinds away from the box.",
+          "Use only short ribbons on the sides.",
+          "Use only long ribbons on the sides."
+         ],
+         "answer": 0,
+         "why": {
+          "Keep both kinds away from the box.": "Ribbons belong on the sides, not away from the box.",
+          "Use only short ribbons on the sides.": "This wrongly treats long ribbons as unusable for the sides.",
+          "Use only long ribbons on the sides.": "This wrongly treats short ribbons as unusable for the sides."
+         },
+         "explanation": "Short and long ribbons can both go on the sides.",
+         "f": [
+          "2.5",
+          "2.6",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 19
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check"
+         ],
+         "prompt": "Heena uses stars, ribbons, and balls. Which decorating plan works?",
+         "options": [
+          "Use 6 stars, 12 ribbons per side, and 8 balls.",
+          "Use 8 stars, 12 ribbons per side, and 6 balls.",
+          "Use 6 stars, 8 ribbons per side, and 12 balls.",
+          "Use 12 stars, 6 ribbons per side, and 8 balls."
+         ],
+         "answer": 0,
+         "why": {
+          "Use 8 stars, 12 ribbons per side, and 6 balls.": "It swaps the star and ball counts for faces and corners.",
+          "Use 6 stars, 8 ribbons per side, and 12 balls.": "It uses the corner count for ribbons and the ribbon count for balls.",
+          "Use 12 stars, 6 ribbons per side, and 8 balls.": "It uses the ribbon count for stars and the face count for ribbons."
+         },
+         "explanation": "It matches 6 faces, 12 ribbons per side, and 8 corners.",
+         "f": [
+          "2.3",
+          "2.4",
+          "2.5",
+          "2.7",
+          "2.8",
+          "2.9",
+          "2.10",
+          "2.11",
+          "2.12"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 19
+          },
+          {
+           "ch": 2,
+           "p": 20
           },
           {
            "ch": 2,
@@ -6568,7 +8454,7 @@
       {
        "id": "mathematics-g2-ch2-l3",
        "title": "Looking at Solid Shapes",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -6728,6 +8614,62 @@
          ],
          "takeaway": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none.",
          "explanation": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch2-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Compare a cube and a cone. What belongs in each table row?",
+         "steps": [
+          "Look at each object, because the table asks what it looks like.",
+          "Record faces, edges, and corners, because the table has each column.",
+          "This shows what each object looks like, which is the table’s purpose."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -7310,6 +9252,204 @@
           "36 (generated problem)",
           "72 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "plan"
+         ],
+         "prompt": "At school, you make a table for the solid shapes. The table asks what each object looks like. What should each row show?",
+         "options": [
+          "The faces, edges, and corners",
+          "Only the faces and corners",
+          "Only the shape names and faces",
+          "Only the edges and shape names"
+         ],
+         "answer": 0,
+         "why": {
+          "Only the faces and corners": "This ignores the edges column.",
+          "Only the shape names and faces": "This ignores the edges and corners columns.",
+          "Only the edges and shape names": "This ignores the faces and corners columns."
+         },
+         "explanation": "This fills every column the table asks about.",
+         "f": [
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "detect"
+         ],
+         "prompt": "A child writes “cube” and leaves the other parts empty. The table has columns for faces, edges, and corners. What is wrong?",
+         "options": [
+          "The row leaves out faces, edges, and corners",
+          "The row leaves out the shape name",
+          "The row leaves out every solid shape",
+          "The row leaves out the table columns"
+         ],
+         "answer": 0,
+         "why": {
+          "The row leaves out the shape name": "The row already includes the shape name.",
+          "The row leaves out every solid shape": "This mistakes every solid shape for missing information.",
+          "The row leaves out the table columns": "This mistakes the table columns for missing information."
+         },
+         "explanation": "The shape name does not fill the faces, edges, and corners columns.",
+         "f": [
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "You are filling the row for a cone in the table. The table has separate columns for faces, edges, and corners. What belongs under edges?",
+         "options": [
+          "What the cone’s edges look like",
+          "What the cone’s corners look like",
+          "What the cone’s faces look like",
+          "What the cone is called"
+         ],
+         "answer": 0,
+         "why": {
+          "What the cone’s corners look like": "This puts corners in the edges column.",
+          "What the cone’s faces look like": "This puts faces in the edges column.",
+          "What the cone is called": "This uses the shape name instead of the edges."
+         },
+         "explanation": "This matches what the edges column asks about.",
+         "f": [
+          "3.2",
+          "3.4",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A sphere row has its shape name. The other columns are empty. What is the best next step?",
+         "options": [
+          "Examine the sphere and complete its row",
+          "Change the row to a cuboid row",
+          "Leave the empty columns for other rows",
+          "Use the shape name in every column"
+         ],
+         "answer": 0,
+         "why": {
+          "Change the row to a cuboid row": "Changing the shape would not fill the sphere’s row.",
+          "Leave the empty columns for other rows": "Empty columns remain empty, so the table stays unfinished.",
+          "Use the shape name in every column": "A shape name cannot show the faces, edges, and corners."
+         },
+         "explanation": "This fills the faces, edges, and corners for the sphere.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          },
+          {
+           "ch": 2,
+           "p": 21
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l3-basic-3d-shape-cone-yellow-6eb458.webp",
@@ -7326,7 +9466,7 @@
       {
        "id": "mathematics-g2-ch2-l4",
        "title": "Touch and Tell",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -7478,6 +9618,53 @@
          ],
          "takeaway": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none.",
          "explanation": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch2-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can a blindfolded child choose the right object in the Touch and Tell game?",
+         "steps": [
+          "The child cannot see, so other children must speak.",
+          "They should describe faces, corners and edges, because these show what the object is like.",
+          "The child uses those details to choose, because the game is to guess the chosen object.",
+          "Then everyone continues with other objects, because the first example is not the end."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          }
+         ]
         },
         {
          "type": "truefalse",
@@ -8309,6 +10496,142 @@
            "p": 22
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "sequence"
+         ],
+         "prompt": "The one-corner objects were named first. The no-corner objects were named next. Which group should be named last?",
+         "options": [
+          "The objects with three corners.",
+          "The objects with one corner.",
+          "The objects with no corners.",
+          "The objects with most edges."
+         ],
+         "answer": 0,
+         "why": {
+          "The objects with one corner.": "The one-corner group was already named.",
+          "The objects with no corners.": "The no-corner group was already named.",
+          "The objects with most edges.": "Objects with most edges are not a required naming group."
+         },
+         "explanation": "The three-corner group is the remaining group that must be named.",
+         "f": [
+          "4.7",
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply rules"
+         ],
+         "prompt": "The class has three corner groups. They have one corner, no corners, and three corners. Which action follows the game rules?",
+         "options": [
+          "Name every object in each corner group.",
+          "Choose one object from each corner group.",
+          "Name only the objects with one corner.",
+          "Collect more objects with the same faces."
+         ],
+         "answer": 0,
+         "why": {
+          "Choose one object from each corner group.": "Choosing one object does not complete the naming task.",
+          "Name only the objects with one corner.": "The rule includes all three corner groups.",
+          "Collect more objects with the same faces.": "Collecting objects needs different faces, not the same ones."
+         },
+         "explanation": "Every object must be named in its corner group.",
+         "f": [
+          "4.2",
+          "4.7",
+          "4.8",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain why"
+         ],
+         "prompt": "A helper describes faces, corners and edges. The blindfolded child picks an object using those details. Why is this the right way to play?",
+         "options": [
+          "The details help the child make a reasoned guess.",
+          "Blindfolding helps the child see every detail.",
+          "The helper's voice changes the object's shape.",
+          "Touching alone explains every object's details."
+         ],
+         "answer": 0,
+         "why": {
+          "Blindfolding helps the child see every detail.": "A blindfold prevents seeing, not helps seeing.",
+          "The helper's voice changes the object's shape.": "Speaking cannot change the object's shape.",
+          "Touching alone explains every object's details.": "The helper's spoken details are needed for the choice."
+         },
+         "explanation": "The spoken details guide the blindfolded child's choice.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l4-children-playing-matching-ga-94429f.webp",
@@ -8325,7 +10648,7 @@
       {
        "id": "mathematics-g2-ch2-l5",
        "title": "Project Work",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -8447,6 +10770,73 @@
          "f": [],
          "derived": [
           "4 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch2-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Which materials can we use, and how can we make objects with different faces and corners?",
+         "steps": [
+          "We take a cardboard sheet because it is used for our project.",
+          "We try one object with four faces and another with one face, because both are project aims.",
+          "We make objects with clay or dough because these materials can also be used.",
+          "We discuss objects with different corners because they may have one, two, three, or no corners."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5",
+          "5.6",
+          "5.7",
+          "5.8",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          }
          ]
         },
         {
@@ -9283,6 +11673,90 @@
            "p": 22
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "plan"
+         ],
+         "prompt": "You want to try two kinds of objects in Project Work. Which plan fits?",
+         "options": [
+          "Make one object with four faces and one with one face.",
+          "Make one object with four faces and one with four faces.",
+          "Make one object with one face and one with no face.",
+          "Make one object with three faces and one with no faces."
+         ],
+         "answer": 0,
+         "why": {
+          "Make one object with four faces and one with four faces.": "This forgets the project aim of trying one face.",
+          "Make one object with one face and one with no face.": "An object with no face is not one of the project aims.",
+          "Make one object with three faces and one with no faces.": "Three faces and no faces are not the project aims."
+         },
+         "explanation": "This tries both an object with four faces and one with one face.",
+         "f": [
+          "5.2",
+          "5.3"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check"
+         ],
+         "prompt": "A friend says all objects have three corners. How can you check this claim?",
+         "options": [
+          "Find objects with one, two, three, or no corners.",
+          "Find only objects that have exactly three corners.",
+          "Make every object have exactly four faces.",
+          "Look only for objects that have no corners."
+         ],
+         "answer": 0,
+         "why": {
+          "Find only objects that have exactly three corners.": "Only three-corner objects cannot test the claim.",
+          "Make every object have exactly four faces.": "This changes the idea from corners to faces.",
+          "Look only for objects that have no corners.": "No-corner objects alone cannot test the claim."
+         },
+         "explanation": "Finding each kind checks the claim against different corner counts.",
+         "f": [
+          "5.5",
+          "5.6",
+          "5.7",
+          "5.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          },
+          {
+           "ch": 2,
+           "p": 22
+          }
+         ]
         }
        ],
        "topicScene": "media/ch2-l5-paper-compound-of-four-tetra-e60433.webp",
@@ -9295,6 +11769,286 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Robert Charles Webb"
        }
+      },
+      {
+       "id": "mathematics-g2-ch2-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 14,
+       "topicScene": "media/ch2-l1-himachali-dhol-used-in-tradi-25ac82.webp",
+       "sceneAlt": "This picture shows a traditional double-sided drum from Himachal Pradesh, used in local weddings and religious events.",
+       "sceneCaption": "A traditional Himachali dhol, a double-sided percussion instrument used in local weddings and religious ceremonies.",
+       "sceneCredit": {
+        "text": "Himachali Dhol Used in Traditional Ceremonies,1 by Rajani Gairshail, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Himachali_Dhol_Used_in_Traditional_Ceremonies,1.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Rajani Gairshail"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner looks at pictures of musical instruments and notices that some have shapes like a drum, matka, or shehnai. The learner ticks instruments with a shape like a matka and identifies the shape similar to a shehnai. The learner also matches instruments with solid shapes. Afterward, the class talks about locally available instruments and how they are played: a drum and tabla are beaten, a guitar and sitar use strings, and a shehnai and flute receive blown air.",
+         "prompt": "If the learner wants to show how a shehnai is played, what should the learner do?",
+         "options": [
+          "Send air into it.",
+          "Tap its surface.",
+          "Pull its strings.",
+          "Place it on a matka."
+         ],
+         "answer": 0,
+         "why": {
+          "Tap its surface.": "Beating is used for a drum and tabla.",
+          "Pull its strings.": "Strings are used for a guitar and sitar.",
+          "Place it on a matka.": "A matka is used for shape matching, not for playing a shehnai."
+         },
+         "explanation": "This is how a shehnai is played."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner looks at pictures of musical instruments and notices that some have shapes like a drum, matka, or shehnai. The learner ticks instruments with a shape like a matka and identifies the shape similar to a shehnai. The learner also matches instruments with solid shapes. Afterward, the class talks about locally available instruments and how they are played: a drum and tabla are beaten, a guitar and sitar use strings, and a shehnai and flute receive blown air.",
+         "prompt": "What should the learner do after seeing an instrument in the picture that has a shape like a matka?",
+         "options": [
+          "Mark the instrument for the matka-shape tick.",
+          "Record it as the shape similar to a shehnai.",
+          "Write down that it is played by blowing air.",
+          "Leave it unticked because it has a drum-like shape."
+         ],
+         "answer": 0,
+         "why": {
+          "Record it as the shape similar to a shehnai.": "This choice identifies a shehnai-like shape instead.",
+          "Write down that it is played by blowing air.": "Blowing air describes how an instrument is played.",
+          "Leave it unticked because it has a drum-like shape.": "A drum-like shape is a different matching choice."
+         },
+         "explanation": "The task says to tick instruments with a matka-like shape."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch2-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the drum and tabla belong in the same playing group, and how they compare with the other instruments.",
+         "answer": "A drum and a tabla are played by beating them, so they belong in the same playing group. A guitar and sitar are played using their strings, while a shehnai and flute are played by blowing air into them. These groups show three different ways that instruments are played.",
+         "points": [
+          "Says that a drum and tabla are beaten.",
+          "Groups a guitar and sitar together.",
+          "Groups a shehnai and flute together.",
+          "Uses the fact that the groups show different ways of playing."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Heena is decorating a gift box for her friend’s birthday. She has ribbons, stars and pompom balls. We place one star on each face, and the box has 6 faces. She needs 12 ribbons for each side or edge, with some short and some long, and puts them on the sides. The colourful balls look good on all the 8 corners. Her table asks for stars, ribbon stripes and pompom balls.",
+         "prompt": "Heena keeps the rule of one star on each face. How many stars will she need for the box?",
+         "options": [
+          "6 stars",
+          "12 stars",
+          "8 stars",
+          "1 star"
+         ],
+         "answer": 0,
+         "why": {
+          "12 stars": "Twelve would confuse the number of ribbons with the number of stars.",
+          "8 stars": "Eight would use the number of corners instead of the number of faces.",
+          "1 star": "One would place a star on only one face."
+         },
+         "explanation": "Six is correct because there are 6 faces and one star goes on each."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Heena is decorating a gift box for her friend’s birthday. She has ribbons, stars and pompom balls. We place one star on each face, and the box has 6 faces. She needs 12 ribbons for each side or edge, with some short and some long, and puts them on the sides. The colourful balls look good on all the 8 corners. Her table asks for stars, ribbon stripes and pompom balls.",
+         "prompt": "Heena puts one pompom ball on every corner of the box. How many pompom balls will she use?",
+         "options": [
+          "8 pompom balls",
+          "6 pompom balls",
+          "12 pompom balls",
+          "1 pompom ball"
+         ],
+         "answer": 0,
+         "why": {
+          "6 pompom balls": "Six would confuse the number of faces with the number of corners.",
+          "12 pompom balls": "Twelve would confuse the number of ribbons with the number of balls.",
+          "1 pompom ball": "One would place a ball on only one corner."
+         },
+         "explanation": "Eight is correct because one ball goes on each of the 8 corners."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch2-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why Heena needs 6 stars for the gift box.",
+         "answer": "The box has 6 faces, and Heena puts one star on every face. Because each face needs one star, multiplying 6 faces by one star for each face gives 6 stars in total.",
+         "points": [
+          "The box has 6 faces.",
+          "One star is placed on each face.",
+          "One star on each of the 6 faces gives 6 stars."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner is helping with solid objects at home. A cube, a cuboid, a cone, a cylinder, and a sphere are on a table. The learner looks closely at each one and uses another table to record what each object looks like. The headings are corners, edges, and faces. Before writing, the learner checks the headings so each observation is placed under the right one.",
+         "prompt": "A learner thinks an object looks like a cuboid. What should the learner do before recording it?",
+         "options": [
+          "Compare its faces, edges, and corners with the solid shapes.",
+          "Record it as a cylinder without making a check.",
+          "Check only its faces, then record it at once.",
+          "Ignore the table headings and choose any shape."
+         ],
+         "answer": 0,
+         "why": {
+          "Record it as a cylinder without making a check.": "The learner would record a different shape without checking.",
+          "Check only its faces, then record it at once.": "Edges and corners still need to be checked.",
+          "Ignore the table headings and choose any shape.": "The table headings guide the observations."
+         },
+         "explanation": "This checks the object before choosing the shape."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner is helping with solid objects at home. A cube, a cuboid, a cone, a cylinder, and a sphere are on a table. The learner looks closely at each one and uses another table to record what each object looks like. The headings are corners, edges, and faces. Before writing, the learner checks the headings so each observation is placed under the right one.",
+         "prompt": "Why did the learner check the table's headings before writing?",
+         "options": [
+          "The table separates those observations into different columns.",
+          "The table puts all observations into one shared column.",
+          "The headings change whenever the object changes.",
+          "The object names should take the place of all three headings."
+         ],
+         "answer": 0,
+         "why": {
+          "The table puts all observations into one shared column.": "That would mix up the separate columns.",
+          "The headings change whenever the object changes.": "The headings stay the same for each object.",
+          "The object names should take the place of all three headings.": "The columns are for observations, not names."
+         },
+         "explanation": "Faces, edges, and corners each have their own column."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch2-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how you would use the table to record what each object looks like.",
+         "answer": "I would look at each object and decide what it looks like. Then I would use the table to record its faces, edges, and corners. I would check the headings carefully so each observation is written in the correct column.",
+         "points": [
+          "Looks at each object",
+          "Uses the correct headings",
+          "Records faces, edges, and corners",
+          "Checks where each observation belongs"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "For Project Work, we take a cardboard sheet and try to make an object with four faces. We also try to make an object with one face. As we make and discuss these objects, we find examples with different numbers of corners. Some have one corner, some have two, and some have three, while others have no corners. We can make the objects using clay or dough.",
+         "prompt": "The maker uses clay or dough for the one-faced object after making the four-faced cardboard object. What should the maker do next?",
+         "options": [
+          "Find and compare the corners of both objects.",
+          "Stop looking at corners because the object is made from clay or dough.",
+          "Make the one-faced object with four faces to match the cardboard object.",
+          "Assume that both objects have the same number of corners without checking."
+         ],
+         "answer": 0,
+         "why": {
+          "Stop looking at corners because the object is made from clay or dough.": "Changing the material does not remove the corner discussion.",
+          "Make the one-faced object with four faces to match the cardboard object.": "The one-faced object should remain one-faced.",
+          "Assume that both objects have the same number of corners without checking.": "Corners should be checked rather than assumed to match."
+         },
+         "explanation": "We need to find and discuss different numbers of corners."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch2-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "For Project Work, we take a cardboard sheet and try to make an object with four faces. We also try to make an object with one face. As we make and discuss these objects, we find examples with different numbers of corners. Some have one corner, some have two, and some have three, while others have no corners. We can make the objects using clay or dough.",
+         "prompt": "What should we do after making and discussing the cardboard objects?",
+         "options": [
+          "Find more objects and check whether each has one, two, three, or no corners.",
+          "Look only for objects with corners and ignore objects with no corners.",
+          "Make every new object look exactly like the object already made.",
+          "Stop discussing corners after making the first object."
+         ],
+         "answer": 0,
+         "why": {
+          "Look only for objects with corners and ignore objects with no corners.": "Objects with no corners are also part of the discussion.",
+          "Make every new object look exactly like the object already made.": "New objects do not all need to look the same.",
+          "Stop discussing corners after making the first object.": "The corner discussion continues with more examples."
+         },
+         "explanation": "The project involves finding and discussing different numbers of corners."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch2-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between making an object with four faces and making an object with one face.",
+         "answer": "The four-faced object is made with four faces, while the one-faced object is made with one face. After making them, we look at their corners and discuss how their numbers may be different. We can make these objects using clay or dough.",
+         "points": [
+          "The first object has four faces.",
+          "The other object has one face.",
+          "Their corners are examined and discussed.",
+          "Clay or dough can be used."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -9633,7 +12387,7 @@
       {
        "id": "mathematics-g2-ch3-l1",
        "title": "Counting on the Ginladi",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -9777,6 +12531,32 @@
          ],
          "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
          "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch3-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A squirrel is on a path. It jumps two steps backward and then five steps forward. Does it finish ahead of or behind where it started?",
+         "steps": [
+          "It moves backward first, so it goes away from the starting point.",
+          "Then it jumps five steps forward, which is more than the two backward steps.",
+          "So the squirrel finishes ahead of where it started."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 23
+          }
+         ]
         },
         {
          "type": "fillblank",
@@ -10483,6 +13263,117 @@
            "p": 23
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "order numbers"
+         ],
+         "prompt": "The number cards show 38, 44, 58, 65, and 98. A child orders them from smallest to largest. Which card comes after 58?",
+         "options": [
+          "44, because it comes before 58.",
+          "58, because it is already on the card.",
+          "65, because it comes after 58.",
+          "98, because it is the largest card."
+         ],
+         "answer": 2,
+         "why": {
+          "44, because it comes before 58.": "This chooses the number before 58 instead of after it.",
+          "58, because it is already on the card.": "This repeats 58 instead of choosing the next number.",
+          "98, because it is the largest card.": "This chooses the largest number instead of the next one."
+         },
+         "explanation": "This is the next number after 58 in the ordered set.",
+         "f": [
+          "1.4",
+          "1.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 23
+          },
+          {
+           "ch": 3,
+           "p": 23
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare jumps"
+         ],
+         "prompt": "The squirrel jumps two steps backward and then five steps forward. The frog jumps two steps forward and then seven steps backward. Which animal makes the bigger backward jump?",
+         "options": [
+          "The frog, because seven is more than two.",
+          "The squirrel, because two comes before seven.",
+          "The frog, because it jumps two times.",
+          "The squirrel, because it moves forward afterward."
+         ],
+         "answer": 0,
+         "why": {
+          "The squirrel, because two comes before seven.": "This confuses the order of the numbers with their size.",
+          "The frog, because it jumps two times.": "This counts the two jumps instead of comparing backward steps.",
+          "The squirrel, because it moves forward afterward.": "This ignores the size of the backward jump."
+         },
+         "explanation": "The frog jumps seven steps backward, which is more than two.",
+         "f": [
+          "1.11",
+          "1.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 23
+          },
+          {
+           "ch": 3,
+           "p": 23
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare positions"
+         ],
+         "prompt": "A squirrel starts at a game marker. It jumps two steps backward, then five steps forward. A frog starts at another marker. It jumps two steps forward, then seven steps backward. Which animal ends farther forward from its start?",
+         "options": [
+          "The squirrel, because it ends ahead of its start.",
+          "The frog, because it jumps more steps overall.",
+          "The squirrel, because it jumps backward first.",
+          "The frog, because seven is bigger than five."
+         ],
+         "answer": 0,
+         "why": {
+          "The frog, because it jumps more steps overall.": "This counts all jumps without noticing their directions.",
+          "The squirrel, because it jumps backward first.": "This ignores that the squirrel later moves farther forward.",
+          "The frog, because seven is bigger than five.": "This compares only the last numbers and ignores the directions."
+         },
+         "explanation": "The squirrel's forward jump is bigger than its backward jump.",
+         "f": [
+          "1.11",
+          "1.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 23
+          },
+          {
+           "ch": 3,
+           "p": 23
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l1-red-bead-abacus-display-1728f3.webp",
@@ -10499,7 +13390,7 @@
       {
        "id": "mathematics-g2-ch3-l2",
        "title": "Guessing Numbers and Finding Places",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -10640,6 +13531,53 @@
          "derived": [
           "10 (generated problem)",
           "60 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch3-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "One child thinks of a number while the others guess. How can yes-or-no questions help?",
+         "steps": [
+          "One child thinks of 30, which is the example guess.",
+          "The other children can ask at most 10 yes-or-no questions.",
+          "They ask whether 30 is less than 20, because this gives one useful clue.",
+          "The answer is no, so they use that clue while continuing to guess 30."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.4",
+          "2.5",
+          "2.6",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          }
          ]
         },
         {
@@ -11102,6 +14040,154 @@
            "p": 24
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare numbers"
+         ],
+         "prompt": "A child is thinking of 30. Is 30 more than 50?",
+         "options": [
+          "No, because 30 is less than 50.",
+          "No, because 30 is more than 50.",
+          "Yes, because 30 is less than 50.",
+          "Yes, because 30 has two digits."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because 30 is more than 50.": "It reverses the comparison between 30 and 50.",
+          "Yes, because 30 is less than 50.": "It uses a true comparison but gives the wrong yes-or-no answer.",
+          "Yes, because 30 has two digits.": "It thinks having two digits proves a number is more."
+         },
+         "explanation": "It is right because 30 is less than 50, so it is not more.",
+         "f": [
+          "2.2",
+          "2.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "read digits"
+         ],
+         "prompt": "A child is thinking of 30. Are its two digits the same?",
+         "options": [
+          "No, because 3 and 0 are different.",
+          "No, because 3 and 0 are the same.",
+          "Yes, because 3 and 0 are different.",
+          "Yes, because 30 has two digits."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because 3 and 0 are the same.": "It says the two different digits are the same.",
+          "Yes, because 3 and 0 are different.": "It uses different digits but gives the wrong yes-or-no answer.",
+          "Yes, because 30 has two digits.": "It thinks two digits must always be the same."
+         },
+         "explanation": "It is right because 3 and 0 are different.",
+         "f": [
+          "2.3",
+          "2.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare numbers"
+         ],
+         "prompt": "A child is thinking of 79. Is 79 less than 20?",
+         "options": [
+          "No, because 79 is more than 20.",
+          "No, because 79 is less than 20.",
+          "Yes, because 79 is more than 20.",
+          "Yes, because 79 has two digits."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because 79 is less than 20.": "It reverses the comparison between 79 and 20.",
+          "Yes, because 79 is more than 20.": "It uses a true comparison but gives the wrong yes-or-no answer.",
+          "Yes, because 79 has two digits.": "It thinks having two digits proves a number is less."
+         },
+         "explanation": "It is right because 79 is more than 20, not less.",
+         "f": [
+          "2.7",
+          "2.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "use a limit"
+         ],
+         "prompt": "Fewer than 10 questions are used. May the group ask one more?",
+         "options": [
+          "Yes, because fewer than 10 were used.",
+          "No, because fewer than 10 were used.",
+          "Yes, because 10 questions were used.",
+          "No, because only yes answers are allowed."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because fewer than 10 were used.": "It wrongly says fewer questions stop the asking.",
+          "Yes, because 10 questions were used.": "It treats 10 as the number already used instead of the limit.",
+          "No, because only yes answers are allowed.": "It forgets that both yes and no answers are allowed."
+         },
+         "explanation": "It is right because fewer than 10 means another question is allowed.",
+         "f": [
+          "2.4",
+          "2.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 24
+          },
+          {
+           "ch": 3,
+           "p": 24
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l2-ants-at-dishon-village-squar-792e23.webp",
@@ -11118,7 +14204,7 @@
       {
        "id": "mathematics-g2-ch3-l3",
        "title": "Forward Number Patterns",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -11195,6 +14281,58 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g2-ch3-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Jumpy starts at 1 and jumps in steps of two. Which numbers on the strip will be stepped on?",
+         "steps": [
+          "The strip starts at 1 and ends at 20.",
+          "It skips one number because each jump moves two places.",
+          "So Jumpy lands on every other number in the forward number pattern.",
+          "The last stepped number is 19 because the next place is 20."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.6",
+          "3.7",
+          "3.9",
+          "3.10",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g2-ch3-l3-a2",
          "difficulty": 1,
@@ -11216,28 +14354,6 @@
           "10 = 7 + 3"
          ],
          "src": [
-          {
-           "ch": 3,
-           "p": 25
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g2-ch3-l3-a3",
-         "difficulty": 1,
-         "tags": [
-          "number strip",
-          "counting"
-         ],
-         "prompt": "The number strip starts with 1 and ends with 20.",
-         "answer": true,
-         "explanation": "The strip begins with 1 and ends with 20.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 25
-          },
           {
            "ch": 3,
            "p": 25
@@ -11533,6 +14649,221 @@
            "p": 25
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Jumpy starts at 1 and lands on 4. The next jumps stay equal. Which group shows the forward number pattern?",
+         "options": [
+          "1, 4, and 7",
+          "1, 2, and 3",
+          "40, 45, and 50",
+          "40, 50, and 60"
+         ],
+         "answer": 0,
+         "why": {
+          "1, 2, and 3": "This group uses jumps of one instead.",
+          "40, 45, and 50": "This copies the second pattern with bigger jumps.",
+          "40, 50, and 60": "This changes to a different jump size."
+         },
+         "explanation": "The jump from 1 to 4 is 3, so 7 comes next.",
+         "f": [
+          "3.1",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Jumpy starts at 40 and lands on 45. The next jumps stay equal. Which pair shows the forward number pattern?",
+         "options": [
+          "45 and 50",
+          "40 and 50",
+          "50 and 60",
+          "1 and 4"
+         ],
+         "answer": 0,
+         "why": {
+          "40 and 50": "This goes back to 40 before moving forward.",
+          "50 and 60": "It skips the landing place at 45.",
+          "1 and 4": "These numbers use a different starting point."
+         },
+         "explanation": "The jump from 40 to 45 is 5, so 50 comes next.",
+         "f": [
+          "3.3",
+          "3.4"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "The second pattern starts 40, 45, 50. The third starts 50 and 60. Which forward number pattern has the longer jump?",
+         "options": [
+          "The second forward pattern",
+          "The third forward pattern",
+          "Both forward patterns equally",
+          "Neither forward pattern at all"
+         ],
+         "answer": 1,
+         "why": {
+          "The second forward pattern": "Its jump from 40 to 45 is smaller.",
+          "Both forward patterns equally": "The jumps cover different distances, so they are not equal.",
+          "Neither forward pattern at all": "It ignores that both patterns have clear forward jumps."
+         },
+         "explanation": "Its jump from 50 to 60 is twice as long.",
+         "f": [
+          "3.4",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "The strip begins with 1 and ends with 20. Children make a number line on the ground. Jumpy jumps forward from 1 in steps of two. Which number comes next?",
+         "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         "answer": 1,
+         "why": {
+          "2": "It counts the skipped number as the landing place.",
+          "4": "It uses a jump of three instead of two.",
+          "5": "It counts three places forward instead of two."
+         },
+         "explanation": "A jump of two from 1 skips 2 and lands on 3.",
+         "f": [
+          "3.6",
+          "3.7",
+          "3.8",
+          "3.9",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "The strip has 1 through 8. It ends with 17 through 20. Jumpy starts at 1 and jumps by two. Which group fits the forward number pattern?",
+         "options": [
+          "1, 3, 5, and 7",
+          "2, 4, 6, and 8",
+          "1, 2, 3, and 4",
+          "17, 18, 19, and 20"
+         ],
+         "answer": 0,
+         "why": {
+          "2, 4, 6, and 8": "Starting at 1, these even places are skipped.",
+          "1, 2, 3, and 4": "This group uses steps of one along the strip.",
+          "17, 18, 19, and 20": "The gaps between these places are one, not two."
+         },
+         "explanation": "These places match jumps of two from 1.",
+         "f": [
+          "3.6",
+          "3.7",
+          "3.9",
+          "3.10",
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          },
+          {
+           "ch": 3,
+           "p": 25
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l3-frog-jumping-contest-1-e23d2b.webp",
@@ -11549,7 +14880,7 @@
       {
        "id": "mathematics-g2-ch3-l4",
        "title": "Skip Counting and Jumping",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -11690,6 +15021,43 @@
          ],
          "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
          "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch3-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child jumps in twos on a ground number line. Can the child land on 17?",
+         "steps": [
+          "The child draws the twos skip, because each jump is two.",
+          "The child checks the drawn numbers against 17.",
+          "The twos skip leaves out 17, because no step lands there.",
+          "So the child cannot land on 17 by counting in twos."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.6",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          }
+         ]
         },
         {
          "type": "truefalse",
@@ -12478,23 +15846,275 @@
            "p": 26
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "skip counting"
+         ],
+         "prompt": "A child jumps along a path marked with numbers. Each jump moves two places. Can the child land on 17?",
+         "options": [
+          "No, because twos skip past 17.",
+          "Yes, because 17 is in the twos skip.",
+          "No, because twos can reach every number.",
+          "Yes, because any number is in the twos skip."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, because 17 is in the twos skip.": "This wrongly places 17 inside the twos skip.",
+          "No, because twos can reach every number.": "This wrongly thinks the twos skip reaches every number.",
+          "Yes, because any number is in the twos skip.": "This wrongly treats every number as part of the twos skip."
+         },
+         "explanation": "Twos skip past 17, so the child cannot land there.",
+         "f": [
+          "4.1",
+          "4.7",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "skip counting"
+         ],
+         "prompt": "A child makes numbered cards for a fives game. The cards jump forward in fives. Can the child reach 40?",
+         "options": [
+          "No, because fives skip past 40.",
+          "Yes, because 40 is in the fives skip.",
+          "No, because 40 belongs only to the twos skip.",
+          "Yes, because any number is in the fives skip."
+         ],
+         "answer": 1,
+         "why": {
+          "No, because fives skip past 40.": "40 is in the fives skip, so the child can reach it.",
+          "No, because 40 belongs only to the twos skip.": "This wrongly puts 40 only in the twos skip.",
+          "Yes, because any number is in the fives skip.": "This wrongly treats every number as part of the fives skip."
+         },
+         "explanation": "This wrongly thinks the fives skip passes over 40.",
+         "f": [
+          "4.2",
+          "4.7",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "skip counting"
+         ],
+         "prompt": "A child hops on numbered floor squares. The child hops forward in fives. Can the child reach 55?",
+         "options": [
+          "No, because fives skip past 55.",
+          "Yes, because 55 is in the fives skip.",
+          "No, because 55 belongs only to the twos skip.",
+          "Yes, because any number is in the fives skip."
+         ],
+         "answer": 1,
+         "why": {
+          "No, because fives skip past 55.": "55 is in the fives skip, so the child can reach it.",
+          "No, because 55 belongs only to the twos skip.": "This wrongly thinks 55 is in the twos skip.",
+          "Yes, because any number is in the fives skip.": "This wrongly treats every number as part of the fives skip."
+         },
+         "explanation": "This wrongly thinks the fives skip passes over 55.",
+         "f": [
+          "4.2",
+          "4.7",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "skip counting"
+         ],
+         "prompt": "A child climbs numbered steps. Each jump counts in threes. Can the child reach 24?",
+         "options": [
+          "No, because threes skip past 24.",
+          "Yes, because 24 is in the threes skip.",
+          "No, because 24 belongs only to the twos skip.",
+          "Yes, because any number is in the threes skip."
+         ],
+         "answer": 1,
+         "why": {
+          "No, because threes skip past 24.": "24 is in the threes skip, so the child can reach it.",
+          "No, because 24 belongs only to the twos skip.": "This wrongly puts 24 only in the twos skip.",
+          "Yes, because any number is in the threes skip.": "This wrongly treats every number as part of the threes skip."
+         },
+         "explanation": "This wrongly thinks the threes skip passes over 24.",
+         "f": [
+          "4.7",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "common skips"
+         ],
+         "prompt": "A child draws the twos skip. The child draws the fives skip beside it. Which number is in both skips?",
+         "options": [
+          "40",
+          "17",
+          "55",
+          "24"
+         ],
+         "answer": 0,
+         "why": {
+          "17": "This wrongly thinks 17 also appears in the fives skip.",
+          "55": "This wrongly thinks 55 also appears in the twos skip.",
+          "24": "This wrongly thinks 24 also appears in the fives skip."
+         },
+         "explanation": "40 appears in both the twos and fives skips.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l4-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "skip counting"
+         ],
+         "prompt": "A child jumps on a long number line. The child counts forward in tens. Can the child reach 100?",
+         "options": [
+          "No, because tens skip past 100.",
+          "Yes, because 100 is in the tens skip.",
+          "No, because 100 belongs only to the fives skip.",
+          "Yes, because any number is in the tens skip."
+         ],
+         "answer": 1,
+         "why": {
+          "No, because tens skip past 100.": "100 is in the tens skip, so the child can reach it.",
+          "No, because 100 belongs only to the fives skip.": "This wrongly puts 100 only in the fives skip.",
+          "Yes, because any number is in the tens skip.": "This wrongly treats every number as part of the tens skip."
+         },
+         "explanation": "This wrongly thinks the tens skip passes over 100.",
+         "f": [
+          "4.6",
+          "4.7",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          },
+          {
+           "ch": 3,
+           "p": 26
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch3-l1-red-bead-abacus-display-1728f3.webp",
-       "sceneAlt": "A red-bead abacus has a frame with beaded rods that can be moved for counting and calculation.",
-       "sceneCaption": "A red-bead abacus uses movable beaded rods to represent digits for counting and calculation.",
+       "topicScene": "media/ch3-l4-skip-counting-on-a-number-li-78782f.webp",
+       "sceneAlt": "A number line shows skip counting.",
+       "sceneCaption": "Skip counting is shown on a number line.",
        "sceneCredit": {
-        "text": "Red Bead Abacus Display by Aliva Sahoo, CC BY 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Red_Bead_Abacus_Display.jpg",
-        "license": "CC BY 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-        "creator": "Aliva Sahoo"
+        "text": "Skip counting on a number line by Brigban, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Skip_counting_on_a_number_line.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Brigban"
        }
       },
       {
        "id": "mathematics-g2-ch3-l5",
        "title": "Counting Backwards and Talking",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -12602,6 +16222,43 @@
           "1 (generated problem)",
           "8 (generated problem)",
           "9 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch3-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child sees 10, 9, and 8. What number comes just before 10?",
+         "steps": [
+          "Find 10 in the row.",
+          "Look at the number right before it.",
+          "That number is 9, because 9 comes just before 10.",
+          "After 9 comes 8, so the row goes backwards."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.3"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          }
          ]
         },
         {
@@ -12898,23 +16555,87 @@
           "19 (generated problem)",
           "20 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "before number"
+         ],
+         "prompt": "Ten numbered books stand in a row. Which number comes just before 10?",
+         "options": [
+          "The number is 8.",
+          "The number is 9.",
+          "The number is 10.",
+          "The number is 20."
+         ],
+         "answer": 1,
+         "why": {
+          "The number is 8.": "For 8, the child skips the number right before 10.",
+          "The number is 10.": "For 10, the child repeats the number instead of moving back.",
+          "The number is 20.": "For 20, the child jumps to a number from another count."
+         },
+         "explanation": "Nine comes just before 10.",
+         "f": [
+          "5.1"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 27
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "counting twos"
+         ],
+         "prompt": "Chavi claps and counts in twos from 10 onwards. Will she say 43?",
+         "options": [
+          "Yes, because 43 is greater than 10.",
+          "No, because she adds two each time.",
+          "Yes, because every number above 10 is counted.",
+          "No, because she stops before 43."
+         ],
+         "answer": 1,
+         "why": {
+          "Yes, because 43 is greater than 10.": "It thinks any number above 10 must be reached.",
+          "Yes, because every number above 10 is counted.": "It thinks every number above 10 will be said.",
+          "No, because she stops before 43.": "It wrongly thinks Chavi stops her count before 43."
+         },
+         "explanation": "Adding two each time from 10 skips 43.",
+         "f": [
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 28
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch3-l1-red-bead-abacus-display-1728f3.webp",
-       "sceneAlt": "A red-bead abacus has a frame with beaded rods that can be moved for counting and calculation.",
-       "sceneCaption": "A red-bead abacus uses movable beaded rods to represent digits for counting and calculation.",
+       "topicScene": "media/ch3-l5-school-children-line-cochin--762df2.webp",
+       "sceneAlt": "School children line up in Cochin, Kerala, India.",
+       "sceneCaption": "School children line up in Cochin, Kerala, India.",
        "sceneCredit": {
-        "text": "Red Bead Abacus Display by Aliva Sahoo, CC BY 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Red_Bead_Abacus_Display.jpg",
-        "license": "CC BY 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-        "creator": "Aliva Sahoo"
+        "text": "School children line Cochin Kerala India by Thorsten Vieth from Bangalore, India, CC BY-SA 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:School_children_line_Cochin_Kerala_India.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "creator": "Thorsten Vieth from Bangalore, India"
        }
       },
       {
        "id": "mathematics-g2-ch3-l6",
        "title": "Number Charts, Patterns and Bingo",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -13036,6 +16757,43 @@
           "12 (generated problem)",
           "23 (generated problem)",
           "34 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch3-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "The lesson needs a 3 × 4 Bingo grid. How can a child fill and play it?",
+         "steps": [
+          "Make 3 rows and 4 columns, because Bingo needs 3 × 4.",
+          "Fill it with numbers from 2 to 12, because these are allowed.",
+          "Repeat numbers when needed, because repeated numbers are allowed.",
+          "Throw two dice and cross their sum, so the child can play Bingo."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.9",
+          "6.10",
+          "6.11"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 31
+          },
+          {
+           "ch": 3,
+           "p": 31
+          },
+          {
+           "ch": 3,
+           "p": 31
+          }
          ]
         },
         {
@@ -13461,6 +17219,90 @@
            "p": 29
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "distinguish"
+         ],
+         "prompt": "The green numbers begin 1, 12, and 23. Which correction helps the child?",
+         "options": [
+          "Shade them to show a number-chart pattern.",
+          "Cross them on a 3 × 4 Bingo grid.",
+          "Use them as centres in number-window questions.",
+          "Fill a Bingo row with only these numbers."
+         ],
+         "answer": 0,
+         "why": {
+          "Cross them on a 3 × 4 Bingo grid.": "Bingo numbers go on the separate 3 × 4 grid.",
+          "Use them as centres in number-window questions.": "The green numbers belong to the chart pattern, not window centres.",
+          "Fill a Bingo row with only these numbers.": "Not all these numbers are from the allowed Bingo range."
+         },
+         "explanation": "Shading shows the pattern on the number chart.",
+         "f": [
+          "6.2",
+          "6.3",
+          "6.9",
+          "6.10"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 29
+          },
+          {
+           "ch": 3,
+           "p": 29
+          },
+          {
+           "ch": 3,
+           "p": 31
+          },
+          {
+           "ch": 3,
+           "p": 31
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "spatial reasoning"
+         ],
+         "prompt": "A number window has 28 in the centre. Where should the child look for the number below?",
+         "options": [
+          "Directly below the centre number.",
+          "Directly above the centre number.",
+          "Directly left of the centre number.",
+          "Directly right of the centre number."
+         ],
+         "answer": 0,
+         "why": {
+          "Directly above the centre number.": "Above is the top position, not the lower one.",
+          "Directly left of the centre number.": "Left is a side position, not the lower one.",
+          "Directly right of the centre number.": "Right is a side position, not the lower one."
+         },
+         "explanation": "Below means the lower position in the window.",
+         "f": [
+          "6.4",
+          "6.5"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 29
+          },
+          {
+           "ch": 3,
+           "p": 29
+          }
+         ]
         }
        ],
        "topicScene": "media/ch3-l1-red-bead-abacus-display-1728f3.webp",
@@ -13473,6 +17315,329 @@
         "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
         "creator": "Aliva Sahoo"
        }
+      },
+      {
+       "id": "mathematics-g2-ch3-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 17,
+       "topicScene": "media/ch3-l1-red-bead-abacus-display-1728f3.webp",
+       "sceneAlt": "A red-bead abacus has a frame with beaded rods that can be moved for counting and calculation.",
+       "sceneCaption": "A red-bead abacus uses movable beaded rods to represent digits for counting and calculation.",
+       "sceneCredit": {
+        "text": "Red Bead Abacus Display by Aliva Sahoo, CC BY 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Red_Bead_Abacus_Display.jpg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "creator": "Aliva Sahoo"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner has beads and blank cards on a ginladi. Counting the beads shows the numbers to write. Cards showing 38, 44, 58, 65, and 98 are placed on the ginladi. Blanks on the number strip are filled. The butterfly moves toward the pink flower. The honey bee moves toward the red flower and then the yellow flower. The squirrel jumps two steps backward, then five steps forward. The frog jumps two steps forward, then seven steps backward.",
+         "prompt": "One card on the ginladi is still blank. What should the learner do to complete it?",
+         "options": [
+          "Count the beads and write their matching number on the card.",
+          "Choose a number without counting and write it on the card.",
+          "Leave the card blank because the beads do not need numbers.",
+          "Count the number cards instead of the beads and write that number."
+         ],
+         "answer": 0,
+         "why": {
+          "Choose a number without counting and write it on the card.": "A number chosen without counting may not match the beads.",
+          "Leave the card blank because the beads do not need numbers.": "The activity says to write the beads' numbers on the cards.",
+          "Count the number cards instead of the beads and write that number.": "The card must match the beads, not the number of cards."
+         },
+         "explanation": "Counting the beads identifies the number that belongs on the card."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner has beads and blank cards on a ginladi. Counting the beads shows the numbers to write. Cards showing 38, 44, 58, 65, and 98 are placed on the ginladi. Blanks on the number strip are filled. The butterfly moves toward the pink flower. The honey bee moves toward the red flower and then the yellow flower. The squirrel jumps two steps backward, then five steps forward. The frog jumps two steps forward, then seven steps backward.",
+         "prompt": "If the squirrel jumps five steps forward first and two steps backward afterward, where will it finish compared with its original route?",
+         "options": [
+          "At the same finishing place as before.",
+          "Two steps behind its original finishing place.",
+          "Five steps behind its original finishing place.",
+          "Two steps ahead of its original finishing place."
+         ],
+         "answer": 0,
+         "why": {
+          "Two steps behind its original finishing place.": "This mistake counts only the backward jump and ignores the forward jump.",
+          "Five steps behind its original finishing place.": "This mistake treats the forward jump as if it were backward.",
+          "Two steps ahead of its original finishing place.": "This mistake adds the backward jump instead of subtracting it from the forward jump."
+         },
+         "explanation": "The two jumps still combine to the same net movement."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch3-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does counting the beads help to fill the blanks on the number strip?",
+         "answer": "First, count the beads on the ginladi. Write the matching number on each blank card. Place the number cards showing 38, 44, 58, 65, and 98 on the ginladi. Then use the number strip and the cards to find and fill every blank with the correct number.",
+         "points": [
+          "Counts the beads on the ginladi.",
+          "Writes the matching number on each blank card.",
+          "Places the number cards on the ginladi.",
+          "Uses the number strip and cards to fill the blanks."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Three ants are sitting on a number line, and 79 is shown on the number line. One ant is drawn on 65, and a sugar cube must also be drawn. In a guessing game, one child thinks of a number while the other children guess it. They can ask yes-or-no questions, including whether it is more than 50, whether its two digits are the same, and whether it is less than 20. They may ask at most 10 questions. An example guess is 30.",
+         "prompt": "The children have already asked ten questions in the guessing game. What should they do next?",
+         "options": [
+          "End the questioning and make the best guess from the answers so far",
+          "Ask one more yes-or-no question",
+          "Continue asking as many questions as they wish",
+          "Ask ten more yes-or-no questions"
+         ],
+         "answer": 0,
+         "why": {
+          "Ask one more yes-or-no question": "This breaks the limit on the number of questions.",
+          "Continue asking as many questions as they wish": "This wrongly treats the question limit as unlimited.",
+          "Ask ten more yes-or-no questions": "This wrongly allows another 10 questions after reaching the limit."
+         },
+         "explanation": "This respects the limit of at most 10 questions."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Three ants are sitting on a number line, and 79 is shown on the number line. One ant is drawn on 65, and a sugar cube must also be drawn. In a guessing game, one child thinks of a number while the other children guess it. They can ask yes-or-no questions, including whether it is more than 50, whether its two digits are the same, and whether it is less than 20. They may ask at most 10 questions. An example guess is 30.",
+         "prompt": "A child wants to check whether the hidden number has matching digits. What should they ask?",
+         "options": [
+          "Ask if the two digits match each other",
+          "Ask if the hidden number is more than 50",
+          "Ask if the hidden number is less than 20",
+          "Ask if the hidden number equals 79"
+         ],
+         "answer": 0,
+         "why": {
+          "Ask if the hidden number is more than 50": "This checks the size of the number, not its digits.",
+          "Ask if the hidden number is less than 20": "This also checks the size of the number, not its digits.",
+          "Ask if the hidden number equals 79": "This checks one number instead of comparing the two digits."
+         },
+         "explanation": "This question checks whether the two digits are the same."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch3-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how yes-or-no questions help the children guess the number and what the 10-question limit means.",
+         "answer": "Each yes-or-no answer gives information about the hidden number. Questions about more than 50, matching digits, or less than 20 can help. The children may ask at most 10 questions, so they should use what they know to guess after the tenth answer.",
+         "points": [
+          "Uses yes-or-no answers to gain information",
+          "Includes the stated comparison questions",
+          "Explains the limit of 10 questions",
+          "Says to make a guess after the tenth answer"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch3-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does jumping in steps of two differ from moving along the number strip one number at a time?",
+         "answer": "When Jumpy jumps in steps of two, it moves from 1 to 3 to 5 and so on. It skips every second number on the strip. If it moved one number at a time, it would land on every number instead.",
+         "points": [
+          "A step of two moves across one number.",
+          "The sequence begins 1, 3, 5.",
+          "Every second number is skipped.",
+          "Moving one at a time lands on every number."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A child makes a number line on the ground and jumps along it. First, the child jumps in twos and marks the numbers reached. Next, the child jumps in fives and marks those numbers too. The child compares the marks to find common numbers, first for twos and fives, then for twos, threes, and fives, and finally for fives and sevens.",
+         "prompt": "The child checks a target using jumps in tens. What should the child record for the target 100?",
+         "options": [
+          "It cannot land on 100.",
+          "It can land on 100 only when the child counts in twos.",
+          "It can land on 100 only when the child counts in fives.",
+          "It can land on 100."
+         ],
+         "answer": 3,
+         "why": {
+          "It cannot land on 100.": "Counting in tens reaches 100.",
+          "It can land on 100 only when the child counts in twos.": "Twos are not the skip pattern being used.",
+          "It can land on 100 only when the child counts in fives.": "Fives are not the skip pattern being used."
+         },
+         "explanation": "Counting in tens reaches 100."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A child makes a number line on the ground and jumps along it. First, the child jumps in twos and marks the numbers reached. Next, the child jumps in fives and marks those numbers too. The child compares the marks to find common numbers, first for twos and fives, then for twos, threes, and fives, and finally for fives and sevens.",
+         "prompt": "The child jumps in fives and checks the target 55. What should the child record?",
+         "options": [
+          "It can land on 55.",
+          "It cannot land on 55.",
+          "It can land on 55 only when counting in twos.",
+          "It can land on 55 only when counting in threes."
+         ],
+         "answer": 0,
+         "why": {
+          "It cannot land on 55.": "The fives pattern does reach 55.",
+          "It can land on 55 only when counting in twos.": "Twos are not the skip pattern being used.",
+          "It can land on 55 only when counting in threes.": "Threes are not the skip pattern being used."
+         },
+         "explanation": "Counting in fives reaches 55."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l4-x3",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A child makes a number line on the ground and jumps along it. First, the child jumps in twos and marks the numbers reached. Next, the child jumps in fives and marks those numbers too. The child compares the marks to find common numbers, first for twos and fives, then for twos, threes, and fives, and finally for fives and sevens.",
+         "prompt": "Instead of jumping in twos, the child changes to jumping in threes. What should the child record for the target 24?",
+         "options": [
+          "It cannot land on 24.",
+          "It can land on 24 only if the child keeps counting in twos.",
+          "It can land on 24.",
+          "It can land on 24 only if the child counts in fives."
+         ],
+         "answer": 2,
+         "why": {
+          "It cannot land on 24.": "Counting in threes reaches 24.",
+          "It can land on 24 only if the child keeps counting in twos.": "The child has changed to threes, not twos.",
+          "It can land on 24 only if the child counts in fives.": "Fives are not the skip pattern being used."
+         },
+         "explanation": "Counting in threes reaches 24."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch3-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the sequence 10, 9, 8 continues, and say what comes just before 10 and just before 9.",
+         "answer": "The sequence moves backward by 1 each time, so the next number after 8 is 7. The number just before 10 is 9, and the number just before 9 is 8. Each new place is one number smaller than the last.",
+         "points": [
+          "Counts backward by 1 each time.",
+          "The next number after 8 is 7.",
+          "The number before 10 is 9.",
+          "The number before 9 is 8."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A chart activity and Bingo game are being prepared. Numbers on the chart will be shaded to show a pattern. The green sequence begins 1, 12, and 23. A number window places 28 at the centre so pupils can find the number below, to the right, and to the left. A 3 × 4 Bingo grid will use numbers from 2 to 12. Numbers may be repeated. Pupils throw two dice, find their sum, and cross that number on the grid.",
+         "prompt": "The green sequence starts with 1, 12, and 23. What should the teacher do next to carry on the chart pattern?",
+         "options": [
+          "Carry on shading the next number in the green sequence.",
+          "Treat 28 as the next number in the green sequence.",
+          "Shade every chart number in a different colour.",
+          "Stop after shading the third green number."
+         ],
+         "answer": 0,
+         "why": {
+          "Treat 28 as the next number in the green sequence.": "Nothing shows that 28 belongs to this sequence.",
+          "Shade every chart number in a different colour.": "Changing colour would not continue the same sequence.",
+          "Stop after shading the third green number.": "The pattern should not stop after three terms."
+         },
+         "explanation": "This continues the stated green sequence."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g2-ch3-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A chart activity and Bingo game are being prepared. Numbers on the chart will be shaded to show a pattern. The green sequence begins 1, 12, and 23. A number window places 28 at the centre so pupils can find the number below, to the right, and to the left. A 3 × 4 Bingo grid will use numbers from 2 to 12. Numbers may be repeated. Pupils throw two dice, find their sum, and cross that number on the grid.",
+         "prompt": "After throwing two dice, what should the pupil do according to the Bingo rule?",
+         "options": [
+          "Find their sum and cross a matching grid number.",
+          "Cross the two dice without finding their sum.",
+          "Cross any grid number without checking the sum.",
+          "Fill the grid again before finding the sum."
+         ],
+         "answer": 0,
+         "why": {
+          "Cross the two dice without finding their sum.": "The rule requires finding the sum first.",
+          "Cross any grid number without checking the sum.": "The crossed number must match the sum.",
+          "Fill the grid again before finding the sum.": "The grid is already filled with numbers from 2 to 12."
+         },
+         "explanation": "The dice sum determines which number is crossed."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g2-ch3-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the green chart pattern should be shown and why 28 is used in a separate number-window task.",
+         "answer": "The teacher should shade numbers on the chart to show the pattern, continuing the green sequence that begins 1, 12, and 23. The number 28 belongs to the separate number-window task, where pupils look below, to the right, and to the left of the centre.",
+         "points": [
+          "Shading is used to show the chart pattern.",
+          "The green sequence begins with 1, 12, and 23.",
+          "28 is the centre of the number window.",
+          "The window asks for numbers below, right, and left."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
