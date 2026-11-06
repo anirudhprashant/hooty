@@ -39083,7 +39083,7 @@
       {
        "id": "mathematics-g5-ch8-l1",
        "title": "Reading scales and changing kilograms into grams",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -39212,6 +39212,38 @@
           "5 (generated problem)",
           "5000 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch8-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "makeone",
+         "params": {
+          "kind": "g"
+         },
+         "title": "Make one whole",
+         "tasks": [
+          {
+           "say": "Make 1 kg using only packs of 250.",
+           "when": "q == 4 and h == 0 and t == 0 and f == 0",
+           "then": "Four 250s make 1000: one 250 is a quarter of a kilogram."
+          },
+          {
+           "say": "Now make it using only packs of 100.",
+           "when": "t == 10 and h == 0 and q == 0 and f == 0",
+           "then": "Ten 100s make 1000: one 100 is a tenth."
+          },
+          {
+           "say": "Make it with three different pack sizes.",
+           "when": "500 * h + 250 * q + 100 * t + 50 * f == 1000 and ((h > 0) + (q > 0) + (t > 0) + (f > 0)) >= 3",
+           "then": "Lots of different packs add up to the same 1000."
+          }
+         ],
+         "takeaway": "1 kg is 1000 g and 1 l is 1000 ml: four 250s, ten 100s or two 500s each make one whole.",
+         "explanation": "1 kg is 1000 g and 1 l is 1000 ml: four 250s, ten 100s or two 500s each make one whole."
         },
         {
          "type": "worked",
@@ -40398,7 +40430,7 @@
       {
        "id": "mathematics-g5-ch8-l2",
        "title": "Comparing weights and measuring milligrams",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -40512,6 +40544,38 @@
           "2 (generated problem)",
           "2000 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "makeone",
+         "params": {
+          "kind": "g"
+         },
+         "title": "Make one whole",
+         "tasks": [
+          {
+           "say": "Make 1 kg using only packs of 250.",
+           "when": "q == 4 and h == 0 and t == 0 and f == 0",
+           "then": "Four 250s make 1000: one 250 is a quarter of a kilogram."
+          },
+          {
+           "say": "Now make it using only packs of 100.",
+           "when": "t == 10 and h == 0 and q == 0 and f == 0",
+           "then": "Ten 100s make 1000: one 100 is a tenth."
+          },
+          {
+           "say": "Make it with three different pack sizes.",
+           "when": "500 * h + 250 * q + 100 * t + 50 * f == 1000 and ((h > 0) + (q > 0) + (t > 0) + (f > 0)) >= 3",
+           "then": "Lots of different packs add up to the same 1000."
+          }
+         ],
+         "takeaway": "1 kg is 1000 g and 1 l is 1000 ml: four 250s, ten 100s or two 500s each make one whole.",
+         "explanation": "1 kg is 1000 g and 1 l is 1000 ml: four 250s, ten 100s or two 500s each make one whole."
         },
         {
          "type": "worked",
@@ -42772,7 +42836,7 @@
       {
        "id": "mathematics-g5-ch8-l6",
        "title": "Solving capacity word problems",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -42879,6 +42943,38 @@
           "5 (generated problem)",
           "5000 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch8-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "makeone",
+         "params": {
+          "kind": "ml"
+         },
+         "title": "Make one whole",
+         "tasks": [
+          {
+           "say": "Make 1 litre using only packs of 250.",
+           "when": "q == 4 and h == 0 and t == 0 and f == 0",
+           "then": "Four 250s make 1000: one 250 is a quarter of a litre."
+          },
+          {
+           "say": "Now make it using only packs of 100.",
+           "when": "t == 10 and h == 0 and q == 0 and f == 0",
+           "then": "Ten 100s make 1000: one 100 is a tenth."
+          },
+          {
+           "say": "Make it with three different pack sizes.",
+           "when": "500 * h + 250 * q + 100 * t + 50 * f == 1000 and ((h > 0) + (q > 0) + (t > 0) + (f > 0)) >= 3",
+           "then": "Lots of different packs add up to the same 1000."
+          }
+         ],
+         "takeaway": "1 kg is 1000 g and 1 l is 1000 ml: four 250s, ten 100s or two 500s each make one whole.",
+         "explanation": "1 kg is 1000 g and 1 l is 1000 ml: four 250s, ten 100s or two 500s each make one whole."
         },
         {
          "type": "mcq",

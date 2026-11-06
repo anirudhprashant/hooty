@@ -23381,7 +23381,7 @@
       {
        "id": "science-ch7-l3",
        "title": "7.3 Measuring Body Temperature Safely",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -23470,6 +23470,33 @@
            "p": 128
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "thermometer",
+         "params": {
+          "kind": "clinical"
+         },
+         "title": "Read the thermometer",
+         "tasks": [
+          {
+           "say": "Show normal body temperature.",
+           "when": "t >= 36.9 and t <= 37.1",
+           "then": "Normal body temperature is about 37 degrees Celsius."
+          },
+          {
+           "say": "Show a fever.",
+           "when": "t >= 38",
+           "then": "From about 38 degrees we call it a fever."
+          }
+         ],
+         "takeaway": "Find the value of one small mark first, then count the marks.",
+         "explanation": "Find the value of one small mark first, then count the marks."
         },
         {
          "type": "worked",
@@ -24249,7 +24276,7 @@
       {
        "id": "science-ch7-l5",
        "title": "7.3.2 Laboratory Thermometer: Parts, Range and Divisions",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -24329,6 +24356,33 @@
            "p": 130
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "thermometer",
+         "params": {
+          "kind": "lab"
+         },
+         "title": "Read the thermometer",
+         "tasks": [
+          {
+           "say": "Show where water freezes.",
+           "when": "t <= 0 and t >= -1",
+           "then": "Water freezes at 0 degrees Celsius."
+          },
+          {
+           "say": "Show where water boils.",
+           "when": "t >= 100 and t <= 101",
+           "then": "Water boils at 100 degrees Celsius."
+          }
+         ],
+         "takeaway": "Find the value of one small mark first, then count the marks.",
+         "explanation": "Find the value of one small mark first, then count the marks."
         },
         {
          "type": "concept",
