@@ -973,6 +973,23 @@ export const WIDGETS = {
       return { kids, say: got ? `${used} = ₹${got}. ${left === 0 ? `That makes ₹${want}.` : left > 0 ? `₹${left} more makes ₹${want}.` : `That is ₹${-left} more than ₹${want}.`}` : `Add notes and coins to make ₹${want}.` };
     },
   },
+  blocks: {
+    subject: 'maths', about: 'Dienes blocks: a cube for 1000, a flat for 100, a rod for 10 and a unit for 1. Build a number from thousands, hundreds, tens and ones, and see 10 ones swap for 1 ten, 10 tens for 1 hundred, 10 hundreds for 1 thousand. For place value, tens and ones, hundreds, thousands, grouping, regrouping.',
+    sliders: [['th', 'Thousands', 0, 3, 1, 0], ['hu', 'Hundreds', 0, 9, 1, 2], ['te', 'Tens', 0, 9, 1, 3], ['on', 'Ones', 0, 19, 1, 4]],
+    draw(v) {
+      const total = 1000 * v.th + 100 * v.hu + 10 * v.te + v.on, kids = [];
+      // each kind of block in its own column: a thousand is a big square, a hundred a flat, a ten a rod, a one a dot
+      for (let i = 0; i < v.th; i++) kids.push(R(24 + i * 30, 30, 26, 26, '#9fd3f2', { w: 2.5, r: 3 }), T(37 + i * 30, 48, '1000', { z: 9, w: 700 }));
+      for (let i = 0; i < v.hu; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(24 + c * 34, 70 + r * 34, 30, 30, '#7fb3d5', { w: 2, r: 3 })); for (let g = 1; g < 3; g++) kids.push(L(24 + c * 34 + g * 10, 70 + r * 34, 24 + c * 34 + g * 10, 100 + r * 34, '#4f84ad', 1), L(24 + c * 34, 70 + r * 34 + g * 10, 54 + c * 34, 70 + r * 34 + g * 10, '#4f84ad', 1)); }
+      for (let i = 0; i < v.te; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(200 + c * 14, 70 + r * 66, 11, 60, '#5fc9b8', { w: 2, r: 2 })); for (let g = 1; g < 6; g++) kids.push(L(200 + c * 14, 70 + r * 66 + g * 10, 211 + c * 14, 70 + r * 66 + g * 10, '#2f8f82', 1)); }
+      for (let i = 0; i < v.on; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(300 + c * 16, 70 + r * 16, 12, 12, '#f2a33a', { w: 2, r: 2 })); }
+      kids.push(T(60, 224, 'hundreds', { z: 11, w: 600, f: '#6b5a8a' }), T(228, 224, 'tens', { z: 11, w: 600, f: '#6b5a8a' }), T(335, 224, 'ones', { z: 11, w: 600, f: '#6b5a8a' }));
+      kids.push(T(480, 90, String(total), { z: 40, w: 700 }), T(480, 128, `${v.th ? v.th + ' thousand' + (v.th > 1 ? 's' : '') + ', ' : ''}${v.hu} hundred${v.hu === 1 ? '' : 's'}`, { z: 13, w: 600, f: '#4f84ad' }), T(480, 148, `${v.te} ten${v.te === 1 ? '' : 's'}, ${v.on} one${v.on === 1 ? '' : 's'}`, { z: 13, w: 600, f: '#2f8f82' }));
+      if (v.on >= 10) kids.push(T(480, 190, `${v.on} ones = 1 ten and ${v.on - 10} one${v.on - 10 === 1 ? '' : 's'}`, { z: 14, w: 700, f: '#c2510e' }));
+      const nm = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`, parts = [v.th && nm(v.th, 'thousand'), v.hu && nm(v.hu, 'hundred'), v.te && nm(v.te, 'ten'), v.on && nm(v.on, 'one')].filter(Boolean);
+      return { kids, say: total ? `${parts.join(', ')} make ${total}.${v.on >= 10 ? ` ${v.on} ones can be grouped as 1 ten and ${nm(v.on - 10, 'one')}.` : ''}` : 'Add some blocks to make a number.' };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

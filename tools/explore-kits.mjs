@@ -471,6 +471,16 @@ export const KITS = {
       { say: 'Make \u20b9183 a different way, using no \u20b9100 note.', when: 'amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0', then: 'Lots of ways make the same amount.' },
     ],
   },
+  blocks: {
+    grades: [2, 5], match: [/dienes/, /ten ones make|ones make one ten|tens make one hundred|hundreds make one thousand/, /building thousand|blocks/, /\btens\b.*\bones\b/],
+    title: 'Build it with blocks', takeaway: '10 ones make 1 ten, 10 tens make 1 hundred and 10 hundreds make 1 thousand.',
+    tasks: [
+      { say: 'Make 34.', when: 'th == 0 and hu == 0 and te == 3 and on == 4', then: '3 tens and 4 ones make 34.' },
+      { say: 'Make 250.', when: 'th == 0 and hu == 2 and te == 5 and on == 0', then: '2 hundreds, 5 tens and no ones make 250.' },
+      { say: 'Make 106 and notice the empty tens.', when: 'th == 0 and hu == 1 and te == 0 and on == 6', then: '1 hundred, no tens and 6 ones make 106.' },
+      { say: 'Show 14 using one ten and four ones.', when: 'th == 0 and hu == 0 and te == 1 and on == 4', then: '14 ones can be grouped as 1 ten and 4 ones.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
