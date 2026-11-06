@@ -842,6 +842,40 @@ export const WIDGETS = {
       return { kids, say: `A ${name} has ${F} faces, ${V} corners and ${E} edges. Faces + corners − edges = ${F} + ${V} − ${E} = ${F + V - E}.` };
     },
   },
+  compass: {
+    subject: 'maths', about: 'Draw a circle with a compass: open the compass to a radius and every point on the circle is that far from the centre. Turn a fold line: every diameter passes through the centre and is twice the radius. For circles, centre, radius, diameter, using a compass (no pi).',
+    sliders: [['r', 'Open the compass (radius in cm)', 1, 6, 1, 3], ['fold', 'Turn the fold line (degrees)', 0, 165, 15, 0]],
+    draw(v) {
+      const cx = 220, cy = 150, k = 20, rad = v.r * k, a = (v.fold * Math.PI) / 180, kids = [];
+      for (let i = 0; i < 24; i++) { const t = (i / 24) * Math.PI * 2; kids.push(CIRC(cx + rad * Math.cos(t), cy + rad * Math.sin(t), 2.5, '#9b8db8', { w: 0 })); }
+      kids.push(CIRC(cx, cy, rad, 'none', { s: C.p, w: 3 }));
+      const dx = rad * Math.cos(a), dy = -rad * Math.sin(a);
+      kids.push(L(cx - dx, cy - dy, cx + dx, cy + dy, C.o, 4, { 'stroke-dasharray': '10 6' }), L(cx, cy, cx + rad, cy, '#058a68', 4));
+      // the compass: needle on the centre, pencil on the circle
+      kids.push(L(cx, cy, cx + rad / 2, cy - 70, INK, 4), L(cx + rad / 2, cy - 70, cx + rad, cy, '#e2583e', 4), CIRC(cx + rad / 2, cy - 72, 6, INK, { w: 0 }));
+      kids.push(CIRC(cx, cy, 5, INK, { w: 0 }), T(cx - 14, cy + 20, 'centre', { z: 12, w: 600 }));
+      kids.push(T(470, 70, `radius: ${v.r} cm`, { z: 18, w: 700, f: '#058a68' }), T(470, 110, `diameter: ${2 * v.r} cm`, { z: 18, w: 700, f: '#c2510e' }), T(470, 150, `${v.r} + ${v.r} = ${2 * v.r}`, { z: 16, w: 600 }));
+      return { kids, say: `With the compass open to ${v.r} cm, every point on the circle is ${v.r} cm from the centre: that is the radius. The fold line is a diameter. Wherever it is turned it passes through the centre and is ${2 * v.r} cm long, twice the radius.` };
+    },
+  },
+  gridwalk: {
+    subject: 'maths', about: 'Walk on a 4 by 4 grid from the bottom-left square. Move right and up (no diagonal moves) and count the steps to reach the flower, the mango or the orange. Rows and columns are counted from the bottom-left corner. For grids, positions, rows and columns, directions, maps and paths.',
+    sliders: [['right', 'Steps to the right', 0, 3, 1, 0], ['up', 'Steps up', 0, 3, 1, 0]],
+    draw(v) {
+      const x0 = 90, y0 = 270, sz = 60, cell = (c, r) => [x0 + c * sz + sz / 2, y0 - r * sz - sz / 2], kids = [];
+      const things = [['flower', 2, 3, '\u{1F33C}'], ['mango', 3, 1, '\u{1F96D}'], ['orange', 1, 2, '\u{1F34A}']];
+      for (let c = 0; c < 4; c++) for (let r = 0; r < 4; r++) kids.push(R(x0 + c * sz, y0 - (r + 1) * sz, sz, sz, (c + r) % 2 ? '#f3f0ff' : '#ffffff', { w: 2 }));
+      for (let i = 0; i < 4; i++) kids.push(T(x0 + i * sz + sz / 2, y0 + 20, `col ${i + 1}`, { z: 11, w: 600, f: '#6b5a8a' }), T(x0 - 26, y0 - i * sz - sz / 2 + 4, `row ${i + 1}`, { z: 11, w: 600, f: '#6b5a8a' }));
+      for (const [, c, r, e] of things) { const [x, y] = cell(c, r); kids.push(T(x, y + 10, e, { z: 30 })); }
+      let path = `M ${cell(0, 0).join(' ')}`; for (let i = 1; i <= v.right; i++) path += ` L ${cell(i, 0).join(' ')}`; for (let j = 1; j <= v.up; j++) path += ` L ${cell(v.right, j).join(' ')}`;
+      kids.push(s('path', { d: path, fill: 'none', stroke: C.o, 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
+      const [mx, my] = cell(v.right, v.up); kids.push(CIRC(mx, my, 25, 'none', { s: C.p, w: 5 }));
+      const here = things.find(([, c, r]) => c === v.right && r === v.up), steps = v.right + v.up;
+      kids.push(T(470, 80, `row ${v.up + 1}, column ${v.right + 1}`, { z: 17, w: 700 }), T(470, 116, `${steps} step${steps === 1 ? '' : 's'}`, { z: 17, w: 700, f: '#c2510e' }));
+      if (here) kids.push(T(470, 156, `found the ${here[0]}!`, { z: 17, w: 700, f: '#058a68' }));
+      return { kids, say: `${steps ? `${v.right} step${v.right === 1 ? '' : 's'} right and ${v.up} step${v.up === 1 ? '' : 's'} up` : 'Start'}: you are in row ${v.up + 1}, column ${v.right + 1}${here ? `, on the ${here[0]}` : ''}. ${steps} step${steps === 1 ? '' : 's'} in all, with no diagonal moves.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

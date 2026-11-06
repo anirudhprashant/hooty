@@ -410,6 +410,22 @@ export const KITS = {
       { say: 'Turn the cuboid right round to the back.', when: 'shape == 1 and turn >= 180', then: 'Turning it changes how it looks, never how many faces, corners and edges it has.' },
     ],
   },
+  compass: {
+    grades: [4, 5], match: [/\bradi(us|i)\b/, /\bdiameters?\b/, /\bcompass\b/, /\bcircles?\b/],
+    title: 'Open the compass', takeaway: 'Every point on a circle is the same distance from the centre: the radius. A diameter goes through the centre and is twice the radius.',
+    tasks: [
+      { say: 'Draw a circle with a diameter of 8 cm.', when: 'r == 4', then: 'Radius 4 cm, so diameter 4 + 4 = 8 cm.' },
+      { say: 'Turn the fold line all the way round. Does it still pass through the centre?', when: 'fold >= 90', then: 'Yes: every diameter passes through the centre.' },
+    ],
+  },
+  gridwalk: {
+    grades: [3, 5], match: [/\bgrids?\b/, /\brows?\b.*\bcolumns?\b/, /steps? (to the )?(right|left|up)/],
+    title: 'Walk the grid', takeaway: 'A square on a grid is named by its row and column; count the steps with no diagonal moves.',
+    tasks: [
+      { say: 'Walk to the flower.', when: 'right == 2 and up == 3', then: '2 right and 3 up: 5 steps, row 4, column 3.' },
+      { say: 'Now find the mango.', when: 'right == 3 and up == 1', then: '3 right and 1 up: 4 steps, row 2, column 4.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

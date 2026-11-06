@@ -2,7 +2,7 @@
 // Attach simulations to lessons by rule, with no model: each kit in tools/explore-kits.mjs says what words mean a lesson is
 // about its idea and which classes learn it. A lesson gets the best-scoring kit (title words count 3, fact words 1, at least 3
 // needed), at most two lessons per chapter share a simulation, and every challenge is checked: false at the start and reachable.
-// Lessons that already have a simulation are left alone.
+// Lessons that already have a simulation, or are marked { "skip": true }, are left alone.
 //   node tools/auto-explore.mjs mathematics-g8 [mathematics-g9 ...] [--ch=3] [--dry]
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -46,7 +46,7 @@ for (const slug of books) {
     for (const v of Object.values(have)) if (v?.widget) used[v.widget] = (used[v.widget] || 0) + 1;
     for (const lesson of facts.lessons || []) {
       const key = lesson.id.slice(1);
-      if (have[key]?.widget) continue;
+      if (have[key]?.widget || have[key]?.skip) continue;   // skip: true marks a lesson a person decided has no fitting simulation
       looked++;
       const title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
       const ranked = Object.entries(KITS)
