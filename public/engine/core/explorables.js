@@ -952,10 +952,10 @@ export const WIDGETS = {
     },
   },
   money: {
-    subject: 'maths', about: 'Make an amount of money from Rs 100, Rs 50 and Rs 10 notes and Rs 5 and Rs 1 coins: Rs 36, Rs 125, Rs 163 or Rs 183. There is more than one way to make the same amount. For money, rupees, counting money, notes and coins, shopping and change.',
-    sliders: [['amt', 'Amount to make: 36, 125, 163, 183', 0, 3, 1, 0], ['h', 'Rs 100 notes', 0, 2, 1, 0], ['f', 'Rs 50 notes', 0, 3, 1, 0], ['t', 'Rs 10 notes', 0, 9, 1, 0], ['v', 'Rs 5 coins', 0, 9, 1, 0], ['o', 'Rs 1 coins', 0, 9, 1, 0]],
+    subject: 'maths', about: 'Make an amount of money from Rs 100, Rs 50 and Rs 10 notes and Rs 5 and Rs 1 coins: Rs 20, 28, 30, 36, 55, 125, 163 or 183. There is more than one way to make the same amount. For money, rupees, counting money, notes and coins, shopping and change.',
+    sliders: [['amt', 'Amount to make: 36, 125, 163, 183, 20, 28, 30, 55', 0, 7, 1, 0], ['h', 'Rs 100 notes', 0, 2, 1, 0], ['f', 'Rs 50 notes', 0, 3, 1, 0], ['t', 'Rs 10 notes', 0, 9, 1, 0], ['v', 'Rs 5 coins', 0, 9, 1, 0], ['o', 'Rs 1 coins', 0, 9, 1, 0]],
     draw(v) {
-      const want = [36, 125, 163, 183][v.amt], pieces = [[100, v.h, '#7fb3d5', true], [50, v.f, '#5fc9b8', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [1, v.o, '#c8c8c8', false]];
+      const want = [36, 125, 163, 183, 20, 28, 30, 55][v.amt], pieces = [[100, v.h, '#7fb3d5', true], [50, v.f, '#5fc9b8', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [1, v.o, '#c8c8c8', false]];
       const got = pieces.reduce((a, [val, n]) => a + val * n, 0), kids = [T(300, 32, `Make ₹${want}`, { z: 22 })];
       // lay the notes and coins out in rows, smaller when there are many so they stay above the total
       const many = pieces.reduce((a, [, n]) => a + n, 0), sc = many > 24 ? 0.6 : many > 14 ? 0.78 : 1, shown = [];

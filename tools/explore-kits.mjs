@@ -464,11 +464,12 @@ export const KITS = {
     ],
   },
   money: {
-    grades: [3, 5], match: [/\bmoney\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b/, /\bbalances? to customers\b/],
+    grades: [3, 5], match: [/\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b/, /\bbalances? to customers\b/],
     title: 'Pay the exact amount', takeaway: 'The same amount can be made with different notes and coins; big notes first uses the fewest.',
     tasks: [
       { say: 'Make \u20b936.', when: 'amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36', then: 'For example 3 \u00d7 \u20b910 + 1 \u00d7 \u20b95 + 1 \u00d7 \u20b91.' },
       { say: 'Make \u20b9163 with just 6 notes and coins.', when: 'amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6', then: '\u20b9100 + \u20b950 + \u20b910 + \u20b91 + \u20b91 + \u20b91: big notes first.' },
+      { say: 'Pay \u20b955 in two different ways, one after the other.', when: 'amt == 7 and 100 * h + 50 * f + 10 * t + 5 * v + o == 55 and h == 0', then: 'For example 5 \u00d7 \u20b910 + 1 \u00d7 \u20b95, or \u20b950 + \u20b95: the same amount can be paid in many ways.' },
       { say: 'Make \u20b9183 a different way, using no \u20b9100 note.', when: 'amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0', then: 'Lots of ways make the same amount.' },
     ],
   },
@@ -484,7 +485,7 @@ export const KITS = {
   },
   column: {
     grades: [3, 5], match: [/regroup/, /\bcarry|\bcarrying\b/, /\bborrow/, /take away|taking away/, /\badd up\b|subtract it/, /column (addition|subtraction)/],
-    params: (text) => ({ kind: /subtract|take away|taking away|borrow|\bleft\b/.test(text) && !/\badd up\b/.test(text) ? 'sub' : 'add' }),
+    params: (text) => ({ kind: /^add/.test(text) || /\badd up\b/.test(text) ? 'add' : /subtract|take away|taking away|borrow|\bleft\b/.test(text) ? 'sub' : 'add' }),
     title: 'Add and subtract in columns', takeaway: 'Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column.',
     tasks: (p) => (p.kind === 'sub'
       ? [{ say: 'Take away 215 from 438.', when: 'a == 438 and b == 215 and step == 3', then: '438 \u2212 215 = 223: that is how many children are still waiting.' },
