@@ -57,7 +57,8 @@ for (const slug of books) {
       for (const [id, kit] of ranked) {
         const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || [])) : {};
         if (kit.usable && !kit.usable(params)) continue;
-        if ((used[slot(id, params)] || 0) >= (kit.perChapter || 2)) continue;
+        const cap = typeof kit.perChapter === 'object' ? (kit.perChapter[grade] ?? 2) : (kit.perChapter || 2);   // a number, or { grade: number } to raise it for one class
+        if ((used[slot(id, params)] || 0) >= cap) continue;
         const full = { ...(WIDGETS[id].params || {}), ...params };
         const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params) : kit.tasks).filter((t) => { try { return canReach(id, full, t.when); } catch { return false; } });
         if (!tasks.length) continue;

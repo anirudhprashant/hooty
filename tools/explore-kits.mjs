@@ -107,10 +107,11 @@ export const KITS = {
     ],
   },
   fraction: {
-    grades: [4, 8], match: [/fractions?/, /numerator/, /denominator/],
+    perChapter: { 3: 4 }, grades: [3, 8], match: [/fractions?/, /numerator/, /denominator/, /\bhalves\b|\bquarters?\b(?! turns?)/],
     title: 'Shade the fraction', takeaway: 'The bottom number says how many equal parts, the top says how many are taken.',
     tasks: [
       { say: 'Show one half.', when: 'n * 2 == d', then: 'Any fraction whose top is half its bottom equals one half.' },
+      { say: 'Cut the bar into 4 equal parts and shade one quarter.', when: 'd == 4 and n == 1', then: 'One of four equal parts is a quarter: four quarters make a whole.' },
       { say: 'Show a fraction bigger than one whole.', when: 'n > d', then: 'When the top is bigger than the bottom you have more than a whole.' },
     ],
   },
