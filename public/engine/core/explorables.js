@@ -908,6 +908,33 @@ export const WIDGETS = {
       return { kids, say: `It is ${words}, ${h12}:${pad(v.minute)} ${ampm}${v.hour === 12 && v.minute === 0 ? ' (noon)' : v.hour === 0 && v.minute === 0 ? ' (midnight)' : ''}. A 24-hour digital clock shows ${pad(v.hour)}:${pad(v.minute)}.` };
     },
   },
+  makeone: {
+    subject: 'maths', about: 'Make 1 kilogram (or 1 litre) from smaller packets (or bottles) of 500, 250, 100 and 50: a pan balance against a 1 kg packet, or a 1-litre bottle being filled. 1 kg = 1000 g, 1 l = 1000 ml; 250 is a quarter and 100 a tenth. Param kind "g" or "ml". For weight, capacity, grams and kilograms, millilitres and litres, measurement.',
+    params: { kind: 'g' },
+    sliders: [['h', 'Packs of 500', 0, 2, 1, 0], ['q', 'Packs of 250', 0, 4, 1, 0], ['t', 'Packs of 100', 0, 10, 1, 0], ['f', 'Packs of 50', 0, 20, 1, 0]],
+    draw(v, p) {
+      const ml = p.kind === 'ml', unit = ml ? 'ml' : 'g', big = ml ? '1 litre' : '1 kg', total = 500 * v.h + 250 * v.q + 100 * v.t + 50 * v.f, kids = [];
+      const packs = [[500, v.h, '#e2583e'], [250, v.q, '#f2a33a'], [100, v.t, '#2fa84f'], [50, v.f, '#1f63d9']];
+      if (ml) {
+        // the 1-litre bottle with a 1000 ml mark, filled by the small bottles
+        const bx = 90, by = 50, bw = 120, bh = 220, lvl = Math.min(total, 1000) / 1000;
+        kids.push(R(bx, by, bw, bh, '#ffffff', { w: 3, r: 10 }), R(bx + 3, by + bh - 3 - lvl * (bh - 6), bw - 6, lvl * (bh - 6), '#7fbfff', { w: 0 }), L(bx - 10, by + 3, bx + bw + 10, by + 3, '#c0392b', 2, { 'stroke-dasharray': '6 4' }), T(bx + bw / 2, by - 10, '1 litre = 1000 ml', { z: 13, w: 700, f: '#c0392b' }));
+        if (total > 1000) kids.push(T(bx + bw / 2, by + 40, 'overflowing!', { z: 15, w: 700, f: '#c0392b' }));
+      } else {
+        const tilt = Math.max(-1, Math.min(1, (total - 1000) / 1000)) * 14, a = (tilt * Math.PI) / 180, cx = 190, cy = 100, arm = 125;
+        const lx = cx - arm * Math.cos(a), ly = cy - arm * Math.sin(a), rx = cx + arm * Math.cos(a), ry = cy + arm * Math.sin(a);
+        kids.push(s('polygon', { points: `${cx - 26},270 ${cx + 26},270 ${cx},${cy}`, fill: '#d8cff0', stroke: INK, 'stroke-width': 3 }), L(lx, ly, rx, ry, INK, 6));
+        for (const [px, py] of [[lx, ly], [rx, ry]]) kids.push(L(px, py, px - 40, py + 60, INK, 1.5), L(px, py, px + 40, py + 60, INK, 1.5), s('path', { d: `M ${px - 55} ${py + 60} Q ${px} ${py + 85} ${px + 55} ${py + 60} Z`, fill: '#f3f0ff', stroke: INK, 'stroke-width': 3 }));
+        kids.push(R(lx - 32, ly + 22, 64, 38, '#8a6bd1', { w: 2.5, r: 5 }), T(lx, ly + 47, '1 kg', { z: 15, w: 700, f: '#fff' }));
+        let k = 0; for (const [, n, col] of packs) for (let i = 0; i < n; i++, k++) kids.push(R(rx - 48 + (k % 8) * 12, ry + 50 - Math.floor(k / 8) * 10, 11, 9, col, { w: 1 }));
+      }
+      // the count of each pack, and the total
+      packs.forEach(([size, n, col], i) => kids.push(R(400, 40 + i * 34, 22, 22, col, { w: 2, r: 4 }), T(430, 57 + i * 34, `${n} × ${size} ${unit}`, { a: 'start', z: 15, w: 600 })));
+      kids.push(T(470, 200, `${total} ${unit}`, { z: 22, w: 700, f: total === 1000 ? '#058a68' : total > 1000 ? '#c0392b' : INK }), T(470, 230, total === 1000 ? `exactly ${big}!` : total > 1000 ? `${total - 1000} ${unit} too much` : `${1000 - total} ${unit} more to go`, { z: 14, w: 700, f: '#6b5a8a' }));
+      const used = packs.filter(([, n]) => n).map(([size, n]) => `${n} × ${size} ${unit}`).join(' + ');
+      return { kids, say: total === 1000 ? `${used} = 1000 ${unit} = ${big}. ${ml ? 'The bottle is full.' : 'The pans balance.'}` : total ? `${used} = ${total} ${unit}. ${total > 1000 ? `That is more than ${big}.` : `${1000 - total} ${unit} more makes ${big}.`}` : `Add packs to make ${big}, which is 1000 ${unit}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

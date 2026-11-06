@@ -43,23 +43,26 @@ for (const slug of books) {
     if (!existsSync(factsFile)) continue;
     const facts = JSON.parse(readFileSync(factsFile, 'utf8')), have = existsSync(out) ? JSON.parse(readFileSync(out, 'utf8')) : {};
     const used = {};
-    for (const v of Object.values(have)) if (v?.widget) used[v.widget] = (used[v.widget] || 0) + 1;
+    // the per-chapter limit counts each mode of a widget apart (weighing and pouring, winnowing and settling)
+    const slot = (id, params) => (params?.kind ? `${id}:${params.kind}` : id);
+    for (const v of Object.values(have)) if (v?.widget) used[slot(v.widget, v.params)] = (used[slot(v.widget, v.params)] || 0) + 1;
     for (const lesson of facts.lessons || []) {
       const key = lesson.id.slice(1);
       if (have[key]?.widget || have[key]?.skip) continue;   // skip: true marks a lesson a person decided has no fitting simulation
       looked++;
       const title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
       const ranked = Object.entries(KITS)
-        .filter(([id, k]) => WIDGETS[id] && [WIDGETS[id].subject, ...(k.subjects || [])].some((x) => kinds.includes(x)) && grade >= k.grades[0] && grade <= k.grades[1] && (used[id] || 0) < (k.perChapter || 2))
+        .filter(([id, k]) => WIDGETS[id] && [WIDGETS[id].subject, ...(k.subjects || [])].some((x) => kinds.includes(x)) && grade >= k.grades[0] && grade <= k.grades[1])
         .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= (x[1].minScore || 3)).sort((a, b) => b[2] - a[2]);
       for (const [id, kit] of ranked) {
         const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || [])) : {};
         if (kit.usable && !kit.usable(params)) continue;
+        if ((used[slot(id, params)] || 0) >= (kit.perChapter || 2)) continue;
         const full = { ...(WIDGETS[id].params || {}), ...params };
         const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params) : kit.tasks).filter((t) => { try { return canReach(id, full, t.when); } catch { return false; } });
         if (!tasks.length) continue;
         have[key] = { widget: id, ...(kit.params ? { params } : {}), title: kit.title, tasks, takeaway: kit.takeaway, auto: true };
-        used[id] = (used[id] || 0) + 1; added++; tally[id] = (tally[id] || 0) + 1;
+        used[slot(id, params)] = (used[slot(id, params)] || 0) + 1; added++; tally[id] = (tally[id] || 0) + 1;
         console.log(`${slug} ${ch} lesson ${key} "${title.slice(0, 50)}": ${id}`);
         break;
       }

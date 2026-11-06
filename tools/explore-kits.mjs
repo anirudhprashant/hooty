@@ -443,6 +443,16 @@ export const KITS = {
       { say: 'Show midnight.', when: 'hour == 0 and minute == 0', then: '12:00 AM is 00:00.' },
     ],
   },
+  makeone: {
+    grades: [3, 5], match: [/\bkilograms?\b.*\bgrams?\b|\bgrams?\b.*\bkilograms?\b/, /\blitres?\b.*\bmillilitres?\b|\bmillilitres?\b.*\blitres?\b/, /\bcapacity\b/, /weigh(t|ing)/, /\bpackets?\b/],
+    params: (text) => ({ kind: /litre|capacity|bottle/.test(text) && !/kilogram|\bgrams?\b/.test(text) ? 'ml' : 'g' }),
+    title: 'Make one whole', takeaway: '1 kg is 1000 g and 1 l is 1000 ml: four 250s, ten 100s or two 500s each make one whole.',
+    tasks: (p) => [
+      { say: `Make ${p.kind === 'ml' ? '1 litre' : '1 kg'} using only packs of 250.`, when: 'q == 4 and h == 0 and t == 0 and f == 0', then: `Four 250s make 1000: one 250 is a quarter of ${p.kind === 'ml' ? 'a litre' : 'a kilogram'}.` },
+      { say: 'Now make it using only packs of 100.', when: 't == 10 and h == 0 and q == 0 and f == 0', then: 'Ten 100s make 1000: one 100 is a tenth.' },
+      { say: 'Make it with three different pack sizes.', when: '500 * h + 250 * q + 100 * t + 50 * f == 1000 and ((h > 0) + (q > 0) + (t > 0) + (f > 0)) >= 3', then: 'Lots of different packs add up to the same 1000.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
