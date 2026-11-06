@@ -719,6 +719,36 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  radiation: {
+    subject: 'science', about: 'Two cans of water in the sunshine: a white one and one whose colour you choose. Over time the darker can warms faster because dark surfaces absorb more of the Sun\'s radiation and light ones reflect it. For radiation, heat from the Sun, absorbing and reflecting heat, light and dark clothes.',
+    sliders: [['colour', 'Paint the can: 0 white ... 3 black', 0, 3, 1, 2], ['t', 'Minutes in the sun', 0, 30, 5, 0]],
+    draw(v) {
+      const shades = [['white', '#f7f7f7', 0.2], ['light grey', '#c8c8c8', 0.45], ['dark grey', '#6d6d6d', 0.7], ['black', '#222222', 0.92]];
+      const temp = (k) => Math.min(60, 25 + k * 1.1 * v.t), [name, fillc, absorb] = shades[v.colour], tw = temp(0.2), tc = temp(absorb);
+      const kids = [CIRC(300, 34, 24, '#ffcc33', { s: '#ffb000', w: 3 })];
+      for (let i = 0; i < 7; i++) kids.push(L(250 + i * 17, 64, 160 + i * 47, 140, '#ffcc33', 2.5));
+      const can = (x, col, t, label) => [R(x, 150, 90, 110, col, { r: 8, w: 3 }), s('ellipse', { cx: x + 45, cy: 150, rx: 45, ry: 10, fill: col, stroke: INK, 'stroke-width': 3 }), T(x + 45, 286, label, { z: 13, w: 600 }), T(x + 45, 210, `${num(t, 0)} °C`, { z: 20, f: col === '#222222' || col === '#6d6d6d' ? '#ffffff' : INK })];
+      kids.push(...can(140, '#f7f7f7', tw, 'white can'), ...can(370, fillc, tc, `${name} can`));
+      kids.push(T(14, 24, v.t ? `after ${v.t} minutes (about)` : 'both start at 25 °C', { a: 'start', z: 14, w: 600, f: '#6b5a8a' }));
+      return { kids, say: v.t ? `After ${v.t} minutes in the sun the white can is about ${num(tw, 0)} °C and the ${name} can about ${num(tc, 0)} °C. ${v.colour ? 'Darker surfaces absorb more of the Sun’s heat; white reflects most of it.' : 'Both are white, so they warm the same: white reflects most of the heat.'}` : 'Both cans start at 25 °C. Let time pass in the sunshine.' };
+    },
+  },
+  seepage: {
+    subject: 'science', about: 'Water poured through gravel, sand and clay in three funnels. Gravel lets it through fastest because the gaps between its particles are widest; clay lets through the least. For seepage, infiltration, groundwater, soil types, water conservation.',
+    sliders: [['t', 'Minutes since pouring', 0, 10, 1, 0]],
+    draw(v) {
+      const soils = [['gravel', 30, '#9a9a9a', 9], ['sand', 12, '#e6c88a', 4], ['clay', 2, '#a0522d', 1.5]], kids = [];
+      soils.forEach(([name, rate, col, grain], i) => {
+        const x = 70 + i * 180, got = Math.min(100, rate * v.t), left = 100 - got;
+        kids.push(s('path', { d: `M ${x} 40 L ${x + 120} 40 L ${x + 70} 130 L ${x + 50} 130 Z`, fill: col, stroke: INK, 'stroke-width': 3 }));
+        for (let k = 0; k < 18; k++) kids.push(CIRC(x + 22 + (k % 6) * 14 + (Math.floor(k / 6) * 5), 52 + Math.floor(k / 6) * 16, grain, '#ffffff', { w: 0, x: { opacity: 0.35 } }));
+        if (left > 0) kids.push(R(x + 10, 40 - (left / 100) * 26, 100, (left / 100) * 26, '#7fbfff', { w: 0, x: { opacity: 0.8 } }));
+        kids.push(L(x + 60, 130, x + 60, 160, INK, 3), R(x + 25, 160, 70, 100, '#fff', { w: 3, r: 4 }), R(x + 27, 258 - (got / 100) * 96, 66, (got / 100) * 96, '#3a86ff', { w: 0 }));
+        kids.push(T(x + 60, 285, `${name}: ${got} ml`, { z: 14, w: 600 }));
+      });
+      return { kids, say: v.t ? `After ${v.t} minute${v.t > 1 ? 's' : ''}, about ${Math.min(100, 30 * v.t)} ml has seeped through the gravel, ${Math.min(100, 12 * v.t)} ml through the sand and ${Math.min(100, 2 * v.t)} ml through the clay. Bigger gaps between particles let water through faster.` : 'The same 100 ml of water has just been poured onto gravel, sand and clay.' };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

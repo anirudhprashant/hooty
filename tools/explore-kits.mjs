@@ -358,6 +358,22 @@ export const KITS = {
       { say: 'Make a land breeze.', when: 'hour >= 21 or hour <= 5', then: 'At night the land is cooler, so the breeze blows out to sea.' },
     ],
   },
+  radiation: {
+    grades: [6, 8], match: [/\bradiation\b/, /absorbs? (more )?heat/, /dark(er)? (colou?red )?(surfaces|clothes)/, /light[- ]colou?red clothes/],
+    title: 'Paint the can', takeaway: 'Dark surfaces absorb more of the Sun\u2019s heat; light ones reflect it.',
+    tasks: [
+      { say: 'Paint the can black and leave it 20 minutes.', when: 'colour == 3 and t >= 20', then: 'The black can is much hotter: dark colours absorb more heat.' },
+      { say: 'Paint it white too. Which can is hotter now?', when: 'colour == 0 and t >= 20', then: 'Neither: both reflect most of the heat. That is why light clothes keep us cool in summer.' },
+    ],
+  },
+  seepage: {
+    grades: [6, 8], match: [/\bseep(age|s|ing)?\b/, /groundwater/, /infiltration/, /\bgravel\b/],
+    title: 'Pour the water', takeaway: 'Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles.',
+    tasks: [
+      { say: 'Let 3 minutes pass.', when: 't == 3', then: 'Gravel has let through the most water: its particles have the widest gaps.' },
+      { say: 'Wait until all the water is through the gravel.', when: 't >= 4', then: 'All 100 ml is through the gravel, while clay has let through only a little.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
