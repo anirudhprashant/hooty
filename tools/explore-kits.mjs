@@ -436,9 +436,11 @@ export const KITS = {
     ],
   },
   clock: {
-    grades: [3, 6], match: [/\bclocks?\b/, /\ba\.?m\.?\b.*\bp\.?m\.?\b|\bam\b.*\bpm\b/, /hours? and minutes?/, /24-hour|\bo.clock\b/, /half past|quarter (past|to)/, /hours in a day/],
+    grades: [2, 6], match: [/\bclocks?\b/, /\ba\.?m\.?\b.*\bp\.?m\.?\b|\bam\b.*\bpm\b/, /hours? and minutes?/, /24-hour|\bo.clock\b/, /half past|quarter (past|to)/, /hours in a day/],
     title: 'Set the clock', takeaway: 'AM is from midnight to noon and PM from noon to midnight; a 24-hour clock counts on past 12, so 8:00 PM is 20:00.',
     tasks: [
+      { say: 'Gargi wakes up at 6 o\u2019clock. Set the clock to 6.', when: 'hour == 6 and minute == 0', then: '6 o\u2019clock: the short hour hand points to 6 and the long minute hand points to 12.' },
+      { say: 'Show 3 o\u2019clock.', when: 'hour == 3 and minute == 0', then: 'At 3 o\u2019clock the long minute hand is on 12 and the short hour hand is on 3.' },
       { say: 'Set the clock to 8:00 PM.', when: 'hour == 20 and minute == 0', then: 'The digital clock shows 20:00.' },
       { say: 'Show quarter to midnight.', when: 'hour == 23 and minute == 45', then: '11:45 PM is 23:45 on a 24-hour clock.' },
       { say: 'Show midnight.', when: 'hour == 0 and minute == 0', then: '12:00 AM is 00:00.' },
@@ -455,9 +457,10 @@ export const KITS = {
     ],
   },
   calendar: {
-    grades: [3, 6], match: [/leap years?/, /\bcalendars?\b/, /\bfebruary\b/, /days of the week/, /\bdd\/mm\/yyyy\b/],
+    grades: [2, 6], minScore: { 2: 4 }, match: [/leap years?/, /\bcalendars?\b/, /\bfebruary\b/, /days of the week/, /\bdd\/mm\/yyyy\b/],
     title: 'Flip the calendar', takeaway: 'February has 29 days only in a leap year, which comes every four years and has 366 days.',
     tasks: [
+      { say: 'Show January 2023. Which day does the month start on?', when: 'year == 2023 and month == 1', then: 'January 2023 starts on a Sunday, the first day heading, S.' },
       { say: 'Show February 2024. How many days does it have?', when: 'year == 2024 and month == 2', then: '29 days: 2024 is a leap year.' },
       { say: 'Find the next February with 29 days after 2024.', when: 'year == 2028 and month == 2', then: 'Leap years come every four years: 2020, 2024, 2028.' },
       { say: 'Show July 2024. What day is 1 July?', when: 'year == 2024 and month == 7', then: 'A Monday, so the next Mondays are 8 July and 15 July.' },
@@ -524,7 +527,7 @@ export const KITS = {
     ],
   },
   arrays: {
-    grades: [2, 3], perChapter: { 2: 6 }, match: [/\bgroups?\b/, /sharing equally|shared equally|share equally/, /multiplication/, /\btimes\b/, /equal groups?|groups? of|counting groups/, /repeated addition/, /\bdivision\b|\bdivide/, /\u00f7/],
+    grades: [2, 3], perChapter: { 2: 6 }, match: [/\bgroups?\b/, /sharing equally|shared equally|share equally/, /multiplication/, /\btimes (table|sign)s?\b/, /equal groups?|groups? of|counting groups/, /repeated addition/, /\bdivision\b|\bdivide/, /\u00f7/],
     title: 'Groups and rows', takeaway: 'Equal groups can be counted by adding, written as a multiplication fact and shared back out with division.',
     tasks: [
       { say: 'Make 3 groups of 3. What is 3 \u00d7 3?', when: 'g == 3 and e == 3', then: '3 + 3 + 3 = 9, so 3 \u00d7 3 = 9.' },
