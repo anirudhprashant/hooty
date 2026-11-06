@@ -557,6 +557,15 @@ export const KITS = {
       { say: 'Try to find half of 13. What happens?', when: 'n == 13 and who == 0', then: '13 is odd: one marble is left over, so it has no whole half.' },
     ],
   },
+  roundsolids: {
+    grades: [2, 2], perChapter: { 2: 3 }, match: [/solid shapes?/, /\bcones?\b/, /\bcylinders?\b/, /\bspheres?\b/, /\bcubes?\b|\bcuboids?\b/, /\bfaces\b/, /\bcorners?\b/, /\bedges?\b/],
+    title: 'Look at the solid', takeaway: 'Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none.',
+    tasks: [
+      { say: 'Find a solid with no corners at all.', when: '(shape == 3 or shape == 4) and look == 2', then: 'The cylinder and the sphere have no corners.' },
+      { say: 'Find the solid with exactly one corner and show it.', when: 'shape == 2 and look == 2', then: 'The cone has one corner, at its tip.' },
+      { say: 'Show the flat faces of the cube. How many are there?', when: 'shape == 0 and look == 1', then: 'A cube has 6 flat faces, like a gift box.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

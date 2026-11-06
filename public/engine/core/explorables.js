@@ -1159,6 +1159,31 @@ export const WIDGETS = {
       return { kids, say: v.who === 0 ? (odd ? `${v.n} is an odd number: share it between two and one marble is left over, so it has no whole half.` : `Half of ${v.n} is ${second}, and ${v.n} is double ${second}.`) : `Double ${v.n} is ${second}: twice as many. And ${v.n} is half of ${second}.` };
     },
   },
+  roundsolids: {
+    subject: 'maths', about: 'The solid shapes of everyday objects: cube, cuboid, cone, cylinder and sphere. Pick a shape and highlight its flat faces, its curved surface or its corners, and read the counts: a cube and a cuboid have 6 flat faces, 12 edges and 8 corners; a cone has 1 flat face, 1 curved surface and 1 corner; a cylinder has 2 flat faces, 1 curved surface and no corners; a sphere has only a curved surface. For solid shapes, faces, edges, corners, boxes, balls, drums and cones.',
+    sliders: [['shape', 'Shape: 0 cube, 1 cuboid, 2 cone, 3 cylinder, 4 sphere', 0, 4, 1, 0], ['look', 'Show: 0 shape, 1 flat faces, 2 corners, 3 curved surface', 0, 3, 1, 0]],
+    draw(v) {
+      const names = ['cube', 'cuboid', 'cone', 'cylinder', 'sphere'], info = [[6, 0, '12 straight', 8], [6, 0, '12 straight', 8], [1, 1, '1 curved', 1], [2, 1, '2 curved', 0], [0, 1, 'none', 0]][v.shape];
+      const [flat, curved, edges, corners] = info, kids = [], base = '#e7defa', flatC = v.look === 1 ? '#ffb86b' : base, curvC = v.look === 3 ? '#8fd3ff' : base;
+      if (v.shape <= 1) {
+        const W = v.shape === 0 ? 110 : 160, H = v.shape === 0 ? 110 : 80, d = 38, x = 70, y = 110 + d;
+        kids.push(s('polygon', { points: `${x},${y} ${x + d},${y - d} ${x + d + W},${y - d} ${x + W},${y}`, fill: flatC, stroke: INK, 'stroke-width': 3 }), s('polygon', { points: `${x + W},${y} ${x + d + W},${y - d} ${x + d + W},${y - d + H} ${x + W},${y + H}`, fill: flatC, stroke: INK, 'stroke-width': 3 }), R(x, y, W, H, flatC, { w: 3 }));
+        if (v.look === 2) for (const [px, py] of [[x, y], [x + W, y], [x, y + H], [x + W, y + H], [x + d, y - d], [x + d + W, y - d], [x + d + W, y - d + H]]) kids.push(CIRC(px, py, 8, '#c0392b', { w: 2 }));
+        if (v.look === 2) kids.push(CIRC(x + d, y - d + H, 8, '#c0392b', { w: 2, x: { opacity: 0.45 } }));
+      } else if (v.shape === 2) {
+        kids.push(s('path', { d: 'M 190 55 L 120 205 A 70 22 0 0 0 260 205 Z', fill: curvC, stroke: INK, 'stroke-width': 3 }), s('ellipse', { cx: 190, cy: 205, rx: 70, ry: 22, fill: flatC, stroke: INK, 'stroke-width': 3 }));
+        if (v.look === 2) kids.push(CIRC(190, 55, 9, '#c0392b', { w: 2 }));
+      } else if (v.shape === 3) {
+        kids.push(s('path', { d: 'M 128 90 L 128 210 A 62 20 0 0 0 252 210 L 252 90 Z', fill: curvC, stroke: INK, 'stroke-width': 3 }), s('ellipse', { cx: 190, cy: 90, rx: 62, ry: 20, fill: flatC, stroke: INK, 'stroke-width': 3 }));
+        if (v.look === 1) kids.push(T(190, 262, 'the bottom is flat too', { z: 12, w: 600, f: '#c2510e' }));
+      } else {
+        kids.push(CIRC(190, 150, 88, curvC, { w: 3 }), s('ellipse', { cx: 160, cy: 112, rx: 22, ry: 13, fill: '#ffffff', opacity: 0.55 }));
+      }
+      kids.push(T(440, 60, names[v.shape], { z: 24, w: 700 }), T(440, 112, `flat faces: ${flat}`, { z: 15, w: 700, f: '#c2510e' }), T(440, 142, `curved surfaces: ${curved}`, { z: 15, w: 700, f: '#1f6fb8' }), T(440, 172, `edges: ${edges}`, { z: 15, w: 600 }), T(440, 202, `corners: ${corners}`, { z: 15, w: 700, f: '#c0392b' }));
+      const sayLook = ['', flat ? ` The ${flat === 1 ? 'flat face is' : `${flat} flat faces are`} lit up.` : ' It has no flat faces.', corners ? ` The ${corners === 1 ? 'corner is' : `${corners} corners are`} marked.` : ' It has no corners.', ' The curved surface is lit up.'][v.look];
+      return { kids, say: `A ${names[v.shape]} has ${flat} flat face${flat === 1 ? '' : 's'}, ${curved} curved surface${curved === 1 ? '' : 's'} and ${corners} corner${corners === 1 ? '' : 's'}.${sayLook}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
