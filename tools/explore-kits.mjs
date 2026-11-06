@@ -524,11 +524,13 @@ export const KITS = {
     ],
   },
   arrays: {
-    grades: [3, 3], match: [/multiplication/, /\btimes\b/, /equal groups?|groups? of|counting groups/, /repeated addition/, /\bdivision\b|\bdivide/, /\u00f7/],
+    grades: [2, 3], perChapter: { 2: 6 }, match: [/\bgroups?\b/, /sharing equally|shared equally|share equally/, /multiplication/, /\btimes\b/, /equal groups?|groups? of|counting groups/, /repeated addition/, /\bdivision\b|\bdivide/, /\u00f7/],
     title: 'Groups and rows', takeaway: 'Equal groups can be counted by adding, written as a multiplication fact and shared back out with division.',
     tasks: [
       { say: 'Make 3 groups of 3. What is 3 \u00d7 3?', when: 'g == 3 and e == 3', then: '3 + 3 + 3 = 9, so 3 \u00d7 3 = 9.' },
       { say: 'Make 6 groups of 3, then try 3 groups of 6.', when: 'g == 3 and e == 6', then: '6 \u00d7 3 and 3 \u00d7 6 both make 18: turning it round does not change the total.' },
+      { say: 'Seven cars with 4 wheels each: how many wheels?', when: 'g == 7 and e == 4', then: '7 \u00d7 4 = 28 wheels, and 28 \u00f7 7 = 4 wheels on each car.' },
+      { say: 'Make 4 groups of 3 flowers.', when: 'g == 4 and e == 3', then: '4 groups of 3 make 12: 4 \u00d7 3 = 12.' },
       { say: 'Make 24 jalebis: 6 groups of 4.', when: 'g == 6 and e == 4', then: '6 \u00d7 4 = 24, and 24 \u00f7 6 = 4 each.' },
     ],
   },
