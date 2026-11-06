@@ -1026,6 +1026,23 @@ export const WIDGETS = {
       return { kids, say: v.step === 0 ? `${v.a} ${sub ? 'take away' : 'plus'} ${v.b}: start with the ones.` : done ? `${v.a} ${sub ? '−' : '+'} ${v.b} = ${total}.${mark[0] || mark[1] ? (sub ? ' Regrouping 1 ten as 10 ones (or 1 hundred as 10 tens) made the subtraction possible.' : ' Regrouping 10 ones as 1 ten (or 10 tens as 1 hundred) carried the 1 along.') : ' No regrouping was needed.'}` : `After the ${nm.slice(0, v.step).join(' and ')} column${v.step > 1 ? 's' : ''}: ${lines[lines.length - 1]}.` };
     },
   },
+  numberjump: {
+    subject: 'maths', about: 'A frog hops along a number line from 0 to 100: pick where it starts, how big each jump is, how many jumps, and forward (adding) or back (taking away). It lands on each number in turn, e.g. from 7 jumping 10 at a time: 7, 17, 27, 37. For number lines, counting on and back, jumps, addition and subtraction, skip counting, tens.',
+    sliders: [['start', 'Start at', 0, 99, 1, 7], ['jump', 'Jump size', 1, 20, 1, 10], ['hops', 'Number of jumps', 0, 9, 1, 3], ['back', 'Direction: 0 forward, 1 back', 0, 1, 1, 0]],
+    draw(v) {
+      const x = (n) => 30 + n * 5.4, y = 190, dir = v.back ? -1 : 1, stops = [v.start];
+      for (let k = 1; k <= v.hops; k++) { const n = stops[k - 1] + dir * v.jump; if (n < 0 || n > 100) break; stops.push(n); }
+      const stuck = stops.length - 1 < v.hops, kids = [L(x(0), y, x(100), y, INK, 3)];
+      for (let n = 0; n <= 100; n++) kids.push(L(x(n), y - (n % 10 ? 4 : 9), x(n), y + (n % 10 ? 4 : 9), INK, n % 10 ? 1 : 2.2), ...(n % 10 ? [] : [T(x(n), y + 28, String(n), { z: 12, w: 600 })]));
+      for (let k = 1; k < stops.length; k++) kids.push(s('path', { d: `M ${x(stops[k - 1])} ${y} Q ${(x(stops[k - 1]) + x(stops[k])) / 2} ${y - 52} ${x(stops[k])} ${y}`, fill: 'none', stroke: C.o, 'stroke-width': 3 }));
+      const everyLabel = v.jump >= 5;
+      stops.forEach((n, k) => { const end = k === stops.length - 1; kids.push(CIRC(x(n), y, end ? 9 : 6, end ? C.p : '#ffcc33', { w: 2.5 })); if (everyLabel || k === 0 || end) kids.push(T(x(n), y - 40, String(n), { z: 14, w: 700, f: end ? '#6b45c8' : INK })); });
+      kids.push(T(300, 34, stops.length > 1 ? `${v.start} ${v.back ? '−' : '+'} ${stops.length - 1} × ${v.jump} = ${stops[stops.length - 1]}` : `start at ${v.start}`, { z: 22, w: 700 }));
+      if (stuck) kids.push(T(300, 270, 'the next jump would leave the number line', { z: 13, w: 600, f: '#c0392b' }));
+      const last = stops[stops.length - 1], n = stops.length - 1;
+      return { kids, say: n === 0 ? (v.hops === 0 ? `The frog starts at ${v.start}.` : `The frog starts at ${v.start}, but a jump of ${v.jump} ${v.back ? 'back' : 'forward'} would go off the number line.`) : `Starting at ${v.start}, ${n} jump${n === 1 ? '' : 's'} of ${v.jump} ${v.back ? 'back' : 'forward'} land${n === 1 ? 's' : ''} on ${last}: ${stops.join(', ')}.${stuck ? ' The next jump would go off the line.' : ''}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

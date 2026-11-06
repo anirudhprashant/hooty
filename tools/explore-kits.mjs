@@ -419,7 +419,7 @@ export const KITS = {
     ],
   },
   gridwalk: {
-    grades: [3, 5], match: [/\bgrids?\b/, /\brows?\b.*\bcolumns?\b/, /steps? (to the )?(right|left|up)/],
+    grades: [4, 5], match: [/\bgrids?\b/, /\brows?\b.*\bcolumns?\b/, /steps? (to the )?(right|left|up)/],
     title: 'Walk the grid', takeaway: 'A square on a grid is named by its row and column; count the steps with no diagonal moves.',
     tasks: [
       { say: 'Walk to the flower.', when: 'right == 2 and up == 3', then: '2 right and 3 up: 5 steps, row 4, column 3.' },
@@ -427,7 +427,7 @@ export const KITS = {
     ],
   },
   jumps: {
-    grades: [3, 5], match: [/common multiples?/, /skip count/, /\bjumps?\b/],
+    grades: [4, 5], match: [/common multiples?/, /skip count/, /\bjumps?\b/],
     title: 'Who lands together?', takeaway: 'An animal lands on the multiples of its jump; where two land together are common multiples.',
     tasks: [
       { say: 'Make the frog and the squirrel jump. Where do they first land together?', when: '(a == 0 and b == 1) or (a == 1 and b == 0)', then: 'On 12: the first common multiple of 3 and 4.' },
@@ -490,6 +490,15 @@ export const KITS = {
          { say: 'Find a take-away that needs regrouping: 83 \u2212 46.', when: 'a == 83 and b == 46 and step == 3', then: '3 ones is less than 6, so regroup 1 ten as 10 ones: 83 \u2212 46 = 37.' }]
       : [{ say: 'Add 438 and 476, one column at a time.', when: 'a == 438 and b == 476 and step == 3', then: '438 + 476 = 914, and regrouping carried a 1 twice.' },
          { say: 'Add 185 and 125.', when: 'a == 185 and b == 125 and step == 3', then: '185 + 125 = 310: 10 ones and 10 tens both regrouped.' }]),
+  },
+  numberjump: {
+    grades: [2, 3], match: [/number lines?/, /\bjump(s|ing)?\b/, /count(ing)? (on|back)/, /\bjump(ing)? (back|forward)/],
+    title: 'Hop along the number line', takeaway: 'Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.',
+    tasks: [
+      { say: 'Start at 7 and jump 10 at a time, three times.', when: 'start == 7 and jump == 10 and hops == 3 and back == 0', then: '7, 17, 27, 37: each jump of 10 adds one ten.' },
+      { say: 'Go back from 52 in jumps of 10, three times.', when: 'start == 52 and jump == 10 and hops == 3 and back == 1', then: '52, 42, 32, 22: jumping back takes away.' },
+      { say: 'Find a start and jump that reach exactly 100 after 5 jumps.', when: 'back == 0 and hops == 5 and start + 5 * jump == 100', then: 'Five equal jumps land on 100: for example from 0 in jumps of 20.' },
+    ],
   },
   // ---- geography and history ----
   timezone: {
