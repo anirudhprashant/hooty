@@ -1056,6 +1056,34 @@ export const WIDGETS = {
       return { kids, say: `${v.n} sits between ${lo} and ${hi}. It is ${left} more than ${lo}, and ${right} more makes ${hi}.` };
     },
   },
+  flatshape: {
+    subject: 'maths', about: 'Build a flat shape from sticks and count its sides and corners: a triangle, a four-sided shape that is a square when both sides are the same length and a rectangle when they differ (four square corners, opposite sides equal), and a circle with its centre. For squares, rectangles, triangles, circles, sides, corners, square corner, equal sides.',
+    sliders: [['shape', 'Shape: 0 triangle, 1 four-sided, 2 circle', 0, 2, 1, 1], ['w', 'Width (sticks)', 2, 8, 1, 6], ['h', 'Height (sticks)', 2, 8, 1, 3]],
+    draw(v) {
+      const u = 26, ox = 70, oy = 250, kids = [];
+      for (let i = 0; i <= 10; i++) for (let j = 0; j <= 8; j++) kids.push(CIRC(ox + i * u, oy - j * u, 1.8, '#c9b8e8', { w: 0 }));
+      let title, facts = [];
+      if (v.shape === 1) {
+        const sq = v.w === v.h, W = v.w * u, Hh = v.h * u;
+        kids.push(R(ox, oy - Hh, W, Hh, sq ? '#ffe9a8' : '#cfe9ff', { w: 4 }));
+        for (const [cx, cy, dx, dy] of [[ox, oy, 1, -1], [ox + W, oy, -1, -1], [ox, oy - Hh, 1, 1], [ox + W, oy - Hh, -1, 1]]) kids.push(s('path', { d: `M ${cx + dx * 12} ${cy} L ${cx + dx * 12} ${cy + dy * 12} L ${cx} ${cy + dy * 12}`, fill: 'none', stroke: '#c0392b', 'stroke-width': 2.5 }));
+        const tick = (x1, y1, x2, y2, n) => { const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, vert = x1 === x2; for (let k = 0; k < n; k++) kids.push(L(vert ? mx - 6 : mx + (k - (n - 1) / 2) * 6, vert ? my + (k - (n - 1) / 2) * 6 : my - 6, vert ? mx + 6 : mx + (k - (n - 1) / 2) * 6, vert ? my + (k - (n - 1) / 2) * 6 : my + 6, '#058a68', 2.5)); };
+        tick(ox, oy, ox + W, oy, 1); tick(ox, oy - Hh, ox + W, oy - Hh, 1); tick(ox, oy, ox, oy - Hh, sq ? 1 : 2); tick(ox + W, oy, ox + W, oy - Hh, sq ? 1 : 2);
+        title = sq ? 'a square' : 'a rectangle';
+        facts = sq ? ['4 sides, all the same length', '4 corners, all square corners'] : ['4 sides: opposite sides are equal', '4 corners, all square corners'];
+      } else if (v.shape === 0) {
+        const bx = ox, by = oy, W = v.w * u, Hh = v.h * u;
+        kids.push(s('polygon', { points: `${bx},${by} ${bx + W},${by} ${bx + W / 2},${by - Hh}`, fill: '#ffd2c2', stroke: INK, 'stroke-width': 4 }), ...[[bx, by], [bx + W, by], [bx + W / 2, by - Hh]].map(([px, py]) => CIRC(px, py, 6, C.o, { w: 2 })));
+        title = 'a triangle'; facts = ['3 sides', '3 corners'];
+      } else {
+        const r = Math.min(v.w, 4.5) * u, cx = ox + 4 * u, cy = oy - 4 * u;
+        kids.push(CIRC(cx, cy, r, '#d9f2e6', { w: 4 }), L(cx - r, cy, cx + r, cy, '#6b45c8', 3, { 'stroke-dasharray': '8 5' }), L(cx, cy - r, cx, cy + r, '#6b45c8', 3, { 'stroke-dasharray': '8 5' }), CIRC(cx, cy, 6, '#c0392b', { w: 0 }), T(cx + 16, cy - 10, 'centre', { a: 'start', z: 13, w: 700, f: '#c0392b' }));
+        title = 'a circle'; facts = ['no straight sides, no corners', 'two folds meet at the centre'];
+      }
+      kids.push(T(470, 70, title, { z: 22, w: 700 }), ...facts.map((f, i) => T(470, 108 + i * 28, f, { z: 13, w: 600, f: '#6b5a8a' })));
+      return { kids, say: v.shape === 1 ? (v.w === v.h ? `Both sticks are ${v.w} long, so the four sides are equal: this is a square, with 4 square corners.` : `The sides are ${v.w} and ${v.h} sticks. Opposite sides are equal and all 4 corners are square corners: this is a rectangle. Make both the same and it becomes a square.`) : v.shape === 0 ? 'A triangle has 3 sides and 3 corners.' : 'A circle has no straight sides and no corners. Folding it in half twice makes two lines that meet at its centre.' };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

@@ -509,6 +509,15 @@ export const KITS = {
       { say: 'Find a number only 1 away from 500.', when: 'n == 499', then: '499 is just 1 less than 500.' },
     ],
   },
+  flatshape: {
+    perChapter: 5, grades: [3, 3], match: [/\bsquares?\b/, /\brectangles?\b/, /\btriangles?\b/, /\bcircles?\b/, /square corners?/, /sides and corners/],
+    title: 'Build the shape', takeaway: 'A square has four equal sides; a rectangle has equal opposite sides. Both have four square corners.',
+    tasks: [
+      { say: 'Make a square.', when: 'shape == 1 and w == h', then: 'All four sides are the same length: a square.' },
+      { say: 'Make a rectangle that is 6 sticks wide and 3 high.', when: 'shape == 1 and w == 6 and h == 3', then: 'Opposite sides are equal, but the sides are not all the same: a rectangle.' },
+      { say: 'Now try a triangle. How many sides and corners?', when: 'shape == 0', then: '3 sides and 3 corners.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
