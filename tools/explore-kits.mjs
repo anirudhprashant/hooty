@@ -382,6 +382,16 @@ export const KITS = {
       { say: 'Find where oxygen goes into the blood.', when: 'step == 5', then: 'In the alveoli, tiny balloon-like sacs at the end of the branches.' },
     ],
   },
+  separate: {
+    grades: [6, 7], match: [/winnow/, /\bsiev(e|ing)\b/, /decant/, /sedimentation/, /\bthresh/],
+    params: (text) => ({ kind: /winnow|thresh/.test(text) ? 'winnow' : /decant|sediment|settle/.test(text) ? 'settle' : 'sieve' }),
+    title: 'Separate the mixture', takeaway: 'Mixtures are separated by a difference between their parts: weight, size, or whether they sink.',
+    tasks: (p) => (p.kind === 'winnow'
+      ? [{ say: 'Blow enough wind to carry the husk away from the grain.', when: 'wind >= 6', then: 'The light husk blows away and the heavy grain falls close: winnowing.' }]
+      : p.kind === 'settle'
+        ? [{ say: 'Let the tea stand until the leaves settle.', when: 'min >= 6', then: 'The leaves have sunk to the bottom: sedimentation.' }, { say: 'Now pour off the tea.', when: 'min >= 6 and tilt == 1', then: 'Pouring the liquid off the settled leaves is decantation.' }]
+        : [{ say: 'Make the holes just big enough to let the bran through but keep the stones.', when: 'hole == 3 or hole == 4 or hole == 5', then: 'Flour and bran fall through; the stones stay on top.' }]),
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

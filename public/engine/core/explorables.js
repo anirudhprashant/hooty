@@ -770,6 +770,36 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  separate: {
+    subject: 'science', about: 'Separating a mixture. Param kind "winnow": blow wind across threshed wheat falling from a tray, heavy grains drop close and light husk blows away. "sieve": change the size of the holes, small particles fall through and bigger ones stay on top. "settle": let tea stand, the leaves settle at the bottom (sedimentation), then tilt the cup to pour off the liquid (decantation). For separation of substances, winnowing, sieving, sedimentation, decantation.',
+    params: { kind: 'winnow' },
+    dynamicSliders: (p) => (p.kind === 'sieve' ? [['hole', 'Size of the holes (mm)', 1, 10, 1, 1]] : p.kind === 'settle' ? [['min', 'Minutes left standing', 0, 10, 1, 0], ['tilt', 'Tilt the cup (0 = upright, 1 = pour)', 0, 1, 1, 0]] : [['wind', 'Wind strength', 0, 10, 1, 0]]),
+    draw(v, p) {
+      const kids = [], rnd = seeded(11);
+      if (p.kind === 'sieve') {
+        const bits = [['flour', 0.5, '#f4ead2', 3], ['bran', 2, '#c99a5b', 5], ['small stones', 5, '#8a8a8a', 8], ['big stones', 9, '#5d5d5d', 12]], h = v.hole;
+        kids.push(L(100, 140, 500, 140, INK, 4, { 'stroke-dasharray': `${Math.max(4, 30 - h * 2.4)} ${h * 2.4}` }), R(120, 230, 360, 50, '#f3f0ff', { w: 2.5, r: 6 }), T(300, 300 - 4, 'what fell through', { z: 12, w: 600, f: '#6b5a8a' }));
+        const thru = bits.filter(([, size]) => size < h).map((b) => b[0]), stay = bits.filter(([, size]) => size >= h).map((b) => b[0]);
+        bits.forEach(([name, size, col, r], i) => { for (let k = 0; k < 6; k++) { const x = 140 + i * 90 + rnd() * 50, fell = size < h; kids.push(CIRC(x, fell ? 255 + rnd() * 18 : 128 - rnd() * 22, r, col, { w: 1.2 })); } kids.push(T(165 + i * 90, size < h ? 222 : 80, name, { z: 11, w: 600 })); });
+        return { kids, say: `With ${h} mm holes, ${thru.length ? thru.join(', ') : 'nothing'} ${thru.length === 1 ? 'falls' : 'fall'} through and ${stay.length ? stay.join(', ') : 'nothing'} ${stay.length === 1 ? 'stays' : 'stay'} on top. A sieve separates particles by size.` };
+      }
+      if (p.kind === 'settle') {
+        const settled = Math.min(1, v.min / 6), cx = 300, ang = v.tilt ? -32 : 0;
+        const leaves = []; for (let k = 0; k < 26; k++) { const x = -60 + rnd() * 120, yTop = 40 + rnd() * 110, y = yTop + (150 - yTop) * settled; leaves.push(CIRC(x, y, 3.5, '#5a3b1e', { w: 0 })); }
+        kids.push(s('g', { transform: `translate(${cx} 80) rotate(${ang})` }, [R(-80, 20, 160, 150, '#fff', { w: 3, r: 6 }), R(-77, v.tilt ? 80 : 40, 154, v.tilt ? 87 : 127, `rgba(150, 90, 40, ${0.75 - 0.5 * settled})`, { w: 0 }), ...leaves]));
+        if (v.tilt) kids.push(s('path', { d: 'M 210 120 Q 160 170 150 280', stroke: settled >= 1 ? '#c98a4a' : '#7a4a22', 'stroke-width': 10, fill: 'none', opacity: 0.8 }), R(100, 250, 100, 40, '#fff', { w: 2.5 }), R(102, 266, 96, 22, settled >= 1 ? '#c98a4a' : '#7a4a22', { w: 0, x: { opacity: 0.8 } }));
+        const say = !v.tilt ? (settled >= 1 ? 'The tea leaves have settled at the bottom: this is sedimentation. Now tilt the cup to pour off the tea.' : `After ${v.min} minute${v.min === 1 ? '' : 's'} the leaves are still settling. Heavier bits that do not dissolve sink to the bottom if the tea is left undisturbed.`) : settled >= 1 ? 'Tilting the cup pours off the tea and leaves the settled leaves behind: this is decantation.' : 'Pouring before the leaves settle carries them along too. Let it stand first.';
+        return { kids, say };
+      }
+      const w = v.wind; kids.push(R(70, 30, 120, 16, '#c8a26b', { w: 2.5, r: 6 }), T(130, 24, 'tray', { z: 11, w: 600 }), L(40, 280, 580, 280, INK, 3));
+      for (let k = 0; k < Math.round(w / 2); k++) kids.push(s('path', { d: `M 20 ${80 + k * 30} q 30 -10 60 0 t 60 0`, stroke: '#7fbfff', 'stroke-width': 3, fill: 'none' }));
+      for (let k = 0; k < 14; k++) { const gx = 120 + w * 3 + rnd() * 30, hx = 120 + w * 34 + rnd() * 40 * (w / 10 + 0.2); kids.push(s('ellipse', { cx: gx, cy: 270 - rnd() * 6, rx: 6, ry: 4, fill: '#d9a441', stroke: INK, 'stroke-width': 1 }), s('ellipse', { cx: hx, cy: 268 - rnd() * 8, rx: 7, ry: 2, fill: '#efe3b5', stroke: '#b79f5a', 'stroke-width': 1 })); }
+      // the falling stream: grain drops nearly straight, husk drifts with the wind
+      for (let k = 0; k < 9; k++) { const f = (k + 1) / 10, y = 50 + f * 210; kids.push(CIRC(130 + w * 3 * f, y, 3, '#d9a441', { w: 0.8 }), CIRC(130 + w * 34 * f * f + (w ? 6 : 10), y, 2.5, '#efe3b5', { s: '#b79f5a', w: 0.8 })); }
+      kids.push(T(140, 250, 'grain', { z: 12, w: 600 }), T(Math.min(560, 150 + w * 36) + (w < 3 ? 46 : 0), w < 3 ? 232 : 240, 'husk', { z: 12, w: 600 }));
+      return { kids, say: w ? `With wind strength ${w}, the heavy grains fall almost straight down while the light husk is blown ${w > 6 ? 'far' : 'a little'} away. Winnowing separates the heavier and lighter parts of a mixture.` : 'With no wind, grain and husk fall into the same heap. Blow some air!' };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
