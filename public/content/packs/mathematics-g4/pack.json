@@ -13615,7 +13615,7 @@
       {
        "id": "mathematics-g4-ch3-l3",
        "title": "Two Ways: Even and Odd Numbers",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -13723,6 +13723,33 @@
           "2 (generated problem)",
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g4-ch3-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "odd"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
@@ -14461,7 +14488,7 @@
       {
        "id": "mathematics-g4-ch3-l4",
        "title": "Crayons Arrangement",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -14560,6 +14587,33 @@
           "4 (generated problem)",
           "7 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g4-ch3-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "odd"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
@@ -23081,7 +23135,7 @@
       {
        "id": "mathematics-g4-ch5-l1",
        "title": "Parts, Halves and Quarters",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -23193,6 +23247,58 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g4-ch5-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Ikra and Samina have only one drawing sheet. Samina wants a bigger part than Ikra. How should they share it?",
+         "steps": [
+          "Only one sheet is available, so they must share the same paper.",
+          "They can choose one half or two quarters of that paper.",
+          "Two quarters may look bigger, but they equal one half.",
+          "Samina cannot get a bigger part with these choices."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.5",
+          "1.6"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 62
+          },
+          {
+           "ch": 5,
+           "p": 62
+          },
+          {
+           "ch": 5,
+           "p": 62
+          },
+          {
+           "ch": 5,
+           "p": 62
+          },
+          {
+           "ch": 5,
+           "p": 62
+          },
+          {
+           "ch": 5,
+           "p": 62
+          }
+         ]
+        },
+        {
          "type": "concept",
          "id": "mathematics-g4-ch5-l1-a7",
          "difficulty": 2,
@@ -23229,24 +23335,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g4-ch5-l1-a2",
-         "difficulty": 1,
-         "tags": [
-          "halves",
-          "equal parts"
-         ],
-         "prompt": "Each of two equal parts is called a half.",
-         "answer": true,
-         "explanation": "A half is one of two equal parts. Each part has the same size.",
-         "src": [
-          {
-           "ch": 5,
-           "p": 63
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "mathematics-g4-ch5-l1-a3",
          "difficulty": 1,
@@ -23272,6 +23360,24 @@
           {
            "ch": 5,
            "p": 62
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "mathematics-g4-ch5-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "halves",
+          "equal parts"
+         ],
+         "prompt": "Each of two equal parts is called a half.",
+         "answer": true,
+         "explanation": "A half is one of two equal parts. Each part has the same size.",
+         "src": [
+          {
+           "ch": 5,
+           "p": 63
           }
          ]
         },
@@ -23999,6 +24105,216 @@
            "p": 64
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "A rectangle is cut into four equal parts. A child says each part is one half. What correction is correct?",
+         "options": [
+          "Each equal part is one quarter, not one half.",
+          "Each equal part is one half, not one quarter.",
+          "Each equal part is one fifth, not one half.",
+          "The whole rectangle is one quarter, not one half."
+         ],
+         "answer": 0,
+         "why": {
+          "Each equal part is one half, not one quarter.": "This confuses a quarter with a half.",
+          "Each equal part is one fifth, not one half.": "This confuses four equal parts with five equal parts.",
+          "The whole rectangle is one quarter, not one half.": "This confuses the whole rectangle with one small part."
+         },
+         "explanation": "Four equal parts make quarters, so each part is one quarter.",
+         "f": [
+          "1.8",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 64
+          },
+          {
+           "ch": 5,
+           "p": 64
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "equal sharing"
+         ],
+         "prompt": "Four equal parts fill one rectangle. Two children want equal shares. How many parts should each get?",
+         "options": [
+          "Two parts, so each child gets one half.",
+          "One part, so each child gets one quarter.",
+          "Two parts, so each child gets one quarter.",
+          "One part, so each child gets one half."
+         ],
+         "answer": 0,
+         "why": {
+          "One part, so each child gets one quarter.": "This leaves more paper for one child than the other.",
+          "Two parts, so each child gets one quarter.": "This confuses two parts with one quarter.",
+          "One part, so each child gets one half.": "This confuses one part with one half."
+         },
+         "explanation": "Two parts make one half, so both children receive equal paper.",
+         "f": [
+          "1.6",
+          "1.8"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 62
+          },
+          {
+           "ch": 5,
+           "p": 64
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare fifths"
+         ],
+         "prompt": "Five equal pieces fill a paper tray. A child takes two pieces. Is the child's amount less than one half?",
+         "options": [
+          "Yes, two of five equal parts are less than one half.",
+          "No, two of five equal parts are more than one half.",
+          "No, two of five equal parts are exactly one half.",
+          "Yes, two of five equal parts are exactly one quarter."
+         ],
+         "answer": 0,
+         "why": {
+          "No, two of five equal parts are more than one half.": "This thinks two fifths are more than one half.",
+          "No, two of five equal parts are exactly one half.": "This thinks two fifths are exactly one half.",
+          "Yes, two of five equal parts are exactly one quarter.": "This thinks two fifths are exactly one quarter."
+         },
+         "explanation": "Two of five equal parts are less than one half.",
+         "f": [
+          "1.7",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 63
+          },
+          {
+           "ch": 5,
+           "p": 64
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare sizes"
+         ],
+         "prompt": "One rectangle is cut into four equal parts. A same-size rectangle is cut into two equal parts. Which pieces are smaller?",
+         "options": [
+          "Each four-part piece is smaller than each two-part piece.",
+          "Each four-part piece is bigger than each two-part piece.",
+          "Each piece from both rectangles is the same size.",
+          "Both cuts make the same number of small pieces."
+         ],
+         "answer": 0,
+         "why": {
+          "Each four-part piece is bigger than each two-part piece.": "This thinks more cuts make bigger equal pieces.",
+          "Each piece from both rectangles is the same size.": "This ignores the smaller size of four equal parts.",
+          "Both cuts make the same number of small pieces.": "This compares the number of pieces instead of their sizes."
+         },
+         "explanation": "Four equal parts make smaller pieces than two equal parts.",
+         "f": [
+          "1.7",
+          "1.8",
+          "1.10",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 63
+          },
+          {
+           "ch": 5,
+           "p": 64
+          },
+          {
+           "ch": 5,
+           "p": 64
+          },
+          {
+           "ch": 5,
+           "p": 65
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l1-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply halves"
+         ],
+         "prompt": "An artist folds one rectangular sheet into two equal parts. She draws on one part. How much paper is unused?",
+         "options": [
+          "Another half of the sheet is unused.",
+          "Another quarter of the sheet is unused.",
+          "Another fifth of the sheet is unused.",
+          "All of the rectangular sheet is unused."
+         ],
+         "answer": 0,
+         "why": {
+          "Another quarter of the sheet is unused.": "This confuses one half with one quarter.",
+          "Another fifth of the sheet is unused.": "This confuses one half with one fifth.",
+          "All of the rectangular sheet is unused.": "This forgets that one part was drawn on."
+         },
+         "explanation": "One drawn half leaves the other equal half unused.",
+         "f": [
+          "1.1",
+          "1.7",
+          "1.8",
+          "1.9",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 62
+          },
+          {
+           "ch": 5,
+           "p": 63
+          },
+          {
+           "ch": 5,
+           "p": 64
+          },
+          {
+           "ch": 5,
+           "p": 64
+          },
+          {
+           "ch": 5,
+           "p": 64
+          }
+         ]
         }
        ],
        "topicScene": "media/ch5-l2-dhokla-special-a91ff0.webp",
@@ -24015,7 +24331,7 @@
       {
        "id": "mathematics-g4-ch5-l2",
        "title": "Sharing Dhokla",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -24129,6 +24445,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "mathematics-g4-ch5-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Two friends or four friends share one dhokla. Which way gives each person a bigger share?",
+         "steps": [
+          "Each friend gets one-half, because the dhokla has two equal parts.",
+          "Each friend gets one-fourth, because the dhokla has four equal parts.",
+          "The one-fourth share is smaller, because more people are sharing.",
+          "Thus, each of two friends gets more than each of four friends."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.6",
+          "2.7",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 66
+          },
+          {
+           "ch": 5,
+           "p": 66
+          },
+          {
+           "ch": 5,
+           "p": 67
+          },
+          {
+           "ch": 5,
+           "p": 67
+          },
+          {
+           "ch": 5,
+           "p": 67
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g4-ch5-l2-a2",
          "difficulty": 1,
@@ -24159,17 +24522,21 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "mathematics-g4-ch5-l2-a3",
+         "type": "fillblank",
+         "id": "mathematics-g4-ch5-l2-a4",
          "difficulty": 1,
          "tags": [
-          "kumar",
-          "doorbell",
-          "family"
+          "halves",
+          "whole",
+          "dhokla"
          ],
-         "prompt": "Kumar arrives when the doorbell rings.",
-         "answer": true,
-         "explanation": "Kumar arrives at the same time as the ringing doorbell.",
+         "title": "Making a Whole",
+         "prompt": "Two halves together make one ______ dhokla.",
+         "answers": [
+          "whole"
+         ],
+         "hint": "The two equal parts join together.",
+         "explanation": "Two halves together make one whole dhokla.",
          "src": [
           {
            "ch": 5,
@@ -24804,6 +25171,211 @@
            "p": 66
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "equal sharing"
+         ],
+         "prompt": "Kumar and Idha share one dhokla equally. How much does each person receive?",
+         "options": [
+          "One half of the dhokla each.",
+          "One fourth of the dhokla each.",
+          "One whole dhokla for each person.",
+          "Two whole dhoklas for each person."
+         ],
+         "answer": 0,
+         "why": {
+          "One fourth of the dhokla each.": "This uses four-person sharing, but only two people are sharing.",
+          "One whole dhokla for each person.": "It treats the whole dhokla as if it were not divided.",
+          "Two whole dhoklas for each person.": "It adds extra dhokla that is not being shared."
+         },
+         "explanation": "Two equal parts make one whole, so each person gets one half.",
+         "f": [
+          "2.1",
+          "2.2"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 66
+          },
+          {
+           "ch": 5,
+           "p": 66
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "comparing shares"
+         ],
+         "prompt": "One dhokla is shared by two people, then by four people. What changes?",
+         "options": [
+          "The two-person share is larger than the four-person share.",
+          "The two-person share is smaller than the four-person share.",
+          "The two-person and four-person shares are the same size.",
+          "Only the four-person shares can make one whole dhokla."
+         ],
+         "answer": 0,
+         "why": {
+          "The two-person share is smaller than the four-person share.": "It reverses the sizes, because more people make each share smaller.",
+          "The two-person and four-person shares are the same size.": "It ignores that more sharing makes each share smaller.",
+          "Only the four-person shares can make one whole dhokla.": "The two-person halves also make one whole dhokla."
+         },
+         "explanation": "Two people each get one-half, while four people each get one-fourth.",
+         "f": [
+          "2.2",
+          "2.7",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 66
+          },
+          {
+           "ch": 5,
+           "p": 67
+          },
+          {
+           "ch": 5,
+           "p": 67
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "correcting mistakes"
+         ],
+         "prompt": "Idha says one-half equals one-fourth because both are pieces. What is correct?",
+         "options": [
+          "More people make each share smaller.",
+          "Equal parts always have different sizes.",
+          "Two pieces always make one whole.",
+          "Four people make each share larger."
+         ],
+         "answer": 0,
+         "why": {
+          "Equal parts always have different sizes.": "It misunderstands equal parts, which are equal in size.",
+          "Two pieces always make one whole.": "It applies the two-half rule to pieces of every size.",
+          "Four people make each share larger.": "It reverses the rule that more people make shares smaller."
+         },
+         "explanation": "Idha's share is smaller because more people are sharing.",
+         "f": [
+          "2.2",
+          "2.7",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 66
+          },
+          {
+           "ch": 5,
+           "p": 67
+          },
+          {
+           "ch": 5,
+           "p": 67
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "combining shares"
+         ],
+         "prompt": "Kumar places two half-pieces on his plate. How much dhokla is on his plate?",
+         "options": [
+          "They make one whole dhokla.",
+          "They make one half dhokla.",
+          "They make one fourth dhokla.",
+          "They make two whole dhoklas."
+         ],
+         "answer": 0,
+         "why": {
+          "They make one half dhokla.": "It counts only one of Kumar's two half-pieces.",
+          "They make one fourth dhokla.": "It treats two quarter-sized pieces as one quarter.",
+          "They make two whole dhoklas.": "It adds a whole dhokla for each half-piece."
+         },
+         "explanation": "Two halves together make one whole dhokla.",
+         "f": [
+          "2.1",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 66
+          },
+          {
+           "ch": 5,
+           "p": 66
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l2-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "combining shares"
+         ],
+         "prompt": "One half-piece and two one-fourth pieces are joined. How much dhokla do they make?",
+         "options": [
+          "They make one whole dhokla.",
+          "They make one half dhokla.",
+          "They make one fourth dhokla.",
+          "They make two whole dhoklas."
+         ],
+         "answer": 0,
+         "why": {
+          "They make one half dhokla.": "It leaves out the two one-fourth pieces.",
+          "They make one fourth dhokla.": "It counts only one one-fourth piece.",
+          "They make two whole dhoklas.": "It doubles the amount instead of joining equal shares."
+         },
+         "explanation": "One half equals two one-fourths, so all four one-fourths make one whole.",
+         "f": [
+          "2.1",
+          "2.3",
+          "2.6",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 66
+          },
+          {
+           "ch": 5,
+           "p": 66
+          },
+          {
+           "ch": 5,
+           "p": 67
+          },
+          {
+           "ch": 5,
+           "p": 67
+          }
+         ]
         }
        ],
        "topicScene": "media/ch5-l2-dhokla-special-a91ff0.webp",
@@ -24820,7 +25392,7 @@
       {
        "id": "mathematics-g4-ch5-l3",
        "title": "More People, Smaller Shares",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -24952,6 +25524,48 @@
           "24 (generated problem)",
           "4 (generated problem)",
           "6 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch5-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "One whole dhokla is shared equally among six people, then among eight people. Which group gets smaller equal pieces?",
+         "steps": [
+          "Six equal parts are larger because the whole has fewer parts.",
+          "Eight equal parts are smaller because the whole has more parts.",
+          "More equal parts make each part smaller.",
+          "Therefore, eight people get smaller equal pieces than six people."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 68
+          },
+          {
+           "ch": 5,
+           "p": 68
+          },
+          {
+           "ch": 5,
+           "p": 68
+          },
+          {
+           "ch": 5,
+           "p": 69
+          }
          ]
         },
         {
@@ -25764,6 +26378,174 @@
            "p": 69
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "A whole dhokla is shared equally among six people. The same dhokla is shared among eight people. How do the pieces compare?",
+         "options": [
+          "The eight-person pieces are smaller.",
+          "The eight-person pieces are larger.",
+          "The eight-person pieces are equal.",
+          "The eight-person pieces are whole."
+         ],
+         "answer": 0,
+         "why": {
+          "The eight-person pieces are larger.": "It reverses the effect of making more equal parts.",
+          "The eight-person pieces are equal.": "It wrongly says that more people make no change.",
+          "The eight-person pieces are whole.": "It confuses each equal part with the whole dhokla."
+         },
+         "explanation": "Eight people get smaller pieces because more equal parts are made.",
+         "f": [
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.8",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 68
+          },
+          {
+           "ch": 5,
+           "p": 68
+          },
+          {
+           "ch": 5,
+           "p": 68
+          },
+          {
+           "ch": 5,
+           "p": 69
+          },
+          {
+           "ch": 5,
+           "p": 69
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A child says eight people get bigger pieces than six people. Why is this claim wrong?",
+         "options": [
+          "More equal parts make each piece smaller.",
+          "More equal parts make each piece bigger.",
+          "Fewer people make each equal part a whole.",
+          "Equal sharing makes every equal part a whole."
+         ],
+         "answer": 0,
+         "why": {
+          "More equal parts make each piece bigger.": "It reverses the rule about making more equal parts.",
+          "Fewer people make each equal part a whole.": "It mistakes a smaller equal part for the whole.",
+          "Equal sharing makes every equal part a whole.": "It mistakes equal parts for complete wholes."
+         },
+         "explanation": "More equal parts make each piece smaller, so eight pieces are smaller.",
+         "f": [
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.8",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 68
+          },
+          {
+           "ch": 5,
+           "p": 68
+          },
+          {
+           "ch": 5,
+           "p": 68
+          },
+          {
+           "ch": 5,
+           "p": 69
+          },
+          {
+           "ch": 5,
+           "p": 69
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "combine"
+         ],
+         "prompt": "Five fractions, each one-fifth of the whole, are joined. What do they make?",
+         "options": [
+          "One complete whole dhokla.",
+          "Only one fifth of the whole.",
+          "Only one third of the whole.",
+          "Only one equal part out of eight."
+         ],
+         "answer": 0,
+         "why": {
+          "Only one fifth of the whole.": "It mistakes one one-fifth piece for all five pieces.",
+          "Only one third of the whole.": "It counts one piece instead of joining all five.",
+          "Only one equal part out of eight.": "It mistakes one small part for the joined pieces."
+         },
+         "explanation": "Five one-fifth pieces together make one complete whole.",
+         "f": [
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 69
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "identify"
+         ],
+         "prompt": "One fraction is made from three equal thirds. What part of the whole is it?",
+         "options": [
+          "One-third of the whole dhokla.",
+          "One-fifth of the whole dhokla.",
+          "One equal part out of six.",
+          "One equal part out of eight."
+         ],
+         "answer": 0,
+         "why": {
+          "One-fifth of the whole dhokla.": "It mixes thirds with the one-fifth pieces.",
+          "One equal part out of six.": "It thinks six equal parts describe the three equal thirds.",
+          "One equal part out of eight.": "It uses the people count instead of the equal thirds."
+         },
+         "explanation": "The rule says three equal thirds make one-third of the whole.",
+         "f": [
+          "3.11"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 69
+          }
+         ]
         }
        ],
        "topicScene": "media/ch5-l2-dhokla-special-a91ff0.webp",
@@ -25780,7 +26562,7 @@
       {
        "id": "mathematics-g4-ch5-l4",
        "title": "Flower Garden Fractions",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -25904,6 +26686,73 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g4-ch5-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Shade the fraction",
+         "tasks": [
+          {
+           "say": "Show one half.",
+           "when": "n * 2 == d",
+           "then": "Any fraction whose top is half its bottom equals one half."
+          },
+          {
+           "say": "Show a fraction bigger than one whole.",
+           "when": "n > d",
+           "then": "When the top is bigger than the bottom you have more than a whole."
+          }
+         ],
+         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
+         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch5-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Idha plants five kinds equally, but roses use two parts. What fraction of her first revised garden is roses?",
+         "steps": [
+          "The whole has five equal parts because she plants all five kinds equally.",
+          "Each part is one-fifth because five equal parts make the whole.",
+          "Roses use two parts because Idha has very few lily seeds.",
+          "Two one-fifth parts make two-fifths, so roses take two-fifths of the first revised garden."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 70
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "mathematics-g4-ch5-l4-a2",
          "difficulty": 1,
@@ -25921,28 +26770,6 @@
          "answer": 1,
          "explanation": "The lesson says Idha has five different flowering plants for her garden.",
          "src": [
-          {
-           "ch": 5,
-           "p": 70
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "mathematics-g4-ch5-l4-a3",
-         "difficulty": 1,
-         "tags": [
-          "garden",
-          "flowers"
-         ],
-         "prompt": "Idha plants all five kinds equally in her first garden.",
-         "answer": true,
-         "explanation": "Idha decides to plant all five kinds equally in her garden.",
-         "src": [
-          {
-           "ch": 5,
-           "p": 70
-          },
           {
            "ch": 5,
            "p": 70
@@ -26150,6 +26977,28 @@
           {
            "ch": 5,
            "p": 71
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "mathematics-g4-ch5-l4-a4",
+         "difficulty": 2,
+         "tags": [
+          "roses",
+          "lily",
+          "fractions"
+         ],
+         "prompt": "Idha uses ______ parts for roses because she has very few lily seeds.",
+         "answers": [
+          "two"
+         ],
+         "hint": "Think about the number of rose parts.",
+         "explanation": "She uses two parts for roses because she has very few lily seeds.",
+         "src": [
+          {
+           "ch": 5,
+           "p": 70
           }
          ]
         },
@@ -26680,6 +27529,253 @@
            "p": 72
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "correct a claim"
+         ],
+         "prompt": "A flower stall has five equal bunches. Two bunches hold roses. A child calls them three-fifths. Which fraction is correct?",
+         "options": [
+          "one-fifth",
+          "two-fifths",
+          "three-fifths",
+          "five-fifths"
+         ],
+         "answer": 1,
+         "why": {
+          "one-fifth": "This counts one bunch instead of the two rose bunches.",
+          "three-fifths": "This is the child’s mistake; only two of five bunches are roses.",
+          "five-fifths": "This shows the whole stall instead of the rose bunches."
+         },
+         "explanation": "Two bunches out of five equal bunches make two-fifths.",
+         "f": [
+          "4.1",
+          "4.3",
+          "4.4"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 70
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare fractions"
+         ],
+         "prompt": "Five garden rows are equal. Mogra gets one row, and roses get two. Which fraction is larger?",
+         "options": [
+          "one-fifth",
+          "two-fifths",
+          "three-fifths",
+          "five-fifths"
+         ],
+         "answer": 1,
+         "why": {
+          "one-fifth": "This is Mogra’s smaller one-row share.",
+          "three-fifths": "This uses three rows, but roses receive only two rows.",
+          "five-fifths": "This shows the whole garden instead of one flower share."
+         },
+         "explanation": "Two rows out of five equal rows make two-fifths.",
+         "f": [
+          "4.3",
+          "4.4",
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 70
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "correct a claim"
+         ],
+         "prompt": "Idha’s garden has five equal parts. A child calls one part five-fifths. What fraction does one part really have?",
+         "options": [
+          "one-fifth",
+          "two-fifths",
+          "five-fifths",
+          "one-seventh"
+         ],
+         "answer": 0,
+         "why": {
+          "two-fifths": "One of five equal parts is one-fifth.",
+          "five-fifths": "This names the whole garden, not one part.",
+          "one-seventh": "Seven parts belong to the next garden, not Idha’s five-part garden."
+         },
+         "explanation": "This uses the rose share instead of one equal part.",
+         "f": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.7"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 70
+          },
+          {
+           "ch": 5,
+           "p": 71
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare fractions"
+         ],
+         "prompt": "Lily gets three-sevenths of a seven-part garden. Marigold and Periwinkle each get two-sevenths. Which amount is larger?",
+         "options": [
+          "one-seventh",
+          "two-sevenths",
+          "three-sevenths",
+          "five-sevenths"
+         ],
+         "answer": 2,
+         "why": {
+          "one-seventh": "This is smaller than either stated share.",
+          "two-sevenths": "This is the smaller share given to each named flower.",
+          "five-sevenths": "This is larger than either share being compared."
+         },
+         "explanation": "Three-sevenths is larger because three parts beat two parts.",
+         "f": [
+          "4.9",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 71
+          },
+          {
+           "ch": 5,
+           "p": 71
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "add fractions"
+         ],
+         "prompt": "A stall has seven equal bunches. One type gets one bunch, and another gets two. What fraction do they get together?",
+         "options": [
+          "one-seventh",
+          "two-sevenths",
+          "three-sevenths",
+          "five-sevenths"
+         ],
+         "answer": 2,
+         "why": {
+          "one-seventh": "This counts only the one-bunch type.",
+          "two-sevenths": "This counts only the two-bunch type.",
+          "five-sevenths": "This adds too many parts and ignores the seven equal parts."
+         },
+         "explanation": "Three bunches out of seven equal bunches make three-sevenths.",
+         "f": [
+          "4.7",
+          "4.8",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 71
+          },
+          {
+           "ch": 5,
+           "p": 71
+          },
+          {
+           "ch": 5,
+           "p": 71
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l4-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "subtract fractions"
+         ],
+         "prompt": "Mogra receives five-sevenths of a seven-part garden. How many sevenths are left for other flowers?",
+         "options": [
+          "one-seventh",
+          "two-sevenths",
+          "three-sevenths",
+          "five-sevenths"
+         ],
+         "answer": 1,
+         "why": {
+          "one-seventh": "This leaves too little; five-sevenths leaves two-sevenths.",
+          "three-sevenths": "This leaves too much for Mogra’s five-sevenths share.",
+          "five-sevenths": "This repeats Mogra’s share instead of the remaining part."
+         },
+         "explanation": "Two-sevenths completes the seven equal parts.",
+         "f": [
+          "4.7",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 71
+          },
+          {
+           "ch": 5,
+           "p": 72
+          }
+         ]
         }
        ],
        "topicScene": "media/ch5-l4-rose-garden-agri-horticultur-d84f6f.webp",
@@ -26696,7 +27792,7 @@
       {
        "id": "mathematics-g4-ch5-l5",
        "title": "Dosas, Diyas and Gifts",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -26808,6 +27904,42 @@
          "derived": [
           "1 (generated problem)",
           "4 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch5-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A cook plans three toppings on a dosa: three-eighths potato, one-eighth chilly paneer, and four-eighths tangy tomato. How much is covered?",
+         "steps": [
+          "The three toppings cover three-eighths, one-eighth, and four-eighths.",
+          "They add to eight-eighths, which equals one whole dosa.",
+          "So the toppings cover the whole dosa."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.5",
+          "5.6",
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 73
+          },
+          {
+           "ch": 5,
+           "p": 73
+          },
+          {
+           "ch": 5,
+           "p": 73
+          }
          ]
         },
         {
@@ -27287,6 +28419,75 @@
            "p": 74
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare fractions"
+         ],
+         "prompt": "Each basic flavour uses one-fourth of a dosa. One topping uses two-thirds of it. How much more?",
+         "options": [
+          "one-twelfth of a dosa",
+          "one-sixth of a dosa",
+          "five-twelfths of a dosa",
+          "seven-twelfths of a dosa"
+         ],
+         "answer": 2,
+         "why": {
+          "one-twelfth of a dosa": "One-twelfth is too small because the topping uses much more.",
+          "one-sixth of a dosa": "One-sixth is two twelfths, not the full difference.",
+          "seven-twelfths of a dosa": "Seven-twelfths adds instead of finding the difference."
+         },
+         "explanation": "Two-thirds is eight twelfths and one-fourth is three twelfths.",
+         "f": [
+          "5.3",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 72
+          },
+          {
+           "ch": 5,
+           "p": 73
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fraction complement"
+         ],
+         "prompt": "Flowers should be drawn in one-fifth of the given pots. What fraction stays without flowers?",
+         "options": [
+          "one-fifth",
+          "two-fifths",
+          "three-fifths",
+          "four-fifths"
+         ],
+         "answer": 3,
+         "why": {
+          "one-fifth": "This is the part with flowers, not the part without them.",
+          "two-fifths": "This leaves too little space after drawing one-fifth.",
+          "three-fifths": "This leaves too much space after drawing one-fifth."
+         },
+         "explanation": "Five-fifths is whole, so four-fifths remains without flowers.",
+         "f": [
+          "5.14"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 74
+          }
+         ]
         }
        ],
        "topicScene": "media/ch5-l5-varieties-of-south-indian-do-00797c.webp",
@@ -27303,7 +28504,7 @@
       {
        "id": "mathematics-g4-ch5-l6",
        "title": "Fractions in Our Surroundings",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -27429,6 +28630,63 @@
          "derived": [
           "16 (generated problem)",
           "4 (generated problem)"
+         ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g4-ch5-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Shade the fraction",
+         "tasks": [
+          {
+           "say": "Show one half.",
+           "when": "n * 2 == d",
+           "then": "Any fraction whose top is half its bottom equals one half."
+          },
+          {
+           "say": "Show a fraction bigger than one whole.",
+           "when": "n > d",
+           "then": "When the top is bigger than the bottom you have more than a whole."
+          }
+         ],
+         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
+         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch5-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Mummy puts one of four equal parts of sixteen barfis on a blue plate. How much of the whole is there, and how many barfis?",
+         "steps": [
+          "The sixteen barfis form the whole group.",
+          "Four equal parts divide that whole into equal shares.",
+          "One share is one-fourth of the whole.",
+          "That share contains four barfis, so the plate has one-fourth of all the barfis."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 75
+          },
+          {
+           "ch": 5,
+           "p": 75
+          }
          ]
         },
         {
@@ -28315,6 +29573,75 @@
            "p": 75
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "solve"
+         ],
+         "prompt": "Mummy divides sixteen barfis into four equal parts. She gives one part to each plate. How many barfis are on each plate?",
+         "options": [
+          "Four barfis on each plate.",
+          "Eight barfis on each plate.",
+          "Twelve barfis on each plate.",
+          "Sixteen barfis on each plate."
+         ],
+         "answer": 0,
+         "why": {
+          "Eight barfis on each plate.": "This mistake shares sixteen barfis among only two parts.",
+          "Twelve barfis on each plate.": "This mistake does not share all sixteen barfis equally.",
+          "Sixteen barfis on each plate.": "This mistake puts all the barfis on every plate."
+         },
+         "explanation": "Sixteen barfis shared among four equal parts give four barfis on each plate.",
+         "f": [
+          "6.1",
+          "6.2"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 75
+          },
+          {
+           "ch": 5,
+           "p": 75
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "One paper starts with two equal parts. Each part is halved each time. What happens after one halving?",
+         "options": [
+          "Half of its first size.",
+          "Twice its first size.",
+          "The same as its first size.",
+          "One-fourth of its first size."
+         ],
+         "answer": 0,
+         "why": {
+          "Twice its first size.": "This mistake reverses what halving does to size.",
+          "The same as its first size.": "This mistake thinks folding in half leaves each part unchanged.",
+          "One-fourth of its first size.": "This mistake applies the half-fold twice, not once."
+         },
+         "explanation": "Halving each part makes every part half its first size.",
+         "f": [
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 77
+          }
+         ]
         }
        ],
        "topicScene": "media/ch5-l6-besan-chakki-homemade-kota-0-24d29b.webp",
@@ -28327,6 +29654,208 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Manoj2095"
        }
+      },
+      {
+       "id": "mathematics-g4-ch5-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 14,
+       "topicScene": "media/ch5-l2-dhokla-special-a91ff0.webp",
+       "sceneAlt": "Dhokla made from fermented rice and split urad dal batter, finished with a sweet, spicy syrup and garnishes.",
+       "sceneCaption": "Gujarati dhokla made with fermented rice and urad dal batter.",
+       "sceneCredit": {
+        "text": "DHOKLA SPECIAL by BHAVYA KAPOOR, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:DHOKLA_SPECIAL.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "BHAVYA KAPOOR"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Ikra and Samina have one rectangular drawing sheet to share. Ikra wants to share the paper with Samina, but Samina wants a bigger part than Ikra. They can choose one half or two quarters of the paper. The sheet can be folded or cut in different ways to make two equal parts or four equal parts. They are deciding how to divide the sheet for the sharing.",
+         "prompt": "If Ikra takes one half and Samina takes two quarters, what will happen?",
+         "options": [
+          "They each receive an equal amount of the sheet.",
+          "Samina receives more because two quarters are two pieces.",
+          "Ikra receives more because one half is one piece.",
+          "They each receive one quarter, with half of the sheet left over."
+         ],
+         "answer": 0,
+         "why": {
+          "Samina receives more because two quarters are two pieces.": "The number of pieces does not change the amount received.",
+          "Ikra receives more because one half is one piece.": "One half and two quarters are equal amounts.",
+          "They each receive one quarter, with half of the sheet left over.": "This gives each person only one quarter and leaves half unshared."
+         },
+         "explanation": "Two quarters together equal one half, so their shares are equal."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Ikra and Samina have one rectangular drawing sheet to share. Ikra wants to share the paper with Samina, but Samina wants a bigger part than Ikra. They can choose one half or two quarters of the paper. The sheet can be folded or cut in different ways to make two equal parts or four equal parts. They are deciding how to divide the sheet for the sharing.",
+         "prompt": "Before sharing, how can they check that one half and two quarters are equal shares?",
+         "options": [
+          "They can compare one half with the two quarters together.",
+          "They can count the pieces and decide that two quarters are bigger.",
+          "They can compare one quarter with the whole half.",
+          "They can fold the sheet in different ways without comparing the shares."
+         ],
+         "answer": 0,
+         "why": {
+          "They can count the pieces and decide that two quarters are bigger.": "Two separate pieces do not automatically make a bigger amount.",
+          "They can compare one quarter with the whole half.": "A single quarter is only part of a half.",
+          "They can fold the sheet in different ways without comparing the shares.": "Different folds do not show whether the chosen shares are equal."
+         },
+         "explanation": "Comparing one half with two quarters together checks their amounts."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch5-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why giving Samina two quarters and Ikra one half would not give Samina a bigger part.",
+         "answer": "Two quarters together make the same amount as one half. So Samina’s two quarters and Ikra’s one half would be equal-sized shares. Samina wants a bigger part, but choosing two quarters instead of one half would not give her one.",
+         "points": [
+          "Two quarters equal one half.",
+          "The two shares would be equal.",
+          "Two quarters do not give Samina a bigger part."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch5-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why Idha’s slice is smaller than the friends’ earlier shares.",
+         "answer": "Idha’s slice is smaller because the same whole dhokla is shared among four people instead of among three friends. Dividing it into four equal parts gives each person one-fourth. When more people share, each person receives less of the whole dhokla.",
+         "points": [
+          "The same whole dhokla is being shared.",
+          "There are now four people sharing.",
+          "Each person receives one-fourth.",
+          "More people sharing means a smaller share for each person."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Sumedha has dhokla and is ready to share it. When it is shared equally among six people, everyone gets an equal part. If eight people share it instead, each person gets a smaller piece. Sumedha’s share becomes smaller whenever another guest arrives. When Idha and Vinayak give their shares to Sumedha, she gets extra dhokla.",
+         "prompt": "What would happen to Sumedha’s portion if another guest arrived?",
+         "options": [
+          "Her portion would be reduced.",
+          "Her portion would grow.",
+          "Her portion would stay the same.",
+          "Her portion would become a larger equal part."
+         ],
+         "answer": 0,
+         "why": {
+          "Her portion would grow.": "Sharing among more people does not make her share grow.",
+          "Her portion would stay the same.": "The number of guests changes how the dhokla is divided.",
+          "Her portion would become a larger equal part.": "A larger equal part would not result from a smaller share."
+         },
+         "explanation": "Each new guest causes Sumedha’s share to become smaller."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch5-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Sumedha has dhokla and is ready to share it. When it is shared equally among six people, everyone gets an equal part. If eight people share it instead, each person gets a smaller piece. Sumedha’s share becomes smaller whenever another guest arrives. When Idha and Vinayak give their shares to Sumedha, she gets extra dhokla.",
+         "prompt": "What happens to each person’s portion when equal sharing changes from six people to eight people?",
+         "options": [
+          "The size of every portion decreases.",
+          "The size of every portion increases.",
+          "The size of every portion stays the same.",
+          "Only some of the portions decrease."
+         ],
+         "answer": 0,
+         "why": {
+          "The size of every portion increases.": "The equal parts are made by using the larger number of people.",
+          "The size of every portion stays the same.": "Equal sharing does not keep the portion size unchanged when the number of people changes.",
+          "Only some of the portions decrease.": "All eight people receive smaller equal parts, not only some people."
+         },
+         "explanation": "Dividing a whole among more people makes each part smaller."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch5-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why two-fifths for roses in the first revised garden is different from three-sevenths for Lily in the seven-part garden.",
+         "answer": "Two-fifths describes the rose area in the first revised garden, which has five equal parts. Three-sevenths describes Lily’s share in the seven-part garden. The denominator tells how many equal parts make the whole, so the two fractions use different-sized wholes.",
+         "points": [
+          "Identifies two-fifths with the first revised garden",
+          "Identifies three-sevenths with the seven-part garden",
+          "Explains what the denominator shows",
+          "Explains that the wholes are not the same size"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch5-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between the diya activity and the hairband activity?",
+         "answer": "The diya activity gives Meena eight diyas and asks for one-fourth, or two, to be coloured red. The hairband activity applies to Simran’s friends, with one-third of them receiving a hairband. The first counts diyas to colour, while the second counts friends receiving a gift.",
+         "points": [
+          "The diya activity involves eight diyas.",
+          "One-fourth of the diyas means two diyas.",
+          "One-third of Simran’s friends receive hairbands.",
+          "The activities count different things and involve different actions."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch5-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does folding and colouring the paper help to find the fraction of the coloured part?",
+         "answer": "The paper is folded into three equal parts, and one of those parts is coloured. Comparing the coloured part with the whole paper shows that the fraction is one-third. The later fold in half does not change which of the three equal parts was coloured, so the coloured fraction is still found by comparison with the whole.",
+         "points": [
+          "The paper is folded into three equal parts.",
+          "One of the three equal parts is coloured.",
+          "The coloured part is compared with the whole paper.",
+          "The coloured fraction is one-third."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -28579,7 +30108,7 @@
       {
        "id": "mathematics-g4-ch6-l1",
        "title": "Let Us Observe: Length and Its Words",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -28701,6 +30230,43 @@
           "1 (generated problem)",
           "2 (generated problem)",
           "3 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch6-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Is our classroom door shorter than one metre?",
+         "steps": [
+          "We use metres for length, because length is measured in metres.",
+          "We compare the door with one metre, because the metre measures length.",
+          "We say yes only if the door is less than one metre.",
+          "Otherwise, we say no, because the door is not shorter."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.8"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 80
+          },
+          {
+           "ch": 6,
+           "p": 80
+          },
+          {
+           "ch": 6,
+           "p": 80
+          }
          ]
         },
         {
@@ -29641,6 +31207,90 @@
           "6 (generated problem)",
           "7 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "interpret length"
+         ],
+         "prompt": "An arm measures less than one metre. What does this show?",
+         "options": [
+          "The arm is less than one metre long.",
+          "The arm is more than one metre long.",
+          "The arm is exactly one metre long.",
+          "The arm has no measurable length at all."
+         ],
+         "answer": 0,
+         "why": {
+          "The arm is more than one metre long.": "It reverses the given comparison.",
+          "The arm is exactly one metre long.": "Less than one metre does not mean exactly one metre.",
+          "The arm has no measurable length at all.": "The arm still has length; the result only compares it with one metre."
+         },
+         "explanation": "It directly matches the arm's length being less than one metre.",
+         "f": [
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 80
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "plan a check"
+         ],
+         "prompt": "A child checks a table's breadth. How should one metre be used?",
+         "options": [
+          "Compare its breadth with one metre.",
+          "Compare its depth with one metre.",
+          "Compare its height with one metre.",
+          "Check whether its width is short."
+         ],
+         "answer": 0,
+         "why": {
+          "Compare its depth with one metre.": "Depth is not the measurement the child wants to check.",
+          "Compare its height with one metre.": "Height is not the measurement the child wants to check.",
+          "Check whether its width is short.": "Checking whether width is short does not show it is over one metre."
+         },
+         "explanation": "It compares the needed breadth with one metre in the correct unit.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.4",
+          "1.5",
+          "1.9"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 80
+          },
+          {
+           "ch": 6,
+           "p": 80
+          },
+          {
+           "ch": 6,
+           "p": 80
+          },
+          {
+           "ch": 6,
+           "p": 80
+          },
+          {
+           "ch": 6,
+           "p": 80
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l1-tape-measure-colored-466df7.webp",
@@ -29657,7 +31307,7 @@
       {
        "id": "mathematics-g4-ch6-l2",
        "title": "Measuring Is Fun",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -29783,6 +31433,48 @@
          "f": [],
          "derived": [
           "10 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch6-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can children estimate a classroom's length and breadth, then check their ideas with ropes?",
+         "steps": [
+          "They first estimate the classroom's length and breadth because they need ideas to check.",
+          "They use a metre rope again and again because repeated use helps them estimate lengths.",
+          "They use more than one rope together when one rope is not enough, because the ropes must cover the distance.",
+          "They measure the classroom with the ropes to see how close their estimates were."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.10",
+          "2.5",
+          "2.2",
+          "2.1"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 82
+          },
+          {
+           "ch": 6,
+           "p": 81
+          },
+          {
+           "ch": 6,
+           "p": 81
+          },
+          {
+           "ch": 6,
+           "p": 81
+          }
          ]
         },
         {
@@ -30641,6 +32333,233 @@
           "17 (generated problem)",
           "7 (generated problem)"
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A child estimates a classroom's length by using the metre rope again and again. Why is that method useful?",
+         "options": [
+          "It helps build an estimate of the length.",
+          "It makes the classroom physically longer.",
+          "It turns the guess into the real length.",
+          "It removes the need for any estimate."
+         ],
+         "answer": 0,
+         "why": {
+          "It makes the classroom physically longer.": "This mistake thinks using a rope changes the real classroom length.",
+          "It turns the guess into the real length.": "This mistake thinks an estimate becomes the real length.",
+          "It removes the need for any estimate.": "This mistake thinks repeated measuring removes the need to estimate."
+         },
+         "explanation": "Repeated rope use helps the child estimate the classroom's length.",
+         "f": [
+          "2.5",
+          "2.1"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 81
+          },
+          {
+           "ch": 6,
+           "p": 81
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A distance is longer than one rope. How can the children measure the whole distance?",
+         "options": [
+          "Place several ropes end to end.",
+          "Place several ropes far apart.",
+          "Place one rope inside another.",
+          "Place all the ropes in a pile."
+         ],
+         "answer": 0,
+         "why": {
+          "Place several ropes far apart.": "This mistake thinks ropes with gaps between them still cover it.",
+          "Place one rope inside another.": "This mistake thinks placing ropes together covers more distance.",
+          "Place all the ropes in a pile.": "This mistake thinks a pile of ropes shows the whole distance."
+         },
+         "explanation": "End-to-end ropes cover the whole distance together.",
+         "f": [
+          "2.2"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 81
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Children draw lines of 1 m, 5 m and 10 m. A child says, 'The 1 m line is only for measuring.' Why is this claim wrong?",
+         "options": [
+          "The child can walk, jump and crawl on it.",
+          "The child can make the line much longer.",
+          "The child can change the line's measurement.",
+          "The child can make the line disappear."
+         ],
+         "answer": 0,
+         "why": {
+          "The child can make the line much longer.": "This mistake thinks playing on a line makes it longer.",
+          "The child can change the line's measurement.": "This mistake thinks playing on a line changes its measurement.",
+          "The child can make the line disappear.": "This mistake thinks playing on a line can erase it."
+         },
+         "explanation": "Children can walk, jump and crawl on the drawn line.",
+         "f": [
+          "2.3",
+          "2.4"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 81
+          },
+          {
+           "ch": 6,
+           "p": 81
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Each child can join a long jump competition. After the jumps, how should the children find each friend's distance?",
+         "options": [
+          "Measure every friend's jump carefully with ropes.",
+          "Guess every friend's jump without using ropes.",
+          "Measure only one friend's jump carefully.",
+          "Measure only the shortest friend's jump carefully."
+         ],
+         "answer": 0,
+         "why": {
+          "Guess every friend's jump without using ropes.": "This mistake thinks guessing can find the distance as accurately as ropes.",
+          "Measure only one friend's jump carefully.": "This mistake thinks only one child's jump needs checking.",
+          "Measure only the shortest friend's jump carefully.": "This mistake thinks checking the shortest jump finds every distance."
+         },
+         "explanation": "Careful rope measurements find every friend's jump distance.",
+         "f": [
+          "2.6",
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 82
+          },
+          {
+           "ch": 6,
+           "p": 82
+          },
+          {
+           "ch": 6,
+           "p": 82
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l2-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "After the children's jump distances are checked, how can they find the greatest jump?",
+         "options": [
+          "Compare all the checked jump distances.",
+          "Choose the child who jumped first.",
+          "Choose the child who jumped last.",
+          "Choose the child who made the shortest jump."
+         ],
+         "answer": 0,
+         "why": {
+          "Choose the child who jumped first.": "This mistake thinks the jump order shows the jump distance.",
+          "Choose the child who jumped last.": "This mistake thinks the last jump must be the greatest.",
+          "Choose the child who made the shortest jump.": "This mistake confuses the shortest jump with the greatest jump."
+         },
+         "explanation": "Comparing the checked distances shows which jump is greatest.",
+         "f": [
+          "2.7",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 82
+          },
+          {
+           "ch": 6,
+           "p": 82
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l2-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Children estimate the length and breadth of their classroom. What should they do next to check the guesses?",
+         "options": [
+          "Measure the classroom carefully using ropes.",
+          "Change the guesses without any measuring.",
+          "Use the guesses again without checking.",
+          "Draw unrelated lines away from the classroom."
+         ],
+         "answer": 0,
+         "why": {
+          "Change the guesses without any measuring.": "This mistake thinks changing a guess checks it.",
+          "Use the guesses again without checking.": "This mistake thinks repeating a guess is the same as checking.",
+          "Draw unrelated lines away from the classroom.": "This mistake thinks unrelated lines check the classroom."
+         },
+         "explanation": "Measuring with ropes checks the length and breadth estimates.",
+         "f": [
+          "2.10",
+          "2.1",
+          "2.5"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 82
+          },
+          {
+           "ch": 6,
+           "p": 81
+          },
+          {
+           "ch": 6,
+           "p": 81
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l1-tape-measure-colored-466df7.webp",
@@ -30657,7 +32576,7 @@
       {
        "id": "mathematics-g4-ch6-l3",
        "title": "Let Us Think: Guess the Length",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -31689,6 +33608,48 @@
            "p": 83
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Imagine each bus is as long as one 6-metre crocodile. How many buses fit along a 30-metre whale?",
+         "options": [
+          "Five buses",
+          "Six buses",
+          "Ten buses",
+          "Thirty buses"
+         ],
+         "answer": 0,
+         "why": {
+          "Six buses": "Six groups make 36 metres, which is too long.",
+          "Ten buses": "Ten groups make 60 metres, which is too long.",
+          "Thirty buses": "Thirty groups make 180 metres, which is too long."
+         },
+         "explanation": "Five groups of 6 metres make 30 metres.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.4"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 83
+          },
+          {
+           "ch": 6,
+           "p": 83
+          },
+          {
+           "ch": 6,
+           "p": 83
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l3-blue-whale-size-e8ab01.webp",
@@ -31705,7 +33666,7 @@
       {
        "id": "mathematics-g4-ch6-l4",
        "title": "Measuring Small Things",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -31826,6 +33787,48 @@
           "10 (generated problem)",
           "5 (generated problem)",
           "50 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch6-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A toy car travels a short distance. A child wants to know how far it went. Which tool should the child use, and why?",
+         "steps": [
+          "Small objects need a smaller unit, so centimetres are suitable.",
+          "A measuring tape can show a toy car’s distance because it measures length.",
+          "Each equal part of a metre scale is one centimetre.",
+          "The child should use the tape and read the distance in centimetres."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.3",
+          "4.4",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 86
+          }
          ]
         },
         {
@@ -32686,6 +34689,236 @@
            "p": 84
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A metre scale can be used for measuring. A plant is small. What should the child use to check its height?",
+         "options": [
+          "Use the metre scale because its parts are centimetres.",
+          "Use no tool because small plants cannot be measured.",
+          "Use only a guess because a plant needs no scale.",
+          "Use a larger unit so the small plant looks bigger."
+         ],
+         "answer": 0,
+         "why": {
+          "Use no tool because small plants cannot be measured.": "This mistake thinks small size means the plant cannot be measured.",
+          "Use only a guess because a plant needs no scale.": "This mistake thinks a guess can replace measuring the plant.",
+          "Use a larger unit so the small plant looks bigger.": "This mistake thinks a larger unit makes a small plant easier to read."
+         },
+         "explanation": "This is right because the scale has centimetre parts for checking height.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "A red bar is repeated 10 times to make 10 cm. The child repeats it 100 times. What length is covered?",
+         "options": [
+          "100 centimetres, which are equal to one metre.",
+          "10 centimetres, which are equal to one metre.",
+          "100 centimetres, which are equal to ten metres.",
+          "10 centimetres, which are equal to one centimetre."
+         ],
+         "answer": 0,
+         "why": {
+          "10 centimetres, which are equal to one metre.": "This mistake confuses 10 cm with one metre.",
+          "100 centimetres, which are equal to ten metres.": "This mistake changes one metre into ten metres.",
+          "10 centimetres, which are equal to one centimetre.": "This mistake confuses 10 cm with one centimetre."
+         },
+         "explanation": "This is right because 100 red bars make one metre.",
+         "f": [
+          "4.5",
+          "4.6",
+          "4.7"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "Children compare their length estimates with their friends. How can they check the pencil’s length?",
+         "options": [
+          "Measure the pencil and compare each friend’s estimate.",
+          "Choose the largest estimate because it must be closest.",
+          "Keep the first estimate because it came before the others.",
+          "Measure only the friend with the largest estimate."
+         ],
+         "answer": 0,
+         "why": {
+          "Choose the largest estimate because it must be closest.": "This mistake assumes the biggest estimate must be closest.",
+          "Keep the first estimate because it came before the others.": "This mistake treats the first guess as automatically correct.",
+          "Measure only the friend with the largest estimate.": "This mistake measures the guesser instead of the pencil."
+         },
+         "explanation": "This is right because measuring gives a length to compare with each estimate.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 86
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "check claim"
+         ],
+         "prompt": "A tape is divided into 100 equal parts. Each equal part is one centimetre. Is the tape one metre long?",
+         "options": [
+          "Yes, because 100 centimetres equal one metre.",
+          "No, because 100 centimetres equal 100 metres.",
+          "No, because one metre has only 10 centimetres.",
+          "Yes, because each equal part is one full metre."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because 100 centimetres equal 100 metres.": "This mistake changes 100 centimetres into 100 metres.",
+          "No, because one metre has only 10 centimetres.": "This mistake thinks one metre contains only 10 centimetres.",
+          "Yes, because each equal part is one full metre.": "This mistake calls each small part a whole metre."
+         },
+         "explanation": "This is right because 100 centimetres equal one metre.",
+         "f": [
+          "4.3",
+          "4.4",
+          "4.7"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A measuring tape can check plant height. Two toy cars need their distances compared. What should the child use?",
+         "options": [
+          "Use a measuring tape and read the distances in centimetres.",
+          "Use a metre only because centimetres are too small for cars.",
+          "Use the plant-height check because it gives the cars’ distances.",
+          "Use friends’ guesses because exact car distances are hard."
+         ],
+         "answer": 0,
+         "why": {
+          "Use a metre only because centimetres are too small for cars.": "This mistake thinks centimetres are too small to measure toy cars.",
+          "Use the plant-height check because it gives the cars’ distances.": "This mistake confuses plant height with distance travelled by toy cars.",
+          "Use friends’ guesses because exact car distances are hard.": "This mistake thinks exact car distances cannot be measured."
+         },
+         "explanation": "This is right because a tape measures car distance and centimetres suit small distances.",
+         "f": [
+          "4.1",
+          "4.3",
+          "4.4",
+          "4.8",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 84
+          },
+          {
+           "ch": 6,
+           "p": 86
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l4-this-is-a-fossilized-claw-fr-e6b2ef.webp",
@@ -32702,7 +34935,7 @@
       {
        "id": "mathematics-g4-ch6-l5",
        "title": "Metre and Centimetres",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -32805,6 +35038,36 @@
           "2 (generated problem)",
           "200 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g4-ch6-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ruler",
+         "params": {},
+         "title": "Measure the pencil",
+         "tasks": [
+          {
+           "say": "Line the pencil up with the zero mark.",
+           "when": "start == 0",
+           "then": "Starting at 0, you can read the length straight off the end."
+          },
+          {
+           "say": "Make a pencil exactly 10 cm long.",
+           "when": "len == 100",
+           "then": "10 cm = 100 mm."
+          },
+          {
+           "say": "Start at the 3 cm mark and make it 5 cm long.",
+           "when": "start == 3 and len == 50",
+           "then": "It ends at 8 cm: 8 - 3 = 5 cm."
+          }
+         ],
+         "takeaway": "Length = where it ends minus where it starts. 1 cm = 10 mm.",
+         "explanation": "Length = where it ends minus where it starts. 1 cm = 10 mm."
         },
         {
          "type": "mcq",
@@ -33507,6 +35770,43 @@
            "p": 90
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "One rope is 6 m. Another is 5 m 50 cm. Which rope is longer?",
+         "options": [
+          "The 6 m rope, because 600 cm is greater.",
+          "The 5 m 50 cm rope, because 550 cm is longer.",
+          "The 6 m rope, because 50 cm is not counted.",
+          "The 5 m 50 cm rope, because 600 cm is smaller."
+         ],
+         "answer": 0,
+         "why": {
+          "The 5 m 50 cm rope, because 550 cm is longer.": "This is wrong because 550 cm is less than 600 cm.",
+          "The 6 m rope, because 50 cm is not counted.": "This ignores the extra 50 cm in 5 m 50 cm.",
+          "The 5 m 50 cm rope, because 600 cm is smaller.": "This says 600 cm is smaller than 550 cm."
+         },
+         "explanation": "This is right because 600 cm is longer than 550 cm.",
+         "f": [
+          "5.6",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 90
+          },
+          {
+           "ch": 6,
+           "p": 90
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l5-fort-rucker-health-fair-teac-507941.webp",
@@ -33523,7 +35823,7 @@
       {
        "id": "mathematics-g4-ch6-l6",
        "title": "Fencing and Lacing",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -33656,6 +35956,58 @@
           "24 (generated problem)",
           "4 (generated problem)",
           "8 (generated problem)"
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g4-ch6-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A path circles a pond. How can we find its boundary length?",
+         "steps": [
+          "The pond path is closed, so its boundary length is its perimeter.",
+          "Footsteps can give an estimate because informal units measure perimeters.",
+          "Then we should use a tape because formal measurements are more accurate.",
+          "So we estimate first, then measure again with a tape."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.5",
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 92
+          }
          ]
         },
         {
@@ -34499,6 +36851,127 @@
            "p": 94
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "closed perimeter"
+         ],
+         "prompt": "A path joins a tree to a gate. Is that a perimeter?",
+         "options": [
+          "The path has no closed boundary.",
+          "The path is already a closed figure.",
+          "The footsteps measure the path twice.",
+          "The tape finds a missing closed boundary."
+         ],
+         "answer": 0,
+         "why": {
+          "The path is already a closed figure.": "A path with two ends is not a closed figure.",
+          "The footsteps measure the path twice.": "Counting footsteps can measure a perimeter, but cannot close a path.",
+          "The tape finds a missing closed boundary.": "A tape measures length, but it cannot create a closed boundary."
+         },
+         "explanation": "The path has no closed boundary, so it has no perimeter.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 92
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "measurement accuracy"
+         ],
+         "prompt": "Two children measure a table boundary. Which method gives the better measurement?",
+         "options": [
+          "Use footsteps, because counting them is easy.",
+          "Use a measuring tape, because it is more accurate.",
+          "Use block printing, because it marks the boundary.",
+          "Use thumbprints, because they show each side."
+         ],
+         "answer": 1,
+         "why": {
+          "Use footsteps, because counting them is easy.": "Footsteps are informal, while formal measurements are more accurate.",
+          "Use block printing, because it marks the boundary.": "Block printing is informal, so it is less accurate than formal units.",
+          "Use thumbprints, because they show each side.": "Thumbprints are informal, so they are less accurate than formal units."
+         },
+         "explanation": "A measuring tape gives a more accurate measurement of the boundary.",
+         "f": [
+          "6.3",
+          "6.4",
+          "6.5",
+          "6.6"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 91
+          },
+          {
+           "ch": 6,
+           "p": 91
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "same perimeter"
+         ],
+         "prompt": "Three different shapes each have perimeter 20 cm. What does this show?",
+         "options": [
+          "Different shapes can have the same perimeter.",
+          "Different shapes always have different perimeters.",
+          "Each different shape needs a different perimeter.",
+          "A shared perimeter means the shapes are alike."
+         ],
+         "answer": 0,
+         "why": {
+          "Different shapes always have different perimeters.": "This mistake assumes different shapes always have different perimeters.",
+          "Each different shape needs a different perimeter.": "This mistake says every new shape needs a different perimeter.",
+          "A shared perimeter means the shapes are alike.": "This mistake thinks equal perimeters mean the shapes are alike."
+         },
+         "explanation": "Different shapes can have the same perimeter, as this example shows.",
+         "f": [
+          "6.11"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 94
+          }
+         ]
         }
        ],
        "topicScene": "media/ch6-l6-0473-vector-orange-man-contr-87463c.webp",
@@ -34511,6 +36984,418 @@
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "creator": "LeoBlanchette"
        }
+      },
+      {
+       "id": "mathematics-g4-ch6-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 21,
+       "topicScene": "media/ch6-l1-tape-measure-colored-466df7.webp",
+       "sceneAlt": "A colourful tape measure with green, red and white sections.",
+       "sceneCaption": "A colourful tape measure used to measure length.",
+       "sceneCredit": {
+        "text": "Tape measure colored by Simon A. Eugster, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Tape_measure_colored.jpeg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Simon A. Eugster"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In a classroom activity, children checked whether an arm was less than one metre long. They checked whether the classroom door was shorter than one metre and whether the blackboard was more than one metre broad. They used tall, wide, short and long in daily talk about the objects around them. They learned that words for length depend on the situation and orientation, and that height, width, depth and breadth all describe length measurement. Lengths are measured in metres.",
+         "prompt": "The children find that the classroom door is shorter than one metre. Which statement should they record?",
+         "options": [
+          "Its length is below one metre.",
+          "Its length is above one metre.",
+          "Its length is exactly one metre.",
+          "Its length cannot be compared with one metre."
+         ],
+         "answer": 0,
+         "why": {
+          "Its length is above one metre.": "Above one metre would mean longer, so it is the opposite.",
+          "Its length is exactly one metre.": "Exactly one metre does not mean shorter than one metre.",
+          "Its length cannot be compared with one metre.": "A door's length can be compared with one metre."
+         },
+         "explanation": "Shorter than one metre means below one metre."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In a classroom activity, children checked whether an arm was less than one metre long. They checked whether the classroom door was shorter than one metre and whether the blackboard was more than one metre broad. They used tall, wide, short and long in daily talk about the objects around them. They learned that words for length depend on the situation and orientation, and that height, width, depth and breadth all describe length measurement. Lengths are measured in metres.",
+         "prompt": "Why is the word \"shorter\" suitable for describing the classroom door in this activity?",
+         "options": [
+          "Because it compares a length measurement with one metre.",
+          "Because it compares the blackboard's breadth with one metre.",
+          "Because it describes the arm as less than one metre long.",
+          "Because it compares the door's width with the classroom's height."
+         ],
+         "answer": 0,
+         "why": {
+          "Because it compares the blackboard's breadth with one metre.": "That comparison concerns the blackboard, not the door.",
+          "Because it describes the arm as less than one metre long.": "That comparison concerns the arm, not the door.",
+          "Because it compares the door's width with the classroom's height.": "The observation concerns the door's length, not its width and height."
+         },
+         "explanation": "The door is being compared with one metre by its length."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch6-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how height, width, depth and breadth are alike, and explain how the correct word is chosen.",
+         "answer": "Height, width, depth and breadth are all words that describe length measurement. The word chosen depends on the situation and orientation. A child should use the word that matches the length being observed, rather than treating one word as suitable for every object.",
+         "points": [
+          "All four words describe length measurement.",
+          "The choice of word depends on the situation.",
+          "Orientation affects the suitable word.",
+          "Choose the word that matches the observation."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a measuring activity, children draw lines of 1 m, 5 m and 10 m. They walk, jump and crawl along the lines, and repeatedly use a metre rope to estimate lengths. One child enters a long jump competition. The others find how far she jumped, measuring as accurately as possible with ropes, and work out who jumped the greatest distance. Finally, they estimate the classroom’s length and breadth and then check their measurements.",
+         "prompt": "What should the children do when the distance they want to measure is longer than one rope?",
+         "options": [
+          "Use more than one rope together.",
+          "Measure only the part reached by the first rope.",
+          "Stop when the first rope is fully stretched.",
+          "Guess the remaining distance without using another rope."
+         ],
+         "answer": 0,
+         "why": {
+          "Measure only the part reached by the first rope.": "This leaves part of the distance unmeasured.",
+          "Stop when the first rope is fully stretched.": "This does not cover the whole distance.",
+          "Guess the remaining distance without using another rope.": "This does not make an accurate measurement."
+         },
+         "explanation": "This allows them to measure the whole distance."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a measuring activity, children draw lines of 1 m, 5 m and 10 m. They walk, jump and crawl along the lines, and repeatedly use a metre rope to estimate lengths. One child enters a long jump competition. The others find how far she jumped, measuring as accurately as possible with ropes, and work out who jumped the greatest distance. Finally, they estimate the classroom’s length and breadth and then check their measurements.",
+         "prompt": "What should the children do after estimating the length and breadth of their classroom?",
+         "options": [
+          "Verify both classroom estimates with ropes.",
+          "Verify only the length and leave the breadth unchecked.",
+          "Leave both estimates unchecked.",
+          "Check only the 10 m line."
+         ],
+         "answer": 0,
+         "why": {
+          "Verify only the length and leave the breadth unchecked.": "This does not check both estimates.",
+          "Leave both estimates unchecked.": "This does not check the estimates at all.",
+          "Check only the 10 m line.": "One line does not check both classroom dimensions."
+         },
+         "explanation": "Both classroom dimensions should be checked."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch6-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why repeatedly using a metre rope is useful when estimating lengths.",
+         "answer": "Repeatedly using a metre rope helps children practise estimating lengths. The rope gives them a length to think about, and repeated use builds this estimating skill. They can then use the skill when estimating the length and breadth of their classroom.",
+         "points": [
+          "A metre rope is used repeatedly.",
+          "The activity develops length estimation.",
+          "The skill can be used for classroom measurements."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school learning activity, children look carefully at a picture before estimating lengths. The picture gives a length of about 30 metres for one bus and about 6 metres for one cricket bat. The teacher also asks how many buses equal the length of two blue whales, how many cricket bats are needed to measure one whale, and how many crocodiles equal the length of a blue whale. Children also consider the height of two ostriches standing together.",
+         "prompt": "A child says that one bus is about 6 metres. What should the teacher do next?",
+         "options": [
+          "Check the picture and correct the child: one bus is about 30 metres.",
+          "Accept the answer because the cricket bat is also about 6 metres.",
+          "Change the answer to two buses of about 30 metres each.",
+          "Use about 30 metres for the cricket bat instead."
+         ],
+         "answer": 0,
+         "why": {
+          "Accept the answer because the cricket bat is also about 6 metres.": "The 6-metre length belongs to the cricket bat.",
+          "Change the answer to two buses of about 30 metres each.": "The question is about one bus, not two buses.",
+          "Use about 30 metres for the cricket bat instead.": "This swaps the bus and cricket bat lengths."
+         },
+         "explanation": "This uses the bus length shown in the picture."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school learning activity, children look carefully at a picture before estimating lengths. The picture gives a length of about 30 metres for one bus and about 6 metres for one cricket bat. The teacher also asks how many buses equal the length of two blue whales, how many cricket bats are needed to measure one whale, and how many crocodiles equal the length of a blue whale. Children also consider the height of two ostriches standing together.",
+         "prompt": "Before answering how many buses equal the length of two blue whales, what should children do?",
+         "options": [
+          "Look carefully at the whale and bus pictures and compare their lengths.",
+          "Use the cricket bat length without checking the bus picture.",
+          "Use the height of the two ostriches as the bus length.",
+          "Count the crocodiles before looking at the whale picture."
+         ],
+         "answer": 0,
+         "why": {
+          "Use the cricket bat length without checking the bus picture.": "The bat length is not the length needed for this question.",
+          "Use the height of the two ostriches as the bus length.": "The ostriches are connected to a different question.",
+          "Count the crocodiles before looking at the whale picture.": "The crocodiles are connected to a different question."
+         },
+         "explanation": "This uses the relevant pictures and compares the lengths."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch6-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How should children use the pictures carefully when answering the length questions?",
+         "answer": "Children should look at each picture carefully and match the object to its stated length. For one bus, they should record about 30 metres, and for one cricket bat, about 6 metres. For questions about whales, they should compare the whale picture with the relevant bus, bat, or crocodile picture before answering.",
+         "points": [
+          "Looks carefully at the relevant pictures.",
+          "Uses about 30 metres for one bus.",
+          "Uses about 6 metres for one cricket bat.",
+          "Compares the correct pictures for whale questions."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Two children are preparing to measure small things. One child places a red bar beside a toy car to show how far the car travelled, while another uses a standard metre scale to check the height of a plant. The children compare their length estimates with their friends and list objects that are equal to or smaller than 1 cm. One child repeats the red bar 100 times beside the other child.",
+         "prompt": "What should the first child do to find the full distance travelled by the toy car?",
+         "options": [
+          "Measure the full path with a measuring tape.",
+          "Measure only the first red-bar length with a measuring tape.",
+          "Treat the red bar as the whole distance without checking the rest of the path.",
+          "Measure the plant's height and use that as the car's distance."
+         ],
+         "answer": 0,
+         "why": {
+          "Measure only the first red-bar length with a measuring tape.": "Measuring only one red-bar length may miss part of the path.",
+          "Treat the red bar as the whole distance without checking the rest of the path.": "The car may travel farther than the red bar shows.",
+          "Measure the plant's height and use that as the car's distance.": "Plant height is different from the distance the car travelled."
+         },
+         "explanation": "A measuring tape can measure the distance travelled by a toy car."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Two children are preparing to measure small things. One child places a red bar beside a toy car to show how far the car travelled, while another uses a standard metre scale to check the height of a plant. The children compare their length estimates with their friends and list objects that are equal to or smaller than 1 cm. One child repeats the red bar 100 times beside the other child.",
+         "prompt": "The plant is taller than one red bar. What should the child do next?",
+         "options": [
+          "Continue using the standard metre scale and count the equal parts up to the plant's top.",
+          "Stop when the red bar ends and record that length as the plant's full height.",
+          "Record one centimetre as the plant's full height.",
+          "Measure only the part above the red bar and ignore the lower part."
+         ],
+         "answer": 0,
+         "why": {
+          "Stop when the red bar ends and record that length as the plant's full height.": "This records only part of the plant's height.",
+          "Record one centimetre as the plant's full height.": "One centimetre is much smaller than the plant in the case.",
+          "Measure only the part above the red bar and ignore the lower part.": "Ignoring the lower part gives an incomplete height."
+         },
+         "explanation": "The metre scale can be used to continue measuring the plant's height."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch6-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does dividing a metre scale into equal parts help when measuring small things and plant height?",
+         "answer": "A metre scale is divided into 100 equal parts, and each part is called a centimetre. A smaller unit is useful for measuring small objects. The metre scale can also be used to check plant height by counting its equal parts.",
+         "points": [
+          "The metre scale has 100 equal parts.",
+          "Each equal part is called a centimetre.",
+          "A smaller unit is needed for small objects.",
+          "The scale can be used to check plant height."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school measuring activity, Ramu and Shamu check their heights. Both height readings are correct: Ramu reads 120 cm, while Shamu reads 1 m 20 cm. Their teacher asks them to record measurements on cards marked 2 m, 4 m 60 cm, and 2 m 30 cm, then compare each card with a centimetre reading.",
+         "prompt": "Ramu wants to write his height in metres and centimetres. Which wording matches his correct height?",
+         "options": [
+          "one metre and twenty centimetres",
+          "one metre and forty centimetres",
+          "two metres and thirty centimetres",
+          "four metres and sixty centimetres"
+         ],
+         "answer": 0,
+         "why": {
+          "one metre and forty centimetres": "This form equals 140 cm, not 120 cm.",
+          "two metres and thirty centimetres": "This form equals 230 cm, not 120 cm.",
+          "four metres and sixty centimetres": "This form equals 460 cm, not 120 cm."
+         },
+         "explanation": "This matches Ramu’s correct 120 cm height."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school measuring activity, Ramu and Shamu check their heights. Both height readings are correct: Ramu reads 120 cm, while Shamu reads 1 m 20 cm. Their teacher asks them to record measurements on cards marked 2 m, 4 m 60 cm, and 2 m 30 cm, then compare each card with a centimetre reading.",
+         "prompt": "The teacher gives Ramu a card marked 4 m 60 cm. Which centimetre reading should he record for the same measurement?",
+         "options": [
+          "400 cm",
+          "550 cm",
+          "230 cm",
+          "460 cm"
+         ],
+         "answer": 3,
+         "why": {
+          "400 cm": "400 cm represents four metres without the extra centimetres.",
+          "550 cm": "550 cm is the equivalent of 5 m 50 cm.",
+          "230 cm": "230 cm is the equivalent of 2 m 30 cm."
+         },
+         "explanation": "4 m 60 cm is equal to 460 cm."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch6-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why 1 m 20 cm and 120 cm can describe the same height.",
+         "answer": "Ramu’s height is 120 cm, and Shamu’s correct reading is 1 m 20 cm. Therefore, 1 m 20 cm and 120 cm describe the same height. The metre-and-centimetre form and the centimetre-only form give equal measurements, so neither person’s correct reading is wrong.",
+         "points": [
+          "Ramu reads 120 cm.",
+          "Shamu reads 1 m 20 cm.",
+          "Both readings are correct.",
+          "The two forms describe the same height."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l6-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Children in a class are learning about the length around shapes. They first try footsteps, thumbprints and block printing as non-formal units. Later, they measure the boundaries of shapes around them and write the measured perimeters in the given spaces. On a dot grid of 1 cm, they check their measurements. They also draw three different shapes with a perimeter of 20 cm, then compare their boundaries and decide which are longest and shortest.",
+         "prompt": "The children want a more accurate measurement after using non-formal units. What should they use next?",
+         "options": [
+          "A scale or measuring tape",
+          "Footsteps",
+          "Thumbprints",
+          "Block printing"
+         ],
+         "answer": 0,
+         "why": {
+          "Footsteps": "Footsteps are non-formal units.",
+          "Thumbprints": "Thumbprints are non-formal units.",
+          "Block printing": "Block printing is a non-formal unit."
+         },
+         "explanation": "This gives a more accurate measurement."
+        },
+        {
+         "type": "mcq",
+         "id": "mathematics-g4-ch6-l6-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Children in a class are learning about the length around shapes. They first try footsteps, thumbprints and block printing as non-formal units. Later, they measure the boundaries of shapes around them and write the measured perimeters in the given spaces. On a dot grid of 1 cm, they check their measurements. They also draw three different shapes with a perimeter of 20 cm, then compare their boundaries and decide which are longest and shortest.",
+         "prompt": "When they compare the three 20 cm shapes, how should a child show the longest boundary?",
+         "options": [
+          "Circle it and colour it blue",
+          "Colour it green",
+          "Leave every boundary unchanged",
+          "Colour all three boundaries blue"
+         ],
+         "answer": 0,
+         "why": {
+          "Colour it green": "Green is used for the shortest boundary.",
+          "Leave every boundary unchanged": "Leaving the boundaries unchanged would not identify the longest one.",
+          "Colour all three boundaries blue": "Colouring all three would not show which boundary is longest."
+         },
+         "explanation": "Circling finds the longest boundary, and blue can mark it."
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g4-ch6-l6-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between perimeter and the units used to measure it.",
+         "answer": "Perimeter is the length going around the outside of a closed shape. Non-formal units, such as footsteps, thumbprints and block printing, can be used to measure it. Formal measurements are more accurate, and a scale or measuring tape gives more accurate measurements. A dot grid of 1 cm can also be used to measure perimeter.",
+         "points": [
+          "Defines perimeter as the boundary length of a closed shape",
+          "Explains that perimeter is the distance going around",
+          "Names non-formal units",
+          "Explains that formal measurements are more accurate"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {

@@ -7009,7 +7009,7 @@
       {
        "id": "mathematics-g5-ch2-l3",
        "title": "Comparing equal denominators and equal numerators",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "concept",
@@ -7047,6 +7047,31 @@
            "p": 23
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch2-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Shade the fraction",
+         "tasks": [
+          {
+           "say": "Show one half.",
+           "when": "n * 2 == d",
+           "then": "Any fraction whose top is half its bottom equals one half."
+          },
+          {
+           "say": "Show a fraction bigger than one whole.",
+           "when": "n > d",
+           "then": "When the top is bigger than the bottom you have more than a whole."
+          }
+         ],
+         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
+         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
         },
         {
          "type": "hook",
@@ -7508,7 +7533,7 @@
       {
        "id": "mathematics-g5-ch2-l4",
        "title": "Fractions greater than one",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -7619,6 +7644,31 @@
           "4 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch2-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Shade the fraction",
+         "tasks": [
+          {
+           "say": "Show one half.",
+           "when": "n * 2 == d",
+           "then": "Any fraction whose top is half its bottom equals one half."
+          },
+          {
+           "say": "Show a fraction bigger than one whole.",
+           "when": "n > d",
+           "then": "When the top is bigger than the bottom you have more than a whole."
+          }
+         ],
+         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
+         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
         },
         {
          "type": "worked",
@@ -20938,7 +20988,7 @@
       {
        "id": "mathematics-g5-ch5-l1",
        "title": "Choosing Units and Matching Measures",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -21085,6 +21135,36 @@
           "40 (generated problem)",
           "60 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ruler",
+         "params": {},
+         "title": "Measure the pencil",
+         "tasks": [
+          {
+           "say": "Line the pencil up with the zero mark.",
+           "when": "start == 0",
+           "then": "Starting at 0, you can read the length straight off the end."
+          },
+          {
+           "say": "Make a pencil exactly 10 cm long.",
+           "when": "len == 100",
+           "then": "10 cm = 100 mm."
+          },
+          {
+           "say": "Start at the 3 cm mark and make it 5 cm long.",
+           "when": "start == 3 and len == 50",
+           "then": "It ends at 8 cm: 8 - 3 = 5 cm."
+          }
+         ],
+         "takeaway": "Length = where it ends minus where it starts. 1 cm = 10 mm.",
+         "explanation": "Length = where it ends minus where it starts. 1 cm = 10 mm."
         },
         {
          "type": "worked",
@@ -31558,7 +31638,7 @@
       {
        "id": "mathematics-g5-ch6-l6",
        "title": "Estimation, Rewards and Multiplication Patterns",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -31679,6 +31759,33 @@
           "23 (generated problem)",
           "345 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch6-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pattern",
+         "params": {
+          "rule": "power2"
+         },
+         "title": "Grow the pattern",
+         "tasks": [
+          {
+           "say": "Show term 5.",
+           "when": "n == 5",
+           "then": "Count the dots and look for the rule that builds each term."
+          },
+          {
+           "say": "Jump to term 8.",
+           "when": "n == 8",
+           "then": "Each term follows the same rule as the one before."
+          }
+         ],
+         "takeaway": "A pattern follows a rule, so you can predict any term without drawing it.",
+         "explanation": "A pattern follows a rule, so you can predict any term without drawing it."
         },
         {
          "type": "worked",
