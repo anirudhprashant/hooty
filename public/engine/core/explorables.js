@@ -1043,6 +1043,19 @@ export const WIDGETS = {
       return { kids, say: n === 0 ? (v.hops === 0 ? `The frog starts at ${v.start}.` : `The frog starts at ${v.start}, but a jump of ${v.jump} ${v.back ? 'back' : 'forward'} would go off the number line.`) : `Starting at ${v.start}, ${n} jump${n === 1 ? '' : 's'} of ${v.jump} ${v.back ? 'back' : 'forward'} land${n === 1 ? 's' : ''} on ${last}: ${stops.join(', ')}.${stuck ? ' The next jump would go off the line.' : ''}` };
     },
   },
+  between: {
+    subject: 'maths', about: 'Place a three-digit number on a number line between two hundreds, like 387 between 300 and 400, and see how far it is from each end (13 to 400, 87 from 300). For number lines, three-digit numbers, hundreds and tens, how far, distance between numbers, estimating where a number sits.',
+    sliders: [['n', 'The number', 100, 999, 1, 387]],
+    draw(v) {
+      const lo = Math.floor(v.n / 100) * 100, hi = lo + 100, x = (m) => 40 + ((m - lo) / 100) * 520, y = 170, kids = [L(x(lo), y, x(hi), y, INK, 4)];
+      for (let m = lo; m <= hi; m += 10) kids.push(L(x(m), y - (m % 50 ? 7 : 12), x(m), y + (m % 50 ? 7 : 12), INK, m % 50 ? 2 : 3), ...(m % 50 === 0 ? [T(x(m), y + 34, String(m), { z: 15, w: 700 })] : []));
+      const left = v.n - lo, right = hi - v.n;
+      kids.push(L(x(lo), y - 52, x(v.n), y - 52, '#1f63d9', 4), L(x(v.n), y - 52, x(hi), y - 52, '#c2510e', 4), T((x(lo) + x(v.n)) / 2, y - 62, `${left} from ${lo}`, { z: 13, w: 700, f: '#1f63d9' }), T((x(v.n) + x(hi)) / 2, y - 62, `${right} to ${hi}`, { z: 13, w: 700, f: '#c2510e' }));
+      kids.push(L(x(v.n), y - 52, x(v.n), y, '#6b45c8', 2, { 'stroke-dasharray': '4 4' }), CIRC(x(v.n), y, 10, C.p, { w: 3 }), T(x(v.n), y + 62, String(v.n), { z: 26, w: 700, f: '#6b45c8' }));
+      kids.push(T(300, 40, `${v.n} is between ${lo} and ${hi}`, { z: 18 }));
+      return { kids, say: `${v.n} sits between ${lo} and ${hi}. It is ${left} more than ${lo}, and ${right} more makes ${hi}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

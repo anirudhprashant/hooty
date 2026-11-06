@@ -500,6 +500,15 @@ export const KITS = {
       { say: 'Find a start and jump that reach exactly 100 after 5 jumps.', when: 'back == 0 and hops == 5 and start + 5 * jump == 100', then: 'Five equal jumps land on 100: for example from 0 in jumps of 20.' },
     ],
   },
+  between: {
+    grades: [3, 3], match: [/number lines?/, /how far/, /\b(from|to) [1-9]00\b|\bfive hundred\b/, /\b[1-9]\d\d\b.*\bnumber line|\bnumber line.*\b[1-9]\d\d\b/],
+    title: 'Place it between the hundreds', takeaway: 'A three-digit number sits between two hundreds: how far it is from each tells you where it belongs.',
+    tasks: [
+      { say: 'Place 387. How far is it from 400?', when: 'n == 387', then: '13 more makes 400: 387 is 87 more than 300.' },
+      { say: 'Find the number exactly halfway between 400 and 500.', when: 'n == 450', then: '450 is 50 from both 400 and 500.' },
+      { say: 'Find a number only 1 away from 500.', when: 'n == 499', then: '499 is just 1 less than 500.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
