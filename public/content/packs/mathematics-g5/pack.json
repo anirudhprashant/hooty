@@ -36260,7 +36260,7 @@
       {
        "id": "mathematics-g5-ch7-l5",
        "title": "Circles and Circle Designs",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -36379,6 +36379,31 @@
           "4 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "compass",
+         "params": {},
+         "title": "Open the compass",
+         "tasks": [
+          {
+           "say": "Draw a circle with a diameter of 8 cm.",
+           "when": "r == 4",
+           "then": "Radius 4 cm, so diameter 4 + 4 = 8 cm."
+          },
+          {
+           "say": "Turn the fold line all the way round. Does it still pass through the centre?",
+           "when": "fold >= 90",
+           "then": "Yes: every diameter passes through the centre."
+          }
+         ],
+         "takeaway": "Every point on a circle is the same distance from the centre: the radius. A diameter goes through the centre and is twice the radius.",
+         "explanation": "Every point on a circle is the same distance from the centre: the radius. A diameter goes through the centre and is twice the radius."
         },
         {
          "type": "worked",
