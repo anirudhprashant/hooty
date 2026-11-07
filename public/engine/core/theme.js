@@ -48,10 +48,7 @@ export function applyTheme(theme, { root = document.documentElement } = {}) {
 
   // A url() inside a CSS custom property resolves against the stylesheet that
   // uses it (css/ui.css), not the document. So build an absolute URL.
-  if (theme.hero) {
-    const abs = new URL(`${theme.base || './themes'}/${theme.id}/${theme.hero}`, document.baseURI).href;
-    root.style.setProperty('--hero-image', `url("${abs}")`);
-  }
+  setHero(theme);
 
   // The theme stylesheet lives beside theme.json. theme.css may be named
   // explicitly, otherwise it is always <theme-id>/theme.css. Falling back to
@@ -80,19 +77,27 @@ export function assetFor(theme, path) {
   return `${base}/${theme.id}/${path}`;
 }
 
-// Two guides walk beside the child. Lumi the explorer is the default for now; Hooty the owl is ready but switched off (SHOW_GUIDE_PICKER in app.js).
-// The theme's own mascot paths still describe Lumi, so a theme can bring its own art without touching the owl.
+// Two guides walk beside the child, picked in Settings: Hooty (the blob mascot, art from tools/brand) or Lumi
+// the explorer. The theme's own mascot paths describe Lumi, so a theme can bring its own art without touching Hooty.
+// With Hooty, painted themes swap their hero for a flat one in Hooty's style (theme.json `heroHooty`).
 let guide = 'lumi';
-export function setGuide(g) { guide = g === 'hooty' ? 'hooty' : 'lumi'; }
+function setHero(theme) {
+  if (!theme) return;
+  const file = guide === 'hooty' && theme.heroHooty ? theme.heroHooty : theme.hero;
+  if (!file) return;
+  const abs = new URL(`${theme.base || './themes'}/${theme.id}/${file}`, document.baseURI).href;
+  document.documentElement.style.setProperty('--hero-image', `url("${abs}")`);
+}
+export function setGuide(g) { guide = g === 'hooty' ? 'hooty' : 'lumi'; setHero(current); }
 export function currentGuide() { return guide; }
 export function guideName() { return guide === 'lumi' ? 'Lumi' : 'Hooty'; }
 export function guideAvatarSrc(which, mood = 'idle') {
-  return which === 'lumi' ? `./characters/lumi/avatar-${mood}.webp` : `./characters/hooty/snowy3-avatar-${mood}.webp`;
+  return which === 'lumi' ? `./characters/lumi/avatar-${mood}.webp` : `./characters/blob/hooty-avatar-${mood}.webp`;
 }
 
 export function mascotImage(mood = 'idle') {
   if (!current) return null;
-  if (guide === 'hooty') return themeAsset(`../../characters/hooty/snowy3-${mood === 'happy' || mood === 'wrong' ? mood : 'idle'}.webp`);
+  if (guide === 'hooty') return themeAsset(`../../characters/blob/hooty-${mood === 'happy' || mood === 'wrong' ? mood : 'idle'}.webp`);
   if (!current.mascot) return null;
   const src = current.mascot[mood] || current.mascot.idle;
   return src ? themeAsset(src) : null;
@@ -103,7 +108,7 @@ export function mascotImage(mood = 'idle') {
 export function mascotAvatar(mood = 'idle') {
   const full = mascotImage(mood);
   if (!full) return null;
-  return guide === 'hooty' ? full.replace(/snowy3-/, 'snowy3-avatar-') : full.replace(/explorer-/, 'avatar-');
+  return guide === 'hooty' ? full.replace(/hooty-(idle|happy|wrong)/, 'hooty-avatar-$1') : full.replace(/explorer-/, 'avatar-');
 }
 
 export function themeCopy(tone, key, fallback = '') {

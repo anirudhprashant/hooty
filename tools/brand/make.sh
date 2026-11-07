@@ -5,6 +5,9 @@ cd "$(dirname "$0")"; P=../../public; T=$(mktemp -d)
 shot(){ chromium --headless=new --disable-gpu --hide-scrollbars --default-background-color=00000000 --window-size=$2,$3 --virtual-time-budget=2000 --screenshot=$T/$1.png "file://$PWD/brand.html?a=$1" 2>/dev/null; }
 shot stage 800 800; shot mark 192 192; shot favicon 64 64; shot icon 512 512; shot maskable 512 512; shot apple 180 180; shot og 1200 630
 mkdir -p $P/characters/blob
+for m in idle happy wrong; do shot guide-$m 800 800; shot avatar-$m 256 256
+  ffmpeg -v error -y -i $T/guide-$m.png -c:v libwebp -q:v 90 $P/characters/blob/hooty-$m.webp
+  ffmpeg -v error -y -i $T/avatar-$m.png -c:v libwebp -q:v 92 $P/characters/blob/hooty-avatar-$m.webp; done
 ffmpeg -v error -y -i $T/stage.png -c:v libwebp -lossless 0 -q:v 90 $P/characters/blob/hooty-stage.webp
 ffmpeg -v error -y -i $T/mark.png -c:v libwebp -q:v 92 $P/characters/blob/hooty-mark.webp
 cp $T/favicon.png $P/assets/icons/favicon-64.png

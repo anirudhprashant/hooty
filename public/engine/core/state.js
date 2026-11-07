@@ -24,7 +24,7 @@ function freshLearner(name = 'Learner') {
     dailyXp: 0,
     dailyGoal: DAILY_GOAL_XP,
     theme: null,
-    guide2: 'lumi',         // which character walks beside the child: 'lumi' (explorer, default) or 'hooty' (owl); a new name so everyone starts on Lumi
+    guide2: 'hooty',        // which character walks beside the child: 'hooty' (blob mascot, default for new learners) or 'lumi' (explorer); saved learners keep theirs
     lang: 'en',
     fontScale: 1,
     dyslexiaFont: false,
@@ -60,7 +60,7 @@ function normaliseLearner(raw, id) {
   out.name = String(l.name ?? 'Learner').slice(0, 24) || 'Learner';
   out.days = Object.fromEntries(Object.entries(out.days).filter(([k, v]) => /^\d{4}-\d{2}-\d{2}$/.test(k) && Number.isFinite(v) && v >= 0).slice(-60));
   out.board = out.board.filter((b) => /^[\w-]{1,40}@\d{1,3},\d{1,3}$/.test(b)).slice(0, 40);
-  if (out.guide2 !== 'hooty') out.guide2 = 'lumi';
+  if (out.guide2 !== 'hooty' && out.guide2 !== 'lumi') out.guide2 = 'hooty';
   out.fontScale = Math.min(1.5, Math.max(0.85, out.fontScale || 1));
   // fields added after the first release
   if (typeof l.grade === 'string' || typeof l.grade === 'number') out.grade = String(l.grade).slice(0, 4);

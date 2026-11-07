@@ -9,8 +9,8 @@ import { state, boot, activeLearner, persist, addXP,
   heartsRegenerated, touchStreak, recordActivity, recordLesson, weakSpots,
   unlockReward, todayKey, exportSave, importSave } from './core/state.js';
 import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, themeCopy, setGuide, currentGuide, guideAvatarSrc } from './core/theme.js';
-// Brand art (tools/brand/make.sh): blob Hooty on the home hero and as the logo mark.
-const BRAND_HERO = './characters/blob/hooty-stage.webp', BRAND_MARK = './characters/blob/hooty-mark.webp';
+// Brand art (tools/brand/make.sh): blob Hooty as the logo mark.
+const BRAND_MARK = './characters/blob/hooty-mark.webp';
 import { t, setLocale, getLocale, availableLocales } from './core/i18n.js';
 import { getActivityModule } from './activities/index.js';
 import { icon } from './core/icons.js';
@@ -43,8 +43,8 @@ function sound(kind, arg) {
   if (kind === 'wrong' || kind === 'correct' || kind === 'win') haptic(kind);
 }
 
-// Hooty the owl is built and ready but off for now: while this is false everyone has Lumi and Settings shows no choice.
-const SHOW_GUIDE_PICKER = false;
+// Settings lets each child pick their guide: Hooty or Lumi.
+const SHOW_GUIDE_PICKER = true;
 
 function applyLearnerPrefs() {
   const l = activeLearner();
@@ -412,9 +412,9 @@ function screenHome() {
   const due = practiceSet(10);
 
   const stage = el('section', { class: 'stage' });
-  const art = el('div', { class: `stage__art${currentGuide() === 'hooty' ? ' stage__art--night' : ''}` });
-  // the home hero shows the brand mascot (blob Hooty); the guide beside lessons is still mascotImage()
-  art.append(el('img', { class: 'stage__mascot', src: BRAND_HERO, alt: '' }));
+  const art = el('div', { class: 'stage__art' });
+  const mascot = mascotImage('idle');
+  if (mascot) art.append(el('img', { class: 'stage__mascot', src: mascot, alt: '' }));
 
   const copy = el('div', { class: 'stage__copy' });
   copy.append(
@@ -1618,7 +1618,7 @@ function screenSettings() {
 
   const guidePicker = el('div', { class: 'guide-picker', role: 'radiogroup', 'aria-label': 'Your guide' },
     [['hooty', 'Hooty'], ['lumi', 'Lumi']].map(([id, label]) => {
-      const on = (l?.guide2 || 'lumi') === id;
+      const on = (l?.guide2 || 'hooty') === id;
       const b = el('button', { class: `guide-pick${on ? ' is-on' : ''}`, type: 'button', role: 'radio', 'aria-checked': String(on), 'aria-label': label }, [
         el('img', { src: guideAvatarSrc(id), alt: '', width: '64', height: '64' }),
         el('span', { text: label }),

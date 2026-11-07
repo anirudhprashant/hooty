@@ -8,6 +8,13 @@ const P="#4b2597",P2="#5a31a8",wave=[{to:[-90,-50],bend:1,len:48},{to:[92,-136],
 const hooty=(x,y,k,o={})=>`<g transform="translate(${x} ${y}) scale(${k})">${H.svg(Object.assign({wob:1.2,eyes:"open",mouth:"grin",look:[0.1,-0.05],tilt:-4,shadow:false,arms:wave},o))}</g>`;
 const mark=(S,bg,round)=>`${round?`<circle cx="${S/2}" cy="${S/2}" r="${S/2}" fill="${bg}"/>`:`<rect width="${S}" height="${S}" fill="${bg}"/>`}`;
 const A={
+ // guide poses (full body, transparent) and round avatars, used when a child picks Hooty as their guide
+ "guide-idle":[800,800,()=>`<ellipse cx="400" cy="786" rx="170" ry="14" fill="rgba(0,0,0,.14)"/>`+hooty(400,782,3.75,{mouth:"smile",tilt:-3})],
+ "guide-happy":[800,800,()=>`<ellipse cx="400" cy="786" rx="150" ry="12" fill="rgba(0,0,0,.12)"/>`+hooty(400,770,3.6,{eyes:"happy",mouth:"grin",tilt:0,arms:[{to:[-84,-150],bend:1,len:66},{to:[84,-150],bend:-1,len:66}]})],
+ "guide-wrong":[800,800,()=>`<ellipse cx="400" cy="786" rx="170" ry="14" fill="rgba(0,0,0,.14)"/>`+hooty(400,782,3.75,{eyes:"open",mouth:"wobble",look:[0,0.7],tilt:8,arms:[{to:[-102,-96],bend:-1,len:60},{to:[102,-96],bend:1,len:60}]})],
+ "avatar-idle":[256,256,()=>hooty(128,232,1.45,{mouth:"smile",tilt:-3,armK:0})],
+ "avatar-happy":[256,256,()=>hooty(128,232,1.45,{eyes:"happy",mouth:"grin",tilt:0,armK:0})],
+ "avatar-wrong":[256,256,()=>hooty(128,232,1.45,{eyes:"open",mouth:"wobble",look:[0,0.7],tilt:8,armK:0})],
  stage:[800,800,()=>`<ellipse cx="400" cy="786" rx="170" ry="14" fill="rgba(0,0,0,.14)"/>`+hooty(400,782,3.75)],
  mark:[192,192,()=>mark(192,P,true)+hooty(96,150,0.95,{armK:0,tilt:0,mouth:"smile"})],
  favicon:[64,64,()=>mark(64,P,true)+hooty(32,52,0.33,{armK:0,tilt:0,mouth:"smile"})],

@@ -96,7 +96,8 @@
   const SHAPES = {
     blob: (a) => { const s = Math.sin(a), W = 150, H = 140; let x = (W / 2) * Math.cos(a) * (1 - (0.2 * (1 - s)) / 2), y = (H / 2) * s; const fl = (H / 2) * 0.84; if (y > fl) y = fl + (y - fl) * 0.25; return [x, y + 4]; },
     star: (a) => { const r = 78 * (0.72 + 0.28 * Math.cos(5 * (a + Math.PI / 2))); return [r * Math.cos(a), r * Math.sin(a) + 2]; },
-    heart: (a) => { const t = a + Math.PI / 2; return [4.4 * 16 * Math.pow(Math.sin(t), 3), -4.4 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) - 6]; },
+    // a plump heart: the classic curve blended a quarter of the way to a circle, so the point is soft
+    heart: (a) => { const t = a + Math.PI / 2, hx = 4.1 * 16 * Math.pow(Math.sin(t), 3), hy = -4.1 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) - 4; return [mix(hx, 70 * Math.cos(a), 0.26), mix(hy, 66 * Math.sin(a), 0.26)]; },
     triangle: (a) => { const r = mix(poly(a, 3, 76, -Math.PI / 2), 76, 0.1); return [r * Math.cos(a) * 1.12, r * Math.sin(a) + 26]; },
     square: (a) => [66 * sgnp(Math.cos(a), 1 / 3), 62 * sgnp(Math.sin(a), 1 / 3) + 4],
     ball: (a) => [66 * Math.cos(a), 66 * Math.sin(a)],
@@ -208,7 +209,9 @@
     const armK = o.armK ?? 1;
     if (armK > 0.03) {
       const arms = o.arms || [{ to: [-94, -46] }, { to: [94, -46] }];
-      const sh = [[-58, -62], [58, -62]];
+      // shoulders sit on the body's real outline at shoulder height, so arms stay attached on any shape
+      const edge = (side, y) => { let best = null; for (const q of P) if (Math.sign(q[0]) === side && (!best || Math.abs(q[1] - y) < Math.abs(best[1] - y))) best = q; return best ? best[0] * 0.9 : side * 58; };
+      const sh = [[edge(-1, -62), -62], [edge(1, -62), -62]];
       arms.forEach((a, i) => {
         if (!a) return;
         const E = [mix(sh[i][0] * 0.8, a.to[0], armK), mix(sh[i][1], a.to[1], armK)];
@@ -224,8 +227,10 @@
     if (dB && to !== from) g += `<g opacity="${f(m)}">${dB}</g>`;
     g += `</g>`;
     if (o.face !== false) g += face(o, (o.turn || 0) * 18, mix(FACE_Y[from], FACE_Y[to], m));
-    const lift = o.lift || 0, k = Math.max(0.4, 1 - lift / 160);
-    const sh = o.shadow === false ? "" : `<ellipse cx="0" cy="1" rx="${f(70 * k * (o.sx || 1))}" ry="${f(7.5 * k)}" fill="rgba(43,19,73,.12)"/>`;
+    // the shadow lies on the ground under Hooty: groundDy = how far that surface is below his feet (rig units).
+    // It only slides sideways with him; it shrinks and fades with his height above that surface.
+    const lift = o.lift || 0, gd = o.groundDy || 0, hgt = Math.max(0, lift + gd), k = Math.max(0.35, 1 - hgt / 170);
+    const sh = o.shadow === false ? "" : `<ellipse cx="0" cy="${f(1 + gd)}" rx="${f(70 * k)}" ry="${f(7.5 * k)}" fill="rgba(43,19,73,${f(0.12 * (0.45 + 0.55 * k))})"/>`;
     return sh + `<g transform="translate(0 ${f(-lift)}) rotate(${f(o.lean || 0)}) scale(${f(o.sx || 1)} ${f(o.sy || 1)})">${g}</g>`;
   }
 
@@ -272,7 +277,7 @@
   /* Butter filter: average a state function over +-0.08 s (gaussian, 9 taps), clamped to [lo, hi].
      Every number in the state is smoothed (positions, squash, tilt, arms, gaze, eyelids, mouth mix);
      shape morphs, colours and strings come from the centre sample so morphs stay crisp. */
-  const KEEP = new Set(["m", "col", "spin", "wob", "eyes", "mouth", "mouthPrev", "shadow", "face", "hand", "screen"]);
+  const KEEP = new Set(["m", "col", "groundDy", "spin", "wob", "eyes", "mouth", "mouthPrev", "shadow", "face", "hand", "screen"]);
   const TAPS = [-4, -3, -2, -1, 0, 1, 2, 3, 4].map((i) => [i * 0.02, Math.exp(-Math.pow(i * 0.02 / 0.04, 2) / 2)]);
   function avg(samples, ws, c) {
     const v = samples[c];
