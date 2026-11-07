@@ -647,6 +647,16 @@ export const KITS = {
       { say: 'Find a friend\u2019s bottle that holds less. Pour 4 glasses in.', when: 'friend < 4 and poured >= 4', then: 'It overflows before 4 glasses: it holds less than Raghu\u2019s.' },
     ],
   },
+  counting: {
+    grades: [1, 1], perChapter: { 1: 4 }, match: [/\bcount(ing|s)?\b/, /numbers? from one to|one to nine|\bnumbers?\b/, /\bone more\b|\bmore and less\b|\bjoins?\b/, /\bhow many\b/],
+    title: 'Count the counters', takeaway: 'Each counter you add makes one more: the number goes up by one.',
+    tasks: [
+      { say: 'Show five.', when: 'n == 5', then: 'Five fills the top frame: five counters.' },
+      { say: 'Now add one more counter. What number is it?', when: 'n == 6', then: 'One more than five is six.' },
+      { say: 'Show nine, the biggest number in the book.', when: 'n == 9', then: 'Nine is one less than ten.' },
+      { say: 'Fill a whole frame: show ten.', when: 'n == 10', then: 'Ten counters fill one frame.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

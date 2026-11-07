@@ -1317,6 +1317,22 @@ export const WIDGETS = {
       return { kids, say: `Raghu’s bottle holds 4 glasses and the friend’s holds ${v.friend}: the friend’s bottle holds ${cmp} Raghu’s.${v.poured ? ` After ${v.poured} glass${v.poured === 1 ? '' : 'es'} in each, ${v.poured >= 4 ? 'Raghu’s bottle is full' + (v.poured > 4 ? ' and overflowing' : '') : 'Raghu’s bottle is not full yet'}${v.poured >= v.friend ? ` and the friend’s is full${v.poured > v.friend ? ' and overflowing' : ''}` : ' and the friend’s is not full yet'}.` : ''}` };
     },
   },
+  counting: {
+    subject: 'maths', about: 'Count objects in two ten-frames from 0 to 20: each counter you add makes one more. It shows the numeral, the number word, and one more and one less than the number. For counting, numbers up to 20, number names, one more and one less, more and fewer.',
+    sliders: [['n', 'How many', 0, 20, 1, 3]],
+    draw(v) {
+      const names = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'];
+      const kids = [], cw = 40, x0 = 24;
+      for (let fr = 0; fr < 2; fr++) for (let i = 0; i < 10; i++) {
+        const x = x0 + (i % 5) * cw, y = 50 + fr * 110 + Math.floor(i / 5) * cw, k = fr * 10 + i;
+        kids.push(R(x, y, cw - 4, cw - 4, '#f3f0ff', { w: 2, r: 5 }));
+        if (k < v.n) kids.push(CIRC(x + (cw - 4) / 2, y + (cw - 4) / 2, 14, fr ? '#f2a33a' : '#5fc9b8', { w: 2 }));
+      }
+      kids.push(T(x0 + 100, 36, 'a frame holds ten', { z: 11, w: 600, f: '#6b5a8a' }), T(430, 90, String(v.n), { z: 72, w: 700 }), T(430, 140, names[v.n], { z: 24, w: 700, f: '#6b45c8' }));
+      kids.push(T(430, 192, v.n < 20 ? `one more is ${v.n + 1}` : 'that is the most here', { z: 15, w: 700, f: '#058a68' }), T(430, 220, v.n > 0 ? `one less is ${v.n - 1}` : 'nothing yet', { z: 15, w: 700, f: '#c2510e' }));
+      return { kids, say: v.n === 0 ? 'There are none yet. Add one and there is one.' : `${names[v.n][0].toUpperCase()}${names[v.n].slice(1)}: ${v.n}. ${v.n < 20 ? `One more makes ${names[v.n + 1]}` : 'That is twenty'}, and one less is ${names[v.n - 1]}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
