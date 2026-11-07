@@ -19,8 +19,8 @@
  },
  "units": [
   {
-   "id": "science-g8",
-   "title": "Science",
+   "id": "science-g8-s1",
+   "title": "Living Things and Healthy Lives",
    "chapters": [
     {
      "id": "ch01-exploring-the-investigative-world-of-sci",
@@ -10075,7 +10075,13 @@
        "creator": "Ximenabc"
       }
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "science-g8-s2",
+   "title": "Forces, Electricity, and Weather",
+   "chapters": [
     {
      "id": "ch04-electricity-magnetic-and-heating-effects",
      "title": "Electricity: Magnetic and Heating Effects",
@@ -20465,7 +20471,13 @@
        "creator": "Unknown author Unknown author"
       }
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "science-g8-s3",
+   "title": "Matter, Mixtures, and Solutions",
+   "chapters": [
     {
      "id": "ch07-particulate-nature-of-matter",
      "title": "Particulate Nature of Matter",
@@ -30956,7 +30968,13 @@
        "creator": "Викидим"
       }
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "science-g8-s4",
+   "title": "Light, Space, and Nature",
+   "chapters": [
     {
      "id": "ch10-light-mirrors-and-lenses",
      "title": "Light: Mirrors and Lenses",
@@ -37972,7 +37990,7 @@
       {
        "id": "science-g8-ch12-l3",
        "title": "Interactions and Ecosystems",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -38034,6 +38052,48 @@
           {
            "ch": 12,
            "p": 197
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch12-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Fish eat dragonfly larvae. Why might nearby plants make fewer seeds?",
+         "steps": [
+          "Fish eat dragonfly larvae, so the fish pond has fewer dragonflies.",
+          "Fewer dragonflies mean fewer insects can pollinate nearby flowers.",
+          "Less pollination means nearby plants produce fewer seeds.",
+          "Therefore, the fish affect plants through their effect on insects."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
           }
          ]
         },
@@ -38212,6 +38272,238 @@
            "p": 197
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Two garden ponds are alike. One has fish and one does not. What will happen to dragonfly larvae in the fish pond?",
+         "options": [
+          "There will be fewer larvae because fish eat them.",
+          "There will be more larvae because fish protect them.",
+          "There will be more larvae because fish give them food.",
+          "There will be the same number because both ponds look alike."
+         ],
+         "answer": 0,
+         "why": {
+          "There will be more larvae because fish protect them.": "This mistake thinks fish protect larvae instead of eating them.",
+          "There will be more larvae because fish give them food.": "This mistake thinks fish provide food not given in the facts.",
+          "There will be the same number because both ponds look alike.": "This mistake assumes similar ponds cancel the effect of fish."
+         },
+         "explanation": "This is right because fish eat dragonfly larvae.",
+         "f": [
+          "3.2"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "The fish pond has fewer dragonflies. These insects pollinate nearby flowers. How will seed production change?",
+         "options": [
+          "Seed production will fall because fewer insects pollinate the flowers.",
+          "Seed production will rise because fish improve pollination.",
+          "Seed production will stay equal because dragonflies do not matter.",
+          "Seed production will rise because more insects pollinate the flowers."
+         ],
+         "answer": 0,
+         "why": {
+          "Seed production will rise because fish improve pollination.": "This mistake thinks fish make pollination stronger.",
+          "Seed production will stay equal because dragonflies do not matter.": "This mistake ignores the role of insects in pollination.",
+          "Seed production will rise because more insects pollinate the flowers.": "This mistake reverses the change in dragonfly numbers."
+         },
+         "explanation": "This is right because pollination helps plants produce seeds.",
+         "f": [
+          "3.2",
+          "3.3",
+          "3.4"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "Fish eat dragonfly larvae. We want to test their effect. Which test is fairest?",
+         "options": [
+          "Compare similar ponds, one with fish and one without.",
+          "Compare one pond before and after adding many fish.",
+          "Compare ponds of different sizes with different fish groups.",
+          "Compare a fish pond with a pond without insects."
+         ],
+         "answer": 0,
+         "why": {
+          "Compare one pond before and after adding many fish.": "This mistake changes the pond over time as well as adding fish.",
+          "Compare ponds of different sizes with different fish groups.": "This mistake changes pond size and fish together.",
+          "Compare a fish pond with a pond without insects.": "This mistake changes both fish and insects together."
+         },
+         "explanation": "This is right because the ponds differ only in fish.",
+         "f": [
+          "3.1",
+          "3.2"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 194
+          },
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Fish eat dragonfly larvae. The insects pollinate nearby flowers. Why is it wrong to say fish cannot affect flowers?",
+         "options": [
+          "Fish change insect numbers, so fewer flowers get pollinated.",
+          "Fish pollinate flowers by moving through the pond.",
+          "Flowers feed fish, so more fish always make more flowers.",
+          "Fish stay in water, while flowers grow far from ponds."
+         ],
+         "answer": 0,
+         "why": {
+          "Fish pollinate flowers by moving through the pond.": "This mistake assumes fish themselves pollinate flowers.",
+          "Flowers feed fish, so more fish always make more flowers.": "This mistake reverses the food link and ignores fewer insects.",
+          "Fish stay in water, while flowers grow far from ponds.": "This mistake assumes distance blocks all indirect effects."
+         },
+         "explanation": "This is right because fewer insects can mean less pollination.",
+         "f": [
+          "3.2",
+          "3.3",
+          "3.4"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Plants and animals depend on each other for nutrition, respiration and reproduction. What may happen if one group disappears?",
+         "options": [
+          "The other may lose help needed for survival.",
+          "The other will gain help because one group is gone.",
+          "The other will need no abiotic components.",
+          "The other will change into an abiotic component."
+         ],
+         "answer": 0,
+         "why": {
+          "The other will gain help because one group is gone.": "This mistake thinks removing a partner adds help.",
+          "The other will need no abiotic components.": "This mistake confuses biotic support with abiotic support.",
+          "The other will change into an abiotic component.": "This mistake confuses living and non-living components."
+         },
+         "explanation": "This is right because the partners provide needed support.",
+         "f": [
+          "3.7",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Living and non-living parts form an ecosystem. A child says biotic parts cannot affect habitat features. Why is this claim wrong?",
+         "options": [
+          "Living parts affect non-living parts, which can change habitat features.",
+          "Only non-living parts can change a habitat's physical features.",
+          "Living organisms never affect non-living components.",
+          "Habitat features cannot change because interactions have no effects."
+         ],
+         "answer": 0,
+         "why": {
+          "Only non-living parts can change a habitat's physical features.": "This mistake separates biotic effects from abiotic ones.",
+          "Living organisms never affect non-living components.": "This mistake ignores that biotic components affect abiotic ones.",
+          "Habitat features cannot change because interactions have no effects.": "This mistake ignores that interactions can influence habitat features."
+         },
+         "explanation": "This is right because biotic and abiotic components affect each other.",
+         "f": [
+          "3.5",
+          "3.9",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 196
+          },
+          {
+           "ch": 12,
+           "p": 197
+          }
+         ]
         }
        ],
        "topicScene": "media/ch12-l3-preparing-hine-s-emerald-dra-0a8b85.webp",
@@ -38228,7 +38520,7 @@
       {
        "id": "science-g8-ch12-l4",
        "title": "Food Chains and Food Webs",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -38286,6 +38578,58 @@
           {
            "ch": 12,
            "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch12-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A hare is eating grass in a grassland. A frog is a small carnivore. How should these organisms form a food chain?",
+         "steps": [
+          "Grass makes food, so it belongs at the first trophic level.",
+          "The hare eats grass, so it belongs at the second trophic level.",
+          "Frogs are small carnivores, so they belong at the third trophic level.",
+          "Therefore, the chain is grass → hare → frog."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.6",
+          "4.7",
+          "4.9",
+          "4.10",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 200
           },
           {
            "ch": 12,
@@ -38555,6 +38899,80 @@
            "p": 200
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "In a grassland, hares eat grass. If the grass becomes less, what will likely happen first to the hares?",
+         "options": [
+          "They will have less food because grass feeds them.",
+          "They will move to the frog's trophic level.",
+          "They will make their own food like plants.",
+          "They will eat frogs because frogs are animals."
+         ],
+         "answer": 0,
+         "why": {
+          "They will move to the frog's trophic level.": "This confuses a trophic level with a source of food.",
+          "They will make their own food like plants.": "This mistakes a consumer for a producer.",
+          "They will eat frogs because frogs are animals.": "This mistakes an animal diet for the hare's plant diet."
+         },
+         "explanation": "This is right because hares eat grass for food.",
+         "f": [
+          "4.3",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 199
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "An animal eats green plants and small animals. Which food can it use after the plants are gone?",
+         "options": [
+          "Small animals, because it eats animals and plants.",
+          "Green plants, because every animal needs plants for food.",
+          "Small animals, because only carnivores can eat other animals.",
+          "No food, because plants and animals cannot both be eaten."
+         ],
+         "answer": 0,
+         "why": {
+          "Green plants, because every animal needs plants for food.": "This forgets that the animal can also eat small animals.",
+          "Small animals, because only carnivores can eat other animals.": "This wrongly limits animal eating to animals that eat only animals.",
+          "No food, because plants and animals cannot both be eaten.": "This forgets that one animal can eat both food types."
+         },
+         "explanation": "This is right because the animal eats plants and animals.",
+         "f": [
+          "4.2",
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 198
+          }
+         ]
         }
        ],
        "topicScene": "media/ch12-l4-red-fox-15260586242-2a4b24.webp",
@@ -38571,7 +38989,7 @@
       {
        "id": "science-g8-ch12-l5",
        "title": "Waste, Migration and Cascading Change",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -38629,6 +39047,32 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g8-ch12-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why can catching too many frogs from nearby ponds hurt farms?",
+         "steps": [
+          "Large-scale frog harvesting removes many frogs, so frog numbers fall.",
+          "Agricultural pests rise because fewer frogs remain.",
+          "This shows that too many frogs can harm farms through cascading change."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 202
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "science-g8-ch12-l5-a2",
          "difficulty": 1,
@@ -38645,25 +39089,6 @@
          ],
          "answer": 0,
          "explanation": "Organisms produce waste during their life cycle.",
-         "src": [
-          {
-           "ch": 12,
-           "p": 200
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch12-l5-a3",
-         "difficulty": 1,
-         "tags": [
-          "microorganisms",
-          "dead plants",
-          "dead animals"
-         ],
-         "prompt": "Microorganisms break down complex substances in dead plants and animals.",
-         "answer": true,
-         "explanation": "Microorganisms help break down complex substances in dead plants and animals.",
          "src": [
           {
            "ch": 12,
@@ -38788,25 +39213,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch12-l5-a8",
-         "difficulty": 3,
-         "tags": [
-          "waste",
-          "nature",
-          "reuse"
-         ],
-         "prompt": "Because nothing is reused in nature, waste builds up and stays unused.",
-         "answer": false,
-         "explanation": "In nature, everything is reused, so nothing is wasted.",
-         "src": [
-          {
-           "ch": 12,
-           "p": 201
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch12-l5-a9",
          "difficulty": 3,
@@ -38835,6 +39241,176 @@
            "p": 202
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "waste prediction"
+         ],
+         "prompt": "A fallen tree branch becomes dead matter. What may grow on it?",
+         "options": [
+          "Mushrooms may grow on the branch.",
+          "Mushrooms may grow on a living plant.",
+          "Mushrooms may grow inside a pond.",
+          "Mushrooms may grow in deep water."
+         ],
+         "answer": 0,
+         "why": {
+          "Mushrooms may grow on a living plant.": "This wrongly assumes mushrooms grow on living matter.",
+          "Mushrooms may grow inside a pond.": "This wrongly assumes mushrooms grow inside ponds.",
+          "Mushrooms may grow in deep water.": "This wrongly assumes mushrooms grow in deep water."
+         },
+         "explanation": "Mushrooms are fungi that grow on dead matter.",
+         "f": [
+          "5.2"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "In nature, everything is reused. Why is the claim “Food waste is completely useless” flawed?",
+         "options": [
+          "Food waste can be reused instead of lost.",
+          "Food waste must become a new food.",
+          "Food waste can only be buried underground.",
+          "Food waste must remain unused forever."
+         ],
+         "answer": 0,
+         "why": {
+          "Food waste must become a new food.": "This confuses reusing something with making new food.",
+          "Food waste can only be buried underground.": "This wrongly assumes buried soil is the only way to reuse it.",
+          "Food waste must remain unused forever.": "This directly ignores the reuse of everything in nature."
+         },
+         "explanation": "In nature, nothing is wasted because everything is reused.",
+         "f": [
+          "5.1",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 200
+          },
+          {
+           "ch": 12,
+           "p": 201
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "migration"
+         ],
+         "prompt": "A harsh storm develops during bird migration. What may the birds do?",
+         "options": [
+          "They may travel away from the storm.",
+          "They may stay and face the storm.",
+          "They may build nests and wait.",
+          "They may travel toward the storm."
+         ],
+         "answer": 0,
+         "why": {
+          "They may stay and face the storm.": "This confuses migration with staying in harsh weather.",
+          "They may build nests and wait.": "This confuses travelling with building a nest.",
+          "They may travel toward the storm.": "This reverses the reason for migration, which is avoiding harsh weather."
+         },
+         "explanation": "Migratory birds travel to avoid harsh weather.",
+         "f": [
+          "5.5"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 201
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "ecosystem balance"
+         ],
+         "prompt": "Migratory birds visit flowers and carry seeds. How may they help the ecosystem?",
+         "options": [
+          "They may pollinate plants and spread seeds.",
+          "They may turn every seed into a weed.",
+          "They may stop all insects from visiting.",
+          "They may spread seeds to one place only."
+         ],
+         "answer": 0,
+         "why": {
+          "They may turn every seed into a weed.": "This mistakes pollination for damaging flowers.",
+          "They may stop all insects from visiting.": "This wrongly treats birds as enemies of insects.",
+          "They may spread seeds to one place only.": "This mistakes spreading seeds for keeping them together."
+         },
+         "explanation": "Migratory birds help balance ecosystems as pollinators and seed dispersers.",
+         "f": [
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 201
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "cascading change"
+         ],
+         "prompt": "Large-scale frog harvesting happens near farms. What may happen next?",
+         "options": [
+          "Farm pests may rise as frogs fall.",
+          "Farm crops may rise as frogs fall.",
+          "Farm birds may fall as frogs rise.",
+          "Farm insects may fall as frogs fall."
+         ],
+         "answer": 0,
+         "why": {
+          "Farm crops may rise as frogs fall.": "This confuses fewer pests with more crop growth.",
+          "Farm birds may fall as frogs rise.": "This assumes frog numbers directly control farm bird numbers.",
+          "Farm insects may fall as frogs fall.": "This confuses agricultural pests with all farm insects."
+         },
+         "explanation": "Large-scale frog harvesting reduced frogs and caused agricultural pests to rise.",
+         "f": [
+          "5.10",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 202
+          },
+          {
+           "ch": 12,
+           "p": 202
+          }
+         ]
         }
        ],
        "topicScene": "media/ch12-l5-fungi-growing-on-dead-wood-891ef0.webp",
@@ -38851,7 +39427,7 @@
       {
        "id": "science-g8-ch12-l6",
        "title": "Balance, Benefits and Sustainable Nature",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -38914,6 +39490,93 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g8-ch12-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Cutting mangroves and adding sewage affect the Sundarbans. What follows?",
+         "steps": [
+          "People cut mangroves because they need fuelwood and farming land.",
+          "Protection weakens because mangroves slow strong winds and waves.",
+          "Water and habitats can be damaged because industrial waste and untreated sewage are present.",
+          "So overusing or misusing these resources disturbs nature’s balance and weakens protection for people."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.8",
+          "6.9",
+          "6.10",
+          "6.11"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 204
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch12-l6-a6",
+         "difficulty": 2,
+         "tags": [
+          "forests",
+          "aquatic ecosystems",
+          "resources",
+          "sundarbans"
+         ],
+         "title": "Nature Gives Us Many Benefits",
+         "body": "Forests give people fresh air, fertile soil, food, fibres, timber and medicines. Aquatic ecosystems provide people with water and food. Overusing or misusing natural resources disturbs nature’s balance. Industrial waste and untreated sewage damage water and habitats in the Sundarbans. Protecting habitats and choosing sustainable farming can help people use natural resources with less harm.",
+         "keyPoints": [
+          "Forests provide many useful resources.",
+          "Aquatic ecosystems provide water and food.",
+          "Misusing resources can disturb nature’s balance."
+         ],
+         "explanation": "These resources benefit people, but their use needs care.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 206
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "science-g8-ch12-l6-a2",
          "difficulty": 1,
@@ -38936,25 +39599,6 @@
            "ch": 12,
            "p": 203
           },
-          {
-           "ch": 12,
-           "p": 203
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch12-l6-a3",
-         "difficulty": 1,
-         "tags": [
-          "mutualism",
-          "organisms",
-          "benefits"
-         ],
-         "prompt": "In mutualism, both organisms benefit.",
-         "answer": true,
-         "explanation": "Mutualism is a relationship in which both organisms benefit.",
-         "src": [
           {
            "ch": 12,
            "p": 203
@@ -39021,51 +39665,6 @@
           {
            "ch": 12,
            "p": 203
-          }
-         ]
-        },
-        {
-         "type": "concept",
-         "id": "science-g8-ch12-l6-a6",
-         "difficulty": 2,
-         "tags": [
-          "forests",
-          "aquatic ecosystems",
-          "resources",
-          "sundarbans"
-         ],
-         "title": "Nature Gives Us Many Benefits",
-         "body": "Forests give people fresh air, fertile soil, food, fibres, timber and medicines. Aquatic ecosystems provide people with water and food. Overusing or misusing natural resources disturbs nature’s balance. Industrial waste and untreated sewage damage water and habitats in the Sundarbans. Protecting habitats and choosing sustainable farming can help people use natural resources with less harm.",
-         "keyPoints": [
-          "Forests provide many useful resources.",
-          "Aquatic ecosystems provide water and food.",
-          "Misusing resources can disturb nature’s balance."
-         ],
-         "explanation": "These resources benefit people, but their use needs care.",
-         "src": [
-          {
-           "ch": 12,
-           "p": 203
-          },
-          {
-           "ch": 12,
-           "p": 203
-          },
-          {
-           "ch": 12,
-           "p": 203
-          },
-          {
-           "ch": 12,
-           "p": 204
-          },
-          {
-           "ch": 12,
-           "p": 204
-          },
-          {
-           "ch": 12,
-           "p": 206
           }
          ]
         },
@@ -39164,6 +39763,228 @@
            "p": 204
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Two animal kinds need the same food and space. What may happen?",
+         "options": [
+          "Their numbers may stay controlled, keeping the ecosystem balanced.",
+          "Their numbers may stop being controlled, so the ecosystem becomes unbalanced.",
+          "They may stop competing because common needs no longer affect them.",
+          "They may compete more, but their numbers will not be controlled."
+         ],
+         "answer": 0,
+         "why": {
+          "Their numbers may stop being controlled, so the ecosystem becomes unbalanced.": "This wrongly assumes competition does not control population size.",
+          "They may stop competing because common needs no longer affect them.": "This wrongly assumes common resources do not cause competition.",
+          "They may compete more, but their numbers will not be controlled.": "This wrongly assumes competition cannot also keep an ecosystem balanced."
+         },
+         "explanation": "Right, because competition controls population size and keeps an ecosystem balanced.",
+         "f": [
+          "6.1",
+          "6.2"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 202
+          },
+          {
+           "ch": 12,
+           "p": 202
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain outcome"
+         ],
+         "prompt": "An animal gets food; the plant gets help. What happens to both?",
+         "options": [
+          "Both organisms benefit from helping each other.",
+          "Only the animal benefits while the plant is harmed.",
+          "Only the animal benefits while the plant is unaffected.",
+          "Both organisms are harmed by helping each other."
+         ],
+         "answer": 0,
+         "why": {
+          "Only the animal benefits while the plant is harmed.": "This wrongly treats mutual help as harm to the plant.",
+          "Only the animal benefits while the plant is unaffected.": "This wrongly leaves the plant without any benefit.",
+          "Both organisms are harmed by helping each other.": "This wrongly treats mutual help as harm for both organisms."
+         },
+         "explanation": "Right, because in mutualism both organisms benefit.",
+         "f": [
+          "6.3"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain outcome"
+         ],
+         "prompt": "A bird rests in a tree without harming it. What happens?",
+         "options": [
+          "The bird benefits, while the tree stays unaffected.",
+          "Both the bird and the tree benefit from resting.",
+          "The bird stays unaffected, while the tree is harmed.",
+          "Both the bird and the tree are harmed by resting."
+         ],
+         "answer": 0,
+         "why": {
+          "Both the bird and the tree benefit from resting.": "This wrongly assumes both organisms receive a benefit.",
+          "The bird stays unaffected, while the tree is harmed.": "This wrongly treats the bird as unaffected and the tree as harmed.",
+          "Both the bird and the tree are harmed by resting.": "This wrongly treats commensalism as harm for both organisms."
+         },
+         "explanation": "Right, because in commensalism one benefits while the other is unaffected.",
+         "f": [
+          "6.4"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain outcome"
+         ],
+         "prompt": "A small living thing feeds on another and weakens it. What happens?",
+         "options": [
+          "One organism benefits, while the other is harmed.",
+          "Both organisms benefit from the feeding arrangement.",
+          "One organism benefits, while the other is unaffected.",
+          "Both organisms are harmed by the feeding arrangement."
+         ],
+         "answer": 0,
+         "why": {
+          "Both organisms benefit from the feeding arrangement.": "This wrongly treats harm to one organism as a benefit for both.",
+          "One organism benefits, while the other is unaffected.": "This wrongly treats the harmed organism as unaffected.",
+          "Both organisms are harmed by the feeding arrangement.": "This wrongly treats parasitism as harm for both organisms."
+         },
+         "explanation": "Right, because in parasitism one organism benefits while the other is harmed.",
+         "f": [
+          "6.5"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l6-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "choose action"
+         ],
+         "prompt": "A forest has wildlife and its habitats. What should people do?",
+         "options": [
+          "Set the area aside to conserve wildlife and habitats.",
+          "Use the area heavily for farming and fuelwood.",
+          "Leave untreated sewage near the protected water.",
+          "Remove habitats to make more farming land."
+         ],
+         "answer": 0,
+         "why": {
+          "Use the area heavily for farming and fuelwood.": "This mistakes heavy resource use for a way to conserve wildlife.",
+          "Leave untreated sewage near the protected water.": "This overlooks that untreated sewage damages water and habitats.",
+          "Remove habitats to make more farming land.": "This mistakes habitat removal for wildlife conservation."
+         },
+         "explanation": "Right, because protected areas conserve wildlife and their habitats.",
+         "f": [
+          "6.8",
+          "6.11",
+          "6.12"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 204
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l6-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "choose method"
+         ],
+         "prompt": "A farmer wants healthy soil for the long term. Which method is better?",
+         "options": [
+          "Use organic and natural farming methods.",
+          "Keep using synthetic fertilisers and pesticides for years.",
+          "Overuse natural resources because short-term gains seem better.",
+          "Remove nearby habitats to create more farming land."
+         ],
+         "answer": 0,
+         "why": {
+          "Keep using synthetic fertilisers and pesticides for years.": "This overlooks that long-term synthetic fertiliser and pesticide use can harm soil.",
+          "Overuse natural resources because short-term gains seem better.": "This mistakes resource overuse for sustainable farming, although it disturbs nature’s balance.",
+          "Remove nearby habitats to create more farming land.": "This mistakes habitat damage for a way to support farming and conservation."
+         },
+         "explanation": "Right, because organic and natural methods support sustainable farming with less interference.",
+         "f": [
+          "6.8",
+          "6.12",
+          "6.14",
+          "6.15"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 206
+          },
+          {
+           "ch": 12,
+           "p": 206
+          }
+         ]
         }
        ],
        "topicScene": "media/ch12-l6-a-bee-flower-interaction-c0cf25.webp",
@@ -39180,7 +40001,7 @@
       {
        "id": "science-g8-ch12-exam",
        "title": "Test practice",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 17,
        "topicScene": "media/ch12-l1-asian-elephant-elephas-maxim-301d45.webp",
        "sceneAlt": "A herd of Asian elephants crosses a road through a wildlife corridor in Manas National Park.",
        "sceneCaption": "A herd of Asian elephants crosses a road through a corridor in Manas National Park.",
@@ -39359,6 +40180,210 @@
           "Distinguishes abiotic components from the living populations."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A pond beside flowering plants is stocked with fish, while a nearby pond has no fish. Researchers find fewer dragonflies around the pond with fish because the fish eat dragonfly larvae. Dragonflies help pollinate the flowers near the ponds, and this pollination helps the plants produce seeds. The study shows that living and non-living parts of the pond affect one another.",
+         "prompt": "If more fish are added to the pond with fish, what is the most likely sequence of changes?",
+         "options": [
+          "Dragonfly larvae will increase, so more flowers will be pollinated and more seeds will be produced.",
+          "More larvae will be eaten, so fewer dragonflies will pollinate the flowers and fewer seeds will be produced.",
+          "More larvae will be eaten, so more dragonflies will pollinate the flowers and more seeds will be produced.",
+          "Fewer larvae will be eaten, so fewer dragonflies will pollinate the flowers and fewer seeds will be produced."
+         ],
+         "answer": 1,
+         "why": {
+          "Dragonfly larvae will increase, so more flowers will be pollinated and more seeds will be produced.": "More fish would eat more larvae, not cause larvae to increase.",
+          "More larvae will be eaten, so more dragonflies will pollinate the flowers and more seeds will be produced.": "Eating larvae would not increase the number of dragonflies.",
+          "Fewer larvae will be eaten, so fewer dragonflies will pollinate the flowers and fewer seeds will be produced.": "Nothing in the case suggests that more fish would cause fewer larvae to be eaten."
+         },
+         "explanation": "Eating more larvae would reduce dragonflies, leading to less pollination and fewer seeds."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A pond beside flowering plants is stocked with fish, while a nearby pond has no fish. Researchers find fewer dragonflies around the pond with fish because the fish eat dragonfly larvae. Dragonflies help pollinate the flowers near the ponds, and this pollination helps the plants produce seeds. The study shows that living and non-living parts of the pond affect one another.",
+         "prompt": "If the aim is to help nearby plants produce more seeds, what change is most supported by the case?",
+         "options": [
+          "Reduce the number of fish in the pond so more dragonflies remain to pollinate the flowers.",
+          "Increase the number of fish in the pond so more dragonflies remain to pollinate the flowers.",
+          "Remove the dragonflies so that the fish have fewer larvae to eat.",
+          "Move the flowering plants farther from the pond so that fewer dragonflies affect them."
+         ],
+         "answer": 0,
+         "why": {
+          "Increase the number of fish in the pond so more dragonflies remain to pollinate the flowers.": "More fish would eat more larvae and reduce pollination.",
+          "Remove the dragonflies so that the fish have fewer larvae to eat.": "Removing dragonflies would directly reduce the insects that pollinate the flowers.",
+          "Move the flowering plants farther from the pond so that fewer dragonflies affect them.": "Moving the plants farther away would not support more dragonfly pollination."
+         },
+         "explanation": "Reducing fish would allow more larvae to survive and become more pollinating dragonflies."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A pond without fish will have more dragonflies than a pond with fish.\nReason (R): Fish eat dragonfly larvae, so ponds with fish have fewer dragonflies.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The statement is true, and the reason directly explains it by showing that fish reduce the number of dragonflies."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Flowers near a pond with fish cannot produce seeds because the pond has fewer dragonflies.\nReason (R): Pollination helps nearby plants produce seeds.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The statement is false because pollination still helps plants produce seeds, while the reason is true."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch12-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why ponds with fish have fewer dragonflies and how this can affect nearby plants.",
+         "answer": "Fish eat dragonfly larvae, so a pond with fish contains fewer dragonflies than a pond without fish. The dragonflies pollinate flowers near the ponds. Pollination helps nearby plants produce seeds. Therefore, a change in one living group can affect other living organisms and the plants nearby. This case shows that biotic and abiotic components affect one another and form an ecosystem. It also shows how an interaction between living organisms can influence the production of seeds in an ecosystem.",
+         "points": [
+          "Fish eat dragonfly larvae.",
+          "Ponds with fish therefore have fewer dragonflies.",
+          "Dragonflies pollinate nearby flowers.",
+          "Pollination helps plants produce seeds."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l4-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A hare that eats only plants is an omnivore.\nReason (R): A hare is a herbivore because it eats only plants.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The assertion is false because a plant-eating hare is a herbivore, while the reason is true."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch12-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between a food chain and a food web.",
+         "answer": "A food chain is a simple sequence showing who eats whom. A food web forms when food chains are interlinked, creating a network of feeding relationships among organisms. Each organism in a food chain has a specific position called a trophic level. Producers occupy the first trophic level, herbivores occupy the second, and small carnivores such as frogs occupy the third. Thus, a food chain shows one simple pathway, while a food web shows several connected pathways.",
+         "points": [
+          "Defines a food chain as a simple sequence",
+          "Defines a food web as interlinked food chains",
+          "Explains that each organism has a trophic level",
+          "Gives the trophic levels of producers, herbivores, and small carnivores"
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A pond near farmland has many plants and fish. Pollution makes many of the pond plants die. Separately, a fall in the fish population reduces the number of consumers in the pond. Insects can spread from the pond into nearby farmlands. Large-scale frog harvesting reduces frog numbers and causes agricultural pests to rise, linking changes in the pond with problems on nearby land.",
+         "prompt": "After the fish population falls in the case, what change is expected in the pond?",
+         "options": [
+          "The pond will support fewer consumers.",
+          "The pond will support more consumers.",
+          "The number of consumers will stay the same.",
+          "All consumers will disappear at once."
+         ],
+         "answer": 0,
+         "why": {
+          "The pond will support more consumers.": "This is the opposite of the stated effect.",
+          "The number of consumers will stay the same.": "This ignores the effect of a fall in the fish population.",
+          "All consumers will disappear at once.": "The situation does not say that every consumer will disappear."
+         },
+         "explanation": "A fall in fish numbers means fewer consumers remain."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A pond near farmland has many plants and fish. Pollution makes many of the pond plants die. Separately, a fall in the fish population reduces the number of consumers in the pond. Insects can spread from the pond into nearby farmlands. Large-scale frog harvesting reduces frog numbers and causes agricultural pests to rise, linking changes in the pond with problems on nearby land.",
+         "prompt": "If large-scale frog harvesting continues while agricultural pests are rising, what is the most likely outcome for nearby farmland?",
+         "options": [
+          "The number of agricultural pests could become larger.",
+          "The number of agricultural pests will definitely fall to zero.",
+          "The number of agricultural pests will remain exactly unchanged.",
+          "Nearby farmland will have no insects at all."
+         ],
+         "answer": 0,
+         "why": {
+          "The number of agricultural pests will definitely fall to zero.": "Complete disappearance of pests is not guaranteed.",
+          "The number of agricultural pests will remain exactly unchanged.": "Continued harvesting does not support no change in pest numbers.",
+          "Nearby farmland will have no insects at all.": "The facts do not guarantee that all insects will disappear."
+         },
+         "explanation": "Frog harvesting has already reduced frogs and caused pests to rise."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): When the fish population falls, the pond has fewer consumers.\nReason (R): A fall in the fish population means fewer consumers remain in the pond.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The reason directly explains why fewer consumers remain when the fish population falls."
         }
        ]
       }
@@ -39711,7 +40736,7 @@
       {
        "id": "science-g8-ch13-l1",
        "title": "Earth Is Special and the Planets Around the Sun",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -39756,6 +40781,73 @@
           {
            "ch": 13,
            "p": 212
+          },
+          {
+           "ch": 13,
+           "p": 212
+          }
+         ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch13-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "solarsystem",
+         "params": {},
+         "title": "Run the solar system",
+         "tasks": [
+          {
+           "say": "Let one Earth year pass.",
+           "when": "days >= 360 and days <= 370",
+           "then": "Earth has gone round once, and Mercury about four times."
+          },
+          {
+           "say": "Let Jupiter go all the way round once.",
+           "when": "days >= 4330 and days <= 4340",
+           "then": "A year on Jupiter lasts about 12 Earth years."
+          },
+          {
+           "say": "Let Saturn finish one orbit.",
+           "when": "days >= 10750",
+           "then": "Saturn takes about 29 and a half Earth years."
+          }
+         ],
+         "takeaway": "Planets nearer the Sun go round faster; the further out, the longer the year.",
+         "explanation": "Planets nearer the Sun go round faster; the further out, the longer the year."
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch13-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child visits Earth and sees people, forests, rivers, and mountains. Why is Earth special?",
+         "steps": [
+          "Earth is the only planet where life, as we know it today, exists and thrives.",
+          "Life lives in a thin surface layer with mountains, rivers, forests, animals, and people.",
+          "Earth gives people air to breathe and water to drink.",
+          "Together, these facts make Earth special for life as we know it today."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 211
+          },
+          {
+           "ch": 13,
+           "p": 211
           },
           {
            "ch": 13,
@@ -39907,25 +40999,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch13-l1-a7",
-         "difficulty": 3,
-         "tags": [
-          "planets",
-          "sun",
-          "temperature"
-         ],
-         "prompt": "Planets generally become colder as they move away from the Sun.",
-         "answer": true,
-         "explanation": "Planets generally become colder as their distance from the Sun increases.",
-         "src": [
-          {
-           "ch": 13,
-           "p": 213
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch13-l1-a8",
          "difficulty": 3,
@@ -39955,17 +41028,131 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch13-l1-a9",
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-d1",
          "difficulty": 3,
          "tags": [
-          "venus",
-          "sun",
-          "temperature"
+          "deep",
+          "explain choice"
          ],
-         "prompt": "Closeness to the Sun alone explains why Venus is the hottest planet.",
-         "answer": false,
-         "explanation": "Venus is the hottest planet, but not simply because it is close to the Sun.",
+         "prompt": "A child needs air to breathe, water to drink, and life as we know it today. Which planet can provide this?",
+         "options": [
+          "Earth, because it gives us air, water, and life.",
+          "Venus, because it is the hottest planet.",
+          "Mars, because it is small and rocky.",
+          "Jupiter, because it is made mostly of gases."
+         ],
+         "answer": 0,
+         "why": {
+          "Venus, because it is the hottest planet.": "The mistake is thinking the hottest planet must support life.",
+          "Mars, because it is small and rocky.": "The mistake is thinking a rocky planet must support life.",
+          "Jupiter, because it is made mostly of gases.": "The mistake is thinking a gas planet must support life."
+         },
+         "explanation": "Earth is the only planet where life, as we know it, thrives.",
+         "f": [
+          "1.1",
+          "1.3"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 211
+          },
+          {
+           "ch": 13,
+           "p": 212
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "interpret"
+         ],
+         "prompt": "A child looks from a mountain and sees forests, rivers, animals, and people below. What does this show?",
+         "options": [
+          "Life lives in a thin surface layer.",
+          "Life lives deep inside every planet.",
+          "Earth has no life in its surface layer.",
+          "Every planet has the same living layer."
+         ],
+         "answer": 0,
+         "why": {
+          "Life lives deep inside every planet.": "The mistake is thinking life lives deep inside every planet.",
+          "Earth has no life in its surface layer.": "The mistake is thinking Earth has no life in its surface layer.",
+          "Every planet has the same living layer.": "The mistake is thinking every planet has the same living layer."
+         },
+         "explanation": "Mountains, rivers, forests, animals, and people live in a thin surface layer.",
+         "f": [
+          "1.2"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 211
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Two planets are compared, and one is farther from the Sun than the other. What should the child expect?",
+         "options": [
+          "The farther planet will generally be colder.",
+          "The farther planet will generally be hotter.",
+          "Both planets will have the same temperature.",
+          "The closer planet will have life today."
+         ],
+         "answer": 0,
+         "why": {
+          "The farther planet will generally be hotter.": "The mistake is thinking distance from the Sun reverses the general pattern.",
+          "Both planets will have the same temperature.": "The mistake is thinking all planets always have the same temperature.",
+          "The closer planet will have life today.": "The mistake is thinking closeness to the Sun guarantees life."
+         },
+         "explanation": "Planets generally become colder as they move away from the Sun.",
+         "f": [
+          "1.8"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 213
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Venus is the hottest planet. A friend says this happens only because Venus is close to the Sun. What is the best reply?",
+         "options": [
+          "Distance alone does not explain Venus's heat.",
+          "Venus is close, so it must be hottest.",
+          "Venus is hottest because it is mostly gas.",
+          "Venus is hottest because it is far away."
+         ],
+         "answer": 0,
+         "why": {
+          "Venus is close, so it must be hottest.": "The mistake is thinking closeness alone explains Venus's heat.",
+          "Venus is hottest because it is mostly gas.": "The mistake is thinking being mostly gas explains Venus's heat.",
+          "Venus is hottest because it is far away.": "The mistake is thinking greater distance makes a planet hottest."
+         },
+         "explanation": "Venus is hottest, but closeness to the Sun is not the simple reason.",
+         "f": [
+          "1.9"
+         ],
          "src": [
           {
            "ch": 13,
@@ -39988,7 +41175,7 @@
       {
        "id": "science-g8-ch13-l2",
        "title": "Earth’s Position in the Solar System",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -40061,19 +41248,68 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch13-l2-a2",
+         "type": "explore",
+         "id": "science-g8-ch13-l2-play",
          "difficulty": 1,
          "tags": [
-          "earth",
-          "sun",
-          "distance",
-          "life"
+          "explore"
          ],
-         "prompt": "Earth’s distance from the Sun is a major reason it can support life.",
-         "answer": true,
-         "explanation": "This distance helps Earth keep water liquid. Liquid water is essential for life to evolve.",
+         "widget": "solarsystem",
+         "params": {},
+         "title": "Run the solar system",
+         "tasks": [
+          {
+           "say": "Let one Earth year pass.",
+           "when": "days >= 360 and days <= 370",
+           "then": "Earth has gone round once, and Mercury about four times."
+          },
+          {
+           "say": "Let Jupiter go all the way round once.",
+           "when": "days >= 4330 and days <= 4340",
+           "then": "A year on Jupiter lasts about 12 Earth years."
+          },
+          {
+           "say": "Let Saturn finish one orbit.",
+           "when": "days >= 10750",
+           "then": "Saturn takes about 29 and a half Earth years."
+          }
+         ],
+         "takeaway": "Planets nearer the Sun go round faster; the further out, the longer the year.",
+         "explanation": "Planets nearer the Sun go round faster; the further out, the longer the year."
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch13-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "What happens if a model Earth moves closer to the Sun?",
+         "steps": [
+          "Moving closer would make Earth too hot, so its water would evaporate.",
+          "Liquid water is essential for life to evolve and survive.",
+          "Most life could not thrive in such extreme conditions.",
+          "Therefore, Earth’s distance helps it support life."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.5",
+          "2.6"
+         ],
          "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 214
+          },
           {
            "ch": 13,
            "p": 214
@@ -40137,24 +41373,6 @@
            "ch": 13,
            "p": 215
           },
-          {
-           "ch": 13,
-           "p": 215
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch13-l2-a5",
-         "difficulty": 2,
-         "tags": [
-          "mars",
-          "life"
-         ],
-         "prompt": "Proof of life has been found on Mars.",
-         "answer": false,
-         "explanation": "No proof of life has yet been found on Mars.",
-         "src": [
           {
            "ch": 13,
            "p": 215
@@ -40301,6 +41519,179 @@
            "p": 215
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A model Earth is moved closer to the Sun. Its water is watched. What will most likely happen?",
+         "options": [
+          "It will stay liquid because the distance has no effect.",
+          "It will freeze because Earth will become too cold.",
+          "It will evaporate because Earth will become too hot.",
+          "It will remain unchanged because water ignores the Sun."
+         ],
+         "answer": 2,
+         "why": {
+          "It will stay liquid because the distance has no effect.": "This wrongly assumes that distance does not affect water.",
+          "It will freeze because Earth will become too cold.": "This describes the farther-away case, not the closer case.",
+          "It will remain unchanged because water ignores the Sun.": "This wrongly treats water as unaffected by distance."
+         },
+         "explanation": "Right: closer Earth would be too hot, so its water would evaporate.",
+         "f": [
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 214
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "One Earth model is inside the Goldilocks zone. Another is outside. Which is more likely to support life?",
+         "options": [
+          "The inside model, because liquid water can remain there.",
+          "The outside model, because extreme heat protects life.",
+          "The inside model, because life is proven there.",
+          "The outside model, because freezing water protects life."
+         ],
+         "answer": 0,
+         "why": {
+          "The outside model, because extreme heat protects life.": "This wrongly says extreme heat helps life thrive.",
+          "The inside model, because life is proven there.": "This wrongly assumes the habitable zone proves that life exists.",
+          "The outside model, because freezing water protects life.": "This wrongly says freezing water helps life thrive."
+         },
+         "explanation": "Right: liquid water can remain in the habitable zone and is essential for life.",
+         "f": [
+          "2.1",
+          "2.6",
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Mars has life because it sits at the habitable zone’s edge. What is the best reply?",
+         "options": [
+          "Being at the edge does not prove that life exists.",
+          "Liquid water there means life must already exist.",
+          "Mars cannot have water because it lies at the edge.",
+          "No world at the edge can ever support life."
+         ],
+         "answer": 0,
+         "why": {
+          "Liquid water there means life must already exist.": "This wrongly treats the habitable zone as proof of life on Mars.",
+          "Mars cannot have water because it lies at the edge.": "This wrongly assumes edge-of-zone worlds cannot have liquid water.",
+          "No world at the edge can ever support life.": "This turns Mars’s special edge into a rule for every world."
+         },
+         "explanation": "Right: lying at the edge does not prove that life exists.",
+         "f": [
+          "2.7",
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "A website says every world in the habitable zone must have life. What is the best reply?",
+         "options": [
+          "The zone shows where water can remain liquid.",
+          "Liquid water alone proves that every world has life.",
+          "Life cannot exist anywhere inside the habitable zone.",
+          "No life exists because no proof has been found on Mars."
+         ],
+         "answer": 0,
+         "why": {
+          "Liquid water alone proves that every world has life.": "This confuses a needed condition with proof that life exists.",
+          "Life cannot exist anywhere inside the habitable zone.": "This wrongly says the habitable zone cannot support life.",
+          "No life exists because no proof has been found on Mars.": "This wrongly uses Mars’s missing proof to claim no life elsewhere."
+         },
+         "explanation": "Right: the habitable zone is the range where water remains liquid.",
+         "f": [
+          "2.6",
+          "2.7",
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          }
+         ]
         }
        ],
        "topicScene": "media/ch13-l2-earth-to-sun-mk-e44ff9.webp",
@@ -40317,7 +41708,7 @@
       {
        "id": "science-g8-ch13-l3",
        "title": "The Right Size and Magnetic Shield of Earth",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -40383,21 +41774,34 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch13-l3-a3",
+         "type": "worked",
+         "id": "science-g8-ch13-l3-t1",
          "difficulty": 1,
          "tags": [
-          "mars",
-          "atmosphere",
-          "earth"
+          "deep",
+          "think"
          ],
-         "prompt": "Mars has an atmosphere one hundred times thicker than Earth’s.",
-         "answer": false,
-         "explanation": "Mars has an atmosphere one hundred times thinner than Earth’s. It is not thicker.",
+         "kicker": "Let us think it through",
+         "prompt": "What could reach Earth if the core's molten iron stopped moving?",
+         "steps": [
+          "Earth's magnetic field may come from moving molten iron in its core.",
+          "If that movement stopped, the magnetic field might become weaker.",
+          "A weaker magnetic field would push away fewer harmful space particles.",
+          "So more harmful space particles could reach Earth's surface."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.9",
+          "3.10"
+         ],
          "src": [
           {
            "ch": 13,
-           "p": 216
+           "p": 217
+          },
+          {
+           "ch": 13,
+           "p": 217
           }
          ]
         },
@@ -40415,6 +41819,25 @@
          ],
          "hint": "This atmosphere is completely missing.",
          "explanation": "Mercury has no atmosphere at all. The word “no” completes the sentence.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 216
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "mars",
+          "atmosphere",
+          "earth"
+         ],
+         "prompt": "Mars has an atmosphere one hundred times thicker than Earth’s.",
+         "answer": false,
+         "explanation": "Mars has an atmosphere one hundred times thinner than Earth’s. It is not thicker.",
          "src": [
           {
            "ch": 13,
@@ -40528,25 +41951,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch13-l3-a8",
-         "difficulty": 3,
-         "tags": [
-          "planet",
-          "force",
-          "living beings"
-         ],
-         "prompt": "An extremely large planet could pull living beings down with crushing force.",
-         "answer": true,
-         "explanation": "An extremely large planet can pull living beings down with crushing force. That makes its pull dangerous.",
-         "src": [
-          {
-           "ch": 13,
-           "p": 216
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch13-l3-a9",
          "difficulty": 3,
@@ -40575,6 +41979,137 @@
            "p": 217
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Mars has one hundred times thinner air than Earth. How would breathing compare there?",
+         "options": [
+          "Breathing would be harder because less oxygen would be available.",
+          "Breathing would be easier because less oxygen would be available.",
+          "Breathing would stay easy because all atmospheres contain enough oxygen.",
+          "Breathing would improve because Mars has one hundred times more oxygen."
+         ],
+         "answer": 0,
+         "why": {
+          "Breathing would be easier because less oxygen would be available.": "This confuses having less oxygen with making breathing easier.",
+          "Breathing would stay easy because all atmospheres contain enough oxygen.": "This assumes every atmosphere has enough oxygen for breathing.",
+          "Breathing would improve because Mars has one hundred times more oxygen.": "This reverses the given air comparison and treats thinner as more oxygen."
+         },
+         "explanation": "This is right because thinner air provides less oxygen for breathing.",
+         "f": [
+          "3.4",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "Molten iron stops moving inside Earth's core. How could Earth's magnetic shield change?",
+         "options": [
+          "It might weaken, letting more harmful space particles reach Earth.",
+          "It might weaken, letting fewer harmful space particles reach Earth.",
+          "It might strengthen, letting more harmful space particles reach Earth.",
+          "It might weaken, causing harmful ultraviolet rays to reach Earth."
+         ],
+         "answer": 0,
+         "why": {
+          "It might weaken, letting fewer harmful space particles reach Earth.": "This reverses how a weaker magnetic field affects arriving particles.",
+          "It might strengthen, letting more harmful space particles reach Earth.": "This reverses what stopped core iron movement may do to the field.",
+          "It might weaken, causing harmful ultraviolet rays to reach Earth.": "This confuses the magnetic shield with the ozone layer."
+         },
+         "explanation": "This is right: core iron may create the field pushing particles away.",
+         "f": [
+          "3.8",
+          "3.9",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 217
+          },
+          {
+           "ch": 13,
+           "p": 217
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "combine"
+         ],
+         "prompt": "An extremely large planet has an orbit like Earth's, which is almost circular. Which result fits both facts?",
+         "options": [
+          "Living beings could be crushed while the orbit stays nearly circular.",
+          "Living beings could float away while the orbit stays perfectly circular.",
+          "Living beings could breathe easily while the orbit becomes perfectly circular.",
+          "Living beings could face fewer particles while the orbit stays nearly circular."
+         ],
+         "answer": 0,
+         "why": {
+          "Living beings could float away while the orbit stays perfectly circular.": "This assumes huge planets pull less and mistakes almost for perfectly.",
+          "Living beings could breathe easily while the orbit becomes perfectly circular.": "This assumes size gives breathable air and mistakes almost for perfectly.",
+          "Living beings could face fewer particles while the orbit stays nearly circular.": "This confuses large size with the magnetic field that shields Earth."
+         },
+         "explanation": "This fits huge-planet gravity and the fact that orbits are almost circular.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.6",
+          "3.7",
+          "3.10"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 217
+          }
+         ]
         }
        ],
        "topicScene": "media/ch13-l3-top-of-atmosphere-b8fd76.webp",
@@ -40591,7 +42126,7 @@
       {
        "id": "science-g8-ch13-l4",
        "title": "Connections That Sustain Life",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -40649,6 +42184,85 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g8-ch13-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A farmer has fewer rainy days. How might this affect crops, people, and animals?",
+         "steps": [
+          "Clouds form from water vapour and bring rain or snow.",
+          "Less rain or snow can mean less freshwater in nature.",
+          "This can affect crops and people, because both need freshwater.",
+          "Animals need water too, so one water change affects all three groups."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 219
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l4-a7",
+         "difficulty": 2,
+         "tags": [
+          "nature",
+          "rainfall",
+          "heat",
+          "water vapour"
+         ],
+         "title": "Changes Can Affect Nature",
+         "body": "Nature works as a connected system. A change in one part can affect rainfall, soil, air quality and animals. Greenhouse gases in the atmosphere trap heat. Water vapour forms clouds and brings rain or snow. Freshwater helps crops grow and supports people. These links help us see how one change can affect many parts of nature.",
+         "keyPoints": [
+          "A change in one part can affect several other parts.",
+          "Greenhouse gases trap heat in the atmosphere.",
+          "Water vapour helps form clouds and bring rain or snow."
+         ],
+         "explanation": "One change can affect many connected parts of nature.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 219
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "science-g8-ch13-l4-a2",
          "difficulty": 1,
@@ -40666,24 +42280,6 @@
          ],
          "answer": 3,
          "explanation": "Plants make food by photosynthesis and release oxygen.",
-         "src": [
-          {
-           "ch": 13,
-           "p": 218
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch13-l4-a3",
-         "difficulty": 1,
-         "tags": [
-          "water",
-          "earth"
-         ],
-         "prompt": "Water covers about seventy per cent of Earth’s surface.",
-         "answer": true,
-         "explanation": "This is the share of Earth’s surface covered by water.",
          "src": [
           {
            "ch": 13,
@@ -40787,43 +42383,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "science-g8-ch13-l4-a7",
-         "difficulty": 2,
-         "tags": [
-          "nature",
-          "rainfall",
-          "heat",
-          "water vapour"
-         ],
-         "title": "Changes Can Affect Nature",
-         "body": "Nature works as a connected system. A change in one part can affect rainfall, soil, air quality and animals. Greenhouse gases in the atmosphere trap heat. Water vapour forms clouds and brings rain or snow. Freshwater helps crops grow and supports people. These links help us see how one change can affect many parts of nature.",
-         "keyPoints": [
-          "A change in one part can affect several other parts.",
-          "Greenhouse gases trap heat in the atmosphere.",
-          "Water vapour helps form clouds and bring rain or snow."
-         ],
-         "explanation": "One change can affect many connected parts of nature.",
-         "src": [
-          {
-           "ch": 13,
-           "p": 214
-          },
-          {
-           "ch": 13,
-           "p": 218
-          },
-          {
-           "ch": 13,
-           "p": 218
-          },
-          {
-           "ch": 13,
-           "p": 219
-          }
-         ]
-        },
-        {
          "type": "dragorder",
          "id": "science-g8-ch13-l4-a8",
          "difficulty": 3,
@@ -40876,6 +42435,191 @@
            "p": 219
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Plants make food by photosynthesis and release oxygen. People and pets use atmospheric oxygen. What connection does this show?",
+         "options": [
+          "Photosynthesis releases oxygen, which people and animals use for respiration.",
+          "Photosynthesis releases oxygen, but animals do not need atmospheric oxygen.",
+          "Photosynthesis makes plants and animals compete for the same oxygen.",
+          "Plants release oxygen during respiration, not during photosynthesis."
+         ],
+         "answer": 0,
+         "why": {
+          "Photosynthesis releases oxygen, but animals do not need atmospheric oxygen.": "This wrongly thinks animals do not need atmospheric oxygen.",
+          "Photosynthesis makes plants and animals compete for the same oxygen.": "This wrongly treats plants as only oxygen users, not oxygen makers.",
+          "Plants release oxygen during respiration, not during photosynthesis.": "This wrongly links oxygen release to respiration, not photosynthesis."
+         },
+         "explanation": "This is right because photosynthesis releases oxygen used in respiration.",
+         "f": [
+          "4.1",
+          "4.2"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 217
+          },
+          {
+           "ch": 13,
+           "p": 218
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "connect"
+         ],
+         "prompt": "Rain falls on rocks and soil. Water vapour forms clouds above them. Which Earth parts are connected?",
+         "options": [
+          "The hydrosphere, geosphere, and atmosphere connect through water and land.",
+          "The biosphere, geosphere, and hydrosphere connect through animals and minerals.",
+          "The biosphere, atmosphere, and geosphere connect through clouds and minerals.",
+          "The atmosphere, biosphere, and hydrosphere connect through clouds and rocks."
+         ],
+         "answer": 0,
+         "why": {
+          "The biosphere, geosphere, and hydrosphere connect through animals and minerals.": "This leaves out the atmosphere, where greenhouse gases trap heat.",
+          "The biosphere, atmosphere, and geosphere connect through clouds and minerals.": "This leaves out the hydrosphere, which contains all of Earth's water.",
+          "The atmosphere, biosphere, and hydrosphere connect through clouds and rocks.": "This leaves out the geosphere, which contains rocks and soils."
+         },
+         "explanation": "Water, land, and atmospheric clouds match these three Earth parts.",
+         "f": [
+          "4.3",
+          "4.5",
+          "4.8",
+          "4.9",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 219
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Greenhouse gases trap heat in the atmosphere. If their amount increases, what should happen?",
+         "options": [
+          "More heat should stay trapped in the atmosphere.",
+          "More heat should leave the atmosphere at once.",
+          "More oxygen should form for plants and animals.",
+          "More clouds should form and bring heavier rain."
+         ],
+         "answer": 0,
+         "why": {
+          "More heat should leave the atmosphere at once.": "This wrongly assumes all trapped heat leaves the atmosphere at once.",
+          "More oxygen should form for plants and animals.": "This confuses heat trapping with the oxygen released by plants.",
+          "More clouds should form and bring heavier rain.": "This wrongly assumes more trapped heat must create clouds and rain."
+         },
+         "explanation": "Greenhouse gases trap heat, so more gases can trap more heat.",
+         "f": [
+          "4.3"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Freshwater is needed to grow crops and support people. What may happen if it becomes scarce?",
+         "options": [
+          "Crops and people may both suffer from the lack.",
+          "Only crops may suffer, because people need other water.",
+          "Only people may suffer, because crops need no freshwater.",
+          "Neither may suffer, because rocks and soil replace water."
+         ],
+         "answer": 0,
+         "why": {
+          "Only crops may suffer, because people need other water.": "This wrongly separates crops from people when both need freshwater.",
+          "Only people may suffer, because crops need no freshwater.": "This wrongly treats crops as if they did not need freshwater.",
+          "Neither may suffer, because rocks and soil replace water.": "This wrongly believes rocks and soil can replace needed freshwater."
+         },
+         "explanation": "Freshwater supports both crops and people, so scarcity can harm both.",
+         "f": [
+          "4.7"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 218
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Geodiversity includes different landforms, rocks, and soils. Losing one soil type cannot change it. Why is this claim flawed?",
+         "options": [
+          "Geodiversity includes soil variety, so losing one type can change it.",
+          "Geodiversity means all water, so losing soil cannot change it.",
+          "Geodiversity means oxygen, so losing soil cannot change it.",
+          "Geodiversity includes animals, so losing soil cannot change it."
+         ],
+         "answer": 0,
+         "why": {
+          "Geodiversity means all water, so losing soil cannot change it.": "This mistakes geodiversity for the hydrosphere, which contains water.",
+          "Geodiversity means oxygen, so losing soil cannot change it.": "This mistakes geodiversity for atmospheric oxygen, which plants release.",
+          "Geodiversity includes animals, so losing soil cannot change it.": "This mistakes geodiversity for the biosphere, which contains living beings."
+         },
+         "explanation": "Soils belong to geodiversity, so losing one type can change its variety.",
+         "f": [
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 219
+          }
+         ]
         }
        ],
        "topicScene": "media/ch13-l4-leaf-function-66c9a2.webp",
@@ -40892,7 +42636,7 @@
       {
        "id": "science-g8-ch13-l5",
        "title": "Reproduction and the Continuity of Life",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -40950,6 +42694,80 @@
           {
            "ch": 13,
            "p": 222
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch13-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Garden plants and animals stop reproducing. What will happen to life there?",
+         "steps": [
+          "Life depends on reproduction because it would eventually disappear without it.",
+          "Reproduction keeps life continuing by producing more plants and animals.",
+          "Reproduction also helps life adapt to changes and continue in new forms.",
+          "So life there will eventually disappear unless reproduction continues."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.3"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 219
+          },
+          {
+           "ch": 13,
+           "p": 220
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l5-a7",
+         "difficulty": 2,
+         "tags": [
+          "animals",
+          "gametes",
+          "sperm",
+          "eggs",
+          "mammals"
+         ],
+         "title": "Reproduction in Animals",
+         "body": "Animals have gametes called sperm and eggs. Each gamete carries only half of its parent's genetic material. In most mammals, the embryo develops inside the female's body. Sexual reproduction combines instructions from two parents. These combined instructions help life continue in new forms.",
+         "keyPoints": [
+          "The gametes of animals are sperm and eggs.",
+          "Each gamete carries half of its parent's genetic material.",
+          "In most mammals, the embryo develops inside the female's body."
+         ],
+         "explanation": "Sperm and eggs are the gametes of animals.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 221
+          },
+          {
+           "ch": 13,
+           "p": 222
+          },
+          {
+           "ch": 13,
+           "p": 223
           }
          ]
         },
@@ -41072,48 +42890,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "science-g8-ch13-l5-a7",
-         "difficulty": 2,
-         "tags": [
-          "animals",
-          "gametes",
-          "sperm",
-          "eggs",
-          "mammals"
-         ],
-         "title": "Reproduction in Animals",
-         "body": "Animals have gametes called sperm and eggs. Each gamete carries only half of its parent's genetic material. In most mammals, the embryo develops inside the female's body. Sexual reproduction combines instructions from two parents. These combined instructions help life continue in new forms.",
-         "keyPoints": [
-          "The gametes of animals are sperm and eggs.",
-          "Each gamete carries half of its parent's genetic material.",
-          "In most mammals, the embryo develops inside the female's body."
-         ],
-         "explanation": "Sperm and eggs are the gametes of animals.",
-         "src": [
-          {
-           "ch": 13,
-           "p": 220
-          },
-          {
-           "ch": 13,
-           "p": 220
-          },
-          {
-           "ch": 13,
-           "p": 221
-          },
-          {
-           "ch": 13,
-           "p": 222
-          },
-          {
-           "ch": 13,
-           "p": 223
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch13-l5-a8",
          "difficulty": 3,
@@ -41172,23 +42948,102 @@
            "p": 222
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "sequence"
+         ],
+         "prompt": "In a plant, fertilisation has just happened. What develops next?",
+         "options": [
+          "A zygote forms and develops into a seed.",
+          "Two exact copies form and develop into a seed.",
+          "A gamete forms and develops into a seed.",
+          "An embryo forms and develops into a seed."
+         ],
+         "answer": 0,
+         "why": {
+          "Two exact copies form and develop into a seed.": "This mistake confuses fertilisation with asexual reproduction's exact copying.",
+          "A gamete forms and develops into a seed.": "This mistake puts the gamete after fertilisation, though it comes before.",
+          "An embryo forms and develops into a seed.": "This mistake mixes a mammal embryo with the zygote becoming a seed."
+         },
+         "explanation": "This is right because fertilisation forms a zygote that develops into a seed.",
+         "f": [
+          "5.7",
+          "5.4",
+          "5.6",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 222
+          },
+          {
+           "ch": 13,
+           "p": 225
+          },
+          {
+           "ch": 13,
+           "p": 221
+          },
+          {
+           "ch": 13,
+           "p": 223
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "A child says asexual young always change after a habitat change. Why is this claim flawed?",
+         "options": [
+          "Asexual young are exact copies of their one parent.",
+          "Asexual young combine instructions from two parents.",
+          "Asexual young carry only half of one parent's material.",
+          "Asexual young develop into seeds after fertilisation."
+         ],
+         "answer": 0,
+         "why": {
+          "Asexual young combine instructions from two parents.": "This mistake confuses asexual copying with sexual reproduction.",
+          "Asexual young carry only half of one parent's material.": "This mistake applies a gamete's half material to a young organism.",
+          "Asexual young develop into seeds after fertilisation.": "This mistake adds sexual reproduction's zygote and seed to asexual copying."
+         },
+         "explanation": "This is right because one parent produces exact copies in asexual reproduction.",
+         "f": [
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 225
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch13-l1-solar-system-graphic-by-nasa-37ce42.webp",
-       "sceneAlt": "A wide NASA graphic shows the Sun and the planets arranged outward from Mercury through Neptune, with asteroids, comets and other objects included.",
-       "sceneCaption": "The Sun and planets appear in order from Mercury near the Sun to distant Neptune.",
+       "topicScene": "media/ch13-l5-pavo-cristatus-indian-peafow-652720.webp",
+       "sceneAlt": "An Indian peafowl is shown mating, with the male on top.",
+       "sceneCaption": "Indian peafowl mating, with the male on top of the female.",
        "sceneCredit": {
-        "text": "Solar System graphic by NASA (wide) by NASA, Public domain, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Solar_System_graphic_by_NASA_(wide).png",
-        "license": "Public domain",
-        "licenseUrl": "",
-        "creator": "NASA"
+        "text": "Pavo cristatus (Indian Peafowl) 28 by gary_leavens, CC BY-SA 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Pavo_cristatus_(Indian_Peafowl)_28.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "creator": "gary_leavens"
        }
       },
       {
        "id": "science-g8-ch13-l6",
        "title": "Threats to Life and Ways to Protect Earth",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -41245,6 +43100,93 @@
           {
            "ch": 13,
            "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch13-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A town burns coal and dumps plastic waste. What harm can follow?",
+         "steps": [
+          "Burning coal releases greenhouse gases into the atmosphere.",
+          "Extra carbon cannot be absorbed fast enough, so more heat builds up.",
+          "Plastic waste can make river water unsafe for living things.",
+          "These linked changes show human actions disturbing the balance that supports life."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.3",
+          "6.4",
+          "6.9",
+          "6.11",
+          "6.1"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 223
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l6-a5",
+         "difficulty": 2,
+         "tags": [
+          "pollution",
+          "water",
+          "soil"
+         ],
+         "title": "Pollution Can Harm Living Things",
+         "body": "Air pollution can damage crops, cause breathing problems and lead to acid rain. Factory, farm and plastic waste can make water unsafe for living things. Excess fertilisers and poor waste disposal can pollute soil. These harms happen because human actions disturb the balance supporting life. We can protect Earth by reducing pollution, protecting natural habitats and stopping waste from entering soil and water.",
+         "keyPoints": [
+          "Air pollution harms crops, breathing and rainfall.",
+          "Different wastes can make water and soil unsafe.",
+          "Reducing pollution and protecting habitats can protect life."
+         ],
+         "explanation": "Pollution can harm people, plants, animals and their surroundings.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
           },
           {
            "ch": 13,
@@ -41321,46 +43263,6 @@
           {
            "ch": 13,
            "p": 223
-          }
-         ]
-        },
-        {
-         "type": "concept",
-         "id": "science-g8-ch13-l6-a5",
-         "difficulty": 2,
-         "tags": [
-          "pollution",
-          "water",
-          "soil"
-         ],
-         "title": "Pollution Can Harm Living Things",
-         "body": "Air pollution can damage crops, cause breathing problems and lead to acid rain. Factory, farm and plastic waste can make water unsafe for living things. Excess fertilisers and poor waste disposal can pollute soil. These harms happen because human actions disturb the balance supporting life. We can protect Earth by reducing pollution, protecting natural habitats and stopping waste from entering soil and water.",
-         "keyPoints": [
-          "Air pollution harms crops, breathing and rainfall.",
-          "Different wastes can make water and soil unsafe.",
-          "Reducing pollution and protecting habitats can protect life."
-         ],
-         "explanation": "Pollution can harm people, plants, animals and their surroundings.",
-         "src": [
-          {
-           "ch": 13,
-           "p": 223
-          },
-          {
-           "ch": 13,
-           "p": 223
-          },
-          {
-           "ch": 13,
-           "p": 224
-          },
-          {
-           "ch": 13,
-           "p": 224
-          },
-          {
-           "ch": 13,
-           "p": 224
           }
          ]
         },
@@ -41488,8 +43390,102 @@
            "p": 223
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Burning coal and oil releases greenhouse gases. What can happen as extra carbon builds up?",
+         "options": [
+          "More heat builds up, and melting ice caps can flood coastal cities.",
+          "Less heat builds up, and melting ice caps can lower sea levels.",
+          "More heat builds up, but melting ice caps cannot affect sea levels.",
+          "Heat stays steady, and melting ice caps can raise sea levels."
+         ],
+         "answer": 0,
+         "why": {
+          "Less heat builds up, and melting ice caps can lower sea levels.": "This wrongly assumes extra carbon cools Earth and lowers sea levels.",
+          "More heat builds up, but melting ice caps cannot affect sea levels.": "This wrongly assumes melting ice cannot raise sea levels.",
+          "Heat stays steady, and melting ice caps can raise sea levels.": "This wrongly assumes greenhouse gases cause no change in heat."
+         },
+         "explanation": "Extra carbon adds heat, and melting ice can flood coastal cities.",
+         "f": [
+          "6.3",
+          "6.4",
+          "6.5"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Farm waste and excess fertilisers reach a field and nearby river. What can happen?",
+         "options": [
+          "The soil can lose water, and river water can become colder.",
+          "The soil can improve, and river water can become safer.",
+          "The soil can stay clean, and river water can stay safe.",
+          "The soil can be polluted, and river water can become unsafe."
+         ],
+         "answer": 3,
+         "why": {
+          "The soil can lose water, and river water can become colder.": "This wrongly links soil and water pollution with heat changes.",
+          "The soil can improve, and river water can become safer.": "This wrongly assumes fertilisers improve soil and waste cleans water.",
+          "The soil can stay clean, and river water can stay safe.": "This wrongly assumes both excess fertilisers and farm waste are harmless."
+         },
+         "explanation": "Excess fertilisers can pollute soil, and farm waste can make water unsafe.",
+         "f": [
+          "6.9",
+          "6.10"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          }
+         ]
         }
        ],
+       "topicScene": "media/ch13-l6-air-pollution-amid-blue-skie-cfd090.webp",
+       "sceneAlt": "A factory near Mumbai releases industrial air pollution against blue skies.",
+       "sceneCaption": "A factory near Mumbai releases toxic industrial pollution, contrasting sharply with the blue sky.",
+       "sceneCredit": {
+        "text": "Air pollution amid blue skies, the day after reopening from lockdown n by Sumaira Abdulali, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Air_pollution_amid_blue_skies,_the_day_after_reopening_from_lockdown_near_Mumbai.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Sumaira Abdulali"
+       }
+      },
+      {
+       "id": "science-g8-ch13-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 15,
        "topicScene": "media/ch13-l1-solar-system-graphic-by-nasa-37ce42.webp",
        "sceneAlt": "A wide NASA graphic shows the Sun and the planets arranged outward from Mercury through Neptune, with asteroids, comets and other objects included.",
        "sceneCaption": "The Sun and planets appear in order from Mercury near the Sun to distant Neptune.",
@@ -41499,7 +43495,387 @@
         "license": "Public domain",
         "licenseUrl": "",
         "creator": "NASA"
-       }
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Samira's class is preparing a display about Earth and the solar system. It will explain how Earth's thin surface layer supports mountains, rivers, forests, animals and people, and how Earth provides the air they breathe and the water they drink. The display will show how rock and timber from Earth are used to construct a community hall. A model will arrange all eight planets around the Sun and compare rocky planets with the large planets made mostly of gases.",
+         "prompt": "The class wants to explain why the community hall belongs in a display about Earth's special nature. Which explanation should it use?",
+         "options": [
+          "Earth supplies the rock and timber used for buildings, so the hall demonstrates how people use Earth's resources.",
+          "Earth's life-supporting surface layer explains why the community hall can be built there.",
+          "The hall shows that people can build homes on the large planets made mostly of gases.",
+          "The hall shows that Venus's great heat makes construction on Venus easier."
+         ],
+         "answer": 0,
+         "why": {
+          "Earth's life-supporting surface layer explains why the community hall can be built there.": "The thin surface layer supports life but does not explain construction.",
+          "The hall shows that people can build homes on the large planets made mostly of gases.": "The fact about gas planets does not apply to the community hall.",
+          "The hall shows that Venus's great heat makes construction on Venus easier.": "Venus's heat does not explain the building of a hall on Earth."
+         },
+         "explanation": "This directly connects the hall with materials supplied by Earth."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Samira's class is preparing a display about Earth and the solar system. It will explain how Earth's thin surface layer supports mountains, rivers, forests, animals and people, and how Earth provides the air they breathe and the water they drink. The display will show how rock and timber from Earth are used to construct a community hall. A model will arrange all eight planets around the Sun and compare rocky planets with the large planets made mostly of gases.",
+         "prompt": "If the rocky planets are placed closer to the Sun than the four large gas planets, what general temperature change should the class expect when moving outward through the solar system?",
+         "options": [
+          "Planets generally become colder as their distance from the Sun increases.",
+          "Planets generally become hotter as their distance from the Sun increases.",
+          "Planets farther from the Sun remain at the same temperature.",
+          "Only the size of each planet determines its temperature."
+         ],
+         "answer": 0,
+         "why": {
+          "Planets generally become hotter as their distance from the Sun increases.": "This reverses the stated temperature pattern.",
+          "Planets farther from the Sun remain at the same temperature.": "Distance from the Sun affects the general temperature pattern.",
+          "Only the size of each planet determines its temperature.": "Size alone does not determine how temperature changes with distance."
+         },
+         "explanation": "This is the stated general pattern for planets moving away from the Sun."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-x3",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Samira's class is preparing a display about Earth and the solar system. It will explain how Earth's thin surface layer supports mountains, rivers, forests, animals and people, and how Earth provides the air they breathe and the water they drink. The display will show how rock and timber from Earth are used to construct a community hall. A model will arrange all eight planets around the Sun and compare rocky planets with the large planets made mostly of gases.",
+         "prompt": "The class notices that Venus is among the planets near the Sun. What should it say about Venus's heat?",
+         "options": [
+          "Venus is the hottest planet, although closeness to the Sun alone does not explain this.",
+          "Venus is the hottest planet simply because it is the closest to the Sun.",
+          "Venus is the coldest planet because it is a rocky planet.",
+          "Venus is the hottest planet because it is made mostly of gases."
+         ],
+         "answer": 0,
+         "why": {
+          "Venus is the hottest planet simply because it is the closest to the Sun.": "Venus's closeness alone is expressly rejected as a complete explanation.",
+          "Venus is the coldest planet because it is a rocky planet.": "Venus is the hottest planet, not the coldest.",
+          "Venus is the hottest planet because it is made mostly of gases.": "Venus is classified as a rocky planet, not a gas planet."
+         },
+         "explanation": "This correctly states both facts about Venus and its distance from the Sun."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Earth is the only planet where life, as we know it today, exists and thrives.\nReason (R): Mountains, rivers, forests, animals and people all live in a thin surface layer.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 1,
+         "explanation": "Both statements are true, but the thin surface layer alone does not explain why life exists only on Earth."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Venus is the hottest planet simply because it is the closest to the Sun.\nReason (R): Venus's high heat cannot be explained by its closeness to the Sun alone.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The first statement is false because closeness to the Sun alone does not explain Venus's heat."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch13-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why Earth is special among the planets of the solar system.",
+         "answer": "Earth is special because it is the only planet where life, as we know it today, exists and thrives. Mountains, rivers, forests, animals and people live in Earth's thin surface layer, and Earth gives people the air they breathe and the water they drink. Earth also supplies rock and timber for building homes, buildings and roads. These features show why Earth is special among the eight planets.",
+         "points": [
+          "Earth is the only planet where life as we know it exists and thrives.",
+          "Life is found in Earth's thin surface layer.",
+          "Earth provides the air people breathe and the water they drink.",
+          "Earth supplies rock and timber for homes, buildings and roads."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A science club is arranging planet models around a model Sun for an Earth-and-Space display. The Earth model stays at its usual distance, while the Mars model is placed where the club’s diagram shows the Sun’s life-friendly range ending. Members are preparing to explain why Earth can support life, what the name for that range means, and whether any life has been found on Mars.",
+         "prompt": "If the club moves the Earth model closer to the model Sun, what should members expect to happen?",
+         "options": [
+          "The model would become too hot, causing its water to evaporate.",
+          "The model would become too cold, causing its water to freeze.",
+          "The model would remain cool enough for its water to stay liquid.",
+          "Most life forms on the model would thrive because of the extra heat."
+         ],
+         "answer": 0,
+         "why": {
+          "The model would become too cold, causing its water to freeze.": "Moving farther away would cause freezing, not evaporation.",
+          "The model would remain cool enough for its water to stay liquid.": "A closer position would not keep Earth cool enough.",
+          "Most life forms on the model would thrive because of the extra heat.": "Extra heat would create extreme conditions rather than help most life thrive."
+         },
+         "explanation": "Moving closer would make Earth too hot."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A science club is arranging planet models around a model Sun for an Earth-and-Space display. The Earth model stays at its usual distance, while the Mars model is placed where the club’s diagram shows the Sun’s life-friendly range ending. Members are preparing to explain why Earth can support life, what the name for that range means, and whether any life has been found on Mars.",
+         "prompt": "Which explanation should the club give about the Mars model?",
+         "options": [
+          "Mars lies at the edge of the Sun’s habitable zone, but no proof of life has yet been found there.",
+          "Mars lies at the edge of the Sun’s habitable zone, and life there has already been proved.",
+          "Mars lies far beyond the Sun’s habitable zone, and life there has already been proved.",
+          "Mars lies far beyond the Sun’s habitable zone, but no proof of life has yet been found there."
+         ],
+         "answer": 0,
+         "why": {
+          "Mars lies at the edge of the Sun’s habitable zone, and life there has already been proved.": "No proof of life has yet been found on Mars.",
+          "Mars lies far beyond the Sun’s habitable zone, and life there has already been proved.": "Mars is at the edge of the habitable zone, not far beyond it.",
+          "Mars lies far beyond the Sun’s habitable zone, but no proof of life has yet been found there.": "Mars is at the edge of the habitable zone, not far beyond it."
+         },
+         "explanation": "Both claims about Mars agree with the given facts."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Earth’s distance from the Sun helps it support life.\nReason (R): Earth’s distance allows water to remain liquid, and liquid water is essential for life to evolve.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The reason explains how Earth’s distance supports life by allowing liquid water."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Mars lies at the edge of the Sun’s habitable zone.\nReason (R): No proof of life has yet been found on Mars.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 1,
+         "explanation": "Both statements are true, but the lack of proof of life does not explain Mars’s position."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch13-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between the habitable zone and the Goldilocks zone.",
+         "answer": "The habitable zone is the range where water remains liquid. The Goldilocks zone is another name for exactly the same range, so there is no difference in meaning between the two terms. Earth’s distance from the Sun allows liquid water to exist, and liquid water is essential for life to evolve. Mars lies at the edge of the Sun’s habitable zone. This means Mars is at the boundary of the life-friendly range, although no proof of life has yet been found there.",
+         "points": [
+          "Defines the habitable zone.",
+          "Identifies the Goldilocks zone as another name.",
+          "Explains the importance of liquid water.",
+          "States Mars’s position and the lack of proof of life."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a class activity, a student notices that Earth has an atmosphere while Mars has one one hundred times thinner and Mercury has none. The class learns that Earth’s right size lets it hold onto gases. They also study Earth’s magnetic field. The student wonders whether making a planet smaller or much larger would affect life, and how harmful space particles reach Earth’s surface.",
+         "prompt": "If Earth were smaller while keeping its magnetic field, what would probably happen to its gases?",
+         "options": [
+          "The gases would escape into space, so the atmosphere would be lost.",
+          "The atmosphere would remain because the magnetic field would hold it.",
+          "The atmosphere would become one hundred times thinner than Mars’s.",
+          "The gases would remain and make the atmosphere thicker."
+         ],
+         "answer": 0,
+         "why": {
+          "The atmosphere would remain because the magnetic field would hold it.": "The magnetic field pushes harmful space particles, not atmospheric gases.",
+          "The atmosphere would become one hundred times thinner than Mars’s.": "No comparison shows that a smaller Earth would have Mars’s atmosphere.",
+          "The gases would remain and make the atmosphere thicker.": "A smaller Earth would not be expected to hold more atmospheric gas."
+         },
+         "explanation": "The given fact says gases escape from a smaller Earth into space."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a class activity, a student notices that Earth has an atmosphere while Mars has one one hundred times thinner and Mercury has none. The class learns that Earth’s right size lets it hold onto gases. They also study Earth’s magnetic field. The student wonders whether making a planet smaller or much larger would affect life, and how harmful space particles reach Earth’s surface.",
+         "prompt": "If a planet became extremely large, what danger should the students expect for living beings?",
+         "options": [
+          "They could be pulled down with crushing force.",
+          "The atmosphere would become one hundred times thinner than Earth’s.",
+          "The magnetic field would push all harmful space particles toward the planet.",
+          "Oxygen would stop allowing the living beings to breathe."
+         ],
+         "answer": 0,
+         "why": {
+          "The atmosphere would become one hundred times thinner than Earth’s.": "Greater size is not given as a cause of a thinner atmosphere.",
+          "The magnetic field would push all harmful space particles toward the planet.": "Earth’s magnetic field pushes many harmful particles away, not toward the planet.",
+          "Oxygen would stop allowing the living beings to breathe.": "A larger planet does not necessarily remove oxygen from its atmosphere."
+         },
+         "explanation": "An extremely large planet could pull living beings down with crushing force."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l3-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Earth’s right size allows it to support an atmosphere.\nReason (R): The gases would escape from a smaller Earth into space.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "Both statements are true, and gas escape explains why a smaller Earth could not support its atmosphere."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l3-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Oxygen in Earth’s atmosphere allows living beings to breathe.\nReason (R): The ozone layer blocks harmful ultraviolet rays from reaching Earth’s surface.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 1,
+         "explanation": "Both statements are true, but blocking ultraviolet rays does not explain how oxygen allows breathing."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch13-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between the role of Earth’s size and the role of its magnetic field?",
+         "answer": "Earth’s right size allows it to support an atmosphere by keeping its gases. This atmosphere includes oxygen, which allows living beings to breathe. If Earth were smaller, its gases would escape into space. The magnetic field has a different job: it pushes many harmful space particles away. It does not keep the atmosphere in place, and an extremely large planet could pull living beings down with crushing force.",
+         "points": [
+          "Earth’s right size allows it to retain an atmosphere.",
+          "A smaller Earth would lose gases into space.",
+          "Oxygen in the atmosphere allows living beings to breathe.",
+          "The magnetic field pushes many harmful space particles away."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A family grows crops using freshwater from a nearby pond. The water helps grow the crops, supports the family, and keeps nearby animals hydrated. Water vapour from the pond forms clouds, which later bring rain or snow. The family also sees plants making food through photosynthesis and releasing oxygen. They want to understand how the pond, atmosphere, soil and living beings are connected when a change occurs in one part of nature.",
+         "prompt": "If the family grows fewer plants near the pond, what atmospheric change is most likely?",
+         "options": [
+          "Less oxygen may be released into the atmosphere.",
+          "More oxygen may be released because fewer plants respire.",
+          "More heat may be trapped because plants release less oxygen.",
+          "More water vapour may form because plants make less food."
+         ],
+         "answer": 0,
+         "why": {
+          "More oxygen may be released because fewer plants respire.": "A fall in plant respiration does not mean photosynthesis releases more oxygen.",
+          "More heat may be trapped because plants release less oxygen.": "Plant numbers do not change how greenhouse gases trap heat.",
+          "More water vapour may form because plants make less food.": "Making less food does not directly cause more water vapour to form."
+         },
+         "explanation": "Fewer plants make food by photosynthesis, so less oxygen is released."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A family grows crops using freshwater from a nearby pond. The water helps grow the crops, supports the family, and keeps nearby animals hydrated. Water vapour from the pond forms clouds, which later bring rain or snow. The family also sees plants making food through photosynthesis and releasing oxygen. They want to understand how the pond, atmosphere, soil and living beings are connected when a change occurs in one part of nature.",
+         "prompt": "After noticing a change near the pond, which response best follows the lesson’s idea of connections?",
+         "options": [
+          "Observe whether rainfall, soil, air quality and animals have also changed.",
+          "Check only the animals because living beings are separate from other parts.",
+          "Check only the rocks because geodiversity cannot be affected by changes.",
+          "Check only the clouds because the water cycle is separate from land and life."
+         ],
+         "answer": 0,
+         "why": {
+          "Check only the animals because living beings are separate from other parts.": "The biosphere is connected to the atmosphere, water and land.",
+          "Check only the rocks because geodiversity cannot be affected by changes.": "Changes in nature can affect rocks and soils as well as other parts of Earth.",
+          "Check only the clouds because the water cycle is separate from land and life.": "The case connects the pond’s water vapour with clouds and the surrounding land and life."
+         },
+         "explanation": "A change in one part of nature can affect rainfall, soil, air quality and animals."
+        }
+       ]
       }
      ],
      "boss": {
