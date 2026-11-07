@@ -79,7 +79,7 @@ export function assetFor(theme, path) {
 
 // Two guides walk beside the child, picked in Settings: Hooty (the blob mascot, art from tools/brand) or Lumi
 // the explorer. The theme's own mascot paths describe Lumi, so a theme can bring its own art without touching Hooty.
-// With Hooty, painted themes swap their hero for a flat one in Hooty's style (theme.json `heroHooty`).
+// With Hooty, painted themes swap their hero for a flat one in Hooty's style (theme.json `heroHooty`, made by tools/brand/ai_heroes.py with Nano Banana 2.1 on Kie).
 let guide = 'lumi';
 function setHero(theme) {
   if (!theme) return;

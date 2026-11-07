@@ -1146,3 +1146,32 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .board__pick:active { transform: scale(0.94); }
 .board__actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 @media (prefers-reduced-motion: reduce) { .board__sticker { transition: none; } }
+
+/* ===== home cards and sidebar: soft tactile polish =========================
+   The same chunky-but-soft language as the buttons: a faint outline, a solid tinted edge underneath,
+   a lift on hover and a press on tap. Badges get their own soft colour. No dark borders. */
+.tile, .feature {
+  border: 2px solid var(--tone-1);
+  box-shadow: 0 5px 0 var(--tone-2);
+  transition: transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out), background 0.18s;
+}
+@media (hover: hover) {
+  .feature:hover, .tile--reward:hover { transform: translateY(-3px); box-shadow: 0 8px 0 var(--tone-2); background: var(--surface); }
+}
+.feature:active, .tile--reward:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--tone-2); }
+.tile--streak .tile__figure { border-radius: 50%; background: color-mix(in srgb, #ff8c42 16%, var(--surface)); }
+.tile--reward .tile__figure img { filter: drop-shadow(0 3px 0 var(--tone-2)); }
+.feature__badge { box-shadow: 0 4px 0 color-mix(in srgb, var(--secondary) 22%, transparent); }
+.feature__art { border-radius: var(--radius-md); box-shadow: 0 4px 0 var(--tone-2); }
+.tile__value { letter-spacing: -0.01em; }
+@media (min-width: 900px) {
+  .nav { border-right: 2px solid var(--tone-1); }
+  .nav__brand { padding-bottom: var(--s4); border-bottom: 2px dashed var(--tone-2); }
+  .nav__brand img { width: 52px; height: 52px; }
+  .nav__item { border-radius: var(--radius-md); transition: background 0.15s, transform 0.15s; }
+  .nav__item:hover:not(.is-active) { background: var(--tone-1); transform: translateX(3px); }
+  .nav__item.is-active { box-shadow: 0 4px 0 color-mix(in srgb, var(--primary-edge) 45%, transparent); }
+  .nav__item .icon { transition: transform 0.2s var(--ease-spring, ease); }
+  .nav__item:hover .icon { transform: rotate(-8deg) scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) { .tile, .feature, .nav__item, .nav__item .icon { transition: none; } }
