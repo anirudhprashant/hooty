@@ -657,6 +657,34 @@ export const KITS = {
       { say: 'Fill a whole frame: show ten.', when: 'n == 10', then: 'Ten counters fill one frame.' },
     ],
   },
+  position: {
+    grades: [1, 1], match: [/\babove\b|\bbelow\b/, /\bunder\b|\binside\b|\boutside\b/, /\bnear\b|\bin relation to\b|\bon or under\b/],
+    title: 'Where is the ball?', takeaway: 'Position words say where something is: above, on, under, near, in and out.',
+    tasks: [
+      { say: 'Put the ball on the table.', when: 'place == 1', then: 'The ball is on the table.' },
+      { say: 'Now put it under the table.', when: 'place == 2', then: 'Under means below, hidden beneath.' },
+      { say: 'Throw the ball IN the basket.', when: 'place == 4', then: 'In: the ball is inside the basket.' },
+      { say: 'Now it is OUT of the basket.', when: 'place == 5', then: 'Out: the ball is outside the basket.' },
+    ],
+  },
+  rollslide: {
+    grades: [1, 1], match: [/\broll(s|ing|ed)?\b/, /\bslid(e|es|ing)\b/, /\bflat surface\b/],
+    title: 'Roll or slide?', takeaway: 'Round things roll, flat things slide, and some things can do both depending on how they sit.',
+    tasks: [
+      { say: 'Find something that only rolls.', when: 'obj == 0', then: 'A ball is round all over, so it rolls. R for rolling.' },
+      { say: 'Find something that only slides.', when: 'obj == 1 or obj == 2', then: 'Flat faces slide. S for sliding.' },
+      { say: 'Lay the tin on its side: does it roll?', when: 'obj == 3 and sit == 0', then: 'Yes, lying down it rolls. Stand it up and it slides: it can do both.' },
+    ],
+  },
+  sortbuttons: {
+    grades: [1, 1], match: [/\bsort(ing|ed)?\b/, /\bgroups?\b/, /\bbuttons?\b/],
+    title: 'Sort the buttons', takeaway: 'The same things can be sorted in different ways: by colour, by size or by holes.',
+    tasks: [
+      { say: 'Sort the buttons by colour. How many groups are there?', when: 'by == 0', then: 'Three groups: red, blue and yellow.' },
+      { say: 'Sort them a different way: by size.', when: 'by == 1', then: 'Two groups: small and big. The same buttons, sorted another way.' },
+      { say: 'Now sort by the number of holes.', when: 'by == 2', then: 'Two groups: buttons with 2 holes and buttons with 4 holes.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

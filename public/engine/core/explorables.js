@@ -1333,6 +1333,71 @@ export const WIDGETS = {
       return { kids, say: v.n === 0 ? 'There are none yet. Add one and there is one.' : `${names[v.n][0].toUpperCase()}${names[v.n].slice(1)}: ${v.n}. ${v.n < 20 ? `One more makes ${names[v.n + 1]}` : 'That is twenty'}, and one less is ${names[v.n - 1]}.` };
     },
   },
+  position: {
+    subject: 'maths', about: 'Where is the red ball? Move it above a table, on it, under it or near it, or put it in or out of a basket, and the words follow: above, on, under, near, in (inside), out (outside). For position words, above, below, on, under, inside, outside, near.',
+    sliders: [['place', 'Where is the ball? 0 above, 1 on, 2 under, 3 near, 4 in, 5 out', 0, 5, 1, 1]],
+    draw(v) {
+      const kids = [L(30, 262, 570, 262, '#c9b8e8', 3)], ball = (x, y) => CIRC(x, y, 18, '#e2583e', { w: 3 });
+      const words = ['above', 'on', 'under', 'near', 'in', 'out'], sent = ['The ball is above the table.', 'The ball is on the table.', 'The ball is under the table.', 'The ball is near the table.', 'The ball is in the basket (inside).', 'The ball is out of the basket (outside).'];
+      if (v.place <= 3) {
+        kids.push(R(110, 170, 200, 14, '#c9a46a', { w: 3, r: 3 }), R(124, 184, 12, 78, '#c9a46a', { w: 3 }), R(284, 184, 12, 78, '#c9a46a', { w: 3 }), T(210, 292, 'table', { z: 12, w: 600, f: '#6b5a8a' }));
+        const pos = [[210, 96], [210, 152], [210, 240], [360, 242]][v.place];
+        if (v.place === 0) kids.push(L(210, 120, 210, 160, '#6b45c8', 2, { 'stroke-dasharray': '4 4' }));
+        kids.push(ball(...pos));
+      } else {
+        kids.push(s('path', { d: 'M 130 196 L 150 262 L 270 262 L 290 196 Z', fill: '#e8d7a8', stroke: INK, 'stroke-width': 3 }), s('ellipse', { cx: 210, cy: 196, rx: 80, ry: 12, fill: 'none', stroke: INK, 'stroke-width': 3 }), T(210, 292, 'basket', { z: 12, w: 600, f: '#6b5a8a' }));
+        kids.push(v.place === 4 ? ball(210, 236) : ball(350, 242));
+      }
+      kids.push(T(470, 120, words[v.place].toUpperCase(), { z: 40, w: 700, f: '#6b45c8' }), T(470, 170, v.place >= 4 ? 'say IN or OUT' : 'a position word', { z: 13, w: 600, f: '#6b5a8a' }));
+      return { kids, say: sent[v.place] };
+    },
+  },
+  rollslide: {
+    subject: 'maths', about: 'Push things along a flat surface: a ball rolls (R), a cube or brick slides (S), and a tin or a cone can do both depending on how it sits (rolls lying on its side, slides standing on a flat end). For rolling and sliding, round and flat shapes, features of objects.',
+    sliders: [['obj', 'Object: 0 ball, 1 cube, 2 brick, 3 tin, 4 cone', 0, 4, 1, 0], ['sit', 'How it sits: 0 lying on its side, 1 standing on a flat end', 0, 1, 1, 0]],
+    draw(v) {
+      const names = ['ball', 'cube', 'brick', 'tin', 'cone'], kids = [L(30, 214, 400, 214, '#c9b8e8', 3)], ink = { w: 3 };
+      const rolls = v.obj === 0 || ((v.obj === 3 || v.obj === 4) && v.sit === 0), slides = v.obj === 1 || v.obj === 2 || ((v.obj === 3 || v.obj === 4) && v.sit === 1);
+      if (v.obj === 0) kids.push(CIRC(130, 180, 34, '#f2c94c', ink));
+      else if (v.obj === 1) kids.push(R(100, 154, 60, 60, '#7fb3d5', ink));
+      else if (v.obj === 2) kids.push(R(80, 164, 100, 50, '#e2583e', ink));
+      else if (v.obj === 3 && v.sit === 0) kids.push(R(90, 164, 80, 50, '#9aa5b1', ink), s('ellipse', { cx: 170, cy: 189, rx: 12, ry: 25, fill: '#c8d0d8', stroke: INK, 'stroke-width': 3 }));
+      else if (v.obj === 3) kids.push(R(105, 134, 50, 80, '#9aa5b1', ink), s('ellipse', { cx: 130, cy: 134, rx: 25, ry: 10, fill: '#c8d0d8', stroke: INK, 'stroke-width': 3 }));
+      else if (v.sit === 0) kids.push(s('polygon', { points: '90,189 170,163 170,215', fill: '#f2a33a', stroke: INK, 'stroke-width': 3 }), s('ellipse', { cx: 170, cy: 189, rx: 12, ry: 26, fill: '#f6c27a', stroke: INK, 'stroke-width': 3 }));
+      else kids.push(s('polygon', { points: '94,208 166,208 130,128', fill: '#f2a33a', stroke: INK, 'stroke-width': 3 }), s('ellipse', { cx: 130, cy: 208, rx: 36, ry: 9, fill: '#f6c27a', stroke: INK, 'stroke-width': 3 }));
+      if (rolls) kids.push(s('path', { d: 'M 230 150 Q 290 110 350 150', fill: 'none', stroke: '#058a68', 'stroke-width': 4 }), s('path', { d: 'M 230 175 Q 290 135 350 175', fill: 'none', stroke: '#058a68', 'stroke-width': 4 }), T(290, 108, 'rolls', { z: 14, w: 700, f: '#058a68' }));
+      if (slides) kids.push(L(230, 196, 350, 196, '#c2510e', 5), s('polygon', { points: '350,188 366,196 350,204', fill: '#c2510e' }), T(290, 178, 'slides', { z: 14, w: 700, f: '#c2510e' }));
+      kids.push(T(470, 90, names[v.obj], { z: 18, w: 700 }));
+      if (rolls) kids.push(CIRC(450, 150, 24, '#058a68', { w: 3 }), T(450, 160, 'R', { z: 26, w: 700, f: '#fff' }));
+      if (slides) kids.push(CIRC(510, 150, 24, '#c2510e', { w: 3 }), T(510, 160, 'S', { z: 26, w: 700, f: '#fff' }));
+      kids.push(T(470, 236, rolls && slides ? 'it can do both' : rolls ? 'it rolls' : 'it slides', { z: 15, w: 700, f: '#6b5a8a' }));
+      const sit = v.sit === 0 ? 'lying on its side' : 'standing on a flat end';
+      return { kids, say: v.obj === 0 ? 'A ball is round all over, so it rolls. R for rolling.' : v.obj === 1 || v.obj === 2 ? `A ${names[v.obj]} has flat faces, so it slides. S for sliding.` : `A ${names[v.obj]} ${sit} ${rolls ? 'rolls' : 'slides'}. ${v.sit === 0 ? 'Stand it on a flat end and it slides instead.' : 'Lay it on its side and it rolls instead.'} A ${names[v.obj]} can do both, depending on how it sits.` };
+    },
+  },
+  sortbuttons: {
+    subject: 'maths', about: 'A pile of twelve buttons that differ in colour (red, blue, yellow), size (big, small) and holes (2 or 4). Choose how to sort them and they fall into groups: three colour groups, two size groups or two groups by holes. The same buttons can be sorted in different ways. For sorting, grouping, same and different, counting each group.',
+    sliders: [['by', 'Sort by: 0 colour, 1 size, 2 holes, 3 not sorted yet', 0, 3, 1, 3]],
+    draw(v) {
+      const cols = ['#e2583e', '#1f63d9', '#f2c94c'], cn = ['red', 'blue', 'yellow'], items = [[0, 1, 2], [0, 0, 4], [0, 1, 4], [1, 0, 2], [1, 1, 2], [1, 0, 4], [1, 1, 4], [2, 0, 2], [2, 1, 2], [2, 0, 4], [0, 0, 2], [2, 1, 4]];
+      const button = (x, y, [c, sz, h]) => { const r = sz ? 15 : 10, out = [CIRC(x, y, r, cols[c], { w: 2 })]; for (let k = 0; k < h; k++) { const a = (k / h) * Math.PI * 2 + Math.PI / 4; out.push(CIRC(x + Math.cos(a) * r * 0.42, y + Math.sin(a) * r * 0.42, 1.8, INK, { w: 0 })); } return out; };
+      const kids = [];
+      if (v.by === 3) {
+        items.forEach((b, i) => kids.push(...button(110 + (i % 6) * 70, 100 + Math.floor(i / 6) * 70, b)));
+        kids.push(T(300, 40, 'a pile of buttons: how could you sort them?', { z: 16, w: 700 }), T(300, 262, '12 buttons', { z: 15, w: 600, f: '#6b5a8a' }));
+        return { kids, say: 'Here are 12 buttons. They are different in colour, in size and in the number of holes. How could you put them in groups?' };
+      }
+      const key = (b) => (v.by === 0 ? b[0] : v.by === 1 ? b[1] : b[2] === 2 ? 0 : 1), names = v.by === 0 ? cn : v.by === 1 ? ['small', 'big'] : ['2 holes', '4 holes'];
+      const groups = names.map((_, g) => items.filter((b) => key(b) === g)), bw = 540 / names.length;
+      groups.forEach((gr, g) => {
+        const x0 = 30 + g * bw;
+        kids.push(R(x0 + 4, 70, bw - 8, 180, '#f3f0ff', { w: 2.5, r: 10 }), T(x0 + bw / 2, 60, `${names[g]}: ${gr.length}`, { z: 15, w: 700 }));
+        gr.forEach((b, i) => kids.push(...button(x0 + 32 + (i % Math.max(2, Math.floor((bw - 20) / 40))) * 38, 100 + Math.floor(i / Math.max(2, Math.floor((bw - 20) / 40))) * 40, b)));
+      });
+      kids.push(T(300, 284, `sorted by ${['colour', 'size', 'holes'][v.by]}: ${names.length} groups`, { z: 15, w: 700, f: '#058a68' }));
+      return { kids, say: `Sorted by ${['colour', 'size', 'the number of holes'][v.by]}, the 12 buttons make ${names.length} groups: ${groups.map((gr, g) => `${gr.length} ${names[g]}`).join(', ')}. The same buttons can be sorted in a different way.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
