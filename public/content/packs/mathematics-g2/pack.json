@@ -57291,9 +57291,24 @@
            "then": "The same amount can be paid in many different ways."
           },
           {
+           "say": "The ball costs ₹20. Pay with only ₹5 coins. How many?",
+           "when": "amt == 7 and v == 4 and f + tw + t + two + o == 0",
+           "then": "4 coins of ₹5 make ₹20."
+          },
+          {
+           "say": "Now pay ₹20 with only ₹10 notes.",
+           "when": "amt == 7 and t == 2 and f + tw + v + two + o == 0",
+           "then": "2 notes of ₹10 make ₹20."
+          },
+          {
            "say": "Make ₹54.",
            "when": "amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54",
            "then": "For example ₹50 + ₹2 + ₹2, or ₹20 + ₹20 + ₹10 + ₹2 + ₹2."
+          },
+          {
+           "say": "Make ₹85 with as few notes and coins as you can.",
+           "when": "amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5",
+           "then": "₹50 + ₹20 + ₹10 + ₹5: big notes first uses the fewest."
           }
          ],
          "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
@@ -58397,9 +58412,24 @@
            "then": "The same amount can be paid in many different ways."
           },
           {
+           "say": "The ball costs ₹20. Pay with only ₹5 coins. How many?",
+           "when": "amt == 7 and v == 4 and f + tw + t + two + o == 0",
+           "then": "4 coins of ₹5 make ₹20."
+          },
+          {
+           "say": "Now pay ₹20 with only ₹10 notes.",
+           "when": "amt == 7 and t == 2 and f + tw + v + two + o == 0",
+           "then": "2 notes of ₹10 make ₹20."
+          },
+          {
            "say": "Make ₹54.",
            "when": "amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54",
            "then": "For example ₹50 + ₹2 + ₹2, or ₹20 + ₹20 + ₹10 + ₹2 + ₹2."
+          },
+          {
+           "say": "Make ₹85 with as few notes and coins as you can.",
+           "when": "amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5",
+           "then": "₹50 + ₹20 + ₹10 + ₹5: big notes first uses the fewest."
           }
          ],
          "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
@@ -60808,9 +60838,24 @@
            "then": "The same amount can be paid in many different ways."
           },
           {
+           "say": "The ball costs ₹20. Pay with only ₹5 coins. How many?",
+           "when": "amt == 7 and v == 4 and f + tw + t + two + o == 0",
+           "then": "4 coins of ₹5 make ₹20."
+          },
+          {
+           "say": "Now pay ₹20 with only ₹10 notes.",
+           "when": "amt == 7 and t == 2 and f + tw + v + two + o == 0",
+           "then": "2 notes of ₹10 make ₹20."
+          },
+          {
            "say": "Make ₹54.",
            "when": "amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54",
            "then": "For example ₹50 + ₹2 + ₹2, or ₹20 + ₹20 + ₹10 + ₹2 + ₹2."
+          },
+          {
+           "say": "Make ₹85 with as few notes and coins as you can.",
+           "when": "amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5",
+           "then": "₹50 + ₹20 + ₹10 + ₹5: big notes first uses the fewest."
           }
          ],
          "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
@@ -62316,9 +62361,24 @@
            "then": "The same amount can be paid in many different ways."
           },
           {
+           "say": "The ball costs ₹20. Pay with only ₹5 coins. How many?",
+           "when": "amt == 7 and v == 4 and f + tw + t + two + o == 0",
+           "then": "4 coins of ₹5 make ₹20."
+          },
+          {
+           "say": "Now pay ₹20 with only ₹10 notes.",
+           "when": "amt == 7 and t == 2 and f + tw + v + two + o == 0",
+           "then": "2 notes of ₹10 make ₹20."
+          },
+          {
            "say": "Make ₹54.",
            "when": "amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54",
            "then": "For example ₹50 + ₹2 + ₹2, or ₹20 + ₹20 + ₹10 + ₹2 + ₹2."
+          },
+          {
+           "say": "Make ₹85 with as few notes and coins as you can.",
+           "when": "amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5",
+           "then": "₹50 + ₹20 + ₹10 + ₹5: big notes first uses the fewest."
           }
          ],
          "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
