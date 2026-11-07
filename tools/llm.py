@@ -166,7 +166,7 @@ def opencode(prompt, model=DEEPSEEK, want_json=True, tries=3, on_retry=None):
         try:
             if model == M31: _take_turn()   # it draws on the same MiniMax plan, so it keeps to the same pace
             with _slot(), tempfile.TemporaryDirectory() as d:
-                r = subprocess.run(['opencode', 'run', '--standalone', '-m', model, prompt], cwd=d, capture_output=True, text=True, timeout=600, stdin=subprocess.DEVNULL)
+                r = subprocess.run((['opencode', 'run'] if ON_ORACLE else ['opencode', 'run', '--standalone']) + ['-m', model, prompt], cwd=d, capture_output=True, text=True, timeout=600, stdin=subprocess.DEVNULL)
             if 'usage limit' in r.stdout + r.stderr:
                 open(COOLDOWN, 'w').close(); print('opencode free limit reached, using MiniMax for an hour', flush=True); return None
             out = re.sub(r'\x1b\[[0-9;]*m', '', r.stdout).strip()
