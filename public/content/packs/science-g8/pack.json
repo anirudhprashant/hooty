@@ -22235,7 +22235,7 @@
       {
        "id": "science-g8-ch7-l5",
        "title": "How the Spacing Changes",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -22294,6 +22294,43 @@
           {
            "ch": 7,
            "p": 108
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch7-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "What happens to gas when a syringe plunger is pushed and released?",
+         "steps": [
+          "You push the plunger, so the air volume inside the syringe decreases.",
+          "The smaller space forces gas particles to come closer together.",
+          "Because the plunger is no longer pushed, gas particles spread out again.",
+          "So changing the plunger changes the space between gas particles."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.5"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 107
+          },
+          {
+           "ch": 7,
+           "p": 107
+          },
+          {
+           "ch": 7,
+           "p": 107
           }
          ]
         },
@@ -22540,6 +22577,75 @@
            "p": 107
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch7-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A soft air-filled ball is squeezed. What happens to its gas particles?",
+         "options": [
+          "The gas particles spread farther apart.",
+          "The gas particles stay very far apart.",
+          "The gas particles come closer together.",
+          "The gas particles stay very close together."
+         ],
+         "answer": 2,
+         "why": {
+          "The gas particles spread farther apart.": "This mistakes external pressure for releasing the plunger.",
+          "The gas particles stay very far apart.": "This assumes pressure cannot reduce the space between particles.",
+          "The gas particles stay very close together.": "This assumes pressure cannot bring the particles closer."
+         },
+         "explanation": "External pressure reduces the space between gas particles.",
+         "f": [
+          "5.3",
+          "5.4"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 107
+          },
+          {
+           "ch": 7,
+           "p": 107
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch7-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "Which test best checks whether water can be squeezed?",
+         "options": [
+          "Measure different amounts of water under pressure.",
+          "Measure sugar solution before and after pressure.",
+          "Measure water and sand before and after pressure.",
+          "Measure the same water before and after pressure."
+         ],
+         "answer": 3,
+         "why": {
+          "Measure different amounts of water under pressure.": "Different amounts do not give a fair test of the same water.",
+          "Measure sugar solution before and after pressure.": "Sugar solution is not the same as the water being tested.",
+          "Measure water and sand before and after pressure.": "Sand is a solid, not the water being tested."
+         },
+         "explanation": "Comparing the same water shows whether its volume changes under pressure.",
+         "f": [
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 107
+          }
+         ]
         }
        ],
        "topicScene": "media/ch7-l1-sand-australia-gold-coast-bae602.webp",
@@ -22556,7 +22662,7 @@
       {
        "id": "science-g8-ch7-l6",
        "title": "How Particles Move",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -22591,6 +22697,121 @@
            "ch": 7,
            "p": 110
           },
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 111
+          },
+          {
+           "ch": 7,
+           "p": 111
+          },
+          {
+           "ch": 7,
+           "p": 111
+          }
+         ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch7-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "Heat the water",
+         "tasks": [
+          {
+           "say": "Freeze the water.",
+           "when": "temp < 0",
+           "then": "Below 0 degrees water is ice: its particles can only jiggle in place."
+          },
+          {
+           "say": "Boil it.",
+           "when": "temp >= 100",
+           "then": "At 100 degrees water boils and its particles fly apart as steam."
+          }
+         ],
+         "takeaway": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.",
+         "explanation": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam."
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch7-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why does potassium permanganate make the whole water pink?",
+         "steps": [
+          "Water particles are always in motion.",
+          "Because these particles move, pink streaks spread from each grain.",
+          "As the streaks spread, the whole bulk of water becomes uniformly pink.",
+          "Thus, particle movement explains the spreading pink colour."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 110
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch7-l6-a6",
+         "difficulty": 2,
+         "tags": [
+          "particles",
+          "spreading",
+          "heat",
+          "insoluble"
+         ],
+         "title": "How Particles Spread",
+         "body": "Different materials show particle movement in different ways. In water, pink streaks spread from each permanganate grain. The whole water eventually becomes one pink colour. In a room, fragrance particles spread everywhere, and air particles keep moving. Heat increases particle movement, so hot water's particles move faster. Sand does not dissolve because its particles stay strongly joined. Soap lifts oil away from fabric, helping it wash away.",
+         "keyPoints": [
+          "Moving particles can spread through water or air.",
+          "Heating increases their movement.",
+          "Strongly joined particles can make a material insoluble."
+         ],
+         "explanation": "Spreading happens because particles keep moving.",
+         "src": [
           {
            "ch": 7,
            "p": 110
@@ -22763,59 +22984,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "science-g8-ch7-l6-a6",
-         "difficulty": 2,
-         "tags": [
-          "particles",
-          "spreading",
-          "heat",
-          "insoluble"
-         ],
-         "title": "How Particles Spread",
-         "body": "Different materials show particle movement in different ways. In water, pink streaks spread from each permanganate grain. The whole water eventually becomes one pink colour. In a room, fragrance particles spread everywhere, and air particles keep moving. Heat increases particle movement, so hot water's particles move faster. Sand does not dissolve because its particles stay strongly joined. Soap lifts oil away from fabric, helping it wash away.",
-         "keyPoints": [
-          "Moving particles can spread through water or air.",
-          "Heating increases their movement.",
-          "Strongly joined particles can make a material insoluble."
-         ],
-         "explanation": "Spreading happens because particles keep moving.",
-         "src": [
-          {
-           "ch": 7,
-           "p": 110
-          },
-          {
-           "ch": 7,
-           "p": 110
-          },
-          {
-           "ch": 7,
-           "p": 110
-          },
-          {
-           "ch": 7,
-           "p": 110
-          },
-          {
-           "ch": 7,
-           "p": 110
-          },
-          {
-           "ch": 7,
-           "p": 111
-          },
-          {
-           "ch": 7,
-           "p": 111
-          },
-          {
-           "ch": 7,
-           "p": 111
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch7-l6-a7",
          "difficulty": 3,
@@ -22847,26 +23015,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch7-l6-a8",
-         "difficulty": 3,
-         "tags": [
-          "particles",
-          "heat",
-          "motion"
-         ],
-         "title": "The Effect of Heat",
-         "prompt": "Providing heat reduces the movement of particles.",
-         "answer": false,
-         "explanation": "Providing heat increases the movement of particles.",
-         "src": [
-          {
-           "ch": 7,
-           "p": 110
-          }
-         ]
-        },
-        {
          "type": "dragorder",
          "id": "science-g8-ch7-l6-a9",
          "difficulty": 3,
@@ -22883,6 +23031,191 @@
           "Water particles move faster in hot water"
          ],
          "explanation": "Providing heat increases movement, so particles move faster in hot water.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 110
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch7-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A scent bottle opens in a warm room. What happens next?",
+         "options": [
+          "The particles will spread throughout the whole room.",
+          "The particles will stay beside the bottle forever.",
+          "The particles will turn into air particles.",
+          "The particles will gather in one warm corner."
+         ],
+         "answer": 0,
+         "why": {
+          "The particles will stay beside the bottle forever.": "This wrongly assumes that fragrance particles cannot move.",
+          "The particles will turn into air particles.": "This wrongly suggests that fragrance particles become air particles.",
+          "The particles will gather in one warm corner.": "Heat increases movement, so particles would not gather together."
+         },
+         "explanation": "Heat increases particle movement, so fragrance particles spread through the room.",
+         "f": [
+          "6.6",
+          "6.7",
+          "6.8"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 111
+          },
+          {
+           "ch": 7,
+           "p": 111
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch7-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Pink streaks spread through water. Why does the water look the same?",
+         "options": [
+          "The particles move and spread the colour evenly.",
+          "The sand particles hold the colour together.",
+          "The heat makes the pink colour lighter.",
+          "The soap lifts the pink grains away."
+         ],
+         "answer": 0,
+         "why": {
+          "The sand particles hold the colour together.": "This wrongly treats sand as the source of the pink colour.",
+          "The heat makes the pink colour lighter.": "Heating increases movement, but no fact says pink becomes lighter.",
+          "The soap lifts the pink grains away.": "Soap helps with oil, not with spreading this pink colour."
+         },
+         "explanation": "Moving particles spread the pink streaks until the water is uniform.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 110
+          },
+          {
+           "ch": 7,
+           "p": 110
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch7-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Fine sand is stirred into water. What is most likely to happen?",
+         "options": [
+          "The sand stays separate because its particles hold together.",
+          "The sand dissolves because its particles move faster.",
+          "The sand floats because its particles are heated.",
+          "The sand becomes soap and washes away."
+         ],
+         "answer": 0,
+         "why": {
+          "The sand dissolves because its particles move faster.": "Moving particles do not make strongly held sand particles dissolve.",
+          "The sand floats because its particles are heated.": "No fact says heating sand particles makes them float.",
+          "The sand becomes soap and washes away.": "Soap helps lift oil, not change sand into soap."
+         },
+         "explanation": "Sand is insoluble because its particles are held together strongly.",
+         "f": [
+          "6.4"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 110
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch7-l6-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "An oily shirt is washed with soap. What change shows that soap helped?",
+         "options": [
+          "Oil lifts off the fabric and washes away.",
+          "Oil stays firmly inside the fabric.",
+          "Oil changes into pink streaks.",
+          "Oil becomes a separate sand layer."
+         ],
+         "answer": 0,
+         "why": {
+          "Oil stays firmly inside the fabric.": "This wrongly assumes soap keeps oil inside the fabric.",
+          "Oil changes into pink streaks.": "This wrongly connects soap with spreading pink streaks.",
+          "Oil becomes a separate sand layer.": "This wrongly connects soap with changing oil into sand."
+         },
+         "explanation": "Soap lifts oil off the fabric so it can wash away.",
+         "f": [
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 7,
+           "p": 111
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch7-l6-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "Which test best checks if heat changes water particle movement?",
+         "options": [
+          "Compare water at different temperatures under the same conditions.",
+          "Compare different water amounts at the same temperature.",
+          "Add sand to one glass and compare the results.",
+          "Use soap in one glass and compare the results."
+         ],
+         "answer": 0,
+         "why": {
+          "Compare different water amounts at the same temperature.": "Changing the amount does not test the effect of heat.",
+          "Add sand to one glass and compare the results.": "Adding sand changes another factor, not only heat.",
+          "Use soap in one glass and compare the results.": "Using soap changes another factor, not only heat."
+         },
+         "explanation": "Changing only temperature tests the effect of heat.",
+         "f": [
+          "6.5",
+          "6.6"
+         ],
          "src": [
           {
            "ch": 7,
@@ -24563,7 +24896,7 @@
       {
        "id": "science-g8-ch8-l3",
        "title": "Types of Mixtures and Pure Substances",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -24611,6 +24944,70 @@
           {
            "ch": 8,
            "p": 121
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch8-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A seller adds a cheaper substance to a product. Is it pure?",
+         "steps": [
+          "This is adulteration because the added substance is cheaper.",
+          "Adulteration means illegally adding a cheaper or poor-quality substance.",
+          "A pure substance has no other substance present in it.",
+          "The added substance is present, so the product is not pure."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.12",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 120
+          },
+          {
+           "ch": 8,
+           "p": 121
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch8-l3-a6",
+         "difficulty": 2,
+         "tags": [
+          "mixtures",
+          "separation",
+          "adulteration"
+         ],
+         "title": "Classifying and separating mixtures",
+         "body": "Mixtures can be grouped according to the physical states of their components. Examples include gas-and-liquid, solid-and-gas, liquid-and-liquid, and solid-and-liquid mixtures. Scientific separation is done to obtain pure substances. Adulteration means illegally adding cheaper or poor-quality substances to a product.",
+         "keyPoints": [
+          "Mixtures can be grouped by the physical states of their components.",
+          "Scientific separation obtains pure substances.",
+          "Adulteration adds cheaper or poor-quality substances illegally."
+         ],
+         "explanation": "Different mixtures can be separated to obtain pure substances.",
+         "src": [
+          {
+           "ch": 8,
+           "p": 120
+          },
+          {
+           "ch": 8,
+           "p": 120
+          },
+          {
+           "ch": 8,
+           "p": 120
           }
          ]
         },
@@ -24725,38 +25122,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "science-g8-ch8-l3-a6",
-         "difficulty": 2,
-         "tags": [
-          "mixtures",
-          "separation",
-          "adulteration"
-         ],
-         "title": "Classifying and separating mixtures",
-         "body": "Mixtures can be grouped according to the physical states of their components. Examples include gas-and-liquid, solid-and-gas, liquid-and-liquid, and solid-and-liquid mixtures. Scientific separation is done to obtain pure substances. Adulteration means illegally adding cheaper or poor-quality substances to a product.",
-         "keyPoints": [
-          "Mixtures can be grouped by the physical states of their components.",
-          "Scientific separation obtains pure substances.",
-          "Adulteration adds cheaper or poor-quality substances illegally."
-         ],
-         "explanation": "Different mixtures can be separated to obtain pure substances.",
-         "src": [
-          {
-           "ch": 8,
-           "p": 120
-          },
-          {
-           "ch": 8,
-           "p": 120
-          },
-          {
-           "ch": 8,
-           "p": 120
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch8-l3-a7",
          "difficulty": 2,
@@ -24831,6 +25196,154 @@
            "p": 120
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "A seller adds a cheaper substance to a product. What has happened?",
+         "options": [
+          "The product has been adulterated.",
+          "The product has become purer.",
+          "The product has been separated.",
+          "The product is still pure."
+         ],
+         "answer": 0,
+         "why": {
+          "The product has become purer.": "Adding another substance does not make a product purer.",
+          "The product has been separated.": "Adulteration means adding substances, not separating them.",
+          "The product is still pure.": "A pure substance has no other substance present in it."
+         },
+         "explanation": "Adding a cheaper substance illegally is adulteration.",
+         "f": [
+          "3.12",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 120
+          },
+          {
+           "ch": 8,
+           "p": 121
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "Oil and water are both liquids. Which mixture group will they form?",
+         "options": [
+          "It will be a liquid-and-liquid mixture.",
+          "It will be a solid-and-liquid mixture.",
+          "It will be a solid-and-gas mixture.",
+          "It will be a gas-and-liquid mixture."
+         ],
+         "answer": 0,
+         "why": {
+          "It will be a solid-and-liquid mixture.": "This wrongly treats one liquid component as a solid.",
+          "It will be a solid-and-gas mixture.": "This wrongly treats both liquid components as solid and gas.",
+          "It will be a gas-and-liquid mixture.": "This wrongly treats one liquid component as a gas."
+         },
+         "explanation": "Oil and water are both liquids, so both components are liquid.",
+         "f": [
+          "3.3",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 120
+          },
+          {
+           "ch": 8,
+           "p": 120
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Acetic acid and water form a clear solution. Is this mixture pure?",
+         "options": [
+          "No, because water is also present in the mixture.",
+          "No, because clear solutions always have one substance.",
+          "No, because pure substances always look clear.",
+          "No, because water and acetic acid form one substance."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because clear solutions always have one substance.": "This wrongly treats appearance as proof of purity.",
+          "No, because pure substances always look clear.": "This wrongly assumes that clear means pure.",
+          "No, because water and acetic acid form one substance.": "This wrongly assumes two substances become one substance."
+         },
+         "explanation": "A pure substance has no other substance present in it.",
+         "f": [
+          "3.6",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 120
+          },
+          {
+           "ch": 8,
+           "p": 121
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "choose"
+         ],
+         "prompt": "Sand and water are mixed. How can the scientist obtain pure substances?",
+         "options": [
+          "Use scientific separation to obtain the pure substances.",
+          "Leave the mixture unchanged because it already looks pure.",
+          "Add more water so the mixture becomes pure.",
+          "Shake the mixture so the sand becomes water."
+         ],
+         "answer": 0,
+         "why": {
+          "Leave the mixture unchanged because it already looks pure.": "A mixture is not pure just because it looks unchanged.",
+          "Add more water so the mixture becomes pure.": "Adding another substance does not make the mixture pure.",
+          "Shake the mixture so the sand becomes water.": "Shaking does not turn sand into water or purify the mixture."
+         },
+         "explanation": "Scientific separation of a mixture obtains pure substances.",
+         "f": [
+          "3.7",
+          "3.8"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 120
+          },
+          {
+           "ch": 8,
+           "p": 120
+          }
+         ]
         }
        ],
        "topicScene": "media/ch8-l3-mixture-of-water-oil-and-bea-acc797.webp",
@@ -24847,7 +25360,7 @@
       {
        "id": "science-g8-ch8-l4",
        "title": "Elements and Their Particles",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -24905,6 +25418,79 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g8-ch8-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A puddle of water slowly dries. Does the water change into different elements?",
+         "steps": [
+          "Water changes into vapour as the puddle dries.",
+          "This is a state change, so the particles stay the same.",
+          "Because the particles stay the same, no new elements form.",
+          "Therefore, this change does not create different elements."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 121
+          },
+          {
+           "ch": 8,
+           "p": 123
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch8-l4-a7",
+         "difficulty": 2,
+         "tags": [
+          "atoms",
+          "molecules",
+          "elements",
+          "metals"
+         ],
+         "title": "Atoms, Molecules and Metals",
+         "body": "Two or more atoms can join to form a molecule of an element. An element cannot be broken down into simpler substances. Gold, silver, magnesium, iron and aluminium are metals. Each element has identical particles called atoms. But its particles differ from every other element.",
+         "keyPoints": [
+          "Atoms can join to form a molecule of an element.",
+          "An element cannot be broken into simpler substances.",
+          "Gold, silver, magnesium, iron and aluminium are metals."
+         ],
+         "explanation": "Each element has its own atoms, and some atoms can join to form molecules.",
+         "src": [
+          {
+           "ch": 8,
+           "p": 123
+          },
+          {
+           "ch": 8,
+           "p": 123
+          },
+          {
+           "ch": 8,
+           "p": 123
+          },
+          {
+           "ch": 8,
+           "p": 123
+          },
+          {
+           "ch": 8,
+           "p": 123
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "science-g8-ch8-l4-a2",
          "difficulty": 1,
@@ -24926,25 +25512,6 @@
           {
            "ch": 8,
            "p": 123
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch8-l4-a3",
-         "difficulty": 1,
-         "tags": [
-          "water",
-          "particles",
-          "changes of state"
-         ],
-         "prompt": "The particles of water stay the same during a change of state.",
-         "answer": true,
-         "explanation": "A change of state does not change the particles of water. They remain the same.",
-         "src": [
-          {
-           "ch": 8,
-           "p": 121
           }
          ]
         },
@@ -25044,47 +25611,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "science-g8-ch8-l4-a7",
-         "difficulty": 2,
-         "tags": [
-          "atoms",
-          "molecules",
-          "elements",
-          "metals"
-         ],
-         "title": "Atoms, Molecules and Metals",
-         "body": "Two or more atoms can join to form a molecule of an element. An element cannot be broken down into simpler substances. Gold, silver, magnesium, iron and aluminium are metals. Each element has identical particles called atoms. But its particles differ from every other element.",
-         "keyPoints": [
-          "Atoms can join to form a molecule of an element.",
-          "An element cannot be broken into simpler substances.",
-          "Gold, silver, magnesium, iron and aluminium are metals."
-         ],
-         "explanation": "Each element has its own atoms, and some atoms can join to form molecules.",
-         "src": [
-          {
-           "ch": 8,
-           "p": 123
-          },
-          {
-           "ch": 8,
-           "p": 123
-          },
-          {
-           "ch": 8,
-           "p": 123
-          },
-          {
-           "ch": 8,
-           "p": 123
-          },
-          {
-           "ch": 8,
-           "p": 123
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch8-l4-a8",
          "difficulty": 3,
@@ -25143,6 +25669,132 @@
           {
            "ch": 8,
            "p": 122
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "infer"
+         ],
+         "prompt": "One collected gas gives a pop sound. Another makes a candle flame brighter. What is present?",
+         "options": [
+          "Hydrogen and oxygen are present.",
+          "Hydrogen and water vapour are present.",
+          "Only hydrogen is present.",
+          "Only water vapour is present."
+         ],
+         "answer": 0,
+         "why": {
+          "Hydrogen and water vapour are present.": "The child wrongly thinks the bright flame shows water vapour.",
+          "Only hydrogen is present.": "The child ignores the evidence from the brighter flame.",
+          "Only water vapour is present.": "The child wrongly thinks the gases are unchanged water."
+         },
+         "explanation": "The pop shows hydrogen, and the brighter flame shows oxygen.",
+         "f": [
+          "4.3",
+          "4.4",
+          "4.5"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 122
+          },
+          {
+           "ch": 8,
+           "p": 122
+          },
+          {
+           "ch": 8,
+           "p": 122
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Someone says boiling a pan of water makes hydrogen and oxygen. What corrects this claim?",
+         "options": [
+          "No, boiling changes state without breaking water down.",
+          "Yes, boiling breaks water into hydrogen and oxygen.",
+          "Yes, boiling changes the water particles.",
+          "Yes, boiling turns water into a new element."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, boiling breaks water into hydrogen and oxygen.": "The child wrongly thinks boiling does what electric current does.",
+          "Yes, boiling changes the water particles.": "The child confuses a state change with a particle change.",
+          "Yes, boiling turns water into a new element.": "The child wrongly thinks boiling can create an element."
+         },
+         "explanation": "Boiling changes only water's state, so its particles stay the same.",
+         "f": [
+          "4.1",
+          "4.2"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 121
+          },
+          {
+           "ch": 8,
+           "p": 123
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "Two samples each have identical atoms. The atoms in one sample differ from those in the other. Can either be broken into simpler substances?",
+         "options": [
+          "No, both are elements and cannot be broken down.",
+          "No, but only the second sample can be broken down.",
+          "Yes, because their atoms are joined in molecules.",
+          "Yes, because different elements can break down."
+         ],
+         "answer": 0,
+         "why": {
+          "No, but only the second sample can be broken down.": "The child wrongly thinks different atoms make an element breakable.",
+          "Yes, because their atoms are joined in molecules.": "Joining atoms in molecules does not mean the element can break down.",
+          "Yes, because different elements can break down.": "The child wrongly thinks elements can become simpler substances."
+         },
+         "explanation": "Different element particles cannot be broken into simpler substances.",
+         "f": [
+          "4.7",
+          "4.8",
+          "4.9",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 123
+          },
+          {
+           "ch": 8,
+           "p": 123
+          },
+          {
+           "ch": 8,
+           "p": 123
+          },
+          {
+           "ch": 8,
+           "p": 123
           }
          ]
         }
@@ -25698,7 +26350,7 @@
       {
        "id": "science-g8-ch8-exam",
        "title": "Test practice",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 15,
        "topicScene": "media/ch8-l1-brass-065799.webp",
        "sceneAlt": "A solid brass sample appears alongside separate pieces of zinc and copper, the two components used to make the alloy.",
        "sceneCaption": "Brass is an alloy made by mixing copper and zinc uniformly.",
@@ -25913,6 +26565,174 @@
           "Air is described as a uniform mixture of several gases."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student visits a shop and notices that the keeper has added a cheaper, poor-quality substance to a product. The student explains that this is adulteration. The keeper says that separation is unnecessary because every mixture contains only pure substances. Looking at sand mixed with water, the student says that its components have different physical states. The student also identifies acetic acid in water as a liquid-and-liquid mixture.",
+         "prompt": "The keeper says separation is unnecessary. What should the student do?",
+         "options": [
+          "Explain that scientific separation is used to obtain pure substances.",
+          "Agree that adding a substance is the same as scientifically separating a mixture.",
+          "Explain that a pure substance can be split into other kinds of matter by physical processes.",
+          "Agree that a mixture cannot contain pure substances as its components."
+         ],
+         "answer": 0,
+         "why": {
+          "Agree that adding a substance is the same as scientifically separating a mixture.": "Adding a substance is not the same as separating a mixture.",
+          "Explain that a pure substance can be split into other kinds of matter by physical processes.": "A pure substance cannot be separated into other kinds of matter by physical processes.",
+          "Agree that a mixture cannot contain pure substances as its components.": "The components of a mixture must be pure substances."
+         },
+         "explanation": "Scientific separation is done to obtain pure substances."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student visits a shop and notices that the keeper has added a cheaper, poor-quality substance to a product. The student explains that this is adulteration. The keeper says that separation is unnecessary because every mixture contains only pure substances. Looking at sand mixed with water, the student says that its components have different physical states. The student also identifies acetic acid in water as a liquid-and-liquid mixture.",
+         "prompt": "If scientific separation removes only some of the sand from the sand-and-water mixture, what should the student expect?",
+         "options": [
+          "The sample is still a solid-and-liquid mixture because some solid sand remains with liquid water.",
+          "The sample is a pure substance because scientific separation has been used.",
+          "The sample is a liquid-and-liquid mixture because the remaining sand is no longer counted.",
+          "The sample is a solid-and-gas mixture because water becomes a gas during separation."
+         ],
+         "answer": 0,
+         "why": {
+          "The sample is a pure substance because scientific separation has been used.": "Using scientific separation does not mean that every other substance has been removed.",
+          "The sample is a liquid-and-liquid mixture because the remaining sand is no longer counted.": "The remaining sand is still a solid, so the mixture is not liquid-and-liquid.",
+          "The sample is a solid-and-gas mixture because water becomes a gas during separation.": "The sand-and-water mixture has liquid water, not a gas component."
+         },
+         "explanation": "Some sand remains as a solid component beside liquid water."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l3-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): The components of a mixture may themselves be mixtures.\nReason (R): This is possible because all components of a mixture must be pure substances.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 2,
+         "explanation": "The assertion is true, but the proposed reason is false because mixture components must be pure substances."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l3-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Aerated water and oxygen dissolved in water are gas-and-liquid mixtures.\nReason (R): Their gas component and liquid component have different physical states.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "Both statements are true, and the different physical states explain the classification."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch8-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the state-based groups of mixtures are different, using examples from the lesson.",
+         "answer": "Mixtures can be grouped according to the physical states of their components. Aerated water and oxygen dissolved in water are gas-and-liquid mixtures because one component is a gas and the other is a liquid. Acetic acid in water and oil with water are liquid-and-liquid mixtures because both components are liquids. Sand and water form a solid-and-liquid mixture, while carbon particles in air form a solid-and-gas mixture.",
+         "points": [
+          "Mixtures are grouped by component states.",
+          "Gas-and-liquid examples are given.",
+          "Liquid-and-liquid and solid-and-liquid examples are distinguished.",
+          "Solid-and-gas carbon particles in air are identified."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student passed an electric current through water and collected the gases produced. During testing, one gas gave a pop and the other made a candle flame brighter. The student knew that water contains elements and wondered how water could be separated into gases that were not water vapour. The lesson explained that elements are made of atoms, and that atoms from different elements are not identical.",
+         "prompt": "After hearing the pop during testing, which gas should the student identify?",
+         "options": [
+          "Hydrogen",
+          "Oxygen",
+          "Water vapour",
+          "Magnesium"
+         ],
+         "answer": 0,
+         "why": {
+          "Oxygen": "Oxygen is identified by the brighter-flame result, not the pop.",
+          "Water vapour": "The collected breakdown gases were stated not to be water vapour.",
+          "Magnesium": "Magnesium is a metal and was not one of the gases produced."
+         },
+         "explanation": "Hydrogen is correctly identified because a pop indicates its presence."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student passed an electric current through water and collected the gases produced. During testing, one gas gave a pop and the other made a candle flame brighter. The student knew that water contains elements and wondered how water could be separated into gases that were not water vapour. The lesson explained that elements are made of atoms, and that atoms from different elements are not identical.",
+         "prompt": "If water changed to another state and then changed back before the electric current was passed, what should remain true?",
+         "options": [
+          "Its particles would remain the same throughout both state changes.",
+          "Its particles would be replaced by those of another element.",
+          "It would contain one element instead of hydrogen and oxygen.",
+          "It would stop being made of atoms."
+         ],
+         "answer": 0,
+         "why": {
+          "Its particles would be replaced by those of another element.": "A state change does not replace water's particles with those of another element.",
+          "It would contain one element instead of hydrogen and oxygen.": "Water contains hydrogen and oxygen regardless of its state.",
+          "It would stop being made of atoms.": "Elements are always made of atoms, including during changes of state."
+         },
+         "explanation": "The particles of water remain the same during changes of state."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l4-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): The collected gases are not water vapour.\nReason (R): An electric current broke the water down into hydrogen and oxygen.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The breakdown into hydrogen and oxygen explains why the collected gases are not water vapour."
         }
        ]
       }
@@ -26202,7 +27022,7 @@
       {
        "id": "science-g8-ch9-l1",
        "title": "Lesson 1: Mixtures, Solutions, Solutes and Solvents",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -26280,6 +27100,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g8-ch9-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why does sugar seem to disappear when it is stirred into water?",
+         "steps": [
+          "The sugar dissolves in the water and spreads evenly.",
+          "This even spread shows that the mixture is uniform.",
+          "In this solution, sugar is the solute and water is the solvent.",
+          "So stirring produces a uniform solution, not separate sugar."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.3",
+          "1.5",
+          "1.6",
+          "1.7",
+          "1.8"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "science-g8-ch9-l1-a2",
          "difficulty": 1,
@@ -26301,25 +27168,6 @@
            "ch": 9,
            "p": 135
           },
-          {
-           "ch": 9,
-           "p": 135
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch9-l1-a3",
-         "difficulty": 1,
-         "tags": [
-          "sawdust",
-          "water",
-          "uniform"
-         ],
-         "prompt": "A sawdust and water mixture is uniform.",
-         "answer": false,
-         "explanation": "A sawdust and water mixture is non-uniform.",
-         "src": [
           {
            "ch": 9,
            "p": 135
@@ -26365,24 +27213,6 @@
          ],
          "answer": 0,
          "explanation": "Water remains the solvent in sugar syrup, even with plenty of sugar.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 136
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch9-l1-a7",
-         "difficulty": 2,
-         "tags": [
-          "sugar syrup",
-          "solvent"
-         ],
-         "prompt": "In sugar syrup, sugar is the solvent when it is present in a large amount.",
-         "answer": false,
-         "explanation": "Water is the solvent in sugar syrup, even when sugar is present in a large amount.",
          "src": [
           {
            "ch": 9,
@@ -26446,6 +27276,169 @@
            "p": 135
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A child mixes salt with water. Another child mixes sawdust with water. Which mixture will have its parts spread evenly?",
+         "options": [
+          "The salt and water parts will spread evenly.",
+          "The sawdust and water parts will spread evenly.",
+          "Both pairs of parts will spread evenly.",
+          "Neither pair of parts will spread evenly."
+         ],
+         "answer": 0,
+         "why": {
+          "The sawdust and water parts will spread evenly.": "This mistake treats sawdust and water as if they were uniform.",
+          "Both pairs of parts will spread evenly.": "This mistake assumes every solid and liquid mixture is uniform.",
+          "Neither pair of parts will spread evenly.": "This mistake ignores that salt and water do spread evenly."
+         },
+         "explanation": "Salt and water form a uniform mixture, so their parts spread evenly.",
+         "f": [
+          "1.3",
+          "1.4"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "reason"
+         ],
+         "prompt": "A cook makes sugar syrup. The syrup has a large amount of sugar. Which component is the solvent?",
+         "options": [
+          "The water is the solvent because it holds the sugar.",
+          "The sugar is the solvent because there is a large amount.",
+          "The sugar is the solvent because it dissolves in water.",
+          "The water is the solvent because it looks clearer."
+         ],
+         "answer": 0,
+         "why": {
+          "The sugar is the solvent because there is a large amount.": "This mistake assumes the larger amount must always be the solvent.",
+          "The sugar is the solvent because it dissolves in water.": "This mistake confuses the dissolving sugar with the solvent holding it.",
+          "The water is the solvent because it looks clearer.": "This mistake uses colour instead of the sugar syrup rule."
+         },
+         "explanation": "Sugar syrup has water as its solvent, even with much sugar.",
+         "f": [
+          "1.6",
+          "1.7",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 136
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A child mixes salt and sugar until they spread evenly. Water is added and the cup is stirred. What should happen next?",
+         "options": [
+          "The salt and sugar will spread evenly, making a solution.",
+          "The salt and sugar will stay separate, making a non-uniform mixture.",
+          "Only the salt will dissolve, while the sugar stays at the bottom.",
+          "The water will become the solute because the cup is stirred."
+         ],
+         "answer": 0,
+         "why": {
+          "The salt and sugar will stay separate, making a non-uniform mixture.": "This mistake assumes adding water will stop the salt and sugar spreading.",
+          "Only the salt will dissolve, while the sugar stays at the bottom.": "This mistake assumes only one solid can spread through the water.",
+          "The water will become the solute because the cup is stirred.": "This mistake swaps the solvent and solute roles in a solution."
+         },
+         "explanation": "Salt and sugar in water form a uniform mixture, which is a solution.",
+         "f": [
+          "1.2",
+          "1.3",
+          "1.5"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A child mixes sawdust and water, and the parts do not spread evenly. Can the water be called the solvent in this mixture?",
+         "options": [
+          "No, because sawdust and water do not form a solution.",
+          "Yes, because water is the liquid in this mixture.",
+          "Yes, because every liquid is the solvent in a mixture.",
+          "No, because sawdust is the larger part of the mixture."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, because water is the liquid in this mixture.": "This mistake mistakes a non-uniform mixture for a solid and liquid solution.",
+          "Yes, because every liquid is the solvent in a mixture.": "This mistake wrongly thinks every liquid in a mixture is its solvent.",
+          "No, because sawdust is the larger part of the mixture.": "This mistake uses amount instead of checking whether a solution forms."
+         },
+         "explanation": "No solution forms, so the solvent rule does not apply.",
+         "f": [
+          "1.4",
+          "1.5",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          },
+          {
+           "ch": 9,
+           "p": 135
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l1-absinthe-spoon-2-289f3b.webp",
@@ -26462,7 +27455,7 @@
       {
        "id": "science-g8-ch9-l2",
        "title": "Lesson 2: Solubility, Saturation and Temperature",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -26533,103 +27526,29 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "science-g8-ch9-l2-a2",
+         "type": "worked",
+         "id": "science-g8-ch9-l2-t1",
          "difficulty": 1,
          "tags": [
-          "salt",
-          "solution"
+          "deep",
+          "think"
          ],
-         "prompt": "What forms when salt dissolves completely in water?",
-         "options": [
-          "a salt pile",
-          "a solution",
-          "a separate solid",
-          "an empty container"
+         "kicker": "Let us think it through",
+         "prompt": "Why does extra salt settle at the bottom after the water has dissolved enough?",
+         "steps": [
+          "First, salt dissolves completely in water and forms a solution.",
+          "Then, adding more salt gives the water more solute to dissolve.",
+          "Water has a limit, so it cannot dissolve all the extra salt.",
+          "Therefore, undissolved salt settles, and the solution becomes saturated."
          ],
-         "answer": 1,
-         "explanation": "Dissolved salt and water form a solution.",
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.5"
+         ],
          "src": [
-          {
-           "ch": 9,
-           "p": 137
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch9-l2-a3",
-         "difficulty": 1,
-         "tags": [
-          "saturation",
-          "solute",
-          "temperature"
-         ],
-         "prompt": "At a given temperature, an unsaturated solution can dissolve more solute.",
-         "answer": true,
-         "explanation": "An unsaturated solution has room to dissolve more solute.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 137
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "id": "science-g8-ch9-l2-a4",
-         "difficulty": 1,
-         "tags": [
-          "salt",
-          "solution"
-         ],
-         "prompt": "Salt and water together form a ______.",
-         "answers": [
-          "solution"
-         ],
-         "hint": "It forms when salt dissolves completely.",
-         "explanation": "A solution forms when salt dissolves completely in water.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 137
-          }
-         ]
-        },
-        {
-         "type": "matchpairs",
-         "id": "science-g8-ch9-l2-a5",
-         "difficulty": 2,
-         "tags": [
-          "saturation",
-          "concentration",
-          "solute"
-         ],
-         "prompt": "Match each solution description to its name.",
-         "pairs": [
-          [
-           "Cannot dissolve more salt",
-           "Saturated solution"
-          ],
-          [
-           "Can dissolve more solute",
-           "Unsaturated solution"
-          ],
-          [
-           "Contains less solute",
-           "Dilute solution"
-          ],
-          [
-           "Contains more solute",
-           "Concentrated solution"
-          ]
-         ],
-         "explanation": "Each description shows the limit or amount of dissolved solute.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 137
-          },
           {
            "ch": 9,
            "p": 137
@@ -26700,6 +27619,122 @@
         },
         {
          "type": "mcq",
+         "id": "science-g8-ch9-l2-a2",
+         "difficulty": 1,
+         "tags": [
+          "salt",
+          "solution"
+         ],
+         "prompt": "What forms when salt dissolves completely in water?",
+         "options": [
+          "a salt pile",
+          "a solution",
+          "a separate solid",
+          "an empty container"
+         ],
+         "answer": 1,
+         "explanation": "Dissolved salt and water form a solution.",
+         "src": [
+          {
+           "ch": 9,
+           "p": 137
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch9-l2-a4",
+         "difficulty": 1,
+         "tags": [
+          "salt",
+          "solution"
+         ],
+         "prompt": "Salt and water together form a ______.",
+         "answers": [
+          "solution"
+         ],
+         "hint": "It forms when salt dissolves completely.",
+         "explanation": "A solution forms when salt dissolves completely in water.",
+         "src": [
+          {
+           "ch": 9,
+           "p": 137
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch9-l2-a3",
+         "difficulty": 1,
+         "tags": [
+          "saturation",
+          "solute",
+          "temperature"
+         ],
+         "prompt": "At a given temperature, an unsaturated solution can dissolve more solute.",
+         "answer": true,
+         "explanation": "An unsaturated solution has room to dissolve more solute.",
+         "src": [
+          {
+           "ch": 9,
+           "p": 137
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch9-l2-a5",
+         "difficulty": 2,
+         "tags": [
+          "saturation",
+          "concentration",
+          "solute"
+         ],
+         "prompt": "Match each solution description to its name.",
+         "pairs": [
+          [
+           "Cannot dissolve more salt",
+           "Saturated solution"
+          ],
+          [
+           "Can dissolve more solute",
+           "Unsaturated solution"
+          ],
+          [
+           "Contains less solute",
+           "Dilute solution"
+          ],
+          [
+           "Contains more solute",
+           "Concentrated solution"
+          ]
+         ],
+         "explanation": "Each description shows the limit or amount of dissolved solute.",
+         "src": [
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          }
+         ]
+        },
+        {
+         "type": "mcq",
          "id": "science-g8-ch9-l2-a7",
          "difficulty": 2,
          "tags": [
@@ -26720,33 +27755,6 @@
           {
            "ch": 9,
            "p": 138
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch9-l2-a8",
-         "difficulty": 3,
-         "tags": [
-          "concentration",
-          "dilute",
-          "concentrated"
-         ],
-         "prompt": "A concentrated solution contains less solute than a dilute solution.",
-         "answer": false,
-         "explanation": "A concentrated solution contains more solute, while a dilute solution contains less.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 137
-          },
-          {
-           "ch": 9,
-           "p": 137
-          },
-          {
-           "ch": 9,
-           "p": 137
           }
          ]
         },
@@ -26780,6 +27788,174 @@
            "ch": 9,
            "p": 137
           },
+          {
+           "ch": 9,
+           "p": 137
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A solution can still dissolve more solute at a given temperature. A child adds more solute. What should happen?",
+         "options": [
+          "The added solute should dissolve.",
+          "The added solute should settle immediately.",
+          "The solution should stop dissolving any solute.",
+          "The solution should become less concentrated."
+         ],
+         "answer": 0,
+         "why": {
+          "The added solute should settle immediately.": "This assumes the solution has already reached its limit.",
+          "The solution should stop dissolving any solute.": "This describes saturation, but the solution is unsaturated.",
+          "The solution should become less concentrated.": "Adding solute does not remove the solute already present."
+         },
+         "explanation": "This is right because an unsaturated solution can dissolve more solute.",
+         "f": [
+          "2.3",
+          "2.4",
+          "2.5"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Salt has dissolved until no more can dissolve. Some extra salt settles at the bottom. What does this solution contain?",
+         "options": [
+          "A saturated solution and undissolved salt.",
+          "An unsaturated solution and undissolved salt.",
+          "A dilute solution and undissolved salt.",
+          "A saturated solution and undissolved water."
+         ],
+         "answer": 0,
+         "why": {
+          "An unsaturated solution and undissolved salt.": "Unsaturated means more solute can still dissolve.",
+          "A dilute solution and undissolved salt.": "Dilute describes less solute, not what settles.",
+          "A saturated solution and undissolved water.": "Water does not settle here; the solute is undissolved salt."
+         },
+         "explanation": "This is right because dissolution stopped and extra salt settled.",
+         "f": [
+          "2.2",
+          "2.3",
+          "2.5",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Two glasses contain the same amount of solution. One has less solute than the other. How should the glasses be compared?",
+         "options": [
+          "The less-solute glass is dilute beside the more-solute glass.",
+          "The less-solute glass is concentrated beside the more-solute glass.",
+          "Both glasses are dilute because each contains some solute.",
+          "Both glasses are concentrated because each contains some solute."
+         ],
+         "answer": 0,
+         "why": {
+          "The less-solute glass is concentrated beside the more-solute glass.": "This reverses the meanings of dilute and concentrated.",
+          "Both glasses are dilute because each contains some solute.": "Some solute in each glass does not make both solutions dilute.",
+          "Both glasses are concentrated because each contains some solute.": "Some solute in each glass does not make both solutions concentrated."
+         },
+         "explanation": "This is right because dilute has less solute than the other.",
+         "f": [
+          "2.6",
+          "2.7",
+          "2.8",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          },
+          {
+           "ch": 9,
+           "p": 137
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l2-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "A child says, “The solubility of salt is the amount already dissolved in this glass.” What is the flaw?",
+         "options": [
+          "It uses the current amount instead of the maximum amount.",
+          "It uses the settled amount instead of the maximum amount.",
+          "It uses the water amount instead of the maximum solute amount.",
+          "It uses the solution amount instead of the maximum solute amount."
+         ],
+         "answer": 0,
+         "why": {
+          "It uses the settled amount instead of the maximum amount.": "This confuses undissolved solute with the maximum that can dissolve.",
+          "It uses the water amount instead of the maximum solute amount.": "This confuses the water with the solute whose amount matters.",
+          "It uses the solution amount instead of the maximum solute amount.": "This confuses the whole solution with the solute whose amount matters."
+         },
+         "explanation": "This is right because solubility means the maximum amount that dissolves.",
+         "f": [
+          "2.10"
+         ],
+         "src": [
           {
            "ch": 9,
            "p": 137
@@ -27091,7 +28267,7 @@
       {
        "id": "science-g8-ch9-l4",
        "title": "Lesson 4: Floating, Sinking and Density",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -27158,6 +28334,26 @@
            "p": 140
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "floatsink",
+         "params": {},
+         "title": "Float or sink?",
+         "tasks": [
+          {
+           "say": "Make the block sink.",
+           "when": "d > 10",
+           "then": "It is now denser than water, so it sinks."
+          }
+         ],
+         "takeaway": "Things lighter than water for their size float; denser things sink.",
+         "explanation": "Things lighter than water for their size float; denser things sink."
         },
         {
          "type": "mcq",
@@ -28064,6 +29260,179 @@
         "licenseUrl": "",
         "creator": "NASA/ISS 16"
        }
+      },
+      {
+       "id": "science-g8-ch9-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 8,
+       "topicScene": "media/ch9-l1-absinthe-spoon-2-289f3b.webp",
+       "sceneAlt": "A sugar cube partially dissolves on a spoon as water drips into a glass.",
+       "sceneCaption": "Water drips onto a partially dissolved sugar cube in an absinthe glass.",
+       "sceneCredit": {
+        "text": "Absinthe spoon 2 by Викидим, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Absinthe_spoon_2.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Викидим"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l1-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): In a solution of salt and water, salt is the solute.\nReason (R): Salt dissolves in the water and forms a solution.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "Both statements are true, and dissolving salt in water explains why salt is the solute."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l1-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A mixture of sawdust and water is a solution.\nReason (R): The mixture of sawdust and water is non-uniform.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The assertion is false, but the reason is true because a non-uniform mixture is not a solution."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch9-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how a uniform mixture of salt or sugar with water is different from a mixture of sawdust and water. Identify the solute and solvent when the mixture is a solution.",
+         "answer": "A salt-or-sugar mixture with water is a solution when the solid is evenly spread throughout the liquid. In that case, the solid is the solute and the liquid is the solvent. The solute dissolves in the solvent and forms the solution. A sawdust-and-water mixture is different because it is non-uniform: its components are not evenly spread. Therefore, it should not be called a solution. Uniformity, rather than simply having both a solid and a liquid present, decides whether the mixture is a solution.",
+         "points": [
+          "Identifies an evenly spread mixture as a solution.",
+          "Names the solid as the solute.",
+          "Names the liquid as the solvent.",
+          "Explains that sawdust and water form a non-uniform mixture."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student pours water into a beaker and adds salt. At first, all the salt dissolves, so the mixture is a solution. When she adds still more salt, some salt remains undissolved and settles at the bottom. She then heats fresh water to 70 °C and finds that it dissolves more baking soda than water at 50 °C.",
+         "prompt": "What does the salt settling at the bottom of the beaker show?",
+         "options": [
+          "The water has reached its limit for dissolving salt.",
+          "The solution is unsaturated because the salt is still visible.",
+          "The mixture contains less solute than any other salt solution.",
+          "The extra salt is helping make the solution concentrated."
+         ],
+         "answer": 0,
+         "why": {
+          "The solution is unsaturated because the salt is still visible.": "Visible salt does not mean that more can still dissolve.",
+          "The mixture contains less solute than any other salt solution.": "Undissolved salt does not determine the comparison.",
+          "The extra salt is helping make the solution concentrated.": "Concentration depends on the solute dissolved in the solution."
+         },
+         "explanation": "Settling salt shows that the water cannot dissolve more."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student pours water into a beaker and adds salt. At first, all the salt dissolves, so the mixture is a solution. When she adds still more salt, some salt remains undissolved and settles at the bottom. She then heats fresh water to 70 °C and finds that it dissolves more baking soda than water at 50 °C.",
+         "prompt": "Before any salt settles, what will happen if the student adds more salt to the unsaturated solution?",
+         "options": [
+          "The extra salt dissolves until the water reaches its limit.",
+          "All the extra salt must settle immediately.",
+          "The solution becomes dilute because more salt enters it.",
+          "The solution is saturated even before any more salt is added."
+         ],
+         "answer": 0,
+         "why": {
+          "All the extra salt must settle immediately.": "Settling begins only after the limit is reached.",
+          "The solution becomes dilute because more salt enters it.": "Adding more dissolved solute does not make a solution dilute.",
+          "The solution is saturated even before any more salt is added.": "A solution is not saturated while it can still dissolve more."
+         },
+         "explanation": "An unsaturated solution can dissolve more solute."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l2-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A solution can be described as saturated when undissolved solute has settled.\nReason (R): The water has reached the limit of how much solute it can dissolve.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The settled solute shows that the water has reached its dissolving limit."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l2-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A dilute solution must contain the maximum amount of solute that can dissolve.\nReason (R): Dilute and concentrated are judged relative to another solution.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "A dilute solution contains less solute rather than the maximum amount."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch9-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between a saturated and an unsaturated solution, and state what happens when more salt is added to each.",
+         "answer": "A saturated solution has reached the water's limit for dissolving solute at a given temperature. Once more salt is added, the extra salt cannot dissolve and settles at the bottom. An unsaturated solution has not reached that limit, so it can dissolve more solute at that temperature. If enough salt is added to an unsaturated solution, it may become saturated, and any further salt will remain undissolved and settle.",
+         "points": [
+          "A saturated solution has reached the limit.",
+          "An unsaturated solution can dissolve more solute.",
+          "Undissolved salt settles after the limit is reached.",
+          "Adding enough salt can change an unsaturated solution into a saturated one."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -28436,6 +29805,1615 @@
        "license": "CC BY-SA 4.0",
        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
        "creator": "Викидим"
+      }
+     }
+    },
+    {
+     "id": "ch10-light-mirrors-and-lenses",
+     "title": "Light: Mirrors and Lenses",
+     "summary": "In this chapter: spherical mirrors and their types; images formed by spherical mirrors; curved mirrors and concentrated light; lenses and their images.",
+     "lessons": [
+      {
+       "id": "science-g8-ch10-l1",
+       "title": "Spherical Mirrors and Their Types",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch10-l1-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Why do the two sides of a shiny spoon reflect so differently?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch10-l1-a1",
+         "difficulty": 1,
+         "tags": [
+          "spherical-mirrors",
+          "concave-mirrors",
+          "convex-mirrors"
+         ],
+         "title": "Meet Spherical Mirrors",
+         "body": "A spherical mirror is a curved mirror shaped like part of a hollow sphere. It is spherical when its reflecting surface is spherical. A concave mirror curves inwards, while a convex mirror curves outwards. The inner surface of a shiny spoon can form an inverted image. The outer surface forms an erect but smaller image. Spherical mirrors are made by grinding and polishing shaped flat glass.",
+         "keyPoints": [
+          "Spherical mirrors have a spherical reflecting surface.",
+          "Concave mirrors curve inwards, while convex mirrors curve outwards.",
+          "A shiny spoon can show an inverted image from its inner surface."
+         ],
+         "explanation": "You can spot spherical mirrors by their curved reflecting surfaces.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "spherical-mirrors"
+         ],
+         "prompt": "Which statement describes a spherical mirror?",
+         "options": [
+          "It has a flat reflecting surface.",
+          "It has a curved reflecting surface.",
+          "It has no reflecting surface.",
+          "It has a square reflecting surface."
+         ],
+         "answer": 1,
+         "explanation": "A spherical mirror is curved like part of a hollow sphere.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch10-l1-a3",
+         "difficulty": 1,
+         "tags": [
+          "spherical-mirrors"
+         ],
+         "prompt": "A mirror is spherical when its reflecting surface is spherical.",
+         "answer": true,
+         "explanation": "Yes. The shape of the reflecting surface gives the mirror its type.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch10-l1-a4",
+         "difficulty": 2,
+         "tags": [
+          "concave-mirrors",
+          "convex-mirrors",
+          "spoon-images"
+         ],
+         "prompt": "Match each description with the correct mirror or image.",
+         "pairs": [
+          [
+           "curves inwards",
+           "concave mirror"
+          ],
+          [
+           "curves outwards",
+           "convex mirror"
+          ],
+          [
+           "shiny spoon's outer surface",
+           "erect but smaller image"
+          ]
+         ],
+         "explanation": "Inward curves belong to concave mirrors. Outward curves belong to convex mirrors.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l1-a6",
+         "difficulty": 2,
+         "tags": [
+          "spoon-images"
+         ],
+         "prompt": "What image does the outer surface of a shiny spoon form?",
+         "options": [
+          "An erect and smaller image.",
+          "An erect and larger image.",
+          "An inverted and smaller image.",
+          "An inverted and larger image."
+         ],
+         "answer": 0,
+         "explanation": "The outer surface forms an image that stays erect but becomes smaller.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 153
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch10-l1-a8",
+         "difficulty": 3,
+         "tags": [
+          "mirror-coatings",
+          "convex-mirrors"
+         ],
+         "prompt": "A coating on the outer curved surface produces a convex mirror.",
+         "answer": false,
+         "explanation": "Not quite. A coating on the outer curved surface produces a concave mirror.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l1-a9",
+         "difficulty": 3,
+         "tags": [
+          "mirror-coatings",
+          "concave-mirrors"
+         ],
+         "prompt": "Which method produces a concave mirror?",
+         "options": [
+          "Coating the outer curved surface",
+          "Coating the inner curved surface",
+          "Leaving both curved surfaces plain",
+          "Polishing the flat surface only"
+         ],
+         "answer": 0,
+         "explanation": "A reflective coating on the outer curved surface produces a concave mirror.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
+       "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
+       "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
+       "sceneCredit": {
+        "text": "A safety convex mirror at the Esplanade end of Howrah metro station's  by Projjalm, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:A_safety_convex_mirror_at_the_Esplanade_end_of_Howrah_metro_station%27s_platform_1B.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Projjalm"
+       }
+      },
+      {
+       "id": "science-g8-ch10-l2",
+       "title": "Images Formed by Spherical Mirrors",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch10-l2-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Why do some mirrors make your reflection look bigger or smaller?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch10-l2-a1",
+         "difficulty": 1,
+         "tags": [
+          "concave mirror",
+          "convex mirror",
+          "plane mirror",
+          "images"
+         ],
+         "title": "Mirror Images",
+         "body": "A concave mirror gives an erect (upright), enlarged image when its object is close. As the object moves farther away, the image becomes smaller. It also becomes inverted (upside down). A convex mirror always gives an erect, smaller image. A plane mirror gives an erect image of the same size. Concave mirrors are used in torch reflectors, vehicle headlights, and dentists' mirrors. Convex side-view mirrors give drivers a wider road view.",
+         "keyPoints": [
+          "Concave mirrors can give erect, enlarged or inverted images.",
+          "Convex mirrors always give erect, smaller images.",
+          "Plane mirrors give erect images of the same size."
+         ],
+         "explanation": "Each mirror type forms a different kind of image.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 157
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l2-a2",
+         "difficulty": 1,
+         "tags": [
+          "convex mirror",
+          "image"
+         ],
+         "prompt": "Which image is always formed by a convex mirror?",
+         "options": [
+          "Erect and smaller",
+          "Erect and enlarged",
+          "Inverted and enlarged",
+          "Inverted and smaller"
+         ],
+         "answer": 0,
+         "explanation": "A convex mirror always forms an erect image that is smaller than the object.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch10-l2-a3",
+         "difficulty": 1,
+         "tags": [
+          "plane mirror",
+          "image"
+         ],
+         "prompt": "A plane mirror forms an erect image of the same size as the object.",
+         "answer": true,
+         "explanation": "A plane mirror forms an erect image with the same size as the object.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch10-l2-a4",
+         "difficulty": 1,
+         "tags": [
+          "concave mirror",
+          "dentist"
+         ],
+         "prompt": "A dentist uses a ______ mirror to get an enlarged view of teeth.",
+         "answers": [
+          "concave"
+         ],
+         "hint": "This mirror can give an enlarged image of a close object.",
+         "explanation": "A dentist uses a concave mirror to get an enlarged view of teeth.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch10-l2-a5",
+         "difficulty": 2,
+         "tags": [
+          "concave mirror",
+          "convex mirror",
+          "plane mirror"
+         ],
+         "prompt": "Match each mirror with its image property or special view.",
+         "pairs": [
+          [
+           "Dentist's mirror",
+           "Enlarged view of teeth"
+          ],
+          [
+           "Vehicle side-view mirror",
+           "Wider view of road behind"
+          ],
+          [
+           "Plane mirror",
+           "Same-size erect image"
+          ]
+         ],
+         "explanation": "Dentists use concave mirrors, side-view mirrors are convex, and plane mirrors keep the same size.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 157
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch10-l2-a6",
+         "difficulty": 2,
+         "tags": [
+          "convex mirror",
+          "side-view mirror",
+          "traffic"
+         ],
+         "prompt": "Vehicle side-view mirrors show the traffic behind as an inverted image.",
+         "answer": false,
+         "explanation": "Vehicle side-view mirrors show the traffic behind as an erect image.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l2-a7",
+         "difficulty": 2,
+         "tags": [
+          "concave mirror",
+          "object distance",
+          "image"
+         ],
+         "prompt": "An object moves farther from a concave mirror. What happens to its image?",
+         "options": [
+          "It becomes upright.",
+          "It becomes larger.",
+          "It stays the same size.",
+          "It becomes inverted."
+         ],
+         "answer": 3,
+         "explanation": "As the object moves farther away, the concave mirror forms an inverted image.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch10-l2-a8",
+         "difficulty": 3,
+         "tags": [
+          "concave mirror",
+          "object distance",
+          "image"
+         ],
+         "prompt": "Put these events in order as the object moves farther from a concave mirror.",
+         "items": [
+          "Object is close to the mirror",
+          "Image is erect and enlarged",
+          "Object moves farther away",
+          "Image becomes inverted"
+         ],
+         "explanation": "The close object gives an erect, enlarged image before the image becomes inverted.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l2-a9",
+         "difficulty": 3,
+         "tags": [
+          "convex mirror",
+          "side-view mirror",
+          "road"
+         ],
+         "prompt": "Why are convex mirrors used as vehicle side-view mirrors?",
+         "options": [
+          "A narrow view of the front",
+          "A close view of teeth",
+          "An enlarged view of a face",
+          "A wider view of the road behind"
+         ],
+         "answer": 3,
+         "explanation": "A convex mirror gives drivers a much wider view of the road behind.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 157
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
+       "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
+       "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
+       "sceneCredit": {
+        "text": "A safety convex mirror at the Esplanade end of Howrah metro station's  by Projjalm, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:A_safety_convex_mirror_at_the_Esplanade_end_of_Howrah_metro_station%27s_platform_1B.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Projjalm"
+       }
+      },
+      {
+       "id": "science-g8-ch10-l3",
+       "title": "Curved Mirrors and Concentrated Light",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch10-l3-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Can a curved mirror gather sunshine into a tiny, fiery spot?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch10-l3-a1",
+         "difficulty": 1,
+         "tags": [
+          "light",
+          "mirrors",
+          "reflection",
+          "solar concentrators"
+         ],
+         "title": "How Curved Mirrors Change Light",
+         "body": "A spherical mirror's curved surface makes parallel rays converge or diverge. A plane mirror keeps reflected rays parallel. A concave mirror brings rays together, so they converge. A convex mirror makes rays spread apart, so they diverge. Every ray follows reflection laws. Mirrors and lenses can concentrate sunlight at one point. These solar concentrators can ignite paper, heat liquid to make steam, or melt steel.",
+         "keyPoints": [
+          "Concave mirrors converge reflected rays.",
+          "Convex mirrors diverge reflected rays.",
+          "Concentrated sunlight can produce heat."
+         ],
+         "explanation": "Curved mirrors change whether reflected rays come together or spread apart.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 161
+          },
+          {
+           "ch": 10,
+           "p": 161
+          },
+          {
+           "ch": 10,
+           "p": 161
+          },
+          {
+           "ch": 10,
+           "p": 161
+          },
+          {
+           "ch": 10,
+           "p": 161
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "plane mirror",
+          "parallel rays",
+          "reflection"
+         ],
+         "title": "A Plane Mirror",
+         "prompt": "What happens to parallel rays after reflecting from a plane mirror?",
+         "options": [
+          "They remain parallel.",
+          "They come closer together.",
+          "They spread apart.",
+          "They focus at one point."
+         ],
+         "answer": 0,
+         "explanation": "A plane mirror keeps parallel rays parallel after reflection.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch10-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "concave mirror",
+          "reflected rays",
+          "converge"
+         ],
+         "title": "A Concave Mirror",
+         "prompt": "A concave mirror makes reflected rays come closer together.",
+         "answer": true,
+         "explanation": "Yes. A concave mirror makes reflected rays converge.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch10-l3-a4",
+         "difficulty": 2,
+         "tags": [
+          "convex mirror",
+          "reflected rays",
+          "diverge"
+         ],
+         "title": "Rays from a Convex Mirror",
+         "prompt": "After reflection from a convex mirror, the rays ______ apart.",
+         "answers": [
+          "spread"
+         ],
+         "hint": "These rays move away from one another.",
+         "explanation": "Reflected rays from a convex mirror spread apart and diverge.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l3-a5",
+         "difficulty": 2,
+         "tags": [
+          "sunlight",
+          "paper",
+          "heat"
+         ],
+         "title": "Sunlight on Paper",
+         "prompt": "Why can reflected sunlight ignite paper?",
+         "options": [
+          "It concentrates and produces enough heat.",
+          "It dims and produces less heat.",
+          "It changes colour and stays cool.",
+          "It stays parallel and produces no heat."
+         ],
+         "answer": 0,
+         "explanation": "Reflected sunlight becomes concentrated. The concentrated light produces enough heat.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 161
+          },
+          {
+           "ch": 10,
+           "p": 161
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch10-l3-a6",
+         "difficulty": 2,
+         "tags": [
+          "mirrors",
+          "reflected rays",
+          "spherical mirror"
+         ],
+         "title": "Match Each Reflection",
+         "prompt": "Match each mirror or surface to its ray behaviour.",
+         "pairs": [
+          [
+           "Plane mirror",
+           "Reflected rays remain parallel"
+          ],
+          [
+           "Concave mirror",
+           "Reflected rays converge"
+          ],
+          [
+           "Convex mirror",
+           "Reflected rays diverge"
+          ],
+          [
+           "Spherical mirror",
+           "Parallel rays converge or diverge"
+          ]
+         ],
+         "explanation": "Concave surfaces bring rays together, while convex surfaces make them spread apart.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch10-l3-a7",
+         "difficulty": 3,
+         "tags": [
+          "spherical mirror",
+          "parallel rays",
+          "converge",
+          "diverge"
+         ],
+         "title": "A Spherical Mirror",
+         "prompt": "A spherical mirror can make parallel rays converge, but not diverge.",
+         "answer": false,
+         "explanation": "A spherical mirror can make parallel rays converge or diverge.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l3-a8",
+         "difficulty": 3,
+         "tags": [
+          "concentrated sunlight",
+          "steam",
+          "solar furnace"
+         ],
+         "title": "Uses of Concentrated Sunlight",
+         "prompt": "Which statement about concentrated sunlight is correct?",
+         "options": [
+          "Concentrated sunlight heats liquid to make steam.",
+          "A convex mirror concentrates reflected rays.",
+          "A plane mirror spreads reflected rays apart.",
+          "Solar furnaces are used to cool steel."
+         ],
+         "answer": 0,
+         "explanation": "Concentrated sunlight heats liquid to make steam for electricity. Solar furnaces can melt steel.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 161
+          },
+          {
+           "ch": 10,
+           "p": 161
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch10-l3-a9",
+         "difficulty": 3,
+         "tags": [
+          "sunlight",
+          "paper",
+          "heat",
+          "ignite"
+         ],
+         "title": "The Paper Experiment",
+         "prompt": "Put the steps for concentrating sunlight on paper in order.",
+         "items": [
+          "Reflected sunlight concentrates at one point on paper.",
+          "The concentrated light produces enough heat.",
+          "The paper is ignited."
+         ],
+         "explanation": "The light concentrates first. Then it produces enough heat to ignite the paper.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 161
+          },
+          {
+           "ch": 10,
+           "p": 161
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
+       "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
+       "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
+       "sceneCredit": {
+        "text": "A safety convex mirror at the Esplanade end of Howrah metro station's  by Projjalm, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:A_safety_convex_mirror_at_the_Esplanade_end_of_Howrah_metro_station%27s_platform_1B.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Projjalm"
+       }
+      },
+      {
+       "id": "science-g8-ch10-l4",
+       "title": "Lenses and Their Images",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch10-l4-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Why do lenses make objects look bigger, smaller, or upside down?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch10-l4-a1",
+         "difficulty": 1,
+         "tags": [
+          "lenses",
+          "convex",
+          "concave",
+          "light",
+          "images"
+         ],
+         "title": "How lenses make images",
+         "body": "A lens is transparent material with curved surfaces, usually made of glass or plastic. Light passes through it. A concave lens is thicker at its edges than in the middle. A convex lens is also called a converging lens because it brings light rays closer together. Close objects appear erect, or upright, and enlarged. Farther objects appear inverted, or upside down. Concave lens images are always erect and smaller.",
+         "keyPoints": [
+          "Convex lenses bring light rays closer together.",
+          "Convex lens images change with distance.",
+          "Concave lens images are always erect and smaller."
+         ],
+         "explanation": "Lenses form images as light passes through them.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 162
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 164
+          },
+          {
+           "ch": 10,
+           "p": 164
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "convex",
+          "images"
+         ],
+         "title": "A close object",
+         "prompt": "What happens when you view an object close to a convex lens?",
+         "options": [
+          "It appears erect and enlarged.",
+          "It appears inverted and smaller.",
+          "It appears upright and smaller.",
+          "It appears upside down and enlarged."
+         ],
+         "answer": 0,
+         "explanation": "A close object appears erect and enlarged through a convex lens.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch10-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "concave",
+          "lenses"
+         ],
+         "title": "Lens shape",
+         "prompt": "A concave lens is thicker at its edges than in its middle.",
+         "answer": true,
+         "explanation": "This shape identifies a concave lens.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch10-l4-a4",
+         "difficulty": 2,
+         "tags": [
+          "light",
+          "lenses",
+          "mirrors"
+         ],
+         "title": "Light through a lens",
+         "prompt": "Light passes through a lens, unlike a ______.",
+         "answers": [
+          "mirrors"
+         ],
+         "hint": "You can see through one, but not the other.",
+         "explanation": "A lens allows light to pass through it, unlike a mirror.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch10-l4-a5",
+         "difficulty": 2,
+         "tags": [
+          "convex",
+          "concave",
+          "images"
+         ],
+         "title": "Match the lenses",
+         "prompt": "Match each lens idea to the correct choice.",
+         "pairs": [
+          [
+           "Converging lens",
+           "Convex lens"
+          ],
+          [
+           "Diverging lens",
+           "Concave lens"
+          ],
+          [
+           "Concave lens",
+           "Erect and smaller images"
+          ],
+          [
+           "Convex lens",
+           "Enlarged then smaller images"
+          ]
+         ],
+         "explanation": "These pairs connect each lens with its image or another name.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 164
+          },
+          {
+           "ch": 10,
+           "p": 164
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch10-l4-a7",
+         "difficulty": 3,
+         "tags": [
+          "convex",
+          "images",
+          "distance"
+         ],
+         "title": "Changes with distance",
+         "prompt": "Put the convex lens observations in order as the object moves farther away.",
+         "items": [
+          "Close object appears erect and enlarged",
+          "Farther object appears inverted",
+          "Image eventually becomes smaller"
+         ],
+         "explanation": "A convex image starts enlarged and upright. It later becomes inverted and smaller.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch10-l4-a9",
+         "difficulty": 3,
+         "tags": [
+          "light",
+          "glass"
+         ],
+         "title": "A flat glass plate",
+         "prompt": "A thin flat glass plate makes light rays converge.",
+         "answer": false,
+         "explanation": "A flat glass plate neither makes light converge nor diverge.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 164
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
+       "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
+       "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
+       "sceneCredit": {
+        "text": "A safety convex mirror at the Esplanade end of Howrah metro station's  by Projjalm, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:A_safety_convex_mirror_at_the_Esplanade_end_of_Howrah_metro_station%27s_platform_1B.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Projjalm"
+       }
+      },
+      {
+       "id": "science-g8-ch10-l5",
+       "title": "Uses of Lenses and Chapter Review",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch10-l5-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How do tiny letters, distant stars, and our eyes become easier to see?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch10-l5-a1",
+         "difficulty": 1,
+         "tags": [
+          "lens",
+          "magnifying-glass",
+          "convex-lens",
+          "concave-lens"
+         ],
+         "title": "Lenses at Work",
+         "body": "Lenses have many uses. A magnifying glass makes small letters look bigger. Telescopes and microscopes use lenses to work. The human eye contains a convex lens. A convex lens pulls light beams together. A concave lens pushes them apart. Convex lenses can make images bigger, smaller or the same size. Concave lenses always make images that stand upright and are smaller.",
+         "keyPoints": [
+          "A magnifying glass makes small letters look bigger",
+          "Telescopes and microscopes use lenses",
+          "Convex lenses join light beams, while concave lenses spread them apart"
+         ],
+         "explanation": "These uses show how lenses help people see and study.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 165
+          },
+          {
+           "ch": 10,
+           "p": 165
+          },
+          {
+           "ch": 10,
+           "p": 162
+          },
+          {
+           "ch": 10,
+           "p": 165
+          },
+          {
+           "ch": 10,
+           "p": 165
+          },
+          {
+           "ch": 10,
+           "p": 165
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l5-a2",
+         "difficulty": 1,
+         "tags": [
+          "magnifying-glass",
+          "letters"
+         ],
+         "title": "The Magnifying Glass",
+         "prompt": "Which statement about a magnifying glass is correct?",
+         "options": [
+          "It makes small letters look bigger.",
+          "It makes small letters look smaller.",
+          "It makes small letters look clearer.",
+          "It makes small letters look wider."
+         ],
+         "answer": 0,
+         "explanation": "A magnifying glass makes small letters look bigger.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 162
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch10-l5-a3",
+         "difficulty": 1,
+         "tags": [
+          "concave-mirror",
+          "images"
+         ],
+         "title": "A Concave Mirror",
+         "prompt": "A concave mirror always forms an image that is erect and diminished.",
+         "answer": false,
+         "explanation": "A concave mirror can make images enlarged, diminished or the same size.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 165
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch10-l5-a4",
+         "difficulty": 1,
+         "tags": [
+          "lens",
+          "magnifying-glass",
+          "telescope",
+          "human-eye"
+         ],
+         "title": "Lenses and Their Uses",
+         "prompt": "Match each item with its use or feature.",
+         "pairs": [
+          [
+           "magnifying glass",
+           "makes small letters look bigger"
+          ],
+          [
+           "telescope",
+           "uses lenses to work"
+          ],
+          [
+           "human eye",
+           "contains a convex lens"
+          ]
+         ],
+         "explanation": "Each pair shows a use or feature given in the lesson.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 165
+          },
+          {
+           "ch": 10,
+           "p": 165
+          },
+          {
+           "ch": 10,
+           "p": 162
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l5-a6",
+         "difficulty": 2,
+         "tags": [
+          "concave-lens",
+          "images"
+         ],
+         "title": "Images from a Concave Lens",
+         "prompt": "What does a concave lens always do to an image?",
+         "options": [
+          "It makes an erect, diminished image.",
+          "It makes an enlarged, erect image.",
+          "It makes an inverted, enlarged image.",
+          "It makes a same-sized, erect image."
+         ],
+         "answer": 0,
+         "explanation": "A concave lens always forms an erect and diminished image.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 165
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch10-l5-a7",
+         "difficulty": 2,
+         "tags": [
+          "reflection",
+          "angle-of-incidence"
+         ],
+         "title": "The Reflection Rule",
+         "prompt": "In every reflection, the angle of ______ always equals the angle of reflection.",
+         "answers": [
+          "incidence"
+         ],
+         "hint": "Choose the angle named before the equals sign.",
+         "explanation": "The reflection rule states that the two angles are always equal.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 165
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch10-l5-a8",
+         "difficulty": 3,
+         "tags": [
+          "stars",
+          "planets",
+          "reflected-images"
+         ],
+         "title": "Observing the Stars",
+         "prompt": "Put the astronomers’ steps in the correct order.",
+         "items": [
+          "Use shallow bowls of water.",
+          "Observe stars and planets.",
+          "Find their reflected images.",
+          "Measure the positions of the stars and planets."
+         ],
+         "explanation": "The positions were measured from the reflected images.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 169
+          },
+          {
+           "ch": 10,
+           "p": 169
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
+       "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
+       "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
+       "sceneCredit": {
+        "text": "A safety convex mirror at the Esplanade end of Howrah metro station's  by Projjalm, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:A_safety_convex_mirror_at_the_Esplanade_end_of_Howrah_metro_station%27s_platform_1B.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "Projjalm"
+       }
+      }
+     ],
+     "boss": {
+      "id": "science-g8-ch10-boss",
+      "title": "Chapter challenge: Light: Mirrors and Lenses",
+      "estimatedMinutes": 4,
+      "activities": [
+       {
+        "type": "mcq",
+        "id": "science-g8-ch10-boss-a1",
+        "difficulty": 2,
+        "tags": [
+         "mirrors",
+         "concave"
+        ],
+        "prompt": "Which shape describes a concave mirror?",
+        "options": [
+         "Curves inwards",
+         "Curves outwards",
+         "Stays completely flat",
+         "Has no reflecting surface"
+        ],
+        "answer": 0,
+        "explanation": "A concave mirror has a reflecting surface that curves inwards.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 154
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "science-g8-ch10-boss-a2",
+        "difficulty": 2,
+        "tags": [
+         "mirrors",
+         "spherical"
+        ],
+        "prompt": "Spherical mirrors are made by shaping flat glass with grinding and polishing.",
+        "answer": true,
+        "explanation": "Grinding and polishing shape flat glass into spherical mirrors.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 154
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "science-g8-ch10-boss-a3",
+        "difficulty": 2,
+        "tags": [
+         "spoon",
+         "images"
+        ],
+        "prompt": "The inner surface of a shiny spoon can form an ______ image.",
+        "answers": [
+         "inverted"
+        ],
+        "hint": "The image is turned upside down.",
+        "explanation": "The inner surface of a shiny spoon can form an inverted image.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 153
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "science-g8-ch10-boss-a4",
+        "difficulty": 3,
+        "tags": [
+         "concave",
+         "images"
+        ],
+        "prompt": "What happens when an object is close to a concave mirror?",
+        "options": [
+         "Erect and enlarged",
+         "Erect and smaller",
+         "Inverted and enlarged",
+         "Inverted and smaller"
+        ],
+        "answer": 0,
+        "explanation": "A close object gives a concave mirror an erect, enlarged image.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 156
+         },
+         {
+          "ch": 10,
+          "p": 156
+         },
+         {
+          "ch": 10,
+          "p": 156
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "science-g8-ch10-boss-a5",
+        "difficulty": 2,
+        "tags": [
+         "mirrors",
+         "lenses",
+         "shapes"
+        ],
+        "prompt": "Match each mirror or lens to its correct description.",
+        "pairs": [
+         [
+          "Concave mirror",
+          "Curves inwards"
+         ],
+         [
+          "Convex mirror",
+          "Curves outwards"
+         ],
+         [
+          "Concave lens",
+          "Thicker at its edges"
+         ],
+         [
+          "Convex lens",
+          "Also called converging"
+         ]
+        ],
+        "explanation": "The pairs use each mirror or lens shape from the lesson.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 154
+         },
+         {
+          "ch": 10,
+          "p": 154
+         },
+         {
+          "ch": 10,
+          "p": 163
+         },
+         {
+          "ch": 10,
+          "p": 164
+         }
+        ]
+       },
+       {
+        "type": "dragorder",
+        "id": "science-g8-ch10-boss-a6",
+        "difficulty": 3,
+        "tags": [
+         "sunlight",
+         "steam",
+         "solar"
+        ],
+        "prompt": "Put the stages of making steam with concentrated sunlight in order.",
+        "items": [
+         "Mirrors and lenses concentrate sunlight",
+         "Concentrated sunlight heats a liquid",
+         "The liquid makes steam",
+         "Steam is used for generating electricity"
+        ],
+        "explanation": "Concentrated sunlight heats a liquid to make steam for generating electricity.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 161
+         },
+         {
+          "ch": 10,
+          "p": 161
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "science-g8-ch10-boss-a7",
+        "difficulty": 2,
+        "tags": [
+         "convex",
+         "images"
+        ],
+        "prompt": "A convex mirror forms an inverted image of an object.",
+        "answer": false,
+        "explanation": "A convex mirror always forms an image that is erect and smaller.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 156
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "science-g8-ch10-boss-a8",
+        "difficulty": 2,
+        "tags": [
+         "lenses",
+         "convex"
+        ],
+        "prompt": "What does an object close to a convex lens appear like?",
+        "options": [
+         "Erect and enlarged",
+         "Erect and smaller",
+         "Inverted and enlarged",
+         "Inverted and smaller"
+        ],
+        "answer": 0,
+        "explanation": "An object close to a convex lens appears erect and enlarged.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 163
+         },
+         {
+          "ch": 10,
+          "p": 163
+         },
+         {
+          "ch": 10,
+          "p": 163
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "science-g8-ch10-boss-a9",
+        "difficulty": 3,
+        "tags": [
+         "light",
+         "reflection"
+        ],
+        "prompt": "For every light ray, the angle of incidence equals the angle of reflection.",
+        "answer": true,
+        "explanation": "The angle of incidence always equals the angle of reflection.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 160
+         },
+         {
+          "ch": 10,
+          "p": 165
+         }
+        ]
+       }
+      ],
+      "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
+      "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
+      "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
+      "sceneCredit": {
+       "text": "A safety convex mirror at the Esplanade end of Howrah metro station's  by Projjalm, CC0, via Wikimedia Commons",
+       "url": "https://commons.wikimedia.org/wiki/File:A_safety_convex_mirror_at_the_Esplanade_end_of_Howrah_metro_station%27s_platform_1B.jpg",
+       "license": "CC0",
+       "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+       "creator": "Projjalm"
       }
      }
     }
