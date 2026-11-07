@@ -1485,6 +1485,22 @@ export const WIDGETS = {
       return { kids, say: `This pattern repeats ${u.map((k) => nm[k]).join(', ')}. After ${v.count} shapes the next one is the ${nm[next]}.` };
     },
   },
+  pihuday: {
+    subject: 'maths', about: 'Pihu\'s day from morning to night, in the order the book gives: out of bed as the sun rises, warm water, yoga or exercise, brush teeth, bath, breakfast, get ready for school, school, wash hands and lunch when the sun is high in the afternoon, home to rest, play and study as the sun sets in the evening, then dinner, a story book and sleep under the moon and stars. Step through the day and watch the sky change. For time of day, morning, afternoon, evening and night, daily routine, what comes first and next.',
+    sliders: [['step', 'Step in Pihu\'s day (0 to 14)', 0, 14, 1, 0]],
+    draw(v) {
+      const acts = [['gets out of bed', '\u{1F6CF}️'], ['drinks a glass of warm water', '\u{1F4A7}'], ['does yoga or exercise', '\u{1F9D8}'], ['brushes her teeth', '\u{1FAA5}'], ['takes a bath', '\u{1F6C1}'], ['eats breakfast', '\u{1F35E}'], ['gets ready for school', '\u{1F392}'], ['studies and plays at school', '\u{1F4DA}'], ['washes her hands', '\u{1F9FC}'], ['has lunch with her friends', '\u{1F371}'], ['comes home and rests', '\u{1F3E0}'], ['plays with her friends', '⚽'], ['studies', '✏️'], ['eats dinner with her family', '\u{1F37D}️'], ['reads a story book and goes to sleep', '\u{1F319}']];
+      const phase = v.step <= 6 ? 'morning' : v.step === 7 ? 'day' : v.step <= 10 ? 'afternoon' : v.step <= 12 ? 'evening' : 'night';
+      const sky = { morning: '#ffe3b0', day: '#bfe6ff', afternoon: '#9fd8ff', evening: '#f6a56b', night: '#1d2350' }[phase], kids = [R(0, 0, 600, 210, sky, { w: 0 }), R(0, 210, 600, 90, phase === 'night' ? '#2c3f2f' : '#8fcf8a', { w: 0 })];
+      // the sun climbs and sets across the sky; at night the moon and stars come out
+      const sunAt = { morning: [90 + v.step * 22, 170 - v.step * 12], day: [300, 70], afternoon: [330 + (v.step - 8) * 30, 56 + (v.step - 8) * 20], evening: [470 + (v.step - 11) * 40, 150 + (v.step - 11) * 30] }[phase];
+      if (phase !== 'night') kids.push(CIRC(sunAt[0], sunAt[1], 26, '#ffcc33', { s: '#ffb000', w: 4 }));
+      else { kids.push(CIRC(420, 70, 22, '#f2f2f2', { s: '#cfcfcf', w: 2 }), CIRC(432, 64, 20, sky, { w: 0 })); for (const [x, y] of [[90, 40], [180, 90], [220, 84], [520, 120], [340, 120], [140, 150]]) kids.push(T(x, y, '✦', { z: 18, f: '#fff3a6' })); }
+      kids.push(T(60, 266, '\u{1F467}', { z: 44 }), T(300, 250, acts[v.step][1], { z: 54 }));
+      kids.push(T(300, 36, phase === 'day' ? 'at school (daytime)' : phase, { z: 26, w: 700, f: phase === 'night' ? '#ffffff' : INK }), T(300, 290, `Pihu ${acts[v.step][0]}.`, { z: 16, w: 700, f: phase === 'night' ? '#ffffff' : INK }));
+      return { kids, say: `${phase === 'day' ? 'In the daytime' : phase === 'night' ? 'At night' : 'In the ' + phase}, step ${v.step + 1} of 15: Pihu ${acts[v.step][0]}.${phase === 'morning' && v.step === 0 ? ' The sun rises as her morning begins.' : phase === 'afternoon' && v.step >= 8 && v.step <= 9 ? ' The sun is high in the sky.' : phase === 'evening' && v.step === 11 ? ' The sun is setting as the evening begins.' : phase === 'night' && v.step === 13 ? ' The moon and stars are visible in the night sky.' : ''}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

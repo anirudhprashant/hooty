@@ -741,6 +741,16 @@ export const KITS = {
       { say: 'Show the AAB pattern three times over (9 shapes). What comes next?', when: 'unit == 1 and count == 9', then: 'A red circle: after blue comes the start of the pattern again.' },
     ],
   },
+  pihuday: {
+    grades: [1, 1], perChapter: { 1: 3 }, match: [/\bmy day\b|\bdaily routine\b/, /\bmorning\b/, /\bafternoon\b/, /\bevening\b/, /\bnight\b/],
+    title: 'Follow Pihu\u2019s day', takeaway: 'A day has a morning, an afternoon, an evening and a night, and the sun and the moon show which it is.',
+    tasks: [
+      { say: 'What does Pihu do after yoga or exercise?', when: 'step == 3', then: 'She brushes her teeth, then takes a bath.' },
+      { say: 'Find lunch time. Where is the sun?', when: 'step == 9', then: 'Lunch is in the afternoon, when the sun is high in the sky.' },
+      { say: 'Find the evening: the sun is setting.', when: 'step == 11', then: 'In the evening Pihu plays with her friends and then studies.' },
+      { say: 'Find the night: moon and stars.', when: 'step >= 13', then: 'At night she eats dinner, reads a story book and sleeps.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
