@@ -4,7 +4,7 @@
 # public repo's rules are untouched. Safe to run any time; does nothing when nothing changed. publish.py runs it after each publish.
 #   tools/backup-work.sh
 set -u
-export GIT_DIR="$HOME/.hooty-work.git" GIT_WORK_TREE="$(cd "$(dirname "$0")/.." && pwd)/work"
+export GIT_DIR="${HOOTY_WORK_GIT:-$HOME/.hooty-work.git}" GIT_WORK_TREE="$(cd "$(dirname "$0")/.." && pwd)/work"
 [ -d "$GIT_DIR" ] || { echo "backup-work: no $GIT_DIR (see tools/backup-work.sh header)"; exit 0; }
 cd "$GIT_WORK_TREE" || exit 0
 git add -A >/dev/null 2>&1
