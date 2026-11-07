@@ -25813,7 +25813,7 @@
       {
        "id": "science-g8-ch8-l5",
        "title": "Compounds and Chemical Combinations",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -25878,6 +25878,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g8-ch8-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child heats iron and sulphur, then uses a magnet. What happens?",
+         "steps": [
+          "Heating Sample A produces iron sulphide because iron and sulphur combine.",
+          "This product has different properties because it differs from both starting elements.",
+          "A magnet will not attract it because iron sulphide is not attracted.",
+          "Therefore, the magnet cannot pull in the iron sulphide."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.8",
+          "5.9",
+          "5.10",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 128
+          },
+          {
+           "ch": 8,
+           "p": 128
+          },
+          {
+           "ch": 8,
+           "p": 128
+          },
+          {
+           "ch": 8,
+           "p": 128
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "science-g8-ch8-l5-a2",
          "difficulty": 1,
@@ -25895,24 +25937,6 @@
          ],
          "answer": 0,
          "explanation": "Water has a 2:1 ratio of hydrogen atoms to oxygen atoms.",
-         "src": [
-          {
-           "ch": 8,
-           "p": 124
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch8-l5-a3",
-         "difficulty": 1,
-         "tags": [
-          "sodium-chloride",
-          "ratio"
-         ],
-         "prompt": "Sodium chloride contains sodium and chlorine in a 1:1 ratio.",
-         "answer": true,
-         "explanation": "Sodium and chlorine combine in equal amounts in sodium chloride.",
          "src": [
           {
            "ch": 8,
@@ -26026,24 +26050,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch8-l5-a7",
-         "difficulty": 2,
-         "tags": [
-          "compound",
-          "separation"
-         ],
-         "prompt": "The elements in a compound can be separated by a physical method.",
-         "answer": false,
-         "explanation": "The elements in a compound cannot be separated by a physical method.",
-         "src": [
-          {
-           "ch": 8,
-           "p": 124
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch8-l5-a8",
          "difficulty": 3,
@@ -26106,6 +26112,122 @@
            "p": 128
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Sample A is heated until iron sulphide forms. What will the magnet do?",
+         "options": [
+          "It will pull iron from the iron sulphide.",
+          "It will not attract the iron sulphide.",
+          "It will pull sulphur from the iron sulphide.",
+          "It will turn iron sulphide into iron."
+         ],
+         "answer": 1,
+         "why": {
+          "It will pull iron from the iron sulphide.": "This mistake assumes iron sulphide behaves like separate iron.",
+          "It will pull sulphur from the iron sulphide.": "This mistake assumes sulphur stays separate inside iron sulphide.",
+          "It will turn iron sulphide into iron.": "This mistake assumes a magnet changes iron sulphide."
+         },
+         "explanation": "Iron sulphide is not attracted by a magnet.",
+         "f": [
+          "5.9",
+          "5.10",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 128
+          },
+          {
+           "ch": 8,
+           "p": 128
+          },
+          {
+           "ch": 8,
+           "p": 128
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Elements form compounds in fixed ratios. Can any amount of iron and sulphur combine?",
+         "options": [
+          "No, the elements must combine in a fixed ratio.",
+          "Yes, any amount of iron and sulphur can combine.",
+          "No, iron and sulphur must stay as separate elements.",
+          "Yes, each amount can form a different compound."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, any amount of iron and sulphur can combine.": "This mistake assumes compounds allow any amount of elements.",
+          "No, iron and sulphur must stay as separate elements.": "This mistake assumes the elements never combine into a compound.",
+          "Yes, each amount can form a different compound.": "This mistake assumes each amount gives a different compound."
+         },
+         "explanation": "Compounds form when elements combine in fixed ratios.",
+         "f": [
+          "5.1"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 124
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Sugar contains carbon, hydrogen and oxygen. Why would filtering fail to get carbon and water?",
+         "options": [
+          "Sugar's elements cannot be separated by a physical method.",
+          "Carbon and water cannot form when sugar is heated.",
+          "Filtering makes sugar into a different compound.",
+          "Sugar does not contain carbon, hydrogen, or oxygen."
+         ],
+         "answer": 0,
+         "why": {
+          "Carbon and water cannot form when sugar is heated.": "This mistake denies the products formed when sugar is heated.",
+          "Filtering makes sugar into a different compound.": "This mistake assumes filtering changes which elements are present.",
+          "Sugar does not contain carbon, hydrogen, or oxygen.": "This mistake denies that sugar contains carbon, hydrogen, and oxygen."
+         },
+         "explanation": "Sugar is a compound, so filtering cannot separate its elements.",
+         "f": [
+          "5.2",
+          "5.6",
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 124
+          },
+          {
+           "ch": 8,
+           "p": 125
+          },
+          {
+           "ch": 8,
+           "p": 125
+          }
+         ]
         }
        ],
        "topicScene": "media/ch8-l5-molecule-of-water-ac5578.webp",
@@ -26122,7 +26244,7 @@
       {
        "id": "science-g8-ch8-l6",
        "title": "Uses of Matter and Minerals",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -26179,6 +26301,38 @@
           {
            "ch": 8,
            "p": 130
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch8-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A builder needs a strong and durable bridge. Should pure iron or stainless steel be used?",
+         "steps": [
+          "Stainless steel is stronger than pure iron, so it fits the need for strength.",
+          "It is also more durable, so it fits the need for long use.",
+          "Iron is already used for bridges, so this choice fits building uses.",
+          "Therefore, stainless steel is the better choice for the bridge."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 129
+          },
+          {
+           "ch": 8,
+           "p": 129
           }
          ]
         },
@@ -26270,24 +26424,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch8-l6-a7",
-         "difficulty": 2,
-         "tags": [
-          "cement",
-          "calcite"
-         ],
-         "prompt": "Cement is made from calcite.",
-         "answer": true,
-         "explanation": "Calcite is one of the materials used to make cement.",
-         "src": [
-          {
-           "ch": 8,
-           "p": 129
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch8-l6-a8",
          "difficulty": 3,
@@ -26329,6 +26465,122 @@
          "answer": 0,
          "explanation": "Wood, steel and concrete are mixtures used as building materials.",
          "src": [
+          {
+           "ch": 8,
+           "p": 129
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "Stainless steel is stronger than pure iron. Which test would fairly check this claim?",
+         "options": [
+          "Test only stainless steel and record the result.",
+          "Test only pure iron and record the result.",
+          "Test both metals with the same strength test.",
+          "Use a different strength test for each metal."
+         ],
+         "answer": 2,
+         "why": {
+          "Test only stainless steel and record the result.": "This omits pure iron, so the comparison is not fair.",
+          "Test only pure iron and record the result.": "This omits stainless steel, so the comparison is not fair.",
+          "Use a different strength test for each metal.": "Different tests may give different results, so the comparison is not fair."
+         },
+         "explanation": "Using the same test for both metals gives a fair comparison.",
+         "f": [
+          "6.2"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 129
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "Most rocks are mixtures of minerals. A learner says rocks are pure elements. Why is the claim flawed?",
+         "options": [
+          "Most rocks contain one mineral and no mixture.",
+          "Most rocks contain compounds made from one element.",
+          "Most rocks contain no minerals of any kind.",
+          "Most rocks are mixtures of minerals, not pure elements."
+         ],
+         "answer": 3,
+         "why": {
+          "Most rocks contain one mineral and no mixture.": "This confuses a mixture of minerals with a single pure mineral.",
+          "Most rocks contain compounds made from one element.": "This mistakes a compound for something containing only one element.",
+          "Most rocks contain no minerals of any kind.": "This wrongly says that rocks contain no minerals."
+         },
+         "explanation": "This correctly separates mixtures of minerals from pure elements.",
+         "f": [
+          "6.5",
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 129
+          },
+          {
+           "ch": 8,
+           "p": 129
+          },
+          {
+           "ch": 8,
+           "p": 129
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch8-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "infer"
+         ],
+         "prompt": "Most rocks are mixtures of minerals. What does this suggest about most minerals?",
+         "options": [
+          "Most are pure elements rather than compounds.",
+          "Most are compounds containing more than one element.",
+          "Most contain only one element or no elements.",
+          "All are mixtures made from different rocks."
+         ],
+         "answer": 1,
+         "why": {
+          "Most are pure elements rather than compounds.": "This confuses native minerals with most minerals.",
+          "Most contain only one element or no elements.": "This wrongly makes compounds contain only one element or none.",
+          "All are mixtures made from different rocks.": "This reverses the relationship between rocks and minerals."
+         },
+         "explanation": "Most minerals are compounds containing more than one element.",
+         "f": [
+          "6.5",
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 129
+          },
+          {
+           "ch": 8,
+           "p": 129
+          },
           {
            "ch": 8,
            "p": 129
@@ -27977,7 +28229,7 @@
       {
        "id": "science-g8-ch9-l3",
        "title": "Lesson 3: Gases Dissolving in Water",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -28045,6 +28297,43 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g8-ch9-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "An aquarium's water is warmed. Why might aquatic life receive less dissolved oxygen?",
+         "steps": [
+          "The aquarium's water becomes warmer.",
+          "Gas solubility generally decreases as temperature increases.",
+          "Cold water can dissolve more oxygen than warm water.",
+          "Therefore, less dissolved oxygen is available to sustain aquatic life."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.3",
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "science-g8-ch9-l3-a2",
          "difficulty": 1,
@@ -28062,24 +28351,6 @@
          ],
          "answer": 0,
          "explanation": "Many gases dissolve in water, including oxygen.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 139
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch9-l3-a3",
-         "difficulty": 1,
-         "tags": [
-          "oxygen",
-          "water"
-         ],
-         "prompt": "Oxygen dissolves in water to a large extent.",
-         "answer": false,
-         "explanation": "Oxygen dissolves in water only to a small extent.",
          "src": [
           {
            "ch": 9,
@@ -28251,6 +28522,248 @@
            "p": 139
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Many gases dissolve in water, including oxygen. Cold and warm water are compared. Which can dissolve more oxygen?",
+         "options": [
+          "The cold water can dissolve more oxygen.",
+          "The warm water can dissolve more oxygen.",
+          "Both waters can dissolve exactly the same oxygen.",
+          "Only warm water can dissolve any oxygen."
+         ],
+         "answer": 0,
+         "why": {
+          "The warm water can dissolve more oxygen.": "This reverses the effect of higher temperature on solubility.",
+          "Both waters can dissolve exactly the same oxygen.": "This ignores that solubility generally decreases as temperature rises.",
+          "Only warm water can dissolve any oxygen.": "This wrongly suggests that warm water cannot dissolve oxygen."
+         },
+         "explanation": "Cold water can dissolve more oxygen, so this is right.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A gas dissolves evenly in water. What will a child see?",
+         "options": [
+          "An even mixture with no separate visible parts.",
+          "A visible gas layer floating on top.",
+          "A visible gas layer resting below.",
+          "Many tiny gas pieces inside the water."
+         ],
+         "answer": 0,
+         "why": {
+          "A visible gas layer floating on top.": "This wrongly assumes the dissolved gas stays in a separate layer.",
+          "A visible gas layer resting below.": "This wrongly assumes the dissolved gas gathers into a lower layer.",
+          "Many tiny gas pieces inside the water.": "This wrongly assumes dissolved gas can be seen as separate pieces."
+         },
+         "explanation": "The gases dissolve evenly, and their parts cannot be seen separately.",
+         "f": [
+          "3.4",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Sawdust and sand are placed in water. Where will each material settle?",
+         "options": [
+          "Sawdust stays above the sand.",
+          "Sand stays above the sawdust.",
+          "Both materials sink below the water.",
+          "Both materials float above the water."
+         ],
+         "answer": 0,
+         "why": {
+          "Sand stays above the sawdust.": "This swaps the positions of floating sawdust and sinking sand.",
+          "Both materials sink below the water.": "This wrongly treats floating sawdust as if it were sand.",
+          "Both materials float above the water.": "This wrongly treats sinking sand as if it were sawdust."
+         },
+         "explanation": "Sawdust floats while sand sinks, so this arrangement is right.",
+         "f": [
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 139
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A pond's water becomes warmer than usual. What happens to its dissolved oxygen?",
+         "options": [
+          "Less oxygen can dissolve, making aquatic life harder to sustain.",
+          "More oxygen can dissolve, making aquatic life easier to sustain.",
+          "Less oxygen can dissolve, making aquatic life easier to sustain.",
+          "More oxygen can dissolve, making aquatic life harder to sustain."
+         ],
+         "answer": 0,
+         "why": {
+          "More oxygen can dissolve, making aquatic life easier to sustain.": "This reverses the effect of higher temperature on gas solubility.",
+          "Less oxygen can dissolve, making aquatic life easier to sustain.": "This mixes lower oxygen with the wrong effect on aquatic life.",
+          "More oxygen can dissolve, making aquatic life harder to sustain.": "This mixes more oxygen with the wrong effect on aquatic life."
+         },
+         "explanation": "Higher temperature lowers solubility, so less oxygen can support aquatic life.",
+         "f": [
+          "3.3",
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "A child wants to test if temperature changes oxygen solubility. Which comparison is fair?",
+         "options": [
+          "Compare cold water and warm water, keeping other things the same.",
+          "Compare cold water and warm water, while changing other things in both.",
+          "Compare two cold waters, while changing other things in both.",
+          "Compare two warm waters, while changing other things in both."
+         ],
+         "answer": 0,
+         "why": {
+          "Compare cold water and warm water, while changing other things in both.": "Changing extra factors hides the effect of temperature.",
+          "Compare two cold waters, while changing other things in both.": "Comparing two cold waters does not test different temperatures.",
+          "Compare two warm waters, while changing other things in both.": "Comparing two warm waters does not test different temperatures."
+         },
+         "explanation": "Keeping other things the same shows temperature's effect, so this is right.",
+         "f": [
+          "3.5",
+          "3.6"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "Gas dissolves in one bowl of water. Sawdust is placed in another. What can a child see in each bowl?",
+         "options": [
+          "The first bowl looks even; sawdust stays visibly separate in the second.",
+          "The first bowl stays separate; the second bowl cannot be seen.",
+          "Both bowls look even, with no visible parts in either bowl.",
+          "Both bowls show visible parts, including the dissolved gas."
+         ],
+         "answer": 0,
+         "why": {
+          "The first bowl stays separate; the second bowl cannot be seen.": "This wrongly treats dissolved gas as separate and sawdust as invisible.",
+          "Both bowls look even, with no visible parts in either bowl.": "This wrongly treats the sawdust and water mixture as even.",
+          "Both bowls show visible parts, including the dissolved gas.": "This wrongly assumes dissolved gas components can be seen separately."
+         },
+         "explanation": "Dissolved gas parts cannot be seen, but sawdust remains visibly separate.",
+         "f": [
+          "3.4",
+          "3.7",
+          "3.8",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          },
+          {
+           "ch": 9,
+           "p": 139
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l1-absinthe-spoon-2-289f3b.webp",
@@ -28267,7 +28780,7 @@
       {
        "id": "science-g8-ch9-l4",
        "title": "Lesson 4: Floating, Sinking and Density",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -28354,6 +28867,98 @@
          ],
          "takeaway": "Things lighter than water for their size float; denser things sink.",
          "explanation": "Things lighter than water for their size float; denser things sink."
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch9-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why do rice husk particles float while rice sinks during washing?",
+         "steps": [
+          "Rice husk particles are lighter than water, so they float.",
+          "Rice is heavier than water, so it sinks.",
+          "This difference shows how density describes heaviness.",
+          "During washing, floating husk particles separate from sinking rice."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.2",
+          "4.3",
+          "4.5",
+          "4.6",
+          "4.7"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch9-l4-a7",
+         "difficulty": 2,
+         "tags": [
+          "density",
+          "mass",
+          "volume",
+          "crowding"
+         ],
+         "title": "What Density Means",
+         "body": "Density is the mass present in a unit volume of a substance. It describes heaviness. A crowded bus has high density because many people are packed together. A bus with only a few people has low density. A forest with trees growing close together is called a dense forest. Density is not the only factor that decides whether an object floats or sinks.",
+         "keyPoints": [
+          "Density is mass in a unit volume.",
+          "Crowded places can have high density.",
+          "A dense forest has trees growing close together."
+         ],
+         "explanation": "Density helps us describe how much mass is packed into a space.",
+         "src": [
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -28513,51 +29118,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "science-g8-ch9-l4-a7",
-         "difficulty": 2,
-         "tags": [
-          "density",
-          "mass",
-          "volume",
-          "crowding"
-         ],
-         "title": "What Density Means",
-         "body": "Density is the mass present in a unit volume of a substance. It describes heaviness. A crowded bus has high density because many people are packed together. A bus with only a few people has low density. A forest with trees growing close together is called a dense forest. Density is not the only factor that decides whether an object floats or sinks.",
-         "keyPoints": [
-          "Density is mass in a unit volume.",
-          "Crowded places can have high density.",
-          "A dense forest has trees growing close together."
-         ],
-         "explanation": "Density helps us describe how much mass is packed into a space.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 140
-          },
-          {
-           "ch": 9,
-           "p": 140
-          },
-          {
-           "ch": 9,
-           "p": 140
-          },
-          {
-           "ch": 9,
-           "p": 140
-          },
-          {
-           "ch": 9,
-           "p": 140
-          },
-          {
-           "ch": 9,
-           "p": 140
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch9-l4-a8",
          "difficulty": 3,
@@ -28592,19 +29152,105 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch9-l4-a9",
+         "type": "mcq",
+         "id": "science-g8-ch9-l4-d1",
          "difficulty": 3,
          "tags": [
-          "density",
-          "floating",
-          "sinking"
+          "deep",
+          "predict"
          ],
-         "title": "The Only Factor",
-         "prompt": "Density is the only factor that decides whether an object floats or sinks.",
-         "answer": false,
-         "explanation": "The lesson says that density is not the only factor affecting floating and sinking.",
+         "prompt": "Oil and water are mixed. What do you see in the container?",
+         "options": [
+          "Water will stay above the oil in the container.",
+          "Water will stay below the oil in the container.",
+          "Oil and water will stay mixed at the same level.",
+          "Oil and water will form one completely mixed layer."
+         ],
+         "answer": 1,
+         "why": {
+          "Water will stay above the oil in the container.": "Oil floats on water when the two are mixed.",
+          "Oil and water will stay mixed at the same level.": "It wrongly assumes oil and water remain mixed.",
+          "Oil and water will form one completely mixed layer.": "It wrongly assumes the two liquids form one layer."
+         },
+         "explanation": "This reverses the known order of oil and water.",
+         "f": [
+          "4.4"
+         ],
          "src": [
+          {
+           "ch": 9,
+           "p": 140
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "One object floats in water, and another sinks. How do their weights compare with water?",
+         "options": [
+          "The floating object is lighter; the sinking object is heavier than water.",
+          "The floating object is heavier; the sinking object is lighter than water.",
+          "Both objects weigh the same compared with the water.",
+          "Neither object's weight can be compared with the water."
+         ],
+         "answer": 0,
+         "why": {
+          "The floating object is heavier; the sinking object is lighter than water.": "This reverses the meanings of floating and sinking.",
+          "Both objects weigh the same compared with the water.": "It ignores how floating and sinking compare with the liquid.",
+          "Neither object's weight can be compared with the water.": "It wrongly claims that the comparison is impossible."
+         },
+         "explanation": "Floating means lighter than the liquid, while sinking means heavier.",
+         "f": [
+          "4.5",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 140
+          },
+          {
+           "ch": 9,
+           "p": 140
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "The bus keeps the same size. At noon, only a few people ride. Later, many people are packed inside. What happens to its density?",
+         "options": [
+          "Density becomes higher because more mass is in the same volume.",
+          "Density becomes lower because more people make each person lighter.",
+          "Density stays the same because the bus keeps the same volume.",
+          "Density becomes higher because the bus gains more seats."
+         ],
+         "answer": 0,
+         "why": {
+          "Density becomes lower because more people make each person lighter.": "This wrongly treats more packed people as lower density.",
+          "Density stays the same because the bus keeps the same volume.": "This wrongly ignores the extra mass in the same volume.",
+          "Density becomes higher because the bus gains more seats.": "This confuses adding passengers with adding seats."
+         },
+         "explanation": "A crowded bus has more mass packed into the same volume.",
+         "f": [
+          "4.9",
+          "4.12"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 140
+          },
           {
            "ch": 9,
            "p": 140
@@ -28626,7 +29272,7 @@
       {
        "id": "science-g8-ch9-l5",
        "title": "Lesson 5: Measuring Mass and Volume",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -28696,19 +29342,71 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch9-l5-a2",
+         "type": "worked",
+         "id": "science-g8-ch9-l5-t1",
          "difficulty": 1,
          "tags": [
-          "mass"
+          "deep",
+          "think"
          ],
-         "prompt": "Mass is the quantity of matter present in an object.",
-         "answer": true,
-         "explanation": "This is the meaning of mass.",
+         "kicker": "Let us think it through",
+         "prompt": "Two rectangular blocks have different masses. How can a child find which is denser?",
+         "steps": [
+          "Measure each block's mass because density depends on mass.",
+          "Multiply each block's length, width and height because this gives volume.",
+          "Compare mass with volume because density is mass per unit volume.",
+          "The block with greater mass per unit volume has greater density."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.2",
+          "5.9",
+          "5.11"
+         ],
          "src": [
           {
            "ch": 9,
            "p": 141
+          },
+          {
+           "ch": 9,
+           "p": 141
+          },
+          {
+           "ch": 9,
+           "p": 145
+          },
+          {
+           "ch": 9,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch9-l5-a6",
+         "difficulty": 2,
+         "tags": [
+          "volume",
+          "cuboid",
+          "water"
+         ],
+         "title": "Finding Different Shapes' Volume",
+         "body": "For a cuboid, multiply length, width and height to find volume. For an irregular object, measure the initial water volume. Then measure the final water volume. Subtract the initial volume from the final volume. This gives the irregular object's volume.",
+         "keyPoints": [
+          "A cuboid's volume is length multiplied by width and height.",
+          "An irregular object's volume is the change in water volume."
+         ],
+         "explanation": "These are two methods for finding volume.",
+         "src": [
+          {
+           "ch": 9,
+           "p": 145
+          },
+          {
+           "ch": 9,
+           "p": 146
           }
          ]
         },
@@ -28811,33 +29509,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "science-g8-ch9-l5-a6",
-         "difficulty": 2,
-         "tags": [
-          "volume",
-          "cuboid",
-          "water"
-         ],
-         "title": "Finding Different Shapes' Volume",
-         "body": "For a cuboid, multiply length, width and height to find volume. For an irregular object, measure the initial water volume. Then measure the final water volume. Subtract the initial volume from the final volume. This gives the irregular object's volume.",
-         "keyPoints": [
-          "A cuboid's volume is length multiplied by width and height.",
-          "An irregular object's volume is the change in water volume."
-         ],
-         "explanation": "These are two methods for finding volume.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 145
-          },
-          {
-           "ch": 9,
-           "p": 146
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch9-l5-a7",
          "difficulty": 2,
@@ -28921,6 +29592,164 @@
            "p": 141
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "balance zero"
+         ],
+         "prompt": "A child is using a balance to measure an object. The balance shows a non-zero reading before the object is added. What should the child do first?",
+         "options": [
+          "Use the reset button to bring the reading to zero.",
+          "Add the object and keep the old reading.",
+          "Measure the object's volume before resetting.",
+          "Change the unit used for the balance reading."
+         ],
+         "answer": 0,
+         "why": {
+          "Add the object and keep the old reading.": "The old reading would remain in the measured result.",
+          "Measure the object's volume before resetting.": "Measuring volume does not bring the balance reading to zero.",
+          "Change the unit used for the balance reading.": "Changing the unit leaves the non-zero reading unchanged."
+         },
+         "explanation": "The reset button brings the balance reading to zero.",
+         "f": [
+          "5.3"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 142
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "displacement"
+         ],
+         "prompt": "A pebble is fully placed in water in a measuring cylinder. The water level rises. How is the pebble's volume found?",
+         "options": [
+          "Subtract initial water volume from final water volume.",
+          "Add initial water volume to final water volume.",
+          "Use final water volume without subtracting anything.",
+          "Use initial water volume without subtracting anything."
+         ],
+         "answer": 0,
+         "why": {
+          "Add initial water volume to final water volume.": "Adding the initial volume does not isolate the pebble's volume.",
+          "Use final water volume without subtracting anything.": "The final volume includes the water and the pebble together.",
+          "Use initial water volume without subtracting anything.": "The initial volume does not include the space taken by the pebble."
+         },
+         "explanation": "Subtracting the initial volume leaves the space taken by the pebble.",
+         "f": [
+          "5.4",
+          "5.6",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 143
+          },
+          {
+           "ch": 9,
+           "p": 143
+          },
+          {
+           "ch": 9,
+           "p": 146
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "density comparison"
+         ],
+         "prompt": "One block has more mass and more volume than another block. What can the child conclude about their densities?",
+         "options": [
+          "Their densities cannot be compared from this information alone.",
+          "The heavier block must have the greater density.",
+          "The lighter block must have the greater density.",
+          "Both blocks must have the same density."
+         ],
+         "answer": 0,
+         "why": {
+          "The heavier block must have the greater density.": "The child is using total mass instead of mass per unit volume.",
+          "The lighter block must have the greater density.": "The child is using total mass instead of mass per unit volume.",
+          "Both blocks must have the same density.": "Equal density does not require equal masses or equal volumes."
+         },
+         "explanation": "Density depends on mass per unit volume, so both values are needed.",
+         "f": [
+          "5.2",
+          "5.4",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 141
+          },
+          {
+           "ch": 9,
+           "p": 143
+          },
+          {
+           "ch": 9,
+           "p": 149
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l5-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "density comparison"
+         ],
+         "prompt": "Two samples have equal volumes, but one sample has more mass. What is the correct conclusion?",
+         "options": [
+          "It has greater density because its mass is greater.",
+          "It has lower density because its mass is greater.",
+          "Both have equal density because their volumes match.",
+          "Density cannot be compared because their volumes match."
+         ],
+         "answer": 0,
+         "why": {
+          "It has lower density because its mass is greater.": "Greater mass gives greater density, not lower density.",
+          "Both have equal density because their volumes match.": "Equal volumes do not make density equal when masses differ.",
+          "Density cannot be compared because their volumes match.": "Equal volumes do not prevent their densities from being compared."
+         },
+         "explanation": "With equal volumes, the greater mass gives greater density.",
+         "f": [
+          "5.2",
+          "5.4",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 141
+          },
+          {
+           "ch": 9,
+           "p": 143
+          },
+          {
+           "ch": 9,
+           "p": 149
+          }
+         ]
         }
        ],
        "topicScene": "media/ch9-l5-a-measuring-cylinder-8b4cd5.webp",
@@ -28937,7 +29766,7 @@
       {
        "id": "science-g8-ch9-l6",
        "title": "Lesson 6: How Temperature and Pressure Affect Density",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -29009,6 +29838,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g8-ch9-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A block is heated and then cooled. How does its density change?",
+         "steps": [
+          "Heating makes the particles move away and spread out.",
+          "This makes the block's volume increase while its mass stays unchanged.",
+          "More volume with the same mass means the density decreases.",
+          "Cooling makes the density increase again, so the cool block is denser."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 147
+          },
+          {
+           "ch": 9,
+           "p": 147
+          },
+          {
+           "ch": 9,
+           "p": 147
+          },
+          {
+           "ch": 9,
+           "p": 147
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "science-g8-ch9-l6-a2",
          "difficulty": 1,
@@ -29030,25 +29901,6 @@
            "ch": 9,
            "p": 147
           },
-          {
-           "ch": 9,
-           "p": 147
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "science-g8-ch9-l6-a3",
-         "difficulty": 1,
-         "tags": [
-          "heating",
-          "volume",
-          "mass"
-         ],
-         "prompt": "Heating a substance increases its volume but does not change its mass.",
-         "answer": true,
-         "explanation": "Correct. Heating increases volume, but the mass stays the same.",
-         "src": [
           {
            "ch": 9,
            "p": 147
@@ -29222,26 +30074,113 @@
         },
         {
          "type": "mcq",
-         "id": "science-g8-ch9-l6-a9",
+         "id": "science-g8-ch9-l6-d1",
          "difficulty": 3,
          "tags": [
-          "hot air",
-          "pressure",
-          "solids"
+          "deep",
+          "predict"
          ],
-         "prompt": "Which statement correctly explains hot air and pressure on solids?",
+         "prompt": "A child heats the same amount of material. What happens to its density?",
          "options": [
-          "Hot air rises because it is less dense; solids resist pressure more than liquids.",
-          "Hot air rises because it is denser; solids resist pressure more than liquids.",
-          "Hot air rises because it is less dense; solids resist pressure less than liquids.",
-          "Hot air rises because it is denser; solids resist pressure less than liquids."
+          "Its density falls because its volume grows.",
+          "Its density rises because its volume grows.",
+          "Its density falls because its mass grows.",
+          "Its density stays same because particles move closer."
          ],
          "answer": 0,
-         "explanation": "Hot air rises because it is less dense than cool air. Solids are even less affected by pressure than liquids.",
+         "why": {
+          "Its density rises because its volume grows.": "The child confuses volume increasing with density increasing.",
+          "Its density falls because its mass grows.": "The child wrongly thinks heating adds mass.",
+          "Its density stays same because particles move closer.": "Heating makes particles move away, not closer."
+         },
+         "explanation": "Heating increases volume without changing mass, so density decreases.",
+         "f": [
+          "6.1",
+          "6.3",
+          "6.4"
+         ],
          "src": [
           {
            "ch": 9,
            "p": 147
+          },
+          {
+           "ch": 9,
+           "p": 147
+          },
+          {
+           "ch": 9,
+           "p": 147
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Gas is pressed into a small space. What happens to its density?",
+         "options": [
+          "Its density falls as its volume falls.",
+          "Its density stays same as particles spread out.",
+          "Its density rises as its volume falls.",
+          "Its density rises as its volume grows."
+         ],
+         "answer": 2,
+         "why": {
+          "Its density falls as its volume falls.": "The child thinks lower volume must mean lower density.",
+          "Its density stays same as particles spread out.": "The child wrongly says pressing makes particles spread out.",
+          "Its density rises as its volume grows.": "The child reverses the volume change caused by pressure."
+         },
+         "explanation": "Pressure moves particles closer, lowering volume and raising density.",
+         "f": [
+          "6.6",
+          "6.7"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 148
+          },
+          {
+           "ch": 9,
+           "p": 148
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l6-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "Which test best compares how pressure affects liquids and solids?",
+         "options": [
+          "Press both kinds equally and compare their density changes.",
+          "Press only the liquid and compare its density change.",
+          "Press both kinds unequally and compare their density changes.",
+          "Heat both kinds equally and compare their density changes."
+         ],
+         "answer": 0,
+         "why": {
+          "Press only the liquid and compare its density change.": "This test cannot compare liquids with solids.",
+          "Press both kinds unequally and compare their density changes.": "Different pressures make the comparison unfair.",
+          "Heat both kinds equally and compare their density changes.": "Heating tests temperature, not the effect of pressure."
+         },
+         "explanation": "Equal pressure is fair, and solids change less than liquids.",
+         "f": [
+          "6.8",
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 148
           },
           {
            "ch": 9,
@@ -29264,7 +30203,7 @@
       {
        "id": "science-g8-ch9-exam",
        "title": "Test practice",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 15,
        "topicScene": "media/ch9-l1-absinthe-spoon-2-289f3b.webp",
        "sceneAlt": "A sugar cube partially dissolves on a spoon as water drips into a glass.",
        "sceneCaption": "Water drips onto a partially dissolved sugar cube in an absinthe glass.",
@@ -29431,6 +30370,216 @@
           "Adding enough salt can change an unsaturated solution into a saturated one."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner visits a school pond and sees aquatic life in the water. She explains that dissolved oxygen helps sustain this life, even though oxygen dissolves only to a small extent. She says the mixture of gases in water is uniform because the gases dissolve evenly. After warming a sample of pond water, she notes that gas solubility generally decreases. She then cools it, so more oxygen can dissolve.",
+         "prompt": "The learner cools the warmed sample of pond water. What should she expect next?",
+         "options": [
+          "The water can hold a greater amount of dissolved oxygen.",
+          "The water can hold less dissolved oxygen.",
+          "The amount of dissolved oxygen will remain exactly unchanged.",
+          "The water will hold an unlimited amount of dissolved oxygen."
+         ],
+         "answer": 0,
+         "why": {
+          "The water can hold less dissolved oxygen.": "This reverses the stated relationship between temperature and gas solubility.",
+          "The amount of dissolved oxygen will remain exactly unchanged.": "The stated solubility trend predicts a change when the water is cooled.",
+          "The water will hold an unlimited amount of dissolved oxygen.": "Cold water still dissolves oxygen only to a small extent, not an unlimited amount."
+         },
+         "explanation": "Cooling allows more oxygen to dissolve because gas solubility generally falls as temperature rises."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A learner visits a school pond and sees aquatic life in the water. She explains that dissolved oxygen helps sustain this life, even though oxygen dissolves only to a small extent. She says the mixture of gases in water is uniform because the gases dissolve evenly. After warming a sample of pond water, she notes that gas solubility generally decreases. She then cools it, so more oxygen can dissolve.",
+         "prompt": "If the learner keeps warming the pond water, what should she expect next?",
+         "options": [
+          "Less gas will generally dissolve, so dissolved oxygen may decrease.",
+          "More gas will generally dissolve, so dissolved oxygen may increase.",
+          "Gas solubility will remain unchanged as the water warms.",
+          "Less gas will generally dissolve, so dissolved oxygen may increase."
+         ],
+         "answer": 0,
+         "why": {
+          "More gas will generally dissolve, so dissolved oxygen may increase.": "This reverses the stated effect of increasing temperature on gas solubility.",
+          "Gas solubility will remain unchanged as the water warms.": "The case states that gas solubility generally decreases when water is warmed.",
+          "Less gas will generally dissolve, so dissolved oxygen may increase.": "A decrease in solubility does not support a greater dissolved amount of oxygen."
+         },
+         "explanation": "Gas solubility generally decreases as temperature rises, so less oxygen can remain dissolved."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): More oxygen can dissolve in cold water than in warmer water.\nReason (R): The solubility of gases generally decreases as temperature increases.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The decrease in gas solubility at higher temperatures explains why cold water can dissolve more oxygen."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l3-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): The components of a solution cannot be seen separately.\nReason (R): A mixture of gases dissolved in water is non-uniform.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 2,
+         "explanation": "The assertion is true, but gases dissolved evenly in water form a uniform mixture rather than a non-uniform one."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch9-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how temperature affects the amount of gas that dissolves in water.",
+         "answer": "The solubility of gases generally decreases when the temperature of water increases. This means that, as the water becomes warmer, less gas can generally dissolve in it. When the water is cooled, the opposite happens, so more oxygen can dissolve. Oxygen dissolves in water only to a small extent, but the dissolved oxygen helps to sustain aquatic life. Therefore, temperature can affect how much oxygen is available in the water.",
+         "points": [
+          "Solubility generally decreases as temperature rises.",
+          "Warmer water can generally dissolve less gas.",
+          "Cooling allows more oxygen to dissolve.",
+          "Dissolved oxygen supports aquatic life."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a science activity, the student washed rice in a container. The student noticed that husk particles stayed at the surface while the rice grains collected at the bottom. Later, the student mixed oil and water in another container. The oil formed a layer above the water.",
+         "prompt": "What would most likely happen if the student added more rice grains to the washing water?",
+         "options": [
+          "The extra grains would settle near the bottom with the other rice grains.",
+          "Most of the extra grains would remain at the surface with the husk particles.",
+          "The extra grains would stay evenly spread through the water.",
+          "The extra grains would rise above the container."
+         ],
+         "answer": 0,
+         "why": {
+          "Most of the extra grains would remain at the surface with the husk particles.": "Husk particles are lighter than water, so they remain at the surface.",
+          "The extra grains would stay evenly spread through the water.": "Even spreading is not expected because the grains sink.",
+          "The extra grains would rise above the container.": "Rice grains do not rise above the container."
+         },
+         "explanation": "Rice grains are heavier than water, so they sink."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a science activity, the student washed rice in a container. The student noticed that husk particles stayed at the surface while the rice grains collected at the bottom. Later, the student mixed oil and water in another container. The oil formed a layer above the water.",
+         "prompt": "Why did the husk particles float while the rice grains sank?",
+         "options": [
+          "The rice grains were heavier than water, while the husk particles were lighter.",
+          "The rice grains were lighter than water, while the husk particles were heavier.",
+          "Both the rice grains and husk particles were heavier than water.",
+          "Both the rice grains and husk particles were lighter than water."
+         ],
+         "answer": 0,
+         "why": {
+          "The rice grains were lighter than water, while the husk particles were heavier.": "Sinking objects are heavier than the liquid.",
+          "Both the rice grains and husk particles were heavier than water.": "Husk particles float, so this option is incorrect.",
+          "Both the rice grains and husk particles were lighter than water.": "Rice grains sink, so this option is incorrect."
+         },
+         "explanation": "Floating objects are lighter than the liquid."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l4-x3",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a science activity, the student washed rice in a container. The student noticed that husk particles stayed at the surface while the rice grains collected at the bottom. Later, the student mixed oil and water in another container. The oil formed a layer above the water.",
+         "prompt": "Why did the oil form a layer above the water?",
+         "options": [
+          "Oil is lighter than water, so it floats above it.",
+          "Oil is heavier than water, so it stays below it.",
+          "Oil and water have the same density, so they mix evenly.",
+          "Oil is affected only by being packed closely together."
+         ],
+         "answer": 0,
+         "why": {
+          "Oil is heavier than water, so it stays below it.": "The result shows that oil does not stay below water.",
+          "Oil and water have the same density, so they mix evenly.": "Oil and water do not form evenly mixed layers in this case.",
+          "Oil is affected only by being packed closely together.": "Packing is related to density but does not explain the oil layer here."
+         },
+         "explanation": "The floating oil must be lighter than water."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l4-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A crowded bus has high density.\nReason (R): Many people are packed together in the bus.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The reason explains the high density because many people are packed into the same space."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch9-l4-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Oil forms a layer above water when the two are mixed.\nReason (R): Oil is heavier than water.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 2,
+         "explanation": "The statement is true, but oil floats above water because it is lighter, not heavier."
         }
        ]
       }
@@ -29816,7 +30965,7 @@
       {
        "id": "science-g8-ch10-l1",
        "title": "Spherical Mirrors and Their Types",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -29869,6 +31018,48 @@
           {
            "ch": 10,
            "p": 153
+          },
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch10-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can curved glass become either kind of spherical mirror?",
+         "steps": [
+          "Grinding and polishing shape flat glass into a curved spherical form.",
+          "Spherical mirrors can curve inwards or outwards, so two types are possible.",
+          "Coating the outer curved surface produces a concave mirror.",
+          "Putting coating on the inner curved surface produces a convex mirror."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.7",
+          "1.8",
+          "1.9",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
           },
           {
            "ch": 10,
@@ -30024,6 +31215,90 @@
            "p": 154
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A maker has curved glass and wants a concave mirror. Which coating plan works?",
+         "options": [
+          "Coat the outer curved surface.",
+          "Coat the inner curved surface.",
+          "Grind and polish a flat sheet.",
+          "Polish the curved surface without coating."
+         ],
+         "answer": 0,
+         "why": {
+          "Coat the inner curved surface.": "This coating produces a convex mirror instead.",
+          "Grind and polish a flat sheet.": "This shapes glass but does not choose the coated curved surface.",
+          "Polish the curved surface without coating.": "Polishing without coating misses the step that makes the mirror."
+         },
+         "explanation": "This coating produces a concave mirror.",
+         "f": [
+          "1.8",
+          "1.9",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "Two curved glass pieces are ready. Which test best reveals their mirror types?",
+         "options": [
+          "Coat one inner surface and one outer surface.",
+          "Coat both inner surfaces, then compare them.",
+          "Coat both outer surfaces, then compare them.",
+          "Polish both surfaces, then compare them."
+         ],
+         "answer": 0,
+         "why": {
+          "Coat both inner surfaces, then compare them.": "Both inner coatings make convex mirrors, so the test cannot separate them.",
+          "Coat both outer surfaces, then compare them.": "Both outer coatings make concave mirrors, so the test cannot separate them.",
+          "Polish both surfaces, then compare them.": "Polishing shapes the glass but does not set the mirror type."
+         },
+         "explanation": "Inner coating makes a convex mirror, while outer coating makes a concave one.",
+         "f": [
+          "1.8",
+          "1.9",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          },
+          {
+           "ch": 10,
+           "p": 154
+          }
+         ]
         }
        ],
        "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
@@ -30040,7 +31315,7 @@
       {
        "id": "science-g8-ch10-l2",
        "title": "Images Formed by Spherical Mirrors",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -30106,6 +31381,43 @@
           {
            "ch": 10,
            "p": 157
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch10-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child looks in a concave mirror, then steps away. What changes?",
+         "steps": [
+          "The close object gives an erect, enlarged image because the mirror is concave.",
+          "As the object moves farther away, its image becomes inverted.",
+          "The enlarged image also becomes smaller as the object moves away.",
+          "Therefore, the image changes with the object's distance from a concave mirror."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
           }
          ]
         },
@@ -30324,17 +31636,96 @@
            "p": 157
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A tooth is close to a concave mirror. What image appears?",
+         "options": [
+          "An inverted, enlarged image.",
+          "An erect, enlarged image.",
+          "An erect, smaller image.",
+          "An inverted, smaller image."
+         ],
+         "answer": 1,
+         "why": {
+          "An inverted, enlarged image.": "This mistake uses the farther-away rule while the tooth is close.",
+          "An erect, smaller image.": "This mistake thinks a concave image is always smaller.",
+          "An inverted, smaller image.": "This mistake mixes the inverted and smaller results from moving away."
+         },
+         "explanation": "This is right because a close object gives an erect, enlarged image.",
+         "f": [
+          "2.1",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "How should you test distance changes in a concave mirror?",
+         "options": [
+          "Move the object farther away and observe the image.",
+          "Cover the image and move the object farther away.",
+          "Replace the concave mirror with a convex one.",
+          "Keep the object still and make it larger."
+         ],
+         "answer": 0,
+         "why": {
+          "Cover the image and move the object farther away.": "This mistake hides the result, so the image cannot be watched.",
+          "Replace the concave mirror with a convex one.": "This mistake changes mirror type, so distance is not tested alone.",
+          "Keep the object still and make it larger.": "This mistake changes object size instead of object distance."
+         },
+         "explanation": "This is right because it changes distance and watches the image.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          },
+          {
+           "ch": 10,
+           "p": 156
+          }
+         ]
         }
        ],
-       "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
-       "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
-       "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
+       "topicScene": "media/ch10-l2-mirror-reflections-on-magnet-6af083.webp",
+       "sceneAlt": "Several magnetic spheres reflect the surrounding room, with each view differing according to the sphere’s position.",
+       "sceneCaption": "Magnetic spheres show different reflections of the same room from their positions.",
        "sceneCredit": {
-        "text": "A safety convex mirror at the Esplanade end of Howrah metro station's  by Projjalm, CC0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:A_safety_convex_mirror_at_the_Esplanade_end_of_Howrah_metro_station%27s_platform_1B.jpg",
-        "license": "CC0",
-        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-        "creator": "Projjalm"
+        "text": "Mirror reflections on magnetic spheres by Annatsach, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Mirror_reflections_on_magnetic_spheres.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Annatsach"
        }
       },
       {
@@ -30658,15 +32049,15 @@
          ]
         }
        ],
-       "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
-       "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
-       "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
+       "topicScene": "media/ch10-l3-solar-dish-at-ben-gurion-nat-5b46dc.webp",
+       "sceneAlt": "A very large solar energy dish stands at the Ben-Gurion National Solar Energy Center in Sde Boker, Israel.",
+       "sceneCaption": "A huge solar dish uses a curved reflector to concentrate sunlight at the national solar energy center in Israel.",
        "sceneCredit": {
-        "text": "A safety convex mirror at the Esplanade end of Howrah metro station's  by Projjalm, CC0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:A_safety_convex_mirror_at_the_Esplanade_end_of_Howrah_metro_station%27s_platform_1B.jpg",
-        "license": "CC0",
-        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-        "creator": "Projjalm"
+        "text": "Solar dish at Ben-Gurion National Solar Energy Center in Israel by David Shankbone, CC BY 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Solar_dish_at_Ben-Gurion_National_Solar_Energy_Center_in_Israel.jpg",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "creator": "David Shankbone"
        }
       },
       {
@@ -30910,15 +32301,15 @@
          ]
         }
        ],
-       "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
-       "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
-       "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
+       "topicScene": "media/ch10-l4-2015-05-25-0820incoming-para-d406ae.webp",
+       "sceneAlt": "Incoming parallel rays pass through a convex lens and form an inverted real image one focal length beyond it.",
+       "sceneCaption": "Parallel rays form an inverted real image one focal length beyond a convex lens.",
        "sceneCredit": {
-        "text": "A safety convex mirror at the Esplanade end of Howrah metro station's  by Projjalm, CC0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:A_safety_convex_mirror_at_the_Esplanade_end_of_Howrah_metro_station%27s_platform_1B.jpg",
-        "license": "CC0",
-        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-        "creator": "Projjalm"
+        "text": "2015-05-25 0820Incoming parallel rays are focused by a convex lens int by Lookang many thanks to author of original simulation = Fu-Kwun Hwang author of E, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:2015-05-25_0820Incoming_parallel_rays_are_focused_by_a_convex_lens_into_an_inverted_real_image_one_focal_length_from_the_lens,_on_the_far_side_of_the.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Lookang many thanks to author of original simulation = Fu-Kwun Hwang author of E"
        }
       },
       {
@@ -31144,6 +32535,21 @@
          ]
         }
        ],
+       "topicScene": "media/ch10-l5-yerkes-40-inch-refractor-tel-78cd5b.webp",
+       "sceneAlt": "A photograph shows the large 40-inch refracting telescope at Yerkes Observatory.",
+       "sceneCaption": "The Yerkes Observatory’s 40-inch refracting telescope, photographed on 9 December 2006.",
+       "sceneCredit": {
+        "text": "Yerkes 40 inch Refractor Telescope-2006 by user Kb9vrg, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Yerkes_40_inch_Refractor_Telescope-2006.jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "user Kb9vrg"
+       }
+      },
+      {
+       "id": "science-g8-ch10-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 7,
        "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
        "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
        "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
@@ -31153,7 +32559,129 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "creator": "Projjalm"
-       }
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student cleans a shiny spoon. The student notices that the polished hollow side shows an upside-down picture, while the polished outside gives an upright picture that looks reduced. A mirror maker grinds and polishes flat glass and then coats the outside of its hollow curve, making a mirror that bends toward the middle. The maker wonders what would happen if the coating were placed on the other curved side instead.",
+         "prompt": "If the maker places the reflective coating on the inner curved surface of the shaped glass, what kind of mirror results?",
+         "options": [
+          "A convex mirror.",
+          "A concave mirror.",
+          "A concave mirror made by coating the inner curved surface.",
+          "A convex mirror made by coating the outer curved surface."
+         ],
+         "answer": 0,
+         "why": {
+          "A concave mirror.": "That result comes from coating the outer curved surface.",
+          "A concave mirror made by coating the inner curved surface.": "The inner-coating rule gives a convex mirror, not a concave mirror.",
+          "A convex mirror made by coating the outer curved surface.": "The outer-coating rule gives a concave mirror, not a convex mirror."
+         },
+         "explanation": "Coating the inner curved surface produces a convex mirror."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student cleans a shiny spoon. The student notices that the polished hollow side shows an upside-down picture, while the polished outside gives an upright picture that looks reduced. A mirror maker grinds and polishes flat glass and then coats the outside of its hollow curve, making a mirror that bends toward the middle. The maker wonders what would happen if the coating were placed on the other curved side instead.",
+         "prompt": "What feature places the mirror made by the maker in the concave group?",
+         "options": [
+          "Its reflecting surface has an inward curve.",
+          "Its reflecting surface has an outward curve.",
+          "Its reflecting surface has no curved shape.",
+          "Its reflecting surface curves in both directions at once."
+         ],
+         "answer": 0,
+         "why": {
+          "Its reflecting surface has an outward curve.": "An outward curve describes a convex mirror.",
+          "Its reflecting surface has no curved shape.": "A spherical mirror has a curved reflecting surface, not a flat one.",
+          "Its reflecting surface curves in both directions at once.": "This matches neither of the inward and outward curvature directions."
+         },
+         "explanation": "A concave mirror has a reflecting surface that curves inwards."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l1-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A reflective coating on the outer curved surface produces a concave mirror.\nReason (R): The reflecting surface of a concave mirror curves inwards.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "Both statements are true, and the inward curve identifies the reflective surface of the mirror produced by outer-side coating."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch10-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between a concave mirror and a convex mirror.",
+         "answer": "A concave mirror and a convex mirror are both spherical mirrors because their reflecting surfaces are spherical. Their main difference is the direction in which the reflecting surface curves. A concave mirror curves inwards, whereas a convex mirror curves outwards. The place of the reflective coating is also important: coating the outer curved surface produces a concave mirror, and coating the inner curved surface produces a convex mirror. Therefore, the reflective surface and coating position determine which of these two mirror types is made.",
+         "points": [
+          "Both are spherical mirrors.",
+          "A concave reflecting surface curves inwards.",
+          "A convex reflecting surface curves outwards.",
+          "Outer-side coating produces a concave mirror, while inner-side coating produces a convex mirror."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l2-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A dentist can obtain an enlarged view of teeth by using a concave mirror close to the teeth.\nReason (R): A concave mirror gives an erect, enlarged image when the object is close to it.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The reason directly explains how the concave mirror enlarges the close view of the teeth."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch10-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the image formed by a concave mirror changes as a close object is moved farther away, and compare it with the image formed by a convex mirror.",
+         "answer": "A concave mirror forms an erect, enlarged image when the object is close to it. If the object is moved farther away, the image becomes inverted, and the previously enlarged image becomes smaller. A convex mirror, however, always forms an image that is erect and smaller than the object. Therefore, the size and orientation of the images differ: the close object gives a large, upright image in the concave mirror, while the convex mirror always gives an upright, reduced image.",
+         "points": [
+          "A close object forms an erect, enlarged image in a concave mirror.",
+          "Moving the object farther away makes the image inverted.",
+          "The enlarged image becomes smaller as the object moves away.",
+          "A convex mirror always forms an erect, smaller image."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -31415,6 +32943,3884 @@
        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
        "creator": "Projjalm"
       }
+     }
+    },
+    {
+     "id": "ch11-keeping-time-with-the-skies",
+     "title": "Keeping Time with the Skies",
+     "summary": "In this chapter: watching the moon’s changing shapes; finding and explaining the moon; eclipses and natural cycles; how natural cycles became calendars.",
+     "lessons": [
+      {
+       "id": "science-g8-ch11-l1",
+       "title": "Watching the Moon’s Changing Shapes",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch11-l1-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Why does the Moon seem to change shape in the night sky?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch11-l1-a1",
+         "difficulty": 1,
+         "tags": [
+          "moon",
+          "phases",
+          "waxing",
+          "waning"
+         ],
+         "title": "Meet the Moon’s Phases",
+         "body": "The spherical Moon shines by reflecting sunlight. From Earth, its bright part changes shape. These changes are called phases of the Moon. A full bright circle is the full Moon day, or Purnima. An invisible Moon marks the new Moon day, or Amavasya. After the new Moon, the bright side grows. The growing stage is waxing. The shrinking stage is waning. India calls them Shukla Paksha and Krishna Paksha.",
+         "keyPoints": [
+          "Phases are the Moon’s changing shapes.",
+          "Full Moon day is Purnima; new Moon day is Amavasya.",
+          "Waxing means growth; waning means shrinking."
+         ],
+         "explanation": "This helps you connect each visible change with its name.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 171
+          },
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch11-l1-a3",
+         "difficulty": 1,
+         "tags": [
+          "moon",
+          "sunlight"
+         ],
+         "title": "Where Does Moonlight Come From?",
+         "prompt": "The Moon shines by making its own light.",
+         "answer": false,
+         "explanation": "The Moon is spherical and shines by reflecting sunlight.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 171
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch11-l1-a4",
+         "difficulty": 2,
+         "tags": [
+          "full moon",
+          "purnima"
+         ],
+         "title": "Name the Full Moon Day",
+         "prompt": "The Indian name for a full Moon day is ______.",
+         "answers": [
+          "Purnima"
+         ],
+         "hint": "Look for the name beside full Moon day.",
+         "explanation": "A full bright circle is called the full Moon day or Purnima.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 172
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch11-l1-a5",
+         "difficulty": 2,
+         "tags": [
+          "moon",
+          "phases",
+          "names"
+         ],
+         "title": "Match the Moon’s Names",
+         "prompt": "Match each Moon name or stage with its correct label.",
+         "pairs": [
+          [
+           "full Moon day",
+           "Purnima"
+          ],
+          [
+           "new Moon day",
+           "Amavasya"
+          ],
+          [
+           "waning period",
+           "Krishna Paksha"
+          ],
+          [
+           "waxing period",
+           "Shukla Paksha"
+          ]
+         ],
+         "explanation": "In India, these names help describe the Moon’s changing stages.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-a6",
+         "difficulty": 2,
+         "tags": [
+          "new moon",
+          "waxing",
+          "half moon"
+         ],
+         "title": "After the New Moon",
+         "prompt": "After the new Moon, what happens to the bright side?",
+         "options": [
+          "The bright side grows to a half circle.",
+          "The bright side slowly shrinks to a half circle.",
+          "The bright side stays hidden for a week.",
+          "The bright side changes into a bright star."
+         ],
+         "answer": 0,
+         "explanation": "After the new Moon, the bright side grows to a half circle in about a week.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 172
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch11-l1-a7",
+         "difficulty": 3,
+         "tags": [
+          "waning",
+          "phases",
+          "half moon"
+         ],
+         "title": "Order the Waning Changes",
+         "prompt": "Put the waning changes in the order given.",
+         "items": [
+          "full bright circle",
+          "the bright part shrinks",
+          "half circle after about a week"
+         ],
+         "explanation": "The bright part shrinks from a full circle to a half circle in about a week.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch11-l1-a8",
+         "difficulty": 3,
+         "tags": [
+          "waxing",
+          "shukla paksha"
+         ],
+         "title": "Name India’s Waxing Period",
+         "prompt": "In India, the waxing period is called ______ Paksha.",
+         "answers": [
+          "Shukla"
+         ],
+         "hint": "This name is for the period when the bright side grows.",
+         "explanation": "In India, the waxing period is called Shukla Paksha.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-a9",
+         "difficulty": 3,
+         "tags": [
+          "waxing",
+          "waning",
+          "indian names"
+         ],
+         "title": "Match India’s Two Periods",
+         "prompt": "Which pair correctly matches a period and its Indian name?",
+         "options": [
+          "Shukla Paksha—waxing; Krishna Paksha—waning",
+          "Krishna Paksha—waxing; Shukla Paksha—waning",
+          "Amavasya—waxing; Purnima—waning",
+          "Purnima—waxing; Amavasya—waning"
+         ],
+         "answer": 0,
+         "explanation": "Shukla Paksha means the waxing period, while Krishna Paksha means the waning period.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch11-l1-waning-gibbous-moon-from-kol-b863ab.webp",
+       "sceneAlt": "A bright waning gibbous Moon appears over Kolkata, India, photographed on the twentieth day after the new Moon.",
+       "sceneCaption": "A waning gibbous Moon over Kolkata, photographed on the twentieth day after the new Moon.",
+       "sceneCredit": {
+        "text": "Waning gibbous moon from Kolkata April 2020 by Paramanu Sarkar 03 by Paramanu Sarkar, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Waning_gibbous_moon_from_Kolkata_April_2020_by_Paramanu_Sarkar_03.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Paramanu Sarkar"
+       }
+      },
+      {
+       "id": "science-g8-ch11-l2",
+       "title": "Finding and Explaining the Moon",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch11-l2-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Why does the Moon seem to change shape each night?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch11-l2-a1",
+         "difficulty": 1,
+         "tags": [
+          "moon",
+          "sunlight",
+          "half-circle",
+          "waxing",
+          "waning"
+         ],
+         "title": "The Moon's Bright Shapes",
+         "body": "The Moon's shape itself does not change. It does not produce light of its own. The half facing the Sun receives sunlight and becomes bright. Only one half always faces Earth. When the Moon looks like a half circle, it is overhead at sunrise. A waxing Moon is easiest to spot at sunset. A waning Moon is easiest to spot at sunrise. It rises about 50 minutes later each day.",
+         "keyPoints": [
+          "The Moon's shape itself does not change.",
+          "Sunlight brightens the half facing the Sun.",
+          "Only one half always faces Earth.",
+          "The Moon rises about 50 minutes later each day."
+         ],
+         "explanation": "The Moon is found by its changing brightness and rising times.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 174
+          },
+          {
+           "ch": 11,
+           "p": 174
+          },
+          {
+           "ch": 11,
+           "p": 174
+          },
+          {
+           "ch": 11,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-a2",
+         "difficulty": 1,
+         "tags": [
+          "moon",
+          "light",
+          "sunlight"
+         ],
+         "prompt": "Which statement about the Moon's light is true?",
+         "options": [
+          "The Moon makes light of its own.",
+          "Sunlight makes the Sun-facing half bright.",
+          "The whole Moon glows by itself.",
+          "The dark half makes more light."
+         ],
+         "answer": 1,
+         "explanation": "The Moon does not produce light of its own. Sunlight makes the half facing the Sun bright.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 174
+          },
+          {
+           "ch": 11,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch11-l2-a3",
+         "difficulty": 1,
+         "tags": [
+          "moon",
+          "shape"
+         ],
+         "prompt": "The shape of the Moon itself changes each night.",
+         "answer": false,
+         "explanation": "The shape of the Moon itself does not change.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch11-l2-a4",
+         "difficulty": 2,
+         "tags": [
+          "moon",
+          "full-moon",
+          "sunrise"
+         ],
+         "prompt": "After the full Moon, the Moon appears closer to the Sun at ______.",
+         "answers": [
+          "sunrise"
+         ],
+         "hint": "Think about the time just after the full Moon.",
+         "explanation": "After the full Moon, the Moon appears closer to the Sun at sunrise.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-a5",
+         "difficulty": 2,
+         "tags": [
+          "moon",
+          "waning",
+          "sunrise",
+          "sunset"
+         ],
+         "prompt": "When is a waning Moon easiest to spot?",
+         "options": [
+          "at sunrise",
+          "at sunset",
+          "on a full Moon day"
+         ],
+         "answer": 0,
+         "explanation": "A waning Moon is easiest to spot at sunrise.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch11-l2-a7",
+         "difficulty": 3,
+         "tags": [
+          "moon",
+          "sun",
+          "rising",
+          "setting"
+         ],
+         "prompt": "The Moon always rises and sets at different times from the Sun.",
+         "answer": true,
+         "explanation": "The Moon always rises and sets at different times from the Sun.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-a8",
+         "difficulty": 3,
+         "tags": [
+          "moon",
+          "shape",
+          "sunlight"
+         ],
+         "prompt": "Why does the Moon show different bright shapes while its own shape stays the same?",
+         "options": [
+          "Sunlight brightens the half facing the Sun.",
+          "The Moon changes its own shape each night.",
+          "The Earth blocks all sunlight from the Moon.",
+          "The Moon produces different kinds of light."
+         ],
+         "answer": 0,
+         "explanation": "The shape itself does not change. Sunlight brightens the half facing the Sun.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 174
+          },
+          {
+           "ch": 11,
+           "p": 174
+          },
+          {
+           "ch": 11,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch11-l2-a9",
+         "difficulty": 3,
+         "tags": [
+          "moon",
+          "sunlight",
+          "brightness"
+         ],
+         "prompt": "Put these events in order from the Sun's light to brightness.",
+         "items": [
+          "The half of the Moon faces the Sun.",
+          "Sunlight reaches that half.",
+          "That half becomes bright."
+         ],
+         "explanation": "Sunlight reaches the half facing the Sun. That half then becomes bright.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 174
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch11-l1-waning-gibbous-moon-from-kol-b863ab.webp",
+       "sceneAlt": "A bright waning gibbous Moon appears over Kolkata, India, photographed on the twentieth day after the new Moon.",
+       "sceneCaption": "A waning gibbous Moon over Kolkata, photographed on the twentieth day after the new Moon.",
+       "sceneCredit": {
+        "text": "Waning gibbous moon from Kolkata April 2020 by Paramanu Sarkar 03 by Paramanu Sarkar, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Waning_gibbous_moon_from_Kolkata_April_2020_by_Paramanu_Sarkar_03.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Paramanu Sarkar"
+       }
+      },
+      {
+       "id": "science-g8-ch11-l3",
+       "title": "Eclipses and Natural Cycles",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch11-l3-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Why do eclipses sometimes miss the Moon?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch11-l3-a1",
+         "difficulty": 1,
+         "tags": [
+          "eclipses",
+          "moon"
+         ],
+         "title": "Why eclipses happen",
+         "body": "Earth’s shadow can fall on the Moon. This causes a lunar eclipse, and it can happen only on a full Moon day. A solar eclipse can happen only on a new Moon day. Eclipses do not happen every month because the Moon’s orbit, or path, is slightly tilted. The Moon’s changing phases form a natural cycle of almost a month. This cycle can also help keep time.",
+         "keyPoints": [
+          "Earth’s shadow on the Moon causes a lunar eclipse.",
+          "A solar eclipse can happen only on a new Moon day.",
+          "Eclipses do not happen every month because the Moon’s orbit is slightly tilted."
+         ],
+         "explanation": "The shadow and the Moon’s day both help decide when an eclipse can happen.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 178
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "lunar eclipse",
+          "earth",
+          "shadow"
+         ],
+         "title": "Cause of a lunar eclipse",
+         "prompt": "What causes a lunar eclipse?",
+         "options": [
+          "Earth’s shadow falling on the Moon",
+          "The Moon’s changing phases",
+          "The Moon’s slightly tilted orbit",
+          "The changing seasons"
+         ],
+         "answer": 0,
+         "explanation": "A lunar eclipse happens when Earth’s shadow falls on the Moon.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch11-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "moon",
+          "phases",
+          "shadow"
+         ],
+         "title": "Shadow and Moon phases",
+         "prompt": "Earth’s shadow causes the phases of the Moon.",
+         "answer": false,
+         "explanation": "Earth’s shadow causes a lunar eclipse, not the Moon’s phases.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch11-l3-a4",
+         "difficulty": 1,
+         "tags": [
+          "lunar eclipse",
+          "full moon"
+         ],
+         "title": "When can a lunar eclipse happen?",
+         "prompt": "A lunar eclipse can happen only on a ______ Moon day.",
+         "answers": [
+          "full"
+         ],
+         "hint": "Think about the phase named in the lesson.",
+         "explanation": "A lunar eclipse can happen only on a full Moon day.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch11-l3-a5",
+         "difficulty": 2,
+         "tags": [
+          "natural cycle",
+          "time",
+          "seasons"
+         ],
+         "title": "Regular patterns in nature",
+         "body": "A natural cycle is a repeating pattern in nature. The Moon’s changing phases form a natural cycle of almost a month. This monthly cycle can also be used for keeping time. Day, night and the changing seasons are also regular natural events. These are patterns that happen again and again.",
+         "keyPoints": [
+          "The Moon’s changing phases form a cycle of almost a month.",
+          "The monthly cycle can be used for keeping time.",
+          "Day, night and the changing seasons are regular natural events."
+         ],
+         "explanation": "Natural cycles are repeating patterns, and some of them help people keep time.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 178
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch11-l3-a6",
+         "difficulty": 2,
+         "tags": [
+          "eclipses",
+          "moon",
+          "natural cycle"
+         ],
+         "title": "Match each idea",
+         "prompt": "Match each idea on the left with its matching idea on the right.",
+         "pairs": [
+          [
+           "Earth’s shadow falling on the Moon",
+           "A lunar eclipse"
+          ],
+          [
+           "A solar eclipse",
+           "A new Moon day"
+          ],
+          [
+           "The Moon’s slightly tilted orbit",
+           "Eclipses do not occur every month"
+          ],
+          [
+           "The Moon’s changing phases",
+           "A natural cycle of almost a month"
+          ],
+          [
+           "The monthly Moon cycle",
+           "Keeping time"
+          ]
+         ],
+         "explanation": "Each pair connects an eclipse, its cause, or the cycle of the Moon.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 178
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-a7",
+         "difficulty": 2,
+         "tags": [
+          "eclipses",
+          "orbit",
+          "moon"
+         ],
+         "title": "Why not every month?",
+         "prompt": "Why do eclipses not occur every month?",
+         "options": [
+          "Because the Moon’s orbit is tilted.",
+          "Because the Moon changes its phases.",
+          "Because day and night change.",
+          "Because the seasons change."
+         ],
+         "answer": 0,
+         "explanation": "The Moon’s orbit is slightly tilted, so eclipses do not occur every month.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-a8",
+         "difficulty": 3,
+         "tags": [
+          "solar eclipse",
+          "lunar eclipse",
+          "moon"
+         ],
+         "title": "Choose the correct link",
+         "prompt": "Which statement correctly links an eclipse with a Moon day?",
+         "options": [
+          "A solar eclipse can happen on a full Moon day.",
+          "A lunar eclipse can happen on a new Moon day.",
+          "A solar eclipse can happen on a new Moon day.",
+          "A lunar eclipse can happen every month."
+         ],
+         "answer": 2,
+         "explanation": "A solar eclipse can happen only on a new Moon day.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch11-l3-a9",
+         "difficulty": 3,
+         "tags": [
+          "natural cycle",
+          "moon",
+          "time"
+         ],
+         "title": "Length of the Moon’s cycle",
+         "prompt": "The Moon’s changing phases form a natural cycle of almost a ______.",
+         "answers": [
+          "month"
+         ],
+         "hint": "Think about how long the cycle lasts.",
+         "explanation": "The changing phases form a natural cycle of almost a month.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 178
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch11-l3-total-solar-eclipse-graphics-380cff.webp",
+       "sceneAlt": "A diagram shows the Moon's shadow falling on Earth and completely blocking sunlight during a total solar eclipse.",
+       "sceneCaption": "A total solar eclipse occurs when the Moon's shadow reaches Earth and blocks the Sun.",
+       "sceneCredit": {
+        "text": "Total Solar Eclipse Graphics En 01 by Sanu N, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Total_Solar_Eclipse_Graphics_En_01.svg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Sanu N"
+       }
+      },
+      {
+       "id": "science-g8-ch11-l4",
+       "title": "How Natural Cycles Became Calendars",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch11-l4-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How did the Sun, Moon, and seasons help people build calendars?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch11-l4-a1",
+         "difficulty": 1,
+         "tags": [
+          "day",
+          "month",
+          "year",
+          "calendar"
+         ],
+         "title": "Natural Cycles and Time",
+         "body": "Earth’s rotation and the Sun’s cycle form the basis of a day. The Moon’s changing phases help define a month. Earth’s cycle of seasons can define a solar year. A lunar calendar uses the Moon’s cycle for months. Ancient people used twelve lunar months. A lunar year lasts 354 days. Solar calendars match years with seasons and adjust months to add up to 365 days.",
+         "keyPoints": [
+          "The day comes from Earth’s rotation and the Sun’s cycle.",
+          "The Moon’s phases help define the month.",
+          "Solar calendars match years with seasons."
+         ],
+         "explanation": "Natural cycles helped people make calendars for days, months, and years.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 180
+          },
+          {
+           "ch": 11,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "rotation",
+          "sun",
+          "day"
+         ],
+         "title": "What Moves the Sun Across the Sky?",
+         "prompt": "The Sun’s daily apparent motion is mainly due to what?",
+         "options": [
+          "Earth’s rotation",
+          "Moon’s phases",
+          "Earth’s seasons",
+          "The Moon’s cycle"
+         ],
+         "answer": 0,
+         "explanation": "Earth’s rotation makes the Sun’s daily apparent motion. This movement helps form the basis of the day.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 178
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch11-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "solar day",
+          "sun"
+         ],
+         "title": "The Mean Solar Day",
+         "prompt": "The average time between the Sun’s highest positions is the mean solar day.",
+         "answer": true,
+         "explanation": "Yes. The mean solar day is the average time between the Sun’s highest positions.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 178
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch11-l4-a4",
+         "difficulty": 2,
+         "tags": [
+          "lunar calendar",
+          "months"
+         ],
+         "title": "Lunar Months",
+         "prompt": "Ancient people created lunar calendars using ______ lunar months in a year.",
+         "answers": [
+          "twelve"
+         ],
+         "hint": "This number comes from the ancient lunar calendar.",
+         "explanation": "Ancient lunar calendars used twelve lunar months in each year.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 179
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l4-a5",
+         "difficulty": 2,
+         "tags": [
+          "solar calendar",
+          "seasons"
+         ],
+         "title": "Why Make Solar Calendars?",
+         "prompt": "Why were solar calendars created?",
+         "options": [
+          "To match years with seasons",
+          "To measure Earth’s rotation",
+          "To show only Moon phases",
+          "To replace the idea of a day"
+         ],
+         "answer": 0,
+         "explanation": "The need to match years with seasons led to the creation of solar calendars.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch11-l4-a6",
+         "difficulty": 2,
+         "tags": [
+          "day",
+          "month",
+          "solar year",
+          "seasons"
+         ],
+         "title": "Match the Cycle",
+         "prompt": "Match each calendar idea with its natural cycle.",
+         "pairs": [
+          [
+           "Day",
+           "Earth’s rotation and the Sun’s cycle"
+          ],
+          [
+           "Month",
+           "The Moon’s cycle of phases"
+          ],
+          [
+           "Solar year",
+           "Earth’s cycle of seasons"
+          ],
+          [
+           "Solar calendar",
+           "The need to match years with seasons"
+          ]
+         ],
+         "explanation": "Each calendar idea comes from a natural cycle or the need to match years with seasons.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l4-a7",
+         "difficulty": 3,
+         "tags": [
+          "solar calendar",
+          "months",
+          "days"
+         ],
+         "title": "Days in Solar Months",
+         "prompt": "Solar calendars adjust their months to add up to how many days?",
+         "options": [
+          "354 days",
+          "365 days",
+          "12 days"
+         ],
+         "answer": 1,
+         "explanation": "Months in solar calendars are adjusted to add up to 365 days.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch11-l4-a8",
+         "difficulty": 3,
+         "tags": [
+          "calendar",
+          "lunar",
+          "solar",
+          "seasons"
+         ],
+         "title": "How Solar Calendars Developed",
+         "prompt": "Put these events in order.",
+         "items": [
+          "Ancient lunar calendars",
+          "Years needed to match seasons",
+          "Solar calendars created",
+          "Months adjusted to add up to 365 days"
+         ],
+         "explanation": "Lunar calendars came first. The need to match seasons led to solar calendars and adjusted months.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 180
+          },
+          {
+           "ch": 11,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch11-l4-a9",
+         "difficulty": 3,
+         "tags": [
+          "solar calendar",
+          "lunar year",
+          "days"
+         ],
+         "title": "Solar or Lunar?",
+         "prompt": "Solar calendars were made so their months would add up to 354 days.",
+         "answer": false,
+         "explanation": "Solar months add up to 365 days. A lunar year lasts 354 days.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 180
+          },
+          {
+           "ch": 11,
+           "p": 180
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch11-l4-moon-phases-bel-eea73e.webp",
+       "sceneAlt": "The Moon’s phases are shown in relation to its revolution around Earth, with sizes and distances not drawn to scale.",
+       "sceneCaption": "The Moon’s phases are shown in relation to its revolution around Earth.",
+       "sceneCredit": {
+        "text": "Moon phases bel by Moon_phases_ru.jpg : Orion 8 derivative work: Plaga med, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Moon_phases_bel.png",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Moon_phases_ru.jpg : Orion 8 derivative work: Plaga med"
+       }
+      },
+      {
+       "id": "science-g8-ch11-l5",
+       "title": "Indian Luni-Solar Calendars and Sky Traditions",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch11-l5-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How do the Moon, Sun, and changing seasons shape India’s traditional calendars?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch11-l5-a1",
+         "difficulty": 1,
+         "tags": [
+          "luni-solar",
+          "uttarayan",
+          "dakshinayan",
+          "moon",
+          "seasons"
+         ],
+         "title": "Calendars Guided by the Sky",
+         "body": "Ancient observers noticed repeating patterns and cycles in natural events. Uttarayan means the Sun’s apparent northward movement from December to June. Dakshinayan means its apparent southward movement from June to December. Luni-solar calendars mainly use Moon phases, but also adjust to match the seasons. Some add an extra month called Adhika Maasa. In Amant calendars, a new month starts after the new Moon.",
+         "keyPoints": [
+          "The Sun appears northward from December to June.",
+          "The Sun appears southward from June to December.",
+          "Luni-solar calendars follow Moon phases and seasonal changes."
+         ],
+         "explanation": "These ideas explain how Indian calendars follow Moon phases, seasons, and the Sun.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 182
+          },
+          {
+           "ch": 11,
+           "p": 182
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch11-l5-a2",
+         "difficulty": 1,
+         "tags": [
+          "uttarayan",
+          "sun",
+          "movement"
+         ],
+         "prompt": "The Sun’s apparent northward movement from December to June is called Uttarayan.",
+         "answer": true,
+         "explanation": "Uttarayan is the Sun’s apparent northward movement from December to June.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 181
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l5-a3",
+         "difficulty": 1,
+         "tags": [
+          "luni-solar",
+          "moon",
+          "seasons"
+         ],
+         "prompt": "Which calendars mainly use Moon phases and adjust to match the seasons?",
+         "options": [
+          "Luni-solar calendars",
+          "Only solar calendars",
+          "Only lunar calendars",
+          "Daily calendars"
+         ],
+         "answer": 0,
+         "explanation": "Luni-solar calendars mainly use Moon phases. They also adjust to match the seasons.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 181
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch11-l5-a4",
+         "difficulty": 2,
+         "tags": [
+          "uttarayan",
+          "dakshinayan",
+          "amant",
+          "purnimant",
+          "moon"
+         ],
+         "prompt": "Match each name with its correct meaning.",
+         "pairs": [
+          [
+           "Uttarayan",
+           "Northward movement"
+          ],
+          [
+           "Dakshinayan",
+           "Southward movement"
+          ],
+          [
+           "Amant",
+           "Starts after the new Moon"
+          ],
+          [
+           "Purnimant",
+           "Starts after the full Moon"
+          ]
+         ],
+         "explanation": "The pairs connect each movement or month-start rule with its correct name.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 182
+          },
+          {
+           "ch": 11,
+           "p": 182
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch11-l5-a5",
+         "difficulty": 2,
+         "tags": [
+          "luni-solar",
+          "adhika-maasa",
+          "moon",
+          "year"
+         ],
+         "prompt": "Twelve lunar months fall nearly ______ days short of the solar year.",
+         "answers": [
+          "11"
+         ],
+         "hint": "The gap is nearly eleven days.",
+         "explanation": "Twelve lunar months fall nearly 11 days short. Some calendars add Adhika Maasa.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 182
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch11-l5-a8",
+         "difficulty": 3,
+         "tags": [
+          "leap-year",
+          "chaitra",
+          "national-calendar"
+         ],
+         "prompt": "In a leap year, an extra day is added to Chaitra.",
+         "answer": true,
+         "explanation": "In a leap year, an extra day is added to Chaitra.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 182
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l5-a9",
+         "difficulty": 3,
+         "tags": [
+          "national-calendar",
+          "months",
+          "days"
+         ],
+         "prompt": "Which statement about the months of the Indian National Calendar is correct?",
+         "options": [
+          "Every month has 30 days.",
+          "Months have 30 or 31 days.",
+          "Every month has 31 days."
+         ],
+         "answer": 1,
+         "explanation": "Its months have either 30 or 31 days. A leap year changes Chaitra.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 182
+          },
+          {
+           "ch": 11,
+           "p": 182
+          },
+          {
+           "ch": 11,
+           "p": 182
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch11-l1-waning-gibbous-moon-from-kol-b863ab.webp",
+       "sceneAlt": "A bright waning gibbous Moon appears over Kolkata, India, photographed on the twentieth day after the new Moon.",
+       "sceneCaption": "A waning gibbous Moon over Kolkata, photographed on the twentieth day after the new Moon.",
+       "sceneCredit": {
+        "text": "Waning gibbous moon from Kolkata April 2020 by Paramanu Sarkar 03 by Paramanu Sarkar, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Waning_gibbous_moon_from_Kolkata_April_2020_by_Paramanu_Sarkar_03.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Paramanu Sarkar"
+       }
+      },
+      {
+       "id": "science-g8-ch11-l6",
+       "title": "Festivals and Artificial Satellites",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch11-l6-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Why do festival dates change, and how do satellites help us?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch11-l6-a1",
+         "difficulty": 1,
+         "tags": [
+          "festivals",
+          "moon",
+          "satellites"
+         ],
+         "title": "Moon, Calendars and Satellites",
+         "body": "Many Indian festivals are linked to the phases of the Moon. Holi falls on the full Moon of Phalguna. Eid-ul-Fitr is celebrated after sighting the crescent Moon. Moon-based festivals can fall on different Gregorian calendar dates in successive years. Festivals following a solar sidereal calendar keep almost the same date each year. Most artificial satellites take roughly 100 minutes to orbit. Old satellites and rocket parts can become space debris.",
+         "keyPoints": [
+          "Moon phases link many Indian festivals.",
+          "Solar sidereal festivals keep nearly the same yearly date.",
+          "Most artificial satellites take roughly 100 minutes to orbit."
+         ],
+         "explanation": "Moon phases can shift festival dates, while satellites orbit and create possible debris.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 184
+          },
+          {
+           "ch": 11,
+           "p": 185
+          },
+          {
+           "ch": 11,
+           "p": 186
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l6-a2",
+         "difficulty": 1,
+         "tags": [
+          "festivals",
+          "moon"
+         ],
+         "title": "Moon Connections",
+         "prompt": "What are many Indian festivals linked to?",
+         "options": [
+          "The phases of the Moon",
+          "The sunrise times",
+          "Satellite orbits",
+          "Rocket launches"
+         ],
+         "answer": 0,
+         "explanation": "The lesson links many Indian festivals to the phases of the Moon.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 183
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch11-l6-a3",
+         "difficulty": 1,
+         "tags": [
+          "festivals",
+          "calendar"
+         ],
+         "title": "Same Festival Date",
+         "prompt": "Festivals following a solar sidereal calendar happen on almost the same date each year.",
+         "answer": true,
+         "explanation": "Festivals using this calendar keep nearly the same date each year.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 184
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch11-l6-a4",
+         "difficulty": 1,
+         "tags": [
+          "satellites",
+          "orbit"
+         ],
+         "title": "Satellite Orbit Time",
+         "prompt": "Most artificial satellites take roughly ______ minutes to complete one orbit.",
+         "answers": [
+          "100"
+         ],
+         "hint": "The lesson gives an approximate time for one orbit.",
+         "explanation": "Most artificial satellites complete one orbit in roughly 100 minutes.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 185
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch11-l6-a5",
+         "difficulty": 2,
+         "tags": [
+          "festivals",
+          "moon",
+          "calendar"
+         ],
+         "title": "Festival Connections",
+         "prompt": "Match each festival or calendar with its linked detail.",
+         "pairs": [
+          [
+           "Holi",
+           "The full Moon of Phalguna"
+          ],
+          [
+           "Eid-ul-Fitr",
+           "Sighting the crescent Moon"
+          ],
+          [
+           "Moon-based festivals",
+           "Different Gregorian dates in successive years"
+          ],
+          [
+           "Solar sidereal calendar festivals",
+           "Almost the same date each year"
+          ]
+         ],
+         "explanation": "Holi and Eid-ul-Fitr follow Moon details, while solar sidereal festivals keep nearly the same date.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 184
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch11-l6-a6",
+         "difficulty": 2,
+         "tags": [
+          "festivals",
+          "calendar"
+         ],
+         "title": "Compare Festival Dates",
+         "prompt": "Put these steps in order to compare festival dates across successive years.",
+         "items": [
+          "Choose a festival.",
+          "Note its Gregorian date in the current year.",
+          "Note its Gregorian date in the next year.",
+          "Compare the recorded dates."
+         ],
+         "explanation": "Recording and comparing dates shows whether a festival date shifts.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 183
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch11-l6-a7",
+         "difficulty": 2,
+         "tags": [
+          "satellites",
+          "space debris"
+         ],
+         "title": "Useful Satellites and Space Debris",
+         "body": "Most artificial satellites take roughly 100 minutes to complete one orbit. They help with communication, navigation, weather monitoring and other work. Old satellites and rocket parts can become space junk or space debris. This lesson connects useful satellite work with possible debris.",
+         "keyPoints": [
+          "Most satellite orbits take roughly 100 minutes.",
+          "Satellites help communication, navigation and weather monitoring.",
+          "Old satellites and rocket parts can become space debris."
+         ],
+         "explanation": "Satellites support useful work, while old parts can become space debris.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 185
+          },
+          {
+           "ch": 11,
+           "p": 185
+          },
+          {
+           "ch": 11,
+           "p": 186
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l6-a8",
+         "difficulty": 3,
+         "tags": [
+          "festivals",
+          "sunrise"
+         ],
+         "title": "Regional Date Shift",
+         "prompt": "What can differ between eastern and western India and shift a festival date?",
+         "options": [
+          "Sunrise times",
+          "Satellite orbits",
+          "Rocket launches",
+          "Satellite debris"
+         ],
+         "answer": 0,
+         "explanation": "The sunrise time difference between eastern and western India can shift a festival date.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 184
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l6-a9",
+         "difficulty": 3,
+         "tags": [
+          "satellites",
+          "space debris"
+         ],
+         "title": "Sources of Space Debris",
+         "prompt": "What can become space junk or space debris?",
+         "options": [
+          "New communication satellites",
+          "Old satellites and rocket parts",
+          "The full Moon of Phalguna",
+          "Gregorian calendar dates"
+         ],
+         "answer": 1,
+         "explanation": "Old satellites and rocket parts can become space junk or space debris.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 186
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch11-l1-waning-gibbous-moon-from-kol-b863ab.webp",
+       "sceneAlt": "A bright waning gibbous Moon appears over Kolkata, India, photographed on the twentieth day after the new Moon.",
+       "sceneCaption": "A waning gibbous Moon over Kolkata, photographed on the twentieth day after the new Moon.",
+       "sceneCredit": {
+        "text": "Waning gibbous moon from Kolkata April 2020 by Paramanu Sarkar 03 by Paramanu Sarkar, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Waning_gibbous_moon_from_Kolkata_April_2020_by_Paramanu_Sarkar_03.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Paramanu Sarkar"
+       }
+      }
+     ],
+     "boss": {
+      "id": "science-g8-ch11-boss",
+      "title": "Chapter challenge: Keeping Time with the Skies",
+      "estimatedMinutes": 5,
+      "activities": [
+       {
+        "type": "mcq",
+        "id": "science-g8-ch11-boss-a1",
+        "difficulty": 2,
+        "tags": [
+         "moon",
+         "daytime",
+         "sunlight"
+        ],
+        "prompt": "Why could Meera see the Moon during daytime?",
+        "options": [
+         "It reflects sunlight",
+         "It makes its own light",
+         "Earth's shadow lights it",
+         "Sunlight passes through it"
+        ],
+        "answer": 0,
+        "explanation": "The Moon shines by reflecting sunlight, so it can be visible during daytime.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 171
+         },
+         {
+          "ch": 11,
+          "p": 171
+         },
+         {
+          "ch": 11,
+          "p": 174
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "science-g8-ch11-boss-a2",
+        "difficulty": 2,
+        "tags": [
+         "moon",
+         "waxing",
+         "phases"
+        ],
+        "prompt": "After the new Moon, the bright side grows to a half circle in about a week.",
+        "answer": true,
+        "explanation": "This growth marks the early part of the waxing period.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 172
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "science-g8-ch11-boss-a3",
+        "difficulty": 2,
+        "tags": [
+         "waning",
+         "paksha",
+         "moon"
+        ],
+        "prompt": "In India, the waning period is generally called ______ Paksha.",
+        "answers": [
+         "Krishna"
+        ],
+        "hint": "Use the Indian name for the waning period.",
+        "explanation": "The waning period is generally called Krishna Paksha in India.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 172
+         },
+         {
+          "ch": 11,
+          "p": 173
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "science-g8-ch11-boss-a4",
+        "difficulty": 2,
+        "tags": [
+         "moon",
+         "phases",
+         "paksha"
+        ],
+        "prompt": "Match each Moon term with its correct name.",
+        "pairs": [
+         [
+          "Full Moon day",
+          "Purnima"
+         ],
+         [
+          "New Moon day",
+          "Amavasya"
+         ],
+         [
+          "Waxing period",
+          "Shukla Paksha"
+         ],
+         [
+          "Waning period",
+          "Krishna Paksha"
+         ]
+        ],
+        "explanation": "These names describe the Moon's brightness and its changing phases.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 172
+         },
+         {
+          "ch": 11,
+          "p": 172
+         },
+         {
+          "ch": 11,
+          "p": 172
+         },
+         {
+          "ch": 11,
+          "p": 173
+         },
+         {
+          "ch": 11,
+          "p": 173
+         }
+        ]
+       },
+       {
+        "type": "dragorder",
+        "id": "science-g8-ch11-boss-a5",
+        "difficulty": 2,
+        "tags": [
+         "moon",
+         "phases",
+         "cycle"
+        ],
+        "prompt": "Put these Moon stages in order, starting with the new Moon.",
+        "items": [
+         "New Moon day",
+         "Waxing half circle",
+         "Full Moon day",
+         "Waning half circle"
+        ],
+        "explanation": "The bright part grows after the new Moon and shrinks after the full Moon.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 172
+         },
+         {
+          "ch": 11,
+          "p": 172
+         },
+         {
+          "ch": 11,
+          "p": 178
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "science-g8-ch11-boss-a6",
+        "difficulty": 3,
+        "tags": [
+         "eclipse",
+         "earth",
+         "moon"
+        ],
+        "prompt": "What causes a lunar eclipse?",
+        "options": [
+         "Earth's shadow falls on the Moon",
+         "The Moon makes its own shadow",
+         "The Moon changes its shape",
+         "The Moon blocks Earth's sunlight"
+        ],
+        "answer": 0,
+        "explanation": "A lunar eclipse happens when Earth's shadow falls on the Moon.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 177
+         },
+         {
+          "ch": 11,
+          "p": 177
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "science-g8-ch11-boss-a7",
+        "difficulty": 3,
+        "tags": [
+         "eclipse",
+         "phases",
+         "moon"
+        ],
+        "prompt": "Earth's shadow causes the phases of the Moon.",
+        "answer": false,
+        "explanation": "Earth's shadow causes a lunar eclipse, not the Moon's phases.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 177
+         },
+         {
+          "ch": 11,
+          "p": 177
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "science-g8-ch11-boss-a8",
+        "difficulty": 3,
+        "tags": [
+         "festivals",
+         "calendars",
+         "seasons"
+        ],
+        "prompt": "Match each festival or calendar with the correct detail.",
+        "pairs": [
+         [
+          "Holi",
+          "Falls on the full Moon of Phalguna"
+         ],
+         [
+          "Eid-ul-Fitr",
+          "Celebrated after crescent Moon sighting"
+         ],
+         [
+          "Luni-solar calendars",
+          "Use Moon phases and adjust to seasons"
+         ],
+         [
+          "Festivals following a solar sidereal calendar",
+          "Happen on almost the same date each year"
+         ],
+         [
+          "Indian National Calendar",
+          "Has 365 days in a year"
+         ]
+        ],
+        "explanation": "Moon phases and seasons help explain the dates of many festivals and calendars.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 181
+         },
+         {
+          "ch": 11,
+          "p": 182
+         },
+         {
+          "ch": 11,
+          "p": 183
+         },
+         {
+          "ch": 11,
+          "p": 183
+         },
+         {
+          "ch": 11,
+          "p": 184
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "science-g8-ch11-boss-a9",
+        "difficulty": 3,
+        "tags": [
+         "lunar year",
+         "calendar",
+         "days"
+        ],
+        "prompt": "A lunar year lasts ______ days.",
+        "answers": [
+         "354"
+        ],
+        "hint": "Think of the length of twelve lunar months.",
+        "explanation": "Ancient lunar calendars used twelve lunar months in a year.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 179
+         },
+         {
+          "ch": 11,
+          "p": 179
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "science-g8-ch11-boss-a10",
+        "difficulty": 3,
+        "tags": [
+         "satellites",
+         "communication",
+         "navigation"
+        ],
+        "prompt": "Which work do artificial satellites help with?",
+        "options": [
+         "Communication and navigation",
+         "Bookbinding and farming",
+         "Cooking and weaving",
+         "Painting and pottery"
+        ],
+        "answer": 0,
+        "explanation": "Artificial satellites help with communication, navigation, weather monitoring and other work.",
+        "src": [
+         {
+          "ch": 11,
+          "p": 185
+         }
+        ]
+       }
+      ],
+      "topicScene": "media/ch11-l1-waning-gibbous-moon-from-kol-b863ab.webp",
+      "sceneAlt": "A bright waning gibbous Moon appears over Kolkata, India, photographed on the twentieth day after the new Moon.",
+      "sceneCaption": "A waning gibbous Moon over Kolkata, photographed on the twentieth day after the new Moon.",
+      "sceneCredit": {
+       "text": "Waning gibbous moon from Kolkata April 2020 by Paramanu Sarkar 03 by Paramanu Sarkar, CC BY-SA 4.0, via Wikimedia Commons",
+       "url": "https://commons.wikimedia.org/wiki/File:Waning_gibbous_moon_from_Kolkata_April_2020_by_Paramanu_Sarkar_03.jpg",
+       "license": "CC BY-SA 4.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+       "creator": "Paramanu Sarkar"
+      }
+     }
+    },
+    {
+     "id": "ch12-how-nature-works-in-harmony",
+     "title": "How Nature Works in Harmony",
+     "summary": "In this chapter: nature, habitats and change; populations, communities and pollination; food chains and food webs; waste, migration and cascading change.",
+     "lessons": [
+      {
+       "id": "science-g8-ch12-l1",
+       "title": "Nature, Habitats and Change",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "concept",
+         "id": "science-g8-ch12-l1-a1",
+         "difficulty": 1,
+         "tags": [
+          "habitats",
+          "organisms",
+          "elephants",
+          "wildlife corridors"
+         ],
+         "title": "Living Things and Their Homes",
+         "body": "A habitat is the place where an organism lives. An organism is a living thing. Every organism needs suitable conditions to survive. Plants and animals interact and adapt to their surroundings. Elephants may enter farms and villages when food is scarce and waterholes dry up. They can eat bananas and sugarcane. Wildlife corridors are marked routes for safe animal movement between forest areas.",
+         "keyPoints": [
+          "A habitat is where a living thing lives.",
+          "Elephants may seek farm food when vegetation and water are scarce.",
+          "Wildlife corridors support safe movement between forest areas."
+         ],
+         "explanation": "These ideas show how living things, their surroundings, and changes are closely connected.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 192
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "habitats",
+          "organisms"
+         ],
+         "prompt": "What is a habitat?",
+         "options": [
+          "the place where an organism lives",
+          "the food an organism eats",
+          "the work an organism does",
+          "the weather an organism likes"
+         ],
+         "answer": 0,
+         "explanation": "A habitat tells you where a living thing lives.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l1-a3",
+         "difficulty": 1,
+         "tags": [
+          "elephants",
+          "vegetation",
+          "waterholes"
+         ],
+         "prompt": "Elephants may wander towards farms when vegetation is scarce and waterholes dry up.",
+         "answer": true,
+         "explanation": "Elephants may search for food when plants are scarce and waterholes dry up.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch12-l1-a4",
+         "difficulty": 2,
+         "tags": [
+          "habitats",
+          "organisms"
+         ],
+         "prompt": "A ______ is the place where an organism lives.",
+         "answers": [
+          "habitat"
+         ],
+         "hint": "Think about where a living thing lives.",
+         "explanation": "The habitat is the home of an organism.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch12-l1-a5",
+         "difficulty": 2,
+         "tags": [
+          "elephants",
+          "habitats",
+          "wildlife corridors",
+          "forests"
+         ],
+         "prompt": "Match each idea with its detail from the lesson.",
+         "pairs": [
+          [
+           "Elephant food",
+           "bananas and sugarcane"
+          ],
+          [
+           "Habitat",
+           "the place where an organism lives"
+          ],
+          [
+           "Safe route",
+           "a marked wildlife corridor"
+          ],
+          [
+           "Forest loss",
+           "cutting down trees"
+          ],
+          [
+           "Survival need",
+           "suitable conditions"
+          ]
+         ],
+         "explanation": "Each pair connects an idea with its matching detail from the lesson.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 192
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l1-a7",
+         "difficulty": 3,
+         "tags": [
+          "wildlife corridors",
+          "animals",
+          "human settlements"
+         ],
+         "prompt": "Marked wildlife corridors make animals enter human settlements.",
+         "answer": false,
+         "explanation": "Corridors allow safe movement, so animals can avoid human settlements.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l1-a8",
+         "difficulty": 3,
+         "tags": [
+          "wildlife corridors",
+          "forests",
+          "animal movement"
+         ],
+         "prompt": "Why are wildlife corridors useful to animals?",
+         "options": [
+          "They provide food for wild animals.",
+          "They make forest loss happen faster.",
+          "They allow safe movement between forests.",
+          "They fill dry waterholes with water."
+         ],
+         "answer": 2,
+         "explanation": "Wildlife corridors let animals move safely between large forest areas.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch12-l1-a9",
+         "difficulty": 3,
+         "tags": [
+          "elephants",
+          "vegetation",
+          "rainfall",
+          "temperature",
+          "farms"
+         ],
+         "prompt": "Put these events in the chain that can lead elephants towards farms.",
+         "items": [
+          "Changes in rainfall and temperature",
+          "Vegetation is affected",
+          "Vegetation becomes scarce and waterholes dry up",
+          "Elephants wander towards farms"
+         ],
+         "explanation": "Changes in rainfall and temperature can affect vegetation. Scarce vegetation and dry waterholes can lead elephants towards farms.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "science-g8-ch12-l2",
+       "title": "Populations, Communities and Pollination",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "concept",
+         "id": "science-g8-ch12-l2-a1",
+         "difficulty": 1,
+         "tags": [
+          "habitats",
+          "biotic",
+          "abiotic",
+          "populations",
+          "communities",
+          "pollination"
+         ],
+         "title": "Living in a Habitat",
+         "body": "A habitat contains living beings and non-living things. Living beings are called biotic components. Non-living things are called abiotic components. A population is the same type of organism living in a habitat at a given time. A community has different populations sharing the same habitat. Pollination happens when wind, water and animals carry pollen between flowers.",
+         "keyPoints": [
+          "Biotic components are living beings.",
+          "Abiotic components are non-living things.",
+          "Wind, water and animals carry pollen during pollination."
+         ],
+         "explanation": "These terms help you describe the parts of habitats and the groups living there.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 194
+          },
+          {
+           "ch": 12,
+           "p": 194
+          },
+          {
+           "ch": 12,
+           "p": 194
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l2-a2",
+         "difficulty": 1,
+         "tags": [
+          "biotic",
+          "abiotic",
+          "pond"
+         ],
+         "prompt": "Both the pond and the forest contain living beings and non-living things. Which are biotic components?",
+         "options": [
+          "Organisms",
+          "Oxygen",
+          "Water",
+          "Space"
+         ],
+         "answer": 0,
+         "explanation": "Organisms are living beings, so they are biotic components.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 192
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l2-a3",
+         "difficulty": 1,
+         "tags": [
+          "biotic",
+          "abiotic"
+         ],
+         "prompt": "Biotic components are the non-living things in a habitat.",
+         "answer": false,
+         "explanation": "Biotic components are living beings, while abiotic components are non-living things.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 192
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch12-l2-a4",
+         "difficulty": 1,
+         "tags": [
+          "biotic",
+          "habitats"
+         ],
+         "prompt": "Living beings in a habitat are called ______ components.",
+         "answers": [
+          "biotic"
+         ],
+         "hint": "These components are alive.",
+         "explanation": "The living beings in a habitat are called biotic components.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 192
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch12-l2-a5",
+         "difficulty": 2,
+         "tags": [
+          "pond",
+          "biotic",
+          "abiotic",
+          "communities"
+         ],
+         "prompt": "Match each item with its correct meaning.",
+         "pairs": [
+          [
+           "Pond",
+           "Food, oxygen, shelter and space"
+          ],
+          [
+           "Living beings",
+           "Biotic components"
+          ],
+          [
+           "Non-living things",
+           "Abiotic components"
+          ],
+          [
+           "Different populations sharing one habitat",
+           "Community"
+          ]
+         ],
+         "explanation": "A pond gives resources, while biotic and abiotic components describe living and non-living parts.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 194
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l2-a6",
+         "difficulty": 2,
+         "tags": [
+          "habitats",
+          "biotic",
+          "physical conditions"
+         ],
+         "prompt": "Each habitat has its own biotic components and physical conditions.",
+         "answer": true,
+         "explanation": "Every habitat has its own living beings and physical conditions.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 193
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l2-a7",
+         "difficulty": 3,
+         "tags": [
+          "organisms",
+          "resources",
+          "competition"
+         ],
+         "prompt": "If all organisms were alike, they would compete for different requirements.",
+         "answer": false,
+         "explanation": "If all organisms were alike, they would compete for the same requirements.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 194
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch12-l2-a8",
+         "difficulty": 3,
+         "tags": [
+          "populations",
+          "pollination",
+          "habitats"
+         ],
+         "prompt": "Match each item with the correct description.",
+         "pairs": [
+          [
+           "Same type of organism in a habitat",
+           "Population"
+          ],
+          [
+           "Wind, water and animals",
+           "Helpers during pollination"
+          ],
+          [
+           "Pond and forest",
+           "Habitats with living and non-living things"
+          ],
+          [
+           "Each habitat",
+           "Has its own biotic components and physical conditions"
+          ]
+         ],
+         "explanation": "These pairs connect populations, habitats and the helpers involved in pollination.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 193
+          },
+          {
+           "ch": 12,
+           "p": 194
+          },
+          {
+           "ch": 12,
+           "p": 194
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l2-a9",
+         "difficulty": 3,
+         "tags": [
+          "pollination",
+          "wind",
+          "water",
+          "animals"
+         ],
+         "prompt": "Which list contains all the helpers that carry pollen between flowers?",
+         "options": [
+          "Wind, water and animals",
+          "Food, oxygen and shelter",
+          "Biotic and abiotic components",
+          "Living and non-living things"
+         ],
+         "answer": 0,
+         "explanation": "During pollination, wind, water and animals help carry pollen between flowers.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 194
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "science-g8-ch12-l4",
+       "title": "Food Chains and Food Webs",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "concept",
+         "id": "science-g8-ch12-l4-a1",
+         "difficulty": 1,
+         "tags": [
+          "food chains",
+          "food webs",
+          "producers",
+          "consumers"
+         ],
+         "title": "Who Eats Whom?",
+         "body": "Plants make their own food by photosynthesis. They are producers, also called autotrophs, and occupy the first trophic level. Consumers cannot make their own food, so they depend on other organisms. Herbivores eat only plants, carnivores eat only animals, and omnivores eat both. In a grassland, grass is eaten by hares. Interlinked food chains form a food web.",
+         "keyPoints": [
+          "Producers make food by photosynthesis.",
+          "Consumers depend on other organisms.",
+          "Food webs contain interlinked food chains."
+         ],
+         "explanation": "Follow the feeding links from plants to consumers.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "producers",
+          "autotrophs",
+          "photosynthesis"
+         ],
+         "prompt": "Which group makes its own food by photosynthesis?",
+         "options": [
+          "Green plants",
+          "Hares and deer",
+          "Small carnivores",
+          "Consumers"
+         ],
+         "answer": 0,
+         "explanation": "Plants make their own food by photosynthesis. These organisms are producers.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 200
+          },
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "herbivores",
+          "consumers"
+         ],
+         "prompt": "Herbivores eat only plants.",
+         "answer": true,
+         "explanation": "Herbivores are animals that eat only plants.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 198
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l4-a4",
+         "difficulty": 1,
+         "tags": [
+          "frogs",
+          "carnivores",
+          "trophic levels"
+         ],
+         "prompt": "Frogs occupy the second trophic level.",
+         "answer": false,
+         "explanation": "Frogs are small carnivores. Small carnivores occupy the third trophic level.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l4-a5",
+         "difficulty": 2,
+         "tags": [
+          "food chains",
+          "food webs"
+         ],
+         "prompt": "What do interlinked food chains form?",
+         "options": [
+          "a trophic level",
+          "a food web",
+          "a producer",
+          "a herbivore"
+         ],
+         "answer": 1,
+         "explanation": "Interlinked food chains form a network called a food web.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch12-l4-a6",
+         "difficulty": 2,
+         "tags": [
+          "hares",
+          "deer",
+          "herbivores",
+          "trophic levels"
+         ],
+         "prompt": "Hares and deer occupy the ______ trophic level.",
+         "answers": [
+          "second"
+         ],
+         "hint": "These animals are herbivores.",
+         "explanation": "Hares and deer occupy the second trophic level.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch12-l4-a7",
+         "difficulty": 2,
+         "tags": [
+          "producers",
+          "herbivores",
+          "carnivores",
+          "food webs"
+         ],
+         "prompt": "Match each group with its name.",
+         "pairs": [
+          [
+           "Green plants",
+           "producers"
+          ],
+          [
+           "Hares and deer",
+           "herbivores"
+          ],
+          [
+           "Frogs",
+           "small carnivores"
+          ],
+          [
+           "Interlinked food chains",
+           "food web"
+          ]
+         ],
+         "explanation": "Each pair joins an organism or group with its feeding role.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 198
+          },
+          {
+           "ch": 12,
+           "p": 200
+          },
+          {
+           "ch": 12,
+           "p": 200
+          },
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch12-l4-a8",
+         "difficulty": 3,
+         "tags": [
+          "trophic levels",
+          "producers",
+          "herbivores",
+          "carnivores"
+         ],
+         "prompt": "Put these organisms in order from the first to the third trophic level.",
+         "items": [
+          "Green plants",
+          "Hares and deer",
+          "Small carnivores such as frogs"
+         ],
+         "explanation": "Green plants occupy the first level. Hares and deer occupy second, and small carnivores occupy third.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 200
+          },
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l4-a9",
+         "difficulty": 3,
+         "tags": [
+          "trophic levels",
+          "food chains",
+          "grassland"
+         ],
+         "prompt": "Which list shows the first, second, and third trophic levels correctly?",
+         "options": [
+          "Green plants, hares and deer, frogs",
+          "Hares and deer, green plants, frogs",
+          "Green plants, frogs, hares and deer",
+          "Frogs, hares and deer, green plants"
+         ],
+         "answer": 0,
+         "explanation": "Green plants occupy the first trophic level. Hares and deer occupy second, and frogs occupy third.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 199
+          },
+          {
+           "ch": 12,
+           "p": 200
+          },
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "science-g8-ch12-l5",
+       "title": "Waste, Migration and Cascading Change",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "concept",
+         "id": "science-g8-ch12-l5-a1",
+         "difficulty": 1,
+         "tags": [
+          "waste",
+          "microorganisms",
+          "migration",
+          "ecosystems"
+         ],
+         "title": "Nature Reuses Everything",
+         "body": "Living things make waste while they follow their life cycles. This waste includes dead matter and food waste. Microorganisms break down complex substances in dead plants and animals. Mushrooms are fungi that grow on dead matter. In nature, nothing is wasted because everything is reused. Migratory birds travel from different parts of the world to avoid harsh weather. Harsh means very difficult. They help keep ecosystems balanced as pollinators and seed dispersers.",
+         "keyPoints": [
+          "Organisms produce dead matter and food waste.",
+          "Nature reuses waste through decomposers.",
+          "Migratory birds help balance ecosystems."
+         ],
+         "explanation": "Waste, migration and ecosystem balance are closely connected in nature.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 200
+          },
+          {
+           "ch": 12,
+           "p": 200
+          },
+          {
+           "ch": 12,
+           "p": 200
+          },
+          {
+           "ch": 12,
+           "p": 201
+          },
+          {
+           "ch": 12,
+           "p": 201
+          },
+          {
+           "ch": 12,
+           "p": 201
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-a2",
+         "difficulty": 1,
+         "tags": [
+          "waste",
+          "life cycle"
+         ],
+         "prompt": "What do organisms produce during their life cycle?",
+         "options": [
+          "waste",
+          "pollution",
+          "migration",
+          "balance"
+         ],
+         "answer": 0,
+         "explanation": "Organisms produce waste during their life cycle.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l5-a3",
+         "difficulty": 1,
+         "tags": [
+          "microorganisms",
+          "dead plants",
+          "dead animals"
+         ],
+         "prompt": "Microorganisms break down complex substances in dead plants and animals.",
+         "answer": true,
+         "explanation": "Microorganisms help break down complex substances in dead plants and animals.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 200
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch12-l5-a4",
+         "difficulty": 2,
+         "tags": [
+          "pollution",
+          "fish",
+          "insects",
+          "ponds"
+         ],
+         "prompt": "Match each pond change with its result.",
+         "pairs": [
+          [
+           "Pollution",
+           "Many pond plants die"
+          ],
+          [
+           "A fall in fish population",
+           "Fewer consumers remain"
+          ],
+          [
+           "Insects",
+           "Spread to nearby farmlands"
+          ]
+         ],
+         "explanation": "Pollution can kill pond plants. A smaller fish population means fewer consumers remain.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 201
+          },
+          {
+           "ch": 12,
+           "p": 202
+          },
+          {
+           "ch": 12,
+           "p": 202
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch12-l5-a5",
+         "difficulty": 2,
+         "tags": [
+          "migration",
+          "weather"
+         ],
+         "prompt": "Migratory birds travel to avoid ______ weather.",
+         "answers": [
+          "harsh"
+         ],
+         "hint": "This word means very difficult.",
+         "explanation": "Migratory birds travel from different parts of the world to avoid harsh weather.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 201
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch12-l5-a6",
+         "difficulty": 2,
+         "tags": [
+          "frogs",
+          "harvesting",
+          "pests",
+          "exports"
+         ],
+         "prompt": "Put this frog-change chain in order.",
+         "items": [
+          "Large-scale frog harvesting",
+          "Frog numbers fall",
+          "Agricultural pests rise",
+          "Government bans frog-leg exports"
+         ],
+         "explanation": "Harvesting reduced frogs and caused pests to rise. The Government banned frog-leg exports.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 202
+          },
+          {
+           "ch": 12,
+           "p": 202
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-a7",
+         "difficulty": 3,
+         "tags": [
+          "migratory birds",
+          "pollinators",
+          "seed dispersers"
+         ],
+         "prompt": "How do migratory birds help keep ecosystems balanced?",
+         "options": [
+          "as pollinators and seed dispersers",
+          "as pond plants and fish",
+          "as waste and fungi",
+          "as farm pests and insects"
+         ],
+         "answer": 0,
+         "explanation": "Migratory birds act as pollinators and seed dispersers, helping balance ecosystems.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 201
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l5-a8",
+         "difficulty": 3,
+         "tags": [
+          "waste",
+          "nature",
+          "reuse"
+         ],
+         "prompt": "Because nothing is reused in nature, waste builds up and stays unused.",
+         "answer": false,
+         "explanation": "In nature, everything is reused, so nothing is wasted.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 201
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l5-a9",
+         "difficulty": 3,
+         "tags": [
+          "frogs",
+          "agriculture",
+          "pests",
+          "exports"
+         ],
+         "prompt": "How can banning frog-leg exports help farms?",
+         "options": [
+          "It can protect frogs and lower pest numbers.",
+          "It can increase pollution around nearby farms.",
+          "It can cause harsher weather near farms.",
+          "It can make pond plants die much faster."
+         ],
+         "answer": 0,
+         "explanation": "Frog harvesting reduced frogs and caused pests to rise. Protecting frogs can help reduce pest numbers.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 202
+          },
+          {
+           "ch": 12,
+           "p": 202
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "science-g8-ch12-l6",
+       "title": "Balance, Benefits and Sustainable Nature",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "concept",
+         "id": "science-g8-ch12-l6-a1",
+         "difficulty": 1,
+         "tags": [
+          "competition",
+          "mutualism",
+          "commensalism",
+          "parasitism",
+          "sustainable farming"
+         ],
+         "title": "Living Together and Using Nature",
+         "body": "Organisms compete for shared resources like food, water, space and sunlight. Competition controls population size and keeps ecosystems balanced. In mutualism, both organisms benefit. In commensalism, one benefits while the other is unaffected. In parasitism, one benefits while the other is harmed. Forests and aquatic ecosystems give people useful resources. Careful use and protected areas help nature stay balanced. Sustainable farming can reduce interference in nature.",
+         "keyPoints": [
+          "Competition helps keep ecosystems balanced.",
+          "Different organism relationships affect organisms differently.",
+          "Protected areas and sustainable farming support nature."
+         ],
+         "explanation": "These ideas connect competition, benefits and protecting nature.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 202
+          },
+          {
+           "ch": 12,
+           "p": 202
+          },
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 206
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l6-a2",
+         "difficulty": 1,
+         "tags": [
+          "aquatic ecosystems",
+          "water",
+          "food"
+         ],
+         "prompt": "Which resource does an aquatic ecosystem provide to people?",
+         "options": [
+          "Water",
+          "Timber",
+          "Fibres",
+          "Fertile soil"
+         ],
+         "answer": 0,
+         "explanation": "Aquatic ecosystems provide people with water and food.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l6-a3",
+         "difficulty": 1,
+         "tags": [
+          "mutualism",
+          "organisms",
+          "benefits"
+         ],
+         "prompt": "In mutualism, both organisms benefit.",
+         "answer": true,
+         "explanation": "Mutualism is a relationship in which both organisms benefit.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch12-l6-a4",
+         "difficulty": 2,
+         "tags": [
+          "commensalism",
+          "organisms",
+          "benefits"
+         ],
+         "prompt": "In commensalism, one organism benefits while the other is ______.",
+         "answers": [
+          "unaffected"
+         ],
+         "hint": "This organism is not changed by the relationship.",
+         "explanation": "In commensalism, one organism benefits while the other remains unaffected.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch12-l6-a5",
+         "difficulty": 2,
+         "tags": [
+          "mutualism",
+          "commensalism",
+          "parasitism",
+          "relationships"
+         ],
+         "prompt": "Match each relationship with its result.",
+         "pairs": [
+          [
+           "Mutualism",
+           "Both organisms benefit"
+          ],
+          [
+           "Commensalism",
+           "One benefits while the other is unaffected"
+          ],
+          [
+           "Parasitism",
+           "One benefits while the other is harmed"
+          ]
+         ],
+         "explanation": "Each relationship has a different effect on the two organisms.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch12-l6-a6",
+         "difficulty": 2,
+         "tags": [
+          "forests",
+          "aquatic ecosystems",
+          "resources",
+          "sundarbans"
+         ],
+         "title": "Nature Gives Us Many Benefits",
+         "body": "Forests give people fresh air, fertile soil, food, fibres, timber and medicines. Aquatic ecosystems provide people with water and food. Overusing or misusing natural resources disturbs nature’s balance. Industrial waste and untreated sewage damage water and habitats in the Sundarbans. Protecting habitats and choosing sustainable farming can help people use natural resources with less harm.",
+         "keyPoints": [
+          "Forests provide many useful resources.",
+          "Aquatic ecosystems provide water and food.",
+          "Misusing resources can disturb nature’s balance."
+         ],
+         "explanation": "These resources benefit people, but their use needs care.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 206
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l6-a7",
+         "difficulty": 2,
+         "tags": [
+          "sundarbans",
+          "protection",
+          "winds",
+          "waves"
+         ],
+         "prompt": "How do the Sundarbans protect people?",
+         "options": [
+          "Slow strong winds and waves",
+          "Control the ecosystem population size",
+          "Keep both organisms benefiting together",
+          "Leave one participating organism unaffected"
+         ],
+         "answer": 0,
+         "explanation": "The Sundarbans protect people by slowing strong winds and waves.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 204
+          },
+          {
+           "ch": 12,
+           "p": 202
+          },
+          {
+           "ch": 12,
+           "p": 203
+          },
+          {
+           "ch": 12,
+           "p": 203
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch12-l6-a8",
+         "difficulty": 3,
+         "tags": [
+          "sundarbans",
+          "mangroves",
+          "fuelwood",
+          "farming"
+         ],
+         "prompt": "Mangrove trees in the Sundarbans are being cut for ______ and farming.",
+         "answers": [
+          "fuelwood"
+         ],
+         "hint": "This comes from trees and is used as fuel.",
+         "explanation": "These mangrove trees are being cut for fuelwood and farming.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 204
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l6-a9",
+         "difficulty": 3,
+         "tags": [
+          "sustainable farming",
+          "organic farming",
+          "natural farming",
+          "fertilisers",
+          "pesticides"
+         ],
+         "prompt": "Which action best supports sustainable farming?",
+         "options": [
+          "Use organic and natural methods",
+          "Use synthetic fertilisers for years",
+          "Use pesticides for many years",
+          "Cut mangroves for more farming"
+         ],
+         "answer": 0,
+         "explanation": "Organic and natural farming supports sustainable farming with less interference in nature.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 206
+          },
+          {
+           "ch": 12,
+           "p": 206
+          },
+          {
+           "ch": 12,
+           "p": 204
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "boss": {
+      "id": "science-g8-ch12-boss",
+      "title": "Chapter challenge: How Nature Works in Harmony",
+      "estimatedMinutes": 5,
+      "activities": [
+       {
+        "type": "mcq",
+        "id": "science-g8-ch12-boss-a1",
+        "difficulty": 2,
+        "tags": [
+         "habitat",
+         "biotic",
+         "abiotic"
+        ],
+        "prompt": "Which pair shows one biotic and one abiotic component?",
+        "options": [
+         "Fish and rocks",
+         "Water and sunlight",
+         "Rocks and water",
+         "Sunlight and oxygen"
+        ],
+        "answer": 0,
+        "explanation": "Fish are living beings, so they are biotic. Rocks are non-living, so they are abiotic.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 192
+         },
+         {
+          "ch": 12,
+          "p": 192
+         },
+         {
+          "ch": 12,
+          "p": 192
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "science-g8-ch12-boss-a2",
+        "difficulty": 2,
+        "tags": [
+         "migration",
+         "birds",
+         "weather"
+        ],
+        "prompt": "Migratory birds travel to avoid harsh weather.",
+        "answer": true,
+        "explanation": "Migratory birds travel from different parts of the world to avoid harsh weather.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 201
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "science-g8-ch12-boss-a3",
+        "difficulty": 2,
+        "tags": [
+         "food chain",
+         "trophic level",
+         "plants"
+        ],
+        "prompt": "Green plants occupy the ______ trophic level.",
+        "answers": [
+         "first"
+        ],
+        "hint": "Think about the beginning of a food chain.",
+        "explanation": "Producers, such as green plants, occupy the first trophic level.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 199
+         },
+         {
+          "ch": 12,
+          "p": 199
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "science-g8-ch12-boss-a4",
+        "difficulty": 2,
+        "tags": [
+         "producers",
+         "consumers",
+         "animals"
+        ],
+        "prompt": "Match each feeding group with its meaning.",
+        "pairs": [
+         [
+          "Herbivore",
+          "Eats only plants"
+         ],
+         [
+          "Carnivore",
+          "Eats only other animals"
+         ],
+         [
+          "Omnivore",
+          "Eats both plants and animals"
+         ],
+         [
+          "Producer",
+          "Makes its own food"
+         ]
+        ],
+        "explanation": "These groups show how organisms get food in an ecosystem.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 198
+         },
+         {
+          "ch": 12,
+          "p": 198
+         },
+         {
+          "ch": 12,
+          "p": 198
+         },
+         {
+          "ch": 12,
+          "p": 198
+         },
+         {
+          "ch": 12,
+          "p": 198
+         }
+        ]
+       },
+       {
+        "type": "dragorder",
+        "id": "science-g8-ch12-boss-a5",
+        "difficulty": 3,
+        "tags": [
+         "food chain",
+         "trophic level",
+         "grassland"
+        ],
+        "prompt": "Put these organisms in food-chain order.",
+        "items": [
+         "Green plants",
+         "Hares and deer",
+         "Small carnivores such as frogs"
+        ],
+        "explanation": "Producers come first, herbivores come next, and small carnivores occupy the third trophic level.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 199
+         },
+         {
+          "ch": 12,
+          "p": 199
+         },
+         {
+          "ch": 12,
+          "p": 200
+         },
+         {
+          "ch": 12,
+          "p": 200
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "science-g8-ch12-boss-a6",
+        "difficulty": 3,
+        "tags": [
+         "corridors",
+         "wildlife",
+         "forests"
+        ],
+        "prompt": "What do identified wildlife corridors allow?",
+        "options": [
+         "Safe movement of animals",
+         "More building materials",
+         "Less rainfall",
+         "Larger villages"
+        ],
+        "answer": 0,
+        "explanation": "Corridors allow safe movement between large forest areas without entering human settlements.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 191
+         },
+         {
+          "ch": 12,
+          "p": 191
+         },
+         {
+          "ch": 12,
+          "p": 191
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "science-g8-ch12-boss-a7",
+        "difficulty": 3,
+        "tags": [
+         "pond",
+         "fish",
+         "dragonflies"
+        ],
+        "prompt": "Ponds with fish have fewer dragonflies because fish eat dragonfly larvae.",
+        "answer": true,
+        "explanation": "Fish eat dragonfly larvae. This connection shows how biotic components affect each other.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 194
+         },
+         {
+          "ch": 12,
+          "p": 195
+         },
+         {
+          "ch": 12,
+          "p": 195
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "science-g8-ch12-boss-a8",
+        "difficulty": 3,
+        "tags": [
+         "pollination",
+         "pond",
+         "plants"
+        ],
+        "prompt": "Fish eat ______ larvae, so ponds with fish have fewer dragonflies.",
+        "answers": [
+         "dragonfly"
+        ],
+        "hint": "These insects help pollinate flowers near ponds.",
+        "explanation": "Fish eat dragonfly larvae, reducing dragonfly numbers in ponds with fish.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 195
+         },
+         {
+          "ch": 12,
+          "p": 195
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "science-g8-ch12-boss-a9",
+        "difficulty": 3,
+        "tags": [
+         "interactions",
+         "mutualism",
+         "parasitism"
+        ],
+        "prompt": "Match each interaction with its meaning.",
+        "pairs": [
+         [
+          "Mutualism",
+          "Both organisms benefit"
+         ],
+         [
+          "Commensalism",
+          "One benefits while the other is unaffected"
+         ],
+         [
+          "Parasitism",
+          "One benefits while the other is harmed"
+         ]
+        ],
+        "explanation": "These interactions show different ways organisms affect one another.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 203
+         },
+         {
+          "ch": 12,
+          "p": 203
+         },
+         {
+          "ch": 12,
+          "p": 203
+         }
+        ]
+       },
+       {
+        "type": "dragorder",
+        "id": "science-g8-ch12-boss-a10",
+        "difficulty": 3,
+        "tags": [
+         "elephants",
+         "farms",
+         "habitats"
+        ],
+        "prompt": "Put these events in the correct order.",
+        "items": [
+         "Vegetation becomes scarce and waterholes dry",
+         "Elephants move towards farms",
+         "Their search includes bananas and sugarcane"
+        ],
+        "explanation": "Elephants may move towards farms when vegetation is scarce and waterholes dry. Their search can include crops.",
+        "src": [
+         {
+          "ch": 12,
+          "p": 191
+         },
+         {
+          "ch": 12,
+          "p": 191
+         },
+         {
+          "ch": 12,
+          "p": 191
+         }
+        ]
+       }
+      ]
      }
     }
    ]
