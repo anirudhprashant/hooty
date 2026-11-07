@@ -1299,6 +1299,24 @@ export const WIDGETS = {
       return { kids, say: close ? `${name(A, v.lc)} and ${name(B, v.rc)} weigh about the same, so the see-saw stays level.` : `${wl > wr ? `${name(A, v.lc)} ${v.lc === 1 ? 'is' : 'are'} heavier than ${name(B, v.rc)}, so the left side goes down` : `${name(B, v.rc)} ${v.rc === 1 ? 'is' : 'are'} heavier than ${name(A, v.lc)}, so the right side goes down`}. The lighter side goes up.` };
     },
   },
+  bottles: {
+    subject: 'maths', about: 'Two bottles filled with glasses of water: Raghu\'s bottle holds four glasses, and a friend\'s bottle holds more, fewer or the same. Pour glasses into both and see which fills first, which holds more, and when a bottle overflows. For capacity, how many glasses fill a bottle, comparing equal, more and less.',
+    sliders: [['friend', 'Friend\'s bottle holds (glasses)', 1, 8, 1, 6], ['poured', 'Glasses poured into each bottle', 0, 8, 1, 0]],
+    draw(v) {
+      const kids = [], base = 250, bottle = (cap, x0, label, col) => {
+        const h = 50 + 22 * cap, w = 64 + cap * 4, filled = Math.min(v.poured, cap), inner = h - 8;
+        kids.push(R(x0, base - h, w, h, '#ffffff', { w: 3, r: 10 }), R(x0 + 3, base - 4 - (filled / cap) * inner, w - 6, (filled / cap) * inner, col, { w: 0, x: { opacity: 0.85 } }));
+        for (let k = 1; k < cap; k++) kids.push(L(x0, base - 4 - (k / cap) * inner, x0 + 10, base - 4 - (k / cap) * inner, INK, 1.5));
+        kids.push(T(x0 + w / 2, base + 22, label, { z: 13, w: 700 }), T(x0 + w / 2, base + 40, `holds ${cap}`, { z: 12, w: 600, f: '#6b5a8a' }));
+        if (v.poured > cap) kids.push(T(x0 + w / 2, base - h - 8, 'overflows!', { z: 13, w: 700, f: '#c0392b' }));
+        return w;
+      };
+      bottle(4, 60, 'Raghu’s bottle', '#7fbfff'); bottle(v.friend, 250, 'friend’s bottle', '#5fc9b8');
+      const cmp = v.friend === 4 ? 'the same as' : v.friend > 4 ? 'more than' : 'less than';
+      kids.push(T(480, 80, `${v.poured} glass${v.poured === 1 ? '' : 'es'} poured into each`, { a: 'middle', z: 14, w: 700 }), T(480, 130, `friend’s bottle holds`, { a: 'middle', z: 13, w: 600, f: '#6b5a8a' }), T(480, 160, cmp, { a: 'middle', z: 20, w: 700, f: v.friend === 4 ? '#058a68' : '#c2510e' }), T(480, 188, 'Raghu’s bottle', { a: 'middle', z: 13, w: 600, f: '#6b5a8a' }));
+      return { kids, say: `Raghu’s bottle holds 4 glasses and the friend’s holds ${v.friend}: the friend’s bottle holds ${cmp} Raghu’s.${v.poured ? ` After ${v.poured} glass${v.poured === 1 ? '' : 'es'} in each, ${v.poured >= 4 ? 'Raghu’s bottle is full' + (v.poured > 4 ? ' and overflowing' : '') : 'Raghu’s bottle is not full yet'}${v.poured >= v.friend ? ` and the friend’s is full${v.poured > v.friend ? ' and overflowing' : ''}` : ' and the friend’s is not full yet'}.` : ''}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

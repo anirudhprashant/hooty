@@ -637,6 +637,16 @@ export const KITS = {
       { say: 'Put the same thing on both sides. What happens?', when: 'li == ri and lc == rc', then: 'Equal weights: the see-saw stays level.' },
     ],
   },
+  bottles: {
+    grades: [2, 2], minScore: { 2: 4 }, match: [/\bbottles?\b/, /\bglasses\b/, /\bholds?\b/, /\bfill(s|ed)?\b/],
+    title: 'How many glasses fill the bottle?', takeaway: 'Count the glasses to find which bottle holds more, fewer or the same.',
+    tasks: [
+      { say: 'Pour glasses until Raghu\u2019s bottle is exactly full. How many glasses?', when: 'poured == 4', then: 'Raghu\u2019s bottle holds 4 glasses.' },
+      { say: 'Make the friend\u2019s bottle hold the same as Raghu\u2019s.', when: 'friend == 4', then: 'Both hold 4 glasses: the same amount.' },
+      { say: 'Find a friend\u2019s bottle that holds more, and fill it.', when: 'friend > 4 and poured >= friend', then: 'It needs more glasses to fill: it holds more than Raghu\u2019s.' },
+      { say: 'Find a friend\u2019s bottle that holds less. Pour 4 glasses in.', when: 'friend < 4 and poured >= 4', then: 'It overflows before 4 glasses: it holds less than Raghu\u2019s.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
