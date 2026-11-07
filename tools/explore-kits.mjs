@@ -296,7 +296,7 @@ export const KITS = {
     ],
   },
   speed: {
-    grades: [6, 9], match: [/\bspeed\b/, /\bvelocity\b/, /uniform motion/, /km\/h|m\/s/, /distance (travelled|covered)/],
+    grades: [6, 9], match: [/(?<!high[- ])(?<!wind )\bspeed\b/, /\bvelocity\b/, /uniform motion/, /km\/h|m\/s/, /distance (travelled|covered)/],
     title: 'Race the cars', takeaway: 'Distance = speed x time.',
     tasks: [
       { say: 'Make the two cars cover the same distance.', when: 'a == b', then: 'Same speed for the same time means the same distance.' },
