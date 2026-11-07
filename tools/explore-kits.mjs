@@ -202,7 +202,7 @@ export const KITS = {
     ],
   },
   thermometer: {
-    grades: [6, 8], match: [/thermometers?/, /temperature/, /\bfever\b/, /celsius|fahrenheit/, /hot (or|and) cold/],
+    grades: [6, 8], match: [/thermometers?/, /\bfever\b/, /celsius|fahrenheit/, /hot (or|and) cold/],
     params: (text) => ({ kind: /\bbody\b|\bfever\b|clinical|doctor|\bpatient\b/.test(text) && !/laboratory|\blab\b/.test(text) ? 'clinical' : 'lab' }),
     title: 'Read the thermometer', takeaway: 'Find the value of one small mark first, then count the marks.',
     tasks: (p) => (p.kind === 'clinical'
@@ -238,7 +238,7 @@ export const KITS = {
   },
   // ---- science ----
   particles: {
-    grades: [6, 9], titleOnly: true, match: [/states? of matter/, /melting|boiling|freez|evaporat|condens/, /\bparticles?\b/, /\bice\b.*\bsteam\b/],
+    grades: [6, 9], titleOnly: true, match: [/states? of matter/, /melting|boiling|freez|evaporat|condens/, /\bice\b.*\bsteam\b/],
     title: 'Heat the water', takeaway: 'Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.',
     tasks: [
       { say: 'Freeze the water.', when: 'temp < 0', then: 'Below 0 degrees water is ice: its particles can only jiggle in place.' },
@@ -246,7 +246,7 @@ export const KITS = {
     ],
   },
   reflection: {
-    grades: [6, 10], match: [/reflect/, /\bmirrors?\b/, /angle of incidence/, /\bnormal\b/],
+    grades: [6, 7], match: [/reflect/, /(?<!spherical )\bmirrors?\b/, /angle of incidence/, /\bnormal\b/],
     title: 'Bounce the light', takeaway: 'Light leaves a mirror at the same angle it arrives: angle in equals angle out.',
     tasks: [
       { say: 'Shine the ray straight at the mirror.', when: 'i == 0', then: 'Straight in, straight back out: both angles are 0.' },
@@ -283,7 +283,7 @@ export const KITS = {
     ],
   },
   floatsink: {
-    grades: [6, 9], match: [/\bfloat/, /\bsinks?\b|\bsinking\b/, /\bdens(e|ity)\b/, /buoyan/],
+    grades: [6, 9], match: [/\bfloat/, /\bsinks?\b|\bsinking\b/, /buoyan/],
     title: 'Float or sink?', takeaway: 'Things lighter than water for their size float; denser things sink.',
     tasks: [{ say: 'Make the block sink.', when: 'd > 10', then: 'It is now denser than water, so it sinks.' }],
   },
