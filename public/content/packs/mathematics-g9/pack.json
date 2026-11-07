@@ -38120,7 +38120,7 @@
       {
        "id": "mathematics-g9-ch7-l3",
        "title": "Measuring probability through experiments",
-       "estimatedMinutes": 13,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -38243,6 +38243,33 @@
           "2 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "probability",
+         "params": {
+          "kind": "dice"
+         },
+         "title": "Try it many times",
+         "tasks": [
+          {
+           "say": "Try 100 times.",
+           "when": "n >= 100",
+           "then": "Look how the blue line has started to settle."
+          },
+          {
+           "say": "Try 500 times.",
+           "when": "n == 500",
+           "then": "With many tries the fraction gets very close to the true chance."
+          }
+         ],
+         "takeaway": "A few tries can land anywhere, but many tries settle close to the true chance.",
+         "explanation": "A few tries can land anywhere, but many tries settle close to the true chance."
         },
         {
          "type": "worked",

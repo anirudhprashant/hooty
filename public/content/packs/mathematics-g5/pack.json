@@ -16097,7 +16097,7 @@
       {
        "id": "mathematics-g5-ch4-l2",
        "title": "Adding and Subtracting Related Amounts",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -16156,6 +16156,43 @@
            "p": 45
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "column",
+         "params": {
+          "kind": "add"
+         },
+         "title": "Add and subtract in columns",
+         "tasks": [
+          {
+           "say": "Add 438 and 476, one column at a time.",
+           "when": "a == 438 and b == 476 and step == 3",
+           "then": "438 + 476 = 914, and regrouping carried a 1 twice."
+          },
+          {
+           "say": "The bus had 18 litres and now has 65. Add 18 and 47 to check.",
+           "when": "a == 18 and b == 47 and step == 3",
+           "then": "18 + 47 = 65: adding checks the subtraction."
+          },
+          {
+           "say": "Add 36 and 47. What carries?",
+           "when": "a == 36 and b == 47 and step == 3",
+           "then": "The ones total 13: write 3 and carry 1 ten. 36 + 47 = 83."
+          },
+          {
+           "say": "Add 185 and 125.",
+           "when": "a == 185 and b == 125 and step == 3",
+           "then": "185 + 125 = 310: 10 ones and 10 tens both regrouped."
+          }
+         ],
+         "takeaway": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column.",
+         "explanation": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column."
         },
         {
          "type": "worked",
@@ -70095,28 +70132,18 @@
          "tags": [
           "explore"
          ],
-         "widget": "factors",
+         "widget": "jumps",
          "params": {},
-         "title": "Rectangles of dots",
+         "title": "Who lands together?",
          "tasks": [
           {
-           "say": "Make 24. How many rectangles can it make?",
-           "when": "n == 24",
-           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
-          },
-          {
-           "say": "Find a prime number bigger than 20.",
-           "when": "n == 23 or n == 29 or n == 31 or n == 37",
-           "then": "It makes only one long row, so it has just two factors: it is prime."
-          },
-          {
-           "say": "Find the number up to 40 with 9 factors.",
-           "when": "n == 36",
-           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+           "say": "Find two animals whose first common landing is 24.",
+           "when": "(a == 2 and b == 3) or (a == 3 and b == 2) or (a == 0 and b == 3) or (a == 3 and b == 0)",
+           "then": "6 and 8, or 3 and 8, both meet first at 24."
           }
          ],
-         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
-         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
+         "takeaway": "An animal lands on the multiples of its jump; where two land together are common multiples.",
+         "explanation": "An animal lands on the multiples of its jump; where two land together are common multiples."
         },
         {
          "type": "worked",
@@ -70760,7 +70787,7 @@
       {
        "id": "mathematics-g5-ch13-l4",
        "title": "Mowgli’s Trail and Common Factors",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -70869,6 +70896,36 @@
          "derived": [
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch13-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "worked",

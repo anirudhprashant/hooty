@@ -74623,7 +74623,7 @@
       {
        "id": "mathematics-g10-ch14-l3",
        "title": "Coin, ball and die events",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -74688,6 +74688,33 @@
            "p": 205
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g10-ch14-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "probability",
+         "params": {
+          "kind": "dice"
+         },
+         "title": "Try it many times",
+         "tasks": [
+          {
+           "say": "Try 100 times.",
+           "when": "n >= 100",
+           "then": "Look how the blue line has started to settle."
+          },
+          {
+           "say": "Try 500 times.",
+           "when": "n == 500",
+           "then": "With many tries the fraction gets very close to the true chance."
+          }
+         ],
+         "takeaway": "A few tries can land anywhere, but many tries settle close to the true chance.",
+         "explanation": "A few tries can land anywhere, but many tries settle close to the true chance."
         },
         {
          "type": "worked",
@@ -76203,7 +76230,7 @@
       {
        "id": "mathematics-g10-ch14-l5",
        "title": "Birthdays, students, marbles and two coins",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "concept",
@@ -76241,6 +76268,33 @@
            "p": 209
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g10-ch14-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "probability",
+         "params": {
+          "kind": "coin"
+         },
+         "title": "Try it many times",
+         "tasks": [
+          {
+           "say": "Try 100 times.",
+           "when": "n >= 100",
+           "then": "Look how the blue line has started to settle."
+          },
+          {
+           "say": "Try 500 times.",
+           "when": "n == 500",
+           "then": "With many tries the fraction gets very close to the true chance."
+          }
+         ],
+         "takeaway": "A few tries can land anywhere, but many tries settle close to the true chance.",
+         "explanation": "A few tries can land anywhere, but many tries settle close to the true chance."
         },
         {
          "type": "hook",
