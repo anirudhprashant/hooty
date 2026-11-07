@@ -768,7 +768,7 @@ export const KITS = {
     tasks: [{ say: 'Stand on the Equator.', when: 'lat == 0', then: 'The Equator is latitude 0, halfway between the poles.' }, { say: 'Stand on the Prime Meridian.', when: 'lon == 0', then: 'Longitude 0 runs through Greenwich.' }],
   },
   mapscale: {
-    grades: [6, 8], match: [/\bscale\b/, /distance on (a |the )?map|map distance/, /\bmaps?\b/],
+    grades: [6, 8], match: [/(map|drawing|bar) scale|scale (of|on) (a |the )?map/, /distance on (a |the )?map|map distance/, /\bmaps?\b/],
     title: 'Measure on the map', takeaway: 'Real distance = distance on the map x the scale.',
     tasks: [{ say: 'Show 400 km on the map.', when: 'cm * km == 400', then: 'Map distance x scale = real distance: 400 km.' }],
   },
