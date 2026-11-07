@@ -467,9 +467,14 @@ export const KITS = {
     ],
   },
   money: {
-    grades: [3, 5], match: [/\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b/, /\bbalances? to customers\b/],
+    grades: [2, 5], perChapter: { 2: 5 }, params: (text, f, all, grade) => ({ kind: grade <= 2 ? 'small' : 'rupees' }), match: [/\bdifferent amounts\b/, /\bspent\b|\bspend\b/, /\bbuying\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b/, /\bbalances? to customers\b/],
     title: 'Pay the exact amount', takeaway: 'The same amount can be made with different notes and coins; big notes first uses the fewest.',
-    tasks: [
+    tasks: (p) => p.kind === 'small' ? [
+      { say: 'Pay \u20b966 using the notes and coins.', when: 'amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66', then: 'For example \u20b950 + \u20b910 + \u20b95 + \u20b91 = \u20b966.' },
+      { say: 'Now pay \u20b966 a different way, with no \u20b950 note.', when: 'amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66 and f == 0', then: 'The same amount can be paid in many different ways.' },
+      { say: 'Make \u20b954.', when: 'amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54', then: 'For example \u20b950 + \u20b92 + \u20b92, or \u20b920 + \u20b920 + \u20b910 + \u20b92 + \u20b92.' },
+      { say: 'Make \u20b985 with as few notes and coins as you can.', when: 'amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5', then: '\u20b950 + \u20b920 + \u20b910 + \u20b95: big notes first uses the fewest.' },
+    ] : [
       { say: 'Make \u20b936.', when: 'amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36', then: 'For example 3 \u00d7 \u20b910 + 1 \u00d7 \u20b95 + 1 \u00d7 \u20b91.' },
       { say: 'Make \u20b9163 with just 6 notes and coins.', when: 'amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6', then: '\u20b9100 + \u20b950 + \u20b910 + \u20b91 + \u20b91 + \u20b91: big notes first.' },
       { say: 'Pay \u20b955 in two different ways, one after the other.', when: 'amt == 7 and 100 * h + 50 * f + 10 * t + 5 * v + o == 55 and h == 0', then: 'For example 5 \u00d7 \u20b910 + 1 \u00d7 \u20b95, or \u20b950 + \u20b95: the same amount can be paid in many ways.' },
@@ -610,6 +615,16 @@ export const KITS = {
       { say: 'Build the pyramid from 3, 9, 6 and 5. What is at the top?', when: 'a == 3 and b == 9 and c == 6 and d == 5', then: '3 + 9 = 12, 9 + 6 = 15, 6 + 5 = 11; then 12 + 15 = 27 and 15 + 11 = 26; the top is 53.' },
       { say: 'Make a pyramid whose second row is 20, 20, 20.', when: 'a + b == 20 and b + c == 20 and c + d == 20', then: 'Each pair adds to 20, so the second row is 20, 20, 20.' },
       { say: 'Put 0 in the whole bottom row. What happens?', when: 'a == 0 and b == 0 and c == 0 and d == 0', then: 'Adding zeros always gives 0, all the way to the top.' },
+    ],
+  },
+  picturechart: {
+    grades: [2, 2], perChapter: { 2: 5 }, match: [/data handling/, /\bface stands for\b|\bdraw faces\b/, /\bnumber of (children|students)\b/, /\bmost liked\b|\bleast liked\b|\bmost students\b|\bleast students\b|\b(more|fewer) students\b/, /\bthe table\b|\btable has\b|\bcomplete the table\b/, /\bchart\b|\bsurveys?\b/],
+    params: (text) => ({ kind: /colou?rs?\b/.test(text.slice(0, 60)) ? 'colours' : /school|mode of|modes\b/.test(text.slice(0, 80)) ? 'modes' : /\bgames?\b/.test(text.slice(0, 60)) ? 'games' : 'things' }),
+    title: 'Fill the picture chart', takeaway: 'One face stands for one child: the longest row is the most liked, the shortest the least.',
+    tasks: [
+      { say: 'Make the first row the longest.', when: 'a > b and a > c and a > d', then: 'The longest row is the one chosen by the most children.' },
+      { say: 'Make the second row shorter than the first but longer than the third.', when: 'b < a and b > c', then: 'The second row has fewer than the first and more than the third.' },
+      { say: 'Make every row the same length.', when: 'a == b and b == c and c == d', then: 'When every row has the same number, no one is the most or the least.' },
     ],
   },
   // ---- geography and history ----

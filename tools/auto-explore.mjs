@@ -55,7 +55,7 @@ for (const slug of books) {
         .filter(([id, k]) => WIDGETS[id] && [WIDGETS[id].subject, ...(k.subjects || [])].some((x) => kinds.includes(x)) && grade >= k.grades[0] && grade <= k.grades[1])
         .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= (typeof x[1].minScore === 'object' ? (x[1].minScore[grade] ?? 3) : (x[1].minScore || 3)))   // minScore: a number, or { grade: n } to ask for more evidence in one class.sort((a, b) => b[2] - a[2]);
       for (const [id, kit] of ranked) {
-        const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || [])) : {};
+        const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || []), grade) : {};
         if (kit.usable && !kit.usable(params)) continue;
         const cap = typeof kit.perChapter === 'object' ? (kit.perChapter[grade] ?? 2) : (kit.perChapter || 2);   // a number, or { grade: number } to raise it for one class
         if ((used[slot(id, params)] || 0) >= cap) continue;

@@ -953,9 +953,12 @@ export const WIDGETS = {
   },
   money: {
     subject: 'maths', about: 'Make an amount of money from Rs 100, Rs 50 and Rs 10 notes and Rs 5 and Rs 1 coins: Rs 20, 28, 30, 36, 55, 125, 163 or 183. There is more than one way to make the same amount. For money, rupees, counting money, notes and coins, shopping and change.',
+    params: { kind: 'rupees' },   // 'small' is Class 2's money: Rs 50, 20, 10 notes and Rs 5, 2, 1 coins
+    dynamicSliders: (p) => (p.kind === 'small' ? [['amt', 'Amount to make: 66, 54, 85, 50, 65, 25, 40', 0, 6, 1, 0], ['f', 'Rs 50 notes', 0, 3, 1, 0], ['tw', 'Rs 20 notes', 0, 4, 1, 0], ['t', 'Rs 10 notes', 0, 9, 1, 0], ['v', 'Rs 5 coins', 0, 9, 1, 0], ['two', 'Rs 2 coins', 0, 9, 1, 0], ['o', 'Rs 1 coins', 0, 9, 1, 0]] : WIDGETS.money.sliders),
     sliders: [['amt', 'Amount to make: 36, 125, 163, 183, 20, 28, 30, 55', 0, 7, 1, 0], ['h', 'Rs 100 notes', 0, 2, 1, 0], ['f', 'Rs 50 notes', 0, 3, 1, 0], ['t', 'Rs 10 notes', 0, 9, 1, 0], ['v', 'Rs 5 coins', 0, 9, 1, 0], ['o', 'Rs 1 coins', 0, 9, 1, 0]],
-    draw(v) {
-      const want = [36, 125, 163, 183, 20, 28, 30, 55][v.amt], pieces = [[100, v.h, '#7fb3d5', true], [50, v.f, '#5fc9b8', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [1, v.o, '#c8c8c8', false]];
+    draw(v, p) {
+      const small = !!p && p.kind === 'small', want = (small ? [66, 54, 85, 50, 65, 25, 40] : [36, 125, 163, 183, 20, 28, 30, 55])[v.amt];
+      const pieces = small ? [[50, v.f, '#5fc9b8', true], [20, v.tw, '#b794f4', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [2, v.two, '#d9b3a0', false], [1, v.o, '#c8c8c8', false]] : [[100, v.h, '#7fb3d5', true], [50, v.f, '#5fc9b8', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [1, v.o, '#c8c8c8', false]];
       const got = pieces.reduce((a, [val, n]) => a + val * n, 0), kids = [T(300, 32, `Make ₹${want}`, { z: 22 })];
       // lay the notes and coins out in rows, smaller when there are many so they stay above the total
       const many = pieces.reduce((a, [, n]) => a + n, 0), sc = many > 24 ? 0.6 : many > 14 ? 0.78 : 1, shown = [];
@@ -1253,6 +1256,26 @@ export const WIDGETS = {
       eq.forEach((t, i) => kids.push(T(470, 66 + i * 26, t, { z: 14, w: 600, f: i >= 5 ? '#c0392b' : i >= 3 ? '#c2510e' : INK })));
       const top = rows[3][0];
       return { kids, say: `Each number is the sum of the two below it: ${rows[0][0]} + ${rows[0][1]} = ${rows[1][0]}, ${rows[0][1]} + ${rows[0][2]} = ${rows[1][1]}, ${rows[0][2]} + ${rows[0][3]} = ${rows[1][2]}. Then ${rows[1][0]} + ${rows[1][1]} = ${rows[2][0]}, ${rows[1][1]} + ${rows[1][2]} = ${rows[2][1]}, and the top is ${rows[2][0]} + ${rows[2][1]} = ${top}.` };
+    },
+  },
+  picturechart: {
+    subject: 'maths', about: 'A picture chart where one face stands for one child: each row is a favourite colour, a way of coming to school or a game, and the child changes how many children chose it. The chart shows which row has the most and which has the fewest, and the total. Param kind: colours, modes, games or things. For data handling, tables and charts, most and least, more and fewer.',
+    params: { kind: 'colours' },
+    dynamicSliders: (p) => { const n = (WIDGETS.picturechart.sets[p.kind] || WIDGETS.picturechart.sets.things).length, d = [3, 5, 2, 4, 6]; return Array.from({ length: n }, (_, i) => ['abcde'[i], `Children: ${(WIDGETS.picturechart.sets[p.kind] || WIDGETS.picturechart.sets.things)[i]}`, 0, 10, 1, d[i]]); },
+    sets: { colours: ['red', 'green', 'blue', 'yellow'], modes: ['on foot', 'autorickshaw', 'bus', 'bike', 'bicycle'], games: ['gilli-danda', 'kabaddi', 'pithu', 'football', 'cricket'], things: ['first', 'second', 'third', 'fourth'] },
+    draw(v, p) {
+      const names = this.sets[p.kind] || this.sets.things, counts = names.map((_, i) => v['abcde'[i]] || 0), total = counts.reduce((x, y) => x + y, 0), kids = [];
+      names.forEach((nm, r) => {
+        const y = 40 + r * 48;
+        kids.push(T(18, y + 5, nm, { a: 'start', z: 14, w: 700 }), L(130, y + 20, 130 + 11 * 22, y + 20, '#e6dff5', 1.5));
+        for (let i = 0; i < counts[r]; i++) { const x = 142 + i * 22; kids.push(CIRC(x, y, 9, '#ffd86b', { w: 1.8 }), CIRC(x - 3, y - 2, 1.3, INK, { w: 0 }), CIRC(x + 3, y - 2, 1.3, INK, { w: 0 }), s('path', { d: `M ${x - 4} ${y + 2} Q ${x} ${y + 7} ${x + 4} ${y + 2}`, fill: 'none', stroke: INK, 'stroke-width': 1.4, 'stroke-linecap': 'round' })); }
+        kids.push(T(130 + 11 * 22 + 10, y + 5, String(counts[r]), { a: 'start', z: 15, w: 700, f: '#6b5a8a' }));
+      });
+      const hi = Math.max(...counts), lo = Math.min(...counts), most = names.filter((_, i) => counts[i] === hi), least = names.filter((_, i) => counts[i] === lo);
+      const list = (a) => (a.length > 2 ? `${a.length} rows` : a.join(' and '));
+      const tie = hi === lo ? 'all the same' : null;
+      kids.push(T(430, 70, 'one face = one child', { a: 'start', z: 12, w: 600, f: '#6b5a8a' }), T(430, 122, !total ? 'no one yet' : tie ? 'all rows are equal' : `most: ${list(most)}`, { a: 'start', z: 15, w: 700, f: '#058a68' }), T(430, 150, total && !tie ? `fewest: ${list(least)}` : '', { a: 'start', z: 15, w: 700, f: '#c2510e' }), T(430, 196, `${total} children in all`, { a: 'start', z: 14, w: 600 }));
+      return { kids, say: !total ? 'Add some faces to the chart.' : hi === lo ? `Every row has ${hi}: they are all equal.` : `${list(most)} ${most.length > 1 ? 'are' : 'is'} liked by the most children (${hi}), and ${list(least)} by the fewest (${lo}). In all there are ${total} children.` };
     },
   },
 };
