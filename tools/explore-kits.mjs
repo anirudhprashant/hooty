@@ -627,6 +627,16 @@ export const KITS = {
       { say: 'Make every row the same length.', when: 'a == b and b == c and c == d', then: 'When every row has the same number, no one is the most or the least.' },
     ],
   },
+  seesaw: {
+    grades: [2, 2], match: [/see-?saw/, /\bheavier\b/, /\blighter\b/, /\bheavy\b|\bweigh(s|t)?\b/, /\bbalance\b/],
+    title: 'Which side goes down?', takeaway: 'The heavier side goes down and the lighter side goes up; when both weigh the same it stays level.',
+    tasks: [
+      { say: 'Put the watermelon on one side and the mango on the other. Which side goes down?', when: '(li == 5 and ri == 1) or (li == 1 and ri == 5)', then: 'The watermelon is heavier, so its side goes down and the mango side goes up.' },
+      { say: 'How many mangoes balance one watermelon?', when: 'li == 5 and lc == 1 and ri == 1 and rc == 10', then: 'About 10 mangoes weigh the same as the watermelon, so the see-saw stays level.' },
+      { say: 'Show that a coconut weighs about the same as two mangoes.', when: 'li == 2 and lc == 1 and ri == 1 and rc == 2', then: 'One coconut and two mangoes balance.' },
+      { say: 'Put the same thing on both sides. What happens?', when: 'li == ri and lc == rc', then: 'Equal weights: the see-saw stays level.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

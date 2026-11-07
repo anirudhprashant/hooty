@@ -1278,6 +1278,27 @@ export const WIDGETS = {
       return { kids, say: !total ? 'Add some faces to the chart.' : hi === lo ? `Every row has ${hi}: they are all equal.` : `${list(most)} ${most.length > 1 ? 'are' : 'is'} liked by the most children (${hi}), and ${list(least)} by the fewest (${lo}). In all there are ${total} children.` };
     },
   },
+  seesaw: {
+    subject: 'maths', about: 'A see-saw: choose what goes on each side (carrot, mango, coconut, cauliflower, bottle gourd, watermelon) and how many, and the heavier side goes down; when the two sides weigh about the same it stays level. The weights are rough relative ones: a coconut is about two mangoes, a watermelon about ten. For heavier and lighter, comparing weights, balancing, how many of one thing balance another.',
+    sliders: [['li', 'Left side: 0 carrot, 1 mango, 2 coconut, 3 cauliflower, 4 bottle gourd, 5 watermelon', 0, 5, 1, 5], ['lc', 'How many on the left', 1, 12, 1, 1], ['ri', 'Right side: same list', 0, 5, 1, 1], ['rc', 'How many on the right', 1, 12, 1, 4]],
+    draw(v) {
+      const items = [['carrot', 'carrots', 0.3, '#f2994a', 7], ['mango', 'mangoes', 1, '#f2c94c', 10], ['coconut', 'coconuts', 2, '#8d6e63', 13], ['cauliflower', 'cauliflowers', 2.5, '#f1ecd8', 14], ['bottle gourd', 'bottle gourds', 3, '#9ccc65', 15], ['watermelon', 'watermelons', 10, '#43a047', 26]];
+      const A = items[v.li], B = items[v.ri], wl = A[2] * v.lc, wr = B[2] * v.rc, kids = [], close = Math.abs(wl - wr) / Math.max(wl, wr) < 0.04;
+      const sign = close ? 0 : wl > wr ? 1 : -1, ang = sign ? (sign * (7 + 7 * Math.min(1, Math.log2(Math.max(wl, wr) / Math.min(wl, wr)) / 3)) * Math.PI) / 180 : 0;
+      const px = 190, py = 200, half = 150, ex = (side) => [px + side * half * Math.cos(ang), py + side * -half * Math.sin(ang)];
+      const [lx, ly] = ex(-1), [rx, ry] = ex(1);
+      kids.push(s('polygon', { points: `${px - 26},262 ${px + 26},262 ${px},${py + 4}`, fill: '#d8cff0', stroke: INK, 'stroke-width': 3 }), L(lx, ly, rx, ry, INK, 8));
+      const pile = (it, count, side) => {
+        const r = it[4], cols = Math.min(count, r > 20 ? 1 : 4), fx = px + side * 0.62 * half * Math.cos(ang), fy = py - side * 0.62 * half * Math.sin(ang);
+        for (let k = 0; k < count; k++) { const c = k % cols, rw = Math.floor(k / cols); kids.push(CIRC(fx + (c - (cols - 1) / 2) * (2 * r + 2), fy - 6 - r - rw * (2 * r), r, it[3], { w: 2 })); }
+      };
+      pile(A, v.lc, -1); pile(B, v.rc, 1);
+      const name = (it, n) => `${n} ${n === 1 ? it[0] : it[1]}`;
+      const verdict = close ? 'they balance' : wl > wr ? 'the left side goes down' : 'the right side goes down';
+      kids.push(T(470, 78, `left: ${name(A, v.lc)}`, { z: 14, w: 700 }), T(470, 108, `right: ${name(B, v.rc)}`, { z: 14, w: 700 }), T(470, 160, verdict, { z: 18, w: 700, f: close ? '#058a68' : '#c2510e' }), T(470, 188, close ? 'about the same weight' : wl > wr ? 'the left side is heavier' : 'the right side is heavier', { z: 12, w: 600, f: '#6b5a8a' }));
+      return { kids, say: close ? `${name(A, v.lc)} and ${name(B, v.rc)} weigh about the same, so the see-saw stays level.` : `${wl > wr ? `${name(A, v.lc)} ${v.lc === 1 ? 'is' : 'are'} heavier than ${name(B, v.rc)}, so the left side goes down` : `${name(B, v.rc)} ${v.rc === 1 ? 'is' : 'are'} heavier than ${name(A, v.lc)}, so the right side goes down`}. The lighter side goes up.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
