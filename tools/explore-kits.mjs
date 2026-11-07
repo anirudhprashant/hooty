@@ -467,13 +467,15 @@ export const KITS = {
     ],
   },
   money: {
-    grades: [2, 5], perChapter: { 2: 5 }, params: (text, f, all, grade) => ({ kind: grade <= 2 ? 'small' : 'rupees' }), match: [/\bdifferent amounts\b/, /\bspent\b|\bspend\b/, /\bbuying\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b/, /\bbalances? to customers\b/],
+    grades: [1, 5], perChapter: { 1: 5, 2: 5 }, minScore: { 1: 4 }, params: (text, f, all, grade) => ({ kind: grade <= 2 ? 'small' : 'rupees' }), match: [/\bdenominations?\b/, /\bdifferent amounts\b/, /\bspent\b|\bspend\b/, /\bbuying\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b/, /\bbalances? to customers\b/],
     title: 'Pay the exact amount', takeaway: 'The same amount can be made with different notes and coins; big notes first uses the fewest.',
     tasks: (p) => p.kind === 'small' ? [
       { say: 'Pay \u20b966 using the notes and coins.', when: 'amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66', then: 'For example \u20b950 + \u20b910 + \u20b95 + \u20b91 = \u20b966.' },
       { say: 'Now pay \u20b966 a different way, with no \u20b950 note.', when: 'amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66 and f == 0', then: 'The same amount can be paid in many different ways.' },
-      { say: 'Make \u20b954.', when: 'amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54', then: 'For example \u20b950 + \u20b92 + \u20b92, or \u20b920 + \u20b920 + \u20b910 + \u20b92 + \u20b92.' },
-      { say: 'Make \u20b985 with as few notes and coins as you can.', when: 'amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5', then: '\u20b950 + \u20b920 + \u20b910 + \u20b95: big notes first uses the fewest.' },
+      { ok: true, say: 'The ball costs \u20b920. Pay with only \u20b95 coins. How many?', when: 'amt == 7 and v == 4 and f + tw + t + two + o == 0', then: '4 coins of \u20b95 make \u20b920.' },
+      { ok: true, say: 'Now pay \u20b920 with only \u20b910 notes.', when: 'amt == 7 and t == 2 and f + tw + v + two + o == 0', then: '2 notes of \u20b910 make \u20b920.' },
+      { ok: true, say: 'Make \u20b954.', when: 'amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54', then: 'For example \u20b950 + \u20b92 + \u20b92, or \u20b920 + \u20b920 + \u20b910 + \u20b92 + \u20b92.' },
+      { ok: true, say: 'Make \u20b985 with as few notes and coins as you can.', when: 'amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5', then: '\u20b950 + \u20b920 + \u20b910 + \u20b95: big notes first uses the fewest.' },
     ] : [
       { say: 'Make \u20b936.', when: 'amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36', then: 'For example 3 \u00d7 \u20b910 + 1 \u00d7 \u20b95 + 1 \u00d7 \u20b91.' },
       { say: 'Make \u20b9163 with just 6 notes and coins.', when: 'amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6', then: '\u20b9100 + \u20b950 + \u20b910 + \u20b91 + \u20b91 + \u20b91: big notes first.' },
@@ -537,7 +539,7 @@ export const KITS = {
     ],
   },
   arrays: {
-    grades: [2, 3], perChapter: { 2: 6 }, match: [/\bgroups?\b/, /sharing equally|shared equally|share equally/, /multiplication/, /\btimes (table|sign)s?\b/, /equal groups?|groups? of|counting groups/, /repeated addition/, /\bdivision\b|\bdivide/, /\u00f7/],
+    grades: [1, 3], perChapter: { 1: 5, 2: 6 }, minScore: { 1: 2 }, match: [/\bgroups?\b/, /\bpacks? of\b/, /\btotal\b.*\btimes\b|\btimes\b.*\btotal\b/, /\b(two|three|four|five|six|seven|eight|nine|ten|\d+) times\b/, /sharing equally|shared equally|share equally/, /multiplication/, /\btimes (table|sign)s?\b/, /equal groups?|groups? of|counting groups/, /repeated addition/, /\bdivision\b|\bdivide/, /\u00f7/],
     title: 'Groups and rows', takeaway: 'Equal groups can be counted by adding, written as a multiplication fact and shared back out with division.',
     tasks: [
       { say: 'Make 3 groups of 3. What is 3 \u00d7 3?', when: 'g == 3 and e == 3', then: '3 + 3 + 3 = 9, so 3 \u00d7 3 = 9.' },

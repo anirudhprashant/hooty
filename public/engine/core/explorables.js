@@ -954,10 +954,10 @@ export const WIDGETS = {
   money: {
     subject: 'maths', about: 'Make an amount of money from Rs 100, Rs 50 and Rs 10 notes and Rs 5 and Rs 1 coins: Rs 20, 28, 30, 36, 55, 125, 163 or 183. There is more than one way to make the same amount. For money, rupees, counting money, notes and coins, shopping and change.',
     params: { kind: 'rupees' },   // 'small' is Class 2's money: Rs 50, 20, 10 notes and Rs 5, 2, 1 coins
-    dynamicSliders: (p) => (p.kind === 'small' ? [['amt', 'Amount to make: 66, 54, 85, 50, 65, 25, 40', 0, 6, 1, 0], ['f', 'Rs 50 notes', 0, 3, 1, 0], ['tw', 'Rs 20 notes', 0, 4, 1, 0], ['t', 'Rs 10 notes', 0, 9, 1, 0], ['v', 'Rs 5 coins', 0, 9, 1, 0], ['two', 'Rs 2 coins', 0, 9, 1, 0], ['o', 'Rs 1 coins', 0, 9, 1, 0]] : WIDGETS.money.sliders),
+    dynamicSliders: (p) => (p.kind === 'small' ? [['amt', 'Amount to make: 66, 54, 85, 50, 65, 25, 40, 20, 15', 0, 8, 1, 0], ['f', 'Rs 50 notes', 0, 3, 1, 0], ['tw', 'Rs 20 notes', 0, 4, 1, 0], ['t', 'Rs 10 notes', 0, 9, 1, 0], ['v', 'Rs 5 coins', 0, 9, 1, 0], ['two', 'Rs 2 coins', 0, 9, 1, 0], ['o', 'Rs 1 coins', 0, 9, 1, 0]] : WIDGETS.money.sliders),
     sliders: [['amt', 'Amount to make: 36, 125, 163, 183, 20, 28, 30, 55', 0, 7, 1, 0], ['h', 'Rs 100 notes', 0, 2, 1, 0], ['f', 'Rs 50 notes', 0, 3, 1, 0], ['t', 'Rs 10 notes', 0, 9, 1, 0], ['v', 'Rs 5 coins', 0, 9, 1, 0], ['o', 'Rs 1 coins', 0, 9, 1, 0]],
     draw(v, p) {
-      const small = !!p && p.kind === 'small', want = (small ? [66, 54, 85, 50, 65, 25, 40] : [36, 125, 163, 183, 20, 28, 30, 55])[v.amt];
+      const small = !!p && p.kind === 'small', want = (small ? [66, 54, 85, 50, 65, 25, 40, 20, 15] : [36, 125, 163, 183, 20, 28, 30, 55])[v.amt];
       const pieces = small ? [[50, v.f, '#5fc9b8', true], [20, v.tw, '#b794f4', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [2, v.two, '#d9b3a0', false], [1, v.o, '#c8c8c8', false]] : [[100, v.h, '#7fb3d5', true], [50, v.f, '#5fc9b8', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [1, v.o, '#c8c8c8', false]];
       const got = pieces.reduce((a, [val, n]) => a + val * n, 0), kids = [T(300, 32, `Make ₹${want}`, { z: 22 })];
       // lay the notes and coins out in rows, smaller when there are many so they stay above the total

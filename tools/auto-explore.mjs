@@ -60,9 +60,9 @@ for (const slug of books) {
         const cap = typeof kit.perChapter === 'object' ? (kit.perChapter[grade] ?? 2) : (kit.perChapter || 2);   // a number, or { grade: number } to raise it for one class
         if ((used[slot(id, params)] || 0) >= cap) continue;
         const full = { ...(WIDGETS[id].params || {}), ...params };
-        const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params) : kit.tasks).filter((t) => { try { return canReach(id, full, t.when); } catch { return false; } });
+        const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params) : kit.tasks).filter((t) => { try { return t.ok || canReach(id, full, t.when); } catch { return false; } });   // t.ok: true = checked by hand (the search is a sample, so an exact sum over many sliders can be missed)
         if (!tasks.length) continue;
-        have[key] = { widget: id, ...(kit.params ? { params } : {}), title: kit.title, tasks, takeaway: kit.takeaway, auto: true };
+        have[key] = { widget: id, ...(kit.params ? { params } : {}), title: kit.title, tasks: tasks.map(({ ok, ...t }) => t), takeaway: kit.takeaway, auto: true };
         used[slot(id, params)] = (used[slot(id, params)] || 0) + 1; added++; tally[id] = (tally[id] || 0) + 1;
         console.log(`${slug} ${ch} lesson ${key} "${title.slice(0, 50)}": ${id}`);
         break;
