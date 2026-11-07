@@ -721,6 +721,26 @@ export const KITS = {
       { say: 'Fill every row: show one hundred.', when: 'n == 100', then: 'Ten tens make one hundred.' },
     ],
   },
+  spans: {
+    grades: [1, 1], params: (text) => ({ kind: /footspan/.test(text.slice(0, 60)) ? 'foot' : 'hand' }), match: [/\bhandspans?\b|\bfootspans?\b/, /\bspans?\b/, /\bhow many (hand|foot)spans\b/],
+    title: 'Measure with spans', takeaway: 'A bigger hand or foot fits fewer times along a length, so you count fewer spans: measure with the same hand every time.',
+    tasks: (p) => (p.kind === 'foot'
+      ? [{ say: 'Measure the classroom side with a medium foot.', when: 'obj == 2 and size == 1', then: 'About 20 footspans.' },
+         { say: 'Now use a big foot on the classroom side. More or fewer footspans?', when: 'obj == 2 and size == 2', then: 'Fewer: a bigger foot covers more each time.' },
+         { say: 'Find the longest length: the playground edge.', when: 'obj == 3', then: 'The longest thing needs the most footspans.' }]
+      : [{ say: 'Measure the table with a medium hand.', when: 'obj == 2 and size == 1', then: 'About 9 handspans.' },
+         { say: 'Now use a big hand on the table. More or fewer handspans?', when: 'obj == 2 and size == 2', then: 'Fewer: a bigger hand covers more each time.' },
+         { say: 'Measure the bag with a small hand.', when: 'obj == 1 and size == 0', then: 'About 4 handspans.' }]),
+  },
+  patternstrip: {
+    grades: [1, 1], perChapter: { 1: 4 }, match: [/\bpatterns?\b/, /\bextend(ing)? (the )?patterns?\b/, /\bcolouring\b|\bkolam\b|\bthumb\b/],
+    title: 'What comes next?', takeaway: 'A pattern repeats the same group again and again, so you can tell what comes next.',
+    tasks: [
+      { say: 'Make a pattern that takes turns: red circle, blue square (AB) with 8 shapes.', when: 'unit == 0 and count == 8', then: 'AB: red, blue, red, blue... they take turns.' },
+      { say: 'Make a pattern with three different shapes repeating.', when: 'unit == 3 and count >= 6', then: 'ABC: red, blue, yellow, then the same three again.' },
+      { say: 'Show the AAB pattern three times over (9 shapes). What comes next?', when: 'unit == 1 and count == 9', then: 'A red circle: after blue comes the start of the pattern again.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],

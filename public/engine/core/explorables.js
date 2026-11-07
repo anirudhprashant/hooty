@@ -1457,6 +1457,34 @@ export const WIDGETS = {
       return { kids, say: v.n === 0 ? 'Zero: no counters.' : `${word}: ${v.n} is ${t} ${t === 1 ? 'ten' : 'tens'}${v.n < 100 ? ` and ${o} ${o === 1 ? 'one' : 'ones'}` : ', which is one hundred'}.` };
     },
   },
+  spans: {
+    subject: 'maths', about: 'Measure with handspans or footspans: choose an object (a pencil, a bag, a table, a blackboard, or a bed, the way to the door, a classroom side, a playground edge) and whose hand or foot (small, medium, big), and see about how many spans long it is. A bigger hand or foot fits fewer times, so you need fewer spans. The sizes are rough: a handspan about 10 to 14 cm and a footspan about 20 to 28 cm. Param kind: hand or foot. For measuring with handspans and footspans, non-standard units, comparing lengths.',
+    params: { kind: 'hand' },
+    dynamicSliders: (p) => (p.kind === 'foot' ? [['obj', 'Measure: 0 bed, 1 way to the door, 2 classroom side, 3 playground edge', 0, 3, 1, 2], ['size', 'Whose foot: 0 small, 1 medium, 2 big', 0, 2, 1, 1]] : [['obj', 'Measure: 0 pencil, 1 bag, 2 table, 3 blackboard', 0, 3, 1, 2], ['size', 'Whose hand: 0 small, 1 medium, 2 big', 0, 2, 1, 1]]),
+    draw(v, p) {
+      const foot = p.kind === 'foot', names = foot ? ['bed', 'way to the door', 'classroom side', 'playground edge'] : ['pencil', 'bag', 'table', 'blackboard'], cms = foot ? [120, 240, 480, 960] : [15, 36, 108, 180], sizes = foot ? [20, 24, 28] : [10, 12, 14];
+      const unit = foot ? 'footspan' : 'handspan', who = ['small', 'medium', 'big'][v.size], len = cms[v.obj], sz = sizes[v.size], sc = 520 / cms[3], n = Math.round(len / sz), kids = [];
+      kids.push(R(40, 100, len * sc, 34, '#e8d7a8', { w: 3, r: 4 }), T(40, 90, names[v.obj], { a: 'start', z: 16, w: 700 }));
+      for (let i = 0; i < n; i++) {
+        const x = 40 + i * sz * sc, w = Math.min(sz * sc, 40 + len * sc - x);
+        if (w > 1) kids.push(R(x, 146, w - 1.5, 26, i % 2 ? '#f2a33a' : '#5fc9b8', { w: 1.5, r: 3 }), ...(w >= 18 ? [T(x + w / 2, 164, String(i + 1), { z: 11, w: 700, f: '#ffffff' })] : []));
+      }
+      kids.push(T(300, 218, `about ${n} ${unit}${n === 1 ? '' : 's'}`, { z: 26, w: 700, f: '#058a68' }), T(300, 248, `measured with a ${who} ${foot ? 'foot' : 'hand'}`, { z: 14, w: 600, f: '#6b5a8a' }), T(300, 272, v.size === 2 ? 'a bigger one fits fewer times' : v.size === 0 ? 'a smaller one fits more times' : '', { z: 12, w: 600, f: '#c2510e' }));
+      return { kids, say: `The ${names[v.obj]} is about ${n} ${unit}${n === 1 ? '' : 's'} long measured with a ${who} ${foot ? 'foot' : 'hand'}. ${v.size === 2 ? 'A bigger ' + (foot ? 'foot' : 'hand') + ' covers more each time, so you need fewer.' : v.size === 0 ? 'A smaller ' + (foot ? 'foot' : 'hand') + ' covers less each time, so you need more.' : 'Try a smaller or a bigger one and see how the number changes.'}` };
+    },
+  },
+  patternstrip: {
+    subject: 'maths', about: 'A strip of shapes in a repeating pattern: red circle (A), blue square (B), yellow triangle (C). Choose the pattern (AB, AAB, ABB or ABC) and how many shapes to show, and the dotted shape at the end shows what comes next. For patterns, repeating patterns, extending a pattern, what comes next.',
+    sliders: [['unit', 'Pattern: 0 AB, 1 AAB, 2 ABB, 3 ABC', 0, 3, 1, 0], ['count', 'How many shapes to show', 3, 12, 1, 6]],
+    draw(v) {
+      const units = [[0, 1], [0, 0, 1], [0, 1, 1], [0, 1, 2]], nm = ['red circle', 'blue square', 'yellow triangle'], cols = ['#e2583e', '#1f63d9', '#f2c94c'], u = units[v.unit], kids = [];
+      const shape = (k, x, y, ghost) => { const o = ghost ? { w: 2.5, s: '#9b8db8' } : { w: 2.5 }, f = ghost ? '#ffffff' : cols[k]; return k === 0 ? [CIRC(x, y, 17, f, o)] : k === 1 ? [R(x - 16, y - 16, 32, 32, f, { ...o, r: 4 })] : [s('polygon', { points: `${x},${y - 18} ${x + 18},${y + 15} ${x - 18},${y + 15}`, fill: f, stroke: ghost ? '#9b8db8' : INK, 'stroke-width': 2.5, 'stroke-dasharray': ghost ? '5 4' : null })]; };
+      for (let i = 0; i < v.count; i++) kids.push(...shape(u[i % u.length], 40 + i * 40, 110, false));
+      const next = u[v.count % u.length]; kids.push(...shape(next, 40 + v.count * 40, 110, true), T(40 + v.count * 40, 150, '?', { z: 14, w: 700, f: '#6b5a8a' }));
+      kids.push(T(300, 200, `the pattern repeats: ${u.map((k) => nm[k].split(' ')[0]).join(', ')}`, { z: 16, w: 700 }), T(300, 236, `next: ${nm[next]}`, { z: 20, w: 700, f: '#058a68' }));
+      return { kids, say: `This pattern repeats ${u.map((k) => nm[k]).join(', ')}. After ${v.count} shapes the next one is the ${nm[next]}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
