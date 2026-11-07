@@ -1411,7 +1411,7 @@ function screenRewards() {
       class: `theme-card${active ? ' is-active' : ''}`, type: 'button', 'aria-pressed': String(active),
       onclick: () => setTheme(theme.id),
     }, [
-      el('img', { class: 'theme-card__art', src: assetFor(theme, theme.preview || theme.hero), alt: '' }),
+      el('img', { class: 'theme-card__art', src: assetFor(theme, currentGuide() === 'hooty' && theme.heroHooty ? theme.heroHooty : theme.preview || theme.hero), alt: '' }),
       el('div', { class: 'theme-card__body' }, [
         el('div', { class: 'theme-card__text' }, [
           el('div', { class: 'theme-card__name', text: theme.name }),
