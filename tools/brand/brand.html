@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Hooty brand images, drawn from the rig. Open with ?a=<asset>; tools/brand/make.sh renders them all. -->
+<style>@font-face{font-family:"Fredoka";src:url("fredoka-latin-wght.woff2");font-weight:300 700}html,body{margin:0;overflow:hidden;background:transparent}</style>
+<script src="hooty.js"></script></head><body><svg id="s" xmlns="http://www.w3.org/2000/svg"></svg>
+<script>
+const H=window.HOOTY,C=H.COL,a=new URLSearchParams(location.search).get("a")||"stage";H.reset("b");
+const P="#4b2597",P2="#5a31a8",wave=[{to:[-90,-50],bend:1,len:48},{to:[92,-136],bend:-1,len:62}];
+const hooty=(x,y,k,o={})=>`<g transform="translate(${x} ${y}) scale(${k})">${H.svg(Object.assign({wob:1.2,eyes:"open",mouth:"grin",look:[0.1,-0.05],tilt:-4,shadow:false,arms:wave},o))}</g>`;
+const mark=(S,bg,round)=>`${round?`<circle cx="${S/2}" cy="${S/2}" r="${S/2}" fill="${bg}"/>`:`<rect width="${S}" height="${S}" fill="${bg}"/>`}`;
+const A={
+ stage:[800,800,()=>`<ellipse cx="400" cy="786" rx="170" ry="14" fill="rgba(0,0,0,.14)"/>`+hooty(400,782,3.75)],
+ mark:[192,192,()=>mark(192,P,true)+hooty(96,150,0.95,{armK:0,tilt:0,mouth:"smile"})],
+ favicon:[64,64,()=>mark(64,P,true)+hooty(32,52,0.33,{armK:0,tilt:0,mouth:"smile"})],
+ icon:[512,512,()=>`<rect width="512" height="512" rx="112" fill="${P}"/><circle cx="256" cy="270" r="200" fill="${P2}"/>`+hooty(256,410,2.15,{arms:[{to:[-90,-50],bend:1,len:48},{to:[90,-128],bend:-1,len:58}]})],
+ maskable:[512,512,()=>`<rect width="512" height="512" fill="${P}"/>`+hooty(256,372,1.65,{armK:0,tilt:0,mouth:"smile"})],
+ apple:[180,180,()=>`<rect width="180" height="180" fill="${P}"/>`+hooty(90,142,0.68,{armK:0,tilt:0,mouth:"smile"})],
+ og:[1200,630,()=>{let s=`<rect width="1200" height="630" fill="${P}"/>`;
+   const cast=[["triangle",C.maths,120,560,0.9,-6],["drop",C.science,1090,120,0.8,6],["heart",C.hindi,90,150,0.7,8],["star",C.home,1120,560,0.7,-8]];
+   cast.forEach(([sh,col,x,y,k,tl],i)=>s+=`<g transform="translate(${x} ${y}) scale(${k})">${H.svg({from:sh,col,wob:i,eyes:i%2?"happy":"open",mouth:"smile",tilt:tl,armK:0,shadow:false})}</g>`);
+   const B=300;[["H",300],["o",620],["t",740],["y",858]].forEach(([c,x])=>s+=`<text x="${x}" y="${B}" text-anchor="middle" font-family="Fredoka" font-weight="600" font-size="230" fill="#fff">${c}</text>`);
+   s+=`<g transform="translate(468 ${B+10}) scale(1.06)">${H.svg({from:"ball",wob:0.5,eyes:"open",mouth:"smile",armK:0,shadow:false})}</g>`;
+   s+=`<text x="560" y="${B+100}" text-anchor="middle" font-family="Fredoka" font-weight="600" font-size="52" fill="#ffc635">Your school books, turned into an adventure</text>`;
+   s+=`<text x="560" y="${B+170}" text-anchor="middle" font-family="Fredoka" font-weight="600" font-size="40" fill="#ffffff" opacity=".9">Free for every child · hooty.org</text>`;
+   return s;}],
+};
+const [w,h,draw]=A[a];const svg=document.getElementById("s");svg.setAttribute("width",w);svg.setAttribute("height",h);svg.setAttribute("viewBox",`0 0 ${w} ${h}`);svg.innerHTML=draw();
+</script></body></html>

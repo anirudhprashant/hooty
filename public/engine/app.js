@@ -9,6 +9,8 @@ import { state, boot, activeLearner, persist, addXP,
   heartsRegenerated, touchStreak, recordActivity, recordLesson, weakSpots,
   unlockReward, todayKey, exportSave, importSave } from './core/state.js';
 import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, themeCopy, setGuide, currentGuide, guideAvatarSrc } from './core/theme.js';
+// Brand art (tools/brand/make.sh): blob Hooty on the home hero and as the logo mark.
+const BRAND_HERO = './characters/blob/hooty-stage.webp', BRAND_MARK = './characters/blob/hooty-mark.webp';
 import { t, setLocale, getLocale, availableLocales } from './core/i18n.js';
 import { getActivityModule } from './activities/index.js';
 import { icon } from './core/icons.js';
@@ -284,8 +286,7 @@ function topBar(title) {
 
 function navBar() {
   const nav = el('nav', { class: 'nav', 'aria-label': 'Main' });
-  const mascot = mascotAvatar('idle');
-  nav.append(el('div', { class: 'nav__brand' }, [mascot ? el('img', { src: mascot, alt: '' }) : null, t('appName')]));
+  nav.append(el('div', { class: 'nav__brand' }, [el('img', { src: BRAND_MARK, alt: '' }), t('appName')]));
   const active = NAV_FOR[router.screen];
   const due = practiceSet(10).length;
   for (const item of NAV) {
@@ -412,8 +413,8 @@ function screenHome() {
 
   const stage = el('section', { class: 'stage' });
   const art = el('div', { class: `stage__art${currentGuide() === 'hooty' ? ' stage__art--night' : ''}` });
-  const mascot = mascotImage('idle');
-  if (mascot) art.append(el('img', { class: 'stage__mascot', src: mascot, alt: '' }));
+  // the home hero shows the brand mascot (blob Hooty); the guide beside lessons is still mascotImage()
+  art.append(el('img', { class: 'stage__mascot', src: BRAND_HERO, alt: '' }));
 
   const copy = el('div', { class: 'stage__copy' });
   copy.append(
