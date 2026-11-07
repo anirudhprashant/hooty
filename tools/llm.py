@@ -13,7 +13,11 @@ def _ensure_connection():
         subprocess.run(['ssh', '-fNM', '-o', f'ControlPath={SOCKET}', '-o', 'ControlPersist=600', HOST],
                        stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
+ON_ORACLE = os.uname().nodename == 'oracle'   # built there: the key is on this machine, so no ssh hop
+
 def _remote(script, data, timeout):
+    if ON_ORACLE:
+        return subprocess.run(['python3', f'{os.path.dirname(os.path.abspath(__file__))}/{script}'], input=data, capture_output=True, text=True, timeout=timeout)
     _ensure_connection()
     return subprocess.run([*SSH, f'python3 {REMOTE}/{script}'], input=data, capture_output=True, text=True, timeout=timeout)
 
