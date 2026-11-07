@@ -1398,6 +1398,27 @@ export const WIDGETS = {
       return { kids, say: `Sorted by ${['colour', 'size', 'the number of holes'][v.by]}, the 12 buttons make ${names.length} groups: ${groups.map((gr, g) => `${gr.length} ${names[g]}`).join(', ')}. The same buttons can be sorted in a different way.` };
     },
   },
+  tumblers: {
+    subject: 'science', about: 'Two tumblers with the same capacity (250 mL) holding different amounts of water. The space the water takes up is its volume (in mL, or in litres: 1000 mL = 1 L), and the tumbler with more water has more mass, so it is the heavier one: a balance tips towards it. About 1 mL of water has a mass of about 1 g. For mass, volume, capacity, heavier and lighter, mL and L.',
+    sliders: [['a', 'Water in tumbler A (mL)', 0, 250, 10, 100], ['b', 'Water in tumbler B (mL)', 0, 250, 10, 100]],
+    draw(v) {
+      const cap = 250, kids = [], tumbler = (x0, ml, name, col) => {
+        const w = 90, h = 130, top = 70, fill = (ml / cap) * (h - 6);
+        kids.push(s('path', { d: `M ${x0} ${top} L ${x0 + 10} ${top + h} L ${x0 + w - 10} ${top + h} L ${x0 + w} ${top} Z`, fill: '#ffffff', stroke: INK, 'stroke-width': 3 }));
+        if (ml > 0) kids.push(s('path', { d: `M ${x0 + 10 * (1 - fill / (h - 6)) + 1} ${top + h - 3 - fill} L ${x0 + 10 + 1} ${top + h - 3} L ${x0 + w - 11} ${top + h - 3} L ${x0 + w - 10 * (1 - fill / (h - 6)) - 1} ${top + h - 3 - fill} Z`, fill: col, opacity: 0.85 }));
+        kids.push(T(x0 + w / 2, top - 12, name, { z: 18, w: 700 }), T(x0 + w / 2, top + h + 24, `${ml} mL`, { z: 15, w: 700 }), T(x0 + w / 2, top + h + 44, `${ml / 1000} L`, { z: 12, w: 600, f: '#6b5a8a' }));
+      };
+      tumbler(40, v.a, 'A', '#7fbfff'); tumbler(180, v.b, 'B', '#5fc9b8');
+      // the balance: it tips towards the tumbler with more water, which has more mass
+      const sign = v.a === v.b ? 0 : v.a > v.b ? 1 : -1, ang = sign * Math.min(1, Math.abs(v.a - v.b) / 120) * 0.2, cx = 440, cy = 120, arm = 80;
+      const lx = cx - arm * Math.cos(ang), ly = cy + arm * Math.sin(ang), rx = cx + arm * Math.cos(ang), ry = cy - arm * Math.sin(ang);
+      kids.push(s('polygon', { points: `${cx - 20},230 ${cx + 20},230 ${cx},${cy + 3}`, fill: '#d8cff0', stroke: INK, 'stroke-width': 3 }), L(lx, ly, rx, ry, INK, 6));
+      for (const [px, py, nm] of [[lx, ly, 'A'], [rx, ry, 'B']]) kids.push(L(px, py, px - 26, py + 34, INK, 1.5), L(px, py, px + 26, py + 34, INK, 1.5), s('path', { d: `M ${px - 34} ${py + 34} Q ${px} ${py + 52} ${px + 34} ${py + 34} Z`, fill: '#f3f0ff', stroke: INK, 'stroke-width': 3 }), T(px, py + 30, nm, { z: 13, w: 700 }));
+      const verdict = v.a === v.b ? 'same volume, same mass' : `${v.a > v.b ? 'A' : 'B'} has more water: more volume and more mass`;
+      kids.push(T(440, 268, verdict, { z: 13, w: 700, f: v.a === v.b ? '#058a68' : '#c2510e' }), T(300, 22, 'each tumbler holds 250 mL', { z: 12, w: 600, f: '#6b5a8a' }));
+      return { kids, say: v.a === v.b ? `Both tumblers hold ${v.a} mL of water, so they have the same volume and about the same mass. The balance stays level.` : `Tumbler ${v.a > v.b ? 'A' : 'B'} holds more water (${Math.max(v.a, v.b)} mL against ${Math.min(v.a, v.b)} mL), so it takes up more space: more volume. It also has more mass, so it is the heavier one. Both tumblers have the same capacity (250 mL), but they do not hold the same amount.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

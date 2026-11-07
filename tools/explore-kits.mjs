@@ -685,6 +685,15 @@ export const KITS = {
       { say: 'Now sort by the number of holes.', when: 'by == 2', then: 'Two groups: buttons with 2 holes and buttons with 4 holes.' },
     ],
   },
+  tumblers: {
+    grades: [6, 6], match: [/\bmass and volume\b/, /\bvolume\b/, /\bmass\b/, /\bcapacity\b/, /\btumblers?\b/],
+    title: 'Same tumbler, different water', takeaway: 'Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass.',
+    tasks: [
+      { say: 'Make tumbler A hold more water than B. Which is heavier?', when: 'a > b', then: 'A has more volume of water and more mass, so A is heavier: the balance tips towards it.' },
+      { say: 'Fill both tumblers right to the top.', when: 'a == 250 and b == 250', then: 'Same capacity and both full: the same volume, 250 mL, and about the same mass.' },
+      { say: 'Empty tumbler B and fill A. What does the balance show?', when: 'a == 250 and b == 0', then: 'A has volume and mass; B has none, so the balance tips right down towards A.' },
+    ],
+  },
   // ---- geography and history ----
   timezone: {
     grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
