@@ -505,9 +505,12 @@ export const KITS = {
          { say: 'Add 185 and 125.', when: 'a == 185 and b == 125 and step == 3', then: '185 + 125 = 310: 10 ones and 10 tens both regrouped.' }]),
   },
   numberjump: {
-    grades: [2, 3], match: [/\bginladi\b/, /number lines?/, /\bjump(s|ing)?\b/, /count(ing)? (on|back)/, /\bjump(ing)? (back|forward)/],
+    grades: [1, 3], match: [/\bginladi\b/, /number lines?/, /\bjump(s|ing)?\b/, /count(ing)? (on|back)/, /\bjump(ing)? (back|forward)/],
     title: 'Hop along the number line', takeaway: 'Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.',
     tasks: [
+      { say: 'Add 12 and 4 on the ginladi: start at 12 and hop 4 times, one at a time.', when: 'start == 12 and jump == 1 and hops == 4 and back == 0', then: '13, 14, 15, 16: 12 + 4 = 16.' },
+      { say: 'Anjali starts at 6 and jumps 2 steps ahead. Where does she land?', when: 'start == 6 and jump == 2 and hops == 1 and back == 0', then: '6 + 2 = 8.' },
+      { say: 'Renu starts at 15 and jumps 7 steps back. Where does she land?', when: 'start == 15 and jump == 7 and hops == 1 and back == 1', then: '15 \u2212 7 = 8: the same place as Anjali.' },
       { say: 'Start at 7 and jump 10 at a time, three times.', when: 'start == 7 and jump == 10 and hops == 3 and back == 0', then: '7, 17, 27, 37: each jump of 10 adds one ten.' },
       { say: 'Go back from 52 in jumps of 10, three times.', when: 'start == 52 and jump == 10 and hops == 3 and back == 1', then: '52, 42, 32, 22: jumping back takes away.' },
       { say: 'Find a start and jump that reach exactly 100 after 5 jumps.', when: 'back == 0 and hops == 5 and start + 5 * jump == 100', then: 'Five equal jumps land on 100: for example from 0 in jumps of 20.' },
