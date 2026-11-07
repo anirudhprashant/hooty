@@ -34646,7 +34646,7 @@
       {
        "id": "science-g8-ch11-l3",
        "title": "Eclipses and Natural Cycles",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -34706,44 +34706,52 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "science-g8-ch11-l3-a2",
+         "type": "explore",
+         "id": "science-g8-ch11-l3-play",
          "difficulty": 1,
          "tags": [
-          "lunar eclipse",
-          "earth",
-          "shadow"
+          "explore"
          ],
-         "title": "Cause of a lunar eclipse",
-         "prompt": "What causes a lunar eclipse?",
-         "options": [
-          "Earth’s shadow falling on the Moon",
-          "The Moon’s changing phases",
-          "The Moon’s slightly tilted orbit",
-          "The changing seasons"
-         ],
-         "answer": 0,
-         "explanation": "A lunar eclipse happens when Earth’s shadow falls on the Moon.",
-         "src": [
+         "widget": "eclipse",
+         "params": {},
+         "title": "Line them up",
+         "tasks": [
           {
-           "ch": 11,
-           "p": 177
+           "say": "Make a solar eclipse.",
+           "when": "moon == 180",
+           "then": "The Moon is between the Sun and the Earth and blocks the Sun."
+          },
+          {
+           "say": "Make a lunar eclipse.",
+           "when": "moon == 0 or moon == 360",
+           "then": "The Earth is in the middle, so its shadow falls on the Moon."
           }
-         ]
+         ],
+         "takeaway": "An eclipse happens when the Sun, Earth and Moon line up.",
+         "explanation": "An eclipse happens when the Sun, Earth and Moon line up."
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch11-l3-a3",
+         "type": "worked",
+         "id": "science-g8-ch11-l3-t1",
          "difficulty": 1,
          "tags": [
-          "moon",
-          "phases",
-          "shadow"
+          "deep",
+          "think"
          ],
-         "title": "Shadow and Moon phases",
-         "prompt": "Earth’s shadow causes the phases of the Moon.",
-         "answer": false,
-         "explanation": "Earth’s shadow causes a lunar eclipse, not the Moon’s phases.",
+         "kicker": "Let us think it through",
+         "prompt": "A child sees the full Moon turn dark. What caused this?",
+         "steps": [
+          "Earth’s shadow fell on the Moon, so a lunar eclipse happened.",
+          "A lunar eclipse can happen only on a full Moon day.",
+          "Earth’s shadow does not cause the Moon’s regular phases.",
+          "So the Moon darkened because of an eclipse, not a phase change."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
          "src": [
           {
            "ch": 11,
@@ -34752,25 +34760,7 @@
           {
            "ch": 11,
            "p": 177
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "id": "science-g8-ch11-l3-a4",
-         "difficulty": 1,
-         "tags": [
-          "lunar eclipse",
-          "full moon"
-         ],
-         "title": "When can a lunar eclipse happen?",
-         "prompt": "A lunar eclipse can happen only on a ______ Moon day.",
-         "answers": [
-          "full"
-         ],
-         "hint": "Think about the phase named in the lesson.",
-         "explanation": "A lunar eclipse can happen only on a full Moon day.",
-         "src": [
+          },
           {
            "ch": 11,
            "p": 177
@@ -34806,6 +34796,54 @@
           {
            "ch": 11,
            "p": 178
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "lunar eclipse",
+          "earth",
+          "shadow"
+         ],
+         "title": "Cause of a lunar eclipse",
+         "prompt": "What causes a lunar eclipse?",
+         "options": [
+          "Earth’s shadow falling on the Moon",
+          "The Moon’s changing phases",
+          "The Moon’s slightly tilted orbit",
+          "The changing seasons"
+         ],
+         "answer": 0,
+         "explanation": "A lunar eclipse happens when Earth’s shadow falls on the Moon.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch11-l3-a4",
+         "difficulty": 1,
+         "tags": [
+          "lunar eclipse",
+          "full moon"
+         ],
+         "title": "When can a lunar eclipse happen?",
+         "prompt": "A lunar eclipse can happen only on a ______ Moon day.",
+         "answers": [
+          "full"
+         ],
+         "hint": "Think about the phase named in the lesson.",
+         "explanation": "A lunar eclipse can happen only on a full Moon day.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
           }
          ]
         },
@@ -34956,6 +34994,127 @@
            "p": 178
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "The full Moon enters Earth’s shadow. What should the child expect?",
+         "options": [
+          "A lunar eclipse is happening.",
+          "The Moon is changing phase.",
+          "A solar eclipse is happening.",
+          "Clouds are hiding the Moon."
+         ],
+         "answer": 0,
+         "why": {
+          "The Moon is changing phase.": "This mistake confuses a phase change with an eclipse.",
+          "A solar eclipse is happening.": "This mistake treats a solar eclipse as Earth-shadow related.",
+          "Clouds are hiding the Moon.": "This mistake blames clouds instead of Earth’s shadow."
+         },
+         "explanation": "Earth’s shadow on the Moon causes a lunar eclipse.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "test claim"
+         ],
+         "prompt": "A full Moon day has no eclipse. Is this possible?",
+         "options": [
+          "Yes, because eclipses do not happen every month.",
+          "No, because every full Moon causes an eclipse.",
+          "No, because lunar eclipses happen every month.",
+          "Yes, because a solar eclipse changes Earth’s shadow."
+         ],
+         "answer": 0,
+         "why": {
+          "No, because every full Moon causes an eclipse.": "This mistake assumes every full Moon must have an eclipse.",
+          "No, because lunar eclipses happen every month.": "This mistake assumes eclipses follow a strict monthly pattern.",
+          "Yes, because a solar eclipse changes Earth’s shadow.": "This mistake mixes up solar eclipses and Earth’s shadow."
+         },
+         "explanation": "The tilted Moon orbit means eclipses do not occur every month.",
+         "f": [
+          "3.3",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 177
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "choose cycle"
+         ],
+         "prompt": "A family needs a natural cycle for keeping time. Which cycle fits?",
+         "options": [
+          "The Moon’s nearly monthly phase cycle.",
+          "The Moon’s slightly tilted orbit.",
+          "Earth’s shadow on the Moon.",
+          "The shadow of a solar eclipse."
+         ],
+         "answer": 0,
+         "why": {
+          "The Moon’s slightly tilted orbit.": "The tilted orbit explains missing eclipses, not keeping time.",
+          "Earth’s shadow on the Moon.": "Earth’s shadow causes a lunar eclipse, not a time cycle.",
+          "The shadow of a solar eclipse.": "A solar eclipse is not the Moon’s monthly time cycle."
+         },
+         "explanation": "The Moon’s monthly phase cycle can be used for keeping time.",
+         "f": [
+          "3.5",
+          "3.6",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 177
+          },
+          {
+           "ch": 11,
+           "p": 178
+          },
+          {
+           "ch": 11,
+           "p": 178
+          }
+         ]
         }
        ],
        "topicScene": "media/ch11-l3-total-solar-eclipse-graphics-380cff.webp",
@@ -34972,7 +35131,7 @@
       {
        "id": "science-g8-ch11-l4",
        "title": "How Natural Cycles Became Calendars",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -35023,6 +35182,48 @@
            "ch": 11,
            "p": 179
           },
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 180
+          },
+          {
+           "ch": 11,
+           "p": 180
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch11-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Twelve lunar months make a 354-day year. A solar year has 365 days. How can the calendar keep matching the seasons?",
+         "steps": [
+          "A lunar year lasts 354 days because it has twelve lunar months.",
+          "A solar year uses months adjusted to add up to 365 days.",
+          "The eleven-day gap would move dates away from the seasons.",
+          "Therefore, add days to the months until each year totals 365 days."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.6",
+          "4.7",
+          "4.8",
+          "4.9"
+         ],
+         "src": [
           {
            "ch": 11,
            "p": 179
@@ -35285,6 +35486,80 @@
            "p": 180
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l4-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Earth stops rotating in a model. What should happen to the Sun’s daily apparent motion?",
+         "options": [
+          "It should mostly stop each day.",
+          "It should keep moving as before.",
+          "It should move only once yearly.",
+          "It should move faster each day."
+         ],
+         "answer": 0,
+         "why": {
+          "It should keep moving as before.": "This assumes daily motion does not depend on rotation.",
+          "It should move only once yearly.": "This mistakes the seasonal cycle for daily motion.",
+          "It should move faster each day.": "This assumes rotation makes the Sun move faster."
+         },
+         "explanation": "Without rotation, the main cause of daily motion is gone.",
+         "f": [
+          "4.1"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 178
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "compare"
+         ],
+         "prompt": "After twelve lunar months, compare the calendar with a solar year. Will both reach the same seasonal point?",
+         "options": [
+          "No, because its year is eleven days shorter.",
+          "Yes, because twelve lunar months fill 365 days.",
+          "No, because each lunar month is longer.",
+          "Yes, because lunar and solar years always match."
+         ],
+         "answer": 0,
+         "why": {
+          "Yes, because twelve lunar months fill 365 days.": "Twelve lunar months make 354 days, not 365 days.",
+          "No, because each lunar month is longer.": "Longer lunar months do not explain the eleven-day difference.",
+          "Yes, because lunar and solar years always match.": "Lunar and solar years do not have the same length."
+         },
+         "explanation": "A 354-day year is eleven days shorter than 365 days.",
+         "f": [
+          "4.6",
+          "4.7",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 179
+          },
+          {
+           "ch": 11,
+           "p": 180
+          }
+         ]
         }
        ],
        "topicScene": "media/ch11-l4-moon-phases-bel-eea73e.webp",
@@ -35301,7 +35576,7 @@
       {
        "id": "science-g8-ch11-l5",
        "title": "Indian Luni-Solar Calendars and Sky Traditions",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -35352,6 +35627,43 @@
           {
            "ch": 11,
            "p": 182
+          },
+          {
+           "ch": 11,
+           "p": 182
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch11-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A family wants monthly dates to stay close to the same seasons. How can a luni-solar calendar do this?",
+         "steps": [
+          "Twelve lunar months are nearly eleven days short of the solar year.",
+          "Luni-solar calendars mainly follow Moon phases but adjust to seasons.",
+          "Adding an extra Adhika Maasa can correct the seasonal gap.",
+          "So the calendar keeps its dates close to the seasons."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.4",
+          "5.5",
+          "5.6"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 181
           },
           {
            "ch": 11,
@@ -35530,6 +35842,137 @@
            "p": 182
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Twelve lunar months end nearly eleven days before the solar year. What happens if no seasonal adjustment is made?",
+         "options": [
+          "Their dates drift earlier against the seasons.",
+          "Their dates stay fixed against the seasons.",
+          "Their dates drift later against the seasons.",
+          "Their dates change with every Moon phase."
+         ],
+         "answer": 0,
+         "why": {
+          "Their dates stay fixed against the seasons.": "This assumes twelve lunar months already match the solar year.",
+          "Their dates drift later against the seasons.": "This reverses the direction of the eleven-day shortfall.",
+          "Their dates change with every Moon phase.": "This confuses month construction with seasonal drift."
+         },
+         "explanation": "This is right because the eleven-day gap makes dates drift against the seasons.",
+         "f": [
+          "5.4",
+          "5.5"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 181
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A luni-solar calendar is nearly eleven days short after twelve lunar months. Why add an extra month?",
+         "options": [
+          "To help match the calendar back with the seasons.",
+          "To make every lunar month begin after a new Moon.",
+          "To replace all twelve regular months with extra ones.",
+          "To make the solar year longer by eleven days."
+         ],
+         "answer": 0,
+         "why": {
+          "To make every lunar month begin after a new Moon.": "This mistakes the Amant month-start rule for the extra month’s purpose.",
+          "To replace all twelve regular months with extra ones.": "This wrongly assumes that extra months replace regular months.",
+          "To make the solar year longer by eleven days.": "This wrongly assumes that the calendar can lengthen the solar year."
+         },
+         "explanation": "This is right because an extra month helps correct the seasonal gap.",
+         "f": [
+          "5.4",
+          "5.5",
+          "5.6",
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 182
+          },
+          {
+           "ch": 11,
+           "p": 182
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "The Indian National Calendar has 365 days and starts on 22 March. How does it differ from a luni-solar calendar?",
+         "options": [
+          "It follows the Sun, while the other follows Moon phases.",
+          "It follows Moon phases, while the other follows seasons.",
+          "Both calendars begin every month after a full Moon.",
+          "Both calendars add an extra month in every year."
+         ],
+         "answer": 0,
+         "why": {
+          "It follows Moon phases, while the other follows seasons.": "This reverses their main time cycles and ignores seasonal adjustments.",
+          "Both calendars begin every month after a full Moon.": "This wrongly applies the Purnimant month-start rule to both calendars.",
+          "Both calendars add an extra month in every year.": "This wrongly assumes that every luni-solar calendar always adds a month."
+         },
+         "explanation": "This is right because the Indian National Calendar is solar, while luni-solar calendars use Moon phases.",
+         "f": [
+          "5.4",
+          "5.9",
+          "5.10",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 181
+          },
+          {
+           "ch": 11,
+           "p": 182
+          },
+          {
+           "ch": 11,
+           "p": 182
+          },
+          {
+           "ch": 11,
+           "p": 182
+          }
+         ]
         }
        ],
        "topicScene": "media/ch11-l5-stone-wheel-engraved-in-the--d7e39d.webp",
@@ -35546,7 +35989,7 @@
       {
        "id": "science-g8-ch11-l6",
        "title": "Festivals and Artificial Satellites",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -35595,6 +36038,74 @@
           {
            "ch": 11,
            "p": 184
+          },
+          {
+           "ch": 11,
+           "p": 185
+          },
+          {
+           "ch": 11,
+           "p": 186
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch11-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child sees Holi's date change between years and wonders why.",
+         "steps": [
+          "Many Indian festivals follow Moon phases, so the Moon affects their timing.",
+          "Holi follows the full Moon of Phalguna, so its timing is Moon-based.",
+          "Because Moon-based festivals can fall on different Gregorian dates, Holi's date can change.",
+          "Therefore, the changed date is expected, not a calendar mistake."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.4"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 183
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch11-l6-a7",
+         "difficulty": 2,
+         "tags": [
+          "satellites",
+          "space debris"
+         ],
+         "title": "Useful Satellites and Space Debris",
+         "body": "Most artificial satellites take roughly 100 minutes to complete one orbit. They help with communication, navigation, weather monitoring and other work. Old satellites and rocket parts can become space junk or space debris. This lesson connects useful satellite work with possible debris.",
+         "keyPoints": [
+          "Most satellite orbits take roughly 100 minutes.",
+          "Satellites help communication, navigation and weather monitoring.",
+          "Old satellites and rocket parts can become space debris."
+         ],
+         "explanation": "Satellites support useful work, while old parts can become space debris.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 185
           },
           {
            "ch": 11,
@@ -35746,37 +36257,6 @@
          ]
         },
         {
-         "type": "concept",
-         "id": "science-g8-ch11-l6-a7",
-         "difficulty": 2,
-         "tags": [
-          "satellites",
-          "space debris"
-         ],
-         "title": "Useful Satellites and Space Debris",
-         "body": "Most artificial satellites take roughly 100 minutes to complete one orbit. They help with communication, navigation, weather monitoring and other work. Old satellites and rocket parts can become space junk or space debris. This lesson connects useful satellite work with possible debris.",
-         "keyPoints": [
-          "Most satellite orbits take roughly 100 minutes.",
-          "Satellites help communication, navigation and weather monitoring.",
-          "Old satellites and rocket parts can become space debris."
-         ],
-         "explanation": "Satellites support useful work, while old parts can become space debris.",
-         "src": [
-          {
-           "ch": 11,
-           "p": 185
-          },
-          {
-           "ch": 11,
-           "p": 185
-          },
-          {
-           "ch": 11,
-           "p": 186
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch11-l6-a8",
          "difficulty": 3,
@@ -35825,6 +36305,80 @@
            "p": 186
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l6-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain cause"
+         ],
+         "prompt": "Holi has different Gregorian dates in two years. What best explains this?",
+         "options": [
+          "It follows the full Moon of Phalguna each year.",
+          "It follows a solar sidereal calendar each year.",
+          "It follows a crescent Moon sighting each year.",
+          "It follows a fixed sunrise time each year."
+         ],
+         "answer": 0,
+         "why": {
+          "It follows a solar sidereal calendar each year.": "This confuses a Moon-based festival with a solar sidereal calendar.",
+          "It follows a crescent Moon sighting each year.": "This confuses Holi's full Moon with the crescent rule for Eid-ul-Fitr.",
+          "It follows a fixed sunrise time each year.": "This confuses Moon-based timing with regional sunrise timing."
+         },
+         "explanation": "Holi follows the full Moon of Phalguna, so its date can change.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.4"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 183
+          },
+          {
+           "ch": 11,
+           "p": 183
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l6-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "No one has seen the crescent Moon. Eid-ul-Fitr is due. What should the family do?",
+         "options": [
+          "The family should wait for a crescent Moon sighting.",
+          "The family should wait for the full Moon of Phalguna.",
+          "The family should wait for a solar sidereal date.",
+          "The family should wait for one satellite orbit."
+         ],
+         "answer": 0,
+         "why": {
+          "The family should wait for the full Moon of Phalguna.": "This confuses Eid-ul-Fitr's crescent sighting with Holi's full Moon.",
+          "The family should wait for a solar sidereal date.": "This confuses Moon sighting with a solar sidereal calendar.",
+          "The family should wait for one satellite orbit.": "This confuses a lunar festival with a satellite's orbit."
+         },
+         "explanation": "Eid-ul-Fitr is celebrated after the crescent Moon is sighted.",
+         "f": [
+          "6.3"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 183
+          }
+         ]
         }
        ],
        "topicScene": "media/ch11-l6-barsana-holi-festival-553ef8.webp",
@@ -35841,7 +36395,7 @@
       {
        "id": "science-g8-ch11-exam",
        "title": "Test practice",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 15,
        "topicScene": "media/ch11-l1-waning-gibbous-moon-from-kol-b863ab.webp",
        "sceneAlt": "A bright waning gibbous Moon appears over Kolkata, India, photographed on the twentieth day after the new Moon.",
        "sceneCaption": "A waning gibbous Moon over Kolkata, photographed on the twentieth day after the new Moon.",
@@ -36056,6 +36610,174 @@
           "The Moon's own shape remains unchanged."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student plans a Moon-watching activity with classmates. On a full Moon day, they watch Earth’s shadow fall across the Moon, so a lunar eclipse occurs. Their project also records the Moon’s changing phases and uses the monthly cycle to keep time. The student wonders why eclipses do not happen every month and why the Moon still shows different phases even when no eclipse is visible.",
+         "prompt": "Why might the group not see an eclipse in every month, even though it follows the Moon’s monthly cycle?",
+         "options": [
+          "The Moon’s orbit is slightly tilted.",
+          "The Moon’s phases are caused by Earth’s shadow.",
+          "The monthly cycle is mainly used for keeping time.",
+          "Day and night determine whether an eclipse can be seen."
+         ],
+         "answer": 0,
+         "why": {
+          "The Moon’s phases are caused by Earth’s shadow.": "Earth’s shadow does not cause the Moon’s changing phases.",
+          "The monthly cycle is mainly used for keeping time.": "Keeping time is a use of the monthly cycle, but it is not the reason eclipses are not monthly.",
+          "Day and night determine whether an eclipse can be seen.": "Day and night are regular, but they do not explain why eclipses are not monthly."
+         },
+         "explanation": "The tilted orbit is why eclipses do not happen every month."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student plans a Moon-watching activity with classmates. On a full Moon day, they watch Earth’s shadow fall across the Moon, so a lunar eclipse occurs. Their project also records the Moon’s changing phases and uses the monthly cycle to keep time. The student wonders why eclipses do not happen every month and why the Moon still shows different phases even when no eclipse is visible.",
+         "prompt": "If the Moon’s orbit were not tilted, what would most likely happen to eclipses?",
+         "options": [
+          "They could occur every month.",
+          "They could never occur.",
+          "A lunar eclipse could happen only on a new Moon day.",
+          "A solar eclipse could happen only on a full Moon day."
+         ],
+         "answer": 0,
+         "why": {
+          "They could never occur.": "The given facts do not show that removing the tilt would prevent all eclipses.",
+          "A lunar eclipse could happen only on a new Moon day.": "A lunar eclipse can happen only on a full Moon day.",
+          "A solar eclipse could happen only on a full Moon day.": "A solar eclipse can happen only on a new Moon day."
+         },
+         "explanation": "The tilt is the reason eclipses do not happen every month."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Earth’s shadow falling on the Moon causes a lunar eclipse.\nReason (R): This shadow effect can occur only on a full Moon day.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "Both statements are true, and the full Moon condition explains when the shadow can cause a lunar eclipse."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l3-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Earth’s shadow causes the changing phases of the Moon.\nReason (R): Earth’s shadow falling on the Moon causes a lunar eclipse.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The assertion is false because Earth’s shadow does not cause the Moon’s phases, while the reason is true."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch11-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "What is the difference between a lunar eclipse, a solar eclipse, and an ordinary change in the Moon’s phase?",
+         "answer": "A lunar eclipse happens when Earth’s shadow falls on the Moon, and it can happen only on a full Moon day. A solar eclipse can happen only on a new Moon day. The Moon’s changing phases form a natural cycle of almost a month, so different phases can appear without an eclipse. Eclipses do not happen every month because the Moon’s orbit is slightly tilted. Therefore, the monthly pattern of phases and the timing of eclipses are related ideas, but they are not the same event.",
+         "points": [
+          "A lunar eclipse involves Earth’s shadow falling on the Moon.",
+          "A lunar eclipse can happen only on a full Moon day.",
+          "A solar eclipse can happen only on a new Moon day.",
+          "The monthly phase cycle and eclipses are not the same event."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A community first used a lunar calendar, following the Moon’s phases and placing twelve lunar months in a year. Their lunar year lasted 354 days, so it did not add up to 365 days. They therefore created a solar calendar so their years would match Earth’s cycle of seasons, adjusting the months to total 365 days. The Sun’s daily apparent motion, mainly caused by Earth’s rotation, also helped them organize the day.",
+         "prompt": "If the community kept its original lunar calendar instead of creating a solar calendar, what would happen?",
+         "options": [
+          "Its calendar year would not match the seasonal cycle.",
+          "The year would contain 365 days without any adjustment.",
+          "The Moon’s phases would stop providing the basis for a month.",
+          "Earth’s rotation would no longer make a day."
+         ],
+         "answer": 0,
+         "why": {
+          "The year would contain 365 days without any adjustment.": "Wrong: The lunar year had 354 days.",
+          "The Moon’s phases would stop providing the basis for a month.": "Wrong: Moon phases still provide the month.",
+          "Earth’s rotation would no longer make a day.": "Wrong: Earth’s rotation still forms the day."
+         },
+         "explanation": "Correct: A 354-day year does not match the seasons."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A community first used a lunar calendar, following the Moon’s phases and placing twelve lunar months in a year. Their lunar year lasted 354 days, so it did not add up to 365 days. They therefore created a solar calendar so their years would match Earth’s cycle of seasons, adjusting the months to total 365 days. The Sun’s daily apparent motion, mainly caused by Earth’s rotation, also helped them organize the day.",
+         "prompt": "What should the community do to make the months in its new solar calendar cover a full year correctly?",
+         "options": [
+          "Make the calendar’s months total 365 days.",
+          "Leave the months at 354 days because the Moon controls the year.",
+          "Base each month only on the Sun’s highest position each day.",
+          "Use the Moon’s phases for each month and make no adjustment."
+         ],
+         "answer": 0,
+         "why": {
+          "Leave the months at 354 days because the Moon controls the year.": "Wrong: A lunar year has 354 days.",
+          "Base each month only on the Sun’s highest position each day.": "Wrong: Days are not the basis of calendar months.",
+          "Use the Moon’s phases for each month and make no adjustment.": "Wrong: Solar months require adjustment."
+         },
+         "explanation": "Correct: Solar months are adjusted to total 365."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l4-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): The Sun’s daily apparent motion is mainly due to Earth’s rotation.\nReason (R): Earth’s rotation and the Sun’s cycle form the basis of the day.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "Earth’s rotation accounts for the Sun’s daily apparent motion and supports the day."
         }
        ]
       }
@@ -36407,7 +37129,7 @@
       {
        "id": "science-g8-ch12-l1",
        "title": "Nature, Habitats and Change",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -36469,6 +37191,53 @@
           {
            "ch": 12,
            "p": 192
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch12-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Elephants enter a farm after rainfall and temperature change. Why might this happen?",
+         "steps": [
+          "Changes in rainfall and temperature can affect vegetation.",
+          "Vegetation may become scarce, and waterholes may dry up.",
+          "Elephants may wander towards farms, where food can include bananas and sugarcane.",
+          "This chain shows that nature's elements are closely connected."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
           }
          ]
         },
@@ -36686,6 +37455,75 @@
            "p": 191
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Rainfall changes. Plants become scarce, and waterholes dry up. What may elephants do?",
+         "options": [
+          "They may wander towards farms to find food.",
+          "They may stay in forests and wait for plants.",
+          "They may enter villages only to find more water.",
+          "They may rest near farms until plants grow again."
+         ],
+         "answer": 0,
+         "why": {
+          "They may stay in forests and wait for plants.": "This mistake thinks animals will wait instead of searching for food.",
+          "They may enter villages only to find more water.": "This mistake focuses on water and ignores the search for food.",
+          "They may rest near farms until plants grow again.": "This mistake assumes elephants can wait without searching for food."
+         },
+         "explanation": "Right, because scarce plants and dry waterholes can draw elephants to farms.",
+         "f": [
+          "1.2",
+          "1.3"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          },
+          {
+           "ch": 12,
+           "p": 191
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "Rainfall and temperature can affect vegetation. Which test would show temperature's effect alone?",
+         "options": [
+          "Use the same plants and rainfall, but change temperature.",
+          "Use different plants, rainfall levels, and temperatures together.",
+          "Use the same plants, but change rainfall and temperature.",
+          "Use different temperatures, but change rainfall and plants."
+         ],
+         "answer": 0,
+         "why": {
+          "Use different plants, rainfall levels, and temperatures together.": "This mistake changes several things, so the cause is unclear.",
+          "Use the same plants, but change rainfall and temperature.": "This mistake changes rainfall too, so temperature's effect is unclear.",
+          "Use different temperatures, but change rainfall and plants.": "This mistake changes plants too, so temperature's effect is unclear."
+         },
+         "explanation": "Right, because only temperature changes while plants and rainfall stay the same.",
+         "f": [
+          "1.4"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 191
+          }
+         ]
         }
        ],
        "topicScene": "media/ch12-l1-asian-elephant-elephas-maxim-301d45.webp",
@@ -36702,7 +37540,7 @@
       {
        "id": "science-g8-ch12-l2",
        "title": "Populations, Communities and Pollination",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -36754,6 +37592,48 @@
           {
            "ch": 12,
            "p": 194
+          },
+          {
+           "ch": 12,
+           "p": 194
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch12-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A pond has many fish and some plants. How can both live and grow there?",
+         "steps": [
+          "Fish and plants are living beings in the pond habitat.",
+          "This makes them biotic components of the pond.",
+          "Food, oxygen, shelter and space help organisms grow in the pond.",
+          "Different organisms can use these resources in different ways, so their populations form a community."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.2",
+          "2.4",
+          "2.6",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 193
           },
           {
            "ch": 12,
@@ -36995,6 +37875,85 @@
           {
            "ch": 12,
            "p": 194
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A pond has plants and fish. Both use the pond's food, oxygen, shelter and space. What may happen if one population becomes very large?",
+         "options": [
+          "The population may compete for the same pond resources.",
+          "The population may use resources in completely different ways.",
+          "The population may stop needing food and oxygen.",
+          "The population may become a non-living pond component."
+         ],
+         "answer": 0,
+         "why": {
+          "The population may use resources in completely different ways.": "This mistake treats different organisms as using resources in the same way.",
+          "The population may stop needing food and oxygen.": "This mistake thinks a population stops needing resources as it grows.",
+          "The population may become a non-living pond component.": "This mistake confuses living beings with non-living habitat parts."
+         },
+         "explanation": "This is right because alike organisms compete for the same requirements.",
+         "f": [
+          "2.4",
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 194
+          },
+          {
+           "ch": 12,
+           "p": 194
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A pond has plants, fish, rocks and water. A child calls the rocks biotic components. Why is this claim wrong?",
+         "options": [
+          "Rocks are non-living, so they are abiotic components.",
+          "Rocks are living, so they are biotic components.",
+          "Rocks share the habitat with every population.",
+          "Rocks provide oxygen for organisms to grow."
+         ],
+         "answer": 0,
+         "why": {
+          "Rocks are living, so they are biotic components.": "This mistake treats non-living rocks as living beings.",
+          "Rocks share the habitat with every population.": "This mistake thinks sharing a habitat makes a thing biotic.",
+          "Rocks provide oxygen for organisms to grow.": "This mistake treats oxygen support as a living component instead of a habitat resource."
+         },
+         "explanation": "This is right because rocks are non-living abiotic components.",
+         "f": [
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 192
+          },
+          {
+           "ch": 12,
+           "p": 192
           }
          ]
         }
@@ -38217,6 +39176,191 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Rashmi H Pardhi"
        }
+      },
+      {
+       "id": "science-g8-ch12-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 8,
+       "topicScene": "media/ch12-l1-asian-elephant-elephas-maxim-301d45.webp",
+       "sceneAlt": "A herd of Asian elephants crosses a road through a wildlife corridor in Manas National Park.",
+       "sceneCaption": "A herd of Asian elephants crosses a road through a corridor in Manas National Park.",
+       "sceneCredit": {
+        "text": "Asian Elephant Elephas maximus DSC0702-01 by DhirajDas991, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Asian_Elephant_Elephas_maximus_DSC0702-01.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "DhirajDas991"
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In several parts of India, elephants often enter farms and villages. When vegetation becomes scarce and waterholes dry up, the elephants may wander towards farms, where their search for food can include bananas and sugarcane. Changes in rainfall and temperature can affect vegetation, while cutting trees for roads and buildings makes forest loss worse. Ecologists have marked corridors that allow animals to travel safely between large forest areas without entering settlements.",
+         "prompt": "Why might the elephants in the case move towards farms and villages?",
+         "options": [
+          "Scarcer vegetation and dry waterholes can make farm food more attractive.",
+          "Bananas and sugarcane are the only foods every elephant can eat.",
+          "Elephants enter farms because marked corridors lead directly into villages.",
+          "Cutting trees for roads guarantees that no elephant will visit a farm."
+         ],
+         "answer": 0,
+         "why": {
+          "Bananas and sugarcane are the only foods every elephant can eat.": "The passage does not say these foods are the only choices.",
+          "Elephants enter farms because marked corridors lead directly into villages.": "Corridors help animals avoid settlements rather than direct them into villages.",
+          "Cutting trees for roads guarantees that no elephant will visit a farm.": "Forest loss can worsen encounters with farms and villages."
+         },
+         "explanation": "Vegetation and water are linked to where elephants search for food."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "In several parts of India, elephants often enter farms and villages. When vegetation becomes scarce and waterholes dry up, the elephants may wander towards farms, where their search for food can include bananas and sugarcane. Changes in rainfall and temperature can affect vegetation, while cutting trees for roads and buildings makes forest loss worse. Ecologists have marked corridors that allow animals to travel safely between large forest areas without entering settlements.",
+         "prompt": "What should be done with a marked wildlife corridor beside a human settlement?",
+         "options": [
+          "Keep the route open so wildlife can pass safely without entering the settlement.",
+          "Fill the route with buildings to create more human habitats.",
+          "Direct all animals through the farms so they can find food.",
+          "Block the marked route because wildlife no longer needs to move."
+         ],
+         "answer": 0,
+         "why": {
+          "Fill the route with buildings to create more human habitats.": "Adding buildings would damage the purpose of a corridor.",
+          "Direct all animals through the farms so they can find food.": "Farm routes do not provide the safe movement described by corridors.",
+          "Block the marked route because wildlife no longer needs to move.": "Wildlife still needs routes between large forest areas."
+         },
+         "explanation": "Corridors allow safe movement without entering human settlements."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l1-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Every marked corridor guarantees that elephants will never enter farms or villages.\nReason (R): Elephants often enter farms and villages in several parts of India.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The assertion is false because corridors cannot guarantee this, while the reason is true."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch12-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why changes in vegetation, water availability, and forest loss can affect human habitats.",
+         "answer": "Vegetation, water, and wildlife are closely connected. Changes in rainfall and temperature can affect vegetation. When vegetation is scarce and waterholes dry up, elephants may wander towards farms to find food, including bananas and sugarcane. Cutting trees for roads and buildings also makes forest loss worse, so animals may lose their natural habitats and enter human habitats. Marked corridors help by allowing safe movement between large forest areas without entering settlements.",
+         "points": [
+          "Changes in rainfall and temperature can affect vegetation.",
+          "Scarce vegetation and dry waterholes can lead elephants towards farms.",
+          "Forest loss can cause animals to enter human habitats.",
+          "Wildlife corridors support safe movement between forest areas."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A school pond contains several populations, including organisms of the same type and organisms of different types. The pond provides food, oxygen, shelter and space for organisms to grow. Nearby, flowers receive pollen carried by wind, water and animals. Students also visit a forest, where living beings and non-living things form the habitat. They compare how different organisms in the pond use resources in different ways and examine the parts of the community.",
+         "prompt": "Why might organisms in the pond face stronger competition if they all began using resources in exactly the same way?",
+         "options": [
+          "They would compete for the same requirements.",
+          "They would each need fewer resources.",
+          "They would divide the pond into separate habitats.",
+          "They would stop sharing the habitat because they are alike."
+         ],
+         "answer": 0,
+         "why": {
+          "They would each need fewer resources.": "Using resources in one way would not necessarily reduce their needs.",
+          "They would divide the pond into separate habitats.": "Different habitats would not form merely because resource use changed.",
+          "They would stop sharing the habitat because they are alike.": "Organisms can still share a habitat even when they are alike."
+         },
+         "explanation": "This is the correct result of organisms having the same requirements."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A school pond contains several populations, including organisms of the same type and organisms of different types. The pond provides food, oxygen, shelter and space for organisms to grow. Nearby, flowers receive pollen carried by wind, water and animals. Students also visit a forest, where living beings and non-living things form the habitat. They compare how different organisms in the pond use resources in different ways and examine the parts of the community.",
+         "prompt": "If wind, water and animals were unavailable around the flowers, what would most likely happen?",
+         "options": [
+          "Pollen would have less help reaching other flowers.",
+          "Pollen would move between flowers more quickly without a carrier.",
+          "Only water would continue carrying pollen between the flowers.",
+          "All three would still carry pollen because they are always present."
+         ],
+         "answer": 0,
+         "why": {
+          "Pollen would move between flowers more quickly without a carrier.": "Removing the carriers would not make pollen transfer faster.",
+          "Only water would continue carrying pollen between the flowers.": "Water would also be unavailable under the changed condition.",
+          "All three would still carry pollen because they are always present.": "The carriers cannot continue helping if they are unavailable."
+         },
+         "explanation": "These three agents help carry pollen between flowers."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l2-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A habitat contains only one population.\nReason (R): Different populations can share the same habitat.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The first statement is false because different populations can share a habitat, while the reason is true."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch12-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between a population and a community, using the pond as an example.",
+         "answer": "A population is a group of the same type of organism living in a habitat at a given time. For example, all the organisms of one type in the pond form a population. A community includes all the different populations that share that same habitat. Thus, the pond’s community includes each population of organisms found there. The pond also has abiotic components, which are its non-living things, but these are not part of the community because a community consists of living populations.",
+         "points": [
+          "Defines a population as the same type of organism at a given time.",
+          "Uses the pond to show that one type of organism forms a population.",
+          "Explains that a community contains different populations sharing one habitat.",
+          "Distinguishes abiotic components from the living populations."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -38556,6 +39700,2093 @@
        "license": "CC BY-SA 4.0",
        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
        "creator": "DhirajDas991"
+      }
+     }
+    },
+    {
+     "id": "ch13-our-home-earth-a-unique-life-sustaining-",
+     "title": "Our Home: Earth, a Unique Life-Sustaining Planet",
+     "summary": "In this chapter: earth is special and the planets around the sun; earth’s position in the solar system; the right size and magnetic shield of earth; connections that sustain life.",
+     "lessons": [
+      {
+       "id": "science-g8-ch13-l1",
+       "title": "Earth Is Special and the Planets Around the Sun",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch13-l1-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "What makes Earth so special, and how do the planets differ?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l1-a1",
+         "difficulty": 1,
+         "tags": [
+          "earth",
+          "life",
+          "solar system"
+         ],
+         "title": "Why Earth Is Special",
+         "body": "Earth is special because life, as we know it today, exists and thrives here. Life lives in a thin surface layer. Mountains, rivers, forests, animals and people live there too. Earth gives us air to breathe and water to drink. We use Earth's rock and timber for homes, buildings and roads. Our solar system means the Sun and eight planets going around it.",
+         "keyPoints": [
+          "Earth supports life as we know it today.",
+          "Earth gives us air, water, rock and timber.",
+          "Eight planets go around the Sun."
+         ],
+         "explanation": "Earth has special conditions that support life.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 211
+          },
+          {
+           "ch": 13,
+           "p": 211
+          },
+          {
+           "ch": 13,
+           "p": 212
+          },
+          {
+           "ch": 13,
+           "p": 212
+          },
+          {
+           "ch": 13,
+           "p": 212
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "earth",
+          "life",
+          "planets"
+         ],
+         "prompt": "Which planet has life, as we know it today?",
+         "options": [
+          "Earth",
+          "Mars",
+          "Venus",
+          "Mercury"
+         ],
+         "answer": 0,
+         "explanation": "Earth is the only planet where life, as we know it today, exists and thrives.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 211
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l1-a3",
+         "difficulty": 1,
+         "tags": [
+          "earth",
+          "surface layer"
+         ],
+         "prompt": "Mountains, rivers, forests, animals and people live in a thin surface layer.",
+         "answer": true,
+         "explanation": "All these parts of life live in Earth's thin surface layer.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 211
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch13-l1-a4",
+         "difficulty": 2,
+         "tags": [
+          "solar system",
+          "planets",
+          "sun"
+         ],
+         "prompt": "Our solar system has ______ planets going around the Sun.",
+         "answers": [
+          "eight"
+         ],
+         "hint": "Think of all the planets named in this lesson.",
+         "explanation": "Our solar system has eight planets going around the Sun.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 212
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch13-l1-a5",
+         "difficulty": 2,
+         "tags": [
+          "mercury",
+          "venus",
+          "earth",
+          "planets"
+         ],
+         "prompt": "Match each planet with its description.",
+         "pairs": [
+          [
+           "Mercury",
+           "Relatively small and rocky"
+          ],
+          [
+           "Venus",
+           "The hottest planet"
+          ],
+          [
+           "Earth",
+           "Supports life today"
+          ]
+         ],
+         "explanation": "Mercury is small and rocky, Venus is hottest, and Earth supports life today.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 211
+          },
+          {
+           "ch": 13,
+           "p": 213
+          },
+          {
+           "ch": 13,
+           "p": 213
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-a6",
+         "difficulty": 2,
+         "tags": [
+          "venus",
+          "sun",
+          "planets"
+         ],
+         "prompt": "Which statement about Venus is correct?",
+         "options": [
+          "Venus is the hottest planet.",
+          "Venus is hottest only because it is close to the Sun.",
+          "Venus is made mostly of gases.",
+          "Venus has life today."
+         ],
+         "answer": 0,
+         "explanation": "Venus is hottest, but its closeness to the Sun is not the simple reason.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 211
+          },
+          {
+           "ch": 13,
+           "p": 213
+          },
+          {
+           "ch": 13,
+           "p": 213
+          },
+          {
+           "ch": 13,
+           "p": 213
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l1-a7",
+         "difficulty": 3,
+         "tags": [
+          "planets",
+          "sun",
+          "temperature"
+         ],
+         "prompt": "Planets generally become colder as they move away from the Sun.",
+         "answer": true,
+         "explanation": "Planets generally become colder as their distance from the Sun increases.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 213
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l1-a8",
+         "difficulty": 3,
+         "tags": [
+          "planets",
+          "gases",
+          "solar system"
+         ],
+         "prompt": "Which pair contains only large planets made mostly of gases?",
+         "options": [
+          "Jupiter and Saturn",
+          "Mercury and Venus",
+          "Earth and Mars",
+          "Mercury and Mars"
+         ],
+         "answer": 0,
+         "explanation": "Jupiter and Saturn are both large planets made mostly of gases.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 213
+          },
+          {
+           "ch": 13,
+           "p": 213
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l1-a9",
+         "difficulty": 3,
+         "tags": [
+          "venus",
+          "sun",
+          "temperature"
+         ],
+         "prompt": "Closeness to the Sun alone explains why Venus is the hottest planet.",
+         "answer": false,
+         "explanation": "Venus is the hottest planet, but not simply because it is close to the Sun.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 213
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch13-l1-solar-system-graphic-by-nasa-37ce42.webp",
+       "sceneAlt": "A wide NASA graphic shows the Sun and the planets arranged outward from Mercury through Neptune, with asteroids, comets and other objects included.",
+       "sceneCaption": "The Sun and planets appear in order from Mercury near the Sun to distant Neptune.",
+       "sceneCredit": {
+        "text": "Solar System graphic by NASA (wide) by NASA, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Solar_System_graphic_by_NASA_(wide).png",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "NASA"
+       }
+      },
+      {
+       "id": "science-g8-ch13-l2",
+       "title": "Earth’s Position in the Solar System",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch13-l2-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "What would happen if Earth lived closer to—or farther from—the Sun?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l2-a1",
+         "difficulty": 1,
+         "tags": [
+          "earth",
+          "sun",
+          "distance",
+          "water",
+          "habitable zone",
+          "goldilocks zone",
+          "mars"
+         ],
+         "title": "Earth and the Habitable Zone",
+         "body": "Earth’s distance from the Sun helps it support life. This distance lets water remain liquid. The habitable zone is where water stays liquid. It is also called the Goldilocks zone. Closer to the Sun, Earth would be too hot, and water would evaporate. Farther away, Earth would be too cold, and water would freeze. Mars lies at this zone’s edge. No proof of life has yet been found on Mars.",
+         "keyPoints": [
+          "Earth’s distance helps it support life.",
+          "The habitable zone is also called the Goldilocks zone.",
+          "Mars lies at the edge of the Sun’s habitable zone."
+         ],
+         "explanation": "Liquid water and a suitable distance from the Sun help life survive.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l2-a2",
+         "difficulty": 1,
+         "tags": [
+          "earth",
+          "sun",
+          "distance",
+          "life"
+         ],
+         "prompt": "Earth’s distance from the Sun is a major reason it can support life.",
+         "answer": true,
+         "explanation": "This distance helps Earth keep water liquid. Liquid water is essential for life to evolve.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 215
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-a3",
+         "difficulty": 1,
+         "tags": [
+          "earth",
+          "sun",
+          "water",
+          "life"
+         ],
+         "prompt": "What would happen if Earth were closer to the Sun?",
+         "options": [
+          "Earth would become too cold.",
+          "Earth would become too hot.",
+          "Earth would keep the same heat."
+         ],
+         "answer": 1,
+         "explanation": "Closer to the Sun, Earth would be too hot. Its water would evaporate, and most life forms could not thrive.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 214
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch13-l2-a4",
+         "difficulty": 1,
+         "tags": [
+          "habitable zone",
+          "water",
+          "goldilocks zone"
+         ],
+         "prompt": "The ______ zone is the range where water remains liquid.",
+         "answers": [
+          "habitable"
+         ],
+         "hint": "This is the suitable range for liquid water.",
+         "explanation": "This range is where water remains liquid. It is also called the Goldilocks zone.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l2-a5",
+         "difficulty": 2,
+         "tags": [
+          "mars",
+          "life"
+         ],
+         "prompt": "Proof of life has been found on Mars.",
+         "answer": false,
+         "explanation": "No proof of life has yet been found on Mars.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 215
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch13-l2-a6",
+         "difficulty": 2,
+         "tags": [
+          "habitable zone",
+          "goldilocks zone",
+          "liquid water",
+          "earth",
+          "mars"
+         ],
+         "prompt": "Match each term with its correct link.",
+         "pairs": [
+          [
+           "Habitable zone",
+           "Range where water remains liquid"
+          ],
+          [
+           "Goldilocks zone",
+           "Another name for the habitable zone"
+          ],
+          [
+           "Liquid water",
+           "Essential for life to evolve"
+          ],
+          [
+           "Earth",
+           "Most of its surface is covered with water"
+          ],
+          [
+           "Mars",
+           "At the edge of the Sun’s habitable zone"
+          ]
+         ],
+         "explanation": "Most of Earth’s surface is covered with water. Mars lies at the habitable zone’s edge.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-a7",
+         "difficulty": 2,
+         "tags": [
+          "earth",
+          "sun",
+          "water"
+         ],
+         "prompt": "What would happen if Earth were farther from the Sun?",
+         "options": [
+          "Water would remain liquid.",
+          "Water would freeze.",
+          "Water would evaporate."
+         ],
+         "answer": 1,
+         "explanation": "Farther from the Sun, Earth would be too cold. Its water would freeze.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch13-l2-a8",
+         "difficulty": 2,
+         "tags": [
+          "earth",
+          "sun",
+          "distance"
+         ],
+         "prompt": "Put these positions in order from nearest to farthest.",
+         "items": [
+          "A position closer to the Sun",
+          "Earth’s distance from the Sun",
+          "A position farther from the Sun"
+         ],
+         "explanation": "A closer position makes Earth too hot. A farther position makes Earth too cold.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 214
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l2-a9",
+         "difficulty": 3,
+         "tags": [
+          "mars",
+          "habitable zone",
+          "life"
+         ],
+         "prompt": "Which statement about Mars is correct?",
+         "options": [
+          "Mars lies outside the habitable zone.",
+          "Life on Mars has been proved.",
+          "Mars marks the habitable zone’s edge."
+         ],
+         "answer": 2,
+         "explanation": "Mars lies at the edge of the Sun’s habitable zone. No proof of life has yet been found on Mars.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 215
+          },
+          {
+           "ch": 13,
+           "p": 215
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch13-l2-earth-to-sun-mk-e44ff9.webp",
+       "sceneAlt": "An illustration shows Earth's distance from the Sun with labels in Macedonian.",
+       "sceneCaption": "An illustration labels Earth’s distance from the Sun.",
+       "sceneCredit": {
+        "text": "Earth to Sun - mk by original by LucasVB derivative by B. Jankuloski, CC0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Earth_to_Sun_-_mk.png",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "creator": "original by LucasVB derivative by B. Jankuloski"
+       }
+      },
+      {
+       "id": "science-g8-ch13-l3",
+       "title": "The Right Size and Magnetic Shield of Earth",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch13-l3-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How does Earth keep us safe from space?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l3-a1",
+         "difficulty": 1,
+         "tags": [
+          "earth",
+          "atmosphere",
+          "magnetic field",
+          "ozone"
+         ],
+         "title": "Earth’s Two Protections",
+         "body": "Earth’s right size allows it to support an atmosphere. Gases would escape from a smaller Earth into space. Mars has an atmosphere one hundred times thinner than Earth’s, while Mercury has no atmosphere. Oxygen lets living beings breathe, and the ozone layer blocks harmful ultraviolet rays. Movement of molten iron in Earth’s core may create its magnetic field. This field pushes many harmful space particles away.",
+         "keyPoints": [
+          "Earth’s right size helps it support an atmosphere.",
+          "Ozone blocks harmful ultraviolet rays.",
+          "The magnetic field pushes many harmful space particles away."
+         ],
+         "explanation": "You can see how Earth’s size and magnetic field help protect life.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 217
+          },
+          {
+           "ch": 13,
+           "p": 217
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "mars",
+          "atmosphere",
+          "earth"
+         ],
+         "prompt": "Mars has an atmosphere one hundred times thicker than Earth’s.",
+         "answer": false,
+         "explanation": "Mars has an atmosphere one hundred times thinner than Earth’s. It is not thicker.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 216
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch13-l3-a4",
+         "difficulty": 1,
+         "tags": [
+          "mercury",
+          "atmosphere"
+         ],
+         "prompt": "Mercury has ______ atmosphere at all.",
+         "answers": [
+          "no"
+         ],
+         "hint": "This atmosphere is completely missing.",
+         "explanation": "Mercury has no atmosphere at all. The word “no” completes the sentence.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 216
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch13-l3-a5",
+         "difficulty": 2,
+         "tags": [
+          "mars",
+          "mercury",
+          "oxygen",
+          "ozone",
+          "atmosphere"
+         ],
+         "title": "Match Each Part",
+         "prompt": "Match each planet, gas, or layer with its feature or role.",
+         "pairs": [
+          [
+           "Mars",
+           "one hundred times thinner atmosphere than Earth’s"
+          ],
+          [
+           "Mercury",
+           "no atmosphere"
+          ],
+          [
+           "oxygen",
+           "allows living beings to breathe"
+          ],
+          [
+           "ozone layer",
+           "blocks harmful ultraviolet rays"
+          ]
+         ],
+         "explanation": "Mars has a much thinner atmosphere, while Mercury has none. Oxygen and ozone protect living beings.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 216
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l3-a6",
+         "difficulty": 2,
+         "tags": [
+          "earth",
+          "core",
+          "magnetic field"
+         ],
+         "title": "Making a Magnetic Field",
+         "prompt": "What may create Earth’s magnetic field?",
+         "options": [
+          "Movement of molten iron in Earth’s core",
+          "Oxygen moving through the ozone layer",
+          "Rock spinning inside Earth’s atmosphere",
+          "Gases circling around Earth’s surface"
+         ],
+         "answer": 0,
+         "explanation": "Moving molten iron in Earth’s core may create the magnetic field. This movement is inside Earth’s core.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 217
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch13-l3-a7",
+         "difficulty": 2,
+         "tags": [
+          "molten iron",
+          "magnetic field",
+          "space particles"
+         ],
+         "title": "Earth’s Magnetic Shield",
+         "prompt": "Put these steps in order.",
+         "items": [
+          "Molten iron moves in Earth’s core.",
+          "Earth’s magnetic field may form.",
+          "Many harmful space particles are pushed away."
+         ],
+         "explanation": "Molten iron moves first. This may create the magnetic field, which pushes particles away.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 217
+          },
+          {
+           "ch": 13,
+           "p": 217
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l3-a8",
+         "difficulty": 3,
+         "tags": [
+          "planet",
+          "force",
+          "living beings"
+         ],
+         "prompt": "An extremely large planet could pull living beings down with crushing force.",
+         "answer": true,
+         "explanation": "An extremely large planet can pull living beings down with crushing force. That makes its pull dangerous.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 216
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l3-a9",
+         "difficulty": 3,
+         "tags": [
+          "ozone",
+          "magnetic field",
+          "protection"
+         ],
+         "title": "The Correct Protection Pair",
+         "prompt": "Which pair protects Earth in the correct way?",
+         "options": [
+          "Ozone blocks ultraviolet rays; magnetic field pushes particles.",
+          "Ozone pushes particles; magnetic field blocks ultraviolet rays.",
+          "Ozone creates oxygen; magnetic field forms the ozone layer.",
+          "Ozone warms the core; magnetic field supports the atmosphere."
+         ],
+         "answer": 0,
+         "explanation": "Ozone blocks harmful ultraviolet rays. Earth’s magnetic field pushes many harmful space particles away.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 216
+          },
+          {
+           "ch": 13,
+           "p": 217
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch13-l3-top-of-atmosphere-b8fd76.webp",
+       "sceneAlt": "The crescent moon is seen through the top of Earth's atmosphere from the International Space Station above the South China Sea.",
+       "sceneCaption": "The crescent moon appears beyond the thin upper atmosphere of Earth.",
+       "sceneCredit": {
+        "text": "Top of Atmosphere by NASA Earth Observatory, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Top_of_Atmosphere.jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "NASA Earth Observatory"
+       }
+      },
+      {
+       "id": "science-g8-ch13-l4",
+       "title": "Connections That Sustain Life",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch13-l4-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How do air, water, and land connect to keep life going?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l4-a1",
+         "difficulty": 1,
+         "tags": [
+          "life",
+          "oxygen",
+          "water",
+          "earth"
+         ],
+         "title": "Life and Earth’s Connected Parts",
+         "body": "Life depends on linked parts of Earth. Plants make food and release oxygen during photosynthesis. Humans, animals and plants use atmospheric oxygen for respiration. Water covers about seventy per cent of Earth’s surface. All Earth’s water forms the hydrosphere. Rocks, soils and minerals form the geosphere. Living beings and their homes form the biosphere.",
+         "keyPoints": [
+          "Plants release oxygen during photosynthesis.",
+          "Living beings use atmospheric oxygen for respiration.",
+          "Water, rocks and living beings form connected parts of Earth."
+         ],
+         "explanation": "These links show how different parts of Earth support life.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 217
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 219
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "plants",
+          "photosynthesis",
+          "oxygen"
+         ],
+         "prompt": "What do plants release when they make food by photosynthesis?",
+         "options": [
+          "water",
+          "heat",
+          "freshwater",
+          "oxygen"
+         ],
+         "answer": 3,
+         "explanation": "Plants make food by photosynthesis and release oxygen.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 218
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "water",
+          "earth"
+         ],
+         "prompt": "Water covers about seventy per cent of Earth’s surface.",
+         "answer": true,
+         "explanation": "This is the share of Earth’s surface covered by water.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 218
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch13-l4-a4",
+         "difficulty": 1,
+         "tags": [
+          "water",
+          "hydrosphere"
+         ],
+         "prompt": "All of Earth’s ______ forms the hydrosphere.",
+         "answers": [
+          "water"
+         ],
+         "hint": "Name the substance that makes up the hydrosphere.",
+         "explanation": "All of Earth’s water forms the hydrosphere.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 218
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch13-l4-a5",
+         "difficulty": 2,
+         "tags": [
+          "hydrosphere",
+          "geosphere",
+          "biosphere",
+          "geodiversity"
+         ],
+         "prompt": "Match each part of Earth with its name.",
+         "pairs": [
+          [
+           "Water",
+           "hydrosphere"
+          ],
+          [
+           "Rocks, soils and minerals",
+           "geosphere"
+          ],
+          [
+           "Living beings and places",
+           "biosphere"
+          ],
+          [
+           "Landforms, rocks and soils",
+           "geodiversity"
+          ]
+         ],
+         "explanation": "Each name describes a different part or variety within Earth.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 219
+          },
+          {
+           "ch": 13,
+           "p": 219
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-a6",
+         "difficulty": 2,
+         "tags": [
+          "water",
+          "animals",
+          "body"
+         ],
+         "prompt": "Which pair shows two jobs of water in animals?",
+         "options": [
+          "temperature and hydration",
+          "rainfall and digestion",
+          "clouds and respiration",
+          "soil and photosynthesis"
+         ],
+         "answer": 0,
+         "explanation": "Water regulates body temperature and keeps animals hydrated.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 218
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l4-a7",
+         "difficulty": 2,
+         "tags": [
+          "nature",
+          "rainfall",
+          "heat",
+          "water vapour"
+         ],
+         "title": "Changes Can Affect Nature",
+         "body": "Nature works as a connected system. A change in one part can affect rainfall, soil, air quality and animals. Greenhouse gases in the atmosphere trap heat. Water vapour forms clouds and brings rain or snow. Freshwater helps crops grow and supports people. These links help us see how one change can affect many parts of nature.",
+         "keyPoints": [
+          "A change in one part can affect several other parts.",
+          "Greenhouse gases trap heat in the atmosphere.",
+          "Water vapour helps form clouds and bring rain or snow."
+         ],
+         "explanation": "One change can affect many connected parts of nature.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 214
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 218
+          },
+          {
+           "ch": 13,
+           "p": 219
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch13-l4-a8",
+         "difficulty": 3,
+         "tags": [
+          "plants",
+          "photosynthesis",
+          "oxygen",
+          "respiration"
+         ],
+         "prompt": "Put these steps in order.",
+         "items": [
+          "Plants make food by photosynthesis.",
+          "Plants release oxygen.",
+          "Living beings use atmospheric oxygen for respiration."
+         ],
+         "explanation": "Photosynthesis makes food and releases oxygen. Living beings then use atmospheric oxygen for respiration.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 217
+          },
+          {
+           "ch": 13,
+           "p": 218
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l4-a9",
+         "difficulty": 3,
+         "tags": [
+          "nature",
+          "rainfall",
+          "soil",
+          "animals"
+         ],
+         "prompt": "Which set lists effects that a change in nature can affect?",
+         "options": [
+          "rainfall, soil, air quality, animals",
+          "clouds, snow, crops, people",
+          "oxygen, water, heat, freshwater",
+          "geodiversity, minerals, hydrosphere, biosphere"
+         ],
+         "answer": 0,
+         "explanation": "A change in one part of nature can affect rainfall, soil, air quality and animals.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 219
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch13-l4-leaf-function-66c9a2.webp",
+       "sceneAlt": "A leaf diagram shows how leaves support gas exchange.",
+       "sceneCaption": "This simple diagram introduces a leaf’s role in gas exchange.",
+       "sceneCredit": {
+        "text": "Leaf function by Vojtech.dostal, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Leaf_function.jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "Vojtech.dostal"
+       }
+      },
+      {
+       "id": "science-g8-ch13-l5",
+       "title": "Reproduction and the Continuity of Life",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch13-l5-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How can reproduction help living things keep surviving?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l5-a1",
+         "difficulty": 1,
+         "tags": [
+          "reproduction",
+          "genes",
+          "gametes",
+          "fertilisation"
+         ],
+         "title": "How Life Continues",
+         "body": "Reproduction keeps life going. Without it, plants and animals would eventually disappear. Genes are instructions stored inside cells. Asexual reproduction makes exact copies from one parent. Sexual reproduction combines instructions from two parents. A gamete carries half of a parent's genetic material. Fertilisation forms a zygote, which develops into a seed. This helps life adapt to changes and continue in new forms.",
+         "keyPoints": [
+          "Reproduction keeps life going.",
+          "Asexual reproduction makes exact copies from one parent.",
+          "Sexual reproduction combines instructions from two parents."
+         ],
+         "explanation": "Reproduction helps living things continue in new forms.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 219
+          },
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 225
+          },
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 221
+          },
+          {
+           "ch": 13,
+           "p": 222
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l5-a2",
+         "difficulty": 1,
+         "tags": [
+          "genes",
+          "cells"
+         ],
+         "title": "Where Genes Stay",
+         "prompt": "Which statement about genes is correct?",
+         "options": [
+          "They are instructions stored outside cells.",
+          "They are instructions copied outside bodies.",
+          "They are instructions stored inside cells.",
+          "They are instructions found only in seeds."
+         ],
+         "answer": 2,
+         "explanation": "Genes are instructions stored inside the cells of living beings. Great choice!",
+         "src": [
+          {
+           "ch": 13,
+           "p": 220
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l5-a3",
+         "difficulty": 1,
+         "tags": [
+          "asexual reproduction",
+          "parents"
+         ],
+         "prompt": "In asexual reproduction, one parent produces exact copies of itself.",
+         "answer": true,
+         "explanation": "That is exactly what happens in asexual reproduction. Well spotted!",
+         "src": [
+          {
+           "ch": 13,
+           "p": 225
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch13-l5-a4",
+         "difficulty": 1,
+         "tags": [
+          "gametes",
+          "genetic material"
+         ],
+         "prompt": "Each ______ carries only half of its parent's genetic material.",
+         "answers": [
+          "gamete"
+         ],
+         "hint": "It carries half of a parent's genetic material.",
+         "explanation": "Each gamete carries only half of its parent's genetic material.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 221
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch13-l5-a6",
+         "difficulty": 2,
+         "tags": [
+          "genes",
+          "asexual reproduction",
+          "sexual reproduction",
+          "gametes"
+         ],
+         "title": "Match Each Word",
+         "prompt": "Match each word with its meaning.",
+         "pairs": [
+          [
+           "Genes",
+           "Instructions stored inside cells"
+          ],
+          [
+           "Asexual reproduction",
+           "One parent produces exact copies"
+          ],
+          [
+           "Sexual reproduction",
+           "Instructions from two parents combine"
+          ],
+          [
+           "Gamete",
+           "Carries half of a parent's genetic material"
+          ]
+         ],
+         "explanation": "Genes guide cells, while reproduction helps life continue in new forms.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 225
+          },
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 221
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l5-a7",
+         "difficulty": 2,
+         "tags": [
+          "animals",
+          "gametes",
+          "sperm",
+          "eggs",
+          "mammals"
+         ],
+         "title": "Reproduction in Animals",
+         "body": "Animals have gametes called sperm and eggs. Each gamete carries only half of its parent's genetic material. In most mammals, the embryo develops inside the female's body. Sexual reproduction combines instructions from two parents. These combined instructions help life continue in new forms.",
+         "keyPoints": [
+          "The gametes of animals are sperm and eggs.",
+          "Each gamete carries half of its parent's genetic material.",
+          "In most mammals, the embryo develops inside the female's body."
+         ],
+         "explanation": "Sperm and eggs are the gametes of animals.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 221
+          },
+          {
+           "ch": 13,
+           "p": 222
+          },
+          {
+           "ch": 13,
+           "p": 223
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l5-a8",
+         "difficulty": 3,
+         "tags": [
+          "sexual reproduction",
+          "gametes",
+          "genetic material"
+         ],
+         "title": "Sexual Reproduction and Gametes",
+         "prompt": "Which statement correctly describes sexual reproduction and its gametes?",
+         "options": [
+          "Two parents combine, but each gamete carries all parental material.",
+          "One parent copies itself, and each gamete carries half its material.",
+          "Two parents combine, and each gamete carries half one parent's material.",
+          "One parent copies itself, and each gamete carries no parental material."
+         ],
+         "answer": 2,
+         "explanation": "Instructions from two parents combine. Each gamete carries only half of one parent's material.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 220
+          },
+          {
+           "ch": 13,
+           "p": 221
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch13-l5-a9",
+         "difficulty": 3,
+         "tags": [
+          "gametes",
+          "fertilisation",
+          "zygote",
+          "seeds"
+         ],
+         "title": "From a Gamete to a Seed",
+         "prompt": "Put these steps in order from a gamete to a seed.",
+         "items": [
+          "Each gamete carries half of a parent's genetic material.",
+          "Fertilisation takes place.",
+          "A zygote forms.",
+          "The zygote develops into a seed."
+         ],
+         "explanation": "Fertilisation forms a zygote, and the zygote develops into a seed.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 221
+          },
+          {
+           "ch": 13,
+           "p": 222
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch13-l1-solar-system-graphic-by-nasa-37ce42.webp",
+       "sceneAlt": "A wide NASA graphic shows the Sun and the planets arranged outward from Mercury through Neptune, with asteroids, comets and other objects included.",
+       "sceneCaption": "The Sun and planets appear in order from Mercury near the Sun to distant Neptune.",
+       "sceneCredit": {
+        "text": "Solar System graphic by NASA (wide) by NASA, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Solar_System_graphic_by_NASA_(wide).png",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "NASA"
+       }
+      },
+      {
+       "id": "science-g8-ch13-l6",
+       "title": "Threats to Life and Ways to Protect Earth",
+       "estimatedMinutes": 5,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch13-l6-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How can we protect Earth and the many lives that share it?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l6-a1",
+         "difficulty": 1,
+         "tags": [
+          "life",
+          "pollution",
+          "climate-change"
+         ],
+         "title": "Life Needs a Balanced Earth",
+         "body": "Humans are disturbing the balance that supports life. Climate change, biodiversity loss and pollution create a planetary crisis. Burning coal and oil releases greenhouse gases. Extra carbon adds heat, melts ice caps and can flood coastal cities. Destroying habitats makes plants and animals disappear. Waste, fertilisers and pollution can harm soil, water, crops and breathing. Earth’s four connected spheres need care.",
+         "keyPoints": [
+          "Human actions disturb the balance supporting life.",
+          "Climate change, biodiversity loss and pollution threaten life.",
+          "Earth’s connected spheres need protection."
+         ],
+         "explanation": "Many human actions add harm to the systems that support life.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l6-a2",
+         "difficulty": 1,
+         "tags": [
+          "planetary-crisis",
+          "climate-change"
+         ],
+         "prompt": "Which one is part of the planetary crisis?",
+         "options": [
+          "Climate change",
+          "Ice-cap melting",
+          "Coastal flooding",
+          "Natural habitats"
+         ],
+         "answer": 0,
+         "explanation": "Climate change is one part of the planetary crisis.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l6-a3",
+         "difficulty": 1,
+         "tags": [
+          "coal",
+          "oil",
+          "greenhouse-gases"
+         ],
+         "prompt": "Burning coal and oil releases greenhouse gases into the atmosphere.",
+         "answer": true,
+         "explanation": "Yes. Burning coal and oil releases greenhouse gases into the atmosphere.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch13-l6-a4",
+         "difficulty": 2,
+         "tags": [
+          "carbon",
+          "heat"
+         ],
+         "prompt": "Extra carbon cannot be absorbed ______ enough, so more heat builds up.",
+         "answers": [
+          "fast"
+         ],
+         "hint": "Carbon cannot be taken in at the needed speed.",
+         "explanation": "Extra carbon cannot be absorbed fast enough. More heat therefore builds up.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          }
+         ]
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch13-l6-a5",
+         "difficulty": 2,
+         "tags": [
+          "pollution",
+          "water",
+          "soil"
+         ],
+         "title": "Pollution Can Harm Living Things",
+         "body": "Air pollution can damage crops, cause breathing problems and lead to acid rain. Factory, farm and plastic waste can make water unsafe for living things. Excess fertilisers and poor waste disposal can pollute soil. These harms happen because human actions disturb the balance supporting life. We can protect Earth by reducing pollution, protecting natural habitats and stopping waste from entering soil and water.",
+         "keyPoints": [
+          "Air pollution harms crops, breathing and rainfall.",
+          "Different wastes can make water and soil unsafe.",
+          "Reducing pollution and protecting habitats can protect life."
+         ],
+         "explanation": "Pollution can harm people, plants, animals and their surroundings.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch13-l6-a6",
+         "difficulty": 2,
+         "tags": [
+          "plastic-waste",
+          "water"
+         ],
+         "prompt": "Why can factory and plastic waste make water unsafe?",
+         "options": [
+          "The waste adds pollution",
+          "The waste melts ice",
+          "The waste traps carbon",
+          "The waste changes habitats"
+         ],
+         "answer": 0,
+         "explanation": "Factory, farm and plastic waste can make water unsafe for living things.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 224
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch13-l6-a7",
+         "difficulty": 3,
+         "tags": [
+          "greenhouse-gases",
+          "habitats",
+          "waste",
+          "soil"
+         ],
+         "prompt": "Match each human action with its effect.",
+         "pairs": [
+          [
+           "Burning coal and oil",
+           "Greenhouse gases enter the atmosphere"
+          ],
+          [
+           "Destroying natural habitats",
+           "Plants and animals can disappear"
+          ],
+          [
+           "Releasing plastic waste",
+           "Water becomes unsafe for living things"
+          ],
+          [
+           "Using excess fertilisers",
+           "Soil can become polluted"
+          ]
+         ],
+         "explanation": "Each action has an effect on the atmosphere, habitats, water or soil.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 224
+          },
+          {
+           "ch": 13,
+           "p": 224
+          }
+         ]
+        },
+        {
+         "type": "dragorder",
+         "id": "science-g8-ch13-l6-a8",
+         "difficulty": 3,
+         "tags": [
+          "carbon",
+          "heat",
+          "ice-caps",
+          "coastal-cities"
+         ],
+         "prompt": "Put the chain of effects in order.",
+         "items": [
+          "Coal and oil are burned",
+          "Greenhouse gases enter the atmosphere",
+          "Extra carbon cannot be absorbed fast enough",
+          "More heat builds up",
+          "Ice caps melt and coastal cities can flood"
+         ],
+         "explanation": "The extra carbon adds heat, which can melt ice caps and flood coastal cities.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          },
+          {
+           "ch": 13,
+           "p": 223
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch13-l6-a9",
+         "difficulty": 3,
+         "tags": [
+          "climate-change",
+          "weather"
+         ],
+         "prompt": "Climate change means short-term changes in temperature, rainfall and weather.",
+         "answer": false,
+         "explanation": "Climate change means long-term changes in temperature, rainfall and weather.",
+         "src": [
+          {
+           "ch": 13,
+           "p": 223
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch13-l1-solar-system-graphic-by-nasa-37ce42.webp",
+       "sceneAlt": "A wide NASA graphic shows the Sun and the planets arranged outward from Mercury through Neptune, with asteroids, comets and other objects included.",
+       "sceneCaption": "The Sun and planets appear in order from Mercury near the Sun to distant Neptune.",
+       "sceneCredit": {
+        "text": "Solar System graphic by NASA (wide) by NASA, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Solar_System_graphic_by_NASA_(wide).png",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "NASA"
+       }
+      }
+     ],
+     "boss": {
+      "id": "science-g8-ch13-boss",
+      "title": "Chapter challenge: Our Home: Earth, a Unique Life-Sustaining Planet",
+      "estimatedMinutes": 4,
+      "activities": [
+       {
+        "type": "mcq",
+        "id": "science-g8-ch13-boss-a1",
+        "difficulty": 2,
+        "tags": [
+         "earth",
+         "sun",
+         "water",
+         "life"
+        ],
+        "title": "The right distance",
+        "prompt": "What does Earth's distance from the Sun allow?",
+        "options": [
+         "Water to remain liquid",
+         "Venus to stay cooler",
+         "Mercury to keep air",
+         "Mars to have thicker air"
+        ],
+        "answer": 0,
+        "explanation": "Earth's distance lets water remain liquid, which supports life.",
+        "src": [
+         {
+          "ch": 13,
+          "p": 214
+         },
+         {
+          "ch": 13,
+          "p": 214
+         },
+         {
+          "ch": 13,
+          "p": 215
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "science-g8-ch13-boss-a3",
+        "difficulty": 2,
+        "tags": [
+         "mars",
+         "atmosphere",
+         "earth"
+        ],
+        "title": "A thin atmosphere",
+        "prompt": "Mars has an atmosphere ______ times thinner than Earth's.",
+        "answers": [
+         "hundred"
+        ],
+        "hint": "Think about the scale of thinness.",
+        "explanation": "Mars's atmosphere is one hundred times thinner than Earth's.",
+        "src": [
+         {
+          "ch": 13,
+          "p": 216
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "science-g8-ch13-boss-a4",
+        "difficulty": 2,
+        "tags": [
+         "planets",
+         "mercury",
+         "venus",
+         "earth",
+         "jupiter"
+        ],
+        "title": "Planet clues",
+        "prompt": "Match each planet with a fact about it.",
+        "pairs": [
+         [
+          "Mercury",
+          "Has no atmosphere"
+         ],
+         [
+          "Venus",
+          "Is the hottest planet"
+         ],
+         [
+          "Earth",
+          "Supports life"
+         ],
+         [
+          "Jupiter",
+          "Is made mostly of gases"
+         ]
+        ],
+        "explanation": "Each clue describes one of these planets in our solar system.",
+        "src": [
+         {
+          "ch": 13,
+          "p": 211
+         },
+         {
+          "ch": 13,
+          "p": 213
+         },
+         {
+          "ch": 13,
+          "p": 213
+         },
+         {
+          "ch": 13,
+          "p": 216
+         }
+        ]
+       },
+       {
+        "type": "mcq",
+        "id": "science-g8-ch13-boss-a5",
+        "difficulty": 2,
+        "tags": [
+         "habitats",
+         "plants",
+         "animals",
+         "nature"
+        ],
+        "title": "Destroying homes",
+        "prompt": "Which action can make plants and animals disappear?",
+        "options": [
+         "Using a bicycle",
+         "Building a school",
+         "Playing a board game",
+         "Destroying natural habitats"
+        ],
+        "answer": 3,
+        "explanation": "Destroying natural habitats can make plants and animals disappear.",
+        "src": [
+         {
+          "ch": 13,
+          "p": 223
+         }
+        ]
+       },
+       {
+        "type": "truefalse",
+        "id": "science-g8-ch13-boss-a6",
+        "difficulty": 2,
+        "tags": [
+         "climate",
+         "ice",
+         "sea",
+         "cities"
+        ],
+        "title": "Rising sea levels",
+        "prompt": "Melting ice caps can raise sea levels and flood coastal cities.",
+        "answer": true,
+        "explanation": "Melting ice caps can raise sea levels and flood coastal cities.",
+        "src": [
+         {
+          "ch": 13,
+          "p": 223
+         }
+        ]
+       },
+       {
+        "type": "matchpairs",
+        "id": "science-g8-ch13-boss-a7",
+        "difficulty": 2,
+        "tags": [
+         "atmosphere",
+         "hydrosphere",
+         "geosphere",
+         "biosphere"
+        ],
+        "title": "Earth's connected parts",
+        "prompt": "Match each part of Earth with what it includes.",
+        "pairs": [
+         [
+          "Atmosphere",
+          "Oxygen for breathing"
+         ],
+         [
+          "Hydrosphere",
+          "All of Earth's water"
+         ],
+         [
+          "Geosphere",
+          "Rocks, soils and minerals"
+         ],
+         [
+          "Biosphere",
+          "Living beings and their places"
+         ]
+        ],
+        "explanation": "These parts of Earth are connected and influence one another.",
+        "src": [
+         {
+          "ch": 13,
+          "p": 216
+         },
+         {
+          "ch": 13,
+          "p": 218
+         },
+         {
+          "ch": 13,
+          "p": 218
+         },
+         {
+          "ch": 13,
+          "p": 219
+         },
+         {
+          "ch": 13,
+          "p": 224
+         }
+        ]
+       },
+       {
+        "type": "fillblank",
+        "id": "science-g8-ch13-boss-a8",
+        "difficulty": 3,
+        "tags": [
+         "ozone",
+         "rays",
+         "surface",
+         "protection"
+        ],
+        "title": "The protective layer",
+        "prompt": "The ozone layer blocks harmful ______ rays.",
+        "answers": [
+         "ultraviolet"
+        ],
+        "hint": "Name the harmful rays blocked by ozone.",
+        "explanation": "The ozone layer blocks harmful ultraviolet rays from reaching Earth's surface.",
+        "src": [
+         {
+          "ch": 13,
+          "p": 216
+         }
+        ]
+       },
+       {
+        "type": "dragorder",
+        "id": "science-g8-ch13-boss-a10",
+        "difficulty": 3,
+        "tags": [
+         "reproduction",
+         "gametes",
+         "fertilisation",
+         "zygote",
+         "seed"
+        ],
+        "title": "Before a new seed forms",
+        "prompt": "Put the sexual reproduction stages in order.",
+        "items": [
+         "Each gamete carries half its parent's genetic material.",
+         "Instructions from two parents combine.",
+         "Fertilisation forms a zygote.",
+         "The zygote develops into a seed."
+        ],
+        "explanation": "Gametes join through fertilisation, creating a zygote that develops into a seed.",
+        "src": [
+         {
+          "ch": 13,
+          "p": 220
+         },
+         {
+          "ch": 13,
+          "p": 221
+         },
+         {
+          "ch": 13,
+          "p": 222
+         }
+        ]
+       }
+      ],
+      "topicScene": "media/ch13-l1-solar-system-graphic-by-nasa-37ce42.webp",
+      "sceneAlt": "A wide NASA graphic shows the Sun and the planets arranged outward from Mercury through Neptune, with asteroids, comets and other objects included.",
+      "sceneCaption": "The Sun and planets appear in order from Mercury near the Sun to distant Neptune.",
+      "sceneCredit": {
+       "text": "Solar System graphic by NASA (wide) by NASA, Public domain, via Wikimedia Commons",
+       "url": "https://commons.wikimedia.org/wiki/File:Solar_System_graphic_by_NASA_(wide).png",
+       "license": "Public domain",
+       "licenseUrl": "",
+       "creator": "NASA"
       }
      }
     }

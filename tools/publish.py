@@ -99,9 +99,11 @@ def smoke():
         paths += sorted({base + l['topicScene'] for u in d['units'] for c in u['chapters'] for l in c['lessons'] + [c['boss']] if l.get('topicScene')})
     keys = json.load(open(f'{PUB}/audio/manifest.json'))['keys']
     paths += [f'audio/{k}.mp3' for k in random.sample(keys, min(25, len(keys)))]
-    for p in paths:
-        n += 1
-        if code(p) != 200: bad.append(p)
+    # 16 at a time: each trip through Cloudflare and the tunnel costs ~200 ms, one by one this took minutes
+    import concurrent.futures as cf
+    n = len(paths)
+    with cf.ThreadPoolExecutor(16) as ex:
+        bad = [p for p, c in zip(paths, ex.map(code, paths)) if c != 200]
     if bad: sys.exit(f'LIVE CHECK FAILED: {len(bad)} of {n} missing, e.g. {bad[:5]}')
     say(f'live check ok: {n} files fetched, {len(idx["packs"])} books')
 
