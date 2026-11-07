@@ -493,14 +493,16 @@ export const KITS = {
     ],
   },
   column: {
-    grades: [2, 5], match: [/\badding\b|\bsubtracting\b|\btaking away\b/, /regroup/, /\bcarry|\bcarrying\b/, /\bborrow/, /take away|taking away/, /\badd up\b|subtract it/, /column (addition|subtraction)/],
+    grades: [2, 5], match: [/^(?!.*(weights?|quintals?|tonnes?|litres?|metres?|kilogram)).*(\badding\b|\bsubtracting\b|\btaking away\b)/, /regroup/, /\bcarry|\bcarrying\b/, /\bborrow/, /take away|taking away/, /\badd up\b|subtract it/, /column (addition|subtraction)/],
     params: (text) => ({ kind: /^add/.test(text) || /\badd up\b/.test(text) ? 'add' : /subtract|take away|taking away|borrow|\bleft\b/.test(text) ? 'sub' : 'add' }),
     title: 'Add and subtract in columns', takeaway: 'Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column.',
     tasks: (p) => (p.kind === 'sub'
       ? [{ say: 'Take away 215 from 438.', when: 'a == 438 and b == 215 and step == 3', then: '438 \u2212 215 = 223: that is how many children are still waiting.' },
+         { say: 'How much fuel was added? Take 18 away from 65.', when: 'a == 65 and b == 18 and step == 3', then: '65 \u2212 18 = 47 litres were added.' },
          { say: 'Take 47 away from 73.', when: 'a == 73 and b == 47 and step == 3', then: '3 ones is less than 7, so regroup 1 ten as 10 ones: 73 \u2212 47 = 26.' },
          { say: 'Find a take-away that needs regrouping: 83 \u2212 46.', when: 'a == 83 and b == 46 and step == 3', then: '3 ones is less than 6, so regroup 1 ten as 10 ones: 83 \u2212 46 = 37.' }]
       : [{ say: 'Add 438 and 476, one column at a time.', when: 'a == 438 and b == 476 and step == 3', then: '438 + 476 = 914, and regrouping carried a 1 twice.' },
+         { say: 'The bus had 18 litres and now has 65. Add 18 and 47 to check.', when: 'a == 18 and b == 47 and step == 3', then: '18 + 47 = 65: adding checks the subtraction.' },
          { say: 'Add 36 and 47. What carries?', when: 'a == 36 and b == 47 and step == 3', then: 'The ones total 13: write 3 and carry 1 ten. 36 + 47 = 83.' },
          { say: 'Add 185 and 125.', when: 'a == 185 and b == 125 and step == 3', then: '185 + 125 = 310: 10 ones and 10 tens both regrouped.' }]),
   },
