@@ -31731,7 +31731,7 @@
       {
        "id": "science-g8-ch10-l3",
        "title": "Curved Mirrors and Concentrated Light",
-       "estimatedMinutes": 5,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -31793,6 +31793,48 @@
           {
            "ch": 10,
            "p": 161
+          },
+          {
+           "ch": 10,
+           "p": 161
+          },
+          {
+           "ch": 10,
+           "p": 161
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch10-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why might a concave mirror's concentrated sunlight burn paper?",
+         "steps": [
+          "Parallel sunlight hits the concave mirror.",
+          "The curved surface makes the reflected rays converge.",
+          "The converging rays concentrate sunlight at one point on the paper.",
+          "That concentrated light gives enough heat to ignite the paper."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.2",
+          "3.5",
+          "3.6",
+          "3.7"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
           },
           {
            "ch": 10,
@@ -32047,6 +32089,75 @@
            "p": 161
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l3-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Parallel sunlight hits a concave mirror. What happens to the reflected rays?",
+         "options": [
+          "They stay parallel and do not meet.",
+          "They come closer and meet at one point.",
+          "They spread farther apart after reflection.",
+          "They turn into one single reflected ray."
+         ],
+         "answer": 1,
+         "why": {
+          "They stay parallel and do not meet.": "This is the plane-mirror result, not the concave-mirror result.",
+          "They spread farther apart after reflection.": "The child confuses a convex mirror with a concave mirror.",
+          "They turn into one single reflected ray.": "The child thinks converging rays turn into one ray."
+         },
+         "explanation": "A concave mirror makes reflected rays come closer and converge.",
+         "f": [
+          "3.2",
+          "3.5"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          },
+          {
+           "ch": 10,
+           "p": 160
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l3-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Parallel light reflects from a plane mirror. Do its rays then meet?",
+         "options": [
+          "They stay parallel and do not meet.",
+          "They come closer and meet at one point.",
+          "They spread apart and move away.",
+          "They bend into a single bright ray."
+         ],
+         "answer": 0,
+         "why": {
+          "They come closer and meet at one point.": "The child confuses a plane mirror with a concave mirror.",
+          "They spread apart and move away.": "The child confuses a plane mirror with a convex mirror.",
+          "They bend into a single bright ray.": "The child thinks parallel rays become one ray."
+         },
+         "explanation": "A plane mirror keeps reflected rays parallel.",
+         "f": [
+          "3.1"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 160
+          }
+         ]
         }
        ],
        "topicScene": "media/ch10-l3-solar-dish-at-ben-gurion-nat-5b46dc.webp",
@@ -32063,7 +32174,7 @@
       {
        "id": "science-g8-ch10-l4",
        "title": "Lenses and Their Images",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -32126,6 +32237,48 @@
           {
            "ch": 10,
            "p": 164
+          },
+          {
+           "ch": 10,
+           "p": 164
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch10-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child looks at a small sign through one convex lens. The child first stands close, then steps farther away. How does the image change?",
+         "steps": [
+          "The lens is convex, so it brings light rays closer together.",
+          "Near the sign, the image is erect and enlarged.",
+          "Farther away, the image becomes inverted and then smaller.",
+          "So the image changes from upright and large to inverted and small."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.4",
+          "4.5",
+          "4.6",
+          "4.8"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
           },
           {
            "ch": 10,
@@ -32282,18 +32435,241 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch10-l4-a9",
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-d1",
          "difficulty": 3,
          "tags": [
-          "light",
-          "glass"
+          "deep",
+          "predict"
          ],
-         "title": "A flat glass plate",
-         "prompt": "A thin flat glass plate makes light rays converge.",
-         "answer": false,
-         "explanation": "A flat glass plate neither makes light converge nor diverge.",
+         "prompt": "A child holds a convex lens over a tiny printed word. The word is very close. How does it look?",
+         "options": [
+          "Upright and larger than the word.",
+          "Inverted and larger than the word.",
+          "Upright and smaller than the word.",
+          "Inverted and smaller than the word."
+         ],
+         "answer": 0,
+         "why": {
+          "Inverted and larger than the word.": "This mixes up the close and far image rules.",
+          "Upright and smaller than the word.": "This wrongly uses the rule for a concave lens.",
+          "Inverted and smaller than the word.": "This wrongly makes the close image inverted and smaller."
+         },
+         "explanation": "Close objects form erect, enlarged images with a convex lens.",
+         "f": [
+          "4.4"
+         ],
          "src": [
+          {
+           "ch": 10,
+           "p": 163
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A child moves a convex lens far away from a printed word. How does the word then look?",
+         "options": [
+          "Inverted and smaller than the word.",
+          "Upright and larger than the word.",
+          "Upright and smaller than the word.",
+          "Inverted and larger than the word."
+         ],
+         "answer": 0,
+         "why": {
+          "Upright and larger than the word.": "It keeps the upright, enlarged image seen up close.",
+          "Upright and smaller than the word.": "It wrongly treats a convex lens like a concave lens.",
+          "Inverted and larger than the word.": "It keeps the enlarged size but changes the upright position."
+         },
+         "explanation": "Farther away, a convex image becomes inverted and then smaller.",
+         "f": [
+          "4.5",
+          "4.6"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A child looks at a friend through a concave lens. How does the friend look?",
+         "options": [
+          "Upright and smaller than the friend.",
+          "Inverted and smaller than the friend.",
+          "Upright and larger than the friend.",
+          "Inverted and larger than the friend."
+         ],
+         "answer": 0,
+         "why": {
+          "Inverted and smaller than the friend.": "It wrongly gives the usual inverted convex image.",
+          "Upright and larger than the friend.": "It wrongly uses the close convex lens result.",
+          "Inverted and larger than the friend.": "It wrongly gives the distant convex lens result."
+         },
+         "explanation": "Through a concave lens, objects always look erect and smaller.",
+         "f": [
+          "4.7"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "Three straight light rays enter a lens. Which result shows that the lens is convex?",
+         "options": [
+          "The rays come closer together after passing through.",
+          "The rays spread farther apart after passing through.",
+          "The rays stay exactly parallel after passing through.",
+          "The rays stop moving after passing through."
+         ],
+         "answer": 0,
+         "why": {
+          "The rays spread farther apart after passing through.": "This is the usual effect of a concave lens.",
+          "The rays stay exactly parallel after passing through.": "A flat glass plate does not make rays converge or diverge.",
+          "The rays stop moving after passing through.": "A lens lets light pass through instead of stopping it."
+         },
+         "explanation": "A convex lens brings converging light rays closer together.",
+         "f": [
+          "4.3",
+          "4.8",
+          "4.9",
+          "4.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 164
+          },
+          {
+           "ch": 10,
+           "p": 164
+          },
+          {
+           "ch": 10,
+           "p": 164
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "apply"
+         ],
+         "prompt": "A child places a thin flat glass plate in straight light rays. What should happen next?",
+         "options": [
+          "The rays pass through without converging or diverging.",
+          "The rays pass through and come closer together.",
+          "The rays pass through and spread farther apart.",
+          "The rays stop at the glass and do not pass."
+         ],
+         "answer": 0,
+         "why": {
+          "The rays pass through and come closer together.": "Coming closer together is the effect of a convex lens.",
+          "The rays pass through and spread farther apart.": "Spreading farther apart is the effect of a concave lens.",
+          "The rays stop at the glass and do not pass.": "Light passes through the transparent glass plate."
+         },
+         "explanation": "A thin flat glass plate does not make light converge or diverge.",
+         "f": [
+          "4.3",
+          "4.9",
+          "4.10",
+          "4.11"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 164
+          },
+          {
+           "ch": 10,
+           "p": 164
+          },
+          {
+           "ch": 10,
+           "p": 164
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "A student says a convex lens always makes objects look enlarged. Which observation proves the claim wrong?",
+         "options": [
+          "Farther away, the image can become inverted and smaller.",
+          "Very close, the image can become inverted and smaller.",
+          "Through a concave lens, objects can look enlarged.",
+          "Through a flat plate, objects can look inverted."
+         ],
+         "answer": 0,
+         "why": {
+          "Very close, the image can become inverted and smaller.": "Close to a convex lens, the image is erect and enlarged.",
+          "Through a concave lens, objects can look enlarged.": "A concave lens always makes objects look erect and smaller.",
+          "Through a flat plate, objects can look inverted.": "A flat plate does not make light converge or diverge."
+         },
+         "explanation": "Farther away, a convex image becomes inverted and then smaller.",
+         "f": [
+          "4.5",
+          "4.6",
+          "4.7",
+          "4.9"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
           {
            "ch": 10,
            "p": 164
@@ -32315,7 +32691,7 @@
       {
        "id": "science-g8-ch10-l5",
        "title": "Uses of Lenses and Chapter Review",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -32365,6 +32741,43 @@
           {
            "ch": 10,
            "p": 165
+          },
+          {
+           "ch": 10,
+           "p": 165
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch10-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How do the eye and magnifying glass help with tiny print?",
+         "steps": [
+          "A magnifying glass makes tiny letters look bigger, so reading becomes easier.",
+          "The eye contains a convex lens, so it also helps us see.",
+          "The eye’s convex lens converges light, while the magnifying glass enlarges letters.",
+          "Therefore, different lenses help us see in different ways."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.2",
+          "5.3",
+          "5.11"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 165
+          },
+          {
+           "ch": 10,
+           "p": 162
           },
           {
            "ch": 10,
@@ -32533,6 +32946,107 @@
            "p": 169
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l5-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "A convex mirror shows a small, erect image. Which lens does too?",
+         "options": [
+          "a convex mirror",
+          "a concave lens",
+          "a convex lens",
+          "a concave mirror"
+         ],
+         "answer": 1,
+         "why": {
+          "a convex mirror": "This is a mirror, but the question asks for a lens.",
+          "a convex lens": "Convex lenses can form enlarged or same-sized images.",
+          "a concave mirror": "This is a mirror, but the question asks for a lens."
+         },
+         "explanation": "Concave lenses always form erect, diminished images.",
+         "f": [
+          "5.7",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 165
+          },
+          {
+           "ch": 10,
+           "p": 165
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l5-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "A child claims a convex mirror can enlarge an image. Which observation proves the claim wrong?",
+         "options": [
+          "The image stays upright but becomes smaller.",
+          "The image stays upright but becomes larger.",
+          "The image becomes larger and upside down.",
+          "The image becomes smaller and upside down."
+         ],
+         "answer": 0,
+         "why": {
+          "The image stays upright but becomes larger.": "This wrongly allows an enlarged image from a convex mirror.",
+          "The image becomes larger and upside down.": "This wrongly allows both enlarged and upside-down images.",
+          "The image becomes smaller and upside down.": "The upside-down part is wrong for a convex mirror."
+         },
+         "explanation": "Convex mirrors always form erect, diminished images.",
+         "f": [
+          "5.7"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 165
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l5-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A concave lens shows a printed page. Which observation fits this lens?",
+         "options": [
+          "The words stay upright but look smaller.",
+          "The words stay upright but look larger.",
+          "The words turn upside down but look smaller.",
+          "The words turn upside down but look larger."
+         ],
+         "answer": 0,
+         "why": {
+          "The words stay upright but look larger.": "This wrongly gives the concave lens an enlarged image.",
+          "The words turn upside down but look smaller.": "Concave lens images always stay upright.",
+          "The words turn upside down but look larger.": "This wrongly gives the image both larger size and wrong direction."
+         },
+         "explanation": "Concave lenses always form images that are upright and smaller.",
+         "f": [
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 165
+          }
+         ]
         }
        ],
        "topicScene": "media/ch10-l5-yerkes-40-inch-refractor-tel-78cd5b.webp",
@@ -32549,7 +33063,7 @@
       {
        "id": "science-g8-ch10-exam",
        "title": "Test practice",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 17,
        "topicScene": "media/ch10-l1-a-safety-convex-mirror-at-th-b63920.webp",
        "sceneAlt": "A convex safety mirror stands at the end of platform 1B at Howrah metro station in Kolkata.",
        "sceneCaption": "A convex safety mirror helps passengers at Howrah metro station.",
@@ -32680,6 +33194,258 @@
           "A convex mirror always forms an erect, smaller image."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l3-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school activity, Meera places a concave mirror in sunlight. The mirror brings the sunlight together, and the reflected sunlight becomes concentrated at one point on the paper. The paper catches fire because the concentrated light produces enough heat to ignite it. Meera also learns that mirrors and lenses can concentrate sunlight in solar concentrators. She wonders whether such concentrated sunlight could heat a liquid to make steam for generating electricity.",
+         "prompt": "If Meera replaces the concave mirror with a convex mirror, what should happen to the reflected rays?",
+         "options": [
+          "The rays would fan outward and move farther apart.",
+          "The rays would remain parallel to one another.",
+          "The rays would come together at one point.",
+          "The rays would travel straight through the mirror."
+         ],
+         "answer": 0,
+         "why": {
+          "The rays would remain parallel to one another.": "A plane mirror keeps reflected rays parallel.",
+          "The rays would come together at one point.": "Convergence is the effect of a concave mirror.",
+          "The rays would travel straight through the mirror.": "Light reflects from a mirror instead of passing through it."
+         },
+         "explanation": "This is the effect of a convex mirror."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l3-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "At a school activity, Meera places a concave mirror in sunlight. The mirror brings the sunlight together, and the reflected sunlight becomes concentrated at one point on the paper. The paper catches fire because the concentrated light produces enough heat to ignite it. Meera also learns that mirrors and lenses can concentrate sunlight in solar concentrators. She wonders whether such concentrated sunlight could heat a liquid to make steam for generating electricity.",
+         "prompt": "What should Meera use if she wants to concentrate sunlight to heat a liquid?",
+         "options": [
+          "Use a mirror-and-lens device designed for gathering sunlight.",
+          "Use a device that sends sunlight in many directions.",
+          "Use a plane mirror that keeps the light rays parallel.",
+          "Use a convex mirror that makes the reflected rays diverge."
+         ],
+         "answer": 0,
+         "why": {
+          "Use a device that sends sunlight in many directions.": "Diverging light is not concentrated.",
+          "Use a plane mirror that keeps the light rays parallel.": "A plane mirror does not concentrate sunlight.",
+          "Use a convex mirror that makes the reflected rays diverge.": "A convex mirror makes reflected rays diverge."
+         },
+         "explanation": "Such a device is a solar concentrator."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l3-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Reflected rays from a concave mirror come closer together and converge.\nReason (R): The curved surface of a spherical mirror makes parallel rays converge or diverge.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "The curved surface of the concave mirror causes the parallel rays to converge."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l3-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Concentrated sunlight can heat a liquid to make steam for generating electricity.\nReason (R): Every ray of light follows the laws of reflection.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 1,
+         "explanation": "Both statements are true, but the laws of reflection do not explain heating the liquid with concentrated sunlight."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch10-l3-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the curved surface of a spherical mirror changes the behaviour of parallel light rays after reflection.",
+         "answer": "The curved surface of a spherical mirror changes the way parallel light rays behave after reflection. With a concave mirror, the reflected rays come closer together and converge. With a convex mirror, the reflected rays spread apart and diverge. Both kinds of mirror follow the laws of reflection, but their curved surfaces make the reflected parallel rays behave differently. The kind of mirror therefore determines whether the rays are brought together or separated.",
+         "points": [
+          "The curved surface changes the reflected rays.",
+          "A concave mirror makes reflected rays converge.",
+          "A convex mirror makes reflected rays diverge.",
+          "Every reflected ray follows the laws of reflection."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student visits a school display where a convex lens and a concave lens are shown separately. The student first places a nearby object in front of the convex lens and notices that it appears upright and enlarged. When the object is moved farther away, the image changes. The student then looks through the concave lens and sees a smaller, upright image. A thin flat glass plate is also placed beside the lenses.",
+         "prompt": "What happens next when the student moves the object farther away from the convex lens?",
+         "options": [
+          "The image stays upright and enlarged.",
+          "It turns upside down, and the image later becomes smaller.",
+          "The image stays upright but becomes smaller.",
+          "It turns upside down while staying enlarged."
+         ],
+         "answer": 1,
+         "why": {
+          "The image stays upright and enlarged.": "This ignores the change caused by greater object distance.",
+          "The image stays upright but becomes smaller.": "A convex image does not remain upright when the distance becomes greater.",
+          "It turns upside down while staying enlarged.": "The image becomes smaller after it has first been enlarged."
+         },
+         "explanation": "At a greater distance, the image becomes inverted and later smaller."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student visits a school display where a convex lens and a concave lens are shown separately. The student first places a nearby object in front of the convex lens and notices that it appears upright and enlarged. When the object is moved farther away, the image changes. The student then looks through the concave lens and sees a smaller, upright image. A thin flat glass plate is also placed beside the lenses.",
+         "prompt": "If the convex lens were replaced by the thin flat glass plate in the ray demonstration, what would happen?",
+         "options": [
+          "The rays would still be brought closer together.",
+          "The rays would be spread farther apart.",
+          "The rays would pass through without being made to converge or diverge.",
+          "The rays would bounce back toward their source."
+         ],
+         "answer": 2,
+         "why": {
+          "The rays would still be brought closer together.": "A flat plate does not bring converging rays closer together.",
+          "The rays would be spread farther apart.": "A flat plate does not make light diverge.",
+          "The rays would bounce back toward their source.": "Light passes through the plate rather than bouncing back."
+         },
+         "explanation": "This is the stated behavior of light passing through a thin flat glass plate."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A convex lens is also called a converging lens.\nReason (R): An object close to a convex lens appears erect and enlarged.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 1,
+         "explanation": "Both statements are true, but the appearance of a nearby object does not explain the alternative name."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l4-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A thin flat glass plate makes light rays converge.\nReason (R): Light passes through a thin flat glass plate without being made to converge or diverge.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The reason is true, but it shows that the assertion about convergence is false."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch10-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain the difference between a convex lens and a concave lens.",
+         "answer": "A convex lens is a converging lens, while a concave lens is a diverging lens. A concave lens is thicker at its edges than in the middle, and both kinds of lens allow light to pass through them. With a nearby object, a convex lens makes it appear erect and enlarged. As the distance becomes greater, the image becomes inverted; it is first enlarged and then smaller in size. An object seen through a concave lens always appears erect and smaller.",
+         "points": [
+          "Convex means converging; concave means diverging.",
+          "A concave lens is thicker at its edges.",
+          "A nearby object appears erect and enlarged through a convex lens.",
+          "A concave lens always gives an erect, smaller view."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l5-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a school astronomy activity, Bhāskara II’s astronomers used shallow bowls of water to observe stars and planets. They measured the positions of the objects from their reflected images. The student then examines a concave mirror, a convex mirror, and two lenses. One lens makes light beams converge, and the other makes them diverge. The student also uses a magnifying glass to read tiny print and compares the images formed by the optical devices.",
+         "prompt": "Why were the astronomers able to measure the positions of the stars and planets after using the shallow bowls?",
+         "options": [
+          "Their reflected images allowed them to record where each object appeared.",
+          "The water always changed the objects into enlarged images.",
+          "The convex mirror always made the images erect and diminished.",
+          "The lenses converged the light beams before the positions were recorded."
+         ],
+         "answer": 0,
+         "why": {
+          "The water always changed the objects into enlarged images.": "A convex mirror always gives an erect, diminished image, but that does not explain the measurements.",
+          "The convex mirror always made the images erect and diminished.": "The convex mirror was used later, not for measuring the objects’ positions.",
+          "The lenses converged the light beams before the positions were recorded.": "Convergence is a property of a convex lens, not of the bowl method."
+         },
+         "explanation": "Correct: the measurements were made from the reflected images."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch10-l5-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During a school astronomy activity, Bhāskara II’s astronomers used shallow bowls of water to observe stars and planets. They measured the positions of the objects from their reflected images. The student then examines a concave mirror, a convex mirror, and two lenses. One lens makes light beams converge, and the other makes them diverge. The student also uses a magnifying glass to read tiny print and compares the images formed by the optical devices.",
+         "prompt": "If the student uses a convex mirror instead of the concave mirror while comparing images, what result should be expected?",
+         "options": [
+          "An erect image that is diminished.",
+          "An image that may be enlarged, diminished or the same size.",
+          "An enlarged image for every object.",
+          "An image that is erect and the same size as the object."
+         ],
+         "answer": 0,
+         "why": {
+          "An image that may be enlarged, diminished or the same size.": "Those are the possible image sizes of a concave mirror.",
+          "An enlarged image for every object.": "A convex mirror does not always give an enlarged image.",
+          "An image that is erect and the same size as the object.": "A convex mirror always makes the image diminished, not the same size."
+         },
+         "explanation": "Correct: a convex mirror always gives an erect, diminished image."
         }
        ]
       }
@@ -32953,7 +33719,7 @@
       {
        "id": "science-g8-ch11-l1",
        "title": "Watching the Moon’s Changing Shapes",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -33023,18 +33789,31 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch11-l1-a3",
+         "type": "worked",
+         "id": "science-g8-ch11-l1-t1",
          "difficulty": 1,
          "tags": [
-          "moon",
-          "sunlight"
+          "deep",
+          "think"
          ],
-         "title": "Where Does Moonlight Come From?",
-         "prompt": "The Moon shines by making its own light.",
-         "answer": false,
-         "explanation": "The Moon is spherical and shines by reflecting sunlight.",
+         "kicker": "Let us think it through",
+         "prompt": "Meera sees the Moon shining during the daytime. Her friend says it must make its own light. Why is the friend’s claim wrong?",
+         "steps": [
+          "Meera sees the Moon shining even during the daytime.",
+          "The Moon is spherical and reflects sunlight, so its light comes from outside it.",
+          "Because it reflects sunlight, the Moon can shine without making its own light.",
+          "Therefore, the Moon’s daytime brightness comes from reflected sunlight."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2"
+         ],
          "src": [
+          {
+           "ch": 11,
+           "p": 171
+          },
           {
            "ch": 11,
            "p": 171
@@ -33229,6 +34008,243 @@
            "p": 173
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "The Moon is spherical and shines by reflecting sunlight. Meera sees it during the day. Why can she see it?",
+         "options": [
+          "It makes its own light during the day.",
+          "It hides sunlight and becomes bright.",
+          "It reflects sunlight and stays visible.",
+          "It copies the light from the sky."
+         ],
+         "answer": 2,
+         "why": {
+          "It makes its own light during the day.": "This wrongly says the Moon makes its own light.",
+          "It hides sunlight and becomes bright.": "This wrongly says hiding sunlight makes the Moon bright.",
+          "It copies the light from the sky.": "This wrongly treats sky light as the Moon’s source."
+         },
+         "explanation": "The Moon shines by reflecting sunlight, so Meera can see it.",
+         "f": [
+          "1.1",
+          "1.2"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 171
+          },
+          {
+           "ch": 11,
+           "p": 171
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "On Purnima, the Moon shows a full bright circle. What should a child expect about one week later?",
+         "options": [
+          "A smaller half circle, because the waning phase continues.",
+          "A larger half circle, because the waxing phase begins.",
+          "A full circle, because the bright shape never changes.",
+          "No visible Moon, because it vanishes after one week."
+         ],
+         "answer": 0,
+         "why": {
+          "A larger half circle, because the waxing phase begins.": "A larger half circle is the waxing pattern, not the waning pattern.",
+          "A full circle, because the bright shape never changes.": "A full circle contradicts the stated shrinking pattern.",
+          "No visible Moon, because it vanishes after one week.": "This wrongly treats a shrinking bright part as whole-Moon disappearance."
+         },
+         "explanation": "A full circle shrinks to a half circle in about a week during waning.",
+         "f": [
+          "1.3",
+          "1.4",
+          "1.5"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "Amavasya is the new Moon day, when the Moon is not visible. About a week later, what should a child expect?",
+         "options": [
+          "A full circle that keeps growing larger.",
+          "A half circle with a shrinking bright side.",
+          "No visible Moon for another week.",
+          "A half circle with a growing bright side."
+         ],
+         "answer": 3,
+         "why": {
+          "A full circle that keeps growing larger.": "The fact predicts growth to a half circle, not a full circle.",
+          "A half circle with a shrinking bright side.": "Shrinking belongs to waning, but this starts after the new Moon.",
+          "No visible Moon for another week.": "The bright side starts growing after the new Moon."
+         },
+         "explanation": "After the new Moon, the bright side grows to a half circle in about a week.",
+         "f": [
+          "1.6",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 172
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-d4",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "classify"
+         ],
+         "prompt": "The Moon’s changing shapes are called phases. After the new Moon, one child sees a growing bright side. Another sees a shrinking bright side. Which pair names their periods correctly?",
+         "options": [
+          "First: Shukla Paksha; second: Krishna Paksha.",
+          "First: Krishna Paksha; second: Shukla Paksha.",
+          "First: Shukla Paksha; second: Shukla Paksha.",
+          "First: Krishna Paksha; second: Krishna Paksha."
+         ],
+         "answer": 0,
+         "why": {
+          "First: Krishna Paksha; second: Shukla Paksha.": "This swaps the growing and shrinking periods.",
+          "First: Shukla Paksha; second: Shukla Paksha.": "This wrongly gives both children the waxing period.",
+          "First: Krishna Paksha; second: Krishna Paksha.": "This wrongly gives both children the waning period."
+         },
+         "explanation": "Growth is Shukla Paksha, and shrinking is Krishna Paksha in India.",
+         "f": [
+          "1.7",
+          "1.8",
+          "1.9",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-d5",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "The Moon is spherical and shines by reflecting sunlight. Which test best shows this on a model?",
+         "options": [
+          "Place a spherical model beside a bright window.",
+          "Shine sunlight on a spherical model in a dark room.",
+          "Put a spherical model inside a closed box.",
+          "Cover a spherical model with a dull cloth."
+         ],
+         "answer": 1,
+         "why": {
+          "Place a spherical model beside a bright window.": "This adds another light source, so it is not a fair test.",
+          "Put a spherical model inside a closed box.": "This gives the model no sunlight to reflect.",
+          "Cover a spherical model with a dull cloth.": "This blocks the sunlight before it reaches the model."
+         },
+         "explanation": "The model reflects sunlight like the Moon, making this a fair test.",
+         "f": [
+          "1.2"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 171
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-d6",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "find flaw"
+         ],
+         "prompt": "The Moon is spherical. Its changing bright shapes are seen from Earth. A child says the Moon itself changes shape. Which observation best shows the flaw?",
+         "options": [
+          "The Moon stays spherical while its bright part changes.",
+          "The Moon changes shape when its bright part grows.",
+          "The Moon becomes hidden when its bright part shrinks.",
+          "The Moon turns half each time it is bright."
+         ],
+         "answer": 0,
+         "why": {
+          "The Moon changes shape when its bright part grows.": "This wrongly treats a changing bright part as a changing Moon.",
+          "The Moon becomes hidden when its bright part shrinks.": "This confuses a shrinking bright part with the Moon becoming invisible.",
+          "The Moon turns half each time it is bright.": "The Moon itself does not turn into a half circle."
+         },
+         "explanation": "The Moon stays spherical, so its changing bright part is the phase.",
+         "f": [
+          "1.2",
+          "1.6",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 171
+          },
+          {
+           "ch": 11,
+           "p": 172
+          },
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
         }
        ],
        "topicScene": "media/ch11-l1-waning-gibbous-moon-from-kol-b863ab.webp",
@@ -33245,7 +34261,7 @@
       {
        "id": "science-g8-ch11-l2",
        "title": "Finding and Explaining the Moon",
-       "estimatedMinutes": 4,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -33305,6 +34321,48 @@
           {
            "ch": 11,
            "p": 174
+          },
+          {
+           "ch": 11,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "science-g8-ch11-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child sees a full Moon and wants to know where to look at sunrise the next day.",
+         "steps": [
+          "On a full Moon day, the Moon is nearly opposite the Sun.",
+          "After the full Moon, it appears closer to the Sun at sunrise.",
+          "It shifts because the Moon rises about 50 minutes later each day.",
+          "So its position changes, although its own shape does not."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
           },
           {
            "ch": 11,
@@ -33407,26 +34465,6 @@
          ]
         },
         {
-         "type": "truefalse",
-         "id": "science-g8-ch11-l2-a7",
-         "difficulty": 3,
-         "tags": [
-          "moon",
-          "sun",
-          "rising",
-          "setting"
-         ],
-         "prompt": "The Moon always rises and sets at different times from the Sun.",
-         "answer": true,
-         "explanation": "The Moon always rises and sets at different times from the Sun.",
-         "src": [
-          {
-           "ch": 11,
-           "p": 173
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "science-g8-ch11-l2-a8",
          "difficulty": 3,
@@ -33476,6 +34514,117 @@
          ],
          "explanation": "Sunlight reaches the half facing the Sun. That half then becomes bright.",
          "src": [
+          {
+           "ch": 11,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-d1",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "predict"
+         ],
+         "prompt": "A child sees a full Moon today. What will the Moon appear to do at sunrise tomorrow?",
+         "options": [
+          "It will appear farther from the Sun.",
+          "It will appear overhead at sunrise.",
+          "It will appear closer to the Sun.",
+          "It will stay in the same place."
+         ],
+         "answer": 2,
+         "why": {
+          "It will appear farther from the Sun.": "This reverses what happens after a full Moon.",
+          "It will appear overhead at sunrise.": "This describes the position of a half-circle Moon at sunrise.",
+          "It will stay in the same place.": "This mistakes a changing position for an unchanged position."
+         },
+         "explanation": "This is right because the Moon appears closer to the Sun after a full Moon.",
+         "f": [
+          "2.1",
+          "2.2"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 173
+          },
+          {
+           "ch": 11,
+           "p": 173
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-d2",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "fair test"
+         ],
+         "prompt": "A child claims the Moon changes its own shape each night. Which test would fairly check this claim?",
+         "options": [
+          "Watch the Moon's brightness over several nights.",
+          "Move a lamp closer to the Moon each night.",
+          "Ask someone what the Moon looks like.",
+          "Watch the Moon's shape over several nights."
+         ],
+         "answer": 3,
+         "why": {
+          "Watch the Moon's brightness over several nights.": "This checks brightness instead of the Moon's shape.",
+          "Move a lamp closer to the Moon each night.": "This changes the test instead of checking the claim fairly.",
+          "Ask someone what the Moon looks like.": "This checks someone's answer instead of making an observation."
+         },
+         "explanation": "This is right because it checks whether the Moon's own shape changes.",
+         "f": [
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 174
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-d3",
+         "difficulty": 3,
+         "tags": [
+          "deep",
+          "explain"
+         ],
+         "prompt": "A child sees one bright half of the Moon. Why is this half bright?",
+         "options": [
+          "Sunlight lights the half facing the Earth.",
+          "The Moon makes its own bright light.",
+          "The Moon changes shape into a half.",
+          "Sunlight lights the half facing the Sun."
+         ],
+         "answer": 3,
+         "why": {
+          "Sunlight lights the half facing the Earth.": "This confuses the half facing Earth with the sunlit half.",
+          "The Moon makes its own bright light.": "This wrongly says that the Moon produces its own light.",
+          "The Moon changes shape into a half.": "This mistakes the visible shape for a change in the Moon itself."
+         },
+         "explanation": "This is right because sunlight makes the half facing the Sun bright.",
+         "f": [
+          "2.9",
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 11,
+           "p": 174
+          },
+          {
+           "ch": 11,
+           "p": 174
+          },
           {
            "ch": 11,
            "p": 174
@@ -34383,15 +35532,15 @@
          ]
         }
        ],
-       "topicScene": "media/ch11-l1-waning-gibbous-moon-from-kol-b863ab.webp",
-       "sceneAlt": "A bright waning gibbous Moon appears over Kolkata, India, photographed on the twentieth day after the new Moon.",
-       "sceneCaption": "A waning gibbous Moon over Kolkata, photographed on the twentieth day after the new Moon.",
+       "topicScene": "media/ch11-l5-stone-wheel-engraved-in-the--d7e39d.webp",
+       "sceneAlt": "A carved stone wheel at Konark Sun Temple acts as a sundial, with engravings showing people’s daily activities.",
+       "sceneCaption": "One of Konark Sun Temple’s 24 wheels acts as a sundial, showing daily activities in its carvings.",
        "sceneCredit": {
-        "text": "Waning gibbous moon from Kolkata April 2020 by Paramanu Sarkar 03 by Paramanu Sarkar, CC BY-SA 4.0, via Wikimedia Commons",
-        "url": "https://commons.wikimedia.org/wiki/File:Waning_gibbous_moon_from_Kolkata_April_2020_by_Paramanu_Sarkar_03.jpg",
+        "text": "Stone wheel engraved in the 13th century built Konark Sun Temple in Or by Subhrajyoti07, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Stone_wheel_engraved_in_the_13th_century_built_Konark_Sun_Temple_in_Orissa,_India.jpg",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "creator": "Paramanu Sarkar"
+        "creator": "Subhrajyoti07"
        }
       },
       {
@@ -34678,6 +35827,21 @@
          ]
         }
        ],
+       "topicScene": "media/ch11-l6-barsana-holi-festival-553ef8.webp",
+       "sceneAlt": "A colourful scene shows devotees inside Krishan temple in Nandgaon during Holi.",
+       "sceneCaption": "Devotees gather inside Krishan temple in Nandgaon during the colourful Holi festival.",
+       "sceneCredit": {
+        "text": "Barsana Holi Festival by Narender9, CC BY-SA 3.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Barsana_Holi_Festival.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "creator": "Narender9"
+       }
+      },
+      {
+       "id": "science-g8-ch11-exam",
+       "title": "Test practice",
+       "estimatedMinutes": 9,
        "topicScene": "media/ch11-l1-waning-gibbous-moon-from-kol-b863ab.webp",
        "sceneAlt": "A bright waning gibbous Moon appears over Kolkata, India, photographed on the twentieth day after the new Moon.",
        "sceneCaption": "A waning gibbous Moon over Kolkata, photographed on the twentieth day after the new Moon.",
@@ -34687,7 +35851,213 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "creator": "Paramanu Sarkar"
-       }
+       },
+       "activities": [
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During the daytime, Meera saw the Moon shining. She knew the Moon is spherical and shines by reflecting sunlight. She also noticed that its bright part changes shape. At one point, it looked like a full circle. Over the next two-week period, Meera watched the bright part become smaller and eventually reach a half circle. She wondered what these changing shapes were called.",
+         "prompt": "Why was Meera able to see the Moon shining during the daytime?",
+         "options": [
+          "The Moon creates its own light.",
+          "Its light is sunlight reflected by the Moon.",
+          "The Moon reflects light from Earth.",
+          "The Moon is visible only when it has a full-circle bright part."
+         ],
+         "answer": 1,
+         "why": {
+          "The Moon creates its own light.": "The Moon shines by reflecting sunlight rather than creating its own light.",
+          "The Moon reflects light from Earth.": "The source of the Moon’s reflected light is sunlight, not Earth.",
+          "The Moon is visible only when it has a full-circle bright part.": "The Moon can be seen during the daytime even when it does not have a full-circle bright part."
+         },
+         "explanation": "The Moon shines by reflecting sunlight, so it can be seen during the daytime."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "During the daytime, Meera saw the Moon shining. She knew the Moon is spherical and shines by reflecting sunlight. She also noticed that its bright part changes shape. At one point, it looked like a full circle. Over the next two-week period, Meera watched the bright part become smaller and eventually reach a half circle. She wondered what these changing shapes were called.",
+         "prompt": "If Meera observed the Moon on new Moon day, what change should she expect after about a week?",
+         "options": [
+          "The bright side will grow until it reaches a half circle.",
+          "The bright part will shrink until it reaches a half circle.",
+          "The Moon will remain invisible.",
+          "The bright part will become a full circle immediately."
+         ],
+         "answer": 0,
+         "why": {
+          "The bright part will shrink until it reaches a half circle.": "A shrinking bright part belongs to the waning period.",
+          "The Moon will remain invisible.": "On new Moon day the Moon is not visible, but its bright side later grows.",
+          "The bright part will become a full circle immediately.": "The bright part grows to a half circle before becoming a full circle."
+         },
+         "explanation": "After the new Moon, the bright side grows to a half circle in about a week."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): Meera could see the Moon during the daytime because it shines by reflecting sunlight.\nReason (R): The Moon is spherical and reflects sunlight.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "Both statements are true, and the reason explains why the Moon could be seen during the daytime."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l1-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): During Krishna Paksha, the bright part of the Moon grows after the new Moon.\nReason (R): In India, the waxing period is called Shukla Paksha.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 3,
+         "explanation": "The statement is false because Krishna Paksha is the waning period, while the reason is true."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch11-l1-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how the changing shapes of the Moon are described using the terms phases, waxing period, and waning period.",
+         "answer": "The changing shapes seen from Earth are called the phases of the Moon. The Moon is spherical and shines by reflecting sunlight, while the shape of its visible bright part changes. After the new Moon, the bright side grows to a half circle in about a week. During the waning period, the bright part shrinks from a full circle to a half circle in about a week. In India, the growing period is called Shukla Paksha and the shrinking period is called Krishna Paksha.",
+         "points": [
+          "Calls the changing shapes the phases of the Moon.",
+          "States that the Moon is spherical and reflects sunlight.",
+          "Explains that the bright side grows after the new Moon.",
+          "Identifies Shukla Paksha as waxing and Krishna Paksha as waning."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student sees a half-circle Moon overhead at sunrise. The next morning, the student notices that the Moon rises about 50 minutes later than it did the day before. On another morning, the student sees the full Moon nearly opposite the Sun. In the evening, the Moon is easiest to spot when it is waxing. The student thinks that the Moon's changing shapes mean that the Moon itself is changing.",
+         "prompt": "What should the student do if the student wants to spot a waxing Moon?",
+         "options": [
+          "Look for it at sunset.",
+          "Look for it only at sunrise.",
+          "Wait until the Moon is nearly opposite the Sun.",
+          "Look for it before sunrise."
+         ],
+         "answer": 0,
+         "why": {
+          "Look for it only at sunrise.": "Option 1 is wrong because sunrise is the easiest viewing time for a waning Moon.",
+          "Wait until the Moon is nearly opposite the Sun.": "Option 2 is wrong because being nearly opposite the Sun describes the full Moon.",
+          "Look for it before sunrise.": "Option 3 is wrong because a waxing Moon is easiest to spot at sunset, not before sunrise."
+         },
+         "explanation": "Option 0 is correct because a waxing Moon is easiest to spot at sunset."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-x2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "A student sees a half-circle Moon overhead at sunrise. The next morning, the student notices that the Moon rises about 50 minutes later than it did the day before. On another morning, the student sees the full Moon nearly opposite the Sun. In the evening, the Moon is easiest to spot when it is waxing. The student thinks that the Moon's changing shapes mean that the Moon itself is changing.",
+         "prompt": "Why should the student correct the idea that the Moon's own shape is changing?",
+         "options": [
+          "Sunlight makes the half facing the Sun bright, changing the bright shape seen from Earth.",
+          "The Moon produces its own light, causing its shape to change each day.",
+          "The Moon's own shape changes because only one half always faces Earth.",
+          "The half facing the Sun becomes dark, so the visible bright shape changes."
+         ],
+         "answer": 0,
+         "why": {
+          "The Moon produces its own light, causing its shape to change each day.": "Option 1 is wrong because the Moon does not produce light of its own.",
+          "The Moon's own shape changes because only one half always faces Earth.": "Option 2 is wrong because only one half facing Earth does not mean that the Moon's shape changes.",
+          "The half facing the Sun becomes dark, so the visible bright shape changes.": "Option 3 is wrong because the half facing the Sun receives sunlight and becomes bright, not dark."
+         },
+         "explanation": "Option 0 is correct because sunlight brightens the half facing the Sun while the Moon's own shape remains unchanged."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-r1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): The Moon can appear to have different shapes even though its own shape does not change.\nReason (R): Sunlight makes the half of the Moon facing the Sun bright, so the bright part seen from Earth can have a different shape.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 0,
+         "explanation": "Both statements are true, and the lighting of the Moon explains why its apparent shape changes."
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch11-l2-r2",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "assertion"
+         ],
+         "prompt": "Assertion (A): A half-circle Moon is overhead at sunrise.\nReason (R): The Moon rises about 50 minutes later each day.",
+         "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is not the correct explanation of A.",
+          "A is true but R is false.",
+          "A is false but R is true."
+         ],
+         "answer": 1,
+         "explanation": "Both statements are true, but the daily change in rising time does not explain why a half-circle Moon is overhead at sunrise."
+        },
+        {
+         "type": "explain",
+         "id": "science-g8-ch11-l2-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain why the Moon appears to change shape even though the Moon's own shape does not change.",
+         "answer": "The Moon does not produce light of its own, so sunlight is what makes it visible. The half of the Moon facing the Sun receives sunlight and becomes bright. As the Moon is seen in different positions relative to the Sun, the bright part visible from Earth can appear to have a changing shape. The Moon itself does not change shape. Also, only one half always faces Earth, but this is different from which half is lit by the Sun.",
+         "points": [
+          "The Moon does not produce its own light.",
+          "The half facing the Sun receives sunlight.",
+          "The visible bright part can appear to change shape.",
+          "The Moon's own shape remains unchanged."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
+        }
+       ]
       }
      ],
      "boss": {
@@ -35040,6 +36410,16 @@
        "estimatedMinutes": 4,
        "activities": [
         {
+         "type": "hook",
+         "id": "science-g8-ch12-l1-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Why do elephants sometimes visit farms and villages?",
+         "explanation": "Now read on to find out."
+        },
+        {
          "type": "concept",
          "id": "science-g8-ch12-l1-a1",
          "difficulty": 1,
@@ -35307,13 +36687,33 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch12-l1-asian-elephant-elephas-maxim-301d45.webp",
+       "sceneAlt": "A herd of Asian elephants crosses a road through a wildlife corridor in Manas National Park.",
+       "sceneCaption": "A herd of Asian elephants crosses a road through a corridor in Manas National Park.",
+       "sceneCredit": {
+        "text": "Asian Elephant Elephas maximus DSC0702-01 by DhirajDas991, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Asian_Elephant_Elephas_maximus_DSC0702-01.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "DhirajDas991"
+       }
       },
       {
        "id": "science-g8-ch12-l2",
        "title": "Populations, Communities and Pollination",
        "estimatedMinutes": 5,
        "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch12-l2-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "What happens when a habitat’s living and non-living parts work together?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "science-g8-ch12-l2-a1",
@@ -35598,13 +36998,289 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch12-l2-mangrove-forest-at-fish-eagl-50a5df.webp",
+       "sceneAlt": "Mangrove trees grow along the coast at Fish Eagle Point in Tanzania, creating a habitat for marine and terrestrial wildlife.",
+       "sceneCaption": "Mangrove forests provide habitat for marine and terrestrial wildlife while protecting Tanzania’s shoreline from erosion.",
+       "sceneCredit": {
+        "text": "Mangrove forest at Fish Eagle Point, Subutuni, Tanzania by Fatih Renkligil, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Mangrove_forest_at_Fish_Eagle_Point,_Subutuni,_Tanzania.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Fatih Renkligil"
+       }
+      },
+      {
+       "id": "science-g8-ch12-l3",
+       "title": "Interactions and Ecosystems",
+       "estimatedMinutes": 4,
+       "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch12-l3-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How could one small pond change the life around it?",
+         "explanation": "Now read on to find out."
+        },
+        {
+         "type": "concept",
+         "id": "science-g8-ch12-l3-a1",
+         "difficulty": 1,
+         "tags": [
+          "ecosystems",
+          "interactions",
+          "biotic",
+          "abiotic"
+         ],
+         "title": "Living and Non-Living Parts",
+         "body": "Living things are biotic components. Non-living surroundings are abiotic components. These parts affect each other. Fish eat dragonfly larvae, so ponds with fish have fewer dragonflies. These insects help pollinate flowers near the ponds. Pollination helps nearby plants produce seeds. Plants and animals depend on one another for nutrition, respiration and reproduction. Together, biotic and abiotic components form an ecosystem.",
+         "keyPoints": [
+          "Biotic and abiotic components affect each other.",
+          "Plants and animals depend on one another.",
+          "Biotic and abiotic components form an ecosystem."
+         ],
+         "explanation": "A habitat works through many linked interactions.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 194
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 197
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "ponds",
+          "fish",
+          "dragonflies"
+         ],
+         "title": "Fish and Dragonflies",
+         "prompt": "Ponds with fish have fewer dragonflies than ponds without fish.",
+         "answer": true,
+         "explanation": "Fish eat dragonfly larvae, so ponds with fish have fewer dragonflies.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 194
+          },
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "fish",
+          "food",
+          "dragonfly larvae"
+         ],
+         "title": "Fish Food",
+         "prompt": "What do fish eat in the pond study?",
+         "options": [
+          "Dragonfly larvae",
+          "Flowers near ponds",
+          "Plant seeds"
+         ],
+         "answer": 0,
+         "explanation": "Fish eat dragonfly larvae in the pond study.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "fillblank",
+         "id": "science-g8-ch12-l3-a4",
+         "difficulty": 2,
+         "tags": [
+          "abiotic",
+          "survival",
+          "living organisms"
+         ],
+         "title": "Needed for Survival",
+         "prompt": "Living organisms depend on ______ components for survival.",
+         "answers": [
+          "abiotic"
+         ],
+         "hint": "These components are the non-living parts of a habitat.",
+         "explanation": "Living organisms depend on abiotic components for survival.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "matchpairs",
+         "id": "science-g8-ch12-l3-a5",
+         "difficulty": 2,
+         "tags": [
+          "pollination",
+          "seeds",
+          "dragonflies"
+         ],
+         "title": "Connect the Pond Interactions",
+         "prompt": "Match each part with its connection in the pond study.",
+         "pairs": [
+          [
+           "Fish",
+           "Eat dragonfly larvae"
+          ],
+          [
+           "Ponds with fish",
+           "Have fewer dragonflies"
+          ],
+          [
+           "Flowers near ponds",
+           "Receive help from pollination"
+          ],
+          [
+           "Nearby plants",
+           "Produce seeds with pollination help"
+          ]
+         ],
+         "explanation": "The pond study shows how each interaction affects another part.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "science-g8-ch12-l3-a7",
+         "difficulty": 3,
+         "tags": [
+          "interactions",
+          "survival",
+          "biotic",
+          "abiotic"
+         ],
+         "title": "Important Interactions",
+         "prompt": "Both biotic-biotic and biotic-abiotic interactions are important for survival.",
+         "answer": true,
+         "explanation": "Living organisms interact with one another and with abiotic components.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 195
+          }
+         ]
+        },
+        {
+         "type": "mcq",
+         "id": "science-g8-ch12-l3-a9",
+         "difficulty": 3,
+         "tags": [
+          "ecosystems",
+          "biotic",
+          "abiotic"
+         ],
+         "title": "The Big Idea",
+         "prompt": "What does the pond study show about ecosystem parts?",
+         "options": [
+          "Only living parts can change a habitat.",
+          "Only non-living parts can change a habitat.",
+          "Biotic and abiotic parts affect each other.",
+          "Living and non-living parts act alone."
+         ],
+         "answer": 2,
+         "explanation": "Biotic and abiotic components affect each other and together form an ecosystem.",
+         "src": [
+          {
+           "ch": 12,
+           "p": 195
+          },
+          {
+           "ch": 12,
+           "p": 197
+          }
+         ]
+        }
+       ],
+       "topicScene": "media/ch12-l3-preparing-hine-s-emerald-dra-0a8b85.webp",
+       "sceneAlt": "Hine’s emerald dragonfly larvae are kept in cages beside a pond where good water will not freeze.",
+       "sceneCaption": "Hine’s emerald dragonfly larvae are placed in pond cages to protect them through winter.",
+       "sceneCredit": {
+        "text": "Preparing Hine's Emerald Dragonfly Larvae for Winter (30474727201) by USFWSmidwest, Public domain, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Preparing_Hine%27s_Emerald_Dragonfly_Larvae_for_Winter_(30474727201).jpg",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "creator": "USFWSmidwest"
+       }
       },
       {
        "id": "science-g8-ch12-l4",
        "title": "Food Chains and Food Webs",
        "estimatedMinutes": 5,
        "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch12-l4-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Who eats whom in a busy little meadow?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "science-g8-ch12-l4-a1",
@@ -35921,13 +37597,33 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch12-l4-red-fox-15260586242-2a4b24.webp",
+       "sceneAlt": "A red fox with a white-tipped tail is shown in Denali National Park.",
+       "sceneCaption": "A red fox, an omnivore that eats berries, mice, voles, lemmings and arctic ground squirrels.",
+       "sceneCredit": {
+        "text": "Red Fox (15260586242) by Sandy Brown Jensen from Eugene, OR, USA, CC BY-SA 2.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Red_Fox_(15260586242).jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "creator": "Sandy Brown Jensen from Eugene, OR, USA"
+       }
       },
       {
        "id": "science-g8-ch12-l5",
        "title": "Waste, Migration and Cascading Change",
        "estimatedMinutes": 5,
        "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch12-l5-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How do waste and migration connect to changes across an ecosystem?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "science-g8-ch12-l5-a1",
@@ -36181,13 +37877,33 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch12-l5-fungi-growing-on-dead-wood-891ef0.webp",
+       "sceneAlt": "Fungi grow on dead wood beside a revitalised creek bed in Šumava National Park.",
+       "sceneCaption": "Fungi growing on dead wood illustrate how fungi live on and break down dead matter.",
+       "sceneCredit": {
+        "text": "Fungi growing on dead wood by Slunkopunk, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Fungi_growing_on_dead_wood.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Slunkopunk"
+       }
       },
       {
        "id": "science-g8-ch12-l6",
        "title": "Balance, Benefits and Sustainable Nature",
        "estimatedMinutes": 5,
        "activities": [
+        {
+         "type": "hook",
+         "id": "science-g8-ch12-l6-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "How do living things share resources, and how can people protect nature?",
+         "explanation": "Now read on to find out."
+        },
         {
          "type": "concept",
          "id": "science-g8-ch12-l6-a1",
@@ -36490,7 +38206,17 @@
           }
          ]
         }
-       ]
+       ],
+       "topicScene": "media/ch12-l6-a-bee-flower-interaction-c0cf25.webp",
+       "sceneAlt": "A bee interacts with a flower, with the plant providing food and the bee enabling reproduction.",
+       "sceneCaption": "A bee and flower show mutualism: the plant provides food, while the bee enables reproduction.",
+       "sceneCredit": {
+        "text": "A bee-flower interaction by Rashmi H Pardhi, CC BY-SA 4.0, via Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:A_bee-flower_interaction.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "creator": "Rashmi H Pardhi"
+       }
       }
      ],
      "boss": {
@@ -36820,7 +38546,17 @@
          }
         ]
        }
-      ]
+      ],
+      "topicScene": "media/ch12-l1-asian-elephant-elephas-maxim-301d45.webp",
+      "sceneAlt": "A herd of Asian elephants crosses a road through a wildlife corridor in Manas National Park.",
+      "sceneCaption": "A herd of Asian elephants crosses a road through a corridor in Manas National Park.",
+      "sceneCredit": {
+       "text": "Asian Elephant Elephas maximus DSC0702-01 by DhirajDas991, CC BY-SA 4.0, via Wikimedia Commons",
+       "url": "https://commons.wikimedia.org/wiki/File:Asian_Elephant_Elephas_maximus_DSC0702-01.jpg",
+       "license": "CC BY-SA 4.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+       "creator": "DhirajDas991"
+      }
      }
     }
    ]
