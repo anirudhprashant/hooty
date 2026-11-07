@@ -20559,7 +20559,7 @@
       {
        "id": "science-ch6-l5",
        "title": "5. Mass and Volume",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -20659,6 +20659,36 @@
            "p": 115
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch6-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "tumblers",
+         "params": {},
+         "title": "Same tumbler, different water",
+         "tasks": [
+          {
+           "say": "Make tumbler A hold more water than B. Which is heavier?",
+           "when": "a > b",
+           "then": "A has more volume of water and more mass, so A is heavier: the balance tips towards it."
+          },
+          {
+           "say": "Fill both tumblers right to the top.",
+           "when": "a == 250 and b == 250",
+           "then": "Same capacity and both full: the same volume, 250 mL, and about the same mass."
+          },
+          {
+           "say": "Empty tumbler B and fill A. What does the balance show?",
+           "when": "a == 250 and b == 0",
+           "then": "A has volume and mass; B has none, so the balance tips right down towards A."
+          }
+         ],
+         "takeaway": "Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass.",
+         "explanation": "Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass."
         },
         {
          "type": "worked",
