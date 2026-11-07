@@ -648,7 +648,7 @@ export const KITS = {
     ],
   },
   counting: {
-    grades: [1, 1], perChapter: { 1: 4 }, match: [/\bcount(ing|s)?\b/, /numbers? from one to|one to nine|\bnumbers?\b/, /\bone more\b|\bmore and less\b|\bjoins?\b/, /\bhow many\b/],
+    grades: [1, 1], perChapter: { 1: 4 }, match: [/\bcount(ing|s)?\b/, /numbers? from one to|one to nine|\bnumber names?\b|beyond 10|\bto 20\b/, /\bone more\b|\bone less\b|\bmore and less\b|\bbirds join\b/, /\bgroups of ten\b/],
     title: 'Count the counters', takeaway: 'Each counter you add makes one more: the number goes up by one.',
     tasks: [
       { say: 'Show five.', when: 'n == 5', then: 'Five fills the top frame: five counters.' },
@@ -677,7 +677,7 @@ export const KITS = {
     ],
   },
   sortbuttons: {
-    grades: [1, 1], match: [/\bsort(ing|ed)?\b/, /\bgroups?\b/, /\bbuttons?\b/],
+    grades: [1, 1], match: [/\bsort(ing|ed)?\b/, /\bgroups? of (objects|things)\b|\bmaking groups\b/, /\bother ways\b|\bsame way\b/],
     title: 'Sort the buttons', takeaway: 'The same things can be sorted in different ways: by colour, by size or by holes.',
     tasks: [
       { say: 'Sort the buttons by colour. How many groups are there?', when: 'by == 0', then: 'Three groups: red, blue and yellow.' },
@@ -693,6 +693,18 @@ export const KITS = {
       { say: 'Fill both tumblers right to the top.', when: 'a == 250 and b == 250', then: 'Same capacity and both full: the same volume, 250 mL, and about the same mass.' },
       { say: 'Empty tumbler B and fill A. What does the balance show?', when: 'a == 250 and b == 0', then: 'A has volume and mass; B has none, so the balance tips right down towards A.' },
     ],
+  },
+  addtake: {
+    grades: [1, 1], perChapter: { 1: 4 }, params: (text) => ({ kind: /take away|taking away|taken away|how many left|\bleft\b|subtract|\bgo(es)? away|flew away/.test(text) ? 'take' : 'add' }),
+    match: [/\badd(ing|ition)?\b/, /\bsums?\b/, /\bnumber pairs?\b|\bmaking 10\b/, /\baltogether\b|\bin all\b|\btotal\b/, /take away|taking away|taken away|how many left|\bsubtraction\b|\bsubtract/, /\bjoin(s|ing)?\b|\btogether\b/],
+    title: 'Join or take away', takeaway: 'Joining groups makes a bigger number and taking some away leaves a smaller one.',
+    tasks: (p) => (p.kind === 'take'
+      ? [{ say: 'Start with 9 and take 6 away. How many are left?', when: 'n == 9 and k == 6', then: '9 take away 6 leaves 3.' },
+         { say: 'Start with 7 and take 4 away.', when: 'n == 7 and k == 4', then: '7 take away 4 leaves 3.' },
+         { say: 'Take all of them away. How many are left?', when: 'n == k and n > 0', then: 'When you take all away, none are left: zero.' }]
+      : [{ say: 'Join 4 and 2. How many in all?', when: 'a == 4 and b == 2', then: '4 and 2 together make 6.' },
+         { say: 'Find two groups that make 10.', when: 'a + b == 10 and a > 0 and b > 0', then: 'These two numbers make 10: a number pair for ten.' },
+         { say: 'Add 7 and 3.', when: 'a == 7 and b == 3', then: '7 + 3 = 10.' }]),
   },
   // ---- geography and history ----
   timezone: {

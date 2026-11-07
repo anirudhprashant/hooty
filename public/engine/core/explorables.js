@@ -1419,6 +1419,28 @@ export const WIDGETS = {
       return { kids, say: v.a === v.b ? `Both tumblers hold ${v.a} mL of water, so they have the same volume and about the same mass. The balance stays level.` : `Tumbler ${v.a > v.b ? 'A' : 'B'} holds more water (${Math.max(v.a, v.b)} mL against ${Math.min(v.a, v.b)} mL), so it takes up more space: more volume. It also has more mass, so it is the heavier one. Both tumblers have the same capacity (250 mL), but they do not hold the same amount.` };
     },
   },
+  addtake: {
+    subject: 'maths', about: 'Join two groups of counters to add (4 + 2 = 6; 7 and 3 make 10) or start with a group and take some away to see how many are left (9 − 6 = 3), shown in ten-frames with the sum written beside. Param kind: "add" or "take". For addition, joining groups, number pairs, taking away, how many are left, subtraction.',
+    params: { kind: 'add' },
+    dynamicSliders: (p) => (p.kind === 'take' ? [['n', 'Start with', 0, 20, 1, 5], ['k', 'Take away', 0, 20, 1, 1]] : [['a', 'First group', 0, 10, 1, 3], ['b', 'Second group', 0, 10, 1, 4]]),
+    draw(v, p) {
+      const take = p.kind === 'take', kids = [], cw = 38, x0 = 24;
+      const total = take ? v.n : v.a + v.b, gone = take ? Math.min(v.k, v.n) : 0, left = total - gone;
+      for (let fr = 0; fr < 2; fr++) for (let i = 0; i < 10; i++) {
+        const x = x0 + (i % 5) * cw, y = 50 + fr * 108 + Math.floor(i / 5) * cw, c = fr * 10 + i, inGroup = c < total;
+        kids.push(R(x, y, cw - 4, cw - 4, '#f3f0ff', { w: 2, r: 5 }));
+        if (!inGroup) continue;
+        const col = take ? (c >= left ? '#c9c9d6' : '#5fc9b8') : (c < v.a ? '#5fc9b8' : '#f2a33a'), cx = x + (cw - 4) / 2, cy = y + (cw - 4) / 2;
+        kids.push(CIRC(cx, cy, 13, col, { w: 2 }));
+        if (take && c >= left) kids.push(L(cx - 9, cy - 9, cx + 9, cy + 9, '#c0392b', 3), L(cx + 9, cy - 9, cx - 9, cy + 9, '#c0392b', 3));
+      }
+      if (take && v.k > v.n) kids.push(T(400, 250, 'you cannot take away more than you have', { z: 12, w: 600, f: '#c0392b' }));
+      kids.push(T(400, 80, take ? `${v.n} − ${Math.min(v.k, v.n)} = ${left}` : `${v.a} + ${v.b} = ${total}`, { z: 34, w: 700 }));
+      kids.push(T(400, 130, take ? `${left} left` : total === 10 && v.a > 0 && v.b > 0 ? `${v.a} and ${v.b} make 10` : `${total} in all`, { z: 18, w: 700, f: take ? '#c2510e' : '#058a68' }));
+      if (!take) kids.push(T(400, 170, v.b === 0 || v.a === 0 ? 'adding none changes nothing' : v.a === v.b ? 'the same number twice: a double' : '', { z: 13, w: 600, f: '#6b5a8a' }));
+      return { kids, say: take ? (v.k > v.n ? `You cannot take away ${v.k} from ${v.n}: there are not enough.` : `${v.n} take away ${v.k} leaves ${left}.${left === 0 ? ' None are left.' : ''}`) : `${v.a} and ${v.b} together make ${total}: ${v.a} + ${v.b} = ${total}.${total === 10 && v.a > 0 && v.b > 0 ? ' These two numbers make 10.' : ''}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
