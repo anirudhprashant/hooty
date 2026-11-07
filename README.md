@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/characters/hooty/snowy3-happy.webp" alt="Hooty, a friendly owl in a blue cape with a satchel and a scroll, wings raised in a cheer" width="260">
+<img src="public/characters/blob/hooty-happy.webp" alt="Hooty, a round sunny-yellow character with a big smile, both arms raised in a cheer" width="260">
 
 # Hooty
 
@@ -16,11 +16,11 @@ No sign-up. No ads. Nothing a child does ever leaves their device.
 
 <br>
 
-<img src="docs/readme/home.webp" alt="Hooty's home screen: a big Start button beside Hooty standing in front of a castle">
+<img src="docs/readme/home.webp" alt="Hooty's home screen: a big Start button beside Hooty waving in front of a cartoon castle on green hills">
 
 ## 🌟 Meet your guide
 
-Hooty, the owl in the blue cape, walks beside the child through every lesson. Lumi, the young explorer, is there too, and each child can pick whichever guide they like in Settings. Either one asks a question that makes you curious, explains the idea in simple words, cheers when you get it, and shows you why when you don't.
+Hooty, our round, sunny-yellow friend, walks beside the child through every lesson. Lumi, the young explorer, is there too, and each child can pick whichever guide they like in Settings. Either one asks a question that makes you curious, explains the idea in simple words, cheers when you get it, and shows you why when you don't.
 
 The aim is simple: a child should understand the idea, not just remember the sentence. And they should still be ready for their school exams.
 
@@ -44,7 +44,7 @@ The aim is simple: a child should understand the idea, not just remember the sen
   </tr>
   <tr>
     <td><img src="docs/readme/trail.webp" alt="A winding trail of lessons shown as stars"><br><sub><b>The trail:</b> every chapter, one small step at a time</sub></td>
-    <td><img src="docs/readme/moonlit.webp" alt="The home screen in a dark theme with a castle at night"><br><sub><b>Moonlit Academy:</b> one of five worlds to choose from</sub></td>
+    <td><img src="docs/readme/moonlit.webp" alt="The home screen in a dark theme: Hooty waving under a full moon beside a wizard castle"><br><sub><b>Moonlit Academy:</b> one of five worlds to choose from</sub></td>
   </tr>
 </table>
 
@@ -114,7 +114,7 @@ To NCERT for the textbooks every lesson is built on, and to the photographers an
 
 <div align="center">
   <br>
-  <img src="public/characters/hooty/snowy3-avatar-idle.webp" alt="Hooty's smiling face" width="84">
+  <img src="public/characters/blob/hooty-avatar-idle.webp" alt="Hooty's smiling face" width="84">
   <br>
   <sub>Made with love, for every child who ever asked "but why?"</sub>
 </div>
