@@ -653,7 +653,7 @@ export const KITS = {
     ],
   },
   counting: {
-    grades: [1, 1], perChapter: { 1: 4 }, match: [/\bcount(ing|s)?\b/, /numbers? from one to|one to nine|\bnumber names?\b|beyond 10|\bto 20\b/, /\bone more\b|\bone less\b|\bmore and less\b|\bbirds join\b/, /\bgroups of ten\b/],
+    grades: [1, 1], perChapter: { 1: 4 }, match: [/^(?!.*\b(2[1-9]|[3-9]\d|100)\b).*\bcount(ing|s)?\b/, /numbers? from one to|one to nine|\bnumber names?\b|beyond 10|\bto 20\b/, /\bone more\b|\bone less\b|\bmore and less\b|\bbirds join\b/, /\bgroups of ten\b/],
     title: 'Count the counters', takeaway: 'Each counter you add makes one more: the number goes up by one.',
     tasks: [
       { say: 'Show five.', when: 'n == 5', then: 'Five fills the top frame: five counters.' },
@@ -710,6 +710,16 @@ export const KITS = {
       : [{ say: 'Join 4 and 2. How many in all?', when: 'a == 4 and b == 2', then: '4 and 2 together make 6.' },
          { say: 'Find two groups that make 10.', when: 'a + b == 10 and a > 0 and b > 0', then: 'These two numbers make 10: a number pair for ten.' },
          { say: 'Add 7 and 3.', when: 'a == 7 and b == 3', then: '7 + 3 = 10.' }]),
+  },
+  numberwords: {
+    grades: [1, 1], perChapter: { 1: 6 }, match: [/counting \d+ to \d+|\d+ to \d+/, /\bwritten as\b/, /\btens? frames?\b/, /\bnumber (names?|list)\b/, /\bmissing numbers?\b/, /\beach box can hold ten\b|\btens\b/],
+    title: 'Count to a hundred', takeaway: 'Every full row is a ten: tens and ones tell you the number, and the number name says it in words.',
+    tasks: [
+      { say: 'Show thirty six. How many tens and ones?', when: 'n == 36', then: 'Thirty Six is 3 tens and 6 ones.' },
+      { say: 'Show fifty: five full rows.', when: 'n == 50', then: 'Fifty is 5 tens and no ones.' },
+      { say: 'Show twenty five.', when: 'n == 25', then: 'Twenty Five is 2 tens and 5 ones.' },
+      { say: 'Fill every row: show one hundred.', when: 'n == 100', then: 'Ten tens make one hundred.' },
+    ],
   },
   // ---- geography and history ----
   timezone: {

@@ -1441,6 +1441,22 @@ export const WIDGETS = {
       return { kids, say: take ? (v.k > v.n ? `You cannot take away ${v.k} from ${v.n}: there are not enough.` : `${v.n} take away ${v.k} leaves ${left}.${left === 0 ? ' None are left.' : ''}`) : `${v.a} and ${v.b} together make ${total}: ${v.a} + ${v.b} = ${total}.${total === 10 && v.a > 0 && v.b > 0 ? ' These two numbers make 10.' : ''}` };
     },
   },
+  numberwords: {
+    subject: 'maths', about: 'Numbers up to 100 in rows of ten counters (a full row is one ten): the numeral, the number name written in words (36 is Thirty Six), and how many tens and ones. For counting to 100, tens and ones, number names, writing numbers in words, tens frames.',
+    sliders: [['n', 'The number', 0, 100, 1, 36]],
+    draw(v) {
+      const small = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'], tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+      const word = v.n === 100 ? 'One Hundred' : v.n < 20 ? small[v.n] : tens[Math.floor(v.n / 10)] + (v.n % 10 ? ' ' + small[v.n % 10] : '');
+      const t = Math.floor(v.n / 10), o = v.n % 10, kids = [];
+      for (let r = 0; r < 10; r++) {
+        const y = 28 + r * 25;
+        kids.push(R(18, y - 11, 236, 22, r < t ? '#e3f6f1' : '#f6f3fc', { w: 1.5, r: 5 }));
+        for (let c = 0; c < 10; c++) { const k = r * 10 + c; if (k < v.n) kids.push(CIRC(32 + c * 22, y, 8, r < t ? '#5fc9b8' : '#f2a33a', { w: 1.5 })); }
+      }
+      kids.push(T(430, 88, String(v.n), { z: 64, w: 700 }), T(430, 138, word, { z: 22, w: 700, f: '#6b45c8' }), T(430, 184, `${t} ten${t === 1 ? '' : 's'}${v.n < 100 ? ` and ${o} one${o === 1 ? '' : 's'}` : ''}`, { z: 16, w: 700, f: '#058a68' }), T(430, 212, v.n === 100 ? 'ten tens make one hundred' : t ? 'each full row is a ten' : '', { z: 12, w: 600, f: '#6b5a8a' }));
+      return { kids, say: v.n === 0 ? 'Zero: no counters.' : `${word}: ${v.n} is ${t} ${t === 1 ? 'ten' : 'tens'}${v.n < 100 ? ` and ${o} ${o === 1 ? 'one' : 'ones'}` : ', which is one hundred'}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

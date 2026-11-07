@@ -53,7 +53,7 @@ for (const slug of books) {
       const title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
       const ranked = Object.entries(KITS)
         .filter(([id, k]) => WIDGETS[id] && [WIDGETS[id].subject, ...(k.subjects || [])].some((x) => kinds.includes(x)) && grade >= k.grades[0] && grade <= k.grades[1])
-        .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= (typeof x[1].minScore === 'object' ? (x[1].minScore[grade] ?? 3) : (x[1].minScore || 3)))   // minScore: a number, or { grade: n } to ask for more evidence in one class.sort((a, b) => b[2] - a[2]);
+        .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= (typeof x[1].minScore === 'object' ? (x[1].minScore[grade] ?? 3) : (x[1].minScore || 3))).sort((a, b) => b[2] - a[2]);   // best score first. minScore: a number, or { grade: n } to ask for more evidence in one class
       for (const [id, kit] of ranked) {
         const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || []), grade) : {};
         if (kit.usable && !kit.usable(params)) continue;
