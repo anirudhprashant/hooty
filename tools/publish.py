@@ -57,7 +57,7 @@ def thumbs():
         t = os.path.join(os.path.dirname(f), 'thumbs', os.path.basename(f))
         if os.path.exists(t) and os.path.getmtime(t) >= os.path.getmtime(f): continue
         os.makedirs(os.path.dirname(t), exist_ok=True)
-        if subprocess.run(['magick', f, '-resize', '240x240>', '-quality', '68', t], capture_output=True).returncode == 0: made += 1
+        if subprocess.run(['convert', f, '-resize', '240x240>', '-quality', '68', t], capture_output=True).returncode == 0: made += 1
     print('thumbnails made:', made, flush=True)
 
 def stamp():
