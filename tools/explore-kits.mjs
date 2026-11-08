@@ -270,7 +270,7 @@ export const KITS = {
     ],
   },
   seasons: {
-    grades: [6, 9], titleOnly: true, match: [/\bseasons?\b/, /revolution/, /\btilt(ed)?\b/, /\baxis\b/, /\bsummer\b|\bwinter\b/],
+    grades: [6, 9], subjects: ['social'], titleOnly: true, match: [/\bseasons?\b/, /\brevolutions?\b/, /\btilt(ed)?\b/, /\baxis\b/, /\bsummer\b|\bwinter\b/],
     title: 'Go round the Sun', takeaway: 'The tilted Earth leans each half toward the Sun in turn, which makes the seasons.',
     tasks: [{ say: 'Go to December.', when: 'month == 12', then: 'Now the southern half leans toward the Sun: summer there, winter in India.' }],
   },
