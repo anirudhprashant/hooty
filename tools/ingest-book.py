@@ -56,9 +56,11 @@ def fetch_inputs(src, tmp):
 def page_count(pdf):
     m = re.search(r'Pages:\s+(\d+)', run(['pdfinfo', pdf]).stdout); return int(m.group(1)) if m else 0
 
+DEVANAGARI_MARK_DUPE = re.compile('([ािीुूृॄॅॆेैॉॊोौ्ँंः़ॢॣ])\\1+')  # some NCERT Hindi PDFs' CMap emits every matra twice
+
 def page_text(pdf, i):
     t = run(['pdftotext', '-f', str(i), '-l', str(i), pdf, '-']).stdout
-    if len(t.strip()) >= 40: return t
+    if len(t.strip()) >= 40: return DEVANAGARI_MARK_DUPE.sub(r'\1', t)
     with tempfile.TemporaryDirectory() as d:  # a scanned page: render and read it
         run(['pdftoppm', '-f', str(i), '-l', str(i), '-r', '200', '-png', pdf, f'{d}/p'])
         img = glob.glob(f'{d}/p*.png')
