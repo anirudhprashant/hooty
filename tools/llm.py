@@ -1,7 +1,7 @@
 """The one place the tools talk to the models on oracle. Bulk writing goes to MiniMax-M2.7, pictures to MiniMax's
 vision endpoint; both keys stay on oracle. All calls share one ssh connection, so a batch of parallel chapters
 cannot trip sshd's connection limit (the "Connection reset by peer" failures)."""
-import base64, fcntl, json, os, re, shutil, subprocess, tempfile, time
+import base64, fcntl, json, os, re, shutil, subprocess, tempfile, time, urllib.request, uuid
 HOST = 'oracle'
 REMOTE = '~/agent-workspace/learning-game/tools'
 SOCKET = os.path.expanduser('~/.ssh/cm-sparkle-%r@%h')
@@ -74,7 +74,7 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
             got = opencode(prompt, DEEPSEEK, want_json=want_json, tries=1)
             if got is not None: return got
     if minimax_cooling() and len(prompt) < 100000:   # MiniMax hit its plan limit lately: do not queue behind it, go straight to the fallback
-        got = opencode(prompt, FALLBACK, want_json=want_json, tries=1)
+        got = fallback(prompt, want_json=want_json, tries=1)
         if got is not None: return got
     for t in range(tries):
         try:
@@ -83,7 +83,7 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
             while '429' in r.stderr:      # plan limit: wait for it to reset, so jobs pause and nothing is marked failed or written empty
                 slow_down()
                 if FALLBACK:   # the plan is out: another model carries this call, so the job does not sit idle
-                    got = opencode(prompt, FALLBACK, want_json=want_json, tries=1)
+                    got = fallback(prompt, want_json=want_json, tries=1)
                     if got is not None: return got
                 print('MiniMax limit reached, waiting 20 minutes', flush=True); time.sleep(1200)
                 _take_turn(); r = _remote('m27.py', prompt, 900)
@@ -97,7 +97,7 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
         except Exception as e:
             if on_retry: on_retry(t + 1, str(e)[:80])
             time.sleep(6 + t * 6)
-    if FALLBACK and len(prompt) < 100000: return opencode(prompt, FALLBACK, want_json=want_json, tries=1)   # MiniMax kept failing
+    if FALLBACK and len(prompt) < 100000: return fallback(prompt, want_json=want_json, tries=1)   # MiniMax kept failing
     return None
 
 def vision(image_path, prompt, tries=3):
@@ -179,5 +179,43 @@ def opencode(prompt, model=DEEPSEEK, want_json=True, tries=3, on_retry=None):
             if on_retry: on_retry(t + 1, str(e)[:80])
             time.sleep(6 + t * 10)
     return None
+GO_ENDPOINT = 'https://opencode.ai/zen/go/v1/chat/completions'
+
+def _go_key():
+    """The OpenCode Go key lives in ~/.hermes/config.yaml; it is read here, never printed or copied."""
+    t = open(os.path.expanduser('~/.hermes/config.yaml')).read()
+    return re.search(r'api_key:\s*(\S+)', t).group(1).strip().strip('"\'')
+
+def go(prompt, want_json=True, tries=3, on_retry=None):
+    """DeepSeek v4.1 flash on the OpenCode Go subscription, the same route the Shorts writer uses.
+
+    It is NOT the `opencode/...-free` model: that one draws on a shared free pool that answers
+    "Free usage limit reached" almost every evening. Go bills from Anirudh's allowance instead, so
+    it costs nothing extra per call. Chosen as the Hooty fallback on 9 Nov 2026 when MiniMax ran dry.
+    """
+    for t in range(tries):
+        try:
+            body = json.dumps({'model': 'deepseek-v4.1-flash',
+                               'messages': [{'role': 'user', 'content': prompt}],
+                               'max_tokens': 20000, 'temperature': 0.3}).encode()
+            req = urllib.request.Request(GO_ENDPOINT, data=body, headers={
+                'Authorization': 'Bearer ' + _go_key(), 'Content-Type': 'application/json',
+                'User-Agent': 'hooty-build/1.0', 'x-opencode-session': 'hooty-' + uuid.uuid4().hex})
+            with _slot():
+                with urllib.request.urlopen(req, timeout=900) as r: d = json.load(r)
+            out = (((d.get('choices') or [{}])[0].get('message') or {}).get('content') or '').strip()
+            if not out: raise ValueError('empty reply')
+            if not want_json: return out
+            return json.loads(re.search(r'\{.*\}', out, re.S).group(0))
+        except Exception as e:
+            if on_retry: on_retry(t + 1, str(e)[:80])
+            time.sleep(5 + t * 8)
+    return None
+
+def fallback(prompt, want_json=True, tries=1, on_retry=None):
+    """Whatever LUMI_FALLBACK names: 'go/...' is the Go subscription, anything else is an opencode model id."""
+    if FALLBACK.startswith('go/'): return go(prompt, want_json=want_json, tries=tries, on_retry=on_retry)
+    return opencode(prompt, FALLBACK, want_json=want_json, tries=tries, on_retry=on_retry)
+
 def deepseek(prompt, **k): return opencode(prompt, DEEPSEEK, **k)
 def checker(prompt, **k): return m27(prompt, **k)   # a fresh session with a checker's prompt: it never sees the writer's reasoning
