@@ -120,8 +120,9 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
             while '429' in r.stderr:      # plan limit: wait for it to reset, so jobs pause and nothing is marked failed or written empty
                 slow_down()
                 if FALLBACK:   # the plan is out: another model carries this call, so the job does not sit idle
-                    got = fallback(prompt, want_json=want_json, tries=1)
+                    got = fallback(prompt, want_json=want_json, tries=2)
                     if got is not None: return got
+                    raise RuntimeError('fallback failed too')   # a 20-minute sleep here would hide the build for hours
                 if MINIMAX_MAX and budget_used() >= MINIMAX_MAX:
                     print('daily MiniMax slice spent, leaving the rest to the fallback', flush=True); return None
                 print('MiniMax limit reached, waiting 20 minutes', flush=True); time.sleep(1200)
@@ -262,6 +263,16 @@ def _anon_key():
             return line.split('=', 1)[1].strip().strip('"').strip("'")
     raise RuntimeError('ANONROUTER_API_KEY missing from ~/.hermes/.env')
 
+ANON_LOCK = LOCK + '.anon-busy'
+
+def _anon_single():
+    """One large generation at a time. Three chapters asking at once made the router answer 500 on every
+    big facts prompt (9 Nov, 19:10), while the same call on its own finished in 164 s."""
+    os.makedirs(os.path.dirname(ANON_LOCK), exist_ok=True)
+    f = open(ANON_LOCK, 'w')
+    fcntl.flock(f, fcntl.LOCK_EX)
+    return f
+
 def anon(prompt, model=None, want_json=True, tries=3, on_retry=None):
     """A model on AnonRouter. Free models need an opt-in on the account (anonymous routes may keep prompts);
     the cheap paid ones cost a fraction of a cent and carry a 1M context, which covers a whole chapter."""
@@ -270,11 +281,12 @@ def anon(prompt, model=None, want_json=True, tries=3, on_retry=None):
         try:
             budget_take('anon')
             body = json.dumps({'model': model, 'messages': [{'role': 'user', 'content': prompt}],
-                               'max_tokens': 16000, 'temperature': 0.3}).encode()
+                               'max_tokens': 32000, 'temperature': 0.3}).encode()
             req = urllib.request.Request(ANON_ENDPOINT, data=body, headers={
                 'Authorization': 'Bearer ' + _anon_key(), 'Content-Type': 'application/json',
                 'User-Agent': 'hooty-build/1.0'})
-            with urllib.request.urlopen(req, timeout=900) as r: d = json.load(r)
+            with _anon_single():
+                with urllib.request.urlopen(req, timeout=600) as r: d = json.load(r)
             u = d.get('usage') or {}
             with open(budget_file(prefix='anon-tokens'), 'a') as f:
                 f.write(json.dumps({'in': u.get('prompt_tokens'), 'out': u.get('completion_tokens')}) + '\n')
@@ -283,8 +295,12 @@ def anon(prompt, model=None, want_json=True, tries=3, on_retry=None):
             if not want_json: return out
             return json.loads(re.search(r'\{.*\}', out, re.S).group(0))
         except Exception as e:
+            try:
+                with open(os.path.expanduser('~/.cache/sparkle-anon-errors.log'), 'a') as fh:
+                    fh.write(f'{time.strftime("%d %b %H:%M:%S")} {model} try{t+1} {type(e).__name__}: {str(e)[:300]}\n')
+            except Exception: pass
             if on_retry: on_retry(t + 1, str(e)[:80])
-            time.sleep(5 + t * 8)
+            time.sleep((25 + t * 25) if re.search(r'\b(429|500|502|503|504)\b', str(e)) else (5 + t * 8))
     return None
 
 def fits_fallback(prompt):
