@@ -24,6 +24,33 @@ def _remote(script, data, timeout):
     return subprocess.run([*SSH, f'python3 {REMOTE}/{script}'], input=data, capture_output=True, text=True, timeout=timeout)
 
 LOCK = os.path.expanduser('~/.cache/sparkle-m27.lock')
+# Daily call cap for the MiniMax plan. One book (12 chapters, ~80 lessons) is roughly 250 calls, and that
+# is exactly what drained the plan dry by 08:00 on 9 Nov: drafts, review and reading all ran flat out from
+# 04:00. The cap keeps the build inside a slice the plan can afford every day; past it, calls go to the
+# fallback instead of hammering MiniMax and stalling the whole queue (Anirudh, 9 Nov 2026).
+MINIMAX_MAX = int(os.environ.get('HOOTY_MINIMAX_MAX', '0'))   # 0 = no cap
+
+def budget_file(day=None):
+    import datetime
+    day = day or datetime.datetime.now(datetime.UTC).strftime('%Y%m%d')
+    return f'{LOCK}.budget-{day}'
+
+def budget_used():
+    try: return int(json.load(open(budget_file())).get('calls', 0))
+    except Exception: return 0
+
+def budget_take():
+    """Count one MiniMax request against today's slice, atomically, across every chapter writing at once."""
+    p = budget_file()
+    with open(p, 'a+') as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        f.seek(0)
+        try: d = json.loads(f.read() or '{}')
+        except Exception: d = {}
+        d['calls'] = d.get('calls', 0) + 1
+        f.seek(0); f.truncate(); json.dump(d, f); f.flush()
+        return d['calls']
+
 BASE_GAP = float(os.environ.get('SPARKLE_M27_GAP', '10'))   # seconds between call starts across every job. 3s ran the plan dry after about 4 hours (2026-11-01)
 GAP_FILE = LOCK + '.gap'
 
@@ -67,6 +94,10 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
     if trial in TRIALS:   # one named model for the whole job: how tools/compare-models.py runs a side by side
         return opencode(prompt, TRIALS[trial], want_json=want_json, tries=tries, on_retry=on_retry)
     if trial == 'm27': minimax_only = True
+    if MINIMAX_MAX and budget_used() >= MINIMAX_MAX and FALLBACK and fits_fallback(prompt):
+        # today's MiniMax slice is spent: the fallback carries the call rather than the build sleeping 20 minutes
+        got = fallback(prompt, want_json=want_json, tries=2)
+        if got is not None: return got
     if not minimax_only:
         got = haiku(prompt, want_json=want_json, tries=1)
         if got is not None: return got
@@ -77,7 +108,13 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
         got = fallback(prompt, want_json=want_json, tries=1)
         if got is not None: return got
     for t in range(tries):
+        if MINIMAX_MAX and budget_used() >= MINIMAX_MAX:
+            if FALLBACK and fits_fallback(prompt):
+                got = fallback(prompt, want_json=want_json, tries=1)
+                if got is not None: return got
+            return None
         try:
+            budget_take()
             _take_turn()
             r = _remote('m27.py', prompt, 900)
             while '429' in r.stderr:      # plan limit: wait for it to reset, so jobs pause and nothing is marked failed or written empty
@@ -85,8 +122,10 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
                 if FALLBACK:   # the plan is out: another model carries this call, so the job does not sit idle
                     got = fallback(prompt, want_json=want_json, tries=1)
                     if got is not None: return got
+                if MINIMAX_MAX and budget_used() >= MINIMAX_MAX:
+                    print('daily MiniMax slice spent, leaving the rest to the fallback', flush=True); return None
                 print('MiniMax limit reached, waiting 20 minutes', flush=True); time.sleep(1200)
-                _take_turn(); r = _remote('m27.py', prompt, 900)
+                budget_take(); _take_turn(); r = _remote('m27.py', prompt, 900)
             out = r.stdout.strip()
             if not out: raise ValueError('empty reply')
             if not want_json: return out
