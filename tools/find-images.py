@@ -41,7 +41,7 @@ def get(url, binary=False, tries=4):
             time.sleep(3 + t * 4)
     return None
 
-from llm import m27
+from llm import MAGICK, m27
 
 clean = lambda s: re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', s or ''))).strip()
 OK_LIC = re.compile(r'^(cc0|public domain|pd|cc[ -]by(?!-?nc)(?!.*nd)|cc[ -]by-sa|attribution)', re.I)
@@ -109,7 +109,7 @@ Reply ONLY JSON: {{"ranked": [{{"index": 0, "alt": "...", "caption": "..."}}]}}'
         name = f"ch{N}-l{key}-{slug(re.sub(r'^File:', '', c['title']).rsplit('.', 1)[0])}-{hashlib.sha1(c['page'].encode()).hexdigest()[:6]}.webp"  # the hash: two candidates can share a shortened title
         tmp = f'/tmp/sparkle-img-{N}-{key}'
         open(tmp, 'wb').write(raw)
-        subprocess.run(['magick', tmp + '[0]', '-auto-orient', '-resize', '1100x1100>', '-background', 'white', '-flatten', '-quality', '74', f'{MEDIA}/{name}'], check=True, capture_output=True)
+        subprocess.run([MAGICK, tmp + '[0]', '-auto-orient', '-resize', '1100x1100>', '-background', 'white', '-flatten', '-quality', '74', f'{MEDIA}/{name}'], check=True, capture_output=True)
         os.remove(tmp)
         score, why = vision_score(f'{MEDIA}/{name}', lesson['title'], sheet)
         print(f'  look {key} {c["title"][:50]}: {score} {why}', flush=True)

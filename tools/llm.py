@@ -1,7 +1,7 @@
 """The one place the tools talk to the models on oracle. Bulk writing goes to MiniMax-M2.7, pictures to MiniMax's
 vision endpoint; both keys stay on oracle. All calls share one ssh connection, so a batch of parallel chapters
 cannot trip sshd's connection limit (the "Connection reset by peer" failures)."""
-import base64, fcntl, json, os, re, subprocess, tempfile, time
+import base64, fcntl, json, os, re, shutil, subprocess, tempfile, time
 HOST = 'oracle'
 REMOTE = '~/agent-workspace/learning-game/tools'
 SOCKET = os.path.expanduser('~/.ssh/cm-sparkle-%r@%h')
@@ -14,6 +14,8 @@ def _ensure_connection():
                        stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 ON_ORACLE = os.uname().nodename == 'oracle'   # built there: the key is on this machine, so no ssh hop
+
+MAGICK = shutil.which('magick') or shutil.which('convert') or 'magick'   # ImageMagick 7 is `magick`, 6 is `convert`; oracle has only 6
 
 def _remote(script, data, timeout):
     if ON_ORACLE:
@@ -101,7 +103,7 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
 def vision(image_path, prompt, tries=3):
     """What MiniMax's vision model says about a local picture, or None if it could not be reached."""
     with tempfile.NamedTemporaryFile(suffix='.jpg') as jpg:
-        subprocess.run(['magick', image_path + '[0]', '-resize', '768x768>', '-background', 'white', '-flatten', jpg.name], capture_output=True)
+        subprocess.run([MAGICK, image_path + '[0]', '-resize', '768x768>', '-background', 'white', '-flatten', jpg.name], capture_output=True)
         payload = json.dumps({'prompt': prompt, 'image': base64.b64encode(open(jpg.name, 'rb').read()).decode()})
     for t in range(tries):
         try:
