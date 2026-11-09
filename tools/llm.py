@@ -73,7 +73,7 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
         if len(prompt) < 100000:   # the longest prompts do not fit on a command line
             got = opencode(prompt, DEEPSEEK, want_json=want_json, tries=1)
             if got is not None: return got
-    if minimax_cooling() and len(prompt) < 100000:   # MiniMax hit its plan limit lately: do not queue behind it, go straight to the fallback
+    if minimax_cooling() and fits_fallback(prompt):   # MiniMax hit its plan limit lately: do not queue behind it, go straight to the fallback
         got = fallback(prompt, want_json=want_json, tries=1)
         if got is not None: return got
     for t in range(tries):
@@ -97,7 +97,7 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
         except Exception as e:
             if on_retry: on_retry(t + 1, str(e)[:80])
             time.sleep(6 + t * 6)
-    if FALLBACK and len(prompt) < 100000: return fallback(prompt, want_json=want_json, tries=1)   # MiniMax kept failing
+    if FALLBACK and fits_fallback(prompt): return fallback(prompt, want_json=want_json, tries=1)   # MiniMax kept failing
     return None
 
 def vision(image_path, prompt, tries=3):
@@ -211,6 +211,12 @@ def go(prompt, want_json=True, tries=3, on_retry=None):
             if on_retry: on_retry(t + 1, str(e)[:80])
             time.sleep(5 + t * 8)
     return None
+
+def fits_fallback(prompt):
+    """A 100k-char prompt only fits a route that does not pass it on a command line. The Go route is an
+    HTTP POST with a 328k-token context, so the old command-line limit does not apply to it; the longest
+    chapter prompts (the facts stage reads the whole book chapter) would otherwise skip the fallback."""
+    return FALLBACK.startswith('go/') or len(prompt) < 100000
 
 def fallback(prompt, want_json=True, tries=1, on_retry=None):
     """Whatever LUMI_FALLBACK names: 'go/...' is the Go subscription, anything else is an opencode model id."""
