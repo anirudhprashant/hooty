@@ -42,6 +42,19 @@ def m27(prompt, want_json=True):
     if r is None: raise SystemExit('M2.7 failed: ' + prompt[:60])
     return r
 
+FACTS_MODEL = os.environ.get('HOOTY_FACTS_MODEL', '')
+
+def facts_text(prompt):
+    """The fact sheet is one large reply. A strong model on the router writes it in a single call in about
+    80 s, where a small one either 500s at that size or needs eight small calls to get there."""
+    if FACTS_MODEL.startswith('anon/'):
+        import llm as _l
+        r = _l.anon(prompt, model=FACTS_MODEL.split('/', 1)[1], want_json=False, tries=2,
+                    on_retry=lambda n, why: log('facts retry', n, why))
+        if r is None: raise SystemExit('facts model failed: ' + prompt[:60])
+        return r
+    return m27(prompt, want_json=False)
+
 def node(*args):
     return subprocess.run(['node', *args], cwd=ROOT, capture_output=True, text=True).stdout
 
@@ -108,7 +121,7 @@ def facts_chunked():
 
 def stage_facts():
     if os.path.exists(f'{W}/facts.json'): return
-    if os.environ.get('HOOTY_FACTS_CHUNKED') == '1':
+    if os.environ.get('HOOTY_FACTS_CHUNKED') == '1' and not FACTS_MODEL:
         for attempt in range(2):
             d = _finish_facts(facts_chunked())
             if len(d['lessons']) >= 4: break
@@ -138,7 +151,7 @@ term ||| other forms separated by ; (or leave empty) ||| meaning sentence ||| ev
 CHAPTER TEXT:
 {TEXT}"""
     for attempt in range(3):
-        d = _finish_facts(m27(prompt, want_json=False))
+        d = _finish_facts(facts_text(prompt))
         if len(d['lessons']) >= 4: break
         log('too few lessons survived, retrying')
     else:
