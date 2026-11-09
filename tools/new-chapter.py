@@ -63,9 +63,60 @@ def parse_facts(text):
             cur['facts'].append({'say': parts[0], 'ev': parts[1]})
     return {'lessons': lessons, 'glossary': glossary}
 
+def _finish_facts(text):
+    """Parse a facts sheet, attach fact ids, verify every evidence phrase against the book."""
+    d = parse_facts(text or '')
+    for i, l in enumerate(d['lessons'], 1):
+        for j, f in enumerate(l['facts'], 1): f['id'] = f'{i}.{j}'
+    json.dump(d, open(f'{W}/facts_raw.json', 'w'), indent=1)
+    print(node('tools/fact-pages.mjs', str(N), f'{W}/facts_raw.json').strip())
+    return json.load(open(f'{W}/facts_raw.json'))
+
+def facts_chunked():
+    """Same fact sheet as stage_facts, asked for in pieces.
+
+    A single reply of about ten thousand tokens is what a small model on a router keeps failing on (HTTP 500
+    on glm-5.3-flash, truncated output on gpt-oss-20b, both 9 Nov). The plan, each lesson and the glossary are
+    small replies, so each one lands, and the assembles sheet is identical to what the one-shot prompt wants.
+    """
+    grade = SUBJ.get('grade', '6')
+    head = (f"You are preparing a Class {grade} {SUBJ['name']} chapter for a children's learning game. "
+            f"The CHAPTER TEXT below is the only source of truth.\nChapter {N}: {CH['title']}.\n{LANG_NOTE}\n")
+    tail = f"\n\nCHAPTER TEXT:\n{TEXT}"
+    plan = m27(head + "List 5 or 6 lessons that follow the chapter's own sections in order (a lesson is a coherent "
+                "chunk a child can do in 5 minutes).\nReply with ONLY the lesson titles, one per line, no numbers, "
+                "no other text." + tail, want_json=False) or ''
+    titles = [re.sub(r'^[\s#*\-\d.)]+', '', t).strip(' *') for t in plan.splitlines() if t.strip()]
+    titles = [t for t in titles if 3 < len(t) < 90][:6]
+    if len(titles) < 4: raise RuntimeError(f'lesson plan came back with {len(titles)} usable titles')
+    rows = []
+    for t in titles:
+        body = m27(head + f'Write the FACTS for the lesson "{t}".\nGive 9 to 12 facts that the chapter states. One '
+                    "fact per line, in exactly this format:\nplain sentence in your own words ||| 4 to 12 consecutive "
+                    "words copied exactly from the chapter text\nNo headings, no numbering, no JSON." + tail,
+                    want_json=False) or ''
+        lines = [l.strip() for l in body.splitlines() if l.count('|||') >= 1]
+        rows.append('## ' + t); rows += lines
+        log('facts chunk', t[:40], len(lines))
+    gl = m27(head + "List 12 to 16 GLOSSARY terms the chapter explains, one per line, in exactly this format:\n"
+              "term ||| other forms separated by ; (or leave empty) ||| one short plain meaning sentence ||| 4 to 12 "
+              "words copied exactly from the chapter text\nNo headings, no numbering." + tail, want_json=False) or ''
+    gloss = [l.strip() for l in gl.splitlines() if l.count('|||') >= 3]
+    rows.append('## GLOSSARY'); rows += gloss
+    log('facts glossary lines', len(gloss))
+    return '\n'.join(rows)
+
 def stage_facts():
     if os.path.exists(f'{W}/facts.json'): return
-    prompt = f"""You are preparing a Class {SUBJ.get('grade', '6')} {SUBJ['name']} chapter for a children's learning game. The CHAPTER TEXT below is the only source of truth.
+    if os.environ.get('HOOTY_FACTS_CHUNKED') == '1':
+        for attempt in range(2):
+            d = _finish_facts(facts_chunked())
+            if len(d['lessons']) >= 4: break
+            log('too few lessons survived, retrying')
+        else:
+            raise SystemExit('facts stage could not produce 4 verified lessons')
+    else:
+        prompt = f"""You are preparing a Class {SUBJ.get('grade', '6')} {SUBJ['name']} chapter for a children's learning game. The CHAPTER TEXT below is the only source of truth.
 Chapter {N}: {CH['title']}.
 
 {LANG_NOTE}
@@ -87,12 +138,7 @@ term ||| other forms separated by ; (or leave empty) ||| meaning sentence ||| ev
 CHAPTER TEXT:
 {TEXT}"""
     for attempt in range(3):
-        d = parse_facts(m27(prompt, want_json=False))
-        for i, l in enumerate(d['lessons'], 1):
-            for j, f in enumerate(l['facts'], 1): f['id'] = f'{i}.{j}'
-        json.dump(d, open(f'{W}/facts_raw.json', 'w'), indent=1)
-        print(node('tools/fact-pages.mjs', str(N), f'{W}/facts_raw.json').strip())
-        d = json.load(open(f'{W}/facts_raw.json'))
+        d = _finish_facts(m27(prompt, want_json=False))
         if len(d['lessons']) >= 4: break
         log('too few lessons survived, retrying')
     else:
