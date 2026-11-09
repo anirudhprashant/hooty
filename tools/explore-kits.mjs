@@ -270,7 +270,8 @@ export const KITS = {
     ],
   },
   seasons: {
-    grades: [6, 9], subjects: ['social'], titleOnly: true, match: [/\bseasons?\b/, /\brotation and revolution\b/, /\brevolutions? (of|around) the (sun|earth)\b/, /\btilt(ed)?\b/, /\baxis\b/, /\bsummer\b|\bwinter\b/],
+    grades: [6, 9], subjects: ['social'], titleOnly: true, match: [/^(?![^\n]*\blocal winds?\b)[^\n]*\bseasons?\b/, /\brotation and revolution\b/, /\brevolutions? (of|around) the (sun|earth)\b/, /\btilt(ed)?\b/, /\baxis\b/, /\bsummer\b|\bwinter\b/],
+    // a lesson on local winds and India's season list is not about the Earth's tilt, and this kit calls July summer
     title: 'Go round the Sun', takeaway: 'The tilted Earth leans each half toward the Sun in turn, which makes the seasons.',
     tasks: [{ say: 'Go to December.', when: 'month == 12', then: 'Now the southern half leans toward the Sun: summer there, winter in India.' }],
   },
@@ -296,7 +297,8 @@ export const KITS = {
     ],
   },
   speed: {
-    grades: [6, 9], match: [/(?<!high[- ])(?<!wind )\bspeed\b/, /\bvelocity\b/, /uniform motion/, /km\/h|m\/s/, /distance (travelled|covered)/],
+    grades: [6, 9], match: [/(?<!high[- ])(?<!wind )\bspeed\b/, /\bvelocity\b/, /uniform motion/, /km\/h|m\/s/, /(?![^.\n]*\b(?:displacement|circular)\b)[^.\n]*\bdistance (travelled|covered)\b/],
+    // both cars run in a straight line, so distance always equals displacement: a lesson on displacement or on a circular path gets nothing
     title: 'Race the cars', takeaway: 'Distance = speed x time.',
     tasks: [
       { say: 'Make the two cars cover the same distance.', when: 'a == b', then: 'Same speed for the same time means the same distance.' },
