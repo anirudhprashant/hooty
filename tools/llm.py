@@ -252,15 +252,51 @@ def go(prompt, want_json=True, tries=3, on_retry=None):
             time.sleep(5 + t * 8)
     return None
 
+ANON_ENDPOINT = 'https://api.anonrouter.ai/v1/chat/completions'
+ANON_MODEL = 'z-ai/glm-5.3-flash'   # $0.058/M in, $0.23/M out, 1M context: ~0.6c a chapter
+
+def _anon_key():
+    """AnonRouter's key lives in ~/.hermes/.env; read here, never printed or copied."""
+    for line in open(os.path.expanduser('~/.hermes/.env')):
+        if line.startswith('ANONROUTER_API_KEY='):
+            return line.split('=', 1)[1].strip().strip('"').strip("'")
+    raise RuntimeError('ANONROUTER_API_KEY missing from ~/.hermes/.env')
+
+def anon(prompt, model=None, want_json=True, tries=3, on_retry=None):
+    """A model on AnonRouter. Free models need an opt-in on the account (anonymous routes may keep prompts);
+    the cheap paid ones cost a fraction of a cent and carry a 1M context, which covers a whole chapter."""
+    model = model or ANON_MODEL
+    for t in range(tries):
+        try:
+            budget_take('anon')
+            body = json.dumps({'model': model, 'messages': [{'role': 'user', 'content': prompt}],
+                               'max_tokens': 16000, 'temperature': 0.3}).encode()
+            req = urllib.request.Request(ANON_ENDPOINT, data=body, headers={
+                'Authorization': 'Bearer ' + _anon_key(), 'Content-Type': 'application/json',
+                'User-Agent': 'hooty-build/1.0'})
+            with urllib.request.urlopen(req, timeout=900) as r: d = json.load(r)
+            u = d.get('usage') or {}
+            with open(budget_file(prefix='anon-tokens'), 'a') as f:
+                f.write(json.dumps({'in': u.get('prompt_tokens'), 'out': u.get('completion_tokens')}) + '\n')
+            out = (((d.get('choices') or [{}])[0].get('message') or {}).get('content') or '').strip()
+            if not out: raise ValueError('empty reply')
+            if not want_json: return out
+            return json.loads(re.search(r'\{.*\}', out, re.S).group(0))
+        except Exception as e:
+            if on_retry: on_retry(t + 1, str(e)[:80])
+            time.sleep(5 + t * 8)
+    return None
+
 def fits_fallback(prompt):
     """A 100k-char prompt only fits a route that does not pass it on a command line. The Go route is an
     HTTP POST with a 328k-token context, so the old command-line limit does not apply to it; the longest
     chapter prompts (the facts stage reads the whole book chapter) would otherwise skip the fallback."""
-    return FALLBACK.startswith('go/') or len(prompt) < 100000
+    return FALLBACK.startswith(('go/', 'anon/')) or len(prompt) < 100000
 
 def fallback(prompt, want_json=True, tries=1, on_retry=None):
     """Whatever LUMI_FALLBACK names: 'go/...' is the Go subscription, anything else is an opencode model id."""
     if FALLBACK.startswith('go/'): return go(prompt, want_json=want_json, tries=tries, on_retry=on_retry)
+    if FALLBACK.startswith('anon/'): return anon(prompt, model=FALLBACK.split('/', 1)[1], want_json=want_json, tries=tries, on_retry=on_retry)
     return opencode(prompt, FALLBACK, want_json=want_json, tries=tries, on_retry=on_retry)
 
 def deepseek(prompt, **k): return opencode(prompt, DEEPSEEK, **k)
