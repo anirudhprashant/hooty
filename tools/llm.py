@@ -30,18 +30,18 @@ LOCK = os.path.expanduser('~/.cache/sparkle-m27.lock')
 # fallback instead of hammering MiniMax and stalling the whole queue (Anirudh, 9 Nov 2026).
 MINIMAX_MAX = int(os.environ.get('HOOTY_MINIMAX_MAX', '0'))   # 0 = no cap
 
-def budget_file(day=None):
+def budget_file(day=None, prefix='budget'):
     import datetime
     day = day or datetime.datetime.now(datetime.UTC).strftime('%Y%m%d')
-    return f'{LOCK}.budget-{day}'
+    return f'{LOCK}.{prefix}-{day}'
 
-def budget_used():
-    try: return int(json.load(open(budget_file())).get('calls', 0))
+def budget_used(prefix='budget'):
+    try: return int(json.load(open(budget_file(prefix=prefix))).get('calls', 0))
     except Exception: return 0
 
-def budget_take():
+def budget_take(prefix='budget'):
     """Count one MiniMax request against today's slice, atomically, across every chapter writing at once."""
-    p = budget_file()
+    p = budget_file(prefix=prefix)
     with open(p, 'a+') as f:
         fcntl.flock(f, fcntl.LOCK_EX)
         f.seek(0)
@@ -234,6 +234,7 @@ def go(prompt, want_json=True, tries=3, on_retry=None):
     """
     for t in range(tries):
         try:
+            budget_take('go')   # counted only: DeepSeek on Go is Anirudh's own model, so this shows how much Hooty leans on it
             body = json.dumps({'model': 'deepseek-v4.1-flash',
                                'messages': [{'role': 'user', 'content': prompt}],
                                'max_tokens': 20000, 'temperature': 0.3}).encode()
