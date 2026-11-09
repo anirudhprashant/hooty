@@ -51,7 +51,7 @@ def facts_text(prompt):
         import llm as _l
         r = _l.anon(prompt, model=FACTS_MODEL[len('anon/'):], want_json=False, tries=2,
                     on_retry=lambda n, why: log('facts retry', n, why))
-        if r is None: raise SystemExit('facts model failed: ' + prompt[:60])
+        if not r: log('facts model returned nothing'); return ''
         return r
     return m27(prompt, want_json=False)
 
@@ -122,15 +122,7 @@ def facts_chunked():
 
 def stage_facts():
     if os.path.exists(f'{W}/facts.json'): return
-    if os.environ.get('HOOTY_FACTS_CHUNKED') == '1' and not FACTS_MODEL:
-        for attempt in range(2):
-            d = _finish_facts(facts_chunked())
-            if len(d['lessons']) >= 4: break
-            log('too few lessons survived, retrying')
-        else:
-            raise SystemExit('facts stage could not produce 4 verified lessons')
-    else:
-        prompt = f"""You are preparing a Class {SUBJ.get('grade', '6')} {SUBJ['name']} chapter for a children's learning game. The CHAPTER TEXT below is the only source of truth.
+    prompt = f"""You are preparing a Class {SUBJ.get('grade', '6')} {SUBJ['name']} chapter for a children's learning game. The CHAPTER TEXT below is the only source of truth.
 Chapter {N}: {CH['title']}.
 
 {LANG_NOTE}
@@ -151,12 +143,23 @@ term ||| other forms separated by ; (or leave empty) ||| meaning sentence ||| ev
 
 CHAPTER TEXT:
 {TEXT}"""
-    for attempt in range(3):
-        d = _finish_facts(facts_text(prompt))
-        if len(d['lessons']) >= 4: break
-        log('too few lessons survived, retrying')
-    else:
+    plans = []                      # each entry: (name, function returning a facts sheet as text)
+    if FACTS_MODEL: plans.append(('facts model', lambda: facts_text(prompt)))
+    if os.environ.get('HOOTY_FACTS_CHUNKED') == '1' or not FACTS_MODEL: plans.append(('chunked', facts_chunked))
+    plans.append(('fallback model', lambda: m27(prompt, want_json=False) or ''))
+    got = None
+    for name, gen in plans:
+        for attempt in range(2):
+            try:
+                d = _finish_facts(gen())
+            except Exception as e:
+                log(name, 'failed:', str(e)[:90]); time.sleep(10); continue
+            if len(d['lessons']) >= 4: got = d; break
+            log(name, ': too few lessons survived, retrying')
+        if got: break
+    if not got:
         raise SystemExit('facts stage could not produce 4 verified lessons')
+    d = got
     lessons = []
     for i, l in enumerate(d['lessons'], 1):
         facts = [{'id': f'{i}.{j}', 'p': f['p'], 'say': f['say'], 'ev': f['ev']} for j, f in enumerate(l['facts'], 1)]
