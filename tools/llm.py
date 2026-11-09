@@ -312,7 +312,7 @@ def fits_fallback(prompt):
 def fallback(prompt, want_json=True, tries=1, on_retry=None):
     """Whatever LUMI_FALLBACK names: 'go/...' is the Go subscription, anything else is an opencode model id."""
     if FALLBACK.startswith('go/'): return go(prompt, want_json=want_json, tries=tries, on_retry=on_retry)
-    if FALLBACK.startswith('anon/'): return anon(prompt, model=FALLBACK.split('/', 1)[1], want_json=want_json, tries=tries, on_retry=on_retry)
+    if FALLBACK.startswith('anon/'): return anon(prompt, model=FALLBACK[len('anon/'):], want_json=want_json, tries=tries, on_retry=on_retry)
     return opencode(prompt, FALLBACK, want_json=want_json, tries=tries, on_retry=on_retry)
 
 def deepseek(prompt, **k): return opencode(prompt, DEEPSEEK, **k)

@@ -49,7 +49,7 @@ def facts_text(prompt):
     80 s, where a small one either 500s at that size or needs eight small calls to get there."""
     if FACTS_MODEL.startswith('anon/'):
         import llm as _l
-        r = _l.anon(prompt, model=FACTS_MODEL.split('/', 1)[1], want_json=False, tries=2,
+        r = _l.anon(prompt, model=FACTS_MODEL[len('anon/'):], want_json=False, tries=2,
                     on_retry=lambda n, why: log('facts retry', n, why))
         if r is None: raise SystemExit('facts model failed: ' + prompt[:60])
         return r
@@ -67,6 +67,7 @@ def parse_facts(text):
         if not line or line.startswith('```'): continue
         if line.startswith('#'):
             title = line.lstrip('#').strip()
+            title = re.sub(r'^lesson\s+\d+\s*[:.)\-\u2013]\s*', '', title, flags=re.I)   # models like to number them
             if title.upper().startswith('GLOSSARY'): in_gloss = True; continue
             in_gloss = False; cur = {'title': title, 'facts': []}; lessons.append(cur); continue
         parts = [p.strip() for p in line.split('|||')]
