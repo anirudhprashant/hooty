@@ -276,7 +276,8 @@ export const KITS = {
     tasks: [{ say: 'Go to December.', when: 'month == 12', then: 'Now the southern half leans toward the Sun: summer there, winter in India.' }],
   },
   circuit: {
-    grades: [6, 10], match: [/circuit/, /\belectric(ity|al)?\b/, /\bbulbs?\b/, /\bswitch(es)?\b/, /\bconductors?\b/, /\bcurrent\b/],
+    grades: [6, 10], titleOnly: true, match: [/^(?![^\n]*magnet)[^\n]*(circuit|\belectric(ity|al)?\b|\bbulbs?\b|\bswitch(es)?\b|\bconductors?\b|\bcurrent\b)/],
+    // a magnetism lesson (compass, field lines) is not about lighting a bulb
     title: 'Light the bulb', takeaway: 'Current flows only round a closed circuit; more cells push more current.',
     tasks: [
       { say: 'Light the bulb.', when: 'closed == 1', then: 'Closing the switch completes the circuit, so current flows.' },
