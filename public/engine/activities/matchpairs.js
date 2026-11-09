@@ -12,7 +12,7 @@ export default {
     const rightCol = el('div', { class: 'match-col', role: 'list', 'aria-label': 'Right column' });
 
     let selectedLeft = null;
-    const matchedRight = new Set();
+    const matchedRightIdx = new Set();
     const matchedLeft = new Set();
 
     const leftNodes = lefts.map((text, i) => {
@@ -29,10 +29,10 @@ export default {
       return node;
     });
 
-    const rightNodes = rights.map((text) => {
+    const rightNodes = rights.map((text, ri) => {
       const node = el('button', { class: 'match-item', type: 'button', role: 'listitem' }, [text]);
       node.addEventListener('click', () => {
-        if (ctx.locked || matchedRight.has(text)) return;
+        if (ctx.locked || matchedRightIdx.has(ri)) return;
         if (selectedLeft === null) {
           ctx.flash('Pick an item on the left first.');
           return;
@@ -41,16 +41,19 @@ export default {
         // left, "First capital of Magadha" on the right). Comparing the two
         // labels can never succeed, so compare the right-hand text against
         // the right-hand half of the pair the left item belongs to.
+        // Track "used" by this node's own index, not its text: two pairs
+        // can share identical right-hand text, and a Set of strings would
+        // make the second matching box permanently unclickable.
         const expectedRight = pairs[selectedLeft][1];
         if (expectedRight === text) {
           node.classList.add('match-item--matched');
           leftNodes[selectedLeft].classList.add('match-item--matched');
-          matchedRight.add(text);
+          matchedRightIdx.add(ri);
           matchedLeft.add(selectedLeft);
           selectedLeft = null;
           leftCol.querySelectorAll('.match-item--selected').forEach((n) => n.classList.remove('match-item--selected'));
           ctx.matchFeedback(true);
-          if (matchedRight.size === pairs.length) ctx.submit({ done: true });
+          if (matchedRightIdx.size === pairs.length) ctx.submit({ done: true });
         } else {
           node.classList.add('match-item--wrong');
           leftNodes[selectedLeft].classList.add('match-item--wrong');
