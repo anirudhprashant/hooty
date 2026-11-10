@@ -60,3 +60,13 @@ It writes `public/audio/*.mp3` and `manifest.json`; lines with no clip fall back
   sentences opening with "you". To redo weak ones, delete the `passage` key from the lesson's entry in
   `work/<book>/chNN/reading.json` and re-run `SPARKLE_SUBJECT=<slug> python3 tools/add-reading.py N --passages`.
   Passages that fail the book audit are dropped and the lesson keeps only its hook.
+
+## GitHub backup
+
+The repo (anirudhprashant/hooty) is the off-box copy of the built packs and the tools.
+`tools/publish.py` commits and pushes at every publish, so a book lands on GitHub when it goes live.
+Between publishes that leaves gaps of several hours, so `work/qa/git-backup.sh` also commits the
+working tree on a timer (`hooty-gitbackup.timer`, every 30 minutes). It skips while publish.py is
+running, so two git writers never fight over the index. Log: `work/qa/git-backup.log`.
+
+`sources/` and `work/` stay out of git (NCERT copyright on the PDFs, plus build scratch).
