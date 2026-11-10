@@ -325,7 +325,8 @@ export const KITS = {
     tasks: [{ say: 'Follow the water until it falls as rain.', when: 'step == 3', then: 'Drops in the clouds grow heavy and fall.' }, { say: 'Finish the cycle.', when: 'step == 4', then: 'Rivers carry the water back to the sea, ready to start again.' }],
   },
   neutral: {
-    grades: [6, 10], titleOnly: true, match: [/\bacids?\b|\bacidic\b/, /\bbases?\b|\bbasic\b/, /neutrali[sz]/, /indicator|litmus/],
+    grades: [6, 10], titleOnly: true, match: [/(?!.*\b(?:reactivity|metals?)\b)\b(?:acids?|acidic)\b/, /\bbases?\b|\bbasic\b/, /neutrali[sz]/, /indicator|litmus/],
+    // "acids, salts and reactivity series" is a metals lesson (metal + acid -> salt + hydrogen), not acid-base neutralisation
     title: 'Mix acid and base', takeaway: 'Equal amounts of acid and base cancel out and make a neutral solution.',
     tasks: [{ say: 'Make the solution neutral.', when: 'acid == base', then: 'Equal drops cancel out: neutral.' }, { say: 'Make it basic.', when: 'base > acid', then: 'More base than acid: litmus turns blue.' }],
   },
