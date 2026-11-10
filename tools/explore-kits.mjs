@@ -262,7 +262,7 @@ export const KITS = {
     ],
   },
   daynight: {
-    grades: [6, 8], match: [/day and night/, /rotation of (the )?earth/, /earth (rotates|spins)/, /\bsunrise\b|\bsunset\b/],
+    grades: [5, 8], match: [/day and night/, /rotation of (the )?earth/, /earth (rotates|spins)/, /\bsunrise\b|\bsunset\b/],
     title: 'Spin the Earth', takeaway: 'The Earth spins once a day, so each place turns into the sunlight and out of it again.',
     tasks: [
       { say: 'Turn to midnight.', when: 'hour == 0 or hour == 24', then: 'Your place has turned away from the Sun.' },
@@ -270,7 +270,7 @@ export const KITS = {
     ],
   },
   seasons: {
-    grades: [6, 9], subjects: ['social'], titleOnly: true, match: [/^(?![^\n]*\blocal winds?\b)[^\n]*\bseasons?\b/, /\brotation and revolution\b/, /\brevolutions? (of|around) the (sun|earth)\b/, /\btilt(ed)?\b/, /\baxis\b/, /\bsummer\b|\bwinter\b/],
+    grades: [5, 9], subjects: ['social'], titleOnly: true, match: [/^(?![^\n]*\blocal winds?\b)[^\n]*\bseasons?\b/, /\brotation and revolution\b/, /\brevolutions? (of|around) the (sun|earth)\b/, /\btilt(ed)?\b/, /\baxis\b/, /\bsummer\b|\bwinter\b/],
     // a lesson on local winds and India's season list is not about the Earth's tilt, and this kit calls July summer
     title: 'Go round the Sun', takeaway: 'The tilted Earth leans each half toward the Sun in turn, which makes the seasons.',
     tasks: [{ say: 'Go to December.', when: 'month == 12', then: 'Now the southern half leans toward the Sun: summer there, winter in India.' }],
@@ -320,7 +320,7 @@ export const KITS = {
     ],
   },
   watercycle: {
-    grades: [6, 7], match: [/water cycle/, /evaporat/, /condens/, /precipitat/],
+    grades: [5, 7], match: [/water cycle/, /evaporat/, /condens/, /precipitat/],
     title: 'Follow a drop', takeaway: 'Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle.',
     tasks: [{ say: 'Follow the water until it falls as rain.', when: 'step == 3', then: 'Drops in the clouds grow heavy and fall.' }, { say: 'Finish the cycle.', when: 'step == 4', then: 'Rivers carry the water back to the sea, ready to start again.' }],
   },
