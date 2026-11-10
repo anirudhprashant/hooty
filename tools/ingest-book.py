@@ -186,9 +186,14 @@ def main():
     ap.add_argument('--jobs', type=int, default=3); ap.add_argument('--no-audio', action='store_true'); ap.add_argument('--extract-only', action='store_true')
     a = ap.parse_args()
     if a.resume:
-        slug = a.resume; known = json.load(open(f'{HERE}/subjects.json'))[slug]; a.name = a.name or known['name']
-        a.grade = known.get('grade', a.grade); a.language = known.get('language', a.language); a.calc = a.calc or bool(known.get('calc'))   # a resume must not forget what the book is
-        a.input = a.input or ''
+        slug = a.resume; known = json.load(open(f'{HERE}/subjects.json')).get(slug)
+        if known:
+            a.name = a.name or known['name']
+            a.grade = known.get('grade', a.grade); a.language = known.get('language', a.language); a.calc = a.calc or bool(known.get('calc'))   # a resume must not forget what the book is
+        else:  # died before register() ran (still in extract): rebuild the identity from the slug instead of KeyError-ing the whole book away
+            m = re.match(r'^(.*)-g(\d+)$', slug)
+            a.name = a.name or (m.group(1).replace('-', ' ').title() if m else slug); a.grade = m.group(2) if m else a.grade
+        a.input = a.input or (f'{ROOT}/sources/{slug}-download' if os.path.isdir(f'{ROOT}/sources/{slug}-download') else '')
     else:
         if not a.input or not a.name: ap.error('give a PDF (or zip, folder, URL) and --name')
         slug = a.slug or f'{slugify(a.name)}-g{a.grade}'
