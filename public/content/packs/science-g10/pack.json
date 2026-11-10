@@ -7838,7 +7838,7 @@
       {
        "id": "science-g10-ch3-l3",
        "title": "Chemical properties: acids, salts and the reactivity series",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -7879,31 +7879,6 @@
            "p": 45
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g10-ch3-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "neutral",
-         "params": {},
-         "title": "Mix acid and base",
-         "tasks": [
-          {
-           "say": "Make the solution neutral.",
-           "when": "acid == base",
-           "then": "Equal drops cancel out: neutral."
-          },
-          {
-           "say": "Make it basic.",
-           "when": "base > acid",
-           "then": "More base than acid: litmus turns blue."
-          }
-         ],
-         "takeaway": "Equal amounts of acid and base cancel out and make a neutral solution.",
-         "explanation": "Equal amounts of acid and base cancel out and make a neutral solution."
         },
         {
          "type": "worked",
