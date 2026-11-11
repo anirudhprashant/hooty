@@ -1432,7 +1432,7 @@ function screenThemes() { return screenRewards(); }
 function screenParent() {
   const l = activeLearner();
   const wrap = el('div', { class: 'page screen' });
-  wrap.append(el('div', { class: 'privacy-note', style: { marginTop: 'var(--s2)' } }, [icon('lock', { size: 22 }), 'All data stays on this device. Nothing is sent anywhere.']));
+  wrap.append(el('div', { class: 'privacy-note', style: { marginTop: 'var(--s2)' } }, [icon('lock', { size: 22 }), 'Your learning stays on this device. We count anonymous page visits only: no cookies, no personal data.']));
 
   const stats = Object.values(l?.activityStats || {});
   const totalAttempts = stats.reduce((a, s) => a + s.seen, 0);

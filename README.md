@@ -10,7 +10,8 @@ A free learning game for school children in India, built chapter by chapter from
 
 **[▶ Play Hooty](https://hooty.org/)**
 
-No sign-up. No ads. Nothing a child does ever leaves their device.
+No sign-up. No ads. No cookies, no trackers, no personal data. Progress never leaves the device;
+the only thing we count is an anonymous page visit, on our own server.
 
 </div>
 
