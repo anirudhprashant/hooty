@@ -285,7 +285,7 @@ export const KITS = {
     ],
   },
   floatsink: {
-    grades: [6, 9], match: [/\bfloat/, /\bsinks?\b|\bsinking\b/, /buoyan/],
+    grades: [4, 9], match: [/\bfloat/, /\bsinks?\b|\bsinking\b/, /buoyan/],
     title: 'Float or sink?', takeaway: 'Things lighter than water for their size float; denser things sink.',
     tasks: [{ say: 'Make the block sink.', when: 'd > 10', then: 'It is now denser than water, so it sinks.' }],
   },
