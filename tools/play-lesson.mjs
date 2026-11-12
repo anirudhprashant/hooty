@@ -120,7 +120,7 @@ for (; steps < 60; steps++) {
     const prompt = (await page.locator('.activity__prompt').first().textContent().catch(() => '')) || '';
     const answer = answerFor(answers, prompt);
     if (answer != null) await input.fill(answer).catch(() => {});
-    else problems.push(`no answer on file for text input: ${prompt.trim().slice(0, 80)}`);
+    else if (state.kind !== 'explain') problems.push(`no answer on file for text input: ${prompt.trim().slice(0, 80)}`);
   }
 
   // 2a. match pairs: pick a left-column item, then try the right-hand items
