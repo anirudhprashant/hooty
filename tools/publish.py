@@ -9,7 +9,7 @@ live site really serves everything. Stops without uploading if a pack does not v
 SPARKLE_DEPLOY  rsync target   (set in tools/local.env)
 SPARKLE_URL     live site      (set in tools/local.env)
 """
-import shutil, glob, hashlib, json, os, random, re, subprocess, sys, urllib.request
+import shutil, glob, hashlib, json, os, random, re, subprocess, sys, time, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE); PUB = f'{ROOT}/public'
 sys.path.insert(0, HERE)
 from subjects import SUBJECTS
@@ -44,11 +44,24 @@ def build():
         if v.returncode: sys.exit(f'{f} does not validate:\n{v.stdout[-600:]}')
 
 def audio():
+    """Record any missing clip, when this machine can. Recording needs a home connection (Microsoft blocks the
+    datacentre), so on oracle the honest answer is a one-line skip, not a traceback in the publish log."""
     venv = f'{ROOT}/.venv-audio'
+    skip = venv + '/.no-edge-tts'
+    if os.path.exists(skip) and time.time() - os.path.getmtime(skip) < 86400:
+        say('audio | skipped (no edge-tts here; clips are recorded on the laptop)'); return
     if not os.path.exists(venv + '/bin/edge-tts'):
-        subprocess.run([sys.executable, '-m', 'venv', venv], check=True); subprocess.run([venv + '/bin/pip', '-q', 'install', 'edge-tts'], check=True)
+        try:
+            subprocess.run([sys.executable, '-m', 'venv', venv], check=True, capture_output=True)
+            subprocess.run([venv + '/bin/pip', '-q', 'install', 'edge-tts'], check=True, capture_output=True, timeout=240)
+        except Exception as e:
+            open(skip, 'w').close()
+            say('audio | skipped: edge-tts cannot be installed here, record on a home connection'); return
     r = subprocess.run([venv + '/bin/python', f'{HERE}/make-audio.py'], cwd=ROOT, capture_output=True, text=True)
-    say('audio |', (r.stdout.strip().splitlines() or [r.stderr[-200:]])[-1])
+    if r.returncode:
+        why = (r.stderr.strip().splitlines() or ['no reason given'])[-1]
+        say('audio | skipped:', why[:140]); return
+    say('audio |', (r.stdout.strip().splitlines() or ['done'])[-1])
 
 def thumbs():
     """A 240px copy of every lesson picture for cards, so a 96px thumbnail never costs a 250 KB download."""

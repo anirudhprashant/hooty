@@ -90,6 +90,8 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
     """Reply text, or the first JSON object in it. None if every try failed. Haiku writes first, then DeepSeek if it is free
     again, and MiniMax-M2.7 is the last resort. The name stays because every tool calls it. minimax_only gets a second opinion
     from a different model."""
+    if os.environ.get('LUMI_MODEL') == 'go':   # DeepSeek on the OpenCode Go allowance: keeps bulk side work (pictures) off the MiniMax plan
+        return go(prompt, want_json=want_json, tries=tries, on_retry=on_retry)
     trial = os.environ.get('LUMI_MODEL', '')
     if trial in TRIALS:   # one named model for the whole job: how tools/compare-models.py runs a side by side
         return opencode(prompt, TRIALS[trial], want_json=want_json, tries=tries, on_retry=on_retry)

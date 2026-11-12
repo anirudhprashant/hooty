@@ -9,9 +9,11 @@
 import { chromium } from 'playwright';
 import { existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { answerFor, loadAnswers } from './qa-answers.mjs';
 
 const URL = process.argv[2] || 'http://127.0.0.1:8111/sparkle/';
 const OUT = '/tmp/sparkle-shots';
+const answers = loadAnswers();
 
 function findChrome() {
   const root = `${process.env.HOME}/.cache/ms-playwright`;
@@ -113,7 +115,12 @@ for (; steps < 60; steps++) {
   // 1. text input (fill blank / type answer)
   const input = page.locator('.text-input:visible:not([disabled])').first();
   if (await input.count()) {
-    await input.fill('arthashastra').catch(() => {});
+    // Type the answer the pack expects (tools/qa-answers.mjs), not a fixed word, so a
+    // fill-in-the-blank is passed and the walk reaches the celebration.
+    const prompt = (await page.locator('.activity__prompt').first().textContent().catch(() => '')) || '';
+    const answer = answerFor(answers, prompt);
+    if (answer != null) await input.fill(answer).catch(() => {});
+    else problems.push(`no answer on file for text input: ${prompt.trim().slice(0, 80)}`);
   }
 
   // 2a. match pairs: pick a left-column item, then try the right-hand items
