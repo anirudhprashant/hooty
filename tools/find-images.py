@@ -133,7 +133,7 @@ Reply ONLY JSON: {{"ranked": [{{"index": 0, "alt": "...", "caption": "..."}}]}}'
 
 for l in facts['lessons']:
     one(l)
-    if l['id'][1:] not in out: one(l, broad=True)
+    if l['id'][1:] not in out and os.environ.get('HOOTY_BROAD') != '0': one(l, broad=True)
 # the chapter challenge reuses the first lesson's picture
 if '1' in out and 'boss' not in out: out['boss'] = out['1']
 json.dump(out, open(out_path, 'w'), indent=1, ensure_ascii=False)
