@@ -58,6 +58,8 @@ def facts_text(prompt):
 def node(*args):
     return subprocess.run(['node', *args], cwd=ROOT, capture_output=True, text=True).stdout
 
+RULE = ('Never write a fact about a classroom instruction or task (for example "the speaking activity asks the child to...", "the listening activity says...", "the activity asks you to tick..."). If such a page teaches words, phrases or lines, keep those words as the fact, never the instruction. A question must ask about the subject, never about what a task asks.')
+
 # ---------------------------------------------------------------- facts
 def parse_facts(text):
     """Plain-text facts -> the dict the rest of the pipeline expects. Pipes cannot clash with quotes in the book."""
@@ -95,7 +97,8 @@ def facts_chunked():
     """
     grade = SUBJ.get('grade', '6')
     head = (f"You are preparing a Class {grade} {SUBJ['name']} chapter for a children's learning game. "
-            f"The CHAPTER TEXT below is the only source of truth.\nChapter {N}: {CH['title']}.\n{LANG_NOTE}\n")
+            f"The CHAPTER TEXT below is the only source of truth.\nChapter {N}: {CH['title']}.\n"
+            f"{RULE}\n{LANG_NOTE}\n")
     tail = f"\n\nCHAPTER TEXT:\n{TEXT}"
     plan = m27(head + "List 5 or 6 lessons that follow the chapter's own sections in order (a lesson is a coherent "
                 "chunk a child can do in 5 minutes).\nReply with ONLY the lesson titles, one per line, no numbers, "
@@ -131,7 +134,7 @@ For each lesson list 9 to 12 FACTS. Each fact has:
   "say": ONE plain sentence in your own words (simple British-Indian English, for a {5 + int(SUBJ.get('grade', '6'))}-year-old),
   "ev": an EXACT run of 4 to 12 consecutive words copied character for character from the chapter text (one line, no line breaks, no page numbers). If you cannot copy it exactly, choose a different phrase.
 Also list 12 to 16 GLOSSARY terms (words a child may not know that the chapter explains), each with "term", "aka" (list of other forms, may be empty), "meaning" (one short plain sentence, original words, optionally with a tiny example) and "ev" (exact words from the chapter).
-Only facts that the chapter states. No outside knowledge. Use BCE/CE, never BC/AD. Skip pure page furniture (figure captions, page numbers, 'Let's explore' prompts) unless they state a fact.
+Only facts that the chapter states. No outside knowledge. Use BCE/CE, never BC/AD. Skip pure page furniture (figure captions, page numbers, 'Let's explore' prompts) unless they state a fact. Never write a fact about a classroom instruction or task (for example "the speaking activity asks the child to...", "the listening activity says...", "the activity asks you to tick..."). If such a page teaches words, phrases or lines, keep those words as the fact, never the instruction. A question must ask about the subject, never about what a task asks.
 
 Reply in EXACTLY this plain-text format (no JSON, no markdown, no numbering):
 ## Lesson title
