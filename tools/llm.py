@@ -1,6 +1,7 @@
 """The one place the tools talk to the models on oracle. Bulk writing goes to MiniMax-M2.7, pictures to MiniMax's
 vision endpoint; both keys stay on oracle. All calls share one ssh connection, so a batch of parallel chapters
 cannot trip sshd's connection limit (the "Connection reset by peer" failures)."""
+import llm_route  # noqa: E402  shared LLM route: Open Design, then OpenCode Go
 import base64, fcntl, json, os, re, shutil, subprocess, tempfile, time, urllib.request, uuid
 HOST = 'oracle'
 REMOTE = '~/agent-workspace/learning-game/tools'
@@ -246,14 +247,11 @@ def go(prompt, want_json=True, tries=3, on_retry=None):
     for t in range(tries):
         try:
             budget_take('go')   # counted only: DeepSeek on Go is Anirudh's own model, so this shows how much Hooty leans on it
-            body = json.dumps({'model': 'deepseek-v4.1-flash',
-                               'messages': [{'role': 'user', 'content': prompt}],
-                               'max_tokens': 20000, 'temperature': 0.3}).encode()
-            req = urllib.request.Request(GO_ENDPOINT, data=body, headers={
-                'Authorization': 'Bearer ' + _go_key(), 'Content-Type': 'application/json',
-                'User-Agent': 'hooty-build/1.0', 'x-opencode-session': 'hooty-' + uuid.uuid4().hex})
+            body = {'model': 'deepseek-v4.1-flash',
+                    'messages': [{'role': 'user', 'content': prompt}],
+                    'max_tokens': 20000, 'temperature': 0.3}
             with _slot():
-                with urllib.request.urlopen(req, timeout=900) as r: d = json.load(r)
+                d = llm_route.post(body, timeout=900)
             out = (((d.get('choices') or [{}])[0].get('message') or {}).get('content') or '').strip()
             if not out: raise ValueError('empty reply')
             if not want_json: return out
@@ -294,13 +292,10 @@ def anon(prompt, model=None, want_json=True, tries=3, on_retry=None):
     for t in range(tries):
         try:
             budget_take('anon')
-            body = json.dumps({'model': model, 'messages': [{'role': 'user', 'content': prompt}],
-                               'max_tokens': 32000, 'temperature': 0.3}).encode()
-            req = urllib.request.Request(ANON_ENDPOINT, data=body, headers={
-                'Authorization': 'Bearer ' + _anon_key(), 'Content-Type': 'application/json',
-                'User-Agent': 'hooty-build/1.0'})
+            body = {'model': model, 'messages': [{'role': 'user', 'content': prompt}],
+                    'max_tokens': 32000, 'temperature': 0.3}
             with _anon_single():
-                with urllib.request.urlopen(req, timeout=600) as r: d = json.load(r)
+                d = llm_route.post(body, timeout=600)
             u = d.get('usage') or {}
             with open(budget_file(prefix='anon-tokens'), 'a') as f:
                 f.write(json.dumps({'in': u.get('prompt_tokens'), 'out': u.get('completion_tokens')}) + '\n')

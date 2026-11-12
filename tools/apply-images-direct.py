@@ -35,9 +35,14 @@ for pack in packs:
             if not os.path.exists(img_path):
                 continue
             imgs = json.load(open(img_path))
+            first_good = next((v for k, v in sorted(imgs.items())
+                               if k != 'boss' and os.path.exists(f"{B}/public/content/packs/{pack}/{v['file']}")), None)
             for lesson in c['lessons'] + [c['boss']]:
                 key = 'boss' if lesson is c['boss'] else lesson['id'].split('-l')[-1]
                 im = imgs.get(key)
+                # same rule as assemble-pack: a lesson with no picture of its own shares the chapter's first good one
+                if not im:
+                    im = first_good
                 if not im or not os.path.exists(f"{B}/public/content/packs/{pack}/{im['file']}"):
                     continue
                 if lesson.get('topicScene') == im['file']:
