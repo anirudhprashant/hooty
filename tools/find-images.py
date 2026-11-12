@@ -115,8 +115,8 @@ Reply ONLY JSON: {{"ranked": [{{"index": 0, "alt": "...", "caption": "..."}}]}}'
         print(f'  look {key} {c["title"][:50]}: {score} {why}', flush=True)
         if score is None:  # checker down: trust the description-based pick and mark it to be looked at later
             chosen = (c, r, name); unchecked = True; break
-        if score >= 7: chosen = (c, r, name); unchecked = False; break
-        if score >= 6 and not runner_up: runner_up = (c, r, name); continue  # keep the file in case nothing beats it
+        if score >= PASS: chosen = (c, r, name); unchecked = False; break
+        if score >= PASS - 1 and not runner_up: runner_up = (c, r, name); continue  # keep the file in case nothing beats it
         os.remove(f'{MEDIA}/{name}'); used.add(c['page'])
     if not chosen and runner_up: chosen = runner_up; unchecked = False
     elif runner_up and chosen is not runner_up and os.path.exists(f'{MEDIA}/{runner_up[2]}'): os.remove(f'{MEDIA}/{runner_up[2]}')
@@ -128,9 +128,13 @@ Reply ONLY JSON: {{"ranked": [{{"index": 0, "alt": "...", "caption": "..."}}]}}'
                 'credit': {'text': f"{title} by {who}, {c['license']}, via {'Wikimedia Commons' if c['src'] == 'commons' else 'Openverse'}",
                            'url': c['page'], 'license': c['license'], 'licenseUrl': c['licenseUrl'], 'creator': who}}
     if unchecked: out[key]['unchecked'] = True
+    if score is not None and score < 7: out[key]['score'] = score   # below the usual bar: kept only to give a blank chapter a picture
     used.add(c['page']); json.dump(out, open(out_path, 'w'), indent=1, ensure_ascii=False)
     print('ok', key, c['title'], flush=True)
 
+# The look test usually wants 7+/10. A backfill of chapters that have NO picture at all may set a lower
+# bar, because an honest, accurate picture of the topic beats a blank page; the score is kept with the file.
+PASS = int(os.environ.get('HOOTY_MIN_SCORE', '7'))
 STOP_AFTER = int(os.environ.get('HOOTY_STOP_AFTER', '0'))   # backfill mode: one good picture makes the whole chapter illustrated
 for l in facts['lessons']:
     one(l)
