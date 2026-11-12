@@ -17,6 +17,12 @@ META = re.compile(
     r"|put\s+the\s+\w+\s+activity\s+in\s+order",
     re.I)
 
+# phrases that look like the pattern but are ordinary English about the subject
+NOISE = re.compile(
+    r"busy\s+activity|activity\s+of\s+(city|village|market)|physical\s+activity|economic\s+activity"
+    r"|volcanic\s+activity|human\s+activity|brain\s+activity",
+    re.I)
+
 # the "activity" is the subject being taught (an experiment or a listening exercise in the chapter itself)
 KEEP = re.compile(
     r"lime[- ]water\s+activity.*(support|show|prove|explain)"
@@ -27,4 +33,6 @@ KEEP = re.compile(
 
 def is_meta(prompt):
     t = str(prompt or '')
+    if NOISE.search(t):
+        return False
     return bool(META.search(t)) and not bool(KEEP.search(t))

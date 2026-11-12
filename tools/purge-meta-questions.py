@@ -66,10 +66,12 @@ for pack in touched:
             continue
         before = json.dumps(dd, ensure_ascii=False)
         def clean(node):
-            """Remove any dict whose prompt is a spot-the-task question, at any depth."""
+            """Remove any question that asks about the task, at any depth (prompt, problem, title...)."""
             if isinstance(node, dict):
-                if is_meta(node.get('prompt')):
+                if is_meta(node.get('prompt')) or is_meta(node.get('problem')):
                     return None
+                if node.get('think') and is_meta((node.get('think') or {}).get('problem')):
+                    node = {k: v for k, v in node.items() if k != 'think'}
                 return {k: clean(v) for k, v in node.items()}
             if isinstance(node, list):
                 out = [clean(v) for v in node]
