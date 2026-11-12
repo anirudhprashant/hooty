@@ -223,12 +223,18 @@ def opencode(prompt, model=DEEPSEEK, want_json=True, tries=3, on_retry=None):
             if on_retry: on_retry(t + 1, str(e)[:80])
             time.sleep(6 + t * 10)
     return None
-GO_ENDPOINT = 'https://opencode.ai/zen/go/v1/chat/completions'
+GO_ENDPOINT = 'https://amr-link.open-design.ai/v1/chat/completions'
 
 def _go_key():
     """The OpenCode Go key lives in ~/.hermes/config.yaml; it is read here, never printed or copied."""
-    t = open(os.path.expanduser('~/.hermes/config.yaml')).read()
-    return re.search(r'api_key:\s*(\S+)', t).group(1).strip().strip('"\'')
+    for path in ('/home/ubuntu/.hermes/.env', os.path.expanduser('~/.hermes/.env')):
+        try:
+            for line in open(path):
+                if line.startswith('OPENDESIGN_API_KEY='):
+                    return line.split('=', 1)[1].strip().strip('"\'')
+        except OSError:
+            continue
+    raise RuntimeError('OPENDESIGN_API_KEY missing from the hermes env')
 
 def go(prompt, want_json=True, tries=3, on_retry=None):
     """DeepSeek v4.1 flash on the OpenCode Go subscription, the same route the Shorts writer uses.
