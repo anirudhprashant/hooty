@@ -4,7 +4,8 @@ live site really serves everything. Stops without uploading if a pack does not v
 
   python3 tools/publish.py              # the whole thing
   python3 tools/publish.py --no-build   # just stamp, upload and check
-  python3 tools/publish.py --no-audio   # build but do not record
+  python3 tools/publish.py --no-audio   # build but do not record (the default: this server cannot reach the voice service)
+  python3 tools/publish.py --audio      # also record missing clips, only on a home connection
 
 SPARKLE_DEPLOY  rsync target   (set in tools/local.env)
 SPARKLE_URL     live site      (set in tools/local.env)
@@ -50,11 +51,18 @@ def audio():
     skip = venv + '/.no-edge-tts'
     if os.path.exists(skip) and time.time() - os.path.getmtime(skip) < 86400:
         say('audio | skipped (no edge-tts here; clips are recorded on the laptop)'); return
-    if not os.path.exists(venv + '/bin/edge-tts'):
+    def usable():
+        try:
+            return subprocess.run([venv + '/bin/python', '-c', 'import edge_tts'], capture_output=True, timeout=60).returncode == 0
+        except Exception:
+            return False
+    if not usable():   # a console script can exist while the module does not: test the import, not the file
         try:
             subprocess.run([sys.executable, '-m', 'venv', venv], check=True, capture_output=True)
             subprocess.run([venv + '/bin/pip', '-q', 'install', 'edge-tts'], check=True, capture_output=True, timeout=240)
-        except Exception as e:
+        except Exception:
+            pass
+        if not usable():
             open(skip, 'w').close()
             say('audio | skipped: edge-tts cannot be installed here, record on a home connection'); return
     r = subprocess.run([venv + '/bin/python', f'{HERE}/make-audio.py'], cwd=ROOT, capture_output=True, text=True)
@@ -122,7 +130,7 @@ def smoke():
 
 if '--no-build' not in args:
     build()
-    if '--no-audio' not in args: audio()
+    if '--audio' in args and '--no-audio' not in args: audio()   # recording is a laptop job: opt in with --audio
 thumbs(); stamp(); upload(); smoke()
 
 def push():
