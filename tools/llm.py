@@ -263,15 +263,19 @@ def go(prompt, want_json=True, tries=3, on_retry=None):
             time.sleep(5 + t * 8)
     return None
 
-ANON_ENDPOINT = 'https://api.anonrouter.ai/v1/chat/completions'
-ANON_MODEL = 'z-ai/glm-5.3-flash'   # $0.058/M in, $0.23/M out, 1M context: ~0.6c a chapter
+ANON_ENDPOINT = 'https://amr-link.open-design.ai/v1/chat/completions'
+ANON_MODEL = 'deepseek-v4.1-flash'   # 1M context, covers a whole chapter in one call
 
 def _anon_key():
-    """AnonRouter's key lives in ~/.hermes/.env; read here, never printed or copied."""
-    for line in open(os.path.expanduser('~/.hermes/.env')):
-        if line.startswith('ANONROUTER_API_KEY='):
-            return line.split('=', 1)[1].strip().strip('"').strip("'")
-    raise RuntimeError('ANONROUTER_API_KEY missing from ~/.hermes/.env')
+    """The Open Design key, read here, never printed or copied."""
+    for path in ('/home/ubuntu/.hermes/.env', os.path.expanduser('~/.hermes/.env')):
+        try:
+            for line in open(path):
+                if line.startswith('OPENDESIGN_API_KEY='):
+                    return line.split('=', 1)[1].strip().strip('"').strip("'")
+        except OSError:
+            continue
+    raise RuntimeError('OPENDESIGN_API_KEY missing from the hermes env')
 
 ANON_LOCK = LOCK + '.anon-busy'
 
@@ -284,8 +288,8 @@ def _anon_single():
     return f
 
 def anon(prompt, model=None, want_json=True, tries=3, on_retry=None):
-    """A model on AnonRouter. Free models need an opt-in on the account (anonymous routes may keep prompts);
-    the cheap paid ones cost a fraction of a cent and carry a 1M context, which covers a whole chapter."""
+    """A model on the Open Design gateway. deepseek-v4.1-flash carries a 1M context, which covers a whole
+    chapter in one call, and the same key drives every other lane now."""
     model = model or ANON_MODEL
     for t in range(tries):
         try:
