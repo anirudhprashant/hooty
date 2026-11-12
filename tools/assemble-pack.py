@@ -5,6 +5,7 @@ Then run tools/make-audio.py (from a home network) and rsync to oracle."""
 import glob, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from subjects import S as SUBJ, KEY
+from meta_questions import is_meta   # one rule for 'questions that ask about the task, not the subject'
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = f"{ROOT}/public/content/packs/{SUBJ['pack']}/"
 os.makedirs(P, exist_ok=True)
@@ -101,6 +102,11 @@ for u in pack['units']:
         fp = f'{WORK}/ch{num(c):02d}/facts.json'
         pages = {x['id']: x.get('p') for l in json.load(open(fp))['lessons'] for x in l['facts']} if os.path.exists(fp) else {}
         src = lambda ids: [{'ch': num(c), 'p': pages[i]} for i in ids if pages.get(i)]
+        for lesson in c['lessons'] + [c['boss']]:
+            acts = lesson.get('activities') or []
+            lean = [a for a in acts if not is_meta(a.get('prompt'))]
+            if len(lean) >= 8:   # never leave a lesson too thin to validate
+                lesson['activities'] = lean
         for lesson in c['lessons']:
             rec = deep.get(lesson['id'].split('-l')[-1])
             if not rec: continue
@@ -113,7 +119,7 @@ for u in pack['units']:
                 recall.sort(key=lambda a: a['type'] == 'truefalse'); recall = sorted(recall[:6], key=lambda a: a.get('difficulty', 2))
             cards = [{'type': 'mcq', 'id': f"{lesson['id']}-d{j}", 'difficulty': 3, 'tags': ['deep', q.get('skill') or 'reasoning'], 'prompt': q['prompt'], 'options': q['options'], 'answer': q['answer'],
                       'why': {o: q['why'][i] for i, o in enumerate(q['options']) if i != q['answer'] and i < len(q.get('why', []))},
-                      'explanation': (q['why'][q['answer']] if q['answer'] < len(q.get('why', [])) else '') or 'Think about why, using the idea from the lesson.', 'f': q.get('f', []), 'src': src(q.get('f', []))} for j, q in enumerate(qs, 1)]
+                      'explanation': (q['why'][q['answer']] if q['answer'] < len(q.get('why', [])) else '') or 'Think about why, using the idea from the lesson.', 'f': q.get('f', []), 'src': src(q.get('f', []))} for j, q in enumerate(qs, 1) if not is_meta(q.get('prompt'))]
             if rec.get('think'):
                 th = rec['think']
                 at = next((i for i, a in enumerate(teach) if a['type'] == 'concept'), len(teach) - 1) + 1
@@ -127,9 +133,10 @@ for u in pack['units']:
             cs = ex.get('case')
             if cs:
                 exam += [{'type': 'mcq', 'id': f'{base}-x{j}', 'difficulty': 3, 'tags': ['exam', 'case'], 'context': cs['passage'], 'prompt': q['prompt'], 'options': q['options'], 'answer': q['answer'],
-                          'why': {o: q['why'][i] for i, o in enumerate(q['options']) if i != q['answer'] and i < len(q.get('why', []))}, 'explanation': (q['why'][q['answer']] if q['answer'] < len(q.get('why', [])) else '') or 'Read the case again and use the idea from the lesson.'} for j, q in enumerate(cs['questions'], 1)]
-            exam += [{'type': 'mcq', 'id': f'{base}-r{j}', 'difficulty': 3, 'tags': ['exam', 'assertion'], 'prompt': q['prompt'], 'options': q['options'], 'answer': q['answer'], 'explanation': q.get('why') or 'Check each statement on its own first, then ask whether the reason explains the assertion.'} for j, q in enumerate(ex.get('assertion', []), 1)]
-            exam += [{'type': 'explain', 'id': f'{base}-e{j}', 'difficulty': 3, 'tags': ['exam', 'written'], 'prompt': q['prompt'], 'answer': q['answer'], 'points': q['points'], 'explanation': 'Compare your answer with the points a marker looks for.'} for j, q in enumerate(ex.get('explain', [])[:1], 1)]
+                          'why': {o: q['why'][i] for i, o in enumerate(q['options']) if i != q['answer'] and i < len(q.get('why', []))}, 'explanation': (q['why'][q['answer']] if q['answer'] < len(q.get('why', [])) else '') or 'Read the case again and use the idea from the lesson.'} for j, q in enumerate(cs['questions'], 1) if not is_meta(q.get('prompt'))]
+            exam += [{'type': 'mcq', 'id': f'{base}-r{j}', 'difficulty': 3, 'tags': ['exam', 'assertion'], 'prompt': q['prompt'], 'options': q['options'], 'answer': q['answer'], 'explanation': q.get('why') or 'Check each statement on its own first, then ask whether the reason explains the assertion.'} for j, q in enumerate(ex.get('assertion', []), 1) if not is_meta(q.get('prompt'))]
+            exam += [{'type': 'explain', 'id': f'{base}-e{j}', 'difficulty': 3, 'tags': ['exam', 'written'], 'prompt': q['prompt'], 'answer': q['answer'], 'points': q['points'], 'explanation': 'Compare your answer with the points a marker looks for.'} for j, q in enumerate([q for q in ex.get('explain', []) if not is_meta(q.get('prompt'))][:1], 1)]
+        exam = [a for a in exam if not is_meta(a.get('prompt'))]
         if len(exam) >= 4:
             first = c['lessons'][0]
             at = c['lessons'][0]['id'].rsplit('-l', 1)[0]

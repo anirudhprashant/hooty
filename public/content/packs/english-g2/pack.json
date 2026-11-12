@@ -1061,7 +1061,7 @@
       {
        "id": "english-g2-ch1-l3",
        "title": "Talking and Listening",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -1182,71 +1182,17 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "english-g2-ch1-l3-a2",
+         "type": "truefalse",
+         "id": "english-g2-ch1-l3-a3",
          "difficulty": 1,
          "tags": [
           "speaking",
-          "bicycle"
-         ],
-         "title": "The First Bicycle Question",
-         "prompt": "What does the speaking activity ask first about a bicycle?",
-         "options": [
-          "Whether you have seen one",
-          "Where you have seen one",
-          "What colour it is",
-          "Who generally rides one"
-         ],
-         "answer": 0,
-         "explanation": "The speaking activity starts by asking whether you have seen a bicycle.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 3
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "id": "english-g2-ch1-l3-a4",
-         "difficulty": 2,
-         "tags": [
-          "speaking",
-          "bicycle"
-         ],
-         "title": "Where Did You See It?",
-         "prompt": "The speaking activity asks where you have seen a ______.",
-         "answers": [
-          "bicycle"
-         ],
-         "hint": "Think of the thing with the colour and rider questions.",
-         "explanation": "You can share where you have seen a bicycle.",
-         "src": [
-          {
-           "ch": 1,
-           "p": 3
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "english-g2-ch1-l3-a5",
-         "difficulty": 2,
-         "tags": [
-          "speaking",
           "tricycle",
-          "wheelchair"
+          "colour"
          ],
-         "title": "Things You Have Seen",
-         "prompt": "Besides a bicycle, which two things does the speaking activity ask about?",
-         "options": [
-          "tricycle and wheelchair",
-          "bell and picture",
-          "colour and rider",
-          "senior citizen and sound"
-         ],
-         "answer": 0,
-         "explanation": "The activity asks whether you have seen a tricycle and a wheelchair.",
+         "prompt": "The speaking activity asks what colour the tricycle is.",
+         "answer": false,
+         "explanation": "The colour question is about the bicycle, not the tricycle.",
          "src": [
           {
            "ch": 1,
@@ -1297,6 +1243,29 @@
            "ch": 1,
            "p": 3
           },
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 3
+          }
+         ]
+        },
+        {
+         "type": "truefalse",
+         "id": "english-g2-ch1-l3-a7",
+         "difficulty": 3,
+         "tags": [
+          "wheelchair",
+          "movement",
+          "wheels"
+         ],
+         "prompt": "Some people need a wheelchair, and wheels help them move.",
+         "answer": true,
+         "explanation": "Senior citizens, injured people and disabled people need wheelchairs. Wheels help movement.",
+         "src": [
           {
            "ch": 1,
            "p": 3
@@ -1495,53 +1464,6 @@
           "3.9",
           "3.10",
           "3.11"
-         ],
-         "src": [
-          {
-           "ch": 1,
-           "p": 3
-          },
-          {
-           "ch": 1,
-           "p": 3
-          },
-          {
-           "ch": 1,
-           "p": 3
-          },
-          {
-           "ch": 1,
-           "p": 3
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "english-g2-ch1-l3-d4",
-         "difficulty": 3,
-         "tags": [
-          "deep",
-          "explain purpose"
-         ],
-         "prompt": "A picture is ready for the speaking activity. Why prepare it?",
-         "options": [
-          "It can be shown to children during the activity.",
-          "It can be played like a recorded bell sound.",
-          "It can give the bicycle's colour aloud to us.",
-          "It can move around the room on its wheels."
-         ],
-         "answer": 0,
-         "why": {
-          "It can be played like a recorded bell sound.": "This confuses showing a picture with playing recorded sounds.",
-          "It can give the bicycle's colour aloud to us.": "This confuses seeing a colour with hearing it spoken aloud.",
-          "It can move around the room on its wheels.": "This confuses a picture with a wheeled vehicle."
-         },
-         "explanation": "This uses the fact that a picture can be ready for showing.",
-         "f": [
-          "3.4",
-          "3.7",
-          "3.9",
-          "3.10"
          ],
          "src": [
           {
@@ -3565,35 +3487,6 @@
          {
           "ch": 1,
           "p": 5
-         }
-        ]
-       },
-       {
-        "type": "mcq",
-        "id": "english-g2-ch1-boss-a5",
-        "difficulty": 2,
-        "tags": [
-         "speaking",
-         "bicycle"
-        ],
-        "title": "Speaking About Bicycles",
-        "prompt": "Which question belongs to the speaking activity?",
-        "options": [
-         "Where have you seen a bicycle?",
-         "Where is your teacher's cap?",
-         "How many bells does the teacher have?",
-         "Which letter comes before “axe”?"
-        ],
-        "answer": 0,
-        "explanation": "The speaking activity asks where children have seen a bicycle.",
-        "src": [
-         {
-          "ch": 1,
-          "p": 3
-         },
-         {
-          "ch": 1,
-          "p": 3
          }
         ]
        },
@@ -8188,7 +8081,7 @@
       {
        "id": "english-g2-ch3-l3",
        "title": "Saying and Writing New Words",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -8282,31 +8175,6 @@
            "ch": 3,
            "p": 21
           },
-          {
-           "ch": 3,
-           "p": 21
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "english-g2-ch3-l3-a2",
-         "difficulty": 1,
-         "tags": [
-          "speaking",
-          "new-words"
-         ],
-         "title": "Speaking Time",
-         "prompt": "What does the speaking activity ask you to do?",
-         "options": [
-          "Write some words.",
-          "Draw a picture.",
-          "Say some words.",
-          "Choose two things."
-         ],
-         "answer": 2,
-         "explanation": "The speaking activity asks children to say some words, so saying them is correct.",
-         "src": [
           {
            "ch": 3,
            "p": 21
@@ -9582,7 +9450,7 @@
       {
        "id": "english-g2-ch3-exam",
        "title": "Test practice",
-       "estimatedMinutes": 15,
+       "estimatedMinutes": 14,
        "topicScene": "media/ch3-l1-a-little-lamb-jumping-in-zao-63a79e.webp",
        "sceneAlt": "A photograph shows a little lamb jumping in the fields of Zaouia d'Ifrane, Morocco.",
        "sceneCaption": "A little lamb jumps in the fields of Zaouia d'Ifrane, Morocco.",
@@ -9725,30 +9593,6 @@
           "Explains that these sounds are different from cat talk."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
-        },
-        {
-         "type": "mcq",
-         "id": "english-g2-ch3-l3-x1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "During the “Saying and Writing New Words” lesson, children first say the new words aloud. Then they make sentences with them, although one example sentence has already been completed. For writing, they answer what the child in the poem can do, because the child can do many things. They also choose any two things they like most. Finally, they think of two animals or birds, other than fish, that can swim, and two animals that live on trees.",
-         "prompt": "The class has completed the example sentence, but the speaking activity is not finished. What should the children do next?",
-         "options": [
-          "Copy the completed example sentence once more.",
-          "Use the new words to make their own sentences.",
-          "Skip speaking and begin the written work.",
-          "Say the new words without using them in sentences."
-         ],
-         "answer": 1,
-         "why": {
-          "Copy the completed example sentence once more.": "This repeats the example instead of practising with the new words.",
-          "Skip speaking and begin the written work.": "This leaves the speaking activity unfinished.",
-          "Say the new words without using them in sentences.": "This omits the sentence-making part of the activity."
-         },
-         "explanation": "This continues the sentence-making activity correctly."
         },
         {
          "type": "mcq",
@@ -11185,7 +11029,7 @@
       {
        "id": "english-g2-ch4-l3",
        "title": "Let Us Speak and Draw",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -11413,47 +11257,6 @@
          ]
         },
         {
-         "type": "dragorder",
-         "id": "english-g2-ch4-l3-a7",
-         "difficulty": 2,
-         "tags": [
-          "speaking",
-          "identify",
-          "order"
-         ],
-         "prompt": "Put the speaking activity in order.",
-         "items": [
-          "Close their eyes",
-          "Identify water",
-          "Identify a local flower",
-          "Identify sugar",
-          "Identify the direction of a clapping sound"
-         ],
-         "explanation": "The clapping sound's direction is the last thing identified.",
-         "src": [
-          {
-           "ch": 4,
-           "p": 31
-          },
-          {
-           "ch": 4,
-           "p": 31
-          },
-          {
-           "ch": 4,
-           "p": 31
-          },
-          {
-           "ch": 4,
-           "p": 31
-          },
-          {
-           "ch": 4,
-           "p": 31
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "english-g2-ch4-l3-a8",
          "difficulty": 3,
@@ -11504,38 +11307,6 @@
           {
            "ch": 4,
            "p": 32
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "english-g2-ch4-l3-d1",
-         "difficulty": 3,
-         "tags": [
-          "deep",
-          "infer feelings"
-         ],
-         "prompt": "The speaking activity begins. How might a child feel with closed eyes?",
-         "options": [
-          "The child may feel curious about what comes next.",
-          "The child may feel sleepy and want to rest.",
-          "The child may feel cross about the activity.",
-          "The child may feel sure of every answer."
-         ],
-         "answer": 0,
-         "why": {
-          "The child may feel sleepy and want to rest.": "Feeling sleepy is possible, but the activity asks for listening.",
-          "The child may feel cross about the activity.": "Closing their eyes does not show that the child feels cross.",
-          "The child may feel sure of every answer.": "The child cannot know every answer before identifying the things."
-         },
-         "explanation": "Closing their eyes can make the next step feel unknown.",
-         "f": [
-          "3.3"
-         ],
-         "src": [
-          {
-           "ch": 4,
-           "p": 31
           }
          ]
         },
@@ -13322,30 +13093,6 @@
         },
         {
          "type": "mcq",
-         "id": "english-g2-ch4-l3-x1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "Onshangla calls Ava her mother. In the speaking activity, the children close their eyes. They identify water, a local flower, and sugar. They also identify the direction of a clapping sound. After that, they draw two things they like to smell and two things they like to taste. Finally, each child shares the drawings with a friend.",
-         "prompt": "A child keeps their eyes open when the speaking activity begins. What should the child do to follow the activity?",
-         "options": [
-          "Close their eyes and listen.",
-          "Keep their eyes open and name what they can see.",
-          "Ask a friend to choose all four things for them.",
-          "Wait without taking part until the drawing activity begins."
-         ],
-         "answer": 0,
-         "why": {
-          "Keep their eyes open and name what they can see.": "Keeping the eyes open does not follow the activity.",
-          "Ask a friend to choose all four things for them.": "Choosing for the child removes the child's own turn.",
-          "Wait without taking part until the drawing activity begins.": "The speaking activity does not have to be delayed."
-         },
-         "explanation": "Closing the eyes is the first step in the speaking activity."
-        },
-        {
-         "type": "mcq",
          "id": "english-g2-ch4-l3-x2",
          "difficulty": 3,
          "tags": [
@@ -13376,13 +13123,13 @@
           "exam",
           "written"
          ],
-         "prompt": "What does Onshangla call Ava, and how do children use their mother tongue in the speaking activity?",
-         "answer": "Onshangla calls Ava her mother. In the speaking activity, children say the word for mother in their mother tongue. These words are part of the speaking activity, while the other speaking tasks are done with their eyes closed.",
+         "prompt": "How does identifying things with closed eyes differ from the drawing part of the activity?",
+         "answer": "Identifying things with closed eyes is part of the speaking activity. The children identify water, a local flower, sugar, and the direction of a clapping sound. In the drawing part, they draw two things they like to smell and two things they like to taste.",
          "points": [
-          "Onshangla calls Ava her mother.",
-          "Children say the word for mother.",
-          "They say it in their mother tongue.",
-          "The speaking activity begins with closed eyes."
+          "Closed-eye identification belongs to speaking.",
+          "Water, a local flower, and sugar are identified.",
+          "The direction of a clapping sound is identified.",
+          "Smelling and tasting choices are drawn."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         },
@@ -21342,27 +21089,6 @@
          ]
         },
         {
-         "type": "fillblank",
-         "id": "english-g2-ch7-l2-a5",
-         "difficulty": 2,
-         "tags": [
-          "speaking"
-         ],
-         "title": "What Do You See?",
-         "prompt": "In the speaking activity, we must say what we see in the ______.",
-         "answers": [
-          "picture"
-         ],
-         "hint": "Think about the speaking activity.",
-         "explanation": "We must say what we see in the picture.",
-         "src": [
-          {
-           "ch": 7,
-           "p": 49
-          }
-         ]
-        },
-        {
          "type": "mcq",
          "id": "english-g2-ch7-l2-a6",
          "difficulty": 2,
@@ -22218,30 +21944,47 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "english-g2-ch7-l4-a8",
+         "type": "dragorder",
+         "id": "english-g2-ch7-l4-a9",
          "difficulty": 3,
          "tags": [
-          "drawing",
-          "creativity"
+          "counting",
+          "writing",
+          "letters"
          ],
-         "prompt": "In the drawing activity, what must we add to the picture?",
-         "options": [
-          "What we think is needed",
-          "What we count in the poem",
-          "The letter we saw more",
-          "The differences we found"
+         "prompt": "Put the poem tasks in the correct order.",
+         "items": [
+          "Count how often e comes in the poem.",
+          "Count how often u comes in the poem.",
+          "Write the number you counted in the space.",
+          "Say which letter you saw more often.",
+          "Write that answer in the space."
          ],
-         "answer": 0,
-         "explanation": "We add what we think the picture needs.",
+         "explanation": "Count e, then u. Write the number, say the letter, and write the answer.",
          "src": [
           {
            "ch": 7,
-           "p": 52
+           "p": 51
           },
           {
            "ch": 7,
-           "p": 52
+           "p": 51
+          },
+          {
+           "ch": 7,
+           "p": 51
+          },
+          {
+           "ch": 7,
+           "p": 51
+          },
+          {
+           "ch": 7,
+           "p": 51
+          },
+          {
+           "ch": 7,
+           "p": 51
           }
          ]
         },
@@ -22844,7 +22587,7 @@
       {
        "id": "english-g2-ch7-exam",
        "title": "Test practice",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 11,
        "topicScene": "media/ch7-l1-flower-basket-displayed-at-t-3256c5.webp",
        "sceneAlt": "A flower basket is displayed at Tiananmen Square in Beijing for National Day.",
        "sceneCaption": "A flower basket celebrates National Day at Beijing’s Tiananmen Square.",
@@ -22921,30 +22664,6 @@
           "Shows the full connection from room to town."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
-        },
-        {
-         "type": "mcq",
-         "id": "english-g2-ch7-l2-x1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "During a lesson on New Words and Let Us Speak, learners read five sight words and study six new words. Train begins the list; town and street come next, house follows, and flower and basket are the final two. A learner is now getting ready for the speaking activity and the word-making task. The learner must describe the picture, name a town or city and a street, make words from circles, and frame a sentence with each word made.",
-         "prompt": "The learner has described the picture. What should the learner do next in the speaking activity?",
-         "options": [
-          "Give the name of the learner’s town or city.",
-          "Give the name of the street where the learner lives.",
-          "Make a word from the letters in a circle.",
-          "Frame a sentence with a word already made."
-         ],
-         "answer": 0,
-         "why": {
-          "Give the name of the street where the learner lives.": "This speaking task comes after naming the town or city.",
-          "Make a word from the letters in a circle.": "This is the letters-in-circles task, not the next speaking step.",
-          "Frame a sentence with a word already made.": "A sentence comes after making a word from the circles."
-         },
-         "explanation": "This is the next speaking task after describing the picture."
         },
         {
          "type": "mcq",
@@ -27733,6 +27452,25 @@
          ]
         },
         {
+         "type": "truefalse",
+         "id": "english-g2-ch9-l3-a2",
+         "difficulty": 1,
+         "tags": [
+          "speaking",
+          "fly",
+          "name"
+         ],
+         "prompt": "The speaking task asks how the fly found his name.",
+         "answer": true,
+         "explanation": "Yes, that is one of the speaking questions.",
+         "src": [
+          {
+           "ch": 9,
+           "p": 63
+          }
+         ]
+        },
+        {
          "type": "matchpairs",
          "id": "english-g2-ch9-l3-a4",
          "difficulty": 2,
@@ -27803,31 +27541,6 @@
          ],
          "hint": "Write the word from the speaking task.",
          "explanation": "The task asks how the fly found his name.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 63
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "english-g2-ch9-l3-a6",
-         "difficulty": 2,
-         "tags": [
-          "speaking",
-          "ask",
-          "forget"
-         ],
-         "prompt": "After you forget your name, the task asks whom you would ______.",
-         "options": [
-          "ask",
-          "sing",
-          "run",
-          "sleep"
-         ],
-         "answer": 0,
-         "explanation": "The task asks whom you would ask for help.",
          "src": [
           {
            "ch": 9,
@@ -33100,30 +32813,6 @@
         },
         {
          "type": "mcq",
-         "id": "english-g2-ch10-l4-x1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "During a bird lesson, the teacher asks children to choose their favourite bird and draw it inside a box. They write the bird’s name in the blank and add grass and trees behind it. The teacher then asks them to close their eyes and listen carefully. Children listen and repeat each word. They clap once for each syllable and notice that words can be broken into smaller parts. Finally, they practise with pea, cock, peacock, and feather.",
-         "prompt": "A child has just closed their eyes as the teacher begins the listening activity. What should the child do next?",
-         "options": [
-          "Listen carefully to the teacher before repeating the words.",
-          "Draw another bird without listening to the teacher.",
-          "Add more grass and trees to the picture.",
-          "Write the bird’s name without hearing the words."
-         ],
-         "answer": 0,
-         "why": {
-          "Draw another bird without listening to the teacher.": "Drawing now would interrupt the listening task.",
-          "Add more grass and trees to the picture.": "The background belongs to the drawing task.",
-          "Write the bird’s name without hearing the words.": "Writing now would skip the listening and repeating step."
-         },
-         "explanation": "This follows the listening activity."
-        },
-        {
-         "type": "mcq",
          "id": "english-g2-ch10-l4-x2",
          "difficulty": 3,
          "tags": [
@@ -34508,6 +34197,23 @@
          ]
         },
         {
+         "type": "truefalse",
+         "id": "english-g2-ch11-l3-a3",
+         "difficulty": 1,
+         "tags": [
+          "sight words"
+         ],
+         "prompt": "The sight words include down and with.",
+         "answer": true,
+         "explanation": "Yes, down and with are included in the sight words.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 78
+          }
+         ]
+        },
+        {
          "type": "fillblank",
          "id": "english-g2-ch11-l3-a4",
          "difficulty": 2,
@@ -34525,38 +34231,6 @@
           {
            "ch": 11,
            "p": 78
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "english-g2-ch11-l3-a5",
-         "difficulty": 2,
-         "tags": [
-          "biscuit wrapper",
-          "speaking"
-         ],
-         "prompt": "What does the speaking activity ask you to do with a biscuit wrapper?",
-         "options": [
-          "Say what you do with it",
-          "Draw three cleaning things",
-          "Imagine sitting under a tree",
-          "Look for sight words in a packet"
-         ],
-         "answer": 0,
-         "explanation": "The speaking activity asks what children do with a biscuit wrapper.",
-         "src": [
-          {
-           "ch": 11,
-           "p": 79
-          },
-          {
-           "ch": 11,
-           "p": 79
-          },
-          {
-           "ch": 11,
-           "p": 79
           }
          ]
         },
@@ -34619,6 +34293,24 @@
          ]
         },
         {
+         "type": "truefalse",
+         "id": "english-g2-ch11-l3-a7",
+         "difficulty": 2,
+         "tags": [
+          "drawing",
+          "house"
+         ],
+         "prompt": "The drawing activity asks for things used to clean the school.",
+         "answer": false,
+         "explanation": "It asks for three things used to clean the house.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 79
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "english-g2-ch11-l3-a8",
          "difficulty": 3,
@@ -34649,43 +34341,6 @@
           {
            "ch": 11,
            "p": 78
-          },
-          {
-           "ch": 11,
-           "p": 79
-          },
-          {
-           "ch": 11,
-           "p": 79
-          },
-          {
-           "ch": 11,
-           "p": 79
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "english-g2-ch11-l3-a9",
-         "difficulty": 3,
-         "tags": [
-          "drawing",
-          "house",
-          "speaking"
-         ],
-         "prompt": "Which instruction belongs to the drawing activity?",
-         "options": [
-          "List three things used to clean the house.",
-          "Talk about packets or bottles being thrown.",
-          "Imagine sitting under a tree.",
-          "Decide whether there is a dustbin in the school."
-         ],
-         "answer": 0,
-         "explanation": "The drawing activity asks for three things used to clean the house.",
-         "src": [
-          {
-           "ch": 11,
-           "p": 79
           },
           {
            "ch": 11,
@@ -35013,6 +34668,24 @@
          ]
         },
         {
+         "type": "truefalse",
+         "id": "english-g2-ch11-l4-a2",
+         "difficulty": 1,
+         "tags": [
+          "word-parts",
+          "market"
+         ],
+         "prompt": "The word market is shown as mar and ket.",
+         "answer": true,
+         "explanation": "Yes! “Market” is shown as “mar” and “ket”.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 80
+          }
+         ]
+        },
+        {
          "type": "mcq",
          "id": "english-g2-ch11-l4-a3",
          "difficulty": 1,
@@ -35029,24 +34702,6 @@
          ],
          "answer": 2,
          "explanation": "Great! “Monkey” is shown as “mon” and “key”.",
-         "src": [
-          {
-           "ch": 11,
-           "p": 80
-          }
-         ]
-        },
-        {
-         "type": "truefalse",
-         "id": "english-g2-ch11-l4-a2",
-         "difficulty": 1,
-         "tags": [
-          "word-parts",
-          "market"
-         ],
-         "prompt": "The word market is shown as mar and ket.",
-         "answer": true,
-         "explanation": "Yes! “Market” is shown as “mar” and “ket”.",
          "src": [
           {
            "ch": 11,
@@ -35076,23 +34731,21 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "english-g2-ch11-l4-a6",
+         "type": "truefalse",
+         "id": "english-g2-ch11-l4-a7",
          "difficulty": 2,
          "tags": [
-          "listening",
-          "teacher"
+          "syllables",
+          "clapping"
          ],
-         "prompt": "Why does the activity ask you to close your eyes?",
-         "options": [
-          "To clap for each syllable",
-          "To write the word parts",
-          "To listen to the teacher",
-          "To choose a name"
-         ],
-         "answer": 2,
-         "explanation": "Good listening! The activity asks children to close their eyes and listen to their teacher.",
+         "prompt": "Children clap for each syllable when they say the word classroom.",
+         "answer": false,
+         "explanation": "Not quite. Children clap for each syllable when they say their name.",
          "src": [
+          {
+           "ch": 11,
+           "p": 80
+          },
           {
            "ch": 11,
            "p": 80
@@ -42800,30 +42453,6 @@
         "creator": "AKS.9955"
        },
        "activities": [
-        {
-         "type": "mcq",
-         "id": "english-g2-ch13-l1-x1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "Meenakshi and Ramu are talking about what they enjoy. Meenakshi comes from Tamil Nadu and speaks Tamil. Her favourite festival is Pongal. Ramu comes from Gujarat and speaks Gujarati. He is seven years old and likes to dance the Garba. Gulabo joins them and talks about colourful clothes and puppet shows. She comes from Rajasthan and travels by camel. Badal is also there. He comes from Bengal, speaks Bengali, likes painting and music, and studies at Santiniketan.",
-         "prompt": "Meenakshi is asked to choose one celebration for a group activity. What should she do?",
-         "options": [
-          "She should choose Pongal for the group activity.",
-          "She should choose the Garba for the group activity.",
-          "She should choose puppet shows for the group activity.",
-          "She should choose painting and music for the group activity."
-         ],
-         "answer": 0,
-         "why": {
-          "She should choose the Garba for the group activity.": "Garba is Ramu's preferred dance.",
-          "She should choose puppet shows for the group activity.": "Gulabo enjoys puppet shows.",
-          "She should choose painting and music for the group activity.": "Painting and music belong to Badal's interests."
-         },
-         "explanation": "Pongal is Meenakshi's favourite festival."
-        },
         {
          "type": "mcq",
          "id": "english-g2-ch13-l1-x2",

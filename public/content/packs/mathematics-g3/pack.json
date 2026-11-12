@@ -10576,27 +10576,6 @@
         },
         {
          "type": "fillblank",
-         "id": "mathematics-g3-ch2-l4-a4",
-         "difficulty": 1,
-         "tags": [
-          "shapes",
-          "tasks"
-         ],
-         "prompt": "The task asks children to draw a box around ______.",
-         "answers": [
-          "cuboids"
-         ],
-         "hint": "Look for the box-sorting task.",
-         "explanation": "The box task is for cuboids, so fill in “cuboids”.",
-         "src": [
-          {
-           "ch": 2,
-           "p": 12
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
          "difficulty": 1,
          "tags": [
           "practice",
@@ -49279,70 +49258,6 @@
         },
         {
          "type": "mcq",
-         "id": "mathematics-g3-ch9-l1-d2",
-         "difficulty": 3,
-         "tags": [
-          "deep",
-          "locate"
-         ],
-         "prompt": "Another activity asks for 703, 721 and 759 to be located. Where should 703 sit?",
-         "options": [
-          "Right of 721 but left of 759",
-          "Left of both 721 and 759",
-          "Right of both 721 and 759",
-          "Left of 721 but right of 759"
-         ],
-         "answer": 1,
-         "why": {
-          "Right of 721 but left of 759": "This starts at 721, but 703 is smaller than 721.",
-          "Right of both 721 and 759": "This treats the smallest number as if it were larger than both.",
-          "Left of 721 but right of 759": "This puts 703 right of 759, but 703 is smaller."
-         },
-         "explanation": "703 is smaller than both 721 and 759, so it sits left.",
-         "f": [
-          "1.9"
-         ],
-         "src": [
-          {
-           "ch": 9,
-           "p": 118
-          }
-         ]
-        },
-        {
-         "type": "mcq",
-         "id": "mathematics-g3-ch9-l1-d3",
-         "difficulty": 3,
-         "tags": [
-          "deep",
-          "explain"
-         ],
-         "prompt": "Another activity asks for 703, 721 and 759 to be located. A child says 721 is after 759. Why is this wrong?",
-         "options": [
-          "721 is smaller than 759.",
-          "721 and 759 are equal.",
-          "759 is smaller than 721.",
-          "721 comes before every number."
-         ],
-         "answer": 0,
-         "why": {
-          "721 and 759 are equal.": "Neither number equals the other, so their order matters.",
-          "759 is smaller than 721.": "This reverses the sizes because 759 is larger.",
-          "721 comes before every number.": "This uses an extreme rule instead of comparing 721 and 759."
-         },
-         "explanation": "721 is smaller than 759, so it must come before it.",
-         "f": [
-          "1.9"
-         ],
-         "src": [
-          {
-           "ch": 9,
-           "p": 118
-          }
-         ]
-        },
-        {
-         "type": "mcq",
          "id": "mathematics-g3-ch9-l1-d4",
          "difficulty": 3,
          "tags": [
@@ -51996,61 +51911,6 @@
         },
         {
          "type": "worked",
-         "id": "mathematics-g3-ch9-l5-w1",
-         "difficulty": 1,
-         "tags": [
-          "worked"
-         ],
-         "prompt": "The matching activity uses the range 5 to 15. How many whole numbers are in this range, including both ends?",
-         "steps": [
-          "The range starts at 5 and ends at 15.",
-          "There are 15 - 5 + 1 numbers, because we count both ends.",
-          "11 is the answer."
-         ],
-         "modelSpec": null,
-         "result": "11",
-         "gen": {
-          "template": "The matching activity uses the range {low} to {high}. How many whole numbers are in this range, including both ends?",
-          "params": {
-           "low": [
-            2,
-            5,
-            8
-           ],
-           "high": {
-            "min": 12,
-            "max": 20
-           }
-          },
-          "where": [
-           "high >= low"
-          ],
-          "answer": "high-low+1",
-          "vals": {
-           "one": 1,
-           "count": "high-low+1"
-          },
-          "steps": [
-           "The range starts at {low} and ends at {high}.",
-           "There are {high} - {low} + {one} numbers, because we count both ends.",
-           "{count} is the answer."
-          ],
-          "model": null,
-          "hint": "Count the numbers by subtracting the lower end from the upper end, then include the lower end.",
-          "wrong": [],
-          "wrongWhy": []
-         },
-         "explanation": "Watch how it is solved.",
-         "f": [],
-         "derived": [
-          "1 (generated problem)",
-          "11 (generated problem)",
-          "15 (generated problem)",
-          "5 (generated problem)"
-         ]
-        },
-        {
-         "type": "worked",
          "id": "mathematics-g3-ch9-l5-t1",
          "difficulty": 1,
          "tags": [
@@ -54036,24 +53896,6 @@
           "The number belongs to the 0–10 range.": "353 is outside the 0–10 range."
          },
          "explanation": "The first and last digits match, and the middle digit remains in the middle."
-        },
-        {
-         "type": "explain",
-         "id": "mathematics-g3-ch9-l5-e1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "written"
-         ],
-         "prompt": "How does the matching activity use ranges to show the difference between groups?",
-         "answer": "Each matching pair uses a different quantity range. School children match 0–10, classroom books match 11–50, people in a bus match 51–100, and book pages match 101–200. Showing 100, 200 and 300 separately demonstrates the chapter’s hundreds.",
-         "points": [
-          "School children match 0–10.",
-          "Classroom books match 11–50.",
-          "The bus group matches 51–100.",
-          "Book pages match 101–200."
-         ],
-         "explanation": "Compare your answer with the points a marker looks for."
         },
         {
          "type": "mcq",
@@ -75864,95 +75706,6 @@
            "ch": 13,
            "p": 173
           },
-          {
-           "ch": 13,
-           "p": 173
-          },
-          {
-           "ch": 13,
-           "p": 173
-          }
-         ]
-        },
-        {
-         "type": "fillblank",
-         "difficulty": 1,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "The children spend 20 minutes matching activity pictures and 5 minutes writing times. How many minutes do they spend in all?",
-         "explanation": "The first activity takes 20 minutes. The second activity takes 5 minutes. Adding both durations gives 25 minutes in all.",
-         "steps": [
-          "The first activity takes 20 minutes.",
-          "The second activity takes 5 minutes.",
-          "Adding both durations gives 25 minutes in all."
-         ],
-         "hint": "Add the two activity durations because both times are spent.",
-         "derived": [
-          "20 (generated problem)",
-          "25 (generated problem)",
-          "5 (generated problem)"
-         ],
-         "gen": {
-          "template": "The children spend {minutes} minutes matching activity pictures and {more_minutes} minutes writing times. How many minutes do they spend in all?",
-          "params": {
-           "minutes": [
-            10,
-            15,
-            20
-           ],
-           "more_minutes": [
-            5,
-            10,
-            15
-           ]
-          },
-          "where": [],
-          "answer": "minutes+more_minutes",
-          "vals": {},
-          "steps": [
-           "The first activity takes {minutes} minutes.",
-           "The second activity takes {more_minutes} minutes.",
-           "Adding both durations gives {answer} minutes in all."
-          ],
-          "model": {
-           "type": "tape",
-           "parts": [
-            {
-             "v": "minutes",
-             "label": "{minutes} minutes"
-            },
-            {
-             "v": "more_minutes",
-             "label": "{more_minutes} minutes"
-            }
-           ],
-           "total": "?"
-          },
-          "hint": "Add the two activity durations because both times are spent.",
-          "wrong": [],
-          "wrongWhy": []
-         },
-         "modelSpec": {
-          "type": "tape",
-          "parts": [
-           {
-            "v": 20,
-            "label": "20 minutes"
-           },
-           {
-            "v": 5,
-            "label": "5 minutes"
-           }
-          ],
-          "total": "?"
-         },
-         "answers": [
-          "25"
-         ],
-         "id": "mathematics-g3-ch13-l5-c3",
-         "src": [
           {
            "ch": 13,
            "p": 173
