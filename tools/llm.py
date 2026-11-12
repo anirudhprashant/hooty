@@ -144,12 +144,14 @@ def m27(prompt, want_json=True, tries=3, on_retry=None, minimax_only=False):
 
 def vision(image_path, prompt, tries=3):
     """What MiniMax's vision model says about a local picture, or None if it could not be reached."""
+    timeout = float(os.environ.get('VISION_TIMEOUT', '180'))   # a healthy reply takes about 8 s; a hung one must not cost 9 minutes
+    tries = int(os.environ.get('VISION_TRIES', tries))
     with tempfile.NamedTemporaryFile(suffix='.jpg') as jpg:
         subprocess.run([MAGICK, image_path + '[0]', '-resize', '768x768>', '-background', 'white', '-flatten', jpg.name], capture_output=True)
         payload = json.dumps({'prompt': prompt, 'image': base64.b64encode(open(jpg.name, 'rb').read()).decode()})
     for t in range(tries):
         try:
-            out = _remote('vlm.py', payload, 180).stdout.strip()
+            out = _remote('vlm.py', payload, timeout).stdout.strip()
             if out: return out
         except Exception: pass
         time.sleep(5 + t * 5)
