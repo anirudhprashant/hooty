@@ -131,9 +131,12 @@ Reply ONLY JSON: {{"ranked": [{{"index": 0, "alt": "...", "caption": "..."}}]}}'
     used.add(c['page']); json.dump(out, open(out_path, 'w'), indent=1, ensure_ascii=False)
     print('ok', key, c['title'], flush=True)
 
+STOP_AFTER = int(os.environ.get('HOOTY_STOP_AFTER', '0'))   # backfill mode: one good picture makes the whole chapter illustrated
 for l in facts['lessons']:
     one(l)
     if l['id'][1:] not in out and os.environ.get('HOOTY_BROAD') != '0': one(l, broad=True)
+    if STOP_AFTER and len([k for k in out if k != 'boss']) >= STOP_AFTER:
+        print('stop-after reached, chapter is illustrated', flush=True); break
 # the chapter challenge reuses the first lesson's picture
 if '1' in out and 'boss' not in out: out['boss'] = out['1']
 json.dump(out, open(out_path, 'w'), indent=1, ensure_ascii=False)
