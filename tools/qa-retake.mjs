@@ -98,6 +98,8 @@ async function tapThroughConcept() {
 }
 
 async function answerCorrect(k) {
+  // Matching boards and ordering strips submit themselves once complete; passActivity knows how to drive them.
+  if (k.type === 'match' || k.type === 'matchpairs' || k.type === 'dragorder') return passActivity(k);
   const info = Q.get(questionKey(k.prompt));
   if (!info) return `no answer on file for: ${k.prompt.slice(0, 70)}`;
   if (info.type === 'mcq') {
