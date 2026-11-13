@@ -1281,7 +1281,8 @@ function retakeOffer(s, activity, response) {
   const l = activeLearner();
   const queued = new Set(s.queue.slice(s.index + 1).map((x) => x.id));
   const alt = chapter ? pickAlt(activity, chapter, { stats: l?.activityStats, shown: s.shown, queued }) : null;
-  showFeedback(s, activity, false, response, { retake: alt ? { base: activity, activity: variantOf(alt, activity) } : true });
+  // whole: the different question tests another line of the same card, so re-reading one line would not cover it.
+  showFeedback(s, activity, false, response, { retake: alt ? { base: activity, activity: variantOf(alt, activity), whole: alt.focus !== activity.focus } : true });
 }
 
 // Answered the different question: credit the idea, not the wording. Right means the idea is known, so the card lands
@@ -1312,8 +1313,10 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
   const slip = !correct && activity.why && activity.options ? activity.why[activity.options[response.choice]] : '';
   const steps = !correct && activity.steps?.length ? activity.steps : null;
   const model = !correct && activity.modelSpec ? renderModel(activity.modelSpec) : null;
-  const reveal = opts.retake ? revealFor(activity, chapterFor(activity)) : null;
   const retake = opts.retake?.activity || null;
+  // The different question can test another line of the same card. When it does, the child needs the whole
+  // remember-list, not just the line the missed question asked about.
+  const reveal = opts.retake ? revealFor(activity, chapterFor(activity), { whole: !!opts.retake.whole }) : null;
   const sheet = el('div', { class: `sheet sheet--${correct ? 'correct' : 'wrong'}`, role: 'status' }, [
     el('div', { class: 'sheet__head' }, [
       el('span', { class: 'sheet__mark' }, [icon(correct ? 'check' : 'cross')]),

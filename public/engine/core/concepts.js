@@ -55,14 +55,15 @@ function trimSentences(text, max = 300) {
 }
 
 // What to show the child who missed this question: the one line that taught it when the link is sure, otherwise the
-// card's own remember-list, so the re-reading always covers what the next question may ask.
-export function revealFor(activity, chapter) {
+// card's own remember-list, so the re-reading always covers what the next question may ask. `whole` forces the list,
+// for when the different question that follows tests a different line of the same card.
+export function revealFor(activity, chapter, { whole = false } = {}) {
   const card = cardById(chapter, activity?.anchor);
   if (!card) return null;
   const pts = pointsOf(card);
   const f = Number.isInteger(activity.focus) ? activity.focus : -1;
   const title = card.title || card.kicker || '';
-  if (f >= 0 && pts[f]) return { title, lines: [pts[f]], one: true };
+  if (!whole && f >= 0 && pts[f]) return { title, lines: [pts[f]], one: true };
   if (card.type === 'concept' && (card.keyPoints || []).length) {
     return { title, lines: card.keyPoints.filter((p) => typeof p === 'string').slice(0, 3), one: false };
   }
