@@ -1567,6 +1567,49 @@ export const WIDGETS = {
       return { kids, say: `The speaker vibrates ${v.freq} times each second, which we hear as ${v.freq >= 600 ? 'a high pitch' : v.freq <= 200 ? 'a low pitch' : 'a middling pitch'}. ${tall ? 'The wave is tall, so the sound is loud.' : soft ? 'The wave is short, so the sound is soft.' : 'The wave is medium height, so the sound is medium loud.'} Bigger amplitude means more energy.` };
     },
   },
+  lens: {
+    subject: 'science', about: 'A convex lens with an object in front of it. Parallel rays bend through the focal point, and the object distance sets whether the image is real and inverted or virtual, upright and magnified. For lenses, convex lens, converging lens, principal focus, focal length, real and virtual images, magnifying glass, the power of a lens.',
+    sliders: [['u', 'Distance of the object (centimetres)', 6, 60, 1, 30], ['f', 'Focal length of the lens (centimetres)', 5, 20, 1, 10]],
+    draw(v) {
+      const axis = 150, lensX = 300, scale = 4, objectH = 6;
+      const objX = lensX - v.u * scale, objY = axis - objectH * scale;
+      const farF = lensX + v.f * scale, nearF = lensX - v.f * scale;
+      const kids = [R(0, 0, W, H, '#f7f3ff', { w: 0 }), L(20, axis, 580, axis, '#b8aed0', 3, { 'stroke-dasharray': '10 8' })];
+      kids.push(s('ellipse', { cx: lensX, cy: axis, rx: 13, ry: 88, fill: C.sky, stroke: INK, 'stroke-width': 4, opacity: 0.75 }));
+      kids.push(T(lensX, axis + 112, 'lens', { z: 13, f: '#6b5a8a' }));
+      kids.push(L(objX, axis, objX, objY, C.p, 5), s('polygon', { points: `${objX},${objY - 12} ${objX - 7},${objY + 2} ${objX + 7},${objY + 2}`, fill: C.p }), T(objX, objY - 20, 'object', { z: 13, f: C.p }));
+      for (const fx of [nearF, farF]) kids.push(CIRC(fx, axis, 5, C.g), T(fx, axis + 24, fx < lensX ? 'F' : "F'", { z: 14, f: C.g }));
+      const denom = v.u - v.f, parallel = Math.abs(denom) < 1e-9;
+      let img = 0, imgX = null, imgY = null, real = false, note = '';
+      if (!parallel) {
+        img = (v.u * v.f) / denom;   // positive on the far side of the lens
+        real = img > 0;
+        imgX = lensX + img * scale;
+        imgY = axis + ((objectH * img) / v.u) * scale;   // real images sit below the axis
+        const k1 = (axis - objY) / (farF - lensX), k2 = (axis - objY) / (lensX - objX);
+        kids.push(L(objX, objY, lensX, objY, C.o, 3), L(lensX, objY, 580, objY + k1 * (580 - lensX), C.o, 3));
+        kids.push(L(objX, objY, 580, objY + k2 * (580 - objX), C.b, 3));
+        if (imgX > 12 && imgX < 588) {
+          kids.push(L(imgX, axis, imgX, imgY, real ? C.o : C.b, 5, real ? {} : { 'stroke-dasharray': '8 6' }));
+          const dir = real ? -1 : 1;
+          kids.push(s('polygon', { points: `${imgX},${imgY} ${imgX - 7},${imgY + dir * 12} ${imgX + 7},${imgY + dir * 12}`, fill: real ? C.o : C.b }));
+          kids.push(T(imgX, imgY + (real ? 24 : 22), 'image', { z: 13, f: real ? C.o : C.b }));
+          if (!real) {
+            kids.push(L(lensX, objY, imgX, imgY, C.o, 2, { 'stroke-dasharray': '7 6' }), L(lensX, axis, imgX, imgY, C.b, 2, { 'stroke-dasharray': '7 6' }));
+          }
+        }
+        const ratio = Math.abs(img / v.u);
+        note = real
+          ? `The image is real, inverted and ${ratio > 1.05 ? 'bigger' : ratio < 0.95 ? 'smaller' : 'the same size'}.`
+          : `The image is virtual, upright and ${ratio > 1.05 ? 'bigger' : ratio < 0.95 ? 'smaller' : 'the same size'}, on the same side as the object.`;
+      }
+      kids.push(T(300, 24, `Object ${v.u} cm from the lens; focal length ${v.f} cm`, { z: 15, w: 600 }));
+      kids.push(T(300, 292, parallel ? 'The rays leave the lens parallel, so no image forms.' : (real ? `Image ${num(img, 1)} cm on the far side: real and inverted.` : `Image appears ${num(-img, 1)} cm on the near side: virtual and upright.`), { z: 15, w: 600, f: real ? C.o : C.b }));
+      return { kids, say: parallel
+        ? `The object sits exactly at the focal point, so the rays leave the lens parallel and never meet: no image forms.`
+        : `The object is ${v.u} cm from a convex lens of focal length ${v.f} cm. ${note}${real ? ' A screen on the far side would show it.' : ' You see it by looking through the lens, the way a magnifying glass works.'}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

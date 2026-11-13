@@ -342,6 +342,15 @@ export const KITS = {
       { say: 'Make the deepest note on the slider.', when: 'freq == 100', then: 'Fewer vibrations each second means a lower pitch.' },
     ],
   },
+  lens: {
+    grades: [9, 10], match: [/convex lens/, /converging lens/, /lenses? and power/, /power of (a )?lens/, /focal length/, /principal focus/, /magnifying glass/, /real and virtual image/],
+    title: 'Focus the lens', takeaway: 'A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger.',
+    tasks: [
+      { say: 'Put the object exactly twice the focal length away, so the image is the same size.', when: 'u == 2 * f', then: 'At twice the focal length the image is real, inverted and the same size.' },
+      { say: 'Move the object inside the focal length to see a virtual, upright image.', when: 'u < f', then: 'Closer than the focus the image is virtual, upright and bigger: this is how a magnifying glass works.' },
+      { say: 'Give the lens a short focal length, so it is more powerful.', when: 'f <= 6', then: 'A short focal length means a powerful lens, because power is one divided by the focal length.' },
+    ],
+  },
   shadow: {
     grades: [4, 7], match: [/shadows?/, /\bopaque\b|\btranslucent\b|\btransparent\b/, /light travels in (a )?straight/],
     title: 'Make a shadow', takeaway: 'Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.',
