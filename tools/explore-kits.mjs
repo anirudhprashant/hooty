@@ -324,6 +324,24 @@ export const KITS = {
       { say: 'Keep the force at 20 N and lift twice as far as at the start.', when: 'force == 20 and dist == 4', then: '4 m is twice 2 m, so the work doubles from 40 J to 80 J.' },
     ],
   },
+  newton: {
+    grades: [8, 9], perChapter: { 9: 4 }, match: [/newton'?s (first|second) law/, /\blaws? of motion\b/, /balanced and unbalanced/, /\binertia\b/, /(force|mass) and acceleration|acceleration and (force|mass)/, /\bwhat is (a )?force\b/],
+    title: 'Push, mass and acceleration', takeaway: 'The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.',
+    tasks: [
+      { say: 'Make the box much heavier and keep the push the same. Watch the acceleration fall.', when: 'mass == 8', then: 'The same force on a bigger mass gives a smaller acceleration.' },
+      { say: 'Balance the push with friction so the speed stops changing.', when: 'push == back and push > 0', then: 'When the forces balance, the net force is zero and the box keeps its speed.' },
+      { say: 'Double both the force and the mass, so the acceleration stays the same.', when: 'push == 20 and mass == 4 and back == 0', then: '20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg.' },
+    ],
+  },
+  sound: {
+    grades: [8, 9], perChapter: { 9: 4 }, match: [/sound waves?/, /\bpitch\b/, /\bloudness\b/, /\bamplitude\b/, /hearing|ultrasonic|echo(es)?/, /how sound is produced/],
+    title: 'See the sound', takeaway: 'More vibrations each second make a higher note, and a taller wave means a louder sound with more energy.',
+    tasks: [
+      { say: 'Make a high, shrill note.', when: 'freq >= 600', then: 'More vibrations each second means a higher pitch.' },
+      { say: 'Make the sound very loud.', when: 'amp >= 8', then: 'A taller wave carries more energy, so the sound is louder.' },
+      { say: 'Make the deepest note on the slider.', when: 'freq == 100', then: 'Fewer vibrations each second means a lower pitch.' },
+    ],
+  },
   shadow: {
     grades: [4, 7], match: [/shadows?/, /\bopaque\b|\btranslucent\b|\btransparent\b/, /light travels in (a )?straight/],
     title: 'Make a shadow', takeaway: 'Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.',

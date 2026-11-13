@@ -1535,6 +1535,38 @@ export const WIDGETS = {
       return { kids, say: v.dist === 0 ? `You push with ${v.force} N but the bag does not move, so the distance is 0 m and the work is 0 J.` : `You lift with ${v.force} N over ${v.dist} m, so you do ${v.force} x ${v.dist} = ${wd} J of work.${v.force === 20 && v.dist === 4 ? ' Twice the distance with the same force is twice the work.' : ''}` };
     },
   },
+  newton: {
+    subject: 'science', about: 'A box pushed one way and held back by friction, with its mass. The net force divided by the mass gives the acceleration, so a heavier box speeds up less and balanced forces leave the speed unchanged. For force, Newton\'s first and second laws, balanced and unbalanced forces, inertia, mass and acceleration.',
+    sliders: [['push', 'Your push (newtons)', 0, 20, 1, 10], ['back', 'Friction pulling back (newtons)', 0, 10, 1, 0], ['mass', 'Mass of the box (kilograms)', 1, 10, 1, 2]],
+    draw(v) {
+      const net = v.push - v.back, acc = net / v.mass, floor = 224;
+      const shift = net > 0 ? Math.min(80, (net / v.mass) * 7) : net < 0 ? -Math.min(80, (-net / v.mass) * 7) : 0;
+      const left = 240 + shift, right = left + 104;
+      const arrow = (x, y, len, dir, colour, word) => [L(x, y, x + dir * len, y, colour, 6), s('polygon', { points: `${x + dir * (len + 12)},${y} ${x + dir * len},${y - 9} ${x + dir * len},${y + 9}`, fill: colour }), T(x + dir * (len / 2), y - 14, word, { z: 13, f: colour })];
+      const kids = [R(0, floor, W, 76, '#efeaf8', { w: 0 }), L(0, floor, W, floor, INK, 4), R(left, floor - 66, 104, 66, C.o, { r: 6, w: 3 }), T(left + 52, floor - 24, `${v.mass} kg`, { z: 17, f: '#fff' })];
+      const pushLen = 18 + v.push * 3.4, backLen = 18 + v.back * 5;
+      if (v.push > 0) kids.push(...arrow(left - 34 - pushLen, floor - 33, pushLen, 1, C.p, `${v.push} N push`));
+      if (v.back > 0) kids.push(...arrow(right + 34 + backLen, floor - 33, backLen, -1, C.b, `${v.back} N friction`));
+      const moving = Math.abs(net) > 1e-9;
+      kids.push(T(300, 40, net === 0 ? 'Balanced: the speed stays the same' : net > 0 ? 'Unbalanced: it speeds up to the right' : 'Unbalanced: it slows down', { z: 22, f: net === 0 ? '#c2510e' : '#058a68' }));
+      kids.push(T(300, 70, `Net force = ${v.push} − ${v.back} = ${num(net, 1)} N`, { z: 16, w: 600 }));
+      kids.push(T(300, 286, moving ? `a = net force ÷ mass = ${num(net, 1)} ÷ ${v.mass} = ${num(acc, 2)} m/s²` : 'net force 0 N, so a = 0 m/s²: the speed does not change', { z: 17 }));
+      const say = net === 0 ? `The push and friction are equal, so the net force is zero. The box keeps the speed it has: this is balanced force, and a still box stays still.` : `The push is ${v.push} N and friction is ${v.back} N, so the net force is ${num(net, 1)} N. On a ${v.mass} kg box that gives an acceleration of ${num(acc, 2)} m/s².${v.mass >= 6 ? ' The same force on a heavier box gives a smaller acceleration.' : ''}`;
+      return { kids, say };
+    },
+  },
+  sound: {
+    subject: 'science', about: 'A speaker making a sound wave. More vibrations each second make a higher pitch, and a taller wave means a louder sound. For sound, pitch, loudness, frequency, amplitude, vibration, hearing.',
+    sliders: [['freq', 'Vibrations each second (frequency)', 100, 800, 10, 300], ['amp', 'Height of the wave (loudness)', 1, 10, 1, 2]], animated: true,
+    draw(v, p, t = 0) {
+      const cy = 154, phase = t * Math.min(v.freq, 800) * 1.1, cycles = v.freq / 45, pts = [];
+      for (let x = 0; x <= 600; x += 4) pts.push(`${x === 0 ? 'M' : 'L'} ${x} ${cy - v.amp * 8 * Math.sin((x / 600) * cycles * 2 * Math.PI + phase)}`);
+      const kids = [R(0, 0, W, H, '#f4f0ff', { w: 0 }), L(30, cy, 570, cy, '#c9c4d6', 2), s('path', { d: pts.join(' '), fill: 'none', stroke: C.p, 'stroke-width': 4 }), CIRC(34, cy, 17, C.o, { w: 3 }), T(34, cy + 52, 'speaker', { z: 13 }), T(300, 34, v.freq >= 600 ? 'a high, shrill note' : v.freq <= 200 ? 'a low, deep note' : 'a middling note', { z: 22 }), T(300, 62, `${v.freq} vibrations each second`, { z: 16, w: 600 })];
+      const tall = v.amp >= 7, soft = v.amp <= 3;
+      kids.push(T(300, 292, tall ? 'tall wave: loud sound' : soft ? 'short wave: soft sound' : 'medium wave: medium loudness', { z: 15, f: C.b, w: 600 }));
+      return { kids, say: `The speaker vibrates ${v.freq} times each second, which we hear as ${v.freq >= 600 ? 'a high pitch' : v.freq <= 200 ? 'a low pitch' : 'a middling pitch'}. ${tall ? 'The wave is tall, so the sound is loud.' : soft ? 'The wave is short, so the sound is soft.' : 'The wave is medium height, so the sound is medium loud.'} Bigger amplitude means more energy.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
