@@ -114,14 +114,14 @@ Reply ONLY JSON: {{"ranked": [{{"index": 0, "alt": "...", "caption": "..."}}]}}'
         score, why = vision_score(f'{MEDIA}/{name}', lesson['title'], sheet)
         print(f'  look {key} {c["title"][:50]}: {score} {why}', flush=True)
         if score is None:  # checker down: trust the description-based pick and mark it to be looked at later
-            chosen = (c, r, name); unchecked = True; break
-        if score >= PASS: chosen = (c, r, name); unchecked = False; break
-        if score >= PASS - 1 and not runner_up: runner_up = (c, r, name); continue  # keep the file in case nothing beats it
+            chosen = (c, r, name, score); unchecked = True; break
+        if score >= PASS: chosen = (c, r, name, score); unchecked = False; break
+        if score >= PASS - 1 and not runner_up: runner_up = (c, r, name, score); continue  # keep the file in case nothing beats it
         os.remove(f'{MEDIA}/{name}'); used.add(c['page'])
     if not chosen and runner_up: chosen = runner_up; unchecked = False
     elif runner_up and chosen is not runner_up and os.path.exists(f'{MEDIA}/{runner_up[2]}'): os.remove(f'{MEDIA}/{runner_up[2]}')
     if not chosen: print('nothing passed the look test', key); return
-    c, pick, name = chosen
+    c, pick, name, score = chosen
     who = c['creator'] if c['creator'] != 'Unknown' else 'unknown author'
     title = re.sub(r'^File:', '', c['title']).rsplit('.', 1)[0].replace('_', ' ')[:70]
     out[key] = {'file': 'media/' + name, 'alt': pick['alt'].strip(), 'caption': pick['caption'].strip(),
