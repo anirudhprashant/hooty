@@ -49,6 +49,18 @@ page.on('pageerror', (e) => problems.push(`pageerror: ${e.message}`));
 
 const wait = (ms = 450) => page.waitForTimeout(ms);
 
+// PACK=english-g2 GRADE=2 runs the walk in another book, so the flow is proved in a second language and a different
+// shape of content, not only in the first book a new child gets.
+if (process.env.PACK) {
+  await page.addInitScript(([packId, grade]) => {
+    localStorage.setItem('sparkle-state-v1', JSON.stringify({
+      learners: { 'qa-learner': { name: 'QA', grade, packId } },
+      activeLearnerId: 'qa-learner',
+      savedAt: Date.now(),
+    }));
+  }, [process.env.PACK, process.env.GRADE || '6']);
+}
+
 async function current() {
   return page.evaluate(() => {
     const a = document.querySelector('.activity');
