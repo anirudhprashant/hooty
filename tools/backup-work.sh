@@ -5,6 +5,11 @@
 #   tools/backup-work.sh
 set -u
 export GIT_DIR="${HOOTY_WORK_GIT:-$HOME/.hooty-work.git}" GIT_WORK_TREE="$(cd "$(dirname "$0")/.." && pwd)/work"
+# The systemd units export HOOTY_WORK_GIT; a manual publish from a plain shell does not. Look where the private repo
+# actually lives before giving up, which is how drafts sat unbacked until someone noticed.
+if [ ! -d "$GIT_DIR" ] && [ -d "$HOME/agent-workspace/hooty-env/hooty-work.git" ]; then
+  export GIT_DIR="$HOME/agent-workspace/hooty-env/hooty-work.git"
+fi
 [ -d "$GIT_DIR" ] || { echo "backup-work: no $GIT_DIR (see tools/backup-work.sh header)"; exit 0; }
 cd "$GIT_WORK_TREE" || exit 0
 git add -A >/dev/null 2>&1
