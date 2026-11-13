@@ -18541,7 +18541,7 @@
       {
        "id": "science-g9-ch6-l3",
        "title": "The Force of Friction",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -18597,6 +18597,36 @@
            "p": 97
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch6-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "friction",
+         "params": {},
+         "title": "Push the box",
+         "tasks": [
+          {
+           "say": "Push hard enough to start the box moving.",
+           "when": "push > (rough / 100) * weight",
+           "then": "Once the push is bigger than friction, the extra force starts the box moving."
+          },
+          {
+           "say": "Slide the box on a surface with no friction at all.",
+           "when": "rough == 0 and push > 0",
+           "then": "With no friction, even a small push sets the box moving."
+          },
+          {
+           "say": "Make the surface so rough that even your hardest push cannot move the box.",
+           "when": "push == 20 and (rough / 100) * weight >= 20",
+           "then": "A heavy box on a very rough surface needs a bigger push than you can give."
+          }
+         ],
+         "takeaway": "A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give.",
+         "explanation": "A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give."
         },
         {
          "type": "worked",
@@ -21149,7 +21179,7 @@
       {
        "id": "science-g9-ch7-l1",
        "title": "Work Done by a Constant Force",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -21205,6 +21235,36 @@
            "p": 118
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "work",
+         "params": {},
+         "title": "Lift the bag",
+         "tasks": [
+          {
+           "say": "Lift without moving the bag. How much work is done?",
+           "when": "dist == 0",
+           "then": "No distance moved means no work is done, however hard you push."
+          },
+          {
+           "say": "Do exactly 100 joules of work.",
+           "when": "force * dist == 100",
+           "then": "Work = force x distance, so 50 N over 2 m gives 100 J."
+          },
+          {
+           "say": "Keep the force at 20 N and lift twice as far as at the start.",
+           "when": "force == 20 and dist == 4",
+           "then": "4 m is twice 2 m, so the work doubles from 40 J to 80 J."
+          }
+         ],
+         "takeaway": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work.",
+         "explanation": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work."
         },
         {
          "type": "worked",
@@ -21656,7 +21716,7 @@
       {
        "id": "science-g9-ch7-l2",
        "title": "Work, Energy and Forms of Energy",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -21711,6 +21771,36 @@
            "p": 121
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "work",
+         "params": {},
+         "title": "Lift the bag",
+         "tasks": [
+          {
+           "say": "Lift without moving the bag. How much work is done?",
+           "when": "dist == 0",
+           "then": "No distance moved means no work is done, however hard you push."
+          },
+          {
+           "say": "Do exactly 100 joules of work.",
+           "when": "force * dist == 100",
+           "then": "Work = force x distance, so 50 N over 2 m gives 100 J."
+          },
+          {
+           "say": "Keep the force at 20 N and lift twice as far as at the start.",
+           "when": "force == 20 and dist == 4",
+           "then": "4 m is twice 2 m, so the work doubles from 40 J to 80 J."
+          }
+         ],
+         "takeaway": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work.",
+         "explanation": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work."
         },
         {
          "type": "worked",
