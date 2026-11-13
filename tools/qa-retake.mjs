@@ -226,7 +226,8 @@ if (again === null) fail('no wrong option left after the hint crossed one out');
 else await page.locator(`.option[data-choice="${again}"]`).first().click();
 await wait(700);
 k = await current();
-const different = k.buttons.find((b) => /different question/i.test(b));
+// The offer is the sheet's primary button when the re-teach is shown: two choices, whatever the book's language.
+const different = k.remember && k.buttons.length >= 2 ? k.buttons[0] : undefined;
 if (!k.remember) fail('the second miss showed no re-teach (no .remember block)');
 else console.log(`re-teach shown: ${k.remember.replace(/\s+/g, ' ').slice(0, 140)}`);
 if (!different) fail(`the second miss did not offer a different question (buttons: ${JSON.stringify(k.buttons)})`);

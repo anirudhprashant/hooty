@@ -1264,12 +1264,12 @@ function applyHint(s, root, hint) {
 
 // What taught this question, shown again beside the explanation: one line when the link is sure, the card's own
 // remember-list when it is not, so the re-reading always covers what the next question may ask.
-function rememberBlock(reveal) {
-  const box = el('div', { class: 'remember' }, [el('p', { class: 'remember__kick', text: 'Read this again' })]);
+function rememberBlock(reveal, w) {
+  const box = el('div', { class: 'remember' }, [el('p', { class: 'remember__kick', text: w('Read this again') })]);
   if (reveal.title) box.append(el('p', { class: 'remember__title', text: reveal.title }));
   if (reveal.one) box.append(el('p', { class: 'remember__line', text: reveal.lines[0] }));
   else box.append(el('ul', { class: 'remember__list' }, reveal.lines.map((text) => el('li', { text }))));
-  const read = el('button', { class: 'btn btn--ghost btn--sm', type: 'button', text: 'Listen' });
+  const read = el('button', { class: 'btn btn--ghost btn--sm', type: 'button', text: w('Listen') });
   read.addEventListener('click', () => speak(reveal.lines.map((text) => ({ text: plain(text) })), speechLang()));
   box.append(read);
   return box;
@@ -1313,6 +1313,7 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
   const slip = !correct && activity.why && activity.options ? activity.why[activity.options[response.choice]] : '';
   const steps = !correct && activity.steps?.length ? activity.steps : null;
   const model = !correct && activity.modelSpec ? renderModel(activity.modelSpec) : null;
+  const w = (text) => bookWord(packById(s?.lesson?.packId)?.language, text);
   const retake = opts.retake?.activity || null;
   // The different question can test another line of the same card. When it does, the child needs the whole
   // remember-list, not just the line the missed question asked about.
@@ -1326,15 +1327,15 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
     model ? el('figure', { class: 'model-fig' }, [model]) : null,
     steps ? el('ol', { class: 'sheet__steps' }, steps.map((x) => el('li', { text: x })))
       : (activity.explanation ? el('p', { class: 'sheet__body', text: activity.explanation }) : null),
-    reveal ? rememberBlock(reveal) : null,
+    reveal ? rememberBlock(reveal, w) : null,
   ]);
   const actions = el('div', { class: 'activity__actions' });
   if (retake) {
     // One more go, on a question that is new to the child. Skipping stays possible, quietly, so a stuck child is never
     // trapped in a loop.
-    const again = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: 'Try a different question' });
+    const again = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: w('Try a different question') });
     again.addEventListener('click', () => { s.reask = opts.retake; renderActivity(); });
-    const later = el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: 'Later' });
+    const later = el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: w('Later') });
     later.addEventListener('click', advance);
     actions.append(again, later);
   } else {
