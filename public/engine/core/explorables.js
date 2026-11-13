@@ -1501,6 +1501,40 @@ export const WIDGETS = {
       return { kids, say: `${phase === 'day' ? 'In the daytime' : phase === 'night' ? 'At night' : 'In the ' + phase}, step ${v.step + 1} of 15: Pihu ${acts[v.step][0]}.${phase === 'morning' && v.step === 0 ? ' The sun rises as her morning begins.' : phase === 'afternoon' && v.step >= 8 && v.step <= 9 ? ' The sun is high in the sky.' : phase === 'evening' && v.step === 11 ? ' The sun is setting as the evening begins.' : phase === 'night' && v.step === 13 ? ' The moon and stars are visible in the night sky.' : ''}` };
     },
   },
+  friction: {
+    subject: 'science', about: 'A heavy box on a surface, with sliders for the push, how rough the surface is and the weight of the box. Friction pushes back, and the box starts to slide only when the push beats the greatest friction the surface can give. For force, friction, contact forces, balanced and unbalanced forces, roughness, weight.',
+    sliders: [['push', 'Your push (newtons)', 0, 20, 1, 6], ['rough', 'How rough the surface is (per cent)', 0, 100, 10, 40], ['weight', 'Weight of the box (newtons)', 10, 60, 10, 30]],
+    draw(v) {
+      const grip = (v.rough / 100) * v.weight;          // the greatest friction the surface can give
+      const slides = v.push > grip + 1e-9, back = Math.min(v.push, grip);
+      const floor = 224, shift = slides ? Math.min(120, 18 + (v.push - grip) * 7) : 0;
+      const left = 120 + shift, right = left + 96, top = floor - 66;
+      const arrow = (x, y, len, dir, col, word) => [L(x, y, x + dir * len, y, col, 6), s('polygon', { points: `${x + dir * (len + 12)},${y} ${x + dir * len},${y - 9} ${x + dir * len},${y + 9}`, fill: col }), T(x + dir * (len / 2), y - 14, word, { z: 14, f: col })];
+      const grain = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].filter((i) => i * 9 < v.rough).map((i) => T(34 + i * 48, floor + 22 + (i % 3) * 12, '\\', { z: 12, f: '#8a7fa8' }));
+      const kids = [R(0, floor, W, 76, '#efeaf8', { w: 0 }), L(0, floor, W, floor, INK, 4), ...grain];
+      kids.push(R(left, top, 96, 66, C.o, { r: 6, w: 3 }), T(left + 48, top + 42, `${v.weight} N`, { z: 18, f: '#fff' }));
+      const pushLen = 12 + Math.min(v.push, 20) * 2.6, pullLen = 12 + back * 4;
+      if (v.push > 0) kids.push(...arrow(left - 34 - pushLen, top + 33, pushLen, 1, C.p, `${v.push} N push`));
+      if (back > 0) kids.push(...arrow(right + 34 + pullLen, top + 33, pullLen, -1, C.b, `friction ${num(back, 1)} N`));
+      kids.push(T(300, 40, slides ? 'The box slides!' : 'The box stays still', { z: 24, f: slides ? '#058a68' : INK }), T(300, 68, slides ? `Push ${v.push} N − friction ${num(grip, 1)} N = ${num(v.push - grip, 1)} N left over` : `Friction can rise to ${num(grip, 1)} N, enough to match your ${v.push} N push`, { z: 15, w: 600 }));
+      const surface = v.rough === 0 ? 'smooth ice' : v.rough <= 20 ? 'a polished floor' : v.rough <= 50 ? 'a wooden floor' : v.rough <= 80 ? 'a rough road' : 'loose sand';
+      const say = slides ? `You push with ${v.push} N. The surface can give up to ${num(grip, 1)} N of friction, and it does, so the box slides with ${num(v.push - grip, 1)} N left over.` : `You push with ${v.push} N. Friction on ${surface} can rise to ${num(grip, 1)} N, which is at least your push, so the box does not move.`;
+      return { kids, say: `${say} Friction always pushes back the opposite way to the push.${v.weight >= 50 ? ' A heavy box is harder to move: more weight means more friction.' : ''}` };
+    },
+  },
+  work: {
+    subject: 'science', about: 'A bag lifted straight up by a force over a distance. Work = force x distance in joules; no distance means no work, and doubling the force or the distance doubles the work. For work, work done by a force, force and displacement, joules, energy.',
+    sliders: [['force', 'Force you lift with (newtons)', 0, 100, 10, 20], ['dist', 'Distance lifted (metres)', 0, 10, 1, 2]],
+    draw(v) {
+      const wd = v.force * v.dist, floor = 250, up = v.dist * 13, bottom = floor - up, top = bottom - 74;
+      const kids = [R(0, floor, W, 50, '#efeaf8', { w: 0 }), L(0, floor, W, floor, INK, 4), R(170, top, 96, 74, C.o, { r: 8, w: 3 }), T(218, top + 46, `${v.force} N`, { z: 17, f: '#fff' })];
+      if (v.dist > 0) kids.push(L(318, floor, 318, bottom, C.b, 4, { 'stroke-dasharray': '7 6' }), L(308, bottom, 328, bottom, C.b, 3), L(308, floor, 328, floor, C.b, 3), T(346, (floor + bottom) / 2 + 6, `${v.dist} m`, { z: 17, a: 'start', f: C.b }));
+      const reach = Math.min(22 + v.force * 0.55, Math.max(18, top - 34));
+      if (v.force > 0) kids.push(L(218, top - 8, 218, top - 8 - reach, C.p, 6), s('polygon', { points: `218,${top - 8 - reach - 14} 209,${top - 8 - reach + 2} 227,${top - 8 - reach + 2}`, fill: C.p }), T(232, top - 8 - reach / 2 + 5, `lift ${v.force} N`, { z: 14, a: 'start', f: C.p }));
+      kids.push(T(300, 278, `${v.force} N × ${v.dist} m = ${wd} J`, { z: 26 }), T(300, 296, wd ? 'the work you do' : 'no distance moved, so no work is done', { z: 14, w: 600, f: wd ? '#058a68' : '#c2510e' }));
+      return { kids, say: v.dist === 0 ? `You push with ${v.force} N but the bag does not move, so the distance is 0 m and the work is 0 J.` : `You lift with ${v.force} N over ${v.dist} m, so you do ${v.force} x ${v.dist} = ${wd} J of work.${v.force === 20 && v.dist === 4 ? ' Twice the distance with the same force is twice the work.' : ''}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

@@ -306,6 +306,24 @@ export const KITS = {
       { say: 'Make the red car cover 200 m.', when: 'a * t == 200', then: 'Speed x time = distance, so this gives 200 m.' },
     ],
   },
+  friction: {
+    grades: [6, 10], match: [/friction/, /(?<!non[- ])contact forces?/, /muscular force/, /\bpush(ed|ing)? a (heavy )?box\b/],
+    title: 'Push the box', takeaway: 'A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give.',
+    tasks: [
+      { say: 'Push hard enough to start the box moving.', when: 'push > (rough / 100) * weight', then: 'Once the push is bigger than friction, the extra force starts the box moving.' },
+      { say: 'Slide the box on a surface with no friction at all.', when: 'rough == 0 and push > 0', then: 'With no friction, even a small push sets the box moving.' },
+      { say: 'Make the surface so rough that even your hardest push cannot move the box.', when: 'push == 20 and (rough / 100) * weight >= 20', then: 'A heavy box on a very rough surface needs a bigger push than you can give.' },
+    ],
+  },
+  work: {
+    grades: [8, 10], match: [/work done/, /work[,\s]+(and\s+)?energy/, /force and displacement/],
+    title: 'Lift the bag', takeaway: 'Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work.',
+    tasks: [
+      { say: 'Lift without moving the bag. How much work is done?', when: 'dist == 0', then: 'No distance moved means no work is done, however hard you push.' },
+      { say: 'Do exactly 100 joules of work.', when: 'force * dist == 100', then: 'Work = force x distance, so 50 N over 2 m gives 100 J.' },
+      { say: 'Keep the force at 20 N and lift twice as far as at the start.', when: 'force == 20 and dist == 4', then: '4 m is twice 2 m, so the work doubles from 40 J to 80 J.' },
+    ],
+  },
   shadow: {
     grades: [4, 7], match: [/shadows?/, /\bopaque\b|\btranslucent\b|\btransparent\b/, /light travels in (a )?straight/],
     title: 'Make a shadow', takeaway: 'Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.',
