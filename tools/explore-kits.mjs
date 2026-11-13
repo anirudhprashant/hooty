@@ -334,7 +334,7 @@ export const KITS = {
     ],
   },
   sound: {
-    grades: [8, 9], perChapter: { 9: 4 }, match: [/sound waves?/, /\bpitch\b/, /\bloudness\b/, /\bamplitude\b/, /hearing|ultrasonic|echo(es)?/, /how sound is produced/],
+    grades: [8, 9], perChapter: { 9: 4 }, match: [/sound waves?/, /\bpitch\b/, /\bloudness\b/, /\bamplitude\b/, /how sound is produced/],
     title: 'See the sound', takeaway: 'More vibrations each second make a higher note, and a taller wave means a louder sound with more energy.',
     tasks: [
       { say: 'Make a high, shrill note.', when: 'freq >= 600', then: 'More vibrations each second means a higher pitch.' },
