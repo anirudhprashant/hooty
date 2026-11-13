@@ -1669,6 +1669,61 @@
          "focus": -1
         },
         {
+         "type": "matchpairs",
+         "id": "the-world-around-us-g3-ch1-l4-a5",
+         "difficulty": 2,
+         "tags": [
+          "families",
+          "grandparents",
+          "neighbours",
+          "animals"
+         ],
+         "prompt": "Match each group with what the lesson says.",
+         "pairs": [
+          [
+           "Parents and children",
+           "A family includes them"
+          ],
+          [
+           "Grandparents",
+           "Older family members"
+          ],
+          [
+           "Other elders",
+           "Can also belong to a family"
+          ],
+          [
+           "Neighbours and relatives",
+           "Love and support the family"
+          ],
+          [
+           "Parrots, cats and goats",
+           "Animals in a family"
+          ]
+         ],
+         "explanation": "The lesson names parents, children, grandparents, other elders, neighbours, relatives and animals.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 7
+          },
+          {
+           "ch": 1,
+           "p": 9
+          },
+          {
+           "ch": 1,
+           "p": 9
+          },
+          {
+           "ch": 1,
+           "p": 9
+          }
+         ],
+         "anchor": "the-world-around-us-g3-ch1-l4-a1",
+         "focus": -1
+        },
+        {
          "type": "mcq",
          "id": "the-world-around-us-g3-ch1-l4-a6",
          "difficulty": 2,
@@ -14530,7 +14585,7 @@
       {
        "id": "the-world-around-us-g3-ch5-l1",
        "title": "Animals Living with Plants",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -14638,6 +14693,36 @@
            "p": 63
           }
          ]
+        },
+        {
+         "type": "mcq",
+         "id": "the-world-around-us-g3-ch5-l1-a2",
+         "difficulty": 1,
+         "tags": [
+          "animals",
+          "plants"
+         ],
+         "prompt": "Where can animals live?",
+         "options": [
+          "On, around and under plants",
+          "Only inside flowers",
+          "Only in the soil",
+          "Only on tree trunks"
+         ],
+         "answer": 0,
+         "explanation": "Animals can live on plants, around plants and even underneath them.",
+         "src": [
+          {
+           "ch": 5,
+           "p": 62
+          },
+          {
+           "ch": 5,
+           "p": 62
+          }
+         ],
+         "anchor": "the-world-around-us-g3-ch5-l1-a1",
+         "focus": 0
         },
         {
          "type": "fillblank",
@@ -17287,6 +17372,63 @@
          }
         ],
         "anchor": "the-world-around-us-g3-ch5-l1-t1",
+        "focus": 0
+       },
+       {
+        "type": "matchpairs",
+        "id": "the-world-around-us-g3-ch5-boss-a2",
+        "difficulty": 2,
+        "tags": [
+         "animals",
+         "plants"
+        ],
+        "prompt": "Match each animal with its activity.",
+        "pairs": [
+         [
+          "A caterpillar",
+          "chew a leaf"
+         ],
+         [
+          "A woodpecker",
+          "sit on a tree trunk"
+         ],
+         [
+          "Ants",
+          "build a nest with leaves"
+         ],
+         [
+          "Camels",
+          "eat leaves"
+         ],
+         [
+          "Monkeys",
+          "eat fruits"
+         ]
+        ],
+        "explanation": "Animals use plants in different ways: some chew leaves, some eat fruit, and ants build nests with leaves.",
+        "src": [
+         {
+          "ch": 5,
+          "p": 63
+         },
+         {
+          "ch": 5,
+          "p": 63
+         },
+         {
+          "ch": 5,
+          "p": 63
+         },
+         {
+          "ch": 5,
+          "p": 63
+         },
+         {
+          "ch": 5,
+          "p": 63
+         }
+        ],
+        "anchor": "the-world-around-us-g3-ch5-l3-t1",
         "focus": 0
        },
        {
@@ -31649,7 +31791,7 @@
       {
        "id": "the-world-around-us-g3-ch10-l2",
        "title": "Seeing Through and Using Colours",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -31708,6 +31850,31 @@
            "p": 127
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seethrough",
+         "params": {},
+         "title": "Look through it",
+         "tasks": [
+          {
+           "say": "Find a sheet that makes the star blurry.",
+           "when": "m == 3 or m == 4",
+           "then": "Butter paper and frosted glass are translucent."
+          },
+          {
+           "say": "Find a sheet that hides the star completely.",
+           "when": "m >= 5",
+           "then": "Wood, cardboard and metal are opaque."
+          }
+         ],
+         "takeaway": "Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all.",
+         "explanation": "Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all."
         },
         {
          "type": "worked",
@@ -33460,6 +33627,52 @@
          "answer": 2,
          "explanation": "Rocks are non-living natural things. Shoes are artificial things.",
          "src": [
+          {
+           "ch": 10,
+           "p": 133
+          },
+          {
+           "ch": 10,
+           "p": 133
+          }
+         ],
+         "anchor": "the-world-around-us-g3-ch10-l5-a1",
+         "focus": 0
+        },
+        {
+         "type": "matchpairs",
+         "id": "the-world-around-us-g3-ch10-l5-a4",
+         "difficulty": 2,
+         "tags": [
+          "living things",
+          "non-living",
+          "artificial"
+         ],
+         "prompt": "Match each thing with its group.",
+         "pairs": [
+          [
+           "Tree",
+           "A plant"
+          ],
+          [
+           "Bird",
+           "An animal"
+          ],
+          [
+           "Rock",
+           "Non-living natural thing"
+          ],
+          [
+           "Table",
+           "Artificial thing"
+          ]
+         ],
+         "explanation": "Trees and birds are living. Rocks are non-living, and tables are artificial.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 133
+          },
           {
            "ch": 10,
            "p": 133
@@ -35392,7 +35605,7 @@
           }
          ],
          "anchor": "the-world-around-us-g3-ch11-l2-a1",
-         "focus": -1
+         "focus": 1
         }
        ],
        "topicScene": "media/ch11-l2-jaipur-blue-pottery-vase-wit-10e122.webp",
@@ -35641,7 +35854,7 @@
           }
          ],
          "anchor": "the-world-around-us-g3-ch11-l3-a1",
-         "focus": 0
+         "focus": 1
         },
         {
          "type": "mcq",
@@ -36325,6 +36538,63 @@
          "explanation": "Now read on to find out."
         },
         {
+         "type": "concept",
+         "id": "the-world-around-us-g3-ch11-l5-a1",
+         "difficulty": 1,
+         "tags": [
+          "bricks",
+          "mould",
+          "safety",
+          "wall"
+         ],
+         "body": "Make a model wall safely. Use a matchbox mould to make bricks. Small paper boxes, clay, or atta dough can become bricks. Stack the bricks in two different arrangements. Rohan’s father follows important safety rules while working. He wears a helmet with a strap, a safety vest, and sturdy footwear. These choices help him work safely.",
+         "keyPoints": [
+          "A matchbox mould helps make bricks.",
+          "Paper boxes, clay, and atta dough can make bricks.",
+          "Safety rules include a helmet, vest, and sturdy footwear."
+         ],
+         "explanation": "This lesson shows how to make and stack bricks while following safety rules.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          }
+         ],
+         "title": "Making Bricks and Building Safely"
+        },
+        {
          "type": "worked",
          "id": "the-world-around-us-g3-ch11-l5-t1",
          "difficulty": 1,
@@ -36399,7 +36669,7 @@
            "p": 146
           }
          ],
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
          "focus": 0
         },
         {
@@ -36422,8 +36692,8 @@
            "p": 146
           }
          ],
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
-         "focus": 3
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
+         "focus": 2
         },
         {
          "type": "mcq",
@@ -36448,7 +36718,50 @@
            "p": 146
           }
          ],
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
+         "focus": -1
+        },
+        {
+         "type": "matchpairs",
+         "id": "the-world-around-us-g3-ch11-l5-a6",
+         "difficulty": 2,
+         "tags": [
+          "helmet",
+          "vest",
+          "footwear",
+          "safety"
+         ],
+         "prompt": "Match each safety item with its description.",
+         "pairs": [
+          [
+           "Helmet",
+           "Worn on the head"
+          ],
+          [
+           "Safety vest",
+           "Worn on the body"
+          ],
+          [
+           "Sturdy footwear",
+           "Worn on the feet"
+          ]
+         ],
+         "explanation": "Rohan’s father wears a helmet with a strap, a safety vest, and sturdy footwear.",
+         "src": [
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          },
+          {
+           "ch": 11,
+           "p": 146
+          }
+         ],
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
          "focus": 2
         },
         {
@@ -36479,7 +36792,7 @@
            "p": 146
           }
          ],
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
          "focus": 1
         },
         {
@@ -36513,8 +36826,8 @@
            "p": 146
           }
          ],
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
-         "focus": -1
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
+         "focus": 2
         },
         {
          "type": "mcq",
@@ -36557,7 +36870,7 @@
            "p": 146
           }
          ],
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
          "focus": 1
         },
         {
@@ -36601,8 +36914,8 @@
            "p": 146
           }
          ],
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
-         "focus": -1
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
+         "focus": 2
         },
         {
          "type": "mcq",
@@ -36645,7 +36958,7 @@
            "p": 146
           }
          ],
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
          "focus": 1
         }
        ],
@@ -36985,8 +37298,8 @@
           "Remind him to put on sturdier footwear.": "Sturdier footwear does not secure the helmet strap."
          },
          "explanation": "The strap is part of the helmet safety rule.",
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
-         "focus": 1
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
+         "focus": 2
         },
         {
          "type": "mcq",
@@ -37011,8 +37324,8 @@
           "sturdy footwear": "Sturdy footwear is worn on the feet."
          },
          "explanation": "Small paper boxes can be used to make bricks.",
-         "anchor": "the-world-around-us-g3-ch11-l5-t1",
-         "focus": 1
+         "anchor": "the-world-around-us-g3-ch11-l5-a1",
+         "focus": 2
         },
         {
          "type": "explain",

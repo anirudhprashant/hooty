@@ -435,7 +435,7 @@ export const KITS = {
         : [{ say: 'Make the holes just big enough to let the bran through but keep the stones.', when: 'hole == 3 or hole == 4 or hole == 5', then: 'Flour and bran fall through; the stones stay on top.' }]),
   },
   seethrough: {
-    grades: [6, 7], match: [/\btranslucent\b/, /\bopaque\b/, /\btransparent\b/, /seeing through/],
+    grades: [3, 7], match: [/\btranslucent\b/, /\bopaque\b/, /\btransparent\b/, /seeing through/],
     title: 'Look through it', takeaway: 'Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all.',
     tasks: [
       { say: 'Find a sheet that makes the star blurry.', when: 'm == 3 or m == 4', then: 'Butter paper and frosted glass are translucent.' },
