@@ -13,6 +13,7 @@ import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, 
 const BRAND_MARK = './characters/blob/hooty-mark.webp';
 import { t, setLocale, getLocale, availableLocales } from './core/i18n.js';
 import { getActivityModule } from './activities/index.js';
+import { revealFor, pickAlt, variantOf } from './core/concepts.js';
 import { icon } from './core/icons.js';
 import { bookWord } from './core/bookwords.js';
 import { saveBook, getBook, deleteBook, listBooks } from './core/mybooks.js';
@@ -318,7 +319,7 @@ function activityIndex() {
           for (const a of lesson.activities || []) {
             if (getActivityModule(a.type)?.graded === false) continue;
             const cardId = `${lessonId}::${a.id}`;
-            map.set(cardId, { ...a, cardId, lessonId, packId: pack.id });
+            map.set(cardId, { ...a, cardId, lessonId, packId: pack.id, chapterId: chapter.id });
           }
         }
       }
@@ -724,6 +725,8 @@ function screenLesson() {
     correct: 0,
     total: 0,
     wrongIds: [],
+    shown: new Set(),         // prompts already on screen this session, so a re-ask cannot repeat one
+    recoveredIds: [],         // ideas answered right on a different question after a re-teach
     startedAt: Date.now(),
     locked: false,
   };
@@ -796,13 +799,42 @@ function screenLesson() {
   return wrap;
 }
 
+// The chapter a lesson or a review card belongs to: concept links live inside one chapter.
+function chapterFor(activity, lesson = session?.lesson) {
+  const pack = packById(activity?.packId || lesson?.packId);
+  const id = activity?.chapterId || lesson?.chapterId;
+  if (!pack || !id) return null;
+  return pack.units.flatMap((u) => u.chapters).find((c) => c.id === id) || null;
+}
+
+// A review proves the idea, not the wording: after the first exposure, practice serves a different question from the
+// same card. A requeued mistake does the same later in its lesson (advance() marks it altLook).
+function variantFor(item) {
+  const s = session;
+  if (!item || item.pre) return item;
+  const l = activeLearner();
+  const card = item.cardId ? l?.cards?.[item.cardId] : null;
+  const rotate = (s.lesson?.isPractice && (card?.reps || 0) >= 1) || item.altLook;
+  if (!rotate) return item;
+  const chapter = chapterFor(item);
+  if (!chapter) return item;
+  const queued = new Set(s.queue.slice(s.index + 1).map((x) => x.id));
+  const alt = pickAlt(item, chapter, { stats: l?.activityStats, shown: s.shown, queued, seed: card?.reps || 0 });
+  return alt ? variantOf(alt, item) : item;
+}
+
 function renderActivity() {
   const s = session;
   if (!s) return;
   // A computed Maths problem draws new numbers every time it is shown (core/gen.js); anything else comes back as it is.
-  // A retry after a hint shows the very same question again, numbers and all; otherwise draw it afresh.
-  const activity = s.retry ? s.retry.activity : realise(s.queue[s.index]);
+  // A retry after a hint shows the very same question again, numbers and all. A re-ask after a re-teach is a different
+  // question from the same card, carrying the identity of the one that was missed so the idea is what gets credited.
+  let activity;
+  if (s.retry) activity = s.retry.activity;
+  else if (s.reask) activity = s.reask.activity;
+  else activity = realise(variantFor(s.queue[s.index]));
   s.current = activity;   // feedback must explain THIS draw of the numbers, not the stored example
+  if (activity?.prompt && s.shown) s.shown.add(activity.prompt);
   stopSpeech();
   clear(s.stage);
   s.locked = false;
@@ -891,13 +923,21 @@ function handleSubmit(rendered, response) {
     return;
   }
 
-  // The second go after a hint. The first miss is already counted and the question is already in Practise; a right
-  // answer now earns half the points, and either way the full explanation follows.
+  // The different question asked after a re-teach. One go: the idea is either recovered or it comes back tomorrow.
+  if (s.reask) { finishReask(rendered, response); return; }
+
+  // The second go after a hint. A right answer now earns half the points. A second miss is not the end of the question:
+  // the child sees the one line that taught it, then gets a different question about the same idea.
   if (s.retry) {
     s.retry = null;
-    if (correct) addXP(5);
-    react(s, correct);
-    showFeedback(s, activity, correct, response);
+    if (correct) {
+      addXP(5);
+      react(s, true);
+      showFeedback(s, activity, true, response);
+    } else {
+      react(s, false);
+      retakeOffer(s, activity, response);
+    }
     persist();
     return;
   }
@@ -942,7 +982,11 @@ function handleSubmit(rendered, response) {
     s.mascotImg.classList.remove('is-happy', 'is-wrong');
   }, 700);
 
-  showFeedback(s, activity, correct, response);
+  // Question types with no fair hint (true or false, two choices, a matching board) get the re-teach and a different
+  // question straight away, so no wrong answer is ever met with just "no" and nothing to do about it.
+  if (!correct) { retakeOffer(s, activity, response); persist(); return; }
+
+  showFeedback(s, activity, true, response);
 
   persist();
 }
@@ -951,12 +995,15 @@ function advance() {
   const s = session;
   if (!s) return;
   s.retry = null;
+  s.reask = null;
   s.index += 1;
 
-  // A wrong item comes back later in the same session, once.
+  // Ideas that never came right, even after a different question, come back later in the session, once, as another
+  // question from the same card. Never the exact wording the child has already seen twice.
   if (s.index === Math.ceil(s.queue.length / 2) && s.wrongIds.length && !s.requeued) {
     s.requeued = true;
-    const requeue = s.queue.filter((a) => s.wrongIds.includes(a.id)).slice(0, 2);
+    const open = s.queue.filter((a) => s.wrongIds.includes(a.id) && !s.recoveredIds.includes(a.id));
+    const requeue = open.slice(0, 2).map((a) => ({ ...a, altLook: true }));
     s.queue.splice(s.index, 0, ...requeue);
   }
 
@@ -1039,6 +1086,9 @@ function renderCelebration() {
       el('div', { class: 'celebrate__stat' }, [el('b', { text: `${accuracy}%` }), el('span', { text: t('accurate') })]),
       el('div', { class: 'celebrate__stat' }, [el('b', { text: `${minutes}m` }), el('span', { text: 'time' })]),
     ]),
+    s.recoveredIds?.length ? el('p', { class: 'celebrate__fixed', text: s.recoveredIds.length === 1
+      ? 'One tricky idea is fixed, because you thought about it again.'
+      : `${s.recoveredIds.length} tricky ideas are fixed, because you thought about them again.` }) : null,
   ]);
 
   const facts = s.lesson.funFacts || [];
@@ -1078,6 +1128,13 @@ function renderCelebration() {
       el('span', { text: `${t('nextLesson')}: ${upNext.title}` }),
     ]) : null,
     more,
+    // A lesson that went badly is worth reading again, but only ever as an offer: trying just the questions missed
+    // stays the main next step, so the child is never sent back through ten minutes of reading as a punishment.
+    !s.lesson.isPractice && accuracy < 50 ? el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: 'Read the lesson again', onclick: () => {
+      const again = s.lesson;
+      session = null;
+      startLesson(again);
+    } }) : null,
     el('button', { class: `btn${upNext || more || replay ? ' btn--ghost' : ''} btn--block`, type: 'button', text: t('backHome'), onclick: () => { session = null; go('home'); } }),
     el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: t('path'), onclick: () => { session = null; go('path'); } }),
   ]));
@@ -1205,12 +1262,56 @@ function applyHint(s, root, hint) {
   s.bubble.textContent = 'Have another go!';
 }
 
-function showFeedback(s, activity, correct, response = {}) {
+// What taught this question, shown again beside the explanation: one line when the link is sure, the card's own
+// remember-list when it is not, so the re-reading always covers what the next question may ask.
+function rememberBlock(reveal) {
+  const box = el('div', { class: 'remember' }, [el('p', { class: 'remember__kick', text: 'Read this again' })]);
+  if (reveal.title) box.append(el('p', { class: 'remember__title', text: reveal.title }));
+  if (reveal.one) box.append(el('p', { class: 'remember__line', text: reveal.lines[0] }));
+  else box.append(el('ul', { class: 'remember__list' }, reveal.lines.map((text) => el('li', { text }))));
+  const read = el('button', { class: 'btn btn--ghost btn--sm', type: 'button', text: 'Listen' });
+  read.addEventListener('click', () => speak(reveal.lines.map((text) => ({ text: plain(text) })), speechLang()));
+  box.append(read);
+  return box;
+}
+
+// A second miss: show what the question was really asking, then offer a different question about the same idea.
+function retakeOffer(s, activity, response) {
+  const chapter = chapterFor(activity);
   const l = activeLearner();
+  const queued = new Set(s.queue.slice(s.index + 1).map((x) => x.id));
+  const alt = chapter ? pickAlt(activity, chapter, { stats: l?.activityStats, shown: s.shown, queued }) : null;
+  showFeedback(s, activity, false, response, { retake: alt ? { base: activity, activity: variantOf(alt, activity) } : true });
+}
+
+// Answered the different question: credit the idea, not the wording. Right means the idea is known, so the card lands
+// in tomorrow's box and leaves Practise today; the first-try miss still shows in the grown-ups view. Wrong means it
+// stays a mistake and comes back tomorrow.
+function finishReask(rendered, response) {
+  const s = session;
+  const { base, activity } = s.reask;
+  s.reask = null;
+  const correct = rendered.check(response);
+  const l = activeLearner();
+  if (l) {
+    l.retakes = l.retakes || { n: 0, fixed: 0 };
+    l.retakes.n += 1;
+    if (correct) l.retakes.fixed += 1;
+  }
+  recordActivity(base, correct);
+  if (correct) { s.recoveredIds.push(base.id); addXP(5); }
+  react(s, correct);
+  showFeedback(s, activity, correct, response);
+  persist();
+}
+
+function showFeedback(s, activity, correct, response = {}, opts = {}) {
   // A wrong answer teaches: say what that particular mistake usually is, then walk through the solution with a picture.
   const slip = !correct && activity.why && activity.options ? activity.why[activity.options[response.choice]] : '';
   const steps = !correct && activity.steps?.length ? activity.steps : null;
   const model = !correct && activity.modelSpec ? renderModel(activity.modelSpec) : null;
+  const reveal = opts.retake ? revealFor(activity, chapterFor(activity)) : null;
+  const retake = opts.retake?.activity || null;
   const sheet = el('div', { class: `sheet sheet--${correct ? 'correct' : 'wrong'}`, role: 'status' }, [
     el('div', { class: 'sheet__head' }, [
       el('span', { class: 'sheet__mark' }, [icon(correct ? 'check' : 'cross')]),
@@ -1220,13 +1321,26 @@ function showFeedback(s, activity, correct, response = {}) {
     model ? el('figure', { class: 'model-fig' }, [model]) : null,
     steps ? el('ol', { class: 'sheet__steps' }, steps.map((x) => el('li', { text: x })))
       : (activity.explanation ? el('p', { class: 'sheet__body', text: activity.explanation }) : null),
+    reveal ? rememberBlock(reveal) : null,
   ]);
-  const cont = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: correct ? t('keepGoing') : t('next') });
-  cont.addEventListener('click', advance);
-  sheet.append(el('div', { class: 'activity__actions' }, [cont]));
+  const actions = el('div', { class: 'activity__actions' });
+  if (retake) {
+    // One more go, on a question that is new to the child. Skipping stays possible, quietly, so a stuck child is never
+    // trapped in a loop.
+    const again = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: 'Try a different question' });
+    again.addEventListener('click', () => { s.reask = opts.retake; renderActivity(); });
+    const later = el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: 'Later' });
+    later.addEventListener('click', advance);
+    actions.append(again, later);
+  } else {
+    const cont = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: correct ? t('keepGoing') : t('next') });
+    cont.addEventListener('click', advance);
+    actions.append(cont);
+  }
+  sheet.append(actions);
   s.stage.append(sheet);
   markWords(sheet);
-  cont.focus({ preventScroll: true });
+  (actions.querySelector('button') || sheet).focus({ preventScroll: true });
   requestAnimationFrame(() => sheet.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
 }
 

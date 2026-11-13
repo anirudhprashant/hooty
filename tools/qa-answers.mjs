@@ -30,8 +30,7 @@ function templateRegex(template, params) {
   return { re: new RegExp('^' + src + '$'), names };
 }
 
-/**
- * Every typed answer the packs expect, keyed by the question the child sees, plus the
+/** Every typed answer the packs expect, keyed by the question the child sees, plus the
  * generated-maths recipes so a question whose numbers change each time still resolves.
  *
  * The QA walkers used to type a fixed word into every text box, so any lesson with a
@@ -90,4 +89,51 @@ export function answerFor(loaded, prompt) {
     }
   }
   return null;
+}
+
+/**
+ * Every question whose prompt the packs can tell apart, with the answer in the form its activity checks. The retake
+ * walker (tools/qa-retake.mjs) answers the different question correctly after a re-teach, which is the only way to
+ * prove the idea is credited to the card that was missed and not to the new wording.
+ */
+export function loadQuestions(root = DEFAULT_ROOT) {
+  const map = new Map();
+  let packs = [];
+  try {
+    packs = readdirSync(join(root, 'public/content/packs'));
+  } catch {
+    return map;
+  }
+  for (const slug of packs) {
+    let pack;
+    try {
+      pack = JSON.parse(readFileSync(join(root, 'public/content/packs', slug, 'pack.json'), 'utf8'));
+    } catch {
+      continue;
+    }
+    for (const unit of pack.units || []) {
+      for (const chapter of unit.chapters || []) {
+        for (const lesson of [...(chapter.lessons || []), chapter.boss].filter(Boolean)) {
+          for (const a of lesson.activities || []) {
+            if (!a.prompt) continue;
+            const key = norm(a.prompt);
+            if (map.has(key)) continue;
+            if (a.type === 'mcq' && Array.isArray(a.options) && typeof a.answer === 'number') {
+              map.set(key, { type: 'mcq', answer: a.answer, options: a.options });
+            } else if (a.type === 'truefalse' && typeof a.answer === 'boolean') {
+              map.set(key, { type: 'truefalse', answer: a.answer });
+            } else if ((a.type === 'fillblank' || a.type === 'typeanswer') && Array.isArray(a.answers) && a.answers.length) {
+              map.set(key, { type: a.type, answers: a.answers });
+            }
+          }
+        }
+      }
+    }
+  }
+  return map;
+}
+
+/** The same whitespace-stable key loadQuestions uses. */
+export function questionKey(prompt) {
+  return norm(prompt);
 }

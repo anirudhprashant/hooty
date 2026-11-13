@@ -282,6 +282,9 @@ def write(): json.dump(pack, open(P + 'pack.json', 'w'), indent=1, ensure_ascii=
 import plain   # plain-English rewrites and removal of questions confirmed broken: work/plain, made by tools/plain.py
 print('plain English:', *plain.apply(SUBJ['pack'], pack))
 import funfacts; print('lessons with fun facts:', funfacts.apply(SUBJ['pack'], pack))
+# Every question learns which card taught it and which line of it the question tests, so a second miss is met with that
+# one line and then a different question about the same idea (tools/concepts.py). Links are recomputed on every build.
+import concepts; print('concept links:', concepts.apply(pack, WORK))
 write()
 for _ in range(3):
     out = subprocess.run(['node', f'{ROOT}/tools/validate-pack.mjs', P + 'pack.json'], capture_output=True, text=True).stdout
