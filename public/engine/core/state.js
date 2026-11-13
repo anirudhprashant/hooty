@@ -40,6 +40,7 @@ function freshLearner(name = 'Learner') {
     days: {},               // 'YYYY-MM-DD' -> xp earned that day (last 60), for the Grown-ups week strip
     pre: {},                // chapterId -> { n, c } score before the chapter was taught
     post: {},               // chapterId -> { pct, title } first score on the chapter challenge
+    retakes: { n: 0, fixed: 0 },   // different questions asked after a re-teach, and how many the child then got right
   };
 }
 
@@ -62,6 +63,7 @@ function normaliseLearner(raw, id) {
   out.board = out.board.filter((b) => /^[\w-]{1,40}@\d{1,3},\d{1,3}$/.test(b)).slice(0, 40);
   if (out.guide2 !== 'hooty' && out.guide2 !== 'lumi') out.guide2 = 'hooty';
   out.fontScale = Math.min(1.5, Math.max(0.85, out.fontScale || 1));
+  out.retakes = { n: Math.max(0, Number(out.retakes?.n) || 0), fixed: Math.max(0, Number(out.retakes?.fixed) || 0) };
   // fields added after the first release
   if (typeof l.grade === 'string' || typeof l.grade === 'number') out.grade = String(l.grade).slice(0, 4);
   if (typeof l.packId === 'string') out.packId = l.packId.slice(0, 80);

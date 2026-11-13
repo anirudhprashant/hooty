@@ -35,10 +35,15 @@ const page = await ctx.newPage();
 
 const problems = [];
 page.on('response', (r) => {
-  if (r.status() >= 400) problems.push(`HTTP ${r.status()} ${r.url()}`);
+  if (r.status() < 400) return;
+  // The first-party page-view script is deployed beside the build, not in it: a local run cannot serve it.
+  if (/\/js\/pp\.js$/.test(r.url())) return;
+  problems.push(`HTTP ${r.status()} ${r.url()}`);
 });
 page.on('console', (m) => {
-  if (m.type() === 'error') problems.push(`console: ${m.text()}`);
+  if (m.type() !== 'error') return;
+  if (/Failed to load resource/i.test(m.text())) return;   // the response handler names the URL
+  problems.push(`console: ${m.text()}`);
 });
 page.on('pageerror', (e) => problems.push(`pageerror: ${e.message}`));
 
@@ -99,7 +104,7 @@ for (; steps < 60; steps++) {
   if (state.kind !== lastActivity) {
     seen.push(state.kind);
     lastActivity = state.kind;
-    console.log(`  step ${steps}: ${state.kind} - ${state.prompt}`);
+    console.log(`  step ${steps}: ${state.kind} [${state.id}] - ${state.prompt}`);
   }
 
   // The same activity rendering three times in a row means the walker is

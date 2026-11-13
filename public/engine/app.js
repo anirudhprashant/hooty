@@ -1298,7 +1298,9 @@ function finishReask(rendered, response) {
     l.retakes.n += 1;
     if (correct) l.retakes.fixed += 1;
   }
-  recordActivity(base, correct);
+  // The same card id the miss wrote: a lesson question carries no cardId of its own, so the lesson id has to be added
+  // here exactly as the first attempt added it, or the recovery lands on a different card and Practise never clears.
+  recordActivity({ ...base, lessonId: s.lesson.lessonId || base.lessonId }, correct);
   if (correct) { s.recoveredIds.push(base.id); addXP(5); }
   react(s, correct);
   showFeedback(s, activity, correct, response);
@@ -1582,6 +1584,7 @@ function screenParent() {
     el('p', { text: retried.length
       ? `Of ${retried.length} question${retried.length === 1 ? '' : 's'} missed the first time and tried again, ${fixed} ${fixed === 1 ? 'is' : 'are'} now right.`
       : 'Questions missed the first time come back later. This will show how many are now right.' }),
+    l?.retakes?.n ? el('p', { class: 'growth-note', text: `After a second miss, Hooty shows the one line that taught it and asks a different question about the same idea. ${l.retakes.fixed} of ${l.retakes.n} of those were then answered right.` }) : null,
   ]));
 
   wrap.append(el('h3', { class: 'section-title', text: t('progressByUnit') }));

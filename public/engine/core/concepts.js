@@ -106,7 +106,7 @@ export function pickAlt(activity, chapter, ctx = {}) {
   for (const a of alts) {
     let s = 0;
     if (activity.focus >= 0 && a.focus >= 0) s += a.focus === activity.focus ? 50 : -12;
-    if (shown.has(a.prompt)) s -= 40;
+    if (shown.has(a.prompt)) s -= 120;   // a question already on screen this session is not a different question
     if (queued.has(a.id)) s -= 60;
     if (!(stats[a.id]?.seen)) s += 14;
     if (a.type !== activity.type) s += 6;

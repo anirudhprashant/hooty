@@ -10,6 +10,9 @@ import { el } from './dom.js';
 const TEXT_SELECTOR = [
   '.activity__prompt', '.passage__body', '.concept-card__body', '.concept-card__points li', '.concept-card__note',
   '.activity__note', '.sheet__body', '.media-caption', '.video-note',
+  // The re-teach before a different question quotes the teaching card itself, so it gets the same key words and the
+  // same tap-a-word meanings as the card it came from.
+  '.remember__line', '.remember__list li',
 ].join(',');
 
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
