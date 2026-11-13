@@ -442,7 +442,7 @@
       {
        "id": "the-world-around-us-g5-ch1-l2",
        "title": "Water has Different Forms",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -495,6 +495,31 @@
            "p": 7
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "Heat the water",
+         "tasks": [
+          {
+           "say": "Freeze the water.",
+           "when": "temp < 0",
+           "then": "Below 0 degrees water is ice: its particles can only jiggle in place."
+          },
+          {
+           "say": "Boil it.",
+           "when": "temp >= 100",
+           "then": "At 100 degrees water boils and its particles fly apart as steam."
+          }
+         ],
+         "takeaway": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.",
+         "explanation": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam."
         },
         {
          "type": "worked",

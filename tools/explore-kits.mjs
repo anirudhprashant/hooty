@@ -238,7 +238,7 @@ export const KITS = {
   },
   // ---- science ----
   particles: {
-    grades: [6, 9], titleOnly: true, match: [/states? of matter/, /melting|boiling|freez|evaporat|condens/, /\bice\b.*\bsteam\b/],
+    grades: [3, 9], titleOnly: true, match: [/states? of matter/, /melting|boiling|freez|evaporat|condens/, /\bice\b.*\bsteam\b/, /solids?,? liquids? and gases?/, /water has different forms/],
     title: 'Heat the water', takeaway: 'Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.',
     tasks: [
       { say: 'Freeze the water.', when: 'temp < 0', then: 'Below 0 degrees water is ice: its particles can only jiggle in place.' },
