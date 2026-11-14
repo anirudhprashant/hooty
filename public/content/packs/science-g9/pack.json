@@ -4228,7 +4228,7 @@
       {
        "id": "science-g9-ch2-l2",
        "title": "The Cell Membrane, Osmosis and Cell Wall",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -4295,6 +4295,36 @@
            "p": 13
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "osmosis",
+         "params": {},
+         "title": "Water through a membrane",
+         "tasks": [
+          {
+           "say": "Make the water cross to the right.",
+           "when": "right > left and mins >= 5",
+           "then": "The right side is stronger, so water moves right: the right level rises."
+          },
+          {
+           "say": "Make the water cross to the left.",
+           "when": "left > right and mins >= 5",
+           "then": "The left side is stronger, so water moves left: the left level rises."
+          },
+          {
+           "say": "Make both sides equally strong so the levels stay the same.",
+           "when": "left == right and mins >= 5",
+           "then": "Equal strength on both sides means equal water movement each way."
+          }
+         ],
+         "takeaway": "Water moves from the dilute side to the concentrated side through a selectively permeable membrane; the dissolved substance cannot cross.",
+         "explanation": "Water moves from the dilute side to the concentrated side through a selectively permeable membrane; the dissolved substance cannot cross."
         },
         {
          "type": "worked",
