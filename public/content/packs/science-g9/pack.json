@@ -21023,7 +21023,7 @@
       {
        "id": "science-g9-ch6-l6",
        "title": "Newton's Third Law and Systems",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -21078,6 +21078,36 @@
            "p": 108
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch6-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "thirdlaw",
+         "params": {},
+         "title": "Push two carts apart",
+         "tasks": [
+          {
+           "say": "Give both carts the same mass. What happens to their accelerations?",
+           "when": "mA == mB",
+           "then": "With equal masses the same force gives the same acceleration, so they fly apart at the same rate."
+          },
+          {
+           "say": "Make cart A very light and cart B very heavy, then push.",
+           "when": "mA == 1 and mB == 10",
+           "then": "Both feel the same force, but the light cart gets ten times the acceleration of the heavy one."
+          },
+          {
+           "say": "Push harder, with a force of 40 N.",
+           "when": "F == 40",
+           "then": "The force on each cart is 40 N, one forwards and one backwards: the two forces are equal and opposite."
+          }
+         ],
+         "takeaway": "Forces come in pairs: when one object pushes another, it gets the same size push back the other way, but the lighter object speeds up more.",
+         "explanation": "Forces come in pairs: when one object pushes another, it gets the same size push back the other way, but the lighter object speeds up more."
         },
         {
          "type": "worked",
