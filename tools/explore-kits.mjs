@@ -910,6 +910,16 @@ export const KITS = {
       { say: 'Make a sodium ion: 11 protons but only 10 electrons.', when: 'p == 11 and e == 10', then: 'Sodium loses one electron, so it has a 1+ charge and a full 2, 8 outer shell.' },
     ],
   },
+  osmosis: {
+    grades: [8, 10],
+    match: [/osmos/, /selectively permeable/, /semi[- ]?permeable/, /cell membrane/, /plasmoly/],
+    title: 'Water through a membrane', takeaway: 'Water moves from the dilute side to the concentrated side through a selectively permeable membrane; the dissolved substance cannot cross.',
+    tasks: [
+      { say: 'Make the water cross to the right.', when: 'right > left and mins >= 5', then: 'The right side is stronger, so water moves right: the right level rises.' },
+      { say: 'Make the water cross to the left.', when: 'left > right and mins >= 5', then: 'The left side is stronger, so water moves left: the left level rises.' },
+      { say: 'Make both sides equally strong so the levels stay the same.', when: 'left == right and mins >= 5', then: 'Equal strength on both sides means equal water movement each way.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
