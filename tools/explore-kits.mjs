@@ -324,6 +324,15 @@ export const KITS = {
       { say: 'Keep the force at 20 N and lift twice as far as at the start.', when: 'force == 20 and dist == 4', then: '4 m is twice 2 m, so the work doubles from 40 J to 80 J.' },
     ],
   },
+  energy: {
+    grades: [8, 10], perChapter: 3, match: [/kinetic energy/, /potential energy/, /conservation of energy/, /forms? of energy/, /mechanical energy/, /energy (is|can be) (never )?(created|destroyed|converted|changed)/],
+    title: 'Roll the ball down the ramp', takeaway: 'At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another.',
+    tasks: [
+      { say: 'Put the ball on a ramp 5 metres high.', when: 'height == 5', then: 'From 5 m the ball reaches 10 m/s at the bottom, whatever its mass.' },
+      { say: 'Make the stored energy exactly 200 joules.', when: 'mass * 10 * height == 200', then: 'Mass x 10 x height = 200 J.' },
+      { say: 'Use the heaviest ball on the highest ramp.', when: 'mass == 5 and height == 10', then: '500 J: this set-up stores the most energy.' },
+    ],
+  },
   newton: {
     grades: [8, 9], perChapter: { 9: 4 }, match: [/newton'?s (first|second) law/, /\blaws? of motion\b/, /balanced and unbalanced/, /\binertia\b/, /(force|mass) and acceleration|acceleration and (force|mass)/, /\bwhat is (a )?force\b/],
     title: 'Push, mass and acceleration', takeaway: 'The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.',
@@ -804,7 +813,7 @@ export const KITS = {
   },
   // ---- geography and history ----
   timezone: {
-    grades: [6, 8], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
+    grades: [6, 10], match: [/time zones?/, /standard time/, /greenwich/, /\bIST\b/, /longitude.{0,40}time|time.{0,40}longitude/],
     title: 'Travel round the world', takeaway: 'Every 15 degrees of longitude is one hour of time.',
     tasks: [
       { say: 'Go to 90 degrees east.', when: 'lon == 90', then: '90 divided by 15 is 6, so it is 6 hours ahead of Greenwich.' },
@@ -812,17 +821,17 @@ export const KITS = {
     ],
   },
   latlong: {
-    grades: [6, 8], match: [/latitudes?/, /longitudes?/, /equator/, /tropics? of/, /prime meridian/, /arctic circle|antarctic circle/],
+    grades: [6, 10], match: [/latitudes?/, /longitudes?/, /equator/, /tropics? of/, /prime meridian/, /arctic circle|antarctic circle/],
     title: 'Find a place on the grid', takeaway: 'Latitude tells you how far north or south, longitude how far east or west.',
     tasks: [{ say: 'Stand on the Equator.', when: 'lat == 0', then: 'The Equator is latitude 0, halfway between the poles.' }, { say: 'Stand on the Prime Meridian.', when: 'lon == 0', then: 'Longitude 0 runs through Greenwich.' }],
   },
   mapscale: {
-    grades: [6, 8], match: [/(map|drawing|bar) scale|scale (of|on) (a |the )?map/, /distance on (a |the )?map|map distance/, /\bmaps?\b/],
+    grades: [6, 10], match: [/(map|drawing|bar) scale|scale (of|on) (a |the )?map/, /distance on (a |the )?map|map distance/, /\bmaps?\b/],
     title: 'Measure on the map', takeaway: 'Real distance = distance on the map x the scale.',
     tasks: [{ say: 'Show 400 km on the map.', when: 'cm * km == 400', then: 'Map distance x scale = real distance: 400 km.' }],
   },
   timeline: {
-    grades: [6, 8], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/],
+    grades: [6, 10], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/],
     // the lesson's own dates if it has three, otherwise the whole chapter's dates when this lesson mentions one of them
     params: (text, facts, chapter) => { const own = datedEvents(facts || []); if (own.length) return { events: own }; return { events: datedEvents(facts || [], 1).length ? datedEvents(chapter || []) : [] }; },
     usable: (p) => p.events.length >= 3, minScore: 1, perChapter: 1,

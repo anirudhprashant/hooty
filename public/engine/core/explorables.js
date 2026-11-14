@@ -1535,6 +1535,23 @@ export const WIDGETS = {
       return { kids, say: v.dist === 0 ? `You push with ${v.force} N but the bag does not move, so the distance is 0 m and the work is 0 J.` : `You lift with ${v.force} N over ${v.dist} m, so you do ${v.force} x ${v.dist} = ${wd} J of work.${v.force === 20 && v.dist === 4 ? ' Twice the distance with the same force is twice the work.' : ''}` };
     },
   },
+  energy: {
+    subject: 'science', about: 'A ball at the top of a ramp, with its mass and the height of the ramp. At the top it stores potential energy, mass x 10 x height, and at the bottom that is all kinetic energy, so the ball speeds up as it falls. For kinetic energy, potential energy, conservation of energy, forms of energy, work and energy, joules.',
+    sliders: [['mass', 'Mass of the ball (kilograms)', 1, 5, 1, 2], ['height', 'Height of the ramp (metres)', 1, 10, 1, 4]],
+    draw(v) {
+      const pe = v.mass * 10 * v.height, speed = Math.sqrt(2 * 10 * v.height), footY = 250, topY = footY - 20 * v.height;
+      const barK = 160 / 500, kids = [R(0, footY, W, 50, '#efeaf8', { w: 0 }), L(0, footY, W, footY, INK, 4), L(70, topY, 410, footY, INK, 5)];
+      kids.push(s('polygon', { points: `70,${topY} 410,${footY} 70,${footY}`, fill: C.sky, opacity: 0.35 }));
+      kids.push(L(70, topY, 70, footY, C.b, 3, { 'stroke-dasharray': '7 6' }), L(60, footY, 80, footY, C.b, 3), L(60, topY, 80, topY, C.b, 3), T(34, (topY + footY) / 2 + 6, `${v.height} m`, { z: 15, a: 'middle', f: C.b }));
+      kids.push(CIRC(70, topY - 13, 13, C.o, { w: 3 }), CIRC(410, footY - 13, 13, '#fff', { w: 3 }), L(426, footY - 13, 450, footY - 13, C.o, 4), s('polygon', { points: `458,${footY - 13} 448,${footY - 21} 448,${footY - 5}`, fill: C.o }));
+      const peH = pe * barK, keH = pe * barK;
+      kids.push(R(470, footY - peH, 36, peH, C.b, { w: 2 }), R(530, footY - keH, 36, keH, C.o, { w: 2 }));
+      kids.push(T(488, footY - peH - 8, 'PE', { z: 14, f: C.b }), T(548, footY - keH - 8, 'KE', { z: 14, f: C.o }));
+      kids.push(T(300, 30, `Potential energy = ${v.mass} x 10 x ${v.height} = ${pe} J at the top`, { z: 17 }));
+      kids.push(T(300, 286, `At the bottom all ${pe} J is kinetic, so the ball moves at ${num(speed)} m/s`, { z: 17 }));
+      return { kids, say: `A ${v.mass} kg ball at the top of a ${v.height} m ramp stores ${v.mass} x 10 x ${v.height} = ${pe} J of potential energy. As it rolls down, that changes into kinetic energy, and at the bottom it moves at ${num(speed)} m/s with the same ${pe} J. The total energy stays the same: energy is not lost, only changed from one form to another.` };
+    },
+  },
   newton: {
     subject: 'science', about: 'A box pushed one way and held back by friction, with its mass. The net force divided by the mass gives the acceleration, so a heavier box speeds up less and balanced forces leave the speed unchanged. For force, Newton\'s first and second laws, balanced and unbalanced forces, inertia, mass and acceleration.',
     sliders: [['push', 'Your push (newtons)', 0, 20, 1, 10], ['back', 'Friction pulling back (newtons)', 0, 10, 1, 0], ['mass', 'Mass of the box (kilograms)', 1, 10, 1, 2]],
