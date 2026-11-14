@@ -33299,7 +33299,7 @@
       {
        "id": "science-g9-ch10-l2",
        "title": "How Sound Travels",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -33350,6 +33350,36 @@
            "p": 187
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "soundtravel",
+         "params": {},
+         "title": "Does sound travel without air?",
+         "tasks": [
+          {
+           "say": "Pump all the air out of the jar and listen.",
+           "when": "air == 0",
+           "then": "The bell still shakes, but with no air there is nothing to carry the sound to your ear."
+          },
+          {
+           "say": "Now, in the vacuum, strike the bell as hard as you can.",
+           "when": "air == 0 and hit == 100",
+           "then": "Even the hardest strike is silent: sound must have a material medium to travel through."
+          },
+          {
+           "say": "Pump the air back in and listen again.",
+           "when": "air == 100",
+           "then": "The air particles carry the vibrations again, so the bell can be heard. Air is the medium here."
+          }
+         ],
+         "takeaway": "Sound is carried by the shaking of particles. Pump the air out of the jar and the bell still shakes, but with no particles to pass the vibration on, nothing reaches your ear: sound needs a material medium.",
+         "explanation": "Sound is carried by the shaking of particles. Pump the air out of the jar and the bell still shakes, but with no particles to pass the vibration on, nothing reaches your ear: sound needs a material medium."
         },
         {
          "type": "worked",
