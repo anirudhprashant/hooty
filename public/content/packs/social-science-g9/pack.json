@@ -26493,7 +26493,7 @@
       {
        "id": "social-science-g9-ch9-l1",
        "title": "Demand: Meaning and the Law of Demand",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -26543,6 +26543,36 @@
            "p": 197
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "market",
+         "params": {},
+         "title": "Run the market",
+         "tasks": [
+          {
+           "say": "Set the price where buyers want exactly what sellers bring.",
+           "when": "price == 100 and buyers == 0",
+           "then": "At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium."
+          },
+          {
+           "say": "Make a shortage: set the price below the equilibrium.",
+           "when": "price == 70",
+           "then": "At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise."
+          },
+          {
+           "say": "Add four buyers, then set the new equilibrium price.",
+           "when": "price == 120 and buyers == 4",
+           "then": "Four more buyers shift demand right, so the market settles at the higher price of ₹120."
+          }
+         ],
+         "takeaway": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.",
+         "explanation": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet."
         },
         {
          "type": "worked",
@@ -27482,7 +27512,7 @@
       {
        "id": "social-science-g9-ch9-l3",
        "title": "Supply and the Law of Supply",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -27542,6 +27572,36 @@
            "p": 201
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch9-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "market",
+         "params": {},
+         "title": "Run the market",
+         "tasks": [
+          {
+           "say": "Set the price where buyers want exactly what sellers bring.",
+           "when": "price == 100 and buyers == 0",
+           "then": "At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium."
+          },
+          {
+           "say": "Make a shortage: set the price below the equilibrium.",
+           "when": "price == 70",
+           "then": "At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise."
+          },
+          {
+           "say": "Add four buyers, then set the new equilibrium price.",
+           "when": "price == 120 and buyers == 4",
+           "then": "Four more buyers shift demand right, so the market settles at the higher price of ₹120."
+          }
+         ],
+         "takeaway": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.",
+         "explanation": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet."
         },
         {
          "type": "worked",
@@ -28425,7 +28485,7 @@
       {
        "id": "social-science-g9-ch9-l5",
        "title": "Market Equilibrium and Changing Markets",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -28486,6 +28546,36 @@
            "p": 204
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch9-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "market",
+         "params": {},
+         "title": "Run the market",
+         "tasks": [
+          {
+           "say": "Set the price where buyers want exactly what sellers bring.",
+           "when": "price == 100 and buyers == 0",
+           "then": "At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium."
+          },
+          {
+           "say": "Make a shortage: set the price below the equilibrium.",
+           "when": "price == 70",
+           "then": "At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise."
+          },
+          {
+           "say": "Add four buyers, then set the new equilibrium price.",
+           "when": "price == 120 and buyers == 4",
+           "then": "Four more buyers shift demand right, so the market settles at the higher price of ₹120."
+          }
+         ],
+         "takeaway": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.",
+         "explanation": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet."
         },
         {
          "type": "worked",
