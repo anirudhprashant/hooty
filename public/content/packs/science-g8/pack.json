@@ -14113,7 +14113,7 @@
       {
        "id": "science-g8-ch5-l1",
        "title": "5.1 and 5.2 — What Is a Force and What Can It Do?",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -14174,6 +14174,36 @@
            "p": 65
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "newton",
+         "params": {},
+         "title": "Push, mass and acceleration",
+         "tasks": [
+          {
+           "say": "Make the box much heavier and keep the push the same. Watch the acceleration fall.",
+           "when": "mass == 8",
+           "then": "The same force on a bigger mass gives a smaller acceleration."
+          },
+          {
+           "say": "Balance the push with friction so the speed stops changing.",
+           "when": "push == back and push > 0",
+           "then": "When the forces balance, the net force is zero and the box keeps its speed."
+          },
+          {
+           "say": "Double both the force and the mass, so the acceleration stays the same.",
+           "when": "push == 20 and mass == 4 and back == 0",
+           "then": "20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg."
+          }
+         ],
+         "takeaway": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.",
+         "explanation": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged."
         },
         {
          "type": "worked",
@@ -15158,7 +15188,7 @@
       {
        "id": "science-g8-ch5-l3",
        "title": "5.4.1 — Contact Forces, Muscular Force and Friction",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -15230,6 +15260,36 @@
            "p": 68
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "friction",
+         "params": {},
+         "title": "Push the box",
+         "tasks": [
+          {
+           "say": "Push hard enough to start the box moving.",
+           "when": "push > (rough / 100) * weight",
+           "then": "Once the push is bigger than friction, the extra force starts the box moving."
+          },
+          {
+           "say": "Slide the box on a surface with no friction at all.",
+           "when": "rough == 0 and push > 0",
+           "then": "With no friction, even a small push sets the box moving."
+          },
+          {
+           "say": "Make the surface so rough that even your hardest push cannot move the box.",
+           "when": "push == 20 and (rough / 100) * weight >= 20",
+           "then": "A heavy box on a very rough surface needs a bigger push than you can give."
+          }
+         ],
+         "takeaway": "A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give.",
+         "explanation": "A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give."
         },
         {
          "type": "worked",
@@ -32447,7 +32507,7 @@
       {
        "id": "science-g8-ch10-l1",
        "title": "Spherical Mirrors and Their Types",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -32506,6 +32566,38 @@
            "p": 154
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch10-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "mirror",
+         "params": {
+          "kind": "concave"
+         },
+         "title": "Mirror, mirror",
+         "tasks": [
+          {
+           "say": "Move the object inside the focus. What kind of image appears?",
+           "when": "u < f",
+           "then": "Closer than the focus the image is virtual, upright and bigger, behind the mirror: that is how a shaving mirror works."
+          },
+          {
+           "say": "Make the real image the same size as the object.",
+           "when": "u == 2 * f",
+           "then": "At the centre of curvature, twice the focal length away, the image is real, inverted and the same size."
+          },
+          {
+           "say": "Now make a real image bigger than the object.",
+           "when": "u > f and u < 2 * f",
+           "then": "Between the focus and the centre of curvature the image is real, inverted and bigger."
+          }
+         ],
+         "takeaway": "A concave mirror can make a real, inverted image on a screen and a bigger virtual image up close; a convex mirror always makes a small, upright virtual image behind it.",
+         "explanation": "A concave mirror can make a real, inverted image on a screen and a bigger virtual image up close; a convex mirror always makes a small, upright virtual image behind it."
         },
         {
          "type": "worked",
@@ -32813,7 +32905,7 @@
       {
        "id": "science-g8-ch10-l2",
        "title": "Images Formed by Spherical Mirrors",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -32881,6 +32973,38 @@
            "p": 157
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "mirror",
+         "params": {
+          "kind": "concave"
+         },
+         "title": "Mirror, mirror",
+         "tasks": [
+          {
+           "say": "Move the object inside the focus. What kind of image appears?",
+           "when": "u < f",
+           "then": "Closer than the focus the image is virtual, upright and bigger, behind the mirror: that is how a shaving mirror works."
+          },
+          {
+           "say": "Make the real image the same size as the object.",
+           "when": "u == 2 * f",
+           "then": "At the centre of curvature, twice the focal length away, the image is real, inverted and the same size."
+          },
+          {
+           "say": "Now make a real image bigger than the object.",
+           "when": "u > f and u < 2 * f",
+           "then": "Between the focus and the centre of curvature the image is real, inverted and bigger."
+          }
+         ],
+         "takeaway": "A concave mirror can make a real, inverted image on a screen and a bigger virtual image up close; a convex mirror always makes a small, upright virtual image behind it.",
+         "explanation": "A concave mirror can make a real, inverted image on a screen and a bigger virtual image up close; a convex mirror always makes a small, upright virtual image behind it."
         },
         {
          "type": "worked",
@@ -33249,7 +33373,7 @@
       {
        "id": "science-g8-ch10-l3",
        "title": "Curved Mirrors and Concentrated Light",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -33321,6 +33445,38 @@
            "p": 161
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "mirror",
+         "params": {
+          "kind": "concave"
+         },
+         "title": "Mirror, mirror",
+         "tasks": [
+          {
+           "say": "Move the object inside the focus. What kind of image appears?",
+           "when": "u < f",
+           "then": "Closer than the focus the image is virtual, upright and bigger, behind the mirror: that is how a shaving mirror works."
+          },
+          {
+           "say": "Make the real image the same size as the object.",
+           "when": "u == 2 * f",
+           "then": "At the centre of curvature, twice the focal length away, the image is real, inverted and the same size."
+          },
+          {
+           "say": "Now make a real image bigger than the object.",
+           "when": "u > f and u < 2 * f",
+           "then": "Between the focus and the centre of curvature the image is real, inverted and bigger."
+          }
+         ],
+         "takeaway": "A concave mirror can make a real, inverted image on a screen and a bigger virtual image up close; a convex mirror always makes a small, upright virtual image behind it.",
+         "explanation": "A concave mirror can make a real, inverted image on a screen and a bigger virtual image up close; a convex mirror always makes a small, upright virtual image behind it."
         },
         {
          "type": "worked",
