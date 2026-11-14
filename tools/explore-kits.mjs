@@ -351,6 +351,15 @@ export const KITS = {
       { say: 'Make the deepest note on the slider.', when: 'freq == 100', then: 'Fewer vibrations each second means a lower pitch.' },
     ],
   },
+  soundtravel: {
+    grades: [7, 9], match: [/sound (travels?|needs?)/, /how sound (travels|reaches)/, /sound.{0,30}\bmedium\b/, /\bmedium\b.{0,30}sound/, /bell jar/, /\bvacuum\b/, /vibrations?.{0,40}(air|medium|matter)/, /sound.{0,30}(air|matter).{0,20}carry/],
+    title: 'Does sound travel without air?', takeaway: 'Sound is carried by the shaking of particles. Pump the air out of the jar and the bell still shakes, but with no particles to pass the vibration on, nothing reaches your ear: sound needs a material medium.',
+    tasks: [
+      { say: 'Pump all the air out of the jar and listen.', when: 'air == 0', then: 'The bell still shakes, but with no air there is nothing to carry the sound to your ear.' },
+      { say: 'Now, in the vacuum, strike the bell as hard as you can.', when: 'air == 0 and hit == 100', then: 'Even the hardest strike is silent: sound must have a material medium to travel through.' },
+      { say: 'Pump the air back in and listen again.', when: 'air == 100', then: 'The air particles carry the vibrations again, so the bell can be heard. Air is the medium here.' },
+    ],
+  },
   lens: {
     grades: [9, 10], match: [/convex lens/, /converging lens/, /lenses? and power/, /power of (a )?lens/, /focal length/, /principal focus/, /magnifying glass/, /real and virtual image/],
     title: 'Focus the lens', takeaway: 'A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger.',

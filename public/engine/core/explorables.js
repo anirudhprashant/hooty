@@ -1624,6 +1624,44 @@ export const WIDGETS = {
       return { kids, say: `The speaker vibrates ${v.freq} times each second, which we hear as ${v.freq >= 600 ? 'a high pitch' : v.freq <= 200 ? 'a low pitch' : 'a middling pitch'}. ${tall ? 'The wave is tall, so the sound is loud.' : soft ? 'The wave is short, so the sound is soft.' : 'The wave is medium height, so the sound is medium loud.'} Bigger amplitude means more energy.` };
     },
   },
+  soundtravel: {
+    subject: 'science', about: 'A ringing bell sealed inside a glass jar, with a pump that can empty the air out. The bell keeps shaking, but once the air is gone no sound reaches the ear, because sound needs a material medium to travel through. For how sound travels, sound needs a medium, the bell jar and vacuum experiment, vibrations carried by air.',
+    sliders: [['air', 'Air inside the jar (%)', 0, 100, 10, 60], ['hit', 'How hard the bell is struck', 10, 100, 10, 40]], animated: true,
+    draw(v, p, t = 0) {
+      const share = v.air / 100, heard = v.air > 0, loud = share * (v.hit / 100);
+      const jx = 120, jy = 62, jw = 330, jh = 178, bx = jx + 74, by = jy + jh - 40;
+      const jiggle = (v.hit / 100) * 2.4 * Math.sin(t * 26), kids = [R(0, 0, W, H, '#f4f7ff', { w: 0 })];
+      kids.push(R(jx, jy, jw, jh, '#fbfdff', { w: 5, r: 18 }), T(jx + jw / 2, jy - 12, 'glass jar', { z: 13, f: '#6b5a8a' }));
+      const bellX = bx + jiggle;
+      kids.push(s('path', { d: `M ${bellX - 28} ${by} Q ${bellX - 26} ${by - 52} ${bellX} ${by - 58} Q ${bellX + 26} ${by - 52} ${bellX + 28} ${by} Z`, fill: C.y, stroke: INK, 'stroke-width': 3 }));
+      kids.push(T(bellX, by - 70, 'bell', { z: 13, f: '#8a6a2a' }), L(bellX, by - 58, bellX, by - 72, INK, 4), CIRC(bellX, by - 76, 6, 'none', { w: 3 }), CIRC(bellX, by + 7, 7, INK));
+      if (heard) for (let k = 0; k < 3; k++) {
+        const rr = 34 + k * 22 + 6 * Math.sin(t * 5 - k);
+        kids.push(CIRC(bellX, by - 30, rr, 'none', { s: C.o, w: 3, x: { opacity: 0.15 + 0.7 * loud } }));
+      }
+      const cols = 9, rows = 5, px0 = bx + 92, py0 = jy + 32, dxp = 17.6, dyp = 29, shown = Math.round(cols * rows * share);
+      for (let i = 0; i < shown; i++) {
+        const col = i % cols, row = Math.floor(i / cols), ph = i * 0.9;
+        const x = px0 + col * dxp + Math.sin(t * 10 + ph) * (1 + 6 * loud), y = py0 + row * dyp;
+        kids.push(CIRC(x, y, 4, C.b, { w: 1, x: { opacity: 0.4 + 0.6 * share } }));
+      }
+      const ex = 536, ey = 170;
+      kids.push(s('path', { d: `M ${ex - 18} ${ey - 26} Q ${ex - 34} ${ey} ${ex - 18} ${ey + 26}`, fill: 'none', stroke: INK, 'stroke-width': 5 }));
+      kids.push(s('path', { d: `M ${ex - 10} ${ey - 16} Q ${ex - 20} ${ey} ${ex - 10} ${ey + 16}`, fill: 'none', stroke: C.p, 'stroke-width': 4 }));
+      kids.push(T(ex - 4, ey + 46, 'ear', { z: 13, f: '#6b5a8a' }));
+      if (heard) for (let k = 0; k < 2; k++) {
+        const wx = 466 + k * 16;
+        kids.push(s('path', { d: `M ${wx} ${ey - 18} Q ${wx + 10} ${ey} ${wx} ${ey + 18}`, fill: 'none', stroke: C.o, 'stroke-width': 3, opacity: 0.2 + 0.7 * loud }));
+      }
+      kids.push(L(jx + 32, jy + jh, jx + 32, jy + jh + 16, INK, 4), R(jx + 8, jy + jh + 16, 80, 24, '#e6e0f2', { w: 3, r: 6 }), T(jx + 48, jy + jh + 34, 'pump', { z: 12 }));
+      kids.push(T(300, 30, v.air === 0 ? 'vacuum: the bell shakes, but no sound can travel' : `air inside the jar: ${v.air}%`, { z: 18, f: v.air === 0 ? '#c2510e' : '#058a68', w: 700 }));
+      const note = loud >= 0.55 ? 'a loud sound' : loud >= 0.2 ? 'a soft sound' : 'a faint sound';
+      const say = v.air === 0
+        ? 'The pump has taken all the air out. The bell still shakes, but there is nothing to carry the vibrations to your ear, so you hear nothing at all. Sound needs a medium to travel through.'
+        : `With ${v.air}% air in the jar, the bell's shaking is passed from one air particle to the next until it reaches your ear, so you hear ${note}.`;
+      return { kids, say };
+    },
+  },
   lens: {
     subject: 'science', about: 'A convex lens with an object in front of it. Parallel rays bend through the focal point, and the object distance sets whether the image is real and inverted or virtual, upright and magnified. For lenses, convex lens, converging lens, principal focus, focal length, real and virtual images, magnifying glass, the power of a lens.',
     sliders: [['u', 'Distance of the object (centimetres)', 6, 60, 1, 30], ['f', 'Focal length of the lens (centimetres)', 5, 20, 1, 10]],
