@@ -10873,6 +10873,26 @@
          "focus": 0
         },
         {
+         "type": "truefalse",
+         "id": "mathematics-g3-ch2-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "shapes",
+          "classroom"
+         ],
+         "prompt": "Children name the classroom shape they find least often.",
+         "answer": true,
+         "explanation": "Yes. You name the classroom shape you find least often.",
+         "src": [
+          {
+           "ch": 2,
+           "p": 11
+          }
+         ],
+         "anchor": "mathematics-g3-ch2-l4-a1",
+         "focus": 1
+        },
+        {
          "type": "fillblank",
          "difficulty": 1,
          "tags": [
@@ -14861,7 +14881,7 @@
        ],
        "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
        "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
-       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BCE, includes people and horses.",
        "sceneCredit": {
         "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
         "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
@@ -15658,7 +15678,7 @@
        ],
        "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
        "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
-       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BCE, includes people and horses.",
        "sceneCredit": {
         "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
         "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
@@ -16612,7 +16632,7 @@
        ],
        "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
        "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
-       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BCE, includes people and horses.",
        "sceneCredit": {
         "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
         "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
@@ -20301,7 +20321,7 @@
        ],
        "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
        "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
-       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BCE, includes people and horses.",
        "sceneCredit": {
         "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
         "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
@@ -20316,7 +20336,7 @@
        "estimatedMinutes": 18,
        "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
        "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
-       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+       "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BCE, includes people and horses.",
        "sceneCredit": {
         "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
         "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
@@ -20928,7 +20948,7 @@
       ],
       "topicScene": "media/ch3-l1-bhimbetka-cave-paintings-fbabea.webp",
       "sceneAlt": "An ancient cave painting at Bhimbetka includes people and horses, with white pigment made from ground limestone and vegetable oil.",
-      "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BC, includes people and horses.",
+      "sceneCaption": "An ancient Bhimbetka cave painting, dating to around 1500–2000 BCE, includes people and horses.",
       "sceneCredit": {
        "text": "Bhimbetka Cave Paintings by Raveesh Vyas, CC BY-SA 2.0, via Wikimedia Commons",
        "url": "https://commons.wikimedia.org/wiki/File:Bhimbetka_Cave_Paintings.jpg",
@@ -53413,7 +53433,7 @@
       {
        "id": "mathematics-g3-ch9-l5",
        "title": "Quantity Ranges and Number Detective",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -53479,6 +53499,55 @@
            "ch": 9,
            "p": 124
           }
+         ]
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g3-ch9-l5-w1",
+         "difficulty": 1,
+         "tags": [
+          "worked"
+         ],
+         "prompt": "The number 121 looks the same from left to right and right to left. What is the sum of its first and last digits?",
+         "steps": [
+          "The first digit is 1 and the last digit is 1.",
+          "Add these two digits.",
+          "1 + 1 = 2, so 2 is the answer."
+         ],
+         "modelSpec": null,
+         "result": "2",
+         "gen": {
+          "template": "The number {a} looks the same from left to right and right to left. What is the sum of its first and last digits?",
+          "params": {
+           "a": [
+            353,
+            868,
+            121,
+            242
+           ]
+          },
+          "where": [],
+          "answer": "a//100+a%10",
+          "vals": {
+           "first": "a//100",
+           "last": "a%10"
+          },
+          "steps": [
+           "The first digit is {first} and the last digit is {last}.",
+           "Add these two digits.",
+           "{first} + {last} = {answer}, so {answer} is the answer."
+          ],
+          "model": null,
+          "hint": "Find the first digit and the last digit, then add them.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "explanation": "Watch how it is solved.",
+         "f": [],
+         "derived": [
+          "1 (generated problem)",
+          "121 (generated problem)",
+          "2 (generated problem)"
          ]
         },
         {
@@ -53592,65 +53661,6 @@
          ],
          "anchor": "mathematics-g3-ch9-l5-a1",
          "focus": 0
-        },
-        {
-         "type": "fillblank",
-         "difficulty": 1,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "The number 121 looks the same from left to right and right to left. What is the sum of its first and last digits?",
-         "explanation": "The first digit is 1 and the last digit is 1. Add these two digits. 1 + 1 = 2, so 2 is the answer.",
-         "steps": [
-          "The first digit is 1 and the last digit is 1.",
-          "Add these two digits.",
-          "1 + 1 = 2, so 2 is the answer."
-         ],
-         "hint": "Find the first digit and the last digit, then add them.",
-         "derived": [
-          "1 (generated problem)",
-          "121 (generated problem)",
-          "2 (generated problem)"
-         ],
-         "gen": {
-          "template": "The number {a} looks the same from left to right and right to left. What is the sum of its first and last digits?",
-          "params": {
-           "a": [
-            353,
-            868,
-            121,
-            242
-           ]
-          },
-          "where": [],
-          "answer": "a//100+a%10",
-          "vals": {
-           "first": "a//100",
-           "last": "a%10"
-          },
-          "steps": [
-           "The first digit is {first} and the last digit is {last}.",
-           "Add these two digits.",
-           "{first} + {last} = {answer}, so {answer} is the answer."
-          ],
-          "model": null,
-          "hint": "Find the first digit and the last digit, then add them.",
-          "wrong": [],
-          "wrongWhy": []
-         },
-         "answers": [
-          "2"
-         ],
-         "id": "mathematics-g3-ch9-l5-c2",
-         "src": [
-          {
-           "ch": 9,
-           "p": 124
-          }
-         ],
-         "anchor": "mathematics-g3-ch9-l5-a1",
-         "focus": -1
         },
         {
          "type": "fillblank",
@@ -55528,6 +55538,24 @@
          "explanation": "The first and last digits match, and the middle digit remains in the middle.",
          "anchor": "mathematics-g3-ch9-l5-t1",
          "focus": -1
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g3-ch9-l5-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "Explain how twin digits, triplet digits, backwards-reading numbers and numbers with zeroes are different.",
+         "answer": "Twin-digit numbers such as 11, 22 and 33 are made from a repeated pair of digits. Triplet-digit numbers such as 111, 222 and 333 use three repeated digits. Numbers like 353 and 868 read the same in either direction, while numbers such as 210, 404 and 800 contain zeroes.",
+         "points": [
+          "Twin-digit examples use two repeated digits.",
+          "Triplet-digit examples use three repeated digits.",
+          "The numbers 353 and 868 read the same backwards.",
+          "The numbers 210, 404 and 800 each contain zeroes."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
         },
         {
          "type": "mcq",
@@ -77754,7 +77782,7 @@
       {
        "id": "mathematics-g3-ch13-l5",
        "title": "Lesson 5: Daily Life and Time",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
