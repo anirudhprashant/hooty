@@ -23480,7 +23480,7 @@
       {
        "id": "science-g9-ch7-l3",
        "title": "Kinetic Energy and Potential Energy",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -23548,6 +23548,36 @@
            "p": 124
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "energy",
+         "params": {},
+         "title": "Roll the ball down the ramp",
+         "tasks": [
+          {
+           "say": "Put the ball on a ramp 5 metres high.",
+           "when": "height == 5",
+           "then": "From 5 m the ball reaches 10 m/s at the bottom, whatever its mass."
+          },
+          {
+           "say": "Make the stored energy exactly 200 joules.",
+           "when": "mass * 10 * height == 200",
+           "then": "Mass x 10 x height = 200 J."
+          },
+          {
+           "say": "Use the heaviest ball on the highest ramp.",
+           "when": "mass == 5 and height == 10",
+           "then": "500 J: this set-up stores the most energy."
+          }
+         ],
+         "takeaway": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another.",
+         "explanation": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another."
         },
         {
          "type": "worked",
@@ -23901,7 +23931,7 @@
       {
        "id": "science-g9-ch7-l4",
        "title": "Gravitational Potential Energy and Conservation",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -23972,6 +24002,36 @@
            "p": 127
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "energy",
+         "params": {},
+         "title": "Roll the ball down the ramp",
+         "tasks": [
+          {
+           "say": "Put the ball on a ramp 5 metres high.",
+           "when": "height == 5",
+           "then": "From 5 m the ball reaches 10 m/s at the bottom, whatever its mass."
+          },
+          {
+           "say": "Make the stored energy exactly 200 joules.",
+           "when": "mass * 10 * height == 200",
+           "then": "Mass x 10 x height = 200 J."
+          },
+          {
+           "say": "Use the heaviest ball on the highest ramp.",
+           "when": "mass == 5 and height == 10",
+           "then": "500 J: this set-up stores the most energy."
+          }
+         ],
+         "takeaway": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another.",
+         "explanation": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another."
         },
         {
          "type": "worked",

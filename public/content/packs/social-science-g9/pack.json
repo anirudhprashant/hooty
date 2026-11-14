@@ -11879,7 +11879,7 @@
       {
        "id": "social-science-g9-ch4-l3",
        "title": "The Neolithic Revolution",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -11946,6 +11946,62 @@
            "p": 73
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": -5500,
+            "label": "At some sites, the Pre-Harappan phase began"
+           },
+           {
+            "year": -4000,
+            "label": "By about 4000 BCE, Mehrgarh people were known as"
+           },
+           {
+            "year": -3200,
+            "label": "The Sumerians began writing"
+           },
+           {
+            "year": -3000,
+            "label": "City-states began to emerge in Egypt"
+           },
+           {
+            "year": -2500,
+            "label": "By 2500 BCE, most of the Indian subcontinent had"
+           },
+           {
+            "year": -1700,
+            "label": "The Assyrian civilisation replaced Akkadian"
+           },
+           {
+            "year": -680,
+            "label": "Walls for protection were first built"
+           }
+          ]
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move to when this happened: By about 4000 BCE, Mehrgarh people were known as.",
+           "when": "y >= -4000",
+           "then": "That was 4000 BCE."
+          },
+          {
+           "say": "Go forward to the last event.",
+           "when": "y >= -680",
+           "then": "The latest event here is from 680 BCE."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",
@@ -38343,7 +38399,7 @@
       {
        "id": "social-science-g9-ch12-l3",
        "title": "Ahoms and Vijayanagara: endurance against expansion",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -38415,6 +38471,46 @@
            "p": 56
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch12-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": 1228,
+            "label": "The Ahom kingdom maintained its independence for"
+           },
+           {
+            "year": 1336,
+            "label": "The Vijayanagara Empire arose"
+           },
+           {
+            "year": 1671,
+            "label": "Lachit Borphukan defeated a Mughal fleet"
+           }
+          ]
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move to when this happened: The Vijayanagara Empire arose.",
+           "when": "y >= 1336",
+           "then": "That was 1336 CE."
+          },
+          {
+           "say": "Go forward to the last event.",
+           "when": "y >= 1671",
+           "then": "The latest event here is from 1671 CE."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",
