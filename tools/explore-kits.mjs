@@ -362,7 +362,7 @@ export const KITS = {
   },
   foodchain: {
     grades: [4, 10], titleOnly: true,
-    match: [/food ?chains?/, /food ?webs?/, /\btrophic\b/, /who eats whom/, /web of life/],
+    match: [/food ?chains?/, /food ?webs?/, /\btrophic\b/, /who eats whom/, /(?![^\n]*\b(?:one earth|one family|vasudhaiva)\b)[^\n]*web of life/],
     title: 'Build a food chain', takeaway: 'A food chain shows who eats whom: green plants are the producer at the first trophic level, each animal after that is a consumer at the next level, energy flows only one way, and less of it is left at each step.',
     tasks: [
       { say: 'Build the longest chain: grass, grasshopper, frog and snake.', when: 'links == 4', then: 'Four living things make four trophic levels, from the producer up to the largest carnivore.' },
@@ -472,7 +472,7 @@ export const KITS = {
     ],
   },
   seepage: {
-    grades: [6, 8], match: [/\bseep(age|s|ing)?\b/, /groundwater/, /infiltration/, /\bgravel\b/],
+    grades: [5, 8], match: [/\bseep(age|s|ing)?\b/, /groundwater/, /infiltration/, /\bgravel\b/],
     title: 'Pour the water', takeaway: 'Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles.',
     tasks: [
       { say: 'Let 3 minutes pass.', when: 't == 3', then: 'Gravel has let through the most water: its particles have the widest gaps.' },
