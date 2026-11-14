@@ -1677,6 +1677,54 @@ export const WIDGETS = {
       return { kids, say: `The object sits exactly at the focus of the ${convex ? 'convex' : 'concave'} mirror, so the reflected rays run parallel and never meet: no image forms.` };
     },
   },
+  atom: {
+    subject: 'science', about: 'Build an atom from its protons, neutrons and electrons. The number of protons sets which element it is (the atomic number), neutrons added to protons give the mass number, extra or missing electrons make an ion, and the electrons fill shells around the nucleus in the 2, 8, 8, 2 pattern. For atoms, atomic number, mass number, isotopes, ions, valency, electron shells, the Bohr model, Rutherford and gold foil.',
+    sliders: [['p', 'Protons in the nucleus', 1, 20, 1, 1], ['n', 'Neutrons in the nucleus', 0, 25, 1, 0], ['e', 'Electrons around it', 0, 20, 1, 1]],
+    draw(v) {
+      const SYM = ['', 'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'Ar', 'K', 'Ca'];
+      const NAMES = ['', 'hydrogen', 'helium', 'lithium', 'beryllium', 'boron', 'carbon', 'nitrogen', 'oxygen', 'fluorine', 'neon', 'sodium', 'magnesium', 'aluminium', 'silicon', 'phosphorus', 'sulphur', 'chlorine', 'argon', 'potassium', 'calcium'];
+      const cx = 180, cy = 150, kids = [];
+      const prot = Math.max(1, Math.min(20, v.p)), neut = Math.max(0, Math.min(25, v.n)), elec = Math.max(0, Math.min(20, v.e));
+      const sym = SYM[prot], name = NAMES[prot], mass = prot + neut, charge = prot - elec;
+      // electrons fill the shells in the order a child meets them: 2, 8, 8, then 2
+      const caps = [2, 8, 8, 2], shells = [];
+      let left = elec;
+      for (const cap of caps) { if (left <= 0) break; const take = Math.min(left, cap); shells.push(take); left -= take; }
+      const radii = [46, 76, 106, 134];
+      for (let i = 0; i < shells.length; i++) kids.push(CIRC(cx, cy, radii[i], 'none', { s: '#cfc6e6', w: 2, x: { 'stroke-dasharray': '5 6' } }));
+      // the nucleus: each proton and neutron a small ball, packed into a round cluster
+      const total = prot + neut;
+      for (let i = 0; i < total; i++) {
+        const a = i * 2.399963, rr = 3.1 * Math.sqrt(i + 0.4);
+        kids.push(CIRC(cx + rr * Math.cos(a), cy + rr * Math.sin(a), 5, i < prot ? C.o : '#9aa5b1', { s: INK, w: 1 }));
+      }
+      // electrons on their shells, spaced evenly so none sit on top of another
+      let seen = 0;
+      shells.forEach((count, sh) => {
+        for (let k = 0; k < count; k++) {
+          const a = -Math.PI / 2 + (2 * Math.PI * k) / count + sh * 0.35;
+          kids.push(CIRC(cx + radii[sh] * Math.cos(a), cy + radii[sh] * Math.sin(a), 5, C.b, { s: INK, w: 1 }));
+          seen++;
+        }
+      });
+      // a small key for the three particles
+      kids.push(CIRC(360, 274, 6, C.o, { s: INK, w: 1 }), T(372, 279, 'proton', { a: 'start', z: 12, w: 600 }), CIRC(438, 274, 6, '#9aa5b1', { s: INK, w: 1 }), T(450, 279, 'neutron', { a: 'start', z: 12, w: 600 }), CIRC(522, 274, 6, C.b, { s: INK, w: 1 }), T(534, 279, 'electron', { a: 'start', z: 12, w: 600 }));
+      const outer = shells[shells.length - 1] || 0;
+      const noble = elec === 2 || elec === 10 || elec === 18;
+      const val = elec === 0 || noble ? 0 : outer <= 4 ? outer : 8 - outer;
+      const chargeText = charge === 0 ? '0, a neutral atom' : charge > 0 ? `+${charge} ion` : `−${-charge} ion`;
+      kids.push(T(350, 36, `${name} (${sym})`, { a: 'start', z: 24, f: '#2a1a4a' }));
+      kids.push(T(350, 68, `Protons, the atomic number Z = ${prot}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(350, 92, `Neutrons = ${neut}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(350, 116, `Mass number A = ${prot} + ${neut} = ${mass}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(350, 140, `Electrons = ${elec}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(350, 164, `Shells: ${shells.length ? shells.join(', ') : 'none'}`, { a: 'start', z: 15, w: 600, f: '#1f63d9' }));
+      kids.push(T(350, 188, `Outer shell: ${outer} electron${outer === 1 ? '' : 's'}, valency ${val}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(350, 212, `Charge: ${chargeText}`, { a: 'start', z: 15, w: 600, f: charge === 0 ? '#058a68' : C.p }));
+      const say = `${sym ? `This is ${name}. ` : ''}${prot} proton${prot === 1 ? ' makes' : 's make'} it ${name} and set${prot === 1 ? 's' : ''} its atomic number to ${prot}. ${neut === 0 ? 'With no neutrons' : `With ${neut} neutron${neut === 1 ? '' : 's'}`} the mass number is ${mass}. ${elec === 0 ? 'It has no electrons, so there are no filled shells' : `${elec} electron${elec === 1 ? ' fills' : 's fill'} the shells as ${shells.join('-')}, so the outer shell holds ${outer}`}. ${charge === 0 ? 'It is neutral because the protons and electrons balance.' : charge > 0 ? `It is a positive ion: ${charge} more proton${charge === 1 ? '' : 's'} than electrons.` : `It is a negative ion: ${-charge} more electron${-charge === 1 ? '' : 's'} than protons.`}`;
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

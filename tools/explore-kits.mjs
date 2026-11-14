@@ -859,6 +859,16 @@ export const KITS = {
       ];
     },
   },
+  atom: {
+    grades: [9, 9], perChapter: 3,
+    match: [/atomic number/, /mass number/, /\bisotopes?\b/, /valenc/, /electron(ic)? (shell|configuration|distribution)/, /\bprotons?\b/, /\bneutrons?\b/, /stationary states|fixed circular|orbits or shells/, /2n²|2n2/, /octet|outermost shell/],
+    title: 'Build an atom', takeaway: 'Protons set which element it is, neutrons change the mass, and electrons fill shells and decide the charge.',
+    tasks: [
+      { say: 'Build a neutral carbon atom: 6 protons, 6 neutrons and 6 electrons.', when: 'p == 6 and n == 6 and e == 6', then: 'Carbon always has 6 protons. With 6 neutrons and 6 electrons it is neutral carbon-12.' },
+      { say: 'Make a heavy isotope of carbon: 6 protons but 8 neutrons.', when: 'p == 6 and n == 8', then: 'Same protons, more neutrons: that is the isotope carbon-14.' },
+      { say: 'Make a sodium ion: 11 protons but only 10 electrons.', when: 'p == 11 and e == 10', then: 'Sodium loses one electron, so it has a 1+ charge and a full 2, 8 outer shell.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
