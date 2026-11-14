@@ -359,6 +359,15 @@ export const KITS = {
       { say: 'Double both the force and the mass, so the acceleration stays the same.', when: 'push == 20 and mass == 4 and back == 0', then: '20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg.' },
     ],
   },
+  thirdlaw: {
+    grades: [9, 9], match: [/third law/, /action.{0,8}reaction/, /equal and opposite/, /paired forces|pair(s|ed)? of forces/, /forces? come into play.{0,30}interact/, /\brecoil\b/, /two objects interact/],
+    title: 'Push two carts apart', takeaway: 'Forces come in pairs: when one object pushes another, it gets the same size push back the other way, but the lighter object speeds up more.',
+    tasks: [
+      { say: 'Give both carts the same mass. What happens to their accelerations?', when: 'mA == mB', then: 'With equal masses the same force gives the same acceleration, so they fly apart at the same rate.' },
+      { say: 'Make cart A very light and cart B very heavy, then push.', when: 'mA == 1 and mB == 10', then: 'Both feel the same force, but the light cart gets ten times the acceleration of the heavy one.' },
+      { say: 'Push harder, with a force of 40 N.', when: 'F == 40', then: 'The force on each cart is 40 N, one forwards and one backwards: the two forces are equal and opposite.' },
+    ],
+  },
   sound: {
     grades: [8, 9], perChapter: { 9: 4 }, titleOnly: true, match: [/sound waves?/, /\bpitch\b/, /\bloudness\b/, /\bamplitude\b/, /how sound is produced/],
     title: 'See the sound', takeaway: 'More vibrations each second make a higher note, and a taller wave means a louder sound with more energy.',
