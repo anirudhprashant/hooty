@@ -360,6 +360,16 @@ export const KITS = {
       { say: 'Pump the air back in and listen again.', when: 'air == 100', then: 'The air particles carry the vibrations again, so the bell can be heard. Air is the medium here.' },
     ],
   },
+  foodchain: {
+    grades: [4, 10], titleOnly: true,
+    match: [/food ?chains?/, /food ?webs?/, /\btrophic\b/, /who eats whom/, /web of life/],
+    title: 'Build a food chain', takeaway: 'A food chain shows who eats whom: green plants are the producer at the first trophic level, each animal after that is a consumer at the next level, energy flows only one way, and less of it is left at each step.',
+    tasks: [
+      { say: 'Build the longest chain: grass, grasshopper, frog and snake.', when: 'links == 4', then: 'Four living things make four trophic levels, from the producer up to the largest carnivore.' },
+      { say: 'Cut the chain down to just the grass and the grasshopper.', when: 'links == 2', then: 'The grass is the producer at trophic level 1; the grasshopper is a herbivore at trophic level 2.' },
+      { say: 'Give the grass the most sunlight you can.', when: 'sun == 1000', then: 'Green plants capture only about 1 part in 100 of sunlight, so from 1000 units the grass stores about 10.' },
+    ],
+  },
   lens: {
     grades: [9, 10], match: [/convex lens/, /converging lens/, /lenses? and power/, /power of (a )?lens/, /focal length/, /principal focus/, /magnifying glass/, /real and virtual image/],
     title: 'Focus the lens', takeaway: 'A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger.',

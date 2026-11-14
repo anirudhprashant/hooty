@@ -1803,6 +1803,63 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  foodchain: {
+    subject: 'science', about: 'A food chain built one living thing at a time, from the Sun and grass at the first trophic level up to a snake. It shows who eats whom, the trophic level of each living thing, that energy flows one way, and that less energy is left at each step. For food chains, food webs, trophic levels, producers, herbivores, consumers, energy flow, and the web of life.',
+    sliders: [['links', 'Living things in the chain', 2, 4, 1, 3], ['sun', 'Sunlight falling on the grass (units)', 100, 1000, 100, 500]],
+    draw(v) {
+      const cards = [
+        { name: 'grass', role: 'producer', level: 'trophic level 1', fill: C.g },
+        { name: 'grasshopper', role: 'herbivore', level: 'trophic level 2', fill: '#7bbf4a' },
+        { name: 'frog', role: 'small carnivore', level: 'trophic level 3', fill: '#2f9e6e' },
+        { name: 'snake', role: 'larger carnivore', level: 'trophic level 4', fill: C.p },
+      ];
+      const shown = Math.max(2, Math.min(4, v.links)), cardTop = 142, cardH = 70, midY = cardTop + cardH / 2;
+      const gap = shown > 1 ? (552 - 130) / (shown - 1) : 0;
+      const kids = [R(0, 0, W, H, '#f3fbf4', { w: 0 })];
+      // the Sun: green plants capture about 1 part in 100 of its energy
+      kids.push(CIRC(64, 62, 22, C.y, { w: 3 }));
+      for (let k = 0; k < 8; k++) { const a = (k * Math.PI) / 4; kids.push(L(64 + 28 * Math.cos(a), 62 + 28 * Math.sin(a), 64 + 36 * Math.cos(a), 62 + 36 * Math.sin(a), '#d99a00', 3)); }
+      kids.push(T(64, 106, 'Sun', { z: 13, f: '#8a6a2a' }));
+      const grassX = 130;
+      kids.push(s('path', { d: `M 86 82 Q 100 118 ${grassX - 34} ${cardTop - 4}`, fill: 'none', stroke: '#d99a00', 'stroke-width': 3, 'stroke-dasharray': '7 5' }));
+      kids.push(s('polygon', { points: `${grassX - 34},${cardTop - 4} ${grassX - 46},${cardTop - 12} ${grassX - 40},${cardTop + 4}`, fill: '#d99a00' }));
+      const heights = [1, 0.55, 0.34, 0.21], baseH = 18 + 42 * (v.sun / 1000);
+      for (let i = 0; i < shown; i++) {
+        const part = cards[i], cx2 = 130 + gap * i, cy2 = midY;
+        const h = baseH * heights[i];
+        kids.push(R(cx2 - 7, cardTop - 14 - h, 14, h, part.fill, { w: 2, x: { opacity: 0.85 } }));
+        kids.push(T(cx2, cardTop - 20 - h, i === 0 ? '1 of 100' : 'less', { z: 11, f: '#5b4a7a', w: 600 }));
+        kids.push(R(cx2 - 42, cardTop, 84, cardH, '#fff', { r: 10, w: 2, s: '#7a6b9a' }));
+        if (i === 0) {
+          for (let b = -1; b <= 1; b++) kids.push(s('path', { d: `M ${cx2 + b * 9} ${cy2 + 22} Q ${cx2 + b * 16} ${cy2 + 2} ${cx2 + b * 20} ${cy2 - 14}`, fill: 'none', stroke: C.g, 'stroke-width': 4, 'stroke-linecap': 'round' }));
+          kids.push(L(cx2 - 20, cy2 + 24, cx2 + 20, cy2 + 24, '#6b4a23', 4));
+        } else if (i === 1) {
+          kids.push(s('ellipse', { cx: cx2 + 2, cy: cy2 + 2, rx: 16, ry: 8, fill: part.fill, stroke: INK, 'stroke-width': 2 }));
+          kids.push(CIRC(cx2 - 15, cy2 - 2, 6, part.fill, { w: 2 }), L(cx2 - 13, cy2 + 8, cx2 - 20, cy2 + 18, INK, 2), L(cx2 + 8, cy2 + 9, cx2 + 16, cy2 + 18, INK, 2), L(cx2 - 14, cy2 - 7, cx2 - 22, cy2 - 16, INK, 2), L(cx2 - 17, cy2 - 6, cx2 - 26, cy2 - 12, INK, 2));
+        } else if (i === 2) {
+          kids.push(s('ellipse', { cx: cx2, cy: cy2 + 4, rx: 18, ry: 12, fill: part.fill, stroke: INK, 'stroke-width': 2 }));
+          kids.push(CIRC(cx2 - 9, cy2 - 10, 6, '#fff', { w: 2 }), CIRC(cx2 + 9, cy2 - 10, 6, '#fff', { w: 2 }), CIRC(cx2 - 9, cy2 - 10, 3, INK, { w: 0 }), CIRC(cx2 + 9, cy2 - 10, 3, INK, { w: 0 }));
+          kids.push(s('path', { d: `M ${cx2 - 12} ${cy2 + 8} Q ${cx2} ${cy2 + 15} ${cx2 + 12} ${cy2 + 8}`, fill: 'none', stroke: INK, 'stroke-width': 2 }));
+        } else {
+          kids.push(s('path', { d: `M ${cx2 - 22} ${cy2 + 12} Q ${cx2 - 12} ${cy2 - 12} ${cx2} ${cy2 + 6} Q ${cx2 + 12} ${cy2 + 20} ${cx2 + 20} ${cy2 - 4}`, fill: 'none', stroke: part.fill, 'stroke-width': 7, 'stroke-linecap': 'round' }));
+          kids.push(CIRC(cx2 + 22, cy2 - 6, 7, part.fill, { w: 2 }));
+        }
+        kids.push(T(cx2, cardTop + cardH + 20, part.name, { z: 14 }));
+        kids.push(T(cx2, cardTop + cardH + 37, part.role, { z: 11, w: 600, f: '#5b4a7a' }));
+        kids.push(T(cx2, cardTop + cardH + 53, part.level, { z: 11, w: 600, f: '#8338ec' }));
+        if (i < shown - 1) {
+          const x1 = cx2 + 42, x2 = 130 + gap * (i + 1) - 42, y0 = midY;
+          kids.push(L(x1 + 2, y0, x2 - 8, y0, C.o, 4));
+          kids.push(s('polygon', { points: `${x2 - 2},${y0} ${x2 - 12},${y0 - 7} ${x2 - 12},${y0 + 7}`, fill: C.o }));
+        }
+      }
+      kids.push(T(300, 24, `a food chain with ${shown} living thing${shown === 1 ? '' : 's'}`, { z: 16, f: '#2a1a4a' }));
+      kids.push(T(400, 46, 'energy flows this way', { z: 12, f: C.o, w: 600 }));
+      const food = Math.round(v.sun / 100 * 10) / 10;
+      const say = `Green plants capture about 1 part in every 100 of the sunlight that falls on them, so the grass stores about ${food} unit${food === 1 ? '' : 's'} from ${v.sun}. ${shown} living things make ${shown} trophic levels: the grass is the producer at level 1, the grasshopper is a herbivore at level 2${shown > 2 ? ', and each animal after that is a carnivore at the next level' : ''}. Energy flows only one way, and less of it is left at each step, so the top of the chain gets the least.`;
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
