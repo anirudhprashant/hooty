@@ -34103,7 +34103,7 @@
       {
        "id": "the-world-around-us-g4-ch10-l5",
        "title": "Shadow Play and the Night Sky",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -34170,6 +34170,41 @@
            "p": 161
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch10-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "moonphase",
+         "params": {},
+         "title": "Watch the Moon change shape",
+         "tasks": [
+          {
+           "say": "Make the full Moon, called Purnima.",
+           "when": "day == 15",
+           "then": "At the full Moon the lit half faces us: a complete bright circle, nearly opposite the Sun."
+          },
+          {
+           "say": "Make the new Moon, called Amavasya, when no Moon is seen.",
+           "when": "day == 0",
+           "then": "At the new Moon the lit half faces away from us, so we cannot see the Moon at all."
+          },
+          {
+           "say": "Stop at the first quarter: about half lit and growing.",
+           "when": "day == 7",
+           "then": "One week after the new Moon we see a half circle, and the bright part is still growing: Shukla Paksha."
+          },
+          {
+           "say": "Find the last quarter: half lit and shrinking.",
+           "when": "day == 22",
+           "then": "One week after the full Moon we see a half circle again, and the bright part is shrinking: Krishna Paksha."
+          }
+         ],
+         "takeaway": "Half of the Moon is always lit by the Sun. As the Moon goes round the Earth we see more or less of that lit half, so it grows from new Moon to full Moon and shrinks back to new Moon.",
+         "explanation": "Half of the Moon is always lit by the Sun. As the Moon goes round the Earth we see more or less of that lit half, so it grows from new Moon to full Moon and shrinks back to new Moon."
         },
         {
          "type": "worked",
@@ -34594,7 +34629,7 @@
       {
        "id": "the-world-around-us-g4-ch10-l6",
        "title": "Moon Festivals and Chandrayaan",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -34657,6 +34692,41 @@
            "p": 162
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch10-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "moonphase",
+         "params": {},
+         "title": "Watch the Moon change shape",
+         "tasks": [
+          {
+           "say": "Make the full Moon, called Purnima.",
+           "when": "day == 15",
+           "then": "At the full Moon the lit half faces us: a complete bright circle, nearly opposite the Sun."
+          },
+          {
+           "say": "Make the new Moon, called Amavasya, when no Moon is seen.",
+           "when": "day == 0",
+           "then": "At the new Moon the lit half faces away from us, so we cannot see the Moon at all."
+          },
+          {
+           "say": "Stop at the first quarter: about half lit and growing.",
+           "when": "day == 7",
+           "then": "One week after the new Moon we see a half circle, and the bright part is still growing: Shukla Paksha."
+          },
+          {
+           "say": "Find the last quarter: half lit and shrinking.",
+           "when": "day == 22",
+           "then": "One week after the full Moon we see a half circle again, and the bright part is shrinking: Krishna Paksha."
+          }
+         ],
+         "takeaway": "Half of the Moon is always lit by the Sun. As the Moon goes round the Earth we see more or less of that lit half, so it grows from new Moon to full Moon and shrinks back to new Moon.",
+         "explanation": "Half of the Moon is always lit by the Sun. As the Moon goes round the Earth we see more or less of that lit half, so it grows from new Moon to full Moon and shrinks back to new Moon."
         },
         {
          "type": "worked",

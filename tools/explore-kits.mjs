@@ -388,6 +388,17 @@ export const KITS = {
       { say: 'Make a lunar eclipse.', when: 'moon == 0 or moon == 360', then: 'The Earth is in the middle, so its shadow falls on the Moon.' },
     ],
   },
+  moonphase: {
+    grades: [4, 8], perChapter: { 8: 3, 4: 2 }, titleOnly: true,
+    match: [/\bmoon\b/, /\bnight sky\b/, /phases? of the moon/],
+    title: 'Watch the Moon change shape', takeaway: 'Half of the Moon is always lit by the Sun. As the Moon goes round the Earth we see more or less of that lit half, so it grows from new Moon to full Moon and shrinks back to new Moon.',
+    tasks: [
+      { say: 'Make the full Moon, called Purnima.', when: 'day == 15', then: 'At the full Moon the lit half faces us: a complete bright circle, nearly opposite the Sun.' },
+      { say: 'Make the new Moon, called Amavasya, when no Moon is seen.', when: 'day == 0', then: 'At the new Moon the lit half faces away from us, so we cannot see the Moon at all.' },
+      { say: 'Stop at the first quarter: about half lit and growing.', when: 'day == 7', then: 'One week after the new Moon we see a half circle, and the bright part is still growing: Shukla Paksha.' },
+      { say: 'Find the last quarter: half lit and shrinking.', when: 'day == 22', then: 'One week after the full Moon we see a half circle again, and the bright part is shrinking: Krishna Paksha.' },
+    ],
+  },
   watercycle: {
     grades: [5, 7], match: [/water cycle/, /evaporat/, /condens/, /precipitat/],
     title: 'Follow a drop', takeaway: 'Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle.',

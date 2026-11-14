@@ -323,6 +323,46 @@ export const WIDGETS = {
         say: solar ? 'Sun, Moon and Earth in line with the Moon in the middle: a solar eclipse.' : lunar ? 'Sun, Earth and Moon in line with the Earth in the middle: a lunar eclipse.' : 'Not in line, so there is no eclipse here.' };
     },
   },
+  moonphase: {
+    subject: 'science', about: 'The Moon going round the Earth lit by the Sun, with the shape seen from Earth beside it. Half the Moon is always lit; as the Moon moves round we see more or less of that lit half, so it grows from new Moon to full Moon and shrinks back again. For the phases of the Moon, new Moon, full Moon, waxing and waning, crescent and gibbous, Shukla Paksha, Krishna Paksha, Purnima, Amavasya, the lunar month, calendars and Moon festivals.',
+    sliders: [['day', 'Days after the new Moon', 0, 29, 1, 3]],
+    draw(v) {
+      const day = Math.max(0, Math.min(29, v.day));
+      const e = (day / 29.5) * 360;                 // how far the Moon has gone round since the new Moon
+      const k = (1 - Math.cos(rad(e))) / 2;         // the part of the face we see that is lit
+      const waning = e > 180;
+      const cx = 306, cy = 172, orbit = 104, sx = 44, sy = 172;
+      const mx = cx - orbit * Math.cos(rad(e));     // at the new Moon the Moon sits between Earth and Sun, on the left
+      const my = cy + orbit * Math.sin(rad(e));
+      const kids = [R(0, 0, W, H, '#12123a', { w: 0 })];
+      kids.push(CIRC(sx, sy, 44, C.y, { s: C.y }), T(sx, sy + 60, 'Sun', { z: 14, f: '#ffe9a8' }));
+      kids.push(s('circle', { cx, cy, r: orbit, fill: 'none', stroke: '#8f9bd6', 'stroke-width': 2, 'stroke-dasharray': '6 8' }));
+      kids.push(CIRC(cx, cy, 33, C.b, { s: '#dbe9ff' }), T(cx, cy + 50, 'Earth', { z: 14, f: '#cfe0ff' }));
+      kids.push(CIRC(mx, my, 14, '#4b4b66', { s: '#fff', w: 1.5 }));
+      kids.push(...clipTo(`mpMoon${Math.round(mx)}_${Math.round(my)}`, mx - 14, my - 14, 14, 28, [CIRC(mx, my, 14, '#f5f1e6', { s: 'none', w: 0 })]));
+      // the same Moon as a child sees it from Earth
+      const ix = 514, iy = 96, ir = 52, litSide = waning ? -1 : 1;
+      kids.push(T(ix, iy + ir + 20, 'the Moon seen from Earth', { z: 12, f: '#cfd6ff', w: 600 }));
+      kids.push(CIRC(ix, iy, ir, '#232347', { s: '#cfd6ff', w: 2 }));
+      kids.push(...clipTo(`mpLit${day}`, litSide < 0 ? ix - ir : ix, iy - ir, ir, 2 * ir, [CIRC(ix, iy, ir, '#f5f1e6', { s: 'none', w: 0 })]));
+      if (k > 0.5) {
+        kids.push(...clipTo(`mpBulge${day}`, litSide < 0 ? ix : ix - ir, iy - ir, ir, 2 * ir, [s('ellipse', { cx: ix, cy: iy, rx: (2 * k - 1) * ir, ry: ir, fill: '#f5f1e6' })]));
+      } else if (k < 0.5) {
+        kids.push(...clipTo(`mpDark${day}`, litSide < 0 ? ix - ir : ix, iy - ir, ir, 2 * ir, [s('ellipse', { cx: ix, cy: iy, rx: (1 - 2 * k) * ir, ry: ir, fill: '#232347' })]));
+      }
+      const pct = Math.round(k * 100);
+      const name = e < 11.25 ? 'new Moon' : e < 78.75 ? 'waxing crescent' : e < 101.25 ? 'first quarter' : e < 168.75 ? 'waxing gibbous' : e < 191.25 ? 'full Moon' : e < 258.75 ? 'waning gibbous' : e < 281.25 ? 'last quarter' : e < 348.75 ? 'waning crescent' : 'new Moon';
+      const local = e < 11.25 || e > 348.75 ? 'Amavasya' : e < 168.75 ? 'Shukla Paksha, the growing half' : e < 191.25 ? 'Purnima' : e < 348.75 ? 'Krishna Paksha, the shrinking half' : 'Amavasya';
+      kids.push(T(300, 26, `Day ${day} after the new Moon: ${name}`, { z: 19, f: '#f4f2ff' }));
+      kids.push(T(300, 292, pct === 0 ? 'None of the face we see is lit.' : pct === 100 ? 'The whole face we see is lit.' : `${pct}% of the face we see is lit, on the ${waning ? 'left' : 'right'}.`, { z: 15, w: 600, f: '#cfd6ff' }));
+      const say = day === 0
+        ? 'This is the new Moon: the lit half faces away from us, so we cannot see the Moon at all. This day is called Amavasya.'
+        : day === 15
+          ? 'This is the full Moon: the lit half faces us completely, so we see a full circle. This day is called Purnima, and the Moon is nearly opposite the Sun.'
+          : `On day ${day} after the new Moon we see the ${name}. Half of the Moon is always lit by the Sun, and ${pct}% of the face turned towards us is lit, on the ${waning ? 'left' : 'right'}. ${waning ? 'The bright part is shrinking: this is the waning half, Krishna Paksha.' : 'The bright part is growing: this is the waxing half, Shukla Paksha.'} The Moon's own shape never changes. (${local}.)`;
+      return { kids, say };
+    },
+  },
   watercycle: {
     subject: 'science', about: 'The water cycle in steps: evaporation, cooling into clouds, rain and water returning to the sea. For the water cycle.',
     sliders: [['step', 'Step of the cycle', 1, 4, 1, 1]],
