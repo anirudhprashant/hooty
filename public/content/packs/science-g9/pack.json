@@ -12630,7 +12630,7 @@
       {
        "id": "science-g9-ch4-l4",
        "title": "Graphical Representation of Motion",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -12690,6 +12690,36 @@
            "p": 63
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch4-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "motiongraph",
+         "params": {},
+         "title": "Draw the motion",
+         "tasks": [
+          {
+           "say": "Stop the car and keep it stopped.",
+           "when": "u == 0 and acc == 0",
+           "then": "With no speed and no acceleration the graph is flat: the car stays in the same place."
+          },
+          {
+           "say": "Make the graph a straight line that climbs steadily.",
+           "when": "acc == 0 and u > 0",
+           "then": "A straight position-time graph means steady speed: equal distances in equal times."
+          },
+          {
+           "say": "Let the car slow down so much that the graph turns downward.",
+           "when": "acc < 0 and u > 0 and t == 10",
+           "then": "The graph bends down and then falls: the car slows, stops and comes back."
+          }
+         ],
+         "takeaway": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down.",
+         "explanation": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down."
         },
         {
          "type": "worked",
@@ -13065,7 +13095,7 @@
       {
        "id": "science-g9-ch4-l5",
        "title": "Kinematic Equations for Constant Acceleration",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -13128,6 +13158,36 @@
            "p": 65
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch4-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "motiongraph",
+         "params": {},
+         "title": "Draw the motion",
+         "tasks": [
+          {
+           "say": "Stop the car and keep it stopped.",
+           "when": "u == 0 and acc == 0",
+           "then": "With no speed and no acceleration the graph is flat: the car stays in the same place."
+          },
+          {
+           "say": "Make the graph a straight line that climbs steadily.",
+           "when": "acc == 0 and u > 0",
+           "then": "A straight position-time graph means steady speed: equal distances in equal times."
+          },
+          {
+           "say": "Let the car slow down so much that the graph turns downward.",
+           "when": "acc < 0 and u > 0 and t == 10",
+           "then": "The graph bends down and then falls: the car slows, stops and comes back."
+          }
+         ],
+         "takeaway": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down.",
+         "explanation": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down."
         },
         {
          "type": "worked",
