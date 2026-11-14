@@ -1926,6 +1926,25 @@ export const WIDGETS = {
       return { kids: parts, say: `${level} This movement of water across a selectively permeable membrane is osmosis.` };
     },
   },
+  foilshape: {
+    subject: 'science', about: 'One piece of aluminium foil shown in three shapes: a tight ball, a cup and a flat sheet. The weight stays the same, but the shape decides how much water it pushes aside: the ball pushes aside too little and sinks, while the cup and the flat sheet push aside more water than the foil weighs and float. For floating and sinking, changing an object\'s shape, why shape matters as well as weight, and making boats.',
+    sliders: [['shape', 'Shape of the foil (0 ball, 1 cup, 2 flat sheet)', 0, 2, 1, 0]],
+    draw(v) {
+      const shp = v.shape, disp = [0.35, 1.35, 1.65][shp], mass = 1, floats = disp >= mass;
+      const base = 258, wy = 150, kids = [R(0, 0, W, H, '#f6f9ff', { w: 0 }), R(80, 48, 440, 212, '#ffffff', { w: 4, r: 6 }), R(82, wy, 436, 158, '#a9def9', { w: 0 }), L(82, wy, 518, wy, C.b, 4)];
+      const tall = shp === 0 ? 68 : shp === 1 ? 84 : 14, frac = floats ? Math.min(1, mass / disp) : 0;
+      const topY = floats ? wy - tall * (1 - frac) : base - tall - 4, silver = '#d7dbe2', edge = '#8d95a3';
+      if (shp === 0) kids.push(CIRC(300, topY + 34, 34, silver, { w: 3, s: edge }));
+      else if (shp === 1) kids.push(s('polygon', { points: `235,${topY} 365,${topY} 345,${topY + 84} 255,${topY + 84}`, fill: silver, stroke: edge, 'stroke-width': 3 }), s('polygon', { points: `245,${topY + 8} 355,${topY + 8} 338,${topY + 76} 262,${topY + 76}`, fill: '#eef1f5', stroke: 'none' }));
+      else kids.push(R(150, topY, 300, 14, silver, { w: 3, s: edge, r: 4 }));
+      kids.push(T(300, 30, 'the same piece of foil every time', { z: 15, w: 600, f: '#6b5a8a' }));
+      if (floats) { kids.push(T(300, topY - 14, 'floats: it pushes aside more water than it weighs', { z: 13, f: '#04795c' })); }
+      else kids.push(T(300, topY - 16, 'sinks: it pushes aside too little water', { z: 14, f: '#c2510e' }));
+      const name = ['a tight ball', 'a cup', 'a flat sheet'][shp];
+      const why = shp === 0 ? 'squeezed into a tight ball it pushes aside only a little water, less than it weighs' : shp === 1 ? 'shaped into a cup it traps air and pushes aside more water than it weighs' : 'spread out flat it pushes aside a wide sheet of water, more than it weighs';
+      return { kids, say: `${name[0].toUpperCase() + name.slice(1)}: ${why}, so it ${floats ? 'floats' : 'sinks'}. The weight never changed; the shape did.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

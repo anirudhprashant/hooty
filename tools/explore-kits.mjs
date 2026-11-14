@@ -289,6 +289,14 @@ export const KITS = {
     title: 'Float or sink?', takeaway: 'Things lighter than water for their size float; denser things sink.',
     tasks: [{ say: 'Make the block sink.', when: 'd > 10', then: 'It is now denser than water, so it sinks.' }],
   },
+  foilshape: {
+    grades: [3, 6], subjects: ['science'], match: [/chang(e|ing) (an object'?s |the )?shapes?/, /shapes?[^.\n]*(float|sink)/, /(float|sink)[^.\n]*\bshapes?\b/, /\bfoil\b/, /making (paper )?boats?/, /\bboats?\b/],
+    title: 'Change the shape, not the weight', takeaway: 'Floating depends on how much water a shape pushes aside, not just on its weight: a tight ball of foil sinks, but the same foil spread out flat or shaped into a cup floats.',
+    tasks: [
+      { say: 'Make the foil float.', when: 'shape >= 1', then: 'Spread out or made into a cup, the foil pushes aside enough water to hold it up.' },
+      { say: 'Make it a cup.', when: 'shape == 1', then: 'A cup traps air and pushes aside more water than the foil weighs, so it floats.' },
+    ],
+  },
   magnets: {
     grades: [6, 7], match: [/magnet/, /\bpoles?\b/, /attract|repel/],
     title: 'Push and pull', takeaway: 'Unlike poles attract, like poles repel, and both get stronger when the magnets are close.',
