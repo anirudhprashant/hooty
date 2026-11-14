@@ -1627,6 +1627,56 @@ export const WIDGETS = {
         : `The object is ${v.u} cm from a convex lens of focal length ${v.f} cm. ${note}${real ? ' A screen on the far side would show it.' : ' You see it by looking through the lens, the way a magnifying glass works.'}` };
     },
   },
+  mirror: {
+    subject: 'science', about: 'A concave or convex spherical mirror with an object in front of it. Parallel rays reflect through the focus or seem to come from it, and the object distance sets whether the image is real and inverted or virtual and upright. For spherical mirrors, concave mirror, convex mirror, curved mirrors, centre of curvature, focal length, mirror formula, sign convention, real and virtual images.',
+    params: { kind: 'concave' },
+    sliders: [['u', 'Distance of the object (centimetres)', 6, 60, 1, 30], ['f', 'Focal length of the mirror (centimetres)', 5, 20, 1, 10]],
+    draw(v, p = {}) {
+      const convex = p.kind === 'convex', axis = 150, mx = 380, scale = 5, objH = 5;
+      const fMag = Math.max(5, Math.min(20, v.f)), f = convex ? -fMag : fMag, denom = v.u - f;
+      const vi = Math.abs(denom) < 1e-9 ? null : (v.u * f) / denom;   // positive means in front of the mirror
+      const objX = mx - v.u * scale, objY = axis - objH * scale;
+      const kids = [R(0, 0, W, H, convex ? '#eef7ff' : '#f7f3ff', { w: 0 }), L(20, axis, 580, axis, '#b8aed0', 3, { 'stroke-dasharray': '10 8' })];
+      const rBig = 2 * fMag * scale, cX = mx + (convex ? rBig : -rBig);
+      kids.push(s('path', { d: convex ? arc(cX, axis, rBig, 125, 235) : arc(cX, axis, rBig, -55, 55), fill: 'none', stroke: INK, 'stroke-width': 6 }));
+      kids.push(T(mx + (convex ? 54 : -54), axis - 66, convex ? 'convex mirror' : 'concave mirror', { z: 13, f: '#6b5a8a' }));
+      const fX = mx - f * scale, cMark = mx - 2 * f * scale;
+      kids.push(CIRC(fX, axis, 5, C.g), T(fX, axis + 24, 'F', { z: 14, f: C.g }));
+      kids.push(CIRC(cMark, axis, 4, C.b), T(cMark, axis + 24, 'C', { z: 14, f: C.b }));
+      kids.push(L(objX, axis, objX, objY, C.p, 5), s('polygon', { points: `${objX},${objY - 12} ${objX - 7},${objY + 2} ${objX + 7},${objY + 2}`, fill: C.p }), T(objX, objY - 20, 'object', { z: 13, f: C.p }));
+      // Two rays: one parallel to the axis (reflects through F, or away from F for a convex mirror) and one to the pole (reflects back at the same angle). Their meeting point is the image.
+      const px = mx, py = axis, dx = mx - objX, dy = axis - objY;
+      const rayTo = (x0, y0, ux, uy, xEnd, solid) => {
+        if (Math.abs(ux) < 1e-6) return;
+        const tt = (xEnd - x0) / ux;
+        kids.push(L(x0, y0, xEnd, y0 + uy * tt, solid ? C.o : C.b, 3, solid ? {} : { 'stroke-dasharray': '7 6' }));
+      };
+      const ax0 = convex ? mx - fX : fX - mx, ay0 = convex ? objY - axis : axis - objY;
+      rayTo(px, objY, ax0, ay0, 20, true);
+      if (!(vi > 0)) rayTo(px, objY, -ax0, -ay0, 580, false);
+      rayTo(px, py, -dx, dy, 20, true);
+      if (!(vi > 0)) rayTo(px, py, dx, -dy, 580, false);
+      let real = false;
+      if (vi !== null) {
+        real = vi > 0;
+        const imgX = mx - vi * scale, m = -vi / v.u, imgY = axis - m * objH * scale, ratio = Math.abs(m);
+        if (imgX > 8 && imgX < 592) {
+          kids.push(L(imgX, axis, imgX, imgY, real ? C.o : C.b, 5, real ? {} : { 'stroke-dasharray': '8 6' }));
+          kids.push(s('polygon', { points: `${imgX},${imgY} ${imgX - 7},${imgY + (real ? -12 : 12)} ${imgX + 7},${imgY + (real ? -12 : 12)}`, fill: real ? C.o : C.b }));
+          kids.push(T(Math.max(24, Math.min(576, imgX)), real ? imgY + 30 : imgY - 14, 'image', { z: 13, f: real ? C.o : C.b }));
+        }
+        kids.push(T(300, 24, `Object ${v.u} cm from the mirror; focal length ${fMag} cm`, { z: 15, w: 600 }));
+        kids.push(T(300, 292, real ? `Image ${num(vi, 1)} cm in front: real and inverted.` : `Image ${num(-vi, 1)} cm behind: virtual and upright.`, { z: 15, w: 600, f: real ? C.o : C.b }));
+        const note = real
+          ? `The image is real, inverted and ${ratio > 1.05 ? 'bigger' : ratio < 0.95 ? 'smaller' : 'the same size'} than the object, ${num(vi, 1)} cm in front of the mirror.`
+          : `The image is virtual, upright and ${ratio > 1.05 ? 'bigger' : ratio < 0.95 ? 'smaller' : 'the same size'} than the object, ${num(-vi, 1)} cm behind the mirror.`;
+        return { kids, say: `The object is ${v.u} cm in front of a ${convex ? 'convex' : 'concave'} mirror of focal length ${fMag} cm. ${note}${real ? ' A screen in front of the mirror would show it.' : ' No screen can catch it: you see it by looking into the mirror.'}` };
+      }
+      kids.push(T(300, 24, `Object ${v.u} cm from the mirror; focal length ${fMag} cm`, { z: 15, w: 600 }));
+      kids.push(T(300, 292, 'The rays reflect parallel, so no image forms.', { z: 15, w: 600, f: C.b }));
+      return { kids, say: `The object sits exactly at the focus of the ${convex ? 'convex' : 'concave'} mirror, so the reflected rays run parallel and never meet: no image forms.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

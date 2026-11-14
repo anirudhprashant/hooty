@@ -360,6 +360,21 @@ export const KITS = {
       { say: 'Give the lens a short focal length, so it is more powerful.', when: 'f <= 6', then: 'A short focal length means a powerful lens, because power is one divided by the focal length.' },
     ],
   },
+  mirror: {
+    grades: [8, 10], perChapter: 3, titleOnly: true,
+    match: [/spherical mirrors?/, /curved mirrors?/, /concave|convex/, /mirror formula|mirror equation/, /sign convention.*mirror|mirror.*sign convention/, /images? (formed|by).*mirrors?/],
+    // the same mirror widget can show either kind; only a lesson that talks about convex and not concave gets the convex side
+    params: (text) => ({ kind: /\bconvex\b/.test(text) && !/\bconcave\b/.test(text) ? 'convex' : 'concave' }),
+    title: 'Mirror, mirror', takeaway: 'A concave mirror can make a real, inverted image on a screen and a bigger virtual image up close; a convex mirror always makes a small, upright virtual image behind it.',
+    tasks: (params) => (params.kind === 'convex' ? [
+      { say: 'Make the mirror flatter by giving it a longer focal length.', when: 'f == 20', then: 'A flatter convex mirror still makes a small, upright virtual image behind it.' },
+      { say: 'Move the object as far away as it goes and watch the image.', when: 'u == 60', then: 'However far the object goes, a convex mirror always makes an upright, smaller, virtual image: that is why it is used to see traffic behind a car.' },
+    ] : [
+      { say: 'Move the object inside the focus. What kind of image appears?', when: 'u < f', then: 'Closer than the focus the image is virtual, upright and bigger, behind the mirror: that is how a shaving mirror works.' },
+      { say: 'Make the real image the same size as the object.', when: 'u == 2 * f', then: 'At the centre of curvature, twice the focal length away, the image is real, inverted and the same size.' },
+      { say: 'Now make a real image bigger than the object.', when: 'u > f and u < 2 * f', then: 'Between the focus and the centre of curvature the image is real, inverted and bigger.' },
+    ]),
+  },
   shadow: {
     grades: [4, 7], match: [/shadows?/, /\bopaque\b|\btranslucent\b|\btransparent\b/, /light travels in (a )?straight/],
     title: 'Make a shadow', takeaway: 'Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.',
