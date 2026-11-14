@@ -314,6 +314,15 @@ export const KITS = {
       { say: 'Make the red car cover 200 m.', when: 'a * t == 200', then: 'Speed x time = distance, so this gives 200 m.' },
     ],
   },
+  motiongraph: {
+    grades: [9, 9], match: [/position[- ]time graph/, /velocity[- ]time graph/, /graph(s|ical)? (representation )?of motion/, /kinematic/, /uniform(ly)? accelerat/, /acceleration/],
+    title: 'Draw the motion', takeaway: 'On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down.',
+    tasks: [
+      { say: 'Stop the car and keep it stopped.', when: 'u == 0 and acc == 0', then: 'With no speed and no acceleration the graph is flat: the car stays in the same place.' },
+      { say: 'Make the graph a straight line that climbs steadily.', when: 'acc == 0 and u > 0', then: 'A straight position-time graph means steady speed: equal distances in equal times.' },
+      { say: 'Let the car slow down so much that the graph turns downward.', when: 'acc < 0 and u > 0 and t == 10', then: 'The graph bends down and then falls: the car slows, stops and comes back.' },
+    ],
+  },
   friction: {
     grades: [6, 10], match: [/friction/, /(?<!non[- ])contact forces?/, /muscular force/, /\bpush(ed|ing)? a (heavy )?box\b/],
     title: 'Push the box', takeaway: 'A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give.',

@@ -303,6 +303,32 @@ export const WIDGETS = {
       return { kids, say: `In ${v.t} second${v.t === 1 ? '' : 's'} red goes ${v.a} x ${v.t} = ${da} m and blue goes ${v.b} x ${v.t} = ${db} m. ${da === db ? 'They are level.' : `${da > db ? 'Red' : 'Blue'} is faster.`}` };
     },
   },
+  motiongraph: {
+    subject: 'science', about: 'A car moving in a straight line with its position-time graph drawn as it goes. The slope of the graph is the speed: a flat line means stopped, a straight climbing line means steady speed, and a bend means the car is speeding up or slowing down. For motion, position-time and velocity-time graphs, uniform and non-uniform motion, acceleration and the kinematic equations.',
+    sliders: [['u', 'Starting speed (metres per second)', 0, 12, 2, 6], ['acc', 'Acceleration (metres per second squared)', -2, 2, 1, 1], ['t', 'Time shown (seconds)', 1, 10, 1, 5]],
+    draw(v) {
+      const u = v.u, acc = v.acc, tf = v.t, pos = (x) => u * x + 0.5 * acc * x * x, now = pos(tf), vNow = u + acc * tf;
+      const lo = Math.min(0, Math.floor(now / 50) * 50), hi = Math.max(50, Math.ceil(Math.max(now, 0) / 50) * 50);
+      const X = (x) => 64 + x * 47, Y = (m) => 268 - ((m - lo) / (hi - lo)) * 220, kids = [];
+      for (let x = 0; x <= 10; x++) kids.push(L(X(x), Y(hi), X(x), Y(lo), x === 0 ? '#8a7aa8' : '#ece8f5', 1.5));
+      for (let m = Math.ceil(lo / 50) * 50; m <= hi; m += 50) kids.push(L(X(0), Y(m), X(10), Y(m), m === 0 ? '#8a7aa8' : '#ece8f5', 1.5));
+      for (let x = 0; x <= 10; x += 2) kids.push(T(X(x), Y(lo) + 18, x, { z: 12, w: 600, f: '#6b5a8a' }));
+      for (let m = Math.ceil(lo / 50) * 50; m <= hi; m += 50) kids.push(T(X(0) - 8, Y(m) + 4, m, { z: 12, w: 600, f: '#6b5a8a', a: 'end' }));
+      kids.push(T(X(5), Y(lo) + 32, 'time (s)', { z: 13, f: '#6b5a8a' }), T(X(0) - 40, Y(hi) - 8, 'position (m)', { z: 13, f: '#6b5a8a', a: 'start' }));
+      const pts = [];
+      for (let x = 0; x <= tf + 1e-9; x += 0.1) pts.push(`${X(x).toFixed(1)},${Y(pos(x)).toFixed(1)}`);
+      pts.push(`${X(tf)},${Y(now)}`);
+      kids.push(...clipTo('xp-motion', X(0), Y(hi) - 4, X(10) - X(0), Y(lo) - Y(hi) + 8, [s('polyline', { points: pts.join(' '), fill: 'none', stroke: C.p, 'stroke-width': 6, 'stroke-linejoin': 'round' })]));
+      kids.push(CIRC(X(tf), Y(now), 8, C.o, { w: 3 }));
+      if (tf >= 1) {
+        const p0 = pos(tf - 1);
+        kids.push(L(X(tf - 1), Y(p0), X(tf), Y(p0), C.g, 3, { 'stroke-dasharray': '6 5' }), L(X(tf), Y(p0), X(tf), Y(now), C.b, 3, { 'stroke-dasharray': '6 5' }));
+        kids.push(T(X(tf - 0.5), Y(p0) + (now >= p0 ? 20 : -10), '1 s', { z: 13, f: '#058a68' }), T(X(tf) + 8, Y((p0 + now) / 2), `${num(now - p0)} m`, { z: 13, f: '#3a86ff', a: 'start' }));
+      }
+      const shape = u === 0 && acc === 0 ? 'The line is flat, so the car is standing still.' : acc === 0 ? 'The line is straight, so the speed is steady.' : acc > 0 ? 'The line bends upward, so the car is speeding up.' : 'The line bends downward, so the car is slowing down.';
+      return { kids, say: `After ${tf} second${tf === 1 ? '' : 's'} the car is ${num(now)} m from its start and moving at ${num(vNow)} m/s. ${shape}` };
+    },
+  },
   shadow: {
     subject: 'science', about: 'A lamp, an object and a screen; moving the object nearer the lamp makes its shadow bigger because light travels in straight lines. For light, shadows.',
     sliders: [['d', 'Distance of the object from the lamp', 10, 45, 5, 25]],
