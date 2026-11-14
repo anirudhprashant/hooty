@@ -889,6 +889,17 @@ export const KITS = {
       ];
     },
   },
+  market: {
+    grades: [9, 10], titleOnly: true, perChapter: 3,
+    match: [/law of demand/, /law of supply/, /market equilibrium|equilibrium price/, /excess demand|excess supply/],
+    title: 'Run the market',
+    takeaway: 'Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.',
+    tasks: [
+      { say: 'Set the price where buyers want exactly what sellers bring.', when: 'price == 100 and buyers == 0', then: 'At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium.' },
+      { say: 'Make a shortage: set the price below the equilibrium.', when: 'price == 70', then: 'At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise.' },
+      { say: 'Add four buyers, then set the new equilibrium price.', when: 'price == 120 and buyers == 4', then: 'Four more buyers shift demand right, so the market settles at the higher price of ₹120.' },
+    ],
+  },
   atom: {
     grades: [9, 9], perChapter: 3,
     match: [/atomic number/, /mass number/, /\bisotopes?\b/, /valenc/, /electron(ic)? (shell|configuration|distribution)/, /\bprotons?\b/, /\bneutrons?\b/, /stationary states|fixed circular|orbits or shells/, /2n²|2n2/, /octet|outermost shell/],

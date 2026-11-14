@@ -1860,6 +1860,38 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  market: {
+    subject: 'social', about: 'A market where buyers and sellers meet: the demand and supply curves cross at the equilibrium price. Move the price to make a shortage or a surplus, and add buyers to shift demand. For the law of demand, the law of supply, market equilibrium, excess demand and excess supply.',
+    sliders: [['price', 'Price (₹ per kg)', 40, 160, 5, 85], ['buyers', 'Extra buyers (demand)', 0, 6, 1, 0]],
+    draw(v) {
+      const pr = v.price, extra = v.buyers, left = 74, right = 560, top = 34, base = 250;
+      const xOf = (q) => left + (q / 30) * (right - left);
+      const yOf = (p) => base - (p / 170) * (base - top);
+      const want = 22 + extra - 0.1 * pr, bring = 2 + 0.1 * pr;
+      const eqP = 100 + 5 * extra, eqQ = 12 + 0.5 * extra;
+      const parts = [R(left, top, right - left, base - top, '#fffdf7', { w: 2, s: '#c9bfe0' })];
+      for (let p = 0; p <= 150; p += 50) { parts.push(L(left - 7, yOf(p), left, yOf(p), INK, 2)); parts.push(T(left - 13, yOf(p) + 5, String(p), { z: 12, w: 600, f: '#6b5a8a', a: 'end' })); }
+      for (let q = 0; q <= 30; q += 10) { parts.push(L(xOf(q), base, xOf(q), base + 7, INK, 2)); parts.push(T(xOf(q), base + 22, String(q), { z: 12, w: 600, f: '#6b5a8a' })); }
+      parts.push(L(left, base, right, base, INK, 3), L(left, top, left, base, INK, 3));
+      parts.push(T(left + 6, top - 10, 'Price (₹ per kg)', { z: 13, w: 600, f: '#6b5a8a', a: 'start' }), T(right - 4, base + 38, 'Quantity (kg)', { z: 13, w: 600, f: '#6b5a8a', a: 'end' }));
+      const curve = (qty, col, word) => {
+        const pts = []; for (let p = 0; p <= 170; p += 5) pts.push(`${xOf(qty(p))},${yOf(p)}`);
+        return [s('polyline', { points: pts.join(' '), fill: 'none', stroke: col, 'stroke-width': 4, 'stroke-linecap': 'round' }), T(xOf(qty(150)) + 30, yOf(150) + (word === 'demand' ? 22 : -12), word, { z: 14, f: col, w: 600 })];
+      };
+      parts.push(...curve((p) => 22 + extra - 0.1 * p, C.b, 'demand'), ...curve((p) => 2 + 0.1 * p, C.o, 'supply'));
+      parts.push(L(left, yOf(pr), right, yOf(pr), '#9a8fb8', 2, { 'stroke-dasharray': '6 6' }));
+      parts.push(CIRC(xOf(want), yOf(pr), 7, C.b, { w: 2 }), CIRC(xOf(bring), yOf(pr), 7, C.o, { w: 2 }));
+      parts.push(CIRC(xOf(eqQ), yOf(eqP), 8, C.g, { w: 3 }));
+      const lo = Math.min(xOf(want), xOf(bring)), hi = Math.max(xOf(want), xOf(bring));
+      if (Math.abs(want - bring) > 0.05) {
+        parts.push(L(lo, yOf(pr) + 26, hi, yOf(pr) + 26, '#c2510e', 3));
+        parts.push(T((lo + hi) / 2, yOf(pr) + 46, want > bring ? 'shortage' : 'surplus', { z: 14, f: '#c2510e', w: 700 }));
+      }
+      const gap = want - bring;
+      const where = Math.abs(gap) < 0.05 ? 'balanced' : gap > 0 ? `a shortage of ${num(gap, 1)} kg, so the price would rise` : `a surplus of ${num(-gap, 1)} kg, so the price would fall`;
+      return { kids: parts, say: `At ₹${pr} a kg, buyers want ${num(want, 1)} kg and sellers bring ${num(bring, 1)} kg: ${where}. The demand and supply curves cross at ₹${num(eqP, 0)} and ${num(eqQ, 1)} kg.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
