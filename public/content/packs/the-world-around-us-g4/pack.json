@@ -23687,7 +23687,7 @@
       {
        "id": "the-world-around-us-g4-ch7-l5",
        "title": "Changing Shapes and Making Boats",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -23755,6 +23755,31 @@
            "p": 114
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "foilshape",
+         "params": {},
+         "title": "Change the shape, not the weight",
+         "tasks": [
+          {
+           "say": "Make the foil float.",
+           "when": "shape >= 1",
+           "then": "Spread out or made into a cup, the foil pushes aside enough water to hold it up."
+          },
+          {
+           "say": "Make it a cup.",
+           "when": "shape == 1",
+           "then": "A cup traps air and pushes aside more water than the foil weighs, so it floats."
+          }
+         ],
+         "takeaway": "Floating depends on how much water a shape pushes aside, not just on its weight: a tight ball of foil sinks, but the same foil spread out flat or shaped into a cup floats.",
+         "explanation": "Floating depends on how much water a shape pushes aside, not just on its weight: a tight ball of foil sinks, but the same foil spread out flat or shaped into a cup floats."
         },
         {
          "type": "worked",
