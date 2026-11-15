@@ -397,12 +397,13 @@ export const KITS = {
     ],
   },
   lens: {
-    grades: [9, 10], match: [/convex lens/, /converging lens/, /lenses? and power/, /power of (a )?lens/, /focal length/, /principal focus/, /magnifying glass/, /real and virtual image/],
+    grades: [8, 10], match: [/lenses\b/, /convex lens/, /converging lens/, /lenses? and power/, /power of (a )?lens/, /focal length/, /principal focus/, /magnifying glass/, /real and virtual image/],
+    params: (text, f, all, grade) => ({ grade }),
     title: 'Focus the lens', takeaway: 'A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger.',
-    tasks: [
+    tasks: (p) => [
       { say: 'Put the object exactly twice the focal length away, so the image is the same size.', when: 'u == 2 * f', then: 'At twice the focal length the image is real, inverted and the same size.' },
       { say: 'Move the object inside the focal length to see a virtual, upright image.', when: 'u < f', then: 'Closer than the focus the image is virtual, upright and bigger: this is how a magnifying glass works.' },
-      { say: 'Give the lens a short focal length, so it is more powerful.', when: 'f <= 6', then: 'A short focal length means a powerful lens, because power is one divided by the focal length.' },
+      ...(p.grade >= 9 ? [{ say: 'Give the lens a short focal length, so it is more powerful.', when: 'f <= 6', then: 'A short focal length means a powerful lens, because power is one divided by the focal length.' }] : []),
     ],
   },
   mirror: {
@@ -853,7 +854,7 @@ export const KITS = {
     ],
   },
   tumblers: {
-    grades: [6, 6], match: [/\bmass and volume\b/, /\bvolume\b/, /\bmass\b/, /\bcapacity\b/, /\btumblers?\b/],
+    grades: [6, 8], match: [/\bmass and volume\b/, /\bvolume\b/, /\bmass\b/, /\bcapacity\b/, /\btumblers?\b/],
     title: 'Same tumbler, different water', takeaway: 'Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass.',
     tasks: [
       { say: 'Make tumbler A hold more water than B. Which is heavier?', when: 'a > b', then: 'A has more volume of water and more mass, so A is heavier: the balance tips towards it.' },
