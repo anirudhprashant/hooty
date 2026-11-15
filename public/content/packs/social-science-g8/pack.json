@@ -14877,7 +14877,7 @@
       {
        "id": "social-science-g8-ch5-l1",
        "title": "Universal Adult Franchise",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -14924,6 +14924,47 @@
            "p": 120
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g8-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": 1950,
+            "label": "The Election Commission of India was established"
+           },
+           {
+            "year": 1951,
+            "label": "India’s first general elections were held"
+           },
+           {
+            "year": 1988,
+            "label": "India lowered the voting age"
+           }
+          ],
+          "hist": true
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move to when this happened: India’s first general elections were held.",
+           "when": "y >= 1951",
+           "then": "That was 1951 CE."
+          },
+          {
+           "say": "Go forward to the last event.",
+           "when": "y >= 1988",
+           "then": "The latest event here is from 1988 CE."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",
@@ -29540,7 +29581,7 @@
       {
        "id": "social-science-g8-ch9-l1",
        "title": "Royal Control and Early Reform",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -29599,6 +29640,63 @@
            "p": 42
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g8-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": 1869,
+            "label": "Mohandas Karamchand Gandhi was born in Porbandar"
+           },
+           {
+            "year": 1882,
+            "label": "Bankim Chandra Chattopadhyay published Anandamath"
+           },
+           {
+            "year": 1885,
+            "label": "The Indian National Congress began in Bombay"
+           },
+           {
+            "year": 1906,
+            "label": "The Congress declared Swaraj, Swadeshi, Boycott"
+           },
+           {
+            "year": 1915,
+            "label": "Gandhi returned to India"
+           },
+           {
+            "year": 1916,
+            "label": "Tilak’s first task of reuniting the two Congress"
+           },
+           {
+            "year": 1919,
+            "label": "The Rowlatt Act"
+           }
+          ],
+          "hist": true
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move to when this happened: Bankim Chandra Chattopadhyay published Anandamath.",
+           "when": "y >= 1882",
+           "then": "That was 1882 CE."
+          },
+          {
+           "say": "Go forward to the last event.",
+           "when": "y >= 1919",
+           "then": "The latest event here is from 1919 CE."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",

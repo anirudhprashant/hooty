@@ -46348,7 +46348,7 @@
       {
        "id": "social-science-g10-ch14-l1",
        "title": "The First World War and Gandhi’s Return",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -46429,6 +46429,47 @@
            "p": 29
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch14-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": 1913,
+            "label": "Prices doubled between 1913 and 1918 and caused"
+           },
+           {
+            "year": 1915,
+            "label": "Mahatma Gandhi returned to India"
+           },
+           {
+            "year": 1921,
+            "label": "The census of 1921 recorded that 12 to 13 million"
+           }
+          ],
+          "hist": true
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move to when this happened: Mahatma Gandhi returned to India.",
+           "when": "y >= 1915",
+           "then": "That was 1915 CE."
+          },
+          {
+           "say": "Go forward to the last event.",
+           "when": "y >= 1921",
+           "then": "The latest event here is from 1921 CE."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",

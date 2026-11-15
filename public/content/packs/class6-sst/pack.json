@@ -40927,7 +40927,7 @@
       {
        "id": "ch12-l4",
        "title": "The History of Municipal Corporations",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -41011,6 +41011,47 @@
            "p": 177
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "ch12-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": 1688,
+            "label": "The Madras Corporation was established"
+           },
+           {
+            "year": 1792,
+            "label": "An Act of Parliament passed"
+           },
+           {
+            "year": 1865,
+            "label": "The Municipal Corporation of Greater Mumbai"
+           }
+          ],
+          "hist": true
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move to when this happened: An Act of Parliament passed.",
+           "when": "y >= 1792",
+           "then": "That was 1792 CE."
+          },
+          {
+           "say": "Go forward to the last event.",
+           "when": "y >= 1865",
+           "then": "The latest event here is from 1865 CE."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",
