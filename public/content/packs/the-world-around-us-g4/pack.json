@@ -21949,7 +21949,7 @@
       {
        "id": "the-world-around-us-g4-ch7-l1",
        "title": "Everyday Things and First Spins",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -22019,6 +22019,36 @@
            "p": 106
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "spinner",
+         "params": {},
+         "title": "Spin the card",
+         "tasks": [
+          {
+           "say": "Spin the square card as fast as it goes.",
+           "when": "turn >= 8 and shape == 0",
+           "then": "Spinning fast, the square card looks like a circle: its corners sweep round too quickly for our eyes to follow them."
+          },
+          {
+           "say": "Turn it slowly, so you can still follow each colour.",
+           "when": "turn > 0 and turn < 6",
+           "then": "Turning slowly, the colours are smeared but you can still pick them out separately."
+          },
+          {
+           "say": "Put on four colours, then spin it fast.",
+           "when": "turn >= 8 and colours == 1",
+           "then": "When the card spins, the separate colours blur and mix into one colour."
+          }
+         ],
+         "takeaway": "A card spun fast looks round, because its corners sweep round too quickly for our eyes to follow. Its colours blur and mix, but the card itself has not changed.",
+         "explanation": "A card spun fast looks round, because its corners sweep round too quickly for our eyes to follow. Its colours blur and mix, but the card itself has not changed."
         },
         {
          "type": "worked",
@@ -22385,7 +22415,7 @@
       {
        "id": "the-world-around-us-g4-ch7-l2",
        "title": "Making and Testing Spinners",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -22461,6 +22491,36 @@
            "p": 108
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "spinner",
+         "params": {},
+         "title": "Spin the card",
+         "tasks": [
+          {
+           "say": "Spin the square card as fast as it goes.",
+           "when": "turn >= 8 and shape == 0",
+           "then": "Spinning fast, the square card looks like a circle: its corners sweep round too quickly for our eyes to follow them."
+          },
+          {
+           "say": "Turn it slowly, so you can still follow each colour.",
+           "when": "turn > 0 and turn < 6",
+           "then": "Turning slowly, the colours are smeared but you can still pick them out separately."
+          },
+          {
+           "say": "Put on four colours, then spin it fast.",
+           "when": "turn >= 8 and colours == 1",
+           "then": "When the card spins, the separate colours blur and mix into one colour."
+          }
+         ],
+         "takeaway": "A card spun fast looks round, because its corners sweep round too quickly for our eyes to follow. Its colours blur and mix, but the card itself has not changed.",
+         "explanation": "A card spun fast looks round, because its corners sweep round too quickly for our eyes to follow. Its colours blur and mix, but the card itself has not changed."
         },
         {
          "type": "worked",
@@ -22864,7 +22924,7 @@
       {
        "id": "the-world-around-us-g4-ch7-l3",
        "title": "Charkha, Shapes and Spinning Colours",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -22933,6 +22993,36 @@
            "p": 109
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "spinner",
+         "params": {},
+         "title": "Spin the card",
+         "tasks": [
+          {
+           "say": "Spin the square card as fast as it goes.",
+           "when": "turn >= 8 and shape == 0",
+           "then": "Spinning fast, the square card looks like a circle: its corners sweep round too quickly for our eyes to follow them."
+          },
+          {
+           "say": "Turn it slowly, so you can still follow each colour.",
+           "when": "turn > 0 and turn < 6",
+           "then": "Turning slowly, the colours are smeared but you can still pick them out separately."
+          },
+          {
+           "say": "Put on four colours, then spin it fast.",
+           "when": "turn >= 8 and colours == 1",
+           "then": "When the card spins, the separate colours blur and mix into one colour."
+          }
+         ],
+         "takeaway": "A card spun fast looks round, because its corners sweep round too quickly for our eyes to follow. Its colours blur and mix, but the card itself has not changed.",
+         "explanation": "A card spun fast looks round, because its corners sweep round too quickly for our eyes to follow. Its colours blur and mix, but the card itself has not changed."
         },
         {
          "type": "worked",
