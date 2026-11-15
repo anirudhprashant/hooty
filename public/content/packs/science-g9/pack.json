@@ -15319,7 +15319,7 @@
       {
        "id": "science-g9-ch5-l2",
        "title": "Solutions and Their Concentration",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -15375,6 +15375,36 @@
            "p": 75
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "dissolve",
+         "params": {},
+         "title": "Dissolve the sugar",
+         "tasks": [
+          {
+           "say": "Warm the water to 50 °C and watch all five spoons dissolve.",
+           "when": "temp == 50 and spoons == 5",
+           "then": "Warm water can hold more sugar, so the solution becomes unsaturated and all of it dissolves."
+          },
+          {
+           "say": "At 20 °C add ten spoons and see the extra sugar settle at the bottom.",
+           "when": "spoons == 10 and temp == 20",
+           "then": "At 20 °C the water holds only 4 spoons, so 6 spoons stay at the bottom as crystals: the solution is saturated."
+          },
+          {
+           "say": "Make a solution that could still dissolve more sugar.",
+           "when": "spoons < 2 + temp / 10",
+           "then": "Below the limit the solution is unsaturated, so more sugar would still dissolve."
+          }
+         ],
+         "takeaway": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated.",
+         "explanation": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated."
         },
         {
          "type": "worked",
@@ -15748,7 +15778,7 @@
       {
        "id": "science-g9-ch5-l3",
        "title": "Solubility and Crystallization",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -15799,6 +15829,36 @@
            "p": 77
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "dissolve",
+         "params": {},
+         "title": "Dissolve the sugar",
+         "tasks": [
+          {
+           "say": "Warm the water to 50 °C and watch all five spoons dissolve.",
+           "when": "temp == 50 and spoons == 5",
+           "then": "Warm water can hold more sugar, so the solution becomes unsaturated and all of it dissolves."
+          },
+          {
+           "say": "At 20 °C add ten spoons and see the extra sugar settle at the bottom.",
+           "when": "spoons == 10 and temp == 20",
+           "then": "At 20 °C the water holds only 4 spoons, so 6 spoons stay at the bottom as crystals: the solution is saturated."
+          },
+          {
+           "say": "Make a solution that could still dissolve more sugar.",
+           "when": "spoons < 2 + temp / 10",
+           "then": "Below the limit the solution is unsaturated, so more sugar would still dissolve."
+          }
+         ],
+         "takeaway": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated.",
+         "explanation": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated."
         },
         {
          "type": "worked",

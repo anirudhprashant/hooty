@@ -543,6 +543,17 @@ export const KITS = {
         ? [{ say: 'Let the tea stand until the leaves settle.', when: 'min >= 6', then: 'The leaves have sunk to the bottom: sedimentation.' }, { say: 'Now pour off the tea.', when: 'min >= 6 and tilt == 1', then: 'Pouring the liquid off the settled leaves is decantation.' }]
         : [{ say: 'Make the holes just big enough to let the bran through but keep the stones.', when: 'hole == 3 or hole == 4 or hole == 5', then: 'Flour and bran fall through; the stones stay on top.' }]),
   },
+  dissolve: {
+    grades: [8, 9], perChapter: 2, titleOnly: true,
+    match: [/solubility/, /\bsolutes?\b/, /\bsolvents?\b/, /\bsolutions?\b/, /saturated solution|unsaturated solution/, /dissolving (sugar|salt)/],
+    // "saturated and unsaturated compounds" is a carbon-chemistry lesson, not a solution, so it must not match
+    title: 'Dissolve the sugar', takeaway: 'Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated.',
+    tasks: [
+      { say: 'Warm the water to 50 °C and watch all five spoons dissolve.', when: 'temp == 50 and spoons == 5', then: 'Warm water can hold more sugar, so the solution becomes unsaturated and all of it dissolves.' },
+      { say: 'At 20 °C add ten spoons and see the extra sugar settle at the bottom.', when: 'spoons == 10 and temp == 20', then: 'At 20 °C the water holds only 4 spoons, so 6 spoons stay at the bottom as crystals: the solution is saturated.' },
+      { say: 'Make a solution that could still dissolve more sugar.', when: 'spoons < 2 + temp / 10', then: 'Below the limit the solution is unsaturated, so more sugar would still dissolve.' },
+    ],
+  },
   seethrough: {
     grades: [3, 7], match: [/\btranslucent\b/, /\bopaque\b/, /\btransparent\b/, /seeing through/],
     title: 'Look through it', takeaway: 'Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all.',

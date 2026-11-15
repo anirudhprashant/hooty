@@ -917,6 +917,28 @@ export const WIDGETS = {
       return { kids, say: w ? `With wind strength ${w}, the heavy grains fall almost straight down while the light husk is blown ${w > 6 ? 'far' : 'a little'} away. Winnowing separates the heavier and lighter parts of a mixture.` : 'With no wind, grain and husk fall into the same heap. Blow some air!' };
     },
   },
+  dissolve: {
+    subject: 'science', about: 'A glass of water with spoons of sugar stirred in, and a temperature slider. Water can dissolve only a certain amount at each temperature: warm water holds more, and any extra sugar settles at the bottom as crystals, leaving a saturated solution. For solutions, solutes and solvents, solubility, saturation, concentration, dissolving and crystallization.',
+    sliders: [['spoons', 'Spoons of sugar added', 0, 14, 1, 5], ['temp', 'Temperature of the water (°C)', 10, 80, 10, 20]],
+    draw(v) {
+      const lim = 2 + v.temp / 10, dis = Math.min(v.spoons, lim), extra = v.spoons - dis;
+      const bx = 190, bw = 220, wtop = 150, floor = 262, strength = Math.min(1, dis / 10);
+      const kids = [R(0, 0, W, H, '#f7f4ff', { w: 0 })];
+      kids.push(R(bx, wtop, bw, floor - wtop, '#e6f6ff', { w: 4, r: 8 }));
+      kids.push(R(bx + 2, floor - 92, bw - 4, 90, `rgba(255, 183, 3, ${0.10 + 0.5 * strength})`, { w: 0, r: 6 }));
+      kids.push(L(bx, floor, bx + bw, floor, INK, 4));
+      for (let i = 0; i < extra; i++) { const gx = bx + 42 + (i % 6) * 26, gy = floor - 8 - Math.floor(i / 6) * 10; kids.push(s('rect', { x: gx, y: gy, width: 9, height: 7, rx: 1.5, fill: '#ffffff', stroke: '#c9a227', 'stroke-width': 1.2, transform: `rotate(${(i % 3) * 12 - 12} ${gx + 4} ${gy + 3})` })); }
+      const tx = 466, ttop = 120, tbot = 250, frac = (v.temp - 10) / 70;
+      kids.push(R(tx, ttop, 18, tbot - ttop, '#ffffff', { w: 3, r: 9 }), R(tx + 4, tbot - 4 - (tbot - ttop - 8) * frac, 10, (tbot - ttop - 8) * frac, C.o, { w: 0, r: 5 }), CIRC(tx + 9, tbot + 8, 14, C.o, { w: 3 }), T(tx + 9, ttop - 12, `${v.temp}°C`, { z: 15, f: C.o }));
+      kids.push(T(300, 34, `Water at ${v.temp}°C can dissolve ${num(lim, 0)} spoons of sugar`, { z: 20 }));
+      kids.push(T(300, 62, `You added ${v.spoons} spoon${v.spoons === 1 ? '' : 's'}`, { z: 15, w: 600, f: '#6b5a8a' }));
+      kids.push(T(300, 285, v.spoons === 0 ? `No sugar yet: this water can still take ${num(lim, 0)} spoons` : extra > 0 ? `${num(dis, 0)} dissolve, ${num(extra, 0)} ${extra === 1 ? 'stays' : 'stay'} at the bottom: the solution is saturated` : `${num(dis, 0)} dissolve and none is left over: the solution can still take ${num(lim - dis, 0)} more`, { z: 16, f: extra > 0 ? '#c2510e' : '#058a68' }));
+      const say = v.spoons === 0 ? `There is no sugar in the water yet. At ${v.temp}°C this water could dissolve up to ${num(lim, 0)} spoons.`
+        : extra > 0 ? `At ${v.temp}°C the water can dissolve ${num(lim, 0)} spoons. You added ${v.spoons}, so ${num(dis, 0)} dissolve and ${num(extra, 0)} ${extra === 1 ? 'settles' : 'settle'} at the bottom as sugar crystals. The solution is saturated: no more sugar will dissolve unless you warm the water.`
+        : `At ${v.temp}°C the water can dissolve up to ${num(lim, 0)} spoons. You added ${v.spoons}, and all of it dissolved, so ${num(lim - v.spoons, 0)} more spoon${lim - v.spoons === 1 ? '' : 's'} could still dissolve. The solution is unsaturated.`;
+      return { kids, say };
+    },
+  },
   seethrough: {
     subject: 'science', about: 'Hold different sheets between your eye and a picture. Through transparent materials (glass, water, cellophane) the picture is clear; through translucent ones (butter paper, frosted glass) it is seen but not clearly; through opaque ones (wood, cardboard, metal) it cannot be seen at all. For transparent, translucent and opaque materials, light, properties of materials.',
     sliders: [['m', 'Pick a sheet', 0, 7, 1, 0]],
