@@ -435,7 +435,7 @@ export const KITS = {
   },
   moonphase: {
     grades: [4, 8], perChapter: { 8: 3, 4: 2 }, titleOnly: true,
-    match: [/\bmoon\b/, /\bnight sky\b/, /phases? of the moon/],
+    match: [/\bmoon\b/, /\bmoon\b.*\bnight sky\b|\bnight sky\b.*\bmoon\b/, /phases? of the moon/],
     title: 'Watch the Moon change shape', takeaway: 'Half of the Moon is always lit by the Sun. As the Moon goes round the Earth we see more or less of that lit half, so it grows from new Moon to full Moon and shrinks back to new Moon.',
     tasks: [
       { say: 'Make the full Moon, called Purnima.', when: 'day == 15', then: 'At the full Moon the lit half faces us: a complete bright circle, nearly opposite the Sun.' },
@@ -529,6 +529,18 @@ export const KITS = {
     tasks: [
       { say: 'Find a sheet that makes the star blurry.', when: 'm == 3 or m == 4', then: 'Butter paper and frosted glass are translucent.' },
       { say: 'Find a sheet that hides the star completely.', when: 'm >= 5', then: 'Wood, cardboard and metal are opaque.' },
+    ],
+  },
+  plantparts: {
+    grades: [3, 6], titleOnly: true,
+    match: [/parts? of (a |the )?plants?/, /plant parts/, /getting to know plants/, /\broots?,? stems? and leaves?\b/, /roots, stems, leaves, flowers/],
+    title: 'Tap the parts of a plant', takeaway: 'Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them.',
+    tasks: [
+      { say: 'Find the part that holds the plant in the soil.', when: 'part == 0', then: 'The roots grip the soil and also take in water.' },
+      { say: 'Find the part that carries water up to the leaves.', when: 'part == 1', then: 'The stem is like a pipe from the roots to the leaves.' },
+      { say: 'Find the part that makes food using sunlight.', when: 'part == 2', then: 'Leaves make food for the whole plant.' },
+      { say: 'Find the part that makes the fruit and seeds.', when: 'part == 3', then: 'The flower makes the fruit, and the fruit holds the seeds.' },
+      { say: 'Find the part a new plant can grow from.', when: 'part == 5', then: 'A seed can grow into a new plant.' },
     ],
   },
   solids: {

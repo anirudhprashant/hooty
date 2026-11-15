@@ -882,6 +882,26 @@ export const WIDGETS = {
       return { kids, say: [`Through ${name} the star is seen clearly: ${name} is transparent.`, `Through ${name} the star can be seen, but not clearly: ${name} is translucent.`, `Through ${name} the star cannot be seen at all: ${name} is opaque.`][kind] };
     },
   },
+  plantparts: {
+    subject: 'science', about: 'Tap each part of a plant and see it light up: roots under the soil, the stem, a leaf, the flower, the fruit and a seed. Each part has its own job. For parts of a plant, roots, stem, leaves, flowers, fruits and seeds, getting to know plants.',
+    sliders: [['part', 'Tap a part of the plant', 0, 5, 1, 0]],
+    draw(v) {
+      const names = ['roots', 'stem', 'leaf', 'flower', 'fruit', 'seed'];
+      const jobs = ['Roots hold the plant in the soil and take in water.', 'The stem holds the plant up and carries water to the leaves.', 'Leaves make food for the plant using sunlight.', 'The flower makes the fruit and the seeds.', 'The fruit protects the seeds inside it.', 'A seed can grow into a new plant.'];
+      const on = (n) => v.part === n, hot = C.o, calm = '#3f7d3a';
+      const kids = [R(0, 0, 600, 300, C.cream, { w: 0 }), R(0, 222, 600, 78, '#c9a46a', { w: 0 }), L(0, 222, 600, 222, '#8a5a2b', 3)];
+      for (let i = 0; i < 7; i++) { const bx = 300 + (i - 3) * 7, by = 222, bx2 = 300 + (i - 3) * 34; kids.push(L(bx, by, bx2, by + 46 + (i % 3) * 12, on(0) ? hot : '#a9743d', on(0) ? 5 : 3)); }
+      kids.push(R(296, 90, 9, 135, on(1) ? hot : calm, { w: 2, r: 4 }));
+      kids.push(s('ellipse', { cx: 262, cy: 158, rx: 38, ry: 19, fill: on(2) ? hot : '#5fae4f', stroke: INK, 'stroke-width': 2, transform: 'rotate(-24 262 158)' }));
+      kids.push(s('ellipse', { cx: 341, cy: 128, rx: 36, ry: 18, fill: on(2) ? hot : '#5fae4f', stroke: INK, 'stroke-width': 2, transform: 'rotate(22 341 128)' }));
+      for (let i = 0; i < 8; i++) { const a = (i / 8) * Math.PI * 2; kids.push(CIRC(300 + 23 * Math.cos(a), 71 + 23 * Math.sin(a), 12, on(3) ? hot : '#f4a3c8', { w: 1.5 })); }
+      kids.push(CIRC(300, 71, 9, on(3) ? '#ffe08a' : C.y, { w: 2 }));
+      kids.push(L(303, 178, 352, 184, on(4) ? hot : calm, 4), CIRC(365, 191, 19, on(4) ? hot : '#e2583e', { w: 2 }));
+      kids.push(s('ellipse', { cx: 238, cy: 253, rx: 12, ry: 8, fill: on(5) ? hot : '#b07a45', stroke: INK, 'stroke-width': 2, transform: 'rotate(-20 238 253)' }));
+      kids.push(T(300, 22, 'A plant and its parts', { z: 18 }), T(14, 24, `You tapped: ${names[v.part]}`, { z: 15, w: 700, f: hot, a: 'start' }));
+      return { kids, say: jobs[v.part] };
+    },
+  },
   solids: {
     subject: 'maths', about: 'Turn a 3D shape (cube, cuboid, triangular prism, square pyramid, triangular pyramid) and count its faces, corners and edges. The counts come from the shape itself, and F + V - E is always 2. For 3D shapes, faces, edges, vertices or corners, prisms and pyramids, nets.',
     sliders: [['shape', 'Shape: cube, cuboid, triangular prism, square pyramid, triangular pyramid', 0, 4, 1, 0], ['turn', 'Turn it (degrees)', 0, 345, 15, 30]],
