@@ -430,6 +430,29 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  lever: {
+    subject: 'science', about: 'A lever: a beam on a fulcrum with a load on one arm and an effort pushing down on the other. The beam tips according to load times load arm against effort times effort arm, and the read-out gives the effort needed to balance and the mechanical advantage. For levers, simple machines, effort, load, fulcrum and mechanical advantage.',
+    sliders: [['effortArm', 'Effort arm (metres)', 1, 5, 1, 3], ['loadArm', 'Load arm (metres)', 1, 5, 1, 2], ['load', 'Load (newtons)', 20, 100, 20, 60], ['effort', 'Effort you push with (newtons)', 10, 120, 10, 60]],
+    draw(v) {
+      const px = 44, pivot = 300, beamY = 150, loadX = pivot - v.loadArm * px, effortX = pivot + v.effortArm * px;
+      const loadM = v.load * v.loadArm, effortM = v.effort * v.effortArm, diff = effortM - loadM, balanced = Math.abs(diff) < 0.5;
+      const tilt = Math.max(-10, Math.min(10, diff / 30)), need = v.load * v.loadArm / v.effortArm, ma = v.load / v.effort;
+      const beam = s('g', { transform: `rotate(${tilt} ${pivot} ${beamY})` }, [
+        R(pivot - v.loadArm * px - 22, beamY - 9, (v.loadArm + v.effortArm) * px + 44, 18, '#d4a72c', { w: 3, r: 5 }),
+        R(loadX - 24, beamY - 58, 48, 48, '#8338ec', { w: 3, r: 4 }),
+        T(loadX, beamY - 27, `${v.load} N`, { z: 14, f: '#fff' }),
+        L(effortX, beamY - 96, effortX, beamY - 24, C.b, 6),
+        s('polygon', { points: `${effortX},${beamY - 10} ${effortX - 11},${beamY - 34} ${effortX + 11},${beamY - 34}`, fill: C.b }),
+        T(effortX, beamY - 106, `effort ${v.effort} N`, { z: 13, f: '#2f5fd0' }),
+      ]);
+      const kids = [R(0, 0, W, H, '#fbf8ff', { w: 0 }), s('polygon', { points: `${pivot},${beamY + 4} ${pivot - 44},${beamY + 88} ${pivot + 44},${beamY + 88}`, fill: '#b9a7d6', stroke: INK, 'stroke-width': 3 }), beam];
+      const dim = (x0, x1, label, col) => [L(x0, 268, x1, 268, col, 2, { 'stroke-dasharray': '5 4' }), T((x0 + x1) / 2, 290, label, { z: 12, f: col })];
+      kids.push(...dim(loadX, pivot, `load arm ${v.loadArm} m`, '#6b45c8'), ...dim(pivot, effortX, `effort arm ${v.effortArm} m`, '#2f5fd0'));
+      kids.push(T(pivot, beamY + 104, 'fulcrum', { z: 12, f: '#6b5a8a' }), T(300, 32, balanced ? 'balanced' : diff > 0 ? 'the effort end goes down' : 'the load end stays down', { z: 18, f: balanced ? '#058a68' : '#c2510e' }));
+      const say = `The ${v.load} N load, ${v.loadArm} m from the fulcrum, turns the beam with ${loadM} N m. Pushing ${v.effort} N at ${v.effortArm} m gives ${effortM} N m. ${balanced ? 'The two turning effects are equal, so the beam stays level.' : diff > 0 ? 'The effort turns harder, so the effort end goes down.' : 'The load turns harder, so the beam will not lift.'} To balance, push with ${num(need, 1)} N. Load divided by effort is ${num(ma, 2)}.`;
+      return { kids, say };
+    },
+  },
   neutral: {
     subject: 'science', about: 'A beaker where drops of an acid and a base of equal strength are added, with a litmus colour: acid red, base blue, neutral in between. For acids, bases, indicators, neutralisation.',
     sliders: [['acid', 'Drops of acid', 0, 10, 1, 4], ['base', 'Drops of base', 0, 10, 1, 1]],

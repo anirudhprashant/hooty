@@ -459,6 +459,15 @@ export const KITS = {
       { say: 'Put on four colours, then spin it fast.', when: 'turn >= 8 and colours == 1', then: 'When the card spins, the separate colours blur and mix into one colour.' },
     ],
   },
+  lever: {
+    grades: [6, 9], match: [/levers?\b/, /fulcrum/, /effort arm|load arm/, /mechanical advantage/],
+    title: 'Balance the load', takeaway: 'A lever balances when load times load arm equals effort times effort arm. A longer effort arm lets you lift the same load with less effort, but a machine cannot reduce the total work.',
+    tasks: [
+      { say: 'Balance the beam without changing the load or the two arms.', when: 'effort * effortArm == load * loadArm', then: 'Load times load arm equals effort times effort arm: the beam is level.' },
+      { say: 'Give yourself a long effort arm and a short load arm, so the load is easy to lift.', when: 'effortArm >= 4 and loadArm <= 1', then: 'With a long effort arm and a short load arm, a small effort can lift a big load.' },
+      { say: 'Make the effort arm shorter than the load arm and watch what the load does.', when: 'effortArm < loadArm', then: 'With the effort arm shorter than the load arm, the effort must be bigger than the load: the mechanical advantage is below 1.' },
+    ],
+  },
   neutral: {
     grades: [6, 10], titleOnly: true, match: [/(?!.*\b(?:reactivity|metals?)\b)\b(?:acids?|acidic)\b/, /\bbases?\b|\bbasic\b/, /neutrali[sz]/, /indicator|litmus/],
     // "acids, salts and reactivity series" is a metals lesson (metal + acid -> salt + hydrogen), not acid-base neutralisation
