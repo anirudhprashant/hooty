@@ -449,6 +449,16 @@ export const KITS = {
     title: 'Follow a drop', takeaway: 'Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle.',
     tasks: [{ say: 'Follow the water until it falls as rain.', when: 'step == 3', then: 'Drops in the clouds grow heavy and fall.' }, { say: 'Finish the cycle.', when: 'step == 4', then: 'Rivers carry the water back to the sea, ready to start again.' }],
   },
+  spinner: {
+    grades: [3, 5], perChapter: { 4: 3 }, titleOnly: true,
+    match: [/spinners?\b/, /\bspins?\b/, /spinning colours/, /\bcharkha\b.*\bshapes?\b|\bshapes?\b.*\bcharkha\b/, /\blattu\b/, /spinning tops?\b/],
+    title: 'Spin the card', takeaway: 'A card spun fast looks round, because its corners sweep round too quickly for our eyes to follow. Its colours blur and mix, but the card itself has not changed.',
+    tasks: [
+      { say: 'Spin the square card as fast as it goes.', when: 'turn >= 8 and shape == 0', then: 'Spinning fast, the square card looks like a circle: its corners sweep round too quickly for our eyes to follow them.' },
+      { say: 'Turn it slowly, so you can still follow each colour.', when: 'turn > 0 and turn < 6', then: 'Turning slowly, the colours are smeared but you can still pick them out separately.' },
+      { say: 'Put on four colours, then spin it fast.', when: 'turn >= 8 and colours == 1', then: 'When the card spins, the separate colours blur and mix into one colour.' },
+    ],
+  },
   neutral: {
     grades: [6, 10], titleOnly: true, match: [/(?!.*\b(?:reactivity|metals?)\b)\b(?:acids?|acidic)\b/, /\bbases?\b|\bbasic\b/, /neutrali[sz]/, /indicator|litmus/],
     // "acids, salts and reactivity series" is a metals lesson (metal + acid -> salt + hydrogen), not acid-base neutralisation

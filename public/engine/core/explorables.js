@@ -402,6 +402,34 @@ export const WIDGETS = {
       return { kids, say: ['Evaporation: the Sun heats water and it rises as vapour.', 'Condensation: vapour cools high up and forms clouds.', 'Precipitation: drops grow heavy and fall as rain.', 'Collection: rivers carry the water back to the sea, and it all begins again.'][v.step - 1] };
     },
   },
+  spinner: {
+    subject: 'science', about: 'A card on a spindle spun by hand, at any speed from still to fast. As it turns, the corners of a square or triangle card sweep round and the card looks round, and the colours painted on it blur into one mixed colour. For spinners, spinning tops, the charkha, why a spinning square card looks circular and mixing colours by spinning.',
+    sliders: [['turn', 'How fast it spins', 0, 10, 1, 0], ['shape', 'Card shape: square, triangle or hexagon', 0, 2, 1, 0], ['colours', 'Number of colours: two, four or six', 0, 2, 1, 0]],
+    draw(v) {
+      const cx = 185, cy = 155, rr = 108, sides = [4, 3, 6][v.shape], shapeName = ['square', 'triangle', 'hexagon'][v.shape];
+      const pal = [['#e63946', '#fff7e8'], ['#e63946', '#ffb703', '#06a77d', '#3a86ff'], ['#e63946', '#ff9505', '#ffd60a', '#06a77d', '#3a86ff', '#8338ec']][v.colours];
+      const ncols = pal.length, pt = (i) => { const a = rad(-90 + (360 * i) / sides); return [cx + rr * Math.cos(a), cy + rr * Math.sin(a)]; };
+      const polyStr = [...Array(sides).keys()].map((i) => pt(i).join(',')).join(' ');
+      const clipId = `spinner-card-${sides}-${ncols}`;
+      const wedge = (i) => { const a0 = rad(-90 + (360 * i) / ncols), a1 = rad(-90 + (360 * (i + 1)) / ncols), big = rr * 2.2; return `M ${cx} ${cy} L ${cx + big * Math.cos(a0)} ${cy + big * Math.sin(a0)} A ${big} ${big} 0 0 1 ${cx + big * Math.cos(a1)} ${cy + big * Math.sin(a1)} Z`; };
+      const wedges = () => pal.map((col, i) => s('path', { d: wedge(i), fill: col, stroke: 'none' }));
+      const cardAt = (angle, op) => s('g', { transform: `rotate(${angle} ${cx} ${cy})`, opacity: op }, [s('g', { 'clip-path': `url(#${clipId})` }, wedges()), s('polygon', { points: polyStr, fill: 'none', stroke: INK, 'stroke-width': 3.5 })]);
+      const mix = pal.reduce((acc, h) => { const q = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)); return acc.map((z, i) => z + q[i]); }, [0, 0, 0]).map((z) => Math.round(z / ncols));
+      const mixed = `rgb(${mix[0]},${mix[1]},${mix[2]})`;
+      const kids = [R(0, 0, W, H, '#fbf8ff', { w: 0 }), s('clipPath', { id: clipId }, s('polygon', { points: polyStr }))];
+      const spread = Math.min(24, v.turn * 2.6);
+      if (v.turn > 0) for (let k = 4; k >= 1; k--) kids.push(cardAt(k * spread, 0.28 - k * 0.045), cardAt(-k * spread, 0.28 - k * 0.045));
+      kids.push(cardAt(0, v.turn > 0 ? 0.9 : 1));
+      if (v.turn > 0) kids.push(CIRC(cx, cy, rr, mixed, { w: 0, s: 'none', x: { opacity: 0.72 * (v.turn / 10) } }));
+      kids.push(CIRC(cx, cy, 7, '#b9c2cf', { w: 2, s: '#6b7280' }), L(cx, cy + 8, cx, cy + 46, '#6b7280', 5));
+      kids.push(T(cx, 292, 'spun by hand', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(370, 58, v.turn === 0 ? 'Standing still' : v.turn < 6 ? 'Turning slowly' : 'Spinning fast', { z: 19, a: 'start', f: v.turn < 6 ? INK : '#c2510e' }));
+      kids.push(T(370, 96, `shape: ${shapeName}`, { z: 15, w: 600, a: 'start', f: '#6b5a8a' }), T(370, 122, `colours: ${ncols}`, { z: 15, w: 600, a: 'start', f: '#6b5a8a' }));
+      if (v.turn >= 6) kids.push(CIRC(384, 176, 22, mixed, { w: 2 }), T(384, 225, 'one mixed colour', { z: 13, w: 600 }));
+      const say = v.turn === 0 ? `The card is still, so you see its real shape: a ${shapeName} with ${ncols} colours on it.` : v.turn < 6 ? `The ${shapeName} card is turning. Its corners are beginning to smear and its ${ncols} colours are starting to blur.` : `Spinning fast, the ${shapeName} card's corners sweep round too quickly for your eyes to follow, so the card looks like a circle, and its ${ncols} colours blur into one mixed colour. The card itself has not changed shape or colour.`;
+      return { kids, say };
+    },
+  },
   neutral: {
     subject: 'science', about: 'A beaker where drops of an acid and a base of equal strength are added, with a litmus colour: acid red, base blue, neutral in between. For acids, bases, indicators, neutralisation.',
     sliders: [['acid', 'Drops of acid', 0, 10, 1, 4], ['base', 'Drops of base', 0, 10, 1, 1]],
