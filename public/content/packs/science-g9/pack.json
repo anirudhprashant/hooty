@@ -25015,7 +25015,7 @@
       {
        "id": "science-g9-ch7-l6",
        "title": "Simple Machines",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -25067,6 +25067,36 @@
            "p": 130
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lever",
+         "params": {},
+         "title": "Balance the load",
+         "tasks": [
+          {
+           "say": "Balance the beam without changing the load or the two arms.",
+           "when": "effort * effortArm == load * loadArm",
+           "then": "Load times load arm equals effort times effort arm: the beam is level."
+          },
+          {
+           "say": "Give yourself a long effort arm and a short load arm, so the load is easy to lift.",
+           "when": "effortArm >= 4 and loadArm <= 1",
+           "then": "With a long effort arm and a short load arm, a small effort can lift a big load."
+          },
+          {
+           "say": "Make the effort arm shorter than the load arm and watch what the load does.",
+           "when": "effortArm < loadArm",
+           "then": "With the effort arm shorter than the load arm, the effort must be bigger than the load: the mechanical advantage is below 1."
+          }
+         ],
+         "takeaway": "A lever balances when load times load arm equals effort times effort arm. A longer effort arm lets you lift the same load with less effort, but a machine cannot reduce the total work.",
+         "explanation": "A lever balances when load times load arm equals effort times effort arm. A longer effort arm lets you lift the same load with less effort, but a machine cannot reduce the total work."
         },
         {
          "type": "worked",
