@@ -13262,7 +13262,7 @@
       {
        "id": "the-world-around-us-g3-ch4-l6",
        "title": "Parts of a Plant and Bark",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -13314,6 +13314,41 @@
            "p": 59
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch4-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "plantparts",
+         "params": {},
+         "title": "Tap the parts of a plant",
+         "tasks": [
+          {
+           "say": "Find the part that carries water up to the leaves.",
+           "when": "part == 1",
+           "then": "The stem is like a pipe from the roots to the leaves."
+          },
+          {
+           "say": "Find the part that makes food using sunlight.",
+           "when": "part == 2",
+           "then": "Leaves make food for the whole plant."
+          },
+          {
+           "say": "Find the part that makes the fruit and seeds.",
+           "when": "part == 3",
+           "then": "The flower makes the fruit, and the fruit holds the seeds."
+          },
+          {
+           "say": "Find the part a new plant can grow from.",
+           "when": "part == 5",
+           "then": "A seed can grow into a new plant."
+          }
+         ],
+         "takeaway": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them.",
+         "explanation": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them."
         },
         {
          "type": "worked",
