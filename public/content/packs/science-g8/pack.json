@@ -30720,7 +30720,7 @@
       {
        "id": "science-g8-ch9-l5",
        "title": "Lesson 5: Measuring Mass and Volume",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -30788,6 +30788,36 @@
            "p": 149
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch9-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "tumblers",
+         "params": {},
+         "title": "Same tumbler, different water",
+         "tasks": [
+          {
+           "say": "Make tumbler A hold more water than B. Which is heavier?",
+           "when": "a > b",
+           "then": "A has more volume of water and more mass, so A is heavier: the balance tips towards it."
+          },
+          {
+           "say": "Fill both tumblers right to the top.",
+           "when": "a == 250 and b == 250",
+           "then": "Same capacity and both full: the same volume, 250 mL, and about the same mass."
+          },
+          {
+           "say": "Empty tumbler B and fill A. What does the balance show?",
+           "when": "a == 250 and b == 0",
+           "then": "A has volume and mass; B has none, so the balance tips right down towards A."
+          }
+         ],
+         "takeaway": "Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass.",
+         "explanation": "Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass."
         },
         {
          "type": "worked",
@@ -33868,7 +33898,7 @@
       {
        "id": "science-g8-ch10-l4",
        "title": "Lenses and Their Images",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -33937,6 +33967,33 @@
            "p": 164
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch10-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lens",
+         "params": {
+          "grade": 8
+         },
+         "title": "Focus the lens",
+         "tasks": [
+          {
+           "say": "Put the object exactly twice the focal length away, so the image is the same size.",
+           "when": "u == 2 * f",
+           "then": "At twice the focal length the image is real, inverted and the same size."
+          },
+          {
+           "say": "Move the object inside the focal length to see a virtual, upright image.",
+           "when": "u < f",
+           "then": "Closer than the focus the image is virtual, upright and bigger: this is how a magnifying glass works."
+          }
+         ],
+         "takeaway": "A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger.",
+         "explanation": "A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger."
         },
         {
          "type": "worked",
@@ -34434,7 +34491,7 @@
       {
        "id": "science-g8-ch10-l5",
        "title": "Uses of Lenses and Chapter Review",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -34490,6 +34547,33 @@
            "p": 165
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch10-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lens",
+         "params": {
+          "grade": 8
+         },
+         "title": "Focus the lens",
+         "tasks": [
+          {
+           "say": "Put the object exactly twice the focal length away, so the image is the same size.",
+           "when": "u == 2 * f",
+           "then": "At twice the focal length the image is real, inverted and the same size."
+          },
+          {
+           "say": "Move the object inside the focal length to see a virtual, upright image.",
+           "when": "u < f",
+           "then": "Closer than the focus the image is virtual, upright and bigger: this is how a magnifying glass works."
+          }
+         ],
+         "takeaway": "A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger.",
+         "explanation": "A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger."
         },
         {
          "type": "worked",
