@@ -933,10 +933,16 @@ export const KITS = {
     tasks: [{ say: 'Show 400 km on the map.', when: 'cm * km == 400', then: 'Map distance x scale = real distance: 400 km.' }],
   },
   timeline: {
-    grades: [6, 10], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/],
-    // the lesson's own dates if it has three, otherwise the whole chapter's dates when this lesson mentions one of them
-    params: (text, facts, chapter) => { const own = datedEvents(facts || []); if (own.length) return { events: own }; return { events: datedEvents(facts || [], 1).length ? datedEvents(chapter || []) : [] }; },
-    usable: (p) => p.events.length >= 3, minScore: 1, perChapter: 1,
+    grades: [6, 10], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/, /\b(?:1[0-9]{3}|20[0-2][0-9])\b/, /\b\d{1,2}(?:st|nd|rd|th) century\b/],
+    // the lesson's own dates if it has three, otherwise the whole chapter's dates when this lesson mentions one of them.
+    // A bare year only counts in a lesson that also reads as history, so an economics chart of 2025 gets no timeline.
+    params: (text, facts, chapter) => {
+      const own = datedEvents(facts || []);
+      const hist = /\b(?:history|ancient|medieval|centur|dynasty|empire|emperor|king|queen|ruled|reign|bce|war|battle|revolution|revolt|movement|freedom|independence|coloni[sz]|british|mughal|sultan|treaty|parliament|harappa|civilisation|civilization)\b/.test(text);
+      if (own.length) return { events: own, hist };
+      return { events: datedEvents(facts || [], 1).length ? datedEvents(chapter || []) : [], hist };
+    },
+    usable: (p) => p.events.length >= 3 && p.hist, minScore: 1, perChapter: 1,
     title: 'Walk through time', takeaway: 'Put events in order, and remember that BCE years count down towards 1 CE.',
     tasks: (p) => {
       const ev = [...p.events].sort((a, b) => a.year - b.year), yr = (y) => (y < 0 ? `${-y} BCE` : `${y} CE`);
@@ -981,7 +987,7 @@ export const KITS = {
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
 // Labels are the fact itself with the date phrase taken off and cut at a whole word, so they read as a short event.
-const DATE_TAIL = /[,]?\s*(?:\b(?:in|around|about|by|from|of|during|until|till|after|before|between|the|latter|early|late|part)\b\s*)*(?:\d{1,4}(?:\s*(?:or|and|to|-)\s*\d{1,4})?\s*(?:BCE|BC|CE|AD)?|\d{1,2}(?:st|nd|rd|th) centur(?:y|ies)(?: (?:BCE|BC|CE|AD))?)\b.*$/i;
+const DATE_TAIL = /[,]?\s*(?:\b(?:in|around|about|by|from|of|during|until|till|after|before|between|the|latter|early|late|part)\b\s*)*(?:\d{1,4}(?:\s*(?:or|and|to|-)\s*\d{1,4})?\s*(?:BCE|BC|CE|AD)?|\d{1,2}(?:st|nd|rd|th) centur(?:y|ies)(?: (?:BCE|BC|CE|AD))?|(?:\d{1,2}\s+)?(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{3,4})\b.*$/i;
 function label(sentence) {
   let c = sentence.replace(/\s+/g, ' ').trim().replace(/[.!]+$/, '');
   const cut = c.replace(DATE_TAIL, '').trim();
@@ -1001,7 +1007,10 @@ export function datedEvents(facts, need = 3) {
     else if ((m = t.match(/(\d{1,4})\s*(CE|AD)\b/))) y = Number(m[1]);
     else if ((m = t.match(/(\d{1,2})(st|nd|rd|th) century (BCE|BC)/i))) y = -(Number(m[1]) * 100 - 50);
     else if ((m = t.match(/(\d{1,2})(st|nd|rd|th) century( CE| AD)?/i))) y = Number(m[1]) * 100 - 50;
-    else if ((m = t.match(/\b(?:in|around|by|from|of|year|until|till|after|before) (1[0-9]{3}|20[0-2][0-9])\b/))) y = Number(m[1]);
+    // a month name before the year: "in January 1915", "on 6 April 1919"
+    else if ((m = t.match(/\b(?:in|on|by|from|around|before|after|until|till|of|between)\s+(?:\d{1,2}\s+)?(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{3,4})\b/i))) y = Number(m[1]);
+    else if ((m = t.match(/\b\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})\b/i))) y = Number(m[1]);
+    else if ((m = t.match(/\b(?:in|around|by|from|of|year|until|till|after|before|between) (1[0-9]{3}|20[0-2][0-9])\b/))) y = Number(m[1]);
     if (y === null || y === 0 || seen.has(y)) continue;
     if (/^(this|these|that|those|it|its|they|their|he|she|his|her|here|there)\b/i.test(t.trim())) continue;   // needs the sentence before it to make sense
     seen.add(y); out.push({ year: y, label: label(t) });
