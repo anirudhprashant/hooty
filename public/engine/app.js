@@ -1929,6 +1929,7 @@ async function main() {
   const fromLink = await openDeepLink(bootHash);
   linkPending = false;
   if (fromLink === false && bootHash && bootHash !== '#/') history.replaceState(null, '', '#/');
+  syncHash();   // a chapter link opens its first unplayed lesson: name that lesson in the address bar
   loadRestInBackground(activeGrade());
 
   if ('serviceWorker' in navigator) {
