@@ -196,7 +196,7 @@ async function switchGrade(g) {
   if (l) l.grade = g;
   const mine = packIndex.filter((p) => String(p.grade) === g);
   const next = mine.find((p) => p.subject === subject) || mine[0];
-  if (next) await ensurePack(next.id);
+  if (next && !(await ensurePack(next.id))) { toast(t('bookNotHere')); }
   router.packId = next?.id;
   if (l && next) l.packId = next.id;
   await persist();
@@ -231,7 +231,7 @@ function subjectTabs() {
     const row = el('div', { class: 'subject-tabs', role: 'tablist', 'aria-label': 'Subject' }, mine.map((p) => el('button', {
       class: `subject-tab${p.id === cur?.id ? ' is-on' : ''}`, type: 'button', role: 'tab', 'aria-selected': String(p.id === cur?.id),
       onclick: async () => {
-        if (!(await ensurePack(p.id))) { toast('Could not load that book. Check your connection.'); return; }
+        if (!(await ensurePack(p.id))) { toast(t('bookNotHere')); return; }
         router.packId = p.id; const l = activeLearner(); if (l) { l.packId = p.id; await persist(); } render(); warmServiceWorker();
       },
     }, [p.subject])));
@@ -1913,7 +1913,7 @@ async function openDeepLink(href = location.hash) {
   const kind = m[1].toLowerCase(), packId = m[2], itemId = m[3];
   const known = packIndex.some((p) => p.id === packId) || !!packById(packId);
   if (!known) return false;
-  if (!(await ensurePack(packId))) return false;
+  if (!(await ensurePack(packId))) { toast(t('bookNotHere')); return false; }
   const pack = packById(packId);
   if (!pack) return false;
   const l = activeLearner();
@@ -2019,12 +2019,15 @@ async function warmServiceWorker() {
   }
   if (!ctrl) return;
   const urls = ['./content/index.json', './themes/index.json'];
-  for (const t of themes) if (t && t.id) urls.push(`./themes/${t.id}/theme.json`);
+  for (const t of themes) if (t && t.id) {
+    urls.push(`./themes/${t.id}/theme.json`);
+    urls.push(`./themes/${t.id}/theme.css`);   // without it the offline app loses the theme's colours
+  }
   const pack = currentPack();
   if (pack) {
     const card = packIndex.find((p) => p.id === pack.id);
     urls.push(`./content/packs/${pack.id}/pack.json${card && card.v ? `?v=${card.v}` : ''}`);
-    if (pack.glossary) urls.push(`./content/packs/${pack.id}/${pack.glossary}`);
+    urls.push(`./content/packs/${pack.id}/${pack.glossary || 'glossary.json'}`);
   }
   ctrl.postMessage({ type: 'warm', urls });
 }
