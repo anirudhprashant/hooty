@@ -9,11 +9,12 @@
 import { chromium } from 'playwright';
 import { existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { answerFor, loadAnswers } from './qa-answers.mjs';
+import { answerFor, loadAnswers, loadOrders } from './qa-answers.mjs';
 
 const URL = process.argv[2] || 'http://127.0.0.1:8111/sparkle/';
 const OUT = '/tmp/sparkle-shots';
 const answers = loadAnswers();
+const orders = loadOrders();   // prompt -> the item order the pack calls correct
 
 function findChrome() {
   const root = `${process.env.HOME}/.cache/ms-playwright`;
@@ -183,8 +184,22 @@ for (; steps < 60; steps++) {
     await page.waitForTimeout(500);
   }
 
-  // 4. ordering: place EVERY pool chip, otherwise the Check button stays
-  //    disabled and the activity looks like a dead end.
+  // 4. ordering: place every chip in the order the pack says is right. The app shuffles the pool, so
+  //    clicking it blindly builds a wrong order, the question comes back and the walk looked stuck.
+  const orderPrompt = (await page.locator('.activity__prompt').first().textContent().catch(() => '')) || '';
+  const wanted = orders.get(String(orderPrompt).replace(/\s+/g, ' ').trim());
+  if (wanted) {
+    for (const text of wanted) {
+      const placed = await page.evaluate((t) => {
+        const chip = [...document.querySelectorAll('.order-pool .order-chip')].find((b) => (b.textContent || '').trim() === t);
+        if (!chip) return false;
+        chip.click();
+        return true;
+      }, text);
+      if (!placed) break;
+      await page.waitForTimeout(160);
+    }
+  }
   for (let k = 0; k < 12; k++) {
     const pool = page.locator('.order-pool .order-chip').first();
     if (!(await pool.count())) break;

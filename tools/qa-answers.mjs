@@ -73,6 +73,40 @@ export function loadAnswers(root = DEFAULT_ROOT) {
 }
 
 /** The answer to type for this on-screen question, or null when the packs cannot work it out. */
+/** The correct order for every tap-to-order activity, keyed by the question the child sees.
+ * The pack stores `items` in the right order; the app shuffles the pool on screen, so a walker that
+ * clicks the pool in whatever order it appears answers wrong and loops on the same question.
+ */
+export function loadOrders(root = DEFAULT_ROOT) {
+  const orders = new Map();
+  let packs = [];
+  try {
+    packs = readdirSync(join(root, 'public/content/packs'));
+  } catch {
+    return orders;
+  }
+  for (const slug of packs) {
+    let pack;
+    try {
+      pack = JSON.parse(readFileSync(join(root, 'public/content/packs', slug, 'pack.json'), 'utf8'));
+    } catch {
+      continue;
+    }
+    for (const unit of pack.units || []) {
+      for (const chapter of unit.chapters || []) {
+        for (const lesson of chapter.lessons || []) {
+          for (const a of lesson.activities || []) {
+            if (a.type !== 'dragorder' || !a.prompt || !Array.isArray(a.items) || a.items.length < 2) continue;
+            const key = norm(a.prompt);
+            if (!orders.has(key)) orders.set(key, a.items.map((x) => norm(x)));
+          }
+        }
+      }
+    }
+  }
+  return orders;
+}
+
 export function answerFor(loaded, prompt) {
   const question = norm(prompt);
   const exact = loaded?.answers?.get(question);
