@@ -1007,6 +1007,69 @@ export const WIDGETS = {
       return { kids, say: jobs[v.part] };
     },
   },
+  plate: {
+    subject: 'science', about: 'Fill a plate with servings from the three food groups: energy food (roti, rice), body-building food (dal, egg, milk) and protective food (vegetables, fruit), plus junk food on the side. The pieces of the plate grow with the servings, so protective food as the biggest part shows what a balanced plate looks like. For food groups, energy-giving, body-building and protective food, a balanced plate, junk food and healthy eating.',
+    sliders: [['grain', 'Energy food: roti, rice (servings)', 0, 4, 1, 0], ['protein', 'Body-building food: dal, egg (servings)', 0, 4, 1, 0], ['veg', 'Protective food: vegetables, fruit (servings)', 0, 4, 1, 0], ['junk', 'Junk food on the side: chips, soft drink (pieces)', 0, 4, 1, 0]],
+    draw(v) {
+      const cx = 230, cy = 165, rr = 100, kids = [], groups = [
+        ['grain', 'Energy food', '#fbeccd', '#f2c14e'],
+        ['protein', 'Body-building food', '#fde3d3', '#e76f51'],
+        ['veg', 'Protective food', '#e6f4d8', '#43a047'],
+      ];
+      const total = v.grain + v.protein + v.veg;
+      const point = (a, dist) => [cx + dist * Math.sin(rad(a)), cy - dist * Math.cos(rad(a))];
+      kids.push(CIRC(cx, cy + 3, rr + 9, '#e9e2f5', { w: 0 }), CIRC(cx, cy, rr + 8, '#ffffff', { w: 4 }));
+      const foodAt = (kind, x, y, k) => {
+        if (kind === 'grain') {
+          kids.push(CIRC(x, y, 15, '#f2c14e', { w: 2 }));
+          kids.push(CIRC(x - 4, y - 3, 1.7, '#b07d18', { w: 0 }), CIRC(x + 4, y - 1, 1.7, '#b07d18', { w: 0 }), CIRC(x, y + 5, 1.7, '#b07d18', { w: 0 }));
+        } else if (kind === 'protein') {
+          kids.push(s('path', { d: `M ${x - 15} ${y - 4} Q ${x} ${y + 20} ${x + 15} ${y - 4} Z`, fill: '#f4a261', stroke: INK, 'stroke-width': 2 }), CIRC(x - 5, y + 1, 2.6, '#d97706', { w: 0 }), CIRC(x + 5, y + 2, 2.6, '#d97706', { w: 0 }), CIRC(x, y + 7, 2.6, '#d97706', { w: 0 }));
+        } else if (k % 2 === 0) {
+          kids.push(s('polygon', { points: `${x},${y - 15} ${x + 12},${y + 11} ${x - 12},${y + 11}`, fill: '#e2583e', stroke: INK, 'stroke-width': 2 }), s('polygon', { points: `${x},${y - 15} ${x + 13},${y - 18} ${x + 8},${y - 9}`, fill: '#43a047', stroke: INK, 'stroke-width': 2 }));
+        } else {
+          kids.push(CIRC(x, y + 2, 13, '#ffb703', { w: 2 }), s('path', { d: `M ${x} ${y - 10} Q ${x + 12} ${y - 20} ${x + 16} ${y - 10} Q ${x + 8} ${y - 5} ${x} ${y - 10}`, fill: '#43a047', stroke: INK, 'stroke-width': 2 }));
+        }
+      };
+      let a0 = 0;
+      for (const [key, label, pale, strong] of groups) {
+        const n = v[key];
+        if (!n) continue;
+        const span = (n / total) * 360, a1 = a0 + span, mid = a0 + span / 2;
+        if (span > 359.5) kids.push(CIRC(cx, cy, rr, pale, { w: 2 }));
+        else { const [x0, y0] = point(a0, rr), [x1, y1] = point(a1, rr); kids.push(s('path', { d: `M ${cx} ${cy} L ${x0} ${y0} A ${rr} ${rr} 0 ${span > 180 ? 1 : 0} 1 ${x1} ${y1} Z`, fill: pale, stroke: INK, 'stroke-width': 2 })); }
+        for (let k = 0; k < n; k++) {
+          const a = n === 1 ? mid : a0 + (span * (k + 0.5)) / n, [x, y] = point(a, rr * 0.56);
+          foodAt(key, x, y, k);
+        }
+        a0 = a1;
+      }
+      if (!total) kids.push(T(cx, cy + 6, 'put some food', { z: 18, w: 700, f: '#8a7fa8' }), T(cx, cy + 28, 'on the plate', { z: 18, w: 700, f: '#8a7fa8' }));
+      else kids.push(CIRC(cx, cy, 5, '#ffffff', { w: 2 }));
+      kids.push(T(cx, 40, 'a thali: fill the plate', { z: 16, w: 700 }));
+      // the junk food sits on its own small tray, off the plate
+      kids.push(R(24, 108, 92, 104, '#fff7e8', { w: 3, r: 10 }), T(70, 98, 'sometimes food', { z: 11, w: 700, f: '#c2510e' }));
+      for (let k = 0; k < v.junk; k++) {
+        const x = 47 + (k % 2) * 44, y = 140 + Math.floor(k / 2) * 42;
+        if (k % 2 === 0) kids.push(s('polygon', { points: `${x - 14},${y - 16} ${x + 14},${y - 14} ${x + 13},${y + 17} ${x - 13},${y + 16}`, fill: '#e2583e', stroke: INK, 'stroke-width': 2 }), T(x, y + 5, 'chips', { z: 9, w: 700, f: '#fff' }));
+        else kids.push(s('polygon', { points: `${x - 11},${y - 14} ${x + 11},${y - 14} ${x + 8},${y + 16} ${x - 8},${y + 16}`, fill: '#3a86ff', stroke: INK, 'stroke-width': 2 }), L(x + 2, y - 14, x + 12, y - 26, '#e2583e', 3), T(x, y + 5, 'drink', { z: 9, w: 700, f: '#fff' }));
+      }
+      const balanced = v.grain >= 1 && v.protein >= 1 && v.veg >= 2 && v.veg > v.grain && v.veg > v.protein;
+      const missing = [v.grain < 1 ? 'energy food' : null, v.protein < 1 ? 'body-building food' : null, v.veg < 1 ? 'protective food' : null].filter(Boolean);
+      const verdict = !total && !v.junk ? 'an empty plate' : !total ? 'only junk food' : balanced ? 'a balanced plate' : missing.length ? `add ${missing.join(' and ')}` : v.veg <= v.grain || v.veg <= v.protein ? 'add more protective food' : 'keep adding food';
+      kids.push(T(cx, 288, verdict, { z: 15, w: 700, f: balanced ? '#058a68' : total ? '#c2510e' : '#8a7fa8' }));
+      const x0 = 372;
+      kids.push(T(x0 + 60, 62, 'on the plate', { z: 14, w: 700 }));
+      groups.forEach(([key, label, pale, strong], i) => {
+        const y = 92 + i * 30;
+        kids.push(CIRC(x0 + 8, y, 8, pale, { w: 2, s: strong }), T(x0 + 24, y + 5, `${label}: ${v[key]}`, { z: 13, w: 700, a: 'start' }));
+      });
+      kids.push(L(x0, 186, x0 + 190, 186, '#ddd6ee', 2), T(x0 + 95, 210, 'A balanced plate has', { z: 12, w: 600, f: '#6b5a8a' }), T(x0 + 95, 228, 'protective food as the', { z: 12, w: 600, f: '#6b5a8a' }), T(x0 + 95, 246, 'biggest part.', { z: 12, w: 600, f: '#6b5a8a' }));
+      if (v.junk) kids.push(T(x0 + 95, 272, 'junk food is not every day', { z: 11, w: 700, f: '#c2510e' }));
+      const say = !total && !v.junk ? 'The plate is empty. Put some roti, dal, vegetables or fruit on it.' : !total ? `There are ${v.junk} pieces of junk food and nothing on the plate. Chips and soft drinks have a lot of oil, salt and sugar: they are sometimes food, not a meal.` : `${balanced ? 'This is a balanced plate' : 'This plate is not balanced yet'}: ${v.grain} of energy food, ${v.protein} of body-building food and ${v.veg} of protective food. ${balanced ? 'Protective food is the biggest part, so it has vitamins to fight illness, with some energy food and body-building food.' : missing.length ? `Add ${missing.join(' and ')}.` : 'Make protective food the biggest part of the plate.'}${v.junk ? ' The junk food on the side is a sometimes food.' : ''}`;
+      return { kids, say };
+    },
+  },
   solids: {
     subject: 'maths', about: 'Turn a 3D shape (cube, cuboid, triangular prism, square pyramid, triangular pyramid) and count its faces, corners and edges. The counts come from the shape itself, and F + V - E is always 2. For 3D shapes, faces, edges, vertices or corners, prisms and pyramids, nets.',
     sliders: [['shape', 'Shape: cube, cuboid, triangular prism, square pyramid, triangular pyramid', 0, 4, 1, 0], ['turn', 'Turn it (degrees)', 0, 345, 15, 30]],

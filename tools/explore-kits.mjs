@@ -594,6 +594,17 @@ export const KITS = {
       { say: 'Find the part a new plant can grow from.', when: 'part == 5', then: 'A seed can grow into a new plant.' },
     ],
   },
+  plate: {
+    grades: [3, 4], perChapter: { 4: 3 },
+    match: [/\bbalanced (plate|meal|diet|food)\b/, /\benergy[- ]giving\b|\benergy[- ]providing\b|\bprovide energy\b|\brich in energy\b/, /\bbody[- ]building\b/, /\bprotective food/, /\bfood groups?\b/, /\bjunk food\b/],
+    title: 'Fill a balanced plate', takeaway: 'A balanced plate has protective food as its biggest part, with body-building food and some energy food. Junk food is a sometimes food.',
+    tasks: [
+      { say: 'Put some energy food on the plate.', when: 'grain >= 1', then: 'Rice, roti and potato give you energy to run and play.' },
+      { say: 'Add some body-building food.', when: 'protein >= 1', then: 'Dal, pulses, egg and milk help you grow and build strong muscles.' },
+      { say: 'Make protective food the biggest part of the plate.', when: 'veg >= 2 and veg > grain and veg > protein', then: 'Vegetables and fruits should fill the most of a balanced plate: they help you fight illness.' },
+      { say: 'Fill the plate with only junk food.', when: 'junk >= 3 and grain == 0 and protein == 0 and veg == 0', then: 'Chips, soft drinks and fried food have a lot of oil, salt and sugar. They are sometimes food, not a meal.' },
+    ],
+  },
   solids: {
     grades: [4, 8], match: [/\bfaces?\b.*\b(edges?|corners?|vertices)\b|\bedges?\b.*\bfaces?\b/, /\bprisms?\b/, /(?<!number )\bpyramids?\b/, /\bcuboids?\b/, /3d shapes?|three-dimensional/],
     title: 'Spin the solid', takeaway: 'Count faces, corners and edges: for each of these shapes faces + corners \u2212 edges = 2.',
