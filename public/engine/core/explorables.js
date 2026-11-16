@@ -462,6 +462,38 @@ export const WIDGETS = {
         say: `${v.acid} drops of acid and ${v.base} of base: the solution is ${name}, so litmus shows ${d > 0 ? 'red' : d < 0 ? 'blue' : 'neither colour change'}.` };
     },
   },
+  reaction: {
+    subject: 'science', about: 'Four reactions from the Class 10 chemistry chapter, one at a time: magnesium burning in oxygen, calcium oxide joining water to make slaked lime, calcium carbonate breaking up on heating, and iron pushing copper out of copper sulphate. Shows the reactants on the left and the products on the right, and names the kind of reaction. For chemical reactions, combination, decomposition, displacement, reactants and products, exothermic and endothermic.',
+    sliders: [['pick', 'Choose a reaction', 0, 3, 1, 1]],
+    draw(v) {
+      const E = [
+        { type: 'Combination reaction', heat: 'gives out heat', col: '#058a68',
+          left: [{ t: 'magnesium', c: '#b0bec5' }, { t: 'oxygen', c: '#90caf9' }], right: [{ t: 'magnesium oxide', c: '#eceff1' }],
+          say: 'Magnesium burns in oxygen and the white powder magnesium oxide is formed. Two substances join into one product, so this is a combination reaction, and it gives out heat and light.' },
+        { type: 'Combination reaction', heat: 'gives out a large amount of heat', col: '#058a68',
+          left: [{ t: 'calcium oxide', c: '#e0e0e0' }, { t: 'water', c: '#90caf9' }], right: [{ t: 'slaked lime', c: '#fff3e0' }],
+          say: 'Calcium oxide reacts vigorously with water and makes slaked lime, which is calcium hydroxide. Two substances join into one product: a combination reaction that gives out a large amount of heat.' },
+        { type: 'Decomposition reaction', heat: 'needs heating', col: '#c2510e',
+          left: [{ t: 'calcium carbonate', c: '#d7ccc8' }], right: [{ t: 'calcium oxide', c: '#e0e0e0' }, { t: 'carbon dioxide', c: '#b3e5fc' }],
+          say: 'On heating, calcium carbonate breaks into calcium oxide and carbon dioxide. One substance breaking into simpler products is a decomposition reaction, and this one happens only when it is heated.' },
+        { type: 'Displacement reaction', heat: 'happens in solution', col: '#1f6fb8',
+          left: [{ t: 'iron', c: '#b0bec5' }, { t: 'copper sulphate', c: '#64b5f6' }], right: [{ t: 'iron sulphate', c: '#a5d6a7' }, { t: 'copper', c: '#c0703a' }],
+          say: 'Iron is more reactive than copper, so iron takes the sulphate from copper sulphate. Iron sulphate forms and copper is left behind: one element displacing another from its compound is a displacement reaction.' },
+      ];
+      const e = E[v.pick] || E[0];
+      const chip = (x, y, item) => {
+        const at = item.t.lastIndexOf(' ', 17), lines = at > 0 ? [item.t.slice(0, at), item.t.slice(at + 1)] : [item.t];
+        return [R(x, y, 164, 56, '#fff', { w: 2.5, r: 10 }), R(x, y, 8, 56, item.c, { w: 0, r: 4 }),
+          ...lines.map((ln, i) => T(x + 88, y + 27 + i * 18 - (lines.length - 1) * 9, ln, { z: 15, w: 700 }))];
+      };
+      const kids = [], leftY = e.left.length === 1 ? [122] : [74, 162], rightY = e.right.length === 1 ? [122] : [74, 162];
+      e.left.forEach((it, i) => kids.push(...chip(24, leftY[i], it)));
+      e.right.forEach((it, i) => kids.push(...chip(410, rightY[i], it)));
+      kids.push(L(196, 150, 388, 150, INK, 4), s('path', { d: 'M 388 150 l -14 -8 l 0 16 Z', fill: INK, stroke: INK, 'stroke-width': 1 }));
+      kids.push(T(300, 28, e.type, { z: 21, f: e.col }), T(300, 50, e.heat, { z: 14, w: 600, f: '#6b5a8a' }), T(300, 286, 'Move the slider to try another reaction.', { z: 13, w: 600, f: '#8a7aa8' }));
+      return { kids, say: e.say };
+    },
+  },
   linegraph: {
     subject: 'maths', about: 'A straight line y = m x + c on a coordinate grid, with a rise-over-run step. m is the slope (steepness) and c is where the line crosses the y-axis. For graphs of linear equations, slope, coordinate geometry, y = mx + c.',
     sliders: [['m', 'Slope (m)', -4, 4, 0.5, 1], ['c', 'Crosses the y-axis at (c)', -3, 3, 1, 1]],

@@ -485,6 +485,16 @@ export const KITS = {
     title: 'Mix acid and base', takeaway: 'Equal amounts of acid and base cancel out and make a neutral solution.',
     tasks: [{ say: 'Make the solution neutral.', when: 'acid == base', then: 'Equal drops cancel out: neutral.' }, { say: 'Make it basic.', when: 'base > acid', then: 'More base than acid: litmus turns blue.' }],
   },
+  reaction: {
+    grades: [9, 10], perChapter: 4,
+    match: [/combination reaction|combination and|two or more reactants combine/, /decomposition reaction|decomposition and|breaks? (up|down) into (simpler|two|three)|one reactant breaking/, /displacement reaction|displaces? (copper|another|a metal|it) from/, /exothermic|endothermic/, /chemical reactions? in daily life/, /types of chemical reactions?/],
+    title: 'Watch the atoms rearrange', takeaway: 'In a combination reaction two substances join into one, in a decomposition reaction one substance breaks into simpler ones, and in a displacement reaction one element pushes another out of its compound.',
+    tasks: [
+      { say: 'Show two substances joining into one product.', when: 'pick == 0', then: 'Magnesium and oxygen join to make the single product magnesium oxide: a combination reaction.' },
+      { say: 'Show one substance breaking into simpler ones on heating.', when: 'pick == 2', then: 'On heating, calcium carbonate breaks into calcium oxide and carbon dioxide: a decomposition reaction.' },
+      { say: 'Show iron pushing copper out of copper sulphate.', when: 'pick == 3', then: 'Iron takes the sulphate and copper is left behind: a displacement reaction.' },
+    ],
+  },
   solarsystem: {
     grades: [6, 8], match: [/solar system/, /\bplanets?\b/, /\borbits?\b/, /asteroids?|comets?/],
     title: 'Run the solar system', takeaway: 'Planets nearer the Sun go round faster; the further out, the longer the year.',
