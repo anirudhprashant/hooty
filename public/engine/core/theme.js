@@ -87,6 +87,18 @@ function setHero(theme) {
   if (!file) return;
   const abs = new URL(`${theme.base || './themes'}/${theme.id}/${file}`, document.baseURI).href;
   document.documentElement.style.setProperty('--hero-image', `url("${abs}")`);
+  // The painted heroes are 1400 to 1600 pixels wide and about 90 KB. A phone draws the stage about 360
+  // pixels wide, so it is handed a 640 pixel copy instead (tools/hero-640.py makes them). The copy is only
+  // offered once it has proved it exists: a theme without one keeps the full picture rather than a blank stage.
+  const small = abs.replace(/\.webp$/, '-640.webp');
+  if (window.matchMedia('(max-width: 720px)').matches) {
+    const probe = new Image();
+    probe.onload = () => document.documentElement.style.setProperty('--hero-image-sm', `url("${small}")`);
+    probe.onerror = () => document.documentElement.style.removeProperty('--hero-image-sm');
+    probe.src = small;
+  } else {
+    document.documentElement.style.removeProperty('--hero-image-sm');
+  }
 }
 export function setGuide(g) { guide = g === 'hooty' ? 'hooty' : 'lumi'; setHero(current); }
 export function currentGuide() { return guide; }
