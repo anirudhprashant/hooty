@@ -90,7 +90,9 @@ function setHero(theme) {
   // The painted heroes are 1400 to 1600 pixels wide and about 90 KB. A phone draws the stage about 360
   // pixels wide, so it is handed a 640 pixel copy instead (tools/hero-640.py makes them). The copy is only
   // offered once it has proved it exists: a theme without one keeps the full picture rather than a blank stage.
-  const small = abs.replace(/\.webp$/, '-640.webp');
+  // The version matters: these were requested while the publish was still copying them, the edge cached the
+  // 404 for a day, and a plain URL would keep handing out the miss.
+  const small = `${abs.replace(/\.webp$/, '-640.webp')}?v=1`;
   if (window.matchMedia('(max-width: 720px)').matches) {
     const probe = new Image();
     probe.onload = () => document.documentElement.style.setProperty('--hero-image-sm', `url("${small}")`);
