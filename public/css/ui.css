@@ -1009,6 +1009,12 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .explore__ask { display: block; font-weight: 700; }
 .explore__then { display: block; margin-top: 4px; font-weight: 500; animation: rise .3s var(--ease-out) both; }
 .explore__done { margin: var(--s2) 0; padding: var(--s3); border-radius: var(--radius-md); background: var(--success-soft); font-weight: 700; }
+.install-card { display: grid; gap: var(--s3); margin: var(--s4) 0; padding: var(--s4); border-radius: var(--radius-lg); background: var(--surface); }
+.install-card b { font-size: var(--fs-md); }
+.install-card span { display: block; margin-top: 2px; color: var(--text-muted); font-size: var(--fs-sm); }
+.install-card .btn { justify-self: start; }
+.install-hint { margin: var(--s4) 0 0; padding: var(--s3) var(--s4); border-radius: var(--radius-lg); background: var(--surface); color: var(--text-muted); font-size: var(--fs-sm); }
+
 .growth-card { margin: var(--s4) 0; padding: var(--s4); border-radius: var(--radius-lg); background: var(--surface); } .growth-card p { margin: 0; line-height: 1.5; }
 .growth-list { margin: 0 0 var(--s2); padding-left: 1.2em; line-height: 1.5; } .growth-note { color: var(--text-muted); font-size: var(--fs-sm); }
 

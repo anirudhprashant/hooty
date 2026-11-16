@@ -1591,10 +1591,50 @@ function screenThemes() { return screenRewards(); }
 
 // --- parent view -----------------------------------------------------------
 
+// --- install ----------------------------------------------------------------
+// Chrome fires beforeinstallprompt once the app meets its criteria. Keep it until a grown-up asks, so the
+// prompt comes from a real tap (the browser requires one) and a child never sees a marketing banner. Hooty is
+// a static app, so once it is on the home screen it opens without a connection.
+let installEvent = null;
+window.addEventListener('beforeinstallprompt', (event) => { event.preventDefault(); installEvent = event; });
+const isInstalled = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
+function installCard() {
+  if (isInstalled()) return null;
+  if (installEvent) {
+    return el('section', { class: 'install-card' }, [
+      el('div', {}, [
+        el('b', { text: t('keepHooty') }),
+        el('span', { text: t('keepHootyBody') }),
+      ]),
+      el('button', {
+        class: 'btn btn--primary', type: 'button',
+        onclick: async () => {
+          const event = installEvent;
+          installEvent = null;
+          try {
+            event.prompt();
+            const choice = await event.userChoice.catch(() => null);
+            if (choice && choice.outcome === 'accepted') toast(t('addedToHome'));
+          } catch { /* the browser withdrew the prompt */ }
+          render();
+        },
+      }, [t('addToHome')]),
+    ]);
+  }
+  // iPhone and iPad have no install event at all: the only route is the share sheet.
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    return el('p', { class: 'install-hint', text: t('installHintIos') });
+  }
+  return null;
+}
+
 function screenParent() {
   const l = activeLearner();
   const wrap = el('div', { class: 'page screen' });
   wrap.append(el('div', { class: 'privacy-note', style: { marginTop: 'var(--s2)' } }, [icon('lock', { size: 22 }), 'Your learning stays on this device. We count anonymous page visits only: no cookies, no personal data.']));
+  const install = installCard();
+  if (install) wrap.append(install);
 
   const stats = Object.values(l?.activityStats || {});
   const totalAttempts = stats.reduce((a, s) => a + s.seen, 0);
