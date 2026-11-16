@@ -538,8 +538,9 @@ export const KITS = {
     ],
   },
   seepage: {
-    grades: [5, 8], match: [/\bseep(age|s|ing)?\b/, /groundwater/, /infiltration/, /\bgravel\b/],
-    title: 'Pour the water', takeaway: 'Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles.',
+    grades: [5, 10], subjects: ['social'],
+    match: [/\bseep(age|s|ing)?\b/, /groundwater/, /infiltration/, /\bgravel\b/, /\bsoil (types?|erosion)\b/, /rainwater harvest/, /water harvest/, /percolat/, /hold(s)? moisture/],
+    title: 'Pour the water', takeaway: 'Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type.',
     tasks: [
       { say: 'Let 3 minutes pass.', when: 't == 3', then: 'Gravel has let through the most water: its particles have the widest gaps.' },
       { say: 'Wait until all the water is through the gravel.', when: 't >= 4', then: 'All 100 ml is through the gravel, while clay has let through only a little.' },
