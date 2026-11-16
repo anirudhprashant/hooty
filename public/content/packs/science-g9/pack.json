@@ -24609,7 +24609,7 @@
       {
        "id": "science-g9-ch7-l5",
        "title": "Power",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -24668,6 +24668,36 @@
            "p": 130
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "power",
+         "params": {},
+         "title": "Time the work",
+         "tasks": [
+          {
+           "say": "Do exactly 100 joules of work in 2 seconds, so the power is 50 watts.",
+           "when": "force * dist == 100 and secs == 2",
+           "then": "100 J in 2 s is 50 W: power is work divided by time."
+          },
+          {
+           "say": "Do the same 100 joules, but take 4 seconds this time.",
+           "when": "force * dist == 100 and secs == 4",
+           "then": "The same work in twice the time is only 25 W, half the power."
+          },
+          {
+           "say": "Lift the heaviest bag the longest distance in the shortest time.",
+           "when": "force == 100 and dist == 10 and secs == 1",
+           "then": "1000 J in 1 s is 1000 W: the most power you can show here."
+          }
+         ],
+         "takeaway": "Power is the rate of doing work: work divided by time, in watts. The same work done in half the time takes twice the power.",
+         "explanation": "Power is the rate of doing work: work divided by time, in watts. The same work done in half the time takes twice the power."
         },
         {
          "type": "worked",

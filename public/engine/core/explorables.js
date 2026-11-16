@@ -1694,6 +1694,20 @@ export const WIDGETS = {
       return { kids, say: v.dist === 0 ? `You push with ${v.force} N but the bag does not move, so the distance is 0 m and the work is 0 J.` : `You lift with ${v.force} N over ${v.dist} m, so you do ${v.force} x ${v.dist} = ${wd} J of work.${v.force === 20 && v.dist === 4 ? ' Twice the distance with the same force is twice the work.' : ''}` };
     },
   },
+  power: {
+    subject: 'science', about: 'A bag lifted by a force over a distance, with a stopwatch. Work = force x distance in joules, and power = work / time in watts, so the same work done in half the time takes twice the power. For power, rate of doing work, the watt, work and time.',
+    sliders: [['force', 'Force you lift with (newtons)', 0, 100, 10, 20], ['dist', 'Distance lifted (metres)', 0, 10, 1, 2], ['secs', 'Time taken (seconds)', 1, 10, 1, 2]],
+    draw(v) {
+      const floor = 232, up = v.dist * 13, bottom = floor - up, top = bottom - 62, wd = v.force * v.dist, pw = wd / v.secs;
+      const kids = [R(0, 0, W, H, '#f6f9ff', { w: 0 }), R(0, floor, W, 68, '#efeaf8', { w: 0 }), L(0, floor, W, floor, INK, 4)];
+      kids.push(R(186, top, 90, 62, C.o, { r: 8, w: 3 }), T(231, top + 40, `${v.force} N`, { z: 17, f: '#fff' }));
+      if (v.dist > 0) kids.push(L(326, floor, 326, bottom, C.b, 4, { 'stroke-dasharray': '7 6' }), L(316, bottom, 336, bottom, C.b, 3), L(316, floor, 336, floor, C.b, 3), T(352, (floor + bottom) / 2 + 6, `${v.dist} m`, { z: 16, a: 'start', f: C.b }));
+      kids.push(CIRC(500, 84, 38, '#fff', { w: 4, s: C.p }), CIRC(500, 84, 4, INK, { w: 0 }), L(500, 84, 500, 58, C.p, 4), T(500, 142, `${v.secs} s`, { z: 18, f: C.p }), T(500, 36, 'stopwatch', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(300, 270, `work = ${v.force} N × ${v.dist} m = ${num(wd)} J`, { z: 18 }));
+      kids.push(T(300, 292, wd ? `power = ${num(wd)} J ÷ ${v.secs} s = ${num(pw, 1)} W` : 'no distance moved, so no work and no power', { z: 14, w: 600, f: wd ? '#058a68' : '#c2510e' }));
+      return { kids, say: v.dist === 0 ? `You push with ${v.force} N but the bag does not move, so the work is 0 J and the power is 0 W.` : `You do ${num(wd)} J of work in ${v.secs} s, so the power is ${num(wd)} ÷ ${v.secs} = ${num(pw, 1)} W.${v.secs === 4 && wd === 100 ? ' The same work in twice the time needs only half the power.' : ''}` };
+    },
+  },
   energy: {
     subject: 'science', about: 'A ball at the top of a ramp, with its mass and the height of the ramp. At the top it stores potential energy, mass x 10 x height, and at the bottom that is all kinetic energy, so the ball speeds up as it falls. For kinetic energy, potential energy, conservation of energy, forms of energy, work and energy, joules.',
     sliders: [['mass', 'Mass of the ball (kilograms)', 1, 5, 1, 2], ['height', 'Height of the ramp (metres)', 1, 10, 1, 4]],

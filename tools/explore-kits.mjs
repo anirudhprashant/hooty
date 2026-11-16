@@ -341,6 +341,16 @@ export const KITS = {
       { say: 'Keep the force at 20 N and lift twice as far as at the start.', when: 'force == 20 and dist == 4', then: '4 m is twice 2 m, so the work doubles from 40 J to 80 J.' },
     ],
   },
+  power: {
+    grades: [9, 9], match: [/(?<!electric(?:al)? )\bpower\b/, /\bwatts?\b/, /rate of doing work/, /joule(s)? per second/],
+    // "power of a lens" and "electric power" are different ideas, so this kit is only for the work-and-time lesson
+    title: 'Time the work', takeaway: 'Power is the rate of doing work: work divided by time, in watts. The same work done in half the time takes twice the power.',
+    tasks: [
+      { say: 'Do exactly 100 joules of work in 2 seconds, so the power is 50 watts.', when: 'force * dist == 100 and secs == 2', then: '100 J in 2 s is 50 W: power is work divided by time.' },
+      { say: 'Do the same 100 joules, but take 4 seconds this time.', when: 'force * dist == 100 and secs == 4', then: 'The same work in twice the time is only 25 W, half the power.' },
+      { say: 'Lift the heaviest bag the longest distance in the shortest time.', when: 'force == 100 and dist == 10 and secs == 1', then: '1000 J in 1 s is 1000 W: the most power you can show here.' },
+    ],
+  },
   energy: {
     grades: [8, 10], perChapter: 3, match: [/kinetic energy/, /potential energy/, /conservation of energy/, /forms? of energy/, /mechanical energy/, /energy (is|can be) (never )?(created|destroyed|converted|changed)/],
     title: 'Roll the ball down the ramp', takeaway: 'At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another.',
