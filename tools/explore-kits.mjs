@@ -1007,6 +1007,16 @@ export const KITS = {
       { say: 'Add four buyers, then set the new equilibrium price.', when: 'price == 120 and buyers == 4', then: 'Four more buyers shift demand right, so the market settles at the higher price of ₹120.' },
     ],
   },
+  interest: {
+    grades: [10, 10], subjects: ['social'], perChapter: 2,
+    match: [/credit/, /\bdebt/, /\bloans?\b/, /\bborrow/, /bank deposits?/, /\binterest\b/],
+    title: 'Watch a loan grow', takeaway: 'Simple interest is charged only on the money borrowed; compound interest is also charged on last year\u2019s interest, so the amount owed grows faster every year.',
+    tasks: [
+      { say: 'Borrow at 20% or more for ten years and see how big the debt becomes.', when: 'rate >= 20 and years == 10', then: 'A high rate left for many years turns even a small loan into a huge debt: that is a debt trap.' },
+      { say: 'Make what you owe more than double the money you borrowed.', when: 'P * (1 + rate / 100) ** years > 2 * P', then: 'Once the interest adds up to more than the loan itself, you owe more than double what you borrowed.' },
+      { say: 'Keep the extra you pay under ₹600.', when: 'P * (1 + rate / 100) ** years - P <= 600', then: 'A small loan for a short time at a low rate costs only a little extra.' },
+    ],
+  },
   pressure: {
     grades: [7, 10],
     match: [/\bpressure\b/, /per unit area|force per unit/, /\bthrust\b/, /atmospheric pressure|air pressure/, /liquids? pressure|pressure .{0,24}(depth|liquid)/, /newtons? per square/],

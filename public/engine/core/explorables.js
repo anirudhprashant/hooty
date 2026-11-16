@@ -2225,6 +2225,36 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  interest: {
+    subject: 'social', about: 'A loan shown as bars year by year: yellow is simple interest on the money borrowed, orange is compound interest, which also charges interest on last year\u2019s interest. For credit, loans, bank deposits, interest rates, simple and compound interest, debt traps.',
+    sliders: [['P', 'Money borrowed (rupees)', 1000, 10000, 1000, 5000], ['rate', 'Interest each year (%)', 5, 30, 1, 12], ['years', 'Years before you pay back', 1, 10, 1, 5]],
+    draw(v) {
+      const base = 238, top = 78, slot = 48, bw = 16;
+      const rupees = (n) => `₹${Math.round(n).toLocaleString('en-IN')}`;
+      const marks = [];
+      for (let y = 1; y <= v.years; y++) {
+        marks.push({ y, flat: v.P * (1 + (v.rate * y) / 100), owed: v.P * Math.pow(1 + v.rate / 100, y) });
+      }
+      const last = marks[marks.length - 1], maxOwed = last.owed, sc = (base - top) / maxOwed;
+      const startX = W / 2 - (v.years * slot) / 2 + (slot - bw * 2 - 4) / 2, kids = [
+        T(300, 32, `A loan of ${rupees(v.P)} at ${v.rate}% a year`, { z: 18 }),
+        R(120, 44, 12, 12, C.y, { w: 2 }), T(138, 54, 'simple interest', { z: 12, w: 600, a: 'start' }),
+        R(320, 44, 12, 12, C.o, { w: 2 }), T(338, 54, 'interest on interest', { z: 12, w: 600, a: 'start' }),
+        L(40, base, 560, base, INK, 3),
+      ];
+      kids.push(L(40, base - v.P * sc, 560, base - v.P * sc, '#8a6d3b', 1.5, { 'stroke-dasharray': '6 6' }));
+      kids.push(T(556, base - v.P * sc - 6, 'money borrowed', { z: 11, w: 600, a: 'end', f: '#8a6d3b' }));
+      for (const m of marks) {
+        const x = startX + (m.y - 1) * slot, hFlat = m.flat * sc, hOwed = m.owed * sc;
+        kids.push(R(x, base - hFlat, bw, hFlat, C.y, { w: 2 }));
+        kids.push(R(x + bw + 4, base - hOwed, bw, hOwed, C.o, { w: 2 }));
+        kids.push(T(x + bw + 3, base + 17, m.y, { z: 11, w: 600, f: '#6b5a8a' }));
+      }
+      kids.push(T(300, base + 36, v.years === 1 ? '1 year' : `${v.years} years`, { z: 12, w: 600, f: '#6b5a8a' }));
+      const extra = last.owed - v.P, simpleExtra = last.flat - v.P;
+      return { kids, say: `You borrow ${rupees(v.P)} at ${v.rate}% a year. After ${v.years} year${v.years === 1 ? '' : 's'} you owe ${rupees(last.owed)}: that is ${rupees(extra)} more than you borrowed. With simple interest you would owe ${rupees(last.flat)}, only ${rupees(simpleExtra)} extra. Compound interest charges interest on last year\u2019s interest too, so the debt grows faster every year${v.rate >= 20 ? '. At a rate as high as this, a small loan can become a debt trap' : ''}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
