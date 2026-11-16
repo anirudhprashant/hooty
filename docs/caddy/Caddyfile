@@ -1,0 +1,219 @@
+# The Caddy configuration for hooty.org, kept in the repository so the edge rules are not only on one disk.
+#
+# Live copy: /etc/caddy/Caddyfile on oracle (root owned). To change it:
+#   sudo cp /etc/caddy/Caddyfile /tmp/Caddyfile.before-<change>
+#   sudo cp docs/caddy/Caddyfile /etc/caddy/Caddyfile
+#   sudo caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
+#   sudo systemctl reload caddy
+#
+# Two rules matter for content work:
+#   - a cache header is only set when the file exists, and a miss gets no-store. Without that, a request that
+#     lands a moment before a new file is published pins a 404 at the Cloudflare edge for a day.
+#   - /content/packs/*/pack.json?v=<hash> is immutable for a year; the bare pack.json stays no-cache.
+
+{
+	email anirudhprashant@gmail.com
+	# admin off (removed for reload support)
+	grace_period 5s
+	https_port 8443
+}
+
+api.barestack.org {
+	reverse_proxy localhost:8092 {
+		header_down Access-Control-Allow-Origin "https://app.barestack.org"
+		header_down Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+		header_down Access-Control-Allow-Headers "Content-Type, Authorization, PocketBase-Auth"
+		header_down Access-Control-Allow-Credentials "true"
+	}
+}
+
+barestack.org {
+	reverse_proxy localhost:8083
+}
+
+www.barestack.org {
+	reverse_proxy localhost:8083
+}
+
+# Client storefront lives on its own domain now. 301 so the Hassan saree
+# rankings transfer to shasthas.com instead of splitting across two hosts,
+# and barestack.org stops absorbing an unrelated retail entity.
+# http:// prefix on purpose: cloudflared terminates TLS at the CF edge for
+# *.barestack.org, so Caddy must not try to run ACME for this host.
+http://shasthas.barestack.org {
+	redir https://shasthas.com{uri} permanent
+}
+
+api.shasthas.barestack.org {
+	reverse_proxy localhost:9000
+}
+
+email.anirudhprashant.com {
+	reverse_proxy localhost:9001
+}
+
+http://anirudhprashant.com {
+	reverse_proxy localhost:3005
+}
+
+http://crm.flowhesive.com {
+	reverse_proxy localhost:3005
+}
+
+http://www.anirudhprashant.com {
+	reverse_proxy localhost:3005
+}
+
+http://nootwise.com {
+	reverse_proxy http://127.0.0.1:5000
+}
+
+http://www.nootwise.com {
+	reverse_proxy http://127.0.0.1:5000
+}
+
+nootwise.com {
+	reverse_proxy http://127.0.0.1:5000
+}
+
+www.nootwise.com {
+	reverse_proxy http://127.0.0.1:5000
+}
+
+http://media.barestack.org {
+	root * /home/ubuntu/linkedin_posts/public
+	encode gzip
+	file_server
+}
+
+http://cdn.barestack.org {
+	root * /var/www/cdn
+	file_server {
+		browse
+	}
+	header * {
+		Access-Control-Allow-Origin *
+	}
+}
+
+http://est.barestack.org {
+	root * /var/www/est
+	encode gzip
+	try_files {path} /index.html
+	file_server
+}
+
+:8087 {
+	root * /var/www/est
+	encode gzip
+	try_files {path} /index.html
+	file_server
+}
+
+
+# Kindle dashboard image, regenerated every 10 min by kindle-dash.timer.
+# http:// on purpose: cloudflared terminates TLS at the CF edge for
+# *.barestack.org, so Caddy must not try to run ACME for this host.
+# Bound to :8095 rather than :80 to keep it off the shared vhost.
+http://dash.barestack.org:8095 {
+	root * /var/www/dash
+	file_server
+	header Cache-Control "no-store, max-age=0"
+}
+
+# Per-lead wireframe demos for BareStack outreach. URLs carry an unguessable
+# token so the list cannot be enumerated from one known link.
+# http:// on purpose: cloudflared terminates TLS at the CF edge for *.barestack.org,
+# so Caddy must not attempt ACME here.
+http://preview.barestack.org {
+	root * /var/www/lead-demos
+	try_files {path} {path}.html
+	file_server
+	header {
+		X-Robots-Tag "noindex, nofollow, noarchive"
+		Cache-Control "public, max-age=300"
+	}
+}
+
+# Lumi, the kids learning game. Caddy serves the static app straight from the deployed folder (no directory
+# listings, strict security headers, proper caching). rsync from tools/publish.py keeps the folder current.
+# http:// on purpose: cloudflared terminates TLS at the CF edge for *.barestack.org,
+# so Caddy must not attempt ACME here.
+http://lumi.barestack.org, http://hooty.org, http://www.hooty.org {
+	root * /home/ubuntu/agent-workspace/learning-game/public
+	encode zstd gzip
+	file_server
+
+	# Voice clips are named by a hash of their text, so a given name never changes: cache for a year.
+	# Every cache rule below is checked against a file that exists. Caddy sets these headers on error
+	# responses too, so a request that lands a moment before a new file is in place used to pin a 404 at the
+	# Cloudflare edge for a day (seen on 17 Nov with the phone heroes). A miss now gets no cache header at all.
+	@clips {
+		path_regexp clips ^/audio/[0-9a-f]+\.(mp3|json)$
+		file {
+			try_files {path}
+		}
+	}
+	header @clips Cache-Control "public, max-age=31536000, immutable"
+	# Pictures, fonts and icons keep their names when replaced, so a day, then revalidate.
+	@art {
+		path_regexp art \.(webp|png|jpg|svg|woff2|ico)$
+		file {
+			try_files {path}
+		}
+	}
+	header @art Cache-Control "public, max-age=86400"
+	# Code, pages and book data: always revalidate (cheap 304s thanks to ETag), so a fix reaches everyone at once.
+	@live path_regexp live \.(html|js|css|json|webmanifest)$
+	header @live Cache-Control "no-cache"
+	# A book is 1.7 MB. The index carries a hash per book and the app asks for pack.json?v=<hash>, an address
+	# that never changes, so this exact URL can live in the browser and Cloudflare cache for a year. The bare
+	# pack.json stays no-cache above, so old clients still see a publish straight away.
+	@bookver {
+		path /content/packs/*/pack.json
+		query v=*
+		file {
+			try_files {path}
+		}
+	}
+	header @bookver Cache-Control "public, max-age=31536000, immutable"
+	# A miss must not be cached anywhere. Dropping the cache header was not enough: Cloudflare caches a 404
+	# on its own for a short time (seen: cf-cache-status HIT, age 1) and that is still long enough to pin a
+	# file requested a moment before it was published. no-store is the only thing the edge obeys.
+	@gone {
+		path_regexp gone \.(webp|png|jpg|jpeg|svg|woff2|ico|mp3|json|js|css|html|webmanifest)$
+		not {
+			file {
+				try_files {path}
+			}
+		}
+	}
+	header @gone Cache-Control "no-store"
+
+	# The manifest has no registered extension mapping: serve the type the spec asks for.
+	header /manifest.webmanifest Content-Type "application/manifest+json"
+	header /sw.js Cache-Control "no-cache, max-age=0"
+	header / Cache-Control "no-cache"
+
+	header {
+		Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), interest-cohort=()"
+		Cross-Origin-Opener-Policy same-origin
+		Cross-Origin-Resource-Policy same-origin
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+
+
+	# Anonymous, cookieless visit counts. The tracker and its endpoint are served from hooty.org
+	# itself, so no third party sees a request and the page's own CSP needs no exception.
+	@plausibleScript path /js/pp.js
+	reverse_proxy @plausibleScript localhost:8098 {
+		rewrite /js/script.js
+	}
+	@plausibleEvent path /api/event /api/event/*
+	reverse_proxy @plausibleEvent localhost:8098
+}
