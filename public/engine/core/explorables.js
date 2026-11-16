@@ -2104,6 +2104,32 @@ export const WIDGETS = {
       return { kids, say: `${name[0].toUpperCase() + name.slice(1)}: ${why}, so it ${floats ? 'floats' : 'sinks'}. The weight never changed; the shape did.` };
     },
   },
+  pressure: {
+    subject: 'science', about: 'A block pressing on sand. The same push spread over a wide area hardly sinks, but squeezed into a small area it sinks deep. Pressure is force divided by area, in newtons per square centimetre. For pressure, force per unit area, thrust, why a nail or a knife cuts, snowshoes, liquid pressure growing with depth, atmospheric pressure.',
+    sliders: [['force', 'Your push (newtons)', 20, 200, 20, 100], ['area', 'Area it presses on (square cm)', 1, 20, 1, 5]],
+    draw(v) {
+      const press = v.force / v.area, floor = 214, sink = Math.min(34, press / 7);
+      const w = 26 + Math.sqrt(v.area) * 24, h = 46, x = 300 - w / 2, yTop = floor - h + sink;
+      const arrow = (cx, top, len, colour, word) => [L(cx, top - len, cx, top - 6, colour, 6), s('polygon', { points: `${cx - 9},${top - len + 12} ${cx + 9},${top - len + 12} ${cx},${top - 2}`, fill: colour }), T(cx, top - len - 8, word, { z: 13, f: colour })];
+      const kids = [
+        R(0, floor, W, 90, '#f4e6c8', { w: 0 }),
+        L(0, floor, W, floor, '#8a6d3b', 3),
+        R(x, yTop, w, h, C.o, { r: 7, w: 3 }),
+        T(300, yTop + h / 2 + 6, `${v.force} N`, { z: 18, f: '#fff', w: 700 }),
+        ...arrow(300, yTop, 26 + v.force / 8, C.p, `${v.force} N`),
+        T(300, 40, press >= 60 ? 'It presses hard, so it sinks deep' : press >= 15 ? 'It presses firmly and sinks a little' : 'It is spread out, so it hardly sinks', { z: 22, f: press >= 60 ? '#058a68' : press >= 15 ? '#c2510e' : '#6b5a8a' }),
+        T(300, 70, `Pressure = ${v.force} N ÷ ${v.area} cm² = ${num(press, 1)} N per cm²`, { z: 16, w: 600 }),
+        T(300, 300, v.area >= 10 ? `The same ${v.force} N over ${v.area} cm² is only ${num(press, 1)} N per cm²: a wide area shares the push.` : `The same ${v.force} N in ${v.area} cm² is ${num(press, 1)} N per cm²: a small area presses harder.`, { z: 15, w: 600, f: '#6b5a8a' }),
+        T(x + w / 2, floor + 22, `${v.area} cm² touching the sand`, { z: 14, f: '#6b5a8a' }),
+      ];
+      const say = press >= 60
+        ? `You are pushing with ${v.force} newtons on ${v.area} square centimetres, so the pressure is ${num(press, 1)} newtons per square centimetre. A small area makes the same push press much harder, which is why a nail goes in and a flat hand does not.`
+        : press >= 15
+          ? `The pressure is ${v.force} divided by ${v.area}, about ${num(press, 1)} newtons per square centimetre. It sinks a little, and the sand holds it up.`
+          : `The same ${v.force} newtons is spread over ${v.area} square centimetres, so the pressure is only ${num(press, 1)} newtons per square centimetre. A wide area shares the push out, so it hardly sinks.`;
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

@@ -985,6 +985,17 @@ export const KITS = {
       { say: 'Add four buyers, then set the new equilibrium price.', when: 'price == 120 and buyers == 4', then: 'Four more buyers shift demand right, so the market settles at the higher price of ₹120.' },
     ],
   },
+  pressure: {
+    grades: [7, 10],
+    match: [/\bpressure\b/, /per unit area|force per unit/, /\bthrust\b/, /atmospheric pressure|air pressure/, /liquids? pressure|pressure .{0,24}(depth|liquid)/, /newtons? per square/],
+    title: 'Press with the same push on a smaller area',
+    takeaway: 'Pressure is force spread over area: the same push in a smaller area presses harder, which is why a nail or a knife goes in.',
+    tasks: [
+      { say: 'Spread the same push over 10 cm².', when: 'area == 10', then: 'A wide area gives a low pressure: the block barely sinks.' },
+      { say: 'Squeeze the whole push into 1 cm².', when: 'area == 1', then: 'The same force in 1 cm² gives the highest pressure: it sinks deep.' },
+      { say: 'Push with 200 N on 2 cm².', when: 'force == 200 and area == 2', then: '200 N on 2 cm² is 100 N per cm².' },
+    ],
+  },
   atom: {
     grades: [9, 9], perChapter: 3,
     match: [/atomic number/, /mass number/, /\bisotopes?\b/, /valenc/, /electron(ic)? (shell|configuration|distribution)/, /\bprotons?\b/, /\bneutrons?\b/, /stationary states|fixed circular|orbits or shells/, /2n²|2n2/, /octet|outermost shell/],
