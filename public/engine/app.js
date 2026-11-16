@@ -1186,7 +1186,29 @@ function lessonBar(count) {
     el('div', { class: 'lesson__progress', role: 'progressbar', 'aria-label': 'Lesson progress', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': '0' }, [el('span', { style: { width: '0%' } })]),
     el('div', { class: 'lesson__count', text: `0/${count}` }),
     highlightToggle(),
+    el('button', { class: 'icon-btn', type: 'button', 'aria-label': t('shareLesson'), title: t('shareLesson'), onclick: shareLesson }, [icon('share')]),
   ]);
+}
+
+// A lesson now has an address of its own (see the deep-link block). A teacher or a parent can send it on:
+// the phone share sheet where there is one, otherwise the address goes to the clipboard.
+async function shareLesson() {
+  const url = location.href;
+  const title = router.lesson?.title ? `${router.lesson.title} | Hooty` : 'Hooty';
+  try {
+    if (navigator.share) {
+      await navigator.share({ title, url });
+      return;
+    }
+  } catch {
+    // the share sheet was dismissed: fall through and copy instead
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    toast(t('linkCopied'));
+  } catch {
+    toast(url);   // no clipboard (or blocked): show the address so it can be copied by hand
+  }
 }
 
 // Marker-pen button: switches key-word highlighting on or off without leaving the lesson.

@@ -15,6 +15,7 @@ const PATHS = {
   grownups: `<circle ${STROKE} cx="9" cy="8" r="3.2"/><path ${STROKE} d="M3.2 19.5c0-3.3 2.6-5.6 5.8-5.6s5.8 2.3 5.8 5.6"/><circle ${STROKE} cx="17.4" cy="9.4" r="2.4"/><path ${STROKE} d="M16.8 14.2c2.4-.2 4.2 1.4 4.2 4"/>`,
   settings: `<circle ${STROKE} cx="12" cy="12" r="3.2"/><path ${STROKE} d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/>`,
   close: `<path ${STROKE} d="M6 6l12 12M18 6 6 18"/>`,
+  share: `<circle ${STROKE} cx="18" cy="5.5" r="2.6"/><circle ${STROKE} cx="6" cy="12" r="2.6"/><circle ${STROKE} cx="18" cy="18.5" r="2.6"/><path ${STROKE} d="m8.3 10.7 7.4-3.9M8.3 13.3l7.4 3.9"/>`,
   back: `<path ${STROKE} d="M14.5 5.5 8 12l6.5 6.5"/>`,
   check: `<path ${STROKE} stroke-width="3.2" d="M5 12.8 10 17.5 19 7"/>`,
   cross: `<path ${STROKE} stroke-width="3.2" d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>`,
