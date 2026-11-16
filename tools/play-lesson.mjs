@@ -80,6 +80,10 @@ console.log('topic scene:', JSON.stringify(scene));
 if (!scene.present) console.log('note: this lesson declares no topic scene (art pending)');
 if (scene.present && !scene.loaded) problems.push(`topic scene failed to load: ${scene.src}`);
 
+const TRACE = !!process.env.TRACE;
+const t0 = Date.now();
+const trace = (m) => { if (TRACE) console.log(`  [${((Date.now() - t0) / 1000).toFixed(1)}s] ${m}`); };
+
 const seen = [];
 const activityIds = new Map();
 let steps = 0;
@@ -122,7 +126,9 @@ for (; steps < 60; steps++) {
     break;
   }
 
+  trace(`step ${steps}: ${state.kind} ${state.progress || ''}`);
   // --- answer whatever is on screen -------------------------------
+  trace('  text input');
   // 1. text input (fill blank / type answer)
   const input = page.locator('.text-input:visible:not([disabled])').first();
   if (await input.count()) {
@@ -134,6 +140,7 @@ for (; steps < 60; steps++) {
     else if (state.kind !== 'explain') problems.push(`no answer on file for text input: ${prompt.trim().slice(0, 80)}`);
   }
 
+  trace('  match pairs');
   // 2a. match pairs: pick a left-column item, then try the right-hand items
   //     one at a time until the correct partner is found. The right column is
   //     shuffled, so the partner cannot be assumed to be the first one.
@@ -165,6 +172,7 @@ for (; steps < 60; steps++) {
     }
   }
 
+  trace('  drag label');
   // 2b. drag-label: pick a chip, then click its target on the picture.
   const chip = page.locator('.label-chip:not(.label-chip--placed)').first();
   if (await chip.count()) {
@@ -177,6 +185,7 @@ for (; steps < 60; steps++) {
     }
   }
 
+  trace('  choice');
   // 3. multiple choice / true-false / listen / watch
   const choice = page.locator('.option:not([disabled]), .tf-btn:not([disabled])').first();
   if (await choice.count()) {
@@ -184,10 +193,17 @@ for (; steps < 60; steps++) {
     await page.waitForTimeout(500);
   }
 
+  trace('  ordering');
   // 4. ordering: place every chip in the order the pack says is right. The app shuffles the pool, so
   //    clicking it blindly builds a wrong order, the question comes back and the walk looked stuck.
-  const orderPrompt = (await page.locator('.activity__prompt').first().textContent().catch(() => '')) || '';
-  const wanted = orders.get(String(orderPrompt).replace(/\s+/g, ' ').trim());
+  // Read it without waiting: most activities (passage, concept, worked) have no .activity__prompt, and a
+  // locator read on a missing element blocks for the 30-second action timeout on every step.
+  const orderPrompt = (await page.evaluate(() => document.querySelector('.activity__prompt')?.textContent || '').catch(() => '')) || '';
+  const candidates = orders.get(String(orderPrompt).replace(/\s+/g, ' ').trim()) || [];
+  const onScreen = await page.evaluate(() => [...document.querySelectorAll('.order-pool .order-chip')].map((b) => (b.textContent || '').trim())).catch(() => []);
+  const sameSet = (a, b) => a.length === b.length && [...a].sort().every((v, i) => v === [...b].sort()[i]);
+  const wanted = candidates.find((list) => sameSet(list, onScreen)) || (candidates.length === 1 ? candidates[0] : null);
+  if (TRACE) trace(`    order: ${candidates.length} candidate(s), picked=${wanted ? 'yes' : 'no'}, chips=${JSON.stringify(onScreen).slice(0, 140)}`);
   if (wanted) {
     for (const text of wanted) {
       const placed = await page.evaluate((t) => {
@@ -207,6 +223,7 @@ for (; steps < 60; steps++) {
     await page.waitForTimeout(180);
   }
 
+  trace('  submit');
   // 5. submit / continue. Text activities put their Check button in
   //    .input-row, not .activity__actions.
   // Prefer an enabled button. After a graded answer the "Check" button in

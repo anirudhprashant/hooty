@@ -98,7 +98,12 @@ export function loadOrders(root = DEFAULT_ROOT) {
           for (const a of lesson.activities || []) {
             if (a.type !== 'dragorder' || !a.prompt || !Array.isArray(a.items) || a.items.length < 2) continue;
             const key = norm(a.prompt);
-            if (!orders.has(key)) orders.set(key, a.items.map((x) => norm(x)));
+            const list = a.items.map((x) => norm(x));
+            // "Put these numbers in order" appears in several lessons with different numbers, so keep every
+            // order for a prompt and let the walker pick the one whose items match what is on screen.
+            const all = orders.get(key) || [];
+            if (!all.some((x) => x.length === list.length && x.every((v, i) => v === list[i]))) all.push(list);
+            orders.set(key, all);
           }
         }
       }
