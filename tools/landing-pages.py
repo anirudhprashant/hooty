@@ -18,7 +18,7 @@ TODAY = '2026-11-16'
 esc = lambda s: html.escape(str(s or ''), quote=True)
 
 CSS = """
-:root { --ink:#2b2536; --dim:#6b6478; --pink:#fff3f8; --card:#ffffff; --line:#efdbe6; --accent:#e4557e; }
+:root { --ink:#2b2536; --dim:#6b6478; --pink:#fff3f8; --card:#ffffff; --line:#efdbe6; --accent:#b02a52; }
 * { box-sizing:border-box; }
 body { margin:0; background:var(--pink); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
 a { color:var(--accent); }
@@ -66,7 +66,9 @@ def page(title, desc, path, body):
 </head>
 <body>
 <div class="wrap">
+<main>
 {body}
+</main>
 <footer>Hooty is free, needs no sign-up, and keeps a child's progress on their own device.
 <a href="/">Open Hooty</a>.</footer>
 </div>

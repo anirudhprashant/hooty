@@ -213,8 +213,8 @@ function subjectTabs() {
   const wrap = el('div', { class: 'tabs-block' });
   {
     const g = activeGrade();
-    const row = el('div', { class: 'subject-tabs grade-tabs', role: 'tablist', 'aria-label': 'Class' }, grades.map((x) => el('button', {
-      class: `subject-tab grade-tab${x === g ? ' is-on' : ''}`, type: 'button', role: 'tab', 'aria-selected': String(x === g),
+    const row = el('div', { class: 'subject-tabs grade-tabs', role: 'group', 'aria-label': 'Class' }, grades.map((x) => el('button', {
+      class: `subject-tab grade-tab${x === g ? ' is-on' : ''}`, type: 'button', 'aria-pressed': String(x === g),
       onclick: () => switchGrade(x),
     }, [x === 'mine' ? 'My books' : `Class ${x}`])));
     row.append(el('button', { class: 'subject-tab grade-tab grade-tab--add', type: 'button', onclick: () => go('addbook') }, ['+ Add my book']));
@@ -642,12 +642,13 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
   const node = el('button', {
     class: `node${rec ? ' node--done' : ''}${boss ? ' node--boss' : ''}${isCurrent ? ' node--current' : ''}`,
     type: 'button', style: { gridColumn: String(cell.col + 1), gridRow: String(cell.row + 1) },
-    'aria-label': `${title}${rec ? ', done' : isCurrent ? ', next up' : ''}`,
   }, [
     el('span', { class: 'node__badge', 'aria-hidden': 'true' }, [glyph]),
     el('span', { class: 'node__body' }, [
       el('span', { class: 'node__title', text: title }),
       el('span', { class: 'node__meta', text: meta }),
+      rec ? el('span', { class: 'visually-hidden', text: ', done' })
+        : isCurrent ? el('span', { class: 'visually-hidden', text: ', next up' }) : null,
     ]),
     isCurrent ? el('span', { class: 'node__start', 'aria-hidden': 'true', text: rec ? '' : t('start') }) : null,
   ]);
@@ -736,6 +737,7 @@ function screenLesson() {
     locked: false,
   };
 
+  wrap.append(el('h1', { class: 'visually-hidden', text: lesson.title || t('path') }));
   wrap.append(lessonBar(activities.length));
 
   // A picture of what this lesson is about, so the child sees the topic
@@ -1173,7 +1175,7 @@ function lessonBar(count) {
       class: 'icon-btn', type: 'button', 'aria-label': 'Leave lesson',
       onclick: () => { session = null; go(router.backScreen || 'home'); },
     }, [icon('close')]),
-    el('div', { class: 'lesson__progress', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': '0' }, [el('span', { style: { width: '0%' } })]),
+    el('div', { class: 'lesson__progress', role: 'progressbar', 'aria-label': 'Lesson progress', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': '0' }, [el('span', { style: { width: '0%' } })]),
     el('div', { class: 'lesson__count', text: `0/${count}` }),
     highlightToggle(),
   ]);
@@ -1584,19 +1586,19 @@ function screenParent() {
   const fixed = retried.filter((x) => x.last).length;
   const pairs = Object.entries(l?.post || {}).filter(([id]) => l?.pre?.[id]?.n);
   if (pairs.length) wrap.append(el('section', { class: 'growth-card' }, [
-    el('h3', { class: 'section-title', text: 'Before and after each chapter' }),
+    el('h2', { class: 'section-title', text: 'Before and after each chapter' }),
     el('ul', { class: 'growth-list' }, pairs.map(([id, p]) => el('li', { text: `${p.title}: ${Math.round((100 * l.pre[id].c) / l.pre[id].n)}% before, ${p.pct}% on the chapter challenge` }))),
     el('p', { class: 'growth-note', text: 'A small sample of questions, so treat this as a guide, not a grade.' }),
   ]));
   wrap.append(el('section', { class: 'growth-card' }, [
-    el('h3', { class: 'section-title', text: 'Is it sticking?' }),
+    el('h2', { class: 'section-title', text: 'Is it sticking?' }),
     el('p', { text: retried.length
       ? `Of ${retried.length} question${retried.length === 1 ? '' : 's'} missed the first time and tried again, ${fixed} ${fixed === 1 ? 'is' : 'are'} now right.`
       : 'Questions missed the first time come back later. This will show how many are now right.' }),
     l?.retakes?.n ? el('p', { class: 'growth-note', text: `After a second miss, Hooty shows the one line that taught it and asks a different question about the same idea. ${l.retakes.fixed} of ${l.retakes.n} of those were then answered right.` }) : null,
   ]));
 
-  wrap.append(el('h3', { class: 'section-title', text: t('progressByUnit') }));
+  wrap.append(el('h2', { class: 'section-title', text: t('progressByUnit') }));
   const list = el('div', { class: 'unit-list' });
   for (const pack of gradePacks()) {
     for (const unit of pack.units) {
@@ -1609,14 +1611,14 @@ function screenParent() {
       const pct = total ? Math.round((done / total) * 100) : 0;
       list.append(el('div', { class: 'unit-row' }, [
         el('span', { class: 'unit-row__name', text: unit.title }),
-        el('div', { class: 'meter', role: 'progressbar', 'aria-valuenow': String(pct), 'aria-valuemin': '0', 'aria-valuemax': '100' }, [el('span', { style: { width: pct + '%' } })]),
+        el('div', { class: 'meter', role: 'progressbar', 'aria-label': `${unit.title} progress`, 'aria-valuenow': String(pct), 'aria-valuemin': '0', 'aria-valuemax': '100' }, [el('span', { style: { width: pct + '%' } })]),
         el('span', { class: 'unit-row__pct', text: `${done}/${total}` }),
       ]));
     }
   }
   wrap.append(list);
 
-  wrap.append(el('h3', { class: 'section-title', text: t('weakSpots') }));
+  wrap.append(el('h2', { class: 'section-title', text: t('weakSpots') }));
   const weak = weakSpots(10);
   if (!weak.length) {
     wrap.append(el('div', { class: 'empty' }, [el('p', { text: t('noWeakSpots') })]));
@@ -1625,7 +1627,7 @@ function screenParent() {
     wrap.append(el('div', { class: 'activity__actions' }, [el('button', { class: 'btn', type: 'button', onclick: () => go('practice') }, [t('practiseTab')])]));
   }
 
-  wrap.append(el('h3', { class: 'section-title', text: 'Your data' }));
+  wrap.append(el('h2', { class: 'section-title', text: 'Your data' }));
   const dl = el('div', { class: 'activity__actions' });
   dl.append(el('button', {
     class: 'btn btn--ghost', type: 'button',
@@ -1668,7 +1670,7 @@ function weekStrip(l) {
   const top = Math.max(goal, ...days.map((x) => x.xp));
   const met = days.filter((x) => x.xp >= goal).length;
   return el('section', { class: 'growth-card week' }, [
-    el('h3', { class: 'section-title', text: 'Last 7 days' }),
+    el('h2', { class: 'section-title', text: 'Last 7 days' }),
     el('p', { class: 'week__sum', text: met ? `Daily goal reached on ${met} of the last 7 days.` : 'Reach the daily goal to light up a day.' }),
     el('div', { class: 'week__bars', role: 'img', 'aria-label': days.map((x) => `${x.name} ${x.xp} points`).join(', ') },
       days.map((x) => el('div', { class: `week__day${x.xp >= goal ? ' is-met' : ''}${x.today ? ' is-today' : ''}` }, [
@@ -1772,7 +1774,7 @@ function screenSettings() {
     }
   }
   if (credits.length) {
-    wrap.append(el('h3', { class: 'section-title', text: 'Picture credits' }));
+    wrap.append(el('h2', { class: 'section-title', text: 'Picture credits' }));
     wrap.append(el('p', { class: 'section-sub', text: 'The photographs and old maps in the lessons come from Wikimedia Commons. Tap one to see its page and licence.' }));
     wrap.append(el('ul', { class: 'credit-list' }, credits.map((c) => el('li', {}, [
       el('a', { class: 'credit-link', href: safeLink(c.url), target: '_blank', rel: 'noopener noreferrer', text: c.text }),
