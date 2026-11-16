@@ -88,9 +88,10 @@ def stamp():
     # without this the browser finds them one trip at a time. The first book is the one a new visitor opens.
     page = open(f'{PUB}/index.html').read()
     hints = ''.join(f'<link rel="modulepreload" href="./{f}">' for f in files if f.endswith('.js'))
+    # The book is NOT preloaded any more. It used to preload index.json's first pack (Class 6 Social Science)
+    # for every visitor, which is a 1.7 MB file, about 290 KB over the wire, and wasted on anyone opening
+    # another class. loadContent fetches the index and then only the book the child is actually in.
     data = ['themes/index.json', 'content/index.json'] + [f"themes/{t['id']}/theme.json" for t in json.load(open(f'{PUB}/themes/index.json'))['themes']]
-    first = json.load(open(f'{PUB}/content/index.json'))['packs'][:1]
-    data += [f"content/packs/{p['id']}/pack.json" for p in first]
     hints += ''.join(f'<link rel="preload" as="fetch" crossorigin="anonymous" href="./{f}">' for f in data)
     open(f'{PUB}/index.html', 'w').write(re.sub(r'<!--PRELOAD-->.*?<!--/PRELOAD-->', lambda m: f'<!--PRELOAD-->{hints}<!--/PRELOAD-->', page, count=1, flags=re.S))
     h = hashlib.sha1()

@@ -67,7 +67,9 @@ function loadClips() {
   if (!clips) clips = fetch(new URL('manifest.json', AUDIO_BASE)).then((r) => (r.ok ? r.json() : { keys: [] })).then((m) => new Set(m.keys)).catch(() => new Set());
   return clips;
 }
-loadClips();
+// 240 KB of clip keys is not needed until something is about to be spoken, and fetching it at first paint
+// cost every visit a slow request it usually never used. The lesson player warms it on entry instead.
+export function warmClips() { loadClips(); }
 
 function browserSpeak(text, lang) {
   if (typeof speechSynthesis === 'undefined') return false;

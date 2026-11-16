@@ -1,7 +1,7 @@
 // The app shell. Screens: home, path (skill trail), lesson player, parent view,
 // settings, theme picker, pack picker. Vanilla, no framework.
 
-import { el, clear, button, confetti, sparkle, speak, stopSpeech, isSpeaking } from './core/dom.js';
+import { el, clear, button, confetti, sparkle, speak, stopSpeech, isSpeaking, warmClips } from './core/dom.js';
 import { sfx, unlockAudio, configureSfx, haptic } from './core/sfx.js';
 import { realise } from './core/gen.js';
 import { renderModel } from './core/models.js';
@@ -696,6 +696,7 @@ function startLesson(lesson) {
   router.backScreen = lesson.isPractice ? 'practice' : 'path';
   router.lesson = lesson;
   router.packId = packOfLesson(lesson)?.id || router.packId || currentPack()?.id;
+  warmClips();   // the clip list is only needed once a lesson can speak: start it now, never on the home screen
   go('lesson');
 }
 
