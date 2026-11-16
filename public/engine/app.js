@@ -26,6 +26,10 @@ let themes = [];
 let packs = [];
 let currentThemeId = null;
 let router = { screen: 'home', args: {} };
+// The link this page was opened with. Captured now, because the very first render writes the hash and
+// would overwrite an incoming #/lesson/... before we have had a chance to open it.
+let bootHash = location.hash;
+let linkPending = /^#\/(book|chapter|lesson)\//i.test(bootHash);
 
 // --- helpers ---------------------------------------------------------------
 
@@ -690,6 +694,7 @@ function resolveMedia(activity, lesson) {
 function startLesson(lesson) {
   router.backScreen = lesson.isPractice ? 'practice' : 'path';
   router.lesson = lesson;
+  router.packId = packOfLesson(lesson)?.id || router.packId || currentPack()?.id;
   go('lesson');
 }
 
@@ -1785,6 +1790,83 @@ function go(screen) {
   render();
 }
 
+// --- deep links -------------------------------------------------------------
+// Before this, the address bar never changed: a lesson could not be linked, shared with a class, or
+// found by a search engine. #/book/<pack>, #/chapter/<pack>/<chapter> and #/lesson/<pack>/<lesson>
+// now open that screen directly, and the hash is written as the child moves.
+
+function packOfLesson(lesson) {
+  for (const p of packs) {
+    for (const u of p.units || []) {
+      for (const c of u.chapters || []) {
+        for (const x of c.lessons || []) if (x.id === lesson.id) return p;
+      }
+    }
+  }
+  return null;
+}
+
+function hashFor() {
+  if (router.screen === 'lesson' && router.lesson?.id) {
+    const p = packOfLesson(router.lesson) || (router.packId ? packById(router.packId) : null);
+    if (p) return `#/lesson/${p.id}/${router.lesson.id}`;
+  }
+  if (router.screen === 'path') {
+    const p = currentPack();
+    if (p) return `#/book/${p.id}`;
+  }
+  if (router.screen === 'home' || router.screen === 'packs') return '#/';
+  return null;
+}
+
+let hashWriting = false;
+function syncHash() {
+  if (linkPending) return;
+  const next = hashFor();
+  if (!next || location.hash === next) return;
+  hashWriting = true;
+  try { history.replaceState(null, '', next); } finally { hashWriting = false; }
+}
+
+// Open whatever the address bar names. Returns true when it took over the screen.
+async function openDeepLink(href = location.hash) {
+  const m = href.match(/^#\/(book|chapter|lesson)\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/i);
+  if (!m) return false;
+  const kind = m[1].toLowerCase(), packId = m[2], itemId = m[3];
+  const known = packIndex.some((p) => p.id === packId) || !!packById(packId);
+  if (!known) return false;
+  if (!(await ensurePack(packId))) return false;
+  const pack = packById(packId);
+  if (!pack) return false;
+  const l = activeLearner();
+  if (l) {
+    if (pack.grade != null) l.grade = String(pack.grade);
+    l.packId = pack.id;
+    await persist();
+  }
+  router.packId = pack.id;
+  if (kind === 'book') { go('path'); return true; }
+
+  let chapter = null, lesson = null, unitId = null, chapterId = null;
+  for (const u of pack.units || []) {
+    for (const c of u.chapters || []) {
+      if (kind === 'chapter' && c.id === itemId) { chapter = c; unitId = u.id; chapterId = c.id; }
+      for (const x of c.lessons || []) {
+        if (kind === 'lesson' && x.id === itemId) { lesson = x; unitId = u.id; chapterId = c.id; }
+      }
+    }
+  }
+  if (kind === 'chapter' && chapter) {
+    const done = activeLearner()?.lessonsDone || {};
+    const list = chapter.lessons || [];
+    lesson = list.find((x) => !done[x.id]) || list[0] || null;
+  }
+  if (!lesson) { go('path'); return true; }
+  // Stamp the book on the lesson the way the trail does, or its picture and audio paths resolve wrong.
+  startLesson({ ...lesson, packId: pack.id, unitId, chapterId, lessonId: lesson.id });
+  return true;
+}
+
 function render() {
   const l = activeLearner();
   if (l) {
@@ -1819,6 +1901,7 @@ function render() {
   window.scrollTo({ top: 0, behavior: 'instant' });
   // Back on the Trail after some progress: open at the next lesson, not at the very top of the book.
   if (router.screen === 'path' && document.querySelector('.node--done')) document.querySelector('.node--current')?.scrollIntoView({ block: 'center', behavior: 'instant' });
+  syncHash();
 }
 
 // --- parent view -----------------------------------------------------------
@@ -1843,6 +1926,9 @@ async function main() {
   currentThemeId = themeId;
   applyTheme(themes.find((x) => x.id === themeId) || themes[0]);
   render();
+  const fromLink = await openDeepLink(bootHash);
+  linkPending = false;
+  if (fromLink === false && bootHash && bootHash !== '#/') history.replaceState(null, '', '#/');
   loadRestInBackground(activeGrade());
 
   if ('serviceWorker' in navigator) {
@@ -1884,6 +1970,8 @@ document.addEventListener('click', (e) => {
 // Anything that escapes a handler should not leave a child staring at a frozen screen.
 window.addEventListener('error', (e) => console.error('uncaught:', e.message));
 window.addEventListener('unhandledrejection', (e) => console.error('unhandled:', e.reason));
+
+window.addEventListener('hashchange', () => { if (hashWriting) return; linkPending = false; openDeepLink(); });
 
 main().catch((err) => {
   console.error(err);
