@@ -779,6 +779,10 @@ function screenLesson() {
   side.append(strip);
 
   const stage = el('div', { class: 'lesson__stage' });
+  // Declare the language of the lesson itself. A child can read a Hindi or Kannada book with the app's buttons
+  // in English, and without this a screen reader pronounces the lesson as English.
+  const bookLang = packById(lesson.packId)?.language;
+  if (bookLang && bookLang !== getLocale()) stage.setAttribute('lang', bookLang);
   wrap.append(stage);
 
   // The comic recap sits at the bottom of the lesson. It is revealed once
