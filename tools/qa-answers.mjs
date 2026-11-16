@@ -94,7 +94,9 @@ export function loadOrders(root = DEFAULT_ROOT) {
     }
     for (const unit of pack.units || []) {
       for (const chapter of unit.chapters || []) {
-        for (const lesson of chapter.lessons || []) {
+        // the chapter challenge (chapter.boss) holds its own dragorder questions and is a page of its own
+        const pages = [...(chapter.lessons || []), ...(chapter.boss ? [chapter.boss] : [])];
+        for (const lesson of pages) {
           for (const a of lesson.activities || []) {
             if (a.type !== 'dragorder' || !a.prompt || !Array.isArray(a.items) || a.items.length < 2) continue;
             const key = norm(a.prompt);
