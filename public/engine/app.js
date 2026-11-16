@@ -96,7 +96,8 @@ async function loadPack(p) {
       const own = await getBook(p.id);
       return own ? { ...own, base: '', glossary: own.glossaryData, matcher: buildMatcher(own.glossaryData) } : null;
     }
-    const full = await getJson(`./content/packs/${p.id}/pack.json`);
+    // ?v is the book's content hash, so a published book is cached hard at the edge and a new one is a new URL.
+    const full = await getJson(`./content/packs/${p.id}/pack.json${p.v ? `?v=${p.v}` : ''}`);
     const pack = { ...full, base: `./content/packs/${p.id}`, glossary: null, matcher: buildMatcher(null) };
     // A pack opts in with "glossary": "glossary.json" in pack.json. Word meanings arrive just after the book:
     // nothing on the home screen needs them, so the child does not wait for them.

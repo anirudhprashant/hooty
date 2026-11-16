@@ -94,6 +94,23 @@ def stamp():
     data = ['themes/index.json', 'content/index.json'] + [f"themes/{t['id']}/theme.json" for t in json.load(open(f'{PUB}/themes/index.json'))['themes']]
     hints += ''.join(f'<link rel="preload" as="fetch" crossorigin="anonymous" href="./{f}">' for f in data)
     open(f'{PUB}/index.html', 'w').write(re.sub(r'<!--PRELOAD-->.*?<!--/PRELOAD-->', lambda m: f'<!--PRELOAD-->{hints}<!--/PRELOAD-->', page, count=1, flags=re.S))
+    # Every book gets a content hash in the index. The app then asks for pack.json?v=<hash>, an address that
+    # never changes, so Cloudflare can keep the 1.7 MB file instead of revalidating it through the tunnel on
+    # every visit. Caddy sets the long cache only for that versioned URL; the bare one stays no-cache.
+    idxf = f'{PUB}/content/index.json'
+    idx = json.load(open(idxf))
+    changed = False
+    for p in idx['packs']:
+        pf = f'{PUB}/content/packs/{p["id"]}/pack.json'
+        if os.path.exists(pf):
+            v = hashlib.sha256(open(pf, 'rb').read()).hexdigest()[:10]
+            if p.get('v') != v:
+                p['v'] = v
+                changed = True
+    if changed:
+        json.dump(idx, open(idxf, 'w'), indent=2, ensure_ascii=False)
+        open(idxf, 'a').write('\n')
+
     h = hashlib.sha1()
     for f in files + ['index.html']: h.update(open(f'{PUB}/{f}', 'rb').read())
     s = open(f'{PUB}/sw.js').read()
