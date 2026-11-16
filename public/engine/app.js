@@ -1837,6 +1837,7 @@ function packOfLesson(lesson) {
     for (const u of p.units || []) {
       for (const c of u.chapters || []) {
         for (const x of c.lessons || []) if (x.id === lesson.id) return p;
+        if (c.boss && (c.boss.id === lesson.id || bossId(c) === lesson.id)) return p;
       }
     }
   }
@@ -1884,12 +1885,16 @@ async function openDeepLink(href = location.hash) {
   router.packId = pack.id;
   if (kind === 'book') { go('path'); return true; }
 
-  let chapter = null, lesson = null, unitId = null, chapterId = null;
+  let chapter = null, lesson = null, unitId = null, chapterId = null, isBoss = false;
   for (const u of pack.units || []) {
     for (const c of u.chapters || []) {
       if (kind === 'chapter' && c.id === itemId) { chapter = c; unitId = u.id; chapterId = c.id; }
       for (const x of c.lessons || []) {
         if (kind === 'lesson' && x.id === itemId) { lesson = x; unitId = u.id; chapterId = c.id; }
+      }
+      // A chapter challenge is a page of its own (the trail calls it a boss) and carries its own id.
+      if (kind === 'lesson' && c.boss && bossId(c) === itemId) {
+        lesson = c.boss; unitId = u.id; chapterId = c.id; isBoss = true;
       }
     }
   }
@@ -1900,7 +1905,9 @@ async function openDeepLink(href = location.hash) {
   }
   if (!lesson) { go('path'); return true; }
   // Stamp the book on the lesson the way the trail does, or its picture and audio paths resolve wrong.
-  startLesson({ ...lesson, packId: pack.id, unitId, chapterId, lessonId: lesson.id });
+  const lessonId = isBoss ? itemId : lesson.id;
+  const title = isBoss ? (lesson.title || t('bossChallenge')) : lesson.title;
+  startLesson({ ...lesson, title, packId: pack.id, unitId, chapterId, lessonId, isBoss: isBoss || undefined });
   return true;
 }
 
