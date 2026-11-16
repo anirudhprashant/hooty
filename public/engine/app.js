@@ -450,7 +450,7 @@ function screenHome() {
   copy.append(actions);
   stage.append(art, copy);
   wrap.append(stage);
-  if (!named) wrap.append(nameCard());
+  if (!named && ready) wrap.append(nameCard());   // not while the book is still loading: the second render would wipe a name half typed
 
   // today: goal ring, streak, next sticker. Rewards are visible from day one.
   const goal = l?.dailyGoal || 50;
