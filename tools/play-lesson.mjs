@@ -232,6 +232,11 @@ for (; steps < 60; steps++) {
   const submit = page
     .locator('.activity__actions .btn--primary:not([disabled]), .input-row .btn--primary:not([disabled])')
     .first();
+  // A feedback sheet covers the activity and owns the next step ("Next", "Try a different question"). Its button
+  // comes after the activity's own in the DOM, so .first() picked the activity's Check again and again: the app
+  // ignored it because the answer was already graded, and the walk looked stuck on the same question forever.
+  const sheetUp = (await page.locator('.sheet').count()) > 0;
+  const sheetBtn = page.locator('.sheet .btn--primary:not([disabled])').first();
   // A concept card is a conversation: tap Next through Hooty's lines until the button reads "Got it".
   for (let n = 0; n < 12 && state.kind === 'concept'; n++) {
     const b = page.locator('.activity--concept .btn--primary').first();
@@ -239,7 +244,10 @@ for (; steps < 60; steps++) {
     await b.click().catch(() => {});
     await page.waitForTimeout(250);
   }
-  if (await submit.count()) {
+  if (sheetUp && (await sheetBtn.count())) {
+    await sheetBtn.click().catch(() => {});
+    await page.waitForTimeout(600);
+  } else if (await submit.count()) {
     const label = (await submit.textContent().catch(() => '')) || '';
     await submit.click().catch(() => {});
     await page.waitForTimeout(600);
