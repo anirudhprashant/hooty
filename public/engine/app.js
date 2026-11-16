@@ -150,13 +150,18 @@ function activeGrade() {
   return all.includes(g) ? g : (all.includes('6') ? '6' : all[0]);
 }
 
-async function loadContent() {
+// The shell is tiny (two index files and the themes); the book is 1.7 MB. They load in two steps so the
+// first screen can paint before the book arrives instead of waiting for it. See main().
+async function loadShell() {
   const [themeIdx, packIdx] = await Promise.all([getJson('./themes/index.json'), getJson('./content/index.json')]);
   themes = await Promise.all(themeIdx.themes.map(async (t) => {
     const full = await getJson(`./themes/${t.id}/theme.json`);
     return { ...full, base: './themes' };
   }));
   packIndex = [...packIdx.packs, ...await listBooks()];
+}
+
+async function loadFirstBook() {
   const grade = activeGrade();
   const mine = packIndex.filter((p) => String(p.grade) === grade);
   const saved = activeLearner()?.packId;
@@ -413,6 +418,7 @@ function screenHome() {
   const wrap = el('div', { class: 'page screen screen--home' });
   { const tabs = subjectTabs(); if (tabs) wrap.append(tabs); }
   const next = nextLesson();
+  const ready = !!currentPack();   // the book is still downloading on a slow connection: paint the stage, not a lie
   const started = Object.keys(l?.lessonsDone || {}).length > 0;
   const named = l?.name && !/^learner$/i.test(l.name);
   const due = practiceSet(10);
@@ -425,7 +431,7 @@ function screenHome() {
   const copy = el('div', { class: 'stage__copy' });
   copy.append(
     el('h2', { class: 'stage__title', text: named ? `Hi, ${l.name}!` : 'Ready to learn?' }),
-    el('p', { class: 'stage__sub', text: next ? (started ? 'Your next adventure is waiting.' : 'Your first lesson takes about four minutes.') : 'Every lesson done. Time to revise!' }),
+    el('p', { class: 'stage__sub', text: !ready ? t('bookLoading') : next ? (started ? 'Your next adventure is waiting.' : 'Your first lesson takes about four minutes.') : 'Every lesson done. Time to revise!' }),
   );
   const actions = el('div', { class: 'stage__actions' });
   const cta = el('button', { class: 'btn big-cta', type: 'button' }, [
@@ -436,7 +442,7 @@ function screenHome() {
     ]),
   ]);
   cta.addEventListener('click', () => (next ? startLesson(next) : go(due.length ? 'practice' : 'path')));
-  actions.append(cta);
+  if (ready) actions.append(cta); else actions.append(el('span', { class: 'stage__loading', text: t('bookLoading') }));
   if (due.length && next) {
     actions.append(el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => go('practice') },
       [icon('practice', { size: 22 }), t('reviewN', { n: due.length })]));
@@ -499,7 +505,7 @@ function screenHome() {
       el('span', { class: 'feature__sub', text: `${done} of ${totalLessons} lessons done` }),
     ]),
   ]);
-  wrap.append(el('section', { class: 'pair' }, [reviewCard, trailCard]));
+  if (ready) wrap.append(el('section', { class: 'pair' }, [reviewCard, trailCard]));
   wrap.append(el('p', { class: 'footer-note', text: t('privacy') }));
   return wrap;
 }
@@ -1924,12 +1930,20 @@ function render() {
 
 async function main() {
   await boot();
-  await loadContent();
+  await loadShell();
   const l = activeLearner();
   const themeId = l?.theme || themes[0]?.id;
   currentThemeId = themeId;
   applyTheme(themes.find((x) => x.id === themeId) || themes[0]);
-  render();
+  if (linkPending) {
+    // A shared lesson link is about to replace the home screen: do not paint home at all.
+    await loadFirstBook();
+    render();
+  } else {
+    render();                 // first paint: theme, stage and mascot, without waiting for the book
+    await loadFirstBook();
+    render();                 // the book is in: progress, next lesson and the cards
+  }
   const fromLink = await openDeepLink(bootHash);
   linkPending = false;
   if (fromLink === false && bootHash && bootHash !== '#/') history.replaceState(null, '', '#/');

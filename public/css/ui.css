@@ -170,6 +170,8 @@
 .stage__title { font-size: var(--fs-hero); font-weight: 700; margin: 0; }
 .stage__sub { color: var(--text-muted); font-size: var(--fs-lg); line-height: 1.35; margin: 0 0 var(--s3); max-width: 28ch; }
 .stage__actions { display: grid; gap: var(--s3); width: 100%; max-width: 520px; }
+/* First paint on a slow connection: the book is still arriving, so say so instead of showing a dead button. */
+.stage__loading { display: inline-flex; align-items: center; min-height: 56px; color: var(--text-muted); font-weight: 700; }
 
 .big-cta {
   min-height: 84px; padding: 14px 24px 14px 18px;
