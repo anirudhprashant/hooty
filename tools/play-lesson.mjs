@@ -89,10 +89,15 @@ for (; steps < 60; steps++) {
     const act = document.querySelector('.activity');
     if (!act) return { kind: null };
     const cls = [...act.classList].find((c) => c.startsWith('activity--')) || 'activity';
+    // A worked example or a concept card changes as the child clicks Next, without changing the prompt.
+    // Counting the lines shown and the button's own label makes "the same page" mean the same page.
+    const shown = act.querySelectorAll('.worked__step, .concept-talk__line, .worked__steps li').length;
+    const label = (act.querySelector('.activity__actions .btn--primary, .activity__actions .btn--block')?.textContent || '').trim();
     return {
       kind: cls.replace('activity--', ''),
       id: act.getAttribute('data-activity-id') || '',
       prompt: (act.querySelector('.activity__prompt')?.textContent || '').slice(0, 60),
+      progress: `${shown}|${label}`,
     };
   });
   if (!state.kind) break;
@@ -109,7 +114,7 @@ for (; steps < 60; steps++) {
 
   // The same activity rendering three times in a row means the walker is
   // stuck in a loop rather than progressing.
-  const marker = `${state.kind}|${state.id}|${state.prompt}`;
+  const marker = `${state.kind}|${state.id}|${state.prompt}|${state.progress || ''}`;
   activityIds.set(marker, (activityIds.get(marker) || 0) + 1);
   if (activityIds.get(marker) >= 3) {
     problems.push(`stuck on activity (repeated ${activityIds.get(marker)}x): ${state.kind} - ${state.prompt}`);
