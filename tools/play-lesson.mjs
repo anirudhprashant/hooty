@@ -9,12 +9,13 @@
 import { chromium } from 'playwright';
 import { existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { answerFor, loadAnswers, loadOrders } from './qa-answers.mjs';
+import { answerFor, loadAnswers, loadOrders, loadQuestions, questionKey } from './qa-answers.mjs';
 
 const URL = process.argv[2] || 'http://127.0.0.1:8111/sparkle/';
 const OUT = '/tmp/sparkle-shots';
 const answers = loadAnswers();
 const orders = loadOrders();   // prompt -> the item order the pack calls correct
+const questions = loadQuestions();   // prompt -> the option the pack calls correct
 
 function findChrome() {
   const root = `${process.env.HOME}/.cache/ms-playwright`;
@@ -186,10 +187,25 @@ for (; steps < 60; steps++) {
   }
 
   trace('  choice');
-  // 3. multiple choice / true-false / listen / watch
-  const choice = page.locator('.option:not([disabled]), .tf-btn:not([disabled])').first();
-  if (await choice.count()) {
-    await choice.click().catch(() => {});
+  // 3. multiple choice / true-false / listen / watch. Answer the option the pack calls right, so a walk
+  //    represents a child who knows, instead of tripping the re-teach on every question.
+  const choicePrompt = await page.evaluate(() => document.querySelector('.activity__prompt')?.textContent || '').catch(() => '');
+  const q = questions.get(questionKey(choicePrompt));
+  const options = page.locator('.option:not([disabled])');
+  const tfs = page.locator('.tf-btn:not([disabled])');
+  if (await options.count()) {
+    let idx = 0;
+    if (q && q.type === 'mcq' && Array.isArray(q.options)) {
+      const texts = await options.allTextContents();
+      const want = String(q.options[q.answer] ?? '').trim().toLowerCase();
+      const hit = texts.findIndex((x) => x.toLowerCase().includes(want) && want.length > 1);
+      if (hit >= 0) idx = hit;
+    }
+    await options.nth(idx).click().catch(() => {});
+    await page.waitForTimeout(500);
+  } else if (await tfs.count()) {
+    const idx = q && q.type === 'truefalse' ? (q.answer ? 0 : 1) : 0;
+    await tfs.nth(idx).click().catch(() => {});
     await page.waitForTimeout(500);
   }
 
