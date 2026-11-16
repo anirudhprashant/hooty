@@ -1950,6 +1950,33 @@ function render() {
 
 // --- boot ------------------------------------------------------------------
 
+// On the very first visit the app's data is fetched before the service worker controls the page, so it is
+// not cached and going offline afterwards shows "Hooty could not start". Hand the addresses the app used to
+// the worker once it is in charge; every later visit, including an offline one, then works.
+async function warmServiceWorker() {
+  const reg = await navigator.serviceWorker.ready.catch(() => null);
+  if (!reg) return;
+  let ctrl = navigator.serviceWorker.controller;
+  if (!ctrl) {
+    // The worker claims the page just after it activates; wait for the takeover instead of giving up.
+    ctrl = await new Promise((resolve) => {
+      const done = () => { navigator.serviceWorker.removeEventListener('controllerchange', done); resolve(navigator.serviceWorker.controller); };
+      navigator.serviceWorker.addEventListener('controllerchange', done);
+      setTimeout(done, 5000);
+    });
+  }
+  if (!ctrl) return;
+  const urls = ['./content/index.json', './themes/index.json'];
+  for (const t of themes) if (t && t.id) urls.push(`./themes/${t.id}/theme.json`);
+  const pack = currentPack();
+  if (pack) {
+    const card = packIndex.find((p) => p.id === pack.id);
+    urls.push(`./content/packs/${pack.id}/pack.json${card && card.v ? `?v=${card.v}` : ''}`);
+    if (pack.glossary) urls.push(`./content/packs/${pack.id}/${pack.glossary}`);
+  }
+  ctrl.postMessage({ type: 'warm', urls });
+}
+
 async function main() {
   await boot();
   await loadShell();
@@ -1976,6 +2003,7 @@ async function main() {
     // Registered after first paint: precaching the app must not compete with the first load.
     const reg = () => navigator.serviceWorker.register('./sw.js').catch(() => {});
     if ('requestIdleCallback' in window) requestIdleCallback(reg, { timeout: 4000 }); else setTimeout(reg, 2000);
+    warmServiceWorker();
   }
 }
 

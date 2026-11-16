@@ -2,7 +2,7 @@
 // after the first visit. Never caches anything that identifies a child:
 // there is nothing to cache but static files.
 
-const CACHE = 'sparkle-5655436dd9';
+const CACHE = 'sparkle-a8ada1e8ea';
 
 const SHELL = [
   './',
@@ -70,6 +70,28 @@ self.addEventListener('activate', (event) => {
         // An older version was running: reload every open page now, so nobody keeps looking at the old design.
         if (replaced) for (const c of await self.clients.matchAll({ type: 'window' })) c.navigate(c.url).catch(() => {});
       }),
+  );
+});
+
+// The very first visit happens before this worker controls the page, so the app's data (the book, the
+// indexes, the theme) is fetched without being cached, and going offline afterwards fails. Once the page is
+// controlled it sends the addresses it used; keep them, and the next offline visit works.
+self.addEventListener('message', (event) => {
+  const data = event.data || {};
+  if (data.type !== 'warm' || !Array.isArray(data.urls)) return;
+  event.waitUntil(
+    caches.open(CACHE).then(async (cache) => {
+      let kept = 0;
+      for (const url of data.urls.slice(0, 40)) {
+        try {
+          const res = await fetch(new Request(url, { credentials: 'same-origin' }));
+          if (res && res.ok) { await cache.put(new Request(url), res.clone()); kept += 1; }
+        } catch {
+          // offline or a 404: nothing to keep
+        }
+      }
+      return kept;
+    }),
   );
 });
 
