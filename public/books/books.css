@@ -22,3 +22,12 @@ ul.lessons li { padding:9px 0; border-bottom:1px solid var(--line); }
 ul.lessons li:last-child { border-bottom:0; }
 .grade { margin-top:30px; font-size:20px; }
 footer { margin-top:40px; font-size:14px; color:var(--dim); border-top:1px solid var(--line); padding-top:16px; }
+.searchbox { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; margin:0 0 22px; }
+.searchbox label { display:block; font-weight:700; margin-bottom:8px; }
+.searchbox input { width:100%; font:inherit; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--ink); }
+.searchbox input:focus { outline:3px solid rgba(176,42,82,.35); outline-offset:1px; }
+#book-results { list-style:none; margin:6px 0 0; padding:0; }
+#book-results .result { padding:10px 0; border-bottom:1px solid var(--line); }
+#book-results .result:last-child { border-bottom:0; }
+#book-results a { font-weight:700; text-decoration:none; }
+#book-results .result__meta { display:block; font-size:14px; color:var(--dim); }

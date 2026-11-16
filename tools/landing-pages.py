@@ -42,10 +42,19 @@ ul.lessons li { padding:9px 0; border-bottom:1px solid var(--line); }
 ul.lessons li:last-child { border-bottom:0; }
 .grade { margin-top:30px; font-size:20px; }
 footer { margin-top:40px; font-size:14px; color:var(--dim); border-top:1px solid var(--line); padding-top:16px; }
+.searchbox { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; margin:0 0 22px; }
+.searchbox label { display:block; font-weight:700; margin-bottom:8px; }
+.searchbox input { width:100%; font:inherit; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--ink); }
+.searchbox input:focus { outline:3px solid rgba(176,42,82,.35); outline-offset:1px; }
+#book-results { list-style:none; margin:6px 0 0; padding:0; }
+#book-results .result { padding:10px 0; border-bottom:1px solid var(--line); }
+#book-results .result:last-child { border-bottom:0; }
+#book-results a { font-weight:700; text-decoration:none; }
+#book-results .result__meta { display:block; font-size:14px; color:var(--dim); }
 """
 
 
-def page(title, desc, path, body):
+def page(title, desc, path, body, script=''):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,6 +72,7 @@ def page(title, desc, path, body):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/icons/favicon-64.png?v=blob1" sizes="64x64" type="image/png">
 <link rel="stylesheet" href="/books/books.css">
+{script}
 </head>
 <body>
 <div class="wrap">
@@ -125,11 +135,33 @@ def main():
 <p class="lede">The NCERT school books, turned into short lessons a child can play. {len(books)} books,
 {sum(len(u.get("chapters") or []) for b in books for u in b.get("units") or [])} chapters. Free, no ads,
 no sign-up, and nobody can sell it.</p>
+<div class="searchbox">
+  <label for="book-search">Search every lesson by topic</label>
+  <input id="book-search" type="search" placeholder="for example, photosynthesis or fractions" autocomplete="off">
+  <p class="note" id="book-search-status" aria-live="polite"></p>
+  <ul id="book-results"></ul>
+</div>
 {''.join(cards)}"""
     open(os.path.join(outdir, 'index.html'), 'w').write(page(
-        'All books | Hooty', f'All {len(books)} NCERT books on Hooty, free for every child. Chapter by chapter, in short lessons.',
-        '/books/', body))
+        'All books | Hooty', f'All {len(books)} NCERT books on Hooty, free for every child. Chapter by chapter, in short lessons. Search every lesson by topic.',
+        '/books/', body, script='<script src="/books/search.js" defer></script>'))
     urls.append((f'{SITE}/books/', TODAY))
+
+    # The search index: book, chapter and lesson titles only, in the same order the pages use. About 66 KB
+    # gzipped, and the script only fetches it when a visitor types or the page goes idle.
+    compact = []
+    for b in books:
+        chs = []
+        for u in b.get('units') or []:
+            for c in u.get('chapters') or []:
+                ls = [[l.get('id'), l.get('title')] for l in c.get('lessons') or []]
+                if c.get('boss'):
+                    ls.append([c['boss'].get('id') or f"{c.get('id')}-boss", c['boss'].get('title') or 'Chapter challenge'])
+                chs.append([c.get('title') or c.get('id'), ls])
+        compact.append([b['id'], b.get('grade'), b.get('subject'), b.get('title'), chs])
+    open(os.path.join(outdir, 'index.json'), 'w').write(json.dumps(compact, ensure_ascii=False, separators=(',', ':')))
+    here = os.path.dirname(os.path.abspath(__file__))
+    open(os.path.join(outdir, 'search.js'), 'w').write(open(os.path.join(here, 'books-search.js')).read())
 
     for b in books:
         slug = b['id']
