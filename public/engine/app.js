@@ -201,6 +201,7 @@ async function switchGrade(g) {
   if (l && next) l.packId = next.id;
   await persist();
   render();
+  warmServiceWorker();   // the class just chosen should load offline next time too
   loadRestInBackground(g);
 }
 
@@ -231,7 +232,7 @@ function subjectTabs() {
       class: `subject-tab${p.id === cur?.id ? ' is-on' : ''}`, type: 'button', role: 'tab', 'aria-selected': String(p.id === cur?.id),
       onclick: async () => {
         if (!(await ensurePack(p.id))) { toast('Could not load that book. Check your connection.'); return; }
-        router.packId = p.id; const l = activeLearner(); if (l) { l.packId = p.id; await persist(); } render();
+        router.packId = p.id; const l = activeLearner(); if (l) { l.packId = p.id; await persist(); } render(); warmServiceWorker();
       },
     }, [p.subject])));
     wrap.append(row); swipe(row);
