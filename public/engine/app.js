@@ -225,6 +225,12 @@ async function switchGrade(g) {
 }
 
 // A row of class chips (only once more than one class exists) above a row of subject pills for that class.
+// Subject names are book metadata in English; a Hindi child should still see them in Hindi.
+function subjectName(name) {
+  const key = { Science: 'subjScience', 'Social Science': 'subjSocial', Mathematics: 'subjMaths', English: 'subjEnglish', Hindi: 'subjHindi', 'The World Around Us': 'subjTwau' }[name];
+  return key ? t(key) : name;
+}
+
 function subjectTabs() {
   const grades = gradeList();
   // Tabs come from the index, so a subject whose book is still on its way is already there to tap.
@@ -242,8 +248,8 @@ function subjectTabs() {
     const row = el('div', { class: 'subject-tabs grade-tabs', role: 'group', 'aria-label': 'Class' }, grades.map((x) => el('button', {
       class: `subject-tab grade-tab${x === g ? ' is-on' : ''}`, type: 'button', 'aria-pressed': String(x === g),
       onclick: () => switchGrade(x),
-    }, [x === 'mine' ? 'My books' : `Class ${x}`])));
-    row.append(el('button', { class: 'subject-tab grade-tab grade-tab--add', type: 'button', onclick: () => go('addbook') }, ['+ Add my book']));
+    }, [x === 'mine' ? t('myBooks') : t('classN', { n: x })])));
+    row.append(el('button', { class: 'subject-tab grade-tab grade-tab--add', type: 'button', onclick: () => go('addbook') }, [t('addMyBook')]));
     wrap.append(row); swipe(row);
   }
   if (mine.length >= 1) {
@@ -253,7 +259,7 @@ function subjectTabs() {
         if (!(await ensurePack(p.id))) { toast(t('bookNotHere')); return; }
         router.packId = p.id; const l = activeLearner(); if (l) { l.packId = p.id; await persist(); } render(); warmServiceWorker();
       },
-    }, [p.subject])));
+    }, [subjectName(p.subject)])));
     wrap.append(row); swipe(row);
   }
   return wrap;
@@ -578,7 +584,7 @@ function screenPath() {
   }
   const tabs = subjectTabs(); if (tabs) wrap.append(tabs);
   wrap.append(el('h2', { class: 'section-title', text: pack.title }));
-  wrap.append(el('p', { class: 'section-sub', text: 'Follow the path. Every lesson is a few minutes, and you can play any of them.' }));
+  wrap.append(el('p', { class: 'section-sub', text: t('trailIntro') }));
 
   let currentMarked = false;
   let upNextShown = false;
