@@ -3,6 +3,16 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  wordbuild: {
+    grades: [4, 5, 6], subject: 'english',
+    match: [/prefix/, /contraction/, /apostroph/, /word building/, /joining words/, /\bun-|\bre-|\bdis-|\bpre-/],
+    title: 'Word builder', takeaway: 'A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap.',
+    tasks: [
+      { say: 'Find the pair that means "not happy".', when: 'w == 0', then: 'un- turns happy into its opposite: unhappy.' },
+      { say: 'Find the word that means "build again".', when: 'w == 1', then: 're- means again, so rebuild means build again.' },
+      { say: "Find the contraction that does not follow the usual pattern.", when: 'w == 8', then: "Will not becomes won't: the vowels change too, so it is the odd one out." },
+    ],
+  },
   spelling: {
     grades: [3, 4, 5, 6], subject: 'english',
     match: [/plural/, /singular/, /\b-?(s|es|ies|ves|ing|ed)\b/, /spelling/, /word endings?/, /verb forms?/, /add(ing)? (-s|-es|-ies|-ing|-ed)/, /past (tense|time)/, /double letters?/],

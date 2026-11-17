@@ -2563,6 +2563,41 @@ export const WIDGETS = {
       return { kids, say: `${base} becomes ${out}. ${rule}. ${why}` };
     },
   },
+  wordbuild: {
+    subject: 'english', about: 'Prefixes that change a word (un-, re-, dis-, pre-, mis-) and contractions that squeeze two words into one with an apostrophe (do not -> don\'t, I am -> I\'m, will not -> won\'t). For prefixes, contractions, apostrophes and word building.',
+    sliders: [['w', 'Pick a pair of words', 0, 9, 1, 0]],
+    draw(v) {
+      const rows = [
+        ['un', 'happy', 'unhappy', 'not happy', 'un- means not. It turns a word into its opposite.'],
+        ['re', 'build', 'rebuild', 'build again', 're- means again.'],
+        ['dis', 'agree', 'disagree', 'not agree', 'dis- means not, or the opposite of.'],
+        ['pre', 'pay', 'prepay', 'pay before', 'pre- means before.'],
+        ['mis', 'spell', 'misspell', 'spell wrongly', 'mis- means wrongly.'],
+        ['do not', "don't", "don't", 'two words joined', 'The o disappears and an apostrophe takes its place.'],
+        ['I am', "I'm", "I'm", 'two words joined', 'The a disappears, and the apostrophe marks the gap.'],
+        ['can not', "can't", "can't", 'two words joined', 'Two n\'s become one, and the apostrophe marks the gap.'],
+        ['will not', "won't", "won't", 'two words joined', 'Will not is the odd one: the vowels change as well.'],
+        ['they are', "they're", "they're", 'two words joined', 'The a disappears and the apostrophe stands in for it.'],
+      ];
+      const [left, right, out, meaning, rule] = rows[v.w];
+      const isContraction = left.includes(' ');
+      const card = (x, word, fill, colour) => [R(x, 58, 200, 74, fill, { w: 3, r: 12 }), T(x + 100, 106, word, { z: 30, f: colour })];
+      const kids = [
+        ...card(30, isContraction ? left : right, '#fdf6ff', '#3a2560'),
+        L(240, 95, 310, 95, INK, 5),
+        s('polygon', { points: '320,95 304,85 304,105', fill: INK }),
+        ...card(340, isContraction ? out : `${left}${right}`, '#e4f7ee', '#058a68'),
+        T(130, 156, isContraction ? 'two words' : 'the prefix, then the word', { z: 13, f: '#6b5a8a' }),
+        T(440, 156, isContraction ? 'one word, with an apostrophe' : meaning, { z: 13, f: '#6b5a8a' }),
+        T(30, 200, rule, { z: 20, a: 'start', w: 620, f: '#c2510e' }),
+        T(30, 238, isContraction ? `It means the same as "${left}".` : `"${left}${right}" means ${meaning}.`, { z: 13, a: 'start', w: 620, f: '#6b5a8a' }),
+      ];
+      const say = isContraction
+        ? `${left} becomes ${out}, one word instead of two. ${rule}`
+        : `${left}${right} means ${meaning}. ${rule}`;
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
