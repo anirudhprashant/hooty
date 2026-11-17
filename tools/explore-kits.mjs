@@ -4,7 +4,7 @@
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
   wordbuild: {
-    grades: [4, 5, 6], subject: 'english',
+    grades: [4, 5, 6], subject: 'english', titleOnly: true,
     match: [/prefix/, /contraction/, /apostroph/, /word building/, /joining words/, /\bun-|\bre-|\bdis-|\bpre-/],
     title: 'Word builder', takeaway: 'A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap.',
     tasks: [
@@ -14,7 +14,7 @@ export const KITS = {
     ],
   },
   spelling: {
-    grades: [3, 4, 5, 6], subject: 'english',
+    grades: [3, 4, 5, 6], subject: 'english', titleOnly: true,
     match: [/plurals?/, /singular/, /spelling/, /word endings?/, /verb forms?/, /past (tense|time)/, /double letters?/, /add(ing)? (-s|-es|-ies|-ing|-ed)\b/, /\b-?(s|es|ies|ves|ing|ed) (endings?|sounds?|forms?)\b/, /words? end(ing)? (with|in) -?(s|es|ed|ing|ies|ves)\b/, /words? taken from the lesson/],
     title: 'The spelling machine', takeaway: 'Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e.',
     tasks: [
