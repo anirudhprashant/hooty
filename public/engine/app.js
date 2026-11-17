@@ -1345,10 +1345,14 @@ function readQuestion() {
     const chips = [...root.querySelectorAll('.order-chip, .label-bar .label-chip')].map((b) => (b.textContent || '').trim()).filter(Boolean);
     if (chips.length) said.push(chips.slice(0, 8).join(', '));
   }
+  // A reading card has its own player: it reads every paragraph with the words lighting up as it goes. Use it rather
+  // than sending the whole passage through the header's single speak call, which stops after the first clip.
+  const passageListen = root.querySelector('.activity--passage .passage__listen');
+  if (passageListen) { passageListen.click(); return; }
   if (!said.length) {
     // a hook or a card without a question box: read the words on the card itself, without the buttons
     const copy = root.cloneNode(true);
-    copy.querySelectorAll('button, .btn, .activity__actions, .option, .hook__cta').forEach((node) => node.remove());
+    copy.querySelectorAll('button, .btn, .activity__actions, .option, .hook__cta, .passage__hint, .passage__kicker').forEach((node) => node.remove());
     copy.style.cssText = 'position:fixed;left:-9999px;top:0;width:320px';
     document.body.append(copy);
     const words = (copy.innerText || copy.textContent || '').replace(/\s+/g, ' ').trim();

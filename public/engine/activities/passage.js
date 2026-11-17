@@ -30,7 +30,7 @@ export default {
       return out;
     };
     const body = el('div', { class: 'passage__body' }, paras.map((t) => el('p', {}, canTap ? words(t) : [t])));
-    const listen = el('button', { class: 'btn btn--ghost btn--sm', type: 'button' }, [w('Listen')]);
+    const listen = el('button', { class: 'btn btn--ghost btn--sm passage__listen', type: 'button' }, [w('Listen')]);
     listen.addEventListener('click', () => {
       const ps = [...body.querySelectorAll('p')];
       ctx.say(paras.map((text, k) => ({ text: text.replace(/\*\*/g, ''), along: ps[k] })));
