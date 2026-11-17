@@ -2266,6 +2266,40 @@ export const WIDGETS = {
       return { kids: parts, say: `At ${h} metres the air is about ${num(temp, 1)}°C, ${num(drop, 1)}°C colder than at sea level.${snow}` };
     },
   },
+  tangent: {
+    subject: 'maths', about: 'A point outside a circle and the two tangents drawn from it. The tangent touches the circle once, meets the radius at a right angle, and both tangents from the same point are equal; the slider moves the point and the radius changes. For tangents to a circle, tangent length, radius perpendicular to the tangent, and the equal tangents from an external point.',
+    sliders: [['r', 'Radius of the circle (cm)', 3, 10, 1, 5], ['d', 'Distance of the point from the centre (cm)', 4, 25, 1, 13]],
+    draw(v) {
+      const r = Math.max(1, Math.min(v.r, v.d)), d = Math.max(v.d, r);   // the point is never inside the circle
+      const cx = 250, cy = 150, scale = Math.min(11, 260 / Math.max(d, 12));
+      const px = cx + d * scale, R = r * scale;
+      const L = Math.sqrt(Math.max(0, d * d - r * r));
+      const theta = Math.acos(Math.min(1, r / d));                       // angle between OP and each touch point
+      const touch = (sign) => ({ x: cx + Math.cos(sign * theta) * R, y: cy - Math.sin(sign * theta) * R });
+      const t1 = touch(1), t2 = touch(-1);
+      const kids = [R(0, 0, W, H, '#fbfdff', { w: 0 })];
+      kids.push(CIRC(cx, cy, R, '#e8f0ff', { w: 4 }));
+      kids.push(CIRC(cx, cy, 4, INK));
+      kids.push(L(cx, cy, px, cy, '#9a8fb8', 2, { 'stroke-dasharray': '7 6' }));
+      kids.push(CIRC(px, cy, 7, C.o, { w: 3 }));
+      for (const t of [t1, t2]) {
+        kids.push(L(px, cy, t.x, t.y, C.o, 4));
+        kids.push(CIRC(t.x, t.y, 5, C.g));
+        // the right angle at the point of contact, drawn from the radius and the tangent
+        const ux = (t.x - cx) / R, uy = (t.y - cy) / R;                  // along the radius
+        const vx = (px - t.x) / (L * scale || 1), vy = (cy - t.y) / (L * scale || 1);
+        const a = 12;
+        kids.push(s('polyline', { points: `${t.x + ux * a},${t.y + uy * a} ${t.x + (ux + vx) * a},${t.y + (uy + vy) * a} ${t.x + vx * a},${t.y + vy * a}`, fill: 'none', stroke: '#3b6ea5', 'stroke-width': 2 }));
+      }
+      kids.push(T(cx + R * 0.5 + 6, cy - 10, `r = ${r} cm`, { z: 20, w: 600, f: '#5a5170', a: 'start' }));
+      kids.push(T((cx + px) / 2, cy + 28, `d = ${d} cm`, { z: 20, w: 600, f: '#5a5170' }));
+      const mid = { x: (px + t1.x) / 2, y: (cy + t1.y) / 2 };
+      kids.push(T(mid.x + 12, mid.y + 4, `tangent ${num(L, 2)} cm`, { z: 20, w: 700, f: '#c2510e', a: 'start' }));
+      kids.push(T(300, 288, 'both tangents from the same point are equal, and each meets the radius at a right angle', { z: 19, w: 600, f: '#5a5170' }));
+      const kind = Math.abs(d - r) < 0.001 ? 'The point is on the circle, so the tangent has closed up to nothing.' : `Each tangent is about ${num(L, 2)} cm long, and both are equal.`;
+      return { kids, say: `Radius ${r} cm, point ${d} cm from the centre. ${kind}` };
+    },
+  },
   osmosis: {
     subject: 'science', about: 'Two compartments of water with different amounts of dissolved sugar, separated by a selectively permeable membrane. Water moves from the dilute (weaker) side to the concentrated (stronger) side until the rising level balances the pull; the sugar cannot cross. For osmosis, diffusion of water, selectively permeable membrane, cell membrane, cell wall, plasmolysis.',
     sliders: [['left', 'Sugar on the left (spoonfuls)', 0, 10, 1, 2], ['right', 'Sugar on the right (spoonfuls)', 0, 10, 1, 8], ['mins', 'Minutes left standing', 0, 10, 1, 0]],

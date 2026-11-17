@@ -1100,6 +1100,15 @@ export const KITS = {
       { say: 'Take the coast to 40 degrees and climb to the top.', when: 'base == 40 and height >= 6000', then: 'Warmer air at sea level lifts the snow line, so the same mountain has less snow than on a cooler day.' },
     ],
   },
+  tangent: {
+    grades: [9, 10], match: [/\btangents?\b/, /tangent to (a|the) circle/, /number of tangents/, /length of (the )?tangent/, /circle.{0,40}tangent|tangent.{0,40}circle/],
+    title: 'Draw a tangent', takeaway: 'A tangent touches the circle at one point, meets the radius there at a right angle, and the two tangents from the same outside point are equal.',
+    tasks: [
+      { say: 'Try the 5-12-13 triple: radius 5 cm, point 13 cm from the centre.', when: 'r == 5 and d == 13', then: 'Each tangent is 12 cm: 5 squared plus 12 squared is 13 squared, so the right angle fits.' },
+      { say: 'Move the point onto the circle itself.', when: 'd == r', then: 'A tangent from a point on the circle has no length: the point of contact is the point itself.' },
+      { say: 'Keep the radius 5 and push the point to 20 cm from the centre.', when: 'r == 5 and d == 20', then: 'The tangent is only about 19.4 cm, not double the 12 cm: it grows more slowly than the distance.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
