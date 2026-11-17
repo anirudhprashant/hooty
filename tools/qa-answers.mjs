@@ -65,6 +65,7 @@ export function loadAnswers(root = DEFAULT_ROOT) {
             if (a.gen && a.gen.template && a.gen.answer) {
               gens.push({
                 ...templateRegex(a.gen.template, a.gen.params),
+                template: a.gen.template,
                 answer: a.gen.answer, vals: a.gen.vals || {},
                 params: a.gen.params || {}, where: a.gen.where || [],
               });
@@ -159,6 +160,13 @@ export function answerFor(loaded, prompt) {
       // the recipe's named in-between values first (the engine does the same), then the answer itself
       const mid = {};
       for (const [name, expr] of Object.entries(g.vals || {})) mid[name] = evaluate(expr, { ...env, ...mid });
+      // Several rod recipes share a shape ("One rod is {a} m {b} cm ..."), and binding one recipe's numbers to
+      // another recipe's names gives a confidently wrong answer (60 instead of 160 on the two-metre-part question).
+      // A recipe is only used when it reproduces the prompt word for word from its own values.
+      const vars = { ...env, ...mid };
+      let rendered = g.template;
+      for (let pass = 0; pass < 3; pass++) rendered = rendered.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+      if (norm(rendered) !== question) continue;
       const value = evaluate(g.answer, { ...env, ...mid });
       if (Number.isFinite(value)) return String(Math.round(value * 1e6) / 1e6);
     } catch {
