@@ -25319,7 +25319,7 @@
       {
        "id": "science-g10-ch8-l2",
        "title": "Heredity and Inherited Traits",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -25376,6 +25376,36 @@
            "p": 129
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g10-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "peas",
+         "params": {},
+         "title": "Cross the pea plants",
+         "tasks": [
+          {
+           "say": "Cross a pure tall plant (TT) with a pure short plant (tt). Look at all four children.",
+           "when": "g1 == 0 and g2 == 2",
+           "then": "Every child gets T from one parent and t from the other, so all four are Tt: they all look tall, but they still carry the short gene."
+          },
+          {
+           "say": "Cross two of those children (Tt × Tt). How many of the four are short?",
+           "when": "g1 == 1 and g2 == 1",
+           "then": "One of the four is tt, so three look tall and one is short: about three tall to one short, as Mendel found."
+          },
+          {
+           "say": "Make a cross with two tall children and two short children.",
+           "when": "(g1 == 1 and g2 == 2) or (g1 == 2 and g2 == 1)",
+           "then": "Tt × tt gives two Tt (tall) and two tt (short): half and half."
+          }
+         ],
+         "takeaway": "Each parent gives one copy of a gene. T (tall) hides t (short), so a Tt plant looks tall but can still pass on shortness: two Tt parents have about three tall children to one short.",
+         "explanation": "Each parent gives one copy of a gene. T (tall) hides t (short), so a Tt plant looks tall but can still pass on shortness: two Tt parents have about three tall children to one short."
         },
         {
          "type": "worked",
@@ -25870,7 +25900,7 @@
       {
        "id": "science-g10-ch8-l3",
        "title": "Mendel's Experiments with One Trait",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -25924,6 +25954,36 @@
            "p": 130
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g10-ch8-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "peas",
+         "params": {},
+         "title": "Cross the pea plants",
+         "tasks": [
+          {
+           "say": "Cross a pure tall plant (TT) with a pure short plant (tt). Look at all four children.",
+           "when": "g1 == 0 and g2 == 2",
+           "then": "Every child gets T from one parent and t from the other, so all four are Tt: they all look tall, but they still carry the short gene."
+          },
+          {
+           "say": "Cross two of those children (Tt × Tt). How many of the four are short?",
+           "when": "g1 == 1 and g2 == 1",
+           "then": "One of the four is tt, so three look tall and one is short: about three tall to one short, as Mendel found."
+          },
+          {
+           "say": "Make a cross with two tall children and two short children.",
+           "when": "(g1 == 1 and g2 == 2) or (g1 == 2 and g2 == 1)",
+           "then": "Tt × tt gives two Tt (tall) and two tt (short): half and half."
+          }
+         ],
+         "takeaway": "Each parent gives one copy of a gene. T (tall) hides t (short), so a Tt plant looks tall but can still pass on shortness: two Tt parents have about three tall children to one short.",
+         "explanation": "Each parent gives one copy of a gene. T (tall) hides t (short), so a Tt plant looks tall but can still pass on shortness: two Tt parents have about three tall children to one short."
         },
         {
          "type": "worked",
