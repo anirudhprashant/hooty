@@ -1091,6 +1091,15 @@ export const KITS = {
       { say: 'Take the swings to their widest and see who wins where.', when: 'spread == 20', then: 'When the local differences are large, the national vote share tells you much less about who wins a seat.' },
     ],
   },
+  lapse: {
+    grades: [6, 10], subjects: ['social'], match: [/\btemperature\b/, /\baltitude\b|\bheight above sea level\b/, /\bsnow line\b/, /\bhill station/, /\blapse rate\b/, /air (cools|thins) (as|with)/],
+    title: 'Climb the mountain', takeaway: 'Air cools about 6.5 degrees for every kilometre you climb, so the top of a mountain is cold and snow settles above the snow line.',
+    tasks: [
+      { say: 'Climb to 3,000 m and read the temperature.', when: 'height >= 3000', then: 'About 6.5 degrees are lost for every kilometre: a hill station at 2,000 m is around 13 degrees cooler than the coast.' },
+      { say: 'Go high enough for the air to freeze.', when: 'height >= 4700', then: 'With 30 degrees at sea level, freezing comes at about 4,700 m: that is why the snow line sits high on tropical mountains.' },
+      { say: 'Take the coast to 40 degrees and climb to the top.', when: 'base == 40 and height >= 6000', then: 'Warmer air at sea level lifts the snow line, so the same mountain has less snow than on a cooler day.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".

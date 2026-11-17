@@ -2228,6 +2228,45 @@ export const WIDGETS = {
       return { kids: parts, say: `With ${share}% of the votes, party A wins ${seatsA} of the 100 seats. ${where}` };
     },
   },
+  lapse: {
+    subject: 'social', about: 'Air cools as you climb: the mountain with a height marker, the temperature at that height, and the snow line where it reaches freezing. For temperature falling with height, hill stations, the snow line, altitude and climate, and why the top of a mountain is cold.',
+    sliders: [['height', 'Height above sea level (m)', 0, 6000, 100, 0], ['base', 'Air at sea level (°C)', 10, 40, 1, 30]],
+    draw(v) {
+      const h = v.height, base = v.base, RATE = 6.5;   // the environmental lapse rate, °C per km
+      const temp = base - (h / 1000) * RATE;
+      const yOf = (m) => 268 - (m / 6000) * 208;
+      const halfAt = (y) => ((268 - y) / 208) * 230;
+      const summitY = yOf(6000), y = yOf(h);
+      const snowLine = (base / RATE) * 1000;            // metres where the air reaches 0°C
+      const snowY = yOf(Math.min(snowLine, 6000));
+      const parts = [R(0, 0, W, H, '#eef6ff', { w: 0 })];
+      // the mountain, with a white cap above the snow line
+      parts.push(s('polygon', { points: `70,268 300,${summitY} 530,268`, fill: '#b9c7de', stroke: INK, 'stroke-width': 3 }));
+      if (snowLine < 6000) {
+        const wl = halfAt(snowY);
+        parts.push(s('polygon', { points: `${300 - wl},${snowY} 300,${summitY} ${300 + wl},${snowY}`, fill: '#ffffff', stroke: INK, 'stroke-width': 2 }));
+      }
+      // sea level line and the height marker
+      parts.push(L(56, 268, 546, 268, INK, 4));
+      parts.push(T(66, 262, 'sea level', { z: 20, w: 600, f: '#5a5170', a: 'start' }));
+      parts.push(L(56, y, 546, y, '#c2510e', 3, { 'stroke-dasharray': '8 6' }));
+      parts.push(CIRC(300, y, 9, '#c2510e', { w: 3 }));
+      parts.push(T(300, y - 20, `${h} m`, { z: 24, w: 700, f: '#c2510e' }));
+      if (snowLine < 6000) parts.push(T(548, snowY + 6, 'snow line', { z: 20, w: 600, f: '#3b6ea5', a: 'end' }));
+      // the thermometer on the right
+      const tx = 556, top = 70, bottom = 250;
+      parts.push(R(tx, top, 24, bottom - top, '#ffffff', { w: 3, r: 12 }));
+      const frac = Math.max(0, Math.min(1, (temp + 10) / 50));   // -10..40 °C
+      const fillTop = bottom - frac * (bottom - top);
+      parts.push(R(tx + 4, fillTop, 16, bottom - fillTop - 4, temp <= 0 ? '#7bb7ff' : '#ffb703', { w: 0, r: 8 }));
+      parts.push(T(tx + 12, bottom + 26, `${num(temp, 0)}°C`, { z: 22, w: 700, f: INK }));
+      parts.push(T(300, 292, `air at ${h} m: ${num(temp, 1)}°C`, { z: 26, w: 700, f: INK }));
+      parts.push(T(120, 60, `${num(base, 0)}°C at the coast`, { z: 20, w: 600, f: '#5a5170', a: 'start' }));
+      const drop = base - temp;
+      const snow = temp <= 0 ? ' At this height the air is at or below freezing, so snow can settle.' : '';
+      return { kids: parts, say: `At ${h} metres the air is about ${num(temp, 1)}°C, ${num(drop, 1)}°C colder than at sea level.${snow}` };
+    },
+  },
   osmosis: {
     subject: 'science', about: 'Two compartments of water with different amounts of dissolved sugar, separated by a selectively permeable membrane. Water moves from the dilute (weaker) side to the concentrated (stronger) side until the rising level balances the pull; the sugar cannot cross. For osmosis, diffusion of water, selectively permeable membrane, cell membrane, cell wall, plasmolysis.',
     sliders: [['left', 'Sugar on the left (spoonfuls)', 0, 10, 1, 2], ['right', 'Sugar on the right (spoonfuls)', 0, 10, 1, 8], ['mins', 'Minutes left standing', 0, 10, 1, 0]],
