@@ -1257,3 +1257,9 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
     flex: 1 1 100%;
   }
 }
+
+/* A lesson begun and left: the badge gets a dashed ring, so it reads as "in the middle of" rather than "done". */
+.node--started .node__badge {
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--accent) 65%, #000), 0 0 0 4px var(--surface), 0 0 0 7px var(--accent);
+  border-radius: 999px;
+}

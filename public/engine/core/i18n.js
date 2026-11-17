@@ -176,6 +176,8 @@ export const strings = {
     subjectAccuracy: "Where the answers come from",
     subjectAccuracyNote: "Answers given and how many were right, subject by subject.",
     answersWord: "{n} answers",
+    startedA11y: ", started",
+    startedWord: "Started",
   },
   hi: {
     appName: 'लूमी',
@@ -351,6 +353,8 @@ export const strings = {
     subjectAccuracy: "उत्तर कहाँ से आ रहे हैं",
     subjectAccuracyNote: "किस विषय में कितने उत्तर दिए और कितने सही हुए।",
     answersWord: "{n} उत्तर",
+    startedA11y: ", शुरू किया",
+    startedWord: "शुरू किया",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -526,6 +530,8 @@ export const strings = {
     subjectAccuracy: "ಉತ್ತರಗಳು ಎಲ್ಲಿಂದ ಬರುತ್ತಿವೆ",
     subjectAccuracyNote: "ಯಾವ ವಿಷಯದಲ್ಲಿ ಎಷ್ಟು ಉತ್ತರಗಳು ಮತ್ತು ಎಷ್ಟು ಸರಿ.",
     answersWord: "{n} ಉತ್ತರಗಳು",
+    startedA11y: ", ಪ್ರಾರಂಭಿಸಲಾಗಿದೆ",
+    startedWord: "ಪ್ರಾರಂಭಿಸಲಾಗಿದೆ",
   },
 };
 

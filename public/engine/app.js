@@ -685,12 +685,17 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
   const title = boss ? (it.lesson.title || t('bossChallenge')) : it.lesson.title;
   const nQuestions = questionCount(it.lesson);
   const questionsWord = t(nQuestions === 1 ? 'question' : 'questions');
+  const savedAt = !rec && activeLearner()?.inProgress?.[it.id];
   const meta = boss
     ? `Chapter boss · ${nQuestions} ${questionsWord}`
-    : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`;
+    : savedAt
+      ? `${t('startedWord')} · ${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`
+      : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`;
+  // A lesson the child started and left: it keeps its place, and says so.
+  const started = !rec && !!activeLearner()?.inProgress?.[it.id];
   const glyph = rec ? icon('check', { size: 40 }) : boss ? icon('crown', { size: 40 }) : isCurrent ? icon('play', { size: 44 }) : icon('star', { size: 40 });
   const node = el('button', {
-    class: `node${rec ? ' node--done' : ''}${boss ? ' node--boss' : ''}${isCurrent ? ' node--current' : ''}`,
+    class: `node${rec ? ' node--done' : ''}${started ? ' node--started' : ''}${boss ? ' node--boss' : ''}${isCurrent ? ' node--current' : ''}`,
     type: 'button', style: { gridColumn: String(cell.col + 1), gridRow: String(cell.row + 1) },
   }, [
     el('span', { class: 'node__badge', 'aria-hidden': 'true' }, [glyph]),
@@ -698,9 +703,10 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
       el('span', { class: 'node__title', text: title }),
       el('span', { class: 'node__meta', text: meta }),
       rec ? el('span', { class: 'visually-hidden', text: t('doneA11y') })
-        : isCurrent ? el('span', { class: 'visually-hidden', text: t('nextUpA11y') }) : null,
+        : started ? el('span', { class: 'visually-hidden', text: t('startedA11y') })
+          : isCurrent ? el('span', { class: 'visually-hidden', text: t('nextUpA11y') }) : null,
     ]),
-    isCurrent ? el('span', { class: 'node__start', 'aria-hidden': 'true', text: rec ? '' : t('start') }) : null,
+    isCurrent ? el('span', { class: 'node__start', 'aria-hidden': 'true', text: rec ? '' : started ? t('continue') : t('start') }) : null,
   ]);
   node.addEventListener('click', () => startLesson({
     ...it.lesson, title, packId: pack.id, unitId: unit.id, chapterId: it.chapter.id, lessonId: it.id, isBoss: boss,
