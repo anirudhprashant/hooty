@@ -30,7 +30,7 @@ const score = (kit, title, text) => {
 };
 
 // which simulations suit which kind of book (a kit's `subjects` adds more, e.g. the ruler is in maths and science books)
-const KIND = { Mathematics: ['maths'], Science: ['science'], 'Social Science': ['social'], 'The World Around Us': ['science', 'social'], Physics: ['science', 'maths'], Chemistry: ['science'], Biology: ['science'], Geography: ['social'], History: ['social'] };
+const KIND = { Mathematics: ['maths'], Science: ['science'], 'Social Science': ['social'], 'The World Around Us': ['science', 'social'], Physics: ['science', 'maths'], Chemistry: ['science'], Biology: ['science'], Geography: ['social'], History: ['social'], English: ['english'] };
 let added = 0, looked = 0;
 const tally = {};
 for (const slug of books) {

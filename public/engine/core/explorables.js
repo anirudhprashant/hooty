@@ -2530,6 +2530,39 @@ export const WIDGETS = {
       return { kids, say: `Parent 1 is ${names[v.g1]} and Parent 2 is ${names[v.g2]}. The four boxes show the children they can make. ${result}${allCarriers ? ' Every child is Tt: tall, but it still carries the short gene and can pass it on.' : ' T hides t, so TT and Tt both look tall; only tt is short.'}` };
     },
   },
+  spelling: {
+    subject: 'english', about: 'The changes a word goes through when it is made plural or given -ing: add -s, add -es after s, x, ch or sh, turn a consonant+y into -ies, change some f endings to v, double the last letter before -ing, and drop the silent e. For plurals, verb forms, and spelling rules.',
+    sliders: [['w', 'Pick a word', 0, 11, 1, 0]],
+    draw(v) {
+      const rows = [
+        ['car', 'cars', 'most words: just add -s', 'One car, two cars. The -s is enough.'],
+        ['bus', 'buses', 'after s, x, ch or sh: add -es', 'Say "buss". You cannot hear the ending, so -es adds a beat.'],
+        ['box', 'boxes', 'after s, x, ch or sh: add -es', 'The x already hisses, so the ending needs a beat of its own.'],
+        ['baby', 'babies', 'a consonant before y: change y to i, add -es', 'The y becomes i, then -es is added.'],
+        ['boy', 'boys', 'a vowel before y: just add -s', 'A vowel in front of the y needs no help.'],
+        ['leaf', 'leaves', 'some words ending in f: change f to v, add -es', 'The f turns into v and -es follows.'],
+        ['run', 'running', 'before -ing: double the last letter', 'Running keeps the u short; "runing" would sound like "rooning".'],
+        ['come', 'coming', 'before -ing: drop the silent e', 'The e is doing no work, so it leaves before -ing.'],
+        ['walk', 'walked', 'most words: just add -ed for the past', 'The -ed says the action is over.'],
+        ['stop', 'stopped', 'after one short vowel and a consonant: double it, add -ed', 'Stopping doubles the p so the o stays short.'],
+        ['carry', 'carried', 'a consonant before y: change y to i, add -ed', 'The y becomes i, then -ed is added.'],
+        ['play', 'played', 'a vowel before y: just add -ed', 'The y keeps its place after a vowel.'],
+      ];
+      const [base, out, rule, why] = rows[v.w];
+      const card = (x, word, fill, colour) => [R(x, 62, 190, 78, fill, { w: 3, r: 12 }), T(x + 95, 112, word, { z: 30, f: colour })];
+      const kids = [
+        ...card(40, base, '#fdf6ff', '#3a2560'),
+        L(240, 101, 320, 101, INK, 5),
+        s('polygon', { points: '330,101 314,91 314,111', fill: INK }),
+        ...card(350, out, '#e4f7ee', '#058a68'),
+        T(300, 178, 'one', { z: 13, f: '#6b5a8a' }),
+        T(445, 178, 'more than one, or -ing', { z: 13, f: '#6b5a8a', w: 600 }),
+        T(40, 222, rule, { z: 20, a: 'start', f: '#c2510e' }),
+        T(40, 254, why, { z: 13, a: 'start', w: 600, f: '#6b5a8a' }),
+      ];
+      return { kids, say: `${base} becomes ${out}: ${rule}. ${why}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

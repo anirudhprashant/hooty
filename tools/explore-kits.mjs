@@ -3,6 +3,17 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  spelling: {
+    grades: [3, 4, 5, 6], subject: 'english',
+    match: [/plural/, /singular/, /\b-?(s|es|ies|ves|ing|ed)\b/, /spelling/, /word endings?/, /verb forms?/, /add(ing)? (-s|-es|-ies|-ing|-ed)/, /past (tense|time)/, /double letters?/],
+    title: 'The spelling machine', takeaway: 'Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e.',
+    tasks: [
+      { say: 'Find a word where -es is added.', when: 'w == 1', then: 'After s, x, ch and sh, -es adds a beat so the ending can be heard.' },
+      { say: 'Find the word where y turns into i.', when: 'w == 3', then: 'A consonant before y makes the y into i before -es.' },
+      { say: 'Find the word whose last letter doubles in the -ing form.', when: 'w == 6', then: 'Run becomes running: doubling keeps the u short.' },
+      { say: 'Find the word that doubles its last letter for the past.', when: 'w == 9', then: 'Stop becomes stopped: the p doubles so the o stays short.' },
+    ],
+  },
   linegraph: {
     grades: [8, 10], match: [/linear equation/, /equations? in two variables/, /\bslope\b/, /\bgradient\b/, /straight[- ]line graph/, /graph of (a|the) (straight )?line/, /y\s*=\s*mx/, /linear (graph|relation|function)/],
     title: 'Steer the straight line', takeaway: 'm sets how steep the line is and c sets where it crosses the y-axis: y = mx + c.',
