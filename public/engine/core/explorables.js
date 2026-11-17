@@ -2290,11 +2290,11 @@ export const WIDGETS = {
         const a = 12;
         kids.push(s('polyline', { points: `${t.x + ux * a},${t.y + uy * a} ${t.x + (ux + vx) * a},${t.y + (uy + vy) * a} ${t.x + vx * a},${t.y + vy * a}`, fill: 'none', stroke: '#3b6ea5', 'stroke-width': 2 }));
       }
-      kids.push(T(cx + rr * 0.5 + 6, cy - 10, `r = ${rad0} cm`, { z: 20, w: 600, f: '#5a5170', a: 'start' }));
-      kids.push(T((cx + px) / 2, cy + 28, `d = ${dist} cm`, { z: 20, w: 600, f: '#5a5170' }));
+      kids.push(T(cx, cy - rr - 14, `r = ${rad0} cm`, { z: 22, w: 700, f: '#5a5170' }));
+      kids.push(T((cx + px) / 2, cy + 42, `d = ${dist} cm`, { z: 22, w: 700, f: '#5a5170' }));
       const mid = { x: (px + t1.x) / 2, y: (cy + t1.y) / 2 };
-      kids.push(T(mid.x + 12, mid.y + 4, `tangent ${num(tl, 2)} cm`, { z: 20, w: 700, f: '#c2510e', a: 'start' }));
-      kids.push(T(300, 288, 'both tangents from the same point are equal, and each meets the radius at a right angle', { z: 19, w: 600, f: '#5a5170' }));
+      kids.push(T(mid.x + 16, mid.y - 6, `tangent ${num(tl, 2)} cm`, { z: 22, w: 700, f: '#c2510e', a: 'start' }));
+      
       const kind = Math.abs(dist - rad0) < 0.001 ? 'The point is on the circle, so the tangent has closed up to nothing.' : `Each tangent is about ${num(tl, 2)} cm long, and both are equal.`;
       return { kids, say: `Radius ${rad0} cm, point ${dist} cm from the centre. ${kind}` };
     },
