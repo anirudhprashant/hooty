@@ -200,6 +200,53 @@
          "focus": 1
         },
         {
+         "type": "matchpairs",
+         "id": "the-world-around-us-g5-ch1-l1-a7",
+         "difficulty": 2,
+         "tags": [
+          "freshwater",
+          "uses",
+          "living beings"
+         ],
+         "title": "Match it up",
+         "prompt": "Match each one with what it needs or uses.",
+         "pairs": [
+          [
+           "Drinking and growing crops",
+           "Need freshwater"
+          ],
+          [
+           "Sea water",
+           "Salty"
+          ],
+          [
+           "Plants and animals in ponds",
+           "Live in freshwater"
+          ]
+         ],
+         "explanation": "Great matching! Freshwater is used for drinking and crops, and many plants and animals live in it.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 3
+          },
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          },
+          {
+           "ch": 1,
+           "p": 4
+          }
+         ],
+         "anchor": "the-world-around-us-g5-ch1-l1-a1",
+         "focus": 2
+        },
+        {
          "type": "mcq",
          "id": "the-world-around-us-g5-ch1-l1-a8",
          "difficulty": 3,
@@ -1611,6 +1658,52 @@
          "answer": 1,
          "explanation": "We dig wells, borewells, tube wells and handpumps to draw groundwater up.",
          "src": [
+          {
+           "ch": 1,
+           "p": 9
+          }
+         ],
+         "anchor": "the-world-around-us-g5-ch1-l4-a1",
+         "focus": 2
+        },
+        {
+         "type": "matchpairs",
+         "id": "the-world-around-us-g5-ch1-l4-a6",
+         "difficulty": 2,
+         "tags": [
+          "soakpits",
+          "ponds",
+          "cemented"
+         ],
+         "prompt": "Match each thing with what it does.",
+         "pairs": [
+          [
+           "A well",
+           "Draws groundwater for our use"
+          ],
+          [
+           "A soak pit or a pond",
+           "Helps rainwater return underground"
+          ],
+          [
+           "A cemented surface",
+           "Stops rainwater from going into the ground"
+          ]
+         ],
+         "explanation": "Wells bring groundwater up, while soak pits and ponds send rainwater back down.",
+         "src": [
+          {
+           "ch": 1,
+           "p": 9
+          },
+          {
+           "ch": 1,
+           "p": 9
+          },
+          {
+           "ch": 1,
+           "p": 9
+          },
           {
            "ch": 1,
            "p": 9
@@ -17167,6 +17260,35 @@
          "focus": 0
         },
         {
+         "type": "matchpairs",
+         "id": "the-world-around-us-g5-ch5-l6-a5",
+         "difficulty": 2,
+         "tags": [
+          "instruments",
+          "music"
+         ],
+         "prompt": "Match each instrument to its music style.",
+         "pairs": [
+          [
+           "Mridangam",
+           "Carnatic music"
+          ],
+          [
+           "Sitar and shehnai",
+           "Hindustani music"
+          ]
+         ],
+         "explanation": "The mridangam plays for Carnatic music. The sitar and shehnai play for Hindustani music.",
+         "src": [
+          {
+           "ch": 5,
+           "p": 89
+          }
+         ],
+         "anchor": "the-world-around-us-g5-ch5-l6-a1",
+         "focus": -1
+        },
+        {
          "type": "fillblank",
          "id": "the-world-around-us-g5-ch5-l6-a6",
          "difficulty": 2,
@@ -18794,37 +18916,6 @@
          ],
          "prompt": "Why do some trees wear wide root 'skirts' to stand tall?",
          "explanation": "Now read on to find out."
-        },
-        {
-         "type": "concept",
-         "id": "the-world-around-us-g5-ch6-l2-k1",
-         "difficulty": 1,
-         "title": "Island Forests and Ferry Safety",
-         "body": "Many trees on the islands are unique and found only there. Shanti was curious about the big roots that support the tree. These forests have unique animals, birds, butterflies and insects. The Andaman wood pigeon and Andaman hornbill live only here. Everyone must wear a life jacket, even if they can swim.",
-         "keyPoints": [
-          "These forests are special and important to protect.",
-          "Get safety instructions before the ferry to the nearby island.",
-          "Life jackets keep you afloat if you fall into water."
-         ],
-         "explanation": "Island forests are special, and ferry safety keeps people safe.",
-         "f": [
-          "2.1",
-          "2.2",
-          "2.3",
-          "2.4",
-          "2.5",
-          "2.6",
-          "2.7",
-          "2.8",
-          "2.9",
-          "2.10"
-         ],
-         "src": [
-          {
-           "ch": 6,
-           "p": 96
-          }
-         ]
         },
         {
          "type": "worked",
@@ -21045,6 +21136,32 @@
         },
         {
          "type": "mcq",
+         "id": "the-world-around-us-g5-ch6-l2-x1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "case"
+         ],
+         "context": "Shanti and her family reached the jetty to catch a ferry to a nearby island. Before boarding, a guide gave everyone safety instructions. On the island, Shanti saw trees with big roots spreading out wide. She was curious about them. She also spotted birds found only on these islands, and heard that the forests are home to many unique animals, birds, butterflies and insects.",
+         "prompt": "Shanti's guide says one of the birds she saw cannot be seen anywhere else in the world. Which bird could it be?",
+         "options": [
+          "The Andaman wood pigeon",
+          "The house sparrow",
+          "The peacock",
+          "The crow"
+         ],
+         "answer": 0,
+         "why": {
+          "The house sparrow": "Sparrows are common everywhere, not unique to the islands.",
+          "The peacock": "Peacocks are common mainland birds, not island-only.",
+          "The crow": "Crows are found almost everywhere, so not unique."
+         },
+         "explanation": "Correct: it is found only on these islands.",
+         "anchor": "the-world-around-us-g5-ch6-l2-k1",
+         "focus": -1
+        },
+        {
+         "type": "mcq",
          "id": "the-world-around-us-g5-ch6-l2-x2",
          "difficulty": 3,
          "tags": [
@@ -22968,6 +23085,52 @@
           {
            "ch": 7,
            "p": 119
+          }
+         ],
+         "anchor": "the-world-around-us-g5-ch7-l3-a1",
+         "focus": 1
+        },
+        {
+         "type": "matchpairs",
+         "id": "the-world-around-us-g5-ch7-l3-a7",
+         "difficulty": 2,
+         "tags": [
+          "energy",
+          "fuel",
+          "food"
+         ],
+         "prompt": "Match each one to its source of energy.",
+         "pairs": [
+          [
+           "You and a sparrow",
+           "Food"
+          ],
+          [
+           "A car",
+           "Petrol"
+          ],
+          [
+           "A kitchen stove",
+           "Cooking gas"
+          ]
+         ],
+         "explanation": "Living things get energy from food. Vehicles get energy from fuels like petrol.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 118
+          },
+          {
+           "ch": 7,
+           "p": 119
+          },
+          {
+           "ch": 7,
+           "p": 119
+          },
+          {
+           "ch": 7,
+           "p": 120
           }
          ],
          "anchor": "the-world-around-us-g5-ch7-l3-a1",
@@ -36066,6 +36229,53 @@
         ],
         "anchor": "the-world-around-us-g5-ch10-l1-a5",
         "focus": 1
+       },
+       {
+        "type": "matchpairs",
+        "id": "the-world-around-us-g5-ch10-boss-a4",
+        "difficulty": 2,
+        "tags": [
+         "chilli",
+         "marigold",
+         "yoga",
+         "cows"
+        ],
+        "prompt": "Match each gift to the place it travelled from.",
+        "pairs": [
+         [
+          "Chilli plants",
+          "South America"
+         ],
+         [
+          "Marigold flowers",
+          "Mexico"
+         ],
+         [
+          "Yoga and Gir cows",
+          "India"
+         ]
+        ],
+        "explanation": "Chillies and marigolds came to India from far away lands. Yoga and Gir cows travelled from India to the world.",
+        "src": [
+         {
+          "ch": 10,
+          "p": 167
+         },
+         {
+          "ch": 10,
+          "p": 170
+         },
+         {
+          "ch": 10,
+          "p": 166
+         },
+         {
+          "ch": 10,
+          "p": 171
+         }
+        ],
+        "anchor": "the-world-around-us-g5-ch10-l5-a1",
+        "focus": 0
        },
        {
         "type": "mcq",
