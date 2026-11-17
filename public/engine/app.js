@@ -1100,7 +1100,7 @@ function finishedNotes(lesson) {
     const wholeBook = bookCompletion(lesson);
     if (wholeBook) {
       out.push(el('div', { class: 'finished finished--book' }, [
-        el('b', { text: `You finished every chapter in ${pack.title}! All ${wholeBook.total} steps, all the way to the end.` }),
+        el('b', { text: t('finishedBook', { title: pack.title, n: wholeBook.total }) }),
         el('span', { class: 'finished__hint', text: 'Pick another class from the trail whenever you want a new adventure.' }),
       ]));
     }
@@ -1207,7 +1207,7 @@ function renderCelebration() {
     el('button', { class: `btn${upNext || more || replay ? ' btn--ghost' : ''} btn--block`, type: 'button', text: t('backHome'), onclick: () => { session = null; go('home'); } }),
     // Finishing a book is the only time the trail is the right next step, so give it the main button and say why.
     finishedBook
-      ? el('button', { class: 'btn btn--primary btn--block', type: 'button', text: 'Pick another class', onclick: () => { session = null; go('path'); } })
+      ? el('button', { class: 'btn btn--primary btn--block', type: 'button', text: t('pickAnotherClass'), onclick: () => { session = null; go('path'); } })
       : el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: t('path'), onclick: () => { session = null; go('path'); } }),
   ]));
 

@@ -10,6 +10,9 @@ const WORDS = {
     Read: 'पढ़िए', 'I have read it': 'पढ़ लिया', 'Tap a highlighted word to see what it means.': 'शब्द का अर्थ जानने के लिए उस पर टैप कीजिए।',
     // The re-teach before a different question: a Hindi book must not stop speaking Hindi halfway through a wrong answer.
     'Read this again': 'फिर से पढ़िए', 'Try a different question': 'दूसरा सवाल आज़माइए', Later: 'बाद में',
+    // Tapping one word to hear it: the hint has to be in the same language as the word being tapped.
+    'Tap any word to hear it on its own.': 'किसी भी शब्द को टैप कीजिए, वह अकेला सुनाई देगा।',
+    'Tap any word to hear it.': 'किसी भी शब्द को टैप कीजिए, वह सुनाई देगा।',
   },
 };
 export const bookWord = (lang, text) => WORDS[lang]?.[text] || text;
