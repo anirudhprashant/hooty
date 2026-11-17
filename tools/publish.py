@@ -146,6 +146,25 @@ def smoke():
         base = f"content/packs/{p['id']}/"; paths.append(base + 'pack.json'); paths.append(base + 'glossary.json')
         d = json.load(open(f'{PUB}/{base}pack.json'))
         paths += sorted({base + l['topicScene'] for u in d['units'] for c in u['chapters'] for l in c['lessons'] + [c['boss']] if l.get('topicScene')})
+    # Links must stay ASCII. A find-and-replace across a pack once rewrote "Onam" inside a Wikimedia URL and broke the
+    # credit link; nothing else in the release would have noticed.
+    deva = re.compile(r'[^\x00-\x7F]')
+    broken = []
+    def check_links(node):
+        if isinstance(node, dict):
+            for k, v in node.items():
+                if isinstance(v, str) and k in ('url', 'src', 'href', 'file', 'credit') and v.startswith(('http', '/', './')) and deva.search(v):
+                    broken.append((k, v[:80]))
+                else:
+                    check_links(v)
+        elif isinstance(node, list):
+            for v in node:
+                check_links(v)
+    for p in idx['packs']:
+        check_links(json.load(open(f"{PUB}/content/packs/{p['id']}/pack.json")))
+    if broken:
+        sys.exit(f'PUBLISH REFUSED: {len(broken)} link(s) contain non-ASCII characters, e.g. {broken[:3]}')
+
     keys = json.load(open(f'{PUB}/audio/manifest.json'))['keys']
     paths += [f'audio/{k}.mp3' for k in random.sample(keys, min(25, len(keys)))]
     # 16 at a time: each trip through Cloudflare and the tunnel costs ~200 ms, one by one this took minutes
