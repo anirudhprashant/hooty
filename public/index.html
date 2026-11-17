@@ -49,9 +49,20 @@
          sizes="(max-width: 720px) 100vw, 1400px">
     <p class="boot__name">Hooty</p>
     <div class="boot__bar" aria-hidden="true"><span></span></div>
-    <p class="boot__note">Getting your world ready</p>
+    <p class="boot__note" id="boot-note">Getting your world ready</p>
   </div>
 </div>
+<script>
+  // The app has not loaded yet, so the splash cannot use its translation table. The device language is the best guess:
+  // a Hindi-medium child should not be greeted in English on their very first visit.
+  (function () {
+    var lang = (navigator.language || 'en').toLowerCase();
+    var note = document.getElementById('boot-note');
+    if (!note) return;
+    if (lang.indexOf('hi') === 0) note.textContent = 'आपकी दुनिया तैयार हो रही है';
+    else if (lang.indexOf('kn') === 0) note.textContent = 'ನಿಮ್ಮ ಜಗತ್ತು ಸಿದ್ಧವಾಗುತ್ತಿದೆ';
+  })();
+</script>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <noscript><p style="padding:24px;font:18px system-ui;text-align:center">Hooty needs JavaScript. Please turn it on in your browser settings and reload.</p></noscript>
 <script type="module" src="./engine/app.js"></script>
