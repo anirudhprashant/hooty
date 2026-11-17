@@ -2136,7 +2136,7 @@ async function warmServiceWorker() {
   if (pack) {
     const card = packIndex.find((p) => p.id === pack.id);
     urls.push(`./content/packs/${pack.id}/pack.json${card && card.v ? `?v=${card.v}` : ''}`);
-    urls.push(`./content/packs/${pack.id}/${pack.glossary || 'glossary.json'}`);
+    urls.push(`./content/packs/${pack.id}/${pack.glossaryFile || 'glossary.json'}`);
   }
   ctrl.postMessage({ type: 'warm', urls });
 }
