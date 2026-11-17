@@ -51,12 +51,15 @@ export default {
         }, ['Hint'])
       : null;
 
+    if (keypad) input.readOnly = true;   // the pad writes the value; a keyboard would only cover the card
     root.append(
       el('p', { class: 'activity__prompt', text: activity.prompt }),
       el('div', { class: 'input-row' }, [input, submit, hint].filter(Boolean)),
       keypad || '',
     );
-    setTimeout(() => input.focus(), 60);
+    // Focus after the card settles, except when the pad is showing: on a phone that pops the keyboard up over the
+    // card and hides the pad the child was given instead.
+    if (!keypad) setTimeout(() => input.focus(), 60);
 
     return {
       root,
