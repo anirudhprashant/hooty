@@ -1889,7 +1889,7 @@ function screenSettings() {
   wrap.append(el('div', { class: 'settings' }, [
     row('Your name', null, nameField),
     row(t('sound'), 'Taps, chimes, a fanfare', soundSwitch),
-    row(t('textSize'), 'Bigger or smaller letters', range),
+    row(t('textSize'), 'Bigger or smaller', range),
     row('Highlight key words', 'Marker-pen on key words', hlSwitch),
     row(t('dyslexiaFont'), 'Wider, clearer letters', dysSwitch),
     SHOW_GUIDE_PICKER ? row('Your guide', 'Who walks with you', guidePicker) : null,
