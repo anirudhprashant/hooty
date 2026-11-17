@@ -714,7 +714,7 @@ function startLesson(lesson) {
   router.backScreen = lesson.isPractice ? 'practice' : 'path';
   router.lesson = lesson;
   router.packId = packOfLesson(lesson)?.id || router.packId || currentPack()?.id;
-  warmClips();   // the clip list is only needed once a lesson can speak: start it now, never on the home screen
+  if (!dataFrugal()) warmClips();   // the clip list is only needed once a lesson can speak: start it now, never on the home screen, and not at all when the phone asked to save data: Listen loads it when tapped
   go('lesson');
 }
 
