@@ -1783,6 +1783,34 @@ function screenParent() {
     el('ul', { class: 'growth-list' }, pairs.map(([id, p]) => el('li', { text: `${p.title}: ${Math.round((100 * l.pre[id].c) / l.pre[id].n)}% before, ${p.pct}% on the chapter challenge` }))),
     el('p', { class: 'growth-note', text: 'A small sample of questions, so treat this as a guide, not a grade.' }),
   ]));
+  // A parent's first question is usually "which subject", so answer it before the finer detail.
+  const bySubject = new Map();
+  const lessonToPack = new Map();
+  for (const p of packs) {
+    for (const u of p.units || []) for (const c of u.chapters || []) {
+      for (const l of c.lessons || []) lessonToPack.set(l.id, p);
+      if (c.boss) lessonToPack.set(bossId(c), p);
+    }
+  }
+  for (const [id, s] of Object.entries(l?.activityStats || {})) {
+    const pack = lessonToPack.get(String(id).split('::')[0]);
+    if (!pack) continue;
+    const cur = bySubject.get(pack.id) || { name: subjectName(pack.subject) || pack.subject || pack.title, seen: 0, correct: 0 };
+    cur.seen += s.seen || 0;
+    cur.correct += s.correct || 0;
+    bySubject.set(pack.id, cur);
+  }
+  const subjectRows = [...bySubject.values()].filter((r) => r.seen >= 5).sort((a, b) => b.seen - a.seen).slice(0, 6);
+  if (subjectRows.length >= 2) {
+    wrap.append(el('section', { class: 'growth-card' }, [
+      el('h2', { class: 'section-title', text: t('subjectAccuracy') }),
+      el('ul', { class: 'growth-list' }, subjectRows.map((r) => el('li', {}, [
+        el('span', { text: r.name }),
+        el('span', { text: ` · ${r.seen ? Math.round((100 * r.correct) / r.seen) : 0}% · ${t('answersWord', { n: r.seen })}` }),
+      ]))),
+      el('p', { class: 'growth-note', text: t('subjectAccuracyNote') }),
+    ]));
+  }
   wrap.append(el('section', { class: 'growth-card' }, [
     el('h2', { class: 'section-title', text: t('isItSticking') }),
     el('p', { text: retried.length

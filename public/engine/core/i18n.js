@@ -173,6 +173,9 @@ export const strings = {
     doneA11y: ", done",
     typeAnswer: "Type your answer",
     deleteKey: "Delete",
+    subjectAccuracy: "Where the answers come from",
+    subjectAccuracyNote: "Answers given and how many were right, subject by subject.",
+    answersWord: "{n} answers",
   },
   hi: {
     appName: 'लूमी',
@@ -345,6 +348,9 @@ export const strings = {
     doneA11y: ", पूरा",
     typeAnswer: "अपना उत्तर लिखिए",
     deleteKey: "मिटाइए",
+    subjectAccuracy: "उत्तर कहाँ से आ रहे हैं",
+    subjectAccuracyNote: "किस विषय में कितने उत्तर दिए और कितने सही हुए।",
+    answersWord: "{n} उत्तर",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -517,6 +523,9 @@ export const strings = {
     doneA11y: ", ಮುಗಿದಿದೆ",
     typeAnswer: "ನಿಮ್ಮ ಉತ್ತರ ಬರೆಯಿರಿ",
     deleteKey: "ಅಳಿಸಿ",
+    subjectAccuracy: "ಉತ್ತರಗಳು ಎಲ್ಲಿಂದ ಬರುತ್ತಿವೆ",
+    subjectAccuracyNote: "ಯಾವ ವಿಷಯದಲ್ಲಿ ಎಷ್ಟು ಉತ್ತರಗಳು ಮತ್ತು ಎಷ್ಟು ಸರಿ.",
+    answersWord: "{n} ಉತ್ತರಗಳು",
   },
 };
 
