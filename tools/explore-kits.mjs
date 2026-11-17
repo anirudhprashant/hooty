@@ -421,7 +421,7 @@ export const KITS = {
     ],
   },
   foodchain: {
-    grades: [4, 10], titleOnly: true,
+    grades: [3, 10], titleOnly: true,
     match: [/food ?chains?/, /food ?webs?/, /\btrophic\b/, /who eats whom/, /(?![^\n]*\b(?:one earth|one family|vasudhaiva)\b)[^\n]*web of life/],
     title: 'Build a food chain', takeaway: 'A food chain shows who eats whom: green plants are the producer at the first trophic level, each animal after that is a consumer at the next level, energy flows only one way, and less of it is left at each step.',
     tasks: [
@@ -480,7 +480,7 @@ export const KITS = {
     ],
   },
   watercycle: {
-    grades: [5, 7], match: [/water cycle/, /evaporat/, /condens/, /precipitat/],
+    grades: [3, 7], match: [/water cycle/, /evaporat/, /condens/, /precipitat/, /\brainwater\b/, /\bground ?water\b/, /\bevaporation\b/],
     title: 'Follow a drop', takeaway: 'Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle.',
     tasks: [{ say: 'Follow the water until it falls as rain.', when: 'step == 3', then: 'Drops in the clouds grow heavy and fall.' }, { say: 'Finish the cycle.', when: 'step == 4', then: 'Rivers carry the water back to the sea, ready to start again.' }],
   },
@@ -695,7 +695,7 @@ export const KITS = {
     ],
   },
   money: {
-    grades: [1, 5], perChapter: { 1: 5, 2: 5 }, minScore: { 1: 4 }, params: (text, f, all, grade) => ({ kind: grade <= 2 ? 'small' : 'rupees' }), match: [/\bdenominations?\b/, /\bdifferent amounts\b/, /\bspent\b|\bspend\b/, /\bbuying\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b/, /\bbalances? to customers\b/],
+    grades: [1, 8], perChapter: { 1: 5, 2: 5 }, minScore: { 1: 4 }, params: (text, f, all, grade) => ({ kind: grade <= 2 ? 'small' : 'rupees' }), match: [/\bdenominations?\b/, /\bdifferent amounts\b/, /\bspent\b|\bspend\b/, /\bbuying\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b/, /\bbalances? to customers\b/, /\bbarter\b/, /\bmedium of exchange\b/],
     title: 'Pay the exact amount', takeaway: 'The same amount can be made with different notes and coins; big notes first uses the fewest.',
     tasks: (p) => p.kind === 'small' ? [
       { say: 'Pay \u20b966 using the notes and coins.', when: 'amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66', then: 'For example \u20b950 + \u20b910 + \u20b95 + \u20b91 = \u20b966.' },
@@ -1001,7 +1001,7 @@ export const KITS = {
     tasks: [{ say: 'Show 400 km on the map.', when: 'cm * km == 400', then: 'Map distance x scale = real distance: 400 km.' }],
   },
   timeline: {
-    grades: [6, 10], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/, /\b(?:1[0-9]{3}|20[0-2][0-9])\b/, /\b\d{1,2}(?:st|nd|rd|th) century\b/],
+    grades: [6, 10], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/, /\b(?:1[0-9]{3}|20[0-2][0-9])\b/, /\b\d{1,2}(?:st|nd|rd|th) century\b/, /\bmaurya|gupta|mughal|chola|sultanate|harappan?\b/],
     // the lesson's own dates if it has three, otherwise the whole chapter's dates when this lesson mentions one of them.
     // A bare year only counts in a lesson that also reads as history, so an economics chart of 2025 gets no timeline.
     params: (text, facts, chapter) => {
@@ -1032,8 +1032,8 @@ export const KITS = {
     ],
   },
   interest: {
-    grades: [10, 10], subjects: ['social'], perChapter: 2,
-    match: [/credit/, /\bdebt/, /\bborrow/, /\binterest\b/, /moneylender/, /high interest/],
+    grades: [9, 10], subjects: ['social'], perChapter: 2,
+    match: [/credit/, /\bdebt/, /\bborrow/, /\binterest\b/, /moneylender/, /high interest/, /\bbanks?\b/, /\bloans?\b/, /\bsavings?\b/],
     title: 'Watch a loan grow', takeaway: 'Simple interest is charged only on the money borrowed; compound interest is also charged on last year\u2019s interest, so the amount owed grows faster every year.',
     tasks: [
       { say: 'Borrow at 20% or more for ten years and see how big the debt becomes.', when: 'rate >= 20 and years == 10', then: 'A high rate left for many years turns even a small loan into a huge debt: that is a debt trap.' },

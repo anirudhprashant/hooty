@@ -537,6 +537,8 @@
 @keyframes sheet-in { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
 .sheet--correct { background: var(--success-soft); }
 .sheet--wrong { background: var(--danger-soft); }
+.sheet__head .icon-btn--sm { margin-left: auto; width: 34px; height: 34px; flex: 0 0 auto; }
+.icon-btn--sm .icon { width: 20px; height: 20px; }
 .sheet__head { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s2); }
 .sheet__mark { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 50%; }
 .sheet--correct .sheet__mark { background: var(--success); color: var(--on-success); }

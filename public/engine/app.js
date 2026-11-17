@@ -1386,10 +1386,16 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
   // The different question can test another line of the same card. When it does, the child needs the whole
   // remember-list, not just the line the missed question asked about.
   const reveal = opts.retake ? revealFor(activity, chapterFor(activity), { whole: !!opts.retake.whole }) : null;
+  // The sheet is where the teaching happens, so it can be read out: the verdict, the note about the slip, the working,
+  // and the explanation. Clips do not exist for feedback, so this uses the device voice like the question button.
+  const teach = [correct ? t('correct') : t('wrong'), slip || '', ...(steps || []), !steps && activity.explanation ? activity.explanation : '']
+    .map((x) => (x || '').trim()).filter(Boolean).join('. ');
+  const saySheet = el('button', { class: 'icon-btn icon-btn--sm', type: 'button', 'aria-label': t('readFeedback'), title: t('readFeedback'), onclick: () => speak([{ text: plain(teach) }], speechLang()) }, [icon('speaker')]);
   const sheet = el('div', { class: `sheet sheet--${correct ? 'correct' : 'wrong'}`, role: 'status' }, [
     el('div', { class: 'sheet__head' }, [
       el('span', { class: 'sheet__mark' }, [icon(correct ? 'check' : 'cross')]),
       el('h3', { class: 'sheet__title', text: correct ? t('correct') : t('wrong') }),
+      saySheet,
     ]),
     slip ? el('p', { class: 'sheet__why', text: slip }) : null,
     model ? el('figure', { class: 'model-fig' }, [model]) : null,
