@@ -935,7 +935,7 @@ function renderActivity() {
   // Everywhere a child reads in a lesson can be tapped for a single word. Concept cards and passages attach their own
   // listener (they draw their text themselves), so the shell covers the question-facing cards.
   if (!['concept', 'passage'].includes(activity.type)) {
-    attachWordTap(rendered.root, packById(s.lesson.packId)?.language);
+    attachWordTap(rendered.root, speechLang());
   }
   if (s.retry) applyHint(s, rendered.root, s.retry.hint);
   // Every new card starts at its top: a long passage leaves the page scrolled, and the next
@@ -1472,7 +1472,7 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
   sheet.append(actions);
   s.stage.append(sheet);
   markWords(sheet);
-  attachWordTap(sheet, packById(s.lesson.packId)?.language);
+  attachWordTap(sheet, speechLang());
   (actions.querySelector('button') || sheet).focus({ preventScroll: true });
   requestAnimationFrame(() => sheet.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
 }

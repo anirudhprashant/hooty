@@ -7,6 +7,9 @@ import { speak, stopSpeech } from './dom.js';
 const WORD = /[\p{L}\p{N}\p{M}'’]/u;
 
 export function speakLangFor(bookLang) {
+  // Either a book language (hi, kn, en) or a full voice code from the app (hi-IN), because practice sessions have no
+  // pack to read a language from and the app already knows the right voice for them.
+  if (/^[a-z]{2,3}-[A-Z]{2}$/.test(String(bookLang || ''))) return bookLang;
   if (bookLang === 'hi') return 'hi-IN';
   if (bookLang === 'kn') return 'kn-IN';
   return 'en-IN';
