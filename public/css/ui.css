@@ -680,6 +680,10 @@
 .switch.is-on::after { transform: translateX(26px); }
 .range { width: 150px; accent-color: var(--text); }
 .setting-row .text-input { flex: 0 1 160px; }
+/* The label takes the leftover space, which left the text-size slider about a third of the row: hard to drag with a
+   thumb. Give a slider in a setting row a real width of its own. */
+.setting-row .range { flex: 0 0 44%; min-width: 132px; }
+
 
 .toast {
   position: fixed; left: 50%; top: calc(env(safe-area-inset-top) + 72px); transform: translate(-50%, -16px);
