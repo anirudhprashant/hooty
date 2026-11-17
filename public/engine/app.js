@@ -908,6 +908,7 @@ function renderActivity() {
     mascot: mascotAvatar,
     markWords: (r) => markWords(r, { hint: false }),
     bookLang: packById(s.lesson.packId)?.language || 'en',
+    grade: String(activeLearner()?.grade ?? ''),
     progress: () => s.index / Math.max(1, s.queue.length),
     // Teaching cards can be stepped back through. A question already answered cannot be answered twice,
     // so Back stops at the first reading card after the last question.

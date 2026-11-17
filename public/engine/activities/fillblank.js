@@ -30,6 +30,19 @@ export default {
       }
     });
 
+    // Little children type numbers on a phone keyboard that covers half the screen. The early classes get a keypad.
+    const numericAnswers = (activity.answers || []).every((x) => /^-?[\d./]+$/.test(String(x)));
+    const young = /^[1-4]$/.test(String(ctx.grade || ''));
+    let keypad = null;
+    if (numericAnswers && young) {
+      const press = (key) => input.value = key === 'del' ? input.value.slice(0, -1) : key === '.' && input.value.includes('.') ? input.value : input.value + key;
+      keypad = el('div', { class: 'keypad' }, [
+        ...['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0', 'del'].map((key) => el('button', {
+          class: 'keypad__key', type: 'button', 'aria-label': key === 'del' ? 'Delete' : key,
+          onclick: () => { press(key); input.focus(); },
+        }, [key === 'del' ? '⌫' : key])),
+      ]);
+    }
     const hint = activity.hint
       ? el('button', {
           class: 'btn btn--ghost btn--sm',
@@ -41,6 +54,7 @@ export default {
     root.append(
       el('p', { class: 'activity__prompt', text: activity.prompt }),
       el('div', { class: 'input-row' }, [input, submit, hint].filter(Boolean)),
+      keypad || '',
     );
     setTimeout(() => input.focus(), 60);
 

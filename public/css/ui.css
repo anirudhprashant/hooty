@@ -1218,3 +1218,32 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .passage__hint { margin: 10px 0 0; color: var(--text-muted); font-size: var(--fs-sm); }
 
 .concept-line__hint { margin: 8px 0 0; color: var(--text-muted); font-size: var(--fs-sm); }
+
+/* A number pad for the early classes: numbers big enough for a small finger, and no keyboard over the card. */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-width: 300px;
+  margin: 12px auto 0;
+}
+.keypad__key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0;
+  font-family: var(--font-display, inherit);
+  font-size: 24px;
+  font-weight: 700;
+  color: #3a2560;
+  background: #fdf6ff;
+  border: 2px solid #e2d4f0;
+  border-radius: 14px;
+  box-shadow: 0 2px 0 #e2d4f0;
+  cursor: pointer;
+}
+.keypad__key:active {
+  background: #f1e4ff;
+  transform: translateY(1px);
+}
