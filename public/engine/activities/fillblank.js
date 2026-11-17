@@ -51,7 +51,6 @@ export default {
         }, ['Hint'])
       : null;
 
-    if (keypad) input.readOnly = true;   // the pad writes the value; a keyboard would only cover the card
     root.append(
       el('p', { class: 'activity__prompt', text: activity.prompt }),
       el('div', { class: 'input-row' }, [input, submit, hint].filter(Boolean)),
