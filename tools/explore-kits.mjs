@@ -236,6 +236,16 @@ export const KITS = {
       { say: 'Make 25% of the amount equal 30.', when: 'p == 25 and whole == 120', then: '25% is a quarter, and a quarter of 120 is 30.' },
     ],
   },
+  division: {
+    grades: [2, 5], perChapter: 3, titleOnly: true,
+    match: [/\bdivision\b/, /\bdivid(e|ing)\b/, /remainders?\b/, /sharing equally/, /equal groups/],
+    title: 'Share the sweets', takeaway: 'Division shares a total into equal groups. The number of whole groups is the quotient, and what cannot fill a group is the remainder, which is always smaller than the group size.',
+    tasks: [
+      { say: 'Share 12 sweets into groups of 3. How many groups are made?', when: 'total == 12 and size == 3', then: '12 shared into groups of 3 makes 4 groups, with nothing left over.' },
+      { say: 'Make a share that leaves exactly 2 sweets over.', when: 'total % size == 2', then: 'The sweets that cannot fill a whole group are the remainder. Here 2 are left over, and 2 is smaller than the group size.' },
+      { say: 'Make 5 full groups of 3 with 1 sweet left over.', when: 'total == 16 and size == 3', then: '5 groups of 3 use 15 sweets, and 16 take one more: 16 = 3 × 5 + 1, so 1 is left over.' },
+    ],
+  },
   // ---- science ----
   particles: {
     grades: [3, 9], titleOnly: true, match: [/states? of matter/, /melting|boiling|freez|evaporat|condens/, /\bice\b.*\bsteam\b/, /solids?,? liquids? and gases?/, /water has different forms/],

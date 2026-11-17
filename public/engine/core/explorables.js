@@ -2297,6 +2297,27 @@ export const WIDGETS = {
       return { kids, say: `You borrow ${rupees(v.P)} at ${v.rate}% a year. After ${v.years} year${v.years === 1 ? '' : 's'} you owe ${rupees(last.owed)}: that is ${rupees(extra)} more than you borrowed. With simple interest you would owe ${rupees(last.flat)}, only ${rupees(simpleExtra)} extra. Compound interest charges interest on last year\u2019s interest too, so the debt grows faster every year${v.rate >= 20 ? '. At a rate as high as this, a small loan can become a debt trap' : ''}.` };
     },
   },
+  division: {
+    subject: 'maths', about: 'Sweets shared into equal groups. One slider sets how many sweets there are and the other sets how many go in each group; the picture shows the whole groups and the sweets left over, so the child sees quotient and remainder. For division, sharing equally, equal groups, remainders, division facts and division word problems.',
+    sliders: [['total', 'Sweets to share', 1, 48, 1, 13], ['size', 'Sweets in each group', 2, 8, 1, 4]],
+    draw(v) {
+      const total = v.total, size = v.size, q = Math.floor(total / size), r = total % size;
+      const rows = Math.ceil(total / size), cell = Math.min(44, 460 / size, 200 / rows), dot = cell * 0.3;
+      const x0 = 300 - (size * cell) / 2 + cell / 2, y0 = 62 + cell / 2;
+      const kids = [R(0, 0, W, H, '#f7f3ff', { w: 0 })];
+      for (let row = 0; row < rows; row++) kids.push(R(x0 - cell / 2 + 2, y0 + row * cell - cell / 2 + 1, size * cell - 4, cell - 2, row < q ? '#e2f6ee' : '#ffeadf', { w: 0, r: 10 }));
+      for (let i = 0; i < total; i++) {
+        const row = Math.floor(i / size), col = i % size, leftOver = i >= q * size;
+        kids.push(CIRC(x0 + col * cell, y0 + row * cell, dot, leftOver ? C.o : row % 2 ? C.g : C.b, { w: 1.4 }));
+      }
+      kids.push(T(300, 28, `${total} ÷ ${size} = ${q}${r ? ` remainder ${r}` : ''}`, { z: 24 }));
+      kids.push(T(300, 288, r ? `${q} full group${q === 1 ? '' : 's'} of ${size}, and ${r} left over` : `${q} full group${q === 1 ? '' : 's'} of ${size}, with nothing left over`, { z: 15, w: 600, f: r ? '#c2510e' : '#058a68' }));
+      const packed = q * size;
+      return { kids, say: r
+        ? `You share ${total} sweets into groups of ${size}. You make ${q} full group${q === 1 ? '' : 's'}, using ${packed} sweets, and ${r} ${r === 1 ? 'sweet is' : 'sweets are'} left over. ${size} × ${q} = ${packed}, and ${total} − ${packed} = ${r}, so the remainder is ${r}, which is smaller than ${size}.`
+        : `You share ${total} sweets into groups of ${size}. You make ${q} full group${q === 1 ? '' : 's'} and nothing is left over, because ${size} × ${q} = ${total}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
