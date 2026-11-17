@@ -1874,7 +1874,7 @@ function weekStrip(l) {
     const d = new Date(Date.now() - i * 86400000);
     const key = todayKey(d);
     const xp = key === todayKey() ? Math.max(l?.dailyXp || 0, l?.days?.[key] || 0) : (l?.days?.[key] || 0);
-    days.push({ xp, name: d.toLocaleDateString(getLocale() === 'hi' ? 'hi-IN' : getLocale() === 'kn' ? 'kn-IN' : 'en-GB', { weekday: 'short', timeZone: 'UTC' }).slice(0, 4), today: i === 0 });
+    days.push({ xp, name: d.toLocaleDateString(getLocale() === 'hi' ? 'hi-IN' : getLocale() === 'kn' ? 'kn-IN' : 'en-GB', { weekday: 'short' }).slice(0, 4), today: i === 0 });
   }
   const top = Math.max(goal, ...days.map((x) => x.xp));
   const met = days.filter((x) => x.xp >= goal).length;

@@ -8,7 +8,9 @@ export const HEARTS_MAX = 5;
 export const DAILY_GOAL_XP = 50;
 
 export function todayKey(d = new Date()) {
-  return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}-${String(d.getUTCDate()).padStart(2, '0')}`;
+  // The child's own day, not Greenwich's: at 05:30 in India a UTC key would still be calling it yesterday, so an
+  // evening lesson could land on the wrong date and the week strip in Grown-ups would disagree with the calendar.
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
 function freshLearner(name = 'Learner') {
