@@ -1212,3 +1212,7 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 
 .finished--book { background: linear-gradient(135deg, var(--primary-soft, #fde8b7), #fff); border: 2px solid var(--primary, #f2b73f); }
 .finished__hint { display: block; margin-top: 6px; color: var(--text-muted); font-size: var(--fs-sm); }
+
+.passage__body .word { cursor: pointer; border-radius: 4px; }
+.passage__body .word:hover, .passage__body .word:active { background: var(--highlight, #fff2b8); }
+.passage__hint { margin: 10px 0 0; color: var(--text-muted); font-size: var(--fs-sm); }
