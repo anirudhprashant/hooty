@@ -1110,7 +1110,7 @@ export const KITS = {
     ],
   },
   elevation: {
-    grades: [9, 10], subjects: ['maths'], match: [/angle of elevation/, /angles? of depression/, /heights? and distances?/, /\btower\b.{0,30}\bheight\b|\bheight\b.{0,30}\btower\b/, /line of sight/],
+    grades: [9, 10], subjects: ['maths'], match: [/angle of elevation/, /angles? of depression/, /heights? and distances?/, /\btower\b.{0,30}\bheight\b|\bheight\b.{0,30}\btower\b/, /line of sight/, /\bminar\b|\bchimney\b|\bflagstaff\b/, /\bheight of (a|the) (minar|tower|building|chimney|pole|flagstaff|tree)\b/, /\bshadows?\b/, /\bpole\b/],
     title: 'Look up at a tower', takeaway: 'The angle of elevation, the height and the distance form a right-angled triangle: distance = height / tan(angle).',
     tasks: [
       { say: 'Stand where the angle is exactly 45 degrees.', when: 'angle == 45', then: 'At 45 degrees the distance equals the height, because tan 45 is 1.' },
