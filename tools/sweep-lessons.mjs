@@ -23,6 +23,7 @@ const JOBS = Math.max(1, Number(flag('--jobs', 3)));
 const LIMIT = Number(flag('--limit', 0)) || 0;
 const ONLY_BOOK = flag('--book');
 const PER_CHAPTER = args.includes('--per-chapter');
+const ONLY_FILE = flag('--only');
 
 function lessonsOf(pack, perChapter = false) {
   const out = [];
@@ -55,7 +56,12 @@ for (const slug of packs) {
   if (PER_CHAPTER) for (const lesson of lessons) targets.push({ slug, lesson });
   else targets.push({ slug, lesson: lessons[Math.floor(Math.random() * lessons.length)] });
 }
-const queue = LIMIT ? targets.slice(0, LIMIT) : targets;
+let queue = LIMIT ? targets.slice(0, LIMIT) : targets;
+// A file of "book lesson" lines from a previous run: walk exactly those, to tell real breakage from a flaky load.
+if (ONLY_FILE) {
+  queue = readFileSync(ONLY_FILE, 'utf8').split('\n').map((line) => line.trim()).filter(Boolean)
+    .map((line) => { const [slug, lesson] = line.split(/\s+/); return { slug, lesson }; });
+}
 console.log(`sweeping ${queue.length} lesson${queue.length === 1 ? '' : 's'} with ${JOBS} at a time against ${BASE}`);
 
 const walk = ({ slug, lesson }) => new Promise((done) => {
@@ -67,25 +73,34 @@ const walk = ({ slug, lesson }) => new Promise((done) => {
     const ok = out.includes('celebrated=1') && out.includes('lesson played through cleanly');
     const steps = (out.split('\n').find((l) => l.includes('steps=')) || '').trim();
     const problems = out.split('\n').filter((l) => l.trim().startsWith('x ')).slice(0, 1);
-    done({ slug, lesson, ok, steps, problems, timedOut: err?.killed || false });
+    // "No steps at all" means the page never came up: under four concurrent browsers Cloudflare starts answering
+    // slowly, and calling that a broken lesson wastes an hour of investigation (it did exactly that once).
+    const reached = out.includes('steps=');
+    done({ slug, lesson, ok, steps, problems, timedOut: err?.killed || false, unreachable: !reached });
   });
 });
 
 const failures = [];
+const unreachable = [];
 let next = 0;
 async function worker() {
   while (next < queue.length) {
     const item = queue[next++];
     const result = await walk(item);
     if (result.ok) console.log(`ok   ${result.slug.padEnd(20)} ${result.lesson}`);
-    else {
+    else if (result.unreachable) {
+      unreachable.push(result);
+      console.log(`miss ${result.slug.padEnd(20)} ${result.lesson} (page did not load${result.timedOut ? ', timed out' : ''})`);
+    } else {
       failures.push(result);
-      console.log(`FAIL ${result.slug.padEnd(20)} ${result.lesson} ${result.timedOut ? '(timed out)' : ''} ${result.problems[0] || ''}`);
+      console.log(`FAIL ${result.slug.padEnd(20)} ${result.lesson} ${result.steps || ''} ${result.problems[0] || ''}`);
     }
   }
 }
 await Promise.all(Array.from({ length: Math.min(JOBS, queue.length) }, worker));
 
-console.log(`\nclean: ${queue.length - failures.length} of ${queue.length}`);
-for (const f of failures) console.log(`  ${f.slug} ${f.lesson}: ${f.steps || 'no steps'} ${f.problems[0] || ''}`);
+console.log(`\nclean: ${queue.length - failures.length - unreachable.length} of ${queue.length}` +
+  (unreachable.length ? `, page did not load: ${unreachable.length}` : ''));
+for (const f of failures) console.log(`  FAIL ${f.slug} ${f.lesson}: ${f.steps || 'no steps'} ${f.problems[0] || ''}`);
+for (const u of unreachable) console.log(`  miss ${u.slug} ${u.lesson}`);
 process.exit(failures.length ? 1 : 0);
