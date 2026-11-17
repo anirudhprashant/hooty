@@ -83,7 +83,7 @@ def thumbs():
 
 def stamp():
     """The offline shell is every engine file, and the cache name is a hash of the code, so nobody bumps either by hand."""
-    files = sorted(os.path.relpath(f, PUB) for p in ('engine/**/*.js', 'css/*.css') for f in glob.glob(f'{PUB}/{p}', recursive=True))
+    files = sorted(os.path.relpath(f, PUB) for p in ('engine/**/*.js', 'css/*.css', 'js/boot.js') for f in glob.glob(f'{PUB}/{p}', recursive=True))
     # Preload every code module and the start-up data in one go: each trip through the tunnel costs about 200 ms, and
     # without this the browser finds them one trip at a time. The first book is the one a new visitor opens.
     page = open(f'{PUB}/index.html').read()
