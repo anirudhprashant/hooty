@@ -178,6 +178,12 @@ export const strings = {
     answersWord: "{n} answers",
     startedA11y: ", started",
     startedWord: "Started",
+    importTooBig: "That file is too big to be a Hooty save.",
+    importUnreadable: "Could not read that file.",
+    importBadFile: "That file is not a Hooty save. Try the file you exported from this app.",
+    importReplace: "Importing replaces the progress on this device. Continue?",
+    importDoneOne: "Imported {who}: 1 lesson done, {xp} XP.",
+    importDoneMany: "Imported {who}: {n} lessons done, {xp} XP.",
   },
   hi: {
     appName: 'लूमी',
@@ -355,6 +361,12 @@ export const strings = {
     answersWord: "{n} उत्तर",
     startedA11y: ", शुरू किया",
     startedWord: "शुरू किया",
+    importTooBig: "यह फ़ाइल हूटी की सेव के लिए बहुत बड़ी है।",
+    importUnreadable: "यह फ़ाइल पढ़ी नहीं जा सकी।",
+    importBadFile: "यह हूटी की सेव फ़ाइल नहीं है। वही फ़ाइल चुनिए जो इस ऐप से निकाली थी।",
+    importReplace: "आयात करने पर इस फ़ोन की प्रगति बदल जाएगी। आगे बढ़ें?",
+    importDoneOne: "{who} आयात हुआ: 1 पाठ पूरा, {xp} XP।",
+    importDoneMany: "{who} आयात हुआ: {n} पाठ पूरे, {xp} XP।",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -532,6 +544,12 @@ export const strings = {
     answersWord: "{n} ಉತ್ತರಗಳು",
     startedA11y: ", ಪ್ರಾರಂಭಿಸಲಾಗಿದೆ",
     startedWord: "ಪ್ರಾರಂಭಿಸಲಾಗಿದೆ",
+    importTooBig: "ಈ ಫೈಲ್ ಹೂಟಿ ಉಳಿಸುವಿಕೆಗೆ ಬಹಳ ದೊಡ್ಡದು.",
+    importUnreadable: "ಈ ಫೈಲ್ ಓದಲಾಗಲಿಲ್ಲ.",
+    importBadFile: "ಇದು ಹೂಟಿ ಉಳಿಸಿದ ಫೈಲ್ ಅಲ್ಲ. ಈ ಆಪ್‌ನಿಂದ ರಫ್ತು ಮಾಡಿದ ಫೈಲ್ ಆರಿಸಿ.",
+    importReplace: "ಆಮದು ಮಾಡಿದರೆ ಈ ಸಾಧನದ ಪ್ರಗತಿ ಬದಲಾಗುತ್ತದೆ. ಮುಂದುವರಿಯುವುದೇ?",
+    importDoneOne: "{who} ಆಮದು ಆಯಿತು: 1 ಪಾಠ ಮುಗಿಯಿತು, {xp} XP.",
+    importDoneMany: "{who} ಆಮದು ಆಯಿತು: {n} ಪಾಠ ಮುಗಿದವು, {xp} XP.",
   },
 };
 

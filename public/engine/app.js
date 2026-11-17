@@ -1931,27 +1931,27 @@ function screenParent() {
     const f = fileInput.files?.[0];
     fileInput.value = '';   // picking the same file twice must work
     if (!f) return;
-    if (f.size > 5 * 1024 * 1024) { toast('That file is too big to be a Hooty save.'); return; }
+    if (f.size > 5 * 1024 * 1024) { toast(t('importTooBig')); return; }
     let text = '';
     try {
       text = await f.text();
     } catch {
-      toast('Could not read that file.');
+      toast(t('importUnreadable'));
       return;
     }
     // An import replaces everything on this device, so a family with two children should not lose the other one by
     // accident. Ask only when there is something to lose.
     const done = Object.values(activeLearner()?.lessonsDone || {}).length;
-    if (done && !window.confirm('Importing replaces the progress on this device. Continue?')) return;
+    if (done && !window.confirm(t('importReplace'))) return;
     try {
       await importSave(text);
       const l2 = activeLearner();
       const count = Object.keys(l2?.lessonsDone || {}).length;
       const who = l2?.name && !/^learner$/i.test(l2.name) ? l2.name : 'this learner';
-      toast(`Imported ${who}: ${count} lesson${count === 1 ? '' : 's'} done, ${l2?.xp || 0} XP.`);
+      toast(count === 1 ? t('importDoneOne', { who, xp: l2?.xp || 0 }) : t('importDoneMany', { who, n: count, xp: l2?.xp || 0 }));
       render();
     } catch (e) {
-      toast(e.message || 'Could not read that file.');
+      toast(e instanceof SyntaxError ? t('importBadFile') : (e.message || t('importUnreadable')));
     }
   });
   dl.append(el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => fileInput.click() }, [icon('upload', { size: 22 }), t('importData')]), fileInput);
