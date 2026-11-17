@@ -722,7 +722,8 @@ function startLesson(lesson) {
   router.backScreen = lesson.isPractice ? 'practice' : 'path';
   router.lesson = lesson;
   router.packId = packOfLesson(lesson)?.id || router.packId || currentPack()?.id;
-  if (!dataFrugal()) warmClips();   // the clip list is only needed once a lesson can speak: start it now, never on the home screen, and not at all when the phone asked to save data: Listen loads it when tapped
+  // The clip list (238 KB) is not fetched here: it is only needed when a child taps a speaker, and speak() loads
+  // it on demand. Warming it on every lesson open cost every reader half a megabyte they may never use.
   go('lesson');
 }
 
