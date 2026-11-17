@@ -13,6 +13,9 @@ export default {
     // Every word is its own span, so a child who is stuck on one can tap it and hear it. The paragraph still reads
     // as running text to a screen reader, because the spans carry no roles and the spaces stay between them.
     const canTap = typeof window !== 'undefined' && !!(window.speechSynthesis || true);
+    // Hindi and Kannada books must not hand a Hindi word to an English voice.
+    const wordLang = (ctx.bookLang === 'hi' || ctx.lang === 'hi') ? 'hi-IN'
+      : (ctx.bookLang === 'kn' || ctx.lang === 'kn') ? 'kn-IN' : 'en-IN';
     const words = (text) => {
       const out = [];
       const parts = String(text).split(/(\s+)/).filter((x) => x.length);
@@ -21,7 +24,7 @@ export default {
         const bare = part.replace(/[^\p{L}\p{N}']/gu, '');
         if (!bare) { out.push(part); continue; }
         const span = el('span', { class: 'word', text: part });
-        span.addEventListener('click', () => { stopSpeech(); speak(bare); });
+        span.addEventListener('click', () => { stopSpeech(); speak(bare, wordLang); });
         out.push(span);
       }
       return out;
