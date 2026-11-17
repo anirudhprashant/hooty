@@ -2234,34 +2234,30 @@ export const WIDGETS = {
     draw(v) {
       const h = v.height, base = v.base, RATE = 6.5;   // the environmental lapse rate, °C per km
       const temp = base - (h / 1000) * RATE;
-      const yOf = (m) => 268 - (m / 6000) * 208;
-      const halfAt = (y) => ((268 - y) / 208) * 230;
+      const yOf = (m) => 266 - (m / 6000) * 196;
+      const halfAt = (y) => ((266 - y) / 196) * 216;
       const summitY = yOf(6000), y = yOf(h);
       const snowLine = (base / RATE) * 1000;            // metres where the air reaches 0°C
       const snowY = yOf(Math.min(snowLine, 6000));
       const parts = [R(0, 0, W, H, '#eef6ff', { w: 0 })];
-      // the mountain, with a white cap above the snow line
-      parts.push(s('polygon', { points: `70,268 300,${summitY} 530,268`, fill: '#b9c7de', stroke: INK, 'stroke-width': 3 }));
+      parts.push(s('polygon', { points: `62,266 300,${summitY} 538,266`, fill: '#b9c7de', stroke: INK, 'stroke-width': 3 }));
       if (snowLine < 6000) {
         const wl = halfAt(snowY);
-        parts.push(s('polygon', { points: `${300 - wl},${snowY} 300,${summitY} ${300 + wl},${snowY}`, fill: '#ffffff', stroke: INK, 'stroke-width': 2 }));
+        parts.push(s('polygon', { points: `${300 - wl},${snowY} 300,${summitY} ${300 + wl},${snowY}`, fill: '#ffffff', stroke: '#7d9ec7', 'stroke-width': 2 }));
+        parts.push(T(70, snowY - 8, `snow line ${Math.round(snowLine / 100) * 100} m`, { z: 20, w: 600, f: '#3b6ea5', a: 'start' }));
       }
-      // sea level line and the height marker
-      parts.push(L(56, 268, 546, 268, INK, 4));
-      parts.push(T(66, 262, 'sea level', { z: 20, w: 600, f: '#5a5170', a: 'start' }));
+      parts.push(T(66, 40, `${num(base, 0)}°C at the coast`, { z: 20, w: 600, f: '#5a5170', a: 'start' }));
+      parts.push(L(56, 266, 546, 266, INK, 4));
+      parts.push(T(66, 258, 'sea level', { z: 19, w: 600, f: '#5a5170', a: 'start' }));
       parts.push(L(56, y, 546, y, '#c2510e', 3, { 'stroke-dasharray': '8 6' }));
       parts.push(CIRC(300, y, 9, '#c2510e', { w: 3 }));
       parts.push(T(300, y - 20, `${h} m`, { z: 24, w: 700, f: '#c2510e' }));
-      if (snowLine < 6000) parts.push(T(548, snowY + 6, 'snow line', { z: 20, w: 600, f: '#3b6ea5', a: 'end' }));
-      // the thermometer on the right
-      const tx = 556, top = 70, bottom = 250;
-      parts.push(R(tx, top, 24, bottom - top, '#ffffff', { w: 3, r: 12 }));
+      const tx = 536, top = 86, bottom = 246;
+      parts.push(R(tx, top, 26, bottom - top, '#ffffff', { w: 3, r: 13 }));
       const frac = Math.max(0, Math.min(1, (temp + 10) / 50));   // -10..40 °C
       const fillTop = bottom - frac * (bottom - top);
-      parts.push(R(tx + 4, fillTop, 16, bottom - fillTop - 4, temp <= 0 ? '#7bb7ff' : '#ffb703', { w: 0, r: 8 }));
-      parts.push(T(tx + 12, bottom + 26, `${num(temp, 0)}°C`, { z: 22, w: 700, f: INK }));
-      parts.push(T(300, 292, `air at ${h} m: ${num(temp, 1)}°C`, { z: 26, w: 700, f: INK }));
-      parts.push(T(120, 60, `${num(base, 0)}°C at the coast`, { z: 20, w: 600, f: '#5a5170', a: 'start' }));
+      parts.push(R(tx + 4, fillTop, 18, bottom - fillTop - 4, temp <= 0 ? '#7bb7ff' : '#ffb703', { w: 0, r: 9 }));
+      parts.push(T(tx + 13, bottom + 30, `${num(temp, 0)}°C`, { z: 22, w: 700, f: INK }));
       const drop = base - temp;
       const snow = temp <= 0 ? ' At this height the air is at or below freezing, so snow can settle.' : '';
       return { kids: parts, say: `At ${h} metres the air is about ${num(temp, 1)}°C, ${num(drop, 1)}°C colder than at sea level.${snow}` };
