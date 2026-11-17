@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
+import { evaluate } from '../public/engine/core/gen.js';
 import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -62,7 +63,11 @@ export function loadAnswers(root = DEFAULT_ROOT) {
             const key = norm(a.prompt);
             if (!answers.has(key)) answers.set(key, list);
             if (a.gen && a.gen.template && a.gen.answer) {
-              gens.push({ ...templateRegex(a.gen.template, a.gen.params), answer: a.gen.answer });
+              gens.push({
+                ...templateRegex(a.gen.template, a.gen.params),
+                answer: a.gen.answer, vals: a.gen.vals || {},
+                params: a.gen.params || {}, where: a.gen.where || [],
+              });
             }
           }
         }
@@ -121,10 +126,41 @@ export function answerFor(loaded, prompt) {
   for (const g of loaded?.gens || []) {
     const m = question.match(g.re);
     if (!m) continue;
-    const vals = g.names.map((_, i) => (NUM_RE.test(m[i + 1]) ? Number(m[i + 1]) : m[i + 1]));
+    const env = Object.fromEntries(g.names.map((name, i) => [name, NUM_RE.test(m[i + 1]) ? Number(m[i + 1]) : m[i + 1]]));
+    // A recipe can ask for a value it never prints (the "greatest common size" style). Recover the hidden
+    // parameters from their declared candidates and the recipe's own constraints.
+    const candidates = (name) => {
+      const spec = g.params?.[name];
+      if (Array.isArray(spec) && spec.every((v) => typeof v === 'number')) return [...spec];
+      if (spec && typeof spec === 'object' && typeof spec.min === 'number') {
+        const step = spec.step || 1, out = [];
+        for (let v = spec.min; v <= (spec.max ?? spec.min + 50); v += step) out.push(v);
+        return out;
+      }
+      return Array.from({ length: 60 }, (_, i) => i + 1);
+    };
+    const hidden = Object.keys(g.params || {}).filter((name) => !(name in env));
+    if (hidden.length) {
+      const pick = (i, acc) => {
+        if (i >= hidden.length) {
+          return (g.where || []).every((cond) => { try { return evaluate(cond, acc) !== 0; } catch { return false; } }) ? acc : null;
+        }
+        for (const value of candidates(hidden[i])) {
+          const next = { ...acc, [hidden[i]]: value };
+          const ok = pick(i + 1, next);
+          if (ok) return ok;
+        }
+        return null;
+      };
+      const solved = pick(0, { ...env });
+      if (solved) Object.assign(env, solved);
+    }
     try {
-      const value = Function(...g.names, `return (${g.answer});`)(...vals);
-      if (Number.isFinite(value)) return String(value);
+      // the recipe's named in-between values first (the engine does the same), then the answer itself
+      const mid = {};
+      for (const [name, expr] of Object.entries(g.vals || {})) mid[name] = evaluate(expr, { ...env, ...mid });
+      const value = evaluate(g.answer, { ...env, ...mid });
+      if (Number.isFinite(value)) return String(Math.round(value * 1e6) / 1e6);
     } catch {
       /* a recipe we cannot evaluate: fall through to the next one */
     }
