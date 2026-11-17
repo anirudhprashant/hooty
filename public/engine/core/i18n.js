@@ -171,6 +171,8 @@ export const strings = {
     lessonsDoneOf: "{done} of {total} lessons done",
     nextUpA11y: ", next up",
     doneA11y: ", done",
+    typeAnswer: "Type your answer",
+    deleteKey: "Delete",
   },
   hi: {
     appName: 'लूमी',
@@ -341,6 +343,8 @@ export const strings = {
     lessonsDoneOf: "{total} में से {done} पाठ पूरे",
     nextUpA11y: ", अगला",
     doneA11y: ", पूरा",
+    typeAnswer: "अपना उत्तर लिखिए",
+    deleteKey: "मिटाइए",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -511,6 +515,8 @@ export const strings = {
     lessonsDoneOf: "{total} ರಲ್ಲಿ {done} ಪಾಠ ಮುಗಿದಿದೆ",
     nextUpA11y: ", ಮುಂದಿನದು",
     doneA11y: ", ಮುಗಿದಿದೆ",
+    typeAnswer: "ನಿಮ್ಮ ಉತ್ತರ ಬರೆಯಿರಿ",
+    deleteKey: "ಅಳಿಸಿ",
   },
 };
 

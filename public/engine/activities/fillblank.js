@@ -1,5 +1,6 @@
 import { el } from '../core/dom.js';
 import { matches } from '../core/answers.js';
+import { t } from '../core/i18n.js';
 
 function normalise(s) {
   return String(s).normalize('NFC').toLowerCase().replace(/[.,!?;:'"()]/g, '').replace(/\s+/g, ' ').trim();
@@ -15,7 +16,7 @@ export default {
       inputmode: (activity.answers || []).every((x) => /^-?[\d./]+$/.test(String(x))) ? 'decimal' : 'text',
       autocomplete: 'off',
       'aria-label': activity.prompt || 'Your answer',
-      placeholder: activity.placeholder || 'Type your answer',
+      placeholder: activity.placeholder || t('typeAnswer'),
     });
 
     const submit = el('button', { class: 'btn btn--primary', type: 'button' }, ['Check']);
@@ -38,7 +39,7 @@ export default {
       const press = (key) => input.value = key === 'del' ? input.value.slice(0, -1) : key === '.' && input.value.includes('.') ? input.value : input.value + key;
       keypad = el('div', { class: 'keypad' }, [
         ...['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0', 'del'].map((key) => el('button', {
-          class: 'keypad__key', type: 'button', 'aria-label': key === 'del' ? 'Delete' : key,
+          class: 'keypad__key', type: 'button', 'aria-label': key === 'del' ? t('deleteKey') : key,
           onclick: () => { press(key); input.focus(); },
         }, [key === 'del' ? '⌫' : key])),
       ]);
