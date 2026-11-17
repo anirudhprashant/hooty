@@ -10395,7 +10395,7 @@
       {
        "id": "mathematics-g5-ch3-l1",
        "title": "Full, Half and Everyday Turns",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -10499,6 +10499,36 @@
          "derived": [
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch3-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",
@@ -11434,7 +11464,7 @@
       {
        "id": "mathematics-g5-ch3-l2",
        "title": "Quarter Turns and Angles",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -11548,6 +11578,36 @@
           "16 (generated problem)",
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",

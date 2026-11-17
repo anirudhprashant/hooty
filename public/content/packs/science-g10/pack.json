@@ -31630,7 +31630,7 @@
       {
        "id": "science-g10-ch10-l1",
        "title": "The Human Eye",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -31694,6 +31694,38 @@
            "p": 162
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g10-ch10-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lens",
+         "params": {
+          "grade": 10
+         },
+         "title": "Focus the lens",
+         "tasks": [
+          {
+           "say": "Put the object exactly twice the focal length away, so the image is the same size.",
+           "when": "u == 2 * f",
+           "then": "At twice the focal length the image is real, inverted and the same size."
+          },
+          {
+           "say": "Move the object inside the focal length to see a virtual, upright image.",
+           "when": "u < f",
+           "then": "Closer than the focus the image is virtual, upright and bigger: this is how a magnifying glass works."
+          },
+          {
+           "say": "Give the lens a short focal length, so it is more powerful.",
+           "when": "f <= 6",
+           "then": "A short focal length means a powerful lens, because power is one divided by the focal length."
+          }
+         ],
+         "takeaway": "A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger.",
+         "explanation": "A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger."
         },
         {
          "type": "worked",
@@ -32656,7 +32688,7 @@
       {
        "id": "science-g10-ch10-l3",
        "title": "Defects of Vision and Their Correction",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -32715,6 +32747,38 @@
            "p": 163
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g10-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lens",
+         "params": {
+          "grade": 10
+         },
+         "title": "Focus the lens",
+         "tasks": [
+          {
+           "say": "Put the object exactly twice the focal length away, so the image is the same size.",
+           "when": "u == 2 * f",
+           "then": "At twice the focal length the image is real, inverted and the same size."
+          },
+          {
+           "say": "Move the object inside the focal length to see a virtual, upright image.",
+           "when": "u < f",
+           "then": "Closer than the focus the image is virtual, upright and bigger: this is how a magnifying glass works."
+          },
+          {
+           "say": "Give the lens a short focal length, so it is more powerful.",
+           "when": "f <= 6",
+           "then": "A short focal length means a powerful lens, because power is one divided by the focal length."
+          }
+         ],
+         "takeaway": "A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger.",
+         "explanation": "A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger."
         },
         {
          "type": "worked",
