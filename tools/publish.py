@@ -161,7 +161,9 @@ def push():
         # no such commit. A trail of "Publish: <what>" commits is readable; a trail of "what is live now" is not.
         head = git('log', '-1', '--pretty=%s').stdout.strip()
         if head and not head.lower().startswith(('publish:', 'backup:', 'merge ')):
-            message = f'Publish: {head[:70]}'
+            room = 90 - len('Publish: ')
+            short = head if len(head) <= room else (head[:room].rsplit(' ', 1)[0] or head[:room])
+            message = f'Publish: {short}'
         else:
             changed = [line for line in git('diff', '--cached', '--name-only').stdout.split('\n') if line.strip()]
             books = len({line.split('/')[3] for line in changed if line.startswith('public/content/packs/') and len(line.split('/')) > 3})
