@@ -2247,11 +2247,11 @@ export const WIDGETS = {
       }
       // the outline goes on last, so the peak stays visible through the snow
       parts.push(s('polygon', { points: `62,266 300,${summitY} 538,266`, fill: 'none', stroke: INK, 'stroke-width': 3 }));
-      if (snowLine < 6000) parts.push(T(66, snowY + 6, `snow line ${Math.round(snowLine / 100) * 100} m`, { z: 19, w: 600, f: '#3b6ea5', a: 'start' }));
+      if (snowLine < 6000) parts.push(T(66, snowY + 20, `snow line ${Math.round(snowLine / 100) * 100} m`, { z: 19, w: 600, f: '#3b6ea5', a: 'start' }));
 
       parts.push(T(66, 40, `${num(base, 0)}°C at the coast`, { z: 20, w: 600, f: '#5a5170', a: 'start' }));
       parts.push(L(56, 266, 546, 266, INK, 4));
-      parts.push(T(66, 258, 'sea level', { z: 19, w: 600, f: '#5a5170', a: 'start' }));
+      parts.push(T(66, 286, 'sea level', { z: 19, w: 600, f: '#5a5170', a: 'start' }));
       parts.push(L(56, y, 546, y, '#c2510e', 3, { 'stroke-dasharray': '8 6' }));
       parts.push(CIRC(300, y, 9, '#c2510e', { w: 3 }));
       parts.push(T(300, y - 20, `${h} m`, { z: 24, w: 700, f: '#c2510e' }));
@@ -2260,10 +2260,12 @@ export const WIDGETS = {
       const frac = Math.max(0, Math.min(1, (temp + 10) / 50));   // -10..40 °C
       const fillTop = bottom - frac * (bottom - top);
       parts.push(R(tx + 4, fillTop, 18, bottom - fillTop - 4, temp <= 0 ? '#7bb7ff' : '#ffb703', { w: 0, r: 9 }));
-      parts.push(T(tx + 13, bottom + 30, `${num(temp, 0)}°C`, { z: 22, w: 700, f: INK }));
+      parts.push(T(tx + 13, bottom + 42, `${num(temp, 0)}°C`, { z: 22, w: 700, f: INK }));
       const drop = base - temp;
       const snow = temp <= 0 ? ' At this height the air is at or below freezing, so snow can settle.' : '';
-      return { kids: parts, say: `At ${h} metres the air is about ${num(temp, 1)}°C, ${num(drop, 1)}°C colder than at sea level.${snow}` };
+      const where = h === 0 ? 'At sea level' : `At ${h} metres`;
+      const colder = h === 0 ? '' : `, ${num(drop, 1)}°C colder than at sea level`;
+      return { kids: parts, say: `${where} the air is about ${num(temp, 1)}°C${colder}.${snow}` };
     },
   },
   tangent: {

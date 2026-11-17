@@ -874,7 +874,7 @@ export const KITS = {
     ],
   },
   picturechart: {
-    grades: [2, 5], perChapter: { 2: 5 }, match: [/data handling/, /\bface stands for\b|\bdraw faces\b/, /\bnumber of (children|students)\b/, /\bmost liked\b|\bleast liked\b|\bmost students\b|\bleast students\b|\b(more|fewer) students\b/, /\bthe table\b|\btable has\b|\bcomplete the table\b/, /\bchart\b|\bsurveys?\b/],
+    grades: [2, 5], perChapter: { 2: 5 }, match: [/data handling/, /\bface stands for\b|\bdraw faces\b/, /\bnumber of (children|students)\b/, /\bmost liked\b|\bleast liked\b|\bmost students\b|\bleast students\b|\b(more|fewer) students\b/, /\btable has\b|\bcomplete the table\b|\btable shows\b/, /\bchart\b|\bsurveys?\b/],
     params: (text) => ({ kind: /colou?rs?\b/.test(text.slice(0, 60)) ? 'colours' : /school|mode of|modes\b/.test(text.slice(0, 80)) ? 'modes' : /\bgames?\b/.test(text.slice(0, 60)) ? 'games' : 'things' }),
     title: 'Fill the picture chart', takeaway: 'One face stands for one child: the longest row is the most liked, the shortest the least.',
     tasks: [
@@ -1113,7 +1113,7 @@ export const KITS = {
     ],
   },
   lapse: {
-    grades: [6, 10], subjects: ['social'], match: [/\baltitude\b|height above sea level/, /\bsnow line\b/, /\bhill station/, /\blapse rate\b/, /air (cools|thins) (as|with|the higher)/, /temperature (decreases|falls|drops|is lower) (as|with|when)/, /\bhigher (up|you go)\b.{0,60}\b(cold|cool|thin)/],
+    grades: [6, 10], subjects: ['social'], match: [/\baltitude\b|height above sea level/, /\bsnow line\b/, /\bhill station/, /\blapse rate\b/, /air (cools|thins) (as|with|the higher)/, /temperature (decreases|falls|drops|is lower) (as|with|when)/, /\bhigher (up|you go)\b.{0,60}\b(cold|cool|thin)/, /\bair (pressure|density)\b.{0,40}\b(decrease|decreases|lower|thin)/],
     title: 'Climb the mountain', takeaway: 'Air cools about 6.5 degrees for every kilometre you climb, so the top of a mountain is cold and snow settles above the snow line.',
     tasks: [
       { say: 'Climb to 3,000 m and read the temperature.', when: 'height >= 3000', then: 'About 6.5 degrees are lost for every kilometre: a hill station at 2,000 m is around 13 degrees cooler than the coast.' },
