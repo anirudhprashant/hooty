@@ -1601,7 +1601,7 @@ function screenRewards() {
   const rewards = getTheme()?.rewards || [];
   const owned = rewards.filter((r) => l?.rewards?.includes(r.id)).length;
 
-  const next = nextReward();
+  const next = nextRewardFor(l);
   const xpNow = l?.xp || 0;
   wrap.append(el('h2', { class: 'section-title', text: t('stickers') }));
   wrap.append(el('p', { class: 'section-sub', text: `${owned} of ${rewards.length} collected. Earn XP by answering questions to unlock the next one.` }));
