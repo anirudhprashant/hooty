@@ -115,11 +115,14 @@ for (; steps < 60; steps++) {
     // Counting the lines shown and the button's own label makes "the same page" mean the same page.
     const shown = act.querySelectorAll('.worked__step, .concept-talk__line, .worked__steps li').length;
     const label = (act.querySelector('.activity__actions .btn--primary, .activity__actions .btn--block')?.textContent || '').trim();
+    // The words on the card are part of what makes "this page" this page: a concept card stepped through five bubbles
+    // keeps the same id, prompt and button label, and used to be reported as stuck after the third.
+    const words = (act.querySelector('.concept-talk__bubble, .worked__step, .activity__prompt, .passage__body')?.textContent || '').trim().slice(0, 40);
     return {
       kind: cls.replace('activity--', ''),
       id: act.getAttribute('data-activity-id') || '',
       prompt: (act.querySelector('.activity__prompt')?.textContent || '').slice(0, 60),
-      progress: `${shown}|${label}`,
+      progress: `${shown}|${label}|${words}`,
     };
   });
   if (!state.kind) break;
