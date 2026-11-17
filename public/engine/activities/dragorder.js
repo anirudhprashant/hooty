@@ -2,6 +2,8 @@ import { el, shuffle } from '../core/dom.js';
 
 // Tap-to-order. Works on a phone with a thumb, no drag library needed.
 // Every tap places an item into the answer row; tap again in the row to remove.
+// Positions are tracked as indexes into `items`, not by their text, so a list with
+// a repeated item (2, 2, 2, 7) can still be placed and checked.
 
 export default {
   type: 'dragorder',
@@ -16,12 +18,12 @@ export default {
 
     function renderPool() {
       pool.replaceChildren();
-      shuffle(items).forEach((text) => {
-        if (placed.includes(text)) return;
-        const b = el('button', { class: 'order-chip', type: 'button', role: 'listitem' }, [text]);
+      const rest = items.map((_, i) => i).filter((i) => !placed.includes(i));
+      shuffle(rest).forEach((i) => {
+        const b = el('button', { class: 'order-chip', type: 'button', role: 'listitem' }, [items[i]]);
         b.addEventListener('click', () => {
           if (ctx.locked) return;
-          placed.push(text);
+          placed.push(i);
           renderPool();
           renderAnswer();
         });
@@ -31,7 +33,8 @@ export default {
 
     function renderAnswer() {
       answerRow.replaceChildren();
-      placed.forEach((text, i) => {
+      placed.forEach((idx, i) => {
+        const text = items[idx];
         const b = el('button', { class: 'order-chip order-chip--placed', type: 'button', 'aria-label': `Position ${i + 1}: ${text}` }, [
           el('span', { class: 'order-num', 'aria-hidden': 'true', text: String(i + 1) }),
           text,
@@ -65,12 +68,12 @@ export default {
       root,
       check(response) {
         const given = response.order || [];
-        const correct = given.length === items.length && given.every((v, i) => v === items[i]);
+        const correct = given.length === items.length && given.every((idx, i) => items[idx] === items[i]);
         checkBtn.disabled = true;
         pool.querySelectorAll('button').forEach((b) => { b.disabled = true; });
         const nodes = answerRow.querySelectorAll('.order-chip');
         nodes.forEach((node, i) => {
-          if (given[i] !== items[i]) node.classList.add('order-chip--wrong');
+          if (items[given[i]] !== items[i]) node.classList.add('order-chip--wrong');
           else node.classList.add('order-chip--correct');
         });
         return correct;
