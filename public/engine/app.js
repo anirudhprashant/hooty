@@ -1446,6 +1446,9 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
 function screenPractice() {
   const l = activeLearner();
   const wrap = el('div', { class: 'page screen' });
+  // The screens carry their title in the top bar, which is decoration for a screen reader: the page needs a real h2
+  // so the "No mistakes to fix" h3 underneath it is not an orphan.
+  wrap.append(el('h2', { class: 'visually-hidden', text: t('practiseTab') }));
   const picked = practiceSet(10);
   if (picked.length) {
     const start = el('button', { class: 'btn big-cta', type: 'button', style: { width: '100%', maxWidth: '420px' } }, [
