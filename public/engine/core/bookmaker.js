@@ -215,7 +215,16 @@ function toSections(chapter) {
       open(b.text, b.page); continue;
     }
     if (!cur) open(chapter.title, b.page);
-    if (cur.inQuestions || (/\?$/.test(b.text) && words(b.text).length < 40)) { if (/\?$/.test(b.text) && words(b.text).length >= 4) cur.questions.push(b.text.replace(/^\(?\d+[.)]\s*|^\(?[a-e]\)\s*/, '')); if (cur.inQuestions) continue; if (/\?$/.test(b.text)) continue; }
+    if (cur.inQuestions) {
+      // In an exercises section every line is a question, whether it ends with a question mark or a full stop.
+      const q = b.text.replace(/^\(?\d+[.)]\s*|^\(?[a-e]\)\s*/, '').trim();
+      if (words(q).length >= 3) cur.questions.push(q);
+      continue;
+    }
+    if (/\?$/.test(b.text) && words(b.text).length < 40) {
+      if (words(b.text).length >= 4) cur.questions.push(b.text.replace(/^\(?\d+[.)]\s*|^\(?[a-e]\)\s*/, '').trim());
+      continue;
+    }
     cur.paras.push(b); cur.terms.push(...(b.terms || []));
   }
   // Fold tiny sections into the one before, and split long ones.
@@ -390,6 +399,10 @@ function workedExamples(section, base) {
   return out.slice(0, 3);
 }
 
+// For tools/QA only: the same stages makeBook uses, so a report of "it lost my exercises" can be answered with the
+// blocks, chapters and sections of the actual file instead of a guess.
+export const __stages = { toBlocks, splitChapters, toSections, bodySize, words, sentencesOf };
+
 export function makeBook(docs, { title, subject = 'My book', id }) {
   dropRepeats(docs);
   const all = docs.flatMap((d) => d.pages.flatMap((p) => p.lines.map((l) => l.text))).join(' ');
@@ -422,7 +435,10 @@ export function makeBook(docs, { title, subject = 'My book', id }) {
       const merged = carry ? { ...s, title: carry.title, page: carry.page, paras: [...carry.paras, ...s.paras], questions: [...carry.questions, ...s.questions], terms: [...carry.terms, ...s.terms] } : s;
       const askable = merged.paras.flatMap(sentencesOf).filter((x) => standsAlone(x.text)).length;
       const size = words(merged.paras.map((p) => p.text).join(' ')).length;
-      if (askable < 2 && size < 700) carry = merged; else { sections.push(merged); carry = null; }
+      // A page of the book's own questions has no paragraphs at all, so it used to be carried into the lesson above and
+      // reduced to one "think about these" card. It deserves its own lesson.
+      const ownQuestions = merged.inQuestions && merged.questions.length >= 2;
+      if (askable < 2 && size < 700 && !ownQuestions) carry = merged; else { sections.push(merged); carry = null; }
     }
     if (carry) { if (sections.length) { const l = sections[sections.length - 1]; l.paras.push(...carry.paras); l.questions.push(...carry.questions); l.terms.push(...carry.terms); } else sections.push(carry); }
     if (!sections.length) {
@@ -445,13 +461,34 @@ export function makeBook(docs, { title, subject = 'My book', id }) {
       const { qs, defs } = questionsFor(s, sentences, terms, { lang, r, base });
       for (const { d, s: from } of defs) if (!glossary.has(d.term.toLowerCase())) glossary.set(d.term.toLowerCase(), { term: d.term, meaning: from.text, src: [{ ch: ch.n, p: from.page }] });
       const body2 = s.paras.filter((p) => !/^(example\s*\d*\b|solution\b)/i.test(p.text)).map((p) => p.text).join('\n\n');
+      // The book's own exercises: ask them as they are printed, with ticking-off practice, instead of inventing questions.
+      if (s.inQuestions && words(body2).length < 40 && s.questions.length >= 2) {
+        lessons.push({
+          id: base, title: s.title, estimatedMinutes: Math.max(3, Math.round(s.questions.length * 0.7)),
+          activities: [{
+            type: 'concept', id: `${base}-ask`, difficulty: 1, tags: ['book questions'], title: s.title,
+            body: lang === 'hi' ? 'ये सवाल आपकी पुस्तक से हैं। अपनी कॉपी में उत्तर लिखिए।' : 'These questions are from your book. Write your answers in your notebook.',
+            keyPoints: s.questions.slice(0, 8),
+            explanation: lang === 'hi' ? 'लिखकर उत्तर दीजिए, फिर किसी को सुनाइए।' : 'Write them down, then read one out to someone at home.',
+          }],
+        });
+        return;
+      }
       if (words(body2).length < 40 && !qs.length) return;
       const reading = { type: 'passage', id: `${base}-read`, difficulty: 1, tags: ['reading'], title: s.title, body: body2, explanation: lang === 'hi' ? 'अब देखते हैं कि क्या याद रहा।' : 'Now let us see what stuck.' };
       const hook = s.questions[0] ? [{ type: 'hook', id: `${base}-hook`, difficulty: 1, tags: ['hook'], prompt: s.questions[0], explanation: lang === 'hi' ? 'आगे पढ़िए।' : 'Read on to find out.' }] : [];
       const keyWords = defs.slice(0, 4).map((x) => x.s.text);
       const recap = keyWords.length >= 2 ? [{ type: 'concept', id: `${base}-key`, difficulty: 1, tags: ['key words'], title: lang === 'hi' ? 'मुख्य बातें' : 'Key ideas', body: keyWords[0], keyPoints: keyWords.slice(1), explanation: lang === 'hi' ? 'ये पंक्तियाँ आपकी पुस्तक से हैं।' : 'These lines are from your book.' }] : [];
       const worked = workedExamples(s, base);
-      const later = s.questions.length > 1 ? [{ type: 'concept', id: `${base}-try`, difficulty: 2, tags: ['book'], title: lang === 'hi' ? 'अपनी पुस्तक से सोचिए' : 'Think about these from your book', body: s.questions[1], keyPoints: s.questions.slice(2, 5), explanation: lang === 'hi' ? 'अपनी कॉपी में लिखकर देखिए।' : 'Try answering in your notebook.' }] : [];
+      // Every printed question belongs in the lesson. The first one already opens the lesson as a hook; the rest are
+      // listed here so a parent can see that the book's own exercises survived the trip.
+      const later = s.questions.length > 1 ? [{
+        type: 'concept', id: `${base}-try`, difficulty: 2, tags: ['book'],
+        title: lang === 'hi' ? 'अपनी पुस्तक के सवाल' : 'Questions from your book',
+        body: s.questions[1],
+        keyPoints: s.questions.slice(2, 9),
+        explanation: lang === 'hi' ? 'अपनी कॉपी में लिखकर उत्तर दीजिए।' : 'Write the answers in your notebook.',
+      }] : [];
       const image = ch.images.find((im) => im.page >= s.page && im.page >= imgAt) || null;
       if (image) imgAt = image.page + 1;
       lessons.push({
