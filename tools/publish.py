@@ -126,9 +126,19 @@ def upload():
 def smoke():
     """Fetch what a child's browser would. Every picture of every book, the code, and a sample of voice clips."""
     def code(path):
-        try:
-            with urllib.request.urlopen(urllib.request.Request(URL + path, headers={'User-Agent': 'sparkle-publish'}), timeout=40) as r: return r.status
-        except Exception as e: return getattr(e, 'code', 0)
+        # One flaky 502 from Cloudflare used to fail a whole publish over a file that was there all along, so a
+        # non-404 answer is retried before it is believed. A real 404 comes back at once.
+        status = 0
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(urllib.request.Request(URL + path, headers={'User-Agent': 'sparkle-publish'}), timeout=40) as r:
+                    if r.status == 200: return 200
+                    status = r.status
+            except Exception as e:
+                status = getattr(e, 'code', 0)
+            if status == 404: return 404
+            time.sleep(0.5 * (attempt + 1))
+        return status
     bad, n = [], 0
     idx = json.load(open(f'{PUB}/content/index.json'))
     paths = ['', 'sw.js', 'content/index.json', 'audio/manifest.json'] + [os.path.relpath(f, PUB) for f in glob.glob(f'{PUB}/engine/**/*.js', recursive=True)]
