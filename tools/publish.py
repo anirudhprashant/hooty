@@ -153,7 +153,8 @@ def smoke():
     def check_links(node):
         if isinstance(node, dict):
             for k, v in node.items():
-                if isinstance(v, str) and k in ('url', 'src', 'href', 'file', 'credit') and v.startswith(('http', '/', './')) and deva.search(v):
+                looks_like_path = isinstance(v, str) and (v.startswith(('http', '/', './')) or '/' in v)
+                if looks_like_path and k in ('url', 'src', 'href', 'file', 'credit', 'topicScene', 'art') and deva.search(v):
                     broken.append((k, v[:80]))
                 else:
                     check_links(v)
