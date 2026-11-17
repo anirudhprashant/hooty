@@ -22,16 +22,21 @@ const BASE = process.env.BASE || 'https://hooty.org/';
 const JOBS = Math.max(1, Number(flag('--jobs', 3)));
 const LIMIT = Number(flag('--limit', 0)) || 0;
 const ONLY_BOOK = flag('--book');
+const PER_CHAPTER = args.includes('--per-chapter');
 
-function lessonsOf(pack) {
+function lessonsOf(pack, perChapter = false) {
   const out = [];
   for (const unit of pack.units) for (const chapter of unit.chapters) {
+    const chapterLessons = [];
     for (const lesson of chapter.lessons || []) {
       const id = lesson.id || '';
       if (id.endsWith('-exam')) continue;
       const kinds = new Set((lesson.activities || []).map((a) => a.type));
-      if (kinds.size >= 3) out.push(id);
+      if (kinds.size >= 3) chapterLessons.push(id);
     }
+    if (!chapterLessons.length) continue;
+    if (perChapter) out.push(chapterLessons[Math.floor(Math.random() * chapterLessons.length)]);
+    else out.push(...chapterLessons);
   }
   return out;
 }
@@ -44,10 +49,11 @@ for (const slug of packs) {
   try {
     pack = JSON.parse(readFileSync(join(packsDir, slug, 'pack.json'), 'utf8'));
   } catch { continue; }
-  const lessons = lessonsOf(pack);
+  const lessons = lessonsOf(pack, PER_CHAPTER);
   if (!lessons.length) continue;
-  // A spread, not just the first lesson: the point is to touch different chapters across runs.
-  targets.push({ slug, lesson: lessons[Math.floor(Math.random() * lessons.length)] });
+  // One per book by default (a spread, so different chapters get touched across runs), or one per chapter.
+  if (PER_CHAPTER) for (const lesson of lessons) targets.push({ slug, lesson });
+  else targets.push({ slug, lesson: lessons[Math.floor(Math.random() * lessons.length)] });
 }
 const queue = LIMIT ? targets.slice(0, LIMIT) : targets;
 console.log(`sweeping ${queue.length} lesson${queue.length === 1 ? '' : 's'} with ${JOBS} at a time against ${BASE}`);
