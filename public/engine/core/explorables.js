@@ -2188,6 +2188,47 @@ export const WIDGETS = {
       return { kids: parts, say: `At ₹${pr} a kg, buyers want ${num(want, 1)} kg and sellers bring ${num(bring, 1)} kg: ${where}. The demand and supply curves cross at ₹${num(eqP, 0)} and ${num(eqQ, 1)} kg.` };
     },
   },
+  seats: {
+    subject: 'social', about: 'Votes turning into seats: one hundred constituencies, each won outright by whoever has more votes there. Slide a party vote share and how uneven the swings are, and watch the seats. For elections, first past the post, vote share against seat share, and how a party can win more seats than its share of votes.',
+    sliders: [['share', 'Votes for party A (%)', 30, 70, 1, 38], ['spread', 'How uneven the swings are', 0, 20, 1, 8]],
+    draw(v) {
+      const share = v.share, spread = v.spread;
+      const rand = seeded(11);   // the same map every time the child comes back
+      const swing = [];
+      for (let i = 0; i < 100; i++) swing.push(rand() * 2 - 1);
+      const box = 20, gap = 2, x0 = 52, y0 = 44;
+      let seatsA = 0;
+      const cells = [];
+      for (let i = 0; i < 100; i++) {
+        const a = share + swing[i] * spread;
+        const won = a >= 50;
+        if (won) seatsA++;
+        cells.push(R(x0 + (i % 10) * (box + gap), y0 + Math.floor(i / 10) * (box + gap), box, box, won ? C.g : C.b, { w: 1, s: '#fff' }));
+      }
+      const seatsB = 100 - seatsA;
+      const bx = 306, bw = 232, barh = 26;
+      const parts = [R(0, 0, W, H, '#fbfdff', { w: 0 }), ...cells];
+      parts.push(T(x0, y0 - 14, 'One square is one constituency, coloured by who won it', { z: 13, w: 600, f: '#6b5a8a', a: 'start' }));
+      parts.push(T(bx, y0 - 14, 'Votes and seats', { z: 13, w: 700, f: INK, a: 'start' }));
+      const bar = (y, labelA, a, labelB, b, colorA, colorB) => {
+        const total = a + b || 1, wA = Math.max(2, (a / total) * bw);
+        parts.push(R(bx, y, bw, barh, colorB, { w: 2, s: '#fff' }));
+        parts.push(R(bx, y, wA, barh, colorA, { w: 2, s: '#fff' }));
+        parts.push(T(bx - 8, y + barh - 7, labelA, { z: 12, w: 600, f: '#6b5a8a', a: 'end' }));
+        parts.push(T(bx + bw + 8, y + barh - 7, `${labelB}`, { z: 12, w: 600, f: '#6b5a8a', a: 'start' }));
+        return parts;
+      };
+      parts.push(T(bx - 8, y0 + 6, 'party A', { z: 13, w: 700, f: '#0b6b52', a: 'end' }), T(bx - 8, y0 + 26, 'party B', { z: 13, w: 700, f: '#1d4ed8', a: 'end' }));
+      bar(y0 + 36, `${share}%`, share, '', 100 - share, C.g, C.b);
+      parts.push(T(bx + bw / 2, y0 + 82, `votes: A ${share}%, B ${100 - share}%`, { z: 13, f: '#6b5a8a', w: 600 }));
+      bar(y0 + 100, `${seatsA}`, seatsA, '', seatsB, C.g, C.b);
+      parts.push(T(bx + bw / 2, y0 + 146, `seats: A ${seatsA}, B ${seatsB}`, { z: 13, f: '#6b5a8a', w: 600 }));
+      const gapSeats = seatsA - share;
+      const where = Math.abs(gapSeats) <= 2 ? 'Seats and votes are close here.'
+        : gapSeats > 0 ? `A wins ${gapSeats} more seats than its share of the votes.` : `A wins ${-gapSeats} fewer seats than its share of the votes.`;
+      return { kids: parts, say: `With ${share}% of the votes, party A wins ${seatsA} of the 100 seats. ${where}` };
+    },
+  },
   osmosis: {
     subject: 'science', about: 'Two compartments of water with different amounts of dissolved sugar, separated by a selectively permeable membrane. Water moves from the dilute (weaker) side to the concentrated (stronger) side until the rising level balances the pull; the sugar cannot cross. For osmosis, diffusion of water, selectively permeable membrane, cell membrane, cell wall, plasmolysis.',
     sliders: [['left', 'Sugar on the left (spoonfuls)', 0, 10, 1, 2], ['right', 'Sugar on the right (spoonfuls)', 0, 10, 1, 8], ['mins', 'Minutes left standing', 0, 10, 1, 0]],

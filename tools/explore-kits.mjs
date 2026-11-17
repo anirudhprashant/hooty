@@ -1082,6 +1082,15 @@ export const KITS = {
       { say: 'Make a cross with two tall children and two short children.', when: '(g1 == 1 and g2 == 2) or (g1 == 2 and g2 == 1)', then: 'Tt × tt gives two Tt (tall) and two tt (short): half and half.' },
     ],
   },
+  seats: {
+    grades: [7, 10], subjects: ['social'], match: [/\bconstituenc/, /first[- ]past[- ]the[- ]post/, /\belections?\b/, /electoral/, /vote share|votes? and seats/, /political part(y|ies)/],
+    title: 'Turn votes into seats', takeaway: 'Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.',
+    tasks: [
+      { say: 'Give party A 51% of the votes and count its seats.', when: 'share == 51', then: 'A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone.' },
+      { say: 'Flatten the swings: make every constituency vote the same way while A is ahead.', when: 'spread == 0 and share > 50', then: 'With no local differences at all, a one-point lead wins every seat.' },
+      { say: 'Take the swings to their widest and see who wins where.', when: 'spread == 20', then: 'When the local differences are large, the national vote share tells you much less about who wins a seat.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".

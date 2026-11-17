@@ -15965,7 +15965,7 @@
       {
        "id": "social-science-g8-ch5-l3",
        "title": "The Election Commission and the Scale of Elections",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "concept",
@@ -16003,6 +16003,36 @@
            "p": 126
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g8-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seats",
+         "params": {},
+         "title": "Turn votes into seats",
+         "tasks": [
+          {
+           "say": "Give party A 51% of the votes and count its seats.",
+           "when": "share == 51",
+           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
+          },
+          {
+           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
+           "when": "spread == 0 and share > 50",
+           "then": "With no local differences at all, a one-point lead wins every seat."
+          },
+          {
+           "say": "Take the swings to their widest and see who wins where.",
+           "when": "spread == 20",
+           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
+          }
+         ],
+         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
+         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
         },
         {
          "type": "hook",
@@ -16764,7 +16794,7 @@
       {
        "id": "social-science-g8-ch5-l5",
        "title": "Elections at Every Level",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -16820,6 +16850,36 @@
            "p": 133
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g8-ch5-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seats",
+         "params": {},
+         "title": "Turn votes into seats",
+         "tasks": [
+          {
+           "say": "Give party A 51% of the votes and count its seats.",
+           "when": "share == 51",
+           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
+          },
+          {
+           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
+           "when": "spread == 0 and share > 50",
+           "then": "With no local differences at all, a one-point lead wins every seat."
+          },
+          {
+           "say": "Take the swings to their widest and see who wins where.",
+           "when": "spread == 20",
+           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
+          }
+         ],
+         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
+         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
         },
         {
          "type": "worked",
