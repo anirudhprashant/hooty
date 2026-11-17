@@ -21,7 +21,7 @@ export default {
       const parts = String(text).split(/(\s+)/).filter((x) => x.length);
       for (const part of parts) {
         if (!part.trim()) { out.push(part); continue; }
-        const bare = part.replace(/[^\p{L}\p{N}']/gu, '');
+        const bare = part.replace(/[^\p{L}\p{N}\p{M}']/gu, '').normalize('NFC');
         if (!bare) { out.push(part); continue; }
         const span = el('span', { class: 'word', text: part });
         span.addEventListener('click', () => { stopSpeech(); speak(bare, wordLang); });

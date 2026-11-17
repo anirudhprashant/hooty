@@ -3,7 +3,8 @@
 // the caret position instead. Punctuation is dropped before speaking and the language comes from the book.
 import { speak, stopSpeech } from './dom.js';
 
-const WORD = /[\p{L}\p{N}'’]/u;
+// \p{M} matters: a vowel sign in Devanagari, Kannada or Tamil is a combining mark, so "भारत" splits without it.
+const WORD = /[\p{L}\p{N}\p{M}'’]/u;
 
 export function speakLangFor(bookLang) {
   if (bookLang === 'hi') return 'hi-IN';
@@ -33,7 +34,7 @@ export function wordAt(node, offset) {
   while (end < text.length && WORD.test(text[end])) end += 1;
   const word = text.slice(start, end).trim();
   if (!word || !/\p{L}/u.test(word)) return '';
-  return word.replace(/^['’]+|['’]+$/g, '');
+  return word.replace(/^['’]+|['’]+$/g, '').normalize('NFC');
 }
 
 export function attachWordTap(root, bookLang) {
