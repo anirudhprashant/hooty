@@ -2243,8 +2243,8 @@ export const WIDGETS = {
       parts.push(s('polygon', { points: `62,266 300,${summitY} 538,266`, fill: '#b9c7de', stroke: INK, 'stroke-width': 3 }));
       if (snowLine < 6000) {
         const wl = halfAt(snowY);
-        parts.push(s('polygon', { points: `${300 - wl},${snowY} 300,${summitY} ${300 + wl},${snowY}`, fill: '#ffffff', stroke: '#7d9ec7', 'stroke-width': 2 }));
-        parts.push(T(70, snowY - 8, `snow line ${Math.round(snowLine / 100) * 100} m`, { z: 20, w: 600, f: '#3b6ea5', a: 'start' }));
+        parts.push(s('polygon', { points: `${300 - wl},${snowY} 300,${summitY} ${300 + wl},${snowY}`, fill: '#ffffff', stroke: 'none' }));
+        parts.push(T(150, snowY + 26, `snow line ${Math.round(snowLine / 100) * 100} m`, { z: 19, w: 600, f: '#3b6ea5', a: 'start' }));
       }
       parts.push(T(66, 40, `${num(base, 0)}°C at the coast`, { z: 20, w: 600, f: '#5a5170', a: 'start' }));
       parts.push(L(56, 266, 546, 266, INK, 4));
@@ -2252,7 +2252,7 @@ export const WIDGETS = {
       parts.push(L(56, y, 546, y, '#c2510e', 3, { 'stroke-dasharray': '8 6' }));
       parts.push(CIRC(300, y, 9, '#c2510e', { w: 3 }));
       parts.push(T(300, y - 20, `${h} m`, { z: 24, w: 700, f: '#c2510e' }));
-      const tx = 536, top = 86, bottom = 246;
+      const tx = 500, top = 84, bottom = 244;
       parts.push(R(tx, top, 26, bottom - top, '#ffffff', { w: 3, r: 13 }));
       const frac = Math.max(0, Math.min(1, (temp + 10) / 50));   // -10..40 °C
       const fillTop = bottom - frac * (bottom - top);
