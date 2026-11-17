@@ -1109,6 +1109,15 @@ export const KITS = {
       { say: 'Keep the radius 5 and push the point to 20 cm from the centre.', when: 'r == 5 and d == 20', then: 'The tangent is only about 19.4 cm, not double the 12 cm: it grows more slowly than the distance.' },
     ],
   },
+  elevation: {
+    grades: [9, 10], subjects: ['maths'], match: [/angle of elevation/, /angles? of depression/, /heights? and distances?/, /\btower\b.{0,30}\bheight\b|\bheight\b.{0,30}\btower\b/, /line of sight/],
+    title: 'Look up at a tower', takeaway: 'The angle of elevation, the height and the distance form a right-angled triangle: distance = height / tan(angle).',
+    tasks: [
+      { say: 'Stand where the angle is exactly 45 degrees.', when: 'angle == 45', then: 'At 45 degrees the distance equals the height, because tan 45 is 1.' },
+      { say: 'Come closer until the angle reaches 60 degrees.', when: 'angle == 60', then: 'tan 60 is about 1.73, so you stand a little more than half the height away.' },
+      { say: 'Move away until the angle is only 20 degrees.', when: 'angle == 20', then: 'A small angle means a long distance: tan 20 is about 0.36, so the distance is nearly three times the height.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".

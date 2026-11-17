@@ -2299,6 +2299,34 @@ export const WIDGETS = {
       return { kids, say: `Radius ${rad0} cm, point ${dist} cm from the centre. ${kind}` };
     },
   },
+  elevation: {
+    subject: 'maths', about: 'Standing a distance from a tall tower and looking up: the angle of elevation sets how far away you are. The sliders change the angle and the tower height, and the drawing shows the right-angled triangle with its distance, height and angle. For angles of elevation, heights and distances, tangent ratios, and finding a distance from an angle.',
+    sliders: [['angle', 'Angle of elevation (degrees)', 10, 60, 1, 35], ['height', 'Height of the tower (metres)', 10, 50, 1, 30]],
+    draw(v) {
+      const deg = v.angle, tall = v.height;
+      const dist = tall / Math.tan((deg * Math.PI) / 180);
+      const groundY = 252, leftX = 62;
+      const scale = Math.min(430 / dist, 178 / tall);
+      const footX = leftX + dist * scale, topY = groundY - tall * scale;
+      const kids = [R(0, 0, W, H, '#f5fbff', { w: 0 })];
+      kids.push(L(36, groundY, 572, groundY, INK, 4));
+      // the tower
+      kids.push(R(footX - 11, topY, 22, groundY - topY, '#c9d7f0', { w: 3, r: 3 }));
+      kids.push(s('polygon', { points: `${footX},${topY - 16} ${footX - 12},${topY} ${footX + 12},${topY}`, fill: C.o, stroke: INK, 'stroke-width': 2 }));
+      // the observer and the line of sight
+      kids.push(CIRC(leftX, groundY - 10, 9, C.p, { w: 3 }));
+      kids.push(L(leftX, groundY - 14, footX, topY, '#c2510e', 3, { 'stroke-dasharray': '9 7' }));
+      kids.push(s('path', { d: `${arc(leftX, groundY - 14, 64, 0, deg)} L ${leftX} ${groundY - 14} Z`, fill: C.y, stroke: INK, 'stroke-width': 2, opacity: 0.55 }));
+      kids.push(T(leftX + 78, groundY - 24, `${deg}°`, { z: 24, w: 700, f: INK, a: 'start' }));
+      // the right angle at the tower's foot
+      const m = 14;
+      kids.push(s('polyline', { points: `${footX - m},${groundY} ${footX - m},${groundY - m} ${footX},${groundY - m}`, fill: 'none', stroke: '#3b6ea5', 'stroke-width': 2 }));
+      kids.push(T((leftX + footX) / 2, groundY + 30, `${num(dist, 1)} m away`, { z: 22, w: 700, f: INK }));
+      kids.push(T(footX + 20, (groundY + topY) / 2, `${tall} m`, { z: 22, w: 700, f: INK, a: 'start' }));
+      const tan = num(Math.tan((deg * Math.PI) / 180), 2);
+      return { kids, say: `Looking up at ${deg}° at a tower ${tall} m high, you stand ${num(dist, 1)} m from its foot. tan ${deg}° is about ${tan}, and distance = height / tan.` };
+    },
+  },
   osmosis: {
     subject: 'science', about: 'Two compartments of water with different amounts of dissolved sugar, separated by a selectively permeable membrane. Water moves from the dilute (weaker) side to the concentrated (stronger) side until the rising level balances the pull; the sugar cannot cross. For osmosis, diffusion of water, selectively permeable membrane, cell membrane, cell wall, plasmolysis.',
     sliders: [['left', 'Sugar on the left (spoonfuls)', 0, 10, 1, 2], ['right', 'Sugar on the right (spoonfuls)', 0, 10, 1, 8], ['mins', 'Minutes left standing', 0, 10, 1, 0]],
