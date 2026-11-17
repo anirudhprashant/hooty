@@ -1776,11 +1776,26 @@ function screenParent() {
   const fileInput = el('input', { type: 'file', accept: 'application/json', style: { display: 'none' } });
   fileInput.addEventListener('change', async () => {
     const f = fileInput.files?.[0];
+    fileInput.value = '';   // picking the same file twice must work
     if (!f) return;
     if (f.size > 5 * 1024 * 1024) { toast('That file is too big to be a Hooty save.'); return; }
+    let text = '';
     try {
-      await importSave(await f.text());
-      toast('Progress imported.');
+      text = await f.text();
+    } catch {
+      toast('Could not read that file.');
+      return;
+    }
+    // An import replaces everything on this device, so a family with two children should not lose the other one by
+    // accident. Ask only when there is something to lose.
+    const done = Object.values(activeLearner()?.lessonsDone || {}).length;
+    if (done && !window.confirm('Importing replaces the progress on this device. Continue?')) return;
+    try {
+      await importSave(text);
+      const l2 = activeLearner();
+      const count = Object.keys(l2?.lessonsDone || {}).length;
+      const who = l2?.name && !/^learner$/i.test(l2.name) ? l2.name : 'this learner';
+      toast(`Imported ${who}: ${count} lesson${count === 1 ? '' : 's'} done, ${l2?.xp || 0} XP.`);
       render();
     } catch (e) {
       toast(e.message || 'Could not read that file.');
@@ -1788,6 +1803,7 @@ function screenParent() {
   });
   dl.append(el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => fileInput.click() }, [icon('upload', { size: 22 }), t('importData')]), fileInput);
   wrap.append(dl);
+  wrap.append(el('p', { class: 'section-sub', text: 'The file holds every child on this device. Importing replaces the progress here, so export first if you are not sure.' }));
   return wrap;
 }
 
