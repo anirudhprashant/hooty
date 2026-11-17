@@ -1,4 +1,5 @@
 import { el, stopSpeech } from '../core/dom.js';
+import { attachWordTap } from '../core/wordtap.js';
 import { bookWord } from '../core/bookwords.js';
 
 // A concept card is a short conversation: Hooty says one thing at a time and the
@@ -58,6 +59,9 @@ export default {
         s.items.forEach((p) => ul.append(el('li', { text: p })));
         content.append(ul);
       }
+      // A word the child is stuck on can be tapped and heard on its own. The hint appears once, on the first line.
+      attachWordTap(content, ctx.bookLang);
+      if (i === 0) content.append(el('p', { class: 'concept-line__hint', text: w('Tap any word to hear it.') }));
       bubble.replaceChildren(content);
       ctx.markWords?.(bubble);
       dots.childNodes.forEach((d, n) => d.classList.toggle('is-on', n <= i));
