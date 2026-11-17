@@ -2,6 +2,7 @@
 // settings, theme picker, pack picker. Vanilla, no framework.
 
 import { el, clear, button, confetti, sparkle, speak, stopSpeech, isSpeaking, warmClips } from './core/dom.js';
+import { attachWordTap } from './core/wordtap.js';
 import { sfx, unlockAudio, configureSfx, haptic } from './core/sfx.js';
 import { realise } from './core/gen.js';
 import { renderModel } from './core/models.js';
@@ -931,6 +932,11 @@ function renderActivity() {
     if (m) rendered.root.querySelector('.activity__prompt')?.after(el('figure', { class: 'model-fig' }, [m]));
   }
   markWords(rendered.root);
+  // Everywhere a child reads in a lesson can be tapped for a single word. Concept cards and passages attach their own
+  // listener (they draw their text themselves), so the shell covers the question-facing cards.
+  if (!['concept', 'passage'].includes(activity.type)) {
+    attachWordTap(rendered.root, packById(s.lesson.packId)?.language);
+  }
   if (s.retry) applyHint(s, rendered.root, s.retry.hint);
   // Every new card starts at its top: a long passage leaves the page scrolled, and the next
   // card's picture and question would otherwise open half hidden under the header.
