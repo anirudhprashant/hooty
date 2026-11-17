@@ -1202,3 +1202,6 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
   .nav__item:hover .icon { transform: rotate(-8deg) scale(1.08); }
 }
 @media (prefers-reduced-motion: reduce) { .tile, .feature, .nav__item, .nav__item .icon { transition: none; } }
+
+.reward-next { margin: -6px 0 14px; font-weight: 700; color: var(--accent, #b45309); }
+.reward.is-next { outline: 3px solid var(--accent, #b45309); outline-offset: 2px; }

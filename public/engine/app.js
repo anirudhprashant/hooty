@@ -1601,12 +1601,17 @@ function screenRewards() {
   const rewards = getTheme()?.rewards || [];
   const owned = rewards.filter((r) => l?.rewards?.includes(r.id)).length;
 
+  const next = nextReward();
+  const xpNow = l?.xp || 0;
   wrap.append(el('h2', { class: 'section-title', text: t('stickers') }));
   wrap.append(el('p', { class: 'section-sub', text: `${owned} of ${rewards.length} collected. Earn XP by answering questions to unlock the next one.` }));
+  // A child looks at this page wondering how far the next sticker is; say the number instead of making them subtract.
+  if (next) wrap.append(el('p', { class: 'reward-next', text: `${Math.max(0, next.unlockAt - xpNow)} ${t('xp')} to the next sticker` }));
   const grid = el('div', { class: 'reward-grid' });
   for (const r of rewards) {
     const got = l?.rewards?.includes(r.id);
-    grid.append(el('div', { class: `reward${got ? '' : ' is-locked'}` }, [
+    const isNext = !got && next && r.id === next.id;
+    grid.append(el('div', { class: `reward${got ? '' : ' is-locked'}${isNext ? ' is-next' : ''}` }, [
       el('img', { class: 'reward__art', src: themeAsset(r.art), alt: got ? r.name : '' }),
       el('span', { class: 'reward__name', text: got ? r.name : '???' }),
       el('span', { class: 'reward__need', text: got ? 'Collected' : `${r.unlockAt} XP` }),
