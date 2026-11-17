@@ -2,7 +2,7 @@
 // after the first visit. Never caches anything that identifies a child:
 // there is nothing to cache but static files.
 
-const CACHE = 'sparkle-fca93560b4';
+const CACHE = 'sparkle-6396ee2cb2';
 
 const SHELL = [
   './',
@@ -47,6 +47,7 @@ const SHELL = [
   './engine/core/state.js',
   './engine/core/store.js',
   './engine/core/theme.js',
+  './engine/core/wordtap.js',
 ];
 
 self.addEventListener('install', (event) => {
