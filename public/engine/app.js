@@ -408,7 +408,7 @@ async function saveName(raw) {
 }
 
 function nameCard() {
-  const input = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': 'Your name', placeholder: 'Type your name' });
+  const input = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': 'Your name', placeholder: t('namePlaceholder') });
   const form = el('form', { class: 'name-card' }, [
     el('p', { class: 'name-card__ask', text: 'What should Hooty call you?' }),
     el('div', { class: 'input-row' }, [input, el('button', { class: 'btn btn--primary', type: 'submit', text: 'Save' })]),
@@ -1912,7 +1912,7 @@ function screenSettings() {
   });
   range.addEventListener('change', () => persist());
 
-  const nameField = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': 'Your name', value: /^learner$/i.test(l?.name || '') ? '' : (l?.name || ''), placeholder: 'Type your name' });
+  const nameField = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': 'Your name', value: /^learner$/i.test(l?.name || '') ? '' : (l?.name || ''), placeholder: t('namePlaceholder') });
   nameField.addEventListener('change', () => saveName(nameField.value));
 
   const langSel = el('select', { class: 'text-input', 'aria-label': t('language') });
@@ -1940,12 +1940,12 @@ function screenSettings() {
     }));
 
   wrap.append(el('div', { class: 'settings' }, [
-    row('Your name', null, nameField),
+    row(t('nameLabel'), null, nameField),
     row(t('sound'), t('soundHint'), soundSwitch),
     row(t('textSize'), t('textSizeHint'), range),
-    row('Highlight key words', t('highlightHint'), hlSwitch),
+    row(t('highlightLabel'), t('highlightHint'), hlSwitch),
     row(t('dyslexiaFont'), t('fontHint'), dysSwitch),
-    SHOW_GUIDE_PICKER ? row('Your guide', t('guideHint'), guidePicker) : null,
+    SHOW_GUIDE_PICKER ? row(t('guideLabel'), t('guideHint'), guidePicker) : null,
     row(t('language'), null, langSel),
   ]));
 
@@ -1958,8 +1958,8 @@ function screenSettings() {
     }
   }
   if (credits.length) {
-    wrap.append(el('h2', { class: 'section-title', text: 'Picture credits' }));
-    wrap.append(el('p', { class: 'section-sub', text: 'The photographs and old maps in the lessons come from Wikimedia Commons. Tap one to see its page and licence.' }));
+    wrap.append(el('h2', { class: 'section-title', text: t('creditsTitle') }));
+    wrap.append(el('p', { class: 'section-sub', text: t('creditsFull') }));
     wrap.append(el('ul', { class: 'credit-list' }, credits.map((c) => el('li', {}, [
       el('a', { class: 'credit-link', href: safeLink(c.url), target: '_blank', rel: 'noopener noreferrer', text: c.text }),
     ]))));
