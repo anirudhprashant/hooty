@@ -1063,6 +1063,18 @@ function updateProgress() {
 }
 
 // After a lesson: how far through the chapter the child is, and where to read this in the real book.
+// Is this the lesson that finishes the whole book? Shared by the note and the buttons under it.
+function bookCompletion(lesson) {
+  const l = activeLearner();
+  const pack = lesson.packId ? packById(lesson.packId) : null;
+  if (!pack || !l) return null;
+  const ids = pack.units.flatMap((u) => u.chapters.flatMap((c) => [
+    ...c.lessons.map((x) => x.id), ...(c.boss ? [bossId(c)] : []),
+  ]));
+  const done = ids.filter((id) => l.lessonsDone[id] || id === lesson.lessonId).length;
+  return done >= ids.length ? { pack, total: ids.length } : null;
+}
+
 function finishedNotes(lesson) {
   const out = [];
   const l = activeLearner();
@@ -1079,13 +1091,10 @@ function finishedNotes(lesson) {
     ]));
     // The chapter bar was the largest thing a child could finish. A whole book deserves its own moment, and it only
     // exists on the lesson that completes it.
-    const allIds = pack.units.flatMap((u) => u.chapters.flatMap((c) => [
-      ...c.lessons.map((x) => x.id), ...(c.boss ? [bossId(c)] : []),
-    ]));
-    const allDone = allIds.filter(isDone).length;
-    if (allDone >= allIds.length && pack.title) {
+    const wholeBook = bookCompletion(lesson);
+    if (wholeBook) {
       out.push(el('div', { class: 'finished finished--book' }, [
-        el('b', { text: `You finished every chapter in ${pack.title}! All ${allIds.length} steps, all the way to the end.` }),
+        el('b', { text: `You finished every chapter in ${pack.title}! All ${wholeBook.total} steps, all the way to the end.` }),
         el('span', { class: 'finished__hint', text: 'Pick another class from the trail whenever you want a new adventure.' }),
       ]));
     }
@@ -1175,6 +1184,7 @@ function renderCelebration() {
     startLesson({ id: 'replay-' + Date.now(), lessonId: 'practice', title: s.lesson.title, activities: missed, estimatedMinutes: Math.max(1, Math.round(missed.length / 2)), isPractice: true, packId: s.lesson.packId, topicScene: s.lesson.topicScene, sceneAlt: s.lesson.sceneAlt });
   } }, [missed.length === 1 ? 'Try the one you missed' : `Try the ${missed.length} you missed`]) : null;
   if (replay) box.querySelector('.celebrate__body').textContent = 'Good effort! Have another go at the ones that were tricky, and they will stick.';
+  const finishedBook = bookCompletion(s.lesson);
   box.append(el('div', { class: 'activity__actions' }, [
     replay,
     upNext ? el('button', { class: `btn${replay ? ' btn--ghost' : ' btn--primary'} btn--block`, type: 'button', onclick: () => { session = null; startLesson(upNext); } }, [
@@ -1189,7 +1199,10 @@ function renderCelebration() {
       startLesson(again);
     } }) : null,
     el('button', { class: `btn${upNext || more || replay ? ' btn--ghost' : ''} btn--block`, type: 'button', text: t('backHome'), onclick: () => { session = null; go('home'); } }),
-    el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: t('path'), onclick: () => { session = null; go('path'); } }),
+    // Finishing a book is the only time the trail is the right next step, so give it the main button and say why.
+    finishedBook
+      ? el('button', { class: 'btn btn--primary btn--block', type: 'button', text: 'Pick another class', onclick: () => { session = null; go('path'); } })
+      : el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: t('path'), onclick: () => { session = null; go('path'); } }),
   ]));
 
   clear(s.stage);
