@@ -1888,11 +1888,11 @@ function screenSettings() {
 
   wrap.append(el('div', { class: 'settings' }, [
     row('Your name', null, nameField),
-    row(t('sound'), 'Taps, chimes and a fanfare when you finish', soundSwitch),
-    row(t('textSize'), 'Make everything bigger or smaller', range),
-    row('Highlight key words', 'Important words get a marker-pen colour', hlSwitch),
+    row(t('sound'), 'Taps, chimes, a fanfare', soundSwitch),
+    row(t('textSize'), 'Bigger or smaller letters', range),
+    row('Highlight key words', 'Marker-pen on key words', hlSwitch),
     row(t('dyslexiaFont'), 'Wider, clearer letters', dysSwitch),
-    SHOW_GUIDE_PICKER ? row('Your guide', 'Who walks beside you through every lesson', guidePicker) : null,
+    SHOW_GUIDE_PICKER ? row('Your guide', 'Who walks with you', guidePicker) : null,
     row(t('language'), null, langSel),
   ]));
 
