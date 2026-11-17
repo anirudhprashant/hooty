@@ -1075,6 +1075,18 @@ function finishedNotes(lesson) {
       el('b', { text: done === ids.length ? `You finished the whole chapter: ${chapter.title}!` : `${done} of ${ids.length} steps finished in this chapter` }),
       el('div', { class: 'finished__bar' }, [el('span', { style: { width: `${Math.round((done / ids.length) * 100)}%` } })]),
     ]));
+    // The chapter bar was the largest thing a child could finish. A whole book deserves its own moment, and it only
+    // exists on the lesson that completes it.
+    const allIds = pack.units.flatMap((u) => u.chapters.flatMap((c) => [
+      ...c.lessons.map((x) => x.id), ...(c.boss ? [bossId(c)] : []),
+    ]));
+    const allDone = allIds.filter((id) => l.lessonsDone[id]).length;
+    if (allDone >= allIds.length && pack.title) {
+      out.push(el('div', { class: 'finished finished--book' }, [
+        el('b', { text: `You finished every chapter in ${pack.title}! All ${allIds.length} steps, all the way to the end.` }),
+        el('span', { class: 'finished__hint', text: 'Pick another class from the trail whenever you want a new adventure.' }),
+      ]));
+    }
   }
   const pages = new Map();
   for (const a of lesson.activities || []) for (const x of a.src || []) { const arr = pages.get(x.ch) || []; arr.push(x.p); pages.set(x.ch, arr); }
