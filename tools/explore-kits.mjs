@@ -223,7 +223,7 @@ export const KITS = {
     ],
   },
   thermometer: {
-    grades: [6, 8], match: [/thermometers?/, /\bfever\b/, /celsius|fahrenheit/, /hot (or|and) cold/],
+    grades: [6, 8], subjects: ['social'], match: [/thermometers?/, /\bfever\b/, /celsius|fahrenheit/, /hot (or|and) cold/, /measuring temperature|temperature and precipitation/],
     params: (text) => ({ kind: /\bbody\b|\bfever\b|clinical|doctor|\bpatient\b/.test(text) && !/laboratory|\blab\b/.test(text) ? 'clinical' : 'lab' }),
     title: 'Read the thermometer', takeaway: 'Find the value of one small mark first, then count the marks.',
     tasks: (p) => (p.kind === 'clinical'
@@ -1113,7 +1113,7 @@ export const KITS = {
     ],
   },
   lapse: {
-    grades: [6, 10], subjects: ['social'], match: [/\btemperature\b/, /\baltitude\b|\bheight above sea level\b/, /\bsnow line\b/, /\bhill station/, /\blapse rate\b/, /air (cools|thins) (as|with)/],
+    grades: [6, 10], subjects: ['social'], match: [/\baltitude\b|height above sea level/, /\bsnow line\b/, /\bhill station/, /\blapse rate\b/, /air (cools|thins) (as|with|the higher)/, /temperature (decreases|falls|drops|is lower) (as|with|when)/, /\bhigher (up|you go)\b.{0,60}\b(cold|cool|thin)/],
     title: 'Climb the mountain', takeaway: 'Air cools about 6.5 degrees for every kilometre you climb, so the top of a mountain is cold and snow settles above the snow line.',
     tasks: [
       { say: 'Climb to 3,000 m and read the temperature.', when: 'height >= 3000', then: 'About 6.5 degrees are lost for every kilometre: a hill station at 2,000 m is around 13 degrees cooler than the coast.' },
