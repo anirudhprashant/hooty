@@ -2318,6 +2318,49 @@ export const WIDGETS = {
         : `You share ${total} sweets into groups of ${size}. You make ${q} full group${q === 1 ? '' : 's'} and nothing is left over, because ${size} × ${q} = ${total}.` };
     },
   },
+  peas: {
+    subject: 'science', about: 'A cross between two pea plants, drawn as a Punnett square: each parent gives one copy of the tall gene T or the short gene t, and the four boxes show the children. T is dominant over t, so a Tt plant looks tall but can still pass on shortness. For heredity, inheritance, Mendel, pea plants, dominant and recessive traits, F1 and F2, the 3:1 ratio.',
+    sliders: [['g1', 'Parent 1 genes (0 TT, 1 Tt, 2 tt)', 0, 2, 1, 0], ['g2', 'Parent 2 genes (0 TT, 1 Tt, 2 tt)', 0, 2, 1, 0]],
+    draw(v) {
+      const copies = [['T', 'T'], ['T', 't'], ['t', 't']], names = ['TT', 'Tt', 'tt'];
+      const left = copies[v.g1], right = copies[v.g2], boxes = [];
+      for (const a of left) for (const b of right) boxes.push([a, b].sort().join(''));
+      const tall = boxes.filter((x) => x.charAt(0) === 'T' || x.charAt(1) === 'T').length;
+      const short = 4 - tall;
+      const kids = [R(0, 0, 600, 300, '#f7fdf5', { w: 0 })];
+      const plant = (cx, base, isTall, size) => {
+        const stem = isTall ? size : size * 0.55;
+        return [
+          L(cx, base, cx, base - stem, '#3f7d3a', 4),
+          s('ellipse', { cx: cx - 9, cy: base - stem + 7, rx: 9, ry: 4, fill: '#7bc96f', transform: `rotate(-28 ${cx - 9} ${base - stem + 7})` }),
+          s('ellipse', { cx: cx + 9, cy: base - stem + 13, rx: 9, ry: 4, fill: '#7bc96f', transform: `rotate(28 ${cx + 9} ${base - stem + 13})` }),
+          CIRC(cx, base - stem - 4, 4, isTall ? '#ffd166' : '#f4a3c8', { w: 1.2 }),
+        ];
+      };
+      const x0 = 150, y0 = 80, cw = 96, ch = 62;
+      kids.push(T(300, 28, `Parent 1 ${names[v.g1]} × Parent 2 ${names[v.g2]}`, { z: 21 }));
+      kids.push(T(x0 + cw, 56, 'Parent 2 gives', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(28, 66, 'Parent 1 gives', { z: 12, w: 600, f: '#6b5a8a', a: 'start' }));
+      right.forEach((al, j) => kids.push(T(x0 + j * cw + cw / 2, 76, al, { z: 20, f: '#6b4aa8' })));
+      left.forEach((al, i) => kids.push(T(x0 - 24, y0 + i * ch + ch / 2 + 7, al, { z: 20, f: '#6b4aa8' })));
+      boxes.forEach((g, k) => {
+        const i = Math.floor(k / 2), j = k % 2, x = x0 + j * cw, y = y0 + i * ch;
+        const isTall = g.charAt(0) === 'T' || g.charAt(1) === 'T';
+        kids.push(R(x, y, cw, ch, isTall ? '#e4f7ee' : '#ffe9e2', { w: 2, r: 10 }));
+        kids.push(T(x + cw / 2 - 16, y + ch / 2 + 8, g, { z: 21, f: isTall ? '#058a68' : '#c2510e' }));
+        kids.push(...plant(x + cw - 18, y + ch - 8, isTall, 26));
+      });
+      kids.push(T(372, 96, `${tall} tall`, { z: 24, a: 'start', f: '#058a68' }));
+      kids.push(T(372, 128, `${short} short`, { z: 24, a: 'start', f: short ? '#c2510e' : '#8a7aa8' }));
+      kids.push(T(372, 166, 'T is the tall gene.', { z: 13, w: 600, a: 'start' }));
+      kids.push(T(372, 186, 't is the short gene.', { z: 13, w: 600, a: 'start' }));
+      kids.push(T(372, 208, 'T hides t, so Tt looks tall.', { z: 13, w: 600, a: 'start', f: '#058a68' }));
+      kids.push(T(300, 276, 'Each child gets one letter from each parent, so it has two copies.', { z: 13, w: 600, f: '#6b5a8a' }));
+      const allCarriers = boxes.every((x) => x === 'Tt');
+      const result = tall === 4 ? 'All four have a T, so all four look tall, and none are short.' : tall === 0 ? 'None of the four has a T, so all four are short.' : `${tall} of the four have a T, so ${tall} look tall, and ${short === 1 ? 'one is short' : `${short} are short`}.`;
+      return { kids, say: `Parent 1 is ${names[v.g1]} and Parent 2 is ${names[v.g2]}. The four boxes show the children they can make. ${result}${allCarriers ? ' Every child is Tt: tall, but it still carries the short gene and can pass it on.' : ' T hides t, so TT and Tt both look tall; only tt is short.'}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

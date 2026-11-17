@@ -1072,6 +1072,16 @@ export const KITS = {
       { say: 'Make both sides equally strong so the levels stay the same.', when: 'left == right and mins >= 5', then: 'Equal strength on both sides means equal water movement each way.' },
     ],
   },
+  peas: {
+    grades: [8, 10],
+    match: [/mendel/, /heredity/, /inherited traits?/, /\bdominant\b/, /\brecessive\b/, /\bF1\b/, /\bF2\b/, /pea plants?/, /single trait|one trait/],
+    title: 'Cross the pea plants', takeaway: 'Each parent gives one copy of a gene. T (tall) hides t (short), so a Tt plant looks tall but can still pass on shortness: two Tt parents have about three tall children to one short.',
+    tasks: [
+      { say: 'Cross a pure tall plant (TT) with a pure short plant (tt). Look at all four children.', when: 'g1 == 0 and g2 == 2', then: 'Every child gets T from one parent and t from the other, so all four are Tt: they all look tall, but they still carry the short gene.' },
+      { say: 'Cross two of those children (Tt × Tt). How many of the four are short?', when: 'g1 == 1 and g2 == 1', then: 'One of the four is tt, so three look tall and one is short: about three tall to one short, as Mendel found.' },
+      { say: 'Make a cross with two tall children and two short children.', when: '(g1 == 1 and g2 == 2) or (g1 == 2 and g2 == 1)', then: 'Tt × tt gives two Tt (tall) and two tt (short): half and half.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
