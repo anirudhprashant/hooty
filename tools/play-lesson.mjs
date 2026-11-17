@@ -7,7 +7,7 @@
  *   node tools/play-lesson.mjs [url]
  */
 import { chromium } from 'playwright';
-import { existsSync, mkdirSync, readdirSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { answerFor, loadAnswers, loadOrders, loadQuestions, questionKey } from './qa-answers.mjs';
 
@@ -34,6 +34,14 @@ const VW = Number(process.env.VW || 1280), VH = Number(process.env.VH || 900);
 const SHOTS = process.env.SHOTS || '';
 const ctx = await browser.newContext({ viewport: { width: VW, height: VH } });
 const page = await ctx.newPage();
+// SEED=/path/save.json starts the walk with that progress already on the device, which is the only way to reach the
+// lesson that finishes a book without playing every lesson before it.
+if (process.env.SEED) {
+  const save = JSON.parse(readFileSync(process.env.SEED, 'utf8'));
+  await page.addInitScript((state) => {
+    try { localStorage.setItem('sparkle-state-v1', JSON.stringify(state)); } catch { /* ignore */ }
+  }, { ...save, savedAt: Date.now() });
+}
 
 const problems = [];
 page.on('response', (r) => {
@@ -292,6 +300,10 @@ if (SHOTS) { await page.waitForTimeout(900); await page.screenshot({ path: `${SH
 // Did the lesson finish?
 const celebrated = await page.locator('.celebrate').count();
 console.log(`\nsteps=${steps} celebrated=${celebrated} activityTypes=[${seen.join(', ')}]`);
+if (celebrated) {
+  const text = await page.evaluate(() => (document.querySelector('.celebrate')?.innerText || '').replace(/\s+/g, ' ').trim());
+  console.log(`celebration: ${text.slice(0, 400)}`);
+}
 
 // The comic recap must be revealed at the end.
 await page.waitForTimeout(600);

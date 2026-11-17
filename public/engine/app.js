@@ -1068,9 +1068,11 @@ function finishedNotes(lesson) {
   const l = activeLearner();
   const pack = lesson.packId ? packById(lesson.packId) : null;
   const chapter = pack?.units.flatMap((u) => u.chapters).find((c) => c.id === lesson.chapterId);
+  // The lesson being celebrated is not in lessonsDone yet, so count it in: the child has just finished it.
+  const isDone = (id) => !!(l?.lessonsDone?.[id] || id === lesson.lessonId);
   if (chapter && l) {
     const ids = [...chapter.lessons.map((x) => x.id), ...(chapter.boss ? [bossId(chapter)] : [])];
-    const done = ids.filter((id) => l.lessonsDone[id]).length;
+    const done = ids.filter(isDone).length;
     out.push(el('div', { class: 'finished' }, [
       el('b', { text: done === ids.length ? `You finished the whole chapter: ${chapter.title}!` : `${done} of ${ids.length} steps finished in this chapter` }),
       el('div', { class: 'finished__bar' }, [el('span', { style: { width: `${Math.round((done / ids.length) * 100)}%` } })]),
@@ -1080,7 +1082,7 @@ function finishedNotes(lesson) {
     const allIds = pack.units.flatMap((u) => u.chapters.flatMap((c) => [
       ...c.lessons.map((x) => x.id), ...(c.boss ? [bossId(c)] : []),
     ]));
-    const allDone = allIds.filter((id) => l.lessonsDone[id]).length;
+    const allDone = allIds.filter(isDone).length;
     if (allDone >= allIds.length && pack.title) {
       out.push(el('div', { class: 'finished finished--book' }, [
         el('b', { text: `You finished every chapter in ${pack.title}! All ${allIds.length} steps, all the way to the end.` }),
