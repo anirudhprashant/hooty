@@ -2205,7 +2205,7 @@ export const WIDGETS = {
         cells.push(R(x0 + (i % 10) * (box + gap), y0 + Math.floor(i / 10) * (box + gap), box, box, won ? C.g : C.b, { w: 1, s: '#fff' }));
       }
       const seatsB = 100 - seatsA;
-      const bx = 252, bw = 320, barh = 34;
+      const bx = 300, bw = 272, barh = 34;
       const parts = [R(0, 0, W, H, '#fbfdff', { w: 0 }), ...cells];
       // legend: one square per party, so the colours mean something without a long caption
       parts.push(R(bx, 20, 16, 16, C.g, { w: 1, s: '#fff' }), T(bx + 24, 34, 'party A', { z: 20, w: 700, f: '#0b6b52', a: 'start' }));
