@@ -1191,8 +1191,34 @@ function lessonBar(count) {
     el('div', { class: 'lesson__progress', role: 'progressbar', 'aria-label': 'Lesson progress', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': '0' }, [el('span', { style: { width: '0%' } })]),
     el('div', { class: 'lesson__count', text: `0/${count}` }),
     highlightToggle(),
+    el('button', { class: 'icon-btn', type: 'button', 'aria-label': t('readAloud'), title: t('readAloud'), onclick: readQuestion }, [icon('speaker')]),
     el('button', { class: 'icon-btn', type: 'button', 'aria-label': t('shareLesson'), title: t('shareLesson'), onclick: shareLesson }, [icon('share')]),
   ]);
+}
+
+// Questions are the one part of a lesson with no voice of their own: a child who is still learning to read (or
+// reading a Hindi book with an English interface) can hear the question and the choices read out. Clips exist
+// only for concept and passage text, so this path uses the device voice.
+function readQuestion() {
+  const root = document.querySelector('.activity');
+  if (!root) return;
+  const prompt = (root.querySelector('.activity__prompt')?.textContent || '').trim();
+  const options = [...root.querySelectorAll('.option .option__text')].map((x) => (x.textContent || '').trim()).filter(Boolean);
+  const said = [];
+  if (prompt) said.push(prompt);
+  options.forEach((text, i) => said.push(`${String.fromCharCode(65 + i)}. ${text}`));
+  if (!said.length) {
+    // a hook or a card without a question box: read the words on the card itself, without the buttons
+    const copy = root.cloneNode(true);
+    copy.querySelectorAll('button, .btn, .activity__actions, .option, .hook__cta').forEach((node) => node.remove());
+    copy.style.cssText = 'position:fixed;left:-9999px;top:0;width:320px';
+    document.body.append(copy);
+    const words = (copy.innerText || copy.textContent || '').replace(/\s+/g, ' ').trim();
+    copy.remove();
+    if (!words) { toast(t('nothingToRead')); return; }
+    said.push(words.slice(0, 320));
+  }
+  speak(said.map((text) => ({ text: plain(text) })), speechLang());
 }
 
 // A lesson now has an address of its own (see the deep-link block). A teacher or a parent can send it on:
