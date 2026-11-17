@@ -99,7 +99,7 @@ async function loadPack(p) {
     }
     // ?v is the book's content hash, so a published book is cached hard at the edge and a new one is a new URL.
     const full = await getJson(`./content/packs/${p.id}/pack.json${p.v ? `?v=${p.v}` : ''}`);
-    const pack = { ...full, base: `./content/packs/${p.id}`, glossary: null, matcher: buildMatcher(null) };
+    const pack = { ...full, base: `./content/packs/${p.id}`, glossary: null, glossaryFile: full.glossary || 'glossary.json', matcher: buildMatcher(null) };
     // A pack opts in with "glossary": "glossary.json" in pack.json. Word meanings arrive just after the book:
     // nothing on the home screen needs them, so the child does not wait for them.
     if (full.glossary) getJson(`${pack.base}/${full.glossary}`).then((g) => { pack.glossary = g; pack.matcher = buildMatcher(g); }).catch(() => {});
@@ -1472,6 +1472,7 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
   sheet.append(actions);
   s.stage.append(sheet);
   markWords(sheet);
+  attachWordTap(sheet, packById(s.lesson.packId)?.language);
   (actions.querySelector('button') || sheet).focus({ preventScroll: true });
   requestAnimationFrame(() => sheet.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
 }
