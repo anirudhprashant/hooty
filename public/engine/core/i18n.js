@@ -119,6 +119,11 @@ export const strings = {
     subjEnglish: "English",
     subjHindi: "Hindi",
     subjTwau: "The World Around Us",
+    addBookTitle: "Turn your textbook into lessons",
+    addBookIntro: "Choose the PDF of a school book. One file for the whole book, or one for each chapter. It stays on this device: nothing is uploaded.",
+    addBookChoose: "Choose PDF",
+    addBookMake: "Make my lessons",
+    addBookNote: "Hooty makes reading cards and questions using the words printed in your book, with the page for each. Use books you have the right to use.",
   },
   hi: {
     appName: 'लूमी',
@@ -237,6 +242,11 @@ export const strings = {
     subjEnglish: "अंग्रेज़ी",
     subjHindi: "हिंदी",
     subjTwau: "हमारा आसपास",
+    addBookTitle: "अपनी किताब को पाठों में बदलिए",
+    addBookIntro: "स्कूल की किताब की PDF चुनिए। पूरी किताब की एक फ़ाइल, या हर अध्याय की अलग। यह इसी फ़ोन में रहती है: कुछ भी अपलोड नहीं होता।",
+    addBookChoose: "PDF चुनिए",
+    addBookMake: "मेरे पाठ बनाइए",
+    addBookNote: "हूटी आपकी किताब में छपे शब्दों से पढ़ने के कार्ड और सवाल बनाती है, हर एक के साथ पन्ना भी। वही किताबें इस्तेमाल कीजिए जिनका आपको हक़ है।",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -355,6 +365,11 @@ export const strings = {
     subjEnglish: "ಇಂಗ್ಲಿಷ್",
     subjHindi: "ಹಿಂದಿ",
     subjTwau: "ನಮ್ಮ ಸುತ್ತಮುತ್ತ",
+    addBookTitle: "ನಿಮ್ಮ ಪಠ್ಯಪುಸ್ತಕವನ್ನು ಪಾಠಗಳಾಗಿ ಮಾಡಿ",
+    addBookIntro: "ಶಾಲೆಯ ಪುಸ್ತಕದ PDF ಆರಿಸಿ. ಇಡೀ ಪುಸ್ತಕದ ಒಂದು ಫೈಲ್, ಅಥವಾ ಪ್ರತಿ ಅಧ್ಯಾಯಕ್ಕೆ ಒಂದು. ಇದು ಈ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತದೆ: ಏನೂ ಅಪ್‌ಲೋಡ್ ಆಗುವುದಿಲ್ಲ.",
+    addBookChoose: "PDF ಆರಿಸಿ",
+    addBookMake: "ನನ್ನ ಪಾಠಗಳನ್ನು ಮಾಡಿ",
+    addBookNote: "ನಿಮ್ಮ ಪುಸ್ತಕದಲ್ಲಿ ಮುದ್ರಿತ ಪದಗಳಿಂದ ಹೂಟಿ ಓದುವ ಕಾರ್ಡ್‌ಗಳನ್ನೂ ಪ್ರಶ್ನೆಗಳನ್ನೂ ಮಾಡುತ್ತದೆ, ಪ್ರತಿಯೊಂದಕ್ಕೂ ಪುಟ ಸಂಖ್ಯೆಯೊಂದಿಗೆ. ನಿಮಗೆ ಹಕ್ಕಿರುವ ಪುಸ್ತಕಗಳನ್ನೇ ಬಳಸಿ.",
   },
 };
 

@@ -1533,7 +1533,7 @@ function screenAddBook() {
   const status = el('p', { class: 'addbook__status', role: 'status' });
   const bar = el('span');
   const meter = el('div', { class: 'finished__bar', hidden: true }, [bar]);
-  const go2 = el('button', { class: 'btn btn--primary btn--block', type: 'button', disabled: true }, ['Make my lessons']);
+  const go2 = el('button', { class: 'btn btn--primary btn--block', type: 'button', disabled: true }, [t('addBookMake')]);
   const WHY = {
     'no-text': 'This PDF looks like photos of pages, with no text inside. Hooty needs a PDF whose words you can select.',
     unreadable: 'The words in this PDF are stored in an old font code, so they come out as nonsense. Try a newer copy of the book.',
@@ -1569,11 +1569,11 @@ function screenAddBook() {
     }
   });
   wrap.append(el('section', { class: 'addbook__card' }, [
-    el('h2', { class: 'section-title', text: 'Turn your textbook into lessons' }),
-    el('p', { text: 'Choose the PDF of a school book. One file for the whole book, or one for each chapter. It stays on this device: nothing is uploaded.' }),
-    el('label', { class: 'btn btn--ghost btn--block', for: 'book-file', text: 'Choose PDF' }),
+    el('h2', { class: 'section-title', text: t('addBookTitle') }),
+    el('p', { text: t('addBookIntro') }),
+    el('label', { class: 'btn btn--ghost btn--block', for: 'book-file', text: t('addBookChoose') }),
     input, name, go2, meter, status,
-    el('p', { class: 'credit-note', text: 'Hooty makes reading cards and questions using the words printed in your book, with the page for each. Use books you have the right to use.' }),
+    el('p', { class: 'credit-note', text: t('addBookNote') }),
   ]));
   const own = packIndex.filter((p) => p.local);
   if (own.length) wrap.append(el('section', { class: 'addbook__card' }, [
