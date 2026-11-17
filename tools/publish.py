@@ -157,7 +157,25 @@ def push():
     if not os.path.isdir(f'{ROOT}/.git') or not git('remote').stdout.strip(): return
     git('add', '-A')
     if git('diff', '--cached', '--quiet').returncode:
-        git('commit', '-m', 'Publish: what is live now')
+        # Say what this publish carries: the change that came just before it, or the shape of the diff when there is
+        # no such commit. A trail of "Publish: <what>" commits is readable; a trail of "what is live now" is not.
+        head = git('log', '-1', '--pretty=%s').stdout.strip()
+        if head and not head.lower().startswith(('publish:', 'backup:', 'merge ')):
+            message = f'Publish: {head[:70]}'
+        else:
+            changed = [line for line in git('diff', '--cached', '--name-only').stdout.split('\n') if line.strip()]
+            books = len({line.split('/')[3] for line in changed if line.startswith('public/content/packs/') and len(line.split('/')) > 3})
+            parts = []
+            if any(line.startswith('public/engine/') or line.startswith('public/css/') or line == 'public/index.html' for line in changed):
+                parts.append('app')
+            if books:
+                parts.append(f'{books} book{"s" if books != 1 else ""}')
+            if any(line.startswith('public/audio/') for line in changed):
+                parts.append('audio')
+            if any(line.startswith('public/books/') for line in changed):
+                parts.append('pages')
+            message = 'Publish: ' + (', '.join(parts) if parts else f'{len(changed)} files')
+        git('commit', '-m', message)
     r = git('push', '-q', 'origin', 'main')
     say('pushed to GitHub' if r.returncode == 0 else f'GitHub push failed: {r.stderr[:120]}')
 push()

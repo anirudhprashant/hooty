@@ -2327,6 +2327,36 @@ export const WIDGETS = {
       return { kids, say: `Looking up at ${deg}° at a tower ${tall} m high, you stand ${num(dist, 1)} m from its foot. tan ${deg}° is about ${tan}, and distance = height / tan.` };
     },
   },
+  hcf: {
+    subject: 'maths', about: 'Euclid\'s division algorithm run on two numbers: each line divides, keeps the remainder and starts again, until the remainder is zero and the last divisor is the highest common factor. Two sliders choose the numbers. For highest common factor, HCF, Euclid\'s algorithm, the division algorithm for real numbers.',
+    sliders: [['a', 'First number', 12, 200, 1, 84], ['b', 'Second number', 6, 120, 1, 36]],
+    draw(v) {
+      const big = Math.max(v.a, v.b), small = Math.min(v.a, v.b);
+      const rows = [];
+      let x = big, y = small, guard = 0;
+      while (y > 0 && guard < 12) {
+        const q = Math.floor(x / y), r = x - q * y;
+        rows.push([x, q, y, r]);
+        x = y;
+        y = r;
+        guard++;
+      }
+      const kids = [R(0, 0, W, H, '#fbfdff', { w: 0 })];
+      kids.push(T(300, 40, `${big} and ${small}`, { z: 26, w: 700, f: INK }));
+      const top = 74, lineH = 32;
+      rows.slice(0, 7).forEach(([dividend, q, divisor, r], i) => {
+        const y0 = top + i * lineH;
+        const text = `${dividend} = ${divisor} × ${q}${r ? ` + ${r}` : ' + 0'}`;
+        kids.push(T(40, y0, text, { z: 22, w: 600, f: r ? INK : '#0b6b52', a: 'start' }));
+        if (!r) kids.push(T(560, y0, 'remainder 0', { z: 20, w: 600, f: '#0b6b52', a: 'end' }));
+      });
+      if (rows.length > 7) kids.push(T(40, top + 7 * lineH, '…', { z: 22, f: '#5a5170', a: 'start' }));
+      const hcf = x;
+      kids.push(T(300, 276, `highest common factor = ${hcf}`, { z: 24, w: 700, f: '#0b6b52' }));
+      const steps = rows.map(([d, q, s, r]) => (r ? `${d} = ${s} × ${q} + ${r}` : `${d} = ${s} × ${q} + 0`)).slice(0, 5).join(', ');
+      return { kids, say: `${big} and ${small}: ${steps}. The last divisor, ${hcf}, is the highest common factor.` };
+    },
+  },
   osmosis: {
     subject: 'science', about: 'Two compartments of water with different amounts of dissolved sugar, separated by a selectively permeable membrane. Water moves from the dilute (weaker) side to the concentrated (stronger) side until the rising level balances the pull; the sugar cannot cross. For osmosis, diffusion of water, selectively permeable membrane, cell membrane, cell wall, plasmolysis.',
     sliders: [['left', 'Sugar on the left (spoonfuls)', 0, 10, 1, 2], ['right', 'Sugar on the right (spoonfuls)', 0, 10, 1, 8], ['mins', 'Minutes left standing', 0, 10, 1, 0]],

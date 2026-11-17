@@ -1118,6 +1118,15 @@ export const KITS = {
       { say: 'Move away until the angle is only 20 degrees.', when: 'angle == 20', then: 'A small angle means a long distance: tan 20 is about 0.36, so the distance is nearly three times the height.' },
     ],
   },
+  hcf: {
+    grades: [9, 10], subjects: ['maths'], match: [/\bHCF\b/, /highest common factor/, /\bEuclid/, /division algorithm/, /\bgcd\b/, /common factors?/],
+    title: 'Run Euclid\'s algorithm', takeaway: 'Divide, keep the remainder, repeat. When the remainder reaches zero, the last divisor is the highest common factor.',
+    tasks: [
+      { say: 'Pick 98 and 56, the numbers from the textbook.', when: 'a == 98 and b == 56', then: 'Three divisions reach zero, and the last divisor is 14, so the HCF of 98 and 56 is 14.' },
+      { say: 'Find two numbers whose highest common factor is 1.', when: 'a == 13 and b == 7', then: 'Two primes share nothing, so the algorithm ends at 1: the numbers are co-prime.' },
+      { say: 'Make the second number a factor of the first.', when: 'a == 60 and b == 12', then: 'The very first division leaves remainder zero, so the smaller number is itself the HCF.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
