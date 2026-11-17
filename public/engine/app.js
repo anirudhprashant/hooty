@@ -419,8 +419,8 @@ async function saveName(raw) {
 function nameCard() {
   const input = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': 'Your name', placeholder: t('namePlaceholder') });
   const form = el('form', { class: 'name-card' }, [
-    el('p', { class: 'name-card__ask', text: 'What should Hooty call you?' }),
-    el('div', { class: 'input-row' }, [input, el('button', { class: 'btn btn--primary', type: 'submit', text: 'Save' })]),
+    el('p', { class: 'name-card__ask', text: t('whatCallYou') }),
+    el('div', { class: 'input-row' }, [input, el('button', { class: 'btn btn--primary', type: 'submit', text: t('save') })]),
   ]);
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -459,8 +459,8 @@ function screenHome() {
 
   const copy = el('div', { class: 'stage__copy' });
   copy.append(
-    el('h2', { class: 'stage__title', text: named ? `Hi, ${l.name}!` : 'Ready to learn?' }),
-    el('p', { class: 'stage__sub', text: !ready ? t('bookLoading') : next ? (started ? 'Your next adventure is waiting.' : 'Your first lesson takes about four minutes.') : 'Every lesson done. Time to revise!' }),
+    el('h2', { class: 'stage__title', text: named ? t('hiName', { name: l.name }) : t('readyToLearn') }),
+    el('p', { class: 'stage__sub', text: !ready ? t('bookLoading') : next ? (started ? t('nextAdventure') : t('firstLesson')) : t('allDone') }),
   );
   const actions = el('div', { class: 'stage__actions' });
   const cta = el('button', { class: 'btn big-cta', type: 'button' }, [
@@ -488,14 +488,14 @@ function screenHome() {
     ringMeter(goalPct, `${goalPct}%`),
     el('div', { class: 'tile__body' }, [
       el('span', { class: 'tile__value', text: `${Math.min(l?.dailyXp || 0, goal)}/${goal}` }),
-      el('span', { class: 'tile__label', text: 'XP today' }),
+      el('span', { class: 'tile__label', text: t('xpToday') }),
     ]),
   ]);
   const streakTile = el('div', { class: 'tile tile--streak' }, [
     el('div', { class: 'tile__figure' }, [icon('flame', { size: 56 })]),
     el('div', { class: 'tile__body' }, [
       el('span', { class: 'tile__value', text: String(l?.streak || 0) }),
-      el('span', { class: 'tile__label', text: (l?.streak || 0) === 1 ? 'day streak' : 'days in a row' }),
+      el('span', { class: 'tile__label', text: (l?.streak || 0) === 1 ? t('dayStreakOne') : t('dayStreakMany') }),
     ]),
   ]);
   const nr = nextRewardFor(l);
