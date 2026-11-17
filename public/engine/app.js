@@ -521,7 +521,7 @@ function screenHome() {
   const reviewCard = el('button', { class: 'feature', type: 'button', onclick: () => go('practice') }, [
     el('span', { class: 'feature__badge' }, [icon('practice', { size: 34 })]),
     el('span', {}, [
-      el('span', { class: 'feature__title', text: due.length ? `${due.length} to try again` : 'No mistakes to fix' }),
+      el('span', { class: 'feature__title', text: due.length ? t('nToTry', { n: due.length }) : t('noMistakes') }),
       el('span', { class: 'feature__sub', text: due.length ? 'Questions you got wrong.' : 'Questions you get wrong wait here.' }),
     ]),
   ]);
@@ -652,7 +652,7 @@ function screenPath() {
       body.append(el('aside', { class: 'trail-side' }, [
         upNext.lesson.topicScene ? el('img', { class: 'trail-side__art', src: resolveMediaPath(upNext.lesson.topicScene, lessonLike), alt: upNext.lesson.sceneAlt || '' }) : null,
         el('div', { class: 'trail-side__body' }, [
-          el('span', { class: 'trail-side__kicker', text: 'Up next' }),
+          el('span', { class: 'trail-side__kicker', text: t('upNext') }),
           el('h3', { text: upNext.chapter.title }),
           upNext.chapter.summary ? el('p', { text: upNext.chapter.summary }) : null,
         ]),
@@ -1518,9 +1518,9 @@ function screenPractice() {
   const quiz = quickQuiz(5);
   wrap.append(el('div', { class: 'empty' }, [
     mascot ? el('img', { src: mascot, alt: '' }) : null,
-    el('h3', { text: finished ? 'Practice complete!' : 'No mistakes to fix' }),
+    el('h3', { text: finished ? t('practiceComplete') : t('noMistakes') }),
     el('p', { text: later ? `${later === 1 ? '1 tricky question comes' : `${later} tricky questions come`} back tomorrow. What next?`
-      : finished ? 'You fixed all your mistakes. What next?' : 'Any question you get wrong will wait for you here.' }),
+      : finished ? t('allFixed') : t('mistakesWait') }),
     el('div', { class: 'empty__next' }, [
       next ? el('button', { class: 'btn btn--primary', type: 'button', onclick: () => startLesson(next) }, [`${t('nextLesson')}: ${next.title}`]) : null,
       quiz.length >= 3 ? el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => startLesson({ id: 'quiz-' + Date.now(), lessonId: 'practice', title: 'Quick quiz', activities: quiz, estimatedMinutes: 2, isPractice: true }) }, [`Quick quiz: ${quiz.length} questions you know`]) : null,
@@ -1534,7 +1534,7 @@ function screenPractice() {
 function screenAddBook() {
   const wrap = el('div', { class: 'page screen addbook' });
   const input = el('input', { class: 'addbook__file', type: 'file', accept: 'application/pdf,.pdf', multiple: true, id: 'book-file' });
-  const name = el('input', { class: 'text-input', type: 'text', maxlength: 60, placeholder: 'Book name, like Science Class 5', 'aria-label': 'Book name' });
+  const name = el('input', { class: 'text-input', type: 'text', maxlength: 60, placeholder: t('bookNamePlaceholder'), 'aria-label': t('bookNameLabel') });
   const status = el('p', { class: 'addbook__status', role: 'status' });
   const bar = el('span');
   const meter = el('div', { class: 'finished__bar', hidden: true }, [bar]);
@@ -1583,7 +1583,7 @@ function screenAddBook() {
   ]));
   const own = packIndex.filter((p) => p.local);
   if (own.length) wrap.append(el('section', { class: 'addbook__card' }, [
-    el('h3', { text: 'My books' }),
+    el('h3', { text: t('myBooks') }),
     ...own.map((b) => el('div', { class: 'addbook__row' }, [
       el('span', { text: b.title }),
       el('button', { class: 'btn btn--ghost btn--sm', type: 'button', onclick: async () => {
@@ -1592,7 +1592,7 @@ function screenAddBook() {
         packIndex = packIndex.filter((p) => p.id !== b.id); packs = packs.filter((p) => p.id !== b.id);
         const l = activeLearner(); if (l?.grade === 'mine' && !packIndex.some((p) => p.local)) l.grade = '6';
         render();
-      } }, ['Remove']),
+      } }, [t('remove')]),
     ])),
   ]));
   return wrap;
