@@ -1538,9 +1538,10 @@ function screenAddBook() {
   const meter = el('div', { class: 'finished__bar', hidden: true }, [bar]);
   const go2 = el('button', { class: 'btn btn--primary btn--block', type: 'button', disabled: true }, [t('addBookMake')]);
   const WHY = {
-    'no-text': 'This PDF looks like photos of pages, with no text inside. Hooty needs a PDF whose words you can select.',
-    unreadable: 'The words in this PDF are stored in an old font code, so they come out as nonsense. Try a newer copy of the book.',
-    'no-lessons': 'Hooty could not find enough lessons in this PDF. Is it a textbook, and not an answer key or a workbook?',
+    'no-text': t('addBookNoText'),
+    'too-little-text': t('addBookLittleText'),
+    unreadable: t('addBookUnreadable'),
+    'no-lessons': t('addBookNoLessons'),
   };
   input.addEventListener('change', () => {
     go2.disabled = !input.files.length;
@@ -1548,7 +1549,7 @@ function screenAddBook() {
   });
   go2.addEventListener('click', async () => {
     const files = [...input.files];
-    if (files.reduce((n, f) => n + f.size, 0) > 400 * 1048576) { status.textContent = 'That is too big for this device. Try one PDF at a time.'; return; }
+    if (files.reduce((n, f) => n + f.size, 0) > 400 * 1048576) { status.textContent = t('addBookTooBig'); return; }
     go2.disabled = true; meter.hidden = false; status.textContent = 'Reading your book…';
     try {
       const { readPdf, makeBook } = await import('./core/bookmaker.js');
@@ -1567,7 +1568,7 @@ function screenAddBook() {
       go('path');
     } catch (e) {
       console.warn('book failed', e);
-      status.textContent = WHY[e.code] || (e.name === 'PasswordException' ? 'This PDF is locked with a password.' : 'Hooty could not read this file. Is it a PDF?');
+      status.textContent = WHY[e.code] || (e.name === 'PasswordException' ? t('addBookLocked') : t('addBookUnread'));
       go2.disabled = false; meter.hidden = true;
     }
   });

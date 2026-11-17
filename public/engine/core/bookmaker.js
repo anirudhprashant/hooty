@@ -383,7 +383,12 @@ export function makeBook(docs, { title, subject = 'My book', id }) {
   dropRepeats(docs);
   const all = docs.flatMap((d) => d.pages.flatMap((p) => p.lines.map((l) => l.text))).join(' ');
   const letters = all.match(/\p{L}/gu)?.length || 0;
-  if (letters < 800) throw new BookError('no-text');
+  const pages = docs.reduce((n, d) => n + d.pages.length, 0);
+  // A photo PDF has almost no letters at all; a real but short PDF (one chapter, a few pages) has plenty and used to
+  // be told it was made of pictures. Judge by letters per page, not a flat 800.
+  const floor = Math.max(120, 150 * Math.max(1, pages));
+  if (letters < 40) throw new BookError('no-text');
+  if (letters < floor) throw new BookError('too-little-text');
   const devanagari = all.match(/\p{Script=Devanagari}/gu)?.length || 0;
   const lang = devanagari > letters * 0.3 ? 'hi' : 'en';
   // Many Hindi PDFs store letters in an old font's private code, which reads as nonsense once extracted.
