@@ -1247,3 +1247,13 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
   background: #f1e4ff;
   transform: translateY(1px);
 }
+
+/* Very narrow phones: the answer, the check button and the pad stack in one column, so Check gets the full width. */
+@media (max-width: 360px) {
+  .input-row {
+    flex-wrap: wrap;
+  }
+  .input-row .btn--primary {
+    flex: 1 1 100%;
+  }
+}
