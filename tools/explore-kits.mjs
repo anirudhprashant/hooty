@@ -15,7 +15,7 @@ export const KITS = {
   },
   spelling: {
     grades: [3, 4, 5, 6], subject: 'english',
-    match: [/plural/, /singular/, /\b-?(s|es|ies|ves|ing|ed)\b/, /spelling/, /word endings?/, /verb forms?/, /add(ing)? (-s|-es|-ies|-ing|-ed)/, /past (tense|time)/, /double letters?/],
+    match: [/plurals?/, /singular/, /spelling/, /word endings?/, /verb forms?/, /past (tense|time)/, /double letters?/, /add(ing)? (-s|-es|-ies|-ing|-ed)\b/, /\b-?(s|es|ies|ves|ing|ed) (endings?|sounds?|forms?)\b/, /words? end(ing)? (with|in) -?(s|es|ed|ing|ies|ves)\b/, /words? taken from the lesson/],
     title: 'The spelling machine', takeaway: 'Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e.',
     tasks: [
       { say: 'Find a word where -es is added.', when: 'w == 1', then: 'After s, x, ch and sh, -es adds a beat so the ending can be heard.' },
@@ -584,7 +584,7 @@ export const KITS = {
   },
   seepage: {
     grades: [5, 10], subjects: ['social'],
-    match: [/\bseep(age|s|ing)?\b/, /groundwater/, /infiltration/, /\bgravel\b/, /\bsoil (types?|erosion)\b/, /rainwater harvest/, /water harvest/, /percolat/, /hold(s)? moisture/],
+    match: [/\bseep(age|s|ing)?\b/, /groundwater/, /infiltration/, /\bgravel\b/, /\bsoil (types?|erosion)\b/, /rainwater harvest|\bwater harvest/, /percolat/, /hold(s)? moisture/],
     title: 'Pour the water', takeaway: 'Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type.',
     tasks: [
       { say: 'Let 3 minutes pass.', when: 't == 3', then: 'Gravel has let through the most water: its particles have the widest gaps.' },
@@ -1064,7 +1064,7 @@ export const KITS = {
   },
   pressure: {
     grades: [7, 10],
-    match: [/\bpressure\b/, /per unit area|force per unit/, /\bthrust\b/, /atmospheric pressure|air pressure/, /liquids? pressure|pressure .{0,24}(depth|liquid)/, /newtons? per square/],
+    match: [/force per unit area|force (that acts|acting) on (each|a) unit/, /\bthrust\b/, /\bpressure\b.{0,24}(liquids?|depth)/, /\bliquids? pressure\b/, /atmospheric pressure|air pressure/, /pressure (exerted|applied) by (the )?air/, /pressure (is|means)\b/, /(narrow|broad) (straps?|tyres?|heels?)/, /newtons? per square/],
     title: 'Press with the same push on a smaller area',
     takeaway: 'Pressure is force spread over area: the same push in a smaller area presses harder, which is why a nail or a knife goes in.',
     tasks: [
