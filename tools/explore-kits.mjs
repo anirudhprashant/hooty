@@ -98,7 +98,7 @@ export const KITS = {
     ],
   },
   angle: {
-    grades: [6, 8], match: [/\bangles?\b/, /protractor/, /\bacute\b/, /\bobtuse\b/, /right angle/, /\breflex\b/, /\bdegrees?\b/],
+    grades: [4, 8], match: [/\bangles?\b/, /protractor/, /\bacute\b/, /\bobtuse\b/, /right angle/, /\breflex\b/, /\bdegrees?\b/, /\bturns?\b/, /\bquarter turn|half turn|full turn\b/],
     title: 'Open the angle', takeaway: 'Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.',
     tasks: [
       { say: 'Make a right angle.', when: 'angle == 90', then: 'A right angle is exactly 90 degrees, a square corner.' },
@@ -431,7 +431,7 @@ export const KITS = {
     ],
   },
   lens: {
-    grades: [8, 10], match: [/lenses\b/, /convex lens/, /converging lens/, /lenses? and power/, /power of (a )?lens/, /focal length/, /principal focus/, /magnifying glass/, /real and virtual image/],
+    grades: [8, 10], match: [/lenses\b/, /convex lens/, /converging lens/, /lenses? and power/, /power of (a )?lens/, /focal length/, /principal focus/, /magnifying glass/, /real and virtual image/, /\bhuman eye\b/, /myopia|hypermetropia|presbyopia/],
     params: (text, f, all, grade) => ({ grade }),
     title: 'Focus the lens', takeaway: 'A convex lens bends parallel rays to its focus. Beyond the focal length the image is real and inverted; closer than the focus it turns virtual, upright and bigger.',
     tasks: (p) => [
@@ -853,7 +853,7 @@ export const KITS = {
     ],
   },
   picturechart: {
-    grades: [2, 2], perChapter: { 2: 5 }, match: [/data handling/, /\bface stands for\b|\bdraw faces\b/, /\bnumber of (children|students)\b/, /\bmost liked\b|\bleast liked\b|\bmost students\b|\bleast students\b|\b(more|fewer) students\b/, /\bthe table\b|\btable has\b|\bcomplete the table\b/, /\bchart\b|\bsurveys?\b/],
+    grades: [2, 5], perChapter: { 2: 5 }, match: [/data handling/, /\bface stands for\b|\bdraw faces\b/, /\bnumber of (children|students)\b/, /\bmost liked\b|\bleast liked\b|\bmost students\b|\bleast students\b|\b(more|fewer) students\b/, /\bthe table\b|\btable has\b|\bcomplete the table\b/, /\bchart\b|\bsurveys?\b/],
     params: (text) => ({ kind: /colou?rs?\b/.test(text.slice(0, 60)) ? 'colours' : /school|mode of|modes\b/.test(text.slice(0, 80)) ? 'modes' : /\bgames?\b/.test(text.slice(0, 60)) ? 'games' : 'things' }),
     title: 'Fill the picture chart', takeaway: 'One face stands for one child: the longest row is the most liked, the shortest the least.',
     tasks: [
@@ -996,7 +996,7 @@ export const KITS = {
     tasks: [{ say: 'Stand on the Equator.', when: 'lat == 0', then: 'The Equator is latitude 0, halfway between the poles.' }, { say: 'Stand on the Prime Meridian.', when: 'lon == 0', then: 'Longitude 0 runs through Greenwich.' }],
   },
   mapscale: {
-    grades: [6, 10], match: [/(map|drawing|bar) scale|scale (of|on) (a |the )?map/, /distance on (a |the )?map|map distance/, /\bmaps?\b/],
+    grades: [4, 10], match: [/(map|drawing|bar) scale|scale (of|on) (a |the )?map/, /distance on (a |the )?map|map distance/, /\bmaps?\b/],
     title: 'Measure on the map', takeaway: 'Real distance = distance on the map x the scale.',
     tasks: [{ say: 'Show 400 km on the map.', when: 'cm * km == 400', then: 'Map distance x scale = real distance: 400 km.' }],
   },
