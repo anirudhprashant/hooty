@@ -1209,10 +1209,15 @@ function renderCelebration() {
   // A hard lesson (under 60% right first time): the strongest next step is a short round of just the questions missed,
   // so that is the main button. Maths problems come back with new numbers. Moving on stays one tap away.
   const missed = s.lesson.isPractice ? [] : (s.lesson.activities || []).filter((a, i, all) => s.wrongIds.includes(a.id) && all.findIndex((b) => b.id === a.id) === i);
-  const replay = accuracy < 60 && missed.length ? el('button', { class: 'btn btn--primary btn--block', type: 'button', onclick: () => {
+  const replayMissed = () => {
     session = null;
     startLesson({ id: 'replay-' + Date.now(), lessonId: 'practice', title: s.lesson.title, activities: missed, estimatedMinutes: Math.max(1, Math.round(missed.length / 2)), isPractice: true, packId: s.lesson.packId, topicScene: s.lesson.topicScene, sceneAlt: s.lesson.sceneAlt });
-  } }, [missed.length === 1 ? bw('Try the one you missed') : bw('Try the {n} you missed').replace('{n}', missed.length)]) : null;
+  };
+  const missedLabel = missed.length === 1 ? bw('Try the one you missed') : bw('Try the {n} you missed').replace('{n}', missed.length);
+  const replay = accuracy < 60 && missed.length ? el('button', { class: 'btn btn--primary btn--block', type: 'button', onclick: replayMissed }, [missedLabel]) : null;
+  // A lesson that went well can still be tidied up: the same offer, quietly, so the misses do not have to wait for
+  // the practice queue to resurface them.
+  const replayOffer = !replay && missed.length ? el('button', { class: 'btn btn--ghost btn--block', type: 'button', onclick: replayMissed }, [missedLabel]) : null;
   if (replay) box.querySelector('.celebrate__body').textContent = bw('Good effort! Have another go at the ones that were tricky, and they will stick.');
   const finishedBook = bookCompletion(s.lesson);
   box.append(el('div', { class: 'activity__actions' }, [
@@ -1220,6 +1225,7 @@ function renderCelebration() {
     upNext ? el('button', { class: `btn${replay ? ' btn--ghost' : ' btn--primary'} btn--block`, type: 'button', onclick: () => { session = null; startLesson(upNext); } }, [
       el('span', { text: `${t('nextLesson')}: ${upNext.title}` }),
     ]) : null,
+    replayOffer,
     more,
     // A lesson that went badly is worth reading again, but only ever as an offer: trying just the questions missed
     // stays the main next step, so the child is never sent back through ten minutes of reading as a punishment.
