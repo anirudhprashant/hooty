@@ -260,7 +260,7 @@ function subjectTabs() {
       class: `subject-tab${p.id === cur?.id ? ' is-on' : ''}`, type: 'button', role: 'tab', 'aria-selected': String(p.id === cur?.id),
       onclick: async () => {
         if (!(await ensurePack(p.id))) { toast(t('bookNotHere')); return; }
-        router.packId = p.id; const l = activeLearner(); if (l) { l.packId = p.id; await persist(); } render(); warmServiceWorker();
+        router.packId = p.id; const l = activeLearner(); if (l) { l.packId = p.id; followBookLanguage(p); await persist(); } render(); warmServiceWorker();
       },
     }, [subjectName(p.subject)])));
     wrap.append(row); swipe(row);
@@ -574,6 +574,18 @@ function nextLesson() {
     }
   }
   return null;
+}
+
+// A child whose book is in Hindi should not read English buttons. Until someone picks a language in Settings, opening a
+// book in another language switches the app to it.
+function followBookLanguage(pack) {
+  const l = activeLearner();
+  const lang = pack?.language;
+  if (!l || l.langChosen || !lang || lang === l.lang) return false;
+  if (!availableLocales().includes(lang)) return false;
+  l.lang = lang;
+  setLocale(lang);
+  return true;
 }
 
 function screenPath() {
@@ -1936,6 +1948,7 @@ function screenSettings() {
   });
   langSel.addEventListener('change', async () => {
     l.lang = langSel.value;
+    l.langChosen = true;   // a deliberate choice: never override it from the book again
     setLocale(l.lang);
     await persist();
     render();
