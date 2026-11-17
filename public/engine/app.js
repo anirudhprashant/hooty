@@ -789,6 +789,23 @@ function screenLesson() {
     locked: false,
   };
 
+  // Coming back to a lesson they did not finish: pick it up at the card they were on. The saved card is an id, not a
+  // number, because the list is rebuilt each time (a pre-hook on the first lesson of a chapter, a fun fact halfway),
+  // and an id either exists in the new list or safely falls back to the beginning.
+  const resumeAt = (() => {
+    if (lesson.isPractice) return -1;
+    const saved = learner?.inProgress?.[lesson.lessonId];
+    if (!saved?.activityId) return -1;
+    const at = session.queue.findIndex((a) => a.id === saved.activityId);
+    if (at <= 0) return -1;
+    session.index = at;
+    session.correct = saved.correct || 0;
+    session.total = saved.total || 0;
+    session.wrongIds = Array.isArray(saved.wrongIds) ? saved.wrongIds : [];
+    session.resumed = true;
+    return at;
+  })();
+
   wrap.append(el('h1', { class: 'visually-hidden', text: lesson.title || t('path') }));
   wrap.append(lessonBar(activities.length));
 
@@ -1084,8 +1101,31 @@ function advance() {
   }
 }
 
+// The position is written after every card, so a child who closes the tab mid-lesson comes back to the same card.
+function saveLessonPosition() {
+  const l = activeLearner();
+  const s = session;
+  if (!l || !s || s.lesson?.isPractice || s.done) return;
+  const cur = s.queue[s.index];
+  if (!cur?.id) return;
+  l.inProgress = l.inProgress || {};
+  l.inProgress[s.lesson.lessonId] = {
+    activityId: cur.id, correct: s.correct || 0, total: s.total || 0,
+    wrongIds: (s.wrongIds || []).slice(0, 24), at: Date.now(),
+  };
+  persist();
+}
+
+function clearLessonPosition(lessonId) {
+  const l = activeLearner();
+  if (!l?.inProgress || !lessonId) return;
+  delete l.inProgress[lessonId];
+  persist();
+}
+
 function updateProgress() {
   const s = session;
+  saveLessonPosition();
   const pct = Math.round((s.index / s.queue.length) * 100);
   s.progressFill.style.width = pct + '%';
   s.progressText.textContent = `${s.index}/${s.queue.length}`;
@@ -1241,6 +1281,8 @@ function renderCelebration() {
       : el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: t('path'), onclick: () => { session = null; go('path'); } }),
   ]));
 
+  s.done = true;
+  clearLessonPosition(s.lesson.lessonId);
   clear(s.stage);
   s.stage.append(box);
   window.scrollTo(0, 0);

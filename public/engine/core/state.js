@@ -33,7 +33,8 @@ function freshLearner(name = 'Learner') {
     highlight: true,
     sound: true,
     reducedMotion: false,
-    lessonsDone: {},        // lessonId -> { count, lastAt, bestAccuracy }
+    lessonsDone: {},
+    inProgress: {},     // where the child stopped in each lesson they have not finished        // lessonId -> { count, lastAt, bestAccuracy }
     activityStats: {},      // activityId -> { seen, correct, wrong, tags: [] }
     cards: {},              // srs itemId -> card
     rewards: [],            // unlocked reward ids
