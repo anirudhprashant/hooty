@@ -132,7 +132,17 @@ async function ensurePack(id) {
   return !!got;
 }
 
+// A child on a metered phone should not download a whole class because they opened one lesson. Save-Data and a
+// 2G link both mean: fetch only the book being read, and let the rest arrive when it is opened.
+function dataFrugal() {
+  const c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  if (!c) return false;
+  if (c.saveData) return true;
+  return /(^|-)2g$/.test(String(c.effectiveType || ''));
+}
+
 function loadRestInBackground(grade) {
+  if (dataFrugal()) return;
   const go2 = () => loadGrade(grade).then(() => {
     if (['practice', 'parent'].includes(router.screen)) render();   // these two screens read every book of the class
   }).catch(() => {});
