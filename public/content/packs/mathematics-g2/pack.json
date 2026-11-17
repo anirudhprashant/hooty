@@ -1896,14 +1896,14 @@
           "practice",
           "computed"
          ],
-         "prompt": "A child lines up 5 ten strips end to end. How many units are there altogether?",
+         "prompt": "A child lines up 5 strips of ten end to end. How many units are there altogether?",
          "explanation": "Each ten strip has 10 units. Skip-count by tens for 5 strips: 5 x 10 = 50. The answer is 50 units.",
          "steps": [
           "Each ten strip has 10 units.",
           "Skip-count by tens for 5 strips: 5 x 10 = 50.",
           "The answer is 50 units."
          ],
-         "hint": "Skip-count by tens for 5 ten strips.",
+         "hint": "Skip-count by tens for 5 strips of ten.",
          "derived": [
           "10 (generated problem)",
           "5 (generated problem)",
@@ -2481,7 +2481,7 @@
          "tags": [
           "worked"
          ],
-         "prompt": "A child has 5 ten strips. How many units are on the ten strips altogether?",
+         "prompt": "A child has 5 strips of ten. How many units are on the ten strips altogether?",
          "steps": [
           "Each ten strip has 10 units.",
           "Multiply 5 strips by 10 units on each strip.",
@@ -2666,11 +2666,11 @@
           "computed"
          ],
          "prompt": "A bank has 50 units. The units can be exchanged for ten strips. How many ten strips can be made?",
-         "explanation": "There are 50 units in the bank. Each ten strip needs 10 units, so divide 50 by 10. 50 divided by 10 gives 5 ten strips, so the answer is 5 ten strips.",
+         "explanation": "There are 50 units in the bank. Each ten strip needs 10 units, so divide 50 by 10. 50 divided by 10 gives 5 strips of ten, so the answer is 5 strips of ten.",
          "steps": [
           "There are 50 units in the bank.",
           "Each ten strip needs 10 units, so divide 50 by 10.",
-          "50 divided by 10 gives 5 ten strips, so the answer is 5 ten strips."
+          "50 divided by 10 gives 5 strips of ten, so the answer is 5 strips of ten."
          ],
          "hint": "Count how many groups of ten units there are.",
          "derived": [
@@ -3144,7 +3144,7 @@
           "Each player takes 6 units from the two dice.",
           "With 5 players, the group takes 30 units altogether.",
           "Exchange all the units for ten strips by dividing by 10.",
-          "30 divided by 10 gives 3 ten strips, so the answer is 3 ten strips."
+          "30 divided by 10 gives 3 strips of ten, so the answer is 3 strips of ten."
          ],
          "modelSpec": {
           "type": "groups",
@@ -3223,7 +3223,7 @@
           "Take units from the bank",
           "Gather ten or more units",
           "Exchange ten units for a ten strip",
-          "Collect ten ten strips for the grid"
+          "Collect ten strips of ten for the grid"
          ],
          "explanation": "Players take units, exchange ten units for a ten strip, then collect ten strips.",
          "src": [
@@ -3254,10 +3254,10 @@
           "practice",
           "computed"
          ],
-         "prompt": "A player has 3 ten strips and 10 loose units in the bank. After exchanging the loose units for ten strips, how many ten strips does the player have altogether?",
-         "explanation": "The player begins with 3 ten strips and 10 loose units. Exchange the loose units first: 10 divided by 10 gives 1 new ten strips. Now add the new strips to the strips already owned. 3 + 1 = 4 ten strips, so the answer is 4 ten strips.",
+         "prompt": "A player has 3 strips of ten and 10 loose units in the bank. After exchanging the loose units for ten strips, how many ten strips does the player have altogether?",
+         "explanation": "The player begins with 3 strips of ten and 10 loose units. Exchange the loose units first: 10 divided by 10 gives 1 new ten strips. Now add the new strips to the strips already owned. 3 + 1 = 4 ten strips, so the answer is 4 ten strips.",
          "steps": [
-          "The player begins with 3 ten strips and 10 loose units.",
+          "The player begins with 3 strips of ten and 10 loose units.",
           "Exchange the loose units first: 10 divided by 10 gives 1 new ten strips.",
           "Now add the new strips to the strips already owned.",
           "3 + 1 = 4 ten strips, so the answer is 4 ten strips."
@@ -3342,13 +3342,13 @@
           "practice",
           "computed"
          ],
-         "prompt": "A 100-units grid needs ten ten strips. A player has 3 ten strips and 20 loose units. After exchanging the units for strips, how many more ten strips are needed to fill the grid?",
-         "explanation": "The complete grid needs 10 ten strips. The 20 loose units make 2 new ten strips, so the player now has 5 ten strips. Subtract the strips already made from the 10 strips needed. 10 - 5 = 5 more strips, so the answer is 5 ten strips.",
+         "prompt": "A 100-units grid needs ten strips of ten. A player has 3 strips of ten and 20 loose units. After exchanging the units for strips, how many more strips of ten are needed to fill the grid?",
+         "explanation": "The complete grid needs 10 strips of ten. The 20 loose units make 2 new ten strips, so the player now has 5 strips of ten. Subtract the strips already made from the 10 strips of ten needed. 10 - 5 = 5 more strips, so the answer is 5 strips of ten.",
          "steps": [
-          "The complete grid needs 10 ten strips.",
-          "The 20 loose units make 2 new ten strips, so the player now has 5 ten strips.",
-          "Subtract the strips already made from the 10 strips needed.",
-          "10 - 5 = 5 more strips, so the answer is 5 ten strips."
+          "The complete grid needs 10 strips of ten.",
+          "The 20 loose units make 2 new ten strips, so the player now has 5 strips of ten.",
+          "Subtract the strips already made from the 10 strips of ten needed.",
+          "10 - 5 = 5 more strips, so the answer is 5 strips of ten."
          ],
          "hint": "Exchange the loose units, then compare the strips already made with the ten strips needed.",
          "derived": [
@@ -3360,7 +3360,7 @@
           "5 (generated problem)"
          ],
          "gen": {
-          "template": "A 100-units grid needs ten ten strips. A player has {a} ten strips and {n} loose units. After exchanging the units for strips, how many more ten strips are needed to fill the grid?",
+          "template": "A 100-units grid needs ten strips of ten. A player has {a} ten strips and {n} loose units. After exchanging the units for strips, how many more strips of ten are needed to fill the grid?",
           "params": {
            "a": [
             2,
@@ -3604,7 +3604,7 @@
           "deep",
           "check"
          ],
-         "prompt": "Six ten strips cannot fill the 100 units grid. What must be done to finish the grid?",
+         "prompt": "Six strips of ten cannot fill the 100 units grid. What must be done to finish the grid?",
          "options": [
           "Collect more strips until there are ten.",
           "Keep six strips because six can fill it.",
@@ -3614,10 +3614,10 @@
          "answer": 0,
          "why": {
           "Keep six strips because six can fill it.": "It mistakes six collected strips for the full ten strips.",
-          "Use units only and collect no strips.": "It ignores that ten ten strips are collected for the grid.",
+          "Use units only and collect no strips.": "It ignores that ten strips of ten are collected for the grid.",
           "Make every strip a different color.": "It thinks changing colors changes how many strips are needed."
          },
-         "explanation": "The players need ten ten strips to complete the grid.",
+         "explanation": "The players need ten strips of ten to complete the grid.",
          "f": [
           "3.4",
           "3.11"
@@ -6927,7 +6927,7 @@
           "exam",
           "case"
          ],
-         "context": "Rajma and chana are set out as units for a group game. A group of six sits together, and one member is chosen as the banker. Everyone rolls two dice and takes units from the bank. Players exchange ten units for a ten strip, then collect ten ten strips to complete the 100 units grid. One possible arrangement uses seven yellow ten strips and three red ten strips.",
+         "context": "Rajma and chana are set out as units for a group game. A group of six sits together, and one member is chosen as the banker. Everyone rolls two dice and takes units from the bank. Players exchange ten units for a ten strip, then collect ten strips of ten to complete the 100 units grid. One possible arrangement uses seven yellow ten strips and three red ten strips.",
          "prompt": "Rajma and chana have used seven yellow ten strips and three red ten strips. What total do they show now?",
          "options": [
           "A total of 70 units",
@@ -6953,7 +6953,7 @@
           "exam",
           "case"
          ],
-         "context": "Rajma and chana are set out as units for a group game. A group of six sits together, and one member is chosen as the banker. Everyone rolls two dice and takes units from the bank. Players exchange ten units for a ten strip, then collect ten ten strips to complete the 100 units grid. One possible arrangement uses seven yellow ten strips and three red ten strips.",
+         "context": "Rajma and chana are set out as units for a group game. A group of six sits together, and one member is chosen as the banker. Everyone rolls two dice and takes units from the bank. Players exchange ten units for a ten strip, then collect ten strips of ten to complete the 100 units grid. One possible arrangement uses seven yellow ten strips and three red ten strips.",
          "prompt": "In a group of six, what should happen after one member becomes the banker?",
          "options": [
           "Each team member should roll two dice.",
@@ -7302,7 +7302,7 @@
          "Each team member rolls two dice.",
          "Each player takes units from the bank.",
          "The players exchange ten units for a ten strip.",
-         "The players collect ten ten strips for the grid."
+         "The players collect ten strips of ten for the grid."
         ],
         "explanation": "The banker starts the game. Players then take units and exchange ten units for a ten strip.",
         "src": [
