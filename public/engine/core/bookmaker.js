@@ -50,7 +50,12 @@ export async function readPdf(files, onProgress = () => {}) {
       const ops = await page.getOperatorList();
       const fontOf = (id) => { try { return page.commonObjs.has(id) ? (page.commonObjs.get(id).name || '') : ''; } catch { return ''; } };
       const items = content.items.filter((i) => i.str && i.str.trim()).map((i) => ({
-        s: i.str, x: i.transform[4], y: i.transform[5], h: Math.abs(i.transform[3]) || i.height, w: i.width, bold: /bold|black|heavy|semibold|-bd/i.test(fontOf(i.fontName)),
+        s: i.str, x: i.transform[4], y: i.transform[5],
+        // Many PDFs position text with a plain "1 0 0 1 x y Tm", so transform[3] is 1 even though the text is 11 or
+        // 16 point. pdf.js still reports the real height, and without it every line looks the same size and no
+        // heading can be found: the whole book then reads as one undifferentiated block.
+        h: (Math.abs(i.transform[3]) > 2 ? Math.abs(i.transform[3]) : (Math.abs(i.height) > 2 ? Math.abs(i.height) : 12)),
+        w: i.width, bold: /bold|black|heavy|semibold|-bd/i.test(fontOf(i.fontName)),
       }));
       pages.push({ n, height: vp.height, lines: toLines(items), image: await bestImage(page, ops, pdfjs) });
       page.cleanup();
@@ -176,11 +181,17 @@ function splitChapters(docs, body) {
   let starts = blocks.map((b, i) => (b.heading && /^(chapter|unit|lesson)\s+[\dIVX]+/i.test(b.text) ? i : -1)).filter((i) => i >= 0);
   if (starts.length < 2) starts = blocks.map((b, i) => (b.heading && b.size >= biggest * 0.92 && !SKIP_SECTION.test(b.text) ? i : -1)).filter((i) => i >= 0);
   if (starts.length < 2) return [{ title: chapterTitle(blocks, docs[0].name), blocks, images: imagesOf(pages), n: 1 }];
-  return starts.map((s, i) => {
+  const parts = starts.map((s, i) => {
     const part = blocks.slice(s, starts[i + 1] ?? blocks.length);
     const nums = new Set(part.map((b) => b.page));
     return { title: chapterTitle(part, docs[0].name), blocks: part, images: imagesOf(pages.filter((p) => nums.has(p.n))), n: i + 1 };
   }).filter((c) => words(c.blocks.map((b) => b.text).join(' ')).length > 120 && !SKIP_SECTION.test(c.title));
+  // Angled headings inside one short document (page titles, section labels) each become a tiny "chapter" and every
+  // one is dropped, so a perfectly good six-page text was refused as "not a textbook". Keep the document whole.
+  if (!parts.length && words(blocks.map((b) => b.text).join(' ')).length > 120) {
+    return [{ title: chapterTitle(blocks, docs[0].name), blocks, images: imagesOf(pages), n: 1 }];
+  }
+  return parts;
 }
 const imagesOf = (pages) => pages.filter((p) => p.image).map((p) => ({ page: p.n, src: p.image }));
 function chapterTitle(blocks, fallback) {
@@ -414,7 +425,13 @@ export function makeBook(docs, { title, subject = 'My book', id }) {
       if (askable < 2 && size < 700) carry = merged; else { sections.push(merged); carry = null; }
     }
     if (carry) { if (sections.length) { const l = sections[sections.length - 1]; l.paras.push(...carry.paras); l.questions.push(...carry.questions); l.terms.push(...carry.terms); } else sections.push(carry); }
-    if (!sections.length) continue;
+    if (!sections.length) {
+      // No headings at all (a plain text export): one lesson from the whole chapter beats refusing the book.
+      const paras = ch.blocks.filter((b) => !b.heading && words(b.text).length > 3);
+      if (paras.length && words(paras.map((b) => b.text).join(' ')).length > 120) {
+        sections.push({ title: chapter.title || 'My book', page: paras[0].page, paras, questions: [], examples: [], terms: [], inQuestions: false });
+      } else continue;
+    }
     const boxFacts = (toSections(ch).boxes || []).map((b) => ({ page: b.page, text: factFromBox(b.paras) })).filter((b) => b.text);
     const allSent = sections.flatMap((s) => s.paras.flatMap(sentencesOf));
     const terms = chapterTerms(sections, allSent, lang, df, parts.length);
@@ -445,6 +462,19 @@ export function makeBook(docs, { title, subject = 'My book', id }) {
       pool.push(...qs.filter((q) => ['mcq', 'truefalse'].includes(q.type)));
     });
     if (!lessons.length) continue;
+    // A lesson with nothing to answer is a reading card on its own: fold it into the next one (or the previous, at the
+    // end) so every lesson in a made book asks something.
+    const graded = (l) => (l.activities || []).some((a) => ['mcq', 'truefalse', 'fillblank', 'matchpairs', 'dragorder'].includes(a.type));
+    for (let i = 0; i < lessons.length; i += 1) {
+      if (graded(lessons[i])) continue;
+      const into = lessons[i + 1] || lessons[i - 1];
+      if (!into) continue;
+      const reading = (lessons[i].activities || []).filter((a) => ['passage', 'concept', 'hook'].includes(a.type));
+      if (into === lessons[i + 1]) into.activities = [...reading, ...into.activities];
+      else into.activities = [...into.activities, ...reading];
+      lessons.splice(i, 1);
+      i -= 1;
+    }
     // each box goes with the lesson it sat beside in the book
     for (const f of boxFacts) {
       const at = [...sections.keys()].filter((i) => sections[i].page <= f.page).pop() ?? 0, l = lessons[Math.min(at, lessons.length - 1)];

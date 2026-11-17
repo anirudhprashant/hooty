@@ -671,9 +671,11 @@ const questionCount = (lesson) => lesson.activities.filter((a) => !['concept', '
 function trailNode(it, rec, isCurrent, cell, pack, unit) {
   const boss = it.kind === 'boss';
   const title = boss ? (it.lesson.title || t('bossChallenge')) : it.lesson.title;
+  const nQuestions = questionCount(it.lesson);
+  const questionsWord = nQuestions === 1 ? 'question' : 'questions';
   const meta = boss
-    ? `Chapter boss · ${questionCount(it.lesson)} questions`
-    : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${questionCount(it.lesson)} questions`;
+    ? `Chapter boss · ${nQuestions} ${questionsWord}`
+    : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`;
   const glyph = rec ? icon('check', { size: 40 }) : boss ? icon('crown', { size: 40 }) : isCurrent ? icon('play', { size: 44 }) : icon('star', { size: 40 });
   const node = el('button', {
     class: `node${rec ? ' node--done' : ''}${boss ? ' node--boss' : ''}${isCurrent ? ' node--current' : ''}`,
