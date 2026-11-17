@@ -798,19 +798,15 @@ function screenLesson() {
   // Coming back to a lesson they did not finish: pick it up at the card they were on. The saved card is an id, not a
   // number, because the list is rebuilt each time (a pre-hook on the first lesson of a chapter, a fun fact halfway),
   // and an id either exists in the new list or safely falls back to the beginning.
-  const resumeAt = (() => {
-    if (lesson.isPractice) return -1;
-    const saved = learner?.inProgress?.[lesson.lessonId];
-    if (!saved?.activityId) return -1;
-    const at = session.queue.findIndex((a) => a.id === saved.activityId);
-    if (at <= 0) return -1;
-    session.index = at;
+  const saved = lesson.isPractice ? null : learner?.inProgress?.[lesson.lessonId];
+  const resumeAt = saved?.activityId ? session.queue.findIndex((a) => a.id === saved.activityId) : -1;
+  if (resumeAt > 0) {
+    session.index = resumeAt;
     session.correct = saved.correct || 0;
     session.total = saved.total || 0;
     session.wrongIds = Array.isArray(saved.wrongIds) ? saved.wrongIds : [];
     session.resumed = true;
-    return at;
-  })();
+  }
 
   wrap.append(el('h1', { class: 'visually-hidden', text: lesson.title || t('path') }));
   wrap.append(lessonBar(activities.length));
@@ -880,6 +876,7 @@ function screenLesson() {
   session.mascotImg = mascotImg;
   session.progressFill = wrap.querySelector('.lesson__progress span');
   session.progressText = wrap.querySelector('.lesson__count');
+  if (session.resumed) updateProgress();
 
   setTimeout(() => renderActivity(), 30);
   return wrap;
@@ -1337,6 +1334,17 @@ function readQuestion() {
   const said = [];
   if (prompt) said.push(prompt);
   options.forEach((text, i) => said.push(`${String.fromCharCode(65 + i)}. ${text}`));
+  // True or false, matching and ordering cards have their choices outside .option, and a child who cannot read yet
+  // hears nothing of them without this.
+  if (!options.length) {
+    const pairs = [...root.querySelectorAll('.tf-btn')].map((b) => (b.textContent || '').trim()).filter(Boolean);
+    if (pairs.length) said.push(pairs.join('. '));
+    const left = [...root.querySelectorAll('.match-col:first-child .match-item')].map((b) => (b.textContent || '').trim());
+    const right = [...root.querySelectorAll('.match-col:last-child .match-item')].map((b) => (b.textContent || '').trim());
+    if (left.length) said.push(left.slice(0, 6).join(', '), '.', right.slice(0, 6).join(', '));
+    const chips = [...root.querySelectorAll('.order-chip, .label-bar .label-chip')].map((b) => (b.textContent || '').trim()).filter(Boolean);
+    if (chips.length) said.push(chips.slice(0, 8).join(', '));
+  }
   if (!said.length) {
     // a hook or a card without a question box: read the words on the card itself, without the buttons
     const copy = root.cloneNode(true);
