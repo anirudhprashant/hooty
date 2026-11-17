@@ -62,6 +62,22 @@
     if (lang.indexOf('hi') === 0) note.textContent = 'आपकी दुनिया तैयार हो रही है';
     else if (lang.indexOf('kn') === 0) note.textContent = 'ನಿಮ್ಮ ಜಗತ್ತು ಸಿದ್ಧವಾಗುತ್ತಿದೆ';
   })();
+  // A returning child should see their own world while it loads, not the default one.
+  (function () {
+    try {
+      var saved = JSON.parse(localStorage.getItem('sparkle-state-v1') || '{}');
+      var learner = (saved.learners || {})[saved.activeLearnerId] || {};
+      var theme = learner.theme;
+      var known = ['enchanted-kingdom', 'wizard-school', 'space-starlight', 'jungle-canopy', 'calm-lagoon'];
+      if (!theme || known.indexOf(theme) < 0 || theme === 'enchanted-kingdom') return;
+      var art = document.querySelector('.boot__art');
+      if (!art) return;
+      var fallback = art.getAttribute('src');
+      art.removeAttribute('srcset');
+      art.onerror = function () { art.onerror = null; art.src = fallback; };
+      art.src = './themes/' + theme + '/assets/hero.webp';
+    } catch (e) { /* a splash is not worth a broken page */ }
+  })();
 </script>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <noscript><p style="padding:24px;font:18px system-ui;text-align:center">Hooty needs JavaScript. Please turn it on in your browser settings and reload.</p></noscript>
