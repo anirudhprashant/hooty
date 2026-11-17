@@ -13,6 +13,14 @@ const WORDS = {
     // Tapping one word to hear it: the hint has to be in the same language as the word being tapped.
     'Tap any word to hear it on its own.': 'किसी भी शब्द को टैप कीजिए, वह अकेला सुनाई देगा।',
     'Tap any word to hear it.': 'किसी भी शब्द को टैप कीजिए, वह सुनाई देगा।',
+    'Not quite. Have another go!': 'अभी नहीं। एक बार फिर कोशिश कीजिए!',
+    'Try again': 'फिर कोशिश कीजिए',
+    'Try the one you missed': 'जो सवाल छूट गया उसे आज़माइए',
+    'Try the {n} you missed': 'जो {n} सवाल छूट गए उन्हें आज़माइए',
+    'Hint: ': 'संकेत: ',
+    'Have another go!': 'फिर कोशिश कीजिए!',
+    '(ruled out)': '(हटा दिया)',
+    'Good effort! Have another go at the ones that were tricky, and they will stick.': 'अच्छी कोशिश! जो सवाल अटके थे उन्हें फिर कीजिए, वे पक्के हो जाएँगे।',
   },
   kn: {
     "Listen": "ಕೇಳಿ",
@@ -44,6 +52,14 @@ const WORDS = {
     "Later": "ನಂತರ",
     "Tap any word to hear it on its own.": "ಯಾವುದೇ ಪದವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ, ಅದು ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿಸುತ್ತದೆ.",
     "Tap any word to hear it.": "ಯಾವುದೇ ಪದವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ, ಅದು ಕೇಳಿಸುತ್ತದೆ.",
+    "Not quite. Have another go!": "ಸರಿಯಿಲ್ಲ. ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ!",
+    "Try again": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "Try the one you missed": "ತಪ್ಪಿದ ಪ್ರಶ್ನೆಯನ್ನು ಪ್ರಯತ್ನಿಸಿ",
+    "Try the {n} you missed": "ತಪ್ಪಿದ {n} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರಯತ್ನಿಸಿ",
+    "Hint: ": "ಸೂಚನೆ: ",
+    "Have another go!": "ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ!",
+    "(ruled out)": "(ತೆಗೆದುಹಾಕಲಾಗಿದೆ)",
+    "Good effort! Have another go at the ones that were tricky, and they will stick.": "ಒಳ್ಳೆಯ ಪ್ರಯತ್ನ! ಕಷ್ಟವಾದ ಪ್ರಶ್ನೆಗಳನ್ನು ಇನ್ನೊಮ್ಮೆ ಮಾಡಿ, ಅವು ನೆನಪಿನಲ್ಲಿ ಉಳಿಯುತ್ತವೆ.",
   },
 };
 export const bookWord = (lang, text) => WORDS[lang]?.[text] || text;

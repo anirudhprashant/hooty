@@ -194,6 +194,9 @@ function packById(id) { return packs.find((p) => p.id === id); }
 
 // The subject the child is working in: the one they last picked, else the first book.
 // Read-aloud language: the book's own (a Hindi book is read in Hindi), else the app language.
+// The words the lesson player itself says, in the language of the book being read.
+const bw = (text) => bookWord(packById(session?.lesson?.packId)?.language, text);
+
 function speechLang() {
   const book = packById(session?.lesson?.packId)?.language;
   if (book === 'hi') return 'hi-IN';
@@ -1194,8 +1197,8 @@ function renderCelebration() {
   const replay = accuracy < 60 && missed.length ? el('button', { class: 'btn btn--primary btn--block', type: 'button', onclick: () => {
     session = null;
     startLesson({ id: 'replay-' + Date.now(), lessonId: 'practice', title: s.lesson.title, activities: missed, estimatedMinutes: Math.max(1, Math.round(missed.length / 2)), isPractice: true, packId: s.lesson.packId, topicScene: s.lesson.topicScene, sceneAlt: s.lesson.sceneAlt });
-  } }, [missed.length === 1 ? 'Try the one you missed' : `Try the ${missed.length} you missed`]) : null;
-  if (replay) box.querySelector('.celebrate__body').textContent = 'Good effort! Have another go at the ones that were tricky, and they will stick.';
+  } }, [missed.length === 1 ? bw('Try the one you missed') : bw('Try the {n} you missed').replace('{n}', missed.length)]) : null;
+  if (replay) box.querySelector('.celebrate__body').textContent = bw('Good effort! Have another go at the ones that were tricky, and they will stick.');
   const finishedBook = bookCompletion(s.lesson);
   box.append(el('div', { class: 'activity__actions' }, [
     replay,
@@ -1366,10 +1369,10 @@ function hintFor(activity, response = {}) {
 
 function showHint(s, activity, hint) {
   const sheet = el('div', { class: 'sheet sheet--hint', role: 'status' }, [
-    el('div', { class: 'sheet__head' }, [el('span', { class: 'sheet__mark' }, [icon('cross')]), el('h3', { class: 'sheet__title', text: 'Not quite. Have another go!' })]),
+    el('div', { class: 'sheet__head' }, [el('span', { class: 'sheet__mark' }, [icon('cross')]), el('h3', { class: 'sheet__title', text: bw('Not quite. Have another go!') })]),
     el('p', { class: 'sheet__body', text: hint.text }),
   ]);
-  const again = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: 'Try again' });
+  const again = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: bw('Try again') });
   again.addEventListener('click', () => { s.retry = { activity, hint }; renderActivity(); });
   sheet.append(el('div', { class: 'activity__actions' }, [again]));
   s.stage.append(sheet);
@@ -1382,10 +1385,10 @@ function showHint(s, activity, hint) {
 function applyHint(s, root, hint) {
   for (const i of hint.out || []) {
     const b = root.querySelector(`.option[data-choice="${i}"]`);
-    if (b) { b.disabled = true; b.classList.add('option--out'); b.setAttribute('aria-label', `${b.textContent} (ruled out)`); }
+    if (b) { b.disabled = true; b.classList.add('option--out'); b.setAttribute('aria-label', `${b.textContent} ${bw('(ruled out)')}`); }
   }
-  root.querySelector('.activity__prompt')?.after(el('p', { class: 'hint-note', role: 'note' }, [el('b', { text: 'Hint: ' }), hint.text]));
-  s.bubble.textContent = 'Have another go!';
+  root.querySelector('.activity__prompt')?.after(el('p', { class: 'hint-note', role: 'note' }, [el('b', { text: bw('Hint: ') }), hint.text]));
+  s.bubble.textContent = bw('Have another go!');
 }
 
 // What taught this question, shown again beside the explanation: one line when the link is sure, the card's own
