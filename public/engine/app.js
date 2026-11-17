@@ -522,7 +522,7 @@ function screenHome() {
     el('span', { class: 'feature__badge' }, [icon('practice', { size: 34 })]),
     el('span', {}, [
       el('span', { class: 'feature__title', text: due.length ? t('nToTry', { n: due.length }) : t('noMistakes') }),
-      el('span', { class: 'feature__sub', text: due.length ? 'Questions you got wrong.' : 'Questions you get wrong wait here.' }),
+      el('span', { class: 'feature__sub', text: due.length ? t('wrongQuestions') : t('wrongWait') }),
     ]),
   ]);
   const trailCard = el('button', { class: 'feature', type: 'button', onclick: () => go('path') }, [
@@ -531,7 +531,7 @@ function screenHome() {
       : el('span', { class: 'feature__badge' }, [icon('trail', { size: 34 })]),
     el('span', {}, [
       el('span', { class: 'feature__title', text: t('path') }),
-      el('span', { class: 'feature__sub', text: `${done} of ${totalLessons} lessons done` }),
+      el('span', { class: 'feature__sub', text: t('lessonsDoneOf', { done, total: totalLessons }) }),
     ]),
   ]);
   if (ready) wrap.append(el('section', { class: 'pair' }, [reviewCard, trailCard]));
@@ -605,7 +605,7 @@ function screenPath() {
       el('span', { class: 'unit-head__icon' }, [unitIcon ? el('img', { src: themeAsset(unitIcon), alt: '' }) : icon('book', { size: 34 })]),
       el('div', {}, [
         el('h3', { class: 'unit-head__name', text: unit.title }),
-        el('span', { class: 'unit-head__meta', text: `${doneCount} of ${items.length} done` }),
+        el('span', { class: 'unit-head__meta', text: t('nOfMDone', { done: doneCount, total: items.length }) }),
       ]),
     ]));
 
@@ -672,7 +672,7 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
   const boss = it.kind === 'boss';
   const title = boss ? (it.lesson.title || t('bossChallenge')) : it.lesson.title;
   const nQuestions = questionCount(it.lesson);
-  const questionsWord = nQuestions === 1 ? 'question' : 'questions';
+  const questionsWord = t(nQuestions === 1 ? 'question' : 'questions');
   const meta = boss
     ? `Chapter boss · ${nQuestions} ${questionsWord}`
     : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`;
@@ -685,8 +685,8 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
     el('span', { class: 'node__body' }, [
       el('span', { class: 'node__title', text: title }),
       el('span', { class: 'node__meta', text: meta }),
-      rec ? el('span', { class: 'visually-hidden', text: ', done' })
-        : isCurrent ? el('span', { class: 'visually-hidden', text: ', next up' }) : null,
+      rec ? el('span', { class: 'visually-hidden', text: t('doneA11y') })
+        : isCurrent ? el('span', { class: 'visually-hidden', text: t('nextUpA11y') }) : null,
     ]),
     isCurrent ? el('span', { class: 'node__start', 'aria-hidden': 'true', text: rec ? '' : t('start') }) : null,
   ]);
@@ -1771,10 +1771,10 @@ function screenParent() {
     el('p', { class: 'growth-note', text: 'A small sample of questions, so treat this as a guide, not a grade.' }),
   ]));
   wrap.append(el('section', { class: 'growth-card' }, [
-    el('h2', { class: 'section-title', text: 'Is it sticking?' }),
+    el('h2', { class: 'section-title', text: t('isItSticking') }),
     el('p', { text: retried.length
       ? `Of ${retried.length} question${retried.length === 1 ? '' : 's'} missed the first time and tried again, ${fixed} ${fixed === 1 ? 'is' : 'are'} now right.`
-      : 'Questions missed the first time come back later. This will show how many are now right.' }),
+      : t('stickingSoon') }),
     l?.retakes?.n ? el('p', { class: 'growth-note', text: `After a second miss, Hooty shows the one line that taught it and asks a different question about the same idea. ${l.retakes.fixed} of ${l.retakes.n} of those were then answered right.` }) : null,
   ]));
 
@@ -1861,7 +1861,7 @@ function weekStrip(l) {
     const d = new Date(Date.now() - i * 86400000);
     const key = todayKey(d);
     const xp = key === todayKey() ? Math.max(l?.dailyXp || 0, l?.days?.[key] || 0) : (l?.days?.[key] || 0);
-    days.push({ xp, name: d.toLocaleDateString(undefined, { weekday: 'short', timeZone: 'UTC' }).slice(0, 3), today: i === 0 });
+    days.push({ xp, name: d.toLocaleDateString(getLocale() === 'hi' ? 'hi-IN' : getLocale() === 'kn' ? 'kn-IN' : 'en-GB', { weekday: 'short', timeZone: 'UTC' }).slice(0, 4), today: i === 0 });
   }
   const top = Math.max(goal, ...days.map((x) => x.xp));
   const met = days.filter((x) => x.xp >= goal).length;
