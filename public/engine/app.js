@@ -1641,9 +1641,9 @@ function screenRewards() {
   const next = nextRewardFor(l);
   const xpNow = l?.xp || 0;
   wrap.append(el('h2', { class: 'section-title', text: t('stickers') }));
-  wrap.append(el('p', { class: 'section-sub', text: `${owned} of ${rewards.length} collected. Earn XP by answering questions to unlock the next one.` }));
+  wrap.append(el('p', { class: 'section-sub', text: t('stickerSub', { owned, total: rewards.length }) }));
   // A child looks at this page wondering how far the next sticker is; say the number instead of making them subtract.
-  if (next) wrap.append(el('p', { class: 'reward-next', text: `${Math.max(0, next.unlockAt - xpNow)} ${t('xp')} to the next sticker` }));
+  if (next) wrap.append(el('p', { class: 'reward-next', text: t('nextSticker', { n: Math.max(0, next.unlockAt - xpNow) }) }));
   const grid = el('div', { class: 'reward-grid' });
   for (const r of rewards) {
     const got = l?.rewards?.includes(r.id);
@@ -1651,7 +1651,7 @@ function screenRewards() {
     grid.append(el('div', { class: `reward${got ? '' : ' is-locked'}${isNext ? ' is-next' : ''}` }, [
       el('img', { class: 'reward__art', src: themeAsset(r.art), alt: got ? r.name : '' }),
       el('span', { class: 'reward__name', text: got ? r.name : '???' }),
-      el('span', { class: 'reward__need', text: got ? 'Collected' : `${r.unlockAt} XP` }),
+      el('span', { class: 'reward__need', text: got ? t('collected') : `${r.unlockAt} XP` }),
     ]));
   }
   wrap.append(grid);
@@ -1941,11 +1941,11 @@ function screenSettings() {
 
   wrap.append(el('div', { class: 'settings' }, [
     row('Your name', null, nameField),
-    row(t('sound'), 'Taps, chimes, a fanfare', soundSwitch),
-    row(t('textSize'), 'Bigger or smaller', range),
-    row('Highlight key words', 'Marker-pen on key words', hlSwitch),
-    row(t('dyslexiaFont'), 'Wider, clearer letters', dysSwitch),
-    SHOW_GUIDE_PICKER ? row('Your guide', 'Who walks with you', guidePicker) : null,
+    row(t('sound'), t('soundHint'), soundSwitch),
+    row(t('textSize'), t('textSizeHint'), range),
+    row('Highlight key words', t('highlightHint'), hlSwitch),
+    row(t('dyslexiaFont'), t('fontHint'), dysSwitch),
+    SHOW_GUIDE_PICKER ? row('Your guide', t('guideHint'), guidePicker) : null,
     row(t('language'), null, langSel),
   ]));
 
