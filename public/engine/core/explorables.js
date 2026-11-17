@@ -2560,7 +2560,7 @@ export const WIDGETS = {
         T(40, 222, rule, { z: 20, a: 'start', f: '#c2510e' }),
         T(40, 254, why, { z: 13, a: 'start', w: 600, f: '#6b5a8a' }),
       ];
-      return { kids, say: `${base} becomes ${out}: ${rule}. ${why}` };
+      return { kids, say: `${base} becomes ${out}. ${rule}. ${why}` };
     },
   },
 };
