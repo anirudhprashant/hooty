@@ -239,6 +239,10 @@ export const KITS = {
   division: {
     grades: [2, 5], perChapter: 3, titleOnly: true,
     match: [/\bdivision\b/, /\bdivid(e|ing)\b/, /remainders?\b/, /sharing equally/, /equal groups/],
+    // the widget shares at most 48 sweets, so a lesson working in hundreds or thousands (multi-digit division, big word
+    // problems) gets nothing: the picture would show baby numbers and teach none of that lesson
+    params: (text) => ({ big: /\b\d{3,}|\b(?:hundred|thousand|lakh|crore|million)s?\b/.test(text) }),
+    usable: (p) => !p.big,
     title: 'Share the sweets', takeaway: 'Division shares a total into equal groups. The number of whole groups is the quotient, and what cannot fill a group is the remainder, which is always smaller than the group size.',
     tasks: [
       { say: 'Share 12 sweets into groups of 3. How many groups are made?', when: 'total == 12 and size == 3', then: '12 shared into groups of 3 makes 4 groups, with nothing left over.' },
