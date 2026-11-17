@@ -47413,7 +47413,7 @@
       {
        "id": "mathematics-g10-ch9-l1",
        "title": "Seeing Above and Below",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -47548,6 +47548,36 @@
           "4 (generated problem)",
           "7 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g10-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "elevation",
+         "params": {},
+         "title": "Look up at a tower",
+         "tasks": [
+          {
+           "say": "Stand where the angle is exactly 45 degrees.",
+           "when": "angle == 45",
+           "then": "At 45 degrees the distance equals the height, because tan 45 is 1."
+          },
+          {
+           "say": "Come closer until the angle reaches 60 degrees.",
+           "when": "angle == 60",
+           "then": "tan 60 is about 1.73, so you stand a little more than half the height away."
+          },
+          {
+           "say": "Move away until the angle is only 20 degrees.",
+           "when": "angle == 20",
+           "then": "A small angle means a long distance: tan 20 is about 0.36, so the distance is nearly three times the height."
+          }
+         ],
+         "takeaway": "The angle of elevation, the height and the distance form a right-angled triangle: distance = height / tan(angle).",
+         "explanation": "The angle of elevation, the height and the distance form a right-angled triangle: distance = height / tan(angle)."
         },
         {
          "type": "worked",
@@ -48644,7 +48674,7 @@
       {
        "id": "mathematics-g10-ch9-l2",
        "title": "Finding the Height of a Minar",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -48748,6 +48778,36 @@
           "12 (generated problem)",
           "45 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g10-ch9-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "elevation",
+         "params": {},
+         "title": "Look up at a tower",
+         "tasks": [
+          {
+           "say": "Stand where the angle is exactly 45 degrees.",
+           "when": "angle == 45",
+           "then": "At 45 degrees the distance equals the height, because tan 45 is 1."
+          },
+          {
+           "say": "Come closer until the angle reaches 60 degrees.",
+           "when": "angle == 60",
+           "then": "tan 60 is about 1.73, so you stand a little more than half the height away."
+          },
+          {
+           "say": "Move away until the angle is only 20 degrees.",
+           "when": "angle == 20",
+           "then": "A small angle means a long distance: tan 20 is about 0.36, so the distance is nearly three times the height."
+          }
+         ],
+         "takeaway": "The angle of elevation, the height and the distance form a right-angled triangle: distance = height / tan(angle).",
+         "explanation": "The angle of elevation, the height and the distance form a right-angled triangle: distance = height / tan(angle)."
         },
         {
          "type": "worked",
