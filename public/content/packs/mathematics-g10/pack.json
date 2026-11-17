@@ -54798,7 +54798,7 @@
       {
        "id": "mathematics-g10-ch10-l2",
        "title": "Tangents and their existence",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -54925,6 +54925,31 @@
           "5 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g10-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "tangent",
+         "params": {},
+         "title": "Draw a tangent",
+         "tasks": [
+          {
+           "say": "Move the point onto the circle itself.",
+           "when": "d == r",
+           "then": "A tangent from a point on the circle has no length: the point of contact is the point itself."
+          },
+          {
+           "say": "Keep the radius 5 and push the point to 20 cm from the centre.",
+           "when": "r == 5 and d == 20",
+           "then": "The tangent is only about 19.4 cm, not double the 12 cm: it grows more slowly than the distance."
+          }
+         ],
+         "takeaway": "A tangent touches the circle at one point, meets the radius there at a right angle, and the two tangents from the same outside point are equal.",
+         "explanation": "A tangent touches the circle at one point, meets the radius there at a right angle, and the two tangents from the same outside point are equal."
         },
         {
          "type": "worked",
@@ -55675,7 +55700,7 @@
       {
        "id": "mathematics-g10-ch10-l3",
        "title": "The tangent and the radius",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -55723,6 +55748,31 @@
            "p": 147
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g10-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "tangent",
+         "params": {},
+         "title": "Draw a tangent",
+         "tasks": [
+          {
+           "say": "Move the point onto the circle itself.",
+           "when": "d == r",
+           "then": "A tangent from a point on the circle has no length: the point of contact is the point itself."
+          },
+          {
+           "say": "Keep the radius 5 and push the point to 20 cm from the centre.",
+           "when": "r == 5 and d == 20",
+           "then": "The tangent is only about 19.4 cm, not double the 12 cm: it grows more slowly than the distance."
+          }
+         ],
+         "takeaway": "A tangent touches the circle at one point, meets the radius there at a right angle, and the two tangents from the same outside point are equal.",
+         "explanation": "A tangent touches the circle at one point, meets the radius there at a right angle, and the two tangents from the same outside point are equal."
         },
         {
          "type": "worked",
