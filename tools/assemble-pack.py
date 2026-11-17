@@ -137,6 +137,25 @@ for u in pack['units']:
             exam += [{'type': 'mcq', 'id': f'{base}-r{j}', 'difficulty': 3, 'tags': ['exam', 'assertion'], 'prompt': q['prompt'], 'options': q['options'], 'answer': q['answer'], 'explanation': q.get('why') or 'Check each statement on its own first, then ask whether the reason explains the assertion.'} for j, q in enumerate(ex.get('assertion', []), 1) if not is_meta(q.get('prompt'))]
             exam += [{'type': 'explain', 'id': f'{base}-e{j}', 'difficulty': 3, 'tags': ['exam', 'written'], 'prompt': q['prompt'], 'answer': q['answer'], 'points': q['points'], 'explanation': 'Compare your answer with the points a marker looks for.'} for j, q in enumerate([q for q in ex.get('explain', []) if not is_meta(q.get('prompt'))][:1], 1)]
         exam = [a for a in exam if not is_meta(a.get('prompt'))]
+        # A test should ask enough questions to practise with: when a chapter's own extras are thin, top it up with
+        # questions the chapter already teaches, before the written cards so the test still ends with writing.
+        scored = ('mcq', 'truefalse', 'fillblank')
+        if sum(1 for a in exam if a['type'] in scored) < 6:
+            used = {a.get('prompt', '').strip().lower() for a in exam}
+            top = []
+            for lesson in c['lessons']:
+                if lesson['id'].endswith(('-exam', '-boss')): continue
+                for a in lesson['activities']:
+                    if sum(1 for x in exam + top if x['type'] in scored) >= 6: break
+                    if a['type'] not in scored or is_meta(a.get('prompt')): continue
+                    p = a.get('prompt', '').strip().lower()
+                    if not p or p in used: continue
+                    copy = {k: v for k, v in a.items() if k not in ('anchor', 'focus')}
+                    copy['id'] = f"{lesson['id']}-q{len([x for x in top if x['id'].startswith(lesson['id'] + '-q')]) + 1}"
+                    top.append(copy); used.add(p)
+            if top:
+                at = next((i for i, a in enumerate(exam) if a['type'] == 'explain'), len(exam))
+                exam = exam[:at] + top + exam[at:]
         if len(exam) >= 4:
             first = c['lessons'][0]
             at = c['lessons'][0]['id'].rsplit('-l', 1)[0]
