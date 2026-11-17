@@ -402,6 +402,48 @@ export const WIDGETS = {
       return { kids, say: ['Evaporation: the Sun heats water and it rises as vapour.', 'Condensation: vapour cools high up and forms clouds.', 'Precipitation: drops grow heavy and fall as rain.', 'Collection: rivers carry the water back to the sea, and it all begins again.'][v.step - 1] };
     },
   },
+  energysource: {
+    subject: 'science', about: 'A small power station fed by one source at a time: the Sun, wind, water or coal. Sun, wind and water make electricity with no smoke, while burning coal sends up smoke and dirty air. For sources of energy, clean energy, solar panels, windmills and hydel power.',
+    sliders: [['source', 'Where the energy comes from (1 Sun, 2 Wind, 3 Water, 4 Coal)', 1, 4, 1, 3]],
+    draw(v) {
+      const k = v.source, kids = [R(0, 0, W, H, k === 4 ? '#e6e2e8' : '#e8f6ff', { w: 0 }), R(0, 236, W, 64, '#cdeac0', { w: 0 })];
+      if (k === 1) {
+        for (let i = 0; i < 12; i++) { const a = i * 30; kids.push(L(120 + Math.cos(rad(a)) * 46, 92 - Math.sin(rad(a)) * 46, 120 + Math.cos(rad(a)) * 64, 92 - Math.sin(rad(a)) * 64, C.y, 5)); }
+        kids.push(CIRC(120, 92, 38, C.y, { w: 3 }), T(120, 154, 'Sun', { z: 17 }));
+      }
+      if (k === 2) {
+        kids.push(L(120, 232, 120, 108, '#8d99ae', 9));
+        for (const a of [90, 210, 330]) kids.push(L(120, 104, 120 + Math.cos(rad(a)) * 62, 104 - Math.sin(rad(a)) * 62, C.b, 8, { 'stroke-linecap': 'round' }));
+        kids.push(CIRC(120, 104, 9, INK), R(92, 140, 56, 24, '#fff', { w: 0, r: 5 }), T(120, 157, 'Wind', { z: 17 }));
+        for (let i = 0; i < 3; i++) kids.push(L(16 + i * 8, 66 + i * 18, 82 + i * 8, 66 + i * 18, C.b, 4, { 'stroke-dasharray': '9 7' }));
+      }
+      if (k === 3) {
+        kids.push(R(16, 168, 210, 34, '#a9def9', { w: 0 }));
+        kids.push(s('path', { d: 'M 16 180 Q 54 166 92 180 T 168 180 T 226 180', fill: 'none', stroke: '#0077b6', 'stroke-width': 5 }));
+        kids.push(CIRC(120, 180, 34, '#dff3ff', { w: 5 }));
+        for (let i = 0; i < 6; i++) { const a = i * 60; kids.push(L(120, 180, 120 + Math.cos(rad(a)) * 30, 180 - Math.sin(rad(a)) * 30, '#0077b6', 4)); }
+        kids.push(T(120, 152, 'Water', { z: 17 }));
+      }
+      if (k === 4) {
+        kids.push(R(62, 190, 116, 42, '#3d3d3d', { r: 8 }), CIRC(96, 190, 20, '#3d3d3d'), CIRC(142, 190, 18, '#3d3d3d'));
+        kids.push(s('polygon', { points: '146,188 168,140 190,188', fill: C.o, stroke: INK }), CIRC(120, 206, 8, C.y, { w: 0 }));
+        kids.push(CIRC(168, 168, 16, '#b8b8c0', { w: 0 }), CIRC(190, 138, 21, '#c9c9d1', { w: 0 }), CIRC(166, 106, 25, '#dadade', { w: 0 }), T(120, 154, 'Coal', { z: 17 }));
+        kids.push(T(196, 232, 'smoke and dirty air', { z: 13, w: 600, a: 'start' }));
+      }
+      kids.push(R(258, 116, 104, 96, '#fff', { r: 12 }), T(310, 154, 'power', { z: 16 }), T(310, 176, 'station', { z: 16 }));
+      kids.push(L(362, 164, 414, 164, INK, 5), L(414, 164, 414, 126, INK, 5), L(414, 126, 434, 126, INK, 5));
+      kids.push(R(434, 132, 18, 26, '#b9b9c6', { r: 3 }), CIRC(468, 118, 32, k === 4 ? '#ffe28a' : '#ffd60a', { w: 3 }));
+      for (let i = 0; i < 8; i++) { const a = i * 45; kids.push(L(468 + Math.cos(rad(a)) * 38, 118 - Math.sin(rad(a)) * 38, 468 + Math.cos(rad(a)) * 50, 118 - Math.sin(rad(a)) * 50, C.y, 4)); }
+      kids.push(T(468, 172, 'light', { z: 15 }));
+      kids.push(T(300, 280, k === 4 ? 'Burning coal: smoke and harmful gases' : 'Clean energy: no smoke', { z: 16, f: k === 4 ? '#8a4b1f' : '#067a4e' }));
+      return { kids, say: [
+        'Sunlight gives light and heat, and solar panels turn it into electricity without any smoke. The Sun is the main source of energy for life on Earth.',
+        'Moving air turns the blades of a windmill, and the turning makes electricity. Wind is clean energy: it gives no smoke.',
+        'Fast rivers and falling water turn machines that make electricity. In hilly areas, gharaats use flowing water to grind grain. Water power is clean energy.',
+        'Burning coal makes most of our electricity, but it sends up smoke and harmful gases that dirty the air. Coal is not clean energy.',
+      ][k - 1] };
+    },
+  },
   spinner: {
     subject: 'science', about: 'A card on a spindle spun by hand, at any speed from still to fast. As it turns, the corners of a square or triangle card sweep round and the card looks round, and the colours painted on it blur into one mixed colour. For spinners, spinning tops, the charkha, why a spinning square card looks circular and mixing colours by spinning.',
     sliders: [['turn', 'How fast it spins', 0, 10, 1, 0], ['shape', 'Card shape: square, triangle or hexagon', 0, 2, 1, 0], ['colours', 'Number of colours: two, four or six', 0, 2, 1, 0]],

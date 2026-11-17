@@ -351,6 +351,16 @@ export const KITS = {
       { say: 'Lift the heaviest bag the longest distance in the shortest time.', when: 'force == 100 and dist == 10 and secs == 1', then: '1000 J in 1 s is 1000 W: the most power you can show here.' },
     ],
   },
+  energysource: {
+    grades: [4, 6], perChapter: 3,
+    match: [/what is energy/, /sources? of energy/, /generating energy/, /clean energy/],
+    title: 'Send the power', takeaway: 'The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.',
+    tasks: [
+      { say: 'Make electricity from moving air.', when: 'source == 2', then: 'Windmills spin in the moving air, and their turning makes electricity.' },
+      { say: 'Find the source that sends up smoke.', when: 'source == 4', then: 'Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air.' },
+      { say: 'Choose the Sun, the main source of energy for life on Earth.', when: 'source == 1', then: 'Sunlight gives light and heat, and solar panels turn it into electricity without any smoke.' },
+    ],
+  },
   energy: {
     grades: [8, 10], perChapter: 3, match: [/kinetic energy/, /potential energy/, /conservation of energy/, /forms? of energy/, /mechanical energy/, /energy (is|can be) (never )?(created|destroyed|converted|changed)/],
     title: 'Roll the ball down the ramp', takeaway: 'At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another.',
