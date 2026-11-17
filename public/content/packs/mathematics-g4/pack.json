@@ -3599,7 +3599,7 @@
       {
        "id": "mathematics-g4-ch1-l5",
        "title": "Meeting Lines and Comparing Angles",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -3711,6 +3711,36 @@
           "1 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g4-ch1-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "angle",
+         "params": {},
+         "title": "Open the angle",
+         "tasks": [
+          {
+           "say": "Make a right angle.",
+           "when": "angle == 90",
+           "then": "A right angle is exactly 90 degrees, a square corner."
+          },
+          {
+           "say": "Make an obtuse angle.",
+           "when": "angle > 90 and angle < 180",
+           "then": "Obtuse angles are between 90 and 180 degrees."
+          },
+          {
+           "say": "Make a reflex angle.",
+           "when": "angle > 180 and angle < 360",
+           "then": "A reflex angle is more than a straight line."
+          }
+         ],
+         "takeaway": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.",
+         "explanation": "Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond."
         },
         {
          "type": "worked",

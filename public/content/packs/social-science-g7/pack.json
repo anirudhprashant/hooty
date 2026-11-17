@@ -4251,28 +4251,25 @@
          "tags": [
           "explore"
          ],
-         "widget": "lapse",
-         "params": {},
-         "title": "Climb the mountain",
+         "widget": "thermometer",
+         "params": {
+          "kind": "lab"
+         },
+         "title": "Read the thermometer",
          "tasks": [
           {
-           "say": "Climb to 3,000 m and read the temperature.",
-           "when": "height >= 3000",
-           "then": "About 6.5 degrees are lost for every kilometre: a hill station at 2,000 m is around 13 degrees cooler than the coast."
+           "say": "Show where water freezes.",
+           "when": "t <= 0 and t >= -1",
+           "then": "Water freezes at 0 degrees Celsius."
           },
           {
-           "say": "Go high enough for the air to freeze.",
-           "when": "height >= 4700",
-           "then": "With 30 degrees at sea level, freezing comes at about 4,700 m: that is why the snow line sits high on tropical mountains."
-          },
-          {
-           "say": "Take the coast to 40 degrees and climb to the top.",
-           "when": "base == 40 and height >= 6000",
-           "then": "Warmer air at sea level lifts the snow line, so the same mountain has less snow than on a cooler day."
+           "say": "Show where water boils.",
+           "when": "t >= 100 and t <= 101",
+           "then": "Water boils at 100 degrees Celsius."
           }
          ],
-         "takeaway": "Air cools about 6.5 degrees for every kilometre you climb, so the top of a mountain is cold and snow settles above the snow line.",
-         "explanation": "Air cools about 6.5 degrees for every kilometre you climb, so the top of a mountain is cold and snow settles above the snow line."
+         "takeaway": "Find the value of one small mark first, then count the marks.",
+         "explanation": "Find the value of one small mark first, then count the marks."
         },
         {
          "type": "worked",

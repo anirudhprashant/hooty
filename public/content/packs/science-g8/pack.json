@@ -31435,7 +31435,7 @@
       {
        "id": "science-g8-ch9-l6",
        "title": "Lesson 6: How Temperature and Pressure Affect Density",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -31505,36 +31505,6 @@
            "p": 148
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g8-ch9-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "pressure",
-         "params": {},
-         "title": "Press with the same push on a smaller area",
-         "tasks": [
-          {
-           "say": "Spread the same push over 10 cm².",
-           "when": "area == 10",
-           "then": "A wide area gives a low pressure: the block barely sinks."
-          },
-          {
-           "say": "Squeeze the whole push into 1 cm².",
-           "when": "area == 1",
-           "then": "The same force in 1 cm² gives the highest pressure: it sinks deep."
-          },
-          {
-           "say": "Push with 200 N on 2 cm².",
-           "when": "force == 200 and area == 2",
-           "then": "200 N on 2 cm² is 100 N per cm²."
-          }
-         ],
-         "takeaway": "Pressure is force spread over area: the same push in a smaller area presses harder, which is why a nail or a knife goes in.",
-         "explanation": "Pressure is force spread over area: the same push in a smaller area presses harder, which is why a nail or a knife goes in."
         },
         {
          "type": "worked",

@@ -66725,7 +66725,7 @@
       {
        "id": "mathematics-g9-ch11-l4",
        "title": "Finding the GCD and Organising Data",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -66782,6 +66782,36 @@
            "p": 43
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch11-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "hcf",
+         "params": {},
+         "title": "Run Euclid's algorithm",
+         "tasks": [
+          {
+           "say": "Pick 98 and 56, the numbers from the textbook.",
+           "when": "a == 98 and b == 56",
+           "then": "Three divisions reach zero, and the last divisor is 14, so the HCF of 98 and 56 is 14."
+          },
+          {
+           "say": "Find two numbers whose highest common factor is 1.",
+           "when": "a == 13 and b == 7",
+           "then": "Two primes share nothing, so the algorithm ends at 1: the numbers are co-prime."
+          },
+          {
+           "say": "Make the second number a factor of the first.",
+           "when": "a == 60 and b == 12",
+           "then": "The very first division leaves remainder zero, so the smaller number is itself the HCF."
+          }
+         ],
+         "takeaway": "Divide, keep the remainder, repeat. When the remainder reaches zero, the last divisor is the highest common factor.",
+         "explanation": "Divide, keep the remainder, repeat. When the remainder reaches zero, the last divisor is the highest common factor."
         },
         {
          "type": "worked",
@@ -67278,7 +67308,7 @@
       {
        "id": "mathematics-g9-ch11-l5",
        "title": "Euclid’s Subtraction Algorithm",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -67410,6 +67440,36 @@
           "2 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch11-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "hcf",
+         "params": {},
+         "title": "Run Euclid's algorithm",
+         "tasks": [
+          {
+           "say": "Pick 98 and 56, the numbers from the textbook.",
+           "when": "a == 98 and b == 56",
+           "then": "Three divisions reach zero, and the last divisor is 14, so the HCF of 98 and 56 is 14."
+          },
+          {
+           "say": "Find two numbers whose highest common factor is 1.",
+           "when": "a == 13 and b == 7",
+           "then": "Two primes share nothing, so the algorithm ends at 1: the numbers are co-prime."
+          },
+          {
+           "say": "Make the second number a factor of the first.",
+           "when": "a == 60 and b == 12",
+           "then": "The very first division leaves remainder zero, so the smaller number is itself the HCF."
+          }
+         ],
+         "takeaway": "Divide, keep the remainder, repeat. When the remainder reaches zero, the last divisor is the highest common factor.",
+         "explanation": "Divide, keep the remainder, repeat. When the remainder reaches zero, the last divisor is the highest common factor."
         },
         {
          "type": "worked",
