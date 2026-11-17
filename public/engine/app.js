@@ -171,13 +171,21 @@ async function loadShell() {
   packIndex = [...packIdx.packs, ...await listBooks()];
 }
 
-async function loadFirstBook() {
+// The book named in a shared link, so a visitor arriving at a lesson fetches that book only. Without this the
+// default class book downloads first and is thrown away a moment later.
+function packFromHash(hash) {
+  const m = /^#\/(?:book|chapter|lesson)\/([^/?#]+)/i.exec(String(hash || ''));
+  return m ? m[1] : null;
+}
+
+async function loadFirstBook(preferId = null) {
   const grade = activeGrade();
   const mine = packIndex.filter((p) => String(p.grade) === grade);
   const saved = activeLearner()?.packId;
-  const first = mine.find((p) => p.id === saved) || mine[0];
+  const prefer = preferId ? packIndex.find((p) => p.id === preferId) : null;
+  const first = prefer || mine.find((p) => p.id === saved) || mine[0];
   if (first) await ensurePack(first.id);
-  if (!packs.length) await loadGrade(grade);   // the first book failed: try the rest before giving up
+  if (!packs.length && !prefer) await loadGrade(grade);   // the first book failed: try the rest before giving up
   if (!packs.length) throw new Error('No books could be loaded.');
 }
 
@@ -2081,9 +2089,10 @@ async function main() {
   const themeId = l?.theme || themes[0]?.id;
   currentThemeId = themeId;
   applyTheme(themes.find((x) => x.id === themeId) || themes[0]);
+  const linkedPack = linkPending ? packFromHash(bootHash) : null;
   if (linkPending) {
-    // A shared lesson link is about to replace the home screen: do not paint home at all.
-    await loadFirstBook();
+    // A shared lesson link is about to replace the home screen: do not paint home at all, and fetch its book first.
+    await loadFirstBook(linkedPack);
     render();
   } else {
     render();                 // first paint: theme, stage and mascot, without waiting for the book
@@ -2094,7 +2103,7 @@ async function main() {
   linkPending = false;
   if (fromLink === false && bootHash && bootHash !== '#/') history.replaceState(null, '', '#/');
   syncHash();   // a chapter link opens its first unplayed lesson: name that lesson in the address bar
-  loadRestInBackground(activeGrade());
+  if (!linkedPack) loadRestInBackground(activeGrade());   // a visitor from a shared link has not chosen a class yet
 
   if ('serviceWorker' in navigator) {
     // Registered after first paint: precaching the app must not compete with the first load.
