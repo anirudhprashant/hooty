@@ -1596,7 +1596,7 @@
       {
        "id": "mathematics-g10-ch1-l3",
        "title": "Using prime factorisation for HCF and LCM",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -1719,6 +1719,36 @@
           "4 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g10-ch1-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "hcf",
+         "params": {},
+         "title": "Run Euclid's algorithm",
+         "tasks": [
+          {
+           "say": "Pick 98 and 56, the numbers from the textbook.",
+           "when": "a == 98 and b == 56",
+           "then": "Three divisions reach zero, and the last divisor is 14, so the HCF of 98 and 56 is 14."
+          },
+          {
+           "say": "Find two numbers whose highest common factor is 1.",
+           "when": "a == 13 and b == 7",
+           "then": "Two primes share nothing, so the algorithm ends at 1: the numbers are co-prime."
+          },
+          {
+           "say": "Make the second number a factor of the first.",
+           "when": "a == 60 and b == 12",
+           "then": "The very first division leaves remainder zero, so the smaller number is itself the HCF."
+          }
+         ],
+         "takeaway": "Divide, keep the remainder, repeat. When the remainder reaches zero, the last divisor is the highest common factor.",
+         "explanation": "Divide, keep the remainder, repeat. When the remainder reaches zero, the last divisor is the highest common factor."
         },
         {
          "type": "worked",
