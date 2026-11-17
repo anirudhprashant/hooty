@@ -498,7 +498,7 @@ function screenHome() {
     el('div', { class: 'tile__figure' }, showReward ? [el('img', { src: themeAsset(showReward.art), alt: '' })] : []),
     el('div', { class: 'tile__body', style: { flex: '1' } }, [
       el('span', { class: 'tile__value', style: { fontSize: 'var(--fs-md)' }, text: nr ? nr.name : 'All collected!' }),
-      el('span', { class: 'tile__label', text: nr ? `${nr.unlockAt - (l?.xp || 0)} XP to unlock` : 'You have every sticker' }),
+      el('span', { class: 'tile__label', text: nr ? t('xpToUnlock', { n: nr.unlockAt - (l?.xp || 0) }) : t('everySticker') }),
       nr ? el('div', { class: 'meter meter--primary' }, [el('span', { style: { width: rewardPct + '%' } })]) : null,
     ]),
   ]);
@@ -1596,8 +1596,8 @@ function stickerBoard(l, rewards) {
   let items = parseBoard(l).filter((i) => byId[i.id]), selected = -1;
   const save = async () => { if (l) { l.board = items.map((i) => `${i.id}@${Math.round(i.x)},${Math.round(i.y)}`); await persist(); } };
   const stage = el('div', { class: 'board__stage', role: 'group', 'aria-label': 'Sticker board' });
-  const removeBtn = el('button', { class: 'btn btn--ghost', type: 'button', hidden: true, onclick: async () => { if (selected >= 0) { items.splice(selected, 1); selected = -1; await save(); draw(); } } }, ['Take it off']);
-  const clearBtn = el('button', { class: 'btn btn--ghost', type: 'button', onclick: async () => { items = []; selected = -1; await save(); draw(); } }, ['Clear the board']);
+  const removeBtn = el('button', { class: 'btn btn--ghost', type: 'button', hidden: true, onclick: async () => { if (selected >= 0) { items.splice(selected, 1); selected = -1; await save(); draw(); } } }, [t('takeItOff')]);
+  const clearBtn = el('button', { class: 'btn btn--ghost', type: 'button', onclick: async () => { items = []; selected = -1; await save(); draw(); } }, [t('clearBoard')]);
   const hint = el('p', { class: 'section-sub' });
   const draw = () => {
     clear(stage);
@@ -1622,14 +1622,14 @@ function stickerBoard(l, rewards) {
       stage.append(node);
     });
     removeBtn.hidden = selected < 0; clearBtn.hidden = !items.length;
-    hint.textContent = !owned.length ? 'Collect a sticker and you can stick it here.' : !items.length ? 'Tap a sticker below to stick it on the board.' : 'Drag a sticker to move it. Tap one to take it off.';
+    hint.textContent = !owned.length ? t('boardEmpty') : !items.length ? t('boardPick') : t('boardDrag');
   };
   const tray = el('div', { class: 'board__tray' }, owned.map((r) => el('button', {
     class: 'board__pick', type: 'button', 'aria-label': `Stick ${r.name}`,
-    onclick: async () => { if (items.length >= 40) { toast('The board is full. Take a sticker off first.'); return; } items.push({ id: r.id, x: 25 + Math.random() * 50, y: 25 + Math.random() * 50 }); selected = -1; sound('tap'); await save(); draw(); },
+    onclick: async () => { if (items.length >= 40) { toast(t('boardFull')); return; } items.push({ id: r.id, x: 25 + Math.random() * 50, y: 25 + Math.random() * 50 }); selected = -1; sound('tap'); await save(); draw(); },
   }, [el('img', { src: themeAsset(r.art), alt: '' })])));
   draw();
-  return el('section', { class: 'board' }, [el('h2', { class: 'section-title', text: 'Your sticker board' }), hint, stage, owned.length ? tray : null, el('div', { class: 'board__actions' }, [removeBtn, clearBtn])]);
+  return el('section', { class: 'board' }, [el('h2', { class: 'section-title', text: t('boardTitle') }), hint, stage, owned.length ? tray : null, el('div', { class: 'board__actions' }, [removeBtn, clearBtn])]);
 }
 
 function screenRewards() {
@@ -1725,7 +1725,7 @@ function installCard() {
 function screenParent() {
   const l = activeLearner();
   const wrap = el('div', { class: 'page screen' });
-  wrap.append(el('div', { class: 'privacy-note', style: { marginTop: 'var(--s2)' } }, [icon('lock', { size: 22 }), 'Your learning stays on this device. We count anonymous page visits only: no cookies, no personal data.']));
+  wrap.append(el('div', { class: 'privacy-note', style: { marginTop: 'var(--s2)' } }, [icon('lock', { size: 22 }), t('privacyNote')]));
   const install = installCard();
   if (install) wrap.append(install);
 
@@ -1740,10 +1740,10 @@ function screenParent() {
   const goalPct = Math.min(100, Math.round(((l?.dailyXp || 0) / goal) * 100));
   wrap.append(el('div', { class: 'stat-grid' }, [
     statCard(`${l?.dailyXp || 0}/${goal}`, t('goal'), goalPct),
-    statCard(String(l?.streak || 0), t('streak'), undefined, `Best: ${l?.bestStreak || 0}`),
+    statCard(String(l?.streak || 0), t('streak'), undefined, t('bestStreak', { n: l?.bestStreak || 0 })),
     statCard(`${accuracy}%`, t('accurate')),
     statCard(`${minutes}m`, t('timeLearned')),
-    statCard(String(Object.keys(l?.lessonsDone || {}).length), 'Lessons done'),
+    statCard(String(Object.keys(l?.lessonsDone || {}).length), t('lessonsDone')),
     statCard(String(totalAttempts), t('attempts')),
   ]));
 
@@ -1795,7 +1795,7 @@ function screenParent() {
     wrap.append(el('div', { class: 'activity__actions' }, [el('button', { class: 'btn', type: 'button', onclick: () => go('practice') }, [t('practiseTab')])]));
   }
 
-  wrap.append(el('h2', { class: 'section-title', text: 'Your data' }));
+  wrap.append(el('h2', { class: 'section-title', text: t('yourData') }));
   const dl = el('div', { class: 'activity__actions' });
   dl.append(el('button', {
     class: 'btn btn--ghost', type: 'button',
@@ -1837,7 +1837,7 @@ function screenParent() {
   });
   dl.append(el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => fileInput.click() }, [icon('upload', { size: 22 }), t('importData')]), fileInput);
   wrap.append(dl);
-  wrap.append(el('p', { class: 'section-sub', text: 'The file holds every child on this device. Importing replaces the progress here, so export first if you are not sure.' }));
+  wrap.append(el('p', { class: 'section-sub', text: t('importNote') }));
   return wrap;
 }
 
@@ -1854,8 +1854,8 @@ function weekStrip(l) {
   const top = Math.max(goal, ...days.map((x) => x.xp));
   const met = days.filter((x) => x.xp >= goal).length;
   return el('section', { class: 'growth-card week' }, [
-    el('h2', { class: 'section-title', text: 'Last 7 days' }),
-    el('p', { class: 'week__sum', text: met ? `Daily goal reached on ${met} of the last 7 days.` : 'Reach the daily goal to light up a day.' }),
+    el('h2', { class: 'section-title', text: t('last7') }),
+    el('p', { class: 'week__sum', text: met ? t('weekGoalMet', { n: met }) : t('weekGoalHint') }),
     el('div', { class: 'week__bars', role: 'img', 'aria-label': days.map((x) => `${x.name} ${x.xp} points`).join(', ') },
       days.map((x) => el('div', { class: `week__day${x.xp >= goal ? ' is-met' : ''}${x.today ? ' is-today' : ''}` }, [
         el('div', { class: 'week__bar' }, [el('span', { style: { height: x.xp ? Math.max(8, Math.round((x.xp / top) * 100)) + '%' : '0%' } })]),
