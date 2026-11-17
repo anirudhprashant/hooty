@@ -1032,8 +1032,8 @@ export const KITS = {
     ],
   },
   interest: {
-    grades: [9, 10], subjects: ['social'], perChapter: 2,
-    match: [/credit/, /\bdebt/, /\bborrow/, /\binterest\b/, /moneylender/, /high interest/, /\bbanks?\b/, /\bloans?\b/, /\bsavings?\b/],
+    grades: [7, 10], subjects: ['social'], perChapter: 2,
+    match: [/credit/, /\bdebt/, /\bborrow/, /\binterest\b/, /moneylender/, /high interest/, /\bbanks?\b/, /\bloans?\b/, /\bsavings\b/],
     title: 'Watch a loan grow', takeaway: 'Simple interest is charged only on the money borrowed; compound interest is also charged on last year\u2019s interest, so the amount owed grows faster every year.',
     tasks: [
       { say: 'Borrow at 20% or more for ten years and see how big the debt becomes.', when: 'rate >= 20 and years == 10', then: 'A high rate left for many years turns even a small loan into a huge debt: that is a debt trap.' },
