@@ -2196,33 +2196,31 @@ export const WIDGETS = {
       const rand = seeded(11);   // the same map every time the child comes back
       const swing = [];
       for (let i = 0; i < 100; i++) swing.push(rand() * 2 - 1);
-      const box = 20, gap = 2, x0 = 52, y0 = 44;
+      const box = 18, gap = 2, x0 = 22, y0 = 24;
       let seatsA = 0;
       const cells = [];
       for (let i = 0; i < 100; i++) {
-        const a = share + swing[i] * spread;
-        const won = a >= 50;
+        const won = share + swing[i] * spread >= 50;
         if (won) seatsA++;
         cells.push(R(x0 + (i % 10) * (box + gap), y0 + Math.floor(i / 10) * (box + gap), box, box, won ? C.g : C.b, { w: 1, s: '#fff' }));
       }
       const seatsB = 100 - seatsA;
-      const bx = 306, bw = 232, barh = 26;
+      const bx = 252, bw = 320, barh = 34;
       const parts = [R(0, 0, W, H, '#fbfdff', { w: 0 }), ...cells];
-      parts.push(T(x0, y0 - 14, 'One square is one constituency, coloured by who won it', { z: 13, w: 600, f: '#6b5a8a', a: 'start' }));
-      parts.push(T(bx, y0 - 14, 'Votes and seats', { z: 13, w: 700, f: INK, a: 'start' }));
-      const bar = (y, labelA, a, labelB, b, colorA, colorB) => {
-        const total = a + b || 1, wA = Math.max(2, (a / total) * bw);
-        parts.push(R(bx, y, bw, barh, colorB, { w: 2, s: '#fff' }));
-        parts.push(R(bx, y, wA, barh, colorA, { w: 2, s: '#fff' }));
-        parts.push(T(bx - 8, y + barh - 7, labelA, { z: 12, w: 600, f: '#6b5a8a', a: 'end' }));
-        parts.push(T(bx + bw + 8, y + barh - 7, `${labelB}`, { z: 12, w: 600, f: '#6b5a8a', a: 'start' }));
-        return parts;
+      // legend: one square per party, so the colours mean something without a long caption
+      parts.push(R(bx, 20, 16, 16, C.g, { w: 1, s: '#fff' }), T(bx + 24, 34, 'party A', { z: 20, w: 700, f: '#0b6b52', a: 'start' }));
+      parts.push(R(bx + 130, 20, 16, 16, C.b, { w: 1, s: '#fff' }), T(bx + 154, 34, 'party B', { z: 20, w: 700, f: '#1d4ed8', a: 'start' }));
+      const row = (y, label, a, b) => {
+        const total = a + b || 1, wA = Math.max(3, (a / total) * bw);
+        parts.push(R(bx, y, bw, barh, C.b, { w: 2, s: '#fff' }));
+        parts.push(R(bx, y, wA, barh, C.g, { w: 2, s: '#fff' }));
+        parts.push(T(bx - 12, y + barh - 11, label, { z: 20, w: 600, f: '#6b5a8a', a: 'end' }));
       };
-      parts.push(T(bx - 8, y0 + 6, 'party A', { z: 13, w: 700, f: '#0b6b52', a: 'end' }), T(bx - 8, y0 + 26, 'party B', { z: 13, w: 700, f: '#1d4ed8', a: 'end' }));
-      bar(y0 + 36, `${share}%`, share, '', 100 - share, C.g, C.b);
-      parts.push(T(bx + bw / 2, y0 + 82, `votes: A ${share}%, B ${100 - share}%`, { z: 13, f: '#6b5a8a', w: 600 }));
-      bar(y0 + 100, `${seatsA}`, seatsA, '', seatsB, C.g, C.b);
-      parts.push(T(bx + bw / 2, y0 + 146, `seats: A ${seatsA}, B ${seatsB}`, { z: 13, f: '#6b5a8a', w: 600 }));
+      row(72, 'votes', share, 100 - share);
+      row(150, 'seats', seatsA, seatsB);
+      parts.push(T(bx + 8, 132, `A ${share}%`, { z: 22, w: 700, f: INK, a: 'start' }), T(bx + bw, 132, `B ${100 - share}%`, { z: 22, w: 700, f: '#6b5a8a', a: 'end' }));
+      parts.push(T(bx + 8, 210, `A ${seatsA}`, { z: 22, w: 700, f: INK, a: 'start' }), T(bx + bw, 210, `B ${seatsB}`, { z: 22, w: 700, f: '#6b5a8a', a: 'end' }));
+      parts.push(T(x0, y0 + 10 * (box + gap) + 24, 'one square = one constituency', { z: 18, w: 600, f: '#6b5a8a', a: 'start' }));
       const gapSeats = seatsA - share;
       const where = Math.abs(gapSeats) <= 2 ? 'Seats and votes are close here.'
         : gapSeats > 0 ? `A wins ${gapSeats} more seats than its share of the votes.` : `A wins ${-gapSeats} fewer seats than its share of the votes.`;
