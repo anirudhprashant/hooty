@@ -1101,7 +1101,7 @@ function finishedNotes(lesson) {
     const ids = [...chapter.lessons.map((x) => x.id), ...(chapter.boss ? [bossId(chapter)] : [])];
     const done = ids.filter(isDone).length;
     out.push(el('div', { class: 'finished' }, [
-      el('b', { text: done === ids.length ? `You finished the whole chapter: ${chapter.title}!` : `${done} of ${ids.length} steps finished in this chapter` }),
+      el('b', { text: done === ids.length ? t('chapterDone', { title: chapter.title }) : t('chapterStep', { done, total: ids.length }) }),
       el('div', { class: 'finished__bar' }, [el('span', { style: { width: `${Math.round((done / ids.length) * 100)}%` } })]),
     ]));
     // The chapter bar was the largest thing a child could finish. A whole book deserves its own moment, and it only
@@ -1119,7 +1119,7 @@ function finishedNotes(lesson) {
   if (pages.size && !lesson.isPractice) {
     const [ch, ps] = [...pages.entries()][0];
     const lo = Math.min(...ps), hi = Math.max(...ps);
-    out.push(el('p', { class: 'in-book', text: `Read it in your book: ${chapter?.title || `Chapter ${ch}`}, ${lo === hi ? 'page ' + lo : `pages ${lo} to ${hi}`}.` }));
+    out.push(el('p', { class: 'in-book', text: lo === hi ? t('inBookOne', { chapter: chapter?.title || `Chapter ${ch}`, page: lo }) : t('inBookMany', { chapter: chapter?.title || `Chapter ${ch}`, from: lo, to: hi }) }));
   }
   return out;
 }
@@ -1152,16 +1152,16 @@ function renderCelebration() {
   // The celebration brings its own Hooty: drop the topic picture and the speech strip so nothing from the last question lingers.
   s.wrap?.classList.add('is-finished');
 
-  const praise = accuracy >= 90 ? 'Brilliant work!' : accuracy >= 60 ? 'Well done!' : 'Good effort. Practice makes it stick.';
+  const praise = accuracy >= 90 ? t('praiseHigh') : accuracy >= 60 ? t('praiseMid') : t('praiseLow');
   const box = el('div', { class: 'celebrate' }, [
     el('img', { class: 'celebrate__art', src: mascotImage(accuracy >= 60 ? 'happy' : 'idle') || '', alt: '' }),
-    el('h2', { class: 'celebrate__title', text: s.lesson.isFix ? 'Practice complete!' : s.lesson.isPractice ? t('practiceDone') : (getTheme()?.copy?.celebrateTitle || t('lessonComplete')) }),
+    el('h2', { class: 'celebrate__title', text: s.lesson.isFix ? t('practiceCompleteFix') : s.lesson.isPractice ? t('practiceDone') : (getLocale() === 'en' ? (getTheme()?.copy?.celebrateTitle || t('lessonComplete')) : t('lessonComplete')) }),
     el('div', { class: 'xp-pill' }, [icon('star', { size: 26 }), `+${xpGained} ${t('xp')}`]),
     el('p', { class: 'celebrate__body', text: praise }),
     el('div', { class: 'celebrate__stats' }, [
-      el('div', { class: 'celebrate__stat' }, [el('b', { text: `${s.correct}/${s.total}` }), el('span', { text: 'correct' })]),
+      el('div', { class: 'celebrate__stat' }, [el('b', { text: `${s.correct}/${s.total}` }), el('span', { text: t('statCorrect') })]),
       el('div', { class: 'celebrate__stat' }, [el('b', { text: `${accuracy}%` }), el('span', { text: t('accurate') })]),
-      el('div', { class: 'celebrate__stat' }, [el('b', { text: `${minutes}m` }), el('span', { text: 'time' })]),
+      el('div', { class: 'celebrate__stat' }, [el('b', { text: `${minutes}m` }), el('span', { text: t('statTime') })]),
     ]),
     s.recoveredIds?.length ? el('p', { class: 'celebrate__fixed', text: s.recoveredIds.length === 1
       ? 'One tricky idea is fixed, because you thought about it again.'

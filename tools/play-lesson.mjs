@@ -36,8 +36,16 @@ const ctx = await browser.newContext({ viewport: { width: VW, height: VH } });
 const page = await ctx.newPage();
 // SEED=/path/save.json starts the walk with that progress already on the device, which is the only way to reach the
 // lesson that finishes a book without playing every lesson before it.
-if (process.env.SEED) {
-  const save = JSON.parse(readFileSync(process.env.SEED, 'utf8'));
+if (process.env.SEED || process.env.LOCALE) {
+  // LOCALE=hi runs the whole player in Hindi, which is how the chrome a Hindi child sees gets checked. The app reads
+  // the language from the learner, so it is written there rather than as a separate setting.
+  const save = process.env.SEED
+    ? JSON.parse(readFileSync(process.env.SEED, 'utf8'))
+    : { learners: { me: { name: 'Learner', grade: '1', packId: 'class6-sst', xp: 0, lessonsDone: {} } }, activeLearnerId: 'me' };
+  if (process.env.LOCALE) {
+    const active = save.learners?.[save.activeLearnerId] || Object.values(save.learners || {})[0];
+    if (active) active.lang = process.env.LOCALE;
+  }
   await page.addInitScript((state) => {
     try { localStorage.setItem('sparkle-state-v1', JSON.stringify(state)); } catch { /* ignore */ }
   }, { ...save, savedAt: Date.now() });
