@@ -35,6 +35,39 @@
     return loading;
   }
 
+  // "class 6 science" is not a title: it is a place to look. Pull the class and subject words out, keep them as a
+  // filter, and search the rest. Without this every lesson in a Class 6 book matched 'science' weakly and the
+  // lesson the parent wanted was buried on page four.
+  var SUBJECTS = { science: 'science', maths: 'mathematics', mathematics: 'mathematics', math: 'mathematics',
+    english: 'english', hindi: 'hindi', social: 'social', sst: 'social', 'social science': 'social',
+    evs: 'the world around us', 'the world around us': 'the world around us', world: 'the world around us' };
+
+  function splitQuery(q) {
+    var tokens = q.split(/\s+/).filter(Boolean);
+    var grade = null, subject = null, rest = [];
+    for (var i = 0; i < tokens.length; i++) {
+      var t = tokens[i];
+      if (/^(class|grade|std|standard)$/.test(t) && tokens[i + 1] && /^\d{1,2}$/.test(tokens[i + 1])) { grade = tokens[i + 1]; i++; continue; }
+      if (/^\d{1,2}$/.test(t) && grade === null && i === 1 && /^(class|grade)$/.test(tokens[0])) { grade = t; continue; }
+      if (t === 'class' || t === 'grade') continue;
+      if (SUBJECTS[t]) { subject = SUBJECTS[t]; continue; }
+      rest.push(t);
+    }
+    return { grade: grade, subject: subject, tokens: rest };
+  }
+
+  function matchesPlace(item, q) {
+    if (q.grade && String(item.grade) !== String(q.grade)) return false;
+    if (q.subject) {
+      var subj = (item.subject || '').toLowerCase();
+      // 'science' must never match 'Social Science'. The canonical subject names are exact, and the one alias
+      // ('social' for 'Social Science') is the only loose match allowed.
+      if (q.subject === 'social') { var m = subj.match(/(^|\s)social(\s|$)/); return !!m; }
+      return subj === q.subject;
+    }
+    return true;
+  }
+
   function score(item, tokens) {
     var title = (item.title || '').toLowerCase();
     var chapter = (item.chapter || '').toLowerCase();
@@ -90,10 +123,12 @@
     timer = setTimeout(function () {
       load().then(function (all) {
         if (!all) { status.textContent = 'Search is not available right now.'; return; }
-        var tokens = q.split(/\s+/).filter(Boolean);
+        var parts = splitQuery(q);
+        var tokens = parts.tokens && parts.tokens.length ? parts.tokens : [];
         var hits = [];
         for (var i = 0; i < all.length; i++) {
-          var s = score(all[i], tokens);
+          if (!matchesPlace(all[i], parts)) continue;
+          var s = tokens.length ? score(all[i], tokens) : 1;   // 'class 6 science' alone lists that book's lessons
           if (s > 0) { all[i]._s = s; hits.push(all[i]); }
         }
         hits.sort(function (a, b) { return b._s - a._s; });
