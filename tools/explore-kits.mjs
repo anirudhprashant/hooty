@@ -1062,7 +1062,8 @@ export const KITS = {
       // Only a lesson that is ABOUT time: the words 'century' or 'CE' alone appear in ordinary history lessons,
       // and those used to get this same generic anchors timeline, which had nothing to do with their facts.
       if (own.length < 3 && /timelines?\b|\bmeasur\w*\s+(?:the\s+)?time\b|\btime\s+is\s+measured\b/i.test(text)) {
-        const anchored = [{ year: -3000, label: 'First cities and writing' }, { year: 0, label: 'BCE ends, CE begins' },
+        // There is no year zero: the lesson itself says so, so CE begins at 1.
+        const anchored = [{ year: -3000, label: 'First cities and writing' }, { year: 1, label: 'BCE ends, CE begins' },
           { year: 1000, label: 'A thousand years into CE' }, { year: 2000, label: 'Two thousand years into CE' }];
         return { events: anchored, hist: true };   // usable() also wants hist, or the anchor branch is never used
       }
