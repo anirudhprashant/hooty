@@ -128,7 +128,10 @@ def records(bs):
                     if a not in rec['aka']:
                         rec['aka'].append(a)
                 continue
-            rec = {'term': term, 'aka': list(t.get('aka') or []), 'meaning': meaning, 'example': t.get('example') or '',
+            # an "also" that is the word with a space or joiner inside it is extraction noise, not another spelling
+            base = re.sub(r'[\s\u200d]', '', term).lower()
+            aks = [a for a in (t.get('aka') or []) if re.sub(r'[\s\u200d]', '', a).lower() != base]
+            rec = {'term': term, 'aka': aks, 'meaning': meaning, 'example': t.get('example') or '',
                    'lang': lang, 'sources': [where],
                    'letter': (term[0].lower() if term[0].isascii() and term[0].isalpha() else None),
                    'hl': devanagari_letter(term)}

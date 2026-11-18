@@ -48,13 +48,19 @@ export function markKeys(root) {
 // standalone "A" at the start of a sentence was underlined and tappable; a handful of entries also carry ",", "।" or "::"
 // as an aka form. None of those should ever interrupt the reading, and none of them is what a child wants explained.
 const TAPPABLE = /(?:[A-Za-z\u0900-\u097f]{1}[A-Za-z\u0900-\u097f'\u0900-\u097f-]{2,})|(?:\d)/;
+// PDF extraction sometimes punches a space or a zero-width joiner into a word and stores the result as an "also" form:
+// "कैमरा" carried "कै मरा". That is not another spelling of anything, so it is not worth matching or printing.
+const tighten = (s) => String(s || '').replace(/[\s\u200d]/g, '');
 
 export function buildMatcher(glossary) {
   const map = new Map();
   for (const t of glossary?.terms || []) {
+    const base = tighten(t.term);
     for (const form of [t.term, ...(t.aka || [])]) {
       const key = String(form || '').trim().toLowerCase();
       if (key.length < 3 || !TAPPABLE.test(key)) continue;
+      // only an "also" form is dropped this way: the word itself must always stay matchable
+      if (form !== t.term && base && tighten(key) === base.toLowerCase()) continue;
       map.set(key, t);
     }
   }
