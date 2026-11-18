@@ -229,6 +229,12 @@ async function switchGrade(g) {
 
 // A row of class chips (only once more than one class exists) above a row of subject pills for that class.
 // Subject names are book metadata in English; a Hindi child should still see them in Hindi.
+// A theme names its rewards in English; each may carry translations, so a Hindi child reads a Hindi sticker name.
+function rewardName(r) {
+  const lang = getLocale();
+  return (lang !== 'en' && r?.names?.[lang]) || r?.name || '';
+}
+
 function subjectName(name) {
   const key = { Science: 'subjScience', 'Social Science': 'subjSocial', Mathematics: 'subjMaths', English: 'subjEnglish', Hindi: 'subjHindi', 'The World Around Us': 'subjTwau' }[name];
   return key ? t(key) : name;
@@ -506,7 +512,7 @@ function screenHome() {
   }, [
     el('div', { class: 'tile__figure' }, showReward ? [el('img', { src: themeAsset(showReward.art), alt: '' })] : []),
     el('div', { class: 'tile__body', style: { flex: '1' } }, [
-      el('span', { class: 'tile__value', style: { fontSize: 'var(--fs-md)' }, text: nr ? nr.name : 'All collected!' }),
+      el('span', { class: 'tile__value', style: { fontSize: 'var(--fs-md)' }, text: nr ? rewardName(nr) : t('allCollected') }),
       el('span', { class: 'tile__label', text: nr ? t('xpToUnlock', { n: nr.unlockAt - (l?.xp || 0) }) : t('everySticker') }),
       nr ? el('div', { class: 'meter meter--primary' }, [el('span', { style: { width: rewardPct + '%' } })]) : null,
     ]),
@@ -1267,7 +1273,7 @@ function renderCelebration() {
   for (const r of unlocked) {
     box.append(el('div', { class: 'unlock' }, [
       el('img', { src: themeAsset(r.art), alt: '' }),
-      el('div', {}, [el('b', { text: r.name }), el('span', { text: t('rewardUnlocked') })]),
+      el('div', {}, [el('b', { text: rewardName(r) }), el('span', { text: t('rewardUnlocked') })]),
     ]));
   }
 
@@ -1747,7 +1753,7 @@ function stickerBoard(l, rewards) {
     hint.textContent = !owned.length ? t('boardEmpty') : !items.length ? t('boardPick') : t('boardDrag');
   };
   const tray = el('div', { class: 'board__tray' }, owned.map((r) => el('button', {
-    class: 'board__pick', type: 'button', 'aria-label': `Stick ${r.name}`,
+    class: 'board__pick', type: 'button', 'aria-label': t('stickReward', { reward: rewardName(r) }),
     onclick: async () => { if (items.length >= 40) { toast(t('boardFull')); return; } items.push({ id: r.id, x: 25 + Math.random() * 50, y: 25 + Math.random() * 50 }); selected = -1; sound('tap'); await save(); draw(); },
   }, [el('img', { src: themeAsset(r.art), alt: '' })])));
   draw();
@@ -1771,8 +1777,8 @@ function screenRewards() {
     const got = l?.rewards?.includes(r.id);
     const isNext = !got && next && r.id === next.id;
     grid.append(el('div', { class: `reward${got ? '' : ' is-locked'}${isNext ? ' is-next' : ''}` }, [
-      el('img', { class: 'reward__art', src: themeAsset(r.art), alt: got ? r.name : '' }),
-      el('span', { class: 'reward__name', text: got ? r.name : '???' }),
+      el('img', { class: 'reward__art', src: themeAsset(r.art), alt: got ? rewardName(r) : '' }),
+      el('span', { class: 'reward__name', text: got ? rewardName(r) : '???' }),
       el('span', { class: 'reward__need', text: got ? t('collected') : `${r.unlockAt} XP` }),
     ]));
   }
