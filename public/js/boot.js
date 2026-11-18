@@ -29,13 +29,12 @@
 
 // 3. The book the child was last in is the one thing the first screen cannot be built without, and it used to be the last
 //    thing asked for: its fetch only began once every engine module had loaded and the app had booted, 2.3 seconds in on a
-//    slow phone. Two things were in the way. The download could not start until content/index.json said which version to
-//    ask for, and even then the promise callback waited for the main thread, which is busy evaluating the engine.
+//    slow phone. Start it here instead, as soon as the index says which version to ask for, so it downloads while the engine
+//    is still booting. app.js takes this copy by URL (see getJson) and fetches normally if it fails or the book changed.
 //
-//    So the version is remembered from the last visit (app.js writes it when it loads a book) and the download starts here,
-//    immediately. If the index then says the book has changed, this copy is aborted before it finishes and the app asks for
-//    the new one; if it cannot be aborted in time it is simply ignored, because app.js only takes an early copy whose URL
-//    it would have asked for itself.
+//    A version remembered from the last visit was tried too, to start the download before the index arrives. It measured no
+//    better: the promise callbacks run on the main thread, which is busy evaluating the engine either way, so the earlier
+//    start never happened. The index-driven version below is what shipped; the honest limit is the engine's boot cost.
 (function () {
   try {
     var saved = JSON.parse(localStorage.getItem('sparkle-state-v1') || '{}');
@@ -44,24 +43,6 @@
     if (!packId || typeof fetch !== 'function') return;
     var early = {};
     window.__earlyPacks = early;
-
-    var grab = function (v) {
-      var url = './content/packs/' + packId + '/pack.json' + (v ? '?v=' + v : '');
-      var ctrl = typeof AbortController === 'function' ? new AbortController() : null;
-      var p = fetch(url, ctrl ? { signal: ctrl.signal } : undefined).then(function (r) {
-        if (!r.ok) throw new Error(String(r.status));
-        return r.json();
-      });
-      early[url] = p;
-      p.catch(function () { delete early[url]; });
-      return { url: url, ctrl: ctrl };
-    };
-
-    var mem = null;
-    try { mem = JSON.parse(localStorage.getItem('sparkle-pack-early-v1') || 'null'); } catch (e) { mem = null; }
-    var mine = mem && mem.id === packId && mem.v ? grab(mem.v) : null;
-
-    // the index is the only thing that can say a book changed; it runs in parallel and corrects the early copy
     fetch('./content/index.json')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (idx) {
@@ -69,12 +50,13 @@
         var card = null;
         for (var i = 0; i < packs.length; i += 1) if (packs[i].id === packId) card = packs[i];
         if (!card) return;
-        if (mine && mem.v === card.v) return;             // the remembered copy is the current one
-        if (mine && mine.ctrl) {                          // stale: stop paying for it
-          try { mine.ctrl.abort(); } catch (e) { /* already finished */ }
-          delete early[mine.url];
-        }
-        if (!mine) grab(card.v);                          // first visit for this device: index-driven as before
+        var url = './content/packs/' + packId + '/pack.json' + (card.v ? '?v=' + card.v : '');
+        var p = fetch(url).then(function (r) {
+          if (!r.ok) throw new Error(String(r.status));
+          return r.json();
+        });
+        early[url] = p;
+        p.catch(function () { delete early[url]; });
       })
       .catch(function () { /* the app fetches the book itself if this fails */ });
   } catch (e) { /* a splash is never worth a broken page */ }

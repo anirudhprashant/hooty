@@ -109,8 +109,6 @@ async function loadPack(p) {
     // ?v is the book's content hash, so a published book is cached hard at the edge and a new one is a new URL.
     const full = await getJson(`./content/packs/${p.id}/pack.json${p.v ? `?v=${p.v}` : ''}`);
     const pack = { ...full, base: `./content/packs/${p.id}`, glossary: null, glossaryFile: full.glossary || 'glossary.json', matcher: buildMatcher(null) };
-    // Remember which version is on this device, so boot.js can start next visit's download before the engine has booted.
-    try { localStorage.setItem('sparkle-pack-early-v1', JSON.stringify({ id: p.id, v: p.v || '' })); } catch (e) { /* private mode */ }
     // A pack opts in with "glossary": "glossary.json" in pack.json. Word meanings arrive just after the book:
     // nothing on the home screen needs them, so the child does not wait for them.
     if (full.glossary) getJson(`${pack.base}/${full.glossary}`).then((g) => { pack.glossary = g; pack.matcher = buildMatcher(g); }).catch(() => {});
