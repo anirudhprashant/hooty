@@ -39,9 +39,7 @@
     if (!packId || typeof fetch !== 'function') return;
     var early = {};
     window.__earlyPacks = early;
-    // priority: high, because both of these are what the first screen is waiting for; without it they queue behind the
-    // engine's module downloads and the book starts late again.
-    fetch('./content/index.json', { priority: 'high' })
+    fetch('./content/index.json')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (idx) {
         var packs = (idx && idx.packs) || [];
@@ -49,7 +47,7 @@
         for (var i = 0; i < packs.length; i += 1) if (packs[i].id === packId) card = packs[i];
         if (!card) return;
         var url = './content/packs/' + packId + '/pack.json' + (card.v ? '?v=' + card.v : '');
-        var p = fetch(url, { priority: 'high' }).then(function (r) {
+        var p = fetch(url).then(function (r) {
           if (!r.ok) throw new Error(String(r.status));
           return r.json();
         });
