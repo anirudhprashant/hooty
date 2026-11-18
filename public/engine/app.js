@@ -1782,8 +1782,9 @@ function screenRewards() {
       el('img', { class: 'theme-card__art', src: assetFor(theme, currentGuide() === 'hooty' && theme.heroHooty ? theme.heroHooty : theme.preview || theme.hero), alt: '' }),
       el('div', { class: 'theme-card__body' }, [
         el('div', { class: 'theme-card__text' }, [
-          el('div', { class: 'theme-card__name', text: theme.name }),
-          el('div', { class: 'theme-card__desc', text: theme.description || '' }),
+          // A theme carries translations of its own name and line, so a Hindi child reads about a Hindi world.
+          el('div', { class: 'theme-card__name', text: theme.names?.[getLocale()]?.name || theme.name }),
+          el('div', { class: 'theme-card__desc', text: theme.names?.[getLocale()]?.description || theme.description || '' }),
         ]),
         active ? el('span', { class: 'theme-card__tick' }, [icon('check', { size: 20 })]) : null,
       ]),
@@ -2035,7 +2036,7 @@ function screenSettings() {
   };
 
   const soundSwitch = toggle(l?.sound, t('sound'), async (v) => { l.sound = v; await persist(); sound('tap'); });
-  const hlSwitch = toggle(l?.highlight !== false, 'Highlight key words', async (v) => {
+  const hlSwitch = toggle(l?.highlight !== false, t('highlightLabel'), async (v) => {
     l.highlight = v;
     document.body.classList.toggle('hl-on', v);
     await persist();
