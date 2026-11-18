@@ -10887,7 +10887,7 @@
             "label": "First cities and writing"
            },
            {
-            "year": 0,
+            "year": 1,
             "label": "BCE ends, CE begins"
            },
            {
@@ -10905,8 +10905,8 @@
          "tasks": [
           {
            "say": "Move to when this happened: BCE ends, CE begins.",
-           "when": "y >= 0",
-           "then": "That was 0 CE."
+           "when": "y >= 1",
+           "then": "That was 1 CE."
           },
           {
            "say": "Go forward to the last event.",
