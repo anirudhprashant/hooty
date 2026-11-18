@@ -34,6 +34,11 @@ p { margin:0 0 14px; }
 .cta:hover { filter:brightness(1.06); }
 .cta--quiet { background:transparent; color:var(--accent); border:2px solid var(--accent); padding:11px 20px; }
 .cta--quiet:hover { background:color-mix(in srgb, var(--accent) 10%, transparent); filter:none; }
+.pill { display:inline-block; padding:7px 13px; margin:0 6px 6px 0; border:1px solid var(--line); border-radius:999px;
+        text-decoration:none; color:var(--text); font-size:14px; }
+.pill:hover { background:var(--card); }
+h2.grade a { color:inherit; text-decoration:none; }
+h2.grade a:hover { text-decoration:underline; }
 .note { font-size:14px; color:var(--dim); }
 .more { font-size:15px; color:var(--dim); margin:14px 0 0; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 16px; margin:10px 0; }
@@ -241,13 +246,39 @@ def main():
 
     cards = []
     for g in sorted(by_grade, key=lambda x: (x == 'mine', int(x) if x.isdigit() else 99)):
-        cards.append(f'<h2 class="grade">Class {esc(g) if g != "mine" else "My books"}</h2>')
+        cslug = 'mine' if g == 'mine' else f'class-{g}'
+        cards.append(f'<h2 class="grade"><a href="/books/{esc(cslug)}.html">Class {esc(g) if g != "mine" else "My books"}</a></h2>')
         for b in by_grade[g]:
             n = sum(len(c.get('lessons') or []) for u in b.get('units') or [] for c in u.get('chapters') or [])
             ch = sum(len(u.get('chapters') or []) for u in b.get('units') or [])
             cards.append(
                 f'<div class="card"><h3><a href="/books/{esc(b["id"])}.html">{esc(b.get("title"))}</a></h3>'
                 f'<div class="meta">{ch} chapters, {n} lessons. Free, no sign-up.</div></div>')
+    # A page per class: 'class 6 ncert books' is a search a parent actually makes, and /books/ is one long list.
+    for g, group in by_grade.items():
+        if g == 'mine-type':
+            continue
+        label = 'My books' if g == 'mine' else f'Class {g}'
+        slug = 'mine' if g == 'mine' else f'class-{g}'
+        rows = []
+        for b in group:
+            n = sum(len(c.get('lessons') or []) for u in b.get('units') or [] for c in u.get('chapters') or [])
+            ch = sum(len(u.get('chapters') or []) for u in b.get('units') or [])
+            rows.append(f'<div class="card"><h3><a href="/books/{esc(b["id"])}.html">{esc(b.get("title"))}</a></h3>'
+                        f'<div class="meta">{ch} chapters, {n} lessons. {esc(b.get("subject") or "")}.</div></div>')
+        others = [x for x in sorted(by_grade, key=lambda y: (y == 'mine', int(y) if y.isdigit() else 99)) if x != g]
+        nav = ' '.join(f'<a class="pill" href="/books/{"mine" if x == "mine" else "class-" + x}.html">'
+                       f'{"My books" if x == "mine" else "Class " + x}</a>' for x in others[:12])
+        cbody = (f'<div class="crumbs"><a href="/">Hooty</a> / <a href="/books/">All books</a> / {esc(label)}</div>'
+                 f'<h1>{esc(label)} books</h1>'
+                 f'<p class="lede">Every {esc(label)} NCERT book on Hooty, free, with no sign-up. '
+                 f'{len(group)} book{"s" if len(group) != 1 else ""}, turned into short lessons a child can play.</p>'
+                 + ''.join(rows) + f'<h2>Another class</h2><p class="more">{nav}</p>')
+        open(os.path.join(outdir, f'{slug}.html'), 'w').write(page(
+            f'{label} books | Hooty', f'Every {label} NCERT book on Hooty, free. Chapter by chapter, in short lessons.',
+            f'/books/{slug}.html', cbody))
+        urls.append((f'{SITE}/books/{slug}.html', TODAY))
+
     body = f"""<div class="crumbs"><a href="/">Hooty</a> / All books</div>
 <h1>Every book on Hooty</h1>
 <p class="lede">The NCERT school books, turned into short lessons a child can play. {len(books)} books,
