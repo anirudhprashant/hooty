@@ -2426,7 +2426,7 @@
       {
        "id": "english-g5-ch1-l6",
        "title": "Crossword, Speaking, Listening, Writing and Fun",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -2742,34 +2742,6 @@
          "focus": 3
         },
         {
-         "type": "dragorder",
-         "id": "english-g5-ch1-l6-a9",
-         "difficulty": 3,
-         "tags": [
-          "listening",
-          "wordpairs"
-         ],
-         "prompt": "Put the steps of the listening task in the right order.",
-         "items": [
-          "Your teacher reads a few word pairs aloud",
-          "You listen carefully to each pair",
-          "You encircle the pairs in which words sound different"
-         ],
-         "explanation": "First the teacher reads the pairs, then you listen, then you encircle. You followed the steps perfectly!",
-         "src": [
-          {
-           "ch": 1,
-           "p": 8
-          },
-          {
-           "ch": 1,
-           "p": 8
-          }
-         ],
-         "anchor": "english-g5-ch1-l6-a1",
-         "focus": 2
-        },
-        {
          "type": "mcq",
          "id": "english-g5-ch1-l6-d1",
          "difficulty": 3,
@@ -2862,7 +2834,7 @@
       {
        "id": "english-g5-ch1-exam",
        "title": "Test practice",
-       "estimatedMinutes": 20,
+       "estimatedMinutes": 18,
        "topicScene": "media/ch1-l1-lezende-man-met-bril-in-een--2bf232.webp",
        "sceneAlt": "An engraving shows a seated man with glasses reading in a study.",
        "sceneCaption": "A seated man with glasses reads in a study.",
@@ -3179,23 +3151,6 @@
          "explanation": "Among shows that something is within a group.",
          "anchor": "english-g5-ch1-l5-a1",
          "focus": -1
-        },
-        {
-         "type": "explain",
-         "id": "english-g5-ch1-l5-e1",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "written"
-         ],
-         "prompt": "How does the spelling task differ from the preposition task in the chapter?",
-         "answer": "The spelling activity asks the pupil to encircle the word spelt correctly from each choice. The preposition activity asks the pupil to complete the story using the correct prepositions. The first checks the form of words, while the second checks which words fit the places and sequence in the story.",
-         "points": [
-          "The spelling task asks the pupil to encircle the correct word.",
-          "The preposition task asks the pupil to complete the story.",
-          "Spelling checks word form, while prepositions show position or sequence."
-         ],
-         "explanation": "Compare your answer with the points a marker looks for."
         },
         {
          "type": "mcq",
@@ -13099,7 +13054,7 @@
       {
        "id": "english-g5-ch4-l5",
        "title": "Sounds, Ideas and the Parrot’s Next Adventure",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -13198,23 +13153,21 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "english-g5-ch4-l5-a2",
+         "type": "truefalse",
+         "id": "english-g5-ch4-l5-a3",
          "difficulty": 1,
          "tags": [
-          "birds",
-          "speaking"
+          "speaking",
+          "class"
          ],
-         "prompt": "What does the speaking task show?",
-         "options": [
-          "One bird",
-          "Two birds",
-          "Three birds",
-          "A parrot alone"
-         ],
-         "answer": 1,
-         "explanation": "The speaking task shows two birds. You will choose which bird you would want to be.",
+         "prompt": "Learners share their views about the birds with the class.",
+         "answer": true,
+         "explanation": "Yes. The class shares views about the birds. You can explain why you chose one bird.",
          "src": [
+          {
+           "ch": 4,
+           "p": 49
+          },
           {
            "ch": 4,
            "p": 49
@@ -13422,45 +13375,6 @@
          "difficulty": 3,
          "tags": [
           "deep",
-          "infer"
-         ],
-         "prompt": "The speaking task shows two birds. What does a good answer need?",
-         "options": [
-          "The chosen bird and a reason for choosing it.",
-          "The names of both birds and their colour.",
-          "A repeated sound from the first bird only.",
-          "A decision without explaining the reason."
-         ],
-         "answer": 0,
-         "why": {
-          "The names of both birds and their colour.": "This adds details that the task does not ask for.",
-          "A repeated sound from the first bird only.": "This focuses on a sound instead of the learner’s choice.",
-          "A decision without explaining the reason.": "This leaves out the reason that the task requires."
-         },
-         "explanation": "This gives a choice and answers why the learner chose it.",
-         "f": [
-          "5.2",
-          "5.3"
-         ],
-         "src": [
-          {
-           "ch": 4,
-           "p": 49
-          },
-          {
-           "ch": 4,
-           "p": 49
-          }
-         ],
-         "anchor": "english-g5-ch4-l5-a1",
-         "focus": -1
-        },
-        {
-         "type": "mcq",
-         "id": "english-g5-ch4-l5-d3",
-         "difficulty": 3,
-         "tags": [
-          "deep",
           "sounds"
          ],
          "prompt": "The teacher asks learners to distinguish the ‘ai’ and ‘oi’ sounds. The sentence says, ‘The bird can see the coin.’ Which word has the ‘oi’ sound?",
@@ -13491,7 +13405,7 @@
         },
         {
          "type": "mcq",
-         "id": "english-g5-ch4-l5-d4",
+         "id": "english-g5-ch4-l5-d3",
          "difficulty": 3,
          "tags": [
           "deep",
@@ -13525,7 +13439,7 @@
         },
         {
          "type": "mcq",
-         "id": "english-g5-ch4-l5-d5",
+         "id": "english-g5-ch4-l5-d4",
          "difficulty": 3,
          "tags": [
           "deep",
@@ -14030,7 +13944,7 @@
       {
        "id": "english-g5-ch4-exam",
        "title": "Test practice",
-       "estimatedMinutes": 21,
+       "estimatedMinutes": 20,
        "topicScene": "media/ch4-l2-rose-ringed-parakeet-in-rabi-ea9074.webp",
        "sceneAlt": "A rose-ringed parakeet hangs from a tree in Rabindra Sarobar, West Bengal.",
        "sceneCaption": "A rose-ringed parakeet hangs from a tree in Rabindra Sarobar.",
@@ -14330,32 +14244,6 @@
           "case"
          ],
          "context": "During an English lesson, the teacher shows two birds and asks pupils to choose one and give reasons. The class also hears word examples and says them back, focusing on ‘ai’ and ‘oi’ sounds. The story tells how a parrot tricked a merchant into releasing it, but the escape is not the ending. The teacher asks pupils to use imagination to continue the parrot’s next adventure.",
-         "prompt": "After seeing the two birds, one pupil chooses one but does not explain why. What should the pupil do next to complete the speaking task?",
-         "options": [
-          "Give a reason for the choice and share it with the class.",
-          "Give a reason for choosing, but keep it to themselves.",
-          "Share a view about the birds without saying which bird they chose.",
-          "Choose the other bird without saying why."
-         ],
-         "answer": 0,
-         "why": {
-          "Give a reason for choosing, but keep it to themselves.": "Keeping the explanation private leaves the sharing task unfinished.",
-          "Share a view about the birds without saying which bird they chose.": "The pupil must identify the chosen bird as well as explain it.",
-          "Choose the other bird without saying why.": "Changing the choice still fails to provide a reason."
-         },
-         "explanation": "It adds the missing reason and includes class sharing.",
-         "anchor": "english-g5-ch4-l5-t1",
-         "focus": -1
-        },
-        {
-         "type": "mcq",
-         "id": "english-g5-ch4-l5-x2",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "During an English lesson, the teacher shows two birds and asks pupils to choose one and give reasons. The class also hears word examples and says them back, focusing on ‘ai’ and ‘oi’ sounds. The story tells how a parrot tricked a merchant into releasing it, but the escape is not the ending. The teacher asks pupils to use imagination to continue the parrot’s next adventure.",
          "prompt": "The class reaches the point where the parrot has escaped, and the teacher asks for the story to be completed. What should pupils produce?",
          "options": [
           "An imagined continuation showing what happens after the escape.",
@@ -14467,7 +14355,7 @@
      "boss": {
       "id": "english-g5-ch4-boss",
       "title": "Chapter challenge: The Wise Parrot",
-      "estimatedMinutes": 5,
+      "estimatedMinutes": 4,
       "activities": [
        {
         "type": "mcq",
@@ -14722,56 +14610,6 @@
         ],
         "anchor": "english-g5-ch4-l6-t1",
         "focus": 1
-       },
-       {
-        "type": "matchpairs",
-        "id": "english-g5-ch4-boss-a9",
-        "difficulty": 3,
-        "tags": [
-         "speaking",
-         "birds",
-         "sounds"
-        ],
-        "prompt": "Match each speaking task with its instruction.",
-        "pairs": [
-         [
-          "bird choice",
-          "which bird they would want to be"
-         ],
-         [
-          "class sharing",
-          "share their views with the class"
-         ],
-         [
-          "sound practice",
-          "distinguish the ‘ai’ and ‘oi’ sounds"
-         ],
-         [
-          "repeat task",
-          "listen and repeat words"
-         ]
-        ],
-        "explanation": "The speaking activity includes bird choices, class sharing and sound practice.",
-        "src": [
-         {
-          "ch": 4,
-          "p": 49
-         },
-         {
-          "ch": 4,
-          "p": 49
-         },
-         {
-          "ch": 4,
-          "p": 49
-         },
-         {
-          "ch": 4,
-          "p": 49
-         }
-        ],
-        "anchor": "english-g5-ch4-l5-a1",
-        "focus": 0
        },
        {
         "type": "dragorder",
@@ -26849,7 +26687,7 @@
       {
        "id": "english-g5-ch8-l4",
        "title": "Let us Speak and Write: Sharing the Decision",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -26969,30 +26807,28 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "english-g5-ch8-l4-a2",
+         "type": "truefalse",
+         "id": "english-g5-ch8-l4-a3",
          "difficulty": 1,
          "tags": [
-          "speaking",
-          "guessing"
+          "groups",
+          "discussion"
          ],
-         "prompt": "What does the speaking task ask you to do first?",
-         "options": [
-          "guess what would happen next",
-          "write a letter as the farmer",
-          "discuss the Panchayat’s decision",
-          "add ‘less’ to a word"
-         ],
-         "answer": 0,
-         "explanation": "This task starts with guessing what would happen next.",
+         "prompt": "Each group will discuss the ending together.",
+         "answer": true,
+         "explanation": "The children work in small groups and discuss each ending together.",
          "src": [
+          {
+           "ch": 8,
+           "p": 99
+          },
           {
            "ch": 8,
            "p": 99
           }
          ],
          "anchor": "english-g5-ch8-l4-a1",
-         "focus": -1
+         "focus": 0
         },
         {
          "type": "fillblank",
@@ -27072,32 +26908,6 @@
          "focus": -1
         },
         {
-         "type": "mcq",
-         "id": "english-g5-ch8-l4-a6",
-         "difficulty": 2,
-         "tags": [
-          "writing",
-          "farmer"
-         ],
-         "prompt": "Whom will you imagine you are in the writing task?",
-         "options": [
-          "The farmer",
-          "The narrator",
-          "One student",
-          "A group member"
-         ],
-         "answer": 0,
-         "explanation": "Only the farmer is named as the children’s viewpoint in the writing task.",
-         "src": [
-          {
-           "ch": 8,
-           "p": 100
-          }
-         ],
-         "anchor": "english-g5-ch8-l4-a1",
-         "focus": -1
-        },
-        {
          "type": "dragorder",
          "id": "english-g5-ch8-l4-a7",
          "difficulty": 3,
@@ -27167,52 +26977,29 @@
          "focus": -1
         },
         {
-         "type": "mcq",
-         "id": "english-g5-ch8-l4-d1",
+         "type": "truefalse",
+         "id": "english-g5-ch8-l4-a9",
          "difficulty": 3,
          "tags": [
-          "deep",
-          "explain purpose"
+          "water",
+          "value",
+          "price"
          ],
-         "prompt": "The speaking task asks children to guess what would happen next. Why should they sit in small groups?",
-         "options": [
-          "To discuss the ending together with other children.",
-          "To let one child write the letter for everyone.",
-          "To listen to every ending without speaking.",
-          "To decide which water has the highest price."
-         ],
-         "answer": 0,
-         "why": {
-          "To let one child write the letter for everyone.": "This confuses the speaking task with the later writing task.",
-          "To listen to every ending without speaking.": "This misses the children’s need to discuss the ending first.",
-          "To decide which water has the highest price.": "This wrongly connects group work with the price of water."
-         },
-         "explanation": "This is right because each small group discusses the ending together.",
-         "f": [
-          "4.1",
-          "4.2",
-          "4.3"
-         ],
+         "prompt": "Water can have a price put on it.",
+         "answer": false,
+         "explanation": "The lesson says that water cannot have a price put on it.",
          "src": [
           {
            "ch": 8,
-           "p": 99
-          },
-          {
-           "ch": 8,
-           "p": 99
-          },
-          {
-           "ch": 8,
-           "p": 99
+           "p": 100
           }
          ],
          "anchor": "english-g5-ch8-l4-a1",
-         "focus": 0
+         "focus": 2
         },
         {
          "type": "mcq",
-         "id": "english-g5-ch8-l4-d2",
+         "id": "english-g5-ch8-l4-d1",
          "difficulty": 3,
          "tags": [
           "deep",
@@ -27251,7 +27038,7 @@
         },
         {
          "type": "mcq",
-         "id": "english-g5-ch8-l4-d3",
+         "id": "english-g5-ch8-l4-d2",
          "difficulty": 3,
          "tags": [
           "deep",
@@ -27285,7 +27072,7 @@
         },
         {
          "type": "mcq",
-         "id": "english-g5-ch8-l4-d4",
+         "id": "english-g5-ch8-l4-d3",
          "difficulty": 3,
          "tags": [
           "deep",
@@ -27319,7 +27106,7 @@
         },
         {
          "type": "mcq",
-         "id": "english-g5-ch8-l4-d5",
+         "id": "english-g5-ch8-l4-d4",
          "difficulty": 3,
          "tags": [
           "deep",
@@ -28351,7 +28138,7 @@
       {
        "id": "english-g5-ch8-exam",
        "title": "Test practice",
-       "estimatedMinutes": 21,
+       "estimatedMinutes": 20,
        "topicScene": "media/ch8-l1-farming-india-202929337-3e325c.webp",
        "sceneAlt": "A farmer works with bullocks and cows in a village farming scene.",
        "sceneCaption": "A farmer works with bullocks and cows in a village landscape.",
@@ -28582,32 +28369,6 @@
           "case"
          ],
          "context": "During the lesson, the children prepare to guess what will happen next. They sit in small groups, talk about how the story might continue, and decide together what the ending should be. One child from each group then shares the group’s ending with the whole class. In another activity, the children imagine that they are the farmer and write a letter about what happened and the Panchayat’s decision.",
-         "prompt": "In the speaking task, what should happen after the groups finish discussing the endings?",
-         "options": [
-          "A child from each group will tell everyone the ending the group discussed.",
-          "Every child in every group will tell a different ending.",
-          "A child from one group will tell the endings imagined by all the other groups.",
-          "The children will begin writing without sharing any ending."
-         ],
-         "answer": 0,
-         "why": {
-          "Every child in every group will tell a different ending.": "Only one child from each group should narrate.",
-          "A child from one group will tell the endings imagined by all the other groups.": "Each group’s ending should be presented by a child from that group.",
-          "The children will begin writing without sharing any ending.": "The speaking task includes sharing each ending."
-         },
-         "explanation": "This follows the plan for one child from each group.",
-         "anchor": "english-g5-ch8-l4-t1",
-         "focus": 0
-        },
-        {
-         "type": "mcq",
-         "id": "english-g5-ch8-l4-x2",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "During the lesson, the children prepare to guess what will happen next. They sit in small groups, talk about how the story might continue, and decide together what the ending should be. One child from each group then shares the group’s ending with the whole class. In another activity, the children imagine that they are the farmer and write a letter about what happened and the Panchayat’s decision.",
          "prompt": "If the children are writing as the farmer, which choice correctly describes what their letter should cover?",
          "options": [
           "The event that occurred and what the Panchayat decided.",
@@ -28633,13 +28394,13 @@
           "exam",
           "written"
          ],
-         "prompt": "Explain the difference between the speaking task and the writing task.",
-         "answer": "The speaking task has children guess what happens next. In small groups, they discuss an ending, and one child from each group shares it with everyone. The writing task asks children to imagine being the farmer and write a letter about something from the previous week and the Panchayat’s decision.",
+         "prompt": "How does the suffix ‘less’ connect with the chapter’s statement about water?",
+         "answer": "Adding ‘less’ to ‘price’ gives ‘priceless.’ This word matches the chapter’s statement that water is valuable and cannot have a price put on it. The suffix therefore helps express the special value of water.",
          "points": [
-          "The speaking task asks children to guess what happens next.",
-          "Children discuss the ending together in small groups.",
-          "One child from each group narrates the ending.",
-          "The writing task imagines being the farmer and includes the incident and decision."
+          "The suffix ‘less’ is added at the end of a word.",
+          "Adding it to ‘price’ forms ‘priceless’.",
+          "‘Priceless’ means that no price can be put on something.",
+          "This shows that water has special value."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         },
@@ -31439,33 +31200,6 @@
            "p": 114
           }
          ]
-        },
-        {
-         "type": "mcq",
-         "id": "english-g5-ch9-l5-a2",
-         "difficulty": 1,
-         "tags": [
-          "jobs",
-          "fun"
-         ],
-         "title": "The Fun Part",
-         "prompt": "What does the child in the writing task see?",
-         "options": [
-          "Only the fun part of each job",
-          "Only the difficult part of each job",
-          "Only the boring part of each job",
-          "Only the paid part of each job"
-         ],
-         "answer": 0,
-         "explanation": "The task shows only the fun part of each job.",
-         "src": [
-          {
-           "ch": 9,
-           "p": 114
-          }
-         ],
-         "anchor": "english-g5-ch9-l5-a1",
-         "focus": 0
         },
         {
          "type": "truefalse",
