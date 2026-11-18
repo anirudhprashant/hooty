@@ -242,6 +242,10 @@ export const strings = {
     ownBookDesc: "{title}: made on this device from your PDF.",
     searchAllBooks: "Search all books",
     searchAllHint: "Find a lesson by what it teaches",
+    readToMe: "Read to me",
+    gotIt: "Got it",
+    inYourBook: "In your book: {page}",
+    chapterPage: "Chapter {ch}, page {p}",
   },
   hi: {
     appName: 'लूमी',
@@ -483,6 +487,10 @@ export const strings = {
     ownBookDesc: "{title}: आपकी PDF से इसी फ़ोन पर बनी।",
     searchAllBooks: "सारी किताबें खोजिए",
     searchAllHint: "जो पढ़ाया जाता है उससे पाठ खोजिए",
+    readToMe: "मुझे सुनाइए",
+    gotIt: "समझ गया",
+    inYourBook: "आपकी किताब में: {page}",
+    chapterPage: "अध्याय {ch}, पृष्ठ {p}",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -724,6 +732,10 @@ export const strings = {
     ownBookDesc: "{title}: ನಿಮ್ಮ PDF ಯಿಂದ ಈ ಸಾಧನದಲ್ಲೇ ಮಾಡಿದ್ದು.",
     searchAllBooks: "ಎಲ್ಲಾ ಪುಸ್ತಕಗಳನ್ನು ಹುಡುಕಿ",
     searchAllHint: "ಏನು ಕಲಿಸುತ್ತದೆ ಎಂಬುದರಿಂದ ಪಾಠ ಹುಡುಕಿ",
+    readToMe: "ನನಗೆ ಓದಿ ಹೇಳಿ",
+    gotIt: "ಅರ್ಥವಾಯಿತು",
+    inYourBook: "ನಿಮ್ಮ ಪುಸ್ತಕದಲ್ಲಿ: {page}",
+    chapterPage: "ಅಧ್ಯಾಯ {ch}, ಪುಟ {p}",
   },
 };
 

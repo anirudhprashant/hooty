@@ -114,10 +114,10 @@ export function openTermCard(entry, { say, from, hint } = {}) {
       el('h3', { class: 'term-pop__word', text: entry.term }),
       el('p', { class: 'term-pop__meaning', text: entry.meaning }),
       entry.example ? el('p', { class: 'term-pop__example', text: entry.example }) : null,
-      src ? el('p', { class: 'term-pop__src', text: `In your book: Chapter ${src.ch}, page ${src.p}` }) : null,
+      src ? el('p', { class: 'term-pop__src', text: t('inYourBook', { page: t('chapterPage', { ch: src.ch, p: src.p }) }) }) : null,
       el('div', { class: 'term-pop__actions' }, [
-        say ? el('button', { class: 'btn btn--ghost btn--sm', type: 'button', onclick: () => say(`${entry.term}. ${entry.meaning}`) }, ['Read to me']) : null,
-        el('button', { class: 'btn btn--sm term-pop__close', type: 'button', onclick: close }, ['Got it']),
+        say ? el('button', { class: 'btn btn--ghost btn--sm', type: 'button', onclick: () => say(`${entry.term}. ${entry.meaning}`) }, [t('readToMe')]) : null,
+        el('button', { class: 'btn btn--sm term-pop__close', type: 'button', onclick: close }, [t('gotIt')]),
       ]),
     ]),
   ]);
