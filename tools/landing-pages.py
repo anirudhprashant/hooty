@@ -70,7 +70,12 @@ def page(title, desc, path, body, script=''):
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{SITE}{path}">
 <meta property="og:image" content="{SITE}/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{esc(desc)}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE}/og.jpg">
 <link rel="icon" href="/assets/icons/favicon-64.png?v=blob1" sizes="64x64" type="image/png">
 <link rel="stylesheet" href="/books/books.css">
 {script}
