@@ -8,7 +8,7 @@ import { realise } from './core/gen.js';
 import { renderModel } from './core/models.js';
 import { state, boot, activeLearner, persist, addXP,
   heartsRegenerated, touchStreak, recordActivity, recordLesson, weakSpots,
-  unlockReward, todayKey, exportSave, importSave } from './core/state.js';
+  unlockReward, todayKey, exportSave, importSave, setActiveLearner, learnerList, createLearner } from './core/state.js';
 import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, themeCopy, setGuide, currentGuide, guideAvatarSrc } from './core/theme.js';
 // Brand art (tools/brand/make.sh): blob Hooty as the logo mark.
 const BRAND_MARK = './characters/blob/hooty-mark.webp';
@@ -1959,6 +1959,43 @@ function screenParent() {
     wrap.append(el('div', { class: 'chip-list' }, weak.map((w) => el('span', { class: 'chip' }, [w.tag, ' ', el('b', { text: `×${w.lapses}` })]))));
     wrap.append(el('div', { class: 'activity__actions' }, [el('button', { class: 'btn', type: 'button', onclick: () => go('practice') }, [t('practiseTab')])]));
   }
+
+  // Two children, one phone: who is learning now, and a way to switch. Each learner keeps its own progress.
+  const people = learnerList();
+  const cur = activeLearner();
+  const section = el('section', { class: 'growth-card' }, [
+    el('h2', { class: 'section-title', text: t('whoIsLearning') }),
+    el('ul', { class: 'growth-list' }, people.map((p) => el('li', {}, [
+      p.id === state.activeLearnerId
+        ? el('span', { text: `${t('learnerNow', { name: p.name })} · ${p.lessons} · ${p.xp} XP` })
+        : el('button', { class: 'btn btn--ghost btn--sm', type: 'button', text: t('switchTo', { name: p.name }), onclick: async () => {
+          setActiveLearner(p.id);
+          await persist();
+          applyLearnerPrefs();
+          render();
+        } }),
+    ]))),
+    el('button', { class: 'btn btn--ghost btn--sm', type: 'button', text: t('addLearner'), onclick: async () => {
+      const name = window.prompt(t('namePlaceholder'));
+      createLearner((name || '').slice(0, 24) || 'Learner');
+      await persist();
+      applyLearnerPrefs();
+      render();
+    } }),
+    el('p', { class: 'growth-note', text: t('addLearnerHint') }),
+  ]);
+  if (people.length > 1) wrap.append(section);
+  else wrap.append(el('section', { class: 'growth-card' }, [
+    el('h2', { class: 'section-title', text: t('whoIsLearning') }),
+    el('button', { class: 'btn btn--ghost btn--sm', type: 'button', text: t('addLearner'), onclick: async () => {
+      const name = window.prompt(t('namePlaceholder'));
+      createLearner((name || '').slice(0, 24) || 'Learner');
+      await persist();
+      applyLearnerPrefs();
+      render();
+    } }),
+    el('p', { class: 'growth-note', text: t('addLearnerHint') }),
+  ]));
 
   wrap.append(el('h2', { class: 'section-title', text: t('yourData') }));
   const dl = el('div', { class: 'activity__actions' });

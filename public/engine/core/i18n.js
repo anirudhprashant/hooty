@@ -219,6 +219,10 @@ export const strings = {
     yourAnswer: "Your answer",
     tapToFlip: "Tap to flip the card",
     highlightToggleLabel: "Highlight key words",
+    whoIsLearning: "Who is learning?",
+    learnerNow: "{name}, learning now",
+    switchTo: "Switch to {name}",
+    addLearnerHint: "Each child on this phone keeps their own progress.",
   },
   hi: {
     appName: 'लूमी',
@@ -437,6 +441,10 @@ export const strings = {
     yourAnswer: "आपका उत्तर",
     tapToFlip: "कार्ड पलटने के लिए टैप कीजिए",
     highlightToggleLabel: "ज़रूरी शब्द हाइलाइट करें",
+    whoIsLearning: "कौन सीख रहा है?",
+    learnerNow: "{name}, अभी सीख रहे हैं",
+    switchTo: "{name} पर जाइए",
+    addLearnerHint: "इस फ़ोन पर हर बच्चे की अपनी प्रगति रहती है।",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -655,6 +663,10 @@ export const strings = {
     yourAnswer: "ನಿಮ್ಮ ಉತ್ತರ",
     tapToFlip: "ಕಾರ್ಡ್ ತಿರುಗಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
     highlightToggleLabel: "ಮುಖ್ಯ ಪದಗಳನ್ನು ಹೈಲೈಟ್ ಮಾಡಿ",
+    whoIsLearning: "ಯಾರು ಕಲಿಯುತ್ತಿದ್ದಾರೆ?",
+    learnerNow: "{name}, ಈಗ ಕಲಿಯುತ್ತಿದ್ದಾರೆ",
+    switchTo: "{name} ಗೆ ಬದಲಿಸಿ",
+    addLearnerHint: "ಈ ಫೋನ್‌ನಲ್ಲಿ ಪ್ರತಿ ಮಗುವಿನ ಪ್ರಗತಿ ಪ್ರತ್ಯೇಕವಾಗಿರುತ್ತದೆ.",
   },
 };
 

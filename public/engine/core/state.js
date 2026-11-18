@@ -99,6 +99,21 @@ export function createLearner(name) {
   return state.learners[id];
 }
 
+// Two children on one phone: pick which learner the app is showing. Every learner keeps its own progress, and the
+// switch is just a pointer, so nothing is copied or lost.
+export function setActiveLearner(id) {
+  if (!id || !state.learners[id]) return false;
+  state.activeLearnerId = id;
+  return true;
+}
+
+export function learnerList() {
+  return Object.entries(state.learners).map(([id, l]) => ({
+    id, name: l.name || 'Learner', xp: l.xp || 0,
+    lessons: Object.keys(l.lessonsDone || {}).length, createdAt: l.createdAt || 0,
+  })).sort((a, b) => a.createdAt - b.createdAt);
+}
+
 export async function boot() {
   const saved = await loadState();
   if (saved && saved.learners && Object.keys(saved.learners).length) {
