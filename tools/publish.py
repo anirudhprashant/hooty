@@ -125,8 +125,9 @@ def upload():
     # rsync copies but never removes, and landing-pages.py rebuilds a book's pages under fresh names
     # (ch2-dada-dadi.html, not ch02-.html), so the old chapter pages would sit on the site forever beside
     # the new ones. Clear any chapter page in a live book folder that this build did not write.
+    dst_books = os.path.join(TARGET, os.path.relpath(f'{PUB}/books', ROOT))
     for slug in os.listdir(f'{PUB}/books'):
-        src, dst = f'{PUB}/books/{slug}', f'{TARGET}/books/{slug}'
+        src, dst = f'{PUB}/books/{slug}', os.path.join(dst_books, slug)
         if not os.path.isdir(src) or not os.path.isdir(dst): continue
         keep = {f for f in os.listdir(src) if f.endswith('.html')}
         for f in os.listdir(dst):
