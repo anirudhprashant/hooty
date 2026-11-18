@@ -2038,6 +2038,9 @@ function screenParent() {
     }
   });
   dl.append(el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => fileInput.click() }, [icon('upload', { size: 22 }), t('importData')]), fileInput);
+  // A parent taking the numbers to a school meeting: the browser's own print dialog, which every phone and computer has,
+  // and which can save a PDF. No extra download, and it keeps working offline.
+  dl.append(el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => window.print() }, [icon('download', { size: 22 }), t('printReport')]));
   wrap.append(dl);
   wrap.append(el('p', { class: 'section-sub', text: t('importNote') }));
   return wrap;

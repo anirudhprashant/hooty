@@ -223,6 +223,7 @@ export const strings = {
     learnerNow: "{name}, learning now",
     switchTo: "Switch to {name}",
     addLearnerHint: "Each child on this phone keeps their own progress.",
+    printReport: "Print this report",
   },
   hi: {
     appName: 'लूमी',
@@ -445,6 +446,7 @@ export const strings = {
     learnerNow: "{name}, अभी सीख रहे हैं",
     switchTo: "{name} पर जाइए",
     addLearnerHint: "इस फ़ोन पर हर बच्चे की अपनी प्रगति रहती है।",
+    printReport: "यह रिपोर्ट छापिए",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -667,6 +669,7 @@ export const strings = {
     learnerNow: "{name}, ಈಗ ಕಲಿಯುತ್ತಿದ್ದಾರೆ",
     switchTo: "{name} ಗೆ ಬದಲಿಸಿ",
     addLearnerHint: "ಈ ಫೋನ್‌ನಲ್ಲಿ ಪ್ರತಿ ಮಗುವಿನ ಪ್ರಗತಿ ಪ್ರತ್ಯೇಕವಾಗಿರುತ್ತದೆ.",
+    printReport: "ಈ ವರದಿ ಮುದ್ರಿಸಿ",
   },
 };
 
