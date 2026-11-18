@@ -91,6 +91,26 @@ def stamp():
     # The book is NOT preloaded any more. It used to preload index.json's first pack (Class 6 Social Science)
     # for every visitor, which is a 1.7 MB file, about 290 KB over the wire, and wasted on anyone opening
     # another class. loadContent fetches the index and then only the book the child is actually in.
+    # Structured data for the app page: who runs it, what it is, and that it costs nothing. Written here so the
+    # book count stays true without anyone editing HTML by hand.
+    try:
+        idx_all = json.load(open(f'{PUB}/content/index.json'))
+        ld = {
+            '@context': 'https://schema.org',
+            '@graph': [
+                {'@type': 'Organization', 'name': 'Hooty', 'url': URL, 'logo': f'{URL}/assets/icons/icon-192.png?v=blob1'},
+                {'@type': 'WebSite', 'name': 'Hooty', 'url': URL, 'inLanguage': ['en', 'hi'],
+                 'description': 'Your school books, turned into an adventure. A free learning game built from the NCERT textbooks.'},
+                {'@type': 'SoftwareApplication', 'name': 'Hooty', 'url': URL, 'applicationCategory': 'EducationalApplication',
+                 'operatingSystem': 'Android, iOS, Windows, macOS, Linux', 'isAccessibleForFree': True,
+                 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'INR'},
+                 'description': f"{len(idx_all['packs'])} NCERT school books turned into short lessons a child can play, free for every child, no sign-up."},
+            ],
+        }
+        block = '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False, separators=(',', ':')) + '</script>'
+        page = re.sub(r'<!--LD-->.*?<!--/LD-->', f'<!--LD-->{block}<!--/LD-->', page, count=1, flags=re.S) if '<!--LD-->' in page else page.replace('</head>', block + '\n</head>', 1)
+    except Exception as e:
+        print('structured data skipped:', str(e)[:120], flush=True)
     data = ['themes/index.json', 'content/index.json'] + [f"themes/{t['id']}/theme.json" for t in json.load(open(f'{PUB}/themes/index.json'))['themes']]
     hints += ''.join(f'<link rel="preload" as="fetch" crossorigin="anonymous" href="./{f}">' for f in data)
     open(f'{PUB}/index.html', 'w').write(re.sub(r'<!--PRELOAD-->.*?<!--/PRELOAD-->', lambda m: f'<!--PRELOAD-->{hints}<!--/PRELOAD-->', page, count=1, flags=re.S))
