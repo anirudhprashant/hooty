@@ -266,7 +266,8 @@ pictures and read-aloud.</p>
         urls.append((f'{SITE}/books/{slug}.html', TODAY))
 
         for u, c in chapters:
-            cid = page_slug(c)
+            cid = page_slug(c)          # the file name, readable
+            real_id = c['id']           # what the app's deep link needs
             ls = lessons_of(c)
             ctitle = c.get('title') or cid
             cdesc = f'{ctitle} from {title}: {len(ls)} short lessons on Hooty, free and no sign-up.'
@@ -278,7 +279,7 @@ pictures and read-aloud.</p>
 <a href="/books/{esc(slug)}.html">{esc(title)}</a> / {esc(ctitle)}</div>
 <h1>{esc(ctitle)}</h1>
 <p class="lede">{esc(title)}, chapter. {len(ls)} short lessons.</p>
-<p><a class="cta" href="/#/chapter/{esc(slug)}/{esc(cid)}">Start this chapter</a></p>
+<p><a class="cta" href="/#/chapter/{esc(slug)}/{esc(real_id)}">Start this chapter</a></p>
 <h2>Lessons in this chapter</h2>
 <ul class="lessons">{rows}</ul>
 {ld_block(chapter_ld(b, c, ls))}
