@@ -143,6 +143,15 @@ function dataFrugal() {
   return /(^|-)2g$/.test(String(c.effectiveType || ''));
 }
 
+// Practice and Grown-ups read every book of the class. They ask for the rest of it when opened, and this re-renders
+// once the books arrive, so the screen fills in instead of staying half empty.
+function needWholeClass() {
+  const g = activeGrade();
+  const want = packIndex.filter((p) => String(p.grade) === g);
+  if (want.length && want.every((p) => packById(p.id))) return;
+  loadRestInBackground(g);
+}
+
 function loadRestInBackground(grade) {
   if (dataFrugal()) return;
   const go2 = () => loadGrade(grade).then(() => {
@@ -2357,9 +2366,9 @@ function render() {
     case 'packs': screen = screenPacks(); title = t('choosePack'); break;
     case 'path': screen = screenPath(); title = t('path'); break;
     case 'lesson': screen = screenLesson(); title = router.lesson?.title || ''; break;
-    case 'practice': screen = screenPractice(); title = t('practiseTab'); break;
+    case 'practice': screen = screenPractice(); title = t('practiseTab'); needWholeClass(); break;
     case 'rewards': screen = screenRewards(); title = t('rewards'); break;
-    case 'parent': screen = screenParent(); title = t('parent'); break;
+    case 'parent': screen = screenParent(); title = t('parent'); needWholeClass(); break;
     case 'themes': screen = screenThemes(); title = t('chooseTheme'); break;
     case 'settings': screen = screenSettings(); title = t('settings'); break;
     case 'addbook': screen = screenAddBook(); title = t('addMyBook'); break;
@@ -2458,7 +2467,9 @@ async function main() {
     if (/^#\/(book|chapter|lesson)\//i.test(bootHash)) toast(t('linkGone'), 3600);
   }
   syncHash();   // a chapter link opens its first unplayed lesson: name that lesson in the address bar
-  if (!linkedPack) loadRestInBackground(activeGrade());   // a visitor from a shared link has not chosen a class yet
+  // The rest of the class used to be fetched here, right after the home screen painted: six books, 1.2 MB on a phone,
+  // for screens the child had not opened. Only Practice and Grown-ups read every book of a class, so they ask for them
+  // (see render), and switching class still fetches the class the child actually chose.
 
   if ('serviceWorker' in navigator) {
     // Registered after first paint: precaching the app must not compete with the first load.
