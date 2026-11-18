@@ -197,6 +197,22 @@ def credits_html(book):
             'order the lessons appear.</p><ul class="lessons">' + ''.join(rows) + '</ul>')
 
 
+def not_found():
+    """The page served with a 404. A mistyped address used to give a blank screen; this gives the search box."""
+    body = ("""
+<div class="crumbs"><a href="/">Hooty</a> / Not found</div>
+<h1>That page is not here</h1>
+<p class="lede">The address may be a typo, or a chapter that has been renamed. Every book and every lesson is still
+one tap away:</p>
+<p><a class="cta" href="/#/">Open Hooty</a></p>
+<p><a class="cta cta--quiet" href="/books/">All books and a search box</a></p>
+<p class="note">If you followed a link from another site, the page it pointed at has moved. Searching for the lesson
+name on the catalogue page will find it.</p>
+""")
+    return page('Not found | Hooty', 'That page is not here. Open Hooty, or search every book and lesson.',
+                '/404.html', body)
+
+
 def main():
     # Pages from an older run stay on disk with their old names (ch02-.html beside ch2-dada-dadi.html), so a book
     # folder is rebuilt from scratch: one page per chapter, always with the current slug.
@@ -363,6 +379,7 @@ pictures and read-aloud.</p>
         pr = '0.8' if u.endswith('/books/') or u.count('/') == 4 else '0.6'
         sm.append(f'  <url><loc>{u}</loc><lastmod>{last}</lastmod><changefreq>monthly</changefreq><priority>{pr}</priority></url>')
     sm.append('</urlset>')
+    open(os.path.join(PUB, '404.html'), 'w').write(not_found())
     open(os.path.join(PUB, 'sitemap.xml'), 'w').write('\n'.join(sm) + '\n')
     print(f'books: {len(books)}  pages written: {len(urls)}  sitemap urls: {len(urls) + 1}')
 
