@@ -862,6 +862,43 @@ function screenLesson() {
     activities = [...activities.slice(0, mid), { type: 'funfact', id: `${lesson.id}-fact`, prompt: facts[plays % facts.length] }, ...activities.slice(mid)];
   }
 
+// The words this lesson actually uses, as revision cards near the end of it. A card asks what a word means and the child
+// flips it, which is the one moment in a lesson where recalling a meaning is the whole task. The words come from the
+// book's own glossary and only from words readable in this lesson's text, so a card never asks about something the child
+// has not just met. Two a lesson, rotating on a replay, and silent: the meaning is read, not spoken.
+const CARD_PROMPT = {
+  en: (w) => `What does "${w}" mean?`,
+  hi: (w) => `"${w}" का अर्थ क्या है?`,
+  kn: (w) => `"${w}" ಎಂದರೆ ಏನು?`,
+};
+
+function wordCards(pack, lesson, activities, plays) {
+  const terms = pack?.glossary?.terms;
+  if (!terms?.length || lesson.isPractice || activities.length < 6) return [];
+  const text = activities.map((a) => `${a.title || ''} ${a.body || ''} ${a.prompt || ''} ${a.explanation || ''}`).join(' ');
+  const found = terms.filter((x) => x.term && x.meaning && x.term.length > 2 && text.includes(x.term));
+  if (!found.length) return [];
+  const start = (plays * 2) % found.length;
+  const prompt = CARD_PROMPT[pack.language] || CARD_PROMPT.en;
+  return [found[start], found[(start + 1) % found.length]]
+    .filter((x, i, all) => x && all.indexOf(x) === i)
+    .map((x, i) => ({
+      type: 'flashcard',
+      id: `${lesson.id}-word-${i}`,
+      silent: true,
+      prompt: prompt(x.term),
+      back: x.meaning,
+    }));
+}
+
+  // The revision cards go in near the end, after the last teaching beat and before the closing question, so the lesson
+  // still finishes on something with a right answer.
+  const cards = wordCards(packById(lesson.packId), lesson, activities, plays);
+  if (cards.length) {
+    const at = Math.max(1, activities.length - 2);
+    activities = [...activities.slice(0, at), ...cards, ...activities.slice(at)];
+  }
+
   session = {
     lesson,
     queue: activities.slice(),

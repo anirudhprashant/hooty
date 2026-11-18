@@ -20,7 +20,9 @@ export default {
     card.append(front, back);
     card.addEventListener('click', () => {
       card.classList.toggle('is-flipped');
-      ctx.say(activity.back || activity.front || '');
+      // A silent card is read rather than heard: the word revision cards reuse the glossary's own sentences, and speaking
+      // them would add a clip per card across every book.
+      if (!activity.silent) ctx.say(activity.back || activity.front || '');
     });
 
     root.append(el('p', { class: 'activity__prompt', text: activity.prompt ? '' : '' }), card);
