@@ -2,6 +2,7 @@ import { el, stopSpeech } from '../core/dom.js';
 import { WIDGETS, W, H, s, slidersOf } from '../core/explorables.js';
 import { evaluate } from '../core/gen.js';
 import { icon } from '../core/icons.js';
+import { t } from '../core/i18n.js';
 
 // A simulation to play with: move the sliders, watch what changes, and meet Hooty's challenges one by one. A challenge ticks itself
 // when the child gets there, and then says what it means. Nothing is graded and nothing blocks moving on: this is for playing.
@@ -11,7 +12,7 @@ export default {
   render(activity, ctx) {
     const root = el('div', { class: 'activity activity--explore' });
     const widget = WIDGETS[activity.widget];
-    if (!widget) { root.append(el('p', { text: activity.title || '' }), el('div', { class: 'activity__actions' }, [el('button', { class: 'btn btn--primary btn--block', type: 'button', text: 'Next', onclick: () => ctx.submit({}) })])); return { root, check() { return true; } }; }
+    if (!widget) { root.append(el('p', { text: activity.title || '' }), el('div', { class: 'activity__actions' }, [el('button', { class: 'btn btn--primary btn--block', type: 'button', text: t('next'), onclick: () => ctx.submit({}) })])); return { root, check() { return true; } }; }
     const params = { ...(widget.params || {}), ...(activity.params || {}) };
     const sl = slidersOf(activity.widget, params);
     const v = Object.fromEntries(sl.map(([key, , , , , start]) => [key, start]));
@@ -53,8 +54,8 @@ export default {
       const tick = (ms) => { if (!root.isConnected && ms > 2000 && root.dataset.seen) return; if (root.isConnected) { root.dataset.seen = '1'; draw(ms / 1000); } requestAnimationFrame(tick); };
       requestAnimationFrame(tick);
     }
-    const next = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: 'Next', onclick: () => { stopSpeech(); ctx.submit({ read: true }); } });
-    const nodes = [el('p', { class: 'worked__kicker', text: 'Try it yourself' }), el('h3', { class: 'concept-card__title', text: activity.title || '' }), svg, readout, ...controls, list, finished, el('div', { class: 'activity__actions' }, [next])];
+    const next = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: t('next'), onclick: () => { stopSpeech(); ctx.submit({ read: true }); } });
+    const nodes = [el('p', { class: 'worked__kicker', text: t('tryItYourself') }), el('h3', { class: 'concept-card__title', text: activity.title || '' }), svg, readout, ...controls, list, finished, el('div', { class: 'activity__actions' }, [next])];
     root.append(...nodes);
     return { root, check() { return true; } };
   },

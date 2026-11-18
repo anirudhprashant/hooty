@@ -224,6 +224,8 @@ export const strings = {
     switchTo: "Switch to {name}",
     addLearnerHint: "Each child on this phone keeps their own progress.",
     printReport: "Print this report",
+    tryItYourself: "Try it yourself",
+    wellExplored: "Well explored!",
   },
   hi: {
     appName: 'लूमी',
@@ -447,6 +449,8 @@ export const strings = {
     switchTo: "{name} पर जाइए",
     addLearnerHint: "इस फ़ोन पर हर बच्चे की अपनी प्रगति रहती है।",
     printReport: "यह रिपोर्ट छापिए",
+    tryItYourself: "खुद आज़माइए",
+    wellExplored: "बढ़िया खोज!",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -670,6 +674,8 @@ export const strings = {
     switchTo: "{name} ಗೆ ಬದಲಿಸಿ",
     addLearnerHint: "ಈ ಫೋನ್‌ನಲ್ಲಿ ಪ್ರತಿ ಮಗುವಿನ ಪ್ರಗತಿ ಪ್ರತ್ಯೇಕವಾಗಿರುತ್ತದೆ.",
     printReport: "ಈ ವರದಿ ಮುದ್ರಿಸಿ",
+    tryItYourself: "ನೀವೇ ಪ್ರಯತ್ನಿಸಿ",
+    wellExplored: "ಚೆನ್ನಾಗಿ ಅನ್ವೇಷಿಸಿದ್ದೀರಿ!",
   },
 };
 
