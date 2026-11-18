@@ -274,9 +274,16 @@ def main():
                  f'<p class="lede">Every {esc(label)} NCERT book on Hooty, free, with no sign-up. '
                  f'{len(group)} book{"s" if len(group) != 1 else ""}, turned into short lessons a child can play.</p>'
                  + ''.join(rows) + f'<h2>Another class</h2><p class="more">{nav}</p>')
+        cld = ld_block({
+            '@context': 'https://schema.org', '@type': 'CollectionPage',
+            'name': f'{label} books on Hooty', 'url': f'{SITE}/books/{slug}.html', 'isAccessibleForFree': True,
+            'description': f'Every {label} NCERT book on Hooty, free, in short lessons a child can play.',
+            'hasPart': [{'@type': 'Book', 'name': b.get('title') or b['id'], 'url': f"{SITE}/books/{b['id']}.html",
+                         'inLanguage': b.get('language') or 'en'} for b in group],
+        }) + ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/'), (label, f'/books/{slug}.html')]))
         open(os.path.join(outdir, f'{slug}.html'), 'w').write(page(
             f'{label} books | Hooty', f'Every {label} NCERT book on Hooty, free. Chapter by chapter, in short lessons.',
-            f'/books/{slug}.html', cbody))
+            f'/books/{slug}.html', cbody + cld))
         urls.append((f'{SITE}/books/{slug}.html', TODAY))
 
     body = f"""<div class="crumbs"><a href="/">Hooty</a> / All books</div>
