@@ -97,7 +97,9 @@
       status.textContent = 'No lesson has "' + q + '" in its title.';
       return;
     }
-    status.textContent = list.length + (list.length === 1 ? ' lesson matches "' : ' lessons match "') + q + '".';
+    var shown = Math.min(list.length, 40);
+    status.textContent = (list.length === 1 ? '1 lesson matches "' : list.length + ' lessons match "') + q + '".'
+      + (list.length > shown ? ' Showing the first ' + shown + '.' : '');
     var frag = document.createDocumentFragment();
     list.slice(0, 40).forEach(function (r) {
       var li = document.createElement('li');
