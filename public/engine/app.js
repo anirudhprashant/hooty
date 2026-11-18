@@ -1002,6 +1002,14 @@ function renderActivity() {
   // render() may call submit synchronously for pair activities that auto-complete
   s.stage.append(rendered.root);
   if (!rendered.root.isConnected) s.stage.append(rendered.root);
+  // A keyboard or switch user should land on the first thing to press, not on the page body: on a question that is
+  // the first answer, on a reading card the button that moves on.
+  requestAnimationFrame(() => {
+    if (!s || s.current !== activity) return;   // the card changed again before this ran
+    const live = (sel) => [...rendered.root.querySelectorAll(sel)].filter((b) => !b.disabled && b.offsetParent);
+    const first = live('.option, .tf-btn, .match-item, .order-chip, .label-chip, .text-input, .activity__actions .btn--primary, .hook__cta')[0];
+    if (first) first.focus({ preventScroll: true });
+  });
   // A case study: the same short passage sits above each of its questions.
   if (activity.context) rendered.root.querySelector('.activity__prompt')?.before(el('div', { class: 'case-box' }, [
     el('p', { class: 'worked__kicker', text: bookWord(packById(s.lesson.packId)?.language, 'Read this first') }),

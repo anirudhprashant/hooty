@@ -25,6 +25,10 @@ export default {
         node.classList.add('match-item--selected');
         selectedLeft = i;
         ctx.say(text);
+        // A keyboard user picked a left item; send focus to the first right item so the next Enter makes the match,
+        // instead of asking them to Tab past the whole left column first.
+        const free = rightNodes.find((r, ri) => !matchedRightIdx.has(ri));
+        if (free) free.focus({ preventScroll: true });
       });
       leftCol.append(node);
       return node;
