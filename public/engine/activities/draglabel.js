@@ -1,4 +1,5 @@
 import { el } from '../core/dom.js';
+import { t } from '../core/i18n.js';
 
 // Drag a label onto a marked place on an image or map.
 // Pointer events, so it works with touch and mouse. Also keyboard friendly:
@@ -22,7 +23,7 @@ export default {
     let placedCount = 0;
     let activeLabel = null;
 
-    const labelBar = el('div', { class: 'label-bar', role: 'list', 'aria-label': 'Labels' });
+    const labelBar = el('div', { class: 'label-bar', role: 'list', 'aria-label': t('labelsGroup') });
 
     const makeLabel = (label) => {
       const node = el('button', { class: 'label-chip', type: 'button', role: 'listitem' }, [label.text]);

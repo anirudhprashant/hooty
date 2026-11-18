@@ -1,4 +1,5 @@
 import { el } from '../core/dom.js';
+import { t } from '../core/i18n.js';
 
 export default {
   type: 'flashcard',
@@ -7,7 +8,7 @@ export default {
   graded: false,
   render(activity, ctx) {
     const root = el('div', { class: 'activity activity--flash' });
-    const card = el('button', { class: 'flashcard', type: 'button', 'aria-label': 'Tap to flip the card' });
+    const card = el('button', { class: 'flashcard', type: 'button', 'aria-label': t('tapToFlip') });
 
     const front = el('div', { class: 'flashcard__face flashcard__face--front' }, [
       el('p', { class: 'flashcard__prompt', text: activity.prompt || activity.front }),

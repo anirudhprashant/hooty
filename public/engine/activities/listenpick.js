@@ -1,11 +1,12 @@
 import { el, speak } from '../core/dom.js';
+import { t } from '../core/i18n.js';
 
 export default {
   type: 'listenpick',
   render(activity, ctx) {
     const root = el('div', { class: 'activity activity--listen' });
 
-    const play = el('button', { class: 'speak-btn', type: 'button', 'aria-label': 'Play the audio' }, [
+    const play = el('button', { class: 'speak-btn', type: 'button', 'aria-label': t('playAudio') }, [
       el('span', { class: 'speak-btn__icon', 'aria-hidden': 'true' }),
       el('span', { text: 'Play' }),
     ]);

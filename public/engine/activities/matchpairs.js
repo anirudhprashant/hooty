@@ -1,4 +1,5 @@
 import { el, shuffle } from '../core/dom.js';
+import { t } from '../core/i18n.js';
 
 export default {
   type: 'matchpairs',
@@ -8,8 +9,8 @@ export default {
     const lefts = pairs.map((p) => p[0]);
     const rights = shuffle(pairs.map((p) => p[1]));
 
-    const leftCol = el('div', { class: 'match-col', role: 'list', 'aria-label': 'Left column' });
-    const rightCol = el('div', { class: 'match-col', role: 'list', 'aria-label': 'Right column' });
+    const leftCol = el('div', { class: 'match-col', role: 'list', 'aria-label': t('leftColumn') });
+    const rightCol = el('div', { class: 'match-col', role: 'list', 'aria-label': t('rightColumn') });
 
     let selectedLeft = null;
     const matchedRightIdx = new Set();

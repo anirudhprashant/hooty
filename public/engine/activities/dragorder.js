@@ -1,4 +1,5 @@
 import { el, shuffle } from '../core/dom.js';
+import { t } from '../core/i18n.js';
 
 // Tap-to-order. Works on a phone with a thumb, no drag library needed.
 // Every tap places an item into the answer row; tap again in the row to remove.
@@ -9,8 +10,8 @@ export default {
   type: 'dragorder',
   render(activity, ctx) {
     const root = el('div', { class: 'activity activity--order' });
-    const pool = el('div', { class: 'order-pool', role: 'list', 'aria-label': 'Items to arrange' });
-    const answerRow = el('div', { class: 'order-answer', role: 'list', 'aria-label': 'Your answer' });
+    const pool = el('div', { class: 'order-pool', role: 'list', 'aria-label': t('itemsToArrange') });
+    const answerRow = el('div', { class: 'order-answer', role: 'list', 'aria-label': t('yourAnswer') });
     const checkBtn = el('button', { class: 'btn btn--primary', type: 'button' }, ['Check order']);
 
     const items = activity.items || [];

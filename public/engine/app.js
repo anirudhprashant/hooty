@@ -423,7 +423,7 @@ async function saveName(raw) {
 }
 
 function nameCard() {
-  const input = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': 'Your name', placeholder: t('namePlaceholder') });
+  const input = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': t('nameLabel'), placeholder: t('namePlaceholder') });
   const form = el('form', { class: 'name-card' }, [
     el('p', { class: 'name-card__ask', text: t('whatCallYou') }),
     el('div', { class: 'input-row' }, [input, el('button', { class: 'btn btn--primary', type: 'submit', text: t('save') })]),
@@ -1349,7 +1349,7 @@ function renderCelebration() {
 function lessonBar(count) {
   return el('div', { class: 'lesson__bar' }, [
     el('button', {
-      class: 'icon-btn', type: 'button', 'aria-label': 'Leave lesson',
+      class: 'icon-btn', type: 'button', 'aria-label': t('leaveLesson'),
       onclick: () => { session = null; go(router.backScreen || 'home'); },
     }, [icon('close')]),
     el('div', { class: 'lesson__progress', role: 'progressbar', 'aria-label': t('lessonProgress'), 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': '0' }, [el('span', { style: { width: '0%' } })]),
@@ -1425,7 +1425,7 @@ async function shareLesson() {
 function highlightToggle() {
   const l = activeLearner();
   const on = () => document.body.classList.contains('hl-on');
-  const b = el('button', { class: 'icon-btn icon-btn--hl', type: 'button', 'aria-label': 'Highlight key words', 'aria-pressed': String(on()) }, [icon('highlight')]);
+  const b = el('button', { class: 'icon-btn icon-btn--hl', type: 'button', 'aria-label': t('highlightToggleLabel'), 'aria-pressed': String(on()) }, [icon('highlight')]);
   b.addEventListener('click', async () => {
     const v = !on();
     document.body.classList.toggle('hl-on', v);
