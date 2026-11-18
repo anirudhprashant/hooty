@@ -253,6 +253,7 @@ export const strings = {
     loadFailedLine: "Something went wrong while loading. Your progress is safe.",
     playClip: "Play",
     bossLabel: "Chapter boss",
+    pictureCredit: "Picture",
   },
   hi: {
     appName: 'हूटी',
@@ -505,6 +506,7 @@ export const strings = {
     loadFailedLine: "लोड करते समय कुछ गड़बड़ हुई। आपकी प्रगति सुरक्षित है।",
     playClip: "सुनिए",
     bossLabel: "अध्याय बॉस",
+    pictureCredit: "चित्र",
   },
   kn: {
     appName: 'ಹೂಟಿ',
@@ -757,6 +759,7 @@ export const strings = {
     loadFailedLine: "ಲೋಡ್ ಮಾಡುವಾಗ ಏನೋ ತಪ್ಪಾಯಿತು. ನಿಮ್ಮ ಪ್ರಗತಿ ಸುರಕ್ಷಿತವಾಗಿದೆ.",
     playClip: "ಕೇಳಿಸಿ",
     bossLabel: "ಅಧ್ಯಾಯ ಬಾಸ್",
+    pictureCredit: "ಚಿತ್ರ",
   },
 };
 

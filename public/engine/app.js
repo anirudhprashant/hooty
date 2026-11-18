@@ -889,7 +889,7 @@ function screenLesson() {
       lesson.sceneCaption || lesson.sceneCredit ? el('figcaption', { class: 'lesson__scene-cap' }, [
         lesson.sceneCaption ? el('span', { text: lesson.sceneCaption }) : null,
         lesson.sceneCredit ? (lesson.sceneCredit.url
-          ? el('a', { class: 'credit-link', href: safeLink(lesson.sceneCredit.url), target: '_blank', rel: 'noopener noreferrer', text: `Picture: ${lesson.sceneCredit.text}` })
+          ? el('a', { class: 'credit-link', href: safeLink(lesson.sceneCredit.url), target: '_blank', rel: 'noopener noreferrer', text: `${t('pictureCredit')}: ${lesson.sceneCredit.text}` })
           : el('span', { class: 'credit-note', text: lesson.sceneCredit.text })) : null,
       ]) : null,
     ]));
@@ -2291,6 +2291,7 @@ async function openDeepLink(href = location.hash) {
   if (l) {
     if (pack.grade != null) l.grade = String(pack.grade);
     l.packId = pack.id;
+    followBookLanguage(pack);   // a shared link into a Hindi book should open a Hindi app
     await persist();
   }
   router.packId = pack.id;
