@@ -2194,7 +2194,7 @@ async function openDeepLink(href = location.hash) {
     const list = chapter.lessons || [];
     lesson = list.find((x) => !done[x.id]) || list[0] || null;
   }
-  if (!lesson) { go('path'); return true; }
+  if (!lesson) { go('path'); toast(t('linkMoved'), 3200); return true; }
   // Stamp the book on the lesson the way the trail does, or its picture and audio paths resolve wrong.
   const lessonId = isBoss ? itemId : lesson.id;
   const title = isBoss ? (lesson.title || t('bossChallenge')) : lesson.title;
@@ -2302,7 +2302,11 @@ async function main() {
   }
   const fromLink = await openDeepLink(bootHash);
   linkPending = false;
-  if (fromLink === false && bootHash && bootHash !== '#/') history.replaceState(null, '', '#/');
+  if (fromLink === false && bootHash && bootHash !== '#/') {
+    history.replaceState(null, '', '#/');
+    // A link to a book that no longer exists used to land on Home with no word about why.
+    if (/^#\/(book|chapter|lesson)\//i.test(bootHash)) toast(t('linkGone'), 3600);
+  }
   syncHash();   // a chapter link opens its first unplayed lesson: name that lesson in the address bar
   if (!linkedPack) loadRestInBackground(activeGrade());   // a visitor from a shared link has not chosen a class yet
 

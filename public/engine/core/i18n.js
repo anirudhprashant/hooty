@@ -185,6 +185,8 @@ export const strings = {
     importDoneOne: "Imported {who}: 1 lesson done, {xp} XP.",
     importDoneMany: "Imported {who}: {n} lessons done, {xp} XP.",
     jumpToUnit: "Jump to a part",
+    linkMoved: "That lesson has moved. Here is the book, so you can pick it up.",
+    linkGone: "That link does not point at a book any more. Pick a class to start.",
   },
   hi: {
     appName: 'लूमी',
@@ -369,6 +371,8 @@ export const strings = {
     importDoneOne: "{who} आयात हुआ: 1 पाठ पूरा, {xp} XP।",
     importDoneMany: "{who} आयात हुआ: {n} पाठ पूरे, {xp} XP।",
     jumpToUnit: "किसी हिस्से पर जाएँ",
+    linkMoved: "वह पाठ अब आगे खिसक गया है। यह रही किताब, वहाँ से चुन लीजिए।",
+    linkGone: "यह लिंक अब किसी किताब तक नहीं जाता। कक्षा चुनकर शुरू कीजिए।",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -553,6 +557,8 @@ export const strings = {
     importDoneOne: "{who} ಆಮದು ಆಯಿತು: 1 ಪಾಠ ಮುಗಿಯಿತು, {xp} XP.",
     importDoneMany: "{who} ಆಮದು ಆಯಿತು: {n} ಪಾಠ ಮುಗಿದವು, {xp} XP.",
     jumpToUnit: "ಒಂದು ಭಾಗಕ್ಕೆ ಹೋಗಿ",
+    linkMoved: "ಆ ಪಾಠ ಈಗ ಬೇರೆಡೆಗೆ ಸರಿದಿದೆ. ಇಲ್ಲಿದೆ ಪುಸ್ತಕ, ಅಲ್ಲಿಂದ ಆರಿಸಿ.",
+    linkGone: "ಈ ಲಿಂಕ್ ಈಗ ಯಾವುದೇ ಪುಸ್ತಕಕ್ಕೆ ಹೋಗುತ್ತಿಲ್ಲ. ತರಗತಿ ಆರಿಸಿ ಪ್ರಾರಂಭಿಸಿ.",
   },
 };
 
