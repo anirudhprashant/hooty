@@ -181,7 +181,8 @@ def stage_draft():
     facts = json.load(open(f'{W}/facts.json')); b = brief()
     os.makedirs(f'{W}/draft', exist_ok=True)
     jobs = [(l['id'], f"ch{N}-l{l['id'][1:]}", l['title'], 9, l['facts']) for l in facts['lessons']]
-    jobs.append(('boss', f'ch{N}-boss', f"Chapter challenge: {facts['title']}", 10, [f for l in facts['lessons'] for f in l['facts']]))
+    lead = {'hi': '\u0905\u0927\u094d\u092f\u093e\u092f \u091a\u0941\u0928\u094c\u0924\u0940', 'kn': '\u0c85\u0c27\u0c4d\u0c2f\u0c3e\u0c2f \u0c38\u0c35\u0c3e\u0c32\u0c41'}.get(SUBJ.get('language', 'en'), 'Chapter challenge')
+    jobs.append(('boss', f'ch{N}-boss', f"{lead}: {facts['title']}", 10, [f for l in facts['lessons'] for f in l['facts']]))
     def run(job):
         key, lid, title, n, fl = job
         out = f'{W}/draft/{key}.json'

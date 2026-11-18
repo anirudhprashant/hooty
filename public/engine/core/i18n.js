@@ -252,6 +252,7 @@ export const strings = {
     offlineLine: "You seem to be offline. Connect to the internet once, then open Hooty again.",
     loadFailedLine: "Something went wrong while loading. Your progress is safe.",
     playClip: "Play",
+    bossLabel: "Chapter boss",
   },
   hi: {
     appName: 'हूटी',
@@ -503,6 +504,7 @@ export const strings = {
     offlineLine: "लगता है इंटरनेट बंद है। एक बार इंटरनेट जोड़कर हूटी फिर खोलिए।",
     loadFailedLine: "लोड करते समय कुछ गड़बड़ हुई। आपकी प्रगति सुरक्षित है।",
     playClip: "सुनिए",
+    bossLabel: "अध्याय बॉस",
   },
   kn: {
     appName: 'ಹೂಟಿ',
@@ -754,6 +756,7 @@ export const strings = {
     offlineLine: "ಇಂಟರ್ನೆಟ್ ಇಲ್ಲ ಎಂದು ತೋರುತ್ತದೆ. ಒಮ್ಮೆ ಇಂಟರ್ನೆಟ್ ಜೋಡಿಸಿ ಹೂಟಿ ಮತ್ತೆ ತೆರೆಯಿರಿ.",
     loadFailedLine: "ಲೋಡ್ ಮಾಡುವಾಗ ಏನೋ ತಪ್ಪಾಯಿತು. ನಿಮ್ಮ ಪ್ರಗತಿ ಸುರಕ್ಷಿತವಾಗಿದೆ.",
     playClip: "ಕೇಳಿಸಿ",
+    bossLabel: "ಅಧ್ಯಾಯ ಬಾಸ್",
   },
 };
 

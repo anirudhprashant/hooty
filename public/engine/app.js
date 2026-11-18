@@ -746,7 +746,7 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
   // A chapter test is 18 cards and is not a quick five minutes; its own line says so instead of a minute count.
   const isTest = /-exam$/i.test(it.lesson.lessonId || it.id || '');
   const meta = boss
-    ? `Chapter boss · ${nQuestions} ${questionsWord}`
+    ? `${t('bossLabel')} · ${nQuestions} ${questionsWord}`
     : isTest
       ? `${t('branchTest')} · ${nQuestions} ${questionsWord}`
       : savedAt
@@ -1976,7 +1976,17 @@ function screenParent() {
 
   wrap.append(el('h2', { class: 'section-title', text: t('progressByUnit') }));
   const list = el('div', { class: 'unit-list' });
-  for (const pack of gradePacks()) {
+  // A child in Class 6 was shown the units of all five Class 6 books, most of them sitting at 0%, so a parent read a
+  // page of zeroes for books the child has never opened. Show the book they are in, plus any other book of theirs that
+  // actually has finished lessons, and name the book when there is more than one.
+  const finishedIn = (p) => p.units.reduce((n, u) => n + u.chapters.reduce((m, c) => {
+    const ids = [...(c.lessons || []).map((x) => x.id), ...(c.boss ? [bossId(c)] : [])];
+    return m + ids.filter((id) => l?.lessonsDone?.[id]).length;
+  }, 0), 0);
+  const here = currentPack();
+  const shownPacks = gradePacks().filter((p) => p.id === here?.id || finishedIn(p) > 0);
+  const nameTheBook = shownPacks.length > 1;
+  for (const pack of shownPacks) {
     for (const unit of pack.units) {
       let total = 0, done = 0;
       for (const chapter of unit.chapters) {
@@ -1986,7 +1996,7 @@ function screenParent() {
       }
       const pct = total ? Math.round((done / total) * 100) : 0;
       list.append(el('div', { class: 'unit-row' }, [
-        el('span', { class: 'unit-row__name', text: unit.title }),
+        el('span', { class: 'unit-row__name', text: nameTheBook ? `${pack.title} · ${unit.title}` : unit.title }),
         el('div', { class: 'meter', role: 'progressbar', 'aria-label': t('unitProgress', { unit: unit.title }), 'aria-valuenow': String(pct), 'aria-valuemin': '0', 'aria-valuemax': '100' }, [el('span', { style: { width: pct + '%' } })]),
         el('span', { class: 'unit-row__pct', text: `${done}/${total}` }),
       ]));
@@ -2221,7 +2231,10 @@ function screenSettings() {
 
 function go(screen) {
   router.screen = screen;
-  if (screen !== 'path') router.packId = router.packId || packs[0]?.id;
+  // Seed the book from the child's own saved book, not from whichever book happens to be first in the index.
+  // currentPack() trusts router.packId whenever that book is in the child's class, so seeding it with the wrong
+  // book made Practice and the home cards talk about a different book than the one on the trail.
+  if (screen !== 'path') router.packId = router.packId || activeLearner()?.packId || packs[0]?.id;
   render();
 }
 
