@@ -20,12 +20,17 @@
 .main--focus { padding-bottom: var(--s7); }
 
 .nav {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  /* bottom is lifted by the height of the browser's own toolbar, which app.js measures. A fixed bar pinned to the
+     layout viewport rides up and down on a phone as the URL bar slides away and comes back; pinned to the visual
+     viewport it does not move at all. The value is 0 wherever the two viewports agree (desktop, installed app). */
+  position: fixed; left: 0; right: 0; bottom: var(--nav-lift, 0px); z-index: 30;
   display: flex; justify-content: space-around; gap: var(--s1);
   padding: var(--s2) var(--s2) calc(var(--s2) + env(safe-area-inset-bottom));
   background: var(--surface);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   box-shadow: 0 -6px 24px color-mix(in srgb, var(--text) 10%, transparent); /* floats over content */
+  transform: translateZ(0);   /* its own layer, so scrolling the page cannot drag it a frame behind */
+  will-change: transform;
 }
 .nav__brand { display: none; }
 .nav__item {

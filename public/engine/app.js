@@ -296,6 +296,29 @@ function markWords(root, { hint = true } = {}) {
 
 // --- top bar ---------------------------------------------------------------
 
+// --- the bottom bar and the browser's own toolbar ---------------------------
+// A phone's URL bar slides away as the page scrolls down and comes back at the top. While it moves, the layout viewport
+// and the visible area disagree by its height, and a `position: fixed; bottom: 0` bar is painted against the layout one,
+// so it appears to ride up and back with every scroll. Measuring the gap and lifting the bar by exactly that keeps it
+// still. On a desktop, and in the installed app, the gap is always 0 and nothing is written.
+function keepNavStill() {
+  const vv = window.visualViewport;
+  if (!vv) return;
+  let last = '';
+  const place = () => {
+    const gap = Math.max(0, Math.round(window.innerHeight - (vv.height + vv.offsetTop)));
+    const value = `${gap}px`;
+    if (value === last) return;
+    last = value;
+    document.documentElement.style.setProperty('--nav-lift', value);
+  };
+  place();
+  vv.addEventListener('resize', place, { passive: true });
+  vv.addEventListener('scroll', place, { passive: true });
+  window.addEventListener('resize', place, { passive: true });
+  window.addEventListener('orientationchange', () => setTimeout(place, 250), { passive: true });
+}
+
 // --- top bar and navigation ------------------------------------------------
 
 const NAV = [
@@ -2324,6 +2347,7 @@ function render() {
 // not cached and going offline afterwards shows "Hooty could not start". Hand the addresses the app used to
 // the worker once it is in charge; every later visit, including an offline one, then works.
 async function warmServiceWorker() {
+  keepNavStill();
   const reg = await navigator.serviceWorker.ready.catch(() => null);
   if (!reg) return;
   let ctrl = navigator.serviceWorker.controller;
