@@ -31,6 +31,15 @@ export function applyTheme(theme, { root = document.documentElement } = {}) {
   set('--hero-text', p.heroText);
   set('--locked', p.locked);
   root.dataset.dark = String(!!theme.dark);
+  // The mascot is the largest thing on the home screen, so it is also what the browser times as the largest paint. Its
+  // request used to start when the stage rendered, four hundred milliseconds after the theme was known: start it here,
+  // at high priority, while the rest of the screen is still being built.
+  const early = mascotImage('idle');
+  if (early) {
+    const warm = new Image();
+    warm.fetchPriority = 'high';
+    warm.src = early;
+  }
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta && p.bg) meta.setAttribute('content', p.bg);
 

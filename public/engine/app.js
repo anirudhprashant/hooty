@@ -500,7 +500,8 @@ function screenHome() {
   const stage = el('section', { class: 'stage' });
   const art = el('div', { class: 'stage__art' });
   const mascot = mascotImage('idle');
-  if (mascot) art.append(el('img', { class: 'stage__mascot', src: mascot, alt: '' }));
+  // fetchpriority: the home mascot is the largest paint on the screen; nothing else there should delay it.
+  if (mascot) art.append(el('img', { class: 'stage__mascot', src: mascot, alt: '', fetchpriority: 'high', decoding: 'async' }));
 
   const copy = el('div', { class: 'stage__copy' });
   copy.append(
