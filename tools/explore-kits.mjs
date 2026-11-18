@@ -3,6 +3,16 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  wordorder: {
+    grades: [1, 3], subject: 'english', titleOnly: true,
+    match: [/word order/, /making sentences?/, /rearranging sentences?/, /sentence building/, /jumbled words?/],
+    title: 'Build the sentence', takeaway: 'English puts the doer first, then the action, then the rest: swap the doer and the thing done and the meaning swaps with them.',
+    tasks: [
+      { say: 'Find the sentence where an animal chases another animal.', when: 'w == 0', then: 'The dog chased the cat: the dog does it, the cat is chased.' },
+      { say: 'Find the sentence where the meaning is the other way round.', when: 'w == 1', then: 'Now the cat chases the dog, because the first word changed.' },
+      { say: 'Find the sentence that ends with a place.', when: 'w == 3', then: 'The bird sings in the tree: the place comes last.' },
+    ],
+  },
   wordbuild: {
     grades: [4, 5, 6], subject: 'english', titleOnly: true,
     match: [/prefix/, /contraction/, /apostroph/, /word building/, /joining words/, /\bun-|\bre-|\bdis-|\bpre-/],

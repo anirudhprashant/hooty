@@ -2676,6 +2676,35 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  wordorder: {
+    subject: 'english', about: 'Word order in an English sentence: who, then what they do, then where or when. Swapping the subject and the doer changes the meaning. For sentences, word order, grammar.',
+    sliders: [['w', 'Pick a sentence', 0, 7, 1, 0]],
+    draw(v) {
+      const rows = [
+        ['The dog', 'chased', 'the cat', 'Who does it comes first: the dog chases, the cat is chased.'],
+        ['The cat', 'chased', 'the dog', 'Swap them and the meaning swaps too.'],
+        ['Riya', 'reads', 'a book', 'The person, then the action, then the thing.'],
+        ['The bird', 'sings', 'in the tree', 'A place can come last.'],
+        ['We', 'eat', 'mangoes', 'The doer, the doing, the thing done.'],
+        ['The sun', 'shines', 'in the sky', 'English sentences usually go this way round.'],
+        ['Aman', 'kicked', 'the ball', 'Subject, verb, object: the usual order.'],
+        ['The cow', 'grazes', 'in the field', 'Even a long sentence keeps this order.'],
+      ];
+      const [who, what, rest, why] = rows[v.w];
+      const box = (x, text, fill, colour, z) => [R(x, 70, 160, 64, fill, { w: 3, r: 12 }), T(x + 80, 112, text, { z, f: colour })];
+      const kids = [
+        ...box(30, who, '#fdf6ff', '#3a2560', 28),
+        ...box(210, what, '#fff5e6', '#c2510e', 28),
+        ...box(390, rest, '#e4f7ee', '#058a68', 28),
+        T(110, 158, 'who', { z: 13, f: '#6b5a8a' }),
+        T(290, 158, 'does what', { z: 13, f: '#6b5a8a' }),
+        T(470, 158, rest.startsWith('the ') ? 'the thing done' : 'where it happens', { z: 13, f: '#6b5a8a' }),
+        T(30, 210, 'Subject, then verb, then the rest.', { z: 18, a: 'start', f: '#c2510e' }),
+        T(30, 242, why, { z: 13, a: 'start', w: 600, f: '#6b5a8a' }),
+      ];
+      return { kids, say: `${who} ${what} ${rest}. ${why}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
