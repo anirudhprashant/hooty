@@ -207,7 +207,9 @@ export const WIDGETS = {
   },
   timeline: {
     subject: 'social', about: 'A timeline you scrub through BCE and CE, with the lesson\'s own dated events marked. For history, chronology, BCE and CE. Param events is a list of {"year": number (negative for BCE), "label": short text} taken from the facts. Sliders span from just before the first event to just after the last.',
-    params: { events: [] }, dynamicSliders: (p) => { const y = (p.events || []).map((e) => e.year); const lo = Math.min(...y), hi = Math.max(...y), pad = Math.max(50, Math.round((hi - lo) / 10)); return [['y', words('moveThroughTime'), lo - pad, hi + pad, Math.max(1, Math.round((hi - lo) / 100)), lo - pad]]; },
+    params: { events: [] }, dynamicSliders: (p) => { const y = (p.events || []).map((e) => e.year); const lo = Math.min(...y), hi = Math.max(...y), pad = Math.max(50, Math.round((hi - lo) / 10)); // Start on the first event, not before it: opening on an empty timeline tells a child "No event yet" at the one
+      // moment it is meant to interest them. Scrubbing back is still possible.
+      return [['y', words('moveThroughTime'), lo - pad, hi + pad, Math.max(1, Math.round((hi - lo) / 100)), Math.min(...y)]]; },
     draw(v, p, t, sl) {
       sl = sl && sl.length ? sl : (this.dynamicSliders ? this.dynamicSliders(p) : []);
       const [, , lo, hi] = sl[0], X = (y) => 30 + ((y - lo) / (hi - lo)) * 540, kids = [L(30, 180, 570, 180, INK, 6)];
