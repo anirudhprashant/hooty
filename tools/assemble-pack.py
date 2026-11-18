@@ -36,6 +36,9 @@ def unit_of(theme, title, n=None):
     return u
 
 def num(c): return int(re.match(r'ch(\d+)', c['id']).group(1))
+# A heading copied whole says "Lesson 3: ..." or "Chapter 7: ..."; on a card the number is noise.
+LESSON_NUM = re.compile(r'^\s*(?:Lesson|पाठ)\s+\d+(?:\.\d+)?\s*[:\-–—]\s*', re.I)
+CHAPTER_NUM = re.compile(r'^\s*(?:Chapter|अध्याय)\s*\d+\s*[:\-–—]\s*', re.I)
 have = {num(c): c for u in pack['units'] for c in u['chapters']}
 seen = {t['term'].lower() for t in gloss['terms']}
 for d in sorted(glob.glob(f'{WORK}/ch*/ship')):
@@ -43,9 +46,10 @@ for d in sorted(glob.glob(f'{WORK}/ch*/ship')):
     if n < 2 and KEY == 'sst6': continue  # Social Science chapter 1 was assembled by hand
     ch = index[n]; L = lambda f: json.load(open(f'{d}/{f}.json'))
     lessons = [json.load(open(f)) for f in sorted(glob.glob(d + '/[0-9]*.json'), key=lambda f: int(os.path.basename(f)[:-5]))]
+    for l in lessons: l['title'] = LESSON_NUM.sub('', l['title'])
     old = have.get(n)
     chapter = {'id': old['id'] if old else f"ch{n:02d}-" + re.sub(r'[^a-z0-9]+', '-', ch['title'].lower()).strip('-')[:40],
-               'title': ch['title'],
+               'title': CHAPTER_NUM.sub('', ch['title']),
                'summary': old['summary'] if old else 'In this chapter: ' + '; '.join(l['title'] for l in lessons[:4]).lower() + '.',
                'lessons': lessons, 'boss': L('boss')}
     unit = unit_of(ch['theme'], ch['themeTitle'], n)
