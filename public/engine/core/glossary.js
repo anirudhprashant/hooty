@@ -1,4 +1,5 @@
 // Tap-a-word. A pack may ship glossary.json:
+import { t } from './i18n.js';
 //   { "terms": [ { "term": "Equator", "aka": ["equatorial"], "meaning": "...", "src": [{ "ch": 1, "p": 14 }] } ] }
 // Words in explanatory text that match a term become small buttons; tapping
 // one opens a plain-language meaning. Only the first mention per question is
@@ -82,7 +83,7 @@ export function annotate(root, matcher, onTap) {
         const shown = m[0];
         frag.append(el('button', {
           class: 'term', type: 'button', 'aria-haspopup': 'dialog',
-          'aria-label': `${shown}: tap to see what it means`,
+          'aria-label': t('tapForMeaning', { word: shown }),
           onclick: (e) => { e.preventDefault(); onTap(entry, e.currentTarget); },
         }, [shown]));
         last = m.index + m[0].length;

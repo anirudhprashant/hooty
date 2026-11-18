@@ -1,11 +1,12 @@
 import { el } from '../core/dom.js';
+import { t } from '../core/i18n.js';
 import { icon } from '../core/icons.js';
 
 export default {
   type: 'truefalse',
   render(activity, ctx) {
     const root = el('div', { class: 'activity activity--truefalse' });
-    const row = el('div', { class: 'tf-row', role: 'radiogroup', 'aria-label': activity.prompt || 'True or false' });
+    const row = el('div', { class: 'tf-row', role: 'radiogroup', 'aria-label': activity.prompt || t('trueOrFalse') });
 
     const make = (label, value) => {
       const b = el('button', { class: 'tf-btn', type: 'button', role: 'radio', 'aria-checked': 'false' }, [
@@ -19,8 +20,8 @@ export default {
       return b;
     };
 
-    const yes = make('True', true);
-    const no = make('False', false);
+    const yes = make(t('true'), true);
+    const no = make(t('false'), false);
     row.append(yes, no);
     root.append(el('p', { class: 'activity__prompt', text: activity.prompt }), row);
 

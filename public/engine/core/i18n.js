@@ -188,6 +188,10 @@ export const strings = {
     linkMoved: "That lesson has moved. Here is the book, so you can pick it up.",
     linkGone: "That link does not point at a book any more. Pick a class to start.",
     bookTitle: "{subject}, Class {n}",
+    tapForMeaning: "{word}: tap to see what it means",
+    trueOrFalse: "True or false",
+    true: "True",
+    false: "False",
   },
   hi: {
     appName: 'लूमी',
@@ -375,6 +379,10 @@ export const strings = {
     linkMoved: "वह पाठ अब आगे खिसक गया है। यह रही किताब, वहाँ से चुन लीजिए।",
     linkGone: "यह लिंक अब किसी किताब तक नहीं जाता। कक्षा चुनकर शुरू कीजिए।",
     bookTitle: "{subject}, कक्षा {n}",
+    tapForMeaning: "{word}: अर्थ देखने के लिए टैप कीजिए",
+    trueOrFalse: "सही या ग़लत",
+    true: "सही",
+    false: "ग़लत",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -562,6 +570,10 @@ export const strings = {
     linkMoved: "ಆ ಪಾಠ ಈಗ ಬೇರೆಡೆಗೆ ಸರಿದಿದೆ. ಇಲ್ಲಿದೆ ಪುಸ್ತಕ, ಅಲ್ಲಿಂದ ಆರಿಸಿ.",
     linkGone: "ಈ ಲಿಂಕ್ ಈಗ ಯಾವುದೇ ಪುಸ್ತಕಕ್ಕೆ ಹೋಗುತ್ತಿಲ್ಲ. ತರಗತಿ ಆರಿಸಿ ಪ್ರಾರಂಭಿಸಿ.",
     bookTitle: "{subject}, ತರಗತಿ {n}",
+    tapForMeaning: "{word}: ಅರ್ಥ ನೋಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
+    trueOrFalse: "ಸರಿ ಅಥವಾ ತಪ್ಪು",
+    true: "ಸರಿ",
+    false: "ತಪ್ಪು",
   },
 };
 
