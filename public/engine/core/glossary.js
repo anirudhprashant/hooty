@@ -44,10 +44,19 @@ export function markKeys(root) {
   return count;
 }
 
+// A word has to be a word to be worth tapping. english-g3's glossary defines the articles "a" and "an", so every
+// standalone "A" at the start of a sentence was underlined and tappable; a handful of entries also carry ",", "।" or "::"
+// as an aka form. None of those should ever interrupt the reading, and none of them is what a child wants explained.
+const TAPPABLE = /(?:[A-Za-z\u0900-\u097f]{1}[A-Za-z\u0900-\u097f'\u0900-\u097f-]{2,})|(?:\d)/;
+
 export function buildMatcher(glossary) {
   const map = new Map();
   for (const t of glossary?.terms || []) {
-    for (const form of [t.term, ...(t.aka || [])]) map.set(form.toLowerCase(), t);
+    for (const form of [t.term, ...(t.aka || [])]) {
+      const key = String(form || '').trim().toLowerCase();
+      if (key.length < 3 || !TAPPABLE.test(key)) continue;
+      map.set(key, t);
+    }
   }
   if (!map.size) return null;
   const forms = [...map.keys()].sort((a, b) => b.length - a.length).map(esc);
