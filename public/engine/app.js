@@ -1646,11 +1646,11 @@ function screenPractice() {
   wrap.append(el('div', { class: 'empty' }, [
     mascot ? el('img', { src: mascot, alt: '' }) : null,
     el('h3', { text: finished ? t('practiceComplete') : t('noMistakes') }),
-    el('p', { text: later ? `${later === 1 ? '1 tricky question comes' : `${later} tricky questions come`} back tomorrow. What next?`
+    el('p', { text: later ? t(later === 1 ? 'trickyOne' : 'trickyMany', { n: later })
       : finished ? t('allFixed') : t('mistakesWait') }),
     el('div', { class: 'empty__next' }, [
       next ? el('button', { class: 'btn btn--primary', type: 'button', onclick: () => startLesson(next) }, [`${t('nextLesson')}: ${next.title}`]) : null,
-      quiz.length >= 3 ? el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => startLesson({ id: 'quiz-' + Date.now(), lessonId: 'practice', title: 'Quick quiz', activities: quiz, estimatedMinutes: 2, isPractice: true }) }, [`Quick quiz: ${quiz.length} questions you know`]) : null,
+      quiz.length >= 3 ? el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => startLesson({ id: 'quiz-' + Date.now(), lessonId: 'practice', title: t('quickQuiz'), activities: quiz, estimatedMinutes: 2, isPractice: true }) }, [t('quickQuizN', { n: quiz.length })]) : null,
     ]),
   ]));
   return wrap;

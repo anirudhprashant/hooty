@@ -1,4 +1,5 @@
 import { el } from '../core/dom.js';
+import { t } from '../core/i18n.js';
 
 // Watch a YouTube clip from youtube-nocookie.com, then answer.
 // The clip is embedded with start/end seconds. A question always follows.
@@ -10,7 +11,7 @@ export default {
     const v = activity.video || {};
 
     if (v.provider !== 'youtube' || !v.id) {
-      root.append(el('p', { class: 'activity__prompt', text: 'This video is not available right now.' }));
+      root.append(el('p', { class: 'activity__prompt', text: t('videoMissing') }));
       return { root, check() { return true; } };
     }
 

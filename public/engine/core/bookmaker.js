@@ -4,6 +4,7 @@
 // Every question comes from a sentence printed in the book, and its feedback quotes that sentence and page. The code can
 // only rearrange what the book says: it cannot simplify the English or invent an explanation.
 
+import { t } from './i18n.js';
 const COMMON = new Set(`about above after again along also although always among another answer around because become before being
 below between both called cannot change children could different during each early either enough every example first follow following
 found friend friends from give given great group have having help here however important include including instead itself large later
@@ -528,7 +529,7 @@ export function makeBook(docs, { title, subject = 'My book', id }) {
   if (!chapters.length) throw new BookError('no-lessons');
   return {
     schemaVersion: '1.0', id: pid, title, language: lang, subject: title, grade: 'mine', curriculum: 'My book', version: '1', local: true,
-    description: `${title}: made on this device from your PDF.`, sources: [{ title: 'Your own PDF of this book, kept on this device.', url: '' }], units: [{ id: pid, title, chapters }], glossaryData: { terms: [...glossary.values()] },
+    description: t('ownBookDesc', { title }), sources: [{ title: t('ownPdfSource'), url: '' }], units: [{ id: pid, title, chapters }], glossaryData: { terms: [...glossary.values()] },
   };
 }
 

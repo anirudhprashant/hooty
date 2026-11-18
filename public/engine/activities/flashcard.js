@@ -12,7 +12,7 @@ export default {
 
     const front = el('div', { class: 'flashcard__face flashcard__face--front' }, [
       el('p', { class: 'flashcard__prompt', text: activity.prompt || activity.front }),
-      el('span', { class: 'flashcard__hint', text: 'Tap to flip' }),
+      el('span', { class: 'flashcard__hint', text: t('flashcardTap') }),
     ]);
     const back = el('div', { class: 'flashcard__face flashcard__face--back' }, [
       el('p', { class: 'flashcard__answer', text: activity.back }),
