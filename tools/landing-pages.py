@@ -98,6 +98,19 @@ def load():
     return books
 
 
+def page_slug(chapter):
+    """A readable file name for a chapter page: the chapter's number and the first words of its title, so a URL reads
+    /books/hindi-g1/ch2-dada-dadi.html instead of /books/hindi-g1/ch02-.html (chapter ids are made for the app, not for
+    a link a parent might read)."""
+    cid = chapter.get('id') or ''
+    num = re.search(r'ch0*(\d+)', cid)
+    title = chapter.get('title') or ''
+    words = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')[:40].strip('-')
+    if not words:
+        return cid
+    return f'ch{int(num.group(1))}-{words}' if num else words
+
+
 def lessons_of(chapter):
     out = []
     for l in chapter.get('lessons') or []:
@@ -110,9 +123,20 @@ def lessons_of(chapter):
 
 
 def main():
+    # Pages from an older run stay on disk with their old names (ch02-.html beside ch2-dada-dadi.html), so a book
+    # folder is rebuilt from scratch: one page per chapter, always with the current slug.
+
     books = load()
     outdir = os.path.join(PUB, 'books')
     os.makedirs(outdir, exist_ok=True)
+    # Pages from an older run stay on disk with their old names (ch02-.html beside ch2-dada-dadi.html), so a book's
+    # folder starts empty: one page per chapter, always with the current slug.
+    for name in os.listdir(outdir):
+        path = os.path.join(outdir, name)
+        if os.path.isdir(path):
+            for f in os.listdir(path):
+                if f.endswith('.html'):
+                    os.remove(os.path.join(path, f))
     open(os.path.join(outdir, 'books.css'), 'w').write(CSS.strip() + '\n')
     urls = []
     urls.append((f'{SITE}/books/', TODAY))
@@ -173,8 +197,8 @@ no sign-up, and nobody can sell it.</p>
         for u, c in chapters:
             ls = lessons_of(c)
             items.append(
-                f'<div class="card"><h3><a href="/books/{esc(slug)}/{esc(c["id"])}.html">{esc(c.get("title"))}</a></h3>'
-                f'<div class="meta"><a href="/books/{esc(slug)}/{esc(c["id"])}.html">{len(ls)} lesson'
+                f'<div class="card"><h3><a href="/books/{esc(slug)}/{esc(page_slug(c))}.html">{esc(c.get("title"))}</a></h3>'
+                f'<div class="meta"><a href="/books/{esc(slug)}/{esc(page_slug(c))}.html">{len(ls)} lesson'
                 f'{"s" if len(ls) != 1 else ""}</a></div></div>')
         body = f"""<div class="crumbs"><a href="/">Hooty</a> / <a href="/books/">All books</a> / {esc(title)}</div>
 <h1>{esc(title)}</h1>
@@ -188,7 +212,7 @@ pictures and read-aloud.</p>
         urls.append((f'{SITE}/books/{slug}.html', TODAY))
 
         for u, c in chapters:
-            cid = c['id']
+            cid = page_slug(c)
             ls = lessons_of(c)
             ctitle = c.get('title') or cid
             cdesc = f'{ctitle} from {title}: {len(ls)} short lessons on Hooty, free and no sign-up.'
