@@ -1877,9 +1877,9 @@ function screenParent() {
   const fixed = retried.filter((x) => x.last).length;
   const pairs = Object.entries(l?.post || {}).filter(([id]) => l?.pre?.[id]?.n);
   if (pairs.length) wrap.append(el('section', { class: 'growth-card' }, [
-    el('h2', { class: 'section-title', text: 'Before and after each chapter' }),
-    el('ul', { class: 'growth-list' }, pairs.map(([id, p]) => el('li', { text: `${p.title}: ${Math.round((100 * l.pre[id].c) / l.pre[id].n)}% before, ${p.pct}% on the chapter challenge` }))),
-    el('p', { class: 'growth-note', text: 'A small sample of questions, so treat this as a guide, not a grade.' }),
+    el('h2', { class: 'section-title', text: t('beforeAfter') }),
+    el('ul', { class: 'growth-list' }, pairs.map(([id, p]) => el('li', { text: t('chapterGrowth', { chapter: p.title, before: Math.round((100 * l.pre[id].c) / l.pre[id].n), after: p.pct }) }))),
+    el('p', { class: 'growth-note', text: t('beforeAfterNote') }),
   ]));
   // A parent's first question is usually "which subject", so answer it before the finer detail.
   const bySubject = new Map();
@@ -1912,9 +1912,9 @@ function screenParent() {
   wrap.append(el('section', { class: 'growth-card' }, [
     el('h2', { class: 'section-title', text: t('isItSticking') }),
     el('p', { text: retried.length
-      ? `Of ${retried.length} question${retried.length === 1 ? '' : 's'} missed the first time and tried again, ${fixed} ${fixed === 1 ? 'is' : 'are'} now right.`
+      ? t(retried.length === 1 ? 'stickingOne' : 'stickingSome', { n: retried.length, fixed })
       : t('stickingSoon') }),
-    l?.retakes?.n ? el('p', { class: 'growth-note', text: `After a second miss, Hooty shows the one line that taught it and asks a different question about the same idea. ${l.retakes.fixed} of ${l.retakes.n} of those were then answered right.` }) : null,
+    l?.retakes?.n ? el('p', { class: 'growth-note', text: t('retakeNote', { fixed: l.retakes.fixed, n: l.retakes.n }) }) : null,
   ]));
 
   wrap.append(el('h2', { class: 'section-title', text: t('progressByUnit') }));

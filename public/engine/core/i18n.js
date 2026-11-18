@@ -201,6 +201,12 @@ export const strings = {
     unitProgress: "{unit} progress",
     lessonProgress: "Lesson progress",
     yourGuide: "Your guide",
+    beforeAfter: "Before and after each chapter",
+    beforeAfterNote: "A small sample of questions, so treat this as a guide, not a grade.",
+    stickingSome: "Of {n} questions missed the first time and tried again, {fixed} are now right.",
+    stickingOne: "Of 1 question missed the first time and tried again, {fixed} of them is now right.",
+    retakeNote: "After a second miss, Hooty shows the one line that taught it and asks a different question about the same idea. {fixed} of {n} of those were then answered right.",
+    chapterGrowth: "{chapter}: {before}% before, {after}% on the chapter challenge",
   },
   hi: {
     appName: 'लूमी',
@@ -401,6 +407,12 @@ export const strings = {
     unitProgress: "{unit} की प्रगति",
     lessonProgress: "पाठ की प्रगति",
     yourGuide: "आपका साथी",
+    beforeAfter: "हर अध्याय से पहले और बाद में",
+    beforeAfterNote: "यह कुछ ही सवालों का नमूना है, इसे ग्रेड नहीं, एक संकेत समझिए।",
+    stickingSome: "पहली बार में जो {n} सवाल ग़लत हुए और फिर आज़माए गए, उनमें से {fixed} अब सही हैं।",
+    stickingOne: "पहली बार में ग़लत हुए 1 सवाल को फिर आज़माने पर वह अब सही है।",
+    retakeNote: "दूसरी बार ग़लत होने पर हूटी वह एक पंक्ति दिखाती है जिसने यह सिखाया था, फिर उसी विचार पर दूसरा सवाल पूछती है। ऐसे {n} में से {fixed} सवाल फिर सही हुए।",
+    chapterGrowth: "{chapter}: पहले {before}%, अध्याय परीक्षा में {after}%",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -601,6 +613,12 @@ export const strings = {
     unitProgress: "{unit} ಪ್ರಗತಿ",
     lessonProgress: "ಪಾಠದ ಪ್ರಗತಿ",
     yourGuide: "ನಿಮ್ಮ ಒಡನಾಡಿ",
+    beforeAfter: "ಪ್ರತಿ ಅಧ್ಯಾಯದ ಮೊದಲು ಮತ್ತು ನಂತರ",
+    beforeAfterNote: "ಇದು ಕೆಲವೇ ಪ್ರಶ್ನೆಗಳ ಮಾದರಿ, ಇದನ್ನು ಅಂಕವಲ್ಲ, ಒಂದು ಸೂಚನೆ ಎಂದು ತಿಳಿಯಿರಿ.",
+    stickingSome: "ಮೊದಲ ಬಾರಿ ತಪ್ಪಾದ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿದ {n} ಪ್ರಶ್ನೆಗಳಲ್ಲಿ {fixed} ಈಗ ಸರಿಯಾಗಿವೆ.",
+    stickingOne: "ಮೊದಲ ಬಾರಿ ತಪ್ಪಾದ 1 ಪ್ರಶ್ನೆಯನ್ನು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿದಾಗ ಈಗ ಸರಿಯಾಗಿದೆ.",
+    retakeNote: "ಎರಡನೇ ಬಾರಿ ತಪ್ಪಾದಾಗ ಹೂಟಿ ಅದನ್ನು ಕಲಿಸಿದ ಒಂದು ಸಾಲನ್ನು ತೋರಿಸಿ, ಅದೇ ಕಲ್ಪನೆಯ ಮೇಲೆ ಬೇರೆ ಪ್ರಶ್ನೆ ಕೇಳುತ್ತದೆ. ಅವುಗಳಲ್ಲಿ {n} ರಲ್ಲಿ {fixed} ಈಗ ಸರಿಯಾಗಿವೆ.",
+    chapterGrowth: "{chapter}: ಮೊದಲು {before}%, ಅಧ್ಯಾಯ ಪರೀಕ್ಷೆಯಲ್ಲಿ {after}%",
   },
 };
 
