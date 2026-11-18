@@ -262,6 +262,8 @@ export const strings = {
     wordBankTitle: "The words this book explains",
     wordBankNote: "Every word Hooty stops to explain in this book, with the chapter and the page it comes from.",
     wordBankOpen: "Read the words",
+    inYourBookChapter: "In your book: {chapter}",
+    chapterOnly: "Chapter {ch}",
   },
   hi: {
     appName: 'हूटी',
@@ -523,6 +525,8 @@ export const strings = {
     wordBankTitle: "इस किताब के शब्द",
     wordBankNote: "इस किताब में हूटी जिन शब्दों को समझाता है, हर शब्द के साथ उसका अध्याय और पृष्ठ।",
     wordBankOpen: "शब्द देखिए",
+    inYourBookChapter: "आपकी किताब में: {chapter}",
+    chapterOnly: "अध्याय {ch}",
   },
   kn: {
     appName: 'ಹೂಟಿ',
@@ -784,6 +788,8 @@ export const strings = {
     wordBankTitle: "ಈ ಪುಸ್ತಕದ ಪದಗಳು",
     wordBankNote: "ಈ ಪುಸ್ತಕದಲ್ಲಿ ಹೂಟಿ ವಿವರಿಸುವ ಪ್ರತಿ ಪದ, ಅದರ ಅಧ್ಯಾಯ ಮತ್ತು ಪುಟದೊಂದಿಗೆ.",
     wordBankOpen: "ಪದಗಳನ್ನು ನೋಡಿ",
+    inYourBookChapter: "ನಿಮ್ಮ ಪುಸ್ತಕದಲ್ಲಿ: {chapter}",
+    chapterOnly: "ಅಧ್ಯಾಯ {ch}",
   },
 };
 

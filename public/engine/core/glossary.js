@@ -129,7 +129,13 @@ export function openTermCard(entry, { say, from, hint } = {}) {
       el('h3', { class: 'term-pop__word', text: entry.term }),
       el('p', { class: 'term-pop__meaning', text: entry.meaning }),
       entry.example ? el('p', { class: 'term-pop__example', text: entry.example }) : null,
-      src ? el('p', { class: 'term-pop__src', text: t('inYourBook', { page: t('chapterPage', { ch: src.ch, p: src.p }) }) }) : null,
+      // A rebuilt glossary knows the chapter but not always the page, and "page 0" is not a thing to show a child.
+      src ? el('p', {
+        class: 'term-pop__src',
+        text: src.p
+          ? t('inYourBook', { page: t('chapterPage', { ch: src.ch, p: src.p }) })
+          : t('inYourBookChapter', { chapter: t('chapterOnly', { ch: src.ch }) }),
+      }) : null,
       el('div', { class: 'term-pop__actions' }, [
         say ? el('button', { class: 'btn btn--ghost btn--sm', type: 'button', onclick: () => say(`${entry.term}. ${entry.meaning}`) }, [t('readToMe')]) : null,
         el('button', { class: 'btn btn--sm term-pop__close', type: 'button', onclick: close }, [t('gotIt')]),
