@@ -2,7 +2,7 @@
 // after the first visit. Never caches anything that identifies a child:
 // there is nothing to cache but static files.
 
-const CACHE = 'sparkle-28977c7414';
+const CACHE = 'sparkle-3584e9719e';
 
 const SHELL = [
   './',
@@ -35,7 +35,6 @@ const SHELL = [
   './engine/core/bookwords.js',
   './engine/core/concepts.js',
   './engine/core/dom.js',
-  './engine/core/explorables.js',
   './engine/core/gen.js',
   './engine/core/glossary.js',
   './engine/core/i18n.js',
@@ -47,6 +46,7 @@ const SHELL = [
   './engine/core/state.js',
   './engine/core/store.js',
   './engine/core/theme.js',
+  './engine/core/widgets.js',
   './engine/core/wordtap.js',
   './js/boot.js',
 ];

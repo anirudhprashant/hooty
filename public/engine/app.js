@@ -19,6 +19,7 @@ import { icon } from './core/icons.js';
 import { bookWord } from './core/bookwords.js';
 import { saveBook, getBook, deleteBook, listBooks } from './core/mybooks.js';
 import { buildMatcher, annotate, openTermCard, markKeys, plain } from './core/glossary.js';
+import { loadWidgets, widgetsLoaded } from './core/widgets.js';
 
 const app = document.getElementById('app');
 const toastEl = document.getElementById('toast');
@@ -995,6 +996,9 @@ function renderActivity() {
     return;
   }
 
+  if (activity?.type === 'explore' && !widgetsLoaded()) {
+    loadWidgets().then(() => { if (session === s && s.current === activity) renderActivity(); }).catch(() => {});
+  }
   const rendered = mod.render(resolveMedia(activity, s.lesson), {
     locked: false,
     locale: getLocale(),
@@ -2349,6 +2353,10 @@ function render() {
   // The tab, the history entry and the screen-reader announcement all use the page title. It said the site name on
   // every screen; it now names where you are, in the app's language.
   document.title = title ? `${title} · ${t('appName')}` : document.title.replace(/^.*? · /, '');
+
+  // A lesson with a simulation in it needs the widget file; start that download now, while the child reads the opening
+  // cards, instead of when the simulation card appears.
+  if (session?.queue?.some((a) => a.type === 'explore') && !widgetsLoaded()) loadWidgets().catch(() => {});
 
   const focus = router.screen === 'lesson';
   const shell = el('div', { class: `shell${focus ? ' shell--focus' : ''}` });

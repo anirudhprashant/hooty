@@ -1,5 +1,5 @@
 import { el, stopSpeech } from '../core/dom.js';
-import { WIDGETS, W, H, s, slidersOf } from '../core/explorables.js';
+import { widgets, loadWidgets } from '../core/widgets.js';
 import { evaluate } from '../core/gen.js';
 import { icon } from '../core/icons.js';
 import { t } from '../core/i18n.js';
@@ -11,6 +11,16 @@ export default {
   graded: false,
   render(activity, ctx) {
     const root = el('div', { class: 'activity activity--explore' });
+    // The widget file arrives on demand. app.js starts that load when a lesson containing a simulation opens, so this
+    // fallback is only seen in the first moments of a cold load.
+    const kit = widgets();
+    if (!kit) {
+      loadWidgets().then(() => ctx.rerender?.()).catch(() => {});
+      root.append(el('p', { class: 'explore__say', text: activity.title || t('tryItYourself') }),
+        el('div', { class: 'activity__actions' }, [el('button', { class: 'btn btn--primary btn--block', type: 'button', text: t('next'), onclick: () => ctx.submit({}) })]));
+      return { root, check() { return true; } };
+    }
+    const { WIDGETS, W, H, s, slidersOf } = kit;
     const widget = WIDGETS[activity.widget];
     if (!widget) { root.append(el('p', { text: activity.title || '' }), el('div', { class: 'activity__actions' }, [el('button', { class: 'btn btn--primary btn--block', type: 'button', text: t('next'), onclick: () => ctx.submit({}) })])); return { root, check() { return true; } }; }
     const params = { ...(widget.params || {}), ...(activity.params || {}) };

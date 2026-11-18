@@ -84,6 +84,11 @@ def thumbs():
 def stamp():
     """The offline shell is every engine file, and the cache name is a hash of the code, so nobody bumps either by hand."""
     files = sorted(os.path.relpath(f, PUB) for p in ('engine/**/*.js', 'css/*.css', 'js/boot.js') for f in glob.glob(f'{PUB}/{p}', recursive=True))
+    # explorables.js holds all 129 simulations and is 43% of the engine's bytes, but only 41% of chapters ever show one.
+    # Leaving it out of this list keeps it out of the preload hints and out of the offline shell, so a child who never
+    # opens a simulation never downloads it; engine/core/widgets.js fetches it on demand, and the worker's own fetch
+    # handler caches it the first time a lesson needs it, so offline lessons still work once seen.
+    files = [f for f in files if not f.endswith('core/explorables.js')]
     # Preload every code module and the start-up data in one go: each trip through the tunnel costs about 200 ms, and
     # without this the browser finds them one trip at a time. The first book is the one a new visitor opens.
     page = open(f'{PUB}/index.html').read()
