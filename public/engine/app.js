@@ -1610,10 +1610,14 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
   const teach = [correct ? t('correct') : t('wrong'), slip || '', ...(steps || []), !steps && activity.explanation ? activity.explanation : '']
     .map((x) => (x || '').trim()).filter(Boolean).join('. ');
   const saySheet = el('button', { class: 'icon-btn icon-btn--sm', type: 'button', 'aria-label': t('readFeedback'), title: t('readFeedback'), onclick: () => speak([{ text: plain(teach) }], speechLang()) }, [icon('speaker')]);
-  const sheet = el('div', { class: `sheet sheet--${correct ? 'correct' : 'wrong'}`, role: 'status' }, [
+  // Focus lands inside this panel, so it needs a name: without one a screen reader announces "Continue, button" with no
+  // hint of what it is continuing. role="status" stays, because the whole panel should be read out as it appears.
+  const sheet = el('div', {
+    class: `sheet sheet--${correct ? 'correct' : 'wrong'}`, role: 'status', 'aria-labelledby': 'sheet-title',
+  }, [
     el('div', { class: 'sheet__head' }, [
       el('span', { class: 'sheet__mark' }, [icon(correct ? 'check' : 'cross')]),
-      el('h3', { class: 'sheet__title', text: correct ? t('correct') : t('wrong') }),
+      el('h3', { class: 'sheet__title', id: 'sheet-title', text: correct ? t('correct') : t('wrong') }),
       saySheet,
     ]),
     slip ? el('p', { class: 'sheet__why', text: slip }) : null,
@@ -1640,6 +1644,13 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
   s.stage.append(sheet);
   markWords(sheet);
   attachWordTap(sheet, speechLang());
+  // Escape is what a keyboard user reaches for to dismiss a panel that took over the screen. It does what the main
+  // button does, so nobody is stuck holding the keyboard to get past feedback.
+  sheet.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    e.preventDefault();
+    (actions.querySelector('button') || sheet).click();
+  });
   (actions.querySelector('button') || sheet).focus({ preventScroll: true });
   requestAnimationFrame(() => sheet.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
 }
