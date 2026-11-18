@@ -115,14 +115,14 @@ def records(bs):
     return [seen[k] for k in order]
 
 
-def word_card(rec, in_book=False):
+def word_card(rec, in_book=False, level=3):
     """One word, in the same card the rest of the site uses. On a book page the chapter and the book are the page's own
     headings, so the card says only which page to turn to."""
     src = rec['sources'][0]
     more = len(rec['sources']) - 1
     parts = [
         '<div class="card">',
-        f"<h3>{esc(rec['term'])}</h3>",
+        f"<h{level}>{esc(rec['term'])}</h{level}>",
     ]
     if rec['aka']:
         parts.append(f'<div class="meta">also: {esc(", ".join(rec["aka"]))}</div>')
@@ -313,7 +313,7 @@ def build():
                 + f'<p class="lede">{len(words):,} words, explained in plain language, with the book and the page each one '
                   f'comes from.</p>'
                 + rail
-                + ''.join(word_card(r) for r in words)
+                + ''.join(word_card(r, level=2) for r in words)
                 + nav)
         title = f'Words that start with {letter.upper()} — Hooty word bank'
         path = f'/glossary/{letter}.html'
