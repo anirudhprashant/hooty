@@ -210,7 +210,14 @@ no sign-up, and nobody can sell it.</p>
   <ul id="book-results"></ul>
 </div>
 {''.join(cards)}"""
-    os.environ['HOOTY_BOOK_PAGES'] = str(len(books))
+    index_ld = ld_block({
+        '@context': 'https://schema.org', '@type': 'CollectionPage',
+        'name': f'Every book on Hooty ({len(books)} books)', 'url': f'{SITE}/books/',
+        'isAccessibleForFree': True,
+        'description': f'All {len(books)} NCERT school books on Hooty, chapter by chapter, in short lessons a child can play.',
+        'hasPart': [{'@type': 'Book', 'name': b.get('title') or b['id'], 'url': f"{SITE}/books/{b['id']}.html"} for b in books],
+    }) + ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/')]))
+    body += index_ld
     open(os.path.join(outdir, 'index.html'), 'w').write(page(
         'All books | Hooty', f'All {len(books)} NCERT books on Hooty, free for every child. Chapter by chapter, in short lessons. Search every lesson by topic.',
         '/books/', body, script='<script src="/books/search.js" defer></script>'))
