@@ -600,7 +600,7 @@ function screenPath() {
   const wrap = el('div', { class: 'page screen' });
 
   if (!pack) {
-    wrap.append(el('div', { class: 'empty' }, [el('p', { text: 'No content packs installed yet.' })]));
+    wrap.append(el('div', { class: 'empty' }, [el('p', { text: t('noPacks') })]));
     return wrap;
   }
   const tabs = subjectTabs(); if (tabs) wrap.append(tabs);
@@ -1216,7 +1216,7 @@ function finishedNotes(lesson) {
     if (wholeBook) {
       out.push(el('div', { class: 'finished finished--book' }, [
         el('b', { text: t('finishedBook', { title: pack.title, n: wholeBook.total }) }),
-        el('span', { class: 'finished__hint', text: 'Pick another class from the trail whenever you want a new adventure.' }),
+        el('span', { class: 'finished__hint', text: t('bookDoneHint') }),
       ]));
     }
   }
@@ -1320,7 +1320,7 @@ function renderCelebration() {
     more,
     // A lesson that went badly is worth reading again, but only ever as an offer: trying just the questions missed
     // stays the main next step, so the child is never sent back through ten minutes of reading as a punishment.
-    !s.lesson.isPractice && accuracy < 50 ? el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: 'Read the lesson again', onclick: () => {
+    !s.lesson.isPractice && accuracy < 50 ? el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: t('readAgain'), onclick: () => {
       const again = s.lesson;
       session = null;
       startLesson(again);
@@ -1632,7 +1632,7 @@ function screenPractice() {
     });
     wrap.append(el('section', { class: 'review-card' }, [
       el('span', { class: 'review-card__count', text: String(picked.length) }),
-      el('p', { class: 'review-card__label', text: picked.length === 1 ? 'question you got wrong. Try it again.' : 'questions you got wrong. Try them again.' }),
+      el('p', { class: 'review-card__label', text: t(picked.length === 1 ? 'reviewOne' : 'reviewMany') }),
       start,
     ]));
     return wrap;
@@ -2424,7 +2424,7 @@ main().catch((err) => {
   console.error(err);
   clear(app);
   app.append(el('div', { class: 'empty fatal' }, [
-    el('h2', { text: 'Hooty could not start' }),
+    el('h2', { text: t('bootFailed') }),
     el('p', { text: navigator.onLine === false ? 'You seem to be offline. Connect to the internet once, then open Hooty again.' : 'Something went wrong while loading. Your progress is safe.' }),
     el('button', { class: 'btn btn--primary', type: 'button', onclick: () => location.reload() }, ['Try again']),
   ]));

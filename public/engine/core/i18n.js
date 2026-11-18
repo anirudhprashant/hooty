@@ -226,6 +226,12 @@ export const strings = {
     printReport: "Print this report",
     tryItYourself: "Try it yourself",
     wellExplored: "Well explored!",
+    bookDoneHint: "Pick another class from the trail whenever you want a new adventure.",
+    readAgain: "Read the lesson again",
+    reviewOne: "question you got wrong. Try it again.",
+    reviewMany: "questions you got wrong. Try them again.",
+    noPacks: "No books are installed on this device yet. Check your connection and open the app again.",
+    bootFailed: "Hooty could not start",
   },
   hi: {
     appName: 'लूमी',
@@ -451,6 +457,12 @@ export const strings = {
     printReport: "यह रिपोर्ट छापिए",
     tryItYourself: "खुद आज़माइए",
     wellExplored: "बढ़िया खोज!",
+    bookDoneHint: "राह से दूसरी कक्षा चुनिए जब भी नया सफ़र शुरू करना हो।",
+    readAgain: "पाठ फिर से पढ़िए",
+    reviewOne: "सवाल ग़लत हुआ था। फिर आज़माइए।",
+    reviewMany: "सवाल ग़लत हुए थे। उन्हें फिर आज़माइए।",
+    noPacks: "इस फ़ोन पर अभी कोई किताब नहीं है। अपना कनेक्शन देखिए और ऐप फिर से खोलिए।",
+    bootFailed: "हूटी शुरू नहीं हो सकी",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -676,6 +688,12 @@ export const strings = {
     printReport: "ಈ ವರದಿ ಮುದ್ರಿಸಿ",
     tryItYourself: "ನೀವೇ ಪ್ರಯತ್ನಿಸಿ",
     wellExplored: "ಚೆನ್ನಾಗಿ ಅನ್ವೇಷಿಸಿದ್ದೀರಿ!",
+    bookDoneHint: "ಹೊಸ ಸಾಹಸ ಬೇಕಾದಾಗ ದಾರಿಯಿಂದ ಬೇರೆ ತರಗತಿ ಆರಿಸಿ.",
+    readAgain: "ಪಾಠವನ್ನು ಮತ್ತೆ ಓದಿ",
+    reviewOne: "ಪ್ರಶ್ನೆ ತಪ್ಪಾಗಿತ್ತು. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    reviewMany: "ಪ್ರಶ್ನೆಗಳು ತಪ್ಪಾಗಿದ್ದವು. ಅವನ್ನು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    noPacks: "ಈ ಸಾಧನದಲ್ಲಿ ಇನ್ನೂ ಪುಸ್ತಕಗಳಿಲ್ಲ. ಸಂಪರ್ಕ ನೋಡಿ ಆಪ್ ಮತ್ತೆ ತೆರೆಯಿರಿ.",
+    bootFailed: "ಹೂಟಿ ಪ್ರಾರಂಭವಾಗಲಿಲ್ಲ",
   },
 };
 
