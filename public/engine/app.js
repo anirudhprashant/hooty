@@ -976,6 +976,14 @@ function renderActivity() {
   // activity apart from another.
   if (activity?.id) rendered.root.setAttribute('data-activity-id', activity.id);
 
+  // A screen-reader user gets no clue that the question changed, because the card is replaced without a page load and
+  // nothing on it is announced. This polite live region says what the new card is.
+  const announced = el('p', { class: 'visually-hidden', role: 'status', 'aria-live': 'polite' });
+  const cardWords = (activity.prompt || activity.title || activity.promptText || '').toString().replace(/\s+/g, ' ').trim();
+  const kindWord = activity.type === 'passage' ? t('readAloud') : activity.type === 'mcq' || activity.type === 'truefalse' ? t('question') : '';
+  announced.textContent = `${s.index + 1} / ${s.queue.length}${kindWord ? `, ${kindWord}` : ''}${cardWords ? `: ${cardWords.slice(0, 160)}` : ''}`;
+  s.stage.append(announced);
+
   // render() may call submit synchronously for pair activities that auto-complete
   s.stage.append(rendered.root);
   if (!rendered.root.isConnected) s.stage.append(rendered.root);
