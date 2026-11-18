@@ -1050,6 +1050,46 @@ export const WIDGETS = {
       return { kids, say: jobs[v.part] };
     },
   },
+  twobins: {
+    subject: 'science', about: 'Throw six everyday things into the right dustbin: the green bin for peels, leaves and eggshells that rot into compost, the blue bin for glass, plastic and paper that can be recycled. For waste, separating waste, green and blue dustbins, compost and recycling.',
+    sliders: [['item', 'Pick a thing to throw away', 0, 5, 1, 0], ['bin', 'Which bin? (0 green, 1 blue, 2 not chosen)', 0, 2, 1, 2]],
+    draw(v) {
+      const items = ['banana peel', 'glass bottle', 'dry leaves', 'plastic bag', 'eggshell', 'newspaper'];
+      const kinds = ['green', 'blue', 'green', 'blue', 'green', 'blue'];
+      const name = items[v.item], kind = kinds[v.item], chosen = v.bin !== 2, right = chosen && (v.bin === (kind === 'green' ? 0 : 1));
+      const kids = [R(0, 0, 600, 300, C.cream, { w: 0 }), T(300, 22, 'Which bin does it go in?', { z: 19 })];
+      kids.push(R(180, 34, 240, 84, '#ffffff', { w: 2.5, r: 12 }));
+      if (v.item === 0) {
+        kids.push(s('path', { d: 'M 264 106 Q 276 56 300 52 Q 324 56 336 106 Q 316 88 300 100 Q 284 88 264 106 Z', fill: '#f2c94c', stroke: INK, 'stroke-width': 2 }), CIRC(265, 106, 4, '#8a5a2b', { w: 1 }), CIRC(336, 106, 4, '#8a5a2b', { w: 1 }));
+      } else if (v.item === 1) {
+        kids.push(R(288, 50, 24, 52, '#bfe6f5', { w: 2, r: 5 }), R(294, 38, 12, 16, '#bfe6f5', { w: 2, r: 2 }), R(293, 62, 14, 26, '#7fbfff', { w: 0, r: 2 }));
+      } else if (v.item === 2) {
+        kids.push(s('ellipse', { cx: 284, cy: 76, rx: 24, ry: 12, fill: '#c98b3a', stroke: INK, 'stroke-width': 2, transform: 'rotate(-20 284 76)' }), s('ellipse', { cx: 318, cy: 86, rx: 22, ry: 11, fill: '#a9743d', stroke: INK, 'stroke-width': 2, transform: 'rotate(18 318 86)' }));
+      } else if (v.item === 3) {
+        kids.push(s('path', { d: 'M 280 56 h 40 l 6 48 h -52 Z', fill: '#dfe9f5', stroke: INK, 'stroke-width': 2 }), s('path', { d: 'M 288 56 q 4 -14 12 -14 q 8 0 12 14', fill: 'none', stroke: INK, 'stroke-width': 3 }));
+      } else if (v.item === 4) {
+        kids.push(s('path', { d: 'M 274 94 Q 274 54 300 52 Q 326 54 326 94 Q 313 84 300 92 Q 287 84 274 94 Z', fill: '#fff7e8', stroke: INK, 'stroke-width': 2 }));
+      } else {
+        kids.push(R(272, 54, 56, 42, '#f0ede6', { w: 2, r: 3 }));
+        for (let r = 0; r < 3; r++) kids.push(L(280, 65 + r * 10, 320, 65 + r * 10, '#9aa5b1', 2));
+      }
+      kids.push(T(300, 136, name, { z: 16, w: 700 }));
+      const binAt = (x, col, label, lit, ring) => {
+        kids.push(R(x - 8, 184, 166, 13, lit ? col : '#d8d3e8', { w: 3, r: 5 }), R(x + 52, 190, 46, 7, lit ? '#ffffff' : '#b7b0cc', { w: 0, r: 3 }));
+        kids.push(s('path', { d: `M ${x} 202 L ${x + 16} 274 L ${x + 134} 274 L ${x + 150} 202 Z`, fill: lit ? col : '#f8f5ee', stroke: ring ? '#c0392b' : INK, 'stroke-width': ring ? 6 : 3 }));
+        kids.push(T(x + 75, 244, label, { z: 17, w: 700, f: lit ? '#ffffff' : '#3d2d5e' }));
+        kids.push(T(x + 75, 288, lit ? 'yes, here' : ring ? 'not here' : 'choose me', { z: 13, w: 600, f: lit ? '#1d7a45' : ring ? '#c0392b' : '#7a6b99' }));
+      };
+      const wantGreen = kind === 'green';
+      binAt(70, '#2e9e5b', 'GREEN BIN', right && wantGreen, chosen && !right && v.bin === 0);
+      binAt(365, '#1f63d9', 'BLUE BIN', right && !wantGreen, chosen && !right && v.bin === 1);
+      let msg;
+      if (!chosen) msg = 'Pick a bin: green eats plant and food scraps, blue takes glass, plastic and paper.';
+      else if (right) msg = `Yes. The ${name} goes in the ${kind} bin. ${wantGreen ? 'It rots and becomes compost, food for plants.' : 'It is washed and made into new things: recycling.'}`;
+      else msg = `Not that one. The ${name} does not belong there. ${wantGreen ? 'It is a plant or food scrap, so it rots into compost.' : 'It is glass, plastic or paper, so it can be made again.'}`;
+      return { kids, say: msg };
+    },
+  },
   plate: {
     subject: 'science', about: 'Fill a plate with servings from the three food groups: energy food (roti, rice), body-building food (dal, egg, milk) and protective food (vegetables, fruit), plus junk food on the side. The pieces of the plate grow with the servings, so protective food as the biggest part shows what a balanced plate looks like. For food groups, energy-giving, body-building and protective food, a balanced plate, junk food and healthy eating.',
     sliders: [['grain', 'Energy food: roti, rice (servings)', 0, 4, 1, 0], ['protein', 'Body-building food: dal, egg (servings)', 0, 4, 1, 0], ['veg', 'Protective food: vegetables, fruit (servings)', 0, 4, 1, 0], ['junk', 'Junk food on the side: chips, soft drink (pieces)', 0, 4, 1, 0]],

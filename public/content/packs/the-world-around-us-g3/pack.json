@@ -39653,7 +39653,7 @@
       {
        "id": "the-world-around-us-g3-ch12-l5",
        "title": "Separate Different Types of Waste",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -39721,6 +39721,41 @@
            "p": 158
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch12-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "twobins",
+         "params": {},
+         "title": "Sort the waste into two bins",
+         "tasks": [
+          {
+           "say": "Put the banana peel in the green bin.",
+           "when": "item == 0 and bin == 0",
+           "then": "Food scraps rot and become compost, food for plants."
+          },
+          {
+           "say": "Put the glass bottle in the blue bin.",
+           "when": "item == 1 and bin == 1",
+           "then": "Glass can be washed and made into new glass."
+          },
+          {
+           "say": "Put the eggshell in the green bin.",
+           "when": "item == 4 and bin == 0",
+           "then": "Eggshells are food waste, so they go in the green bin."
+          },
+          {
+           "say": "Put the plastic bag in the blue bin.",
+           "when": "item == 3 and bin == 1",
+           "then": "Plastic can be recycled into new things."
+          }
+         ],
+         "takeaway": "Green bin: peels, leaves and eggshells rot into compost. Blue bin: glass, plastic and paper can be made into new things.",
+         "explanation": "Green bin: peels, leaves and eggshells rot into compost. Blue bin: glass, plastic and paper can be made into new things."
         },
         {
          "type": "worked",

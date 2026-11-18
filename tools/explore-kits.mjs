@@ -640,6 +640,16 @@ export const KITS = {
       { say: 'Find the part a new plant can grow from.', when: 'part == 5', then: 'A seed can grow into a new plant.' },
     ],
   },
+  twobins: {
+    grades: [3, 4], match: [/\bgreen (dust)?bin\b/, /\bblue (dust)?bin\b/, /separat(e|ing) (the )?waste/, /waste[^.\n]{0,30}\bseparat/, /dustbins? of two colou?rs/, /\bcompost/],
+    title: 'Sort the waste into two bins', takeaway: 'Green bin: peels, leaves and eggshells rot into compost. Blue bin: glass, plastic and paper can be made into new things.',
+    tasks: [
+      { say: 'Put the banana peel in the green bin.', when: 'item == 0 and bin == 0', then: 'Food scraps rot and become compost, food for plants.' },
+      { say: 'Put the glass bottle in the blue bin.', when: 'item == 1 and bin == 1', then: 'Glass can be washed and made into new glass.' },
+      { say: 'Put the eggshell in the green bin.', when: 'item == 4 and bin == 0', then: 'Eggshells are food waste, so they go in the green bin.' },
+      { say: 'Put the plastic bag in the blue bin.', when: 'item == 3 and bin == 1', then: 'Plastic can be recycled into new things.' },
+    ],
+  },
   plate: {
     grades: [3, 4], perChapter: { 4: 3 },
     match: [/\bbalanced (plate|meal|diet|food)\b/, /\benergy[- ]giving\b|\benergy[- ]providing\b|\bprovide energy\b|\brich in energy\b/, /\bbody[- ]building\b/, /\bprotective food/, /\bfood groups?\b/, /\bjunk food\b/],
