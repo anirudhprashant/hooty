@@ -209,8 +209,9 @@ one tap away:</p>
 <p class="note">If you followed a link from another site, the page it pointed at has moved. Searching for the lesson
 name on the catalogue page will find it.</p>
 """)
-    return page('Not found | Hooty', 'That page is not here. Open Hooty, or search every book and lesson.',
+    html = page('Not found | Hooty', 'That page is not here. Open Hooty, or search every book and lesson.',
                 '/404.html', body)
+    return html.replace('<meta name="twitter:image"', '<meta name="robots" content="noindex">\n<meta name="twitter:image"', 1)
 
 
 def main():
