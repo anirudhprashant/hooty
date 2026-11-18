@@ -98,7 +98,7 @@ def stamp():
         ld = {
             '@context': 'https://schema.org',
             '@graph': [
-                {'@type': 'Organization', 'name': 'Hooty', 'url': URL, 'logo': f'{URL}/assets/icons/icon-192.png?v=blob1'},
+                {'@type': 'Organization', 'name': 'Hooty', 'url': URL, 'logo': f'{URL.rstrip("/")}/assets/icons/icon-192.png?v=blob1'},
                 {'@type': 'WebSite', 'name': 'Hooty', 'url': URL, 'inLanguage': ['en', 'hi'],
                  'description': 'Your school books, turned into an adventure. A free learning game built from the NCERT textbooks.'},
                 {'@type': 'SoftwareApplication', 'name': 'Hooty', 'url': URL, 'applicationCategory': 'EducationalApplication',
