@@ -108,7 +108,9 @@ def stamp():
             ],
         }
         block = '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False, separators=(',', ':')) + '</script>'
-        page = re.sub(r'<!--LD-->.*?<!--/LD-->', f'<!--LD-->{block}<!--/LD-->', page, count=1, flags=re.S) if '<!--LD-->' in page else page.replace('</head>', block + '\n</head>', 1)
+        # Any block this tool wrote before is removed first, so a page never accumulates two of them.
+        page = re.sub(r'<!--LD-->.*?<!--/LD-->', '', page, count=1, flags=re.S)
+        page = page.replace('</head>', f'<!--LD-->{block}<!--/LD-->\n</head>', 1)
     except Exception as e:
         print('structured data skipped:', str(e)[:120], flush=True)
     data = ['themes/index.json', 'content/index.json'] + [f"themes/{t['id']}/theme.json" for t in json.load(open(f'{PUB}/themes/index.json'))['themes']]
