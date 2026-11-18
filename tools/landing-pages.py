@@ -55,9 +55,9 @@ footer { margin-top:40px; font-size:14px; color:var(--dim); border-top:1px solid
 """
 
 
-def page(title, desc, path, body, script=''):
+def page(title, desc, path, body, script='', lang='en'):
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{esc(lang)}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -283,7 +283,7 @@ pictures and read-aloud.</p>
 {ld_block(book_ld(b, chapters, n))}
 {ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/'), (title, f'/books/{slug}.html')]))}"""
         os.makedirs(outdir, exist_ok=True)
-        open(os.path.join(outdir, f'{slug}.html'), 'w').write(page(f'{title} | Hooty', desc, f'/books/{slug}.html', body))
+        open(os.path.join(outdir, f'{slug}.html'), 'w').write(page(f'{title} | Hooty', desc, f'/books/{slug}.html', body, lang=b.get('language') or 'en'))
         urls.append((f'{SITE}/books/{slug}.html', TODAY))
 
         for idx, (u, c) in enumerate(chapters):
@@ -318,7 +318,7 @@ pictures and read-aloud.</p>
 {ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/'), (title, f'/books/{slug}.html'), (ctitle, f'/books/{slug}/{cid}.html')]))}"""
             os.makedirs(os.path.join(outdir, slug), exist_ok=True)
             open(os.path.join(outdir, slug, f'{cid}.html'), 'w').write(
-                page(f'{ctitle} | {title} | Hooty', cdesc, f'/books/{slug}/{cid}.html', cbody))
+                page(f'{ctitle} | {title} | Hooty', cdesc, f'/books/{slug}/{cid}.html', cbody, lang=b.get('language') or 'en'))
             urls.append((f'{SITE}/books/{slug}/{cid}.html', TODAY))
 
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
