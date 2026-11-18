@@ -122,6 +122,16 @@ def stamp():
 def upload():
     r = subprocess.run(['rsync', '-a', '--exclude', 'work', '--exclude', 'sources', '--exclude', 'node_modules', '--exclude', '.venv-audio', '--exclude', '__pycache__', f'{ROOT}/', TARGET], capture_output=True, text=True)
     if r.returncode not in (0, 24): sys.exit('upload failed: ' + r.stderr[-300:])
+    # rsync copies but never removes, and landing-pages.py rebuilds a book's pages under fresh names
+    # (ch2-dada-dadi.html, not ch02-.html), so the old chapter pages would sit on the site forever beside
+    # the new ones. Clear any chapter page in a live book folder that this build did not write.
+    for slug in os.listdir(f'{PUB}/books'):
+        src, dst = f'{PUB}/books/{slug}', f'{TARGET}/books/{slug}'
+        if not os.path.isdir(src) or not os.path.isdir(dst): continue
+        keep = {f for f in os.listdir(src) if f.endswith('.html')}
+        for f in os.listdir(dst):
+            if f.endswith('.html') and f not in keep:
+                os.remove(os.path.join(dst, f))
 
 def smoke():
     """Fetch what a child's browser would. Every picture of every book, the code, and a sample of voice clips."""
