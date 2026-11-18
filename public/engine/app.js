@@ -703,7 +703,10 @@ function screenPath() {
   return wrap;
 }
 
-const questionCount = (lesson) => lesson.activities.filter((a) => !['concept', 'hook', 'passage', 'media', 'funfact'].includes(a.type)).length;
+// "N questions" must mean questions the app marks: explore cards, flashcards, watched answers and written answers are
+// teaching, not questions, so a parent counting the cards found the number too high on 3,513 of 3,618 lessons.
+const QUESTIONS = new Set(['mcq', 'truefalse', 'fillblank', 'matchpairs', 'dragorder', 'draglabel', 'typeanswer', 'listenpick']);
+const questionCount = (lesson) => lesson.activities.filter((a) => QUESTIONS.has(a.type)).length;
 
 function trailNode(it, rec, isCurrent, cell, pack, unit) {
   const boss = it.kind === 'boss';
