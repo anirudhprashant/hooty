@@ -184,6 +184,7 @@ export const strings = {
     importReplace: "Importing replaces the progress on this device. Continue?",
     importDoneOne: "Imported {who}: 1 lesson done, {xp} XP.",
     importDoneMany: "Imported {who}: {n} lessons done, {xp} XP.",
+    jumpToUnit: "Jump to a part",
   },
   hi: {
     appName: 'लूमी',
@@ -367,6 +368,7 @@ export const strings = {
     importReplace: "आयात करने पर इस फ़ोन की प्रगति बदल जाएगी। आगे बढ़ें?",
     importDoneOne: "{who} आयात हुआ: 1 पाठ पूरा, {xp} XP।",
     importDoneMany: "{who} आयात हुआ: {n} पाठ पूरे, {xp} XP।",
+    jumpToUnit: "किसी हिस्से पर जाएँ",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -550,6 +552,7 @@ export const strings = {
     importReplace: "ಆಮದು ಮಾಡಿದರೆ ಈ ಸಾಧನದ ಪ್ರಗತಿ ಬದಲಾಗುತ್ತದೆ. ಮುಂದುವರಿಯುವುದೇ?",
     importDoneOne: "{who} ಆಮದು ಆಯಿತು: 1 ಪಾಠ ಮುಗಿಯಿತು, {xp} XP.",
     importDoneMany: "{who} ಆಮದು ಆಯಿತು: {n} ಪಾಠ ಮುಗಿದವು, {xp} XP.",
+    jumpToUnit: "ಒಂದು ಭಾಗಕ್ಕೆ ಹೋಗಿ",
   },
 };
 

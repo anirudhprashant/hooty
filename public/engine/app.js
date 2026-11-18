@@ -601,6 +601,20 @@ function screenPath() {
   wrap.append(el('h2', { class: 'section-title', text: pack.title }));
   wrap.append(el('p', { class: 'section-sub', text: t('trailIntro') }));
 
+  // A big book is fifteen screens of trail. A row of unit chips at the top lets a child jump to the part they want
+  // instead of scrolling past everything they have already done.
+  if (pack.units.length > 1) {
+    const chips = el('div', { class: 'unit-jump', role: 'navigation', 'aria-label': t('jumpToUnit') },
+      pack.units.map((unit) => el('button', {
+        class: 'unit-jump__chip', type: 'button', text: unit.title,
+        onclick: () => {
+          const at = document.getElementById(`unit-${unit.id}`);
+          if (at) at.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        },
+      })));
+    wrap.append(chips);
+  }
+
   let currentMarked = false;
   let upNextShown = false;
   for (const unit of pack.units) {
@@ -612,7 +626,7 @@ function screenPath() {
     const doneCount = items.filter((x) => l.lessonsDone[x.id]).length;
     const unitIcon = getTheme()?.unitIcons?.[unit.id];
 
-    const block = el('section', { class: 'unit-block' });
+    const block = el('section', { class: 'unit-block', id: `unit-${unit.id}` });
     block.append(el('div', { class: 'unit-head' }, [
       el('span', { class: 'unit-head__icon' }, [unitIcon ? el('img', { src: themeAsset(unitIcon), alt: '' }) : icon('book', { size: 34 })]),
       el('div', {}, [

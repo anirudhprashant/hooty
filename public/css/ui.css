@@ -1263,3 +1263,32 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
   box-shadow: 0 6px 0 color-mix(in srgb, var(--accent) 65%, #000), 0 0 0 4px var(--surface), 0 0 0 7px var(--accent);
   border-radius: 999px;
 }
+
+/* The trail's unit jump row: one line, scrolled sideways, so a long book name never stacks the whole list vertically. */
+.unit-jump {
+  display: flex;
+  gap: var(--s2, 8px);
+  margin: 0 0 var(--s4, 16px);
+  padding: 2px 0 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.unit-jump::-webkit-scrollbar { display: none; }
+.unit-jump__chip {
+  flex: 0 0 auto;
+  max-width: 15rem;
+  padding: 9px 14px;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text);
+  background: var(--surface);
+  border: 2px solid var(--line, #e2d4f0);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.unit-jump__chip:active { background: var(--primary-soft, #f1e4ff); }
