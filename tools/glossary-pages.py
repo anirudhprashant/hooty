@@ -16,6 +16,7 @@ Style: the same shell and classes as /books/ (books.css), so it reads as part of
 """
 import glob
 import html
+import unicodedata
 import importlib.util
 import json
 import os
@@ -79,10 +80,28 @@ def chapter_href(book, ch):
     return None
 
 
+DEVA = re.compile(r'[\u0900-\u097f]')
+LATIN = re.compile(r'[A-Za-z]')
+
+
+def usable(term, meaning, lang):
+    """A word is only printed when it is written in its book's own script. hindi-g10's glossary was extracted from a
+    PDF that stored Devanagari in a legacy ASCII font, so 41 of its 52 words read "mUeu" with a meaning to match:
+    unreadable, and impossible to match against the lesson text, which meant they had never highlighted either."""
+    if not term or not meaning:
+        return False
+    if lang == 'hi':
+        return bool(DEVA.search(term)) and bool(DEVA.search(meaning))
+    # An English book may define a symbol rather than a word: mathematics-g8 explains "::" as the proportion symbol.
+    # Symbols are kept (they are real entries with real meanings); only Hindi books need the script test above.
+    return True
+
+
 def records(bs):
     """One record per word, merging the same word and meaning across books into one entry with several sources."""
     seen = {}
     order = []
+    dropped = {}
     for book in bs:
         lang = book.get('language', 'en')
         title = book.get('title') or book['id']
@@ -90,6 +109,9 @@ def records(bs):
             term = (t.get('term') or '').strip()
             meaning = (t.get('meaning') or '').strip()
             if not term or not meaning:
+                continue
+            if not usable(term, meaning, lang):
+                dropped[book['id']] = dropped.get(book['id'], 0) + 1
                 continue
             key = (term.lower(), meaning.lower())
             src = (t.get('src') or [{}])[0]
@@ -112,6 +134,9 @@ def records(bs):
                    'hl': devanagari_letter(term)}
             seen[key] = rec
             order.append(key)
+    if dropped:
+        print('words skipped because they are not in their book\'s script:',
+              ', '.join(f'{k} {v}' for k, v in sorted(dropped.items())))
     return [seen[k] for k in order]
 
 
@@ -147,6 +172,20 @@ def word_card(rec, in_book=False, level=3):
         parts.append(f'<div class="meta">{where}</div>')
     parts.append('</div>')
     return ''.join(parts)
+
+
+def hi_slug(ch):
+    """A Devanagari letter needs a file name a link can carry: "क" is `ka`, "आ" is `aa`, a vowel sign is `matra-aa`.
+    The letters are read straight from the Unicode name, so nothing has to be typed by hand."""
+    try:
+        name = unicodedata.name(ch).lower()
+    except ValueError:
+        return None
+    for prefix, repl in (('devanagari letter ', ''), ('devanagari vowel sign ', 'matra-'),
+                         ('devanagari sign ', 'sign-')):
+        if name.startswith(prefix):
+            return repl + name[len(prefix):].replace(' ', '-')
+    return None
 
 
 def count_by(items, key):
@@ -323,6 +362,33 @@ def build():
                     script='<script src="/glossary/word-search.js" defer></script>'))
         urls.append((f'{SITE}{path}', TODAY))
 
+    # --- Hindi letter pages ------------------------------------------------------------------------------
+    hi_letters = {}
+    for r in hi:
+        slug = hi_slug(r['hl']) if r['hl'] else None
+        if slug:
+            hi_letters.setdefault((r['hl'], slug), []).append(r)
+    hi_rail_cells = []
+    for (letter, slug), words in sorted(hi_letters.items(), key=lambda kv: kv[0][0]):
+        words.sort(key=lambda r: (r['term'], r['meaning']))
+        cells = ''.join(word_card(r, level=2) for r in words)
+        body = (body_head
+                + f'<h1>{esc(letter)} से शुरू होने वाले शब्द</h1>'
+                + f'<p class="lede">{len(words):,} शब्द, आसान भाषा में, हर शब्द के साथ उसकी किताब और पृष्ठ।</p>'
+                + '<div class="letters">' + ''.join(
+                    f'<a class="{"is-on" if l == letter else ""}" href="/glossary/hi-{sl}.html">{esc(l)}'
+                    f'<span class="note">{len(w):,}</span></a>'
+                    for (l, sl), w in sorted(hi_letters.items(), key=lambda kv: kv[0][0])) + '</div>'
+                + cells
+                + '<p class="more"><a class="cta cta--quiet" href="/glossary/">पूरा शब्द-भंडार</a></p>')
+        path = f'/glossary/hi-{slug}.html'
+        open(os.path.join(out_dir, f'hi-{slug}.html'), 'w', encoding='utf-8').write(
+            lp.page(f'{letter} से शुरू होने वाले शब्द — हूटी शब्द-भंडार',
+                    f'{len(words)} शब्द जो {letter} से शुरू होते हैं, आसान भाषा में, अपने अध्याय के साथ।',
+                    path, body, lang='hi'))
+        urls.append((f'{SITE}{path}', TODAY))
+        hi_rail_cells.append(f'<a href="/glossary/hi-{slug}.html">{esc(letter)}<span class="note">{len(words):,}</span></a>')
+
     # --- the index -------------------------------------------------------------------------------------
     rail = letter_grid(letters)
     by_class = {}
@@ -357,6 +423,7 @@ def build():
         + '</div>'
         + '<h2>Browse by letter</h2>'
         + (rail if rail else '')
+        + (f'<h2>Hindi words, by letter</h2><div class="letters">{"".join(hi_rail_cells)}</div>' if hi_rail_cells else '')
         + (f'<h2>Words from Hindi books</h2>{hindi_rail}' if hindi_rail else '')
         + f'<h2>Every book, word by word <span class="note">{len(bs)} books</span></h2>'
         + ''.join(book_cards)
