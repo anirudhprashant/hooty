@@ -254,6 +254,11 @@ export const strings = {
     playClip: "Play",
     bossLabel: "Chapter boss",
     pictureCredit: "Picture",
+    moveThroughTime: "Move through time",
+    bce: "BCE",
+    ce: "CE",
+    mostRecentEvent: "Most recent event: {label} ({year}).",
+    noEventYet: "No event yet.",
   },
   hi: {
     appName: 'हूटी',
@@ -507,6 +512,11 @@ export const strings = {
     playClip: "सुनिए",
     bossLabel: "अध्याय बॉस",
     pictureCredit: "चित्र",
+    moveThroughTime: "समय में आगे बढ़िए",
+    bce: "ई.पू.",
+    ce: "ई.",
+    mostRecentEvent: "सबसे नई घटना: {label} ({year})।",
+    noEventYet: "अभी कोई घटना नहीं।",
   },
   kn: {
     appName: 'ಹೂಟಿ',
@@ -760,6 +770,11 @@ export const strings = {
     playClip: "ಕೇಳಿಸಿ",
     bossLabel: "ಅಧ್ಯಾಯ ಬಾಸ್",
     pictureCredit: "ಚಿತ್ರ",
+    moveThroughTime: "ಸಮಯದಲ್ಲಿ ಮುಂದೆ ಸಾಗಿ",
+    bce: "ಕ್ರಿ.ಪೂ.",
+    ce: "ಕ್ರಿ.ಶ.",
+    mostRecentEvent: "ಇತ್ತೀಚಿನ ಘಟನೆ: {label} ({year}).",
+    noEventYet: "ಇನ್ನೂ ಯಾವುದೇ ಘಟನೆ ಇಲ್ಲ.",
   },
 };
 

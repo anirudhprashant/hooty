@@ -1052,10 +1052,20 @@ export const KITS = {
     tasks: [{ say: 'Show 400 km on the map.', when: 'cm * km == 400', then: 'Map distance x scale = real distance: 400 km.' }],
   },
   timeline: {
-    grades: [6, 10], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/, /\b(?:1[0-9]{3}|20[0-2][0-9])\b/, /\b\d{1,2}(?:st|nd|rd|th) century\b/, /\bmaurya|gupta|mughal|chola|sultanate|harappan?\b/],
+    subjects: ['social', 'hindi'], languages: ['en', 'hi'],
+    grades: [6, 10], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/, /\b(?:1[0-9]{3}|20[0-2][0-9])\b/, /\b\d{1,2}(?:st|nd|rd|th) century\b/, /\bmaurya|gupta|mughal|chola|sultanate|harappan?\b/,
+      /सन्|संवत्|ईस्वी/, /शताब्दी/, /राजवंश|साम्राज्य|सम्राट/, /इतिहास/, /(?:1[6-9]\d{2}|20[0-2]\d)/],
     // the lesson's own dates if it has three, otherwise the whole chapter's dates when this lesson mentions one of them.
     // A bare year only counts in a lesson that also reads as history, so an economics chart of 2025 gets no timeline.
     params: (text, facts, chapter) => {
+      // a Hindi chapter: the words around the year are Hindi, so the English date reader finds nothing
+      if (/[\u0900-\u097F]/.test(text || '')) {
+        // A single lesson rarely has three dated facts of its own, so fall back to the dates the whole chapter mentions,
+        // which is what the English side does too: the idea is the chapter's, not the lesson's.
+        const own = datedEventsHi(facts || []);
+        const events = own.length >= 3 ? own : datedEventsHi(chapter || []);
+        return { events, hist: HI_HIST.test(text || ''), hi: true };
+      }
       const own = datedEvents(facts || []);
       // A lesson about measuring time ('Timelines, Centuries and Millenniums') has no dated events of its own, and the
       // widget refuses to attach without three. Give it the standard anchors so the idea can still be shown.
@@ -1072,9 +1082,20 @@ export const KITS = {
       return { events: datedEvents(facts || [], 1).length ? datedEvents(chapter || []) : [], hist };
     },
     usable: (p) => p.events.length >= 3 && p.hist, minScore: 1, perChapter: 1,
-    title: 'Walk through time', takeaway: 'Put events in order, and remember that BCE years count down towards 1 CE.',
-    tasks: (p) => {
+    title: { en: 'Walk through time', hi: 'समय की रेखा पर चलिए' },
+    takeaway: {
+      en: 'Put events in order, and remember that BCE years count down towards 1 CE.',
+      hi: 'घटनाओं को क्रम में रखिए, और याद रखिए कि ई.पू. के वर्ष 1 ई. की ओर उलटी गिनती में चलते हैं।',
+    },
+    tasks: (p, lang) => {
       const ev = [...p.events].sort((a, b) => a.year - b.year), yr = (y) => (y < 0 ? `${-y} BCE` : `${y} CE`);
+      if (lang === 'hi') {
+        const yhi = (y) => (y < 0 ? `${-y} ई.पू.` : `${y} ई.`);
+        return [
+          { say: `उस समय पर जाइए जब यह हुआ: ${ev[1].label}.`, when: `y >= ${ev[1].year}`, then: `वह ${yhi(ev[1].year)} में हुआ था।` },
+          { say: 'आख़िरी घटना तक आगे बढ़िए।', when: `y >= ${ev[ev.length - 1].year}`, then: `यहाँ की सबसे नई घटना ${yhi(ev[ev.length - 1].year)} की है।` },
+        ];
+      }
       return [
         { say: `Move to when this happened: ${ev[1].label.replace(/[.]+$/, '')}.`, when: `y >= ${ev[1].year}`, then: `That was ${yr(ev[1].year)}.` },
         { say: 'Go forward to the last event.', when: `y >= ${ev[ev.length - 1].year}`, then: `The latest event here is from ${yr(ev[ev.length - 1].year)}.` },
@@ -1202,6 +1223,34 @@ export const KITS = {
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
 // Labels are the fact itself with the date phrase taken off and cut at a whole word, so they read as a short event.
 const DATE_TAIL = /[,]?\s*(?:\b(?:in|around|about|by|from|of|during|until|till|after|before|between|the|latter|early|late|part)\b\s*)*(?:\d{1,4}(?:\s*(?:or|and|to|-)\s*\d{1,4})?\s*(?:BCE|BC|CE|AD)?|\d{1,2}(?:st|nd|rd|th) centur(?:y|ies)(?: (?:BCE|BC|CE|AD))?|(?:\d{1,2}\s+)?(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{3,4})\b.*$/i;
+// Hindi dates. datedEvents above looks for English month names and prepositions ("in 1916"), which a Hindi sentence
+// never has, so a Hindi chapter about a poet's life had years in it and still produced no timeline. A year counts only
+// when it is used as a date: सन् / ई. / संवत् before it, or a Hindi time word right after it.
+const HI_HIST = /इतिहास|प्राचीन|मध्यकाल|शताब्दी|राजवंश|साम्राज्य|सम्राट|शासन|स्वतंत्रता|आंदोलन|संग्राम|युद्ध|संविधान|कवि|रचना|जन्म|स्थापना|निर्माण/;
+function labelHi(sentence) {
+  let c = sentence.replace(/\s+/g, ' ').trim().replace(/[।.!]+$/, '');
+  if (c.length > 52) c = c.slice(0, 52).replace(/\s+\S*$/, '');
+  return c;
+}
+function datedEventsHi(facts, need = 3) {
+  const out = [], seen = new Set();
+  for (const f of facts || []) {
+    const sentence = String(f.say || '').replace(/\s+/g, ' ').trim();
+    const m = sentence.match(/(?<!\d)(1[6-9]\d{2}|20[0-2]\d)(?!\d)/);
+    if (!m) continue;
+    const y = Number(m[1]);
+    if (seen.has(y)) continue;
+    const near = sentence.slice(Math.max(0, m.index - 22), m.index + m[0].length + 16);
+    const before = /सन्|ई\.|ईस्वी|संवत्|शताब्दी/.test(near);
+    const after = /^\s*(?:में|को|तक|से|के\s+(?:बाद|पहले|समय|दौरान|जन्म)|की\s+(?:रचना|स्थापना))/.test(sentence.slice(m.index + m[0].length));
+    if (!before && !after) continue;
+    seen.add(y);
+    out.push({ year: y, label: labelHi(sentence) });
+  }
+  // three dates are what the widget needs to be worth showing
+  return out.length >= (need === 1 ? 1 : Math.min(need, out.length)) ? out.sort((a, b) => a.year - b.year) : out.sort((a, b) => a.year - b.year);
+}
+
 function label(sentence) {
   let c = sentence.replace(/\s+/g, ' ').trim().replace(/[.!]+$/, '');
   const cut = c.replace(DATE_TAIL, '').trim();

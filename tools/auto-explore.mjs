@@ -30,14 +30,19 @@ const score = (kit, title, text) => {
 };
 
 // which simulations suit which kind of book (a kit's `subjects` adds more, e.g. the ruler is in maths and science books)
-const KIND = { Mathematics: ['maths'], Science: ['science'], 'Social Science': ['social'], 'The World Around Us': ['science', 'social'], Physics: ['science', 'maths'], Chemistry: ['science'], Biology: ['science'], Geography: ['social'], History: ['social'], English: ['english'] };
+const KIND = { Mathematics: ['maths'], Science: ['science'], 'Social Science': ['social'], 'The World Around Us': ['science', 'social'], Physics: ['science', 'maths'], Chemistry: ['science'], Biology: ['science'], Geography: ['social'], History: ['social'], English: ['english'], Hindi: ['hindi'], Kannada: ['kannada'] };
+// A kit is written in one language unless it says otherwise. `languages` lets a kit serve a Hindi book, and its
+// title, takeaway and task wording are given per language as { en: ..., hi: ... }.
+const pick = (v, lang) => (v && typeof v === 'object' && !Array.isArray(v) && (lang in v || 'en' in v) ? (v[lang] ?? v.en) : v);
 let added = 0, looked = 0;
 const tally = {};
 for (const slug of books) {
   const sub = SUBJECTS[slug];
   if (!sub) { console.error(`unknown book ${slug}`); continue; }
   const grade = Number(sub.grade) || 6, work = join(ROOT, sub.work), kinds = KIND[sub.name] || [];
-  if (!kinds.length || sub.language && sub.language !== 'en') continue;   // literature and Hindi books have no simulations
+  const lang = sub.language || 'en';
+  // Literature books still get nothing, but a Hindi book now gets a simulation when a kit is written for Hindi.
+  if (!kinds.length) continue;
   for (const ch of readdirSync(work).filter((d) => /^ch\d\d$/.test(d) && (!only || Number(d.slice(2)) === only)).sort()) {
     const factsFile = join(work, ch, 'facts.json'), out = join(work, ch, 'explore.json');
     if (!existsSync(factsFile)) continue;
@@ -52,7 +57,8 @@ for (const slug of books) {
       looked++;
       const title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
       const ranked = Object.entries(KITS)
-        .filter(([id, k]) => WIDGETS[id] && [WIDGETS[id].subject, ...(k.subjects || [])].some((x) => kinds.includes(x)) && grade >= k.grades[0] && grade <= k.grades[1])
+        .filter(([id, k]) => WIDGETS[id] && (k.languages || ['en']).includes(lang)
+          && [WIDGETS[id].subject, ...(k.subjects || [])].some((x) => kinds.includes(x)) && grade >= k.grades[0] && grade <= k.grades[1])
         .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= (typeof x[1].minScore === 'object' ? (x[1].minScore[grade] ?? 3) : (x[1].minScore || 3))).sort((a, b) => b[2] - a[2]);   // best score first. minScore: a number, or { grade: n } to ask for more evidence in one class
       for (const [id, kit] of ranked) {
         const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || []), grade) : {};
@@ -60,9 +66,9 @@ for (const slug of books) {
         const cap = typeof kit.perChapter === 'object' ? (kit.perChapter[grade] ?? 2) : (kit.perChapter || 2);   // a number, or { grade: number } to raise it for one class
         if ((used[slot(id, params)] || 0) >= cap) continue;
         const full = { ...(WIDGETS[id].params || {}), ...params };
-        const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params) : kit.tasks).filter((t) => { try { return t.ok || canReach(id, full, t.when); } catch { return false; } });   // t.ok: true = checked by hand (the search is a sample, so an exact sum over many sliders can be missed)
+        const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params, lang) : kit.tasks).map((t) => ({ ...t, say: pick(t.say, lang), then: pick(t.then, lang) })).filter((t) => { try { return t.ok || canReach(id, full, t.when); } catch { return false; } });   // t.ok: true = checked by hand (the search is a sample, so an exact sum over many sliders can be missed)
         if (!tasks.length) continue;
-        have[key] = { widget: id, ...(kit.params ? { params } : {}), title: kit.title, tasks: tasks.map(({ ok, ...t }) => t), takeaway: kit.takeaway, auto: true };
+        have[key] = { widget: id, ...(kit.params ? { params } : {}), title: pick(kit.title, lang), tasks: tasks.map(({ ok, ...t }) => t), takeaway: pick(kit.takeaway, lang), auto: true };
         used[slot(id, params)] = (used[slot(id, params)] || 0) + 1; added++; tally[id] = (tally[id] || 0) + 1;
         console.log(`${slug} ${ch} lesson ${key} "${title.slice(0, 50)}": ${id}`);
         break;

@@ -3,6 +3,8 @@
 // the child sees is right by construction. A lesson only chooses a widget and sets challenges (tools/add-explore.py).
 // All drawing is SVG built in code; no files, no network.
 
+import { t as words } from './i18n.js';   // `t` is already a draw() parameter name
+
 const NS = 'http://www.w3.org/2000/svg';
 const INK = '#2a1a4a', C = { o: '#ff7a59', y: '#ffb703', b: '#3a86ff', g: '#06a77d', p: '#8338ec', sky: '#bde0fe', cream: '#fff7e8' };
 export const W = 600, H = 300;
@@ -19,7 +21,7 @@ const CIRC = (cx, cy, r, f, o = {}) => s('circle', { cx, cy, r, fill: f, stroke:
 const R = (x, y, w, h, f, o = {}) => s('rect', { x, y, width: w, height: h, fill: f, stroke: o.s || INK, 'stroke-width': o.w ?? 2, rx: o.r ?? 0, ...(o.x || {}) });
 const rad = (d) => (d * Math.PI) / 180;
 const num = (x, p = 2) => String(+Number(x).toFixed(p));
-const year = (y) => (y < 0 ? `${-y} BCE` : y === 0 ? '1 CE' : `${y} CE`);
+const year = (y) => (y < 0 ? `${-y} ${words('bce')}` : y === 0 ? `1 ${words('ce')}` : `${y} ${words('ce')}`);
 
 function arc(cx, cy, r, a0, a1) {   // angles in degrees, counter-clockwise from the +x axis
   const x0 = cx + r * Math.cos(rad(a0)), y0 = cy - r * Math.sin(rad(a0)), x1 = cx + r * Math.cos(rad(a1)), y1 = cy - r * Math.sin(rad(a1));
@@ -205,19 +207,20 @@ export const WIDGETS = {
   },
   timeline: {
     subject: 'social', about: 'A timeline you scrub through BCE and CE, with the lesson\'s own dated events marked. For history, chronology, BCE and CE. Param events is a list of {"year": number (negative for BCE), "label": short text} taken from the facts. Sliders span from just before the first event to just after the last.',
-    params: { events: [] }, dynamicSliders: (p) => { const y = (p.events || []).map((e) => e.year); const lo = Math.min(...y), hi = Math.max(...y), pad = Math.max(50, Math.round((hi - lo) / 10)); return [['y', 'Move through time', lo - pad, hi + pad, Math.max(1, Math.round((hi - lo) / 100)), lo - pad]]; },
+    params: { events: [] }, dynamicSliders: (p) => { const y = (p.events || []).map((e) => e.year); const lo = Math.min(...y), hi = Math.max(...y), pad = Math.max(50, Math.round((hi - lo) / 10)); return [['y', words('moveThroughTime'), lo - pad, hi + pad, Math.max(1, Math.round((hi - lo) / 100)), lo - pad]]; },
     draw(v, p, t, sl) {
       sl = sl && sl.length ? sl : (this.dynamicSliders ? this.dynamicSliders(p) : []);
       const [, , lo, hi] = sl[0], X = (y) => 30 + ((y - lo) / (hi - lo)) * 540, kids = [L(30, 180, 570, 180, INK, 6)];
       const events = (p.events || []).slice().sort((a, b) => a.year - b.year);
-      if (lo < 0 && hi > 0) { kids.push(L(X(0), 165, X(0), 195, C.p, 4), T(X(0), 215, 'BCE | CE', { z: 14 })); }
+      if (lo < 0 && hi > 0) { kids.push(L(X(0), 165, X(0), 195, C.p, 4), T(X(0), 215, `${words('bce')} | ${words('ce')}`, { z: 14 })); }
       events.forEach((e) => kids.push(CIRC(X(e.year), 180, 9, v.y >= e.year ? C.g : '#fff', { w: 3 })));
       // the events reached so far, newest last, as dated lines across the top (at most four, each cut at a whole word)
       const fit = (str) => (str.length > 54 ? `${str.slice(0, 54).replace(/\s+\S*$/, '')}...` : str);
       events.filter((e) => v.y >= e.year).slice(-4).forEach((e, i) => kids.push(T(30, 34 + i * 26, `${year(e.year)}: ${fit(e.label)}`, { z: 14, a: 'start', w: 600 })));
       kids.push(L(X(v.y), 150, X(v.y), 210, C.o, 5));
       const last = events.filter((e) => e.year <= v.y).pop();
-      return { kids, say: `${year(v.y)}.${last ? ` Most recent event: ${last.label} (${year(last.year)}).` : ' No event yet.'}` };
+      // 'ई.' already ends in a full stop, so it takes a space instead of another dot
+      return { kids, say: `${year(v.y)}${/\.$/.test(year(v.y)) ? ' ' : '. '}${last ? words('mostRecentEvent', { label: last.label, year: year(last.year) }) : words('noEventYet')}` };
     },
   },
   timezone: {
