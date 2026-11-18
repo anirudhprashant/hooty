@@ -192,6 +192,7 @@ export const strings = {
     trueOrFalse: "True or false",
     true: "True",
     false: "False",
+    branchTest: "Chapter test",
   },
   hi: {
     appName: 'लूमी',
@@ -383,6 +384,7 @@ export const strings = {
     trueOrFalse: "सही या ग़लत",
     true: "सही",
     false: "ग़लत",
+    branchTest: "अध्याय परीक्षा",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -574,6 +576,7 @@ export const strings = {
     trueOrFalse: "ಸರಿ ಅಥವಾ ತಪ್ಪು",
     true: "ಸರಿ",
     false: "ತಪ್ಪು",
+    branchTest: "ಅಧ್ಯಾಯ ಪರೀಕ್ಷೆ",
   },
 };
 

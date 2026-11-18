@@ -705,9 +705,13 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
   const nQuestions = questionCount(it.lesson);
   const questionsWord = t(nQuestions === 1 ? 'question' : 'questions');
   const savedAt = !rec && activeLearner()?.inProgress?.[it.id];
+  // A chapter test is 18 cards and is not a quick five minutes; its own line says so instead of a minute count.
+  const isTest = /-exam$/i.test(it.lesson.lessonId || it.id || '');
   const meta = boss
     ? `Chapter boss · ${nQuestions} ${questionsWord}`
-    : savedAt
+    : isTest
+      ? `${t('branchTest')} · ${nQuestions} ${questionsWord}`
+      : savedAt
       ? `${t('startedWord')} · ${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`
       : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`;
   // A lesson the child started and left: it keeps its place, and says so.
