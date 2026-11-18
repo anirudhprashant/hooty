@@ -32,6 +32,8 @@ p { margin:0 0 14px; }
 .cta { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:700;
        padding:13px 22px; border-radius:999px; margin:6px 0 4px; }
 .cta:hover { filter:brightness(1.06); }
+.cta--quiet { background:transparent; color:var(--accent); border:2px solid var(--accent); padding:11px 20px; }
+.cta--quiet:hover { background:color-mix(in srgb, var(--accent) 10%, transparent); filter:none; }
 .note { font-size:14px; color:var(--dim); }
 .more { font-size:15px; color:var(--dim); margin:14px 0 0; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 16px; margin:10px 0; }
