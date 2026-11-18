@@ -258,10 +258,25 @@ no sign-up, and nobody can sell it.</p>
                 f'<div class="card"><h3><a href="/books/{esc(slug)}/{esc(page_slug(c))}.html">{esc(c.get("title"))}</a></h3>'
                 f'<div class="meta"><a href="/books/{esc(slug)}/{esc(page_slug(c))}.html">{len(ls)} lesson'
                 f'{"s" if len(ls) != 1 else ""}</a></div></div>')
+        same_class = [x for x in books if str(x.get('grade')) == str(b.get('grade')) and x['id'] != slug]
+        # the next class up, in class order; the last class points back to Class 1 so the trail never stops
+        grades = sorted({str(x.get('grade')) for x in books if x.get('grade')}, key=lambda g: int(g) if g.isdigit() else 99)
+        here = str(b.get('grade'))
+        nxt_grade = grades[(grades.index(here) + 1) % len(grades)] if here in grades else (grades[0] if grades else '')
+        others = [x for x in books if str(x.get('grade')) == nxt_grade and x['id'] != slug]
+        siblings = ''
+        if same_class:
+            siblings += 'Other books in Class ' + esc(b.get('grade')) + ': ' + ' &middot; '.join(
+                f'<a href="/books/{esc(x["id"])}.html">{esc(x.get("subject") or x.get("title"))}</a>' for x in same_class) + '. '
+        if others:
+            nxt = others[0]
+            siblings += f'<a href="/books/{esc(nxt["id"])}.html">{esc(nxt.get("title"))}</a>.'
+        siblings = f'<p class="more">{siblings}</p>' if siblings else ''
         body = f"""<div class="crumbs"><a href="/">Hooty</a> / <a href="/books/">All books</a> / {esc(title)}</div>
 <h1>{esc(title)}</h1>
 <p class="lede">{len(chapters)} chapters, {n} short lessons. Each one is a few minutes, with questions,
 pictures and read-aloud.</p>
+{siblings}
 <p><a class="cta" href="/#/book/{esc(slug)}">Open this book in Hooty</a></p>
 <h2>Chapters</h2>
 {''.join(items)}
