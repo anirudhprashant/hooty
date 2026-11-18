@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 PUB = os.path.join(ROOT, 'public')
 SITE = 'https://hooty.org'
-TODAY = '2026-11-16'
+TODAY = __import__('datetime').date.today().isoformat()
 
 esc = lambda s: html.escape(str(s or ''), quote=True)
 
