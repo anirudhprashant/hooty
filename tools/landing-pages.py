@@ -172,6 +172,31 @@ def lessons_of(chapter):
     return out
 
 
+def credits_html(book):
+    """The picture credits for one book, in reading order: every lesson's photo, its maker and its licence."""
+    rows = []
+    for u in book.get('units') or []:
+        for c in u.get('chapters') or []:
+            for l in (c.get('lessons') or []) + ([c['boss']] if c.get('boss') else []):
+                if not l:
+                    continue
+                cr = l.get('sceneCredit') or {}
+                if not cr.get('text'):
+                    continue
+                who = cr.get('creator') or ''
+                lic = cr.get('license') or ''
+                link = cr.get('licenseUrl') or cr.get('url') or ''
+                name = esc(l.get('title') or l.get('id'))
+                credit = esc(cr['text'])
+                rows.append(f'<li><b>{name}</b> — {credit}'
+                            + (f' ({esc(who)})' if who and who not in cr['text'] else '')
+                            + (f' <span class="meta">{esc(lic)}</span>' if lic else '')
+                            + (f' <a href="{esc(link)}" rel="noopener noreferrer">licence</a>' if link else '')
+                            + '</li>')
+    return ('<h2>Picture credits</h2><p class="lede">Every photograph in this book, with its maker and licence, in the '
+            'order the lessons appear.</p><ul class="lessons">' + ''.join(rows) + '</ul>')
+
+
 def main():
     # Pages from an older run stay on disk with their old names (ch02-.html beside ch2-dada-dadi.html), so a book
     # folder is rebuilt from scratch: one page per chapter, always with the current slug.
@@ -278,12 +303,23 @@ no sign-up, and nobody can sell it.</p>
 pictures and read-aloud.</p>
 {siblings}
 <p><a class="cta" href="/#/book/{esc(slug)}">Open this book in Hooty</a></p>
+<p class="note"><a href="/books/{esc(slug)}/credits.html">Picture credits for this book</a></p>
 <h2>Chapters</h2>
 {''.join(items)}
 {ld_block(book_ld(b, chapters, n))}
 {ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/'), (title, f'/books/{slug}.html')]))}"""
         os.makedirs(outdir, exist_ok=True)
         open(os.path.join(outdir, f'{slug}.html'), 'w').write(page(f'{title} | Hooty', desc, f'/books/{slug}.html', body, lang=b.get('language') or 'en'))
+        # The credits for this book, as a page a teacher can open or print. CC BY-SA asks the credit to travel with the
+        # picture, and until now it only travelled inside the app.
+        os.makedirs(os.path.join(outdir, slug), exist_ok=True)
+        cpage = credits_html(b)
+        if '<li>' in cpage:
+            open(os.path.join(outdir, slug, 'credits.html'), 'w').write(
+                page(f'Picture credits | {title} | Hooty', f'Where every photograph in {title} came from, with maker and licence.',
+                     f'/books/{slug}/credits.html', f'<div class="crumbs"><a href="/">Hooty</a> / <a href="/books/">All books</a> / '
+                     f'<a href="/books/{esc(slug)}.html">{esc(title)}</a> / Picture credits</div>' + cpage, lang=b.get('language') or 'en'))
+            urls.append((f'{SITE}/books/{slug}/credits.html', TODAY))
         urls.append((f'{SITE}/books/{slug}.html', TODAY))
 
         for idx, (u, c) in enumerate(chapters):
