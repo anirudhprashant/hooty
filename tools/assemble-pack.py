@@ -8,6 +8,17 @@ from subjects import S as SUBJ, KEY
 from meta_questions import is_meta   # one rule for 'questions that ask about the task, not the subject'
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = f"{ROOT}/public/content/packs/{SUBJ['pack']}/"
+# The words the scaffolding adds around the model's own text. A Hindi book must not say them in English.
+FILLER = {
+    'hook': {'en': 'Now read on to find out.', 'hi': 'आगे पढ़िए, उत्तर मिल जाएगा।'},
+    'passage': {'en': 'Reading first helps the ideas stick.', 'hi': 'पहले पढ़ने से विचार पक्के होते हैं।'},
+    'think_kicker': {'en': 'Let us think it through', 'hi': 'आइए, सोचकर समझें'},
+    'think': {'en': 'Think it through with Hooty.', 'hi': 'हूटी के साथ मिलकर सोचिए।'},
+    'exam': {'en': 'Compare your answer with the points a marker looks for.', 'hi': 'अपने उत्तर को उन बिंदुओं से मिलाइए जो जाँचने वाला देखता है।'},
+    'explore': {'en': 'Play with it and see what changes.', 'hi': 'इसे चलाकर देखिए क्या बदलता है।'},
+}
+WLANG = SUBJ.get('language', 'en')
+W = lambda k: FILLER[k].get(WLANG) or FILLER[k]['en']
 os.makedirs(P, exist_ok=True)
 WORK = f"{ROOT}/{SUBJ['work']}"
 if not os.path.exists(P + 'pack.json'):  # a new subject starts from the Social Science pack's shape
@@ -50,7 +61,7 @@ for d in sorted(glob.glob(f'{WORK}/ch*/ship')):
     old = have.get(n)
     chapter = {'id': old['id'] if old else f"ch{n:02d}-" + re.sub(r'[^a-z0-9]+', '-', ch['title'].lower()).strip('-')[:40],
                'title': CHAPTER_NUM.sub('', ch['title']),
-               'summary': old['summary'] if old else ('इस अध्याय में: ' if sub.get('language') == 'hi' else 'In this chapter: ') + '; '.join(l['title'] for l in lessons[:4]) + '.',
+               'summary': old['summary'] if old else ('इस अध्याय में: ' if WLANG == 'hi' else 'In this chapter: ') + '; '.join(l['title'] for l in lessons[:4]) + '.',
                'lessons': lessons, 'boss': L('boss')}
     unit = unit_of(ch['theme'], ch['themeTitle'], n)
     for u in pack['units']: u['chapters'] = [c for c in u['chapters'] if num(c) != n]
@@ -82,12 +93,12 @@ for u in pack['units']:
             rec = extras.get(lesson['id'].split('-l')[-1])
             if not rec: continue
             acts = [a for a in lesson['activities'] if a['type'] not in ('hook', 'passage')]
-            front = [{'type': 'hook', 'id': lesson['id'] + '-hook', 'difficulty': 1, 'tags': ['hook'], 'prompt': rec['hook'], 'explanation': 'Now read on to find out.'}]
+            front = [{'type': 'hook', 'id': lesson['id'] + '-hook', 'difficulty': 1, 'tags': ['hook'], 'prompt': rec['hook'], 'explanation': W('hook')}]
             if rec.get('passage'):
                 pa = rec['passage']; seen_src = []
                 for x in pa['src']:
                     if x not in seen_src: seen_src.append(x)
-                front.append({'type': 'passage', 'id': lesson['id'] + '-read', 'difficulty': 1, 'tags': ['reading'], 'title': pa['title'], 'body': pa['body'], 'explanation': 'Reading first helps the ideas stick.', 'src': seen_src})
+                front.append({'type': 'passage', 'id': lesson['id'] + '-read', 'difficulty': 1, 'tags': ['reading'], 'title': pa['title'], 'body': pa['body'], 'explanation': W('passage'), 'src': seen_src})
             lesson['activities'] = front + acts
 # explorables (tools/add-explore.py): a simulation to play with, right after the lesson's opening explanation
 EXPLORE = {}
@@ -127,7 +138,7 @@ for u in pack['units']:
             if rec.get('think'):
                 th = rec['think']
                 at = next((i for i, a in enumerate(teach) if a['type'] == 'concept'), len(teach) - 1) + 1
-                teach.insert(at, {'type': 'worked', 'id': f"{lesson['id']}-t1", 'difficulty': 1, 'tags': ['deep', 'think'], 'kicker': 'Let us think it through', 'prompt': th['problem'], 'steps': th['steps'], 'explanation': 'Think it through with Hooty.', 'f': th.get('f', []), 'src': src(th.get('f', []))})
+                teach.insert(at, {'type': 'worked', 'id': f"{lesson['id']}-t1", 'difficulty': 1, 'tags': ['deep', 'think'], 'kicker': W('think_kicker'), 'prompt': th['problem'], 'steps': th['steps'], 'explanation': W('think'), 'f': th.get('f', []), 'src': src(th.get('f', []))})
             lesson['activities'] = teach + recall + comp + cards
         # Test practice: one extra stop per chapter with the styles of question school papers use. Lessons stay about learning.
         exam, hi = [], pack.get('language') == 'hi'
@@ -139,7 +150,7 @@ for u in pack['units']:
                 exam += [{'type': 'mcq', 'id': f'{base}-x{j}', 'difficulty': 3, 'tags': ['exam', 'case'], 'context': cs['passage'], 'prompt': q['prompt'], 'options': q['options'], 'answer': q['answer'],
                           'why': {o: q['why'][i] for i, o in enumerate(q['options']) if i != q['answer'] and i < len(q.get('why', []))}, 'explanation': (q['why'][q['answer']] if q['answer'] < len(q.get('why', [])) else '') or 'Read the case again and use the idea from the lesson.'} for j, q in enumerate(cs['questions'], 1) if not is_meta(q.get('prompt'))]
             exam += [{'type': 'mcq', 'id': f'{base}-r{j}', 'difficulty': 3, 'tags': ['exam', 'assertion'], 'prompt': q['prompt'], 'options': q['options'], 'answer': q['answer'], 'explanation': q.get('why') or 'Check each statement on its own first, then ask whether the reason explains the assertion.'} for j, q in enumerate(ex.get('assertion', []), 1) if not is_meta(q.get('prompt'))]
-            exam += [{'type': 'explain', 'id': f'{base}-e{j}', 'difficulty': 3, 'tags': ['exam', 'written'], 'prompt': q['prompt'], 'answer': q['answer'], 'points': q['points'], 'explanation': 'Compare your answer with the points a marker looks for.'} for j, q in enumerate([q for q in ex.get('explain', []) if not is_meta(q.get('prompt'))][:1], 1)]
+            exam += [{'type': 'explain', 'id': f'{base}-e{j}', 'difficulty': 3, 'tags': ['exam', 'written'], 'prompt': q['prompt'], 'answer': q['answer'], 'points': q['points'], 'explanation': W('exam')} for j, q in enumerate([q for q in ex.get('explain', []) if not is_meta(q.get('prompt'))][:1], 1)]
         exam = [a for a in exam if not is_meta(a.get('prompt'))]
         # A test should ask enough questions to practise with: when a chapter's own extras are thin, top it up with
         # questions the chapter already teaches, before the written cards so the test still ends with writing.
@@ -173,7 +184,7 @@ for u in pack['units']:
             rec = EXPLORE.get(num(c), {}).get(lesson['id'].split('-l')[-1])
             if not rec or not rec.get('widget'): continue
             at = next((i for i, a in enumerate(lesson['activities']) if a['type'] == 'concept'), -1) + 1
-            lesson['activities'].insert(at, {'type': 'explore', 'id': f"{lesson['id']}-play", 'difficulty': 1, 'tags': ['explore'], 'widget': rec['widget'], 'params': rec.get('params') or {}, 'title': rec.get('title', ''), 'tasks': rec.get('tasks', []), 'takeaway': rec.get('takeaway', ''), 'explanation': rec.get('takeaway') or 'Play with it and see what changes.'})
+            lesson['activities'].insert(at, {'type': 'explore', 'id': f"{lesson['id']}-play", 'difficulty': 1, 'tags': ['explore'], 'widget': rec['widget'], 'params': rec.get('params') or {}, 'title': rec.get('title', ''), 'tasks': rec.get('tasks', []), 'takeaway': rec.get('takeaway', ''), 'explanation': rec.get('takeaway') or W('explore')})
 pack['units'] = [u for u in pack['units'] if u['chapters']]
 for u in pack['units']: u['chapters'].sort(key=num)
 order = ['geography', 'history', 'culture', 'civics', 'economics', 'science']
