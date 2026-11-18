@@ -33,6 +33,7 @@ p { margin:0 0 14px; }
        padding:13px 22px; border-radius:999px; margin:6px 0 4px; }
 .cta:hover { filter:brightness(1.06); }
 .note { font-size:14px; color:var(--dim); }
+.more { font-size:15px; color:var(--dim); margin:14px 0 0; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 16px; margin:10px 0; }
 .card h3 { margin:0 0 4px; font-size:17px; }
 .card a { text-decoration:none; }
@@ -265,7 +266,7 @@ pictures and read-aloud.</p>
         open(os.path.join(outdir, f'{slug}.html'), 'w').write(page(f'{title} | Hooty', desc, f'/books/{slug}.html', body))
         urls.append((f'{SITE}/books/{slug}.html', TODAY))
 
-        for u, c in chapters:
+        for idx, (u, c) in enumerate(chapters):
             cid = page_slug(c)          # the file name, readable
             real_id = c['id']           # what the app's deep link needs
             ls = lessons_of(c)
@@ -275,6 +276,16 @@ pictures and read-aloud.</p>
                 f'<li><a href="/#/lesson/{esc(slug)}/{esc(lid)}">{esc(t)}</a>'
                 + (f' <span class="meta">{esc(m)} min</span>' if m else '') + '</li>'
                 for t, m, lid in ls)
+            nav = ''
+            if len(chapters) > 1:
+                links = []
+                for j, (_, other) in enumerate(chapters):
+                    if other is c:
+                        continue
+                    if j == idx - 1 or j == idx + 1:
+                        links.append(f'<a href="/books/{esc(slug)}/{esc(page_slug(other))}.html">{esc((other.get("title") or "")[:40])}</a>')
+                if links:
+                    nav = '<p class="more">Also in this book: ' + ' &middot; '.join(links) + '</p>'
             cbody = f"""<div class="crumbs"><a href="/">Hooty</a> / <a href="/books/">All books</a> /
 <a href="/books/{esc(slug)}.html">{esc(title)}</a> / {esc(ctitle)}</div>
 <h1>{esc(ctitle)}</h1>
@@ -282,6 +293,7 @@ pictures and read-aloud.</p>
 <p><a class="cta" href="/#/chapter/{esc(slug)}/{esc(real_id)}">Start this chapter</a></p>
 <h2>Lessons in this chapter</h2>
 <ul class="lessons">{rows}</ul>
+{nav}
 {ld_block(chapter_ld(b, c, ls))}
 {ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/'), (title, f'/books/{slug}.html'), (ctitle, f'/books/{slug}/{cid}.html')]))}"""
             os.makedirs(os.path.join(outdir, slug), exist_ok=True)
