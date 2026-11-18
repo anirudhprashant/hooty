@@ -187,6 +187,7 @@ export const strings = {
     jumpToUnit: "Jump to a part",
     linkMoved: "That lesson has moved. Here is the book, so you can pick it up.",
     linkGone: "That link does not point at a book any more. Pick a class to start.",
+    bookTitle: "{subject}, Class {n}",
   },
   hi: {
     appName: 'लूमी',
@@ -373,6 +374,7 @@ export const strings = {
     jumpToUnit: "किसी हिस्से पर जाएँ",
     linkMoved: "वह पाठ अब आगे खिसक गया है। यह रही किताब, वहाँ से चुन लीजिए।",
     linkGone: "यह लिंक अब किसी किताब तक नहीं जाता। कक्षा चुनकर शुरू कीजिए।",
+    bookTitle: "{subject}, कक्षा {n}",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -559,6 +561,7 @@ export const strings = {
     jumpToUnit: "ಒಂದು ಭಾಗಕ್ಕೆ ಹೋಗಿ",
     linkMoved: "ಆ ಪಾಠ ಈಗ ಬೇರೆಡೆಗೆ ಸರಿದಿದೆ. ಇಲ್ಲಿದೆ ಪುಸ್ತಕ, ಅಲ್ಲಿಂದ ಆರಿಸಿ.",
     linkGone: "ಈ ಲಿಂಕ್ ಈಗ ಯಾವುದೇ ಪುಸ್ತಕಕ್ಕೆ ಹೋಗುತ್ತಿಲ್ಲ. ತರಗತಿ ಆರಿಸಿ ಪ್ರಾರಂಭಿಸಿ.",
+    bookTitle: "{subject}, ತರಗತಿ {n}",
   },
 };
 

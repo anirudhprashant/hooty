@@ -598,7 +598,12 @@ function screenPath() {
     return wrap;
   }
   const tabs = subjectTabs(); if (tabs) wrap.append(tabs);
-  wrap.append(el('h2', { class: 'section-title', text: pack.title }));
+  // The index carries the English title ("Social Science, Class 6"); a Hindi app should not print the English
+  // subject name next to a Hindi trail.
+  const bookTitle = getLocale() === 'en'
+    ? pack.title
+    : t('bookTitle', { subject: subjectName(String(pack.subject || '').replace(/\bScience\b/, 'Science')) || pack.subject, n: pack.grade });
+  wrap.append(el('h2', { class: 'section-title', text: bookTitle }));
   wrap.append(el('p', { class: 'section-sub', text: t('trailIntro') }));
 
   // A big book is fifteen screens of trail. A row of unit chips at the top lets a child jump to the part they want
