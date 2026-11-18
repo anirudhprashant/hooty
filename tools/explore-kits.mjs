@@ -1057,6 +1057,13 @@ export const KITS = {
     // A bare year only counts in a lesson that also reads as history, so an economics chart of 2025 gets no timeline.
     params: (text, facts, chapter) => {
       const own = datedEvents(facts || []);
+      // A lesson about measuring time ('Timelines, Centuries and Millenniums') has no dated events of its own, and the
+      // widget refuses to attach without three. Give it the standard anchors so the idea can still be shown.
+      if (own.length < 3 && /timeline|centur|millenni|measur\w* time|bce|ce\b/i.test(text)) {
+        const anchored = [{ year: -3000, label: 'First cities and writing' }, { year: 0, label: 'BCE ends, CE begins' },
+          { year: 1000, label: 'A thousand years into CE' }, { year: 2000, label: 'Two thousand years into CE' }];
+        return { events: anchored, hist: true };   // usable() also wants hist, or the anchor branch is never used
+      }
       const hist = /\b(?:history|ancient|medieval|centur|dynasty|empire|emperor|king|queen|ruled|reign|bce|war|battle|revolution|revolt|movement|freedom|independence|coloni[sz]|british|mughal|sultan|treaty|parliament|harappa|civilisation|civilization)\b/.test(text);
       if (own.length) return { events: own, hist };
       return { events: datedEvents(facts || [], 1).length ? datedEvents(chapter || []) : [], hist };

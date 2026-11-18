@@ -10883,30 +10883,39 @@
          "params": {
           "events": [
            {
-            "year": -2,
-            "label": "2 BCE"
+            "year": -3000,
+            "label": "First cities and writing"
            },
            {
-            "year": 2,
-            "label": "2 CE"
+            "year": 0,
+            "label": "BCE ends, CE begins"
+           },
+           {
+            "year": 1000,
+            "label": "A thousand years into CE"
+           },
+           {
+            "year": 2000,
+            "label": "Two thousand years into CE"
            }
-          ]
+          ],
+          "hist": true
          },
-         "title": "Walk from BCE into CE",
+         "title": "Walk through time",
          "tasks": [
           {
-           "say": "Move past 2 BCE.",
-           "when": "y >= -2 and y < 2",
-           "then": "In BCE, years count down towards the starting point."
+           "say": "Move to when this happened: BCE ends, CE begins.",
+           "when": "y >= 0",
+           "then": "That was 0 CE."
           },
           {
-           "say": "Move past 2 CE.",
-           "when": "y >= 2",
-           "then": "From 2 BCE to 2 CE is three years, because there is no year zero."
+           "say": "Go forward to the last event.",
+           "when": "y >= 2000",
+           "then": "The latest event here is from 2000 CE."
           }
          ],
-         "takeaway": "BCE years count down and CE years count up.",
-         "explanation": "BCE years count down and CE years count up."
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "mcq",
