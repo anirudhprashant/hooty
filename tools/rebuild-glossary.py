@@ -2,16 +2,18 @@
 """Rebuild a book's glossary from its own lesson text, for a book whose glossary is unusable.
 
 hindi-g10's glossary came out of a PDF that stored Devanagari in a legacy ASCII font: 41 of its 52 words read "mUeu" with
-meanings to match, so no word in that book could ever be highlighted or tapped. Asking a model to pick the words does not
-work, because a model paraphrases and a paraphrased word matches nothing.
+meanings to match, so no word in that book could ever be highlighted or tapped. The words have to be rebuilt.
 
-So the words are chosen from the lesson text itself, by a rule, and the model is only asked what they mean:
+Two designs were tried and the second one is what this does:
 
-  * a word of five letters or more, pure Devanagari, that the chapter uses once or twice (literary vocabulary is rare),
-  * not a name of a person or place as far as a word list can tell, not a common function word,
-  * the page it appears on comes from the chapter's fact sheet when the word is in a fact.
+  * ask a model to pick the words from the fact sheet: it paraphrases, so its words are not in the text and match
+    nothing. In the first run all 12 picks were rejected for that reason.
+  * give the model the lesson text it is glossing, and **check every pick against that same text**. Its judgement about
+    which words a Class 10 reader needs is good (दोहा, वात्सल्य, उपदेश, ब्रह्म were right); the check throws away the
+    ones it paraphrased (दासता, शृंगार).
 
-Every term is therefore guaranteed to appear in the text the child reads, which is what makes it tappable.
+A term is kept only when it appears verbatim in the chapter's own text, is pure Devanagari, and its meaning is Devanagari
+with no English letters. That is what makes it tappable.
 
   python3 tools/rebuild-glossary.py hindi-g10 [--ch=3] [--dry] [--show]
 """
@@ -19,7 +21,6 @@ import json
 import os
 import re
 import sys
-from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from llm import m27  # noqa: E402
@@ -27,118 +28,106 @@ from llm import m27  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 PUB = os.path.join(ROOT, 'public')
-
-# Devanagari letters only: no danda, no digits, no matras on their own
-WORD = re.compile(r'[\u0905-\u0939\u0958-\u095f][\u0905-\u0939\u0958-\u095f\u093e-\u094c\u0901-\u0903\u093c\u094d]{3,}')
-LATIN = re.compile(r'[A-Za-z]')
 DEVA = re.compile(r'[\u0900-\u097f]')
-
-# words that carry no meaning worth explaining, so they are never chosen
-STOP = set("""और तथा किंतु लेकिन इसका उसका इनका उनका इसकी उसकी इनकी उनकी इसके उसके इनके उनके इसमें उसमें इनमें उनमें
-यह वह ये वे जो जब तब कभी सदा यहाँ वहाँ अब फिर भी ही तो भी नहीं हाँ जी कुछ सब बहुत अधिक कम लोग बात बार तरह अनेक
-करना करता करती करते किया गया गई गए हुआ हुई हुए होता होती होते था थी थे हैं है हूँ को से का की के में पर और भी
-अपना अपनी अपने उनका उसका मेरा तेरा हमारा तुम्हारा कोई किसी किसका जिसका उसके बाद पहले समय वर्ष साल दिन रात
-""".split())
-
-
-def words_of(text):
-    return [w for w in WORD.findall(text) if len(w) >= 5 and w not in STOP]
-
-
-def candidates(chapter_text, chapter_facts, limit=12):
-    """Rare, long words in the order the chapter meets them: the ones a child is most likely to need explained."""
-    counts = Counter(words_of(chapter_text))
-    pages = {}
-    for f in chapter_facts:
-        say = str(f.get('say') or '')
-        for w in words_of(say):
-            pages.setdefault(w, f.get('p'))
-    picked, seen = [], set()
-    for w in words_of(chapter_text):
-        if w in seen or counts[w] > 3:
-            continue
-        seen.add(w)
-        picked.append({'term': w, 'p': pages.get(w) or 0})
-        if len(picked) >= limit:
-            break
-    return picked
-
+LATIN = re.compile(r'[A-Za-z]')
 
 PROMPT = """You are glossing the vocabulary of one chapter of an NCERT Hindi textbook for Class {grade}.
 
-Below are words taken from the chapter, each with the sentence it appears in. Write a meaning for each in simple Hindi:
-six to fourteen words, in Devanagari only, no English letters, explained as THIS chapter uses the word.
+Choose 8 to 12 words or short phrases from the chapter text below that a Class {grade} student may not know, or that the
+chapter uses in a special way. Then write a short meaning for each, in simple Hindi.
 
-Reply with ONLY this JSON object, with the same number of entries as the words, in the same order:
+Strict rules:
+1. The word must be copied EXACTLY from the text below, in Devanagari, with no change of any vowel sign or letter.
+2. Never choose the name of a person, place, book, festival or language.
+3. Never choose a pronoun, a verb form, or a common everyday word.
+4. The meaning is Hindi only, six to fourteen words, no English letters at all.
 
-{{"meanings": [{{"term": "...", "meaning": "..."}}]}}
+Reply with ONLY this JSON object, no commentary and no markdown fence:
 
-WORDS AND THEIR SENTENCES:
-{pairs}
+{{"terms": [{{"term": "...", "meaning": "..."}}]}}
+
+CHAPTER TEXT:
+{text}
 """
 
 
-def sentences_for(terms, text):
-    out = []
-    for t in terms:
-        i = text.find(t['term'])
-        sentence = text[max(0, i - 70):i + len(t['term']) + 90].replace('\n', ' ')
-        out.append(f"- {t['term']}: ...{sentence.strip()}...")
-    return '\n'.join(out)
+def chapter_text(chapter):
+    parts = []
+    for l in chapter.get('lessons') or []:
+        parts.append(str(l.get('title') or ''))
+        for a in l.get('activities') or []:
+            for k in ('body', 'prompt', 'explanation', 'title'):
+                v = a.get(k)
+                if isinstance(v, str):
+                    parts.append(v)
+            for k in ('keyPoints', 'options', 'steps'):
+                v = a.get(k)
+                if isinstance(v, list):
+                    parts += [str(x) for x in v]
+    return re.sub(r'\s+', ' ', ' '.join(parts)).strip()
+
+
+def valid(term, meaning, text):
+    if not (3 <= len(term) <= 40):
+        return 'length'
+    if not DEVA.search(term) or not DEVA.search(meaning):
+        return 'script'
+    if LATIN.search(term) or LATIN.search(meaning):
+        return 'latin'
+    if term not in text:
+        return 'not in the chapter text'
+    if not (3 <= len(meaning.split()) <= 16):
+        return 'meaning length'
+    return None
 
 
 def build(slug, only=None, dry=False, show=False):
     pack = json.load(open(os.path.join(PUB, 'content/packs', slug, 'pack.json'), encoding='utf-8'))
     grade = str(pack.get('grade') or 10)
     work = os.path.join(ROOT, 'work', slug)
-    chapters = sorted(d for d in os.listdir(work) if re.match(r'^ch\d\d$', d) and (not only or int(d[2:]) == only))
-    kept_total = 0
-    for ch in chapters:
-        num = int(ch[2:])
+    kept_total = dropped_total = 0
+    for num in sorted({int(d[2:]) for d in os.listdir(work) if re.match(r'^ch\d\d$', d)}):
+        if only and num != only:
+            continue
         chapter = None
         for u in pack['units']:
             for c in u['chapters']:
                 if re.match(r'ch0*%d(?!\d)' % num, c.get('id') or ''):
                     chapter = c
         if not chapter:
+            print(f'ch{num:02d}: no chapter in the pack')
             continue
-        lessons = chapter.get('lessons') or []
-        text = ' '.join(str(a.get(k) or '') for l in lessons for a in (l.get('activities') or [])
-                        for k in ('body', 'prompt', 'explanation', 'title'))
-        for l in lessons:
-            text += ' ' + str(l.get('title') or '')
-        ffile = os.path.join(work, ch, 'facts.json')
-        facts = []
-        if os.path.exists(ffile):
-            d = json.load(open(ffile, encoding='utf-8'))
-            facts = [f for l in d.get('lessons') or [] for f in (l.get('facts') or [])]
-        terms = candidates(text, facts)
-        if not terms:
-            print(f'{ch}: no candidates')
+        text = chapter_text(chapter)
+        if len(text) < 400:
+            print(f'ch{num:02d}: too little text ({len(text)} chars)')
             continue
-        got = m27(PROMPT.format(grade=grade, pairs=sentences_for(terms, text)))
-        meanings = {}
-        for m in (got or {}).get('meanings') or []:
-            if isinstance(m, dict):
-                meanings[str(m.get('term') or '').strip()] = str(m.get('meaning') or '').strip()
-        entries = []
-        for t in terms:
-            meaning = meanings.get(t['term'], '')
-            if not meaning or LATIN.search(meaning) or not DEVA.search(meaning):
+        got = m27(PROMPT.format(grade=grade, text=text[:9000]))
+        if not got or not isinstance(got, dict):
+            print(f'ch{num:02d}: no reply')
+            continue
+        entries, dropped, seen = [], {}, set()
+        for t in got.get('terms') or []:
+            term = str(t.get('term') or '').strip()
+            meaning = str(t.get('meaning') or '').strip()
+            why = valid(term, meaning, text)
+            if why:
+                dropped[why] = dropped.get(why, 0) + 1
                 continue
-            if not (3 <= len(meaning.split()) <= 16):
+            if term in seen:
                 continue
-            entries.append({'term': t['term'], 'meaning': meaning, 'src': [{'ch': num, 'p': t['p']}]})
+            seen.add(term)
+            entries.append({'term': term, 'meaning': meaning, 'src': [{'ch': num, 'p': 0}]})
         kept_total += len(entries)
-        print(f'{ch}: {len(terms)} candidates -> {len(entries)} glossed')
+        dropped_total += sum(dropped.values())
+        print(f'ch{num:02d}: kept {len(entries)}, dropped {sum(dropped.values())}{" " + str(dropped) if dropped else ""}')
         if show:
             for e in entries[:4]:
-                print('    ', e['term'], '|', e['meaning'][:64])
+                print('    ', e['term'], '|', e['meaning'][:60])
         if dry or not entries:
             continue
-        out = os.path.join(work, ch, 'glossary.json')
-        json.dump({'terms': entries}, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    print(f'words written: {kept_total}{" (dry run)" if dry else ""}')
+        json.dump({'terms': entries}, open(os.path.join(work, f'ch{num:02d}', 'glossary.json'), 'w', encoding='utf-8'),
+                  ensure_ascii=False, indent=1)
+    print(f'words written: {kept_total}, dropped: {dropped_total}{" (dry run)" if dry else ""}')
 
 
 if __name__ == '__main__':
