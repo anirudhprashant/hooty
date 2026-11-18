@@ -23,7 +23,6 @@ h2.grade a:hover { text-decoration:underline; }
 .more { font-size:15px; color:var(--dim); margin:14px 0 0; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 16px; margin:10px 0; }
 .card h3 { margin:0 0 4px; font-size:17px; }
-.card h2 { margin:0 0 4px; font-size:17px; }
 .card a { text-decoration:none; }
 .card .meta { color:var(--dim); font-size:14px; }
 ul.lessons { list-style:none; margin:0; padding:0; }
@@ -40,3 +39,24 @@ footer { margin-top:40px; font-size:14px; color:var(--dim); border-top:1px solid
 #book-results .result:last-child { border-bottom:0; }
 #book-results a { font-weight:700; text-decoration:none; }
 #book-results .result__meta { display:block; font-size:14px; color:var(--dim); }
+
+/* Word bank */
+.letters { display:grid; grid-template-columns:repeat(auto-fill,minmax(62px,1fr)); gap:8px; margin:0 0 14px; padding:0; list-style:none; }
+.letters a { display:flex; flex-direction:column; align-items:center; gap:1px; padding:9px 4px 10px; border:1px solid var(--line);
+             border-radius:14px; background:var(--card); text-decoration:none; color:var(--ink); font-weight:800; font-size:19px; line-height:1.1; }
+.letters a:hover { border-color:var(--accent); background:#fff; }
+.letters a .note { font-size:12px; font-weight:400; }
+.letters a.is-on { background:var(--accent); border-color:var(--accent); color:#fff; }
+.letters a.is-on .note { color:rgba(255,255,255,.85); }
+.card h2 { margin:0 0 4px; font-size:17px; }
+.card h3::first-letter { text-transform:uppercase; }
+.books-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(232px,1fr)); gap:8px; margin:0 0 6px; }
+.books-grid .pill { margin:0; display:flex; justify-content:space-between; align-items:baseline; gap:10px; white-space:nowrap; }
+.books-grid .pill .note { color:var(--dim); }
+#word-results { list-style:none; margin:6px 0 0; padding:0; }
+#word-results .result { padding:10px 0; border-bottom:1px solid var(--line); }
+#word-results .result:last-child { border-bottom:0; }
+#word-results a { font-weight:700; text-decoration:none; }
+#word-results a::first-letter { text-transform:uppercase; }
+#word-results .result__meta { display:block; font-size:14px; color:var(--dim); }
+.card .meta a { text-decoration:none; border-bottom:1px solid var(--line); }
