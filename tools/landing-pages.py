@@ -210,6 +210,7 @@ no sign-up, and nobody can sell it.</p>
   <ul id="book-results"></ul>
 </div>
 {''.join(cards)}"""
+    os.environ['HOOTY_BOOK_PAGES'] = str(len(books))
     open(os.path.join(outdir, 'index.html'), 'w').write(page(
         'All books | Hooty', f'All {len(books)} NCERT books on Hooty, free for every child. Chapter by chapter, in short lessons. Search every lesson by topic.',
         '/books/', body, script='<script src="/books/search.js" defer></script>'))
@@ -250,7 +251,9 @@ no sign-up, and nobody can sell it.</p>
 pictures and read-aloud.</p>
 <p><a class="cta" href="/#/book/{esc(slug)}">Open this book in Hooty</a></p>
 <h2>Chapters</h2>
-{''.join(items)}"""
+{''.join(items)}
+{ld_block(book_ld(b, chapters, n))}
+{ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/'), (title, f'/books/{slug}.html')]))}"""
         os.makedirs(outdir, exist_ok=True)
         open(os.path.join(outdir, f'{slug}.html'), 'w').write(page(f'{title} | Hooty', desc, f'/books/{slug}.html', body))
         urls.append((f'{SITE}/books/{slug}.html', TODAY))
@@ -270,7 +273,9 @@ pictures and read-aloud.</p>
 <p class="lede">{esc(title)}, chapter. {len(ls)} short lessons.</p>
 <p><a class="cta" href="/#/chapter/{esc(slug)}/{esc(cid)}">Start this chapter</a></p>
 <h2>Lessons in this chapter</h2>
-<ul class="lessons">{rows}</ul>"""
+<ul class="lessons">{rows}</ul>
+{ld_block(chapter_ld(b, c, ls))}
+{ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/'), (title, f'/books/{slug}.html'), (ctitle, f'/books/{slug}/{cid}.html')]))}"""
             os.makedirs(os.path.join(outdir, slug), exist_ok=True)
             open(os.path.join(outdir, slug, f'{cid}.html'), 'w').write(
                 page(f'{ctitle} | {title} | Hooty', cdesc, f'/books/{slug}/{cid}.html', cbody))
