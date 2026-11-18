@@ -10,10 +10,14 @@ META = re.compile(
     r"(the\s+)?(ride|thinking|water|listening|speaking|reading|writing|thread|gola|group|bird[- ]listening|"
     r"lime[- ]water|matching|drawing|tick)\s+activity"
     r"|\b\w+\s+and\s+\w+\s+activity"                       # "the speaking and drawing activity"
-    r"|activit(y|ies)\s+(ask|say|check|want|include|begin)s?\b"
+    r"|activit(y|ies)\s+(ask|say|tell|check|want|include|begin)s?\b"
     r"|(the|this)\s+task\s+(ask|say|want)s?\b"
+    r"|\b(writing|speaking|listening|reading|spelling|matching|drawing|thinking|tracing|fun)\s+task\b"
+    r"|match\s+each\s+(writing|speaking|listening|reading|spelling|matching|drawing|thinking)\s+task"
+    r"|what\s+does\s+(the|one|the\s+first|the\s+last)\s+.{0,30}\btask\b"
     r"|what\s+does\s+the\s+(task|activity)"
     r"|which\s+question\s+belongs\s+to\s+the"
+    r"|put\s+the\s+steps?\s+of\s+the\s+.{0,30}\btask\b"
     r"|put\s+the\s+\w+\s+activity\s+in\s+order",
     re.I)
 
@@ -27,7 +31,8 @@ NOISE = re.compile(
 KEEP = re.compile(
     r"lime[- ]water\s+activity.*(support|show|prove|explain)"
     r"|bird[- ]listening\s+activity.*(carry\s+out|from\s+hearing)"
-    r"|how\s+does\s+a\s+\w+\s+lose\s+its\s+l\s+sound",
+    r"|how\s+does\s+a\s+\w+\s+lose\s+its\s+l\s+sound"
+    r"|funny\s+writing\s+task\s+as\s+a\s+punishment",     # a story event, not a textbook exercise
     re.I)
 
 
