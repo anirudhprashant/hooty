@@ -2640,6 +2640,42 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  monsoon: {
+    subject: 'social', about: 'The yearly monsoon over India, month by month. In summer the land heats faster than the sea, low pressure forms over the land and moist winds blow in from the sea and bring rain. In winter the sea stays warmer, the pressure is low over the sea and cool, dry winds blow from the land out to sea. For monsoons, seasonal reversal of winds, summer and winter monsoon, unequal heating of land and sea, rainfall, floods and droughts.',
+    sliders: [['month', 'Month of the year', 1, 12, 1, 3]],
+    draw(v) {
+      const m = v.month, names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const summer = m >= 5 && m <= 9, winter = m === 12 || m <= 2;
+      const arrow = (x1, y1, x2, y2, col) => { const a = Math.atan2(y2 - y1, x2 - x1); return [L(x1, y1, x2, y2, col, 6), s('polygon', { points: `${x2},${y2} ${x2 - 16 * Math.cos(a - 0.45)},${y2 - 16 * Math.sin(a - 0.45)} ${x2 - 16 * Math.cos(a + 0.45)},${y2 - 16 * Math.sin(a + 0.45)}`, fill: col })]; };
+      const badge = (x, y, word, col) => [R(x - 42, y - 20, 84, 40, col, { r: 10, w: 2.5 }), T(x, y + 6, word, { z: 15, f: '#fff' })];
+      const kids = [R(0, 0, W, H, '#eaf6ff', { w: 0 }), R(0, 150, 300, 150, '#8ecae6', { w: 0 }), s('path', { d: 'M 300 150 L 600 150 L 600 300 L 300 300 Z', fill: '#e8dcc0', stroke: INK, 'stroke-width': 2 })];
+      for (let k = 0; k < 4; k++) kids.push(s('path', { d: `M 20 ${176 + k * 26} q 18 -8 36 0 t 36 0`, stroke: '#5aa9cc', 'stroke-width': 2.5, fill: 'none' }));
+      kids.push(s('path', { d: 'M 330 150 L 380 116 L 426 150 Z', fill: '#cbb98a', stroke: INK, 'stroke-width': 2 }), s('path', { d: 'M 500 150 L 548 126 L 590 150 Z', fill: '#cbb98a', stroke: INK, 'stroke-width': 2 }));
+      kids.push(T(110, 286, 'SEA', { a: 'start', z: 15, f: '#0b4a6f' }), T(470, 286, 'LAND', { a: 'end', z: 15, f: '#5b4a2a' }));
+      if (summer) {
+        kids.push(...badge(110, 60, 'HIGH', '#3a86ff'), ...badge(470, 60, 'LOW', '#c0392b'));
+        kids.push(...arrow(110, 190, 390, 190, '#1f63d9'));
+        kids.push(CIRC(452, 126, 26, '#ffffff', { s: '#9fb8cc', w: 2.5 }), CIRC(490, 118, 32, '#ffffff', { s: '#9fb8cc', w: 2.5 }), CIRC(526, 128, 24, '#ffffff', { s: '#9fb8cc', w: 2.5 }), R(442, 140, 96, 16, '#ffffff', { w: 0 }));
+        for (let k = 0; k < 4; k++) kids.push(L(462 + k * 22, 154, 458 + k * 22, 174, '#1f63d9', 3));
+        kids.push(T(300, 222, 'moist wind from the sea', { z: 14, w: 600, f: '#1f63d9' }));
+      } else if (winter) {
+        kids.push(...badge(110, 60, 'LOW', '#c0392b'), ...badge(470, 60, 'HIGH', '#3a86ff'));
+        kids.push(...arrow(410, 190, 130, 190, '#c2510e'));
+        kids.push(T(300, 222, 'cool, dry wind from the land', { z: 14, w: 600, f: '#c2510e' }));
+      } else {
+        kids.push(T(300, 90, 'winds are light and changing', { z: 15, w: 600, f: '#6b5a8a' }));
+        kids.push(...arrow(150, 180, 260, 180, '#9b8db8'), ...arrow(460, 202, 350, 202, '#9b8db8'));
+      }
+      const phase = summer ? 'summer monsoon' : winter ? 'winter monsoon' : 'between the monsoons';
+      kids.push(T(16, 30, `${names[m - 1]}: ${phase}`, { a: 'start', z: 18 }));
+      const say = summer
+        ? `In ${names[m - 1]} the land is hotter than the sea, so the air over the land rises and low pressure forms there. Moist winds blow from the sea towards the land and bring rain.`
+        : winter
+          ? `In ${names[m - 1]} the sea is warmer than the land, so the air rises over the sea and pressure is low there. Cool, dry winds blow from the land out to sea, so there is little rain.`
+          : `In ${names[m - 1]} the land and the sea are close in temperature, so the winds are light and are changing direction. This is between the two monsoons.`;
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

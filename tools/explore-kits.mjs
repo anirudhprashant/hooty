@@ -1131,6 +1131,15 @@ export const KITS = {
       { say: 'Take the coast to 40 degrees and climb to the top.', when: 'base == 40 and height >= 6000', then: 'Warmer air at sea level lifts the snow line, so the same mountain has less snow than on a cooler day.' },
     ],
   },
+  monsoon: {
+    grades: [7, 9], subjects: ['social'], perChapter: 1, match: [/\bmonsoons?\b/, /seasonal reversal of (the )?winds?/, /moist (ocean|sea) air|moist air from (the )?(ocean|sea)/, /\bunequal heating of (the )?land and (the )?sea\b/, /winds? (blow|bring).{0,50}(ocean|sea).{0,30}(to|towards) (the )?land/],
+    title: 'Follow the monsoon winds', takeaway: 'The monsoon is a yearly reversal of the winds. In summer the land is hotter, so moist sea air blows in and brings rain; in winter the sea is warmer, so cool dry air blows from the land out to sea.',
+    tasks: [
+      { say: 'Move the month to July, in the middle of the summer monsoon.', when: 'month == 7', then: 'In July the land is hotter than the sea, so low pressure sits over the land and moist winds come in from the sea. This is the summer monsoon, and it brings most of India\'s rain.' },
+      { say: 'Move the month to December, in the winter monsoon.', when: 'month == 12', then: 'In December the land is cooler than the sea, so the pressure is low over the sea and cool, dry winds blow from the land out to sea. Little rain falls.' },
+      { say: 'Find another month when the wind blows from the land to the sea.', when: 'month >= 1 and month <= 2', then: 'January and February work too: the winter monsoon lasts through these months, with dry winds blowing out to sea.' },
+    ],
+  },
   tangent: {
     grades: [9, 10], match: [/\btangents?\b/, /tangent to (a|the) circle/, /number of tangents/, /length of (the )?tangent/, /circle.{0,40}tangent|tangent.{0,40}circle/],
     title: 'Draw a tangent', takeaway: 'A tangent touches the circle at one point, meets the radius there at a right angle, and the two tangents from the same outside point are equal.',
