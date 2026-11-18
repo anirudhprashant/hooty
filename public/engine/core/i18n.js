@@ -254,7 +254,7 @@ export const strings = {
     playClip: "Play",
   },
   hi: {
-    appName: 'लूमी',
+    appName: 'हूटी',
     home: 'होम',
     path: 'राह',
     practice: 'कमजोर बिंदु दोहराओ',
@@ -505,7 +505,7 @@ export const strings = {
     playClip: "सुनिए",
   },
   kn: {
-    appName: 'ಲೂಮಿ',
+    appName: 'ಹೂಟಿ',
     home: 'ಮುಖಪುಟ',
     path: 'ದಾರಿ',
     practice: 'ದುರ್ಬಲ ಅಂಶ ಅಭ್ಯಾಸ',

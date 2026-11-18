@@ -2328,9 +2328,13 @@ function render() {
     case 'parent': screen = screenParent(); title = t('parent'); break;
     case 'themes': screen = screenThemes(); title = t('chooseTheme'); break;
     case 'settings': screen = screenSettings(); title = t('settings'); break;
-    case 'addbook': screen = screenAddBook(); title = 'Add my book'; break;
+    case 'addbook': screen = screenAddBook(); title = t('addMyBook'); break;
     default: screen = screenHome(); title = '';
   }
+
+  // The tab, the history entry and the screen-reader announcement all use the page title. It said the site name on
+  // every screen; it now names where you are, in the app's language.
+  document.title = title ? `${title} · ${t('appName')}` : document.title.replace(/^.*? · /, '');
 
   const focus = router.screen === 'lesson';
   const shell = el('div', { class: `shell${focus ? ' shell--focus' : ''}` });
