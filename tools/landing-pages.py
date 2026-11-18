@@ -221,6 +221,14 @@ name on the catalogue page will find it.</p>
     return html.replace('<meta name="twitter:image"', '<meta name="robots" content="noindex">\n<meta name="twitter:image"', 1)
 
 
+def glossary_word_count():
+    """How many words the word bank holds: the number it prints itself, read from the file it wrote."""
+    try:
+        return len(json.load(open(os.path.join(PUB, 'glossary', 'index.json'), encoding='utf-8')).get('words') or [])
+    except Exception:
+        return 0
+
+
 def main():
     # Pages from an older run stay on disk with their old names (ch02-.html beside ch2-dada-dadi.html), so a book
     # folder is rebuilt from scratch: one page per chapter, always with the current slug.
@@ -286,6 +294,18 @@ def main():
             f'/books/{slug}.html', cbody + cld))
         urls.append((f'{SITE}/books/{slug}.html', TODAY))
 
+    # The word bank (tools/glossary-pages.py) writes /glossary/** and /books/<slug>/glossary.html and hands back its
+    # addresses. It runs before the index body so the count printed on /books/ is the same count the word bank shows
+    # (a word explained twice in two books is one entry there).
+    try:
+        import importlib.util as _ilu
+        _spec = _ilu.spec_from_file_location('glossary_pages', os.path.join(ROOT, 'tools', 'glossary-pages.py'))
+        _gp = _ilu.module_from_spec(_spec)
+        _spec.loader.exec_module(_gp)
+        urls.extend(_gp.build())
+    except Exception as _e:
+        print('word bank skipped:', str(_e)[:160])
+
     body = f"""<div class="crumbs"><a href="/">Hooty</a> / All books</div>
 <h1>Every book on Hooty</h1>
 <p class="lede">The NCERT school books, turned into short lessons a child can play. {len(books)} books,
@@ -297,6 +317,8 @@ no sign-up, and nobody can sell it.</p>
   <p class="note" id="book-search-status" aria-live="polite"></p>
   <ul id="book-results"></ul>
 </div>
+<div class="card"><h3><a href="/glossary/">The word bank</a></h3><div class="meta">@@WORDS@@ words Hooty explains,
+A to Z or book by book, with the chapter and page each one comes from.</div></div>
 {''.join(cards)}"""
     index_ld = ld_block({
         '@context': 'https://schema.org', '@type': 'CollectionPage',
@@ -305,6 +327,7 @@ no sign-up, and nobody can sell it.</p>
         'description': f'All {len(books)} NCERT school books on Hooty, chapter by chapter, in short lessons a child can play.',
         'hasPart': [{'@type': 'Book', 'name': b.get('title') or b['id'], 'url': f"{SITE}/books/{b['id']}.html"} for b in books],
     }) + ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/')]))
+    body = body.replace('@@WORDS@@', f'{glossary_word_count():,}')
     body += index_ld
     open(os.path.join(outdir, 'index.html'), 'w').write(page(
         'All books | Hooty', f'All {len(books)} NCERT books on Hooty, free for every child. Chapter by chapter, in short lessons. Search every lesson by topic.',
@@ -360,7 +383,7 @@ no sign-up, and nobody can sell it.</p>
 pictures and read-aloud.</p>
 {siblings}
 <p><a class="cta" href="/#/book/{esc(slug)}">Open this book in Hooty</a></p>
-<p class="note"><a href="/books/{esc(slug)}/credits.html">Picture credits for this book</a></p>
+<p class="note"><a href="/books/{esc(slug)}/glossary.html">The words this book explains</a> &middot; <a href="/books/{esc(slug)}/credits.html">Picture credits for this book</a></p>
 <h2>Chapters</h2>
 {''.join(items)}
 {ld_block(book_ld(b, chapters, n))}
