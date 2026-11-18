@@ -20,7 +20,7 @@ export default {
     const readout = el('p', { class: 'explore__say', 'aria-live': 'polite' });
     const tasks = (activity.tasks || []).map((t) => ({ ...t, done: false }));
     const list = el('ol', { class: 'explore__tasks' });
-    const finished = el('p', { class: 'explore__done', hidden: true, text: activity.takeaway || 'Well explored!' });
+    const finished = el('p', { class: 'explore__done', hidden: true, text: activity.takeaway || t('wellExplored') });
     const still = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
     const draw = (t = 0) => {
