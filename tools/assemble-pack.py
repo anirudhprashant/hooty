@@ -50,7 +50,7 @@ for d in sorted(glob.glob(f'{WORK}/ch*/ship')):
     old = have.get(n)
     chapter = {'id': old['id'] if old else f"ch{n:02d}-" + re.sub(r'[^a-z0-9]+', '-', ch['title'].lower()).strip('-')[:40],
                'title': CHAPTER_NUM.sub('', ch['title']),
-               'summary': old['summary'] if old else 'In this chapter: ' + '; '.join(l['title'] for l in lessons[:4]).lower() + '.',
+               'summary': old['summary'] if old else ('इस अध्याय में: ' if sub.get('language') == 'hi' else 'In this chapter: ') + '; '.join(l['title'] for l in lessons[:4]) + '.',
                'lessons': lessons, 'boss': L('boss')}
     unit = unit_of(ch['theme'], ch['themeTitle'], n)
     for u in pack['units']: u['chapters'] = [c for c in u['chapters'] if num(c) != n]
