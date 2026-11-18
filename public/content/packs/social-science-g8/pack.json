@@ -3773,42 +3773,35 @@
          "params": {
           "events": [
            {
-            "year": 1050,
-            "label": "A new era in India’s history began"
+            "year": -3000,
+            "label": "First cities and writing"
            },
            {
-            "year": 1192,
-            "label": "The Delhi Sultanate was formed after King"
+            "year": 1,
+            "label": "BCE ends, CE begins"
            },
            {
-            "year": 1330,
-            "label": "The Musunuri confederacy expelled Muhammad bin"
+            "year": 1000,
+            "label": "A thousand years into CE"
            },
            {
-            "year": 1350,
-            "label": "Timur’s forces launched a devastating attack"
-           },
-           {
-            "year": 1526,
-            "label": "Babur defeated Ibrahim Lodi at the First Battle"
-           },
-           {
-            "year": 1565,
-            "label": "A coalition of Deccan Sultanates defeated"
+            "year": 2000,
+            "label": "Two thousand years into CE"
            }
-          ]
+          ],
+          "hist": true
          },
          "title": "Walk through time",
          "tasks": [
           {
-           "say": "Move to when this happened: The Delhi Sultanate was formed after King.",
-           "when": "y >= 1192",
-           "then": "That was 1192 CE."
+           "say": "Move to when this happened: BCE ends, CE begins.",
+           "when": "y >= 1",
+           "then": "That was 1 CE."
           },
           {
            "say": "Go forward to the last event.",
-           "when": "y >= 1565",
-           "then": "The latest event here is from 1565 CE."
+           "when": "y >= 2000",
+           "then": "The latest event here is from 2000 CE."
           }
          ],
          "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
@@ -7508,7 +7501,8 @@
             "year": 1771,
             "label": "Under Mahadji Shinde, the Marathas recaptured Delhi"
            }
-          ]
+          ],
+          "hist": true
          },
          "title": "Walk through time",
          "tasks": [
@@ -11443,6 +11437,10 @@
             "label": "The Age of Colonialism began with Europe’s expansion"
            },
            {
+            "year": 1498,
+            "label": "Vasco da Gama arrived at Kappad near Kozhikode"
+           },
+           {
             "year": 1510,
             "label": "Goa became the capital of the Portuguese colony"
            },
@@ -11461,24 +11459,21 @@
            {
             "year": 1750,
             "label": "India was famous for its manufacturing, especially"
-           },
-           {
-            "year": 1770,
-            "label": "Crop failure and harsh Company taxation caused"
            }
-          ]
+          ],
+          "hist": true
          },
          "title": "Walk through time",
          "tasks": [
           {
-           "say": "Move to when this happened: Goa became the capital of the Portuguese colony.",
-           "when": "y >= 1510",
-           "then": "That was 1510 CE."
+           "say": "Move to when this happened: Vasco da Gama arrived at Kappad near Kozhikode.",
+           "when": "y >= 1498",
+           "then": "That was 1498 CE."
           },
           {
            "say": "Go forward to the last event.",
-           "when": "y >= 1770",
-           "then": "The latest event here is from 1770 CE."
+           "when": "y >= 1750",
+           "then": "The latest event here is from 1750 CE."
           }
          ],
          "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
@@ -34168,7 +34163,8 @@
             "year": 1558,
             "label": "Humayun’s chief wife, Bega Begum, commissioned his"
            }
-          ]
+          ],
+          "hist": true
          },
          "title": "Walk through time",
          "tasks": [
@@ -49538,7 +49534,8 @@
             "year": 2021,
             "label": "Kolkata’s Durga Puja was added to UNESCO’s list"
            }
-          ]
+          ],
+          "hist": true
          },
          "title": "Walk through time",
          "tasks": [

@@ -1081,7 +1081,9 @@ export const KITS = {
       if (own.length) return { events: own, hist };
       return { events: datedEvents(facts || [], 1).length ? datedEvents(chapter || []) : [], hist };
     },
-    usable: (p) => p.events.length >= 3 && p.hist, minScore: 1, perChapter: 1,
+    // Two dated events still make a real timeline (a birth and a first book, a birth and a death), and a Hindi
+    // biography often has only two. The challenges are written to match, so two points are worth showing.
+    usable: (p) => p.events.length >= 2 && p.hist, minScore: 1, perChapter: 1,
     title: { en: 'Walk through time', hi: 'समय की रेखा पर चलिए' },
     takeaway: {
       en: 'Put events in order, and remember that BCE years count down towards 1 CE.',
@@ -1091,9 +1093,21 @@ export const KITS = {
       const ev = [...p.events].sort((a, b) => a.year - b.year), yr = (y) => (y < 0 ? `${-y} BCE` : `${y} CE`);
       if (lang === 'hi') {
         const yhi = (y) => (y < 0 ? `${-y} ई.पू.` : `${y} ई.`);
+        if (ev.length === 2) {
+          return [
+            { say: `आगे बढ़कर वह समय देखिए जब यह हुआ: ${ev[1].label}.`, when: `y >= ${ev[1].year}`, then: `वह ${yhi(ev[1].year)} में हुआ था।` },
+            { say: `फिर पीछे लौटकर पहली घटना से भी पहले जाइए।`, when: `y < ${ev[0].year}`, then: `पहली घटना ${yhi(ev[0].year)} की है, दूसरी ${yhi(ev[1].year)} की: बीच में ${ev[1].year - ev[0].year} साल हैं।` },
+          ];
+        }
         return [
           { say: `उस समय पर जाइए जब यह हुआ: ${ev[1].label}.`, when: `y >= ${ev[1].year}`, then: `वह ${yhi(ev[1].year)} में हुआ था।` },
           { say: 'आख़िरी घटना तक आगे बढ़िए।', when: `y >= ${ev[ev.length - 1].year}`, then: `यहाँ की सबसे नई घटना ${yhi(ev[ev.length - 1].year)} की है।` },
+        ];
+      }
+      if (ev.length === 2) {
+        return [
+          { say: `Move forward to when this happened: ${ev[1].label.replace(/[.]+$/, '')}.`, when: `y >= ${ev[1].year}`, then: `That was ${yr(ev[1].year)}.` },
+          { say: 'Now go back to before the first event.', when: `y < ${ev[0].year}`, then: `The first event is ${yr(ev[0].year)} and the second is ${yr(ev[1].year)}: ${ev[1].year - ev[0].year} years apart.` },
         ];
       }
       return [
@@ -1244,6 +1258,13 @@ function datedEventsHi(facts, need = 3) {
     const before = /सन्|ई\.|ईस्वी|संवत्|शताब्दी/.test(near);
     const after = /^\s*(?:में|को|तक|से|के\s+(?:बाद|पहले|समय|दौरान|जन्म)|की\s+(?:रचना|स्थापना))/.test(sentence.slice(m.index + m[0].length));
     if (!before && !after) continue;
+    // A sentence that starts with a pronoun means nothing on its own: "वह घटना सन् 1933 की है" ("that event was in
+    // 1933") became a timeline label that pointed at a sentence the child never sees. datedEvents above drops the same
+    // shape in English and the Hindi side was missing it.
+    // A pronoun pointing back at another *event* is worthless on a timeline: "वह घटना सन् 1933 की है" (that event was
+    // in 1933) names nothing. A pronoun pointing at a person is fine here, because the person is the chapter's
+    // subject: "उनका पहला कहानी संग्रह 1958 में छपा" reads perfectly. So drop only the event-shaped ones.
+    if (/^(?:वह|वे|वो|यह|ये|इस|उस|उन|इन)\s+(?:घटना|बात|प्रसंग|उदाहरण|समय|वर्ष|साल)(?:\s|[,.।]|$)/.test(sentence)) continue;
     seen.add(y);
     out.push({ year: y, label: labelHi(sentence) });
   }
