@@ -77,6 +77,14 @@ async function setTheme(id) {
 
 // One retry covers a dropped connection; a book that still will not load is skipped so the others stay usable.
 async function getJson(url) {
+  // boot.js starts the book the child was last in while the engine loads; take that copy instead of asking twice.
+  const early = window.__earlyPacks && window.__earlyPacks[url];
+  if (early) {
+    delete window.__earlyPacks[url];
+    try {
+      return await early;
+    } catch (e) { /* fall through to a normal fetch */ }
+  }
   for (let attempt = 0; ; attempt += 1) {
     try {
       const r = await fetch(url);

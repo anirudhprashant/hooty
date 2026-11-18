@@ -26,3 +26,34 @@
     art.src = './themes/' + theme + '/assets/hero.webp';
   } catch (e) { /* a splash is not worth a broken page */ }
 })();
+
+// 3. The book the child was last in is the one thing the first screen cannot be built without, and it was the last thing
+//    asked for: its fetch only began once every engine module had loaded and the app had booted, 2.3 seconds in on a slow
+//    phone. Start it here instead, so it downloads while the engine is still booting. app.js picks the result up by URL
+//    (see getJson) and fetches normally if this early copy fails or the book is out of date.
+(function () {
+  try {
+    var saved = JSON.parse(localStorage.getItem('sparkle-state-v1') || '{}');
+    var learner = (saved.learners || {})[saved.activeLearnerId] || {};
+    var packId = learner.packId;
+    if (!packId || typeof fetch !== 'function') return;
+    var early = {};
+    window.__earlyPacks = early;
+    fetch('./content/index.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (idx) {
+        var packs = (idx && idx.packs) || [];
+        var card = null;
+        for (var i = 0; i < packs.length; i += 1) if (packs[i].id === packId) card = packs[i];
+        if (!card) return;
+        var url = './content/packs/' + packId + '/pack.json' + (card.v ? '?v=' + card.v : '');
+        var p = fetch(url).then(function (r) {
+          if (!r.ok) throw new Error(String(r.status));
+          return r.json();
+        });
+        early[url] = p;
+        p.catch(function () { delete early[url]; });
+      })
+      .catch(function () { /* the app fetches it itself if this fails */ });
+  } catch (e) { /* a splash is never worth a broken page */ }
+})();
