@@ -107,7 +107,8 @@ def page_slug(chapter):
     title = chapter.get('title') or ''
     words = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')[:40].strip('-')
     if not words:
-        return cid
+        # A Hindi or Kannada title has no Latin letters to slug from, so the page keeps a short numbered name.
+        return f'ch{int(num.group(1))}' if num else re.sub(r'[^a-z0-9]+', '-', cid.lower()).strip('-')
     return f'ch{int(num.group(1))}-{words}' if num else words
 
 
