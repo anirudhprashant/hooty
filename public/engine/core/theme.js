@@ -125,8 +125,12 @@ export function mascotAvatar(mood = 'idle') {
   return guide === 'hooty' ? full.replace(/hooty-(idle|happy|wrong)/, 'hooty-avatar-$1') : full.replace(/explorer-/, 'avatar-');
 }
 
-export function themeCopy(tone, key, fallback = '') {
-  const c = current?.copy?.[tone];
-  if (Array.isArray(c) && c.length) return c[Math.floor(Math.random() * c.length)];
-  return c || fallback || key;
+// A theme's copy is written in English; some themes carry translations per language, and a Hindi child must not be
+// congratulated in English by a mascot whose every other word is Hindi.
+export function themeCopy(tone, key, fallback = '', lang = 'en') {
+  const translated = lang !== 'en' ? current?.copy?.[lang]?.[tone] : null;
+  const source = translated || current?.copy?.[tone];
+  const c = Array.isArray(source) ? source[Math.floor(Math.random() * source.length)] : source;
+  if (c) return c;
+  return fallback || key;
 }

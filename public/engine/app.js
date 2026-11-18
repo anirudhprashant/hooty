@@ -1089,7 +1089,7 @@ function handleSubmit(rendered, response) {
   const l = activeLearner();
   if (correct) {
     addXP(10);
-    s.bubble.textContent = themeCopy('correct', 'correct', t('correct'));
+    s.bubble.textContent = themeCopy('correct', 'correct', t('correct'), getLocale());
     s.bubble.classList.remove('is-wrong');
     s.mascotImg.src = mascotAvatar('happy') || '';
     s.mascotImg.classList.add('is-happy');
@@ -1097,7 +1097,7 @@ function handleSubmit(rendered, response) {
     sound('correct', s.streak);
     sparkle(s.wrap);
   } else {
-    s.bubble.textContent = themeCopy('wrong', 'wrong', t('wrong'));
+    s.bubble.textContent = themeCopy('wrong', 'wrong', t('wrong'), getLocale());
     s.bubble.classList.add('is-wrong');
     s.mascotImg.src = mascotAvatar('wrong') || '';
     s.mascotImg.classList.add('is-wrong');
@@ -1439,14 +1439,14 @@ function highlightToggle() {
 // Hooty's face, words and sound for an answer (the full feedback sheet is separate).
 function react(s, correct) {
   if (correct) {
-    s.bubble.textContent = themeCopy('correct', 'correct', t('correct'));
+    s.bubble.textContent = themeCopy('correct', 'correct', t('correct'), getLocale());
     s.bubble.classList.remove('is-wrong');
     s.mascotImg.src = mascotAvatar('happy') || '';
     s.mascotImg.classList.add('is-happy');
     sound('correct', 1);
     sparkle(s.wrap);
   } else {
-    s.bubble.textContent = themeCopy('wrong', 'wrong', t('wrong'));
+    s.bubble.textContent = themeCopy('wrong', 'wrong', t('wrong'), getLocale());
     s.bubble.classList.add('is-wrong');
     s.mascotImg.src = mascotAvatar('wrong') || '';
     s.mascotImg.classList.add('is-wrong');
