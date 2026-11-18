@@ -248,7 +248,7 @@ function subjectTabs() {
   const wrap = el('div', { class: 'tabs-block' });
   {
     const g = activeGrade();
-    const row = el('div', { class: 'subject-tabs grade-tabs', role: 'group', 'aria-label': 'Class' }, grades.map((x) => el('button', {
+    const row = el('div', { class: 'subject-tabs grade-tabs', role: 'group', 'aria-label': t('classGroup') }, grades.map((x) => el('button', {
       class: `subject-tab grade-tab${x === g ? ' is-on' : ''}`, type: 'button', 'aria-pressed': String(x === g),
       onclick: () => switchGrade(x),
     }, [x === 'mine' ? t('myBooks') : t('classN', { n: x })])));
@@ -256,7 +256,7 @@ function subjectTabs() {
     wrap.append(row); swipe(row);
   }
   if (mine.length >= 1) {
-    const row = el('div', { class: 'subject-tabs', role: 'tablist', 'aria-label': 'Subject' }, mine.map((p) => el('button', {
+    const row = el('div', { class: 'subject-tabs', role: 'tablist', 'aria-label': t('subjectGroup') }, mine.map((p) => el('button', {
       class: `subject-tab${p.id === cur?.id ? ' is-on' : ''}`, type: 'button', role: 'tab', 'aria-selected': String(p.id === cur?.id),
       onclick: async () => {
         if (!(await ensurePack(p.id))) { toast(t('bookNotHere')); return; }
@@ -325,7 +325,7 @@ function topBar(title) {
 }
 
 function navBar() {
-  const nav = el('nav', { class: 'nav', 'aria-label': 'Main' });
+  const nav = el('nav', { class: 'nav', 'aria-label': t('mainNav') });
   nav.append(el('div', { class: 'nav__brand' }, [el('img', { src: BRAND_MARK, alt: '' }), t('appName')]));
   const active = NAV_FOR[router.screen];
   const due = practiceSet(10).length;
@@ -335,7 +335,7 @@ function navBar() {
       'aria-current': item.id === active ? 'page' : undefined,
       onclick: () => go(item.id),
     }, [icon(item.icon, { size: 26 }), el('span', { text: item.label() })]);
-    if (item.id === 'practice' && due) b.append(el('span', { class: 'nav__badge', 'aria-label': `${due} to try again`, text: String(due) }));
+    if (item.id === 'practice' && due) b.append(el('span', { class: 'nav__badge', 'aria-label': t('nToTry', { n: due }), text: String(due) }));
     nav.append(b);
   }
   return nav;
@@ -511,7 +511,7 @@ function screenHome() {
       nr ? el('div', { class: 'meter meter--primary' }, [el('span', { style: { width: rewardPct + '%' } })]) : null,
     ]),
   ]);
-  wrap.append(el('section', { class: 'today', 'aria-label': 'Today' }, [goalTile, streakTile, rewardTile]));
+  wrap.append(el('section', { class: 'today', 'aria-label': t('todayGroup') }, [goalTile, streakTile, rewardTile]));
 
   // review + trail
   const pack = currentPack();
@@ -1346,7 +1346,7 @@ function lessonBar(count) {
       class: 'icon-btn', type: 'button', 'aria-label': 'Leave lesson',
       onclick: () => { session = null; go(router.backScreen || 'home'); },
     }, [icon('close')]),
-    el('div', { class: 'lesson__progress', role: 'progressbar', 'aria-label': 'Lesson progress', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': '0' }, [el('span', { style: { width: '0%' } })]),
+    el('div', { class: 'lesson__progress', role: 'progressbar', 'aria-label': t('lessonProgress'), 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': '0' }, [el('span', { style: { width: '0%' } })]),
     el('div', { class: 'lesson__count', text: `0/${count}` }),
     highlightToggle(),
     el('button', { class: 'icon-btn', type: 'button', 'aria-label': t('readAloud'), title: t('readAloud'), onclick: readQuestion }, [icon('speaker')]),
@@ -1717,7 +1717,7 @@ function stickerBoard(l, rewards) {
   const owned = rewards.filter((r) => l?.rewards?.includes(r.id)), byId = Object.fromEntries(owned.map((r) => [r.id, r]));
   let items = parseBoard(l).filter((i) => byId[i.id]), selected = -1;
   const save = async () => { if (l) { l.board = items.map((i) => `${i.id}@${Math.round(i.x)},${Math.round(i.y)}`); await persist(); } };
-  const stage = el('div', { class: 'board__stage', role: 'group', 'aria-label': 'Sticker board' });
+  const stage = el('div', { class: 'board__stage', role: 'group', 'aria-label': t('stickerBoard') });
   const removeBtn = el('button', { class: 'btn btn--ghost', type: 'button', hidden: true, onclick: async () => { if (selected >= 0) { items.splice(selected, 1); selected = -1; await save(); draw(); } } }, [t('takeItOff')]);
   const clearBtn = el('button', { class: 'btn btn--ghost', type: 'button', onclick: async () => { items = []; selected = -1; await save(); draw(); } }, [t('clearBoard')]);
   const hint = el('p', { class: 'section-sub' });
@@ -1930,7 +1930,7 @@ function screenParent() {
       const pct = total ? Math.round((done / total) * 100) : 0;
       list.append(el('div', { class: 'unit-row' }, [
         el('span', { class: 'unit-row__name', text: unit.title }),
-        el('div', { class: 'meter', role: 'progressbar', 'aria-label': `${unit.title} progress`, 'aria-valuenow': String(pct), 'aria-valuemin': '0', 'aria-valuemax': '100' }, [el('span', { style: { width: pct + '%' } })]),
+        el('div', { class: 'meter', role: 'progressbar', 'aria-label': t('unitProgress', { unit: unit.title }), 'aria-valuenow': String(pct), 'aria-valuemin': '0', 'aria-valuemax': '100' }, [el('span', { style: { width: pct + '%' } })]),
         el('span', { class: 'unit-row__pct', text: `${done}/${total}` }),
       ]));
     }
@@ -2080,7 +2080,7 @@ function screenSettings() {
     render();
   });
 
-  const guidePicker = el('div', { class: 'guide-picker', role: 'radiogroup', 'aria-label': 'Your guide' },
+  const guidePicker = el('div', { class: 'guide-picker', role: 'radiogroup', 'aria-label': t('yourGuide') },
     [['hooty', 'Hooty'], ['lumi', 'Lumi']].map(([id, label]) => {
       const on = (l?.guide2 || 'hooty') === id;
       const b = el('button', { class: `guide-pick${on ? ' is-on' : ''}`, type: 'button', role: 'radio', 'aria-checked': String(on), 'aria-label': label }, [
