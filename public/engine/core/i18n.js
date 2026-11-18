@@ -240,6 +240,8 @@ export const strings = {
     videoMissing: "This video is not available right now.",
     ownPdfSource: "Your own PDF of this book, kept on this device.",
     ownBookDesc: "{title}: made on this device from your PDF.",
+    searchAllBooks: "Search all books",
+    searchAllHint: "Find a lesson by what it teaches",
   },
   hi: {
     appName: 'लूमी',
@@ -479,6 +481,8 @@ export const strings = {
     videoMissing: "यह वीडियो अभी उपलब्ध नहीं है।",
     ownPdfSource: "आपकी अपनी PDF, इसी फ़ोन पर रखी हुई।",
     ownBookDesc: "{title}: आपकी PDF से इसी फ़ोन पर बनी।",
+    searchAllBooks: "सारी किताबें खोजिए",
+    searchAllHint: "जो पढ़ाया जाता है उससे पाठ खोजिए",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -718,6 +722,8 @@ export const strings = {
     videoMissing: "ಈ ವೀಡಿಯೊ ಈಗ ಲಭ್ಯವಿಲ್ಲ.",
     ownPdfSource: "ನಿಮ್ಮದೇ PDF, ಈ ಸಾಧನದಲ್ಲೇ ಇದೆ.",
     ownBookDesc: "{title}: ನಿಮ್ಮ PDF ಯಿಂದ ಈ ಸಾಧನದಲ್ಲೇ ಮಾಡಿದ್ದು.",
+    searchAllBooks: "ಎಲ್ಲಾ ಪುಸ್ತಕಗಳನ್ನು ಹುಡುಕಿ",
+    searchAllHint: "ಏನು ಕಲಿಸುತ್ತದೆ ಎಂಬುದರಿಂದ ಪಾಠ ಹುಡುಕಿ",
   },
 };
 

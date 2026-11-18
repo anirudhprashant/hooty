@@ -13,6 +13,7 @@ const PATHS = {
   practice: `<circle ${STROKE} cx="12" cy="12" r="8.5"/><circle ${STROKE} cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/>`,
   rewards: `<path ${STROKE} d="M7 4h10v4.5a5 5 0 0 1-10 0z"/><path ${STROKE} d="M7 6H4.2c0 3 1 4.6 3.2 5M17 6h2.8c0 3-1 4.6-3.2 5M12 13.6V17M8.5 20.5h7M9.5 17h5"/>`,
   grownups: `<circle ${STROKE} cx="9" cy="8" r="3.2"/><path ${STROKE} d="M3.2 19.5c0-3.3 2.6-5.6 5.8-5.6s5.8 2.3 5.8 5.6"/><circle ${STROKE} cx="17.4" cy="9.4" r="2.4"/><path ${STROKE} d="M16.8 14.2c2.4-.2 4.2 1.4 4.2 4"/>`,
+  search: '<circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/>',
   settings: `<circle ${STROKE} cx="12" cy="12" r="3.2"/><path ${STROKE} d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/>`,
   close: `<path ${STROKE} d="M6 6l12 12M18 6 6 18"/>`,
   share: `<circle ${STROKE} cx="18" cy="5.5" r="2.6"/><circle ${STROKE} cx="6" cy="12" r="2.6"/><circle ${STROKE} cx="18" cy="18.5" r="2.6"/><path ${STROKE} d="m8.3 10.7 7.4-3.9M8.3 13.3l7.4 3.9"/>`,

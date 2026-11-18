@@ -261,6 +261,12 @@ function subjectTabs() {
     row.append(el('button', { class: 'subject-tab grade-tab grade-tab--add', type: 'button', onclick: () => go('addbook') }, [t('addMyBook')]));
     wrap.append(row); swipe(row);
   }
+  // The catalogue at /books/ is the only place a lesson can be found by what it teaches ('photosynthesis') instead of
+  // by class and subject. It is a real page, so it opens in the same tab and the back button returns here.
+  wrap.append(el('a', { class: 'catalogue-link', href: '/books/' }, [
+    icon('search', { size: 18 }),
+    el('span', {}, [el('b', {}, [t('searchAllBooks')]), el('span', { class: 'catalogue-link__sub' }, [t('searchAllHint')])]),
+  ]));
   if (mine.length >= 1) {
     const row = el('div', { class: 'subject-tabs', role: 'tablist', 'aria-label': t('subjectGroup') }, mine.map((p) => el('button', {
       class: `subject-tab${p.id === cur?.id ? ' is-on' : ''}`, type: 'button', role: 'tab', 'aria-selected': String(p.id === cur?.id),
