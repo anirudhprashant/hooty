@@ -259,6 +259,9 @@ export const strings = {
     ce: "CE",
     mostRecentEvent: "Most recent event: {label} ({year}).",
     noEventYet: "No event yet.",
+    wordBankTitle: "The words this book explains",
+    wordBankNote: "Every word Hooty stops to explain in this book, with the chapter and the page it comes from.",
+    wordBankOpen: "Read the words",
   },
   hi: {
     appName: 'हूटी',
@@ -517,6 +520,9 @@ export const strings = {
     ce: "ई.",
     mostRecentEvent: "सबसे नई घटना: {label} ({year})।",
     noEventYet: "अभी कोई घटना नहीं।",
+    wordBankTitle: "इस किताब के शब्द",
+    wordBankNote: "इस किताब में हूटी जिन शब्दों को समझाता है, हर शब्द के साथ उसका अध्याय और पृष्ठ।",
+    wordBankOpen: "शब्द देखिए",
   },
   kn: {
     appName: 'ಹೂಟಿ',
@@ -775,6 +781,9 @@ export const strings = {
     ce: "ಕ್ರಿ.ಶ.",
     mostRecentEvent: "ಇತ್ತೀಚಿನ ಘಟನೆ: {label} ({year}).",
     noEventYet: "ಇನ್ನೂ ಯಾವುದೇ ಘಟನೆ ಇಲ್ಲ.",
+    wordBankTitle: "ಈ ಪುಸ್ತಕದ ಪದಗಳು",
+    wordBankNote: "ಈ ಪುಸ್ತಕದಲ್ಲಿ ಹೂಟಿ ವಿವರಿಸುವ ಪ್ರತಿ ಪದ, ಅದರ ಅಧ್ಯಾಯ ಮತ್ತು ಪುಟದೊಂದಿಗೆ.",
+    wordBankOpen: "ಪದಗಳನ್ನು ನೋಡಿ",
   },
 };
 

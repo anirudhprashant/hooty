@@ -80,6 +80,12 @@ footer { margin-top:40px; font-size:14px; color:var(--dim); border-top:1px solid
 #word-results a::first-letter { text-transform:uppercase; }
 #word-results .result__meta { display:block; font-size:14px; color:var(--dim); }
 .card .meta a { text-decoration:none; border-bottom:1px solid var(--line); }
+
+ul.words { list-style:none; margin:0 0 10px; padding:0; }
+ul.words li { padding:10px 0; border-bottom:1px solid var(--line); }
+ul.words li:last-child { border-bottom:0; }
+ul.words strong { display:block; color:var(--ink); }
+ul.words span { color:var(--dim); font-size:15px; }
 """
 
 
@@ -250,11 +256,40 @@ def glossary_word_count():
         return 0
 
 
+def glossary_by_chapter():
+    """{book: {chapter number: [(word, meaning), ...]}} so a chapter page can show the words it teaches. The app explains
+    a word in place; a chapter page should say beforehand which words are coming."""
+    out = {}
+    for g in glob.glob(os.path.join(PUB, 'content', 'packs', '*', 'glossary.json')):
+        book = os.path.basename(os.path.dirname(g))
+        try:
+            d = json.load(open(g, encoding='utf-8'))
+        except Exception:
+            continue
+        terms = d.get('terms') if isinstance(d, dict) else d
+        per = {}
+        for t in terms or []:
+            term, meaning = (t.get('term') or '').strip(), (t.get('meaning') or '').strip()
+            if not term or not meaning:
+                continue
+            for src in (t.get('src') or [{}]):
+                ch = src.get('ch')
+                if not ch:
+                    continue
+                bucket = per.setdefault(int(ch), [])
+                if term not in [x[0] for x in bucket]:
+                    bucket.append((term, meaning))
+        if per:
+            out[book] = per
+    return out
+
+
 def main():
     # Pages from an older run stay on disk with their old names (ch02-.html beside ch2-dada-dadi.html), so a book
     # folder is rebuilt from scratch: one page per chapter, always with the current slug.
 
     books = load()
+    words_by_book = glossary_by_chapter()
     outdir = os.path.join(PUB, 'books')
     os.makedirs(outdir, exist_ok=True)
     # Pages from an older run stay on disk with their old names (ch02-.html beside ch2-dada-dadi.html), so a book's
@@ -338,7 +373,7 @@ no sign-up, and nobody can sell it.</p>
   <p class="note" id="book-search-status" aria-live="polite"></p>
   <ul id="book-results"></ul>
 </div>
-<div class="card"><h3><a href="/glossary/">The word bank</a></h3><div class="meta">@@WORDS@@ words Hooty explains,
+<div class="card"><h2><a href="/glossary/">The word bank</a></h2><div class="meta">@@WORDS@@ words Hooty explains,
 A to Z or book by book, with the chapter and page each one comes from.</div></div>
 {''.join(cards)}"""
     index_ld = ld_block({
@@ -443,6 +478,21 @@ pictures and read-aloud.</p>
                         links.append(f'<a href="/books/{esc(slug)}/{esc(page_slug(other))}.html">{esc((other.get("title") or "")[:40])}</a>')
                 if links:
                     nav = '<p class="more">Also in this book: ' + ' &middot; '.join(links) + '</p>'
+            chnum = None
+            _m = re.search(r'ch0*(\d+)', real_id or '')
+            if _m:
+                chnum = int(_m.group(1))
+            chapter_words = (words_by_book.get(slug) or {}).get(chnum) or []
+            words = ''
+            if chapter_words:
+                shown = chapter_words[:24]
+                items_w = ''.join(
+                    f'<li><strong>{esc(t)}</strong><span>{esc(m)}</span></li>' for t, m in shown)
+                more_w = (f'<p class="more">and {len(chapter_words) - len(shown)} more in '
+                          f'<a href="/books/{esc(slug)}/glossary.html">the words of this book</a>.</p>'
+                          if len(chapter_words) > len(shown)
+                          else f'<p class="more">Every word in <a href="/books/{esc(slug)}/glossary.html">this book</a>.</p>')
+                words = (f'<h2>Words this chapter explains</h2><ul class="words">{items_w}</ul>{more_w}')
             cbody = f"""<div class="crumbs"><a href="/">Hooty</a> / <a href="/books/">All books</a> /
 <a href="/books/{esc(slug)}.html">{esc(title)}</a> / {esc(ctitle)}</div>
 <h1>{esc(ctitle)}</h1>
@@ -450,6 +500,7 @@ pictures and read-aloud.</p>
 <p><a class="cta" href="/#/chapter/{esc(slug)}/{esc(real_id)}">Start this chapter</a></p>
 <h2>Lessons in this chapter</h2>
 <ul class="lessons">{rows}</ul>
+{words}
 {nav}
 {ld_block(chapter_ld(b, c, ls))}
 {ld_block(crumbs_ld([('Hooty', '/'), ('All books', '/books/'), (title, f'/books/{slug}.html'), (ctitle, f'/books/{slug}/{cid}.html')]))}"""

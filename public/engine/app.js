@@ -1978,6 +1978,22 @@ function screenParent() {
     l?.retakes?.n ? el('p', { class: 'growth-note', text: t('retakeNote', { fixed: l.retakes.fixed, n: l.retakes.n }) }) : null,
   ]));
 
+  // The same words are a page on the site, so a parent can read them without opening a lesson. It sits here because
+  // this is where a grown-up looks, and the count is the book's own glossary once it has arrived.
+  const thisBook = currentPack();
+  if (thisBook) {
+    const wordCount = thisBook.glossary?.terms?.length || 0;
+    wrap.append(el('section', { class: 'growth-card' }, [
+      el('h2', { class: 'section-title', text: t('wordBankTitle') }),
+      el('p', { text: wordCount ? `${wordCount.toLocaleString()} · ${t('wordBankNote')}` : t('wordBankNote') }),
+      el('p', {}, [el('a', {
+        class: 'catalogue-link',
+        href: `/books/${thisBook.id}/glossary.html`,
+        text: t('wordBankOpen'),
+      })]),
+    ]));
+  }
+
   wrap.append(el('h2', { class: 'section-title', text: t('progressByUnit') }));
   const list = el('div', { class: 'unit-list' });
   // A child in Class 6 was shown the units of all five Class 6 books, most of them sitting at 0%, so a parent read a
