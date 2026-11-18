@@ -793,7 +793,7 @@ function screenLesson() {
     const pool = (inChapter.boss.activities || []).filter((a) => ['mcq', 'truefalse'].includes(a.type)).slice(0, 3);
     if (pool.length === 3) {
       learner.pre ||= {};
-      activities = [{ type: 'hook', id: `${lesson.id}-prehook`, prompt: 'Three quick questions first, just to see what you already know. It is fine not to know yet!', explanation: '' },
+      activities = [{ type: 'hook', id: `${lesson.id}-prehook`, prompt: t('preHook'), explanation: '' },
         ...pool.map((a) => ({ ...a, id: `${a.id}-pre`, pre: true })), ...activities];
     }
   }

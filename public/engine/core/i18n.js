@@ -207,6 +207,7 @@ export const strings = {
     stickingOne: "Of 1 question missed the first time and tried again, {fixed} of them is now right.",
     retakeNote: "After a second miss, Hooty shows the one line that taught it and asks a different question about the same idea. {fixed} of {n} of those were then answered right.",
     chapterGrowth: "{chapter}: {before}% before, {after}% on the chapter challenge",
+    preHook: "Three quick questions first, just to see what you already know. It is fine not to know yet!",
   },
   hi: {
     appName: 'लूमी',
@@ -413,6 +414,7 @@ export const strings = {
     stickingOne: "पहली बार में ग़लत हुए 1 सवाल को फिर आज़माने पर वह अब सही है।",
     retakeNote: "दूसरी बार ग़लत होने पर हूटी वह एक पंक्ति दिखाती है जिसने यह सिखाया था, फिर उसी विचार पर दूसरा सवाल पूछती है। ऐसे {n} में से {fixed} सवाल फिर सही हुए।",
     chapterGrowth: "{chapter}: पहले {before}%, अध्याय परीक्षा में {after}%",
+    preHook: "पहले तीन छोटे सवाल, यह देखने के लिए कि आपको क्या पहले से आता है। न आना भी ठीक है!",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -619,6 +621,7 @@ export const strings = {
     stickingOne: "ಮೊದಲ ಬಾರಿ ತಪ್ಪಾದ 1 ಪ್ರಶ್ನೆಯನ್ನು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿದಾಗ ಈಗ ಸರಿಯಾಗಿದೆ.",
     retakeNote: "ಎರಡನೇ ಬಾರಿ ತಪ್ಪಾದಾಗ ಹೂಟಿ ಅದನ್ನು ಕಲಿಸಿದ ಒಂದು ಸಾಲನ್ನು ತೋರಿಸಿ, ಅದೇ ಕಲ್ಪನೆಯ ಮೇಲೆ ಬೇರೆ ಪ್ರಶ್ನೆ ಕೇಳುತ್ತದೆ. ಅವುಗಳಲ್ಲಿ {n} ರಲ್ಲಿ {fixed} ಈಗ ಸರಿಯಾಗಿವೆ.",
     chapterGrowth: "{chapter}: ಮೊದಲು {before}%, ಅಧ್ಯಾಯ ಪರೀಕ್ಷೆಯಲ್ಲಿ {after}%",
+    preHook: "ಮೊದಲು ಮೂರು ಸಣ್ಣ ಪ್ರಶ್ನೆಗಳು, ನಿಮಗೆ ಈಗಾಗಲೇ ಏನು ಗೊತ್ತು ಎಂದು ನೋಡಲು. ಗೊತ್ತಿಲ್ಲದಿದ್ದರೂ ಪರವಾಗಿಲ್ಲ!",
   },
 };
 
