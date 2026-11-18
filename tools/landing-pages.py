@@ -87,6 +87,49 @@ def page(title, desc, path, body, script=''):
 """
 
 
+def ld_block(obj):
+    """Structured data for a page. Google reads this to build rich results, and it costs the page nothing."""
+    return ('<script type="application/ld+json">'
+            + json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
+            + '</script>')
+
+
+def book_ld(book, chapters, lessons):
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Book',
+        'name': book.get('title') or book['id'],
+        'url': f"{SITE}/books/{book['id']}.html",
+        'inLanguage': book.get('language') or 'en',
+        'numberOfPages': lessons,
+        'bookEdition': f"Class {book.get('grade')}" if book.get('grade') else None,
+        'learningResourceType': 'Course',
+        'isAccessibleForFree': True,
+        'description': f"{book.get('title') or book['id']} on Hooty: {len(chapters)} chapters and {lessons} short lessons, free for every child, no sign-up.",
+        'publisher': {'@type': 'Organization', 'name': 'Hooty', 'url': SITE},
+    }
+
+
+def chapter_ld(book, chapter, lessons):
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Chapter' if False else 'LearningResource',
+        'name': chapter.get('title') or chapter.get('id'),
+        'url': f"{SITE}/books/{book['id']}/{page_slug(chapter)}.html",
+        'learningResourceType': 'Lesson',
+        'isAccessibleForFree': True,
+        'inLanguage': book.get('language') or 'en',
+        'numberOfItems': len(lessons),
+        'isPartOf': {'@type': 'Book', 'name': book.get('title') or book['id'], 'url': f"{SITE}/books/{book['id']}.html"},
+        'description': f"{chapter.get('title') or chapter.get('id')} from {book.get('title') or book['id']}: {len(lessons)} short lessons on Hooty, free and no sign-up.",
+    }
+
+
+def crumbs_ld(parts):
+    items = [{'@type': 'ListItem', 'position': i + 1, 'name': name, 'item': f'{SITE}{path}'} for i, (name, path) in enumerate(parts)]
+    return {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': items}
+
+
 def load():
     idx = json.load(open(os.path.join(PUB, 'content/index.json')))
     order = [p['id'] for p in idx['packs']]
