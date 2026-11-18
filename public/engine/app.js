@@ -2059,7 +2059,7 @@ function screenSettings() {
   });
   range.addEventListener('change', () => persist());
 
-  const nameField = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': 'Your name', value: /^learner$/i.test(l?.name || '') ? '' : (l?.name || ''), placeholder: t('namePlaceholder') });
+  const nameField = el('input', { class: 'text-input', type: 'text', maxlength: '24', autocomplete: 'given-name', 'aria-label': t('nameLabel'), value: /^learner$/i.test(l?.name || '') ? '' : (l?.name || ''), placeholder: t('namePlaceholder') });
   nameField.addEventListener('change', () => saveName(nameField.value));
 
   const langSel = el('select', { class: 'text-input', 'aria-label': t('language') });
