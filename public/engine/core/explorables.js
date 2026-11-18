@@ -2705,6 +2705,35 @@ export const WIDGETS = {
       return { kids, say: `${who} ${what} ${rest}. ${why}` };
     },
   },
+  opposites: {
+    subject: 'english', about: 'Pairs of words that mean the opposite, and the prepositions in, on, under and behind that say where something is. For opposites, prepositions, describing words.',
+    sliders: [['w', 'Pick a pair', 0, 7, 1, 1]],
+    draw(v) {
+      const rows = [
+        ['big', 'small', 'A big elephant, a small mouse.', null],
+        ['hot', 'cold', 'Hot tea, cold ice.', null],
+        ['fast', 'slow', 'A fast train, a slow bullock cart.', null],
+        ['light', 'heavy', 'A light feather, a heavy stone.', null],
+        ['in', 'out', 'The cat is in the box, then out of it.', 'in'],
+        ['on', 'under', 'The cat sits on the table, then under it.', 'on'],
+      ];
+      const [a, b, line, where] = rows[v.w];
+      const kids = [];
+      const card = (x, word, fill, colour) => [R(x, 60, 200, 70, fill, { w: 3, r: 12 }), T(x + 100, 106, word, { z: 28, f: colour })];
+      kids.push(...card(30, a, '#fdf6ff', '#3a2560'));
+      kids.push(T(230, 106, '↔', { z: 24 }));
+      kids.push(...card(280, b, '#e4f7ee', '#058a68'));
+      if (where) {
+        // a table drawn in perspective, with the object above it or beneath it, so in/on/under can be seen
+        const onTop = where === 'on';
+        kids.push(R(120, 210, 200, 16, '#c99a5b', { w: 2, r: 4 }));
+        kids.push(T(220, 186, onTop ? 'on' : 'under', { z: 18, f: '#c2510e' }));
+        kids.push(onTop ? R(190, 178, 60, 32, '#8a5a2b', { w: 2, r: 6 }) : R(140, 232, 60, 32, '#8a5a2b', { w: 2, r: 6 }));
+      }
+      kids.push(T(30, where ? 262 : 190, line, { z: 15, a: 'start', w: 620, f: '#6b5a8a' }));
+      return { kids, say: `${a} and ${b} are opposites. ${line}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

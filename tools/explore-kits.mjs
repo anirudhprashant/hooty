@@ -3,6 +3,16 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  opposites: {
+    grades: [2, 4], subject: 'english', titleOnly: true,
+    match: [/opposites?/, /opposite words?/, /prepositions?/, /words that mean the opposite/],
+    title: 'Opposites and where things are', takeaway: 'Opposites describe the two ends of one idea (big and small, hot and cold), and prepositions such as in, on and under say where something is.',
+    tasks: [
+      { say: 'Find the pair that describes a mouse and an elephant.', when: 'w == 0', then: 'Big and small are opposites: the elephant is big, the mouse is small.' },
+      { say: 'Find the pair about a train and a bullock cart.', when: 'w == 2', then: 'Fast and slow are opposites.' },
+      { say: 'Find a pair that tells you WHERE something is.', when: 'w == 4', then: 'In and out, on and under: prepositions say where.' },
+    ],
+  },
   wordorder: {
     grades: [1, 3], subject: 'english', titleOnly: true,
     match: [/word order/, /making sentences?/, /rearranging sentences?/, /sentence building/, /jumbled words?/],

@@ -25811,7 +25811,7 @@
       {
        "id": "english-g3-ch8-l3",
        "title": "Learning Opposites",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -25888,6 +25888,36 @@
            "p": 83
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g3-ch8-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "opposites",
+         "params": {},
+         "title": "Opposites and where things are",
+         "tasks": [
+          {
+           "say": "Find the pair that describes a mouse and an elephant.",
+           "when": "w == 0",
+           "then": "Big and small are opposites: the elephant is big, the mouse is small."
+          },
+          {
+           "say": "Find the pair about a train and a bullock cart.",
+           "when": "w == 2",
+           "then": "Fast and slow are opposites."
+          },
+          {
+           "say": "Find a pair that tells you WHERE something is.",
+           "when": "w == 4",
+           "then": "In and out, on and under: prepositions say where."
+          }
+         ],
+         "takeaway": "Opposites describe the two ends of one idea (big and small, hot and cold), and prepositions such as in, on and under say where something is.",
+         "explanation": "Opposites describe the two ends of one idea (big and small, hot and cold), and prepositions such as in, on and under say where something is."
         },
         {
          "type": "worked",
