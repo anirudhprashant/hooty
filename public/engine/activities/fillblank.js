@@ -19,7 +19,7 @@ export default {
       placeholder: activity.placeholder || t('typeAnswer'),
     });
 
-    const submit = el('button', { class: 'btn btn--primary', type: 'button' }, ['Check']);
+    const submit = el('button', { class: 'btn btn--primary', type: 'button' }, [t('check')]);
     submit.addEventListener('click', () => {
       if (ctx.locked) return;
       ctx.submit({ value: input.value });
@@ -49,7 +49,7 @@ export default {
           class: 'btn btn--ghost btn--sm',
           type: 'button',
           onclick: () => { input.placeholder = activity.hint; ctx.say(activity.hint); },
-        }, ['Hint'])
+        }, [t('hint')])
       : null;
 
     root.append(

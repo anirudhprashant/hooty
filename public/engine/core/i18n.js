@@ -246,6 +246,12 @@ export const strings = {
     gotIt: "Got it",
     inYourBook: "In your book: {page}",
     chapterPage: "Chapter {ch}, page {p}",
+    hint: "Hint",
+    playAgain: "Play again",
+    checkOrder: "Check order",
+    offlineLine: "You seem to be offline. Connect to the internet once, then open Hooty again.",
+    loadFailedLine: "Something went wrong while loading. Your progress is safe.",
+    playClip: "Play",
   },
   hi: {
     appName: 'लूमी',
@@ -491,6 +497,12 @@ export const strings = {
     gotIt: "समझ गया",
     inYourBook: "आपकी किताब में: {page}",
     chapterPage: "अध्याय {ch}, पृष्ठ {p}",
+    hint: "संकेत",
+    playAgain: "फिर सुनाइए",
+    checkOrder: "क्रम जाँचिए",
+    offlineLine: "लगता है इंटरनेट बंद है। एक बार इंटरनेट जोड़कर हूटी फिर खोलिए।",
+    loadFailedLine: "लोड करते समय कुछ गड़बड़ हुई। आपकी प्रगति सुरक्षित है।",
+    playClip: "सुनिए",
   },
   kn: {
     appName: 'ಲೂಮಿ',
@@ -736,6 +748,12 @@ export const strings = {
     gotIt: "ಅರ್ಥವಾಯಿತು",
     inYourBook: "ನಿಮ್ಮ ಪುಸ್ತಕದಲ್ಲಿ: {page}",
     chapterPage: "ಅಧ್ಯಾಯ {ch}, ಪುಟ {p}",
+    hint: "ಸುಳಿವು",
+    playAgain: "ಮತ್ತೆ ಕೇಳಿಸಿ",
+    checkOrder: "ಕ್ರಮ ಪರಿಶೀಲಿಸಿ",
+    offlineLine: "ಇಂಟರ್ನೆಟ್ ಇಲ್ಲ ಎಂದು ತೋರುತ್ತದೆ. ಒಮ್ಮೆ ಇಂಟರ್ನೆಟ್ ಜೋಡಿಸಿ ಹೂಟಿ ಮತ್ತೆ ತೆರೆಯಿರಿ.",
+    loadFailedLine: "ಲೋಡ್ ಮಾಡುವಾಗ ಏನೋ ತಪ್ಪಾಯಿತು. ನಿಮ್ಮ ಪ್ರಗತಿ ಸುರಕ್ಷಿತವಾಗಿದೆ.",
+    playClip: "ಕೇಳಿಸಿ",
   },
 };
 

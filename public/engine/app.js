@@ -2466,7 +2466,7 @@ main().catch((err) => {
   clear(app);
   app.append(el('div', { class: 'empty fatal' }, [
     el('h2', { text: t('bootFailed') }),
-    el('p', { text: navigator.onLine === false ? 'You seem to be offline. Connect to the internet once, then open Hooty again.' : 'Something went wrong while loading. Your progress is safe.' }),
-    el('button', { class: 'btn btn--primary', type: 'button', onclick: () => location.reload() }, ['Try again']),
+    el('p', { text: navigator.onLine === false ? t('offlineLine') : t('loadFailedLine') }),
+    el('button', { class: 'btn btn--primary', type: 'button', onclick: () => location.reload() }, [t('tryAgain')]),
   ]));
 });

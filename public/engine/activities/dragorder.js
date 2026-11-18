@@ -12,7 +12,7 @@ export default {
     const root = el('div', { class: 'activity activity--order' });
     const pool = el('div', { class: 'order-pool', role: 'list', 'aria-label': t('itemsToArrange') });
     const answerRow = el('div', { class: 'order-answer', role: 'list', 'aria-label': t('yourAnswer') });
-    const checkBtn = el('button', { class: 'btn btn--primary', type: 'button' }, ['Check order']);
+    const checkBtn = el('button', { class: 'btn btn--primary', type: 'button' }, [t('checkOrder')]);
 
     const items = activity.items || [];
     const placed = [];

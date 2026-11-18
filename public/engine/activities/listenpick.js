@@ -8,9 +8,9 @@ export default {
 
     const play = el('button', { class: 'speak-btn', type: 'button', 'aria-label': t('playAudio') }, [
       el('span', { class: 'speak-btn__icon', 'aria-hidden': 'true' }),
-      el('span', { text: 'Play' }),
+      el('span', { text: t('playClip') }),
     ]);
-    const playAgain = el('button', { class: 'btn btn--ghost btn--sm', type: 'button' }, ['Play again']);
+    const playAgain = el('button', { class: 'btn btn--ghost btn--sm', type: 'button' }, [t('playAgain')]);
 
     const doSpeak = () => {
       const ok = speak(activity.speech || activity.prompt, ctx.locale || 'en-IN');

@@ -1,4 +1,5 @@
 import { el } from '../core/dom.js';
+import { t } from '../core/i18n.js';
 
 // A media block between activities. Never blocks progress.
 
@@ -41,7 +42,7 @@ export default {
 
     // A media block is scenery between activities. It must never block
     // progress, so it gets a plain way forward.
-    const next = el('button', { class: 'btn btn--primary btn--block', type: 'button' }, ['Continue']);
+    const next = el('button', { class: 'btn btn--primary btn--block', type: 'button' }, [t('continue')]);
     next.addEventListener('click', () => ctx.submit({ seen: true }));
 
     root.append(el('div', { class: 'activity__actions' }, [next]));

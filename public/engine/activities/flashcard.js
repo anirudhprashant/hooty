@@ -35,7 +35,7 @@ export default {
       root.append(el('p', { class: 'activity__note', text: activity.explanation }));
     }
 
-    const next = el('button', { class: 'btn btn--primary btn--block', type: 'button' }, ['Continue']);
+    const next = el('button', { class: 'btn btn--primary btn--block', type: 'button' }, [t('continue')]);
     next.addEventListener('click', () => ctx.submit({ flipped: true }));
 
     root.append(el('div', { class: 'activity__actions' }, [next]));

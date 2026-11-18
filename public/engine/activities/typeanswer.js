@@ -1,5 +1,6 @@
 import { el } from '../core/dom.js';
 import { matches, closeWord } from '../core/answers.js';
+import { t } from '../core/i18n.js';
 
 function normalise(s) {
   return String(s).toLowerCase().replace(/[.,!?;:'"()]/g, '').replace(/\s+/g, ' ').trim();
@@ -14,9 +15,9 @@ export default {
       type: 'text',
       autocomplete: 'off',
       'aria-label': activity.prompt || 'Your answer',
-      placeholder: activity.placeholder || 'Type your answer',
+      placeholder: activity.placeholder || t('typeAnswer'),
     });
-    const submit = el('button', { class: 'btn btn--primary', type: 'button' }, ['Check']);
+    const submit = el('button', { class: 'btn btn--primary', type: 'button' }, [t('check')]);
     submit.addEventListener('click', () => {
       if (ctx.locked) return;
       ctx.submit({ value: input.value });
