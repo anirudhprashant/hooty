@@ -55,13 +55,20 @@ export function pickDueCards(cards, limit = 10, now = Date.now()) {
 
 // Weak topics = tags of cards with the most lapses, used by the parent view
 // and the "Practice weak spots" button.
+// Tags come from the build: some name what the question is about ('maps', 'direction') and some only say how the card
+// was made ('deep', 'exam', 'computed'). A parent reading 'deep x2' learns nothing, so the structural ones are dropped.
+const STRUCTURAL = new Set(['deep', 'exam', 'case', 'practice', 'computed', 'hook', 'think', 'written', 'assertion', 'worked',
+  'predict', 'infer', 'explain', 'explore', 'book', 'exam', 'case', 'reading', 'key words', 'book questions', 'retake', 'alt']);
+
 export function weakTags(cards, limit = 6) {
   const tally = new Map();
   for (const c of cards) {
     const lapses = c.lapses || 0;
     if (lapses <= 0) continue;
     for (const tag of c.meta?.tags || []) {
-      tally.set(tag, (tally.get(tag) || 0) + lapses);
+      const clean = String(tag || '').trim();
+      if (!clean || STRUCTURAL.has(clean.toLowerCase())) continue;
+      tally.set(clean, (tally.get(clean) || 0) + lapses);
     }
   }
   return [...tally.entries()]
