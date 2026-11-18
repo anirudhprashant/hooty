@@ -8103,7 +8103,7 @@
       {
        "id": "social-science-g7-ch3-l4",
        "title": "The Monsoons",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -8183,6 +8183,36 @@
            "p": 55
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch3-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "monsoon",
+         "params": {},
+         "title": "Follow the monsoon winds",
+         "tasks": [
+          {
+           "say": "Move the month to July, in the middle of the summer monsoon.",
+           "when": "month == 7",
+           "then": "In July the land is hotter than the sea, so low pressure sits over the land and moist winds come in from the sea. This is the summer monsoon, and it brings most of India's rain."
+          },
+          {
+           "say": "Move the month to December, in the winter monsoon.",
+           "when": "month == 12",
+           "then": "In December the land is cooler than the sea, so the pressure is low over the sea and cool, dry winds blow from the land out to sea. Little rain falls."
+          },
+          {
+           "say": "Find another month when the wind blows from the land to the sea.",
+           "when": "month >= 1 and month <= 2",
+           "then": "January and February work too: the winter monsoon lasts through these months, with dry winds blowing out to sea."
+          }
+         ],
+         "takeaway": "The monsoon is a yearly reversal of the winds. In summer the land is hotter, so moist sea air blows in and brings rain; in winter the sea is warmer, so cool dry air blows from the land out to sea.",
+         "explanation": "The monsoon is a yearly reversal of the winds. In summer the land is hotter, so moist sea air blows in and brings rain; in winter the sea is warmer, so cool dry air blows from the land out to sea."
         },
         {
          "type": "worked",
