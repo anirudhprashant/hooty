@@ -18979,7 +18979,7 @@
       {
        "id": "science-g8-ch6-l3",
        "title": "How Winds Form",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -19041,6 +19041,31 @@
            "p": 89
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch6-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seabreeze",
+         "params": {},
+         "title": "Watch the coast breathe",
+         "tasks": [
+          {
+           "say": "Make a sea breeze.",
+           "when": "hour >= 10 and hour <= 17",
+           "then": "By day the land is hotter, so air rises over it and the sea air blows in."
+          },
+          {
+           "say": "Make a land breeze.",
+           "when": "hour >= 21 or hour <= 5",
+           "then": "At night the land is cooler, so the breeze blows out to sea."
+          }
+         ],
+         "takeaway": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.",
+         "explanation": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze."
         },
         {
          "type": "worked",
