@@ -212,7 +212,7 @@ export const KITS = {
     tasks: [{ say: 'Build 2.05.', when: 'o == 2 and t == 0 and h == 5', then: '2 ones, 0 tenths and 5 hundredths is 2.05.' }],
   },
   bargraph: {
-    grades: [5, 7], match: [/bar graphs?/, /pictographs?/, /tally/, /\bfrequency\b/],
+    grades: [4, 7], match: [/bar graphs?/, /pictographs?/, /tally/, /\bfrequency\b/],
     title: 'Read the bar graph', takeaway: 'Bars compare amounts, and the scale tells you what each mark is worth.',
     tasks: [{ say: 'Make Monday and Wednesday equal.', when: 'a == c', then: 'Equal bars mean equal amounts.' }],
   },
@@ -682,7 +682,7 @@ export const KITS = {
     ],
   },
   plate: {
-    grades: [3, 4], perChapter: { 4: 3 },
+    grades: [3, 6], perChapter: { 4: 3, 6: 2 },
     match: [/\bbalanced (plate|meal|diet|food)\b/, /\benergy[- ]giving\b|\benergy[- ]providing\b|\bprovide energy\b|\brich in energy\b/, /\bbody[- ]building\b/, /\bprotective food/, /\bfood groups?\b/, /\bjunk food\b/],
     title: 'Fill a balanced plate', takeaway: 'A balanced plate has protective food as its biggest part, with body-building food and some energy food. Junk food is a sometimes food.',
     tasks: [
