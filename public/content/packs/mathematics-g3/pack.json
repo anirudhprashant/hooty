@@ -7020,7 +7020,7 @@
       {
        "id": "mathematics-g3-ch2-l1",
        "title": "Shapes and Funny Faces",
-       "estimatedMinutes": 13,
+       "estimatedMinutes": 15,
        "activities": [
         {
          "type": "hook",
@@ -7137,6 +7137,36 @@
          "derived": [
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g3-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "roundsolids",
+         "params": {},
+         "title": "Look at the solid",
+         "tasks": [
+          {
+           "say": "Find a solid with no corners at all.",
+           "when": "(shape == 3 or shape == 4) and look == 2",
+           "then": "The cylinder and the sphere have no corners."
+          },
+          {
+           "say": "Find the solid with exactly one corner and show it.",
+           "when": "shape == 2 and look == 2",
+           "then": "The cone has one corner, at its tip."
+          },
+          {
+           "say": "Show the flat faces of the cube. How many are there?",
+           "when": "shape == 0 and look == 1",
+           "then": "A cube has 6 flat faces, like a gift box."
+          }
+         ],
+         "takeaway": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none.",
+         "explanation": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none."
         },
         {
          "type": "worked",
@@ -8406,7 +8436,7 @@
       {
        "id": "mathematics-g3-ch2-l2",
        "title": "Shapes All Around Us",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -8512,6 +8542,36 @@
           "3 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g3-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "roundsolids",
+         "params": {},
+         "title": "Look at the solid",
+         "tasks": [
+          {
+           "say": "Find a solid with no corners at all.",
+           "when": "(shape == 3 or shape == 4) and look == 2",
+           "then": "The cylinder and the sphere have no corners."
+          },
+          {
+           "say": "Find the solid with exactly one corner and show it.",
+           "when": "shape == 2 and look == 2",
+           "then": "The cone has one corner, at its tip."
+          },
+          {
+           "say": "Show the flat faces of the cube. How many are there?",
+           "when": "shape == 0 and look == 1",
+           "then": "A cube has 6 flat faces, like a gift box."
+          }
+         ],
+         "takeaway": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none.",
+         "explanation": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none."
         },
         {
          "type": "worked",
@@ -27016,7 +27076,7 @@
       {
        "id": "mathematics-g3-ch5-l1",
        "title": "Rangoli, Boxes and Shapes",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -27137,6 +27197,36 @@
           "4 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g3-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "roundsolids",
+         "params": {},
+         "title": "Look at the solid",
+         "tasks": [
+          {
+           "say": "Find a solid with no corners at all.",
+           "when": "(shape == 3 or shape == 4) and look == 2",
+           "then": "The cylinder and the sphere have no corners."
+          },
+          {
+           "say": "Find the solid with exactly one corner and show it.",
+           "when": "shape == 2 and look == 2",
+           "then": "The cone has one corner, at its tip."
+          },
+          {
+           "say": "Show the flat faces of the cube. How many are there?",
+           "when": "shape == 0 and look == 1",
+           "then": "A cube has 6 flat faces, like a gift box."
+          }
+         ],
+         "takeaway": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none.",
+         "explanation": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none."
         },
         {
          "type": "worked",

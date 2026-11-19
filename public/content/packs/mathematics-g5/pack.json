@@ -57114,7 +57114,7 @@
       {
        "id": "mathematics-g5-ch11-l1",
        "title": "The Quilt and Perimeter",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -57284,6 +57284,31 @@
           "4 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch11-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "rectangle",
+         "params": {},
+         "title": "Build the rectangle",
+         "tasks": [
+          {
+           "say": "Make a square.",
+           "when": "l == b",
+           "then": "A square is a rectangle whose sides are equal."
+          },
+          {
+           "say": "Make a different rectangle with area 24.",
+           "when": "l * b == 24",
+           "then": "Different rectangles can share an area: 24 = 6 x 4 = 8 x 3 = 12 x 2."
+          }
+         ],
+         "takeaway": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width)).",
+         "explanation": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width))."
         },
         {
          "type": "worked",
@@ -58565,7 +58590,7 @@
       {
        "id": "mathematics-g5-ch11-l2",
        "title": "Covering Shapes and Finding Area",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -58703,6 +58728,31 @@
           "3 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch11-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "rectangle",
+         "params": {},
+         "title": "Build the rectangle",
+         "tasks": [
+          {
+           "say": "Make a square.",
+           "when": "l == b",
+           "then": "A square is a rectangle whose sides are equal."
+          },
+          {
+           "say": "Make a different rectangle with area 24.",
+           "when": "l * b == 24",
+           "then": "Different rectangles can share an area: 24 = 6 x 4 = 8 x 3 = 12 x 2."
+          }
+         ],
+         "takeaway": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width)).",
+         "explanation": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width))."
         },
         {
          "type": "worked",
@@ -65623,7 +65673,7 @@
       {
        "id": "mathematics-g5-ch12-l2",
        "title": "Twelve-Hour and Twenty-Four-Hour Times",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "concept",
@@ -65710,6 +65760,46 @@
           "30 (generated problem)",
           "5 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch12-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clock",
+         "params": {},
+         "title": "Set the clock",
+         "tasks": [
+          {
+           "say": "Gargi wakes up at 6 o’clock. Set the clock to 6.",
+           "when": "hour == 6 and minute == 0",
+           "then": "6 o’clock: the short hour hand points to 6 and the long minute hand points to 12."
+          },
+          {
+           "say": "Show 3 o’clock.",
+           "when": "hour == 3 and minute == 0",
+           "then": "At 3 o’clock the long minute hand is on 12 and the short hour hand is on 3."
+          },
+          {
+           "say": "Set the clock to 8:00 PM.",
+           "when": "hour == 20 and minute == 0",
+           "then": "The digital clock shows 20:00."
+          },
+          {
+           "say": "Show quarter to midnight.",
+           "when": "hour == 23 and minute == 45",
+           "then": "11:45 PM is 23:45 on a 24-hour clock."
+          },
+          {
+           "say": "Show midnight.",
+           "when": "hour == 0 and minute == 0",
+           "then": "12:00 AM is 00:00."
+          }
+         ],
+         "takeaway": "AM is from midnight to noon and PM from noon to midnight; a 24-hour clock counts on past 12, so 8:00 PM is 20:00.",
+         "explanation": "AM is from midnight to noon and PM from noon to midnight; a 24-hour clock counts on past 12, so 8:00 PM is 20:00."
         },
         {
          "type": "hook",
@@ -82566,7 +82656,7 @@
       {
        "id": "mathematics-g5-ch15-l2",
        "title": "Making pictographs",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -82697,6 +82787,26 @@
           "5 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch15-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "bargraph",
+         "params": {},
+         "title": "Read the bar graph",
+         "tasks": [
+          {
+           "say": "Make Monday and Wednesday equal.",
+           "when": "a == c",
+           "then": "Equal bars mean equal amounts."
+          }
+         ],
+         "takeaway": "Bars compare amounts, and the scale tells you what each mark is worth.",
+         "explanation": "Bars compare amounts, and the scale tells you what each mark is worth."
         },
         {
          "type": "worked",
@@ -83719,7 +83829,7 @@
       {
        "id": "mathematics-g5-ch15-l3",
        "title": "Recording a day and a bar graph",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -83859,6 +83969,26 @@
           "4 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch15-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "bargraph",
+         "params": {},
+         "title": "Read the bar graph",
+         "tasks": [
+          {
+           "say": "Make Monday and Wednesday equal.",
+           "when": "a == c",
+           "then": "Equal bars mean equal amounts."
+          }
+         ],
+         "takeaway": "Bars compare amounts, and the scale tells you what each mark is worth.",
+         "explanation": "Bars compare amounts, and the scale tells you what each mark is worth."
         },
         {
          "type": "worked",
