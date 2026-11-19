@@ -587,7 +587,9 @@ export const KITS = {
     ],
   },
   seabreeze: {
-    grades: [6, 8], match: [/sea breezes?|land breezes?/, /\bconvection\b/],
+    // "How winds form" names the coast only in its facts ("air flows from the high-pressure sea region towards the land",
+    // "wind blows from the land towards the sea"), so the match has to know those phrasings too.
+    grades: [6, 8], match: [/sea breezes?|land breezes?/, /\bconvection\b/, /land (heats|is hotter|warmer)/, /air flows from the (sea|land)/, /wind blows from the (land|sea)/, /pressure differences? over land and sea/],
     title: 'Watch the coast breathe', takeaway: 'Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.',
     tasks: [
       { say: 'Make a sea breeze.', when: 'hour >= 10 and hour <= 17', then: 'By day the land is hotter, so air rises over it and the sea air blows in.' },
