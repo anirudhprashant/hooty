@@ -122,7 +122,7 @@ export const KITS = {
     ],
   },
   solidvol: {
-    grades: [9, 9], perChapter: { 9: 3 }, match: [/right circular cylinders?|volume of (a )?cylinder|surface area of (a )?cylinder/, /spheres? and hemispheres?|volume of (a )?sphere|surface area of (a )?sphere/, /right circular cones?|volumes? of (a )?cone|surface area of (a )?cone/, /surface areas? and volumes?/],
+    grades: [9, 10], perChapter: { 9: 3, 10: 3 }, match: [/right circular cylinders?|volume of (a )?cylinder|surface area of (a )?cylinder/, /spheres? and hemispheres?|volume of (a )?sphere|surface area of (a )?sphere/, /right circular cones?|volumes? of (a )?cone|surface area of (a )?cone/, /surface areas? and volumes?/, /combined solids?/, /volume of combined|surface area of combined/],
     title: 'Fill and cover a solid', takeaway: 'A cylinder holds pi x r x r x h, a cone a third of that, and a sphere four thirds of pi x r x r x r; surface area counts the outside.',
     tasks: [
       { say: 'Make a cylinder with radius 2 cm and height 10 cm.', when: 'pick == 0 and rr == 2 and ht == 10', then: 'V = pi x 2 x 2 x 10, about 125.7 cm3.' },
