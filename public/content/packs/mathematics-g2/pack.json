@@ -71153,9 +71153,9 @@
          "tags": [
           "worked"
          ],
-         "prompt": "The vegetable table says carrot is liked by 5 children and carrot is liked by 2 children. How many children like the vegetable that is liked by more children?",
+         "prompt": "The vegetable table says carrot is liked by 5 children and spinach is liked by 2 children. How many children like the vegetable that is liked by more children?",
          "steps": [
-          "The table gives 5 children for carrot and 2 children for carrot.",
+          "The table gives 5 children for carrot and 2 children for spinach.",
           "The larger number is 5, so carrot is liked by more children.",
           "So 5 children like the more-liked vegetable."
          ],
@@ -71167,8 +71167,8 @@
             "v": 5
            },
            {
-            "label": "carrot",
-            "v": 2
+            "label": "spinach",
+            "v": 2.0
            }
           ]
          },
@@ -71459,12 +71459,12 @@
           "practice",
           "computed"
          ],
-         "prompt": "At the market, the completed vegetable table says peas is liked by 8 children and peas is liked by 5 children. How many more children like peas than peas?",
-         "explanation": "The table gives 8 children for peas and 5 children for peas. To find how many more, subtract the smaller count from the larger count: 8 - 5 = 3. So 3 more children like peas than peas.",
+         "prompt": "At the market, the completed vegetable table says peas is liked by 8 children and spinach is liked by 5 children. How many more children like peas than spinach?",
+         "explanation": "The table gives 8 children for peas and 5 children for spinach. To find how many more, subtract the smaller count from the larger count: 8 - 5 = 3. So 3 more children like peas than spinach.",
          "steps": [
-          "The table gives 8 children for peas and 5 children for peas.",
+          "The table gives 8 children for peas and 5 children for spinach.",
           "To find how many more, subtract the smaller count from the larger count: 8 - 5 = 3.",
-          "So 3 more children like peas than peas."
+          "So 3 more children like peas than spinach."
          ],
          "hint": "Find how many more by subtracting the smaller count from the larger count.",
          "derived": [
@@ -71533,8 +71533,8 @@
             "v": 8
            },
            {
-            "label": "peas",
-            "v": 5
+            "label": "spinach",
+            "v": 5.0
            }
           ]
          },
@@ -71557,7 +71557,7 @@
           }
          ],
          "anchor": "mathematics-g2-ch11-l5-a1",
-         "focus": 0
+         "focus": -1
         },
         {
          "type": "fillblank",
