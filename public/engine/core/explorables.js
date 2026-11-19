@@ -510,6 +510,41 @@ export const WIDGETS = {
         say: `${v.acid} drops of acid and ${v.base} of base: the solution is ${name}, so litmus shows ${d > 0 ? 'red' : d < 0 ? 'blue' : 'neither colour change'}.` };
     },
   },
+  solidvol: {
+    subject: 'maths', about: 'A cylinder, a cone or a sphere whose radius and height change, with the volume and surface area worked out from the formula. For surface areas and volumes of solids, right circular cylinders, cones, spheres and hemispheres, and combined solids.',
+    sliders: [['pick', 'Choose the solid', 0, 2, 1, 0], ['rr', 'Radius r (cm)', 1, 8, 1, 3], ['ht', 'Height h (cm)', 2, 16, 2, 6]],
+    draw(v) {
+      const cx = 300, base = 244, k = 10, rr = v.rr * k, hh = v.ht * k, top = base - hh, kids = [];
+      const names = ['cylinder', 'cone', 'sphere'];
+      kids.push(L(40, base + 8, 560, base + 8, '#ddd6ee', 2));
+      if (v.pick === 0) {
+        kids.push(s('ellipse', { cx, cy: base, rx: rr, ry: rr * 0.3, fill: '#cfeeff', stroke: INK, 'stroke-width': 3 }));
+        kids.push(R(cx - rr, top, 2 * rr, hh, '#bfe3ff', { w: 0 }));
+        kids.push(L(cx - rr, top, cx - rr, base, INK, 3), L(cx + rr, top, cx + rr, base, INK, 3));
+        kids.push(s('ellipse', { cx, cy: top, rx: rr, ry: rr * 0.3, fill: '#e6f6ff', stroke: INK, 'stroke-width': 3 }));
+        kids.push(L(cx, top, cx + rr, top, C.o, 3), T(cx + rr / 2, top - 8, `r = ${v.rr}`, { z: 13, f: '#c2510e' }));
+        kids.push(L(cx + rr + 16, top, cx + rr + 16, base, C.g, 3), T(cx + rr + 28, (top + base) / 2 + 4, `h = ${v.ht}`, { z: 13, f: '#058a68', a: 'start' }));
+      } else if (v.pick === 1) {
+        kids.push(s('polygon', { points: `${cx},${top} ${cx - rr},${base} ${cx + rr},${base}`, fill: '#ffe3a3', stroke: INK, 'stroke-width': 3 }));
+        kids.push(s('ellipse', { cx, cy: base, rx: rr, ry: rr * 0.3, fill: '#ffd27a', stroke: INK, 'stroke-width': 3 }));
+        kids.push(L(cx, top, cx, base, INK, 2, { 'stroke-dasharray': '6 6' }));
+        kids.push(L(cx, base, cx + rr, base, C.o, 3), T(cx + rr / 2, base + 22, `r = ${v.rr}`, { z: 13, f: '#c2510e' }));
+        kids.push(T(cx + 10, (top + base) / 2 + 4, `h = ${v.ht}`, { z: 13, f: '#058a68', a: 'start' }));
+      } else {
+        kids.push(CIRC(cx, 150, rr, '#cfeeff', { w: 3 }));
+        kids.push(s('ellipse', { cx, cy: 150, rx: rr, ry: rr * 0.35, fill: 'none', stroke: '#8ecae6', 'stroke-width': 2 }));
+        kids.push(L(cx, 150, cx + rr, 150, C.o, 3), T(cx + rr / 2, 142, `r = ${v.rr}`, { z: 13, f: '#c2510e' }));
+      }
+      const vol = v.pick === 0 ? Math.PI * v.rr ** 2 * v.ht : v.pick === 1 ? (Math.PI * v.rr ** 2 * v.ht) / 3 : (4 * Math.PI * v.rr ** 3) / 3;
+      const area = v.pick === 0 ? 2 * Math.PI * v.rr * (v.rr + v.ht) : v.pick === 1 ? Math.PI * v.rr * (v.rr + Math.hypot(v.rr, v.ht)) : 4 * Math.PI * v.rr ** 2;
+      const rule = v.pick === 0 ? 'V = pi x r x r x h' : v.pick === 1 ? 'V = one third of pi x r x r x h' : 'V = four thirds of pi x r x r x r';
+      kids.push(T(300, 286, `${rule}, so volume = ${num(vol, 1)} cm3 and surface area = ${num(area, 1)} cm2.`, { z: 14, f: '#4b3a6b' }));
+      const say = v.pick === 2
+        ? `The sphere has radius ${v.rr} cm. Volume = 4/3 x pi x ${v.rr} x ${v.rr} x ${v.rr} = ${num(vol, 1)} cm3. Surface area = 4 x pi x ${v.rr} x ${v.rr} = ${num(area, 1)} cm2. The height slider does not change a sphere.`
+        : `The ${names[v.pick]} has radius ${v.rr} cm and height ${v.ht} cm. Volume = ${num(vol, 1)} cm3 and surface area = ${num(area, 1)} cm2.`;
+      return { kids, say };
+    },
+  },
   reaction: {
     subject: 'science', about: 'Four reactions from the Class 10 chemistry chapter, one at a time: magnesium burning in oxygen, calcium oxide joining water to make slaked lime, calcium carbonate breaking up on heating, and iron pushing copper out of copper sulphate. Shows the reactants on the left and the products on the right, and names the kind of reaction. For chemical reactions, combination, decomposition, displacement, reactants and products, exothermic and endothermic.',
     sliders: [['pick', 'Choose a reaction', 0, 3, 1, 1]],

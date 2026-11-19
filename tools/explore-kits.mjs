@@ -121,6 +121,15 @@ export const KITS = {
       { say: 'Make the square have 49 small squares.', when: 'n == 7', then: '7 x 7 = 49, so the square root of 49 is 7.' },
     ],
   },
+  solidvol: {
+    grades: [9, 9], perChapter: { 9: 3 }, match: [/right circular cylinders?|volume of (a )?cylinder|surface area of (a )?cylinder/, /spheres? and hemispheres?|volume of (a )?sphere|surface area of (a )?sphere/, /right circular cones?|volumes? of (a )?cone|surface area of (a )?cone/, /surface areas? and volumes?/],
+    title: 'Fill and cover a solid', takeaway: 'A cylinder holds pi x r x r x h, a cone a third of that, and a sphere four thirds of pi x r x r x r; surface area counts the outside.',
+    tasks: [
+      { say: 'Make a cylinder with radius 2 cm and height 10 cm.', when: 'pick == 0 and rr == 2 and ht == 10', then: 'V = pi x 2 x 2 x 10, about 125.7 cm3.' },
+      { say: 'Switch to the cone and give it the same base and height.', when: 'pick == 1 and ht == 10', then: 'A cone holds one third of the cylinder with the same base and height.' },
+      { say: 'Show the sphere and make its radius 4 cm.', when: 'pick == 2 and rr == 4', then: 'V = 4/3 x pi x 4 x 4 x 4, about 268.1 cm3.' },
+    ],
+  },
   ap: {
     grades: [10, 10], match: [/arithmetic progression/, /common difference/, /\bnth term\b|\bn th term\b/, /sum of (the )?first n/, /\bAPs?\b/],
     title: 'Build the progression', takeaway: 'Each term adds the same difference d; the nth term is a + (n - 1)d.',
