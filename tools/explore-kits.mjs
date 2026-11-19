@@ -157,7 +157,7 @@ export const KITS = {
     ],
   },
   rectangle: {
-    grades: [6, 8], match: [/\bareas?\b/, /perimeter/, /square units/, /unit squares/],
+    grades: [5, 8], match: [/\bareas?\b/, /perimeter/, /square units/, /unit squares/],
     title: 'Build the rectangle', takeaway: 'Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width)).',
     tasks: [
       { say: 'Make a square.', when: 'l == b', then: 'A square is a rectangle whose sides are equal.' },
@@ -203,7 +203,7 @@ export const KITS = {
     tasks: [{ say: 'Build 2.05.', when: 'o == 2 and t == 0 and h == 5', then: '2 ones, 0 tenths and 5 hundredths is 2.05.' }],
   },
   bargraph: {
-    grades: [6, 7], match: [/bar graphs?/, /pictographs?/, /tally/, /\bfrequency\b/],
+    grades: [5, 7], match: [/bar graphs?/, /pictographs?/, /tally/, /\bfrequency\b/],
     title: 'Read the bar graph', takeaway: 'Bars compare amounts, and the scale tells you what each mark is worth.',
     tasks: [{ say: 'Make Monday and Wednesday equal.', when: 'a == c', then: 'Equal bars mean equal amounts.' }],
   },
@@ -570,7 +570,7 @@ export const KITS = {
     ],
   },
   photosynthesis: {
-    grades: [6, 10], match: [/photosynth/, /chlorophyll/, /food factor(y|ies)/, /\bstomata\b/, /plants? make (their )?(own )?food/],
+    grades: [6, 10], match: [/photosynth/, /autotroph/, /chlorophyll/, /food factor(y|ies)/, /\bstomata\b/, /plants? make (their )?(own )?food/],
     title: 'Run the leaf factory', takeaway: 'A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food.',
     tasks: [
       { say: 'Turn off the light.', when: 'light == 0', then: 'With no light, photosynthesis stops completely.' },
@@ -717,7 +717,7 @@ export const KITS = {
     ],
   },
   clock: {
-    grades: [2, 6], match: [/\bclocks?\b/, /\ba\.?m\.?\b.*\bp\.?m\.?\b|\bam\b.*\bpm\b/, /hours? and minutes?/, /24-hour|\bo.clock\b/, /half past|quarter (past|to)/, /hours in a day/],
+    grades: [2, 6], match: [/\bclocks?\b/, /\ba\.?m\.?\b.*\bp\.?m\.?\b|\bam\b.*\bpm\b/, /hours? and minutes?/, /24-hour|\bo.clock\b/, /(twelve|twenty-four)[- ]hour/, /half past|quarter (past|to)/, /hours in a day/],
     title: 'Set the clock', takeaway: 'AM is from midnight to noon and PM from noon to midnight; a 24-hour clock counts on past 12, so 8:00 PM is 20:00.',
     tasks: [
       { say: 'Gargi wakes up at 6 o\u2019clock. Set the clock to 6.', when: 'hour == 6 and minute == 0', then: '6 o\u2019clock: the short hour hand points to 6 and the long minute hand points to 12.' },
@@ -859,7 +859,7 @@ export const KITS = {
     ],
   },
   roundsolids: {
-    grades: [2, 2], perChapter: { 2: 3 }, match: [/solid shapes?/, /\bcones?\b/, /\bcylinders?\b/, /\bspheres?\b/, /\bcubes?\b|\bcuboids?\b/, /\bfaces\b/, /faces.*corners|corners.*edges/, /\bedges?\b/],
+    grades: [2, 3], perChapter: { 2: 3 }, match: [/solid shapes?/, /\bcones?\b/, /\bcylinders?\b/, /\bspheres?\b/, /\bcubes?\b|\bcuboids?\b/, /\bfaces\b/, /faces.*corners|corners.*edges/, /\bedges?\b/],
     title: 'Look at the solid', takeaway: 'Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none.',
     tasks: [
       { say: 'Find a solid with no corners at all.', when: '(shape == 3 or shape == 4) and look == 2', then: 'The cylinder and the sphere have no corners.' },
