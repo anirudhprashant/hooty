@@ -59272,7 +59272,7 @@
       {
        "id": "mathematics-g6-ch10-l2",
        "title": "Moving, Comparing and Finding Change",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -59507,6 +59507,70 @@
          ],
          "answer": 1,
          "explanation": "Floor + 1 plus two floors reaches Floor + 3.",
+         "src": [
+          {
+           "ch": 10,
+           "p": 245
+          },
+          {
+           "ch": 10,
+           "p": 245
+          }
+         ],
+         "anchor": "mathematics-g6-ch10-l2-a1",
+         "focus": -1
+        },
+        {
+         "type": "fillblank",
+         "difficulty": 1,
+         "tags": [
+          "practice",
+          "computed"
+         ],
+         "prompt": "A lift starts on Floor 9 and moves down 4 floors. Which floor does it reach?",
+         "explanation": "The lift starts on Floor 9. Moving down 4 floors means subtract 4. 9 - 4 = 5, so the lift reaches Floor 5.",
+         "steps": [
+          "The lift starts on Floor 9.",
+          "Moving down 4 floors means subtract 4.",
+          "9 - 4 = 5, so the lift reaches Floor 5."
+         ],
+         "hint": "Subtract 4 from the starting floor.",
+         "derived": [
+          "9 (generated problem)",
+          "4 (generated problem)",
+          "5 (generated problem)"
+         ],
+         "gen": {
+          "template": "A lift starts on Floor {start} and moves down {movement} floors. Which floor does it reach?",
+          "params": {
+           "start": [
+            7,
+            9
+           ],
+           "movement": [
+            2,
+            4
+           ]
+          },
+          "where": [],
+          "answer": "start-movement",
+          "vals": {
+           "target": "start-movement",
+           "answer": "start-movement"
+          },
+          "steps": [
+           "The lift starts on Floor {start}.",
+           "Moving down {movement} floors means subtract {movement}.",
+           "{start} - {movement} = {answer}, so the lift reaches Floor {answer}."
+          ],
+          "hint": "Subtract 4 from the starting floor.",
+          "wrong": [],
+          "wrongWhy": []
+         },
+         "answers": [
+          "5"
+         ],
+         "id": "mathematics-g6-ch10-l2-c2",
          "src": [
           {
            "ch": 10,
