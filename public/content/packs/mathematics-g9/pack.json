@@ -83836,7 +83836,7 @@
       {
        "id": "mathematics-g9-ch14-l2",
        "title": "Right Circular Cylinders",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -83900,6 +83900,36 @@
            "p": 128
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch14-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "solidvol",
+         "params": {},
+         "title": "Fill and cover a solid",
+         "tasks": [
+          {
+           "say": "Make a cylinder with radius 2 cm and height 10 cm.",
+           "when": "pick == 0 and rr == 2 and ht == 10",
+           "then": "V = pi x 2 x 2 x 10, about 125.7 cm3."
+          },
+          {
+           "say": "Switch to the cone and give it the same base and height.",
+           "when": "pick == 1 and ht == 10",
+           "then": "A cone holds one third of the cylinder with the same base and height."
+          },
+          {
+           "say": "Show the sphere and make its radius 4 cm.",
+           "when": "pick == 2 and rr == 4",
+           "then": "V = 4/3 x pi x 4 x 4 x 4, about 268.1 cm3."
+          }
+         ],
+         "takeaway": "A cylinder holds pi x r x r x h, a cone a third of that, and a sphere four thirds of pi x r x r x r; surface area counts the outside.",
+         "explanation": "A cylinder holds pi x r x r x h, a cone a third of that, and a sphere four thirds of pi x r x r x r; surface area counts the outside."
         },
         {
          "type": "worked",
@@ -85981,7 +86011,7 @@
       {
        "id": "mathematics-g9-ch14-l5",
        "title": "Spheres and Hemispheres",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -86029,6 +86059,36 @@
            "p": 139
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch14-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "solidvol",
+         "params": {},
+         "title": "Fill and cover a solid",
+         "tasks": [
+          {
+           "say": "Make a cylinder with radius 2 cm and height 10 cm.",
+           "when": "pick == 0 and rr == 2 and ht == 10",
+           "then": "V = pi x 2 x 2 x 10, about 125.7 cm3."
+          },
+          {
+           "say": "Switch to the cone and give it the same base and height.",
+           "when": "pick == 1 and ht == 10",
+           "then": "A cone holds one third of the cylinder with the same base and height."
+          },
+          {
+           "say": "Show the sphere and make its radius 4 cm.",
+           "when": "pick == 2 and rr == 4",
+           "then": "V = 4/3 x pi x 4 x 4 x 4, about 268.1 cm3."
+          }
+         ],
+         "takeaway": "A cylinder holds pi x r x r x h, a cone a third of that, and a sphere four thirds of pi x r x r x r; surface area counts the outside.",
+         "explanation": "A cylinder holds pi x r x r x h, a cone a third of that, and a sphere four thirds of pi x r x r x r; surface area counts the outside."
         },
         {
          "type": "worked",
