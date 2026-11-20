@@ -1128,8 +1128,8 @@ export const KITS = {
     },
   },
   market: {
-    grades: [9, 10], titleOnly: true, perChapter: 3,
-    match: [/law of demand/, /law of supply/, /market equilibrium|equilibrium price/, /excess demand|excess supply/],
+    grades: [7, 10], titleOnly: true, perChapter: 3,
+    match: [/law of demand/, /law of supply/, /market equilibrium|equilibrium price/, /excess demand|excess supply/, /prices? and markets?/],
     title: 'Run the market',
     takeaway: 'Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.',
     tasks: [
