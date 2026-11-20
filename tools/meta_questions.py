@@ -27,7 +27,15 @@ META = re.compile(
     r"|\bwhich\s+(task|exercise)\s+asks?\b"                # "Which task asks children to make new shapes?"
     r"|\bto\s+complete\s+the\s+(final\s+)?task\b"
     r"|\bmatch\s+each\s+task\b"                           # matching textbook tasks, not the subject
-    r"|\bin\s+the\s+order\s+the\s+lesson\s+gives\b",
+    r"|\bin\s+the\s+order\s+the\s+lesson\s+gives\b"
+    r"|\bbook\s+question\b"                               # "Which pair is matched in one book question?"
+    r"|\b(your|the)\s+book\s+asks?\b"                     # "Your book asks where the chakra is"
+    r"|\bwhich\s+question\s+does\s+the\s+book\s+ask\b"
+    r"|\bwhat\s+does\s+(your|the)\s+book\s+ask\b"
+    r"|\bwhere\s+should\s+the\s+answers?\s+be\s+written\b"
+    r"|\bafter\s+the\s+(first|second|last)\s+exercise\b"
+    r"|\bwhat\s+does\s+the\s+exercise\s+ask\b"
+    r"|\bput\s+the\s+exercises?\s+in\s+the\s+order\b",
     re.I)
 
 # phrases that look like the pattern but are ordinary English about the subject
