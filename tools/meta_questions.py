@@ -18,7 +18,16 @@ META = re.compile(
     r"|what\s+does\s+the\s+(task|activity)"
     r"|which\s+question\s+belongs\s+to\s+the"
     r"|put\s+the\s+steps?\s+of\s+the\s+.{0,30}\btask\b"
-    r"|put\s+the\s+\w+\s+activity\s+in\s+order",
+    r"|put\s+the\s+\w+\s+activity\s+in\s+order"
+    r"|\b(the|this|that)\s+(exercise|task)\s+(ask|say|tell|want|include|need)s?\b"
+    r"|\bone\s+(task|exercise)\s+asks?\b"                 # "One task asks for the items..."
+    r"|\bthe\s+(first|second|third|last|final)\s+exercise\b"
+    r"|\bfor\s+(this|the|that)\s+(task|activity|exercise)\b"   # "What should you paste for this task?"
+    r"|\bfor\s+the\s+(first|second|third|final|last)\s+(task|activity|exercise)\b"
+    r"|\bwhich\s+(task|exercise)\s+asks?\b"                # "Which task asks children to make new shapes?"
+    r"|\bto\s+complete\s+the\s+(final\s+)?task\b"
+    r"|\bmatch\s+each\s+task\b"                           # matching textbook tasks, not the subject
+    r"|\bin\s+the\s+order\s+the\s+lesson\s+gives\b",
     re.I)
 
 # phrases that look like the pattern but are ordinary English about the subject
