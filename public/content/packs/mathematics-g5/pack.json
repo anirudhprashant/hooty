@@ -57211,21 +57211,21 @@
          ],
          "widget": "rectangle",
          "params": {},
-         "title": "Build the rectangle",
+         "title": "Walk the border",
          "tasks": [
           {
-           "say": "Make a square.",
-           "when": "l == b",
-           "then": "A square is a rectangle whose sides are equal."
+           "say": "Make the perimeter 20 units.",
+           "when": "2 * (l + b) == 20",
+           "then": "20 units around the edge, for example 9 by 1 or 7 by 3."
           },
           {
-           "say": "Make a different rectangle with area 24.",
-           "when": "l * b == 24",
-           "then": "Different rectangles can share an area: 24 = 6 x 4 = 8 x 3 = 12 x 2."
+           "say": "Now make a long, thin rectangle that still has perimeter 20.",
+           "when": "2 * (l + b) == 20 && l >= 8",
+           "then": "9 by 1 is long and thin, and its border is still 20 units."
           }
          ],
-         "takeaway": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width)).",
-         "explanation": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width))."
+         "takeaway": "Perimeter is the distance around the outside: 2 x (length + width). Two shapes can share a perimeter and still differ in area.",
+         "explanation": "Perimeter is the distance around the outside: 2 x (length + width). Two shapes can share a perimeter and still differ in area."
         },
         {
          "type": "worked",
@@ -69834,7 +69834,7 @@
          "tags": [
           "worked"
          ],
-         "prompt": "Ragini started homework at 7:4 PM and finished at 7:45 PM. How many minutes did she work?",
+         "prompt": "Ragini started homework at 7:04 PM and finished at 7:45 PM. How many minutes did she work?",
          "steps": [
           "The start and finish times are both in the 7:00 PM hour.",
           "Subtract the earlier minute from the later minute because both times are in the same hour.",
@@ -70202,10 +70202,10 @@
           "practice",
           "computed"
          ],
-         "prompt": "After school, Ravi leaves home at 6:3 PM and walks for 52 minutes. At what time does he reach the market? Give the clock time as the number of minutes after midnight.",
-         "explanation": "At 6:3 PM, the starting time is 1083 minutes after midnight. The walk lasts 52 minutes. Add the duration because the ending time comes later: 1083 + 52 = 1135 minutes after midnight.",
+         "prompt": "After school, Ravi leaves home at 6:03 PM and walks for 52 minutes. At what time does he reach the market? Give the clock time as the number of minutes after midnight.",
+         "explanation": "At 6:03 PM, the starting time is 1083 minutes after midnight. The walk lasts 52 minutes. Add the duration because the ending time comes later: 1083 + 52 = 1135 minutes after midnight.",
          "steps": [
-          "At 6:3 PM, the starting time is 1083 minutes after midnight.",
+          "At 6:03 PM, the starting time is 1083 minutes after midnight.",
           "The walk lasts 52 minutes.",
           "Add the duration because the ending time comes later: 1083 + 52 = 1135 minutes after midnight."
          ],
