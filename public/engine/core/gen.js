@@ -89,7 +89,11 @@ export function evaluate(src, env) {
 // A child can type a whole number or a decimal with at most two places.
 const shortNumber = (x) => Math.abs(x * 100 - Math.round(x * 100)) < 1e-6;
 const fmt = (x) => String(+x.toFixed(2));
-const fill = (tpl, vars) => String(tpl).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+const fill = (tpl, vars) => {
+  const text = String(tpl).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+  // Clock times must read "7:04 PM", not "7:4 PM": a generated minute is a bare number.
+  return text.replace(/\b(\d{1,2}):(\d)(?!\d)(\s*[ap]\.?m\.?)/gi, (m, h, mm, tail) => `${h}:0${mm}${tail}`);
+};
 const pick = (list, rnd) => list[Math.floor(rnd() * list.length)];
 
 function valuesOf(spec) {

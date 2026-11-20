@@ -73,6 +73,11 @@ def short(v):
     v = Fraction(v)
     return v.denominator in (1, 2, 4, 5, 10, 20, 25, 50, 100)
 
+CLOCK = re.compile(r'\b(\d{1,2}):(\d)(?!\d)(\s*[ap]\.?m\.?)', re.I)
+def clock(text):
+    """A minute is two digits on a clock: the template samples must read 7:04 PM, never 7:4 PM."""
+    return CLOCK.sub(lambda m: f'{m.group(1)}:0{m.group(2)}{m.group(3)}', text)
+
 def same(a, b):
     try: return abs(parse_num(a) - parse_num(b)) < Fraction(1, 1000)
     except Exception: return False
@@ -203,7 +208,7 @@ def build(p, lesson, idx):
     for env, num, ans in runs:                      # steps and picture must be right for every sampled instance
         try:
             nums, vars_ = draw(env, num, ans)
-            rendered = [x.format(**vars_) for x in steps_t]
+            rendered = [clock(x.format(**vars_)) for x in steps_t]
         except Exception as e:
             print(f'  steps do not render ({e}): {tmpl[:60]}', flush=True); return None
         if not steps_true(rendered, show(ans)): print(f'  steps wrong or no answer: {rendered}', flush=True); return None
@@ -212,13 +217,13 @@ def build(p, lesson, idx):
             except Exception: spec_ok = False
     # every sampled instance must read sensibly and be solved identically by M2.7 with no formula
     for env, num, ans in runs[:SOLVES]:
-        text = tmpl.format(**env)
+        text = clock(tmpl.format(**env))
         solved = m27(f'Solve this school {SUBJ['name'].lower()} question. Reply with ONLY the final answer as a number (a fraction like 3/4 is fine), no words, no units.\n\n{text}', want_json=False)
         if not solved or not same(solved, show(ans)):
             print(f'  dropped (solver said {str(solved)[:30]!r}, formula {show(ans)}): {text[:70]}', flush=True); return None
     env, num, ans = runs[0]
     nums, vars_ = draw(env, num, ans)
-    text = tmpl.format(**env); truth = show(ans)
+    text = clock(tmpl.format(**env)); truth = show(ans)
     others, why = [], {}
     if kind == 'mcq':
         for wi, w in enumerate(p.get('wrong', [])):
@@ -233,10 +238,10 @@ def build(p, lesson, idx):
             v = show(extra)
             if extra >= 0 and v != truth and v not in others: others.append(v)
         if len(others) < 3: return None
-    steps = [x.format(**vars_) for x in steps_t]
+    steps = [clock(x.format(**vars_)) for x in steps_t]
     tier = int(p.get('tier', 2)) if str(p.get('tier', '2')).isdigit() else 2
     a = {'type': kind, 'difficulty': min(max(tier, 1), 3), 'tags': ['practice', 'computed'],
-         'prompt': text, 'explanation': ' '.join(steps), 'steps': steps, 'hint': (p.get('hint') or 'Work out the first step.').format(**vars_),
+         'prompt': text, 'explanation': ' '.join(steps), 'steps': steps, 'hint': clock((p.get('hint') or 'Work out the first step.').format(**vars_)),
          'f': [i for i in p.get('f', []) if i in {f['id'] for f in lesson['facts']}] or [lesson['facts'][0]['id']],
          'derived': [f'{n} (generated problem)' for n in sorted(set(re.findall(r'\d+(?:\.\d+)?', ' '.join([text, ' '.join(steps), truth] + others))))],
          'gen': {'template': tmpl, 'params': p['params'], 'where': p.get('where', []), 'answer': p['answer'], 'vals': vals_t, 'steps': steps_t,
