@@ -6811,32 +6811,6 @@
          "focus": -1
         },
         {
-         "type": "mcq",
-         "id": "english-g4-ch2-l3-x2",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "Aman and Jiya are doing a comparison exercise. Aman is shorter than Jiya. The exercise uses -er when comparing two people or objects, and than is used to make the comparison. It also asks for -est when comparing a whole group, with -est added to the adjective. February is the shortest month of the year. Another part asks for words with opposite meanings.",
-         "prompt": "The exercise asks for the opposite meaning of “ugly.” Which word should Aman write?",
-         "options": [
-          "beautiful",
-          "punishment",
-          "reward",
-          "purchase"
-         ],
-         "answer": 0,
-         "why": {
-          "punishment": "Punishment is the opposite of reward.",
-          "reward": "Reward is the opposite of punishment.",
-          "purchase": "Sell and purchase are opposite words in the exercise."
-         },
-         "explanation": "Correct: ugly is the opposite of beautiful.",
-         "anchor": "english-g4-ch2-l3-a1",
-         "focus": -1
-        },
-        {
          "type": "explain",
          "id": "english-g4-ch2-l3-e1",
          "difficulty": 3,
@@ -19443,6 +19417,27 @@
          "focus": -1
         },
         {
+         "type": "truefalse",
+         "id": "english-g4-ch6-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "eyes",
+          "precautions"
+         ],
+         "title": "Protecting your eyes",
+         "prompt": "Precautions should be taken to protect eyes from harm.",
+         "answer": true,
+         "explanation": "Yes. Precautions help protect eyes from harm.",
+         "src": [
+          {
+           "ch": 6,
+           "p": 61
+          }
+         ],
+         "anchor": "english-g4-ch6-l4-a1",
+         "focus": 0
+        },
+        {
          "type": "fillblank",
          "id": "english-g4-ch6-l4-a4",
          "difficulty": 1,
@@ -19465,27 +19460,6 @@
          ],
          "anchor": "english-g4-ch6-l4-a1",
          "focus": -1
-        },
-        {
-         "type": "truefalse",
-         "id": "english-g4-ch6-l4-a3",
-         "difficulty": 1,
-         "tags": [
-          "eyes",
-          "precautions"
-         ],
-         "title": "Protecting your eyes",
-         "prompt": "Precautions should be taken to protect eyes from harm.",
-         "answer": true,
-         "explanation": "Yes. Precautions help protect eyes from harm.",
-         "src": [
-          {
-           "ch": 6,
-           "p": 61
-          }
-         ],
-         "anchor": "english-g4-ch6-l4-a1",
-         "focus": 0
         },
         {
          "type": "fillblank",
@@ -19544,28 +19518,18 @@
          "focus": -1
         },
         {
-         "type": "mcq",
-         "id": "english-g4-ch6-l4-a8",
+         "type": "truefalse",
+         "id": "english-g4-ch6-l4-a9",
          "difficulty": 3,
          "tags": [
           "past-continuous",
-          "present-actions"
+          "barking-dogs"
          ],
-         "title": "Change an action into the past",
-         "prompt": "What does the exercise ask learners to do?",
-         "options": [
-          "Match actions with people",
-          "Change present actions into the past",
-          "Find actions happening now",
-          "Write actions in a longer form"
-         ],
-         "answer": 1,
-         "explanation": "The exercise asks learners to change present actions into the past.",
+         "title": "The barking dogs sentence",
+         "prompt": "The sentence about barking dogs is already in the past.",
+         "answer": false,
+         "explanation": "The sentence about barking dogs must be changed into the past.",
          "src": [
-          {
-           "ch": 6,
-           "p": 61
-          },
           {
            "ch": 6,
            "p": 61
@@ -23767,7 +23731,7 @@
       {
        "id": "english-g4-ch7-exam",
        "title": "Test practice",
-       "estimatedMinutes": 15,
+       "estimatedMinutes": 14,
        "topicScene": "media/ch7-l1-playing-kabaddi-74675e.webp",
        "sceneAlt": "Students play kabaddi together on a playground in Kondapak.",
        "sceneCaption": "Students play the energetic team game of kabaddi on a Kondapak playground.",
@@ -23873,32 +23837,6 @@
          },
          "explanation": "This matches Geeta's habit of learning every day from her skating mistakes.",
          "anchor": "english-g4-ch7-l2-t1",
-         "focus": -1
-        },
-        {
-         "type": "mcq",
-         "id": "english-g4-ch7-l2-x2",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "In “Talking About Games and Us,” the children read a poem that shows them through qualities. A child can write a quality beginning with the same letter as their name. Anant plays hockey. Geeta learns every day from her skating mistakes. The poem mentions a guitar and a sitar, and Meena likes moving in rhythm. The class discusses school games, instruments children like to play, instruments they have seen, and favourite and famous regional dances.",
-         "prompt": "A child wants to write a quality for the activity. What should the child do to follow the rule?",
-         "options": [
-          "Choose a quality whose first letter matches the first letter of the child's name.",
-          "Choose a quality whose first letter is different from the child's name.",
-          "Choose a game whose first letter matches the child's name.",
-          "Choose an instrument and call it the child's quality."
-         ],
-         "answer": 0,
-         "why": {
-          "Choose a quality whose first letter is different from the child's name.": "A different first letter would not follow the stated rule.",
-          "Choose a game whose first letter matches the child's name.": "A game is not a quality.",
-          "Choose an instrument and call it the child's quality.": "An instrument is not a quality."
-         },
-         "explanation": "The rule is to match the first letter of the quality with the first letter of the child's name.",
-         "anchor": "english-g4-ch7-l2-a1",
          "focus": -1
         },
         {
@@ -24298,39 +24236,6 @@
         "answer": true,
         "explanation": "Healthy and tasty food is liked by everyone.",
         "src": [
-         {
-          "ch": 7,
-          "p": 71
-         }
-        ],
-        "anchor": "english-g4-ch7-l4-a1",
-        "focus": 2
-       },
-       {
-        "type": "dragorder",
-        "id": "english-g4-ch7-boss-a8",
-        "difficulty": 3,
-        "tags": [
-         "double",
-         "letters",
-         "writing"
-        ],
-        "prompt": "Put the writing-task blanks in the order the lesson gives them.",
-        "items": [
-         "the pet's name",
-         "the pet's food",
-         "the food's colour"
-        ],
-        "explanation": "The pet comes first, its food next, then its colour.",
-        "src": [
-         {
-          "ch": 7,
-          "p": 71
-         },
-         {
-          "ch": 7,
-          "p": 71
-         },
          {
           "ch": 7,
           "p": 71
@@ -40319,7 +40224,7 @@
       {
        "id": "english-g4-ch12-l6",
        "title": "Speaking, Writing and Puzzle Time",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -40671,68 +40576,6 @@
          ],
          "anchor": "english-g4-ch12-l6-a1",
          "focus": 1
-        },
-        {
-         "type": "matchpairs",
-         "id": "english-g4-ch12-l6-a9",
-         "difficulty": 3,
-         "tags": [
-          "matching",
-          "writing",
-          "puzzle"
-         ],
-         "prompt": "Match each task with its result.",
-         "pairs": [
-          [
-           "Ask elders",
-           "Find information about a nearby place"
-          ],
-          [
-           "Collect pictures and information",
-           "Prepare a class presentation"
-          ],
-          [
-           "Complete a passage",
-           "Use suitable articles"
-          ],
-          [
-           "Imagine a family visit",
-           "Write about Maheshwar Fort"
-          ],
-          [
-           "Mix puzzle pieces",
-           "Rearrange them into a fort"
-          ]
-         ],
-         "explanation": "Each task leads to the speaking, writing or puzzle result in the lesson.",
-         "src": [
-          {
-           "ch": 12,
-           "p": 132
-          },
-          {
-           "ch": 12,
-           "p": 132
-          },
-          {
-           "ch": 12,
-           "p": 132
-          },
-          {
-           "ch": 12,
-           "p": 133
-          },
-          {
-           "ch": 12,
-           "p": 133
-          },
-          {
-           "ch": 12,
-           "p": 134
-          }
-         ],
-         "anchor": "english-g4-ch12-l6-a1",
-         "focus": 2
         },
         {
          "type": "mcq",

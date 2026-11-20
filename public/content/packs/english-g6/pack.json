@@ -735,39 +735,17 @@
          "focus": -1
         },
         {
-         "type": "matchpairs",
-         "id": "english-g6-ch1-l2-a5",
-         "difficulty": 2,
+         "type": "truefalse",
+         "id": "english-g6-ch1-l2-a3",
+         "difficulty": 1,
          "tags": [
-          "tasks",
           "dew",
-          "potion"
+          "water",
+          "bottle"
          ],
-         "title": "Join Each Task to Its Result",
-         "prompt": "Match each task with its matching result.",
-         "pairs": [
-          [
-           "Plant a banana plant",
-           "Look after the plants"
-          ],
-          [
-           "Water the plant regularly",
-           "Do it with his hands"
-          ],
-          [
-           "Collect the dew",
-           "Store it in a bottle"
-          ],
-          [
-           "Carry the collected dew",
-           "Bring five litres to the sage"
-          ],
-          [
-           "Use a drop of the potion",
-           "Turn any object into gold"
-          ]
-         ],
-         "explanation": "Each action leads towards the sage’s magical potion.",
+         "prompt": "Rama Natha used the collected dew to water the banana plant.",
+         "answer": false,
+         "explanation": "He watered the plant regularly. He collected the dew separately and stored it in a bottle.",
          "src": [
           {
            "ch": 1,
@@ -776,26 +754,10 @@
           {
            "ch": 1,
            "p": 2
-          },
-          {
-           "ch": 1,
-           "p": 2
-          },
-          {
-           "ch": 1,
-           "p": 2
-          },
-          {
-           "ch": 1,
-           "p": 2
-          },
-          {
-           "ch": 1,
-           "p": 3
           }
          ],
          "anchor": "english-g6-ch1-l2-a1",
-         "focus": -1
+         "focus": 0
         },
         {
          "type": "dragorder",

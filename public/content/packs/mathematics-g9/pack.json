@@ -49546,7 +49546,7 @@
       {
        "id": "mathematics-g9-ch8-exam",
        "title": "Test practice",
-       "estimatedMinutes": 15,
+       "estimatedMinutes": 17,
        "topicScene": "media/ch8-l1-school-children-line-cochin--762df2.webp",
        "sceneAlt": "School children line up in Kochi, Kerala, India.",
        "sceneCaption": "Children lining up show how a sequence places people in a particular order.",
@@ -49806,32 +49806,6 @@
         },
         {
          "type": "mcq",
-         "id": "mathematics-g9-ch8-l3-x2",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "A student studying the 7th-century CE work Vṛttajātisamuchaya notices a row of numbered labels: 1, 4, 7, 10 and 13. Each label is 3 more than the previous one, so the student uses a recursive rule to continue checking the row, including whether 133 belongs. In another exercise, the student must find each new value by adding the previous two values. Before either task can continue, the needed earlier terms are written down.",
-         "prompt": "If one of the two earlier values is missing for the second exercise, what is the best conclusion?",
-         "options": [
-          "The next value cannot be obtained from the stated two-term rule.",
-          "The next value can be obtained by adding 3 to the available earlier value.",
-          "The next value can be obtained by using the final value twice.",
-          "The missing value can be ignored because only one earlier value is required."
-         ],
-         "answer": 0,
-         "why": {
-          "The next value can be obtained by adding 3 to the available earlier value.": "Adding 3 does not apply to the stated two-term rule.",
-          "The next value can be obtained by using the final value twice.": "Using the final value twice does not follow the rule.",
-          "The missing value can be ignored because only one earlier value is required.": "One earlier value is not enough when the rule requires two."
-         },
-         "explanation": "Both of the previous two terms are needed.",
-         "anchor": "mathematics-g9-ch8-l3-a1",
-         "focus": -1
-        },
-        {
-         "type": "mcq",
          "id": "mathematics-g9-ch8-l3-r1",
          "difficulty": 3,
          "tags": [
@@ -49947,6 +49921,24 @@
          "explanation": "The AP increases by 3, so the assertion is false, while the stated change from 1 to 4 is true.",
          "anchor": "mathematics-g9-ch8-l1-w1",
          "focus": -1
+        },
+        {
+         "type": "explain",
+         "id": "mathematics-g9-ch8-l4-e1",
+         "difficulty": 3,
+         "tags": [
+          "exam",
+          "written"
+         ],
+         "prompt": "How does tn = 4n – 3 describe the square pattern and show that it is an AP?",
+         "answer": "The rule tn = 4n – 3 gives the number of tiny squares at stage n. At the first stage, n = 1 and the rule gives 1 square. At every following stage, the expression increases by 4 because 4(n + 1) – 3 is 4 greater than 4n – 3. This matches the way 4 squares are added to the corners at each stage. Therefore, the counts form a special sequence with the same difference between consecutive terms. That fixed difference is 4, so the counts form an arithmetic progression, and the plotted pairs lie on a straight line.",
+         "points": [
+          "Explains that tn = 4n – 3 gives the number of squares at stage n.",
+          "Shows that the first term is 1.",
+          "Explains that consecutive terms have a difference of 4.",
+          "Uses the constant difference to identify the sequence as an AP."
+         ],
+         "explanation": "Compare your answer with the points a marker looks for."
         }
        ]
       }

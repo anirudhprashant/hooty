@@ -9622,33 +9622,6 @@
          ]
         },
         {
-         "type": "mcq",
-         "id": "english-g3-ch3-l5-a2",
-         "difficulty": 1,
-         "tags": [
-          "friend",
-          "drawing"
-         ],
-         "title": "Choose the Picture",
-         "prompt": "What should you paste for this task?",
-         "options": [
-          "a picture of your friend",
-          "your friend’s name",
-          "your friend’s play choice",
-          "your friend’s favourite colour"
-         ],
-         "answer": 0,
-         "explanation": "Your lesson asks you to paste a picture of your friend.",
-         "src": [
-          {
-           "ch": 3,
-           "p": 31
-          }
-         ],
-         "anchor": "english-g3-ch3-l5-a1",
-         "focus": 0
-        },
-        {
          "type": "fillblank",
          "id": "english-g3-ch3-l5-a4",
          "difficulty": 1,
@@ -9671,6 +9644,47 @@
          ],
          "anchor": "english-g3-ch3-l5-a1",
          "focus": 2
+        },
+        {
+         "type": "truefalse",
+         "id": "english-g3-ch3-l5-a3",
+         "difficulty": 1,
+         "tags": [
+          "writing",
+          "name"
+         ],
+         "title": "Name Only",
+         "prompt": "You should write only your friend’s name.",
+         "answer": false,
+         "explanation": "The task asks for several details, not only the name.",
+         "src": [
+          {
+           "ch": 3,
+           "p": 32
+          },
+          {
+           "ch": 3,
+           "p": 32
+          },
+          {
+           "ch": 3,
+           "p": 32
+          },
+          {
+           "ch": 3,
+           "p": 32
+          },
+          {
+           "ch": 3,
+           "p": 32
+          },
+          {
+           "ch": 3,
+           "p": 32
+          }
+         ],
+         "anchor": "english-g3-ch3-l5-a1",
+         "focus": 1
         },
         {
          "type": "matchpairs",
@@ -10859,7 +10873,7 @@
      "boss": {
       "id": "english-g3-ch3-boss",
       "title": "Chapter challenge: Best Friends",
-      "estimatedMinutes": 5,
+      "estimatedMinutes": 4,
       "activities": [
        {
         "type": "mcq",
@@ -11099,38 +11113,6 @@
         ],
         "anchor": "english-g3-ch3-l4-a1",
         "focus": 1
-       },
-       {
-        "type": "fillblank",
-        "id": "english-g3-ch3-boss-a7",
-        "difficulty": 3,
-        "tags": [
-         "articles",
-         "eagle",
-         "grammar"
-        ],
-        "prompt": "The second exercise includes the word “eagle”. It needs ______ before it.",
-        "answers": [
-         "an"
-        ],
-        "hint": "Choose the correct article from the exercise.",
-        "explanation": "The word eagle begins with a vowel sound, so it takes an.",
-        "src": [
-         {
-          "ch": 3,
-          "p": 31
-         },
-         {
-          "ch": 3,
-          "p": 31
-         },
-         {
-          "ch": 3,
-          "p": 30
-         }
-        ],
-        "anchor": "english-g3-ch3-l4-a1",
-        "focus": 2
        },
        {
         "type": "mcq",
@@ -13186,6 +13168,26 @@
          "focus": 0
         },
         {
+         "type": "truefalse",
+         "id": "english-g3-ch4-l4-a3",
+         "difficulty": 1,
+         "tags": [
+          "answers",
+          "exercise"
+         ],
+         "prompt": "One answer has already been done.",
+         "answer": true,
+         "explanation": "Yes. One answer is already completed for the exercise.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 42
+          }
+         ],
+         "anchor": "english-g3-ch4-l4-a1",
+         "focus": 1
+        },
+        {
          "type": "matchpairs",
          "id": "english-g3-ch4-l4-a4",
          "difficulty": 1,
@@ -13228,30 +13230,6 @@
          "focus": -1
         },
         {
-         "type": "fillblank",
-         "id": "english-g3-ch4-l4-a5",
-         "difficulty": 2,
-         "tags": [
-          "and",
-          "exercise"
-         ],
-         "title": "Choose the joining word",
-         "prompt": "The exercise asks you to combine words using ______.",
-         "answers": [
-          "and"
-         ],
-         "hint": "This word links two words.",
-         "explanation": "You use “and” to combine two words.",
-         "src": [
-          {
-           "ch": 4,
-           "p": 42
-          }
-         ],
-         "anchor": "english-g3-ch4-l4-a1",
-         "focus": 0
-        },
-        {
          "type": "mcq",
          "id": "english-g3-ch4-l4-a6",
          "difficulty": 2,
@@ -13279,33 +13257,6 @@
          "focus": 1
         },
         {
-         "type": "mcq",
-         "id": "english-g3-ch4-l4-a7",
-         "difficulty": 2,
-         "tags": [
-          "word pairs",
-          "thinking"
-         ],
-         "title": "Think of more pairs",
-         "prompt": "What should you think of after the first exercise?",
-         "options": [
-          "Two more word pairs",
-          "One very long word",
-          "Two new page numbers",
-          "A different lesson title"
-         ],
-         "answer": 0,
-         "explanation": "You need to think of two more word pairs.",
-         "src": [
-          {
-           "ch": 4,
-           "p": 43
-          }
-         ],
-         "anchor": "english-g3-ch4-l4-a1",
-         "focus": 2
-        },
-        {
          "type": "fillblank",
          "id": "english-g3-ch4-l4-a8",
          "difficulty": 3,
@@ -13328,6 +13279,34 @@
          ],
          "anchor": "english-g3-ch4-l4-a1",
          "focus": 2
+        },
+        {
+         "type": "mcq",
+         "id": "english-g3-ch4-l4-a9",
+         "difficulty": 3,
+         "tags": [
+          "word pairs",
+          "jump",
+          "sway"
+         ],
+         "title": "Find the correct pair",
+         "prompt": "Which pair shows jumping and swaying?",
+         "options": [
+          "jump and skip",
+          "jump and sway",
+          "run and sway",
+          "slide and jump"
+         ],
+         "answer": 1,
+         "explanation": "The word pair “jump and sway” matches the lesson.",
+         "src": [
+          {
+           "ch": 4,
+           "p": 40
+          }
+         ],
+         "anchor": "english-g3-ch4-l4-a1",
+         "focus": -1
         },
         {
          "type": "mcq",
@@ -23651,6 +23630,27 @@
          "focus": 0
         },
         {
+         "type": "truefalse",
+         "id": "english-g3-ch7-l5-a4",
+         "difficulty": 2,
+         "tags": [
+          "pongal",
+          "tamil nadu"
+         ],
+         "title": "True or false?",
+         "prompt": "Pongal is a name used in Tamil Nadu.",
+         "answer": true,
+         "explanation": "Yes, Pongal is a name used in Tamil Nadu.",
+         "src": [
+          {
+           "ch": 7,
+           "p": 77
+          }
+         ],
+         "anchor": "english-g3-ch7-l5-a1",
+         "focus": 1
+        },
+        {
          "type": "mcq",
          "id": "english-g3-ch7-l5-a7",
          "difficulty": 3,
@@ -23702,38 +23702,6 @@
          ],
          "anchor": "english-g3-ch7-l5-a1",
          "focus": 1
-        },
-        {
-         "type": "mcq",
-         "id": "english-g3-ch7-l5-a9",
-         "difficulty": 3,
-         "tags": [
-          "final task",
-          "sweets",
-          "dishes"
-         ],
-         "title": "The final task",
-         "prompt": "What must children list for the final task?",
-         "options": [
-          "kites and boats",
-          "sweets and dishes",
-          "songs and dances",
-          "books and pens"
-         ],
-         "answer": 1,
-         "explanation": "Children name their favourite festival and list sweets and dishes prepared on that day.",
-         "src": [
-          {
-           "ch": 7,
-           "p": 77
-          },
-          {
-           "ch": 7,
-           "p": 77
-          }
-         ],
-         "anchor": "english-g3-ch7-l5-a1",
-         "focus": -1
         },
         {
          "type": "mcq",
@@ -23950,7 +23918,7 @@
       {
        "id": "english-g3-ch7-exam",
        "title": "Test practice",
-       "estimatedMinutes": 14,
+       "estimatedMinutes": 13,
        "topicScene": "media/ch7-l1-porto-covo-july-2011-1-0a2a88.webp",
        "sceneAlt": "A person plays in the ocean surf at Porto Covo in Portugal.",
        "sceneCaption": "A person plays in the surf at Porto Covo, Portugal.",
@@ -24167,32 +24135,6 @@
           "Bajra khichdi": "This name is used in Rajasthan."
          },
          "explanation": "This is the name used for khichdi in Bihar.",
-         "anchor": "english-g3-ch7-l5-a1",
-         "focus": 1
-        },
-        {
-         "type": "mcq",
-         "id": "english-g3-ch7-l5-x2",
-         "difficulty": 3,
-         "tags": [
-          "exam",
-          "case"
-         ],
-         "context": "On festival day, a family in Gujarat calls khichdi “Gujarati khichdi.” The family also flies kites because kite flying is very popular during the festival. Elsewhere, the same festival is called Sankranti, Pongal, Lohri or Bihu. A student wonders why people in different parts of the country use different names. The student also has a final task: name a favourite festival and list the sweets and dishes prepared on that day.",
-         "prompt": "What should the student include to complete the final task?",
-         "options": [
-          "A favourite celebration and the foods served that day.",
-          "A regional khichdi name instead of a chosen festival.",
-          "Kite flying instead of the festival and its foods.",
-          "Festival names only, without listing any dishes."
-         ],
-         "answer": 0,
-         "why": {
-          "A regional khichdi name instead of a chosen festival.": "A khichdi name does not complete the favourite-festival task.",
-          "Kite flying instead of the festival and its foods.": "Flying kites does not answer either part of the task.",
-          "Festival names only, without listing any dishes.": "The task also requires sweets and dishes to be listed."
-         },
-         "explanation": "The task needs both a chosen festival and its foods.",
          "anchor": "english-g3-ch7-l5-a1",
          "focus": 1
         },
