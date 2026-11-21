@@ -5529,7 +5529,7 @@
       {
        "id": "science-g10-ch2-l4",
        "title": "Strength, pH and everyday importance",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -5585,6 +5585,36 @@
            "p": 26
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g10-ch2-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "phscale",
+         "params": {},
+         "title": "Slide along the pH scale",
+         "tasks": [
+          {
+           "say": "Make a strong acid.",
+           "when": "ph <= 2",
+           "then": "At pH 2 there are far more hydrogen ions than in pure water, so the acid is strong."
+          },
+          {
+           "say": "Make the solution exactly neutral.",
+           "when": "ph == 7",
+           "then": "At pH 7 the solution is neutral, like pure water."
+          },
+          {
+           "say": "Make a strong base.",
+           "when": "ph >= 12",
+           "then": "At pH 12 there are very few hydrogen ions and many hydroxide ions: a strong base."
+          }
+         ],
+         "takeaway": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes.",
+         "explanation": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes."
         },
         {
          "type": "worked",
