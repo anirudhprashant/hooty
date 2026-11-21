@@ -310,7 +310,7 @@ export const KITS = {
     ],
   },
   reflection: {
-    grades: [6, 7], match: [/reflect/, /(?<!spherical )\bmirrors?\b/, /angle of incidence/, /\bnormal\b/],
+    grades: [6, 10], match: [/^(?![^\n]*(?:sound|hearing|echo|ultrason))[^\n]*reflect/, /(?<!spherical )\bmirrors?\b/, /angle of incidence/, /\bnormal\b/],
     title: 'Bounce the light', takeaway: 'Light leaves a mirror at the same angle it arrives: angle in equals angle out.',
     tasks: [
       { say: 'Shine the ray straight at the mirror.', when: 'i == 0', then: 'Straight in, straight back out: both angles are 0.' },
