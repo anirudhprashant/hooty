@@ -36,7 +36,7 @@ META = re.compile(
     r"|\bafter\s+the\s+(first|second|last)\s+exercise\b"
     r"|\bwhat\s+does\s+the\s+exercise\s+ask\b"
     r"|\bput\s+the\s+exercises?\s+in\s+the\s+order\b"
-    r"|\bself[- ]assessment\b"                            # "Which part is included in the self-assessment?"
+    r"|\bself[- ](assessment|check)\b"                            # "Which part is included in the self-assessment?"
     r"|\bwhat\s+the\s+exercise\s+asks?\b"                 # "Match each action to what the exercise asks"
     r"|\bin\s+the\s+exercise\s+(figure|picture|sum|question)\b"
     r"|\bexercise\s+figure\b"
