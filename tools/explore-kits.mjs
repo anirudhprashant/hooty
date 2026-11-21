@@ -568,6 +568,15 @@ export const KITS = {
     title: 'Mix acid and base', takeaway: 'Equal amounts of acid and base cancel out and make a neutral solution.',
     tasks: [{ say: 'Make the solution neutral.', when: 'acid == base', then: 'Equal drops cancel out: neutral.' }, { say: 'Make it basic.', when: 'base > acid', then: 'More base than acid: litmus turns blue.' }],
   },
+  phscale: {
+    grades: [6, 10], match: [/universal indicator/, /\blitmus\b/, /\bindicators?\b/, /\bph\b/],
+    title: 'Slide along the pH scale', takeaway: 'The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes.',
+    tasks: [
+      { say: 'Make a strong acid.', when: 'ph <= 2', then: 'At pH 2 there are far more hydrogen ions than in pure water, so the acid is strong.' },
+      { say: 'Make the solution exactly neutral.', when: 'ph == 7', then: 'At pH 7 the solution is neutral, like pure water.' },
+      { say: 'Make a strong base.', when: 'ph >= 12', then: 'At pH 12 there are very few hydrogen ions and many hydroxide ions: a strong base.' },
+    ],
+  },
   reaction: {
     grades: [9, 10], perChapter: 4,
     match: [/combination reaction|combination and|two or more reactants combine/, /decomposition reaction|decomposition and|breaks? (up|down) into (simpler|two|three)|one reactant breaking/, /displacement reaction|displaces? (copper|another|a metal|it) from/, /exothermic|endothermic/, /chemical reactions? in daily life/, /types of chemical reactions?/],

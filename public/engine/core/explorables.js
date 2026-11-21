@@ -510,6 +510,26 @@ export const WIDGETS = {
         say: `${v.acid} drops of acid and ${v.base} of base: the solution is ${name}, so litmus shows ${d > 0 ? 'red' : d < 0 ? 'blue' : 'neither colour change'}.` };
     },
   },
+  phscale: {
+    subject: 'science', about: 'A pH scale from 0 to 14 with the universal indicator colours: the slider sets the pH and the solution turns red for a strong acid, green at neutral 7 and purple for a strong base, with the litmus colour. For acids, bases, pH, strength of acids and bases, indicators.',
+    sliders: [['ph', 'pH of the solution', 0, 14, 1, 5]],
+    draw(v) {
+      const cols = ['#d00000', '#e63946', '#f4511e', '#fb8c00', '#fdd835', '#d4e157', '#9ccc65', '#43a047', '#26a69a', '#29b6f6', '#1e88e5', '#3949ab', '#5e35b1', '#8e24aa', '#6a1b9a'];
+      const ph = v.ph, x0 = 30, seg = 36, y0 = 110, hh = 58, px = x0 + (ph + 0.5) * seg, kids = [];
+      for (let i = 0; i <= 14; i++) {
+        kids.push(R(x0 + i * seg, y0, seg, hh, cols[i], { w: 1, s: '#fff' }));
+        kids.push(T(x0 + (i + 0.5) * seg, y0 + hh + 22, i, { z: 16, w: 600 }));
+      }
+      kids.push(s('polygon', { points: `${px},${y0 - 4} ${px - 12},${y0 - 26} ${px + 12},${y0 - 26}`, fill: INK }));
+      kids.push(T(px, y0 - 36, `pH ${ph}`, { z: 22 }));
+      kids.push(T(x0 + 2.6 * seg, y0 + hh + 52, 'more acidic', { z: 14, w: 600, f: '#b23a48' }));
+      kids.push(T(x0 + 7.5 * seg, y0 + hh + 52, 'neutral', { z: 14, w: 600, f: '#2f7d32' }));
+      kids.push(T(x0 + 12.4 * seg, y0 + hh + 52, 'more basic', { z: 14, w: 600, f: '#5e35b1' }));
+      const name = ph === 7 ? 'neutral' : ph < 7 ? (ph <= 2 ? 'a strong acid' : 'a weak acid') : (ph >= 12 ? 'a strong base' : 'a weak base');
+      const litmus = ph < 7 ? 'Blue litmus paper turns red.' : ph > 7 ? 'Red litmus paper turns blue.' : 'Neither litmus paper changes colour.';
+      return { kids, say: `pH ${ph} is ${name}. ${litmus} ${ph === 7 ? 'A neutral solution, like pure water, has pH 7.' : ph < 7 ? 'Below 7 the solution is acidic.' : 'Above 7 the solution is basic.'}` };
+    },
+  },
   solidvol: {
     subject: 'maths', about: 'A cylinder, a cone or a sphere whose radius and height change, with the volume and surface area worked out from the formula. For surface areas and volumes of solids, right circular cylinders, cones, spheres and hemispheres, and combined solids.',
     sliders: [['pick', 'Choose the solid', 0, 2, 1, 0], ['rr', 'Radius r (cm)', 1, 8, 1, 3], ['ht', 'Height h (cm)', 2, 16, 2, 6]],
