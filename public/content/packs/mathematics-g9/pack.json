@@ -20659,7 +20659,7 @@
       {
        "id": "mathematics-g9-ch4-l1",
        "title": "Patterns and Visualising Identities",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -20722,6 +20722,36 @@
            "p": 70
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch4-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "identity",
+         "params": {},
+         "title": "Cut the big square",
+         "tasks": [
+          {
+           "say": "Make the big square out of four equal parts.",
+           "when": "a == b",
+           "then": "When a = b both rectangles are squares too, and a² + 2ab + b² is 4a²."
+          },
+          {
+           "say": "Make a = 10 and b = 2.",
+           "when": "a == 10 and b == 2",
+           "then": "12 × 12 = 144, while a² + b² is only 104: the two rectangles make up the other 40."
+          },
+          {
+           "say": "Make the b² square bigger than the a² square.",
+           "when": "b > a",
+           "then": "A bigger b grows the yellow square and both rectangles with it."
+          }
+         ],
+         "takeaway": "(a + b)² is not a² + b²: the two a-by-b rectangles add the 2ab in the middle.",
+         "explanation": "(a + b)² is not a² + b²: the two a-by-b rectangles add the 2ab in the middle."
         },
         {
          "type": "worked",
@@ -21143,7 +21173,7 @@
       {
        "id": "mathematics-g9-ch4-l2",
        "title": "Understanding and Using the Square Identities",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -21197,6 +21227,36 @@
            "p": 71
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "identity",
+         "params": {},
+         "title": "Cut the big square",
+         "tasks": [
+          {
+           "say": "Make the big square out of four equal parts.",
+           "when": "a == b",
+           "then": "When a = b both rectangles are squares too, and a² + 2ab + b² is 4a²."
+          },
+          {
+           "say": "Make a = 10 and b = 2.",
+           "when": "a == 10 and b == 2",
+           "then": "12 × 12 = 144, while a² + b² is only 104: the two rectangles make up the other 40."
+          },
+          {
+           "say": "Make the b² square bigger than the a² square.",
+           "when": "b > a",
+           "then": "A bigger b grows the yellow square and both rectangles with it."
+          }
+         ],
+         "takeaway": "(a + b)² is not a² + b²: the two a-by-b rectangles add the 2ab in the middle.",
+         "explanation": "(a + b)² is not a² + b²: the two a-by-b rectangles add the 2ab in the middle."
         },
         {
          "type": "worked",
