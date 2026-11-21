@@ -54786,62 +54786,6 @@
          ]
         },
         {
-         "type": "fillblank",
-         "difficulty": 1,
-         "tags": [
-          "practice",
-          "computed"
-         ],
-         "prompt": "In the exercise figure, AB = AC, so the stated proposition tells us that IE = IF. If IE is 4 cm, what is IF in cm?",
-         "explanation": "Since AB = AC, the stated proposition gives IE = IF. IE measures 4 cm. Therefore, IF is 4 cm.",
-         "steps": [
-          "Since AB = AC, the stated proposition gives IE = IF.",
-          "IE measures 4 cm.",
-          "Therefore, IF is 4 cm."
-         ],
-         "hint": "Use the conclusion IE = IF given by the proposition.",
-         "derived": [
-          "4 (generated problem)"
-         ],
-         "gen": {
-          "template": "In the exercise figure, AB = AC, so the stated proposition tells us that IE = IF. If IE is {x} cm, what is IF in cm?",
-          "params": {
-           "x": [
-            2,
-            3,
-            4,
-            5
-           ]
-          },
-          "where": [],
-          "answer": "x",
-          "vals": {
-           "equal_measure": "x"
-          },
-          "steps": [
-           "Since AB = AC, the stated proposition gives IE = IF.",
-           "IE measures {equal_measure} cm.",
-           "Therefore, IF is {answer} cm."
-          ],
-          "model": null,
-          "hint": "Use the conclusion IE = IF given by the proposition.",
-          "wrong": [],
-          "wrongWhy": []
-         },
-         "answers": [
-          "4"
-         ],
-         "id": "mathematics-g9-ch9-l5-c2",
-         "src": [
-          {
-           "ch": 9,
-           "p": 5
-          }
-         ],
-         "anchor": "mathematics-g9-ch9-l5-a1",
-         "focus": -1
-        },
-        {
          "type": "matchpairs",
          "id": "mathematics-g9-ch9-l5-a5",
          "difficulty": 2,
