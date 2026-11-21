@@ -156,6 +156,15 @@ export const KITS = {
       { say: 'Make a reflex angle.', when: 'angle > 180 and angle < 360', then: 'A reflex angle is more than a straight line.' },
     ],
   },
+  identity: {
+    grades: [8, 10], match: [/identit(y|ies)/, /\(a \+ b\)\s*(²|\^2|squared)/, /square of (a |the )?sum/, /a² \+ 2ab/, /square of a binomial/],
+    title: 'Cut the big square', takeaway: '(a + b)² is not a² + b²: the two a-by-b rectangles add the 2ab in the middle.',
+    tasks: [
+      { say: 'Make the big square out of four equal parts.', when: 'a == b', then: 'When a = b both rectangles are squares too, and a² + 2ab + b² is 4a².' },
+      { say: 'Make a = 10 and b = 2.', when: 'a == 10 and b == 2', then: '12 × 12 = 144, while a² + b² is only 104: the two rectangles make up the other 40.' },
+      { say: 'Make the b² square bigger than the a² square.', when: 'b > a', then: 'A bigger b grows the yellow square and both rectangles with it.' },
+    ],
+  },
   fraction: {
     perChapter: { 3: 4 }, grades: [3, 8], match: [/fractions?/, /numerator/, /denominator/, /\bhalves\b|\bquarters?\b(?! turns?)/],
     title: 'Shade the fraction', takeaway: 'The bottom number says how many equal parts, the top says how many are taken.',

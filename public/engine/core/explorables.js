@@ -769,6 +769,22 @@ export const WIDGETS = {
       return { kids, say: `When x = ${v.x}, ${expr} = ${a} × ${v.x}${b ? ` + ${b}` : ''} = ${val}. Each blue bar is one x, so all ${a} bars grow when x grows; the ${b} small squares always stay ${b}.` };
     },
   },
+  identity: {
+    subject: 'maths', about: 'A square of side a + b cut into an a-by-a square, a b-by-b square and two a-by-b rectangles, so the child sees that (a + b) squared is a squared plus two ab plus b squared. For algebraic identities, the square of a sum, expanding and factorising perfect squares.',
+    sliders: [['a', 'a', 1, 10, 1, 3], ['b', 'b', 1, 10, 1, 2]],
+    draw(v) {
+      const side = v.a + v.b, u = Math.min(230 / side, 36), x0 = 40, y0 = 32, z = Math.max(11, Math.min(22, u * 0.5)), kids = [];
+      const A = v.a * u, B = v.b * u, fc = { a: 'middle', z, f: '#fff' };
+      kids.push(R(x0, y0, A, A, C.sky, { w: 3 }), T(x0 + A / 2, y0 + A / 2 + z / 3, `a² = ${v.a * v.a}`, fc));
+      kids.push(R(x0 + A, y0 + A, B, B, C.y, { w: 3 }), T(x0 + A + B / 2, y0 + A + B / 2 + z / 3, `b² = ${v.b * v.b}`, { ...fc, f: INK }));
+      kids.push(R(x0 + A, y0, B, A, C.g, { w: 3 }), T(x0 + A + B / 2, y0 + A / 2 + z / 3, B > 52 ? `ab = ${v.a * v.b}` : 'ab', fc));
+      kids.push(R(x0, y0 + A, A, B, C.o, { w: 3 }), T(x0 + A / 2, y0 + A + B / 2 + z / 3, A > 52 ? `ab = ${v.a * v.b}` : 'ab', fc));
+      kids.push(R(x0, y0, A + B, A + B, 'none', { w: 5 }), T(x0 + (A + B) / 2, y0 + A + B + 26, `side = ${v.a} + ${v.b} = ${side}`, { z: 16 }));
+      const total = side * side, tx = 580, eq = [`(a + b)² = ${side} × ${side} = ${total}`, `a² + 2ab + b²`, `${v.a * v.a} + ${2 * v.a * v.b} + ${v.b * v.b} = ${total}`];
+      kids.push(T(tx, 92, eq[0], { a: 'end', z: 22 }), T(tx, 136, eq[1], { a: 'end', z: 20, w: 600 }), T(tx, 180, eq[2], { a: 'end', z: 20, w: 600, f: '#058a68' }));
+      return { kids, say: `The square has side ${v.a} + ${v.b} = ${side}, so its area is ${total}. Its four parts are ${v.a * v.a} + ${v.a * v.b} + ${v.a * v.b} + ${v.b * v.b} = ${total}. The two rectangles each have area ${v.a} × ${v.b} = ${v.a * v.b}, and that is why there is a 2ab in the identity.` };
+    },
+  },
   ruler: {
     subject: 'science', about: 'A pencil laid along a 15 cm ruler marked in centimetres and millimetres. Slide where it starts and how long it is, and read its length by subtracting the start from the end. For measuring length, standard units, centimetres and millimetres, measuring correctly from the zero mark.',
     sliders: [['start', 'Where the pencil starts (cm mark)', 0, 4, 1, 2], ['len', 'Length of the pencil (mm)', 10, 110, 5, 55]],
