@@ -2540,7 +2540,7 @@
       {
        "id": "social-science-g8-ch1-l6",
        "title": "Wise Use, Sustainable Farming and Renewable Energy",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -2608,6 +2608,36 @@
            "p": 18
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g8-ch1-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "energysource",
+         "params": {},
+         "title": "Send the power",
+         "tasks": [
+          {
+           "say": "Make electricity from moving air.",
+           "when": "source == 2",
+           "then": "Windmills spin in the moving air, and their turning makes electricity."
+          },
+          {
+           "say": "Find the source that sends up smoke.",
+           "when": "source == 4",
+           "then": "Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air."
+          },
+          {
+           "say": "Choose the Sun, the main source of energy for life on Earth.",
+           "when": "source == 1",
+           "then": "Sunlight gives light and heat, and solar panels turn it into electricity without any smoke."
+          }
+         ],
+         "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
+         "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
         },
         {
          "type": "worked",

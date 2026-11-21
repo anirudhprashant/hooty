@@ -416,8 +416,8 @@ export const KITS = {
     ],
   },
   energysource: {
-    grades: [4, 6], perChapter: 3,
-    match: [/what is energy/, /sources? of energy/, /generating energy/, /clean energy/],
+    grades: [4, 10], perChapter: 3, subjects: ['social'],
+    match: [/what is energy/, /sources? of energy/, /generating energy/, /clean energy/, /conventional sources? of energy/, /non[- ]conventional (sources? of )?energy/, /solar (energy|power|panels?)/, /wind (energy|power|mills?)/, /tidal|geothermal|biogas|nuclear (power|energy)/, /renewable (sources? of )?energy/, /hydro ?electric|hydel/],
     title: 'Send the power', takeaway: 'The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.',
     tasks: [
       { say: 'Make electricity from moving air.', when: 'source == 2', then: 'Windmills spin in the moving air, and their turning makes electricity.' },
