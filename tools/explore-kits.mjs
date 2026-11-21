@@ -157,7 +157,7 @@ export const KITS = {
     ],
   },
   identity: {
-    grades: [8, 10], match: [/identit(y|ies)/, /\(a \+ b\)\s*(²|\^2|squared)/, /square of (a |the )?sum/, /a² \+ 2ab/, /square of a binomial/],
+    grades: [8, 10], match: [/(square|algebr)\w*[^.]{0,30}identit(y|ies)|identit(y|ies)[^.]{0,20}(square|algebr)/, /\(a \+ b\)\s*(²|\^2|squared)/, /square of (a |the )?sum/, /a² \+ 2ab/, /square of a binomial/],
     title: 'Cut the big square', takeaway: '(a + b)² is not a² + b²: the two a-by-b rectangles add the 2ab in the middle.',
     tasks: [
       { say: 'Make the big square out of four equal parts.', when: 'a == b', then: 'When a = b both rectangles are squares too, and a² + 2ab + b² is 4a².' },
