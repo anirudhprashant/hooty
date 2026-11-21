@@ -40361,7 +40361,7 @@
       {
        "id": "science-g7-ch11-l6",
        "title": "Making Useful Items from Light",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -40422,6 +40422,31 @@
            "p": 165
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g7-ch11-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reflection",
+         "params": {},
+         "title": "Bounce the light",
+         "tasks": [
+          {
+           "say": "Shine the ray straight at the mirror.",
+           "when": "i == 0",
+           "then": "Straight in, straight back out: both angles are 0."
+          },
+          {
+           "say": "Make the incoming angle 60 degrees.",
+           "when": "i == 60",
+           "then": "The reflected ray also leaves at 60 degrees."
+          }
+         ],
+         "takeaway": "Light leaves a mirror at the same angle it arrives: angle in equals angle out.",
+         "explanation": "Light leaves a mirror at the same angle it arrives: angle in equals angle out."
         },
         {
          "type": "worked",

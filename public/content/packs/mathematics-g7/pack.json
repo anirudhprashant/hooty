@@ -78538,7 +78538,7 @@
       {
        "id": "mathematics-g7-ch13-l2",
        "title": "Finding a Representative Value",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -78669,6 +78669,31 @@
           "41 (generated problem)",
           "7 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch13-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "dotplot",
+         "params": {},
+         "title": "Mean, median and range",
+         "tasks": [
+          {
+           "say": "Change only Number 5 to 10. Which moved: the mean or the median?",
+           "when": "v5 == 10",
+           "then": "The mean moved to 5.4 but the median stayed at 5: one big value pulls the mean, not the median."
+          },
+          {
+           "say": "Make the mean exactly 6.",
+           "when": "v1 + v2 + v3 + v4 + v5 == 30",
+           "then": "Mean = total divided by 5, so the five numbers must add up to 30."
+          }
+         ],
+         "takeaway": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are.",
+         "explanation": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are."
         },
         {
          "type": "mcq",
