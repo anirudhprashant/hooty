@@ -309,6 +309,23 @@ for u in pack['units']:
         for lesson in c['lessons'] + [c['boss']]:
             lesson['estimatedMinutes'] = max(3, round(sum(COST.get(a['type'], 0.5) for a in lesson['activities'])))
 
+# The right answer was the first option in nearly three quarters of multiple-choice cards, so a child could score
+# without reading. Shuffle the options per activity id (stable across rebuilds) and move the answer index with them.
+# The `why` map is keyed by option text, so it needs no change.
+import random as _random
+for u in pack['units']:
+    for c in u['chapters']:
+        for lesson in c['lessons'] + [c['boss']]:
+            for a in lesson['activities']:
+                if a['type'] != 'mcq': continue
+                o = a.get('options') or []
+                if not isinstance(a.get('answer'), int) or not 0 <= a['answer'] < len(o) or len(o) < 2: continue
+                right = o[a['answer']]
+                order = list(range(len(o)))
+                _random.Random(f"{a['id']}|{len(o)}").shuffle(order)
+                a['options'] = [o[i] for i in order]
+                a['answer'] = a['options'].index(right)
+
 # Structural safety net: an activity the validator rejects (a matching question with repeated answers, a card
 # with no body) is dropped here rather than shipped, so one bad question never breaks a chapter.
 import subprocess
