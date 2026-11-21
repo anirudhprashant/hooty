@@ -111,8 +111,16 @@ def apply(pack_id, pack):
             if n.get('options') and len(n['options']) == len(c.get('options') or []) and not g.get('options'): c['options'] = n['options']
         else:
             old_options = c.get('options')
+            old_answer = c.get('answer')
+            right_text = old_options[old_answer] if isinstance(old_answer, int) and isinstance(old_options, list) and 0 <= old_answer < len(old_options) else None
             for f, v in n.items():
                 if f in FIELDS or f in ('pairs', 'items'): c[f] = v
+            # A rewrite keeps the options in their order, so the answer slot normally stays valid. But a chapter that
+            # is not rebuilt from its source (Social Science chapter 1 is assembled by hand) arrives already shuffled
+            # from the last build: then the slot is only right if we follow the correct option's text.
+            if isinstance(c.get('answer'), int) and isinstance(c.get('options'), list) and old_options is not c.get('options'):
+                if right_text is not None and right_text in c['options']:
+                    c['answer'] = c['options'].index(right_text)
             if isinstance(c.get('why'), list) and c.get('options'): c['why'] = dict(zip(c['options'], c['why']))
             elif isinstance(c.get('why'), dict) and old_options and c.get('options'):   # rewrite left the notes alone: follow the new option text
                 c['why'] = {new: c['why'].get(old, '') for old, new in zip(old_options, c['options'])}

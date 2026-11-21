@@ -309,8 +309,18 @@ for u in pack['units']:
         for lesson in c['lessons'] + [c['boss']]:
             lesson['estimatedMinutes'] = max(3, round(sum(COST.get(a['type'], 0.5) for a in lesson['activities'])))
 
+# Structural safety net: an activity the validator rejects (a matching question with repeated answers, a card
+# with no body) is dropped here rather than shipped, so one bad question never breaks a chapter.
+import subprocess
+def write(): json.dump(pack, open(P + 'pack.json', 'w'), indent=1, ensure_ascii=False)
+import plain   # plain-English rewrites and removal of questions confirmed broken: work/plain, made by tools/plain.py
+print('plain English:', *plain.apply(SUBJ['pack'], pack))
+import funfacts; print('lessons with fun facts:', funfacts.apply(SUBJ['pack'], pack))
+
 # The right answer was the first option in nearly three quarters of multiple-choice cards, so a child could score
 # without reading. Shuffle the options per activity id (stable across rebuilds) and move the answer index with them.
+# This must run AFTER plain.apply: a plain rewrite replaces a card's options in their original order and leaves the
+# answer slot alone, so shuffling first made the stored index point at a different, often wrong, option.
 # The `why` map is keyed by option text, so it needs no change.
 import random as _random
 for u in pack['units']:
@@ -325,14 +335,6 @@ for u in pack['units']:
                 _random.Random(f"{a['id']}|{len(o)}").shuffle(order)
                 a['options'] = [o[i] for i in order]
                 a['answer'] = a['options'].index(right)
-
-# Structural safety net: an activity the validator rejects (a matching question with repeated answers, a card
-# with no body) is dropped here rather than shipped, so one bad question never breaks a chapter.
-import subprocess
-def write(): json.dump(pack, open(P + 'pack.json', 'w'), indent=1, ensure_ascii=False)
-import plain   # plain-English rewrites and removal of questions confirmed broken: work/plain, made by tools/plain.py
-print('plain English:', *plain.apply(SUBJ['pack'], pack))
-import funfacts; print('lessons with fun facts:', funfacts.apply(SUBJ['pack'], pack))
 # Every question learns which card taught it and which line of it the question tests, so a second miss is met with that
 # one line and then a different question about the same idea (tools/concepts.py). Links are recomputed on every build.
 import concepts; print('concept links:', concepts.apply(pack, WORK))
