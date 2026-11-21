@@ -35,7 +35,17 @@ META = re.compile(
     r"|\bwhere\s+should\s+the\s+answers?\s+be\s+written\b"
     r"|\bafter\s+the\s+(first|second|last)\s+exercise\b"
     r"|\bwhat\s+does\s+the\s+exercise\s+ask\b"
-    r"|\bput\s+the\s+exercises?\s+in\s+the\s+order\b",
+    r"|\bput\s+the\s+exercises?\s+in\s+the\s+order\b"
+    r"|\bself[- ]assessment\b"                            # "Which part is included in the self-assessment?"
+    r"|\bwhat\s+the\s+exercise\s+asks?\b"                 # "Match each action to what the exercise asks"
+    r"|\bin\s+the\s+exercise\s+(figure|picture|sum|question)\b"
+    r"|\bexercise\s+figure\b"
+    r"|\bbook'?s\s+instructions?\b"                       # "Put the bogies in order using the book's instructions"
+    r"|\btitle\s+of\s+the\s+book\b"
+    r"|\b(matching|drawing|writing|reading|listening|speaking|fill[- ]in)\s+exercise\b"
+    r"|\bput\s+the\s+exercises?\s+in\s+(the\s+)?(right\s+)?order\b"
+    r"|\bwhich\s+exercise\s+(deals|asks|shows|wants|has)\b"
+    r"|\bthe\s+(first|second|third|last|final)\s+\w+\s+exercise\b",
     re.I)
 
 # phrases that look like the pattern but are ordinary English about the subject
