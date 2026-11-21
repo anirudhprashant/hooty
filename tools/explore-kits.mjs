@@ -106,7 +106,7 @@ export const KITS = {
     ],
   },
   dotplot: {
-    grades: [6, 10], match: [/\bmean\b/, /\bmedian\b/, /\bmode\b/, /\baverage\b/, /central tendency/, /\brange\b.*\bdata\b|\bdata\b.*\brange\b/, /\bstatistics\b/, /data handling/],
+    grades: [6, 10], match: [/\bmean\b/, /\bmedian\b/, /\bmode\b/, /\baverage\b/, /central tendency/, /\brange\b.*\bdata\b|\bdata\b.*\brange\b/, /\bstatistics\b/, /data handling/, /representative (number|value)/, /\boutliers?\b/, /mean (increase|decrease|raise)s?/],
     title: 'Mean, median and range', takeaway: 'The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are.',
     tasks: [
       { say: 'Change only Number 5 to 10. Which moved: the mean or the median?', when: 'v5 == 10', then: 'The mean moved to 5.4 but the median stayed at 5: one big value pulls the mean, not the median.' },
@@ -319,7 +319,7 @@ export const KITS = {
     ],
   },
   reflection: {
-    grades: [6, 10], match: [/^(?![^\n]*(?:sound|hearing|echo|ultrason))[^\n]*reflect/, /(?<!spherical )\bmirrors?\b/, /angle of incidence/, /\bnormal\b/],
+    grades: [6, 10], match: [/^(?![^\n]*(?:sound|hearing|echo|ultrason))[^\n]*reflect/, /(?<!spherical )\bmirrors?\b/, /angle of incidence/, /\bnormal\b/, /periscope|kaleidoscope/],
     title: 'Bounce the light', takeaway: 'Light leaves a mirror at the same angle it arrives: angle in equals angle out.',
     tasks: [
       { say: 'Shine the ray straight at the mirror.', when: 'i == 0', then: 'Straight in, straight back out: both angles are 0.' },
