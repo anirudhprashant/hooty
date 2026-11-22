@@ -597,6 +597,41 @@ export const WIDGETS = {
       return { kids, say: e.say };
     },
   },
+  masskeep: {
+    subject: 'science', about: 'A flask of vinegar and baking soda on a digital balance, before the reaction, with the flask open so gas escapes, and with a balloon trapping the gas. The reading falls when the gas escapes and stays the same when it is trapped, so mass is conserved. For conservation of mass, open and closed systems, gas produced in a reaction.',
+    sliders: [['pick', 'Set up the flask', 0, 2, 1, 0]],
+    draw(v) {
+      const mass = [250.0, 248.6, 250.0][v.pick] || 250.0;
+      const label = ['Before the reaction', 'After, flask open', 'After, gas trapped'][v.pick] || 'Before the reaction';
+      const trapped = v.pick === 2, running = v.pick > 0;
+      const kids = [
+        R(120, 214, 360, 52, '#37474f', { w: 3, r: 6 }),
+        R(150, 198, 300, 18, '#cfd8dc', { w: 3, r: 4 }),
+        T(300, 246, 'digital balance', { z: 14, w: 600, f: '#eceff1' }),
+      ];
+      kids.push(R(400, 30, 170, 66, '#12321e', { w: 3, r: 8 }), T(485, 60, `${mass.toFixed(1)} g`, { z: 26, f: '#7dff9b' }), T(485, 84, label, { z: 12, w: 600, f: '#b9f6ca' }));
+      kids.push(s('path', { d: 'M 262 104 L 262 140 L 214 190 Q 206 198 218 198 L 382 198 Q 394 198 386 190 L 338 140 L 338 104 Z', fill: '#e3f2fd', stroke: INK, 'stroke-width': 4 }));
+      kids.push(s('path', { d: 'M 248 150 L 240 193 L 360 193 L 352 150 Z', fill: '#b9e6fb', stroke: 'none' }));
+      kids.push(R(258, 92, 84, 14, '#d7ccc8', { w: 3, r: 4 }));
+      kids.push(T(300, 176, 'vinegar + baking soda', { z: 11, w: 600, f: '#1f6fb8' }));
+      if (running) for (const [bx, by, br] of [[282, 166, 5], [314, 158, 4], [296, 148, 6], [320, 176, 4], [272, 154, 4]]) kids.push(CIRC(bx, by, br, 'none', { s: '#90caf9', w: 2 }));
+      if (trapped) {
+        kids.push(s('path', { d: 'M 300 92 L 300 78', stroke: INK, 'stroke-width': 3 }));
+        kids.push(s('ellipse', { cx: 300, cy: 54, rx: 26, ry: 30, fill: C.o, stroke: INK, 'stroke-width': 3 }));
+        kids.push(s('path', { d: 'M 300 84 l -7 10 l 14 0 Z', fill: C.o, stroke: INK, 'stroke-width': 2 }));
+        kids.push(T(300, 58, 'gas', { z: 12, f: '#fff' }));
+      } else if (running) {
+        kids.push(L(300, 88, 300, 52, '#90caf9', 3), s('path', { d: 'M 300 50 l -8 12 l 16 0 Z', fill: '#90caf9', stroke: '#90caf9', 'stroke-width': 1 }));
+        kids.push(T(300, 40, 'carbon dioxide escapes', { z: 13, w: 600, f: '#1f6fb8' }));
+      }
+      const say = v.pick === 0
+        ? 'The balance reads 250.0 g with the vinegar and baking soda in the flask, before anything happens.'
+        : v.pick === 1
+          ? 'The reaction made carbon dioxide. With the flask open the gas leaves, so the balance now reads 248.6 g. Nothing was destroyed: the missing mass is the gas in the air.'
+          : 'With a balloon over the neck the carbon dioxide cannot escape. The balance still reads 250.0 g, so the mass before and after the reaction is the same.';
+      return { kids, say };
+    },
+  },
   linegraph: {
     subject: 'maths', about: 'A straight line y = m x + c on a coordinate grid, with a rise-over-run step. m is the slope (steepness) and c is where the line crosses the y-axis. For graphs of linear equations, slope, coordinate geometry, y = mx + c.',
     sliders: [['m', 'Slope (m)', -4, 4, 0.5, 1], ['c', 'Crosses the y-axis at (c)', -3, 3, 1, 1]],

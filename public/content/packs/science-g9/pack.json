@@ -29965,7 +29965,7 @@
       {
        "id": "science-g9-ch9-l1",
        "title": "Physical and Chemical Changes: Mass Is Conserved",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -30028,6 +30028,31 @@
            "p": 165
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "masskeep",
+         "params": {},
+         "title": "Weigh it before and after",
+         "tasks": [
+          {
+           "say": "Run the reaction with the flask open. What happens to the reading?",
+           "when": "pick == 1",
+           "then": "The reading falls from 250.0 g to 248.6 g: carbon dioxide escaped into the air."
+          },
+          {
+           "say": "Trap the gas with a balloon and run it again.",
+           "when": "pick == 2",
+           "then": "The reading stays at 250.0 g. Mass is conserved when nothing escapes."
+          }
+         ],
+         "takeaway": "In a closed flask the total mass stays the same through a chemical reaction, because the gas cannot escape. In an open flask the reading falls by the mass of the gas that left, so nothing is really lost.",
+         "explanation": "In a closed flask the total mass stays the same through a chemical reaction, because the gas cannot escape. In an open flask the reading falls by the mass of the gas that left, so nothing is really lost."
         },
         {
          "type": "worked",

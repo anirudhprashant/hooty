@@ -587,6 +587,15 @@ export const KITS = {
       { say: 'Show iron pushing copper out of copper sulphate.', when: 'pick == 3', then: 'Iron takes the sulphate and copper is left behind: a displacement reaction.' },
     ],
   },
+  masskeep: {
+    grades: [9, 10],
+    match: [/mass is conserved|conservation of mass|matter can neither be created nor destroyed/, /baking soda and vinegar|vinegar.*baking soda/, /gas (produced |formed )?(escaped|escapes|escape)|escaped gas|readings differed/, /closed (flask|container|system)|balloon over/],
+    title: 'Weigh it before and after', takeaway: 'In a closed flask the total mass stays the same through a chemical reaction, because the gas cannot escape. In an open flask the reading falls by the mass of the gas that left, so nothing is really lost.',
+    tasks: [
+      { say: 'Run the reaction with the flask open. What happens to the reading?', when: 'pick == 1', then: 'The reading falls from 250.0 g to 248.6 g: carbon dioxide escaped into the air.' },
+      { say: 'Trap the gas with a balloon and run it again.', when: 'pick == 2', then: 'The reading stays at 250.0 g. Mass is conserved when nothing escapes.' },
+    ],
+  },
   solarsystem: {
     grades: [6, 8], match: [/solar system/, /\bplanets?\b/, /\borbits?\b/, /asteroids?|comets?/],
     title: 'Run the solar system', takeaway: 'Planets nearer the Sun go round faster; the further out, the longer the year.',
