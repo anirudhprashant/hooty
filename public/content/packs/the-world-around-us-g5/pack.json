@@ -3844,7 +3844,7 @@
       {
        "id": "the-world-around-us-g5-ch2-l1",
        "title": "Where I Begin, Where I Flow",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -3895,6 +3895,36 @@
            "p": 21
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "river",
+         "params": {},
+         "title": "Follow the river to the sea",
+         "tasks": [
+          {
+           "say": "Make the river wider as small streams join it.",
+           "when": "stage == 2",
+           "then": "The joining streams are tributaries: each one adds water, so the river grows wider and stronger."
+          },
+          {
+           "say": "Stop the river with a giant wall and store its water.",
+           "when": "stage == 4",
+           "then": "A dam blocks the flow and holds the water in a reservoir for drinking, crops and electricity."
+          },
+          {
+           "say": "Take the river all the way to the sea.",
+           "when": "stage == 5",
+           "then": "Near the sea the river splits into many small streams and makes a delta, where mangroves grow."
+          }
+         ],
+         "takeaway": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta.",
+         "explanation": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta."
         },
         {
          "type": "worked",

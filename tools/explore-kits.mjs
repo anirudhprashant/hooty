@@ -1282,6 +1282,16 @@ export const KITS = {
       { say: 'Cross two threads at a time to make a basket pattern.', when: 'over == 2', then: 'With two threads crossing together the marks get bigger: this is basket weave.' },
     ],
   },
+  river: {
+    grades: [4, 6], subjects: ['social'], perChapter: 1,
+    match: [/tributar/, /\bdelta\b/, /mountain to sea/, /source to sea/, /\brivers?\b/, /\bstreams?\b/, /\breservoir\b/],
+    title: 'Follow the river to the sea', takeaway: 'A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta.',
+    tasks: [
+      { say: 'Make the river wider as small streams join it.', when: 'stage == 2', then: 'The joining streams are tributaries: each one adds water, so the river grows wider and stronger.' },
+      { say: 'Stop the river with a giant wall and store its water.', when: 'stage == 4', then: 'A dam blocks the flow and holds the water in a reservoir for drinking, crops and electricity.' },
+      { say: 'Take the river all the way to the sea.', when: 'stage == 5', then: 'Near the sea the river splits into many small streams and makes a delta, where mangroves grow.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".

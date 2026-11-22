@@ -2893,6 +2893,49 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  river: {
+    subject: 'science', about: 'A river from its source in the hills to the sea: a small stream grows as tributaries join, flows past fields and forests, can be blocked by a dam and its reservoir, and splits into a delta at the sea. For the journey of a river, tributaries, dams and deltas.',
+    sliders: [['stage', 'How far the river has travelled', 1, 5, 1, 1]],
+    draw(v) {
+      const kids = [R(0, 0, W, H, '#dff3ff', { w: 0 })];
+      kids.push(s('polygon', { points: '10,226 120,74 230,226', fill: '#9dbfa5', stroke: INK, 'stroke-width': 2 }));
+      kids.push(T(120, 96, 'hills', { z: 13, f: '#3d5a44' }));
+      kids.push(R(492, 206, 108, 94, '#a9def9', { w: 0 }));
+      kids.push(T(556, 246, 'sea', { z: 16, f: '#1d4ed8' }));
+      kids.push(s('path', { d: 'M 118 150 Q 230 168 320 182 T 500 224', fill: 'none', stroke: '#0077b6', 'stroke-width': 7 + v.stage * 1.4, 'stroke-linecap': 'round' }));
+      if (v.stage >= 2) {
+        kids.push(L(214, 112, 268, 172, '#4cc9f0', 6, { 'stroke-linecap': 'round' }));
+        kids.push(L(300, 240, 268, 172, '#4cc9f0', 6, { 'stroke-linecap': 'round' }));
+        kids.push(T(268, 118, 'tributary', { z: 12, f: '#0077b6' }));
+      }
+      if (v.stage >= 3) {
+        for (let i = 0; i < 4; i++) kids.push(R(300 + i * 26, 208 + (i % 2) * 8, 14, 16, '#7ac74f', { w: 1, r: 2 }));
+        kids.push(T(352, 250, 'fields and forests', { z: 12, f: '#2f6b2f' }));
+      }
+      if (v.stage === 4) {
+        kids.push(s('ellipse', { cx: 392, cy: 176, rx: 34, ry: 15, fill: '#a9def9', stroke: INK, 'stroke-width': 2 }));
+        kids.push(R(408, 156, 14, 58, '#8d99ae', { w: 2, r: 2 }));
+        kids.push(T(392, 150, 'reservoir', { z: 12, f: '#0077b6' }));
+        kids.push(T(415, 232, 'dam', { z: 12, f: '#3d3d3d' }));
+      }
+      if (v.stage === 5) {
+        for (const dy of [-14, 0, 14]) kids.push(L(470, 214, 516, 224 + dy, '#0077b6', 4));
+        kids.push(CIRC(506, 198, 5, '#2f6b2f', { w: 1 }), CIRC(520, 210, 5, '#2f6b2f', { w: 1 }));
+        kids.push(T(492, 178, 'delta and mangroves', { z: 12, f: '#2f6b2f', a: 'middle' }));
+      }
+      const at = [[118, 150], [268, 172], [352, 194], [392, 200], [498, 222]][v.stage - 1];
+      kids.push(CIRC(at[0], at[1], 9, '#ff7a59', { w: 3 }));
+      kids.push(T(16, 274, `${v.stage} of 5: ${['source', 'tributaries join', 'fields and forests', 'dam and reservoir', 'delta and sea'][v.stage - 1]}`, { z: 14, a: 'start', f: '#2a1a4a' }));
+      const say = [
+        'High in the hills the river begins as a small stream, fed by rain.',
+        'Small streams join the river along the way. These tributaries make it wider and stronger.',
+        'The river flows through fields and forests, giving water to plants, animals and people.',
+        'A dam is a giant wall across the river. It stores water in a reservoir for drinking, crops and electricity.',
+        'Near the sea the river splits into many small streams and makes a delta, where mangroves grow.',
+      ][v.stage - 1];
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
