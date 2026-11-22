@@ -2858,6 +2858,41 @@ export const WIDGETS = {
       return { kids, say: `${a} and ${b} are opposites. ${line}` };
     },
   },
+  loom: {
+    subject: 'science', about: 'A loom that weaves cloth: vertical warp threads and rows of horizontal weft thread crossing over one thread and under the next. For weaving, the warp and weft, handloom cloth, plain and basket weave, and how thread becomes fabric.',
+    sliders: [['row', 'Rows of thread woven', 0, 8, 1, 0], ['over', 'Threads crossing: one or two at a time', 1, 2, 1, 1]],
+    draw(v) {
+      const woven = v.row, group = v.over, cols = 8, rows = 8, cw = 40, rh = 24, x0 = 140, y0 = 64;
+      const kids = [R(0, 0, W, H, '#fbfdff', { w: 0 })];
+      kids.push(T(16, 24, 'Warp: threads up and down', { z: 14, a: 'start', f: '#1d4ed8' }));
+      kids.push(T(16, 46, 'Weft: thread side to side', { z: 14, a: 'start', f: '#c2510e' }));
+      kids.push(R(x0 - 8, y0 - 8, cols * cw + 16, rows * rh + 16, '#f2ecff', { w: 2, s: '#d9cfef', r: 8 }));
+      for (let c = 0; c < cols; c++) { const x = x0 + (c + 0.5) * cw; kids.push(L(x, y0, x, y0 + rows * rh, '#3a86ff', 7)); }
+      const overCell = (r, c) => (group === 2 ? (Math.floor(r / 2) + Math.floor(c / 2)) % 2 === 0 : (r + c) % 2 === 0);
+      for (let r = 0; r < woven; r++) {
+        const y = y0 + (r + 0.5) * rh;
+        for (let c = 0; c < cols; c++) {
+          if (!overCell(r, c)) continue;
+          const left = x0 + c * cw - (c === 0 ? 0 : 3), right = x0 + (c + 1) * cw + (c === cols - 1 ? 0 : 3);
+          kids.push(L(left, y, right, y, '#ff7a59', 9));
+        }
+      }
+      // a small shuttle and an arrow show where the next row of weft will go
+      if (woven < rows) {
+        const ny = y0 + (woven + 0.5) * rh;
+        kids.push(R(x0 - 34, ny - 7, 20, 14, '#ff7a59', { w: 2, r: 4 }));
+        kids.push(s('path', { d: `M ${x0 - 10} ${ny} l -8 -5 l 0 10 Z`, fill: '#ff7a59' }));
+        kids.push(T(x0 - 38, ny + 4, 'shuttle', { z: 11, a: 'end', f: '#c2510e' }));
+      }
+      kids.push(T(16, y0 + rows * rh + 34, `${woven} of ${rows} rows woven`, { z: 15, a: 'start', f: '#2a1a4a' }));
+      const cloth = group === 2 ? 'Two threads cross together, so the marks are bigger: this is a basket weave.' : 'Each row goes over one thread and under the next, so the threads lock together: this is plain weave.';
+      let say = `The up-and-down threads are the warp. The side-to-side thread is the weft. ${cloth}`;
+      if (woven === 0) say = 'The up-and-down threads are the warp. The side-to-side thread is the weft. Slide to send the weft across: over one thread, under the next.';
+      else if (woven === rows) say = `All ${rows} rows are woven. The warp and the weft have locked together into one piece of cloth. ${cloth}`;
+      else say = `${woven} of ${rows} rows are woven. ${cloth}`;
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

@@ -1272,6 +1272,16 @@ export const KITS = {
       { say: 'Make the second number a factor of the first.', when: 'a == 60 and b == 12', then: 'The very first division leaves remainder zero, so the smaller number is itself the HCF.' },
     ],
   },
+  loom: {
+    grades: [4, 8], subjects: ['social'], titleOnly: true, perChapter: 3,
+    match: [/weav/, /spinning/, /handloom/, /\blooms?\b/, /\bthreads?\b/, /\bfibres?\b|\bfibers?\b/, /\byarn\b/, /\bkhadi\b/, /\bcharkha\b/, /stitching|embroidery/, /\bcloth\b/],
+    title: 'Weave a piece of cloth', takeaway: 'Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together.',
+    tasks: [
+      { say: 'Send the shuttle across once to weave the first row.', when: 'row == 1', then: 'The weft crosses the warp: over one thread and under the next.' },
+      { say: 'Weave every row and finish the cloth.', when: 'row == 8', then: 'When the rows fill the warp, the threads lock together into cloth.' },
+      { say: 'Cross two threads at a time to make a basket pattern.', when: 'over == 2', then: 'With two threads crossing together the marks get bigger: this is basket weave.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
