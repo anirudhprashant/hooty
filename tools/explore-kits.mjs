@@ -1293,7 +1293,7 @@ export const KITS = {
   },
   river: {
     grades: [4, 6], subjects: ['social'], perChapter: 1,
-    match: [/tributar/, /\bdelta\b/, /mountain to sea/, /source to sea/, /\brivers?\b/, /\bstreams?\b/, /\breservoir\b/],
+    match: [/tributar/, /\bdelta\b/, /mountain to sea/, /source to sea/, /\bstreams?\b/, /\breservoir\b/, /\bdams?\b/],
     title: 'Follow the river to the sea', takeaway: 'A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta.',
     tasks: [
       { say: 'Make the river wider as small streams join it.', when: 'stage == 2', then: 'The joining streams are tributaries: each one adds water, so the river grows wider and stronger.' },
