@@ -2305,6 +2305,54 @@ export const WIDGETS = {
       return { kids: parts, say: `At ₹${pr} a kg, buyers want ${num(want, 1)} kg and sellers bring ${num(bring, 1)} kg: ${where}. The demand and supply curves cross at ₹${num(eqP, 0)} and ${num(eqQ, 1)} kg.` };
     },
   },
+  sectors: {
+    subject: 'social', about: 'A crop turned into cloth and then a shirt, with the value each stage adds, and where the workers of a country are: on farms, in factories or in services. For the three sectors of the economy, primary, secondary and tertiary, value added, and how jobs move as a country develops.',
+    sliders: [['stage', 'How far the product has gone', 0, 2, 1, 0], ['advance', 'How developed the country is', 0, 2, 1, 0]],
+    draw(v) {
+      const st = v.stage, ad = v.advance;
+      const cards = [
+        { x: 26, head: 'Farm', thing: 'raw cotton', worth: 20, colour: C.g, pale: '#e6f7f1' },
+        { x: 214, head: 'Factory', thing: 'cloth', worth: 45, colour: C.b, pale: '#e8f0ff' },
+        { x: 402, head: 'Shop', thing: 'shirt', worth: 90, colour: C.o, pale: '#fff0eb' },
+      ];
+      const kids = [R(0, 0, W, H, '#fbfdff', { w: 0 })];
+      cards.forEach((c, i) => {
+        const on = i <= st;
+        kids.push(R(c.x, 22, 172, 86, on ? c.pale : '#fff', { s: on ? c.colour : '#cfc7e0', w: on ? 4 : 2, r: 12 }));
+        kids.push(T(c.x + 86, 50, c.head, { z: 17, f: on ? c.colour : '#a99fc0' }));
+        kids.push(T(c.x + 86, 76, c.thing, { z: 16, f: on ? INK : '#a99fc0', w: 600 }));
+        kids.push(T(c.x + 86, 99, `₹${c.worth}`, { z: 18, f: on ? INK : '#a99fc0' }));
+        if (i < 2) {
+          const onNext = i + 1 <= st, mid = c.x + 192;
+          kids.push(L(c.x + 174, 65, c.x + 204, 65, onNext ? INK : '#cfc7e0', 4));
+          kids.push(s('path', { d: `M ${c.x + 204} 65 l -9 -6 l 0 12 Z`, fill: onNext ? INK : '#cfc7e0' }));
+          kids.push(T(mid, 126, `+ ₹${cards[i + 1].worth - c.worth} added`, { z: 14, f: onNext ? '#0b6b52' : '#a99fc0', w: 700 }));
+        }
+      });
+      const mix = [[70, 15, 15], [45, 30, 25], [12, 28, 60]][ad];
+      const names = ['primary: farms', 'secondary: factories', 'services: shops and offices'];
+      const cols = [C.g, C.b, C.o];
+      kids.push(T(26, 148, 'Where the workers of this country are', { z: 16, a: 'start', f: '#6b5a8a', w: 600 }));
+      mix.forEach((p, i) => {
+        const y = 166 + i * 34;
+        kids.push(T(26, y + 16, names[i], { z: 14, a: 'start', w: 600, f: '#6b5a8a' }));
+        kids.push(R(252, y, 300, 22, '#efe9f7', { w: 0, r: 6 }));
+        kids.push(R(252, y, 3 * p, 22, cols[i], { w: 0, r: 6 }));
+        kids.push(T(252 + 3 * p + 8, y + 16, `${p} of 100`, { z: 14, a: 'start', f: INK, w: 700 }));
+      });
+      const step = [
+        'The farm grows the cotton and sells it for ₹20.',
+        'The factory turns the cotton into cloth and sells it for ₹45, so this stage adds ₹25.',
+        'The shop sells the finished shirt for ₹90, so this stage adds ₹45.',
+      ][st];
+      const dev = [
+        'Most workers are on farms.',
+        'Many workers have moved to factories, but farms still employ the most.',
+        'Most workers are now in services.',
+      ][ad];
+      return { kids, say: `${step} ${dev} Primary ${mix[0]}, secondary ${mix[1]} and services ${mix[2]} out of every 100 workers.` };
+    },
+  },
   seats: {
     subject: 'social', about: 'Votes turning into seats: one hundred constituencies, each won outright by whoever has more votes there. Slide a party vote share and how uneven the swings are, and watch the seats. For elections, first past the post, vote share against seat share, and how a party can win more seats than its share of votes.',
     sliders: [['share', 'Votes for party A (%)', 30, 70, 1, 38], ['spread', 'How uneven the swings are', 0, 20, 1, 8]],

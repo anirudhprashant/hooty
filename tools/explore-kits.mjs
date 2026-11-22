@@ -1156,6 +1156,17 @@ export const KITS = {
       { say: 'Add four buyers, then set the new equilibrium price.', when: 'price == 120 and buyers == 4', then: 'Four more buyers shift demand right, so the market settles at the higher price of ₹120.' },
     ],
   },
+  sectors: {
+    grades: [8, 10], subjects: ['social'], perChapter: 2,
+    match: [/three sectors/, /sectors? of the (indian )?economy|importance of sectors/, /primary,? secondary/, /\btertiary sector\b/, /value added|intermediate goods/],
+    title: 'Follow a crop to the shop',
+    takeaway: 'Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.',
+    tasks: [
+      { say: 'Send the cotton to the factory and make cloth.', when: 'stage == 1', then: 'The factory adds value by turning cotton into cloth: that is the secondary sector.' },
+      { say: 'Take the shirt all the way to the shop.', when: 'stage == 2', then: 'The shop adds more value by selling the finished shirt: that is a service.' },
+      { say: 'Show a country where most workers are in services.', when: 'advance == 2', then: 'As a country develops, workers move from farms to factories and then to services.' },
+    ],
+  },
   interest: {
     grades: [7, 10], subjects: ['social'], perChapter: 2,
     match: [/credit/, /\bdebt/, /\bborrow/, /\binterest\b/, /moneylender/, /high interest/, /\bbanks?\b/, /\bloans?\b/, /\bsavings\b/],
