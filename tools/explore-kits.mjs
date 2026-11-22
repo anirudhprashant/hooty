@@ -1186,6 +1186,17 @@ export const KITS = {
       { say: 'Keep the extra you pay under ₹600.', when: 'P * (1 + rate / 100) ** years - P <= 600', then: 'A small loan for a short time at a low rate costs only a little extra.' },
     ],
   },
+  income: {
+    grades: [10, 10], subjects: ['social'], perChapter: 1,
+    match: [/average income/, /per capita income/, /income.{0,24}distribut/, /distributed more equally/, /averages? (can )?hide/],
+    title: 'Two countries, the same average',
+    takeaway: 'Average income is handy for comparing countries, but two countries with the same average can share it very differently: one may have every family on 5 thousand rupees a year while another has one rich family and nine poor ones.',
+    tasks: [
+      { say: 'Make Country B the same as Country A: every family earns 5 thousand.', when: 'rich == 5', then: 'Now both countries look the same: every family earns 5 thousand and the average is 5 thousand.' },
+      { say: 'Make the other nine families in Country B get only 1 thousand each.', when: 'rich == 41', then: 'One family has 41 thousand and nine have 1 thousand, yet the average is still 5 thousand.' },
+      { say: 'Make one family in Country B earn 50 thousand a year.', when: 'rich == 50', then: 'One family takes the whole 50 thousand and nine get nothing: the average still reads 5 thousand, but that average hides a very unequal country.' },
+    ],
+  },
   pressure: {
     grades: [7, 10],
     match: [/force per unit area|force (that acts|acting) on (each|a) unit/, /\bthrust\b/, /\bpressure\b.{0,24}(liquids?|depth)/, /\bliquids? pressure\b/, /atmospheric pressure|air pressure/, /pressure (exerted|applied) by (the )?air/, /pressure (is|means)\b/, /(narrow|broad) (straps?|tyres?|heels?)/, /newtons? per square/],

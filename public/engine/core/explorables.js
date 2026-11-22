@@ -2667,6 +2667,35 @@ export const WIDGETS = {
       return { kids, say: `You borrow ${rupees(v.P)} at ${v.rate}% a year. After ${v.years} year${v.years === 1 ? '' : 's'} you owe ${rupees(last.owed)}: that is ${rupees(extra)} more than you borrowed. With simple interest you would owe ${rupees(last.flat)}, only ${rupees(simpleExtra)} extra. Compound interest charges interest on last year\u2019s interest too, so the debt grows faster every year${v.rate >= 20 ? '. At a rate as high as this, a small loan can become a debt trap' : ''}.` };
     },
   },
+  income: {
+    subject: 'social', about: 'Two countries with the same average income but very different shares: ten families in each, and moving the richest family in one shows how an average can hide inequality. For average and per capita income, how income is distributed, and why a country with a fairer share is preferred.',
+    sliders: [['rich', 'Richest family in Country B (rupees thousand a year)', 5, 50, 1, 32]],
+    draw(v) {
+      const base = 236, top = 84, barW = 16, gap = 6, unit = (base - top) / 50;
+      const rest = (50 - v.rich) / 9;
+      const kids = [
+        T(300, 30, 'Two countries, ten families each', { z: 18 }),
+        L(40, base, 560, base, INK, 3),
+        L(40, base - 5 * unit, 560, base - 5 * unit, '#8a6d3b', 2, { 'stroke-dasharray': '6 6' }),
+        T(556, base - 5 * unit - 7, 'average: 5 thousand', { z: 12, w: 600, a: 'end', f: '#8a6d3b' }),
+        T(140, 58, 'Country A', { z: 16 }),
+        T(440, 58, 'Country B', { z: 16 }),
+        T(40, 72, 'rupees in thousands a year', { z: 11, w: 600, a: 'start', f: '#6b5a8a' }),
+      ];
+      for (let m = 0; m <= 50; m += 10) kids.push(T(34, base - m * unit + 4, m, { a: 'end', z: 11, w: 600, f: '#6b5a8a' }));
+      const bars = (x0, vals, colour, label) => {
+        vals.forEach((inc, i) => {
+          const h = Math.max(1, inc * unit), x = x0 + i * (barW + gap);
+          kids.push(R(x, base - h, barW, h, colour, { w: 2 }));
+        });
+        kids.push(T(x0 + (vals.length * (barW + gap) - gap) / 2, base + 20, label, { z: 12, w: 600, f: '#6b5a8a' }));
+      };
+      bars(50, Array(10).fill(5), C.b, 'every family: 5');
+      bars(350, [v.rich, ...Array(9).fill(rest)], C.o, 'one family much richer');
+      const poor = Math.round(rest * 10) / 10;
+      return { kids, say: `Both countries have the same average income: 5 thousand rupees a year for each family. In Country A every family earns 5 thousand. In Country B the richest family earns ${v.rich} thousand and the other nine earn ${num(poor, 1)} thousand each. The average is the same, but the money is shared very differently, so a country where income is distributed more equally is the better place to live.` };
+    },
+  },
   division: {
     subject: 'maths', about: 'Sweets shared into equal groups. One slider sets how many sweets there are and the other sets how many go in each group; the picture shows the whole groups and the sweets left over, so the child sees quotient and remainder. For division, sharing equally, equal groups, remainders, division facts and division word problems.',
     sliders: [['total', 'Sweets to share', 1, 48, 1, 13], ['size', 'Sweets in each group', 2, 8, 1, 4]],
