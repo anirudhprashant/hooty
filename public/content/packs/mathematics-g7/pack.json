@@ -6961,7 +6961,7 @@
           "deep",
           "explain"
          ],
-         "prompt": "A child says 10 + 2 and 15 – 3 cannot match. The child thinks they look different. Which reply fixes this?",
+         "prompt": "A child says 10 + 2 and 15 – 3 cannot match. You think they look different. Which reply fixes this?",
          "options": [
           "They match only when the numbers are written the same way.",
           "They cannot compare, because subtraction always changes a value.",
@@ -10692,11 +10692,11 @@
           "computed"
          ],
          "prompt": "A child has 30 marbles and shares them equally into bags of 2 marbles. How many bags are needed?",
-         "explanation": "There are 30 marbles altogether. Each bag holds 2 marbles, so 30 ÷ 2 = 15 bags. The child needs 15 bags.",
+         "explanation": "There are 30 marbles altogether. Each bag holds 2 marbles, so 30 ÷ 2 = 15 bags. You need 15 bags.",
          "steps": [
           "There are 30 marbles altogether.",
           "Each bag holds 2 marbles, so 30 ÷ 2 = 15 bags.",
-          "The child needs 15 bags."
+          "You need 15 bags."
          ],
          "hint": "Divide the number of marbles equally by the number of marbles in one bag.",
          "derived": [
@@ -25153,8 +25153,8 @@
          "answer": 3,
          "why": {
           "2a makes 1 + 7": "The two a terms are equal; 1 and 7 supply the missing 8.",
-          "8 makes 1 and 7": "The child treats the final 8 as making both smaller numbers.",
-          "a makes 2a + 8": "The child wrongly thinks a and 2a are the same number."
+          "8 makes 1 and 7": "You treat the final 8 as making both smaller numbers.",
+          "a makes 2a + 8": "You wrongly think a and 2a are the same number."
          },
          "explanation": "Adding 1 and 7 gives 8, so both sums equal 2a + 8.",
          "f": [
@@ -28014,9 +28014,9 @@
          ],
          "answer": 0,
          "why": {
-          "Exactly 115.3 degrees": "The child has mixed in the unrelated 115.3-degree angle.",
+          "Exactly 115.3 degrees": "You have mixed in the unrelated 115.3-degree angle.",
           "An unknown angle size": "The equal-angle fact gives an exact measure.",
-          "Equal but not 90 degrees": "The child thinks equal angles need not be right angles."
+          "Equal but not 90 degrees": "You think equal angles need not be right angles."
          },
          "explanation": "Four equal angles are right angles, each measuring 90 degrees.",
          "f": [
@@ -28053,9 +28053,9 @@
          ],
          "answer": 3,
          "why": {
-          "They meet at one point.": "The child thinks extending parallel lines makes them meet.",
-          "They meet at both ends.": "The child thinks parallel lines meet at either end.",
-          "They become perpendicular lines.": "The child thinks extension turns parallel lines into perpendicular lines."
+          "They meet at one point.": "You think extending parallel lines makes them meet.",
+          "They meet at both ends.": "You think parallel lines meet at either end.",
+          "They become perpendicular lines.": "You think extension turns parallel lines into perpendicular lines."
          },
          "explanation": "Parallel lines stay apart even when extended.",
          "f": [
@@ -29305,7 +29305,7 @@
           "deep",
           "spot error"
          ],
-         "prompt": "A child sees two vertically opposite angles at one crossing. The child says they can differ. What is wrong with the claim?",
+         "prompt": "A child sees two vertically opposite angles at one crossing. You say they can differ. What is wrong with the claim?",
          "options": [
           "Only one opposite pair can have equal angles.",
           "Vertically opposite angles must have equal measures.",
@@ -29383,7 +29383,7 @@
           "deep",
           "spot error"
          ],
-         "prompt": "A path crosses two roads that are not parallel. The child says angles 2 and 6 are equal. What is the best response?",
+         "prompt": "A path crosses two roads that are not parallel. You say angles 2 and 6 are equal. What is the best response?",
          "options": [
           "They may be equal because opposite angles always match.",
           "They cannot be equal because the roads are not parallel.",
@@ -33009,11 +33009,11 @@
           "A zero call always means the child is the shortest.",
           "Exactly seven children behind must be taller.",
           "The rule checks only children in front, not behind.",
-          "The child must be taller than every child behind."
+          "You must be taller than every child behind."
          ],
          "answer": 2,
          "why": {
-          "The child must be taller than every child behind.": "The rule does not count anyone behind the caller.",
+          "You must be taller than every child behind.": "The rule does not count anyone behind the caller.",
           "Exactly seven children behind must be taller.": "A zero call only shows no child in front is taller."
          },
          "explanation": "A zero call gives no height order for children behind.",
@@ -38669,8 +38669,8 @@
          ],
          "answer": 2,
          "why": {
-          "Yes, because the name CAB contains the letter C.": "The child thinks any letter in the name gives its label.",
-          "No, because angle CAB can simply be called C.": "The child thinks CAB is simply called angle C.",
+          "Yes, because the name CAB contains the letter C.": "You think any letter in the name gives its label.",
+          "No, because angle CAB can simply be called C.": "You think CAB is simply called angle C.",
           "Yes, because vertex names may be written in any order.": "This mixes up vertex order with angle labels."
          },
          "explanation": "Right: CAB can simply be called angle A.",
@@ -60725,18 +60725,18 @@
           "deep",
           "additive inverse"
          ],
-         "prompt": "A child must add the additive inverse of –18. The child adds 18 red tokens. What went wrong?",
+         "prompt": "A child must add the additive inverse of –18. You add 18 red tokens. What went wrong?",
          "options": [
-          "The child needs 18 red tokens, because red means negative.",
-          "The child needs 18 green tokens, because the inverse is positive.",
-          "The child needs 11 green tokens, because 11 tokens remain.",
-          "The child needs 11 red tokens, because zero pairs cancel."
+          "You need 18 red tokens, because red means negative.",
+          "You need 18 green tokens, because the inverse is positive.",
+          "You need 11 green tokens, because 11 tokens remain.",
+          "You need 11 red tokens, because zero pairs cancel."
          ],
          "answer": 1,
          "why": {
-          "The child needs 18 red tokens, because red means negative.": "Red tokens represent –18, not the inverse of –18.",
-          "The child needs 11 green tokens, because 11 tokens remain.": "11 is the remainder, not the additive inverse of –18.",
-          "The child needs 11 red tokens, because zero pairs cancel.": "Zero pairs cancel, but they are not the inverse of –18."
+          "You need 18 red tokens, because red means negative.": "Red tokens represent –18, not the inverse of –18.",
+          "You need 11 green tokens, because 11 tokens remain.": "11 is the remainder, not the additive inverse of –18.",
+          "You need 11 red tokens, because zero pairs cancel.": "Zero pairs cancel, but they are not the inverse of –18."
          },
          "explanation": "The inverse of –18 is positive 18, so green tokens are needed.",
          "f": [
@@ -60818,7 +60818,7 @@
           "deep",
           "reason"
          ],
-         "prompt": "A child adds 11 zero pairs. The child now says there are 18 green and 11 red tokens. Is the claim right?",
+         "prompt": "A child adds 11 zero pairs. You now say there are 18 green and 11 red tokens. Is the claim right?",
          "options": [
           "Yes, because each pair adds one green and one red token.",
           "No, because the 7 starting green tokens all disappear.",
@@ -90457,8 +90457,8 @@
          ],
          "answer": 3,
          "why": {
-          "No, because seven pieces cannot fit together.": "The child thinks having many pieces makes tiling impossible.",
-          "No, because the pieces must overlap each other.": "The child thinks tiling needs overlaps instead of no overlaps.",
+          "No, because seven pieces cannot fit together.": "You think having many pieces makes tiling impossible.",
+          "No, because the pieces must overlap each other.": "You think tiling needs overlaps instead of no overlaps.",
           "Yes, but only if one piece stays outside.": "Leaving one piece outside leaves the square partly uncovered."
          },
          "explanation": "Dividing the square gives pieces that cover it without gaps or overlaps.",

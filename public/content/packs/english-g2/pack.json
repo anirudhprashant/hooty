@@ -113,7 +113,7 @@
          "kicker": "Let us think it through",
          "prompt": "A child rides past friends on the red bicycle. What should the child do before passing them?",
          "steps": [
-          "The child rides and pedals, so the child is moving past the friends.",
+          "You ride and pedals, so you are moving past the friends.",
           "The bell goes “Trin… trin… trin…”, so it gives a clear sound.",
           "The sound makes the friends move aside, so ringing it gives the child room.",
           "Therefore, the child should ring the bell before passing the friends."
@@ -347,16 +347,16 @@
          ],
          "prompt": "The bell goes “Trin… trin… trin…”. The friends move aside. What does the bell tell them?",
          "options": [
-          "The child needs more room to pass.",
-          "The child wants a louder bell sound.",
-          "The child wants the friends to follow.",
-          "The child wants the bicycle to stop."
+          "You need more room to pass.",
+          "You want a louder bell sound.",
+          "You want the friends to follow.",
+          "You want the bicycle to stop."
          ],
          "answer": 0,
          "why": {
-          "The child wants a louder bell sound.": "A bell sound does not mean that the child wants more sound.",
-          "The child wants the friends to follow.": "Moving aside means making space, not telling friends to follow.",
-          "The child wants the bicycle to stop.": "The bell gives a signal, not a command to stop the bicycle."
+          "You want a louder bell sound.": "A bell sound does not mean that the child wants more sound.",
+          "You want the friends to follow.": "Moving aside means making space, not telling friends to follow.",
+          "You want the bicycle to stop.": "The bell gives a signal, not a command to stop the bicycle."
          },
          "explanation": "The friends move aside, so the child needs room to pass.",
          "f": [
@@ -384,7 +384,7 @@
           "deep",
           "predict action"
          ],
-         "prompt": "The child rides past the friends. The bell goes “Trin… trin… trin…”. Why should the child ring it?",
+         "prompt": "You ride past the friends. The bell goes “Trin… trin… trin…”. Why should you ring it?",
          "options": [
           "The friends can hear it and ride away.",
           "The friends can hear it and stop it.",
@@ -521,7 +521,7 @@
           "deep",
           "word context"
          ],
-         "prompt": "The child pedals and rides. The pedals are black. What does “pedals” describe here?",
+         "prompt": "You pedal and ride. The pedals are black. What does “pedals” describe here?",
          "options": [
           "The blue part the child sits on while riding.",
           "The black parts the bell makes while ringing.",
@@ -590,10 +590,10 @@
           "new-words"
          ],
          "title": "The Bicycle Words",
-         "body": "The bicycle needs some air to keep moving. The child puts on a little helmet and goes happily everywhere. The sight-word list includes “I”, “and”, “is”, “in”, and “my”. The new-word list includes “pedal”. These words are the words you will practise in this lesson.",
+         "body": "The bicycle needs some air to keep moving. You put on a little helmet and go happily everywhere. The sight-word list includes “I”, “and”, “is”, “in”, and “my”. The new-word list includes “pedal”. These words are the words you will practise in this lesson.",
          "keyPoints": [
           "Some air keeps the bicycle moving.",
-          "The child puts on a little helmet.",
+          "You put on a little helmet.",
           "Practise the sight words and the new word “pedal”."
          ],
          "explanation": "This card shows what the child does and which words to practise.",
@@ -773,7 +773,7 @@
            "some air"
           ]
          ],
-         "explanation": "The child wears a helmet and goes happily everywhere. The bicycle needs air.",
+         "explanation": "You wear a helmet and go happily everywhere. The bicycle needs air.",
          "src": [
           {
            "ch": 1,
@@ -789,7 +789,7 @@
           }
          ],
          "anchor": "english-g2-ch1-l2-a1",
-         "focus": 1
+         "focus": -1
         },
         {
          "type": "fillblank",
@@ -846,7 +846,7 @@
           "pedal"
          ],
          "answer": 0,
-         "explanation": "The child puts on a little helmet. “I” and “my” are sight words.",
+         "explanation": "You put on a little helmet. “I” and “my” are sight words.",
          "src": [
           {
            "ch": 1,
@@ -873,7 +873,7 @@
           "helmet",
           "child"
          ],
-         "prompt": "Put the child's actions in the right order.",
+         "prompt": "Put your actions in the right order.",
          "items": [
           "The bicycle needs some air",
           "The child puts on a little helmet",
@@ -905,7 +905,7 @@
           "deep",
           "infer purpose"
          ],
-         "prompt": "The child puts on a helmet. What is the child ready for?",
+         "prompt": "You put on a helmet. What is you ready for?",
          "options": [
           "The new word without meaning.",
           "The happy bicycle ride.",
@@ -954,18 +954,18 @@
           "deep",
           "infer feeling"
          ],
-         "prompt": "The child goes everywhere happily on the bicycle. What does this show?",
+         "prompt": "You go everywhere happily on the bicycle. What does this show?",
          "options": [
-          "The child worries about the helmet.",
-          "The child wants to stop the bicycle.",
-          "The child cannot use the pedal.",
-          "The child enjoys the bicycle ride."
+          "You worry about the helmet.",
+          "You want to stop the bicycle.",
+          "You cannot use the pedal.",
+          "You enjoy the bicycle ride."
          ],
          "answer": 3,
          "why": {
-          "The child wants to stop the bicycle.": "This mistake thinks the child wants the bicycle to stop.",
-          "The child worries about the helmet.": "This mistake thinks putting on a helmet means worry.",
-          "The child cannot use the pedal.": "This mistake reads happiness as an inability to pedal."
+          "You want to stop the bicycle.": "This mistake thinks the child wants the bicycle to stop.",
+          "You worry about the helmet.": "This mistake thinks putting on a helmet means worry.",
+          "You cannot use the pedal.": "This mistake reads happiness as an inability to pedal."
          },
          "explanation": "Going everywhere happily shows that the child enjoys the ride.",
          "f": [
@@ -1003,7 +1003,7 @@
           "deep",
           "word meaning"
          ],
-         "prompt": "The child needs air to move the bicycle. What might “pedal” name?",
+         "prompt": "You need air to move the bicycle. What might “pedal” name?",
          "options": [
           "Some air for the bicycle.",
           "A happy place to go.",
@@ -1044,16 +1044,16 @@
          ],
          "prompt": "“I put on my helmet. I have air. I go everywhere happily.” What does this show?",
          "options": [
-          "The child is keeping the bicycle still.",
-          "The child is waiting without any air.",
-          "The child is enjoying a bicycle ride.",
-          "The child is leaving the helmet behind."
+          "You are keeping the bicycle still.",
+          "You are waiting without any air.",
+          "You are enjoying a bicycle ride.",
+          "You are leaving the helmet behind."
          ],
          "answer": 2,
          "why": {
-          "The child is leaving the helmet behind.": "This mistake reverses putting on the helmet and taking it off.",
-          "The child is keeping the bicycle still.": "This mistake confuses going everywhere with staying still.",
-          "The child is waiting without any air.": "This mistake confuses needing air with having no air."
+          "You are leaving the helmet behind.": "This mistake reverses putting on the helmet and taking it off.",
+          "You are keeping the bicycle still.": "This mistake confuses going everywhere with staying still.",
+          "You are waiting without any air.": "This mistake confuses needing air with having no air."
          },
          "explanation": "The helmet, air, and happy movement show a bicycle ride.",
          "f": [
@@ -1368,7 +1368,7 @@
           }
          ],
          "anchor": "english-g2-ch1-l3-a1",
-         "focus": -1
+         "focus": 0
         },
         {
          "type": "mcq",
@@ -2428,10 +2428,10 @@
          "answer": 2,
          "why": {
           "the bicycle seat": "The pedal is the part pushed by a foot.",
-          "the bicycle wheel": "The child confuses the rolling part with the foot part.",
-          "the bicycle bell": "The child confuses the ringing part with the foot part."
+          "the bicycle wheel": "You confuse the rolling part with the foot part.",
+          "the bicycle bell": "You confuse the ringing part with the foot part."
          },
-         "explanation": "The child confuses the sitting part with the foot part.",
+         "explanation": "You confuse the sitting part with the foot part.",
          "f": [
           "5.4"
          ],
@@ -2462,10 +2462,10 @@
          "answer": 0,
          "why": {
           "the bicycle seat": "The wheel is the part that rolls as the bicycle moves.",
-          "the bicycle pedal": "The child confuses the sitting part with the rolling part.",
-          "the bicycle carrier": "The child confuses the bag-holding part with the rolling part."
+          "the bicycle pedal": "You confuse the sitting part with the rolling part.",
+          "the bicycle carrier": "You confuse the bag-holding part with the rolling part."
          },
-         "explanation": "The child confuses the foot part with the rolling part.",
+         "explanation": "You confuse the foot part with the rolling part.",
          "f": [
           "5.5"
          ],
@@ -2496,10 +2496,10 @@
          "answer": 0,
          "why": {
           "the bicycle seat": "The carrier is the part that holds the bags.",
-          "the bicycle pedal": "The child confuses the sitting part with the bag-holding part.",
-          "the bicycle wheel": "The child confuses the foot part with the bag-holding part."
+          "the bicycle pedal": "You confuse the sitting part with the bag-holding part.",
+          "the bicycle wheel": "You confuse the foot part with the bag-holding part."
          },
-         "explanation": "The child confuses the rolling part with the bag-holding part.",
+         "explanation": "You confuse the rolling part with the bag-holding part.",
          "f": [
           "5.8"
          ],
@@ -2529,9 +2529,9 @@
          ],
          "answer": 0,
          "why": {
-          "the bicycle pedal and bell": "The child confuses the pedal and bell with the sitting and holding parts.",
-          "the bicycle wheel and brake": "The child confuses the wheel and brake with the sitting and holding parts.",
-          "the bicycle carrier and pedal": "The child confuses the carrier and pedal with the sitting and holding parts."
+          "the bicycle pedal and bell": "You confuse the pedal and bell with the sitting and holding parts.",
+          "the bicycle wheel and brake": "You confuse the wheel and brake with the sitting and holding parts.",
+          "the bicycle carrier and pedal": "You confuse the carrier and pedal with the sitting and holding parts."
          },
          "explanation": "The rider sits on the seat and holds the handle.",
          "f": [
@@ -2568,9 +2568,9 @@
          ],
          "answer": 3,
          "why": {
-          "the bicycle seat and pedal": "The child chooses the sitting and foot parts instead.",
-          "the bicycle wheel and carrier": "The child chooses the rolling and bag-holding parts instead.",
-          "the bicycle handle and brake": "The child chooses the holding part instead of the bell."
+          "the bicycle seat and pedal": "You choose the sitting and foot parts instead.",
+          "the bicycle wheel and carrier": "You choose the rolling and bag-holding parts instead.",
+          "the bicycle handle and brake": "You choose the holding part instead of the bell."
          },
          "explanation": "The brake is used to stop, and the bell is used to call.",
          "f": [
@@ -2692,7 +2692,7 @@
          "kicker": "Let us think it through",
          "prompt": "How can a child use a box to picture a magic bicycle and imagine a whole ride?",
          "steps": [
-          "The child uses their imagination, because a magic bicycle can exist in their thoughts.",
+          "You use their imagination, because a magic bicycle can exist in their thoughts.",
           "They draw the bicycle in the box, because a picture makes their imagined idea clear.",
           "They think and speak about the ride, because shared thoughts make the adventure easier to understand.",
           "They can choose real or imaginary places, so the bicycle becomes a clear adventure in their mind."
@@ -2737,7 +2737,7 @@
           "bicycle",
           "poem"
          ],
-         "prompt": "In the poem, the child's bicycle is ______.",
+         "prompt": "In the poem, your bicycle is ______.",
          "answers": [
           "red"
          ],
@@ -2769,7 +2769,7 @@
           "Carries it"
          ],
          "answer": 0,
-         "explanation": "The child draws the magic bicycle in the box.",
+         "explanation": "You draw the magic bicycle in the box.",
          "src": [
           {
            "ch": 1,
@@ -2862,7 +2862,7 @@
           "moving",
           "bicycle"
          ],
-         "prompt": "The child says that ______ is needed to keep the bicycle moving.",
+         "prompt": "You say that ______ is needed to keep the bicycle moving.",
          "answers": [
           "air"
          ],
@@ -2894,7 +2894,7 @@
           "A black bag"
          ],
          "answer": 2,
-         "explanation": "The child puts on a little helmet before going everywhere.",
+         "explanation": "You put on a little helmet before going everywhere.",
          "src": [
           {
            "ch": 1,
@@ -2912,18 +2912,18 @@
           "deep",
           "imagination"
          ],
-         "prompt": "The child sees a magic bicycle in their mind. They draw it and speak about the ride. What are they doing?",
+         "prompt": "You see a magic bicycle in their mind. They draw it and speak about the ride. What are they doing?",
          "options": [
-          "The child is visualising and sharing their thoughts.",
-          "The child is hiding what they imagine.",
-          "The child is copying words from the poem.",
-          "The child is remembering a real bicycle ride."
+          "You are visualising and sharing their thoughts.",
+          "You are hiding what they imagine.",
+          "You are copying words from the poem.",
+          "You are remembering a real bicycle ride."
          ],
          "answer": 0,
          "why": {
-          "The child is remembering a real bicycle ride.": "This mistake treats an imagined bicycle as a remembered real one.",
-          "The child is copying words from the poem.": "This mistake thinks drawing and speaking mean copying.",
-          "The child is hiding what they imagine.": "This mistake confuses sharing thoughts with hiding them."
+          "You are remembering a real bicycle ride.": "This mistake treats an imagined bicycle as a remembered real one.",
+          "You are copying words from the poem.": "This mistake thinks drawing and speaking mean copying.",
+          "You are hiding what they imagine.": "This mistake confuses sharing thoughts with hiding them."
          },
          "explanation": "This is right because the child imagines, visualises, and speaks about the bicycle.",
          "f": [
@@ -3001,7 +3001,7 @@
          "why": {
           "To show that air keeps it moving.": "This mistake confuses its appearance with the need for air.",
           "To show that the bell warns people.": "This mistake gives the bell a job that the details do not show.",
-          "To show that the child likes red colours.": "This mistake assumes the child's colour is stated in the poem."
+          "To show that the child likes red colours.": "This mistake assumes your colour is stated in the poem."
          },
          "explanation": "This is right because clear details help readers picture the bicycle.",
          "f": [
@@ -3063,18 +3063,18 @@
           "deep",
           "character clues"
          ],
-         "prompt": "The child says air keeps the bicycle moving. Before going everywhere, the child puts on a little helmet. What do these details show?",
+         "prompt": "You say air keeps the bicycle moving. Before going everywhere, you put on a little helmet. What do these details show?",
          "options": [
-          "The child hopes the bicycle will not move.",
-          "The child thinks about the bicycle and getting ready.",
-          "The child only thinks about the bicycle's colour.",
-          "The child wants the bell to stay quiet."
+          "You hope the bicycle will not move.",
+          "You think about the bicycle and getting ready.",
+          "You only think about the bicycle's colour.",
+          "You want the bell to stay quiet."
          ],
          "answer": 1,
          "why": {
-          "The child only thinks about the bicycle's colour.": "This mistake reduces the child's thoughts to the bicycle's colour.",
-          "The child wants the bell to stay quiet.": "This mistake confuses thoughts about movement with thoughts about the bell.",
-          "The child hopes the bicycle will not move.": "This mistake mistakes getting ready with hoping the bicycle will stop."
+          "You only think about the bicycle's colour.": "This mistake reduces your thoughts to the bicycle's colour.",
+          "You want the bell to stay quiet.": "This mistake confuses thoughts about movement with thoughts about the bell.",
+          "You hope the bicycle will not move.": "This mistake mistakes getting ready with hoping the bicycle will stop."
          },
          "explanation": "This is right because the child thinks about movement and prepares before the ride.",
          "f": [
@@ -3182,12 +3182,12 @@
           "written"
          ],
          "prompt": "Explain the difference between the bicycle moving fast and moving slowly.",
-         "answer": "The bicycle can sometimes travel quickly and sometimes travel slowly. In either case, it remains on its course. The child is still the one pedaling and riding it. Fast and slow describe how it moves, not where it goes.",
+         "answer": "The bicycle can sometimes travel quickly and sometimes travel slowly. In either case, it remains on its course. You are still the one pedaling and riding it. Fast and slow describe how it moves, not where it goes.",
          "points": [
           "Sometimes the bicycle is fast.",
           "Sometimes the bicycle is slow.",
           "It always stays on track.",
-          "The child pedals and rides it."
+          "You pedal and ride it."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         },
@@ -3199,7 +3199,7 @@
           "exam",
           "case"
          ],
-         "context": "Here is the lesson for my child. The child needs some air to keep the bicycle moving. The child puts on a little helmet. Then the child goes happily everywhere. Our sight-word list includes “I,” “and,” “is,” “in,” and “my.”",
+         "context": "Here is the lesson for my child. You need some air to keep the bicycle moving. You put on a little helmet. Then you go happily everywhere. Our sight-word list includes “I,” “and,” “is,” “in,” and “my.”",
          "prompt": "What should the child do if the bicycle needs some air again?",
          "options": [
           "Put the little helmet on again so the bicycle can keep moving.",
@@ -3215,7 +3215,7 @@
          },
          "explanation": "Taking in some air helps the bicycle keep moving.",
          "anchor": "english-g2-ch1-l2-a1",
-         "focus": 1
+         "focus": 0
         },
         {
          "type": "mcq",
@@ -3225,8 +3225,8 @@
           "exam",
           "case"
          ],
-         "context": "Here is the lesson for my child. The child needs some air to keep the bicycle moving. The child puts on a little helmet. Then the child goes happily everywhere. Our sight-word list includes “I,” “and,” “is,” “in,” and “my.”",
-         "prompt": "The child finds a word that is not on the sight-word list. It is on the lesson's new-word list. Which word is it?",
+         "context": "Here is the lesson for my child. You need some air to keep the bicycle moving. You put on a little helmet. Then you go happily everywhere. Our sight-word list includes “I,” “and,” “is,” “in,” and “my.”",
+         "prompt": "You find a word that is not on the sight-word list. It is on the lesson's new-word list. Which word is it?",
          "options": [
           "is",
           "and",
@@ -3252,7 +3252,7 @@
           "written"
          ],
          "prompt": "Explain why the child should take in some air before the bicycle continues moving.",
-         "answer": "If the child does not take in some air, the bicycle may not keep moving. The child should take in some air before trying to continue. This matters because the lesson says that the bicycle needs some air to keep moving.",
+         "answer": "If you do not take in some air, the bicycle may not keep moving. You should take in some air before trying to continue. This matters because the lesson says that the bicycle needs some air to keep moving.",
          "points": [
           "Says the bicycle may not keep moving.",
           "Identifies taking in some air as the needed action.",
@@ -3408,8 +3408,8 @@
           "exam",
           "case"
          ],
-         "context": "A child gets ready to use a bicycle. The child sits on the seat and holds the handle. Before moving faster, the child checks the brake. The bell is rung, and then the child puts a foot on the pedal. The wheel turns as the child moves. The carrier is also ready to hold what the child wants to carry.",
-         "prompt": "The child wants to carry something while using the bicycle. What should the child do?",
+         "context": "A child gets ready to use a bicycle. You sit on the seat and hold the handle. Before moving faster, you check the brake. The bell is rung, and then you put a foot on the pedal. The wheel turns as you move. The carrier is also ready to hold what you want to carry.",
+         "prompt": "You want to carry something while using the bicycle. What should you do?",
          "options": [
           "Place it on the pedal",
           "Place it on the seat",
@@ -3434,8 +3434,8 @@
           "exam",
           "case"
          ],
-         "context": "A child gets ready to use a bicycle. The child sits on the seat and holds the handle. Before moving faster, the child checks the brake. The bell is rung, and then the child puts a foot on the pedal. The wheel turns as the child moves. The carrier is also ready to hold what the child wants to carry.",
-         "prompt": "The child wants to make a ringing sound before setting off. Which bicycle part should be chosen?",
+         "context": "A child gets ready to use a bicycle. You sit on the seat and hold the handle. Before moving faster, you check the brake. The bell is rung, and then you put a foot on the pedal. The wheel turns as you move. The carrier is also ready to hold what you want to carry.",
+         "prompt": "You want to make a ringing sound before setting off. Which bicycle part should be chosen?",
          "options": [
           "Choose the seat",
           "Choose the carrier",
@@ -3460,8 +3460,8 @@
           "exam",
           "case"
          ],
-         "context": "At school, a child imagines a magic bicycle and draws it in a box. It has a red body, black tyres and black pedals. The child thinks about where to go and visualises the journey to an imaginary or real place. Before going everywhere, the child puts on a little helmet. The bicycle is sometimes fast and sometimes slow. The child says that air is needed to keep it moving. When the bell sounds, people move aside.",
-         "prompt": "The child is ready to travel on the magic bicycle. What should the child do first?",
+         "context": "At school, a child imagines a magic bicycle and draw it in a box. It has a red body, black tyres and black pedals. You think about where to go and visualises the journey to an imaginary or real place. Before going everywhere, you put on a little helmet. The bicycle is sometimes fast and sometimes slow. You say that air is needed to keep it moving. When the bell sounds, people move aside.",
+         "prompt": "You are ready to travel on the magic bicycle. What should you do first?",
          "options": [
           "Wait for the bell before using the bicycle.",
           "Wear the helmet before beginning the trip.",
@@ -3474,7 +3474,7 @@
           "Wait for the bell before using the bicycle.": "The bell makes people move aside.",
           "Draw the bicycle in the box again.": "Drawing happens while imagining the bicycle."
          },
-         "explanation": "The child wears it before going everywhere.",
+         "explanation": "You wear it before going everywhere.",
          "anchor": "english-g2-ch1-l6-a1",
          "focus": -1
         },
@@ -3486,19 +3486,19 @@
           "exam",
           "case"
          ],
-         "context": "At school, a child imagines a magic bicycle and draws it in a box. It has a red body, black tyres and black pedals. The child thinks about where to go and visualises the journey to an imaginary or real place. Before going everywhere, the child puts on a little helmet. The bicycle is sometimes fast and sometimes slow. The child says that air is needed to keep it moving. When the bell sounds, people move aside.",
+         "context": "At school, a child imagines a magic bicycle and draw it in a box. It has a red body, black tyres and black pedals. You think about where to go and visualises the journey to an imaginary or real place. Before going everywhere, you put on a little helmet. The bicycle is sometimes fast and sometimes slow. You say that air is needed to keep it moving. When the bell sounds, people move aside.",
          "prompt": "If there is not enough air for the magic bicycle to keep moving, what should the child expect?",
          "options": [
           "The bicycle will move faster than usual.",
           "The bicycle will not be able to keep moving.",
           "The tyres and pedals will change colour.",
-          "The child will no longer need the helmet."
+          "You will no longer need the helmet."
          ],
          "answer": 1,
          "why": {
           "The bicycle will move faster than usual.": "The facts do not say air makes it faster.",
           "The tyres and pedals will change colour.": "The tyres and pedals stay black.",
-          "The child will no longer need the helmet.": "Wearing the helmet does not depend on the air."
+          "You will no longer need the helmet.": "Wearing the helmet does not depend on the air."
          },
          "explanation": "Air is needed for the bicycle to continue.",
          "anchor": "english-g2-ch1-l6-a1",
@@ -3513,7 +3513,7 @@
           "written"
          ],
          "prompt": "Explain how the child gets ready for a journey on the magic bicycle.",
-         "answer": "The child imagines a magic bicycle and draws it in the box. Then the child thinks about where to go, choosing an imaginary or real place. The child visualises and speaks about the journey. Before going everywhere, the child puts on the little helmet.",
+         "answer": "You imagine a magic bicycle and draw it in the box. Then you think about where to go, choosing an imaginary or real place. You visualise and speaks about the journey. Before going everywhere, you put on the little helmet.",
          "points": [
           "Imagines and draws the bicycle",
           "Chooses an imaginary or real place",
@@ -3540,7 +3540,7 @@
          "poem"
         ],
         "title": "The Bicycle Colour",
-        "prompt": "What colour is the child's bicycle in the lesson and poem?",
+        "prompt": "What colour is your bicycle in the lesson and poem?",
         "options": [
          "Red",
          "Blue",
@@ -3548,7 +3548,7 @@
          "Green"
         ],
         "answer": 0,
-        "explanation": "The child's bicycle is red. The poem also shows a red bicycle.",
+        "explanation": "Your bicycle is red. The poem also shows a red bicycle.",
         "src": [
          {
           "ch": 1,
@@ -3693,7 +3693,7 @@
          "helmet"
         ],
         "hint": "You wear it on your head.",
-        "explanation": "The child puts on a little helmet before going everywhere.",
+        "explanation": "You put on a little helmet before going everywhere.",
         "src": [
          {
           "ch": 1,
@@ -3774,7 +3774,7 @@
          "Draw it in the box"
         ],
         "answer": 3,
-        "explanation": "The child can imagine a magic bicycle and draw it in the box.",
+        "explanation": "You can imagine a magic bicycle and draw it in the box.",
         "src": [
          {
           "ch": 1,
@@ -6710,7 +6710,7 @@
           "exam",
           "case"
          ],
-         "context": "After class, a child put a book in a courtyard. A friend saw it and picked it up. They skipped, then threw the book. The child skipped after them, so they gathered the book and brought it back. “This is my book,” the child said. “How can I get this? Also, can I read it?” “Of this, the child was sure.",
+         "context": "After class, a child put a book in a courtyard. A friend saw it and picked it up. They skipped, then threw the book. You skipped after them, so they gathered the book and brought it back. “This is my book,” you said. “How can I get this? Also, can I read it?” “Of this, you were sure.",
          "prompt": "After the child says, “This is my book,” what should the friend do?",
          "options": [
           "Throw the book into the courtyard again.",
@@ -6720,11 +6720,11 @@
          ],
          "answer": 1,
          "why": {
-          "Keep the book until after class.": "Keeping it would not answer the child’s claim.",
-          "Throw the book into the courtyard again.": "The child wants the book, not for it to be thrown again.",
+          "Keep the book until after class.": "Keeping it would not answer your claim.",
+          "Throw the book into the courtyard again.": "You want the book, not for it to be thrown again.",
           "Ask the child to pick up the book alone.": "The friend already picked up the book, so the child need not do it."
          },
-         "explanation": "The child says that the book belongs to them.",
+         "explanation": "You say that the book belongs to them.",
          "anchor": "english-g2-ch2-l2-a1",
          "focus": 2
         },
@@ -6736,17 +6736,17 @@
           "exam",
           "case"
          ],
-         "context": "After class, a child put a book in a courtyard. A friend saw it and picked it up. They skipped, then threw the book. The child skipped after them, so they gathered the book and brought it back. “This is my book,” the child said. “How can I get this? Also, can I read it?” “Of this, the child was sure.",
+         "context": "After class, a child put a book in a courtyard. A friend saw it and picked it up. They skipped, then threw the book. You skipped after them, so they gathered the book and brought it back. “This is my book,” you said. “How can I get this? Also, can I read it?” “Of this, you were sure.",
          "prompt": "If the child had not skipped after the friend, what would most likely have happened?",
          "options": [
-          "The child might have thrown the book again.",
+          "You might have thrown the book again.",
           "The friend might have taken the book to class.",
           "The book might not have been returned.",
           "The book might have been read after class."
          ],
          "answer": 2,
          "why": {
-          "The child might have thrown the book again.": "The child followed to get the book, not to throw it again.",
+          "You might have thrown the book again.": "You followed to get the book, not to throw it again.",
           "The friend might have taken the book to class.": "The case does not show the friend taking the book to class.",
           "The book might have been read after class.": "The friend planned to read it after the child had the book back."
          },
@@ -7363,7 +7363,7 @@
          "prompt": "How can a child act like all the animals in the poem?",
          "steps": [
           "Lamb, cat, frog, fish, horse, and bird each have an action.",
-          "The child can act because the speaker acts like all animals.",
+          "You can act because the speaker acts like all animals.",
           "Acting like them is fun because the poem says so.",
           "So the child can act like every animal and have fun."
          ],
@@ -7677,9 +7677,9 @@
          ],
          "answer": 2,
          "why": {
-          "climb, then swim": "The child mixes climbing and swimming with leaping and hopping.",
-          "trot, then fly": "The child chooses animal movements that do not match the jumps.",
-          "swim, then trot": "The child reverses the meaning of leap and hop."
+          "climb, then swim": "You mix climbing and swimming with leaping and hopping.",
+          "trot, then fly": "You choose animal movements that do not match the jumps.",
+          "swim, then trot": "You reverse the meaning of leap and hop."
          },
          "explanation": "A big jump is a leap, and small jumps are hops.",
          "f": [
@@ -7716,9 +7716,9 @@
          ],
          "answer": 2,
          "why": {
-          "leap, then hop": "The child treats water movement as hopping instead of swimming.",
-          "trot, then fly": "The child uses flying and trotting for climbing and swimming.",
-          "hop, then leap": "The child mixes up hopping with leaping."
+          "leap, then hop": "You treat water movement as hopping instead of swimming.",
+          "trot, then fly": "You use flying and trotting for climbing and swimming.",
+          "hop, then leap": "You mix up hopping with leaping."
          },
          "explanation": "Going up means climbing, and moving through water means swimming.",
          "f": [
@@ -7755,9 +7755,9 @@
          ],
          "answer": 1,
          "why": {
-          "swim, then climb": "The child thinks swimming and climbing happen through air.",
-          "hop, then leap": "The child mixes hopping and leaping with trotting and flying.",
-          "leap, then swim": "The child puts swimming before the movement through air."
+          "swim, then climb": "You think swimming and climbing happen through air.",
+          "hop, then leap": "You mix hopping and leaping with trotting and flying.",
+          "leap, then swim": "You put swimming before the movement through air."
          },
          "explanation": "Trotting uses quick steps, and flying happens through air.",
          "f": [
@@ -7794,9 +7794,9 @@
          ],
          "answer": 0,
          "why": {
-          "standing beside the animals": "The child thinks being fun means standing beside animals.",
-          "watching animals stay still": "The child mistakes watching animals for acting like them.",
-          "leaving every animal alone": "The child thinks fun has nothing to do with the animals."
+          "standing beside the animals": "You think being fun means standing beside animals.",
+          "watching animals stay still": "You mistake watching animals for acting like them.",
+          "leaving every animal alone": "You think fun has nothing to do with the animals."
          },
          "explanation": "The speaker can act like animals, and the poem calls it fun.",
          "f": [
@@ -8187,7 +8187,7 @@
           "deep",
           "infer"
          ],
-         "prompt": "The teacher plays a sound on the mobile. The child hears a “quack.” Which animal made it?",
+         "prompt": "The teacher plays a sound on the mobile. You hear a “quack.” Which animal made it?",
          "options": [
           "A sheep is making the sound.",
           "A duck is making the sound.",
@@ -8554,7 +8554,7 @@
           "deep",
           "infer"
          ],
-         "prompt": "The child sees one example sentence. The teacher asks for new words. The child points at the example. Why?",
+         "prompt": "You see one example sentence. The teacher asks for new words. You point at the example. Why?",
          "options": [
           "The example shows what the child likes.",
           "The example gives two animals to name.",
@@ -8600,16 +8600,16 @@
          ],
          "prompt": "The poem says, ‘The child can do many things.’ What does this line imply?",
          "options": [
-          "The child must choose one liked ability.",
-          "The child has more than one ability.",
-          "The child has no ability at all.",
-          "The child has exactly one ability."
+          "You must choose one liked ability.",
+          "You have more than one ability.",
+          "You have no ability at all.",
+          "You have exactly one ability."
          ],
          "answer": 1,
          "why": {
-          "The child has exactly one ability.": "This mistake treats many as exactly one.",
-          "The child has no ability at all.": "This mistake thinks many means none.",
-          "The child must choose one liked ability.": "This mistake mixes choosing liked things with the poem’s abilities."
+          "You have exactly one ability.": "This mistake treats many as exactly one.",
+          "You have no ability at all.": "This mistake thinks many means none.",
+          "You must choose one liked ability.": "This mistake mixes choosing liked things with the poem’s abilities."
          },
          "explanation": "Many means more than one, so the child has several abilities.",
          "f": [
@@ -10767,7 +10767,7 @@
           }
          ],
          "anchor": "english-g2-ch4-l1-a1",
-         "focus": 1
+         "focus": -1
         },
         {
          "type": "mcq",
@@ -11177,11 +11177,11 @@
          ],
          "answer": 0,
          "why": {
-          "Only sight, because seeing gives the clearest clues.": "The child thinks seeing works even with covered eyes.",
-          "Only hearing, because sounds are easy to understand.": "The child thinks hearing is the only useful way to find things.",
-          "Only touch, because smell and hearing cannot help.": "The child thinks touch works, but smell and hearing do not."
+          "Only sight, because seeing gives the clearest clues.": "You think seeing works even with covered eyes.",
+          "Only hearing, because sounds are easy to understand.": "You think hearing is the only useful way to find things.",
+          "Only touch, because smell and hearing cannot help.": "You think touch works, but smell and hearing do not."
          },
-         "explanation": "The child can use several senses when sight is not available.",
+         "explanation": "You can use several senses when sight is not available.",
          "f": [
           "2.1",
           "2.2",
@@ -11239,16 +11239,16 @@
          ],
          "prompt": "A child’s scarf is removed, and the child blinks and looks around. What has changed?",
          "options": [
-          "The child has heard a small bell again.",
-          "The child has tasted orange juice again.",
-          "The child can use their sight again.",
-          "The child has touched a soft flower again."
+          "You have heard a small bell again.",
+          "You have tasted orange juice again.",
+          "You can use their sight again.",
+          "You have touched a soft flower again."
          ],
          "answer": 2,
          "why": {
-          "The child has heard a small bell again.": "The bell was heard earlier, not after the scarf came off.",
-          "The child has touched a soft flower again.": "The flower was touched earlier, not after the scarf came off.",
-          "The child has tasted orange juice again.": "The juice was found earlier, not after the scarf came off."
+          "You have heard a small bell again.": "The bell was heard earlier, not after the scarf came off.",
+          "You have touched a soft flower again.": "The flower was touched earlier, not after the scarf came off.",
+          "You have tasted orange juice again.": "The juice was found earlier, not after the scarf came off."
          },
          "explanation": "Removing the scarf let the child see again.",
          "f": [
@@ -11553,9 +11553,9 @@
          ],
          "answer": 2,
          "why": {
-          "Toward the sound in front of the child.": "The child mistakes front for back.",
-          "Toward the sound beside the child.": "The child mistakes beside for behind.",
-          "Toward the sound above the child.": "The child mistakes above for behind."
+          "Toward the sound in front of the child.": "You mistake front for back.",
+          "Toward the sound beside the child.": "You mistake beside for behind.",
+          "Toward the sound above the child.": "You mistake above for behind."
          },
          "explanation": "The direction of the clapping sound is the last clue.",
          "f": [
@@ -11626,9 +11626,9 @@
          ],
          "answer": 1,
          "why": {
-          "Keep the drawing away from friends.": "The child thinks the drawing should stay private.",
-          "Draw the sugar again and again.": "The child thinks drawing should be repeated instead of shared.",
-          "Listen for another clapping sound.": "The child thinks another speaking clue comes instead of sharing."
+          "Keep the drawing away from friends.": "You think the drawing should stay private.",
+          "Draw the sugar again and again.": "You think drawing should be repeated instead of shared.",
+          "Listen for another clapping sound.": "You think another speaking clue comes instead of sharing."
          },
          "explanation": "Children share their drawings with a friend after drawing.",
          "f": [
@@ -12220,7 +12220,7 @@
          "prompt": "A child reads in poor light. What should the child do?",
          "steps": [
           "Our eyes do so much for us, so we should take care of them.",
-          "The child should read in good light because good light helps reading.",
+          "You should read in good light because good light helps reading.",
           "Sitting straight while reading also helps the child take care of their eyes.",
           "So the child should change the light and sit straight."
          ],
@@ -12507,9 +12507,9 @@
          ],
          "answer": 0,
          "why": {
-          "Sitting very close to the TV screen.": "The child thinks sitting close to the TV protects the eyes.",
-          "Staring at the sun for a longer time.": "The child thinks staring at the sun is a useful eye movement.",
-          "Playing on the mobile for a long time.": "The child thinks long mobile play is part of good eye care."
+          "Sitting very close to the TV screen.": "You think sitting close to the TV protects the eyes.",
+          "Staring at the sun for a longer time.": "You think staring at the sun is a useful eye movement.",
+          "Playing on the mobile for a long time.": "You think long mobile play is part of good eye care."
          },
          "explanation": "Sitting straight while drawing helps the child take care of their eyes.",
          "f": [
@@ -12564,16 +12564,16 @@
          ],
          "prompt": "A teacher tells a child to look right and then left. What should move?",
          "options": [
-          "Only the child's hands should move.",
-          "The child's arms and legs should move.",
-          "The child's whole body should move.",
-          "Only the child's eyes should move."
+          "Only your hands should move.",
+          "Your arms and legs should move.",
+          "Your whole body should move.",
+          "Only your eyes should move."
          ],
          "answer": 3,
          "why": {
-          "Only the child's hands should move.": "The child mistakes the teacher's eye directions for hand movements.",
-          "The child's arms and legs should move.": "The child thinks the arms and legs should move too.",
-          "The child's whole body should move.": "The child thinks the whole body should join the exercise."
+          "Only your hands should move.": "You mistake the teacher's eye directions for hand movements.",
+          "Your arms and legs should move.": "You think the arms and legs should move too.",
+          "Your whole body should move.": "You think the whole body should join the exercise."
          },
          "explanation": "Only the eyes move during the exercises, including looking right and left.",
          "f": [
@@ -12703,7 +12703,7 @@
          "kicker": "Let us think it through",
          "prompt": "A child sees a word beginning with o and wonders whether to say “a” or “an”.",
          "steps": [
-          "The child notices o because it is the word’s first sound.",
+          "You notice o because it is the word’s first sound.",
           "An comes before o words because they begin with a vowel sound.",
           "So the child says an, because the rule fits this word."
          ],
@@ -13445,8 +13445,8 @@
           "exam",
           "case"
          ],
-         "context": "A child sits very close to the TV and plays for a long time on the mobile. The child also stares at the sun. Later, the child reads in good light, sits upright while drawing, and eats carrots and lots of vegetables. In class, the child splashes water on the eyelids and closes the eyes. The teacher then asks the child to repeat eye movements, looking up, down, right and left while only the eyes move.",
-         "prompt": "The child has been sitting very close to the TV. What should the child do next to take care of the eyes?",
+         "context": "A child sits very close to the TV and play for a long time on the mobile. You also stare at the sun. Later, you read in good light, sits upright while drawing, and eat carrots and lots of vegetables. In class, you splash water on the eyelids and closes the eyes. The teacher then asks youthe child to repeat eye movements, looking up, down, right and left while only the eyes move.",
+         "prompt": "You have been sitting very close to the TV. What should you do next to take care of the eyes?",
          "options": [
           "Keep playing on the mobile for longer.",
           "Move away from the TV.",
@@ -13471,8 +13471,8 @@
           "exam",
           "case"
          ],
-         "context": "A child sits very close to the TV and plays for a long time on the mobile. The child also stares at the sun. Later, the child reads in good light, sits upright while drawing, and eats carrots and lots of vegetables. In class, the child splashes water on the eyelids and closes the eyes. The teacher then asks the child to repeat eye movements, looking up, down, right and left while only the eyes move.",
-         "prompt": "The child is about to read. Which action should the child choose to take care of the eyes?",
+         "context": "A child sits very close to the TV and play for a long time on the mobile. You also stare at the sun. Later, you read in good light, sits upright while drawing, and eat carrots and lots of vegetables. In class, you splash water on the eyelids and closes the eyes. The teacher then asks youthe child to repeat eye movements, looking up, down, right and left while only the eyes move.",
+         "prompt": "You are about to read. Which action should you choose to take care of the eyes?",
          "options": [
           "Read while playing for a long time on the mobile.",
           "Read while sitting very close to the TV.",
@@ -13498,7 +13498,7 @@
           "written"
          ],
          "prompt": "How should a child do the eye movements in this lesson?",
-         "answer": "The child should repeat the eye movements as the teacher instructs. The child looks up, down, right and left. During the exercises, only the eyes should move, so the child should keep the rest of the body still and follow the teacher’s directions.",
+         "answer": "You should repeat the eye movements as the teacher instructs. You look up, down, right and left. During the exercises, only the eyes should move, so you should keep the rest of the body still and follow the teacher’s directions.",
          "points": [
           "Repeats the teacher’s instructions",
           "Looks up, down, right and left",
@@ -14035,7 +14035,7 @@
          "kicker": "Let us think it through",
          "prompt": "A child wants a trip that can reach the moon. Which travel choice should the child choose?",
          "steps": [
-          "The child wants to reach the moon, so the trip needs the right transport.",
+          "You want to reach the moon, so the trip needs the right transport.",
           "A rocket can take the child to the moon, so it meets this need.",
           "Near and far describe the distance, so they do not show where the trip goes.",
           "Therefore, the child should choose the rocket for the moon trip."
@@ -14949,10 +14949,10 @@
          "kicker": "Let us think it through",
          "prompt": "A child hears the poem and keeps doing the first action. How should the child follow the poem?",
          "steps": [
-          "The child should listen as the poem is read aloud because it tells everyone what to do.",
-          "The child stops, stands, and sits because each instruction changes the current action.",
-          "The child raises a hand, jumps, runs, and stops again because the poem keeps giving new actions.",
-          "The child should follow from one instruction to the next because “What fun” presents the poem as enjoyable."
+          "You should listen as the poem is read aloud because it tells everyone what to do.",
+          "You stop, stands, and sit because each instruction changes the current action.",
+          "You raise a hand, jumps, runs, and stops again because the poem keeps giving new actions.",
+          "You should follow from one instruction to the next because “What fun” presents the poem as enjoyable."
          ],
          "explanation": "Think it through with Hooty.",
          "f": [
@@ -15333,16 +15333,16 @@
          ],
          "prompt": "The poem says “jump” and then “run”. What should the child understand?",
          "options": [
-          "The child should only jump and ignore running.",
-          "The child should keep one action for the whole poem.",
-          "The child should change actions with each instruction.",
-          "The child should run first and then refuse to jump."
+          "You should only jump and ignore running.",
+          "You should keep one action for the whole poem.",
+          "You should change actions with each instruction.",
+          "You should run first and then refuse to jump."
          ],
          "answer": 2,
          "why": {
-          "The child should only jump and ignore running.": "This thinks the jump instruction cancels the run instruction.",
-          "The child should run first and then refuse to jump.": "This reverses the order of the two instructions.",
-          "The child should keep one action for the whole poem.": "This assumes the poem wants one unchanged action throughout."
+          "You should only jump and ignore running.": "This thinks the jump instruction cancels the run instruction.",
+          "You should run first and then refuse to jump.": "This reverses the order of the two instructions.",
+          "You should keep one action for the whole poem.": "This assumes the poem wants one unchanged action throughout."
          },
          "explanation": "Each new instruction tells the child which action comes next.",
          "f": [
@@ -15841,7 +15841,7 @@
           "deep",
           "word meaning"
          ],
-         "prompt": "The vehicle lives only in the child's picture. What does imaginary mean here?",
+         "prompt": "The vehicle lives only in your picture. What does imaginary mean here?",
          "options": [
           "Old and broken",
           "Fast and noisy",
@@ -16046,8 +16046,8 @@
          "kicker": "Let us think it through",
          "prompt": "A child has many vehicle cards and does not know how to sort them into groups.",
          "steps": [
-          "The child looks at every vehicle first, because each card must go into a group.",
-          "The child watches what each vehicle moves on, because the surface shows the group.",
+          "You look at every vehicle first, because each card must go into a group.",
+          "You watch what each vehicle moves on, because the surface shows the group.",
           "So the child puts the bus, train, cart and tractor on land, the aeroplane and helicopter in the air, and the ship, boat, raft and yacht on water.",
           "Then the teacher helps with new words, so the child can sort every card."
          ],
@@ -16631,10 +16631,10 @@
          "kicker": "Let us think it through",
          "prompt": "A group shows umbrella, truck, and duck. Which word needs “an”?",
          "steps": [
-          "The child checks first letters because an comes before u words.",
+          "You check first letters because an comes before u words.",
           "Umbrella begins with u, so the child notices it first.",
           "Truck and duck do not begin with u.",
-          "The child puts an before umbrella, so the answer is clear."
+          "You put an before umbrella, so the answer is clear."
          ],
          "explanation": "Think it through with Hooty.",
          "f": [
@@ -17115,7 +17115,7 @@
          ],
          "answer": 3,
          "why": {
-          "Use the bus or use the train.": "The child has already ruled out the bus and train.",
+          "Use the bus or use the train.": "You have already ruled out the bus and train.",
           "Use a rocket or take a moon trip.": "A rocket is linked with a journey to the moon, not this near journey.",
           "Use near or use far.": "Near and far describe a journey rather than a travel choice."
          },
@@ -18455,7 +18455,7 @@
          "prompt": "Why does the child listen to the teacher before choosing an object?",
          "steps": [
           "The teacher reads words aloud, so each word can be heard.",
-          "The child listens because the spoken word gives the matching clue.",
+          "You listen because the spoken word gives the matching clue.",
           "Each word is represented by a separate object.",
           "Pointing to that object shows that the child understands the word."
          ],
@@ -19215,9 +19215,9 @@
          ],
          "answer": 2,
          "why": {
-          "The classroom chart.": "The child thinks the chart is part of the route.",
-          "The teacher's chair.": "The child thinks the chair is part of the route.",
-          "The drawing box.": "The child mistakes the drawing box for the route's start."
+          "The classroom chart.": "You think the chart is part of the route.",
+          "The teacher's chair.": "You think the chair is part of the route.",
+          "The drawing box.": "You mistake the drawing box for the route's start."
          },
          "explanation": "The route goes from home to school, so home comes first.",
          "f": [
@@ -19347,7 +19347,7 @@
          "steps": [
           "The letters can be rearranged, so the words are not lost.",
           "The words come from the lesson, so the child checks it.",
-          "The child rearranges the letters and compares them with lesson words.",
+          "You rearrange the letters and compares them with lesson words.",
           "This finds the answers because both clues work together."
          ],
          "explanation": "Think it through with Hooty.",
@@ -20196,7 +20196,7 @@
           "deep",
           "choose source"
          ],
-         "prompt": "A child cannot cut a picture from an old magazine. The child still needs one. What can the child do?",
+         "prompt": "A child cannot cut a picture from an old magazine. You still need one. What can you do?",
          "options": [
           "Use a vehicle picture from a newspaper or poster.",
           "Bring an empty piece of paper to class instead.",
@@ -21580,9 +21580,9 @@
          "kicker": "Let us think it through",
          "prompt": "A child knows the six new words but cannot begin speaking.",
          "steps": [
-          "The child looks closely because they must say what they see.",
+          "You look closely because they must say what they see.",
           "They say “I see a house” because house is a new word.",
-          "The child names their town and street because both names are required.",
+          "You name their town and street because both names are required.",
           "So the child completes the speaking activity by following each request."
          ],
          "explanation": "Think it through with Hooty.",
@@ -21801,7 +21801,7 @@
          "why": {
           "To make more circles with letters.": "More circles are used to make words, not to frame sentences.",
           "To name the picture out loud.": "Naming the picture belongs elsewhere, not after making a word.",
-          "To choose another word to make.": "The child must use the made word, not choose another one."
+          "To choose another word to make.": "You must use the made word, not choose another one."
          },
          "explanation": "A framed sentence uses the newly made word, as the activity requires.",
          "f": [
@@ -22246,16 +22246,16 @@
          ],
          "prompt": "In the listening game, a child does not listen carefully. What may happen?",
          "options": [
-          "The child may learn about India.",
-          "The child may miss the word in a row.",
-          "The child may write the street name.",
-          "The child may find the area name."
+          "You may learn about India.",
+          "You may miss the word in a row.",
+          "You may write the street name.",
+          "You may find the area name."
          ],
          "answer": 1,
          "why": {
-          "The child may write the street name.": "This confuses listening carefully with writing an address.",
-          "The child may learn about India.": "This confuses the listening game with learning about India.",
-          "The child may find the area name.": "This confuses listening carefully with finding address information."
+          "You may write the street name.": "This confuses listening carefully with writing an address.",
+          "You may learn about India.": "This confuses the listening game with learning about India.",
+          "You may find the area name.": "This confuses listening carefully with finding address information."
          },
          "explanation": "This is right because children must listen carefully to hear each word.",
          "f": [
@@ -23145,7 +23145,7 @@
           "deep",
           "sequence"
          ],
-         "prompt": "The child has filled all the blanks with sh. What should the child do next?",
+         "prompt": "You have filled all the blanks with sh. What should you do next?",
          "options": [
           "Read each sentence aloud.",
           "Point to every object.",
@@ -23255,7 +23255,7 @@
           "exam",
           "case"
          ],
-         "context": "In a house on a street in the town, a child is in one room. The room has a bed. A basket is on the bed, and flowers are inside the basket. The child is thinking about where each item belongs and how the room is connected to the house and town.",
+         "context": "In a house on a street in the town, a child is in one room. The room has a bed. A basket is on the bed, and flowers are inside the basket. You are thinking about where each item belongs and how the room is connected to the house and town.",
          "prompt": "If the basket is moved from the bed to the floor, what would happen?",
          "options": [
           "The basket would return to the bed by itself.",
@@ -23281,7 +23281,7 @@
           "exam",
           "case"
          ],
-         "context": "In a house on a street in the town, a child is in one room. The room has a bed. A basket is on the bed, and flowers are inside the basket. The child is thinking about where each item belongs and how the room is connected to the house and town.",
+         "context": "In a house on a street in the town, a child is in one room. The room has a bed. A basket is on the bed, and flowers are inside the basket. You are thinking about where each item belongs and how the room is connected to the house and town.",
          "prompt": "Why does the house belong to the town?",
          "options": [
           "The flowers show that the house is in the town.",
@@ -23369,7 +23369,7 @@
           "exam",
           "case"
          ],
-         "context": "During an English lesson, a child opens a notebook to write the home address. The child is unsure about the name of the street, so the teacher helps the child find it out. The child also includes the name of the area because both are parts of the address. Later, the teacher starts a listening game. The children must listen carefully, encircle the words they hear in each row, and follow one word from each column.",
+         "context": "During an English lesson, a child opens a notebook to write the home address. You are unsure about the name of the street, so the teacher helps you find it out. You also include the name of the area because both are parts of the address. Later, the teacher starts a listening game. The children must listen carefully, encircle the words they hear in each row, and follow one word from each column.",
          "prompt": "Why should the teacher say one word clearly from each row?",
          "options": [
           "It shows the child which words to use in the home address.",
@@ -23395,7 +23395,7 @@
           "exam",
           "case"
          ],
-         "context": "During an English lesson, a child opens a notebook to write the home address. The child is unsure about the name of the street, so the teacher helps the child find it out. The child also includes the name of the area because both are parts of the address. Later, the teacher starts a listening game. The children must listen carefully, encircle the words they hear in each row, and follow one word from each column.",
+         "context": "During an English lesson, a child opens a notebook to write the home address. You are unsure about the name of the street, so the teacher helps you find it out. You also include the name of the area because both are parts of the address. Later, the teacher starts a listening game. The children must listen carefully, encircle the words they hear in each row, and follow one word from each column.",
          "prompt": "If the teacher says a word unclearly, what should the child do?",
          "options": [
           "Ask the teacher to say one word clearly from each row.",
@@ -23407,7 +23407,7 @@
          "why": {
           "Ask the teacher to say one word clearly from only one column.": "The game uses words from each column, not only one column.",
           "Ask the teacher to say all the words in each row clearly.": "Only one word from each row is needed, not all the words.",
-          "Ask the teacher to encircle the words for the child.": "The child must encircle the words, not the teacher."
+          "Ask the teacher to encircle the words for the child.": "You must encircle the words, not the teacher."
          },
          "explanation": "The teacher must say one word clearly from each row.",
          "anchor": "english-g2-ch7-l3-a6",
@@ -23792,11 +23792,11 @@
           "elephant"
          ],
          "title": "Looking at the clouds",
-         "body": "A child lies on his back and looks up at the sky. A big white bear appears in the clouds. The bear looks down at the child. Next, the child sees a ship sailing on a white sea. An elephant appears too, and it waves its trunk. The child finds watching the clouds fun. The child can see whatever the child wants to see.",
+         "body": "A child lies on his back and looks up at the sky. A big white bear appears in the clouds. The bear looks down at the child. Next, the child sees a ship sailing on a white sea. An elephant appears too, and it waves its trunk. You find watching the clouds fun. You can see whatever the child wants to see.",
          "keyPoints": [
-          "The child looks up at the sky.",
+          "You look up at the sky.",
           "A bear, ship and elephant appear in the clouds.",
-          "The child can see anything and enjoys watching."
+          "You can see anything and enjoy watching."
          ],
          "explanation": "Wonderful! The clouds can show the child many fun things.",
          "src": [
@@ -23853,9 +23853,9 @@
          "kicker": "Let us think it through",
          "prompt": "Why can the child see different things in the clouds?",
          "steps": [
-          "The child looks up at the sky.",
+          "You look up at the sky.",
           "So the child can watch the clouds.",
-          "The child can see whatever the child wants to see.",
+          "You can see whatever you want to see.",
           "So the child can imagine many cloud pictures."
          ],
          "explanation": "Think it through with Hooty.",
@@ -23910,7 +23910,7 @@
           "A long green snake"
          ],
          "answer": 0,
-         "explanation": "Great spotting! The child sees a big white bear in the clouds.",
+         "explanation": "Great spotting! You see a big white bear in the clouds.",
          "src": [
           {
            "ch": 8,
@@ -24096,7 +24096,7 @@
           "Only ships"
          ],
          "answer": 1,
-         "explanation": "Wonderful! The child can see whatever the child wants to see.",
+         "explanation": "Wonderful! You can see whatever the child wants to see.",
          "src": [
           {
            "ch": 8,
@@ -24114,18 +24114,18 @@
           "deep",
           "infer feelings"
          ],
-         "prompt": "The child sees an elephant in the clouds. The elephant waves its trunk. How does the child most likely feel?",
+         "prompt": "You see an elephant in the clouds. The elephant waves its trunk. How does you most likely feel?",
          "options": [
-          "The child feels very bored and tired.",
-          "The child feels very happy and playful.",
-          "The child feels very cross and upset.",
-          "The child feels very scared and alone."
+          "You feel very bored and tired.",
+          "You feel very happy and playful.",
+          "You feel very cross and upset.",
+          "You feel very scared and alone."
          ],
          "answer": 1,
          "why": {
-          "The child feels very cross and upset.": "This mistake thinks the wave is a cross action.",
-          "The child feels very scared and alone.": "This mistake thinks the elephant is a danger to the child.",
-          "The child feels very bored and tired.": "This mistake thinks the interesting elephant is boring."
+          "You feel very cross and upset.": "This mistake thinks the wave is a cross action.",
+          "You feel very scared and alone.": "This mistake thinks the elephant is a danger to the child.",
+          "You feel very bored and tired.": "This mistake thinks the interesting elephant is boring."
          },
          "explanation": "The waving elephant makes cloud watching fun for the child.",
          "f": [
@@ -24158,16 +24158,16 @@
           "deep",
           "infer meaning"
          ],
-         "prompt": "The child sees a ship sailing in the clouds. What makes the ship seem to move?",
+         "prompt": "You see a ship sailing in the clouds. What makes the ship seem to move?",
          "options": [
           "The bear pulls the ship along.",
           "The white clouds make a sea.",
           "The elephant pushes the ship away.",
-          "The child makes the ship move."
+          "You make the ship move."
          ],
          "answer": 1,
          "why": {
-          "The child makes the ship move.": "This mistake thinks the child controls the ship.",
+          "You make the ship move.": "This mistake thinks the child controls the ship.",
           "The bear pulls the ship along.": "This mistake thinks the bear gives the ship power.",
           "The elephant pushes the ship away.": "This mistake thinks the elephant moves the ship."
          },
@@ -24197,7 +24197,7 @@
           "deep",
           "infer meaning"
          ],
-         "prompt": "The child sees a big white bear in the clouds. The bear looks down. Where is the bear most likely looking?",
+         "prompt": "You see a big white bear in the clouds. The bear looks down. Where is the bear most likely looking?",
          "options": [
           "At another bear in the sky.",
           "At the ship on the sea.",
@@ -24241,7 +24241,7 @@
           "deep",
           "infer meaning"
          ],
-         "prompt": "The child sees a bear, a ship, and an elephant in the clouds. What do these pictures show about the clouds?",
+         "prompt": "You see a bear, a ship, and an elephant in the clouds. What do these pictures show about the clouds?",
          "options": [
           "The clouds can turn into different things.",
           "The clouds always keep the same shape.",
@@ -24293,7 +24293,7 @@
          "prompt": "A poem says the ship sails on a white sea. In this poem, what is the white sea?",
          "options": [
           "The clouds seen from below.",
-          "The sky above the child's head.",
+          "The sky above your head.",
           "The trunk of the waving elephant.",
           "The fur around the white bear."
          ],
@@ -24301,7 +24301,7 @@
          "why": {
           "The fur around the white bear.": "This mistake thinks the sea is part of the bear.",
           "The trunk of the waving elephant.": "This mistake thinks the sea is the elephant's trunk.",
-          "The sky above the child's head.": "This mistake thinks the sea is the sky above the child."
+          "The sky above your head.": "This mistake thinks the sea is the sky above the child."
          },
          "explanation": "The white sea is the white clouds that the child sees.",
          "f": [
@@ -24339,20 +24339,20 @@
           "deep",
           "infer reason"
          ],
-         "prompt": "The child can see whatever the child wants to see. Why does the child enjoy watching the clouds?",
+         "prompt": "You can see whatever you want to see. Why does you enjoy watching the clouds?",
          "options": [
           "The clouds let the child imagine many things.",
           "The clouds make every shape look the same.",
-          "The clouds always hide the child's ideas.",
+          "The clouds always hide your ideas.",
           "The clouds force the child to stay still."
          ],
          "answer": 0,
          "why": {
-          "The clouds always hide the child's ideas.": "This mistake thinks the clouds stop new ideas.",
+          "The clouds always hide your ideas.": "This mistake thinks the clouds stop new ideas.",
           "The clouds force the child to stay still.": "This mistake thinks the clouds cause the child to lie still.",
           "The clouds make every shape look the same.": "This mistake thinks every cloud picture looks the same."
          },
-         "explanation": "The child can choose different cloud pictures, so watching them is fun.",
+         "explanation": "You can choose different cloud pictures, so watching them is fun.",
          "f": [
           "1.9",
           "1.10"
@@ -24468,7 +24468,7 @@
          "kicker": "Let us think it through",
          "prompt": "How can a child learn cloud words by watching and talking?",
          "steps": [
-          "The child sits outside or in an open space because either place can be used for cloud watching.",
+          "You sit outside or in an open space because either place can be used for cloud watching.",
           "They watch the clouds go by because this is how they see the cloud colours.",
           "The next day, they tell the class what was seen because sharing what they watched leads to talk.",
           "The teacher accepts one word and asks for explanations because the children are encouraged to speak in English."
@@ -24637,7 +24637,7 @@
           "clouds",
           "telling"
          ],
-         "prompt": "Put the child's actions in the correct order.",
+         "prompt": "Put your actions in the correct order.",
          "items": [
           "sit outside the home or in an open space",
           "watch the clouds go by",
@@ -24700,7 +24700,7 @@
           "deep",
           "sequence"
          ],
-         "prompt": "The child sits outside. Clouds go by. The next day, the child tells the class. What did the child likely do first?",
+         "prompt": "You sit outside. Clouds go by. The next day, you tell the class. What did you likely do first?",
          "options": [
           "Watched the clouds go by.",
           "Ticked the cloud colours.",
@@ -24713,7 +24713,7 @@
           "Explained their answers in English.": "This mistake puts the class explanation before the cloud watching.",
           "Spoke to the teacher.": "This mistake puts a talk with the teacher before the class talk."
          },
-         "explanation": "The child watched the clouds before telling the class.",
+         "explanation": "You watched the clouds before telling the class.",
          "f": [
           "2.4",
           "2.5"
@@ -24739,7 +24739,7 @@
           "deep",
           "infer purpose"
          ],
-         "prompt": "The child sits outside the home or in an open space. Why can either place work?",
+         "prompt": "You sit outside the home or in an open space. Why can either place work?",
          "options": [
           "Both places make clouds change colour.",
           "Both places give the child new words.",
@@ -25240,16 +25240,16 @@
          ],
          "prompt": "A story says, “I looked up, down, and with closed eyes.” What does this line show?",
          "options": [
-          "The child looked in different ways.",
-          "The child saw only one real thing.",
-          "The child copied another child's answer.",
-          "The child stopped asking any questions."
+          "You looked in different ways.",
+          "You saw only one real thing.",
+          "You copied another child's answer.",
+          "You stopped asking any questions."
          ],
          "answer": 0,
          "why": {
-          "The child copied another child's answer.": "This confuses different looking with copying another child's answer.",
-          "The child saw only one real thing.": "This mistakes different looking for seeing only one real thing.",
-          "The child stopped asking any questions.": "This mistakes the line for ending the questions."
+          "You copied another child's answer.": "This confuses different looking with copying another child's answer.",
+          "You saw only one real thing.": "This mistakes different looking for seeing only one real thing.",
+          "You stopped asking any questions.": "This mistakes the line for ending the questions."
          },
          "explanation": "This is right because the line shows looking up, down, and with closed eyes.",
          "f": [
@@ -25497,9 +25497,9 @@
          "prompt": "How can a child turn what they see into writing and a drawing?",
          "steps": [
           "The poem asks which animals the child sees, so the child must look for animals.",
-          "The child looks up at the clouds, because that is where the animals are seen.",
-          "The child writes any three things seen during the day, so the ideas become writing.",
-          "The child joins dots in alphabetical order and colours the picture, so the task ends with a drawing."
+          "You look up at the clouds, because that is where the animals are seen.",
+          "You write any three things seen during the day, so the ideas become writing.",
+          "You join dots in alphabetical order and colours the picture, so the task ends with a drawing."
          ],
          "explanation": "Think it through with Hooty.",
          "f": [
@@ -25631,7 +25631,7 @@
           "Joins coloured dots"
          ],
          "answer": 0,
-         "explanation": "The child looks up at the clouds when seeing the animals.",
+         "explanation": "You look up at the clouds when seeing the animals.",
          "src": [
           {
            "ch": 8,
@@ -25655,7 +25655,7 @@
           "things"
          ],
          "title": "Daytime writing",
-         "prompt": "The child writes any ______ things seen during the day.",
+         "prompt": "You write any ______ things seen during the day.",
          "answers": [
           "three"
          ],
@@ -25760,15 +25760,15 @@
          "prompt": "If the child joins the dots in a different order, what may happen?",
          "options": [
           "The joined picture may not look right.",
-          "The child may write three new things.",
-          "The child may colour the dots first.",
-          "The child may look for new animals."
+          "You may write three new things.",
+          "You may colour the dots first.",
+          "You may look for new animals."
          ],
          "answer": 0,
          "why": {
-          "The child may colour the dots first.": "The child confuses joining dots with colouring the picture.",
-          "The child may write three new things.": "The child confuses the picture task with daytime writing.",
-          "The child may look for new animals.": "The child confuses the picture task with looking for animals."
+          "You may colour the dots first.": "You confuse joining dots with colouring the picture.",
+          "You may write three new things.": "You confuse the picture task with daytime writing.",
+          "You may look for new animals.": "You confuse the picture task with looking for animals."
          },
          "explanation": "Dots should be joined in alphabetical order for the picture to look right.",
          "f": [
@@ -25925,7 +25925,7 @@
           "Listen carefully because the teacher asks the children to listen and say the listed words.",
           "Notice “back” because it is in the poem and contains the common ck sound.",
           "Repeat each word after the teacher because the children practise the ck sound this way.",
-          "The child can join in without knowing the meanings, so listening and repeating is enough."
+          "You can join in without knowing the meanings, so listening and repeating is enough."
          ],
          "explanation": "Think it through with Hooty.",
          "f": [
@@ -26163,16 +26163,16 @@
          ],
          "prompt": "A child hears “back”. Why does the child repeat that word?",
          "options": [
-          "The child thinks the teacher wants a different word.",
-          "The child thinks the teacher wants the word twice.",
+          "You think the teacher wants a different word.",
+          "You think the teacher wants the word twice.",
           "The teacher asks the children to listen and say the word.",
-          "The child thinks the child should explain the word."
+          "You think you should explain the word."
          ],
          "answer": 2,
          "why": {
-          "The child thinks the teacher wants a different word.": "This mistake expects a new word, but the child repeats the same word.",
-          "The child thinks the teacher wants the word twice.": "This mistake counts the repeats, but the lesson is about the ck sound.",
-          "The child thinks the child should explain the word.": "This mistake thinks meanings are needed, but they are not needed."
+          "You think the teacher wants a different word.": "This mistake expects a new word, but the child repeats the same word.",
+          "You think the teacher wants the word twice.": "This mistake counts the repeats, but the lesson is about the ck sound.",
+          "You think you should explain the word.": "This mistake thinks meanings are needed, but they are not needed."
          },
          "explanation": "The teacher asks the children to listen and say the listed words.",
          "f": [
@@ -26330,7 +26330,7 @@
           "exam",
           "case"
          ],
-         "context": "A child lies on his back and looks up at the sky. The child sees a big white bear in the clouds. The bear looks down at the child. The child also sees a ship sailing on a white sea and an elephant in the clouds. The elephant waves its trunk at the child. The child finds it fun to watch the clouds because the child can see whatever the child wants to see.",
+         "context": "A child lies on his back and look up at the sky. You see a big white bear in the clouds. The bear looks down at you. You also see a ship sailing on a white sea and an elephant in the clouds. The elephant waves its trunk at you. You find it fun to watch the clouds because you can see whatever you want to see.",
          "prompt": "After watching the ship, the child wants to see the elephant. Where should the child look?",
          "options": [
           "Among the clouds above him.",
@@ -26356,7 +26356,7 @@
           "exam",
           "case"
          ],
-         "context": "A child lies on his back and looks up at the sky. The child sees a big white bear in the clouds. The bear looks down at the child. The child also sees a ship sailing on a white sea and an elephant in the clouds. The elephant waves its trunk at the child. The child finds it fun to watch the clouds because the child can see whatever the child wants to see.",
+         "context": "A child lies on his back and look up at the sky. You see a big white bear in the clouds. The bear looks down at you. You also see a ship sailing on a white sea and an elephant in the clouds. The elephant waves its trunk at you. You find it fun to watch the clouds because you can see whatever you want to see.",
          "prompt": "If the child is still lying on his back and looking up, but the clouds seem empty, what should the child do?",
          "options": [
           "Keep watching and look for another sight in the clouds.",
@@ -26370,7 +26370,7 @@
           "Look only at the white sea and wait for the ship.": "The ship is only one of the sights in the clouds.",
           "Look for the elephant behind the child instead of in the sky.": "The elephant appears among the clouds, not behind the child."
          },
-         "explanation": "The child can see whatever the child wants to see.",
+         "explanation": "You can see whatever you want to see.",
          "anchor": "english-g2-ch8-l1-a1",
          "focus": -1
         },
@@ -26470,7 +26470,7 @@
           "exam",
           "case"
          ],
-         "context": "During the English lesson, the child answers the writing questions and reads a poem about animals. Looking up at the clouds, the child sees the animals. The writing task asks what is seen in the sky during the day, and the child writes any three things seen during the day. The child then answers what is seen in the sky at night. Finally, the child joins dots in a picture in alphabetical order and colours the joined picture.",
+         "context": "During the English lesson, you answer the writing questions and read a poem about animals. Looking up at the clouds, you see the animals. The writing task asks what is seen in the sky during the day, and you write any three things seen during the day. You then answer what is seen in the sky at night. Finally, you join dots in a picture in alphabetical order and colours the joined picture.",
          "prompt": "What should the child do when reading the poem about animals?",
          "options": [
           "Join the picture’s dots before checking the poem.",
@@ -26496,7 +26496,7 @@
           "exam",
           "case"
          ],
-         "context": "During the English lesson, the child answers the writing questions and reads a poem about animals. Looking up at the clouds, the child sees the animals. The writing task asks what is seen in the sky during the day, and the child writes any three things seen during the day. The child then answers what is seen in the sky at night. Finally, the child joins dots in a picture in alphabetical order and colours the joined picture.",
+         "context": "During the English lesson, you answer the writing questions and read a poem about animals. Looking up at the clouds, you see the animals. The writing task asks what is seen in the sky during the day, and you write any three things seen during the day. You then answer what is seen in the sky at night. Finally, you join dots in a picture in alphabetical order and colours the joined picture.",
          "prompt": "After writing three things seen during the day, what should the child do next?",
          "options": [
           "Begin joining the dots in reverse alphabetical order.",
@@ -26649,7 +26649,7 @@
          "clouds",
          "sky"
         ],
-        "prompt": "The child can see whatever the child wants to see.",
+        "prompt": "You can see whatever the child wants to see.",
         "answer": true,
         "explanation": "That is true. The clouds can show the child many exciting sights.",
         "src": [
@@ -26670,12 +26670,12 @@
          "sky",
          "words"
         ],
-        "prompt": "The child lies on his ______ while looking at the sky.",
+        "prompt": "You lie on his ______ while looking at the sky.",
         "answers": [
          "back"
         ],
         "hint": "This word is in the poem and the sight-word list.",
-        "explanation": "The child lies on his back to watch the clouds.",
+        "explanation": "You lie on his back to watch the clouds.",
         "src": [
          {
           "ch": 8,
@@ -26691,7 +26691,7 @@
          }
         ],
         "anchor": "english-g2-ch8-l1-a1",
-        "focus": 0
+        "focus": -1
        },
        {
         "type": "matchpairs",
@@ -26764,7 +26764,7 @@
          "Sailing ship",
          "Elephant"
         ],
-        "explanation": "The child first sees a bear, then a ship, and then an elephant.",
+        "explanation": "You first see a bear, then a ship, and then an elephant.",
         "src": [
          {
           "ch": 8,
@@ -31888,18 +31888,18 @@
           "deep",
           "infer feelings"
          ],
-         "prompt": "At a dress-up table, a child puts one feather on a hat. The child says, “Now I am beautiful.” How does the child feel?",
+         "prompt": "At a dress-up table, a child puts one feather on a hat. You say, “Now I am beautiful.” How does you feel?",
          "options": [
-          "The child feels afraid of the other children",
-          "The child feels bored by the feathered hat",
-          "The child feels proud of the feathered hat",
-          "The child feels sorry about the feathered hat"
+          "You feel afraid of the other children",
+          "You feel bored by the feathered hat",
+          "You feel proud of the feathered hat",
+          "You feel sorry about the feathered hat"
          ],
          "answer": 2,
          "why": {
-          "The child feels afraid of the other children": "The facts do not say that the child feels afraid.",
-          "The child feels bored by the feathered hat": "Praising the look shows interest, not boredom.",
-          "The child feels sorry about the feathered hat": "The child praises the feathered hat, not feeling sorry."
+          "You feel afraid of the other children": "The facts do not say that the child feels afraid.",
+          "You feel bored by the feathered hat": "Praising the look shows interest, not boredom.",
+          "You feel sorry about the feathered hat": "You praise the feathered hat, not feeling sorry."
          },
          "explanation": "Saying “I am beautiful” shows pride in the new look.",
          "f": [
@@ -32022,16 +32022,16 @@
          ],
          "prompt": "After laughing, one child says, “Black was beautiful.” What does the child mean?",
          "options": [
-          "The child thinks the other child should change",
-          "The child wants every child to wear feathers",
-          "The child believes black feathers are ugly",
-          "The child likes the other child as they are"
+          "You think the other child should change",
+          "You want every child to wear feathers",
+          "You believe black feathers are ugly",
+          "You like the other child as they are"
          ],
          "answer": 3,
          "why": {
-          "The child wants every child to wear feathers": "This would mean black feathers are not beautiful.",
-          "The child believes black feathers are ugly": "Saying black is beautiful rejects the idea that it is ugly.",
-          "The child thinks the other child should change": "Their words accept the crow as he is, not ask him to change."
+          "You want every child to wear feathers": "This would mean black feathers are not beautiful.",
+          "You believe black feathers are ugly": "Saying black is beautiful rejects the idea that it is ugly.",
+          "You think the other child should change": "Their words accept the crow as he is, not ask him to change."
          },
          "explanation": "They love the crow for what he was, so they accept his natural look.",
          "f": [
@@ -32095,16 +32095,16 @@
          ],
          "prompt": "After hearing this, what may the child learn about beauty?",
          "options": [
-          "The child can be beautiful without adding feathers",
-          "The child should laugh whenever someone wears feathers",
-          "The child can change beauty by changing colour",
-          "The child needs more feathers before feeling beautiful"
+          "You can be beautiful without adding feathers",
+          "You should laugh whenever someone wears feathers",
+          "You can change beauty by changing colour",
+          "You need more feathers before feeling beautiful"
          ],
          "answer": 0,
          "why": {
-          "The child needs more feathers before feeling beautiful": "They already accept the child without asking for more feathers.",
-          "The child should laugh whenever someone wears feathers": "Their message is acceptance, not a wish for laughter.",
-          "The child can change beauty by changing colour": "Nothing says that changing colour makes someone beautiful."
+          "You need more feathers before feeling beautiful": "They already accept the child without asking for more feathers.",
+          "You should laugh whenever someone wears feathers": "Their message is acceptance, not a wish for laughter.",
+          "You can change beauty by changing colour": "Nothing says that changing colour makes someone beautiful."
          },
          "explanation": "They say black is beautiful, so the child can be beautiful too.",
          "f": [
@@ -32461,16 +32461,16 @@
          ],
          "prompt": "Fair or dark skin does not matter. Why is the child happy?",
          "options": [
-          "The child hears that fair skin matters.",
-          "The child hears that dark skin matters.",
-          "The child hears that bird names matter.",
-          "The child hears that good qualities matter."
+          "You hear that fair skin matters.",
+          "You hear that dark skin matters.",
+          "You hear that bird names matter.",
+          "You hear that good qualities matter."
          ],
          "answer": 3,
          "why": {
-          "The child hears that fair skin matters.": "This mistake thinks beauty depends only on fair skin.",
-          "The child hears that dark skin matters.": "This mistake thinks beauty depends only on dark skin.",
-          "The child hears that bird names matter.": "This mistake mixes the beauty lesson with the bird writing task."
+          "You hear that fair skin matters.": "This mistake thinks beauty depends only on fair skin.",
+          "You hear that dark skin matters.": "This mistake thinks beauty depends only on dark skin.",
+          "You hear that bird names matter.": "This mistake mixes the beauty lesson with the bird writing task."
          },
          "explanation": "This is right because the lesson says real beauty lies in good qualities.",
          "f": [
@@ -32500,16 +32500,16 @@
          ],
          "prompt": "Children can speak about one good quality of their friend. A child looks proud. Why?",
          "options": [
-          "The child is praising a skin tone.",
-          "The child is praising a good quality.",
-          "The child is naming birds in a box.",
-          "The child is comparing birds nearby."
+          "You are praising a skin tone.",
+          "You are praising a good quality.",
+          "You are naming birds in a box.",
+          "You are comparing birds nearby."
          ],
          "answer": 1,
          "why": {
-          "The child is praising a skin tone.": "This mistake confuses good qualities with skin tone.",
-          "The child is naming birds in a box.": "This mistake confuses talking about a friend with the box writing task.",
-          "The child is comparing birds nearby.": "This mistake confuses talking about a friend with comparing nearby birds."
+          "You are praising a skin tone.": "This mistake confuses good qualities with skin tone.",
+          "You are naming birds in a box.": "This mistake confuses talking about a friend with the box writing task.",
+          "You are comparing birds nearby.": "This mistake confuses talking about a friend with comparing nearby birds."
          },
          "explanation": "This is right because the child is praising a friend's good quality.",
          "f": [
@@ -34547,7 +34547,7 @@
           "deep",
           "word context"
          ],
-         "prompt": "A child's legs feel heavy. The child wants to rest. Which phrase fits?",
+         "prompt": "A child's legs feel heavy. You want to rest. Which phrase fits?",
          "options": [
           "too busy to stop",
           "too tired to keep going",
@@ -35142,10 +35142,10 @@
          "kicker": "Let us think it through",
          "prompt": "A child sits under a tree, sees a packet nearby, and wants to complete the activities.",
          "steps": [
-          "The child is under the tree because the tree is above the child.",
+          "You are under the tree because the tree is above you.",
           "The packet is nearby because it lies close to the child.",
-          "The child can talk about thrown packets or bottles because the speaking activity asks whether they have seen them.",
-          "The child can then draw three cleaning things because that is the separate drawing task."
+          "You can talk about thrown packets or bottles because the speaking activity asks whether they have seen them.",
+          "You can then draw three cleaning things because that is the separate drawing task."
          ],
          "explanation": "Think it through with Hooty.",
          "f": [
@@ -35395,7 +35395,7 @@
           "deep",
           "context clue"
          ],
-         "prompt": "The child sits below a tree's branches. Which word shows the child's place?",
+         "prompt": "You sit below a tree's branches. Which word shows your place?",
          "options": [
           "in",
           "nearby",
@@ -35434,7 +35434,7 @@
           "deep",
           "word meaning"
          ],
-         "prompt": "A packet lies close to the child's feet. Which word fits the sentence?",
+         "prompt": "A packet lies close to your feet. Which word fits the sentence?",
          "options": [
           "under",
           "then",
@@ -35569,7 +35569,7 @@
           "Whether the wrapper is edible.": "Edibility is about eating, not what to do with a wrapper.",
           "Whether the wrapper is sweet.": "Sweetness would matter for food, not for a wrapper."
          },
-         "explanation": "The child should check for a school dustbin before deciding what to do with the wrapper.",
+         "explanation": "You should check for a school dustbin before deciding what to do with the wrapper.",
          "f": [
           "3.5",
           "3.7"
@@ -35893,7 +35893,7 @@
           "The last part of each word.": "This mistake thinks only the ending is needed.",
           "The reverse order of each pair.": "This mistake thinks the parts must change order."
          },
-         "explanation": "The child needs to join each pair to make one word.",
+         "explanation": "You need to join each pair to make one word.",
          "f": [
           "4.4",
           "4.5"
@@ -36612,7 +36612,7 @@
          "kicker": "Let us think it through",
          "prompt": "How can a child share a shop visit when they know only a few English words?",
          "steps": [
-          "The child visited a nearby shop with their family, so they have an experience to share.",
+          "You visited a nearby shop with their family, so they have an experience to share.",
           "They can share this experience in class, because the project asks children to talk about their visits.",
           "They may use a few mother-tongue words first, because this helps them begin sharing.",
           "The teacher should encourage English, so the child shares what they like and dislike during shopping."
@@ -36861,16 +36861,16 @@
          ],
          "prompt": "A child shares only what they disliked at a shop. What is missing?",
          "options": [
-          "The child's family visit story",
-          "The child's picture of the shop",
-          "The child's likes at the shop",
+          "Your family visit story",
+          "Your picture of the shop",
+          "Your likes at the shop",
           "The names of all shop items"
          ],
          "answer": 2,
          "why": {
           "The names of all shop items": "This mistakes sharing for naming every shop item.",
-          "The child's picture of the shop": "This thinks a picture is needed instead of spoken likes and dislikes.",
-          "The child's family visit story": "This thinks the visit story replaces sharing likes and dislikes."
+          "Your picture of the shop": "This thinks a picture is needed instead of spoken likes and dislikes.",
+          "Your family visit story": "This thinks the visit story replaces sharing likes and dislikes."
          },
          "explanation": "Sharing should include both what the child likes and dislikes.",
          "f": [
@@ -36955,7 +36955,7 @@
           "Remove the picture before sharing it": "Removing the picture goes against pasting a liked picture.",
           "Share only the word floor": "Sharing one word does not include sharing the shopping experience."
          },
-         "explanation": "The child may paste a liked picture and share the shop experience.",
+         "explanation": "You may paste a liked picture and share the shop experience.",
          "f": [
           "6.2",
           "6.3",
@@ -37258,8 +37258,8 @@
           "exam",
           "case"
          ],
-         "context": "A child visits a nearby shop with their family. In class, the child shares the shopping experience, first using a few words in their mother tongue. The child says they liked a clock and a flower, but did not like the floor, and pastes pictures of the clock and flower. The child writes, “There is a clock in the classroom.” The teacher encourages English, asks the child to write sentences with picture words, and checks the blends during regular practice.",
-         "prompt": "The child begins sharing with a few words in the mother tongue. What should the teacher do next?",
+         "context": "A child visits a nearby shop with their family. In class, you share the shopping experience, first using a few words in their mother tongue. You say they liked a clock and a flower, but did not like the floor, and pastes pictures of the clock and flower. You write, “There is a clock in the classroom.” The teacher encourages English, asks youthe child to write sentences with picture words, and check the blends during regular practice.",
+         "prompt": "You begin sharing with a few words in the mother tongue. What should the teacher do next?",
          "options": [
           "Invite the child to continue sharing in English.",
           "Ask another child to finish the sharing for them.",
@@ -37284,7 +37284,7 @@
           "exam",
           "case"
          ],
-         "context": "A child visits a nearby shop with their family. In class, the child shares the shopping experience, first using a few words in their mother tongue. The child says they liked a clock and a flower, but did not like the floor, and pastes pictures of the clock and flower. The child writes, “There is a clock in the classroom.” The teacher encourages English, asks the child to write sentences with picture words, and checks the blends during regular practice.",
+         "context": "A child visits a nearby shop with their family. In class, you share the shopping experience, first using a few words in their mother tongue. You say they liked a clock and a flower, but did not like the floor, and pastes pictures of the clock and flower. You write, “There is a clock in the classroom.” The teacher encourages English, asks youthe child to write sentences with picture words, and check the blends during regular practice.",
          "prompt": "After pasting pictures of the clock and flower, what should the child do for the writing part of the work?",
          "options": [
           "Put the chosen picture words into written sentences.",
@@ -38689,7 +38689,7 @@
           "Draw one thing because the lesson asks for one thing.",
           "Choose something that feels helpful because the drawing should help.",
           "Make the earth more beautiful because that is the lesson's goal.",
-          "The child can now draw that one helpful thing."
+          "You can now draw that one helpful thing."
          ],
          "explanation": "Think it through with Hooty.",
          "f": [
@@ -38991,7 +38991,7 @@
           "deep",
           "infer feelings"
          ],
-         "prompt": "The child draws one thing. The thing would help make the earth more beautiful. How does the child feel about the drawing?",
+         "prompt": "You draw one thing. The thing would help make the earth more beautiful. How does you feel about the drawing?",
          "options": [
           "They want to win a prize.",
           "They want to help the earth.",
@@ -39000,11 +39000,11 @@
          ],
          "answer": 1,
          "why": {
-          "They want to win a prize.": "The child gives no reason about winning a prize.",
-          "They want to hurry home.": "Rushing home is not part of the child's reason.",
+          "They want to win a prize.": "You give no reason about winning a prize.",
+          "They want to hurry home.": "Rushing home is not part of your reason.",
           "They want to draw alone.": "Drawing alone is not the reason the child chose."
          },
-         "explanation": "The child's choice is meant to help and improve the earth.",
+         "explanation": "Your choice is meant to help and improve the earth.",
          "f": [
           "3.1",
           "3.2",
@@ -39463,16 +39463,16 @@
          ],
          "prompt": "A child says “drops of carrot.” What mistake did the child make?",
          "options": [
-          "The child forgot that carrot is not a liquid.",
-          "The child thought drops need a round shape.",
-          "The child thought drops come only from trees.",
-          "The child thought all small things are liquids."
+          "You forgot that carrot is not a liquid.",
+          "You thought drops need a round shape.",
+          "You thought drops come only from trees.",
+          "You thought all small things are liquids."
          ],
          "answer": 0,
          "why": {
-          "The child thought all small things are liquids.": "This mistake comes from thinking all small things are liquids.",
-          "The child thought drops need a round shape.": "This mistake comes from thinking drops need a round shape.",
-          "The child thought drops come only from trees.": "This mistake comes from thinking drops come only from trees."
+          "You thought all small things are liquids.": "This mistake comes from thinking all small things are liquids.",
+          "You thought drops need a round shape.": "This mistake comes from thinking drops need a round shape.",
+          "You thought drops come only from trees.": "This mistake comes from thinking drops come only from trees."
          },
          "explanation": "Carrot is not a liquid, so drops of carrot does not fit.",
          "f": [
@@ -40835,7 +40835,7 @@
           "exam",
           "case"
          ],
-         "context": "A child is doing the drawing and matching task. The child must draw one thing that feels helpful, and the drawing should help make the earth more beautiful. The matching task asks children to match the words in Column A. The child also completes phrases from the poem: “Little grains of sand,” “Little drops of water,” “Little deeds of warmth,” “Little words of love,” and “Little acts of kindness.” The child pauses before starting because choosing the subject is difficult.",
+         "context": "A child is doing the drawing and matching task. You must draw one thing that feels helpful, and the drawing should help make the earth more beautiful. The matching task asks children to match the words in Column A. You also complete phrases from the poem: “Little grains of sand,” “Little drops of water,” “Little deeds of warmth,” “Little words of love,” and “Little acts of kindness.” You pause before starting because choosing the subject is difficult.",
          "prompt": "What kind of subject should the child choose for the drawing?",
          "options": [
           "One that is easy to draw, whether or not it is helpful",
@@ -40847,7 +40847,7 @@
          "why": {
           "One that is easy to draw, whether or not it is helpful": "Being easy to draw is not the main reason.",
           "One that looks attractive but may not help the earth": "Looking attractive alone does not meet the helpful purpose.",
-          "Several different subjects placed together in one picture": "The child should draw one thing, not several subjects."
+          "Several different subjects placed together in one picture": "You should draw one thing, not several subjects."
          },
          "explanation": "It follows the feelings and purpose given in the lesson.",
          "anchor": "english-g2-ch12-l1-a1",
@@ -40861,7 +40861,7 @@
           "exam",
           "case"
          ],
-         "context": "A child is doing the drawing and matching task. The child must draw one thing that feels helpful, and the drawing should help make the earth more beautiful. The matching task asks children to match the words in Column A. The child also completes phrases from the poem: “Little grains of sand,” “Little drops of water,” “Little deeds of warmth,” “Little words of love,” and “Little acts of kindness.” The child pauses before starting because choosing the subject is difficult.",
+         "context": "A child is doing the drawing and matching task. You must draw one thing that feels helpful, and the drawing should help make the earth more beautiful. The matching task asks children to match the words in Column A. You also complete phrases from the poem: “Little grains of sand,” “Little drops of water,” “Little deeds of warmth,” “Little words of love,” and “Little acts of kindness.” You pause before starting because choosing the subject is difficult.",
          "prompt": "Why should the child think about the poem before choosing a subject?",
          "options": [
           "The poem gives little examples of helpful things to think about",
@@ -40873,7 +40873,7 @@
          "why": {
           "The poem shows exactly what the finished drawing must look like": "The poem does not give one exact drawing to copy.",
           "All the words from the poem must appear in the drawing": "Drawing and completing the phrases are separate tasks.",
-          "Thinking about the poem replaces the need to complete its phrases": "The child must still complete the poem phrases."
+          "Thinking about the poem replaces the need to complete its phrases": "You must still complete the poem phrases."
          },
          "explanation": "The poem’s phrases provide helpful ideas to consider.",
          "anchor": "english-g2-ch12-l1-a1",
@@ -40887,8 +40887,8 @@
           "exam",
           "case"
          ],
-         "context": "A child is doing the drawing and matching task. The child must draw one thing that feels helpful, and the drawing should help make the earth more beautiful. The matching task asks children to match the words in Column A. The child also completes phrases from the poem: “Little grains of sand,” “Little drops of water,” “Little deeds of warmth,” “Little words of love,” and “Little acts of kindness.” The child pauses before starting because choosing the subject is difficult.",
-         "prompt": "If the child’s first subject does not help make the earth more beautiful, what should the child do next?",
+         "context": "A child is doing the drawing and matching task. You must draw one thing that feels helpful, and the drawing should help make the earth more beautiful. The matching task asks children to match the words in Column A. You also complete phrases from the poem: “Little grains of sand,” “Little drops of water,” “Little deeds of warmth,” “Little words of love,” and “Little acts of kindness.” You pause before starting because choosing the subject is difficult.",
+         "prompt": "If your first subject does not help make the earth more beautiful, what should the child do next?",
          "options": [
           "Stop drawing and only complete the poem phrases",
           "Keep the first subject because every drawing is enough",
@@ -40898,7 +40898,7 @@
          "answer": 3,
          "why": {
           "Keep the first subject because every drawing is enough": "Every drawing does not automatically have the required purpose.",
-          "Add several subjects so that one of them must be helpful": "The child should choose one suitable subject.",
+          "Add several subjects so that one of them must be helpful": "You should choose one suitable subject.",
           "Stop drawing and only complete the poem phrases": "Completing the phrases does not replace the drawing task."
          },
          "explanation": "A different subject can meet the lesson’s helpful purpose.",
@@ -40914,7 +40914,7 @@
           "written"
          ],
          "prompt": "Why should the child draw one thing that feels helpful?",
-         "answer": "The child should choose one thing that feels helpful and draw it so that it can help make the earth more beautiful. The child’s choice should feel meaningful, and the drawing should have the purpose of helping the earth become more beautiful. This follows the lesson’s instructions for the drawing.",
+         "answer": "You should choose one thing that feels helpful and draw it so that it can help make the earth more beautiful. Your choice should feel meaningful, and the drawing should have the purpose of helping the earth become more beautiful. This follows the lesson’s instructions for the drawing.",
          "points": [
           "Draws one thing",
           "Chooses something that feels helpful",
@@ -40931,7 +40931,7 @@
           "exam",
           "case"
          ],
-         "context": "A child is working with the poem “Using Drops of.” The poem is about drops of water. The teacher asks the child to circle words for which drops of can be used. Bread, carrot, milk, salt, water, rice, juice, cotton, and oil are on the list. The child must choose the words that fit the rule about liquid.",
+         "context": "A child is working with the poem “Using Drops of.” The poem is about drops of water. The teacher asks youthe child to circle words for which drops of can be used. Bread, carrot, milk, salt, water, rice, juice, cotton, and oil are on the list. You must choose the words that fit the rule about liquid.",
          "prompt": "Which words should the child circle?",
          "options": [
           "Bread, carrot, milk, and water",
@@ -40947,7 +40947,7 @@
          },
          "explanation": "These words all name liquids.",
          "anchor": "english-g2-ch12-l4-t1",
-         "focus": 1
+         "focus": -1
         },
         {
          "type": "mcq",
@@ -40957,7 +40957,7 @@
           "exam",
           "case"
          ],
-         "context": "A child is working with the poem “Using Drops of.” The poem is about drops of water. The teacher asks the child to circle words for which drops of can be used. Bread, carrot, milk, salt, water, rice, juice, cotton, and oil are on the list. The child must choose the words that fit the rule about liquid.",
+         "context": "A child is working with the poem “Using Drops of.” The poem is about drops of water. The teacher asks youthe child to circle words for which drops of can be used. Bread, carrot, milk, salt, water, rice, juice, cotton, and oil are on the list. You must choose the words that fit the rule about liquid.",
          "prompt": "Why should the child circle juice?",
          "options": [
           "Because juice is a liquid.",
@@ -41071,7 +41071,7 @@
           "exam",
           "case"
          ],
-         "context": "While at home, a child asks a parent or guardian to let them touch and feel the kitchen things. The child touches and feels the banana, flour, salt, sugar, oil, rice and wheat. The child explains that the purpose is to touch and notice things, especially the texture. The child chooses one thing that seems grainy and brings it to class the next day, with the parent or guardian involved in the activity.",
+         "context": "While at home, a child asks a parent or guardian to let them touch and feel the kitchen things. You touch and feel the banana, flour, salt, sugar, oil, rice and wheat. You explain that the purpose is to touch and notice things, especially the texture. You choose one thing that seems grainy and brings it to class the next day, with the parent or guardian involved in the activity.",
          "prompt": "After choosing an item that seems grainy, what should the child do next?",
          "options": [
           "Choose another item without touching or feeling it.",
@@ -42763,16 +42763,16 @@
          ],
          "prompt": "The example says the child likes mangoes but not apples. What might the child choose?",
          "options": [
-          "The child may choose apples.",
-          "The child may choose neither.",
-          "The child may choose mangoes.",
-          "The child may choose both."
+          "You may choose apples.",
+          "You may choose neither.",
+          "You may choose mangoes.",
+          "You may choose both."
          ],
          "answer": 2,
          "why": {
-          "The child may choose apples.": "This reverses the choice because apples are not liked.",
-          "The child may choose both.": "This ignores that the child does not like apples.",
-          "The child may choose neither.": "This ignores that the child likes mangoes."
+          "You may choose apples.": "This reverses the choice because apples are not liked.",
+          "You may choose both.": "This ignores that the child does not like apples.",
+          "You may choose neither.": "This ignores that the child likes mangoes."
          },
          "explanation": "Mangoes are liked, so they are the likely choice.",
          "f": [
@@ -42797,16 +42797,16 @@
          ],
          "prompt": "A child uses their mother tongue and also answers in English. What can we work out?",
          "options": [
-          "The child speaks only one language.",
-          "The child cannot use English.",
-          "The child must forget another language.",
-          "The child speaks more than one language."
+          "You speak only one language.",
+          "You cannot use English.",
+          "You must forget another language.",
+          "You speak more than one language."
          ],
          "answer": 3,
          "why": {
-          "The child speaks only one language.": "Two languages are being used, so this choice is wrong.",
-          "The child cannot use English.": "Answering in English shows that the child can use English.",
-          "The child must forget another language.": "The lesson does not say that the child must forget a language."
+          "You speak only one language.": "Two languages are being used, so this choice is wrong.",
+          "You cannot use English.": "Answering in English shows that the child can use English.",
+          "You must forget another language.": "The lesson does not say that the child must forget a language."
          },
          "explanation": "Using two languages shows that the child can speak more than one.",
          "f": [
@@ -43682,13 +43682,13 @@
           "Phool Dei has ended just as Spring begins.",
           "The flower festival has arrived with Spring.",
           "The festival starts after the monsoon ends.",
-          "The child will not gather any flowers."
+          "You will not gather any flowers."
          ],
          "answer": 1,
          "why": {
           "Phool Dei has ended just as Spring begins.": "This mistake reverses the beginning and ending of Spring.",
           "The festival starts after the monsoon ends.": "This mistake mixes up Phool Dei with Sharad Poornima.",
-          "The child will not gather any flowers.": "This mistake assumes the child will not join in."
+          "You will not gather any flowers.": "This mistake assumes the child will not join in."
          },
          "explanation": "Phool Dei marks Spring’s beginning, and the child is joining its flower collecting.",
          "f": [
@@ -43723,16 +43723,16 @@
          ],
          "prompt": "A child collects many kinds of flowers and brings them to an elder. What do these actions show?",
          "options": [
-          "The child is starting a different festival.",
-          "The child joins both Phool Dei celebrations.",
-          "The child is waiting for the monsoon to end.",
-          "The child is praying beside the Cauvery."
+          "You are starting a different festival.",
+          "You join both Phool Dei celebrations.",
+          "You are waiting for the monsoon to end.",
+          "You are praying beside the Cauvery."
          ],
          "answer": 1,
          "why": {
-          "The child is starting a different festival.": "This mistake confuses Phool Dei with another festival.",
-          "The child is waiting for the monsoon to end.": "This mistake connects flower collecting with the end of monsoon.",
-          "The child is praying beside the Cauvery.": "This mistake connects the child’s actions with Cauvery worship."
+          "You are starting a different festival.": "This mistake confuses Phool Dei with another festival.",
+          "You are waiting for the monsoon to end.": "This mistake connects flower collecting with the end of monsoon.",
+          "You are praying beside the Cauvery.": "This mistake connects your actions with Cauvery worship."
          },
          "explanation": "Collecting flowers and offering them to elders are both Phool Dei actions.",
          "f": [
@@ -44041,7 +44041,7 @@
          "prompt": "Why can a child answer in their mother tongue and still give a response in English?",
          "answer": "A child may answer in their mother tongue because children can speak more than one language. They are then helped to give their response in English. Even a few words or sentences in another language are enough, so the child can begin with a short answer in that language.",
          "points": [
-          "The child may use their mother tongue.",
+          "You may use their mother tongue.",
           "Children can speak more than one language.",
           "Helpers help the child answer in English.",
           "A few words in another language are enough."
