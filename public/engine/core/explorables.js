@@ -1672,10 +1672,10 @@ export const WIDGETS = {
     },
   },
   picturechart: {
-    subject: 'maths', about: 'A picture chart where one face stands for one child: each row is a favourite colour, a way of coming to school or a game, and the child changes how many children chose it. The chart shows which row has the most and which has the fewest, and the total. Param kind: colours, modes, games or things. For data handling, tables and charts, most and least, more and fewer.',
+    subject: 'maths', about: 'A picture chart where one face stands for one child: each row is a favourite colour, a way of coming to school or a game, and the child changes how many children chose it. The chart shows which row has the most and which has the fewest, and the total. Param kind: colours, modes, games, foods, toys or things. For data handling, tables and charts, most and least, more and fewer.',
     params: { kind: 'colours' },
     dynamicSliders: (p) => { const n = (WIDGETS.picturechart.sets[p.kind] || WIDGETS.picturechart.sets.things).length, d = [3, 5, 2, 4, 6]; return Array.from({ length: n }, (_, i) => ['abcde'[i], `Children: ${(WIDGETS.picturechart.sets[p.kind] || WIDGETS.picturechart.sets.things)[i]}`, 0, 10, 1, d[i]]); },
-    sets: { colours: ['red', 'green', 'blue', 'yellow'], modes: ['on foot', 'autorickshaw', 'bus', 'bike', 'bicycle'], games: ['gilli-danda', 'kabaddi', 'pithu', 'football', 'cricket'], things: ['first', 'second', 'third', 'fourth'] },
+    sets: { colours: ['red', 'green', 'blue', 'yellow'], modes: ['on foot', 'autorickshaw', 'bus', 'bike', 'bicycle'], games: ['gilli-danda', 'kabaddi', 'pithu', 'football', 'cricket'], foods: ['fruit chaat', 'sandwich', 'gola', 'chikki', 'pakora'], toys: ['toys', 'board games', 'sports items', 'books'], things: ['first', 'second', 'third', 'fourth'] },
     draw(v, p) {
       const names = this.sets[p.kind] || this.sets.things, counts = names.map((_, i) => v['abcde'[i]] || 0), total = counts.reduce((x, y) => x + y, 0), kids = [];
       names.forEach((nm, r) => {

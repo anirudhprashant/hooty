@@ -221,7 +221,7 @@ export const KITS = {
     tasks: [{ say: 'Build 2.05.', when: 'o == 2 and t == 0 and h == 5', then: '2 ones, 0 tenths and 5 hundredths is 2.05.' }],
   },
   bargraph: {
-    grades: [4, 7], match: [/bar graphs?/, /pictographs?/, /tally/, /\bfrequency\b/],
+    grades: [4, 7], match: [/bar graphs?/, /tally/, /\bfrequency\b/],
     title: 'Read the bar graph', takeaway: 'Bars compare amounts, and the scale tells you what each mark is worth.',
     tasks: [{ say: 'Make Monday and Wednesday equal.', when: 'a == c', then: 'Equal bars mean equal amounts.' }],
   },
@@ -933,8 +933,8 @@ export const KITS = {
     ],
   },
   picturechart: {
-    grades: [2, 5], perChapter: { 2: 5 }, match: [/data handling/, /\bface stands for\b|\bdraw faces\b/, /\bnumber of (children|students)\b/, /\bmost liked\b|\bleast liked\b|\bmost students\b|\bleast students\b|\b(more|fewer) students\b/, /\btable has\b|\bcomplete the table\b|\btable shows\b/, /\bchart\b|\bsurveys?\b/],
-    params: (text) => ({ kind: /colou?rs?\b/.test(text.slice(0, 60)) ? 'colours' : /school|mode of|modes\b/.test(text.slice(0, 80)) ? 'modes' : /\bgames?\b/.test(text.slice(0, 60)) ? 'games' : 'things' }),
+    grades: [2, 6], perChapter: { 2: 5 }, match: [/data handling/, /\bpictographs?\b|\bpicture graphs?\b/, /\bface stands for\b|\bdraw faces\b/, /\bnumber of (children|students)\b/, /\bmost liked\b|\bleast liked\b|\bmost students\b|\bleast students\b|\b(more|fewer) students\b/, /\btable has\b|\bcomplete the table\b|\btable shows\b/, /\bchart\b|\bsurveys?\b/],
+    params: (text) => ({ kind: /colou?rs?\b/.test(text.slice(0, 80)) ? 'colours' : /school|mode of|modes\b/.test(text.slice(0, 80)) || /\b(bus|bicycle|autorickshaw|on foot)\b/.test(text) ? 'modes' : /\btoys?\b|\bboard games?\b|sports items/.test(text) ? 'toys' : /fruit|chaat|sandwich|\bfood\b|\bate\b|\bsold\b/.test(text) ? 'foods' : /\bgames?\b|chess|cricket|kabaddi|football/.test(text) ? 'games' : 'things' }),
     title: 'Fill the picture chart', takeaway: 'One face stands for one child: the longest row is the most liked, the shortest the least.',
     tasks: [
       { say: 'Make the first row the longest.', when: 'a > b and a > c and a > d', then: 'The longest row is the one chosen by the most children.' },
