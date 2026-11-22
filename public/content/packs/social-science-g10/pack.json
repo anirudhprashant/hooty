@@ -29121,7 +29121,7 @@
       {
        "id": "social-science-g10-ch9-l1",
        "title": "Economic Activities and the Three Sectors",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -29185,6 +29185,36 @@
            "p": 18
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sectors",
+         "params": {},
+         "title": "Follow a crop to the shop",
+         "tasks": [
+          {
+           "say": "Send the cotton to the factory and make cloth.",
+           "when": "stage == 1",
+           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
+          },
+          {
+           "say": "Take the shirt all the way to the shop.",
+           "when": "stage == 2",
+           "then": "The shop adds more value by selling the finished shirt: that is a service."
+          },
+          {
+           "say": "Show a country where most workers are in services.",
+           "when": "advance == 2",
+           "then": "As a country develops, workers move from farms to factories and then to services."
+          }
+         ],
+         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
+         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
         },
         {
          "type": "worked",
@@ -30190,7 +30220,7 @@
       {
        "id": "social-science-g10-ch9-l3",
        "title": "How the Importance of Sectors Has Changed",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -30245,6 +30275,36 @@
            "p": 18
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch9-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sectors",
+         "params": {},
+         "title": "Follow a crop to the shop",
+         "tasks": [
+          {
+           "say": "Send the cotton to the factory and make cloth.",
+           "when": "stage == 1",
+           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
+          },
+          {
+           "say": "Take the shirt all the way to the shop.",
+           "when": "stage == 2",
+           "then": "The shop adds more value by selling the finished shirt: that is a service."
+          },
+          {
+           "say": "Show a country where most workers are in services.",
+           "when": "advance == 2",
+           "then": "As a country develops, workers move from farms to factories and then to services."
+          }
+         ],
+         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
+         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
         },
         {
          "type": "worked",
