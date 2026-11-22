@@ -54,11 +54,11 @@
           "stream"
          ],
          "title": "Setting Off for the Fair",
-         "body": "A hen is invited to go to the village fair. She says that she will bring her chicks. A duck invites the ducklings to go along. The group reaches the stream. The duck cannot swim, so she wonders how they will cross. She says there is a plan. A duckling is a duck's young one. A chick is a hen's young one.",
+         "body": "A hen is invited to go to the village fair. She says that she will bring her chicks. A duck invites the ducklings to go along. The group reaches the stream. The hen cannot swim, so she wonders how they will cross. The duck says there is a plan. A duckling is a duck's young one. A chick is a hen's young one.",
          "keyPoints": [
           "The hen and duck invite their young ones.",
           "The group reaches a stream.",
-          "The duck cannot swim, but she has a plan."
+          "The hen cannot swim, but the duck has a plan."
          ],
          "explanation": "This story begins a journey to the fair and sets up a problem at the stream.",
          "src": [
@@ -109,11 +109,11 @@
           "think"
          ],
          "kicker": "Let us think it through",
-         "prompt": "The duck cannot swim, and the group is at a stream. How can they cross?",
+         "prompt": "The hen cannot swim, and the group is at a stream. How can they cross?",
          "steps": [
           "The stream is a problem because the group has reached it.",
-          "Swimming cannot help the duck because the duck cannot swim.",
-          "The duck wonders how to cross because the group needs a way.",
+          "Swimming cannot help the hen because the hen cannot swim.",
+          "The hen wonders how to cross because the group needs a way.",
           "The group should listen because the duck says there is a plan."
          ],
          "explanation": "Think it through with Hooty.",
@@ -255,11 +255,11 @@
          "prompt": "Put these events in the correct order.",
          "items": [
           "The group reaches the stream.",
-          "The duck says that she cannot swim.",
-          "The duck wonders how they will cross the stream.",
+          "The hen says that she cannot swim.",
+          "The hen wonders how they will cross the stream.",
           "The duck says that there is a plan."
          ],
-         "explanation": "The group reaches the stream, finds a problem, and then the duck offers a plan.",
+         "explanation": "The group reaches the stream, finds a problem, and then the duck says there is a plan.",
          "src": [
           {
            "ch": 1,
@@ -394,7 +394,7 @@
           "deep",
           "predict action"
          ],
-         "prompt": "The group has reached the stream. The duck cannot swim. The duck wonders how they will cross. What should the group do next?",
+         "prompt": "The group has reached the stream. The hen cannot swim. The hen wonders how they will cross. What should the group do next?",
          "options": [
           "Listen to the duck's plan.",
           "Try to swim across now.",
@@ -403,7 +403,7 @@
          ],
          "answer": 0,
          "why": {
-          "Try to swim across now.": "The duck cannot swim, so swimming is not a good choice.",
+          "Try to swim across now.": "The hen cannot swim, so swimming is not a good choice.",
           "Go back without a plan.": "A plan exists, so going back is not needed.",
           "Ask the chicks to go alone.": "The facts do not say the chicks should go alone."
          },
@@ -443,7 +443,7 @@
           "deep",
           "word meaning"
          ],
-         "prompt": "The duck cannot swim. The duck wonders how they will cross the stream. What does 'wonders' mean here?",
+         "prompt": "The hen cannot swim. The hen wonders how they will cross the stream. What does 'wonders' mean here?",
          "options": [
           "Thinks about a question",
           "Does a happy dance",
@@ -452,11 +452,11 @@
          ],
          "answer": 0,
          "why": {
-          "Does a happy dance": "A dance does not fit the duck's question.",
-          "Starts a loud fight": "A fight is not suggested by the duck's question.",
+          "Does a happy dance": "A dance does not fit the hen's question.",
+          "Starts a loud fight": "A fight is not suggested by the hen's question.",
           "Keeps a secret plan": "Keeping a secret does not fit the duck's thinking."
          },
-         "explanation": "The duck is thinking about how to cross the stream.",
+         "explanation": "The hen is thinking about how to cross the stream.",
          "f": [
           "1.5",
           "1.6"
@@ -2831,8 +2831,8 @@
           "exam",
           "case"
          ],
-         "context": "When the hen was invited to the village fair, she said that she would bring her chicks. The duck invited her ducklings to go along. When the group reached the stream, the duck could not swim. She wondered how they would cross. Then the duck said that there was a plan.",
-         "prompt": "If the duck could swim, what change would help her at the stream?",
+         "context": "When the hen was invited to the village fair, she said that she would bring her chicks. The duck invited her ducklings to go along. When the group reached the stream, the hen could not swim. The hen wondered how they would cross. Then the duck said that there was a plan.",
+         "prompt": "If the hen could swim, what change would help her at the stream?",
          "options": [
           "She would be able to cross the stream herself.",
           "The ducklings could automatically follow her across.",
@@ -2843,11 +2843,11 @@
          "why": {
           "The whole group could cross together without any other help.": "One person's ability would not prove that everyone could cross.",
           "The ducklings could automatically follow her across.": "The ducklings' ability was not established.",
-          "The duck would no longer wonder how to cross.": "The original problem would disappear for the duck."
+          "The duck would no longer wonder how to cross.": "The original problem would disappear for the hen."
          },
-         "explanation": "Swimming would directly solve the duck's problem.",
+         "explanation": "Swimming would directly solve the hen's problem.",
          "anchor": "english-g3-ch1-l1-a1",
-         "focus": -1
+         "focus": 2
         },
         {
          "type": "mcq",
@@ -2857,7 +2857,7 @@
           "exam",
           "case"
          ],
-         "context": "When the hen was invited to the village fair, she said that she would bring her chicks. The duck invited her ducklings to go along. When the group reached the stream, the duck could not swim. She wondered how they would cross. Then the duck said that there was a plan.",
+         "context": "When the hen was invited to the village fair, she said that she would bring her chicks. The duck invited her ducklings to go along. When the group reached the stream, the hen could not swim. The hen wondered how they would cross. Then the duck said that there was a plan.",
          "prompt": "If the duck had not mentioned a plan, what problem would remain for the group?",
          "options": [
           "They would still need to find a way to cross the stream.",
@@ -2883,13 +2883,13 @@
           "exam",
           "written"
          ],
-         "prompt": "Explain why the duck's inability to swim led her to think about a plan.",
-         "answer": "The group had reached the stream, but the duck could not swim. She wondered how they would cross. That difficulty made her think of a plan, showing that the plan was meant to solve the problem of getting across.",
+         "prompt": "Explain how the hen's inability to swim led to a plan.",
+         "answer": "The group had reached the stream, but the hen could not swim. She wondered how they would cross. The duck then said there was a plan, showing that the plan was meant to solve the problem of getting across.",
          "points": [
           "The group reached the stream.",
-          "The duck could not swim.",
-          "The duck wondered how they would cross.",
-          "The plan offered a solution to the problem."
+          "The hen could not swim.",
+          "The hen wondered how they would cross.",
+          "The duck offered a plan to solve the problem."
          ],
          "explanation": "Compare your answer with the points a marker looks for."
         },
@@ -3229,7 +3229,7 @@
          }
         ],
         "anchor": "english-g3-ch1-l1-a1",
-        "focus": 0
+        "focus": -1
        },
        {
         "type": "truefalse",
@@ -3240,10 +3240,10 @@
          "ducklings",
          "swim"
         ],
-        "title": "Can the Duck Swim?",
-        "prompt": "The duck cannot swim.",
+        "title": "Who Cannot Swim?",
+        "prompt": "The hen cannot swim.",
         "answer": true,
-        "explanation": "The duck cannot swim, so the group needs another way across the stream.",
+        "explanation": "Yes. The hen cannot swim, so the duck says there is a plan.",
         "src": [
          {
           "ch": 1,
@@ -3346,8 +3346,8 @@
         "prompt": "Put the duck group's events in order.",
         "items": [
          "The group reaches the stream.",
-         "The duck cannot swim.",
-         "The duck wonders how they will cross.",
+         "The hen cannot swim.",
+         "The hen wonders how they will cross.",
          "The duck says there is a plan."
         ],
         "explanation": "This is the order of events at the stream.",
@@ -3369,7 +3369,7 @@
           "p": 2
          }
         ],
-        "anchor": "english-g3-ch1-l1-t1",
+        "anchor": "english-g3-ch1-l1-a1",
         "focus": 2
        },
        {
