@@ -1186,6 +1186,17 @@ export const KITS = {
       { say: 'Add four buyers, then set the new equilibrium price.', when: 'price == 120 and buyers == 4', then: 'Four more buyers shift demand right, so the market settles at the higher price of ₹120.' },
     ],
   },
+  barter: {
+    grades: [6, 8], subjects: ['social'], perChapter: 2,
+    match: [/\bbarter\b/, /double coincidence of wants/, /medium of exchange/, /forms? of money/, /earliest form of exchange/, /why do we need money|need (for )?money/],
+    title: 'Swap in the village market',
+    takeaway: 'Barter needs a double coincidence of wants: each person must want what the other has. Money is accepted by everyone, so it replaces barter.',
+    tasks: [
+      { say: 'Swap your wheat for shoes, without money.', when: 'mode == 0 and person == 0 and need == 0', then: 'Meena wanted wheat and had shoes, so the swap worked.' },
+      { say: 'Try Ravi for salt and see the swap fail.', when: 'mode == 0 and person == 1 and need == 1', then: 'Ravi wanted cloth, not wheat, so no swap was possible.' },
+      { say: 'Use money to buy the blanket.', when: 'mode == 1 and need == 2', then: 'Money is accepted by everyone, so you did not need a double match.' },
+    ],
+  },
   sectors: {
     grades: [8, 10], subjects: ['social'], perChapter: 2,
     match: [/three sectors/, /sectors? of the (indian )?economy|importance of sectors/, /primary,? secondary/, /\btertiary sector\b/, /value added|intermediate goods/],

@@ -2429,17 +2429,28 @@ export const WIDGETS = {
         else if (kind === 'salt') { out.push(s('path', { d: `M ${cx - 26} ${cy + 16} q 26 -34 52 0 Z`, fill: '#f3f7fd', stroke: C.b, 'stroke-width': 2 })); for (const [dx, dy] of [[-8, 6], [6, 8], [0, 0], [-14, 12], [14, 12]]) out.push(CIRC(cx + dx, cy + dy, 2, '#9fb8d8', { w: 0 })); }
         else if (kind === 'blanket') { out.push(R(cx - 26, cy - 14, 52, 32, C.p, { s: INK, w: 2, r: 5 })); for (const dx of [-14, 0, 14]) out.push(L(cx + dx, cy - 14, cx + dx, cy + 18, '#c9aef0', 3)); }
         else if (kind === 'rice') { out.push(s('path', { d: `M ${cx - 28} ${cy} q 28 30 56 0 Z`, fill: '#fff', stroke: INK, 'stroke-width': 2 })); for (const [dx, dy] of [[-10, -2], [0, -4], [10, -2], [-4, 4], [6, 4]]) out.push(s('ellipse', { cx: cx + dx, cy: cy + dy, rx: 4, ry: 2, fill: '#e9e2cc', stroke: '#b9ad8a', 'stroke-width': 1 })); }
+        else if (kind === 'coins') { for (const dy of [10, 0, -10]) { out.push(s('ellipse', { cx, cy: cy + dy, rx: 22, ry: 8, fill: '#ffd166', stroke: '#b8860b', 'stroke-width': 2 })); } out.push(T(cx, cy - 6, '\u20b9', { z: 13, f: '#8a6500' })); }
         else { out.push(R(cx - 24, cy - 16, 48, 32, pale || '#e8eef7', { s: INK, w: 2, r: 4 })); for (const dx of [-12, 0, 12]) out.push(L(cx + dx, cy - 16, cx + dx, cy + 16, '#9fb0c8', 2)); }
-        out.push(T(cx, cy + 36, kind, { z: 13, w: 600, f: '#6b5a8a' }));
         return out;
       };
       const card = (x, w, head, col, pale) => { kids.push(R(x, 40, w, 122, pale, { s: col, w: 2, r: 12 })); kids.push(T(x + w / 2, 62, head, { z: 14, f: '#6b5a8a', w: 700 })); };
-      card(16, 158, 'YOU', '#c9bfe0', '#fbf8f0'); kids.push(...icon('wheat', 95, 104));
-      card(188, 206, f.name.toUpperCase(), f.wants === 'wheat' ? C.g : '#c9bfe0', '#fbf8f0');
-      kids.push(T(291, 84, `has ${f.has}`, { z: 15, w: 600 }));
-      kids.push(...icon(f.has, 291, 116));
-      kids.push(T(291, 154, `wants ${f.wants}`, { z: 15, w: 700, f: f.wants === 'wheat' ? '#0b6b52' : '#c2510e' }));
-      card(408, 176, 'YOU NEED', want.col, want.pale); kids.push(...icon(want.name, 496, 104, want.pale));
+      card(16, 158, 'YOU', '#c9bfe0', '#fbf8f0');
+      kids.push(...icon('wheat', 95, 108));
+      kids.push(T(95, 150, 'wheat', { z: 13, w: 600, f: '#6b5a8a' }));
+      if (md === 1) {
+        card(188, 206, 'SHOP', '#c9bfe0', '#fbf8f0');
+        kids.push(T(291, 88, `sells ${want.name}`, { z: 15, w: 600 }));
+        kids.push(...icon('coins', 291, 120));
+        kids.push(T(291, 152, 'takes your coins', { z: 15, w: 700, f: '#0b6b52' }));
+      } else {
+        card(188, 206, f.name.toUpperCase(), f.wants === 'wheat' ? C.g : '#c9bfe0', '#fbf8f0');
+        kids.push(T(291, 88, `has ${f.has}`, { z: 15, w: 600 }));
+        kids.push(...icon(f.has, 291, 118));
+        kids.push(T(291, 152, `wants ${f.wants}`, { z: 15, w: 700, f: f.wants === 'wheat' ? '#0b6b52' : '#c2510e' }));
+      }
+      card(408, 176, 'YOU NEED', want.col, want.pale);
+      kids.push(...icon(want.name, 496, 108, want.pale));
+      kids.push(T(496, 150, want.name, { z: 13, w: 600, f: '#6b5a8a' }));
       let ok, head, sub;
       if (md === 1) {
         ok = true; head = `With money you can buy the ${want.name}`;
