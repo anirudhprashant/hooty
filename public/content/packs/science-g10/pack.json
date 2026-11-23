@@ -20,7 +20,7 @@
  "units": [
   {
    "id": "science-g10-s1",
-   "title": "Chemical World Around Us",
+   "title": "Chemistry All Around",
    "chapters": [
     {
      "id": "ch01-chemical-reactions-and-equations",
@@ -14488,7 +14488,7 @@
   },
   {
    "id": "science-g10-s2",
-   "title": "Living Beings and Life",
+   "title": "Life and Inheritance",
    "chapters": [
     {
      "id": "ch05-life-processes",
@@ -18569,7 +18569,7 @@
       {
        "id": "science-g10-ch6-l2",
        "title": "How Nerve Impulses Travel",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -18616,6 +18616,36 @@
            "p": 101
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g10-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reflex",
+         "params": {},
+         "title": "The reflex arc",
+         "tasks": [
+          {
+           "say": "Send the signal all the way so the hand pulls back from the pan.",
+           "when": "t == 100",
+           "then": "The reflex signal has reached the muscle and the hand is already away."
+          },
+          {
+           "say": "Stop when the reflex signal reaches the spinal cord, the shortcut point.",
+           "when": "t == 35",
+           "then": "The spinal cord is where the reflex turns back, without waiting for the brain."
+          },
+          {
+           "say": "Stop when the news first reaches the brain.",
+           "when": "t == 53",
+           "then": "The brain hears about it later: by then the hand has already moved."
+          }
+         ],
+         "takeaway": "A reflex is quick because the signal turns back at the spinal cord instead of going all the way up to the brain. That is why your hand leaves a hot pan before you feel the pain.",
+         "explanation": "A reflex is quick because the signal turns back at the spinal cord instead of going all the way up to the brain. That is why your hand leaves a hot pan before you feel the pain."
         },
         {
          "type": "worked",
@@ -18970,7 +19000,7 @@
       {
        "id": "science-g10-ch6-l3",
        "title": "Reflex Actions and the Human Brain",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -19022,6 +19052,36 @@
            "p": 103
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g10-ch6-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reflex",
+         "params": {},
+         "title": "The reflex arc",
+         "tasks": [
+          {
+           "say": "Send the signal all the way so the hand pulls back from the pan.",
+           "when": "t == 100",
+           "then": "The reflex signal has reached the muscle and the hand is already away."
+          },
+          {
+           "say": "Stop when the reflex signal reaches the spinal cord, the shortcut point.",
+           "when": "t == 35",
+           "then": "The spinal cord is where the reflex turns back, without waiting for the brain."
+          },
+          {
+           "say": "Stop when the news first reaches the brain.",
+           "when": "t == 53",
+           "then": "The brain hears about it later: by then the hand has already moved."
+          }
+         ],
+         "takeaway": "A reflex is quick because the signal turns back at the spinal cord instead of going all the way up to the brain. That is why your hand leaves a hot pan before you feel the pain.",
+         "explanation": "A reflex is quick because the signal turns back at the spinal cord instead of going all the way up to the brain. That is why your hand leaves a hot pan before you feel the pain."
         },
         {
          "type": "worked",
@@ -28289,7 +28349,7 @@
   },
   {
    "id": "science-g10-s3",
-   "title": "Light, Power and Magnets",
+   "title": "Light and Vision",
    "chapters": [
     {
      "id": "ch09-light-reflection-and-refraction",
@@ -35352,7 +35412,13 @@
        "creator": "Chabacano"
       }
      }
-    },
+    }
+   ]
+  },
+  {
+   "id": "science-g10-s4",
+   "title": "Power and Our World",
+   "chapters": [
     {
      "id": "ch11-electricity",
      "title": "Electricity",
@@ -42718,13 +42784,7 @@
        "creator": "Zátonyi Sándor, (ifj.) Fizped"
       }
      }
-    }
-   ]
-  },
-  {
-   "id": "science-g10-s4",
-   "title": "Caring for Our Planet",
-   "chapters": [
+    },
     {
      "id": "ch13-our-environment",
      "title": "Our Environment",

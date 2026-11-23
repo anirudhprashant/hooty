@@ -3215,6 +3215,50 @@ export const WIDGETS = {
       return { kids, say: full };
     },
   },
+  reflex: {
+    subject: 'science', about: 'A hand touches a hot pan: one signal turns back at the spinal cord (a reflex) while a longer route carries the news up to the brain, so the hand pulls away before the brain knows. For reflex actions, the reflex arc, nerve impulses, neurons, the spinal cord and the brain as the coordinating centre.',
+    sliders: [['t', 'Signal on its way (0 to 100)', 0, 100, 1, 0]],
+    draw(v) {
+      const rp = [[128, 150], [280, 150], [430, 150]];
+      const bp = [[128, 166], [280, 166], [280, 112], [290, 82], [300, 112], [300, 166], [430, 166]];
+      const seglen = (a, b) => Math.hypot(b[0] - a[0], b[1] - a[1]);
+      const total = (pts) => { let n = 0; for (let i = 1; i < pts.length; i++) n += seglen(pts[i - 1], pts[i]); return n; };
+      const along = (pts, d) => {
+        let rem = Math.max(0, d);
+        for (let i = 1; i < pts.length; i++) {
+          const a = pts[i - 1], b = pts[i], sg = seglen(a, b);
+          if (rem <= sg) { const k = sg ? rem / sg : 0; return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k]; }
+          rem -= sg;
+        }
+        return pts[pts.length - 1];
+      };
+      const rlen = total(rp), blen = total(bp), dist = (v.t / 100) * blen;
+      const [rx, ry] = along(rp, Math.min(dist, rlen));
+      const [bx, by] = along(bp, Math.min(dist, blen));
+      const home = dist >= rlen;
+      const kids = [];
+      kids.push(R(38, 150, 60, 46, '#5b5b70', { r: 6 }), L(38, 173, 18, 173, INK, 6));
+      for (let i = 0; i < 3; i++) kids.push(s('path', { d: `M ${50 + i * 18} 146 q 6 -10 0 -20 q -6 -10 0 -18`, fill: 'none', stroke: C.o, 'stroke-width': 3, 'stroke-linecap': 'round', opacity: 0.85 }));
+      kids.push(T(68, 214, 'hot pan', { z: 13, f: '#6b5a8a' }));
+      kids.push(R(270, 118, 40, 132, '#ece4f8', { r: 18 }), T(290, 268, 'spinal cord', { z: 13, f: '#6b5a8a' }));
+      kids.push(CIRC(290, 72, 26, '#f6c9d6'), T(290, 40, 'brain', { z: 13, f: '#6b5a8a' }));
+      kids.push(R(428, 138, 96, 28, home ? '#bfe9d2' : '#f0c39b', { r: 14 }), CIRC(530, 152, 17, home ? '#bfe9d2' : '#f0c39b'));
+      kids.push(T(478, 124, 'muscle', { z: 13, f: '#6b5a8a' }));
+      kids.push(s('polyline', { points: rp.map((p) => p.join(',')).join(' '), fill: 'none', stroke: C.o, 'stroke-width': 6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', opacity: 0.9 }));
+      kids.push(s('polyline', { points: bp.map((p) => p.join(',')).join(' '), fill: 'none', stroke: C.b, 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', opacity: 0.85 }));
+      kids.push(CIRC(120, 158, 9, C.y), T(132, 200, 'receptor', { z: 12, a: 'start', f: '#6b5a8a' }));
+      kids.push(CIRC(rx, ry, 8, C.o), CIRC(bx, by, 8, C.b));
+      kids.push(CIRC(26, 36, 7, C.o), T(42, 41, 'reflex: turns back at the spinal cord', { z: 12, a: 'start', w: 600 }));
+      kids.push(CIRC(26, 62, 7, C.b), T(42, 67, 'long way: up to the brain', { z: 12, a: 'start', w: 600 }));
+      if (home) kids.push(T(470, 196, 'the hand is already back', { z: 15, f: '#058a68' }));
+      let say;
+      if (dist < 152) say = 'The signal is still travelling from the fingertip.';
+      else if (dist < 237) say = 'The reflex signal has turned back at the spinal cord, while the brain route is still climbing.';
+      else if (dist < rlen) say = 'The brain has the news now, but the hand has not pulled back yet.';
+      else say = 'The hand has already pulled back: the reflex is quicker because the signal turns back at the spinal cord instead of going all the way to the brain.';
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

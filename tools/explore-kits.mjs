@@ -1366,6 +1366,16 @@ export const KITS = {
       ];
     },
   },
+  reflex: {
+    grades: [10, 10], subject: 'science',
+    match: [/reflex/, /nerve impulses?/, /neurons?/, /spinal cord/],
+    title: 'The reflex arc', takeaway: 'A reflex is quick because the signal turns back at the spinal cord instead of going all the way up to the brain. That is why your hand leaves a hot pan before you feel the pain.',
+    tasks: [
+      { say: 'Send the signal all the way so the hand pulls back from the pan.', when: 't == 100', then: 'The reflex signal has reached the muscle and the hand is already away.' },
+      { say: 'Stop when the reflex signal reaches the spinal cord, the shortcut point.', when: 't == 35', then: 'The spinal cord is where the reflex turns back, without waiting for the brain.' },
+      { say: 'Stop when the news first reaches the brain.', when: 't == 53', then: 'The brain hears about it later: by then the hand has already moved.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
