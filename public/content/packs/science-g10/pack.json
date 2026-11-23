@@ -8008,7 +8008,7 @@
       {
        "id": "science-g10-ch3-l2",
        "title": "Chemical properties: metals with air and water",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -8060,6 +8060,36 @@
            "p": 43
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g10-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reactivity",
+         "params": {},
+         "title": "Drop a metal in",
+         "tasks": [
+          {
+           "say": "Find a metal that fizzes in dilute acid but not in cold water.",
+           "when": "metal == 1 and liquid == 2",
+           "then": "Magnesium is too slow in cold water, but it fizzes fast in dilute acid."
+          },
+          {
+           "say": "Show a metal that does not react with dilute acid at all.",
+           "when": "metal == 4 and liquid == 2",
+           "then": "Copper is below hydrogen in the activity series, so it cannot push hydrogen out of the acid."
+          },
+          {
+           "say": "Push copper out of copper sulphate solution with a more reactive metal.",
+           "when": "metal == 2 and liquid == 3",
+           "then": "Zinc is more reactive than copper, so it takes the copper’s place: the blue fades and a brown coat of copper forms."
+          }
+         ],
+         "takeaway": "How a metal behaves in water, acid or a salt solution shows where it sits in the reactivity series: sodium is at the top, copper and silver near the bottom, and a metal above copper pushes copper out of copper sulphate.",
+         "explanation": "How a metal behaves in water, acid or a salt solution shows where it sits in the reactivity series: sodium is at the top, copper and silver near the bottom, and a metal above copper pushes copper out of copper sulphate."
         },
         {
          "type": "worked",
@@ -8411,7 +8441,7 @@
       {
        "id": "science-g10-ch3-l3",
        "title": "Chemical properties: acids, salts and the reactivity series",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -8452,6 +8482,36 @@
            "p": 45
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g10-ch3-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reactivity",
+         "params": {},
+         "title": "Drop a metal in",
+         "tasks": [
+          {
+           "say": "Find a metal that fizzes in dilute acid but not in cold water.",
+           "when": "metal == 1 and liquid == 2",
+           "then": "Magnesium is too slow in cold water, but it fizzes fast in dilute acid."
+          },
+          {
+           "say": "Show a metal that does not react with dilute acid at all.",
+           "when": "metal == 4 and liquid == 2",
+           "then": "Copper is below hydrogen in the activity series, so it cannot push hydrogen out of the acid."
+          },
+          {
+           "say": "Push copper out of copper sulphate solution with a more reactive metal.",
+           "when": "metal == 2 and liquid == 3",
+           "then": "Zinc is more reactive than copper, so it takes the copper’s place: the blue fades and a brown coat of copper forms."
+          }
+         ],
+         "takeaway": "How a metal behaves in water, acid or a salt solution shows where it sits in the reactivity series: sodium is at the top, copper and silver near the bottom, and a metal above copper pushes copper out of copper sulphate.",
+         "explanation": "How a metal behaves in water, acid or a salt solution shows where it sits in the reactivity series: sodium is at the top, copper and silver near the bottom, and a metal above copper pushes copper out of copper sulphate."
         },
         {
          "type": "worked",

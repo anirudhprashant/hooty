@@ -1376,6 +1376,16 @@ export const KITS = {
       { say: 'Stop when the news first reaches the brain.', when: 't == 53', then: 'The brain hears about it later: by then the hand has already moved.' },
     ],
   },
+  reactivity: {
+    grades: [10, 10], subject: 'science',
+    match: [/reactivity series/, /activity series/, /\breactivity\b/, /more reactive than/, /displacement reaction/, /displaces? (copper|hydrogen|a less reactive|another)/, /metals? react with (water|acid|dilute)/, /reacts? violently with cold water/, /metal oxides? are (basic|amphoteric)/],
+    title: 'Drop a metal in', takeaway: 'How a metal behaves in water, acid or a salt solution shows where it sits in the reactivity series: sodium is at the top, copper and silver near the bottom, and a metal above copper pushes copper out of copper sulphate.',
+    tasks: [
+      { say: 'Find a metal that fizzes in dilute acid but not in cold water.', when: 'metal == 1 and liquid == 2', then: 'Magnesium is too slow in cold water, but it fizzes fast in dilute acid.' },
+      { say: 'Show a metal that does not react with dilute acid at all.', when: 'metal == 4 and liquid == 2', then: 'Copper is below hydrogen in the activity series, so it cannot push hydrogen out of the acid.' },
+      { say: 'Push copper out of copper sulphate solution with a more reactive metal.', when: 'metal == 2 and liquid == 3', then: 'Zinc is more reactive than copper, so it takes the copper\u2019s place: the blue fades and a brown coat of copper forms.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".

@@ -3297,17 +3297,19 @@ export const WIDGETS = {
         else if (met.name === 'zinc' || met.name === 'iron') { kind = 'fast'; head = `${met.name} fizzes in dilute acid`; sub = `${met.name} gives off hydrogen and forms a salt, but more slowly than magnesium.`; }
         else { kind = 'none'; head = `${met.name} does not react with dilute acid`; sub = `${met.name} is below hydrogen in the activity series, so it cannot push hydrogen out of the acid.`; }
       }
+      const cap = (x) => x.charAt(0).toUpperCase() + x.slice(1);
+      head = cap(head); sub = cap(sub);
       const kids = [R(0, 0, W, H, '#fffdf6', { w: 0 })];
       const liquidCol = liq === 3 ? (kind === 'displace' ? '#dbeafb' : '#7fb3e8') : liq === 2 ? '#fdf3d8' : '#dff0fb';
-      kids.push(T(300, 28, `${met.name} in ${liquidNames[liq]}`, { z: 18, w: 700, f: '#6b5a8a' }));
+      kids.push(T(300, 28, `${cap(met.name)} in ${liquidNames[liq]}`, { z: 18, w: 700, f: '#6b5a8a' }));
       const beakerPath = 'M 190 64 L 190 236 Q 190 252 206 252 L 394 252 Q 410 252 410 236 L 410 64';
       kids.push(s('path', { d: 'M 192 108 L 192 236 Q 192 250 206 250 L 394 250 Q 408 250 408 236 L 408 108 Z', fill: liquidCol, stroke: 'none' }));
       kids.push(s('path', { d: beakerPath, fill: 'none', stroke: INK, 'stroke-width': 4, 'stroke-linejoin': 'round' }));
       kids.push(L(186, 64, 414, 64, INK, 3));
-      kids.push(T(300, 88, liquidNames[liq], { z: 12, w: 600, f: '#5b7fa6' }));
+      kids.push(T(300, 244, liquidNames[liq], { z: 12, w: 600, f: '#4a6a88' }));
       kids.push(R(278, 104, 44, 124, '#c9cdd6', { r: 4, s: '#8d93a3', w: 2 }));
-      kids.push(T(300, 172, met.sym, { z: 20, w: 700, f: '#3a3f4a' }));
-      if (kind === 'displace') kids.push(R(278, 104, 44, 124, '#b5652e', { r: 4, s: '#8a4a20', w: 2, x: { opacity: 0.75 } }));
+      if (kind === 'displace') kids.push(R(278, 104, 44, 124, '#b5652e', { r: 4, s: '#8a4a20', w: 2, x: { opacity: 0.8 } }));
+      kids.push(T(300, 172, met.sym, { z: 20, w: 700, f: kind === 'displace' ? '#fff3e8' : '#3a3f4a' }));
       const bubPos = [[300, 122], [287, 142], [315, 134], [296, 162], [309, 176], [283, 154], [320, 152], [300, 192], [290, 202]];
       const nbub = kind === 'violent' ? 9 : kind === 'fast' ? 6 : kind === 'slow' ? 3 : 0;
       for (let i = 0; i < nbub; i++) { const [bx, by] = bubPos[i]; kids.push(CIRC(bx, by, 3 + (i % 3), '#ffffff', { s: '#8fb8dc', w: 1 })); }
