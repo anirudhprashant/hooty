@@ -3027,6 +3027,7 @@ export const WIDGETS = {
   lifecycle: {
     subject: 'science', about: 'The life cycle of a frog, a mosquito, a silk moth or a bean plant, one stage at a time: egg, young, pupa or flower, then the adult that lays eggs or makes seeds. For life cycles, eggs and young, tadpoles, larvae and caterpillars, cocoons, seeds and germination, and how some young look nothing like the adult.',
     sliders: [['creature', 'Choose the living thing', 0, 3, 1, 0], ['stage', 'Move through its life', 0, 3, 1, 0]],
+    dynamicSliders: (p) => [['creature', 'Choose the living thing', 0, 3, 1, (p && p.creature) || 0], ['stage', 'Move through its life', 0, 3, 1, 0]],
     draw(v) {
       const names = ['Frog', 'Mosquito', 'Silk moth', 'Bean plant'];
       const c = Math.max(0, Math.min(3, v.creature | 0)), k = Math.max(0, Math.min(3, v.stage | 0));

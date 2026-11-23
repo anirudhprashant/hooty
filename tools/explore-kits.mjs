@@ -1328,12 +1328,23 @@ export const KITS = {
     grades: [3, 6], subjects: ['science'], titleOnly: true, perChapter: 4,
     match: [/life ?cycle/, /\btadpole/, /metamorph/, /\bcocoon/, /silk ?moth/, /germinat/],
     title: 'Follow a life cycle', takeaway: 'Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.',
-    tasks: [
-      { say: 'Show the frog when it is a tadpole.', when: 'creature == 0 and stage == 1', then: 'The tadpole lives in water, breathes with gills and swims with its tail. Later it grows legs.' },
-      { say: 'Show the mosquito stage that wriggles in water.', when: 'creature == 1 and stage == 1', then: 'The larva wriggles in water and comes up to breathe. It looks nothing like the adult.' },
-      { say: 'Show the silk moth wrapped in its cocoon.', when: 'creature == 2 and stage == 2', then: 'Inside the cocoon the caterpillar is changing into a moth. The silk thread is the cocoon.' },
-      { say: 'Show a seed that has just begun to sprout.', when: 'creature == 3 and stage == 1', then: 'A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up.' },
-    ],
+    // Each lesson opens on its own living thing, and its tasks are about that one plus one other, so a child is never asked about a creature the lesson is not about.
+    params: (text) => ({ creature: /frog|tadpole/.test(text) ? 0 : /mosquito/.test(text) ? 1 : /silk ?moth|cocoon/.test(text) ? 2 : 3 }),
+    tasks: (params) => {
+      const c = (params && params.creature) || 0, names = ['frog', 'mosquito', 'silk moth', 'bean plant'], other = (c + 1) % 4;
+      const key = [
+        { say: 'Show the frog when it is a tadpole.', when: 'creature == 0 and stage == 1', then: 'The tadpole lives in water, breathes with gills and swims with its tail. Later it grows legs.' },
+        { say: 'Show the mosquito stage that wriggles in water.', when: 'creature == 1 and stage == 1', then: 'The larva wriggles in water and comes up to breathe. It looks nothing like the adult.' },
+        { say: 'Show the silk moth wrapped in its cocoon.', when: 'creature == 2 and stage == 2', then: 'Inside the cocoon the caterpillar is changing into a moth. The silk thread is the cocoon.' },
+        { say: 'Show a seed that has just begun to sprout.', when: 'creature == 3 and stage == 1', then: 'A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up.' },
+      ][c];
+      const grown = c === 3 ? 'the plant has made its own seeds' : 'the adult can lay eggs of its own';
+      return [
+        key,
+        { say: `Take the ${names[c]} all the way to its last stage.`, when: `creature == ${c} and stage == 3`, then: `At the last stage ${grown}, so the cycle can begin again.` },
+        { say: `Now see how a ${names[other]} begins.`, when: `creature == ${other} and stage == 0`, then: `Every life cycle starts the same way: an egg, or a seed, that holds the young one.` },
+      ];
+    },
   },
 };
 
