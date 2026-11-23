@@ -1239,7 +1239,7 @@ export const KITS = {
     ],
   },
   seats: {
-    grades: [7, 10], subjects: ['social'], match: [/\bconstituenc/, /first[- ]past[- ]the[- ]post/, /\belections?\b/, /electoral/, /vote share|votes? and seats/, /political part(y|ies)/],
+    grades: [7, 10], subjects: ['social'], match: [/\bconstituenc/, /first[- ]past[- ]the[- ]post/, /\belections?\b/, /electoral/, /vote share|votes? and seats/, /political part(y|ies)/, /universal adult franchise/, /registered voters/, /representative democracy/, /free and fair elections?/, /polling station/],
     title: 'Turn votes into seats', takeaway: 'Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.',
     tasks: [
       { say: 'Give party A 51% of the votes and count its seats.', when: 'share == 51', then: 'A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone.' },
