@@ -76695,7 +76695,7 @@
       {
        "id": "mathematics-g1-ch12-l3",
        "title": "Finding Amounts and Playing Shop",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -76824,6 +76824,53 @@
           "50 (generated problem)",
           "51 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g1-ch12-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "money",
+         "params": {
+          "kind": "small"
+         },
+         "title": "Pay the exact amount",
+         "tasks": [
+          {
+           "say": "Pay ₹66 using the notes and coins.",
+           "when": "amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66",
+           "then": "For example ₹50 + ₹10 + ₹5 + ₹1 = ₹66."
+          },
+          {
+           "say": "Now pay ₹66 a different way, with no ₹50 note.",
+           "when": "amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66 and f == 0",
+           "then": "The same amount can be paid in many different ways."
+          },
+          {
+           "say": "The ball costs ₹20. Pay with only ₹5 coins. How many?",
+           "when": "amt == 7 and v == 4 and f + tw + t + two + o == 0",
+           "then": "4 coins of ₹5 make ₹20."
+          },
+          {
+           "say": "Now pay ₹20 with only ₹10 notes.",
+           "when": "amt == 7 and t == 2 and f + tw + v + two + o == 0",
+           "then": "2 notes of ₹10 make ₹20."
+          },
+          {
+           "say": "Make ₹54.",
+           "when": "amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54",
+           "then": "For example ₹50 + ₹2 + ₹2, or ₹20 + ₹20 + ₹10 + ₹2 + ₹2."
+          },
+          {
+           "say": "Make ₹85 with as few notes and coins as you can.",
+           "when": "amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5",
+           "then": "₹50 + ₹20 + ₹10 + ₹5: big notes first uses the fewest."
+          }
+         ],
+         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
+         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
         },
         {
          "type": "worked",
