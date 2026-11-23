@@ -2895,7 +2895,7 @@ export const WIDGETS = {
   },
   opposites: {
     subject: 'english', about: 'Pairs of words that mean the opposite, and the prepositions in, on, under and behind that say where something is. For opposites, prepositions, describing words.',
-    sliders: [['w', 'Pick a pair', 0, 7, 1, 1]],
+    sliders: [['w', 'Pick a pair', 0, 5, 1, 1]],
     draw(v) {
       const rows = [
         ['big', 'small', 'A big elephant, a small mouse.', null],
