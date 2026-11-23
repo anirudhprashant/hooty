@@ -3259,6 +3259,70 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  reactivity: {
+    subject: 'science', about: 'A metal strip is dropped into a beaker of cold water, hot water, dilute acid or copper sulphate solution. Sodium fizzes violently even in cold water, magnesium needs hot water, magnesium, zinc and iron fizz in acid, copper and silver do nothing, and a metal above copper pushes copper out of copper sulphate so the blue fades and a brown coat forms. For the reactivity series, metals reacting with water and acids, and displacement reactions.',
+    sliders: [['metal', 'Metal: sodium, magnesium, zinc, iron, copper, silver', 0, 5, 1, 0], ['liquid', 'Liquid: cold water, hot water, dilute acid, copper sulphate', 0, 3, 1, 0]],
+    draw(v) {
+      const metalList = [
+        { name: 'sodium', sym: 'Na', rank: 0 },
+        { name: 'magnesium', sym: 'Mg', rank: 1 },
+        { name: 'zinc', sym: 'Zn', rank: 2 },
+        { name: 'iron', sym: 'Fe', rank: 3 },
+        { name: 'copper', sym: 'Cu', rank: 4 },
+        { name: 'silver', sym: 'Ag', rank: 5 },
+      ];
+      const liquidNames = ['cold water', 'hot water', 'dilute acid', 'copper sulphate solution'];
+      const met = metalList[v.metal], liq = v.liquid;
+      let kind, head, sub;
+      if (liq === 3) {
+        if (met.rank < 4) {
+          kind = 'displace';
+          head = `${met.name} pushes copper out of the solution`;
+          sub = `${met.name} is more reactive than copper, so it takes the copper's place. The blue colour fades and a brown coat of copper forms on the metal.`;
+        } else {
+          kind = 'none';
+          head = `${met.name} cannot push copper out`;
+          sub = `${met.name} is less reactive than copper, so it cannot take the copper's place. The blue solution stays as it is.`;
+        }
+      } else if (liq === 0) {
+        if (met.name === 'sodium') { kind = 'violent'; head = 'Sodium reacts violently with cold water'; sub = 'Sodium fizzes and darts about on the surface, and may catch fire. It is stored in kerosene to keep water away.'; }
+        else { kind = 'none'; head = `${met.name} does not react with cold water`; sub = met.name === 'magnesium' ? 'Magnesium is too slow in cold water: it needs hot water to react.' : `${met.name} does not react with cold water at all.`; }
+      } else if (liq === 1) {
+        if (met.name === 'sodium') { kind = 'violent'; head = 'Sodium reacts violently with hot water'; sub = 'Sodium fizzes and darts about, giving off hydrogen, and may catch fire.'; }
+        else if (met.name === 'magnesium') { kind = 'slow'; head = 'Magnesium reacts with hot water'; sub = 'Magnesium gives off hydrogen slowly and forms magnesium hydroxide in the water.'; }
+        else { kind = 'none'; head = `${met.name} does not react with hot water`; sub = `${met.name} does not react with water, even when it is hot.`; }
+      } else {
+        if (met.name === 'sodium') { kind = 'violent'; head = 'Sodium reacts violently with dilute acid'; sub = 'Sodium fizzes and darts about, giving off hydrogen very fast.'; }
+        else if (met.name === 'magnesium') { kind = 'fast'; head = 'Magnesium fizzes fast in dilute acid'; sub = 'Magnesium gives off hydrogen fastest of these metals, leaving a salt in the acid.'; }
+        else if (met.name === 'zinc' || met.name === 'iron') { kind = 'fast'; head = `${met.name} fizzes in dilute acid`; sub = `${met.name} gives off hydrogen and forms a salt, but more slowly than magnesium.`; }
+        else { kind = 'none'; head = `${met.name} does not react with dilute acid`; sub = `${met.name} is below hydrogen in the activity series, so it cannot push hydrogen out of the acid.`; }
+      }
+      const kids = [R(0, 0, W, H, '#fffdf6', { w: 0 })];
+      const liquidCol = liq === 3 ? (kind === 'displace' ? '#dbeafb' : '#7fb3e8') : liq === 2 ? '#fdf3d8' : '#dff0fb';
+      kids.push(T(300, 28, `${met.name} in ${liquidNames[liq]}`, { z: 18, w: 700, f: '#6b5a8a' }));
+      const beakerPath = 'M 190 64 L 190 236 Q 190 252 206 252 L 394 252 Q 410 252 410 236 L 410 64';
+      kids.push(s('path', { d: 'M 192 108 L 192 236 Q 192 250 206 250 L 394 250 Q 408 250 408 236 L 408 108 Z', fill: liquidCol, stroke: 'none' }));
+      kids.push(s('path', { d: beakerPath, fill: 'none', stroke: INK, 'stroke-width': 4, 'stroke-linejoin': 'round' }));
+      kids.push(L(186, 64, 414, 64, INK, 3));
+      kids.push(T(300, 88, liquidNames[liq], { z: 12, w: 600, f: '#5b7fa6' }));
+      kids.push(R(278, 104, 44, 124, '#c9cdd6', { r: 4, s: '#8d93a3', w: 2 }));
+      kids.push(T(300, 172, met.sym, { z: 20, w: 700, f: '#3a3f4a' }));
+      if (kind === 'displace') kids.push(R(278, 104, 44, 124, '#b5652e', { r: 4, s: '#8a4a20', w: 2, x: { opacity: 0.75 } }));
+      const bubPos = [[300, 122], [287, 142], [315, 134], [296, 162], [309, 176], [283, 154], [320, 152], [300, 192], [290, 202]];
+      const nbub = kind === 'violent' ? 9 : kind === 'fast' ? 6 : kind === 'slow' ? 3 : 0;
+      for (let i = 0; i < nbub; i++) { const [bx, by] = bubPos[i]; kids.push(CIRC(bx, by, 3 + (i % 3), '#ffffff', { s: '#8fb8dc', w: 1 })); }
+      if (liq === 1 && kind !== 'violent') { for (const dx of [-50, 0, 50]) kids.push(s('path', { d: `M ${300 + dx} 60 q 8 -10 0 -18 q -8 -8 0 -16`, fill: 'none', stroke: '#b9c4cf', 'stroke-width': 3, 'stroke-linecap': 'round', opacity: 0.8 })); }
+      if (kind === 'violent') {
+        kids.push(s('path', { d: 'M 300 100 q 10 -18 0 -34 q -10 8 0 18 q 10 -8 0 -18', fill: 'none', stroke: C.o, 'stroke-width': 4, 'stroke-linecap': 'round' }));
+        kids.push(T(352, 116, 'fizz!', { z: 14, w: 700, f: C.o }));
+      }
+      if (kind === 'displace') for (let i = 0; i < 5; i++) kids.push(CIRC(322 + i * 6, 200 - i * 9, 3, '#b5652e', { s: '#8a4a20', w: 1 }));
+      const ok = kind !== 'none';
+      kids.push(R(16, 258, 568, 34, ok ? '#e9f7ef' : '#f1eef7', { s: ok ? C.g : '#b8b0c9', w: 2, r: 10 }));
+      kids.push(T(300, 280, head, { z: 15, w: 700, f: ok ? '#0b6b52' : '#6b5a8a' }));
+      return { kids, say: `${head}. ${sub}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
