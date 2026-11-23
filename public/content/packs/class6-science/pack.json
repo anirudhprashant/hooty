@@ -34289,28 +34289,25 @@
           "explore"
          ],
          "widget": "lifecycle",
-         "params": {},
+         "params": {
+          "creature": 3
+         },
          "title": "Follow a life cycle",
          "tasks": [
-          {
-           "say": "Show the frog when it is a tadpole.",
-           "when": "creature == 0 and stage == 1",
-           "then": "The tadpole lives in water, breathes with gills and swims with its tail. Later it grows legs."
-          },
-          {
-           "say": "Show the mosquito stage that wriggles in water.",
-           "when": "creature == 1 and stage == 1",
-           "then": "The larva wriggles in water and comes up to breathe. It looks nothing like the adult."
-          },
-          {
-           "say": "Show the silk moth wrapped in its cocoon.",
-           "when": "creature == 2 and stage == 2",
-           "then": "Inside the cocoon the caterpillar is changing into a moth. The silk thread is the cocoon."
-          },
           {
            "say": "Show a seed that has just begun to sprout.",
            "when": "creature == 3 and stage == 1",
            "then": "A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up."
+          },
+          {
+           "say": "Take the bean plant all the way to its last stage.",
+           "when": "creature == 3 and stage == 3",
+           "then": "At the last stage the plant has made its own seeds, so the cycle can begin again."
+          },
+          {
+           "say": "Now see how a frog begins.",
+           "when": "creature == 0 and stage == 0",
+           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
           }
          ],
          "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
@@ -35332,28 +35329,25 @@
           "explore"
          ],
          "widget": "lifecycle",
-         "params": {},
+         "params": {
+          "creature": 3
+         },
          "title": "Follow a life cycle",
          "tasks": [
-          {
-           "say": "Show the frog when it is a tadpole.",
-           "when": "creature == 0 and stage == 1",
-           "then": "The tadpole lives in water, breathes with gills and swims with its tail. Later it grows legs."
-          },
-          {
-           "say": "Show the mosquito stage that wriggles in water.",
-           "when": "creature == 1 and stage == 1",
-           "then": "The larva wriggles in water and comes up to breathe. It looks nothing like the adult."
-          },
-          {
-           "say": "Show the silk moth wrapped in its cocoon.",
-           "when": "creature == 2 and stage == 2",
-           "then": "Inside the cocoon the caterpillar is changing into a moth. The silk thread is the cocoon."
-          },
           {
            "say": "Show a seed that has just begun to sprout.",
            "when": "creature == 3 and stage == 1",
            "then": "A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up."
+          },
+          {
+           "say": "Take the bean plant all the way to its last stage.",
+           "when": "creature == 3 and stage == 3",
+           "then": "At the last stage the plant has made its own seeds, so the cycle can begin again."
+          },
+          {
+           "say": "Now see how a frog begins.",
+           "when": "creature == 0 and stage == 0",
+           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
           }
          ],
          "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
@@ -35927,28 +35921,25 @@
           "explore"
          ],
          "widget": "lifecycle",
-         "params": {},
+         "params": {
+          "creature": 1
+         },
          "title": "Follow a life cycle",
          "tasks": [
-          {
-           "say": "Show the frog when it is a tadpole.",
-           "when": "creature == 0 and stage == 1",
-           "then": "The tadpole lives in water, breathes with gills and swims with its tail. Later it grows legs."
-          },
           {
            "say": "Show the mosquito stage that wriggles in water.",
            "when": "creature == 1 and stage == 1",
            "then": "The larva wriggles in water and comes up to breathe. It looks nothing like the adult."
           },
           {
-           "say": "Show the silk moth wrapped in its cocoon.",
-           "when": "creature == 2 and stage == 2",
-           "then": "Inside the cocoon the caterpillar is changing into a moth. The silk thread is the cocoon."
+           "say": "Take the mosquito all the way to its last stage.",
+           "when": "creature == 1 and stage == 3",
+           "then": "At the last stage the adult can lay eggs of its own, so the cycle can begin again."
           },
           {
-           "say": "Show a seed that has just begun to sprout.",
-           "when": "creature == 3 and stage == 1",
-           "then": "A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up."
+           "say": "Now see how a silk moth begins.",
+           "when": "creature == 2 and stage == 0",
+           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
           }
          ],
          "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
@@ -36474,7 +36465,9 @@
           "explore"
          ],
          "widget": "lifecycle",
-         "params": {},
+         "params": {
+          "creature": 0
+         },
          "title": "Follow a life cycle",
          "tasks": [
           {
@@ -36483,19 +36476,14 @@
            "then": "The tadpole lives in water, breathes with gills and swims with its tail. Later it grows legs."
           },
           {
-           "say": "Show the mosquito stage that wriggles in water.",
-           "when": "creature == 1 and stage == 1",
-           "then": "The larva wriggles in water and comes up to breathe. It looks nothing like the adult."
+           "say": "Take the frog all the way to its last stage.",
+           "when": "creature == 0 and stage == 3",
+           "then": "At the last stage the adult can lay eggs of its own, so the cycle can begin again."
           },
           {
-           "say": "Show the silk moth wrapped in its cocoon.",
-           "when": "creature == 2 and stage == 2",
-           "then": "Inside the cocoon the caterpillar is changing into a moth. The silk thread is the cocoon."
-          },
-          {
-           "say": "Show a seed that has just begun to sprout.",
-           "when": "creature == 3 and stage == 1",
-           "then": "A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up."
+           "say": "Now see how a mosquito begins.",
+           "when": "creature == 1 and stage == 0",
+           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
           }
          ],
          "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
