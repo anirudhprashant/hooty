@@ -698,6 +698,18 @@ export const KITS = {
       { say: 'Find the part a new plant can grow from.', when: 'part == 5', then: 'A seed can grow into a new plant.' },
     ],
   },
+  eatenparts: {
+    grades: [3, 5],
+    match: [/\bfood from plants?\b/, /\bparts? of (a |the )?plants? we eat\b/, /\b(eat|edible)\b[^.\n]{0,40}\b(leaves?|roots?|stems?|fruits?|seeds?)\b/, /\bvegetables? and fruits?\b[^.\n]{0,40}\bplants?\b/],
+    title: 'Which part of the plant do we eat?', takeaway: 'We eat different parts of plants: leaves like spinach, roots like carrot, stems like potato, fruits like mango and seeds like rice.',
+    tasks: [
+      { say: 'Find the part we eat when we eat spinach.', when: 'item == 0 and part == 2', then: 'Spinach leaves are leaves: we eat the green leaves of the plant.' },
+      { say: 'Find the part a carrot grows as.', when: 'item == 1 and part == 0', then: 'A carrot is a root that grows under the soil.' },
+      { say: 'Find the part a potato grows as.', when: 'item == 2 and part == 1', then: 'A potato is a swollen stem that grows underground.' },
+      { say: 'Find the part a mango grows as.', when: 'item == 3 and part == 3', then: 'A mango is a fruit, and the fruit holds the seeds.' },
+      { say: 'Find the part rice grains are.', when: 'item == 4 and part == 4', then: 'Rice grains are seeds: each grain can grow into a new plant.' },
+    ],
+  },
   twobins: {
     grades: [3, 4], match: [/\bgreen (dust)?bin\b/, /\bblue (dust)?bin\b/, /separat(e|ing) (the )?waste/, /waste[^.\n]{0,30}\bseparat/, /dustbins? of two colou?rs/, /\bcompost/],
     title: 'Sort the waste into two bins', takeaway: 'Green bin: peels, leaves and eggshells rot into compost. Blue bin: glass, plastic and paper can be made into new things.',

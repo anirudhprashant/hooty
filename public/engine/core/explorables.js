@@ -1161,6 +1161,30 @@ export const WIDGETS = {
       return { kids, say: jobs[v.part] };
     },
   },
+  eatenparts: {
+    subject: 'science', about: 'A plant with roots, stem, leaves, fruit and seeds, and six foods from the book: spinach, carrot, potato, mango, rice and onion. Pick a food, then tap the part of the plant it is, and that part lights up on the plant. For food from plants, the parts of a plant we eat: leaves, roots, stems, fruits and seeds.',
+    sliders: [['item', 'Pick a food', 0, 5, 1, 0], ['part', 'Which part of the plant is it?', 0, 4, 1, 0]],
+    draw(v) {
+      const foods = ['spinach', 'carrot', 'potato', 'mango', 'rice', 'onion'];
+      const partNames = ['roots', 'stem', 'leaves', 'fruit', 'seeds'];
+      const right = [2, 0, 1, 3, 4, 1];
+      const notes = ['Spinach leaves are leaves: we eat the green leaves of the plant.', 'A carrot is a root that grows under the soil.', 'A potato is a swollen stem that grows underground.', 'A mango is a fruit, and the fruit holds the seeds.', 'Rice grains are seeds: each grain can grow into a new plant.', 'An onion is a stem that stores food for the plant.'];
+      const food = foods[v.item], want = right[v.item], ok = v.part === want, hot = C.o, calm = '#3f7d3a';
+      const on = (n) => v.part === n;
+      const kids = [R(0, 0, 600, 300, C.cream, { w: 0 }), R(0, 210, 600, 90, '#c9a46a', { w: 0 }), L(0, 210, 600, 210, '#8a5a2b', 3)];
+      for (let i = 0; i < 7; i++) { const bx = 300 + (i - 3) * 7, bx2 = 300 + (i - 3) * 34; kids.push(L(bx, 210, bx2, 210 + 46 + (i % 3) * 12, on(0) ? hot : '#a9743d', on(0) ? 5 : 3)); }
+      kids.push(R(294, 88, 12, 122, on(1) ? hot : calm, { w: 2, r: 4 }));
+      kids.push(s('ellipse', { cx: 262, cy: 150, rx: 36, ry: 18, fill: on(2) ? hot : '#5fae4f', stroke: INK, 'stroke-width': 2, transform: 'rotate(-24 262 150)' }));
+      kids.push(s('ellipse', { cx: 338, cy: 122, rx: 34, ry: 17, fill: on(2) ? hot : '#5fae4f', stroke: INK, 'stroke-width': 2, transform: 'rotate(22 338 122)' }));
+      kids.push(L(304, 176, 352, 188, on(3) ? hot : calm, 4), CIRC(362, 196, 18, on(3) ? hot : '#e2583e', { w: 2 }));
+      kids.push(L(294, 148, 250, 136, on(4) ? hot : calm, 4), s('ellipse', { cx: 234, cy: 133, rx: 18, ry: 10, fill: on(4) ? hot : '#b07a45', stroke: INK, 'stroke-width': 2, transform: 'rotate(-14 234 133)' }));
+      for (let i = 0; i < 3; i++) kids.push(CIRC(226 + i * 8, 133, 2.6, INK, { w: 0 }));
+      kids.push(T(300, 22, 'Which part of the plant is it?', { z: 18 }), T(300, 46, `Food: ${food}`, { z: 17, w: 800, f: C.p }));
+      kids.push(T(16, 292, `You chose: ${partNames[v.part]}`, { z: 14, w: 600, f: ok ? '#1d7a45' : '#7a6b99', a: 'start' }));
+      const say = ok ? `Yes. ${notes[v.item]}` : `Not the ${partNames[v.part]}. ${notes[v.item]}`;
+      return { kids, say };
+    },
+  },
   twobins: {
     subject: 'science', about: 'Throw six everyday things into the right dustbin: the green bin for peels, leaves and eggshells that rot into compost, the blue bin for glass, plastic and paper that can be recycled. For waste, separating waste, green and blue dustbins, compost and recycling.',
     sliders: [['item', 'Pick a thing to throw away', 0, 5, 1, 0], ['bin', 'Which bin? (0 green, 1 blue, 2 not chosen)', 0, 2, 1, 2]],
