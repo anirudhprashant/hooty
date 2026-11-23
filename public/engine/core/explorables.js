@@ -2433,28 +2433,27 @@ export const WIDGETS = {
         else { out.push(R(cx - 24, cy - 16, 48, 32, pale || '#e8eef7', { s: INK, w: 2, r: 4 })); for (const dx of [-12, 0, 12]) out.push(L(cx + dx, cy - 16, cx + dx, cy + 16, '#9fb0c8', 2)); }
         return out;
       };
-      const card = (x, w, head, col, pale) => { kids.push(R(x, 40, w, 122, pale, { s: col, w: 2, r: 12 })); kids.push(T(x + w / 2, 62, head, { z: 14, f: '#6b5a8a', w: 700 })); };
+      const card = (x, w, head, col, pale) => { kids.push(R(x, 40, w, 122, pale, { s: col, w: 2, r: 12 })); kids.push(T(x + w / 2, 60, head, { z: 18, f: '#6b5a8a', w: 700 })); };
       card(16, 158, 'YOU', '#c9bfe0', '#fbf8f0');
-      kids.push(...icon('wheat', 95, 108));
-      kids.push(T(95, 150, 'wheat', { z: 13, w: 600, f: '#6b5a8a' }));
+      kids.push(...icon('wheat', 95, 106));
+      kids.push(T(95, 152, 'wheat', { z: 18, w: 600, f: '#6b5a8a' }));
       if (md === 1) {
         card(188, 206, 'SHOP', '#c9bfe0', '#fbf8f0');
-        kids.push(T(291, 88, `sells ${want.name}`, { z: 15, w: 600 }));
-        kids.push(...icon('coins', 291, 120));
-        kids.push(T(291, 152, 'takes your coins', { z: 15, w: 700, f: '#0b6b52' }));
+        kids.push(...icon('coins', 218, 112));
+        kids.push(T(258, 118, 'takes coins', { z: 20, a: 'start', w: 700, f: '#0b6b52' }));
       } else {
         card(188, 206, f.name.toUpperCase(), f.wants === 'wheat' ? C.g : '#c9bfe0', '#fbf8f0');
-        kids.push(T(291, 88, `has ${f.has}`, { z: 15, w: 600 }));
-        kids.push(...icon(f.has, 291, 118));
-        kids.push(T(291, 152, `wants ${f.wants}`, { z: 15, w: 700, f: f.wants === 'wheat' ? '#0b6b52' : '#c2510e' }));
+        kids.push(...icon(f.has, 218, 112));
+        kids.push(T(258, 104, `has ${f.has}`, { z: 19, a: 'start', w: 600 }));
+        kids.push(T(258, 134, `wants ${f.wants}`, { z: 19, a: 'start', w: 700, f: f.wants === 'wheat' ? '#0b6b52' : '#c2510e' }));
       }
       card(408, 176, 'YOU NEED', want.col, want.pale);
-      kids.push(...icon(want.name, 496, 108, want.pale));
-      kids.push(T(496, 150, want.name, { z: 13, w: 600, f: '#6b5a8a' }));
+      kids.push(...icon(want.name, 496, 106, want.pale));
+      kids.push(T(496, 152, want.name, { z: 18, w: 600, f: '#6b5a8a' }));
       let ok, head, sub;
       if (md === 1) {
         ok = true; head = `With money you can buy the ${want.name}`;
-        sub = `You sell your wheat for coins, then pay those coins for the ${want.name}. You do not have to find anyone who wants wheat, so money removes the double coincidence of wants.`;
+        sub = `You sell your wheat for coins, then buy the ${want.name} with them. Money is accepted by everyone, so no double match is needed.`;
       } else if (f.wants !== 'wheat') {
         ok = false; head = `${f.name} will not take your wheat`;
         sub = `${f.name} wants ${f.wants}, not wheat, so no swap happens. You must find someone who wants your wheat.`;
@@ -2466,9 +2465,9 @@ export const WIDGETS = {
         sub = `${f.name} wanted your wheat and had ${want.name}. You both wanted what the other had: a double coincidence of wants.`;
       }
       kids.push(R(16, 174, 568, 110, ok ? '#e9f7ef' : '#fdeceb', { s: ok ? C.g : '#d9534f', w: 3, r: 12 }));
-      kids.push(T(300, 202, (ok ? '\u2713 ' : '\u2715 ') + head, { z: 18, w: 700, f: ok ? '#0b6b52' : '#a8322d' }));
-      const words = sub.match(/.{1,58}(\s|$)/g) || [sub];
-      words.slice(0, 3).forEach((line, i) => kids.push(T(36, 230 + i * 20, line.trim(), { z: 14, w: 600, a: 'start', f: INK })));
+      kids.push(T(300, 204, (ok ? '\u2713 ' : '\u2715 ') + head, { z: 21, w: 700, f: ok ? '#0b6b52' : '#a8322d' }));
+      const lines = sub.match(/.{1,50}(\s|$)/g) || [sub];
+      lines.slice(0, 3).forEach((line, i) => kids.push(T(36, 232 + i * 20, line.trim(), { z: 17, w: 600, a: 'start', f: INK })));
       return { kids, say: `${head}. ${sub}` };
     },
   },
