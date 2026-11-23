@@ -70015,7 +70015,7 @@
       {
        "id": "mathematics-g9-ch12-l1",
        "title": "Quadrilaterals and tiling",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -70139,6 +70139,36 @@
           "2 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch12-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "quadtile",
+         "params": {},
+         "title": "Tile with any four-sided shape",
+         "tasks": [
+          {
+           "say": "Lower the top corner to make the shape flatter.",
+           "when": "lift == 2",
+           "then": "The shape changes but its four angles still add up to 360 degrees."
+          },
+          {
+           "say": "Fit a second ring of copies around the shape.",
+           "when": "tiles == 2",
+           "then": "Every new copy is the last one turned half a turn about the middle of a shared edge."
+          },
+          {
+           "say": "Make the top corner lean to the left.",
+           "when": "push == -3",
+           "then": "A leaning quadrilateral still tiles, and its angles still make a full turn."
+          }
+         ],
+         "takeaway": "The four angles of any quadrilateral add up to 360 degrees, which is why four corners fit around a point and copies of the shape tile the plane.",
+         "explanation": "The four angles of any quadrilateral add up to 360 degrees, which is why four corners fit around a point and copies of the shape tile the plane."
         },
         {
          "type": "worked",
@@ -70906,7 +70936,7 @@
       {
        "id": "mathematics-g9-ch12-l2",
        "title": "Parts of a quadrilateral",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -70983,6 +71013,36 @@
            "p": 83
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch12-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "quadtile",
+         "params": {},
+         "title": "Tile with any four-sided shape",
+         "tasks": [
+          {
+           "say": "Lower the top corner to make the shape flatter.",
+           "when": "lift == 2",
+           "then": "The shape changes but its four angles still add up to 360 degrees."
+          },
+          {
+           "say": "Fit a second ring of copies around the shape.",
+           "when": "tiles == 2",
+           "then": "Every new copy is the last one turned half a turn about the middle of a shared edge."
+          },
+          {
+           "say": "Make the top corner lean to the left.",
+           "when": "push == -3",
+           "then": "A leaning quadrilateral still tiles, and its angles still make a full turn."
+          }
+         ],
+         "takeaway": "The four angles of any quadrilateral add up to 360 degrees, which is why four corners fit around a point and copies of the shape tile the plane.",
+         "explanation": "The four angles of any quadrilateral add up to 360 degrees, which is why four corners fit around a point and copies of the shape tile the plane."
         },
         {
          "type": "worked",
@@ -74586,7 +74646,7 @@
       {
        "id": "mathematics-g9-ch12-l6",
        "title": "Tiling with any 4-gon",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -74712,6 +74772,36 @@
           "80 (generated problem)",
           "90 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch12-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "quadtile",
+         "params": {},
+         "title": "Tile with any four-sided shape",
+         "tasks": [
+          {
+           "say": "Lower the top corner to make the shape flatter.",
+           "when": "lift == 2",
+           "then": "The shape changes but its four angles still add up to 360 degrees."
+          },
+          {
+           "say": "Fit a second ring of copies around the shape.",
+           "when": "tiles == 2",
+           "then": "Every new copy is the last one turned half a turn about the middle of a shared edge."
+          },
+          {
+           "say": "Make the top corner lean to the left.",
+           "when": "push == -3",
+           "then": "A leaning quadrilateral still tiles, and its angles still make a full turn."
+          }
+         ],
+         "takeaway": "The four angles of any quadrilateral add up to 360 degrees, which is why four corners fit around a point and copies of the shape tile the plane.",
+         "explanation": "The four angles of any quadrilateral add up to 360 degrees, which is why four corners fit around a point and copies of the shape tile the plane."
         },
         {
          "type": "worked",

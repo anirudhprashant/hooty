@@ -89474,7 +89474,7 @@
       {
        "id": "mathematics-g7-ch14-l6",
        "title": "Tiling Regions and the Plane",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -89583,6 +89583,36 @@
           "3 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g7-ch14-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "quadtile",
+         "params": {},
+         "title": "Tile with any four-sided shape",
+         "tasks": [
+          {
+           "say": "Lower the top corner to make the shape flatter.",
+           "when": "lift == 2",
+           "then": "The shape changes but its four angles still add up to 360 degrees."
+          },
+          {
+           "say": "Fit a second ring of copies around the shape.",
+           "when": "tiles == 2",
+           "then": "Every new copy is the last one turned half a turn about the middle of a shared edge."
+          },
+          {
+           "say": "Make the top corner lean to the left.",
+           "when": "push == -3",
+           "then": "A leaning quadrilateral still tiles, and its angles still make a full turn."
+          }
+         ],
+         "takeaway": "The four angles of any quadrilateral add up to 360 degrees, which is why four corners fit around a point and copies of the shape tile the plane.",
+         "explanation": "The four angles of any quadrilateral add up to 360 degrees, which is why four corners fit around a point and copies of the shape tile the plane."
         },
         {
          "type": "worked",
