@@ -3024,6 +3024,89 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  lifecycle: {
+    subject: 'science', about: 'The life cycle of a frog, a mosquito, a silk moth or a bean plant, one stage at a time: egg, young, pupa or flower, then the adult that lays eggs or makes seeds. For life cycles, eggs and young, tadpoles, larvae and caterpillars, cocoons, seeds and germination, and how some young look nothing like the adult.',
+    sliders: [['creature', 'Choose the living thing', 0, 3, 1, 0], ['stage', 'Move through its life', 0, 3, 1, 0]],
+    draw(v) {
+      const names = ['Frog', 'Mosquito', 'Silk moth', 'Bean plant'];
+      const c = Math.max(0, Math.min(3, v.creature | 0)), k = Math.max(0, Math.min(3, v.stage | 0));
+      const kids = [R(0, 0, W, H, '#fffdf6', { w: 0 })];
+      const stageNames = [
+        ['egg', 'tadpole', 'froglet', 'adult frog'],
+        ['egg', 'larva', 'pupa', 'adult mosquito'],
+        ['egg', 'caterpillar', 'cocoon', 'adult moth'],
+        ['seed', 'sprout', 'young plant', 'plant with seeds'],
+      ][c];
+      kids.push(T(20, 30, names[c], { z: 22, a: 'start' }));
+      kids.push(T(580, 30, `step ${k + 1} of 4`, { z: 15, a: 'end', f: '#6b5a8a' }));
+      const cw = 128, gap = 16, x0 = 18, y0 = 48, chh = 168;
+      const inWater = c === 0 || c === 1;
+      const icon = (i, cx, cy) => {
+        const out = [];
+        if (inWater) { out.push(R(cx - 52, cy + 34, 104, 26, '#bfe6ff', { w: 0 })); out.push(L(cx - 52, cy + 34, cx + 52, cy + 34, '#7cc4ea', 2)); }
+        else if (c === 2) { out.push(L(cx - 48, cy + 34, cx + 48, cy + 30, '#8a6d3b', 5)); }
+        else { out.push(s('ellipse', { cx, cy: cy + 44, rx: 52, ry: 12, fill: '#cde8b5', stroke: '#7aa85a', 'stroke-width': 2 })); }
+        if (c === 0) {
+          if (i === 0) { for (const [dx, dy] of [[-16, -4], [0, -12], [16, -4], [-8, 10], [8, 10]]) { out.push(CIRC(cx + dx, cy + dy, 9, '#e8f6ff', { s: '#4a7fa5', w: 2 })); out.push(CIRC(cx + dx, cy + dy, 3, '#2a1a4a', { w: 0 })); } }
+          else if (i === 1) { out.push(s('ellipse', { cx: cx - 6, cy, rx: 20, ry: 13, fill: '#5b6b4a', stroke: INK, 'stroke-width': 2 })); out.push(s('path', { d: `M ${cx + 12} ${cy} q 12 -10 24 0 q 10 8 22 -2`, fill: 'none', stroke: '#5b6b4a', 'stroke-width': 5, 'stroke-linecap': 'round' })); out.push(CIRC(cx - 10, cy - 4, 3, INK, { w: 0 })); }
+          else if (i === 2) { out.push(CIRC(cx, cy, 16, '#6f9e4a', { s: INK, w: 2 })); out.push(CIRC(cx - 8, cy - 8, 5, '#6f9e4a', { s: INK, w: 1.5 })); out.push(CIRC(cx + 8, cy - 8, 5, '#6f9e4a', { s: INK, w: 1.5 })); out.push(L(cx - 14, cy + 10, cx - 26, cy + 24, '#6f9e4a', 4)); out.push(L(cx + 14, cy + 10, cx + 26, cy + 24, '#6f9e4a', 4)); out.push(s('path', { d: `M ${cx + 16} ${cy + 4} q 14 4 20 12`, fill: 'none', stroke: '#6f9e4a', 'stroke-width': 4 })); }
+          else { out.push(s('ellipse', { cx, cy: cy + 2, rx: 24, ry: 17, fill: '#6f9e4a', stroke: INK, 'stroke-width': 2 })); out.push(CIRC(cx - 11, cy - 14, 7, '#6f9e4a', { s: INK, w: 2 })); out.push(CIRC(cx + 11, cy - 14, 7, '#6f9e4a', { s: INK, w: 2 })); out.push(CIRC(cx - 11, cy - 14, 3, INK, { w: 0 })); out.push(CIRC(cx + 11, cy - 14, 3, INK, { w: 0 })); out.push(L(cx - 20, cy + 14, cx - 38, cy + 30, '#6f9e4a', 5)); out.push(L(cx + 20, cy + 14, cx + 38, cy + 30, '#6f9e4a', 5)); out.push(L(cx - 24, cy + 6, cx - 42, cy + 10, '#6f9e4a', 4)); out.push(L(cx + 24, cy + 6, cx + 42, cy + 10, '#6f9e4a', 4)); }
+        } else if (c === 1) {
+          if (i === 0) { for (let j = 0; j < 5; j++) out.push(s('ellipse', { cx: cx - 30 + j * 15, cy: cy + 28 - (j % 2) * 3, rx: 4, ry: 8, fill: '#3d3d3d', stroke: INK, 'stroke-width': 1 })); }
+          else if (i === 1) { out.push(s('path', { d: `M ${cx - 34} ${cy} q 10 -14 20 0 q 10 14 20 0 q 10 -14 20 0`, fill: 'none', stroke: '#3d3d3d', 'stroke-width': 7, 'stroke-linecap': 'round' })); out.push(CIRC(cx - 36, cy, 8, '#3d3d3d', { w: 0 })); out.push(CIRC(cx - 36, cy, 3, '#fff', { w: 0 })); }
+          else if (i === 2) { out.push(s('path', { d: `M ${cx - 4} ${cy - 22} q 18 6 14 26 q -3 14 -18 10 q -12 -4 -6 -18 q 4 -8 10 -18 Z`, fill: '#8a6d3b', stroke: INK, 'stroke-width': 2 })); }
+          else { out.push(s('ellipse', { cx: cx - 16, cy: cy - 6, rx: 18, ry: 8, fill: '#cfe8f7', stroke: INK, 'stroke-width': 1.5 })); out.push(s('ellipse', { cx: cx + 16, cy: cy - 6, rx: 18, ry: 8, fill: '#cfe8f7', stroke: INK, 'stroke-width': 1.5 })); out.push(L(cx, cy - 8, cx, cy + 22, '#3d3d3d', 6)); out.push(CIRC(cx, cy - 12, 6, '#3d3d3d', { w: 0 })); for (const dx of [-14, -6, 6, 14]) out.push(L(cx, cy + 4, cx + dx, cy + 26, '#3d3d3d', 2)); out.push(L(cx, cy - 18, cx - 10, cy - 30, '#3d3d3d', 2)); out.push(L(cx, cy - 18, cx + 10, cy - 30, '#3d3d3d', 2)); }
+        } else if (c === 2) {
+          if (i === 0) { out.push(s('ellipse', { cx: cx - 20, cy: cy + 10, rx: 26, ry: 14, fill: '#8fbf6a', stroke: '#5f8f3a', 'stroke-width': 2 })); for (const [dx, dy] of [[0, -6], [10, 2], [-10, 4], [16, -8], [-16, -2]]) out.push(CIRC(cx - 20 + dx, cy + 6 + dy, 4, '#f2e3c0', { s: INK, w: 1 })); }
+          else if (i === 1) { for (let j = 0; j < 5; j++) out.push(CIRC(cx - 28 + j * 13, cy - (j % 2) * 5, 10, j === 0 ? '#f2e3c0' : '#e8d9a8', { s: INK, w: 1.5 })); for (let j = 0; j < 4; j++) out.push(L(cx - 28 + j * 13, cy + 8, cx - 30 + j * 13, cy + 18, '#6b5a3a', 2)); out.push(CIRC(cx - 28, cy - 2, 2, INK, { w: 0 })); }
+          else if (i === 2) { out.push(s('ellipse', { cx, cy, rx: 20, ry: 30, fill: '#f3e7c9', stroke: INK, 'stroke-width': 2 })); for (let j = -2; j <= 2; j++) out.push(s('path', { d: `M ${cx - 16} ${cy + j * 11} q 16 ${j % 2 ? -6 : 6} 32 0`, fill: 'none', stroke: '#c9b48a', 'stroke-width': 2 })); }
+          else { out.push(s('ellipse', { cx: cx - 20, cy: cy - 6, rx: 26, ry: 20, fill: '#f6ecd4', stroke: INK, 'stroke-width': 2 })); out.push(s('ellipse', { cx: cx + 20, cy: cy - 6, rx: 26, ry: 20, fill: '#f6ecd4', stroke: INK, 'stroke-width': 2 })); out.push(s('ellipse', { cx, cy, rx: 9, ry: 24, fill: '#a87f4a', stroke: INK, 'stroke-width': 2 })); out.push(L(cx, cy - 24, cx - 8, cy - 36, '#a87f4a', 2)); out.push(L(cx, cy - 24, cx + 8, cy - 36, '#a87f4a', 2)); }
+        } else {
+          if (i === 0) { out.push(s('ellipse', { cx, cy, rx: 20, ry: 14, fill: '#b07a3c', stroke: INK, 'stroke-width': 2 })); out.push(s('path', { d: `M ${cx - 4} ${cy + 12} q -2 14 -10 18`, fill: 'none', stroke: '#f2e3c0', 'stroke-width': 4 })); out.push(s('path', { d: `M ${cx + 4} ${cy + 12} q 2 14 10 18`, fill: 'none', stroke: '#f2e3c0', 'stroke-width': 4 })); }
+          else if (i === 1) { out.push(L(cx, cy + 34, cx, cy - 6, '#4f8a3a', 5)); out.push(s('path', { d: `M ${cx} ${cy - 4} q -26 -6 -30 -22 q 24 0 30 14 Z`, fill: '#7ac74f', stroke: '#4f8a3a', 'stroke-width': 2 })); out.push(s('path', { d: `M ${cx} ${cy - 4} q 26 -6 30 -22 q -24 0 -30 14 Z`, fill: '#7ac74f', stroke: '#4f8a3a', 'stroke-width': 2 })); }
+          else if (i === 2) { out.push(L(cx, cy + 44, cx, cy - 22, '#4f8a3a', 6)); for (const [dy, dir] of [[-14, -1], [-2, 1], [10, -1], [22, 1]]) out.push(s('path', { d: `M ${cx} ${cy + dy} q ${dir * 24} -8 ${dir * 30} -18 q -22 -2 -30 10 Z`, fill: '#7ac74f', stroke: '#4f8a3a', 'stroke-width': 2 })); out.push(CIRC(cx, cy - 30, 9, '#ffd166', { s: '#c99a00', w: 2 })); for (let j = 0; j < 6; j++) { const a = j * 60 * Math.PI / 180; out.push(CIRC(cx + Math.cos(a) * 9, cy - 30 + Math.sin(a) * 9, 3, '#ff9f1c', { w: 0 })); } }
+          else { out.push(L(cx, cy + 46, cx, cy - 18, '#4f8a3a', 6)); for (const [dy, dir] of [[-10, -1], [2, 1], [14, -1], [26, 1]]) out.push(s('path', { d: `M ${cx} ${cy + dy} q ${dir * 22} -8 ${dir * 28} -18 q -20 -2 -28 10 Z`, fill: '#7ac74f', stroke: '#4f8a3a', 'stroke-width': 2 })); out.push(s('ellipse', { cx: cx + 26, cy: cy - 6, rx: 8, ry: 22, fill: '#8fd16a', stroke: '#4f8a3a', 'stroke-width': 2, transform: `rotate(24 ${cx + 26} ${cy - 6})` })); for (let j = -1; j <= 1; j++) out.push(CIRC(cx + 20 + j * 5, cy - 12 + j * 12, 3, '#2f6b2f', { w: 0 })); }
+        }
+        return out;
+      };
+      for (let i = 0; i < 4; i++) {
+        const bx = x0 + i * (cw + gap), cx = bx + cw / 2, cy = y0 + 84;
+        kids.push(R(bx, y0, cw, chh, i === k ? '#fff2d6' : '#fbf8f0', { w: i === k ? 4 : 2, s: i === k ? C.o : '#e3dccb', r: 14 }));
+        kids.push(...icon(i, cx, cy));
+        kids.push(T(cx, y0 + chh - 12, stageNames[i], { z: 13, f: i === k ? INK : '#8a7fa0' }));
+        if (i < 3) kids.push(T(bx + cw + gap / 2, cy + 6, '\u203A', { z: 26, f: '#b9aed0' }));
+      }
+      const tail = (c === 0 || c === 1 || c === 2) ? ' The young looks nothing like the adult: it changes form completely, and that is called metamorphosis.' : ' The new seed can grow into another plant, so the cycle never stops.';
+      const sayText = [
+        ['A frog begins as an egg in a jelly-like mass in water. Many eggs are laid together, so some survive.',
+          'The egg hatches into a tadpole. It lives in water, breathes with gills and swims with a long tail.',
+          'The tadpole grows legs and its tail shrinks. It is now a froglet that can hop out of the water.',
+          'The adult frog has no tail. It breathes with lungs and lays eggs, so the cycle begins again.'],
+        ['A female mosquito lays her eggs on still water. They float together in a small raft.',
+          'Each egg hatches into a larva that wriggles in the water. It comes to the surface to breathe.',
+          'The larva becomes a pupa. It does not feed now; it is changing inside.',
+          'The pupa splits open and an adult mosquito flies out. The cycle starts again with new eggs.'],
+        ['The female silk moth lays many tiny eggs on a leaf.',
+          'The egg hatches into a caterpillar. It eats leaves and grows fast, shedding its skin as it grows.',
+          'The caterpillar spins a silk thread around itself and becomes a pupa inside a cocoon.',
+          'The adult moth comes out of the cocoon, mates and lays eggs. The silk we use is the cocoon.'],
+        ['A bean seed holds a tiny plant and its own food. It waits for water and warmth.',
+          'The seed takes in water and sprouts. A root grows down and a shoot comes up with two leaves.',
+          'The young plant grows more leaves and a flower. The flower can make new seeds.',
+          'The flower becomes a pod full of seeds. The seeds fall and new plants grow, so the cycle repeats.'],
+      ][c][k];
+      const full = sayText + (k === 3 ? tail : ''), lines = [];
+      let rest = full;
+      while (rest && lines.length < 3) {
+        if (rest.length <= 78) { lines.push(rest); rest = ''; break; }
+        const cut = rest.slice(0, 78).replace(/\s+\S*$/, '');
+        lines.push(cut); rest = rest.slice(cut.length).trim();
+      }
+      if (rest) lines[lines.length - 1] = lines[lines.length - 1].replace(/[,;]?$/, '') + ' ...';
+      lines.forEach((ln, j) => kids.push(T(20, 240 + j * 20, ln, { z: 14, a: 'start', f: j === 2 ? '#6b5a8a' : '#2a1a4a', w: 600 })));
+      return { kids, say: full };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

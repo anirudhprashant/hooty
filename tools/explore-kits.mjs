@@ -1167,7 +1167,7 @@ export const KITS = {
     },
   },
   market: {
-    grades: [7, 10], titleOnly: true, perChapter: 3,
+    grades: [7, 10], titleOnly: true, perChapter: 4,
     match: [/law of demand/, /law of supply/, /market equilibrium|equilibrium price/, /excess demand|excess supply/, /prices? and markets?/],
     title: 'Run the market',
     takeaway: 'Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.',
@@ -1322,6 +1322,17 @@ export const KITS = {
       { say: 'Make the river wider as small streams join it.', when: 'stage == 2', then: 'The joining streams are tributaries: each one adds water, so the river grows wider and stronger.' },
       { say: 'Stop the river with a giant wall and store its water.', when: 'stage == 4', then: 'A dam blocks the flow and holds the water in a reservoir for drinking, crops and electricity.' },
       { say: 'Take the river all the way to the sea.', when: 'stage == 5', then: 'Near the sea the river splits into many small streams and makes a delta, where mangroves grow.' },
+    ],
+  },
+  lifecycle: {
+    grades: [3, 6], subjects: ['science'], titleOnly: true, perChapter: 4,
+    match: [/life ?cycle/, /\btadpole/, /metamorph/, /\bcocoon/, /silk ?moth/, /germinat/],
+    title: 'Follow a life cycle', takeaway: 'Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.',
+    tasks: [
+      { say: 'Show the frog when it is a tadpole.', when: 'creature == 0 and stage == 1', then: 'The tadpole lives in water, breathes with gills and swims with its tail. Later it grows legs.' },
+      { say: 'Show the mosquito stage that wriggles in water.', when: 'creature == 1 and stage == 1', then: 'The larva wriggles in water and comes up to breathe. It looks nothing like the adult.' },
+      { say: 'Show the silk moth wrapped in its cocoon.', when: 'creature == 2 and stage == 2', then: 'Inside the cocoon the caterpillar is changing into a moth. The silk thread is the cocoon.' },
+      { say: 'Show a seed that has just begun to sprout.', when: 'creature == 3 and stage == 1', then: 'A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up.' },
     ],
   },
 };
