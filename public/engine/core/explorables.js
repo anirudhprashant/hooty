@@ -2413,6 +2413,54 @@ export const WIDGETS = {
       return { kids: parts, say: `At ₹${pr} a kg, buyers want ${num(want, 1)} kg and sellers bring ${num(bring, 1)} kg: ${where}. The demand and supply curves cross at ₹${num(eqP, 0)} and ${num(eqQ, 1)} kg.` };
     },
   },
+  barter: {
+    subject: 'social', about: 'A village market where you hold a sack of wheat and need shoes, salt or a blanket. By barter the swap works only when the other person both wants your wheat and has what you need; with money you sell the wheat for coins and then buy the good, so you never need that double match. For barter, the double coincidence of wants, the problems of barter and why money was invented.',
+    sliders: [['mode', 'Barter or money (0 barter, 1 money)', 0, 1, 1, 0], ['person', 'Who you visit: Meena, Ravi, Sita, Gopal', 0, 3, 1, 1], ['need', 'What you need: shoes, salt, blanket', 0, 2, 1, 0]],
+    draw(v) {
+      const md = v.mode, who = v.person, need = v.need;
+      const goods = [{ name: 'shoes', col: C.o, pale: '#fff0eb' }, { name: 'salt', col: C.b, pale: '#e8f0ff' }, { name: 'blanket', col: C.p, pale: '#f1e9fd' }];
+      const folks = [{ name: 'Meena', has: 'shoes', wants: 'wheat', good: 0 }, { name: 'Ravi', has: 'salt', wants: 'cloth', good: 1 }, { name: 'Sita', has: 'blanket', wants: 'rice', good: 2 }, { name: 'Gopal', has: 'rice', wants: 'wheat', good: 3 }];
+      const f = folks[who], want = goods[need];
+      const kids = [R(0, 0, W, H, '#fffdf6', { w: 0 })];
+      const icon = (kind, cx, cy, pale) => {
+        const out = [];
+        if (kind === 'wheat') { out.push(s('path', { d: `M ${cx - 20} ${cy + 20} L ${cx - 12} ${cy - 18} L ${cx + 12} ${cy - 18} L ${cx + 20} ${cy + 20} Z`, fill: '#e8cf8a', stroke: INK, 'stroke-width': 2 })); for (const dy of [-8, 0, 8]) { out.push(L(cx - 9, cy + dy, cx - 3, cy + dy - 9, '#b58b3a', 2)); out.push(L(cx + 9, cy + dy, cx + 3, cy + dy - 9, '#b58b3a', 2)); } }
+        else if (kind === 'shoes') { for (const dx of [-22, 2]) { out.push(s('path', { d: `M ${cx + dx} ${cy + 10} L ${cx + dx} ${cy - 4} q 0 -8 8 -8 l 6 0 q 6 0 10 6 l 8 12 l 0 6 l -32 0 Z`, fill: C.o, stroke: INK, 'stroke-width': 2 })); } }
+        else if (kind === 'salt') { out.push(s('path', { d: `M ${cx - 26} ${cy + 16} q 26 -34 52 0 Z`, fill: '#f3f7fd', stroke: C.b, 'stroke-width': 2 })); for (const [dx, dy] of [[-8, 6], [6, 8], [0, 0], [-14, 12], [14, 12]]) out.push(CIRC(cx + dx, cy + dy, 2, '#9fb8d8', { w: 0 })); }
+        else if (kind === 'blanket') { out.push(R(cx - 26, cy - 14, 52, 32, C.p, { s: INK, w: 2, r: 5 })); for (const dx of [-14, 0, 14]) out.push(L(cx + dx, cy - 14, cx + dx, cy + 18, '#c9aef0', 3)); }
+        else if (kind === 'rice') { out.push(s('path', { d: `M ${cx - 28} ${cy} q 28 30 56 0 Z`, fill: '#fff', stroke: INK, 'stroke-width': 2 })); for (const [dx, dy] of [[-10, -2], [0, -4], [10, -2], [-4, 4], [6, 4]]) out.push(s('ellipse', { cx: cx + dx, cy: cy + dy, rx: 4, ry: 2, fill: '#e9e2cc', stroke: '#b9ad8a', 'stroke-width': 1 })); }
+        else { out.push(R(cx - 24, cy - 16, 48, 32, pale || '#e8eef7', { s: INK, w: 2, r: 4 })); for (const dx of [-12, 0, 12]) out.push(L(cx + dx, cy - 16, cx + dx, cy + 16, '#9fb0c8', 2)); }
+        out.push(T(cx, cy + 36, kind, { z: 13, w: 600, f: '#6b5a8a' }));
+        return out;
+      };
+      const card = (x, w, head, col, pale) => { kids.push(R(x, 40, w, 122, pale, { s: col, w: 2, r: 12 })); kids.push(T(x + w / 2, 62, head, { z: 14, f: '#6b5a8a', w: 700 })); };
+      card(16, 158, 'YOU', '#c9bfe0', '#fbf8f0'); kids.push(...icon('wheat', 95, 104));
+      card(188, 206, f.name.toUpperCase(), f.wants === 'wheat' ? C.g : '#c9bfe0', '#fbf8f0');
+      kids.push(T(291, 84, `has ${f.has}`, { z: 15, w: 600 }));
+      kids.push(...icon(f.has, 291, 116));
+      kids.push(T(291, 154, `wants ${f.wants}`, { z: 15, w: 700, f: f.wants === 'wheat' ? '#0b6b52' : '#c2510e' }));
+      card(408, 176, 'YOU NEED', want.col, want.pale); kids.push(...icon(want.name, 496, 104, want.pale));
+      let ok, head, sub;
+      if (md === 1) {
+        ok = true; head = `With money you can buy the ${want.name}`;
+        sub = `You sell your wheat for coins, then pay those coins for the ${want.name}. You do not have to find anyone who wants wheat, so money removes the double coincidence of wants.`;
+      } else if (f.wants !== 'wheat') {
+        ok = false; head = `${f.name} will not take your wheat`;
+        sub = `${f.name} wants ${f.wants}, not wheat, so no swap happens. You must find someone who wants your wheat.`;
+      } else if (f.good !== need) {
+        ok = false; head = `${f.name} has ${f.has}, not ${want.name}`;
+        sub = `${f.name} wants your wheat but can only give ${f.has}. You need ${want.name}, so this swap still leaves you without it.`;
+      } else {
+        ok = true; head = `Swap done: wheat for ${want.name}`;
+        sub = `${f.name} wanted your wheat and had ${want.name}. You both wanted what the other had: a double coincidence of wants.`;
+      }
+      kids.push(R(16, 174, 568, 110, ok ? '#e9f7ef' : '#fdeceb', { s: ok ? C.g : '#d9534f', w: 3, r: 12 }));
+      kids.push(T(300, 202, (ok ? '\u2713 ' : '\u2715 ') + head, { z: 18, w: 700, f: ok ? '#0b6b52' : '#a8322d' }));
+      const words = sub.match(/.{1,58}(\s|$)/g) || [sub];
+      words.slice(0, 3).forEach((line, i) => kids.push(T(36, 230 + i * 20, line.trim(), { z: 14, w: 600, a: 'start', f: INK })));
+      return { kids, say: `${head}. ${sub}` };
+    },
+  },
   sectors: {
     subject: 'social', about: 'A crop turned into cloth and then a shirt, with the value each stage adds, and where the workers of a country are: on farms, in factories or in services. For the three sectors of the economy, primary, secondary and tertiary, value added, and how jobs move as a country develops.',
     sliders: [['stage', 'How far the product has gone', 0, 2, 1, 0], ['advance', 'How developed the country is', 0, 2, 1, 0]],
