@@ -35490,7 +35490,7 @@
       {
        "id": "social-science-g7-ch11-l1",
        "title": "Barter: Swapping Without Money",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -35555,6 +35555,36 @@
            "p": 230
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch11-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "barter",
+         "params": {},
+         "title": "Swap in the village market",
+         "tasks": [
+          {
+           "say": "Swap your wheat for shoes, without money.",
+           "when": "mode == 0 and person == 0 and need == 0",
+           "then": "Meena wanted wheat and had shoes, so the swap worked."
+          },
+          {
+           "say": "Try Ravi for salt and see the swap fail.",
+           "when": "mode == 0 and person == 1 and need == 1",
+           "then": "Ravi wanted cloth, not wheat, so no swap was possible."
+          },
+          {
+           "say": "Use money to buy the blanket.",
+           "when": "mode == 1 and need == 2",
+           "then": "Money is accepted by everyone, so you did not need a double match."
+          }
+         ],
+         "takeaway": "Barter needs a double coincidence of wants: each person must want what the other has. Money is accepted by everyone, so it replaces barter.",
+         "explanation": "Barter needs a double coincidence of wants: each person must want what the other has. Money is accepted by everyone, so it replaces barter."
         },
         {
          "type": "worked",
@@ -35988,7 +36018,7 @@
       {
        "id": "social-science-g7-ch11-l2",
        "title": "Why Do We Need Money?",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -36044,6 +36074,36 @@
            "p": 233
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch11-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "barter",
+         "params": {},
+         "title": "Swap in the village market",
+         "tasks": [
+          {
+           "say": "Swap your wheat for shoes, without money.",
+           "when": "mode == 0 and person == 0 and need == 0",
+           "then": "Meena wanted wheat and had shoes, so the swap worked."
+          },
+          {
+           "say": "Try Ravi for salt and see the swap fail.",
+           "when": "mode == 0 and person == 1 and need == 1",
+           "then": "Ravi wanted cloth, not wheat, so no swap was possible."
+          },
+          {
+           "say": "Use money to buy the blanket.",
+           "when": "mode == 1 and need == 2",
+           "then": "Money is accepted by everyone, so you did not need a double match."
+          }
+         ],
+         "takeaway": "Barter needs a double coincidence of wants: each person must want what the other has. Money is accepted by everyone, so it replaces barter.",
+         "explanation": "Barter needs a double coincidence of wants: each person must want what the other has. Money is accepted by everyone, so it replaces barter."
         },
         {
          "type": "worked",
