@@ -788,6 +788,55 @@ export const WIDGETS = {
       return { kids, say: `Area of the triangle = ½ × base × height = ½ × ${b} × ${h} = ${num((b * h) / 2)} square units, exactly half of the rectangle (${b * h}). Slide the top corner along the dashed line: the shape changes but the area does not.` };
     },
   },
+  quadtile: {
+    subject: 'maths', about: 'One quadrilateral you reshape with sliders, its four angles added up to 360, and then copies of the same four-sided shape fitted edge to edge all around it with no gaps or overlaps. For quadrilaterals, the angle sum of a quadrilateral, tiling and tessellation, 4-gons, parallelograms and the midpoint theorem.',
+    sliders: [['push', 'Push the top corner sideways', -3, 3, 1, 1], ['lift', 'Lift the top corner', 2, 6, 1, 4], ['wide', 'Move the right corner', 5, 9, 1, 7], ['tiles', 'Fit copies around it', 0, 2, 1, 1]],
+    draw(v) {
+      const cx = v.wide, cy = v.lift, dx = v.push;
+      const base = [[0, 0], [8, 0], [cx, cy], [dx, cy * 0.7]];
+      const cen = (q) => [q.reduce((t, p) => t + p[0], 0) / 4, q.reduce((t, p) => t + p[1], 0) / 4];
+      const turn = (q, m) => q.map(([x, y]) => [2 * m[0] - x, 2 * m[1] - y]);
+      const seen = new Map(), key = (q) => { const c = cen(q); return `${Math.round(c[0] * 20)}:${Math.round(c[1] * 20)}`; };
+      let ring = [base]; seen.set(key(base), base);
+      for (let k = 0; k < v.tiles; k++) {
+        const next = [];
+        for (const q of ring) for (let i = 0; i < 4; i++) {
+          const a = q[i], b = q[(i + 1) % 4], m = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], nq = turn(q, m);
+          if (!seen.has(key(nq))) { seen.set(key(nq), nq); next.push(nq); }
+        }
+        ring = next;
+      }
+      const all = [...seen.values()], xs = all.flat().map((p) => p[0]), ys = all.flat().map((p) => p[1]);
+      const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+      const u = Math.min(540 / (maxX - minX || 1), 250 / (maxY - minY || 1));
+      const ox = 300 - ((minX + maxX) / 2) * u, oy = 158 + ((minY + maxY) / 2) * u;
+      const X = (x) => ox + x * u, Y = (y) => oy - y * u;
+      const pts = (q) => q.map(([x, y]) => `${X(x)},${Y(y)}`).join(' ');
+      const fills = ['#ffe3a3', '#cfe8ff', '#d9f2e3', '#ffe0ea', '#e6ddff', '#fff0c2'];
+      const kids = [];
+      all.forEach((q, i) => { if (q !== base) kids.push(s('polygon', { points: pts(q), fill: fills[i % fills.length], stroke: '#b9a8d8', 'stroke-width': 2, 'stroke-linejoin': 'round', opacity: 0.95 })); });
+      kids.push(s('polygon', { points: pts(base), fill: '#ffd06b', stroke: INK, 'stroke-width': 4, 'stroke-linejoin': 'round' }));
+      const c0 = cen(base), ang = (i) => {
+        const p = base[i], q = base[(i + 3) % 4], r = base[(i + 1) % 4];
+        const u1 = [q[0] - p[0], q[1] - p[1]], u2 = [r[0] - p[0], r[1] - p[1]];
+        return (Math.acos((u1[0] * u2[0] + u1[1] * u2[1]) / (Math.hypot(...u1) * Math.hypot(...u2))) * 180) / Math.PI;
+      };
+      const angs = [0, 1, 2, 3].map(ang), names = ['A', 'B', 'C', 'D'];
+      base.forEach((p, i) => {
+        const lx = X(p[0] + (c0[0] - p[0]) * 0.26), ly = Y(p[1] + (c0[1] - p[1]) * 0.26);
+        kids.push(CIRC(X(p[0]), Y(p[1]), u > 15 ? 7 : 5, C.b, { w: 2.5 }));
+        if (u > 15) {
+          kids.push(T(lx, ly + 5, `${num(angs[i], 0)}°`, { z: 15, f: '#2a1a4a' }));
+          kids.push(T(X(p[0]) + (p[0] < c0[0] ? -18 : 18), Y(p[1]) + (p[1] > c0[1] ? -14 : 18), names[i], { z: 14, w: 600, f: '#6b5a8a' }));
+        }
+      });
+      const parts = angs.map((a) => num(a, 1));
+      const tail = v.tiles === 0
+        ? 'Move the sliders: however you bend the shape, the four angles still add up to 360 degrees.'
+        : `Copies of this same shape fit all around it with no gaps and no overlaps, because four corners meeting at a point make one full turn (${num(360, 0)} degrees).`;
+      return { kids, say: `The four angles are ${parts.join('° + ')}° = 360°, the same as one full turn. ${tail}` };
+    },
+  },
   factors: {
     subject: 'maths', about: 'A number shown as every rectangle of dots it can make: each rectangle is a factor pair. A prime number can only make one long row. Shows all factors and the prime factorisation. For factors, multiples, prime and composite numbers, prime factorisation, divisibility.',
     sliders: [['n', 'Number', 2, 40, 1, 12]],

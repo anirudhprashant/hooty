@@ -147,6 +147,15 @@ export const KITS = {
       { say: 'Make the area 20 square units.', when: 'b * h == 40', then: 'Half of base x height = 20, so base x height must be 40.' },
     ],
   },
+  quadtile: {
+    grades: [6, 10], perChapter: { 8: 2, 9: 3 }, match: [/quadrilateral/, /\b4-gons?\b/, /tiling|tessellat/, /four angles|angle sum/],
+    title: 'Tile with any four-sided shape', takeaway: 'The four angles of any quadrilateral add up to 360 degrees, which is why four corners fit around a point and copies of the shape tile the plane.',
+    tasks: [
+      { say: 'Lower the top corner to make the shape flatter.', when: 'lift == 2', then: 'The shape changes but its four angles still add up to 360 degrees.' },
+      { say: 'Fit a second ring of copies around the shape.', when: 'tiles == 2', then: 'Every new copy is the last one turned half a turn about the middle of a shared edge.' },
+      { say: 'Make the top corner lean to the left.', when: 'push == -3', then: 'A leaning quadrilateral still tiles, and its angles still make a full turn.' },
+    ],
+  },
   angle: {
     grades: [4, 8], match: [/\bangles?\b/, /protractor/, /\bacute\b/, /\bobtuse\b/, /right angle/, /\breflex\b/, /\bdegrees?\b/, /\bturns?\b/, /\bquarter turn|half turn|full turn\b/],
     title: 'Open the angle', takeaway: 'Angles are named by size: acute below 90, right at 90, obtuse up to 180 and reflex beyond.',
