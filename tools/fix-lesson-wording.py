@@ -69,7 +69,8 @@ TEXT_RULES = [
     (re.compile(r'\bof this lesson\b', re.I), 'of this text'),
     (re.compile(r'\bof the lesson\b', re.I), 'of the text'),
     (re.compile(r'\bthis lesson\b', re.I), 'this text'),
-    (re.compile(r'\bthe lesson\b', re.I), 'the text'),
+    # "the lesson of loss" is a moral, not the book: leave it.
+    (re.compile(r'\bthe lesson\b(?! (?:of|that)\b)', re.I), 'the text'),
     (re.compile(r'\byour lesson\b', re.I), 'the text'),
     (re.compile(r'\bin this chapter\b', re.I), 'in this text'),
     (re.compile(r'\bin the chapter\b', re.I), 'in the text'),
@@ -78,10 +79,7 @@ TEXT_RULES = [
     (re.compile(r'\bof this chapter\b', re.I), 'of this text'),
     (re.compile(r'\bof the chapter\b', re.I), 'of the text'),
     (re.compile(r'\bthis chapter\b', re.I), 'this text'),
-    (re.compile(r'\bthe chapter\b', re.I), 'the text'),
-    (re.compile(r'\bthe textbook\b', re.I), 'the text'),
-    (re.compile(r'\bthis textbook\b', re.I), 'this text'),
-    (re.compile(r'\ba textbook\b', re.I), 'a text'),
+    (re.compile(r'\bthe chapter\b(?!\s+\d)', re.I), 'the text'),
     # Tidy the joins the swaps leave behind: "the text events" reads worse than "the events".
     (re.compile(r'\bthe text (events|clue|detail|answer|steps|words|facts|parts|order)\b', re.I), r'the \1'),
     (re.compile(r'\bits text (meaning|answer|detail|clue)\b', re.I), r'its \1'),
@@ -89,6 +87,9 @@ TEXT_RULES = [
 
 PROMPT_FIELDS = ('prompt', 'problem')
 PROSE_FIELDS = ('explanation', 'body', 'hint', 'passage', 'answer', 'ev', 'why', 'title')
+# Lists of prose a child reads. tags and steps are left alone: a tag is metadata, and a step may
+# honestly use "textbook lengths" or "the chapter takes two hours" as a maths unit.
+LIST_PROSE_KEYS = ('why', 'options', 'keyPoints', 'points', 'items')
 
 
 def _sub_case(rx, rep, text):
@@ -102,7 +103,7 @@ def _sub_case(rx, rep, text):
 
 def _tidy(text):
     out = re.sub(r'\s{2,}', ' ', text)
-    out = re.sub(r'\s+([?.!,;])', r'\1', out)
+    out = re.sub(r'\s+([.,;])', r'\1', out)
     out = re.sub(r'([(\[])\s+', r'\1', out)
     return out.strip()
 
@@ -136,6 +137,16 @@ def walk(node, where):
                 nv = fix_prompt(v)
             elif isinstance(v, str) and k in PROSE_FIELDS:
                 nv = fix_prose(v)
+            elif isinstance(v, list) and k in LIST_PROSE_KEYS:
+                for i, item in enumerate(v):
+                    if isinstance(item, str):
+                        ni = fix_prose(item)
+                        if ni != item:
+                            changed.append((where, k, item, ni))
+                            v[i] = ni
+                    else:
+                        walk(item, where)
+                continue
             else:
                 walk(v, where)
                 continue
