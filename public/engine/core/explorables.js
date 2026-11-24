@@ -3325,6 +3325,43 @@ export const WIDGETS = {
       return { kids, say: `${head}. ${sub}` };
     },
   },
+  ppc: {
+    subject: 'social', about: 'A Production Possibility Curve for a farm that can grow barley and wheat. Move the two sliders to place a combination: on the curve all the land and workers are used, inside the curve some are idle, outside the curve the farm cannot reach. For choices, scarcity, trade-offs and opportunity cost.',
+    sliders: [['b', 'Barley (quintals)', 0, 10, 1, 0], ['w', 'Wheat (quintals)', 0, 10, 1, 10]],
+    draw(v) {
+      const left = 82, right = 556, top = 26, base = 252;
+      const X = (q) => left + (q / 10) * (right - left);
+      const Y = (q) => base - (q / 10) * (base - top);
+      const b = v.b, w = v.w, d = b * b + w * w;
+      const kids = [R(0, 0, W, H, '#fffdf6', { w: 0 })];
+      for (let q = 0; q <= 10; q += 2) {
+        kids.push(L(X(q), base, X(q), base + 7, INK, 2));
+        kids.push(T(X(q), base + 22, String(q), { z: 12, w: 600, f: '#6b5a8a' }));
+        kids.push(L(left - 7, Y(q), left, Y(q), INK, 2));
+        kids.push(T(left - 14, Y(q) + 4, String(q), { z: 12, w: 600, f: '#6b5a8a', a: 'end' }));
+      }
+      const curvePts = [];
+      for (let i = 0; i <= 90; i++) {
+        const ang = rad(i);
+        curvePts.push(`${X(10 * Math.cos(ang))},${Y(10 * Math.sin(ang))}`);
+      }
+      kids.push(s('polygon', { points: `${X(0)},${Y(0)} ${X(10)},${Y(0)} ${curvePts.join(' ')}`, fill: '#eef7ff', stroke: 'none' }));
+      kids.push(L(left, base, right, base, INK, 3), L(left, top, left, base, INK, 3));
+      kids.push(s('polyline', { points: curvePts.join(' '), fill: 'none', stroke: C.p, 'stroke-width': 4, 'stroke-linecap': 'round' }));
+      kids.push(T(right - 4, base + 40, 'Barley (quintals)', { z: 13, w: 600, f: '#6b5a8a', a: 'end' }));
+      kids.push(T(left + 8, top - 8, 'Wheat (quintals)', { z: 13, w: 600, f: '#6b5a8a', a: 'start' }));
+      const on = d === 100, inside = d < 100;
+      const col = on ? C.g : inside ? C.b : C.o;
+      kids.push(L(X(b), base, X(b), Y(w), col, 2, { 'stroke-dasharray': '5 5' }));
+      kids.push(L(left, Y(w), X(b), Y(w), col, 2, { 'stroke-dasharray': '5 5' }));
+      kids.push(CIRC(X(b), Y(w), 11, col, { w: 3 }));
+      kids.push(T(X(b), Y(w) - 20, `${b} barley, ${w} wheat`, { z: 14, w: 700, f: col }));
+      const where = on ? 'exactly on the curve, so all the land and workers are used'
+        : inside ? 'inside the curve, so some land or workers are lying idle'
+        : 'outside the curve, so the farm cannot grow that much';
+      return { kids, say: `${b} quintals of barley and ${w} quintals of wheat: ${where}. More barley means less wheat, and the wheat given up is the opportunity cost.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

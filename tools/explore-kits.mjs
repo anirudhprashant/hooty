@@ -1208,6 +1208,17 @@ export const KITS = {
       { say: 'Show a country where most workers are in services.', when: 'advance == 2', then: 'As a country develops, workers move from farms to factories and then to services.' },
     ],
   },
+  ppc: {
+    grades: [9, 10], subjects: ['social'], perChapter: 2,
+    match: [/production possibility/, /\bppc\b/, /opportunity cost/, /barley and wheat|wheat and barley/, /scarce resources?/, /choices?,? needs/],
+    title: 'Grow barley or wheat',
+    takeaway: 'The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost.',
+    tasks: [
+      { say: 'Grow 6 quintals of barley and 8 of wheat: a point exactly on the curve.', when: 'b == 6 and w == 8', then: 'On the curve all the land and workers are used, so this is an efficient combination.' },
+      { say: 'Move to a point inside the curve, where some land or workers are left idle.', when: 'b * b + w * w < 100', then: 'Inside the curve the farm could grow more of one crop without giving up the other, because something is idle.' },
+      { say: 'Try a combination the farm cannot reach.', when: 'b * b + w * w > 100', then: 'Outside the curve there is not enough land and labour, so this combination is impossible.' },
+    ],
+  },
   interest: {
     grades: [7, 10], subjects: ['social'], perChapter: 2,
     match: [/credit/, /\bdebt/, /\bborrow/, /\binterest\b/, /moneylender/, /high interest/, /\bbanks?\b/, /\bloans?\b/, /\bsavings\b/],
