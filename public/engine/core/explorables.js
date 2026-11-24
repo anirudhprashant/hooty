@@ -2750,9 +2750,9 @@ export const WIDGETS = {
       const farF = lensX + v.f * scale, nearF = lensX - v.f * scale;
       const kids = [R(0, 0, W, H, '#f7f3ff', { w: 0 }), L(20, axis, 580, axis, '#b8aed0', 3, { 'stroke-dasharray': '10 8' })];
       kids.push(s('ellipse', { cx: lensX, cy: axis, rx: 13, ry: 88, fill: C.sky, stroke: INK, 'stroke-width': 4, opacity: 0.75 }));
-      kids.push(T(lensX, axis + 112, 'lens', { z: 13, f: '#6b5a8a' }));
-      kids.push(L(objX, axis, objX, objY, C.p, 5), s('polygon', { points: `${objX},${objY - 12} ${objX - 7},${objY + 2} ${objX + 7},${objY + 2}`, fill: C.p }), T(objX, objY - 20, 'object', { z: 13, f: C.p }));
-      for (const fx of [nearF, farF]) kids.push(CIRC(fx, axis, 5, C.g), T(fx, axis + 24, fx < lensX ? 'F' : "F'", { z: 14, f: C.g }));
+      kids.push(T(lensX, axis + 112, 'lens', { z: 16, f: '#6b5a8a' }));
+      kids.push(L(objX, axis, objX, objY, C.p, 5), s('polygon', { points: `${objX},${objY - 12} ${objX - 7},${objY + 2} ${objX + 7},${objY + 2}`, fill: C.p }), T(objX, objY - 22, 'object', { z: 16, f: C.p }));
+      for (const fx of [nearF, farF]) kids.push(CIRC(fx, axis, 5, C.g), T(fx, axis + 26, fx < lensX ? 'F' : "F'", { z: 16, f: C.g }));
       const denom = v.u - v.f, parallel = Math.abs(denom) < 1e-9;
       let img = 0, imgX = null, imgY = null, real = false, note = '';
       if (!parallel) {
@@ -2767,7 +2767,7 @@ export const WIDGETS = {
           kids.push(L(imgX, axis, imgX, imgY, real ? C.o : C.b, 5, real ? {} : { 'stroke-dasharray': '8 6' }));
           const dir = real ? -1 : 1;
           kids.push(s('polygon', { points: `${imgX},${imgY} ${imgX - 7},${imgY + dir * 12} ${imgX + 7},${imgY + dir * 12}`, fill: real ? C.o : C.b }));
-          kids.push(T(imgX, imgY + (real ? 24 : 22), 'image', { z: 13, f: real ? C.o : C.b }));
+          kids.push(T(imgX + 24, imgY + 8, 'image', { z: 16, a: 'start', f: real ? C.o : C.b }));
           if (!real) {
             kids.push(L(lensX, objY, imgX, imgY, C.o, 2, { 'stroke-dasharray': '7 6' }), L(lensX, axis, imgX, imgY, C.b, 2, { 'stroke-dasharray': '7 6' }));
           }
@@ -2796,11 +2796,11 @@ export const WIDGETS = {
       const kids = [R(0, 0, W, H, convex ? '#eef7ff' : '#f7f3ff', { w: 0 }), L(20, axis, 580, axis, '#b8aed0', 3, { 'stroke-dasharray': '10 8' })];
       const rBig = 2 * fMag * scale, cX = mx + (convex ? rBig : -rBig);
       kids.push(s('path', { d: convex ? arc(cX, axis, rBig, 125, 235) : arc(cX, axis, rBig, -55, 55), fill: 'none', stroke: INK, 'stroke-width': 6 }));
-      kids.push(T(mx + (convex ? 54 : -54), axis - 66, convex ? 'convex mirror' : 'concave mirror', { z: 13, f: '#6b5a8a' }));
+      kids.push(T(mx + 10, axis - 96, convex ? 'convex mirror' : 'concave mirror', { z: 16, a: 'start', f: '#6b5a8a' }));
       const fX = mx - f * scale, cMark = mx - 2 * f * scale;
-      kids.push(CIRC(fX, axis, 5, C.g), T(fX, axis + 24, 'F', { z: 14, f: C.g }));
-      kids.push(CIRC(cMark, axis, 4, C.b), T(cMark, axis + 24, 'C', { z: 14, f: C.b }));
-      kids.push(L(objX, axis, objX, objY, C.p, 5), s('polygon', { points: `${objX},${objY - 12} ${objX - 7},${objY + 2} ${objX + 7},${objY + 2}`, fill: C.p }), T(objX, objY - 20, 'object', { z: 13, f: C.p }));
+      kids.push(CIRC(fX, axis, 5, C.g), T(fX + 12, axis + 26, 'F', { z: 16, a: 'start', f: C.g }));
+      kids.push(CIRC(cMark, axis, 4, C.b), T(cMark, axis + 42, 'C', { z: 16, f: C.b }));
+      kids.push(L(objX, axis, objX, objY, C.p, 5), s('polygon', { points: `${objX},${objY - 12} ${objX - 7},${objY + 2} ${objX + 7},${objY + 2}`, fill: C.p }), T(objX, objY - 22, 'object', { z: 16, f: C.p }));
       // Two rays: one parallel to the axis (reflects through F, or away from F for a convex mirror) and one to the pole (reflects back at the same angle). Their meeting point is the image.
       const px = mx, py = axis, dx = mx - objX, dy = axis - objY;
       const rayTo = (x0, y0, ux, uy, xEnd, solid) => {
@@ -2820,7 +2820,7 @@ export const WIDGETS = {
         if (imgX > 8 && imgX < 592) {
           kids.push(L(imgX, axis, imgX, imgY, real ? C.o : C.b, 5, real ? {} : { 'stroke-dasharray': '8 6' }));
           kids.push(s('polygon', { points: `${imgX},${imgY} ${imgX - 7},${imgY + (real ? -12 : 12)} ${imgX + 7},${imgY + (real ? -12 : 12)}`, fill: real ? C.o : C.b }));
-          kids.push(T(Math.max(24, Math.min(576, imgX)), real ? imgY + 30 : imgY - 14, 'image', { z: 13, f: real ? C.o : C.b }));
+          kids.push(T(Math.max(24, Math.min(576, imgX)), axis - 30, 'image', { z: 16, f: real ? C.o : C.b }));
         }
         kids.push(T(300, 24, `Object ${v.u} cm from the mirror; focal length ${fMag} cm`, { z: 15, w: 600 }));
         kids.push(T(300, 292, real ? `Image ${num(vi, 1)} cm in front: real and inverted.` : `Image ${num(-vi, 1)} cm behind: virtual and upright.`, { z: 15, w: 600, f: real ? C.o : C.b }));
@@ -2951,13 +2951,13 @@ export const WIDGETS = {
       const want = 22 + extra - 0.1 * pr, bring = 2 + 0.1 * pr;
       const eqP = 100 + 5 * extra, eqQ = 12 + 0.5 * extra;
       const parts = [R(left, top, right - left, base - top, '#fffdf7', { w: 2, s: '#c9bfe0' })];
-      for (let p = 0; p <= 150; p += 50) { parts.push(L(left - 7, yOf(p), left, yOf(p), INK, 2)); parts.push(T(left - 13, yOf(p) + 5, String(p), { z: 12, w: 600, f: '#6b5a8a', a: 'end' })); }
-      for (let q = 0; q <= 30; q += 10) { parts.push(L(xOf(q), base, xOf(q), base + 7, INK, 2)); parts.push(T(xOf(q), base + 22, String(q), { z: 12, w: 600, f: '#6b5a8a' })); }
+      for (let p = 0; p <= 150; p += 50) { parts.push(L(left - 7, yOf(p), left, yOf(p), INK, 2)); parts.push(T(left - 13, yOf(p) + 6, String(p), { z: 15, w: 600, f: '#6b5a8a', a: 'end' })); }
+      for (let q = 0; q <= 30; q += 10) { parts.push(L(xOf(q), base, xOf(q), base + 7, INK, 2)); parts.push(T(xOf(q), base + 23, String(q), { z: 15, w: 600, f: '#6b5a8a' })); }
       parts.push(L(left, base, right, base, INK, 3), L(left, top, left, base, INK, 3));
-      parts.push(T(left + 6, top - 10, 'Price (₹ per kg)', { z: 13, w: 600, f: '#6b5a8a', a: 'start' }), T(right - 4, base + 38, 'Quantity (kg)', { z: 13, w: 600, f: '#6b5a8a', a: 'end' }));
+      parts.push(T(left + 6, top - 12, 'Price (₹ per kg)', { z: 15, w: 600, f: '#6b5a8a', a: 'start' }), T(right - 4, base + 42, 'Quantity (kg)', { z: 15, w: 600, f: '#6b5a8a', a: 'end' }));
       const curve = (qty, col, word) => {
         const pts = []; for (let p = 0; p <= 170; p += 5) pts.push(`${xOf(qty(p))},${yOf(p)}`);
-        return [s('polyline', { points: pts.join(' '), fill: 'none', stroke: col, 'stroke-width': 4, 'stroke-linecap': 'round' }), T(xOf(qty(150)) + 30, yOf(150) + (word === 'demand' ? 22 : -12), word, { z: 14, f: col, w: 600 })];
+        return [s('polyline', { points: pts.join(' '), fill: 'none', stroke: col, 'stroke-width': 4, 'stroke-linecap': 'round' }), T(xOf(qty(150)) + 30, yOf(150) + (word === 'demand' ? 24 : -14), word, { z: 16, f: col, w: 600 })];
       };
       parts.push(...curve((p) => 22 + extra - 0.1 * p, C.b, 'demand'), ...curve((p) => 2 + 0.1 * p, C.o, 'supply'));
       parts.push(L(left, yOf(pr), right, yOf(pr), '#9a8fb8', 2, { 'stroke-dasharray': '6 6' }));
@@ -2966,7 +2966,7 @@ export const WIDGETS = {
       const lo = Math.min(xOf(want), xOf(bring)), hi = Math.max(xOf(want), xOf(bring));
       if (Math.abs(want - bring) > 0.05) {
         parts.push(L(lo, yOf(pr) + 26, hi, yOf(pr) + 26, '#c2510e', 3));
-        parts.push(T((lo + hi) / 2, yOf(pr) + 46, want > bring ? 'shortage' : 'surplus', { z: 14, f: '#c2510e', w: 700 }));
+        parts.push(T((lo + hi) / 2, yOf(pr) + 48, want > bring ? 'shortage' : 'surplus', { z: 16, f: '#c2510e', w: 700 }));
       }
       const gap = want - bring;
       const where = Math.abs(gap) < 0.05 ? 'balanced' : gap > 0 ? `a shortage of ${num(gap, 1)} kg, so the price would rise` : `a surplus of ${num(-gap, 1)} kg, so the price would fall`;
