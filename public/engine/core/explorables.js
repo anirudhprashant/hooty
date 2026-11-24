@@ -1014,10 +1014,9 @@ export const WIDGETS = {
         T(effortX, beamY - 106, `effort ${v.effort} N`, { z: 16, f: '#2f5fd0' }),
       ]);
       const kids = [R(0, 0, W, H, '#fbf8ff', { w: 0 }), s('polygon', { points: `${pivot},${beamY + 4} ${pivot - 44},${beamY + 88} ${pivot + 44},${beamY + 88}`, fill: '#b9a7d6', stroke: INK, 'stroke-width': 3 }), beam];
-      const dim = (x0, x1, label, col, y0, y1) => [L(x0, y0, x1, y0, col, 2, { 'stroke-dasharray': '5 4' }), T((x0 + x1) / 2, y1, label, { z: 16, f: col })];
-      const midL = (loadX + pivot) / 2, midE = (pivot + effortX) / 2, tight = midE - midL < 128;
-      kids.push(...dim(loadX, pivot, `load arm ${v.loadArm} m`, '#6b45c8', tight ? 258 : 268, tight ? 278 : 290), ...dim(pivot, effortX, `effort arm ${v.effortArm} m`, '#2f5fd0', tight ? 288 : 268, tight ? 296 : 290));
-      kids.push(T(pivot, beamY + 104, 'fulcrum', { z: 16, f: '#6b5a8a' }), T(300, 32, balanced ? 'balanced' : diff > 0 ? 'the effort end goes down' : 'the load end stays down', { z: 18, f: balanced ? '#058a68' : '#c2510e' }));
+      kids.push(L(loadX, 268, pivot, 268, '#6b45c8', 2, { 'stroke-dasharray': '5 4' }), L(pivot, 268, effortX, 268, '#2f5fd0', 2, { 'stroke-dasharray': '5 4' }));
+      kids.push(T(300, 292, `load arm ${v.loadArm} m  ·  effort arm ${v.effortArm} m`, { z: 16 }));
+      kids.push(T(pivot, beamY + 104, 'fulcrum', { z: 16, f: '#6b5a8a' }), T(300, 24, balanced ? 'balanced' : diff > 0 ? 'the effort end goes down' : 'the load end stays down', { z: 17, f: balanced ? '#058a68' : '#c2510e' }));
       const say = `The ${v.load} N load, ${v.loadArm} m from the fulcrum, turns the beam with ${loadM} N m. Pushing ${v.effort} N at ${v.effortArm} m gives ${effortM} N m. ${balanced ? 'The two turning effects are equal, so the beam stays level.' : diff > 0 ? 'The effort turns harder, so the effort end goes down.' : 'The load turns harder, so the beam will not lift.'} To balance, push with ${num(need, 1)} N. Load divided by effort is ${num(ma, 2)}.`;
       return { kids, say };
     },
@@ -2215,8 +2214,8 @@ export const WIDGETS = {
       } else {
         const bx = 55, by = 50, bw = 100, bh = 200, lvl = Math.min(q, 4) / 4;
         kids.push(R(bx, by, bw, bh, '#ffffff', { w: 3, r: 10 }), R(bx + 3, by + bh - 3 - lvl * (bh - 6), bw - 6, lvl * (bh - 6), '#7fbfff', { w: 0 }));
-        for (const [k, lab] of [[1, '¼'], [2, '½'], [3, '¾'], [4, '1 l']]) kids.push(L(bx + bw - 18, by + bh - 3 - (k / 4) * (bh - 6), bx + bw, by + bh - 3 - (k / 4) * (bh - 6), INK, 2), T(bx - 16, by + bh - 3 - (k / 4) * (bh - 6) + 5, lab, { z: 16, w: 700 }));
-        if (q > 4) kids.push(T(bx + bw / 2, by + 36, 'overflowing!', { z: 16, w: 700, f: '#c0392b' }));
+        for (const [k, lab] of [[1, '¼'], [2, '½'], [3, '¾'], [4, '1 l']]) kids.push(L(bx + bw - 18, by + bh - 3 - (k / 4) * (bh - 6), bx + bw, by + bh - 3 - (k / 4) * (bh - 6), INK, 2), T(bx + bw + 8, by + bh - 3 - (k / 4) * (bh - 6) + 6, lab, { z: 16, a: 'start', w: 700 }));
+        if (q > 4) kids.push(T(bx + bw / 2, 32, 'overflowing!', { z: 16, w: 700, f: '#c0392b' }));
       }
       // the pieces laid out on the right: bigger for halves, smaller for quarters
       const w = v.piece === 0 ? 62 : 44, h = v.piece === 0 ? 56 : 40;
