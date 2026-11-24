@@ -990,10 +990,10 @@ export const WIDGETS = {
       kids.push(cardAt(0, v.turn > 0 ? 0.9 : 1));
       if (v.turn > 0) kids.push(CIRC(cx, cy, rr, mixed, { w: 0, s: 'none', x: { opacity: 0.72 * (v.turn / 10) } }));
       kids.push(CIRC(cx, cy, 7, '#b9c2cf', { w: 2, s: '#6b7280' }), L(cx, cy + 8, cx, cy + 46, '#6b7280', 5));
-      kids.push(T(cx, 292, 'spun by hand', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(cx, 292, 'spun by hand', { z: 16, w: 600, f: '#6b5a8a' }));
       kids.push(T(370, 58, v.turn === 0 ? 'Standing still' : v.turn < 6 ? 'Turning slowly' : 'Spinning fast', { z: 19, a: 'start', f: v.turn < 6 ? INK : '#c2510e' }));
       kids.push(T(370, 96, `shape: ${shapeName}`, { z: 15, w: 600, a: 'start', f: '#6b5a8a' }), T(370, 122, `colours: ${ncols}`, { z: 15, w: 600, a: 'start', f: '#6b5a8a' }));
-      if (v.turn >= 6) kids.push(CIRC(384, 176, 22, mixed, { w: 2 }), T(384, 225, 'one mixed colour', { z: 13, w: 600 }));
+      if (v.turn >= 6) kids.push(CIRC(384, 176, 22, mixed, { w: 2 }), T(384, 225, 'one mixed colour', { z: 16, w: 600 }));
       const say = v.turn === 0 ? `The card is still, so you see its real shape: a ${shapeName} with ${ncols} colours on it.` : v.turn < 6 ? `The ${shapeName} card is turning. Its corners are beginning to smear and its ${ncols} colours are starting to blur.` : `Spinning fast, the ${shapeName} card's corners sweep round too quickly for your eyes to follow, so the card looks like a circle, and its ${ncols} colours blur into one mixed colour. The card itself has not changed shape or colour.`;
       return { kids, say };
     },
@@ -1008,15 +1008,16 @@ export const WIDGETS = {
       const beam = s('g', { transform: `rotate(${tilt} ${pivot} ${beamY})` }, [
         R(pivot - v.loadArm * px - 22, beamY - 9, (v.loadArm + v.effortArm) * px + 44, 18, '#d4a72c', { w: 3, r: 5 }),
         R(loadX - 24, beamY - 58, 48, 48, '#8338ec', { w: 3, r: 4 }),
-        T(loadX, beamY - 27, `${v.load} N`, { z: 14, f: '#fff' }),
+        T(loadX, beamY - 27, `${v.load} N`, { z: 16, f: '#fff' }),
         L(effortX, beamY - 96, effortX, beamY - 24, C.b, 6),
         s('polygon', { points: `${effortX},${beamY - 10} ${effortX - 11},${beamY - 34} ${effortX + 11},${beamY - 34}`, fill: C.b }),
-        T(effortX, beamY - 106, `effort ${v.effort} N`, { z: 13, f: '#2f5fd0' }),
+        T(effortX, beamY - 106, `effort ${v.effort} N`, { z: 16, f: '#2f5fd0' }),
       ]);
       const kids = [R(0, 0, W, H, '#fbf8ff', { w: 0 }), s('polygon', { points: `${pivot},${beamY + 4} ${pivot - 44},${beamY + 88} ${pivot + 44},${beamY + 88}`, fill: '#b9a7d6', stroke: INK, 'stroke-width': 3 }), beam];
-      const dim = (x0, x1, label, col) => [L(x0, 268, x1, 268, col, 2, { 'stroke-dasharray': '5 4' }), T((x0 + x1) / 2, 290, label, { z: 12, f: col })];
-      kids.push(...dim(loadX, pivot, `load arm ${v.loadArm} m`, '#6b45c8'), ...dim(pivot, effortX, `effort arm ${v.effortArm} m`, '#2f5fd0'));
-      kids.push(T(pivot, beamY + 104, 'fulcrum', { z: 12, f: '#6b5a8a' }), T(300, 32, balanced ? 'balanced' : diff > 0 ? 'the effort end goes down' : 'the load end stays down', { z: 18, f: balanced ? '#058a68' : '#c2510e' }));
+      const dim = (x0, x1, label, col, y0, y1) => [L(x0, y0, x1, y0, col, 2, { 'stroke-dasharray': '5 4' }), T((x0 + x1) / 2, y1, label, { z: 16, f: col })];
+      const midL = (loadX + pivot) / 2, midE = (pivot + effortX) / 2, tight = midE - midL < 128;
+      kids.push(...dim(loadX, pivot, `load arm ${v.loadArm} m`, '#6b45c8', tight ? 258 : 268, tight ? 278 : 290), ...dim(pivot, effortX, `effort arm ${v.effortArm} m`, '#2f5fd0', tight ? 288 : 268, tight ? 296 : 290));
+      kids.push(T(pivot, beamY + 104, 'fulcrum', { z: 16, f: '#6b5a8a' }), T(300, 32, balanced ? 'balanced' : diff > 0 ? 'the effort end goes down' : 'the load end stays down', { z: 18, f: balanced ? '#058a68' : '#c2510e' }));
       const say = `The ${v.load} N load, ${v.loadArm} m from the fulcrum, turns the beam with ${loadM} N m. Pushing ${v.effort} N at ${v.effortArm} m gives ${effortM} N m. ${balanced ? 'The two turning effects are equal, so the beam stays level.' : diff > 0 ? 'The effort turns harder, so the effort end goes down.' : 'The load turns harder, so the beam will not lift.'} To balance, push with ${num(need, 1)} N. Load divided by effort is ${num(ma, 2)}.`;
       return { kids, say };
     },
@@ -2209,18 +2210,18 @@ export const WIDGETS = {
         const tilt = Math.max(-1, Math.min(1, (q - 4) / 4)) * 12, a = (tilt * Math.PI) / 180, cx = 140, cy = 90, arm = 80, lx = cx - arm * Math.cos(a), ly = cy - arm * Math.sin(a), rx = cx + arm * Math.cos(a), ry = cy + arm * Math.sin(a);
         kids.push(s('polygon', { points: `${cx - 24},250 ${cx + 24},250 ${cx},${cy}`, fill: '#d8cff0', stroke: INK, 'stroke-width': 3 }), L(lx, ly, rx, ry, INK, 6));
         for (const [px, py] of [[lx, ly], [rx, ry]]) kids.push(L(px, py, px - 36, py + 52, INK, 1.5), L(px, py, px + 36, py + 52, INK, 1.5), s('path', { d: `M ${px - 48} ${py + 52} Q ${px} ${py + 76} ${px + 48} ${py + 52} Z`, fill: '#f3f0ff', stroke: INK, 'stroke-width': 3 }));
-        kids.push(R(lx - 28, ly + 22, 56, 30, '#8a6bd1', { w: 2.5, r: 5 }), T(lx, ly + 43, `1 ${ab}`, { z: 14, w: 700, f: '#fff' }));
+        kids.push(R(lx - 28, ly + 22, 56, 30, '#8a6bd1', { w: 2.5, r: 5 }), T(lx, ly + 43, `1 ${ab}`, { z: 16, w: 700, f: '#fff' }));
         for (let i = 0; i < count; i++) kids.push(R(rx - 34 + (i % 4) * 18, ry + 44 - Math.floor(i / 4) * 12, 16, 10, v.piece === 0 ? '#e2583e' : '#f2a33a', { w: 1.5, r: 2 }));
       } else {
         const bx = 55, by = 50, bw = 100, bh = 200, lvl = Math.min(q, 4) / 4;
         kids.push(R(bx, by, bw, bh, '#ffffff', { w: 3, r: 10 }), R(bx + 3, by + bh - 3 - lvl * (bh - 6), bw - 6, lvl * (bh - 6), '#7fbfff', { w: 0 }));
-        for (const [k, lab] of [[1, '¼'], [2, '½'], [3, '¾'], [4, '1 l']]) kids.push(L(bx + bw - 18, by + bh - 3 - (k / 4) * (bh - 6), bx + bw, by + bh - 3 - (k / 4) * (bh - 6), INK, 2), T(bx - 16, by + bh - 3 - (k / 4) * (bh - 6) + 5, lab, { z: 13, w: 700 }));
-        if (q > 4) kids.push(T(bx + bw / 2, by + 36, 'overflowing!', { z: 14, w: 700, f: '#c0392b' }));
+        for (const [k, lab] of [[1, '¼'], [2, '½'], [3, '¾'], [4, '1 l']]) kids.push(L(bx + bw - 18, by + bh - 3 - (k / 4) * (bh - 6), bx + bw, by + bh - 3 - (k / 4) * (bh - 6), INK, 2), T(bx - 16, by + bh - 3 - (k / 4) * (bh - 6) + 5, lab, { z: 16, w: 700 }));
+        if (q > 4) kids.push(T(bx + bw / 2, by + 36, 'overflowing!', { z: 16, w: 700, f: '#c0392b' }));
       }
       // the pieces laid out on the right: bigger for halves, smaller for quarters
       const w = v.piece === 0 ? 62 : 44, h = v.piece === 0 ? 56 : 40;
-      for (let i = 0; i < count; i++) { const x = 270 + (i % 4) * (w + 12), y = 60 + Math.floor(i / 4) * (h + 18); kids.push(R(x, y, w, h, v.piece === 0 ? '#e2583e' : '#f2a33a', { w: 2.5, r: 8 }), T(x + w / 2, y + h / 2 + 5, v.piece === 0 ? `½ ${ab}` : `¼ ${ab}`, { z: v.piece === 0 ? 17 : 14, w: 700, f: '#fff' })); }
-      kids.push(T(430, 226, words, { z: 18, w: 700, f: q === 4 ? '#058a68' : q > 4 ? '#c2510e' : INK }), T(430, 250, q < 4 ? `less than one ${unit}` : q === 4 ? `exactly one ${unit}` : `more than one ${unit}`, { z: 13, w: 600, f: '#6b5a8a' }));
+      for (let i = 0; i < count; i++) { const x = 270 + (i % 4) * (w + 12), y = 60 + Math.floor(i / 4) * (h + 18); kids.push(R(x, y, w, h, v.piece === 0 ? '#e2583e' : '#f2a33a', { w: 2.5, r: 8 }), T(x + w / 2, y + h / 2 + 5, v.piece === 0 ? `½ ${ab}` : `¼ ${ab}`, { z: v.piece === 0 ? 17 : 16, w: 700, f: '#fff' })); }
+      kids.push(T(430, 226, words, { z: 18, w: 700, f: q === 4 ? '#058a68' : q > 4 ? '#c2510e' : INK }), T(430, 250, q < 4 ? `less than one ${unit}` : q === 4 ? `exactly one ${unit}` : `more than one ${unit}`, { z: 16, w: 600, f: '#6b5a8a' }));
       const nm = v.piece === 0 ? `half-${unit}` : `quarter-${unit}`;
       return { kids, say: `${count} ${nm} ${kg ? 'packet' : 'vessel'}${count === 1 ? '' : 's'} make ${words}${q === 4 ? `: exactly one ${unit}` : `, which is ${q < 4 ? 'less' : 'more'} than one ${unit}`}. ${v.piece === 0 ? `Two half-${unit}s equal one ${unit}.` : `Four quarter-${unit}s equal one ${unit}.`}` };
     },
@@ -2419,15 +2420,15 @@ export const WIDGETS = {
       const kids = [L(30, 262, 570, 262, '#c9b8e8', 3)], ball = (x, y) => CIRC(x, y, 18, '#e2583e', { w: 3 });
       const words = ['above', 'on', 'under', 'near', 'in', 'out'], sent = ['The ball is above the table.', 'The ball is on the table.', 'The ball is under the table.', 'The ball is near the table.', 'The ball is in the basket (inside).', 'The ball is out of the basket (outside).'];
       if (v.place <= 3) {
-        kids.push(R(110, 170, 200, 14, '#c9a46a', { w: 3, r: 3 }), R(124, 184, 12, 78, '#c9a46a', { w: 3 }), R(284, 184, 12, 78, '#c9a46a', { w: 3 }), T(210, 292, 'table', { z: 12, w: 600, f: '#6b5a8a' }));
+        kids.push(R(110, 170, 200, 14, '#c9a46a', { w: 3, r: 3 }), R(124, 184, 12, 78, '#c9a46a', { w: 3 }), R(284, 184, 12, 78, '#c9a46a', { w: 3 }), T(210, 292, 'table', { z: 16, w: 600, f: '#6b5a8a' }));
         const pos = [[210, 96], [210, 152], [210, 240], [360, 242]][v.place];
         if (v.place === 0) kids.push(L(210, 120, 210, 160, '#6b45c8', 2, { 'stroke-dasharray': '4 4' }));
         kids.push(ball(...pos));
       } else {
-        kids.push(s('path', { d: 'M 130 196 L 150 262 L 270 262 L 290 196 Z', fill: '#e8d7a8', stroke: INK, 'stroke-width': 3 }), s('ellipse', { cx: 210, cy: 196, rx: 80, ry: 12, fill: 'none', stroke: INK, 'stroke-width': 3 }), T(210, 292, 'basket', { z: 12, w: 600, f: '#6b5a8a' }));
+        kids.push(s('path', { d: 'M 130 196 L 150 262 L 270 262 L 290 196 Z', fill: '#e8d7a8', stroke: INK, 'stroke-width': 3 }), s('ellipse', { cx: 210, cy: 196, rx: 80, ry: 12, fill: 'none', stroke: INK, 'stroke-width': 3 }), T(210, 292, 'basket', { z: 16, w: 600, f: '#6b5a8a' }));
         kids.push(v.place === 4 ? ball(210, 236) : ball(350, 242));
       }
-      kids.push(T(470, 120, words[v.place].toUpperCase(), { z: 40, w: 700, f: '#6b45c8' }), T(470, 170, v.place >= 4 ? 'say IN or OUT' : 'a position word', { z: 13, w: 600, f: '#6b5a8a' }));
+      kids.push(T(470, 120, words[v.place].toUpperCase(), { z: 40, w: 700, f: '#6b45c8' }), T(470, 170, v.place >= 4 ? 'say IN or OUT' : 'a position word', { z: 16, w: 600, f: '#6b5a8a' }));
       return { kids, say: sent[v.place] };
     },
   },
@@ -3510,10 +3511,10 @@ export const WIDGETS = {
         L(240, 95, 310, 95, INK, 5),
         s('polygon', { points: '320,95 304,85 304,105', fill: INK }),
         ...card(340, isContraction ? out : `${left}${right}`, '#e4f7ee', '#058a68'),
-        T(130, 156, isContraction ? 'two words' : 'the prefix, then the word', { z: 13, f: '#6b5a8a' }),
-        T(440, 156, isContraction ? 'one word, with an apostrophe' : meaning, { z: 13, f: '#6b5a8a' }),
+        T(130, 156, isContraction ? 'two words' : 'the prefix, then the word', { z: 16, f: '#6b5a8a' }),
+        T(440, 156, isContraction ? 'one word, with an apostrophe' : meaning, { z: 16, f: '#6b5a8a' }),
         T(30, 200, rule, { z: 20, a: 'start', w: 620, f: '#c2510e' }),
-        T(30, 238, isContraction ? `It means the same as "${left}".` : `"${left}${right}" means ${meaning}.`, { z: 13, a: 'start', w: 620, f: '#6b5a8a' }),
+        T(30, 238, isContraction ? `It means the same as "${left}".` : `"${left}${right}" means ${meaning}.`, { z: 16, a: 'start', w: 620, f: '#6b5a8a' }),
       ];
       const say = isContraction
         ? `${left} becomes ${out}, one word instead of two. ${rule}`
