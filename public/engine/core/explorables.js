@@ -2386,8 +2386,8 @@ export const WIDGETS = {
         const h = 50 + 22 * cap, w = 64 + cap * 4, filled = Math.min(v.poured, cap), inner = h - 8;
         kids.push(R(x0, base - h, w, h, '#ffffff', { w: 3, r: 10 }), R(x0 + 3, base - 4 - (filled / cap) * inner, w - 6, (filled / cap) * inner, col, { w: 0, x: { opacity: 0.85 } }));
         for (let k = 1; k < cap; k++) kids.push(L(x0, base - 4 - (k / cap) * inner, x0 + 10, base - 4 - (k / cap) * inner, INK, 1.5));
-        kids.push(T(x0 + w / 2, base + 22, label, { z: 13, w: 700 }), T(x0 + w / 2, base + 40, `holds ${cap}`, { z: 12, w: 600, f: '#6b5a8a' }));
-        if (v.poured > cap) kids.push(T(x0 + w / 2, base - h - 8, 'overflows!', { z: 13, w: 700, f: '#c0392b' }));
+        kids.push(T(x0 + w / 2, base + 22, label, { z: 16, w: 700 }), T(x0 + w / 2, base + 42, `holds ${cap}`, { z: 14, w: 600, f: '#6b5a8a' }));
+        if (v.poured > cap) kids.push(T(x0 + w / 2, base - h - 10, 'overflows!', { z: 15, w: 700, f: '#c0392b' }));
         return w;
       };
       bottle(4, 60, 'Raghu’s bottle', '#7fbfff'); bottle(v.friend, 250, 'friend’s bottle', '#5fc9b8');
@@ -2494,7 +2494,7 @@ export const WIDGETS = {
       kids.push(s('polygon', { points: `${cx - 20},230 ${cx + 20},230 ${cx},${cy + 3}`, fill: '#d8cff0', stroke: INK, 'stroke-width': 3 }), L(lx, ly, rx, ry, INK, 6));
       for (const [px, py, nm] of [[lx, ly, 'A'], [rx, ry, 'B']]) kids.push(L(px, py, px - 26, py + 34, INK, 1.5), L(px, py, px + 26, py + 34, INK, 1.5), s('path', { d: `M ${px - 34} ${py + 34} Q ${px} ${py + 52} ${px + 34} ${py + 34} Z`, fill: '#f3f0ff', stroke: INK, 'stroke-width': 3 }), T(px, py + 30, nm, { z: 13, w: 700 }));
       const verdict = v.a === v.b ? 'same volume, same mass' : `${v.a > v.b ? 'A' : 'B'} has more water: more volume and more mass`;
-      kids.push(T(440, 268, verdict, { z: 13, w: 700, f: v.a === v.b ? '#058a68' : '#c2510e' }), T(300, 22, 'each tumbler holds 250 mL', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(440, 268, verdict, { z: 15, w: 700, f: v.a === v.b ? '#058a68' : '#c2510e' }), T(300, 22, 'each tumbler holds 250 mL', { z: 14, w: 600, f: '#6b5a8a' }));
       return { kids, say: v.a === v.b ? `Both tumblers hold ${v.a} mL of water, so they have the same volume and about the same mass. The balance stays level.` : `Tumbler ${v.a > v.b ? 'A' : 'B'} holds more water (${Math.max(v.a, v.b)} mL against ${Math.min(v.a, v.b)} mL), so it takes up more space: more volume. It also has more mass, so it is the heavier one. Both tumblers have the same capacity (250 mL), but they do not hold the same amount.` };
     },
   },
@@ -2710,10 +2710,10 @@ export const WIDGETS = {
       const share = v.air / 100, heard = v.air > 0, loud = share * (v.hit / 100);
       const jx = 120, jy = 62, jw = 330, jh = 178, bx = jx + 74, by = jy + jh - 40;
       const jiggle = (v.hit / 100) * 2.4 * Math.sin(t * 26), kids = [R(0, 0, W, H, '#f4f7ff', { w: 0 })];
-      kids.push(R(jx, jy, jw, jh, '#fbfdff', { w: 5, r: 18 }), T(jx + jw / 2, jy - 12, 'glass jar', { z: 13, f: '#6b5a8a' }));
+      kids.push(R(jx, jy, jw, jh, '#fbfdff', { w: 5, r: 18 }), T(jx + jw / 2, jy - 14, 'glass jar', { z: 16, f: '#6b5a8a' }));
       const bellX = bx + jiggle;
       kids.push(s('path', { d: `M ${bellX - 28} ${by} Q ${bellX - 26} ${by - 52} ${bellX} ${by - 58} Q ${bellX + 26} ${by - 52} ${bellX + 28} ${by} Z`, fill: C.y, stroke: INK, 'stroke-width': 3 }));
-      kids.push(T(bellX, by - 70, 'bell', { z: 13, f: '#8a6a2a' }), L(bellX, by - 58, bellX, by - 72, INK, 4), CIRC(bellX, by - 76, 6, 'none', { w: 3 }), CIRC(bellX, by + 7, 7, INK));
+      kids.push(T(bellX, by - 72, 'bell', { z: 16, f: '#8a6a2a' }), L(bellX, by - 58, bellX, by - 72, INK, 4), CIRC(bellX, by - 76, 6, 'none', { w: 3 }), CIRC(bellX, by + 7, 7, INK));
       if (heard) for (let k = 0; k < 3; k++) {
         const rr = 34 + k * 22 + 6 * Math.sin(t * 5 - k);
         kids.push(CIRC(bellX, by - 30, rr, 'none', { s: C.o, w: 3, x: { opacity: 0.15 + 0.7 * loud } }));
@@ -2727,7 +2727,7 @@ export const WIDGETS = {
       const ex = 536, ey = 170;
       kids.push(s('path', { d: `M ${ex - 18} ${ey - 26} Q ${ex - 34} ${ey} ${ex - 18} ${ey + 26}`, fill: 'none', stroke: INK, 'stroke-width': 5 }));
       kids.push(s('path', { d: `M ${ex - 10} ${ey - 16} Q ${ex - 20} ${ey} ${ex - 10} ${ey + 16}`, fill: 'none', stroke: C.p, 'stroke-width': 4 }));
-      kids.push(T(ex - 4, ey + 46, 'ear', { z: 13, f: '#6b5a8a' }));
+      kids.push(T(ex - 4, ey + 48, 'ear', { z: 16, f: '#6b5a8a' }));
       if (heard) for (let k = 0; k < 2; k++) {
         const wx = 466 + k * 16;
         kids.push(s('path', { d: `M ${wx} ${ey - 18} Q ${wx + 10} ${ey} ${wx} ${ey + 18}`, fill: 'none', stroke: C.o, 'stroke-width': 3, opacity: 0.2 + 0.7 * loud }));
