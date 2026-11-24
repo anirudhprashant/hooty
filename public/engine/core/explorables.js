@@ -1633,12 +1633,12 @@ export const WIDGETS = {
       // the rib cage over the lungs, which it protects
       for (let r = 0; r < 5; r++) kids.push(s('path', { d: `M 80 ${165 + r * 22} Q 170 ${150 + r * 22} 260 ${165 + r * 22}`, fill: 'none', stroke: '#b9a27a', 'stroke-width': 4, opacity: 0.55 }));
       kids.push(s('path', { d: 'M 170 150 L 130 185 M 170 150 L 210 185 M 130 185 L 115 215 M 130 185 L 140 225 M 210 185 L 225 215 M 210 185 L 200 225', fill: 'none', stroke: v.step === 4 ? C.o : '#a58fcf', 'stroke-width': 5, 'stroke-linecap': 'round' }));
-      kids.push(CIRC(470, 150, 92, '#fff', { w: 3, s: v.step === 5 ? C.o : '#c9b8e8' }), T(470, 52, 'zoom: alveoli', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(CIRC(470, 150, 92, '#fff', { w: 3, s: v.step === 5 ? C.o : '#c9b8e8' }), T(470, 44, 'zoom: alveoli', { z: 16, w: 600, f: '#6b5a8a' }));
       for (let k = 0; k < 7; k++) { const a = (k / 7) * Math.PI * 2; kids.push(CIRC(470 + 46 * Math.cos(a), 150 + 46 * Math.sin(a), 22, '#ffd2c2', { w: 2.5 })); }
-      if (v.step === 5) kids.push(T(470, 262, 'O₂ → blood', { z: 13, w: 700, f: '#c0392b' }), T(470, 280, 'CO₂ ← blood', { z: 13, w: 700, f: '#1f63d9' }));
+      if (v.step === 5) kids.push(T(470, 262, 'O₂ → blood', { z: 16, w: 700, f: '#c0392b' }), T(470, 284, 'CO₂ ← blood', { z: 16, w: 700, f: '#1f63d9' }));
       if (v.step === 6) kids.push(L(200, 40, 280, 20, C.b, 4), T(286, 20, 'out', { a: 'start', z: 14, f: '#1f63d9' }));
       const say = ['', 'Air comes in through the two nostrils.', 'In the nasal passages, tiny hair and mucus trap dust and dirt from the air.', 'The air travels down the windpipe.', 'The windpipe divides into branches, one into each lung. The rib cage protects the lungs.', 'The branches end in tiny balloon-like sacs called alveoli. Here oxygen passes into the blood and carbon dioxide passes out of it.', 'The air, now carrying more carbon dioxide, is breathed out.'][v.step];
-      kids.push(T(300, 290, `Step ${v.step} of 6`, { z: 13, w: 600, f: '#6b5a8a' }));
+      kids.push(T(300, 288, `Step ${v.step} of 6`, { z: 16, w: 600, f: '#6b5a8a' }));
       return { kids, say };
     },
   },
