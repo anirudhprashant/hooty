@@ -214,10 +214,107 @@ def smoke():
     if bad: sys.exit(f'LIVE CHECK FAILED: {len(bad)} of {n} missing, e.g. {bad[:5]}')
     say(f'live check ok: {n} files fetched, {len(idx["packs"])} books')
 
+def finish_lessons():
+    """One English lesson and one Hindi lesson that between them reach every screen of a lesson, including the finish.
+
+    Chosen from the packs being published, not hard-coded: a lesson that uses a glossary word and has enough activities
+    for the revision cards to appear is the lesson that would have caught the finish screen throwing on 24 Nov.
+    """
+    picks, seen_lang = [], set()
+    try:
+        idx = json.load(open(f'{PUB}/content/index.json'))
+    except Exception:
+        return picks
+    for p in idx.get('packs') or []:
+        lang = p.get('language') or 'en'
+        if lang in seen_lang:
+            continue
+        try:
+            d = json.load(open(f"{PUB}/content/packs/{p['id']}/pack.json"))
+        except Exception:
+            continue
+        try:
+            g = json.load(open(f"{PUB}/content/packs/{p['id']}/glossary.json"))
+        except Exception:
+            g = {}
+        terms = [t.get('term') for t in g.get('terms') or [] if t.get('term')]
+        plain = None
+        for u in d.get('units') or []:
+            for c in u.get('chapters') or []:
+                for l in c.get('lessons') or []:
+                    acts = l.get('activities') or []
+                    if l.get('isPractice') or len(acts) < 6 or not l.get('id'):
+                        continue
+                    text = ' '.join(str(a.get(k) or '') for a in acts for k in ('title', 'body', 'prompt', 'explanation'))
+                    if terms and any(t in text for t in terms):
+                        picks.append(f"{p['id']}/{l['id']}")
+                        seen_lang.add(lang)
+                        break
+                    plain = plain or f"{p['id']}/{l['id']}"
+                if lang in seen_lang:
+                    break
+            if lang in seen_lang:
+                break
+        if lang not in seen_lang and plain:
+            picks.append(plain)
+            seen_lang.add(lang)
+    return picks
+
+
+def finish_check():
+    """Play the lessons through in a real browser before the copy goes live and refuse to publish if one cannot finish.
+
+    Nothing else in a publish looks at a screen: the live check fetches files and the smoke test opens the app, and on
+    24 Nov a helper declared in the wrong scope threw a ReferenceError on the finish screen of every lesson for half an
+    hour while every check stayed green. A child saw the lesson end with no celebration and no way forward.
+    """
+    node = shutil.which('node')
+    if not node:
+        say('finish check skipped: node is not installed here')
+        return
+    picks = finish_lessons()
+    if not picks:
+        say('finish check skipped: no lesson to play')
+        return
+    import socket
+    sock = socket.socket()
+    sock.bind(('127.0.0.1', 0))
+    port = sock.getsockname()[1]
+    sock.close()
+    # The copy that is about to be uploaded, served from public/ so the check tests what the upload carries.
+    srv = subprocess.Popen([sys.executable, '-m', 'http.server', str(port), '--bind', '127.0.0.1'],
+                           cwd=PUB, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        for _ in range(40):
+            try:
+                socket.create_connection(('127.0.0.1', port), timeout=0.5).close()
+                break
+            except OSError:
+                time.sleep(0.1)
+        for pick in picks:
+            url = f'http://127.0.0.1:{port}/?x={random.randint(1, 10**6)}#/lesson/{pick}'
+            try:
+                r = subprocess.run([node, f'{HERE}/play-lesson.mjs', url], cwd=ROOT,
+                                   capture_output=True, text=True, timeout=420)
+                out = (r.stdout or '') + (r.stderr or '')
+                if r.returncode != 0:
+                    tail = '\n'.join(out.strip().splitlines()[-9:])
+                    sys.exit(f'PUBLISH REFUSED: {pick} did not play through\n{tail}')
+                steps = re.search(r'steps=(\d+)', out)
+                say(f'finish screen ok: {pick}' + (f' ({steps.group(1)} steps)' if steps else ''))
+            except subprocess.TimeoutExpired:
+                sys.exit(f'PUBLISH REFUSED: {pick} did not finish playing within 7 minutes')
+    finally:
+        srv.terminate()
+        try:
+            srv.wait(timeout=5)
+        except Exception:
+            srv.kill()
+
 if '--no-build' not in args:
     build()
     if '--audio' in args and '--no-audio' not in args: audio()   # recording is a laptop job: opt in with --audio
-thumbs(); stamp(); upload(); smoke()
+thumbs(); stamp(); finish_check(); upload(); smoke()
 
 def push():
     """What just went live also goes to GitHub. A failed push never fails a publish."""
