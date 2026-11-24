@@ -37324,7 +37324,7 @@
       {
        "id": "science-g9-ch11-l2",
        "title": "Vegetative Propagation in Agriculture",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -37399,6 +37399,36 @@
            "p": 210
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch11-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reproduce",
+         "params": {},
+         "title": "One parent, many copies",
+         "tasks": [
+          {
+           "say": "Split one amoeba into two identical cells.",
+           "when": "mode == 0 and grown >= 8",
+           "then": "Binary fission: the parent copies its nucleus, then divides. Two amoebas, one parent."
+          },
+          {
+           "say": "Grow a bud on the yeast cell and let it break off.",
+           "when": "mode == 1 and grown >= 8",
+           "then": "Budding: the bud grows out of the parent and then lives on its own, as a new yeast cell."
+          },
+          {
+           "say": "Break the green thread into pieces that can each grow.",
+           "when": "mode == 2 and grown >= 8",
+           "then": "Fragmentation: each broken piece of spirogyra grows into a new thread."
+          }
+         ],
+         "takeaway": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent.",
+         "explanation": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent."
         },
         {
          "type": "worked",
@@ -37805,7 +37835,7 @@
       {
        "id": "science-g9-ch11-l3",
        "title": "Budding, Fungi and Spores",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -37868,6 +37898,36 @@
            "p": 212
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch11-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reproduce",
+         "params": {},
+         "title": "One parent, many copies",
+         "tasks": [
+          {
+           "say": "Split one amoeba into two identical cells.",
+           "when": "mode == 0 and grown >= 8",
+           "then": "Binary fission: the parent copies its nucleus, then divides. Two amoebas, one parent."
+          },
+          {
+           "say": "Grow a bud on the yeast cell and let it break off.",
+           "when": "mode == 1 and grown >= 8",
+           "then": "Budding: the bud grows out of the parent and then lives on its own, as a new yeast cell."
+          },
+          {
+           "say": "Break the green thread into pieces that can each grow.",
+           "when": "mode == 2 and grown >= 8",
+           "then": "Fragmentation: each broken piece of spirogyra grows into a new thread."
+          }
+         ],
+         "takeaway": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent.",
+         "explanation": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent."
         },
         {
          "type": "worked",
