@@ -3476,6 +3476,44 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  arcangle: {
+    subject: 'maths', about: 'A chord AB of a circle with the angle it makes at the centre, and a point C on the far arc showing the angle there. The angle at the centre is twice the angle at C, and a diameter makes a right angle. A second view draws four points on one circle and shows opposite angles of a cyclic quadrilateral adding to 180. For circles, chord, arc, angle at the centre, angle at the circumference, twice, diameter, semicircle, concyclic, cyclic quadrilateral, opposite angles.',
+    sliders: [['a', 'Angle at the centre (degrees)', 40, 180, 10, 120], ['c', 'Move point C or a corner', 0, 100, 5, 50], ['mode', 'Two angles / Four-sided shape', 0, 1, 1, 0]],
+    draw(v) {
+      const cx = 300, cy = 150, rr = 100;
+      const P = (ang) => ({ x: cx + rr * Math.cos(rad(ang)), y: cy - rr * Math.sin(rad(ang)) });
+      const kids = [CIRC(cx, cy, rr, 'none', { s: '#cfc6e2', w: 3 }), CIRC(cx, cy, 5, INK)];
+      if (v.mode === 0) {
+        const half = v.a / 2, ptA = P(90 + half), ptB = P(90 - half);
+        const cAng = 90 - half - (360 - v.a) * (0.05 + 0.9 * v.c / 100), ptC = P(cAng);
+        kids.push(s('path', { d: `${arc(cx, cy, 38, 90 - half, 90 + half)} L ${cx} ${cy} Z`, fill: C.y, stroke: INK, 'stroke-width': 2, opacity: 0.7 }));
+        kids.push(L(ptA.x, ptA.y, ptB.x, ptB.y, INK, 4));
+        kids.push(L(cx, cy, ptA.x, ptA.y, '#8a80a8', 3), L(cx, cy, ptB.x, ptB.y, '#8a80a8', 3));
+        kids.push(L(ptC.x, ptC.y, ptA.x, ptA.y, C.o, 3), L(ptC.x, ptC.y, ptB.x, ptB.y, C.o, 3));
+        kids.push(CIRC(ptA.x, ptA.y, 6, C.b), CIRC(ptB.x, ptB.y, 6, C.b), CIRC(ptC.x, ptC.y, 7, C.o));
+        kids.push(T(ptA.x + 16, ptA.y - 6, 'A', { z: 17 }), T(ptB.x - 16, ptB.y - 6, 'B', { z: 17 }), T(ptC.x, ptC.y + 26, 'C', { z: 17, f: '#d9531e' }));
+        kids.push(T(cx, cy - 14, `${v.a}°`, { z: 15, f: '#8a6a00' }), T(ptC.x, ptC.y - 16, `${half}°`, { z: 15, f: '#d9531e' }));
+        kids.push(T(cx, cy + 24, 'centre', { z: 11, w: 600, f: '#6b5a8a' }));
+        kids.push(R(96, 262, 408, 30, '#eef7ff', { s: '#b8cde8', w: 1, r: 8 }));
+        kids.push(T(300, 282, `angle at centre ${v.a}°, angle at C ${half}°`, { z: 14, w: 700, f: '#2a4a6a' }));
+        return { kids, say: `The chord AB makes ${v.a} degrees at the centre. From point C on the far arc it makes ${half} degrees, which is always half. Move C along the arc and watch the angle stay the same.` };
+      }
+      const angAt = (Q, U, V) => {
+        const u1 = { x: U.x - Q.x, y: U.y - Q.y }, u2 = { x: V.x - Q.x, y: V.y - Q.y };
+        const d = (u1.x * u2.x + u1.y * u2.y) / (Math.hypot(u1.x, u1.y) * Math.hypot(u2.x, u2.y));
+        return (Math.acos(Math.max(-1, Math.min(1, d))) * 180) / Math.PI;
+      };
+      const p1 = P(20), p2 = P(60 + v.c * 0.8), p3 = P(200), p4 = P(290);
+      const a1 = angAt(p1, p4, p2), a2 = angAt(p2, p1, p3), a3 = angAt(p3, p2, p4), a4 = angAt(p4, p3, p1);
+      kids.push(s('polygon', { points: [p1, p2, p3, p4].map((p) => `${p.x},${p.y}`).join(' '), fill: C.sky, 'fill-opacity': 0.3, stroke: INK, 'stroke-width': 4, 'stroke-linejoin': 'round' }));
+      const put = (p, txt, col) => { const ux = (p.x - cx) / rr, uy = (p.y - cy) / rr; kids.push(CIRC(p.x, p.y, 6, col)); kids.push(T(p.x - ux * 26, p.y - uy * 26 + 6, txt, { z: 15, f: col })); };
+      put(p1, `${Math.round(a1)}°`, '#d9531e'); put(p2, `${Math.round(a2)}°`, '#3a86ff'); put(p3, `${Math.round(a3)}°`, '#d9531e'); put(p4, `${Math.round(a4)}°`, '#3a86ff');
+      const s13 = Math.round(a1 + a3), s24 = Math.round(a2 + a4);
+      kids.push(R(96, 262, 408, 30, '#eef7ff', { s: '#b8cde8', w: 1, r: 8 }));
+      kids.push(T(300, 282, `opposite pairs: ${Math.round(a1)} + ${Math.round(a3)} = ${s13}°, ${Math.round(a2)} + ${Math.round(a4)} = ${s24}°`, { z: 13, w: 700, f: '#2a4a6a' }));
+      return { kids, say: `Four points sit on one circle. The orange angles are opposite each other and add to ${s13} degrees. The blue angles are the other opposite pair and add to ${s24} degrees. Both pairs always add to 180.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

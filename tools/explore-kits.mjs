@@ -1406,6 +1406,17 @@ export const KITS = {
       { say: 'Push copper out of copper sulphate solution with a more reactive metal.', when: 'metal == 2 and liquid == 3', then: 'Zinc is more reactive than copper, so it takes the copper\u2019s place: the blue fades and a brown coat of copper forms.' },
     ],
   },
+  arcangle: {
+    grades: [8, 10], subject: 'maths',
+    match: [/\barcs?\b.*\bangles?\b/, /subtend/, /cyclic quadrilateral/, /concyclic/],
+    title: 'Angle at the centre, angle on the circle', takeaway: 'The angle a chord makes at the centre is twice the angle it makes at any point on the far arc, a diameter makes a right angle, and opposite angles of a cyclic quadrilateral add to 180 degrees.',
+    tasks: [
+      { say: 'Make the angle at the centre a right angle (90 degrees).', when: 'mode == 0 and a == 90', then: 'The angle at C is 45 degrees, half of 90.' },
+      { say: 'Make AB a diameter, with the angle at the centre 180 degrees.', when: 'mode == 0 and a == 180', then: 'The angle at C is 90 degrees: a diameter makes a right angle at the circle.' },
+      { say: 'Move C right across to the other side of the big arc.', when: 'mode == 0 and c >= 85', then: 'The angle at C is still half the angle at the centre: every point on the same arc sees AB at the same angle.' },
+      { say: 'Switch to the four-sided shape and look at the opposite angles.', when: 'mode == 1', then: 'The two pairs of opposite angles each add up to 180 degrees.' },
+    ],
+  },
 };
 
 // Dates in the lesson's own facts, as timeline events: "around 320 BCE", "in 1857", "the 3rd century BCE".
