@@ -1529,9 +1529,9 @@ export const WIDGETS = {
       for (const [k, [name, per, r, size, col]] of P.entries()) {
         const a = (2 * Math.PI * v.days) / per + (start[k] * Math.PI) / 180, x = cx + r * Math.cos(a), y = cy + r * 0.44 * Math.sin(a);
         kids.push(CIRC(x, y, size, col, { s: '#0e1233', w: 1.5 }));
-        if (r >= 72) kids.push(T(x, y - size - 5, name, { z: 11, w: 600, f: '#dfe3ff' }));
+        if (r >= 72) kids.push(T(x, y - size - 5, name, { z: 16, w: 600, f: '#dfe3ff' }));
       }
-      kids.push(T(12, 22, `${v.days} days = ${num(v.days / 365, 1)} Earth year${num(v.days / 365, 1) === '1' ? '' : 's'}`, { a: 'start', z: 15, f: '#ffffff' }), T(588, 290, 'distances not to scale', { a: 'end', z: 11, w: 600, f: '#9aa3d6' }));
+      kids.push(T(12, 22, `${v.days} days = ${num(v.days / 365, 1)} Earth year${num(v.days / 365, 1) === '1' ? '' : 's'}`, { a: 'start', z: 15, f: '#ffffff' }), T(588, 290, 'distances not to scale', { a: 'end', z: 16, w: 600, f: '#9aa3d6' }));
       const laps = (per) => { const n = num(v.days / per, 1); return n === '1' ? 'once' : n === '0' ? '0 times' : `${n} times`; };
       return { kids, say: `${v.days} days have passed. Earth has gone round the Sun ${laps(365)}, Mercury ${laps(88)}, Mars ${laps(687)} and Jupiter ${laps(4333)}. The further a planet is from the Sun, the longer its year.` };
     },
