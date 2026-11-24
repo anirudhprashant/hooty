@@ -760,6 +760,9 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
   const boss = it.kind === 'boss';
   const title = boss ? (it.lesson.title || t('bossChallenge')) : it.lesson.title;
   const nQuestions = questionCount(it.lesson);
+  // A lesson with something to play says so on the trail: a child choosing between two lessons had no way to know which
+  // one had a simulation in it, and the trail is where that choice is made.
+  const hasTry = (it.lesson.activities || []).some((a) => a.type === 'explore');
   const questionsWord = t(nQuestions === 1 ? 'question' : 'questions');
   const savedAt = !rec && activeLearner()?.inProgress?.[it.id];
   // A chapter test is 18 cards and is not a quick five minutes; its own line says so instead of a minute count.
@@ -770,12 +773,12 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
       ? `${t('branchTest')} · ${nQuestions} ${questionsWord}`
       : savedAt
       ? `${t('startedWord')} · ${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`
-      : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`;
+      : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}${hasTry ? ` · ${t('tryItYourself')}` : ''}`;
   // A lesson the child started and left: it keeps its place, and says so.
   const started = !rec && !!activeLearner()?.inProgress?.[it.id];
   const glyph = rec ? icon('check', { size: 40 }) : boss ? icon('crown', { size: 40 }) : isCurrent ? icon('play', { size: 44 }) : icon('star', { size: 40 });
   const node = el('button', {
-    class: `node${rec ? ' node--done' : ''}${started ? ' node--started' : ''}${boss ? ' node--boss' : ''}${isCurrent ? ' node--current' : ''}`,
+    class: `node${rec ? ' node--done' : ''}${started ? ' node--started' : ''}${boss ? ' node--boss' : ''}${isCurrent ? ' node--current' : ''}${hasTry ? ' node--try' : ''}`,
     type: 'button', style: { gridColumn: String(cell.col + 1), gridRow: String(cell.row + 1) },
   }, [
     el('span', { class: 'node__badge', 'aria-hidden': 'true' }, [glyph]),
