@@ -3,6 +3,17 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  germs: {
+    // The Class 8 health chapter is the home of this one, but the same idea is met in Class 7 (hygiene) and Class 9 (why
+    // we fall ill). The match asks for disease and hygiene words, never "health" alone, which is too broad.
+    grades: [6, 9], subject: 'science',
+    match: [/communicable/, /diseases?/, /germs?/, /hand ?wash/, /hygiene/, /pathogens?/, /prevention of disease/, /clean water/, /vaccin/, /sanitation/],
+    title: 'Watch an illness spread', takeaway: 'A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner.',
+    tasks: [
+      { say: 'Let the illness reach most of the group.', when: 'wash <= 10 and day >= 12', then: 'With almost nobody washing, the germs pass from neighbour to neighbour until nearly the whole group has been ill.' },
+      { say: 'Break the chain: make most people wash their hands.', when: 'wash >= 70 and day >= 12', then: 'Most people wash their hands, so the illness keeps meeting people who do not take it in and stops after a few.' },
+    ],
+  },
   levels: {
     // The same idea is met in Class 7 (plants and their parts) and Class 9 (tissues). The match leans on the tissue
     // names, which are specific to the chapter, plus the plain words organ and organ system.

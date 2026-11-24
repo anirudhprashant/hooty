@@ -44,6 +44,66 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
+  germs: {
+    subject: 'science', about: 'A room of a hundred and forty-four people, three of them ill: move the day forward and the illness passes from neighbour to neighbour by contact. People who wash their hands do not pick it up, so the more who wash, the sooner the chain breaks. For communicable diseases, how they spread, and how handwashing and cleanliness prevent them.',
+    sliders: [['wash', 'People who wash their hands (in 100)', 0, 100, 1, 0], ['day', 'Day', 0, 14, 1, 0]],
+    draw(v) {
+      const wash = Math.max(0, Math.min(100, v.wash));
+      const day = Math.max(0, Math.min(14, v.day));
+      const N = 12, CELL = 21, RAD = 8.2;
+      const x0 = (W - N * CELL) / 2 + CELL / 2 - 9, y0 = 26;
+      const kids = [R(0, 0, W, H, '#fbfdff', { w: 0 })];
+      // The three who start ill, spread out so the illness has room to travel from more than one corner.
+      const seeds = [0, 6 * N + 6, N * N - 1];
+      // Who washes: a seeded shuffle so the room looks the same every time, and a higher count only adds washers.
+      let seedNo = 7;
+      const rand = () => { seedNo = (seedNo + 0x6d2b79f5) >>> 0; let t = seedNo; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+      const pool = [...Array(N * N).keys()].filter((i) => !seeds.includes(i));
+      for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+      const washers = new Set(pool.slice(0, Math.round((wash / 100) * (N * N - seeds.length))));
+      // The illness passes by contact to the four neighbours; a person who washes does not take it in.
+      const state = new Array(N * N).fill(0);   // 0 well, 1 ill now, 2 was ill
+      const since = new Array(N * N).fill(-1);
+      for (const s of seeds) { state[s] = 1; since[s] = 0; }
+      for (let d = 1; d <= day; d++) {
+        for (let i = 0; i < N * N; i++) if (state[i] === 1 && d - since[i] >= 5) state[i] = 2;
+        for (let i = 0; i < N * N; i++) {
+          if (state[i] !== 1 || d - since[i] >= 5) continue;
+          const x = i % N, y = (i / N) | 0;
+          for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
+            const nx = x + dx, ny = y + dy;
+            if (nx < 0 || nx > N - 1 || ny < 0 || ny > N - 1) continue;
+            const j = ny * N + nx;
+            if (state[j] === 0 && !washers.has(j)) { state[j] = 1; since[j] = d; }
+          }
+        }
+      }
+      const ill = state.filter((s) => s === 1).length;
+      const ever = state.filter((s) => s > 0).length;
+      for (let i = 0; i < N * N; i++) {
+        const cx = x0 + (i % N) * CELL, cy = y0 + ((i / N) | 0) * CELL;
+        const washed = washers.has(i);
+        const fill = washed ? '#8ecae6' : state[i] === 1 ? '#ff7a59' : state[i] === 2 ? '#f8d3c8' : '#d5dde1';
+        kids.push(CIRC(cx, cy, RAD, fill, { w: 1.6, s: washed ? '#3a86ff' : '#9aa6ad' }));
+        if (state[i] === 1) kids.push(CIRC(cx, cy, 2.8, '#7a1f0f', { w: 0 }));
+      }
+      kids.push(T(300, 16, `day ${day}: ${ill} ill now, ${ever} of ${N * N} have been ill`, { z: 13, f: '#2a1a4a' }));
+      const legend = [['washes hands', '#8ecae6', '#3a86ff'], ['ill now', '#ff7a59', '#9aa6ad'], ['was ill', '#f8d3c8', '#9aa6ad'], ['no wash, well', '#d5dde1', '#9aa6ad']];
+      legend.forEach(([label, fill, stroke], i) => {
+        const lx = 66 + i * 128, ly = 288;
+        kids.push(CIRC(lx, ly, 6, fill, { w: 1.6, s: stroke }));
+        kids.push(T(lx + 10, ly + 4, label, { z: 11, a: 'start', f: '#4a5a6a', w: 600 }));
+      });
+      const say = day === 0
+        ? 'Three of these people are ill. The germs of a communicable disease leave a sick person by contact, water, food or air, so move the day forward and watch who catches it.'
+        : wash <= 10
+          ? `By day ${day}, ${ever} of the ${N * N} have been ill. Hardly anyone washes their hands, so the germs move from neighbour to neighbour almost without stopping.`
+          : wash >= 70
+            ? `By day ${day}, only ${ever} of the ${N * N} have been ill. Most people here wash their hands, so the germs keep meeting people who do not take them in, and the chain breaks.`
+            : `By day ${day}, ${ever} of the ${N * N} have been ill. Each person who washes their hands breaks one link, so the illness spreads more slowly and stops sooner.`;
+      return { kids, say };
+    },
+  },
   levels: {
     subject: 'science', about: 'The levels of organisation in a plant, one step at a time: a cell, a group of similar cells that is a tissue, an organ such as a leaf, an organ system such as the shoot, and the whole plant as an organism. For tissues, organs, organ systems, cells working together, and plant tissues such as the epidermis, xylem and phloem.',
     sliders: [['stage', 'Climb from one cell to the whole plant', 0, 4, 1, 0]],
@@ -63,7 +123,7 @@ export const WIDGETS = {
       panel(0, (cx, cy) => {
         kids.push(R(cx - 26, cy - 26, 52, 52, '#e7f5d9', { w: 4, s: '#3f7d3a', r: 4 }));
         kids.push(CIRC(cx + 4, cy - 2, 8, '#3a86ff', { w: 1.5 }));
-        kids.push(T(cx - 8, cy + 16, 'wall', { z: 9, f: '#3f7d3a' }));
+        kids.push(T(cx, cy + 40, 'wall', { z: 10, f: '#3f7d3a' }));
       });
       // 2. a tissue: similar cells packed together
       panel(1, (cx, cy) => {

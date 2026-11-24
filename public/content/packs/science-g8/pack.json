@@ -8447,7 +8447,7 @@
       {
        "id": "science-g8-ch3-l4",
        "title": "Signs, Symptoms and Types of Disease",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -8506,6 +8506,31 @@
            "p": 32
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch3-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "germs",
+         "params": {},
+         "title": "Watch an illness spread",
+         "tasks": [
+          {
+           "say": "Let the illness reach most of the group.",
+           "when": "wash <= 10 and day >= 12",
+           "then": "With almost nobody washing, the germs pass from neighbour to neighbour until nearly the whole group has been ill."
+          },
+          {
+           "say": "Break the chain: make most people wash their hands.",
+           "when": "wash >= 70 and day >= 12",
+           "then": "Most people wash their hands, so the illness keeps meeting people who do not take it in and stops after a few."
+          }
+         ],
+         "takeaway": "A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner.",
+         "explanation": "A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner."
         },
         {
          "type": "worked",
@@ -8914,7 +8939,7 @@
       {
        "id": "science-g8-ch3-l5",
        "title": "How Communicable Diseases Spread",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -8973,6 +8998,31 @@
            "p": 33
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch3-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "germs",
+         "params": {},
+         "title": "Watch an illness spread",
+         "tasks": [
+          {
+           "say": "Let the illness reach most of the group.",
+           "when": "wash <= 10 and day >= 12",
+           "then": "With almost nobody washing, the germs pass from neighbour to neighbour until nearly the whole group has been ill."
+          },
+          {
+           "say": "Break the chain: make most people wash their hands.",
+           "when": "wash >= 70 and day >= 12",
+           "then": "Most people wash their hands, so the illness keeps meeting people who do not take it in and stops after a few."
+          }
+         ],
+         "takeaway": "A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner.",
+         "explanation": "A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner."
         },
         {
          "type": "worked",
