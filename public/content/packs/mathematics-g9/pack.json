@@ -29215,7 +29215,7 @@
       {
        "id": "mathematics-g9-ch5-l5",
        "title": "Arcs and the Angles They Subtend",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -29323,6 +29323,41 @@
           "22 (generated problem)",
           "40 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch5-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "arcangle",
+         "params": {},
+         "title": "Angle at the centre, angle on the circle",
+         "tasks": [
+          {
+           "say": "Make the angle at the centre a right angle (90 degrees).",
+           "when": "mode == 0 and a == 90",
+           "then": "The angle at C is 45 degrees, half of 90."
+          },
+          {
+           "say": "Make AB a diameter, with the angle at the centre 180 degrees.",
+           "when": "mode == 0 and a == 180",
+           "then": "The angle at C is 90 degrees: a diameter makes a right angle at the circle."
+          },
+          {
+           "say": "Move C right across to the other side of the big arc.",
+           "when": "mode == 0 and c >= 85",
+           "then": "The angle at C is still half the angle at the centre: every point on the same arc sees AB at the same angle."
+          },
+          {
+           "say": "Switch to the four-sided shape and look at the opposite angles.",
+           "when": "mode == 1",
+           "then": "The two pairs of opposite angles each add up to 180 degrees."
+          }
+         ],
+         "takeaway": "The angle a chord makes at the centre is twice the angle it makes at any point on the far arc, a diameter makes a right angle, and opposite angles of a cyclic quadrilateral add to 180 degrees.",
+         "explanation": "The angle a chord makes at the centre is twice the angle it makes at any point on the far arc, a diameter makes a right angle, and opposite angles of a cyclic quadrilateral add to 180 degrees."
         },
         {
          "type": "worked",
@@ -30161,7 +30196,7 @@
       {
        "id": "mathematics-g9-ch5-l6",
        "title": "Concyclic Points and Cyclic Quadrilaterals",
-       "estimatedMinutes": 13,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -30302,6 +30337,41 @@
           "300 (generated problem)",
           "60 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g9-ch5-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "arcangle",
+         "params": {},
+         "title": "Angle at the centre, angle on the circle",
+         "tasks": [
+          {
+           "say": "Make the angle at the centre a right angle (90 degrees).",
+           "when": "mode == 0 and a == 90",
+           "then": "The angle at C is 45 degrees, half of 90."
+          },
+          {
+           "say": "Make AB a diameter, with the angle at the centre 180 degrees.",
+           "when": "mode == 0 and a == 180",
+           "then": "The angle at C is 90 degrees: a diameter makes a right angle at the circle."
+          },
+          {
+           "say": "Move C right across to the other side of the big arc.",
+           "when": "mode == 0 and c >= 85",
+           "then": "The angle at C is still half the angle at the centre: every point on the same arc sees AB at the same angle."
+          },
+          {
+           "say": "Switch to the four-sided shape and look at the opposite angles.",
+           "when": "mode == 1",
+           "then": "The two pairs of opposite angles each add up to 180 degrees."
+          }
+         ],
+         "takeaway": "The angle a chord makes at the centre is twice the angle it makes at any point on the far arc, a diameter makes a right angle, and opposite angles of a cyclic quadrilateral add to 180 degrees.",
+         "explanation": "The angle a chord makes at the centre is twice the angle it makes at any point on the far arc, a diameter makes a right angle, and opposite angles of a cyclic quadrilateral add to 180 degrees."
         },
         {
          "type": "worked",
