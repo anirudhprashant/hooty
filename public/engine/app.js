@@ -1614,7 +1614,7 @@ function hintFor(activity, response = {}) {
 
 function showHint(s, activity, hint) {
   const sheet = el('div', { class: 'sheet sheet--hint', role: 'status' }, [
-    el('div', { class: 'sheet__head' }, [el('span', { class: 'sheet__mark' }, [icon('cross')]), el('h3', { class: 'sheet__title', text: bw('Not quite. Have another go!') })]),
+    el('div', { class: 'sheet__head' }, [el('span', { class: 'sheet__mark' }, [icon('cross')]), el('h2', { class: 'sheet__title', text: bw('Not quite. Have another go!') })]),
     el('p', { class: 'sheet__body', text: hint.text }),
   ]);
   const again = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: bw('Try again') });
@@ -1704,7 +1704,7 @@ function showFeedback(s, activity, correct, response = {}, opts = {}) {
   }, [
     el('div', { class: 'sheet__head' }, [
       el('span', { class: 'sheet__mark' }, [icon(correct ? 'check' : 'cross')]),
-      el('h3', { class: 'sheet__title', id: 'sheet-title', text: correct ? t('correct') : t('wrong') }),
+      el('h2', { class: 'sheet__title', id: 'sheet-title', text: correct ? t('correct') : t('wrong') }),
       saySheet,
     ]),
     slip ? el('p', { class: 'sheet__why', text: slip }) : null,

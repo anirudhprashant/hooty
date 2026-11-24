@@ -65,7 +65,7 @@ export default {
       requestAnimationFrame(tick);
     }
     const next = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: t('next'), onclick: () => { stopSpeech(); ctx.submit({ read: true }); } });
-    const nodes = [el('p', { class: 'worked__kicker', text: t('tryItYourself') }), el('h3', { class: 'concept-card__title', text: activity.title || '' }), svg, readout, ...controls, list, finished, el('div', { class: 'activity__actions' }, [next])];
+    const nodes = [el('p', { class: 'worked__kicker', text: t('tryItYourself') }), el('h2', { class: 'concept-card__title', text: activity.title || '' }), svg, readout, ...controls, list, finished, el('div', { class: 'activity__actions' }, [next])];
     root.append(...nodes);
     return { root, check() { return true; } };
   },

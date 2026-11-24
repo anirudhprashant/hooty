@@ -42,7 +42,7 @@ export default {
     back.addEventListener('click', () => ctx.back?.());
     root.append(
       el('p', { class: 'passage__kicker', text: w('Read') }),
-      el('h3', { class: 'passage__title', text: activity.title || '' }),
+      el('h2', { class: 'passage__title', text: activity.title || '' }),
       body,
       canTap ? el('p', { class: 'passage__hint', text: w('Tap any word to hear it on its own.') }) : null,
       el('div', { class: 'activity__actions' }, [back, listen, done]),

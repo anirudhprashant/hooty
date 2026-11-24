@@ -24,7 +24,7 @@ export default {
     if (activity.keyPoints?.length) steps.push({ kind: 'points', items: activity.keyPoints });
     if (activity.explanation) steps.push({ kind: 'note', text: activity.explanation });
 
-    const head = el('div', { class: 'concept-card' }, [el('h3', { class: 'concept-card__title', text: title })]);
+    const head = el('div', { class: 'concept-card' }, [el('h2', { class: 'concept-card__title', text: title })]);
     if (activity.image) {
       head.append(el('img', { class: 'concept-card__img', src: activity.image, alt: activity.alt || title, loading: 'lazy' }));
     }
