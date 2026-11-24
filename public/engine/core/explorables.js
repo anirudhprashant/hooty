@@ -44,6 +44,66 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
+  organs: {
+    subject: 'social', about: 'The three organs of government and what each one does with a law: the legislature makes it, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. For the three organs of government, the legislature, executive and judiciary, separation of powers, and how each organ checks the others.',
+    sliders: [['stage', 'Follow one law through the government', 0, 2, 1, 0]],
+    draw(v) {
+      const stage = Math.max(0, Math.min(2, v.stage | 0));
+      const cases = [
+        ['A new kind of digital fraud is hurting people.', 'Someone has to make a law against it.'],
+        ['The law has been passed.', 'Now the offices of government must act on it.'],
+        ['A person is accused of breaking the new law.', 'Someone has to judge the case fairly.'],
+      ];
+      const names = ['Legislature', 'Executive', 'Judiciary'];
+      const roles = ['makes the law', 'carries it out', 'judges by it'];
+      const kids = [R(0, 0, W, H, '#fbf9f2', { w: 0 })];
+      // the case for this step of the journey
+      kids.push(R(36, 12, 528, 64, '#ffffff', { w: 2, s: '#e3d9c6', r: 12 }));
+      kids.push(T(48, 30, 'One law, three organs', { z: 12, a: 'start', f: '#8a6d3b', w: 700 }));
+      kids.push(T(48, 50, cases[stage][0], { z: 13.5, a: 'start' }));
+      kids.push(T(48, 68, cases[stage][1], { z: 13.5, a: 'start' }));
+      // the journey: three stops on one line
+      const xs = [70, 240, 410], bw = 152, bh = 104, y0 = 108;
+      kids.push(L(30, y0 + bh / 2, 570, y0 + bh / 2, '#d8cdb8', 3, { 'stroke-dasharray': '7 6' }));
+      for (let i = 0; i < 3; i++) {
+        const on = i === stage;
+        const x = xs[i], y = y0;
+        kids.push(R(x, y, bw, bh, on ? '#fff4cf' : '#f4f2ea', { w: on ? 4 : 2, s: on ? '#e09f00' : '#d5cdbd', r: 14 }));
+        kids.push(T(x + bw / 2, y + 18, names[i], { z: 13, f: on ? '#5c4300' : '#5d6b63', w: 700 }));
+        kids.push(T(x + bw / 2, y + 94, roles[i], { z: 11, f: '#8a7a5c', w: 600 }));
+        const ink = on ? '#b98600' : '#8fa08f';
+        const mid = x + bw / 2, cy = y + 56;
+        if (i === 0) {
+          // an assembly: a dome on top of columns
+          kids.push(s('path', { d: `M ${mid - 30} ${cy - 10} Q ${mid} ${cy - 44} ${mid + 30} ${cy - 10}`, fill: 'none', stroke: ink, 'stroke-width': 4 }));
+          for (const dx of [-22, -8, 8, 22]) kids.push(L(mid + dx, cy - 8, mid + dx, cy + 22, ink, 3.5));
+          kids.push(L(mid - 32, cy + 24, mid + 32, cy + 24, ink, 3.5));
+        } else if (i === 1) {
+          // a government building with a flag: the part that carries the law out
+          kids.push(R(mid - 26, cy - 8, 44, 32, 'none', { w: 3.5, s: ink, r: 3 }));
+          kids.push(L(mid + 24, cy - 34, mid + 24, cy + 24, ink, 3.5));
+          kids.push(s('path', { d: `M ${mid + 24} ${cy - 34} L ${mid + 46} ${cy - 28} L ${mid + 24} ${cy - 20} Z`, fill: ink, stroke: ink, 'stroke-width': 1 }));
+          kids.push(T(mid - 4, cy + 12, '↑', { z: 15, f: ink, w: 700 }));
+        } else {
+          // scales: the courts weigh the case
+          kids.push(L(mid, cy - 30, mid, cy + 22, ink, 3.5));
+          kids.push(L(mid - 34, cy - 22, mid + 34, cy - 22, ink, 3.5));
+          kids.push(L(mid - 34, cy - 22, mid - 34, cy - 6, ink, 2), L(mid + 34, cy - 22, mid + 34, cy - 6, ink, 2));
+          kids.push(s('path', { d: `M ${mid - 46} ${cy - 6} Q ${mid - 34} ${cy + 14} ${mid - 22} ${cy - 6} Z`, fill: 'none', stroke: ink, 'stroke-width': 3 }));
+          kids.push(s('path', { d: `M ${mid + 22} ${cy - 6} Q ${mid + 34} ${cy + 14} ${mid + 46} ${cy - 6} Z`, fill: 'none', stroke: ink, 'stroke-width': 3 }));
+          kids.push(L(mid - 12, cy + 22, mid + 12, cy + 22, ink, 3.5));
+        }
+      }
+      kids.push(T(300, 246, 'each organ can check the other two, and none may take over their work', { z: 11.5, f: '#5d6b63', w: 600 }));
+      kids.push(T(300, 266, 'a court can strike down a law that breaks the Constitution; the assembly can question the government', { z: 10.5, f: '#8a7a5c', w: 600 }));
+      const say = [
+        'The legislature is the assembly of elected representatives. It debates the problem, writes the law against digital fraud and passes it. Making the law is its job alone.',
+        'The executive is the part of government that carries laws out: the ministries, the police, the tax offices. It puts the new law to work, but it does not write the law.',
+        'The judiciary is the courts. They hear the case, decide whether the law has been broken and whether it is fair, and they can strike down a law that breaks the Constitution.',
+      ][stage];
+      return { kids, say };
+    },
+  },
   nagar: {
     subject: 'social', about: 'Who runs a town or a city: the bigger the place, the bigger the body. A town has a Nagar Panchayat, a city of one to ten lakh people has a Municipal Council (Nagar Palika), and a city above ten lakh has a Municipal Corporation (Mahanagar Nigam). For urban local bodies, wards, municipal corporations and councils, and the services a city body looks after.',
     sliders: [['size', 'How big is the place?', 0, 2, 1, 0]],

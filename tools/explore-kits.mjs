@@ -3,6 +3,18 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  organs: {
+    // Part 1 of the civics chapters: the three organs, their separation, and the three tiers. The match asks for the
+    // organs by name; "government" alone is in every civics lesson and would swallow this one.
+    grades: [5, 8], subjects: ['social'],
+    match: [/legislature/, /\bexecutive\b/, /judiciary/, /three organs/, /separation of powers/, /organs of government/, /checks and balances/, /supreme court|high court/, /makes? (the )?laws?/, /passes? (the )?laws?/],
+    title: 'One law, three organs', takeaway: 'The legislature makes the law, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. Each organ can check the other two, and none may take over their work.',
+    // The walk opens on the legislature, so no challenge asks for it.
+    tasks: [
+      { say: 'Find the organ that carries the law out.', when: 'stage == 1', then: 'The executive puts the law to work: the ministries, the police and the tax offices.' },
+      { say: 'Find the organ that decides a case under the law.', when: 'stage == 2', then: 'The judiciary, the courts, hear the case and can strike down a law that breaks the Constitution.' },
+    ],
+  },
   nagar: {
     // The urban local bodies chapter. Names only: "city" or "local government" alone would pull in the rural chapters,
     // which have their own walk.
