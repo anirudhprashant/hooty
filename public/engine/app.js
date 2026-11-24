@@ -837,31 +837,6 @@ function startLesson(lesson) {
   go('lesson');
 }
 
-function screenLesson() {
-  const lesson = router.lesson;
-  const wrap = el('div', { class: 'screen lesson' });
-  // Before a chapter is taught: a few of its challenge questions, to see what the child already knows. Compared with the challenge
-  // at the end, this is the before-and-after that shows whether Hooty taught anything. Trying before being taught helps too.
-  let activities = lesson.activities || [];
-  const learner = activeLearner();
-  const inChapter = lesson.chapterId && /-l1$/.test(lesson.lessonId || lesson.id || '') && !lesson.isPractice
-    ? packById(lesson.packId)?.units.flatMap((u) => u.chapters).find((c) => c.id === lesson.chapterId) : null;
-  if (inChapter?.boss && learner && !learner.pre?.[lesson.chapterId]) {
-    const pool = (inChapter.boss.activities || []).filter((a) => ['mcq', 'truefalse'].includes(a.type)).slice(0, 3);
-    if (pool.length === 3) {
-      learner.pre ||= {};
-      activities = [{ type: 'hook', id: `${lesson.id}-prehook`, prompt: t('preHook'), explanation: '' },
-        ...pool.map((a) => ({ ...a, id: `${a.id}-pre`, pre: true })), ...activities];
-    }
-  }
-
-  // A fun fact halfway through, between two questions, and a different one on the finish screen. Replays show new ones.
-  const facts = lesson.funFacts || [], plays = learner?.lessonsDone?.[lesson.lessonId]?.count || 0;
-  if (facts.length && !lesson.isPractice && activities.length >= 6) {
-    const mid = Math.floor(activities.length / 2);
-    activities = [...activities.slice(0, mid), { type: 'funfact', id: `${lesson.id}-fact`, prompt: facts[plays % facts.length] }, ...activities.slice(mid)];
-  }
-
 // The words this lesson actually uses, as revision cards near the end of it. A card asks what a word means and the child
 // flips it, which is the one moment in a lesson where recalling a meaning is the whole task. The words come from the
 // book's own glossary and only from words readable in this lesson's text, so a card never asks about something the child
@@ -894,6 +869,31 @@ function wordCards(pack, lesson, activities, plays) {
       back: x.meaning,
     }));
 }
+
+function screenLesson() {
+  const lesson = router.lesson;
+  const wrap = el('div', { class: 'screen lesson' });
+  // Before a chapter is taught: a few of its challenge questions, to see what the child already knows. Compared with the challenge
+  // at the end, this is the before-and-after that shows whether Hooty taught anything. Trying before being taught helps too.
+  let activities = lesson.activities || [];
+  const learner = activeLearner();
+  const inChapter = lesson.chapterId && /-l1$/.test(lesson.lessonId || lesson.id || '') && !lesson.isPractice
+    ? packById(lesson.packId)?.units.flatMap((u) => u.chapters).find((c) => c.id === lesson.chapterId) : null;
+  if (inChapter?.boss && learner && !learner.pre?.[lesson.chapterId]) {
+    const pool = (inChapter.boss.activities || []).filter((a) => ['mcq', 'truefalse'].includes(a.type)).slice(0, 3);
+    if (pool.length === 3) {
+      learner.pre ||= {};
+      activities = [{ type: 'hook', id: `${lesson.id}-prehook`, prompt: t('preHook'), explanation: '' },
+        ...pool.map((a) => ({ ...a, id: `${a.id}-pre`, pre: true })), ...activities];
+    }
+  }
+
+  // A fun fact halfway through, between two questions, and a different one on the finish screen. Replays show new ones.
+  const facts = lesson.funFacts || [], plays = learner?.lessonsDone?.[lesson.lessonId]?.count || 0;
+  if (facts.length && !lesson.isPractice && activities.length >= 6) {
+    const mid = Math.floor(activities.length / 2);
+    activities = [...activities.slice(0, mid), { type: 'funfact', id: `${lesson.id}-fact`, prompt: facts[plays % facts.length] }, ...activities.slice(mid)];
+  }
 
   // The revision cards go in near the end, after the last teaching beat and before the closing question, so the lesson
   // still finishes on something with a right answer.
