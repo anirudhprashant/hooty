@@ -2116,12 +2116,12 @@ export const WIDGETS = {
       const x = (n) => 30 + n * 5.4, y = 190, dir = v.back ? -1 : 1, stops = [v.start];
       for (let k = 1; k <= v.hops; k++) { const n = stops[k - 1] + dir * v.jump; if (n < 0 || n > 100) break; stops.push(n); }
       const stuck = stops.length - 1 < v.hops, kids = [L(x(0), y, x(100), y, INK, 3)];
-      for (let n = 0; n <= 100; n++) kids.push(L(x(n), y - (n % 10 ? 4 : 9), x(n), y + (n % 10 ? 4 : 9), INK, n % 10 ? 1 : 2.2), ...(n % 10 ? [] : [T(x(n), y + 28, String(n), { z: 12, w: 600 })]));
+      for (let n = 0; n <= 100; n++) kids.push(L(x(n), y - (n % 10 ? 4 : 9), x(n), y + (n % 10 ? 4 : 9), INK, n % 10 ? 1 : 2.2), ...(n % 10 ? [] : [T(x(n), y + 29, String(n), { z: 15, w: 600 })]));
       for (let k = 1; k < stops.length; k++) kids.push(s('path', { d: `M ${x(stops[k - 1])} ${y} Q ${(x(stops[k - 1]) + x(stops[k])) / 2} ${y - 52} ${x(stops[k])} ${y}`, fill: 'none', stroke: C.o, 'stroke-width': 3 }));
       const everyLabel = v.jump >= 5;
-      stops.forEach((n, k) => { const end = k === stops.length - 1; kids.push(CIRC(x(n), y, end ? 9 : 6, end ? C.p : '#ffcc33', { w: 2.5 })); if (everyLabel || k === 0 || end) kids.push(T(x(n), y - 40, String(n), { z: 14, w: 700, f: end ? '#6b45c8' : INK })); });
+      stops.forEach((n, k) => { const end = k === stops.length - 1; kids.push(CIRC(x(n), y, end ? 9 : 6, end ? C.p : '#ffcc33', { w: 2.5 })); if (everyLabel || k === 0 || end) kids.push(T(x(n), y - 42, String(n), { z: 16, w: 700, f: end ? '#6b45c8' : INK })); });
       kids.push(T(300, 34, stops.length > 1 ? `${v.start} ${v.back ? '−' : '+'} ${stops.length - 1} × ${v.jump} = ${stops[stops.length - 1]}` : `start at ${v.start}`, { z: 22, w: 700 }));
-      if (stuck) kids.push(T(300, 270, 'the next jump would leave the number line', { z: 13, w: 600, f: '#c0392b' }));
+      if (stuck) kids.push(T(300, 272, 'the next jump would leave the number line', { z: 15, w: 600, f: '#c0392b' }));
       const last = stops[stops.length - 1], n = stops.length - 1;
       return { kids, say: n === 0 ? (v.hops === 0 ? `The frog starts at ${v.start}.` : `The frog starts at ${v.start}, but a jump of ${v.jump} ${v.back ? 'back' : 'forward'} would go off the number line.`) : `Starting at ${v.start}, ${n} jump${n === 1 ? '' : 's'} of ${v.jump} ${v.back ? 'back' : 'forward'} land${n === 1 ? 's' : ''} on ${last}: ${stops.join(', ')}.${stuck ? ' The next jump would go off the line.' : ''}` };
     },
@@ -3478,10 +3478,10 @@ export const WIDGETS = {
         L(240, 101, 320, 101, INK, 5),
         s('polygon', { points: '330,101 314,91 314,111', fill: INK }),
         ...card(350, out, '#e4f7ee', '#058a68'),
-        T(300, 178, 'one', { z: 13, f: '#6b5a8a' }),
-        T(445, 178, 'more than one, or -ing', { z: 13, f: '#6b5a8a', w: 600 }),
+        T(300, 178, 'one', { z: 16, f: '#6b5a8a' }),
+        T(445, 178, 'more than one, or -ing', { z: 16, f: '#6b5a8a', w: 600 }),
         T(40, 222, rule, { z: 20, a: 'start', f: '#c2510e' }),
-        T(40, 254, why, { z: 13, a: 'start', w: 600, f: '#6b5a8a' }),
+        T(40, 254, why, { z: 16, a: 'start', w: 600, f: '#6b5a8a' }),
       ];
       return { kids, say: `${base} becomes ${out}. ${rule}. ${why}` };
     },
