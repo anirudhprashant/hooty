@@ -767,7 +767,7 @@ export const KITS = {
     ],
   },
   gridwalk: {
-    grades: [4, 5], match: [/\bgrids?\b/, /\brows?\b.*\bcolumns?\b/, /steps? (to the )?(right|left|up)/],
+    grades: [4, 5], match: [/\bgrids?\b/, /\brows?\b[^.]*\bcolumns?\b/, /\bcolumns?\b[^.]*\brows?\b/, /\bdotted lines?\b/, /\bone[- ]centimetre\b/, /\bhorizontal\b[^.]*\bvertical\b/, /\bpositions?\b/, /steps? (to the )?(right|left|up)/],
     title: 'Walk the grid', takeaway: 'A square on a grid is named by its row and column; count the steps with no diagonal moves.',
     tasks: [
       { say: 'Walk to the flower.', when: 'right == 2 and up == 3', then: '2 right and 3 up: 5 steps, row 4, column 3.' },
