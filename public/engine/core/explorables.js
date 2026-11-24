@@ -1133,7 +1133,7 @@ export const WIDGETS = {
       kids.push(s('path', { d: 'M 262 104 L 262 140 L 214 190 Q 206 198 218 198 L 382 198 Q 394 198 386 190 L 338 140 L 338 104 Z', fill: '#e3f2fd', stroke: INK, 'stroke-width': 4 }));
       kids.push(s('path', { d: 'M 248 150 L 240 193 L 360 193 L 352 150 Z', fill: '#b9e6fb', stroke: 'none' }));
       kids.push(R(258, 92, 84, 14, '#d7ccc8', { w: 3, r: 4 }));
-      kids.push(T(300, 176, 'vinegar + baking soda', { z: 16, w: 600, f: '#1f6fb8' }));
+      kids.push(T(300, 176, 'vinegar + baking soda', { z: 16, w: 600, f: '#134a86' }));
       if (running) for (const [bx, by, br] of [[282, 166, 5], [314, 158, 4], [296, 148, 6], [320, 176, 4], [272, 154, 4]]) kids.push(CIRC(bx, by, br, 'none', { s: '#90caf9', w: 2 }));
       if (trapped) {
         kids.push(s('path', { d: 'M 300 92 L 300 78', stroke: INK, 'stroke-width': 3 }));
@@ -3917,7 +3917,17 @@ export const WIDGETS = {
       kids.push(L(X(b), base, X(b), Y(w), col, 2, { 'stroke-dasharray': '5 5' }));
       kids.push(L(left, Y(w), X(b), Y(w), col, 2, { 'stroke-dasharray': '5 5' }));
       kids.push(CIRC(X(b), Y(w), 11, col, { w: 3 }));
-      kids.push(T(X(b), Y(w) - 20, `${b} barley, ${w} wheat`, { z: 16, w: 700, f: col }));
+      let labX, labY, labAnchor;
+      if (Y(w) < top + 34) {
+        labAnchor = X(b) < right - 160 ? 'start' : 'end';
+        labX = labAnchor === 'start' ? X(b) + 16 : X(b) - 16;
+        labY = Y(w) + (X(b) < left + 120 ? 20 : 6);
+      } else {
+        labAnchor = X(b) < left + 120 ? 'start' : X(b) > right - 120 ? 'end' : 'middle';
+        labX = labAnchor === 'start' ? X(b) + 16 : labAnchor === 'end' ? X(b) - 16 : X(b);
+        labY = Y(w) - 18;
+      }
+      kids.push(T(labX, labY, `${b} barley, ${w} wheat`, { z: 16, w: 700, f: col, a: labAnchor }));
       const where = on ? 'exactly on the curve, so all the land and workers are used'
         : inside ? 'inside the curve, so some land or workers are lying idle'
         : 'outside the curve, so the farm cannot grow that much';
