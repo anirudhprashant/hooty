@@ -1873,24 +1873,24 @@ export const WIDGETS = {
       else kids.push(CIRC(cx, cy, 5, '#ffffff', { w: 2 }));
       kids.push(T(cx, 40, 'a thali: fill the plate', { z: 16, w: 700 }));
       // the junk food sits on its own small tray, off the plate
-      kids.push(R(24, 108, 92, 104, '#fff7e8', { w: 3, r: 10 }), T(70, 98, 'sometimes food', { z: 11, w: 700, f: '#c2510e' }));
+      kids.push(R(24, 108, 92, 104, '#fff7e8', { w: 3, r: 10 }), T(70, 96, 'sometimes food', { z: 15, w: 700, f: '#c2510e' }));
       for (let k = 0; k < v.junk; k++) {
         const x = 47 + (k % 2) * 44, y = 140 + Math.floor(k / 2) * 42;
-        if (k % 2 === 0) kids.push(s('polygon', { points: `${x - 14},${y - 16} ${x + 14},${y - 14} ${x + 13},${y + 17} ${x - 13},${y + 16}`, fill: '#e2583e', stroke: INK, 'stroke-width': 2 }), T(x, y + 5, 'chips', { z: 9, w: 700, f: '#fff' }));
-        else kids.push(s('polygon', { points: `${x - 11},${y - 14} ${x + 11},${y - 14} ${x + 8},${y + 16} ${x - 8},${y + 16}`, fill: '#3a86ff', stroke: INK, 'stroke-width': 2 }), L(x + 2, y - 14, x + 12, y - 26, '#e2583e', 3), T(x, y + 5, 'drink', { z: 9, w: 700, f: '#fff' }));
+        if (k % 2 === 0) kids.push(s('polygon', { points: `${x - 14},${y - 16} ${x + 14},${y - 14} ${x + 13},${y + 17} ${x - 13},${y + 16}`, fill: '#e2583e', stroke: INK, 'stroke-width': 2 }), T(x, y + 6, 'chips', { z: 10.5, w: 700, f: '#fff' }));
+        else kids.push(s('polygon', { points: `${x - 11},${y - 14} ${x + 11},${y - 14} ${x + 8},${y + 16} ${x - 8},${y + 16}`, fill: '#3a86ff', stroke: INK, 'stroke-width': 2 }), L(x + 2, y - 14, x + 12, y - 26, '#e2583e', 3), T(x, y + 6, 'drink', { z: 10.5, w: 700, f: '#fff' }));
       }
       const balanced = v.grain >= 1 && v.protein >= 1 && v.veg >= 2 && v.veg > v.grain && v.veg > v.protein;
       const missing = [v.grain < 1 ? 'energy food' : null, v.protein < 1 ? 'body-building food' : null, v.veg < 1 ? 'protective food' : null].filter(Boolean);
       const verdict = !total && !v.junk ? 'an empty plate' : !total ? 'only junk food' : balanced ? 'a balanced plate' : missing.length ? `add ${missing.join(' and ')}` : v.veg <= v.grain || v.veg <= v.protein ? 'add more protective food' : 'keep adding food';
       kids.push(T(cx, 288, verdict, { z: 15, w: 700, f: balanced ? '#058a68' : total ? '#c2510e' : '#8a7fa8' }));
       const x0 = 372;
-      kids.push(T(x0 + 60, 62, 'on the plate', { z: 14, w: 700 }));
+      kids.push(T(x0 + 60, 62, 'on the plate', { z: 16, w: 700 }));
       groups.forEach(([key, label, pale, strong], i) => {
         const y = 92 + i * 30;
-        kids.push(CIRC(x0 + 8, y, 8, pale, { w: 2, s: strong }), T(x0 + 24, y + 5, `${label}: ${v[key]}`, { z: 13, w: 700, a: 'start' }));
+        kids.push(CIRC(x0 + 8, y, 8, pale, { w: 2, s: strong }), T(x0 + 24, y + 5, `${label}: ${v[key]}`, { z: 15, w: 700, a: 'start' }));
       });
-      kids.push(L(x0, 186, x0 + 190, 186, '#ddd6ee', 2), T(x0 + 95, 210, 'A balanced plate has', { z: 12, w: 600, f: '#6b5a8a' }), T(x0 + 95, 228, 'protective food as the', { z: 12, w: 600, f: '#6b5a8a' }), T(x0 + 95, 246, 'biggest part.', { z: 12, w: 600, f: '#6b5a8a' }));
-      if (v.junk) kids.push(T(x0 + 95, 272, 'junk food is not every day', { z: 11, w: 700, f: '#c2510e' }));
+      kids.push(L(x0, 186, x0 + 190, 186, '#ddd6ee', 2), T(x0 + 95, 208, 'A balanced plate has', { z: 14.5, w: 600, f: '#6b5a8a' }), T(x0 + 95, 230, 'protective food as the', { z: 14.5, w: 600, f: '#6b5a8a' }), T(x0 + 95, 252, 'biggest part.', { z: 14.5, w: 600, f: '#6b5a8a' }));
+      if (v.junk) kids.push(T(x0 + 95, 276, 'junk food is not every day', { z: 14, w: 700, f: '#c2510e' }));
       const say = !total && !v.junk ? 'The plate is empty. Put some roti, dal, vegetables or fruit on it.' : !total ? `There are ${v.junk} pieces of junk food and nothing on the plate. Chips and soft drinks have a lot of oil, salt and sugar: they are sometimes food, not a meal.` : `${balanced ? 'This is a balanced plate' : 'This plate is not balanced yet'}: ${v.grain} of energy food, ${v.protein} of body-building food and ${v.veg} of protective food. ${balanced ? 'Protective food is the biggest part, so it has vitamins to fight illness, with some energy food and body-building food.' : missing.length ? `Add ${missing.join(' and ')}.` : 'Make protective food the biggest part of the plate.'}${v.junk ? ' The junk food on the side is a sometimes food.' : ''}`;
       return { kids, say };
     },
