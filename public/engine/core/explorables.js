@@ -1546,11 +1546,11 @@ export const WIDGETS = {
       for (let i = 0; i < v.light; i++) { const a = rad(18 + (i - (v.light - 1) / 2) * 8); kids.push(L(70 + 38 * Math.cos(a), 60 + 38 * Math.sin(a), 70 + 115 * Math.cos(a), 60 + 115 * Math.sin(a), '#ffcc33', 3)); }   // rays fan out towards the leaf
       kids.push(s('path', { d: 'M 300 250 C 200 230 190 120 300 60 C 410 120 400 230 300 250 Z', fill: rate ? '#3fb36b' : '#8fbf9f', stroke: INK, 'stroke-width': 4 }), L(300, 250, 300, 70, '#246b40', 3), L(300, 290, 300, 250, '#7a5230', 6));
       for (let i = 1; i <= 4; i++) kids.push(L(300, 250 - i * 40, 300 - 45 + i * 4, 250 - i * 40 - 30, '#246b40', 2), L(300, 250 - i * 40, 300 + 45 - i * 4, 250 - i * 40 - 30, '#246b40', 2));
-      for (let i = 0; i < v.co2; i++) kids.push(T(150 + (i % 2) * 22, 130 + i * 14, 'CO₂', { z: 11, w: 600, f: '#6b5a8a' }));
+      for (let i = 0; i < v.co2; i++) kids.push(T(150 + (i % 2) * 22, 130 + i * 14, 'CO₂', { z: 14, w: 600, f: '#6b5a8a' }));
       for (let i = 0; i < v.water; i++) kids.push(CIRC(282 - (i % 2) * 10, 285 - i * 3, 4, '#3a86ff', { w: 0 }));
-      if (v.water) kids.push(T(262, 292, 'water from the roots', { a: 'end', z: 11, w: 600, f: '#1f63d9' }));
+      if (v.water) kids.push(T(262, 292, 'water from the roots', { a: 'end', z: 14, w: 600, f: '#1f63d9' }));
       for (let i = 0; i < rate; i++) kids.push(CIRC(400 + (i % 3) * 18, 210 - i * 18, 6 + (i % 2), '#e9f7ff', { s: '#7fbfff', w: 2 }));
-      kids.push(T(400, 30, rate ? `O₂ bubbles: ${rate} a minute` : 'No bubbles', { a: 'start', z: 14 }), T(520, 280, rate ? `sugar made: ${rate}` : 'no sugar made', { a: 'end', z: 13, w: 600, f: '#7a5230' }));
+      kids.push(T(400, 30, rate ? `O₂ bubbles: ${rate} a minute` : 'No bubbles', { a: 'start', z: 14 }), T(520, 280, rate ? `sugar made: ${rate}` : 'no sugar made', { a: 'end', z: 15, w: 600, f: '#7a5230' }));
       const say = !v.light ? 'With no light, the leaf cannot make food at all, however much carbon dioxide and water it has.' : rate === 10 ? 'Everything is at the top, so the leaf works at full speed: the most sugar and oxygen. Carbon dioxide + water, with light, become sugar + oxygen.' : `The leaf makes food at speed ${rate} out of 10. It is held back by ${limit.map((k) => names[k]).join(' and ')}, ${limit.length > 1 ? 'the inputs' : 'the input'} in shortest supply. Carbon dioxide + water, with light, become sugar + oxygen.`;
       return { kids, say };
     },
@@ -1650,9 +1650,9 @@ export const WIDGETS = {
       const kids = [], rnd = seeded(11);
       if (p.kind === 'sieve') {
         const bits = [['flour', 0.5, '#f4ead2', 3], ['bran', 2, '#c99a5b', 5], ['small stones', 5, '#8a8a8a', 8], ['big stones', 9, '#5d5d5d', 12]], h = v.hole;
-        kids.push(L(100, 140, 500, 140, INK, 4, { 'stroke-dasharray': `${Math.max(4, 30 - h * 2.4)} ${h * 2.4}` }), R(120, 230, 360, 50, '#f3f0ff', { w: 2.5, r: 6 }), T(300, 300 - 4, 'what fell through', { z: 12, w: 600, f: '#6b5a8a' }));
+        kids.push(L(100, 140, 500, 140, INK, 4, { 'stroke-dasharray': `${Math.max(4, 30 - h * 2.4)} ${h * 2.4}` }), R(120, 230, 360, 50, '#f3f0ff', { w: 2.5, r: 6 }), T(300, 300 - 6, 'what fell through', { z: 15, w: 600, f: '#6b5a8a' }));
         const thru = bits.filter(([, size]) => size < h).map((b) => b[0]), stay = bits.filter(([, size]) => size >= h).map((b) => b[0]);
-        bits.forEach(([name, size, col, r], i) => { for (let k = 0; k < 6; k++) { const x = 140 + i * 90 + rnd() * 50, fell = size < h; kids.push(CIRC(x, fell ? 255 + rnd() * 18 : 128 - rnd() * 22, r, col, { w: 1.2 })); } kids.push(T(165 + i * 90, size < h ? 222 : 80, name, { z: 11, w: 600 })); });
+        bits.forEach(([name, size, col, r], i) => { for (let k = 0; k < 6; k++) { const x = 140 + i * 90 + rnd() * 50, fell = size < h; kids.push(CIRC(x, fell ? 255 + rnd() * 18 : 128 - rnd() * 22, r, col, { w: 1.2 })); } kids.push(T(165 + i * 90, size < h ? 224 : 80, name, { z: 14, w: 600 })); });
         return { kids, say: `With ${h} mm holes, ${thru.length ? thru.join(', ') : 'nothing'} ${thru.length === 1 ? 'falls' : 'fall'} through and ${stay.length ? stay.join(', ') : 'nothing'} ${stay.length === 1 ? 'stays' : 'stay'} on top. A sieve separates particles by size.` };
       }
       if (p.kind === 'settle') {
@@ -1663,12 +1663,12 @@ export const WIDGETS = {
         const say = !v.tilt ? (settled >= 1 ? 'The tea leaves have settled at the bottom: this is sedimentation. Now tilt the cup to pour off the tea.' : `After ${v.min} minute${v.min === 1 ? '' : 's'} the leaves are still settling. Heavier bits that do not dissolve sink to the bottom if the tea is left undisturbed.`) : settled >= 1 ? 'Tilting the cup pours off the tea and leaves the settled leaves behind: this is decantation.' : 'Pouring before the leaves settle carries them along too. Let it stand first.';
         return { kids, say };
       }
-      const w = v.wind; kids.push(R(70, 30, 120, 16, '#c8a26b', { w: 2.5, r: 6 }), T(130, 24, 'tray', { z: 11, w: 600 }), L(40, 280, 580, 280, INK, 3));
+      const w = v.wind; kids.push(R(70, 30, 120, 16, '#c8a26b', { w: 2.5, r: 6 }), T(130, 24, 'tray', { z: 15, w: 600 }), L(40, 280, 580, 280, INK, 3));
       for (let k = 0; k < Math.round(w / 2); k++) kids.push(s('path', { d: `M 20 ${80 + k * 30} q 30 -10 60 0 t 60 0`, stroke: '#7fbfff', 'stroke-width': 3, fill: 'none' }));
       for (let k = 0; k < 14; k++) { const gx = 120 + w * 3 + rnd() * 30, hx = 120 + w * 34 + rnd() * 40 * (w / 10 + 0.2); kids.push(s('ellipse', { cx: gx, cy: 270 - rnd() * 6, rx: 6, ry: 4, fill: '#d9a441', stroke: INK, 'stroke-width': 1 }), s('ellipse', { cx: hx, cy: 268 - rnd() * 8, rx: 7, ry: 2, fill: '#efe3b5', stroke: '#b79f5a', 'stroke-width': 1 })); }
       // the falling stream: grain drops nearly straight, husk drifts with the wind
       for (let k = 0; k < 9; k++) { const f = (k + 1) / 10, y = 50 + f * 210; kids.push(CIRC(130 + w * 3 * f, y, 3, '#d9a441', { w: 0.8 }), CIRC(130 + w * 34 * f * f + (w ? 6 : 10), y, 2.5, '#efe3b5', { s: '#b79f5a', w: 0.8 })); }
-      kids.push(T(140, 250, 'grain', { z: 12, w: 600 }), T(Math.min(560, 150 + w * 36) + (w < 3 ? 46 : 0), w < 3 ? 232 : 240, 'husk', { z: 12, w: 600 }));
+      kids.push(T(140, 252, 'grain', { z: 15, w: 600 }), T(Math.min(560, 150 + w * 36) + (w < 3 ? 46 : 0), w < 3 ? 232 : 240, 'husk', { z: 15, w: 600 }));
       return { kids, say: w ? `With wind strength ${w}, the heavy grains fall almost straight down while the light husk is blown ${w > 6 ? 'far' : 'a little'} away. Winnowing separates the heavier and lighter parts of a mixture.` : 'With no wind, grain and husk fall into the same heap. Blow some air!' };
     },
   },
@@ -2284,8 +2284,8 @@ export const WIDGETS = {
       kids.push(T(450, 60, seq.length > 1 ? rule : 'start somewhere', { z: 17, w: 700, f: '#058a68' }));
       const line = seq.join(', ');
       kids.push(T(450, 100, line.length > 34 ? line.slice(0, line.lastIndexOf(',', 34)) + ',' : line, { z: 14, w: 700 }), ...(line.length > 34 ? [T(450, 122, line.slice(line.lastIndexOf(',', 34) + 2), { z: 14, w: 700 })] : []));
-      if (shape) kids.push(T(450, 164, `on the chart it goes ${shape}`, { z: 13, w: 600, f: '#6b5a8a' }));
-      if (seq.length < v.n) kids.push(T(450, 200, 'the next one is off the chart', { z: 13, w: 600, f: '#c0392b' }));
+      if (shape) kids.push(T(450, 164, `on the chart it goes ${shape}`, { z: 15, w: 600, f: '#6b5a8a' }));
+      if (seq.length < v.n) kids.push(T(450, 202, 'the next one is off the chart', { z: 15, w: 600, f: '#c0392b' }));
       return { kids, say: seq.length < 2 ? `Start at ${v.start}.` : `Starting at ${v.start}, ${rule}: ${line}.${shape ? ` On the chart this goes ${shape}.` : ''}${seq.length < v.n ? ' The next one would be off the chart.' : ''}` };
     },
   },
@@ -2865,7 +2865,7 @@ export const WIDGETS = {
         }
       });
       // a small key for the three particles
-      kids.push(CIRC(360, 274, 6, C.o, { s: INK, w: 1 }), T(372, 279, 'proton', { a: 'start', z: 12, w: 600 }), CIRC(438, 274, 6, '#9aa5b1', { s: INK, w: 1 }), T(450, 279, 'neutron', { a: 'start', z: 12, w: 600 }), CIRC(522, 274, 6, C.b, { s: INK, w: 1 }), T(534, 279, 'electron', { a: 'start', z: 12, w: 600 }));
+      kids.push(CIRC(360, 274, 6, C.o, { s: INK, w: 1 }), T(372, 279, 'proton', { a: 'start', z: 15, w: 600 }), CIRC(438, 274, 6, '#9aa5b1', { s: INK, w: 1 }), T(450, 279, 'neutron', { a: 'start', z: 12, w: 600 }), CIRC(522, 274, 6, C.b, { s: INK, w: 1 }), T(534, 279, 'electron', { a: 'start', z: 12, w: 600 }));
       const outer = shells[shells.length - 1] || 0;
       const noble = elec === 2 || elec === 10 || elec === 18;
       const val = elec === 0 || noble ? 0 : outer <= 4 ? outer : 8 - outer;
@@ -3431,8 +3431,8 @@ export const WIDGETS = {
       };
       const x0 = 150, y0 = 80, cw = 96, ch = 62;
       kids.push(T(300, 28, `Parent 1 ${names[v.g1]} × Parent 2 ${names[v.g2]}`, { z: 21 }));
-      kids.push(T(x0 + cw, 56, 'Parent 2 gives', { z: 12, w: 600, f: '#6b5a8a' }));
-      kids.push(T(28, 66, 'Parent 1 gives', { z: 12, w: 600, f: '#6b5a8a', a: 'start' }));
+      kids.push(T(x0 + cw, 56, 'Parent 2 gives', { z: 15, w: 600, f: '#6b5a8a' }));
+      kids.push(T(28, 66, 'Parent 1 gives', { z: 15, w: 600, f: '#6b5a8a', a: 'start' }));
       right.forEach((al, j) => kids.push(T(x0 + j * cw + cw / 2, 76, al, { z: 20, f: '#6b4aa8' })));
       left.forEach((al, i) => kids.push(T(x0 - 24, y0 + i * ch + ch / 2 + 7, al, { z: 20, f: '#6b4aa8' })));
       boxes.forEach((g, k) => {
@@ -3444,10 +3444,10 @@ export const WIDGETS = {
       });
       kids.push(T(372, 96, `${tall} tall`, { z: 24, a: 'start', f: '#058a68' }));
       kids.push(T(372, 128, `${short} short`, { z: 24, a: 'start', f: short ? '#c2510e' : '#8a7aa8' }));
-      kids.push(T(372, 166, 'T is the tall gene.', { z: 13, w: 600, a: 'start' }));
-      kids.push(T(372, 186, 't is the short gene.', { z: 13, w: 600, a: 'start' }));
-      kids.push(T(372, 208, 'T hides t, so Tt looks tall.', { z: 13, w: 600, a: 'start', f: '#058a68' }));
-      kids.push(T(300, 276, 'Each child gets one letter from each parent, so it has two copies.', { z: 13, w: 600, f: '#6b5a8a' }));
+      kids.push(T(372, 166, 'T is the tall gene.', { z: 15, w: 600, a: 'start' }));
+      kids.push(T(372, 186, 't is the short gene.', { z: 15, w: 600, a: 'start' }));
+      kids.push(T(372, 208, 'T hides t, so Tt looks tall.', { z: 15, w: 600, a: 'start', f: '#058a68' }));
+      kids.push(T(300, 276, 'Each child gets one letter from each parent, so it has two copies.', { z: 14.5, w: 600, f: '#6b5a8a' }));
       const allCarriers = boxes.every((x) => x === 'Tt');
       const result = tall === 4 ? 'All four have a T, so all four look tall, and none are short.' : tall === 0 ? 'None of the four has a T, so all four are short.' : `${tall} of the four have a T, so ${tall} look tall, and ${short === 1 ? 'one is short' : `${short} are short`}.`;
       return { kids, say: `Parent 1 is ${names[v.g1]} and Parent 2 is ${names[v.g2]}. The four boxes show the children they can make. ${result}${allCarriers ? ' Every child is Tt: tall, but it still carries the short gene and can pass it on.' : ' T hides t, so TT and Tt both look tall; only tt is short.'}` };
@@ -3577,11 +3577,11 @@ export const WIDGETS = {
         ...box(30, who, '#fdf6ff', '#3a2560', 28),
         ...box(210, what, '#fff5e6', '#c2510e', 28),
         ...box(390, rest, '#e4f7ee', '#058a68', 28),
-        T(110, 158, 'who', { z: 13, f: '#6b5a8a' }),
-        T(290, 158, 'does what', { z: 13, f: '#6b5a8a' }),
-        T(470, 158, rest.startsWith('the ') ? 'the thing done' : 'where it happens', { z: 13, f: '#6b5a8a' }),
+        T(110, 158, 'who', { z: 16, f: '#6b5a8a' }),
+        T(290, 158, 'does what', { z: 16, f: '#6b5a8a' }),
+        T(470, 158, rest.startsWith('the ') ? 'the thing done' : 'where it happens', { z: 16, f: '#6b5a8a' }),
         T(30, 210, 'Subject, then verb, then the rest.', { z: 18, a: 'start', f: '#c2510e' }),
-        T(30, 242, why, { z: 13, a: 'start', w: 600, f: '#6b5a8a' }),
+        T(30, 242, why, { z: 15, a: 'start', w: 600, f: '#6b5a8a' }),
       ];
       return { kids, say: `${who} ${what} ${rest}. ${why}` };
     },
@@ -3967,11 +3967,11 @@ export const WIDGETS = {
       const shown = v.w === 1 ? bands : v.w === 2 ? [bands[0]] : [bands[6]];
       const kids = [R(0, 0, W, H, '#fbf8ff', { w: 0 })];
       kids.push(s('polygon', { points: `${apex.x},${apex.y} ${bl.x},${bl.y} ${br.x},${br.y}`, fill: '#dcecfb', stroke: INK, 'stroke-width': 4, 'stroke-linejoin': 'round', opacity: 0.85 }));
-      kids.push(T(300, 56, `prism angle ${v.A} degrees`, { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(300, 56, `prism angle ${v.A} degrees`, { z: 15, w: 600, f: '#6b5a8a' }));
       kids.push(L(start.x, start.y, pin.x, pin.y, v.w === 1 ? '#8a86a0' : shown[0][1], 5));
       const nTip = add2(pin, mul2(nLeft, 46));
       kids.push(L(add2(pin, mul2(nLeft, -8)).x, add2(pin, mul2(nLeft, -8)).y, nTip.x, nTip.y, '#9c93b8', 2, { 'stroke-dasharray': '6 6' }));
-      kids.push(T(nTip.x + 10, nTip.y, 'normal', { z: 11, w: 600, f: '#8a80a8' }));
+      kids.push(T(nTip.x + 10, nTip.y, 'normal', { z: 14, w: 600, f: '#8a80a8' }));
       kids.push(CIRC(pin.x, pin.y, 4, INK));
       const results = [];
       for (const [name, colour, n] of shown) {
@@ -4006,7 +4006,7 @@ export const WIDGETS = {
         kids.push(L(r.exitAt.x, r.exitAt.y, far.x, far.y, r.colour, 4));
       }
       kids.push(R(566, 30, 22, 240, '#ffffff', { s: '#cfc6e2', w: 2, r: 4 }));
-      kids.push(T(577, 22, 'screen', { z: 10, w: 600, f: '#8a80a8' }));
+      kids.push(T(566, 22, 'screen', { z: 14, w: 600, f: '#8a80a8', a: 'end' }));
       for (const r of results) {
         const shownDir = fan(r);
         if (shownDir.x <= 0.02) continue;
@@ -4032,9 +4032,9 @@ export const WIDGETS = {
         say = 'The ray hits the second face too steeply, so it reflects back inside the glass. This is total internal reflection.';
       }
       kids.push(R(12, 8, 300, 26, '#f1eef7', { s: '#d5cde6', w: 1, r: 8 }));
-      kids.push(T(20, 26, `ray at ${v.i} degrees on the first face`, { z: 12, w: 600, f: '#6b5a8a', a: 'start' }));
+      kids.push(T(20, 26, `ray at ${v.i} degrees on the first face`, { z: 15, w: 600, f: '#6b5a8a', a: 'start' }));
       kids.push(R(14, 262, 572, 28, '#eef7ff', { s: '#b8cde8', w: 1, r: 8 }));
-      kids.push(T(300, 281, line, { z: 13, w: 700, f: '#2a4a6a' }));
+      kids.push(T(300, 281, line, { z: 15, w: 700, f: '#2a4a6a' }));
       return { kids, say };
     },
   },
