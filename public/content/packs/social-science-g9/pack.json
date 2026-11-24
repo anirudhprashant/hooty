@@ -23499,7 +23499,7 @@
       {
        "id": "social-science-g9-ch8-l1",
        "title": "Choices, Needs and Scarce Resources",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -23551,6 +23551,36 @@
            "p": 183
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch8-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ppc",
+         "params": {},
+         "title": "Grow barley or wheat",
+         "tasks": [
+          {
+           "say": "Grow 6 quintals of barley and 8 of wheat: a point exactly on the curve.",
+           "when": "b == 6 and w == 8",
+           "then": "On the curve all the land and workers are used, so this is an efficient combination."
+          },
+          {
+           "say": "Move to a point inside the curve, where some land or workers are left idle.",
+           "when": "b * b + w * w < 100",
+           "then": "Inside the curve the farm could grow more of one crop without giving up the other, because something is idle."
+          },
+          {
+           "say": "Try a combination the farm cannot reach.",
+           "when": "b * b + w * w > 100",
+           "then": "Outside the curve there is not enough land and labour, so this combination is impossible."
+          }
+         ],
+         "takeaway": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost.",
+         "explanation": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost."
         },
         {
          "type": "worked",
@@ -24070,7 +24100,7 @@
       {
        "id": "social-science-g9-ch8-l2",
        "title": "The Production Possibility Curve",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -24138,6 +24168,36 @@
            "p": 185
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ppc",
+         "params": {},
+         "title": "Grow barley or wheat",
+         "tasks": [
+          {
+           "say": "Grow 6 quintals of barley and 8 of wheat: a point exactly on the curve.",
+           "when": "b == 6 and w == 8",
+           "then": "On the curve all the land and workers are used, so this is an efficient combination."
+          },
+          {
+           "say": "Move to a point inside the curve, where some land or workers are left idle.",
+           "when": "b * b + w * w < 100",
+           "then": "Inside the curve the farm could grow more of one crop without giving up the other, because something is idle."
+          },
+          {
+           "say": "Try a combination the farm cannot reach.",
+           "when": "b * b + w * w > 100",
+           "then": "Outside the curve there is not enough land and labour, so this combination is impossible."
+          }
+         ],
+         "takeaway": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost.",
+         "explanation": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost."
         },
         {
          "type": "worked",
