@@ -508,6 +508,15 @@ export const KITS = {
       ...(p.grade >= 9 ? [{ say: 'Give the lens a short focal length, so it is more powerful.', when: 'f <= 6', then: 'A short focal length means a powerful lens, because power is one divided by the focal length.' }] : []),
     ],
   },
+  prism: {
+    grades: [8, 10], match: [/prism/, /dispersion/, /spectrum/, /vibgyor/, /rainbow/, /colours of (white )?light/, /splitting (of )?(white )?light/],
+    title: 'Split the light', takeaway: 'A prism bends a ray twice, so the ray comes out at an angle to the way it went in. White light splits into the spectrum because violet bends most and red least: VIBGYOR.',
+    tasks: [
+      { say: 'Switch to white light and find the band of colours.', when: 'w == 1', then: 'White light splits into VIBGYOR: violet, indigo, blue, green, yellow, orange and red.' },
+      { say: 'Switch to violet and see it bend further than red.', when: 'w == 2', then: 'Violet bends the most and red the least, so a prism spreads white light into a spectrum.' },
+      { say: 'Make the prism angle bigger and watch the ray turn more.', when: 'A >= 65', then: 'A wider prism angle bends the light through a bigger angle of deviation.' },
+    ],
+  },
   mirror: {
     grades: [8, 10], perChapter: 3, titleOnly: true,
     match: [/spherical mirrors?/, /curved mirrors?/, /concave|convex/, /mirror formula|mirror equation/, /sign convention.*mirror|mirror.*sign convention/, /images? (formed|by).*mirrors?/],

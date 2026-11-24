@@ -3362,6 +3362,120 @@ export const WIDGETS = {
       return { kids, say: `${b} quintals of barley and ${w} quintals of wheat: ${where}. More barley means less wheat, and the wheat given up is the opportunity cost.` };
     },
   },
+  prism: {
+    subject: 'science', about: 'A triangular glass prism with a ray of light falling on one face. The ray bends towards the normal as it enters the glass and away as it leaves, so it comes out at an angle to the way it went in: the angle of deviation. White light splits into the colours of the spectrum (VIBGYOR) because violet bends most and red least. For refraction through a prism, the angle of deviation, dispersion, spectrum, VIBGYOR, Newton and the rainbow.',
+    sliders: [['i', 'Angle of the ray on the first face (degrees)', 20, 70, 5, 45], ['A', 'Angle of the prism (degrees)', 40, 70, 5, 50], ['w', 'Light: red, white, violet', 0, 2, 1, 0]],
+    draw(v) {
+      const apex = { x: 300, y: 66 }, baseY = 250;
+      const half = (baseY - apex.y) * Math.tan(rad(v.A / 2));
+      const bl = { x: 300 - half, y: baseY }, br = { x: 300 + half, y: baseY };
+      const middle = { x: 300, y: (apex.y + baseY + baseY) / 3 };
+      const sub2 = (a, b) => ({ x: a.x - b.x, y: a.y - b.y });
+      const add2 = (a, b) => ({ x: a.x + b.x, y: a.y + b.y });
+      const mul2 = (a, k) => ({ x: a.x * k, y: a.y * k });
+      const dot2 = (a, b) => a.x * b.x + a.y * b.y;
+      const cross2 = (a, b) => a.x * b.y - a.y * b.x;
+      const unit2 = (a) => mul2(a, 1 / Math.hypot(a.x, a.y));
+      const rot2 = (a, ang) => ({ x: a.x * Math.cos(ang) - a.y * Math.sin(ang), y: a.x * Math.sin(ang) + a.y * Math.cos(ang) });
+      const facingOut = (p, q) => { const f = sub2(q, p), mid = mul2(add2(p, q), 0.5); let n = unit2({ x: -f.y, y: f.x }); if (dot2(n, sub2(mid, middle)) < 0) n = mul2(n, -1); return n; };
+      const hitFace = (from, dir, p, q) => {
+        const edge = sub2(q, p), den = cross2(dir, edge);
+        if (Math.abs(den) < 1e-9) return null;
+        const ap = sub2(p, from), t = cross2(ap, edge) / den, u = cross2(ap, dir) / den;
+        return t > 1e-6 && u >= -1e-6 && u <= 1 + 1e-6 ? { t, pt: add2(from, mul2(dir, t)), p, q } : null;
+      };
+      const bend = (dir, nOut, n1, n2) => {
+        let n = nOut, cosi = -dot2(n, dir);
+        if (cosi < 0) { n = mul2(n, -1); cosi = -cosi; }
+        const eta = n1 / n2, k = 1 - eta * eta * (1 - cosi * cosi);
+        if (k < 0) return { dir: unit2(sub2(dir, mul2(n, 2 * dot2(dir, n)))), tir: true };
+        const cost = Math.sqrt(k);
+        return { dir: unit2(add2(mul2(dir, eta), mul2(n, eta * cosi - cost))), tir: false };
+      };
+      const pin = add2(bl, mul2(sub2(apex, bl), 0.45));
+      const nLeft = facingOut(bl, apex), inward = mul2(nLeft, -1);
+      const dIn = unit2(rot2(inward, -rad(v.i)));
+      let back = 320;
+      if (dIn.x > 1e-6) back = Math.min(back, (pin.x - 8) / dIn.x);
+      if (dIn.x < -1e-6) back = Math.min(back, (592 - pin.x) / -dIn.x);
+      if (dIn.y > 1e-6) back = Math.min(back, (pin.y - 8) / dIn.y);
+      if (dIn.y < -1e-6) back = Math.min(back, (292 - pin.y) / -dIn.y);
+      const start = sub2(pin, mul2(dIn, Math.max(20, back)));
+      const bands = [['violet', '#7a3cff', 1.532], ['indigo', '#4b3fd4', 1.528], ['blue', '#2f7bf5', 1.524], ['green', '#17a34a', 1.519], ['yellow', '#f5c211', 1.517], ['orange', '#f57c1f', 1.514], ['red', '#e02020', 1.513]];
+      const shown = v.w === 1 ? bands : v.w === 2 ? [bands[0]] : [bands[6]];
+      const kids = [R(0, 0, W, H, '#fbf8ff', { w: 0 })];
+      kids.push(s('polygon', { points: `${apex.x},${apex.y} ${bl.x},${bl.y} ${br.x},${br.y}`, fill: '#dcecfb', stroke: INK, 'stroke-width': 4, 'stroke-linejoin': 'round', opacity: 0.85 }));
+      kids.push(T(300, 56, `prism angle ${v.A} degrees`, { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(L(start.x, start.y, pin.x, pin.y, v.w === 1 ? '#8a86a0' : shown[0][1], 5));
+      const nTip = add2(pin, mul2(nLeft, 46));
+      kids.push(L(add2(pin, mul2(nLeft, -8)).x, add2(pin, mul2(nLeft, -8)).y, nTip.x, nTip.y, '#9c93b8', 2, { 'stroke-dasharray': '6 6' }));
+      kids.push(T(nTip.x + 10, nTip.y, 'normal', { z: 11, w: 600, f: '#8a80a8' }));
+      kids.push(CIRC(pin.x, pin.y, 4, INK));
+      const results = [];
+      for (const [name, colour, n] of shown) {
+        const r1 = bend(dIn, nLeft, 1, n);
+        let pos = pin, dir = r1.dir, cameOut = false, outDir = null, exitAt = null, guard = 0, bounced = false;
+        const inner = [];
+        while (guard < 4) {
+          const options = [hitFace(pos, dir, apex, br), hitFace(pos, dir, br, bl), hitFace(pos, dir, bl, apex)].filter(Boolean).sort((a, b) => a.t - b.t);
+          const face = options[0];
+          if (!face) break;
+          inner.push([pos, face.pt]);
+          const r2 = bend(dir, facingOut(face.p, face.q), n, 1);
+          if (!r2.tir) { outDir = r2.dir; exitAt = face.pt; cameOut = true; break; }
+          pos = face.pt; dir = r2.dir; bounced = true; guard++;
+        }
+        for (const [a, b] of inner) kids.push(L(a.x, a.y, b.x, b.y, colour, 4));
+        if (cameOut) {
+          const dev = (Math.acos(Math.max(-1, Math.min(1, dot2(dIn, outDir)))) * 180) / Math.PI;
+          results.push({ name, colour, dev, exitAt, outDir, bounced });
+        }
+      }
+      const red = results.find((r) => r.name === 'red'), violet = results.find((r) => r.name === 'violet');
+      const clean = v.w === 1 && red && violet && !red.bounced && !violet.bounced;
+      const fan = (r) => {   // white light only: draw the colours wider apart so the band can be seen
+        if (!clean || r.name === 'red') return r.outDir;
+        const ang = Math.atan2(cross2(red.outDir, r.outDir), dot2(red.outDir, r.outDir));
+        return rot2(red.outDir, ang * 5);
+      };
+      for (const r of results) {
+        const shownDir = fan(r);
+        const far = add2(r.exitAt, mul2(shownDir, 340));
+        kids.push(L(r.exitAt.x, r.exitAt.y, far.x, far.y, r.colour, 4));
+      }
+      kids.push(R(566, 30, 22, 240, '#ffffff', { s: '#cfc6e2', w: 2, r: 4 }));
+      kids.push(T(577, 22, 'screen', { z: 10, w: 600, f: '#8a80a8' }));
+      for (const r of results) {
+        const shownDir = fan(r);
+        if (shownDir.x <= 0.02) continue;
+        const t = (577 - r.exitAt.x) / shownDir.x, sy = r.exitAt.y + shownDir.y * t;
+        if (sy > 34 && sy < 266) kids.push(CIRC(577, sy, 6, r.colour, { s: INK, w: 1 }));
+      }
+      let line, say;
+      if (v.w === 1 && red && violet && !red.bounced && !violet.bounced) {
+        const spread = violet.dev - red.dev;
+        line = 'White light splits into the spectrum: violet bends most, red least.';
+        say = `White light enters the prism and comes out as a band of colours, violet to red. Violet is bent ${num(spread, 1)} degrees more than red, so the colours spread apart. The band is drawn wider so you can see it. This splitting is called dispersion, and the band is the spectrum: VIBGYOR.`;
+      } else if (v.w === 1) {
+        line = 'The light reflects inside the prism before it leaves.';
+        say = 'At this steep angle the light hits the second face too flat to get out, so it reflects off the inside of that face and leaves through another face. This is total internal reflection. Slide the ray or the prism angle to let the light come straight out.';
+      } else if (red) {
+        line = `Red light comes out bent through ${num(red.dev, 1)} degrees.`;
+        say = `The red ray enters the glass, bends towards the normal, then bends away from the normal as it leaves, so it comes out at ${num(red.dev, 1)} degrees to its first direction. Red bends the least of all the colours.`;
+      } else if (violet) {
+        line = `Violet light comes out bent through ${num(violet.dev, 1)} degrees.`;
+        say = `The violet ray comes out at ${num(violet.dev, 1)} degrees to its first direction. Violet bends more than red, which is why a prism spreads white light into its colours.`;
+      } else {
+        line = 'The light reflects inside the prism instead of coming out.';
+        say = 'The ray hits the second face too steeply, so it reflects back inside the glass. This is total internal reflection.';
+      }
+      kids.push(R(12, 8, 300, 26, '#f1eef7', { s: '#d5cde6', w: 1, r: 8 }));
+      kids.push(T(20, 26, `ray at ${v.i} degrees on the first face`, { z: 12, w: 600, f: '#6b5a8a', a: 'start' }));
+      kids.push(R(14, 262, 572, 28, '#eef7ff', { s: '#b8cde8', w: 1, r: 8 }));
+      kids.push(T(300, 281, line, { z: 13, w: 700, f: '#2a4a6a' }));
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
