@@ -61,19 +61,19 @@ export const WIDGETS = {
       // the family's ending, big, as a pill
       kids.push(R(430, 12, 146, 46, accent, { w: 3, s: '#2a1a4a', r: 23 }));
       kids.push(T(503, 43, ending, { z: 24, f: '#2a1a4a' }));
-      // four word cards in a two-by-two
-      const cardW = 252, cardH = 74;
+      // four word cards in a two-by-two, with every word split at the same seam so the endings line up
+      const cardW = 252, cardH = 74, seam = 116;
       words.forEach((word, i) => {
         const x = 24 + (i % 2) * (cardW + 24), y = 78 + Math.floor(i / 2) * (cardH + 18);
         kids.push(R(x, y, cardW, cardH, '#ffffff', { w: 3, s: '#e3dccb', r: 14 }));
         const stem = word.slice(0, word.length - (ending.length - 1));
-        kids.push(T(x + 22, y + 46, stem, { z: 26, a: 'start', f: '#2a1a4a' }));
         // the shared ending, in the family colour, so the eye lands on what makes the rhyme
-        const stemW = Math.max(0, stem.length) * 15.5;
-        kids.push(R(x + 22 + stemW + 4, y + 20, 18 + (ending.length - 1) * 15.5, 40, accent, { w: 0, r: 10 }));
-        kids.push(T(x + 22 + stemW + 8, y + 46, word.slice(stem.length), { z: 26, a: 'start', f: '#2a1a4a' }));
+        kids.push(T(x + seam, y + 46, stem, { z: 26, a: 'end', f: '#2a1a4a' }));
+        const endW = 8 + (ending.length - 1) * 15;
+        kids.push(R(x + seam + 6, y + 20, endW, 40, accent, { w: 0, r: 10 }));
+        kids.push(T(x + seam + 12, y + 46, word.slice(stem.length), { z: 26, a: 'start', f: '#2a1a4a' }));
       });
-      kids.push(T(300, 268, 'say them aloud: the last part sounds the same in every card', { z: 12, f: '#7d7a70', w: 600 }));
+      kids.push(T(300, 268, 'say them aloud: the last part sounds the same in every card', { z: 15, f: '#7d7a70', w: 600 }));
       const say = `${words.slice(0, 3).map((w) => w[0].toUpperCase() + w.slice(1)).join(', ')} and ${words[3]} all end with the same sound, ${ending}. Words that end with the same sound rhyme.`;
       return { kids, say };
     },
@@ -93,23 +93,23 @@ export const WIDGETS = {
       const kids = [R(0, 0, W, H, '#fbf9f2', { w: 0 })];
       // the case for this step of the journey
       kids.push(R(36, 12, 528, 64, '#ffffff', { w: 2, s: '#e3d9c6', r: 12 }));
-      kids.push(T(48, 30, 'One law, three organs', { z: 12, a: 'start', f: '#8a6d3b', w: 700 }));
-      kids.push(T(48, 50, cases[stage][0], { z: 13.5, a: 'start' }));
-      kids.push(T(48, 68, cases[stage][1], { z: 13.5, a: 'start' }));
+      kids.push(T(48, 30, 'One law, three organs', { z: 15, a: 'start', f: '#8a6d3b', w: 700 }));
+      kids.push(T(48, 51, cases[stage][0], { z: 18, a: 'start' }));
+      kids.push(T(48, 70, cases[stage][1], { z: 18, a: 'start' }));
       // the journey: three stops on one line
-      const xs = [70, 240, 410], bw = 152, bh = 104, y0 = 108;
+      const xs = [70, 240, 410], bw = 152, bh = 112, y0 = 106;
       kids.push(L(30, y0 + bh / 2, 570, y0 + bh / 2, '#d8cdb8', 3, { 'stroke-dasharray': '7 6' }));
       for (let i = 0; i < 3; i++) {
         const on = i === stage;
         const x = xs[i], y = y0;
         kids.push(R(x, y, bw, bh, on ? '#fff4cf' : '#f4f2ea', { w: on ? 4 : 2, s: on ? '#e09f00' : '#d5cdbd', r: 14 }));
-        kids.push(T(x + bw / 2, y + 18, names[i], { z: 13, f: on ? '#5c4300' : '#5d6b63', w: 700 }));
-        kids.push(T(x + bw / 2, y + 94, roles[i], { z: 11, f: '#8a7a5c', w: 600 }));
+        kids.push(T(x + bw / 2, y + 20, names[i], { z: 17, f: on ? '#5c4300' : '#5d6b63', w: 700 }));
+        kids.push(T(x + bw / 2, y + 102, roles[i], { z: 14.5, f: '#8a7a5c', w: 600 }));
         const ink = on ? '#b98600' : '#8fa08f';
-        const mid = x + bw / 2, cy = y + 56;
+        const mid = x + bw / 2, cy = y + 58;
         if (i === 0) {
           // an assembly: a dome on top of columns
-          kids.push(s('path', { d: `M ${mid - 30} ${cy - 10} Q ${mid} ${cy - 44} ${mid + 30} ${cy - 10}`, fill: 'none', stroke: ink, 'stroke-width': 4 }));
+          kids.push(s('path', { d: `M ${mid - 30} ${cy - 10} Q ${mid} ${cy - 42} ${mid + 30} ${cy - 10}`, fill: 'none', stroke: ink, 'stroke-width': 4 }));
           for (const dx of [-22, -8, 8, 22]) kids.push(L(mid + dx, cy - 8, mid + dx, cy + 22, ink, 3.5));
           kids.push(L(mid - 32, cy + 24, mid + 32, cy + 24, ink, 3.5));
         } else if (i === 1) {
@@ -128,8 +128,8 @@ export const WIDGETS = {
           kids.push(L(mid - 12, cy + 22, mid + 12, cy + 22, ink, 3.5));
         }
       }
-      kids.push(T(300, 246, 'each organ can check the other two, and none may take over their work', { z: 11.5, f: '#5d6b63', w: 600 }));
-      kids.push(T(300, 266, 'a court can strike down a law that breaks the Constitution; the assembly can question the government', { z: 10.5, f: '#8a7a5c', w: 600 }));
+      kids.push(T(300, 246, 'each organ can check the other two, and none may take over their work', { z: 15, f: '#5d6b63', w: 600 }));
+      kids.push(T(300, 272, 'a court can strike down a law; the assembly can question the government', { z: 13.5, f: '#8a7a5c', w: 600 }));
       const say = [
         'The legislature is the assembly of elected representatives. It debates the problem, writes the law against digital fraud and passes it. Making the law is its job alone.',
         'The executive is the part of government that carries laws out: the ministries, the police, the tax offices. It puts the new law to work, but it does not write the law.',
@@ -297,14 +297,15 @@ export const WIDGETS = {
         const x = x0 + i * (boxW + gap), y = y0;
         const on = i === stage;
         kids.push(R(x, y, boxW, boxH, on ? '#fff4cf' : '#f2f5ee', { w: on ? 4 : 2, s: on ? '#ffb703' : '#cfd8cc', r: 12 }));
-        kids.push(T(x + boxW / 2, y + boxH - 10, names[i], { z: 13, f: on ? '#2a1a4a' : '#6b7a72', w: 700 }));
+        // "organ system" does not fit five panels at phone size, so the panel names stay modest
+        kids.push(T(x + boxW / 2, y + boxH - 10, names[i], { z: 14, f: on ? '#2a1a4a' : '#6b7a72', w: 700 }));
         draw(x + boxW / 2, y + 64, on);
       };
       // 1. a plant cell: stiff wall, nucleus inside
       panel(0, (cx, cy) => {
         kids.push(R(cx - 26, cy - 26, 52, 52, '#e7f5d9', { w: 4, s: '#3f7d3a', r: 4 }));
         kids.push(CIRC(cx + 4, cy - 2, 8, '#3a86ff', { w: 1.5 }));
-        kids.push(T(cx, cy + 40, 'wall', { z: 10, f: '#3f7d3a' }));
+        kids.push(T(cx, cy + 40, 'wall', { z: 14, f: '#3f7d3a' }));
       });
       // 2. a tissue: similar cells packed together
       panel(1, (cx, cy) => {
@@ -326,7 +327,7 @@ export const WIDGETS = {
         kids.push(L(cx, cy + 46, cx, cy - 44, '#3f7d3a', 4));
         kids.push(s('ellipse', { cx: cx - 22, cy: cy - 16, rx: 22, ry: 11, fill: '#8fd18a', stroke: '#2f6b2c', 'stroke-width': 2, transform: `rotate(-28 ${cx - 22} ${cy - 16})` }));
         kids.push(s('ellipse', { cx: cx + 22, cy: cy + 8, rx: 22, ry: 11, fill: '#8fd18a', stroke: '#2f6b2c', 'stroke-width': 2, transform: `rotate(28 ${cx + 22} ${cy + 8})` }));
-        kids.push(T(cx, cy + 56, 'stem + leaves', { z: 10, f: '#2f6b2c' }));
+        kids.push(T(cx, cy + 56, 'stem + leaves', { z: 13, f: '#2f6b2c' }));
       });
       // 5. the whole plant: an organism
       panel(4, (cx, cy) => {
@@ -337,7 +338,7 @@ export const WIDGETS = {
         kids.push(CIRC(cx, cy - 50, 11, '#ffd166', { w: 2 }));
         for (const dx of [-14, -6, 6, 14]) kids.push(L(cx, cy + 52, cx + dx, cy + 72, '#a9743d', 2.5));
       });
-      kids.push(T(300, 22, 'the same plant, five sizes', { z: 14, f: '#4a5a6a' }));
+      kids.push(T(300, 22, 'the same plant, five sizes', { z: 17, f: '#4a5a6a' }));
       const say = [
         'A cell is the basic unit of life: a stiff wall around the living parts, with a nucleus inside. One cell on its own is the smallest level.',
         'A tissue is a group of similar cells that do the same job together. The epidermis, xylem and phloem are plant tissues.',
@@ -410,7 +411,7 @@ export const WIDGETS = {
       kids.push(s('clipPath', { id: uid }, [CIRC(300, 150, 118, '#fff')]));
       kids.push(s('g', { 'clip-path': `url(#${uid})` }, [CIRC(300, 150, 118, '#f7fcff', { w: 0 }), ...field]));
       kids.push(CIRC(300, 150, 118, 'none', { w: 6, s: '#2a1a4a' }));
-      kids.push(T(300, 292, `about ${mag}x`, { z: 14, f: '#4a5a6a' }));
+      kids.push(T(300, 292, `about ${mag}x`, { z: 18, f: '#4a5a6a' }));
       const group = p < 200 ? 0 : p < 400 ? 1 : p < 560 ? 2 : 3;
       const say = !big
         ? `At ${mag}x a drop of pond water looks almost empty: only tiny specks. Your eyes could never see these at all. Turn the magnification up to make them out.`
@@ -457,10 +458,10 @@ export const WIDGETS = {
       }
       kids.push(s('path', { d: 'M 470 210 Q 490 192 512 208', fill: 'none', stroke: '#c9ab6a', 'stroke-width': 3 }));
       kids.push(s('path', { d: 'M 528 212 Q 552 194 578 210', fill: 'none', stroke: '#c9ab6a', 'stroke-width': 3 }));
-      kids.push(T(26, 205, 'mountain', { z: 13, a: 'start', f: '#4a5a6a' }));
-      kids.push(T(212, 128, 'plateau', { z: 13, f: '#4a5a6a' }));
-      kids.push(T(370, 186, 'plain', { z: 13, f: '#4a5a6a' }));
-      kids.push(T(530, 190, 'desert', { z: 13, f: '#4a5a6a' }));
+      kids.push(T(26, 198, 'mountain', { z: 16, a: 'start', f: '#4a5a6a' }));
+      kids.push(T(212, 122, 'plateau', { z: 16, f: '#4a5a6a' }));
+      kids.push(T(370, 182, 'plain', { z: 16, f: '#4a5a6a' }));
+      kids.push(T(530, 186, 'desert', { z: 16, f: '#4a5a6a' }));
       // the child, standing on the ground at this point of the walk
       const gy = groundAt(px);
       kids.push(CIRC(px, gy - 30, 7, C.y, { w: 2 }));
