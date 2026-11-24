@@ -1332,3 +1332,11 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .catalogue-link:hover { background: var(--primary-soft); }
 .catalogue-link .icon { flex: 0 0 auto; color: var(--text-muted); }
 .catalogue-link__sub { display: block; color: var(--text-muted); font-size: var(--fs-xs); }
+
+
+/* On a laptop the whole class list fits in one line's worth of space: let it wrap, so every class and the add button
+   are visible at once. On a phone the list stays one swipeable row, which is what the negative gutters and the fade
+   are for. */
+@media (min-width: 900px) {
+  .subject-tabs { flex-wrap: wrap; mask-image: none; }
+}
