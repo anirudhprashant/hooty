@@ -838,9 +838,9 @@ export const WIDGETS = {
       const X = (x) => 64 + x * 47, Y = (m) => 268 - ((m - lo) / (hi - lo)) * 220, kids = [];
       for (let x = 0; x <= 10; x++) kids.push(L(X(x), Y(hi), X(x), Y(lo), x === 0 ? '#8a7aa8' : '#ece8f5', 1.5));
       for (let m = Math.ceil(lo / 50) * 50; m <= hi; m += 50) kids.push(L(X(0), Y(m), X(10), Y(m), m === 0 ? '#8a7aa8' : '#ece8f5', 1.5));
-      for (let x = 0; x <= 10; x += 2) kids.push(T(X(x), Y(lo) + 18, x, { z: 12, w: 600, f: '#6b5a8a' }));
-      for (let m = Math.ceil(lo / 50) * 50; m <= hi; m += 50) kids.push(T(X(0) - 8, Y(m) + 4, m, { z: 12, w: 600, f: '#6b5a8a', a: 'end' }));
-      kids.push(T(X(5), Y(lo) + 32, 'time (s)', { z: 13, f: '#6b5a8a' }), T(X(0) - 40, Y(hi) - 8, 'position (m)', { z: 13, f: '#6b5a8a', a: 'start' }));
+      for (let x = 0; x <= 10; x += 2) kids.push(T(X(x), Y(lo) + 20, x, { z: 15, w: 600, f: '#6b5a8a' }));
+      for (let m = Math.ceil(lo / 50) * 50; m <= hi; m += 50) kids.push(T(X(0) - 8, Y(m) + 5, m, { z: 15, w: 600, f: '#6b5a8a', a: 'end' }));
+      kids.push(T(X(10) - 6, Y(lo) - 14, 'time (s)', { z: 15, f: '#6b5a8a', a: 'end' }), T(X(0) - 44, Y(hi) - 10, 'position (m)', { z: 15, f: '#6b5a8a', a: 'start' }));
       const pts = [];
       for (let x = 0; x <= tf + 1e-9; x += 0.1) pts.push(`${X(x).toFixed(1)},${Y(pos(x)).toFixed(1)}`);
       pts.push(`${X(tf)},${Y(now)}`);
@@ -849,7 +849,7 @@ export const WIDGETS = {
       if (tf >= 1) {
         const p0 = pos(tf - 1);
         kids.push(L(X(tf - 1), Y(p0), X(tf), Y(p0), C.g, 3, { 'stroke-dasharray': '6 5' }), L(X(tf), Y(p0), X(tf), Y(now), C.b, 3, { 'stroke-dasharray': '6 5' }));
-        kids.push(T(X(tf - 0.5), Y(p0) + (now >= p0 ? 20 : -10), '1 s', { z: 13, f: '#058a68' }), T(X(tf) + 8, Y((p0 + now) / 2), `${num(now - p0)} m`, { z: 13, f: '#3a86ff', a: 'start' }));
+        kids.push(T(X(tf - 0.5), Y(p0) + (now >= p0 ? 22 : -12), '1 s', { z: 15, f: '#058a68' }), T(X(tf) + 8, Y((p0 + now) / 2), `${num(now - p0)} m`, { z: 15, f: '#3a86ff', a: 'start' }));
       }
       const shape = u === 0 && acc === 0 ? 'The line is flat, so the car is standing still.' : acc === 0 ? 'The line is straight, so the speed is steady.' : acc > 0 ? 'The line bends upward, so the car is speeding up.' : 'The line bends downward, so the car is slowing down.';
       return { kids, say: `After ${tf} second${tf === 1 ? '' : 's'} the car is ${num(now)} m from its start and moving at ${num(vNow)} m/s. ${shape}` };
@@ -3652,29 +3652,29 @@ export const WIDGETS = {
     draw(v) {
       const kids = [R(0, 0, W, H, '#dff3ff', { w: 0 })];
       kids.push(s('polygon', { points: '10,226 120,74 230,226', fill: '#9dbfa5', stroke: INK, 'stroke-width': 2 }));
-      kids.push(T(120, 96, 'hills', { z: 13, f: '#3d5a44' }));
+      kids.push(T(146, 100, 'hills', { z: 16, a: 'start', f: '#3d5a44' }));
       kids.push(R(492, 206, 108, 94, '#a9def9', { w: 0 }));
-      kids.push(T(556, 246, 'sea', { z: 16, f: '#1d4ed8' }));
+      kids.push(T(548, 250, 'sea', { z: 16, a: 'end', f: '#1d4ed8' }));
       kids.push(s('path', { d: 'M 118 150 Q 230 168 320 182 T 500 224', fill: 'none', stroke: '#0077b6', 'stroke-width': 7 + v.stage * 1.4, 'stroke-linecap': 'round' }));
       if (v.stage >= 2) {
         kids.push(L(214, 112, 268, 172, '#4cc9f0', 6, { 'stroke-linecap': 'round' }));
         kids.push(L(300, 240, 268, 172, '#4cc9f0', 6, { 'stroke-linecap': 'round' }));
-        kids.push(T(268, 118, 'tributary', { z: 12, f: '#0077b6' }));
+        kids.push(T(268, 116, 'tributary', { z: 15, f: '#0077b6' }));
       }
       if (v.stage >= 3) {
         for (let i = 0; i < 4; i++) kids.push(R(300 + i * 26, 208 + (i % 2) * 8, 14, 16, '#7ac74f', { w: 1, r: 2 }));
-        kids.push(T(352, 250, 'fields and forests', { z: 12, f: '#2f6b2f' }));
+        kids.push(T(352, 252, 'fields and forests', { z: 15, f: '#2f6b2f' }));
       }
       if (v.stage === 4) {
         kids.push(s('ellipse', { cx: 392, cy: 176, rx: 34, ry: 15, fill: '#a9def9', stroke: INK, 'stroke-width': 2 }));
         kids.push(R(408, 156, 14, 58, '#8d99ae', { w: 2, r: 2 }));
-        kids.push(T(392, 150, 'reservoir', { z: 12, f: '#0077b6' }));
-        kids.push(T(415, 232, 'dam', { z: 12, f: '#3d3d3d' }));
+        kids.push(T(392, 148, 'reservoir', { z: 15, f: '#0077b6' }));
+        kids.push(T(415, 236, 'dam', { z: 15, f: '#3d3d3d' }));
       }
       if (v.stage === 5) {
         for (const dy of [-14, 0, 14]) kids.push(L(470, 214, 516, 224 + dy, '#0077b6', 4));
         kids.push(CIRC(506, 198, 5, '#2f6b2f', { w: 1 }), CIRC(520, 210, 5, '#2f6b2f', { w: 1 }));
-        kids.push(T(492, 178, 'delta and mangroves', { z: 12, f: '#2f6b2f', a: 'middle' }));
+        kids.push(T(492, 176, 'delta and mangroves', { z: 15, f: '#2f6b2f', a: 'middle' }));
       }
       const at = [[118, 150], [268, 172], [352, 194], [392, 200], [498, 222]][v.stage - 1];
       kids.push(CIRC(at[0], at[1], 9, '#ff7a59', { w: 3 }));
