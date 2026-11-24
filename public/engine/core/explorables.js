@@ -1062,23 +1062,23 @@ export const WIDGETS = {
         kids.push(R(cx - rr, top, 2 * rr, hh, '#bfe3ff', { w: 0 }));
         kids.push(L(cx - rr, top, cx - rr, base, INK, 3), L(cx + rr, top, cx + rr, base, INK, 3));
         kids.push(s('ellipse', { cx, cy: top, rx: rr, ry: rr * 0.3, fill: '#e6f6ff', stroke: INK, 'stroke-width': 3 }));
-        kids.push(L(cx, top, cx + rr, top, C.o, 3), T(cx + rr / 2, top - 8, `r = ${v.rr}`, { z: 13, f: '#c2510e' }));
-        kids.push(L(cx + rr + 16, top, cx + rr + 16, base, C.g, 3), T(cx + rr + 28, (top + base) / 2 + 4, `h = ${v.ht}`, { z: 13, f: '#058a68', a: 'start' }));
+        kids.push(L(cx, top, cx + rr, top, C.o, 3), T(cx + rr / 2, top - 10, `r = ${v.rr}`, { z: 16, f: '#c2510e' }));
+        kids.push(L(cx + rr + 16, top, cx + rr + 16, base, C.g, 3), T(cx + rr + 30, (top + base) / 2 + 5, `h = ${v.ht}`, { z: 16, f: '#058a68', a: 'start' }));
       } else if (v.pick === 1) {
         kids.push(s('polygon', { points: `${cx},${top} ${cx - rr},${base} ${cx + rr},${base}`, fill: '#ffe3a3', stroke: INK, 'stroke-width': 3 }));
         kids.push(s('ellipse', { cx, cy: base, rx: rr, ry: rr * 0.3, fill: '#ffd27a', stroke: INK, 'stroke-width': 3 }));
         kids.push(L(cx, top, cx, base, INK, 2, { 'stroke-dasharray': '6 6' }));
-        kids.push(L(cx, base, cx + rr, base, C.o, 3), T(cx + rr / 2, base + 22, `r = ${v.rr}`, { z: 13, f: '#c2510e' }));
-        kids.push(T(cx + 10, (top + base) / 2 + 4, `h = ${v.ht}`, { z: 13, f: '#058a68', a: 'start' }));
+        kids.push(L(cx, base, cx + rr, base, C.o, 3), T(cx + rr / 2, base + 23, `r = ${v.rr}`, { z: 16, f: '#c2510e' }));
+        kids.push(T(cx + 10, (top + base) / 2 + 5, `h = ${v.ht}`, { z: 16, f: '#058a68', a: 'start' }));
       } else {
         kids.push(CIRC(cx, 150, rr, '#cfeeff', { w: 3 }));
         kids.push(s('ellipse', { cx, cy: 150, rx: rr, ry: rr * 0.35, fill: 'none', stroke: '#8ecae6', 'stroke-width': 2 }));
-        kids.push(L(cx, 150, cx + rr, 150, C.o, 3), T(cx + rr / 2, 142, `r = ${v.rr}`, { z: 13, f: '#c2510e' }));
+        kids.push(L(cx, 150, cx + rr, 150, C.o, 3), T(cx + rr / 2, 140, `r = ${v.rr}`, { z: 16, f: '#c2510e' }));
       }
       const vol = v.pick === 0 ? Math.PI * v.rr ** 2 * v.ht : v.pick === 1 ? (Math.PI * v.rr ** 2 * v.ht) / 3 : (4 * Math.PI * v.rr ** 3) / 3;
       const area = v.pick === 0 ? 2 * Math.PI * v.rr * (v.rr + v.ht) : v.pick === 1 ? Math.PI * v.rr * (v.rr + Math.hypot(v.rr, v.ht)) : 4 * Math.PI * v.rr ** 2;
       const rule = v.pick === 0 ? 'V = pi x r x r x h' : v.pick === 1 ? 'V = one third of pi x r x r x h' : 'V = four thirds of pi x r x r x r';
-      kids.push(T(300, 286, `${rule}, so volume = ${num(vol, 1)} cm3 and surface area = ${num(area, 1)} cm2.`, { z: 14, f: '#4b3a6b' }));
+      kids.push(T(300, 286, `${rule}, so volume = ${num(vol, 1)} cm3 and surface area = ${num(area, 1)} cm2.`, { z: 15, f: '#4b3a6b' }));
       const say = v.pick === 2
         ? `The sphere has radius ${v.rr} cm. Volume = 4/3 x pi x ${v.rr} x ${v.rr} x ${v.rr} = ${num(vol, 1)} cm3. Surface area = 4 x pi x ${v.rr} x ${v.rr} = ${num(area, 1)} cm2. The height slider does not change a sphere.`
         : `The ${names[v.pick]} has radius ${v.rr} cm and height ${v.ht} cm. Volume = ${num(vol, 1)} cm3 and surface area = ${num(area, 1)} cm2.`;
@@ -2061,14 +2061,14 @@ export const WIDGETS = {
     draw(v) {
       const total = 1000 * v.th + 100 * v.hu + 10 * v.te + v.on, kids = [];
       // each kind of block in its own column: a thousand is a big square, a hundred a flat, a ten a rod, a one a dot
-      for (let i = 0; i < v.th; i++) kids.push(R(24 + i * 30, 30, 26, 26, '#9fd3f2', { w: 2.5, r: 3 }), T(37 + i * 30, 48, '1000', { z: 9, w: 700 }));
+      for (let i = 0; i < v.th; i++) kids.push(R(24 + i * 30, 26, 26, 26, '#9fd3f2', { w: 2.5, r: 3 }), T(37 + i * 30, 45, '1000', { z: 11, w: 700 }));
       for (let i = 0; i < v.hu; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(24 + c * 34, 70 + r * 34, 30, 30, '#7fb3d5', { w: 2, r: 3 })); for (let g = 1; g < 3; g++) kids.push(L(24 + c * 34 + g * 10, 70 + r * 34, 24 + c * 34 + g * 10, 100 + r * 34, '#4f84ad', 1), L(24 + c * 34, 70 + r * 34 + g * 10, 54 + c * 34, 70 + r * 34 + g * 10, '#4f84ad', 1)); }
       for (let i = 0; i < v.te; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(200 + c * 14, 70 + r * 66, 11, 60, '#5fc9b8', { w: 2, r: 2 })); for (let g = 1; g < 6; g++) kids.push(L(200 + c * 14, 70 + r * 66 + g * 10, 211 + c * 14, 70 + r * 66 + g * 10, '#2f8f82', 1)); }
       for (let i = 0; i < v.on; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(300 + c * 16, 70 + r * 16, 12, 12, '#f2a33a', { w: 2, r: 2 })); }
-      kids.push(T(60, 290, 'hundreds', { z: 11, w: 600, f: '#6b5a8a' }), T(228, 290, 'tens', { z: 11, w: 600, f: '#6b5a8a' }), T(335, 290, 'ones', { z: 11, w: 600, f: '#6b5a8a' }));
-      kids.push(T(480, 90, String(total), { z: 40, w: 700 }), T(480, 128, `${v.th ? v.th + ' thousand' + (v.th > 1 ? 's' : '') + ', ' : ''}${v.hu} hundred${v.hu === 1 ? '' : 's'}`, { z: 13, w: 600, f: '#4f84ad' }), T(480, 148, `${v.te} ten${v.te === 1 ? '' : 's'}, ${v.on} one${v.on === 1 ? '' : 's'}`, { z: 13, w: 600, f: '#2f8f82' }));
-      if (v.on >= 10) kids.push(T(480, 190, `${v.on} ones = 1 ten and ${v.on - 10} one${v.on - 10 === 1 ? '' : 's'}`, { z: 14, w: 700, f: '#c2510e' }));
-      if (v.te >= 10) kids.push(T(480, 216, `${v.te} tens = 1 hundred${v.te > 10 ? ` and ${v.te - 10} ten${v.te - 10 === 1 ? '' : 's'}` : ''}`, { z: 14, w: 700, f: '#c2510e' }));
+      kids.push(T(60, 282, 'hundreds', { z: 16, w: 600, f: '#6b5a8a' }), T(228, 282, 'tens', { z: 16, w: 600, f: '#6b5a8a' }), T(335, 282, 'ones', { z: 16, w: 600, f: '#6b5a8a' }));
+      kids.push(T(480, 90, String(total), { z: 40, w: 700 }), T(480, 128, `${v.th ? v.th + ' thousand' + (v.th > 1 ? 's' : '') + ', ' : ''}${v.hu} hundred${v.hu === 1 ? '' : 's'}`, { z: 15, w: 600, f: '#4f84ad' }), T(480, 150, `${v.te} ten${v.te === 1 ? '' : 's'}, ${v.on} one${v.on === 1 ? '' : 's'}`, { z: 15, w: 600, f: '#2f8f82' }));
+      if (v.on >= 10) kids.push(T(480, 192, `${v.on} ones = 1 ten and ${v.on - 10} one${v.on - 10 === 1 ? '' : 's'}`, { z: 15, w: 700, f: '#c2510e' }));
+      if (v.te >= 10) kids.push(T(480, 218, `${v.te} tens = 1 hundred${v.te > 10 ? ` and ${v.te - 10} ten${v.te - 10 === 1 ? '' : 's'}` : ''}`, { z: 15, w: 700, f: '#c2510e' }));
       const nm = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`, parts = [v.th && nm(v.th, 'thousand'), v.hu && nm(v.hu, 'hundred'), v.te && nm(v.te, 'ten'), v.on && nm(v.on, 'one')].filter(Boolean);
       return { kids, say: total ? `${parts.join(', ')} make ${total}.${v.on >= 10 ? ` ${v.on} ones can be grouped as 1 ten and ${nm(v.on - 10, 'one')}.` : ''}${v.te >= 10 ? ` ${v.te} tens can be grouped as 1 hundred${v.te > 10 ? ` and ${nm(v.te - 10, 'ten')}` : ''}.` : ''}` : 'Add some blocks to make a number.' };
     },
@@ -2898,16 +2898,18 @@ export const WIDGETS = {
       // the Sun: green plants capture about 1 part in 100 of its energy
       kids.push(CIRC(64, 62, 22, C.y, { w: 3 }));
       for (let k = 0; k < 8; k++) { const a = (k * Math.PI) / 4; kids.push(L(64 + 28 * Math.cos(a), 62 + 28 * Math.sin(a), 64 + 36 * Math.cos(a), 62 + 36 * Math.sin(a), '#d99a00', 3)); }
-      kids.push(T(64, 106, 'Sun', { z: 13, f: '#8a6a2a' }));
+      kids.push(T(64, 108, 'Sun', { z: 16, f: '#8a6a2a' }));
       const grassX = 130;
       kids.push(s('path', { d: `M 86 82 Q 100 118 ${grassX - 34} ${cardTop - 4}`, fill: 'none', stroke: '#d99a00', 'stroke-width': 3, 'stroke-dasharray': '7 5' }));
       kids.push(s('polygon', { points: `${grassX - 34},${cardTop - 4} ${grassX - 46},${cardTop - 12} ${grassX - 40},${cardTop + 4}`, fill: '#d99a00' }));
       const heights = [1, 0.55, 0.34, 0.21], baseH = 18 + 42 * (v.sun / 1000);
       for (let i = 0; i < shown; i++) {
         const part = cards[i], cx2 = 130 + gap * i, cy2 = midY;
+        // the last card sits near the right edge, so its three lines end at the card instead of running past it
+        const lastAnchor = i === shown - 1 ? 'end' : undefined, lx = i === shown - 1 ? cx2 + 40 : cx2;
         const h = baseH * heights[i];
         kids.push(R(cx2 - 7, cardTop - 14 - h, 14, h, part.fill, { w: 2, x: { opacity: 0.85 } }));
-        kids.push(T(cx2, cardTop - 20 - h, i === 0 ? '1 of 100' : 'less', { z: 11, f: '#5b4a7a', w: 600 }));
+        kids.push(T(cx2, cardTop - 20 - h, i === 0 ? '1 of 100' : 'less', { z: 13, f: '#5b4a7a', w: 600 }));
         kids.push(R(cx2 - 42, cardTop, 84, cardH, '#fff', { r: 10, w: 2, s: '#7a6b9a' }));
         if (i === 0) {
           for (let b = -1; b <= 1; b++) kids.push(s('path', { d: `M ${cx2 + b * 9} ${cy2 + 22} Q ${cx2 + b * 16} ${cy2 + 2} ${cx2 + b * 20} ${cy2 - 14}`, fill: 'none', stroke: C.g, 'stroke-width': 4, 'stroke-linecap': 'round' }));
@@ -2923,9 +2925,9 @@ export const WIDGETS = {
           kids.push(s('path', { d: `M ${cx2 - 22} ${cy2 + 12} Q ${cx2 - 12} ${cy2 - 12} ${cx2} ${cy2 + 6} Q ${cx2 + 12} ${cy2 + 20} ${cx2 + 20} ${cy2 - 4}`, fill: 'none', stroke: part.fill, 'stroke-width': 7, 'stroke-linecap': 'round' }));
           kids.push(CIRC(cx2 + 22, cy2 - 6, 7, part.fill, { w: 2 }));
         }
-        kids.push(T(cx2, cardTop + cardH + 20, part.name, { z: 14 }));
-        kids.push(T(cx2, cardTop + cardH + 37, part.role, { z: 11, w: 600, f: '#5b4a7a' }));
-        kids.push(T(cx2, cardTop + cardH + 53, part.level, { z: 11, w: 600, f: '#8338ec' }));
+        kids.push(T(lx, cardTop + cardH + 20, part.name, { z: 15, a: lastAnchor }));
+        kids.push(T(lx, cardTop + cardH + 38, part.role, { z: 13, w: 600, f: '#5b4a7a', a: lastAnchor }));
+        kids.push(T(lx, cardTop + cardH + 56, part.level, { z: 14, w: 600, f: '#8338ec', a: lastAnchor }));
         if (i < shown - 1) {
           const x1 = cx2 + 42, x2 = 130 + gap * (i + 1) - 42, y0 = midY;
           kids.push(L(x1 + 2, y0, x2 - 8, y0, C.o, 4));
