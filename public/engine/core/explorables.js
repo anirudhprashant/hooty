@@ -2671,7 +2671,7 @@ export const WIDGETS = {
     draw(v) {
       const aA = v.F / v.mA, aB = v.F / v.mB, floor = 226, cx = 300, hig = 70;
       const wA = 50 + v.mA * 6, wB = 50 + v.mB * 6, ax = cx - wA, bx = cx;
-      const arrow = (x, y, len, dir, colour, word) => [L(x, y, x + dir * len, y, colour, 6), s('polygon', { points: `${x + dir * (len + 12)},${y} ${x + dir * len},${y - 9} ${x + dir * len},${y + 9}`, fill: colour }), T(x + dir * (len / 2), y - 12, word, { z: 13, f: colour })];
+      const arrow = (x, y, len, dir, colour, word) => [L(x, y, x + dir * len, y, colour, 6), s('polygon', { points: `${x + dir * (len + 12)},${y} ${x + dir * len},${y - 9} ${x + dir * len},${y + 9}`, fill: colour }), T(x + dir * (len / 2), y - 12, word, { z: 16, f: colour })];
       const kids = [R(0, floor, W, 74, '#efeaf8', { w: 0 }), L(0, floor, W, floor, INK, 4)];
       kids.push(R(ax, floor - hig, wA, hig, C.b, { r: 6, w: 3 }), T(ax + wA / 2, floor - hig / 2 + 6, 'A', { z: 20, f: '#fff' }));
       kids.push(R(bx, floor - hig, wB, hig, C.o, { r: 6, w: 3 }), T(bx + wB / 2, floor - hig / 2 + 6, 'B', { z: 20, f: '#fff' }));
@@ -2679,7 +2679,7 @@ export const WIDGETS = {
       kids.push(...arrow(ax - 8, floor - hig / 2, len, -1, C.p, `${v.F} N`));
       kids.push(...arrow(bx + wB + 8, floor - hig / 2, len, 1, C.g, `${v.F} N`));
       kids.push(T(cx, 36, 'The push on A and the push on B are the same size and opposite.', { z: 15, w: 600, f: '#6b5a8a' }));
-      kids.push(T(cx, 60, 'Each cart pushes the other: one force is the action, the other is the reaction.', { z: 13, w: 600, f: '#6b5a8a' }));
+      kids.push(T(cx, 62, 'Each cart pushes the other: one force is the action, the other is the reaction.', { z: 16, w: 600, f: '#6b5a8a' }));
       kids.push(T(ax + wA / 2, floor + 30, `${v.mA} kg`, { z: 16 }));
       kids.push(T(bx + wB / 2, floor + 30, `${v.mB} kg`, { z: 16 }));
       kids.push(T(cx - 6, floor + 54, `a = ${num(aA, 2)} m/s²`, { z: 14, f: C.b, a: 'end' }));
