@@ -3,6 +3,18 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  reproduce: {
+    // Reproduction is one chapter in Class 10 and a whole idea in Classes 7 and 8 (plants, and budding and fission in
+    // animals), so the same widget serves all three. The lesson words that carry it are the mode names, not the chapter.
+    grades: [7, 10], match: [/asexual reproduction/, /binary fission/, /\bfission\b/, /\bbudding\b/, /fragmentation/, /spore formation/, /vegetative propagation/, /\bregeneration\b/, /how do organisms reproduce/, /reproduce? (by|from) (one|a single) parent/],
+    title: 'One parent, many copies', takeaway: 'In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent.',
+    tasks: [
+      { say: 'Split one amoeba into two identical cells.', when: 'mode == 0 and grown >= 8', then: 'Binary fission: the parent copies its nucleus, then divides. Two amoebas, one parent.' },
+      { say: 'Grow a bud on the yeast cell and let it break off.', when: 'mode == 1 and grown >= 8', then: 'Budding: the bud grows out of the parent and then lives on its own, as a new yeast cell.' },
+      { say: 'Break the green thread into pieces that can each grow.', when: 'mode == 2 and grown >= 8', then: 'Fragmentation: each broken piece of spirogyra grows into a new thread.' },
+    ],
+  },
+
   opposites: {
     grades: [2, 4], subject: 'english', titleOnly: true,
     match: [/opposites?/, /opposite words?/, /prepositions?/, /words that mean the opposite/],

@@ -44,6 +44,93 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
+  reproduce: {
+    subject: 'science', about: 'How one parent makes more of itself: an amoeba splits in two (binary fission), yeast grows a bud that breaks off (budding), spirogyra breaks into pieces that each grow (fragmentation), rhizopus lets spores drift away, and a potato sprouts new plants from its eyes (vegetative propagation). For how organisms reproduce, asexual reproduction, fission, budding, fragmentation, spores, vegetative propagation.',
+    sliders: [['mode', 'Choose the living thing (0 Amoeba, 1 Yeast, 2 Spirogyra, 3 Rhizopus, 4 Potato)', 0, 4, 1, 0], ['grown', 'Let it grow', 0, 10, 1, 0]],
+    draw(v) {
+      const names = ['Amoeba', 'Yeast', 'Spirogyra', 'Rhizopus', 'Potato'];
+      const how = ['binary fission', 'budding', 'fragmentation', 'spore formation', 'vegetative propagation'];
+      const m = Math.max(0, Math.min(4, v.mode | 0)), t = Math.max(0, Math.min(10, v.grown | 0)) / 10;
+      const kids = [R(0, 0, W, H, '#fbfdf9', { w: 0 })];
+      kids.push(T(16, 30, names[m], { z: 22, a: 'start' }), T(584, 30, how[m], { z: 15, a: 'end', f: '#6b5a8a', w: 600 }));
+      const cell = (cx, cy, r, fill) => kids.push(CIRC(cx, cy, r, fill, { w: 3 }));
+      // An amoeba has no fixed shape: a wobbly outline reads as one far better than a circle does.
+      const blob = (cx, cy, r, phase) => {
+        const pts = [];
+        for (let i = 0; i < 44; i++) {
+          const a = (i / 44) * Math.PI * 2;
+          const rr = r * (1 + 0.15 * Math.sin(3 * a + phase) + 0.07 * Math.sin(5 * a - phase));
+          pts.push(`${(cx + Math.cos(a) * rr).toFixed(1)},${(cy + Math.sin(a) * rr).toFixed(1)}`);
+        }
+        kids.push(s('polygon', { points: pts.join(' '), fill: '#e8f7ff', stroke: INK, 'stroke-width': 3, 'stroke-linejoin': 'round' }));
+      };
+      let say = '';
+      if (m === 0) {
+        // Binary fission: the one cell copies what is inside it, then the middle pinches until there are two.
+        const d = t * 72, r = 62 - t * 13;
+        if (t < 0.05) {
+          blob(300, 172, 62, 0.4);
+          kids.push(CIRC(300, 172, 21, C.b, { w: 2 }));
+        } else {
+          blob(300 - d, 172, r, 0.4);
+          blob(300 + d, 172, r, 2.1);
+          kids.push(CIRC(300 - d, 172, 18, C.b, { w: 2 }), CIRC(300 + d, 172, 18, C.b, { w: 2 }));
+        }
+        say = t >= 0.8
+          ? 'One amoeba has become two identical amoebas. One parent made both and no partner was needed: that is binary fission.'
+          : 'The amoeba copies the nucleus inside it, then the one cell pinches in the middle.';
+      } else if (m === 1) {
+        // Budding: a small bud grows out of the parent and then lives on its own.
+        const br = 8 + t * 26, bx = 300 + 58 + t * 22, by = 172 - 20 * t;
+        cell(300, 172, 62, '#fff6e0');
+        kids.push(CIRC(300, 172, 18, C.y, { w: 2 }), CIRC(bx, by, br, '#ffe9b3', { w: 3 }));
+        if (br > 16) kids.push(CIRC(bx, by, br * 0.42, C.y, { w: 2 }));
+        say = t >= 0.8
+          ? 'The bud is nearly as big as its parent and will break off as a new yeast cell. One parent made it: that is budding.'
+          : 'A small bud grows out of the yeast cell and slowly gets bigger.';
+      } else if (m === 2) {
+        // Fragmentation: the green thread breaks, and each piece grows into a new thread.
+        const gap = t * 52;
+        for (let i = 0; i < 4; i++) {
+          const x = 108 + i * 96 + (i > 1 ? gap : -gap * 0.5);
+          kids.push(R(x, 146, 90, 52, '#dcf2c8', { w: 3, r: 8 }));
+          const pts = [];
+          for (let k = 0; k <= 10; k++) pts.push(`${x + 6 + k * 7.8},${k % 2 ? 156 : 188}`);
+          kids.push(s('polyline', { points: pts.join(' '), fill: 'none', stroke: '#3f7d3a', 'stroke-width': 2.5 }));
+        }
+        say = t >= 0.8
+          ? 'The thread has broken into pieces, and each piece can grow into a whole new spirogyra. That is fragmentation.'
+          : 'Spirogyra is a green thread of cells. When the thread breaks, each piece can grow on its own.';
+      } else if (m === 3) {
+        // Spore formation: the spore case opens and the spores drift away to grow wherever they land.
+        kids.push(L(300, 250, 300, 132, '#7a5c3e', 6), L(268, 250, 300, 214, '#7a5c3e', 4), L(332, 250, 300, 214, '#7a5c3e', 4));
+        kids.push(CIRC(300, 118, 32, '#f0d3a0', { w: 3 }), CIRC(300, 118, 13, '#b98c4a', { w: 2 }));
+        for (let i = 0; i < 5; i++) {
+          // Keep every spore inside the frame: the ones that drift straight up would leave the picture at full stretch.
+          const a = ((-160 + i * 35) * Math.PI) / 180, dist = 34 + t * 62;
+          kids.push(CIRC(300 + Math.cos(a) * dist, 118 + Math.sin(a) * dist, 6, C.o, { w: 2 }));
+        }
+        say = t >= 0.8
+          ? 'The case at the top holds spores. Each spore can grow into a new rhizopus when it lands on food.'
+          : 'Rhizopus grows a stalk with a round case on top, and the case fills with spores.';
+      } else {
+        // Vegetative propagation: a potato's eyes sprout into new plants.
+        kids.push(s('ellipse', { cx: 286, cy: 208, rx: 104, ry: 58, fill: '#d9b48a', stroke: INK, 'stroke-width': 3 }));
+        for (const [ex, ey] of [[226, 196], [280, 232], [340, 190], [382, 224]]) kids.push(CIRC(ex, ey, 8, '#a97c4d', { w: 2 }));
+        const sh = t * 104, x0 = 340, y0 = 190, ly = y0 - sh;
+        kids.push(L(x0, y0, x0 + sh * 0.18, ly, '#3f7d3a', 5));
+        if (sh > 26) {
+          kids.push(s('ellipse', { cx: x0 + sh * 0.18 - 26, cy: ly + 22, rx: 26, ry: 12, fill: '#5fae4f', stroke: INK, 'stroke-width': 2, transform: `rotate(-24 ${x0 + sh * 0.18 - 26} ${ly + 22})` }));
+          kids.push(s('ellipse', { cx: x0 + sh * 0.18 + 26, cy: ly + 44, rx: 26, ry: 12, fill: '#5fae4f', stroke: INK, 'stroke-width': 2, transform: `rotate(24 ${x0 + sh * 0.18 + 26} ${ly + 44})` }));
+        }
+        say = t >= 0.8
+          ? 'The eyes of the potato have sprouted into new plants. Each sprout can become a whole potato plant: that is vegetative propagation.'
+          : 'The potato has eyes. Left in the soil, each eye can sprout into a new plant.';
+      }
+      return { kids, say };
+    },
+  },
+
   angle: {
     subject: 'maths', about: 'An angle that opens as the slider moves, named acute, right, obtuse, straight or reflex. For angles, turning, measuring with a protractor.',
     sliders: [['angle', 'Turn the arm', 0, 360, 5, 40]],
