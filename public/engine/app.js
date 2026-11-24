@@ -851,7 +851,12 @@ function lessonWords(pack, lesson, activities) {
   const terms = pack?.glossary?.terms;
   if (!terms?.length || lesson.isPractice || (activities || []).length < 6) return [];
   const text = activities.map((a) => `${a.title || ''} ${a.body || ''} ${a.prompt || ''} ${a.explanation || ''}`).join(' ');
-  return terms.filter((x) => x.term && x.meaning && x.term.length > 2 && text.includes(x.term));
+  // A book's glossary is shared by every chapter, and common words such as "work" and "matter" appear in most science
+  // lessons: matching the text alone named four words a child had not met in that lesson ("theory, work, matter, ion"
+  // on a reproduction lesson). The glossary records the chapter each word came from, so only that chapter's words count.
+  const chapterNo = Number((String(lesson.chapterId || '').match(/(?:^|-)ch(\d+)/) || [])[1]);
+  const fromChapter = (x) => !chapterNo || !x.src?.length || x.src.some((s) => Number(s.ch) === chapterNo);
+  return terms.filter((x) => x.term && x.meaning && x.term.length > 2 && fromChapter(x) && text.includes(x.term));
 }
 
 function wordCards(pack, lesson, activities, plays) {
