@@ -1551,6 +1551,44 @@ export const WIDGETS = {
       else msg = `Not that one. The ${name} does not belong there. ${wantGreen ? 'It is a plant or food scrap, so it rots into compost.' : 'It is glass, plastic or paper, so it can be made again.'}`;
       return { kids, say: msg };
     },
+     },
+  mattersort: {
+    subject: 'science', about: 'Sort eight substances into mixture, element or compound: air, brass and sand with water are mixtures, oxygen and iron are elements, and water, salt and sugar are compounds. For mixtures and their components, pure substances, elements, compounds and alloys.',
+    sliders: [['item', 'Pick a substance', 0, 7, 1, 0], ['group', 'Which group? (0 mixture, 1 element, 2 compound, 3 not chosen)', 0, 3, 1, 3]],
+    draw(v) {
+      const items = [
+        ['air', 0, 'Air is a uniform mixture of gases, mostly nitrogen, and each gas keeps its own properties.'],
+        ['brass', 0, 'Brass is an alloy: copper and zinc mixed so evenly that it looks like one metal, yet it is still a mixture.'],
+        ['water', 2, 'Water is a compound of hydrogen and oxygen in a 2:1 ratio, and current can break it back into the two gases.'],
+        ['oxygen', 1, 'Oxygen is an element: every particle is an oxygen atom, one kind throughout.'],
+        ['salt', 2, 'Sodium chloride is a compound of sodium and chlorine in a 1:1 ratio.'],
+        ['iron', 1, 'Iron is an element, a metal. It cannot be broken down into a simpler substance.'],
+        ['sugar', 2, 'Sugar is a compound of carbon, hydrogen and oxygen; heating it gives carbon and water.'],
+        ['sand and water', 0, 'Sand and water is a non-uniform mixture: you can still see the sand and the water.'],
+      ];
+      const names = ['MIXTURE', 'ELEMENT', 'COMPOUND'];
+      const [name, kind, why] = items[v.item];
+      const chosen = v.group !== 3, right = chosen && v.group === kind;
+      const kids = [R(0, 0, 600, 300, C.cream, { w: 0 })];
+      kids.push(R(150, 18, 300, 86, '#ffffff', { w: 3, r: 14 }));
+      kids.push(T(300, 58, name, { z: 24, w: 700 }));
+      kids.push(T(300, 86, 'what is it made of?', { z: 14, w: 600, f: '#6b5a8a' }));
+      const boxAt = (x, label, idx) => {
+        const lit = chosen && v.group === idx, ok = lit && idx === kind, wrong = lit && idx !== kind;
+        const fill = ok ? '#d8f3e0' : wrong ? '#fde3e3' : '#ffffff';
+        kids.push(R(x, 150, 170, 110, fill, { w: ok || wrong ? 6 : 3, s: ok ? '#1d7a45' : wrong ? '#c0392b' : INK, r: 12 }));
+        kids.push(T(x + 85, 194, label, { z: 18, w: 700, f: ok ? '#1d7a45' : wrong ? '#c0392b' : INK }));
+        kids.push(T(x + 85, 226, ok ? 'yes' : wrong ? 'no' : 'choose me', { z: 13, w: 600, f: ok ? '#1d7a45' : wrong ? '#c0392b' : '#7a6b99' }));
+      };
+      boxAt(30, names[0], 0);
+      boxAt(215, names[1], 1);
+      boxAt(400, names[2], 2);
+      const say = !chosen
+        ? `What is ${name} made of? Slide to a group: a mixture keeps its parts, an element is one kind of particle, a compound is elements joined in a fixed ratio.`
+        : right ? `Yes. ${why}`
+        : `Not that one. ${why}`;
+      return { kids, say };
+    },
   },
   plate: {
     subject: 'science', about: 'Fill a plate with servings from the three food groups: energy food (roti, rice), body-building food (dal, egg, milk) and protective food (vegetables, fruit), plus junk food on the side. The pieces of the plate grow with the servings, so protective food as the biggest part shows what a balanced plate looks like. For food groups, energy-giving, body-building and protective food, a balanced plate, junk food and healthy eating.',

@@ -789,6 +789,19 @@ export const KITS = {
       { say: 'Put the glass bottle in the blue bin.', when: 'item == 1 and bin == 1', then: 'Glass can be washed and made into new glass.' },
       { say: 'Put the eggshell in the green bin.', when: 'item == 4 and bin == 0', then: 'Eggshells are food waste, so they go in the green bin.' },
       { say: 'Put the plastic bag in the blue bin.', when: 'item == 3 and bin == 1', then: 'Plastic can be recycled into new things.' },
+     ],
+   },
+  mattersort: {
+    // The chapter names each idea in its lesson titles, so the kit reads titles only: the words "mixture" or
+    // "compound" in a passage elsewhere rarely mean the lesson is about telling the three kinds of matter apart.
+    grades: [8, 8], subject: 'science', titleOnly: true,
+    match: [/mixtures? and (their )?components/, /pure substances?/, /elements? and (their )?particles/, /compounds? and chemical/, /\btypes of mixtures\b/],
+    title: 'Sort the substances', takeaway: 'A mixture keeps its parts, an element is one kind of particle, and a compound is elements joined in a fixed ratio. Air, brass and sand with water are mixtures; oxygen and iron are elements; water, salt and sugar are compounds.',
+    tasks: [
+      { say: 'Put air in its group.', when: 'item == 0 and group == 0', then: 'Air is a uniform mixture of several gases, and each gas keeps its own properties.' },
+      { say: 'Put water in its group.', when: 'item == 2 and group == 2', then: 'Water is a compound of hydrogen and oxygen, joined in a 2:1 ratio.' },
+      { say: 'Put oxygen in its group.', when: 'item == 3 and group == 1', then: 'Oxygen is an element: made of one kind of atom.' },
+      { say: 'Put salt (sodium chloride) in its group.', when: 'item == 4 and group == 2', then: 'Sodium chloride is a compound of sodium and chlorine in a 1:1 ratio.' },
     ],
   },
   plate: {
