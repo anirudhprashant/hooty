@@ -3261,13 +3261,13 @@ export const WIDGETS = {
       parts.push(R(x0 + 2, yLeft, x1 - x0 - 4, base - yLeft - 3, '#cfeaff', { w: 0 }), R(x2 + 2, yRight, x3 - x2 - 4, base - yRight - 3, '#cfeaff', { w: 0 }));
       parts.push(L(x0, yLeft, x1, yLeft, C.b, 4), L(x2, yRight, x3, yRight, C.b, 4));
       parts.push(L(300, top, 300, base, '#8338ec', 5, { 'stroke-dasharray': '13 9' }));
-      parts.push(T(300, top - 16, 'selectively permeable membrane', { z: 13, f: '#6b45c8' }));
+      parts.push(T(300, top - 16, 'selectively permeable membrane', { z: 16, f: '#6b45c8' }));
       const rnd = seeded(7), sugarDot = (x, y) => CIRC(x, y, 4.5, '#d99b2b', { w: 1, s: '#a97416' });
       const scatter = (n, xa, xb, ya, yb) => { const out = []; for (let i = 0; i < n; i++) out.push([xa + (xb - xa) * rnd(), ya + (yb - ya) * rnd()]); return out; };
       const leftSugar = scatter(v.left * 2, x0 + 16, x1 - 16, yLeft + 18, base - 20), rightSugar = scatter(v.right * 2, x2 + 16, x3 - 16, yRight + 18, base - 20);
       leftSugar.forEach(([x, y]) => parts.push(sugarDot(x, y))); rightSugar.forEach(([x, y]) => parts.push(sugarDot(x, y)));
       for (const [xa, xb, yTop, n] of [[x0, x1, yLeft, 7], [x2, x3, yRight, 7]]) for (let i = 0; i < n; i++) parts.push(CIRC(xa + 28 + (xb - xa - 56) * ((i * 0.37) % 1), Math.min(base - 26, yTop + 26 + i * 19), 3.2, '#5aa9e6', { w: 0, x: { opacity: 0.75 } }));
-      const label = (x, w, text, col) => parts.push(T(x + w / 2, 82, text, { z: 14, w: 700, f: col }));
+      const label = (x, w, text, col) => parts.push(T(x + w / 2, 82, text, { z: 16, w: 700, f: col }));
       const strong = diff > 0 ? 'right' : 'left', weak = diff > 0 ? 'left' : 'right';
       label(x0, x1 - x0, diff === 0 ? 'same strength' : `left side: ${strong === 'left' ? 'strong' : 'dilute'}`, diff === 0 ? '#6b5a8a' : strong === 'left' ? '#c2510e' : '#058a68');
       label(x2, x3 - x2, diff === 0 ? 'same strength' : `right side: ${strong === 'right' ? 'strong' : 'dilute'}`, diff === 0 ? '#6b5a8a' : strong === 'right' ? '#c2510e' : '#058a68');
@@ -3278,7 +3278,7 @@ export const WIDGETS = {
           parts.push(L(tail, yy, tip - dir * 12, yy, C.b, 5), s('polygon', { points: `${tip},${yy} ${tip - dir * 15},${yy - 9} ${tip - dir * 15},${yy + 9}`, fill: C.b }));
         }
       }
-      parts.push(T(x3 - 4, 288, 'the sugar cannot cross', { a: 'end', z: 12, w: 600, f: '#a97416' }));
+      parts.push(T(x3 - 4, 288, 'the sugar cannot cross', { a: 'end', z: 16, w: 600, f: '#a97416' }));
       const level = diff === 0 ? 'The two sides are equally strong, so water crosses each way equally and the levels stay the same.' : v.mins === 0 ? `The ${strong} side has more sugar in the same water, so water will cross towards it once time passes.` : `Water crosses from the dilute ${weak} side to the strong ${strong} side, so the ${strong} level rises and the ${weak} level falls. The sugar itself cannot cross.`;
       return { kids: parts, say: `${level} This movement of water across a selectively permeable membrane is osmosis.` };
     },
