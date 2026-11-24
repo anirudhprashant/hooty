@@ -146,14 +146,14 @@ export const WIDGETS = {
       const bands = ['under 20,000 people', '1 to 10 lakh people', 'over 10 lakh people'];
       const bodies = [['Nagar Panchayat'], ['Municipal Council', '(Nagar Palika)'], ['Municipal Corporation', '(Mahanagar Nigam)']];
       const kids = [R(0, 0, W, H, '#f4f8ff', { w: 0 })];
-      kids.push(T(24, 26, 'Who runs a town or a city?', { z: 16, a: 'start', f: '#2a1a4a', w: 700 }));
-      kids.push(T(24, 46, 'The bigger the place, the bigger the body.', { z: 12, a: 'start', f: '#6b7a8a', w: 600 }));
+      kids.push(T(24, 28, 'Who runs a town or a city?', { z: 19, a: 'start', f: '#2a1a4a', w: 700 }));
+      kids.push(T(24, 48, 'The bigger the place, the bigger the body.', { z: 15, a: 'start', f: '#6b7a8a', w: 600 }));
       const panelW = 168, y0 = 58, panelH = 168;
       for (let i = 0; i < 3; i++) {
         const on = i === size;
         const x = 24 + i * (panelW + 18);
         kids.push(R(x, y0, panelW, panelH, on ? '#fff4cf' : '#ffffff', { w: on ? 4 : 2, s: on ? '#e09f00' : '#cfd8e6', r: 12 }));
-        kids.push(T(x + panelW / 2, y0 + 18, bands[i], { z: 11, f: on ? '#5c4300' : '#6b7a8a', w: 600 }));
+        kids.push(T(x + panelW / 2, y0 + 18, bands[i], { z: 14, f: on ? '#5c4300' : '#6b7a8a', w: 600 }));
         const base = y0 + 112;
         const fill = on ? '#f0cf85' : '#cfdcf0', edge = on ? '#b98e12' : '#94a9c4';
         if (i === 0) {
@@ -167,11 +167,11 @@ export const WIDGETS = {
           for (const ax of [108, 114]) kids.push(L(x + ax, base - 80, x + ax, base - 92, edge, 2));
         }
         kids.push(L(x + 10, base, x + panelW - 10, base, edge, 2));
-        kids.push(T(x + panelW / 2, y0 + 138, bodies[i][0], { z: 11.5, f: on ? '#5c4300' : '#3d4a56', w: 700 }));
-        if (bodies[i][1]) kids.push(T(x + panelW / 2, y0 + 154, bodies[i][1], { z: 10.5, f: '#7d8a96', w: 600 }));
+        kids.push(T(x + panelW / 2, y0 + 138, bodies[i][0], { z: 14, f: on ? '#5c4300' : '#3d4a56', w: 700 }));
+        if (bodies[i][1]) kids.push(T(x + panelW / 2, y0 + 155, bodies[i][1], { z: 12.5, f: '#7d8a96', w: 600 }));
       }
-      kids.push(T(300, 250, 'roads · water · drains · garbage · street lights · markets · property tax', { z: 11.5, f: '#4a5a6a', w: 600 }));
-      kids.push(T(300, 272, 'each ward elects a councillor, and the ward committee speaks for that neighbourhood', { z: 10.5, f: '#7d8a96', w: 600 }));
+      kids.push(T(300, 250, 'roads · water · drains · garbage · street lights · markets · property tax', { z: 14.5, f: '#4a5a6a', w: 600 }));
+      kids.push(T(300, 272, 'each ward elects a councillor, and the ward committee speaks for that neighbourhood', { z: 12.5, f: '#7d8a96', w: 600 }));
       const say = [
         'A town has a Nagar Panchayat. It keeps the streets, the drains, the water and the street lights working, and it collects local taxes to pay for them.',
         'A city of one to ten lakh people has a Municipal Council, also called a Nagar Palika. It looks after the same services for a much larger area, through its elected councillors.',
@@ -195,24 +195,25 @@ export const WIDGETS = {
       const kids = [R(0, 0, W, H, '#fffaf0', { w: 0 })];
       // the case for this level, in a card at the top
       kids.push(R(40, 16, 520, 58, '#ffffff', { w: 2, s: '#e3d9c6', r: 12 }));
-      kids.push(T(52, 38, 'Who decides?', { z: 12, a: 'start', f: '#8a6d3b', w: 700 }));
-      kids.push(T(52, 60, cases[level][0], { z: 15, a: 'start' }));
-      kids.push(T(52, 78, cases[level][1], { z: 15, a: 'start' }));
+      kids.push(T(52, 40, 'Who decides?', { z: 16, a: 'start', f: '#8a6d3b', w: 700 }));
+      kids.push(T(52, 62, cases[level][0], { z: 19, a: 'start' }));
+      kids.push(T(52, 82, cases[level][1], { z: 19, a: 'start' }));
       // four platforms, rising left to right: name, tier, and a little council of three people
       const bw = 132, bh = 74, gap = 16;
       for (let i = 0; i < 4; i++) {
         const on = i === level;
         const x = 12 + i * (bw + gap), y = 274 - bh - i * 34;
         kids.push(R(x, y, bw, bh, on ? '#ffe9a8' : '#f1f4ee', { w: on ? 4 : 2, s: on ? '#e09f00' : '#cfd8cc', r: 12 }));
-        kids.push(T(x + bw / 2, y + 20, names[i][0], { z: 12, f: on ? '#5c4300' : '#5d6b63', w: 700 }));
-        kids.push(T(x + bw / 2, y + 38, names[i][1], { z: 11, f: '#8a978f', w: 600 }));
+        // big enough to read once the card is the width of a phone
+        kids.push(T(x + bw / 2, y + 22, names[i][0], { z: 16, f: on ? '#5c4300' : '#5d6b63', w: 700 }));
+        kids.push(T(x + bw / 2, y + 40, names[i][1], { z: 14, f: '#8a978f', w: 600 }));
         for (let k = 0; k < 3; k++) {
           const px = x + bw / 2 - 22 + k * 22;
           kids.push(CIRC(px, y + 54, 5.5, on ? '#e09f00' : '#9fb3a6', { w: 0 }));
           kids.push(s('path', { d: `M ${px - 8} ${y + 68} Q ${px} ${y + 58} ${px + 8} ${y + 68}`, fill: 'none', stroke: on ? '#e09f00' : '#9fb3a6', 'stroke-width': 3.5 }));
         }
       }
-      kids.push(T(12, 292, 'plans and money move up this stair; decisions come back down it', { z: 11, a: 'start', f: '#8a7a5c', w: 600 }));
+      kids.push(T(12, 294, 'plans and money move up this stair; decisions come back down it', { z: 15, a: 'start', f: '#8a7a5c', w: 600 }));
       const say = [
         'A village decides for itself. All the adults on the voters list meet in the Gram Sabha and say what the village needs; the Gram Panchayat, with its Sarpanch and Panchayat Secretary, carries the work out.',
         'Several villages together make a block. The Panchayat Samiti collects the plans of all the Gram Panchayats in the block, joins them, and sends them up so the road and the ambulance can be paid for together.',
@@ -265,12 +266,14 @@ export const WIDGETS = {
         kids.push(CIRC(cx, cy, RAD, fill, { w: 1.6, s: washed ? '#3a86ff' : '#9aa6ad' }));
         if (state[i] === 1) kids.push(CIRC(cx, cy, 2.8, '#7a1f0f', { w: 0 }));
       }
-      kids.push(T(300, 16, `day ${day}: ${ill} ill now, ${ever} of ${N * N} have been ill`, { z: 13, f: '#2a1a4a' }));
+      kids.push(T(300, 18, `day ${day}: ${ill} ill now, ${ever} of ${N * N} have been ill`, { z: 19, f: '#2a1a4a' }));
       const legend = [['washes hands', '#8ecae6', '#3a86ff'], ['ill now', '#ff7a59', '#9aa6ad'], ['was ill', '#f8d3c8', '#9aa6ad'], ['no wash, well', '#d5dde1', '#9aa6ad']];
       legend.forEach(([label, fill, stroke], i) => {
-        const lx = 66 + i * 128, ly = 288;
-        kids.push(CIRC(lx, ly, 6, fill, { w: 1.6, s: stroke }));
-        kids.push(T(lx + 10, ly + 4, label, { z: 11, a: 'start', f: '#4a5a6a', w: 600 }));
+        // Phone screens shrink the whole drawing to about 57 per cent, so the small print has to start bigger than it
+        // looks on a laptop: a 16px label reads at about 9px on a 390 wide phone.
+        const lx = 26 + i * 146, ly = 288;
+        kids.push(CIRC(lx, ly, 7, fill, { w: 1.6, s: stroke }));
+        kids.push(T(lx + 11, ly + 5.5, label, { z: 16, a: 'start', f: '#4a5a6a', w: 600 }));
       });
       const say = day === 0
         ? 'Three of these people are ill. The germs of a communicable disease leave a sick person by contact, water, food or air, so move the day forward and watch who catches it.'
