@@ -859,7 +859,15 @@ function lessonWords(pack, lesson, activities) {
   // on a reproduction lesson). The glossary records the chapter each word came from, so only that chapter's words count.
   const chapterNo = Number((String(lesson.chapterId || '').match(/(?:^|-)ch(\d+)/) || [])[1]);
   const fromChapter = (x) => !chapterNo || !x.src?.length || x.src.some((s) => Number(s.ch) === chapterNo);
-  return terms.filter((x) => x.term && x.meaning && x.term.length > 2 && fromChapter(x) && text.includes(x.term));
+  const usable = terms.filter((x) => x.term && x.meaning && x.term.length > 2 && text.includes(x.term));
+  const own = usable.filter(fromChapter);
+  // Some lessons, mostly in the literature books, use only one or two of their chapter's glossary words, and one word
+  // card is not a word card. Below three, top up with the rest of the chapter's words: the chapter teaches them, even
+  // where this one lesson does not spell them out. Words the lesson does use stay first.
+  if (own.length >= 3 || !chapterNo) return own;
+  const seen = new Set(own.map((x) => x.term));
+  const rest = terms.filter((x) => x.term && x.meaning && x.term.length > 2 && fromChapter(x) && !seen.has(x.term));
+  return [...own, ...rest].slice(0, 3);
 }
 
 function wordCards(pack, lesson, activities, plays) {
