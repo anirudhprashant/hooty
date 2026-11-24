@@ -79578,7 +79578,7 @@
       {
        "id": "mathematics-g5-ch14-l5",
        "title": "Anthill in the Zoo",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -79697,6 +79697,31 @@
           "0 (generated problem)",
           "6 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch14-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "gridwalk",
+         "params": {},
+         "title": "Walk the grid",
+         "tasks": [
+          {
+           "say": "Walk to the flower.",
+           "when": "right == 2 and up == 3",
+           "then": "2 right and 3 up: 5 steps, row 4, column 3."
+          },
+          {
+           "say": "Now find the mango.",
+           "when": "right == 3 and up == 1",
+           "then": "3 right and 1 up: 4 steps, row 2, column 4."
+          }
+         ],
+         "takeaway": "A square on a grid is named by its row and column; count the steps with no diagonal moves.",
+         "explanation": "A square on a grid is named by its row and column; count the steps with no diagonal moves."
         },
         {
          "type": "worked",
@@ -80721,7 +80746,7 @@
       {
        "id": "mathematics-g5-ch14-l6",
        "title": "Locating Animals in the Zoological Park",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -80839,6 +80864,31 @@
           "6 (generated problem)",
           "8 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g5-ch14-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "gridwalk",
+         "params": {},
+         "title": "Walk the grid",
+         "tasks": [
+          {
+           "say": "Walk to the flower.",
+           "when": "right == 2 and up == 3",
+           "then": "2 right and 3 up: 5 steps, row 4, column 3."
+          },
+          {
+           "say": "Now find the mango.",
+           "when": "right == 3 and up == 1",
+           "then": "3 right and 1 up: 4 steps, row 2, column 4."
+          }
+         ],
+         "takeaway": "A square on a grid is named by its row and column; count the steps with no diagonal moves.",
+         "explanation": "A square on a grid is named by its row and column; count the steps with no diagonal moves."
         },
         {
          "type": "worked",
