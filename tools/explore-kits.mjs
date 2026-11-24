@@ -3,6 +3,18 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  levels: {
+    // The same idea is met in Class 7 (plants and their parts) and Class 9 (tissues). The match leans on the tissue
+    // names, which are specific to the chapter, plus the plain words organ and organ system.
+    grades: [7, 9], subject: 'science',
+    match: [/tissues?/, /levels? of organi[sz]ation/, /organ systems?/, /epidermis|parenchyma|collenchyma|sclerenchyma|xylem|phloem|meristem/, /cells? (form|make|join|work)/, /organi[sz]ation in (plants|animals)/],
+    title: 'From one cell to a whole plant', takeaway: 'Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together.',
+    tasks: [
+      { say: 'Show the level where many similar cells work together.', when: 'stage == 1', then: 'A group of similar cells doing one job is a tissue.' },
+      { say: 'Show the level that is several organs working together.', when: 'stage == 3', then: 'Several organs working together make an organ system.' },
+      { say: 'Show the whole living thing.', when: 'stage == 4', then: 'All the organ systems working together make the organism.' },
+    ],
+  },
   microscope: {
     // Microbes are the Class 8 chapter, and the same words turn up in Class 6 (curd, yeast) and Class 9 (microscopes,
     // cells). The match asks for the group names, not "cells", which would pull in every biology chapter.

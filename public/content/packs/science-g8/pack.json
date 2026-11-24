@@ -4403,7 +4403,7 @@
       {
        "id": "science-g8-ch2-l3",
        "title": "Cell Shapes and Levels of Organisation",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -4480,6 +4480,36 @@
            "p": 14
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch2-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "levels",
+         "params": {},
+         "title": "From one cell to a whole plant",
+         "tasks": [
+          {
+           "say": "Show the level where many similar cells work together.",
+           "when": "stage == 1",
+           "then": "A group of similar cells doing one job is a tissue."
+          },
+          {
+           "say": "Show the level that is several organs working together.",
+           "when": "stage == 3",
+           "then": "Several organs working together make an organ system."
+          },
+          {
+           "say": "Show the whole living thing.",
+           "when": "stage == 4",
+           "then": "All the organ systems working together make the organism."
+          }
+         ],
+         "takeaway": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together.",
+         "explanation": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together."
         },
         {
          "type": "worked",

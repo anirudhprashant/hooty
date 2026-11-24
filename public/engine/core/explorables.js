@@ -44,6 +44,69 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
+  levels: {
+    subject: 'science', about: 'The levels of organisation in a plant, one step at a time: a cell, a group of similar cells that is a tissue, an organ such as a leaf, an organ system such as the shoot, and the whole plant as an organism. For tissues, organs, organ systems, cells working together, and plant tissues such as the epidermis, xylem and phloem.',
+    sliders: [['stage', 'Climb from one cell to the whole plant', 0, 4, 1, 0]],
+    draw(v) {
+      const stage = Math.max(0, Math.min(4, v.stage | 0));
+      const names = ['cell', 'tissue', 'organ', 'organ system', 'organism'];
+      const kids = [R(0, 0, W, H, '#fbfdf7', { w: 0 })];
+      const boxW = 108, gap = 12, x0 = (W - (boxW * 5 + gap * 4)) / 2, y0 = 40, boxH = 168;
+      const panel = (i, draw) => {
+        const x = x0 + i * (boxW + gap), y = y0;
+        const on = i === stage;
+        kids.push(R(x, y, boxW, boxH, on ? '#fff4cf' : '#f2f5ee', { w: on ? 4 : 2, s: on ? '#ffb703' : '#cfd8cc', r: 12 }));
+        kids.push(T(x + boxW / 2, y + boxH - 10, names[i], { z: 13, f: on ? '#2a1a4a' : '#6b7a72', w: 700 }));
+        draw(x + boxW / 2, y + 64, on);
+      };
+      // 1. a plant cell: stiff wall, nucleus inside
+      panel(0, (cx, cy) => {
+        kids.push(R(cx - 26, cy - 26, 52, 52, '#e7f5d9', { w: 4, s: '#3f7d3a', r: 4 }));
+        kids.push(CIRC(cx + 4, cy - 2, 8, '#3a86ff', { w: 1.5 }));
+        kids.push(T(cx - 8, cy + 16, 'wall', { z: 9, f: '#3f7d3a' }));
+      });
+      // 2. a tissue: similar cells packed together
+      panel(1, (cx, cy) => {
+        for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) {
+          kids.push(R(cx - 40 + c * 28, cy - 42 + r * 28, 24, 24, '#e7f5d9', { w: 1.5, s: '#3f7d3a', r: 3 }));
+        }
+      });
+      // 3. an organ: a leaf, made of those tissues
+      panel(2, (cx, cy) => {
+        kids.push(s('ellipse', { cx, cy, rx: 40, ry: 22, fill: '#8fd18a', stroke: '#2f6b2c', 'stroke-width': 2.5, transform: `rotate(-26 ${cx} ${cy})` }));
+        kids.push(L(cx - 34, cy + 18, cx + 34, cy - 18, '#2f6b2c', 2));
+        for (let k = 0; k < 4; k++) {
+          const t = -26 + k * 16;
+          kids.push(L(cx + t, cy - t * 0.52, cx + t + 12, cy - t * 0.52 - 12, '#2f6b2c', 1.2));
+        }
+      });
+      // 4. an organ system: the shoot, with stem and leaves
+      panel(3, (cx, cy) => {
+        kids.push(L(cx, cy + 46, cx, cy - 44, '#3f7d3a', 4));
+        kids.push(s('ellipse', { cx: cx - 22, cy: cy - 16, rx: 22, ry: 11, fill: '#8fd18a', stroke: '#2f6b2c', 'stroke-width': 2, transform: `rotate(-28 ${cx - 22} ${cy - 16})` }));
+        kids.push(s('ellipse', { cx: cx + 22, cy: cy + 8, rx: 22, ry: 11, fill: '#8fd18a', stroke: '#2f6b2c', 'stroke-width': 2, transform: `rotate(28 ${cx + 22} ${cy + 8})` }));
+        kids.push(T(cx, cy + 56, 'stem + leaves', { z: 10, f: '#2f6b2c' }));
+      });
+      // 5. the whole plant: an organism
+      panel(4, (cx, cy) => {
+        kids.push(L(cx, cy + 52, cx, cy - 40, '#3f7d3a', 5));
+        for (const [dy, dir] of [[-24, -1], [-2, 1], [20, -1]]) {
+          kids.push(s('ellipse', { cx: cx + dir * 20, cy: cy + dy, rx: 20, ry: 10, fill: '#8fd18a', stroke: '#2f6b2c', 'stroke-width': 1.8, transform: `rotate(${dir * 30} ${cx + dir * 20} ${cy + dy})` }));
+        }
+        kids.push(CIRC(cx, cy - 50, 11, '#ffd166', { w: 2 }));
+        for (const dx of [-14, -6, 6, 14]) kids.push(L(cx, cy + 52, cx + dx, cy + 72, '#a9743d', 2.5));
+      });
+      kids.push(T(300, 22, 'the same plant, five sizes', { z: 14, f: '#4a5a6a' }));
+      const say = [
+        'A cell is the basic unit of life: a stiff wall around the living parts, with a nucleus inside. One cell on its own is the smallest level.',
+        'A tissue is a group of similar cells that do the same job together. The epidermis, xylem and phloem are plant tissues.',
+        'An organ is different tissues working together to do a bigger job. A leaf is an organ: its epidermis covers it and its veins carry water and food.',
+        'An organ system is several organs working together. The shoot, with its stem and leaves, is one system; the root is another.',
+        'An organism is all its organ systems working together: here, the whole plant, from root to flower.',
+      ][stage];
+      return { kids, say };
+    },
+  },
   microscope: {
     subject: 'science', about: 'A drop of pond water seen through a microscope: moving the slide finds the different groups and turning the magnification up makes them out. Rod-shaped bacteria, yeast that buds, green microalgae and a shape-changing amoeba, all single cells. For the invisible living world, microscopes, microorganisms, bacteria, yeast, algae and amoeba.',
     sliders: [['zoom', 'Magnification', 0, 100, 1, 0], ['at', 'Move the slide', 0, 100, 1, 0]],
