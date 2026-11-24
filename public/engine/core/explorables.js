@@ -2044,8 +2044,8 @@ export const WIDGETS = {
       let x = 30, y = 60;
       for (const [val, n, col, note] of pieces) for (let i = 0; i < n; i++) {
         if (x > 30 + 490 / sc) { x = 30; y += 54; }
-        if (note) shown.push(R(x, y, 74, 40, col, { w: 2, r: 4 }), T(x + 37, y + 26, `₹${val}`, { z: 14, w: 700 }));
-        else shown.push(CIRC(x + 20, y + 20, 19, col, { w: 2 }), T(x + 20, y + 26, `₹${val}`, { z: 12, w: 700 }));
+        if (note) shown.push(R(x, y, 74, 40, col, { w: 2, r: 4 }), T(x + 37, y + 27, `₹${val}`, { z: 16, w: 700 }));
+        else shown.push(CIRC(x + 20, y + 20, 19, col, { w: 2 }), T(x + 20, y + 26, `₹${val}`, { z: 15, w: 700 }));
         x += note ? 82 : 46;
       }
       kids.push(s('g', { transform: `translate(30 60) scale(${sc}) translate(-30 -60)` }, shown));
@@ -2103,7 +2103,7 @@ export const WIDGETS = {
       }
       const i = Math.min(v.step, 3) - 1, lines = [];
       for (let k = 0; k <= i; k++) lines.push(sub ? `${nm[k]}: ${A[k] - (k && mark[k - 1] ? 1 : 0) + (mark[k] ? 10 : 0)} − ${B[k]} = ${res[k]}` : `${nm[k]}: ${A[k]} + ${B[k]}${k && mark[k - 1] ? ' + 1' : ''} = ${A[k] + B[k] + (k && mark[k - 1] ? 1 : 0)}${mark[k] ? `, write ${res[k]} and carry 1` : ''}`);
-      lines.forEach((t, k) => kids.push(T(310, 76 + k * 30, t, { a: 'start', z: 12, w: 600 })));
+      lines.forEach((t, k) => kids.push(T(310, 76 + k * 30, t, { a: 'start', z: 14.5, w: 600 })));
       kids.push(T(440, 262, v.step >= 3 ? `${v.a} ${sub ? '−' : '+'} ${v.b} = ${total}` : '', { z: 22, w: 700, f: '#058a68' }));
       const done = v.step >= 3;
       return { kids, say: v.step === 0 ? `${v.a} ${sub ? 'take away' : 'plus'} ${v.b}: start with the ones.` : done ? `${v.a} ${sub ? '−' : '+'} ${v.b} = ${total}.${mark[0] || mark[1] ? (sub ? ' Regrouping 1 ten as 10 ones (or 1 hundred as 10 tens) made the subtraction possible.' : ' Regrouping 10 ones as 1 ten (or 10 tens as 1 hundred) carried the 1 along.') : ' No regrouping was needed.'}` : `After the ${nm.slice(0, v.step).join(' and ')} column${v.step > 1 ? 's' : ''}: ${lines[lines.length - 1]}.` };
@@ -2353,7 +2353,7 @@ export const WIDGETS = {
       const hi = Math.max(...counts), lo = Math.min(...counts), most = names.filter((_, i) => counts[i] === hi), least = names.filter((_, i) => counts[i] === lo);
       const list = (a) => (a.length > 2 ? `${a.length} rows` : a.join(' and '));
       const tie = hi === lo ? 'all the same' : null;
-      kids.push(T(430, 70, 'one face = one child', { a: 'start', z: 12, w: 600, f: '#6b5a8a' }), T(430, 122, !total ? 'no one yet' : tie ? 'all rows are equal' : `most: ${list(most)}`, { a: 'start', z: 15, w: 700, f: '#058a68' }), T(430, 150, total && !tie ? `fewest: ${list(least)}` : '', { a: 'start', z: 15, w: 700, f: '#c2510e' }), T(430, 196, `${total} children in all`, { a: 'start', z: 14, w: 600 }));
+      kids.push(T(430, 70, 'one face = one child', { a: 'start', z: 15, w: 600, f: '#6b5a8a' }), T(430, 122, !total ? 'no one yet' : tie ? 'all rows are equal' : `most: ${list(most)}`, { a: 'start', z: 15, w: 700, f: '#058a68' }), T(430, 150, total && !tie ? `fewest: ${list(least)}` : '', { a: 'start', z: 15, w: 700, f: '#c2510e' }), T(430, 196, `${total} children in all`, { a: 'start', z: 14, w: 600 }));
       return { kids, say: !total ? 'Add some faces to the chart.' : hi === lo ? `Every row has ${hi}: they are all equal.` : `${list(most)} ${most.length > 1 ? 'are' : 'is'} liked by the most children (${hi}), and ${list(least)} by the fewest (${lo}). In all there are ${total} children.` };
     },
   },
@@ -2935,7 +2935,7 @@ export const WIDGETS = {
         }
       }
       kids.push(T(300, 24, `a food chain with ${shown} living thing${shown === 1 ? '' : 's'}`, { z: 16, f: '#2a1a4a' }));
-      kids.push(T(400, 46, 'energy flows this way', { z: 12, f: C.o, w: 600 }));
+      kids.push(T(400, 46, 'energy flows this way', { z: 15, f: C.o, w: 600 }));
       const food = Math.round(v.sun / 100 * 10) / 10;
       const say = `Green plants capture about 1 part in every 100 of the sunlight that falls on them, so the grass stores about ${food} unit${food === 1 ? '' : 's'} from ${v.sun}. ${shown} living things make ${shown} trophic levels: the grass is the producer at level 1, the grasshopper is a herbivore at level 2${shown > 2 ? ', and each animal after that is a carnivore at the next level' : ''}. Energy flows only one way, and less of it is left at each step, so the top of the chain gets the least.`;
       return { kids, say };
