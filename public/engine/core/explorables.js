@@ -1127,22 +1127,22 @@ export const WIDGETS = {
       const kids = [
         R(120, 214, 360, 52, '#37474f', { w: 3, r: 6 }),
         R(150, 198, 300, 18, '#cfd8dc', { w: 3, r: 4 }),
-        T(300, 246, 'digital balance', { z: 14, w: 600, f: '#eceff1' }),
+        T(300, 246, 'digital balance', { z: 16, w: 600, f: '#eceff1' }),
       ];
-      kids.push(R(400, 30, 170, 66, '#12321e', { w: 3, r: 8 }), T(485, 60, `${mass.toFixed(1)} g`, { z: 26, f: '#7dff9b' }), T(485, 84, label, { z: 12, w: 600, f: '#b9f6ca' }));
+      kids.push(R(400, 30, 170, 66, '#12321e', { w: 3, r: 8 }), T(485, 60, `${mass.toFixed(1)} g`, { z: 26, f: '#7dff9b' }), T(485, 84, label, { z: 16, w: 600, f: '#b9f6ca' }));
       kids.push(s('path', { d: 'M 262 104 L 262 140 L 214 190 Q 206 198 218 198 L 382 198 Q 394 198 386 190 L 338 140 L 338 104 Z', fill: '#e3f2fd', stroke: INK, 'stroke-width': 4 }));
       kids.push(s('path', { d: 'M 248 150 L 240 193 L 360 193 L 352 150 Z', fill: '#b9e6fb', stroke: 'none' }));
       kids.push(R(258, 92, 84, 14, '#d7ccc8', { w: 3, r: 4 }));
-      kids.push(T(300, 176, 'vinegar + baking soda', { z: 11, w: 600, f: '#1f6fb8' }));
+      kids.push(T(300, 176, 'vinegar + baking soda', { z: 16, w: 600, f: '#1f6fb8' }));
       if (running) for (const [bx, by, br] of [[282, 166, 5], [314, 158, 4], [296, 148, 6], [320, 176, 4], [272, 154, 4]]) kids.push(CIRC(bx, by, br, 'none', { s: '#90caf9', w: 2 }));
       if (trapped) {
         kids.push(s('path', { d: 'M 300 92 L 300 78', stroke: INK, 'stroke-width': 3 }));
         kids.push(s('ellipse', { cx: 300, cy: 54, rx: 26, ry: 30, fill: C.o, stroke: INK, 'stroke-width': 3 }));
         kids.push(s('path', { d: 'M 300 84 l -7 10 l 14 0 Z', fill: C.o, stroke: INK, 'stroke-width': 2 }));
-        kids.push(T(300, 58, 'gas', { z: 12, f: '#fff' }));
+        kids.push(T(300, 58, 'gas', { z: 16, f: '#fff' }));
       } else if (running) {
         kids.push(L(300, 88, 300, 52, '#90caf9', 3), s('path', { d: 'M 300 50 l -8 12 l 16 0 Z', fill: '#90caf9', stroke: '#90caf9', 'stroke-width': 1 }));
-        kids.push(T(300, 40, 'carbon dioxide escapes', { z: 13, w: 600, f: '#1f6fb8' }));
+        kids.push(T(300, 40, 'carbon dioxide escapes', { z: 16, w: 600, f: '#1f6fb8' }));
       }
       const say = v.pick === 0
         ? 'The balance reads 250.0 g with the vinegar and baking soda in the flask, before anything happens.'
@@ -3898,9 +3898,9 @@ export const WIDGETS = {
       const kids = [R(0, 0, W, H, '#fffdf6', { w: 0 })];
       for (let q = 0; q <= 10; q += 2) {
         kids.push(L(X(q), base, X(q), base + 7, INK, 2));
-        kids.push(T(X(q), base + 22, String(q), { z: 12, w: 600, f: '#6b5a8a' }));
+        kids.push(T(X(q), base + 22, String(q), { z: 16, w: 600, f: '#6b5a8a' }));
         kids.push(L(left - 7, Y(q), left, Y(q), INK, 2));
-        kids.push(T(left - 14, Y(q) + 4, String(q), { z: 12, w: 600, f: '#6b5a8a', a: 'end' }));
+        kids.push(T(left - 14, Y(q) + 4, String(q), { z: 16, w: 600, f: '#6b5a8a', a: 'end' }));
       }
       const curvePts = [];
       for (let i = 0; i <= 90; i++) {
@@ -3910,14 +3910,14 @@ export const WIDGETS = {
       kids.push(s('polygon', { points: `${X(0)},${Y(0)} ${X(10)},${Y(0)} ${curvePts.join(' ')}`, fill: '#eef7ff', stroke: 'none' }));
       kids.push(L(left, base, right, base, INK, 3), L(left, top, left, base, INK, 3));
       kids.push(s('polyline', { points: curvePts.join(' '), fill: 'none', stroke: C.p, 'stroke-width': 4, 'stroke-linecap': 'round' }));
-      kids.push(T(right - 4, base + 40, 'Barley (quintals)', { z: 13, w: 600, f: '#6b5a8a', a: 'end' }));
-      kids.push(T(left + 8, top - 8, 'Wheat (quintals)', { z: 13, w: 600, f: '#6b5a8a', a: 'start' }));
+      kids.push(T(right - 4, base + 40, 'Barley (quintals)', { z: 16, w: 600, f: '#6b5a8a', a: 'end' }));
+      kids.push(T(left + 8, top - 8, 'Wheat (quintals)', { z: 16, w: 600, f: '#6b5a8a', a: 'start' }));
       const on = d === 100, inside = d < 100;
       const col = on ? C.g : inside ? C.b : C.o;
       kids.push(L(X(b), base, X(b), Y(w), col, 2, { 'stroke-dasharray': '5 5' }));
       kids.push(L(left, Y(w), X(b), Y(w), col, 2, { 'stroke-dasharray': '5 5' }));
       kids.push(CIRC(X(b), Y(w), 11, col, { w: 3 }));
-      kids.push(T(X(b), Y(w) - 20, `${b} barley, ${w} wheat`, { z: 14, w: 700, f: col }));
+      kids.push(T(X(b), Y(w) - 20, `${b} barley, ${w} wheat`, { z: 16, w: 700, f: col }));
       const where = on ? 'exactly on the curve, so all the land and workers are used'
         : inside ? 'inside the curve, so some land or workers are lying idle'
         : 'outside the curve, so the farm cannot grow that much';
