@@ -872,11 +872,15 @@ const CARD_PROMPT = {
   kn: (w) => `"${w}" ಎಂದರೆ ಏನು?`,
 };
 
-function wordCards(pack, lesson, activities, plays) {
+function lessonWords(pack, lesson, activities) {
   const terms = pack?.glossary?.terms;
-  if (!terms?.length || lesson.isPractice || activities.length < 6) return [];
+  if (!terms?.length || lesson.isPractice || (activities || []).length < 6) return [];
   const text = activities.map((a) => `${a.title || ''} ${a.body || ''} ${a.prompt || ''} ${a.explanation || ''}`).join(' ');
-  const found = terms.filter((x) => x.term && x.meaning && x.term.length > 2 && text.includes(x.term));
+  return terms.filter((x) => x.term && x.meaning && x.term.length > 2 && text.includes(x.term));
+}
+
+function wordCards(pack, lesson, activities, plays) {
+  const found = lessonWords(pack, lesson, activities);
   if (!found.length) return [];
   const start = (plays * 2) % found.length;
   const prompt = CARD_PROMPT[pack.language] || CARD_PROMPT.en;
@@ -1366,6 +1370,22 @@ function renderCelebration() {
   if (facts.length) {
     const plays = l?.lessonsDone?.[s.lesson.lessonId]?.count || 1;
     box.append(el('p', { class: 'fun-fact' }, [el('b', { text: `${bookWord(packById(s.lesson.packId)?.language, 'Did you know?')} ` }), facts[plays % facts.length]]));
+  }
+  // The words this lesson used, said again at the end where they are freshest, and the whole book's words one tap away:
+  // the word bank is the page they live on, and this is the moment a child knows which ones they just met.
+  {
+    const pack = packById(s.lesson.packId);
+    const learnt = lessonWords(pack, s.lesson, s.lesson.activities).slice(0, 4);
+    if (pack && learnt.length) {
+      box.append(el('div', { class: 'celebrate__words' }, [
+        el('p', { class: 'celebrate__words-title', text: t('wordsThisLesson') }),
+        el('ul', { class: 'celebrate__word-list' }, learnt.map((w) => el('li', {}, [
+          el('b', { text: w.term }),
+          el('span', { text: w.meaning }),
+        ]))),
+        el('a', { class: 'catalogue-link', href: `/books/${pack.id}/glossary.html`, text: t('wordBankOpen') }),
+      ]));
+    }
   }
   box.append(...finishedNotes(s.lesson));
 

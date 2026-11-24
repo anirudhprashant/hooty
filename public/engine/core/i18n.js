@@ -264,6 +264,7 @@ export const strings = {
     wordBankOpen: "Read the words",
     inYourBookChapter: "In your book: {chapter}",
     chapterOnly: "Chapter {ch}",
+    wordsThisLesson: "Words from this lesson",
   },
   hi: {
     appName: 'हूटी',
@@ -527,6 +528,7 @@ export const strings = {
     wordBankOpen: "शब्द देखिए",
     inYourBookChapter: "आपकी किताब में: {chapter}",
     chapterOnly: "अध्याय {ch}",
+    wordsThisLesson: "इस पाठ के शब्द",
   },
   kn: {
     appName: 'ಹೂಟಿ',
@@ -790,6 +792,7 @@ export const strings = {
     wordBankOpen: "ಪದಗಳನ್ನು ನೋಡಿ",
     inYourBookChapter: "ನಿಮ್ಮ ಪುಸ್ತಕದಲ್ಲಿ: {chapter}",
     chapterOnly: "ಅಧ್ಯಾಯ {ch}",
+    wordsThisLesson: "ಈ ಪಾಠದ ಪದಗಳು",
   },
 };
 
