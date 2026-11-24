@@ -3370,18 +3370,18 @@ export const WIDGETS = {
         T(300, 30, 'Two countries, ten families each', { z: 18 }),
         L(40, base, 560, base, INK, 3),
         L(40, base - 5 * unit, 560, base - 5 * unit, '#8a6d3b', 2, { 'stroke-dasharray': '6 6' }),
-        T(556, base - 5 * unit - 7, 'average: 5 thousand', { z: 12, w: 600, a: 'end', f: '#8a6d3b' }),
+        T(556, base - 5 * unit - 7, 'average: 5 thousand', { z: 16, w: 600, a: 'end', f: '#8a6d3b' }),
         T(140, 58, 'Country A', { z: 16 }),
         T(440, 58, 'Country B', { z: 16 }),
-        T(40, 72, 'rupees in thousands a year', { z: 11, w: 600, a: 'start', f: '#6b5a8a' }),
+        T(300, 290, 'rupees in thousands a year', { z: 16, w: 600, f: '#6b5a8a' }),
       ];
-      for (let m = 0; m <= 50; m += 10) kids.push(T(34, base - m * unit + 4, m, { a: 'end', z: 11, w: 600, f: '#6b5a8a' }));
+      for (let m = 0; m <= 50; m += 10) kids.push(T(34, base - m * unit + 4, m, { a: 'end', z: 16, w: 600, f: '#6b5a8a' }));
       const bars = (x0, vals, colour, label) => {
         vals.forEach((inc, i) => {
           const h = Math.max(1, inc * unit), x = x0 + i * (barW + gap);
           kids.push(R(x, base - h, barW, h, colour, { w: 2 }));
         });
-        kids.push(T(x0 + (vals.length * (barW + gap) - gap) / 2, base + 20, label, { z: 12, w: 600, f: '#6b5a8a' }));
+        kids.push(T(x0 + (vals.length * (barW + gap) - gap) / 2, base + 20, label, { z: 16, w: 600, f: '#6b5a8a' }));
       };
       bars(50, Array(10).fill(5), C.b, 'every family: 5');
       bars(350, [v.rich, ...Array(9).fill(rest)], C.o, 'one family much richer');
