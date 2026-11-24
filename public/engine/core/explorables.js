@@ -734,11 +734,11 @@ export const WIDGETS = {
       sl = sl && sl.length ? sl : (this.dynamicSliders ? this.dynamicSliders(p) : []);
       const [, , lo, hi] = sl[0], X = (y) => 30 + ((y - lo) / (hi - lo)) * 540, kids = [L(30, 180, 570, 180, INK, 6)];
       const events = (p.events || []).slice().sort((a, b) => a.year - b.year);
-      if (lo < 0 && hi > 0) { kids.push(L(X(0), 165, X(0), 195, C.p, 4), T(X(0), 215, `${words('bce')} | ${words('ce')}`, { z: 14 })); }
+      if (lo < 0 && hi > 0) { kids.push(L(X(0), 165, X(0), 195, C.p, 4), T(X(0), 216, `${words('bce')} | ${words('ce')}`, { z: 17 })); }
       events.forEach((e) => kids.push(CIRC(X(e.year), 180, 9, v.y >= e.year ? C.g : '#fff', { w: 3 })));
       // the events reached so far, newest last, as dated lines across the top (at most four, each cut at a whole word)
       const fit = (str) => (str.length > 54 ? `${str.slice(0, 54).replace(/\s+\S*$/, '')}...` : str);
-      events.filter((e) => v.y >= e.year).slice(-4).forEach((e, i) => kids.push(T(30, 34 + i * 26, `${year(e.year)}: ${fit(e.label)}`, { z: 14, a: 'start', w: 600 })));
+      events.filter((e) => v.y >= e.year).slice(-4).forEach((e, i) => kids.push(T(30, 30 + i * 30, `${year(e.year)}: ${fit(e.label)}`, { z: 17, a: 'start', w: 600 })));
       kids.push(L(X(v.y), 150, X(v.y), 210, C.o, 5));
       const last = events.filter((e) => e.year <= v.y).pop();
       // 'ई.' already ends in a full stop, so it takes a space instead of another dot
@@ -750,7 +750,7 @@ export const WIDGETS = {
     sliders: [['lon', 'Longitude (negative = west)', -180, 180, 15, 0], ['gmt', 'Time at Greenwich (hour)', 0, 23, 1, 12]],
     draw(v) {
       const X = (d) => 300 + d * (270 / 180), kids = [R(30, 60, 540, 150, C.sky, { w: 3, r: 6 })];
-      for (let d = -180; d <= 180; d += 45) { kids.push(L(X(d), 60, X(d), 210, d === 0 ? C.o : INK, d === 0 ? 4 : 1.5)); kids.push(T(X(d), 236, d === 0 ? '0' : `${Math.abs(d)}${d < 0 ? 'W' : 'E'}`, { z: 14 })); }
+      for (let d = -180; d <= 180; d += 45) { kids.push(L(X(d), 60, X(d), 210, d === 0 ? C.o : INK, d === 0 ? 4 : 1.5)); kids.push(T(X(d), 238, d === 0 ? '0' : `${Math.abs(d)}${d < 0 ? 'W' : 'E'}`, { z: 16 })); }
       kids.push(CIRC(X(v.lon), 135, 13, C.y, { w: 3 }));
       const hr = (((v.gmt + v.lon / 15) % 24) + 24) % 24;
       return { kids, say: `At ${Math.abs(v.lon)} degrees ${v.lon < 0 ? 'West' : v.lon > 0 ? 'East' : '(Greenwich)'}, it is ${num(hr, 2)}:00 when Greenwich shows ${v.gmt}:00. Each 15 degrees is one hour.` };
@@ -761,7 +761,7 @@ export const WIDGETS = {
     sliders: [['lat', 'Latitude (negative = south)', -90, 90, 5, 20], ['lon', 'Longitude (negative = west)', -180, 180, 5, 80]],
     draw(v) {
       const X = (d) => 300 + d * 1.5, Y = (d) => 150 - d * 1.5, kids = [R(30, 15, 540, 270, C.sky, { w: 3 })];
-      for (const [d, n, c] of [[0, 'Equator', C.o], [23.5, 'Tropic of Cancer', C.g], [-23.5, 'Tropic of Capricorn', C.g], [66.5, 'Arctic Circle', C.p], [-66.5, 'Antarctic Circle', C.p]]) { kids.push(L(30, Y(d), 570, Y(d), c, 2)); kids.push(T(36, Y(d) - 4, n, { a: 'start', z: 12, f: c })); }
+      for (const [d, n, c] of [[0, 'Equator', C.o], [23.5, 'Tropic of Cancer', C.g], [-23.5, 'Tropic of Capricorn', C.g], [66.5, 'Arctic Circle', C.p], [-66.5, 'Antarctic Circle', C.p]]) { kids.push(L(30, Y(d), 570, Y(d), c, 2)); kids.push(T(36, Y(d) - 5, n, { a: 'start', z: 15, f: c })); }
       kids.push(L(X(0), 15, X(0), 285, C.o, 2), CIRC(X(v.lon), Y(v.lat), 10, C.y, { w: 3 }));
       const a = Math.abs(v.lat), zone = a <= 23.5 ? 'Torrid (hot) Zone' : a <= 66.5 ? 'Temperate Zone' : 'Frigid (cold) Zone';
       return { kids, say: `${a} degrees ${v.lat < 0 ? 'S' : v.lat > 0 ? 'N' : ''}, ${Math.abs(v.lon)} degrees ${v.lon < 0 ? 'W' : v.lon > 0 ? 'E' : ''}: the ${zone}.` };
@@ -772,7 +772,7 @@ export const WIDGETS = {
     sliders: [['cm', 'Distance on the map (cm)', 1, 10, 1, 3], ['km', 'Scale: 1 cm stands for (km)', 5, 100, 5, 50]],
     draw(v) {
       const kids = [R(30, 40, 540, 170, '#e9f5db', { w: 3 }), CIRC(70, 125, 10, C.o), CIRC(70 + v.cm * 48, 125, 10, C.b), L(70, 125, 70 + v.cm * 48, 125, INK, 3, { 'stroke-dasharray': '6 5' })];
-      for (let c = 0; c <= 10; c++) { kids.push(L(70 + c * 48, 225, 70 + c * 48, c % 5 === 0 ? 250 : 240, INK, 2)); kids.push(T(70 + c * 48, 272, c, { z: 13 })); }
+      for (let c = 0; c <= 10; c++) { kids.push(L(70 + c * 48, 225, 70 + c * 48, c % 5 === 0 ? 250 : 240, INK, 2)); kids.push(T(70 + c * 48, 274, c, { z: 16 })); }
       return { kids, say: `${v.cm} cm x ${v.km} km = ${v.cm * v.km} km on the ground.` };
     },
   },
