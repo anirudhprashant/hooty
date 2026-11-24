@@ -177,11 +177,13 @@ export function answerFor(loaded, prompt) {
 }
 
 /**
- * Every question whose prompt the packs can tell apart, with the answer in the form its activity checks. The retake
- * walker (tools/qa-retake.mjs) answers the different question correctly after a re-teach, which is the only way to
- * prove the idea is credited to the card that was missed and not to the new wording.
+ * Every candidate answer for every prompt, in pack order. Most prompts are unique, but about seventy short ones
+ * ("Which statement is correct?", "Which sentence is correct?") belong to several books with a genuinely different
+ * right answer. Keeping only the first made a walker answer another book's question, get the card marked wrong, and
+ * report a lesson as stuck when the child's own answer was on screen the whole time. A walker that can read the
+ * options on screen can pick the candidate whose options are the ones being shown.
  */
-export function loadQuestions(root = DEFAULT_ROOT) {
+export function loadQuestionCandidates(root = DEFAULT_ROOT) {
   const map = new Map();
   let packs = [];
   try {
@@ -202,19 +204,32 @@ export function loadQuestions(root = DEFAULT_ROOT) {
           for (const a of lesson.activities || []) {
             if (!a.prompt) continue;
             const key = norm(a.prompt);
-            if (map.has(key)) continue;
+            const list = map.get(key) || [];
             if (a.type === 'mcq' && Array.isArray(a.options) && typeof a.answer === 'number') {
-              map.set(key, { type: 'mcq', answer: a.answer, options: a.options });
+              list.push({ type: 'mcq', answer: a.answer, options: a.options });
             } else if (a.type === 'truefalse' && typeof a.answer === 'boolean') {
-              map.set(key, { type: 'truefalse', answer: a.answer });
+              list.push({ type: 'truefalse', answer: a.answer });
             } else if ((a.type === 'fillblank' || a.type === 'typeanswer') && Array.isArray(a.answers) && a.answers.length) {
-              map.set(key, { type: a.type, answers: a.answers });
+              list.push({ type: a.type, answers: a.answers });
             }
+            if (list.length) map.set(key, list);
           }
         }
       }
     }
   }
+  return map;
+}
+
+/**
+ * Every question whose prompt the packs can tell apart, with the answer in the form its activity checks. The retake
+ * walker (tools/qa-retake.mjs) answers the different question correctly after a re-teach, which is the only way to
+ * prove the idea is credited to the card that was missed and not to the new wording. Prompts that several books share
+ * keep the first candidate here; a walker that can see the options uses loadQuestionCandidates instead.
+ */
+export function loadQuestions(root = DEFAULT_ROOT) {
+  const map = new Map();
+  for (const [key, list] of loadQuestionCandidates(root)) map.set(key, list[0]);
   return map;
 }
 

@@ -9,13 +9,13 @@
 import { chromium } from 'playwright';
 import { existsSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { answerFor, loadAnswers, loadOrders, loadQuestions, questionKey } from './qa-answers.mjs';
+import { answerFor, loadAnswers, loadOrders, loadQuestionCandidates, questionKey } from './qa-answers.mjs';
 
 const URL = process.argv[2] || 'http://127.0.0.1:8111/sparkle/';
 const OUT = '/tmp/sparkle-shots';
 const answers = loadAnswers();
 const orders = loadOrders();   // prompt -> the item order the pack calls correct
-const questions = loadQuestions();   // prompt -> the option the pack calls correct
+const questions = loadQuestionCandidates();   // prompt -> every pack's candidate for it, in pack order
 
 function findChrome() {
   const root = `${process.env.HOME}/.cache/ms-playwright`;
@@ -63,7 +63,12 @@ page.on('console', (m) => {
   if (/Failed to load resource/i.test(m.text())) return;   // the response handler names the URL
   problems.push(`console: ${m.text()}`);
 });
-page.on('pageerror', (e) => problems.push(`pageerror: ${e.message}`));
+page.on('pageerror', (e) => {
+  // The message alone leaves you guessing which file threw: an undefined helper in one module looks the same as a
+  // stale cached copy of another. Keep the first stack frame next to the message.
+  const at = String(e.stack || '').split('\n').find((l) => /\bat .*\.js/.test(l));
+  problems.push(`pageerror: ${e.message}${at ? ` | ${at.trim()}` : ''}`);
+});
 
 await page.goto(URL, { waitUntil: 'networkidle' });
 await page.waitForTimeout(500);
@@ -209,21 +214,38 @@ for (; steps < 60; steps++) {
   // 3. multiple choice / true-false / listen / watch. Answer the option the pack calls right, so a walk
   //    represents a child who knows, instead of tripping the re-teach on every question.
   const choicePrompt = await page.evaluate(() => document.querySelector('.activity__prompt')?.textContent || '').catch(() => '');
-  const q = questions.get(questionKey(choicePrompt));
+  // The prompt does not always identify the card: about seventy short prompts ("Which statement is correct?",
+  // "Which sentence is correct?") appear in several books with a different right answer, and answering one book's
+  // question with the first book's answer marked the card wrong and sent the walk round the re-teach until it
+  // reported a stuck lesson. Pick the candidate whose options are the ones on screen.
+  const choiceCandidates = questions.get(questionKey(choicePrompt)) || [];
   const options = page.locator('.option:not([disabled])');
   const tfs = page.locator('.tf-btn:not([disabled])');
   if (await options.count()) {
+    const texts = (await options.allTextContents()).map((x) => x.trim().toLowerCase());
+    const onScreen = (label) => texts.some((t) => t && (t === label || t.includes(label) || label.includes(t)));
+    let best = null;
+    let bestScore = 0;
+    for (const cand of choiceCandidates) {
+      if (cand.type !== 'mcq' || !Array.isArray(cand.options)) continue;
+      const score = cand.options.filter((o) => onScreen(String(o).trim().toLowerCase())).length;
+      if (score > bestScore) { best = cand; bestScore = score; }
+    }
     let idx = 0;
-    if (q && q.type === 'mcq' && Array.isArray(q.options)) {
-      const texts = await options.allTextContents();
-      const want = String(q.options[q.answer] ?? '').trim().toLowerCase();
-      const hit = texts.findIndex((x) => x.toLowerCase().includes(want) && want.length > 1);
-      if (hit >= 0) idx = hit;
+    if (best && bestScore >= 2) {
+      const want = String(best.options[best.answer] ?? '').trim().toLowerCase();
+      const hit = texts.findIndex((x) => x === want);
+      const near = hit >= 0 ? hit : texts.findIndex((x) => x.includes(want) && want.length > 1);
+      if (near >= 0) idx = near;
     }
     await options.nth(idx).click().catch(() => {});
     await page.waitForTimeout(500);
   } else if (await tfs.count()) {
-    const idx = q && q.type === 'truefalse' ? (q.answer ? 0 : 1) : 0;
+    // True/false shows the same two buttons whatever the card asks, so the only guide is the packs that use the
+    // prompt; when they disagree the majority is the least-wrong guess and the card reports itself if it is wrong.
+    const tf = choiceCandidates.filter((c) => c.type === 'truefalse');
+    const trues = tf.filter((c) => c.answer).length;
+    const idx = tf.length && trues * 2 < tf.length ? 1 : 0;
     await tfs.nth(idx).click().catch(() => {});
     await page.waitForTimeout(500);
   }
