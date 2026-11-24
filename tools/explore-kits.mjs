@@ -3,6 +3,18 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  nagar: {
+    // The urban local bodies chapter. Names only: "city" or "local government" alone would pull in the rural chapters,
+    // which have their own walk.
+    grades: [5, 8], subjects: ['social'],
+    match: [/municipal corporation/, /municipal council/, /nagar palika/, /nagar panchayat/, /mahanagar nigam/, /urban local bod/, /ward committee|ward councillor/, /\bmunicipal\b/],
+    title: 'Which body runs your street?', takeaway: 'Urban local bodies grow with the place: a town has a Nagar Panchayat, a city of one to ten lakh has a Municipal Council (Nagar Palika), and a city above ten lakh has a Municipal Corporation (Mahanagar Nigam). They keep roads, water, drains, garbage and street lights going, and collect local taxes; each ward elects a councillor.',
+    // The walk opens on a town, so no challenge asks for it.
+    tasks: [
+      { say: 'Find the body for a city of one to ten lakh people.', when: 'size == 1', then: 'A city of one to ten lakh has a Municipal Council, the Nagar Palika.' },
+      { say: 'Find the body for a city of more than ten lakh people.', when: 'size == 2', then: 'A city above ten lakh has a Municipal Corporation, the Mahanagar Nigam: the biggest urban body.' },
+    ],
+  },
   panchayat: {
     // The Panchayati Raj chapter is the home of this one. The match asks for the bodies by name, not "local government",
     // which would also pull in the city chapters this walk does not cover.

@@ -44,6 +44,48 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
+  nagar: {
+    subject: 'social', about: 'Who runs a town or a city: the bigger the place, the bigger the body. A town has a Nagar Panchayat, a city of one to ten lakh people has a Municipal Council (Nagar Palika), and a city above ten lakh has a Municipal Corporation (Mahanagar Nigam). For urban local bodies, wards, municipal corporations and councils, and the services a city body looks after.',
+    sliders: [['size', 'How big is the place?', 0, 2, 1, 0]],
+    draw(v) {
+      const size = Math.max(0, Math.min(2, v.size | 0));
+      const bands = ['under 20,000 people', '1 to 10 lakh people', 'over 10 lakh people'];
+      const bodies = [['Nagar Panchayat'], ['Municipal Council', '(Nagar Palika)'], ['Municipal Corporation', '(Mahanagar Nigam)']];
+      const kids = [R(0, 0, W, H, '#f4f8ff', { w: 0 })];
+      kids.push(T(24, 26, 'Who runs a town or a city?', { z: 16, a: 'start', f: '#2a1a4a', w: 700 }));
+      kids.push(T(24, 46, 'The bigger the place, the bigger the body.', { z: 12, a: 'start', f: '#6b7a8a', w: 600 }));
+      const panelW = 168, y0 = 58, panelH = 168;
+      for (let i = 0; i < 3; i++) {
+        const on = i === size;
+        const x = 24 + i * (panelW + 18);
+        kids.push(R(x, y0, panelW, panelH, on ? '#fff4cf' : '#ffffff', { w: on ? 4 : 2, s: on ? '#e09f00' : '#cfd8e6', r: 12 }));
+        kids.push(T(x + panelW / 2, y0 + 18, bands[i], { z: 11, f: on ? '#5c4300' : '#6b7a8a', w: 600 }));
+        const base = y0 + 112;
+        const fill = on ? '#f0cf85' : '#cfdcf0', edge = on ? '#b98e12' : '#94a9c4';
+        if (i === 0) {
+          for (const [hx, hw, hh] of [[22, 30, 22], [58, 34, 30], [98, 26, 18], [130, 24, 25]]) kids.push(R(x + hx, base - hh, hw, hh, fill, { w: 1.6, s: edge, r: 2 }));
+        } else if (i === 1) {
+          for (const [hx, hw, hh] of [[16, 26, 40], [46, 24, 56], [74, 30, 46], [108, 24, 62], [136, 20, 38]]) kids.push(R(x + hx, base - hh, hw, hh, fill, { w: 1.6, s: edge, r: 2 }));
+          for (const [wx, wy] of [[56, 22], [84, 34], [116, 46]]) kids.push(R(x + wx, base - wy, 4, 4, on ? '#b98e12' : '#8fa6c4', { w: 0 }));
+        } else {
+          for (const [hx, hw, hh] of [[12, 22, 52], [40, 26, 70], [72, 22, 60], [100, 28, 80], [134, 24, 64]]) kids.push(R(x + hx, base - hh, hw, hh, fill, { w: 1.6, s: edge, r: 2 }));
+          // a couple of aerials on the tallest tower, kept below the panel's own label
+          for (const ax of [108, 114]) kids.push(L(x + ax, base - 80, x + ax, base - 92, edge, 2));
+        }
+        kids.push(L(x + 10, base, x + panelW - 10, base, edge, 2));
+        kids.push(T(x + panelW / 2, y0 + 138, bodies[i][0], { z: 11.5, f: on ? '#5c4300' : '#3d4a56', w: 700 }));
+        if (bodies[i][1]) kids.push(T(x + panelW / 2, y0 + 154, bodies[i][1], { z: 10.5, f: '#7d8a96', w: 600 }));
+      }
+      kids.push(T(300, 250, 'roads · water · drains · garbage · street lights · markets · property tax', { z: 11.5, f: '#4a5a6a', w: 600 }));
+      kids.push(T(300, 272, 'each ward elects a councillor, and the ward committee speaks for that neighbourhood', { z: 10.5, f: '#7d8a96', w: 600 }));
+      const say = [
+        'A town has a Nagar Panchayat. It keeps the streets, the drains, the water and the street lights working, and it collects local taxes to pay for them.',
+        'A city of one to ten lakh people has a Municipal Council, also called a Nagar Palika. It looks after the same services for a much larger area, through its elected councillors.',
+        'A city of more than ten lakh people has a Municipal Corporation, also called a Mahanagar Nigam. It is the biggest urban body, with the most services to run and the most taxes to collect. Every ward elects a councillor who speaks for that neighbourhood.',
+      ][size];
+      return { kids, say };
+    },
+  },
   panchayat: {
     subject: 'social', about: 'Who decides what, from the village up: the Gram Sabha and Gram Panchayat for a village, the Panchayat Samiti for a group of villages, the Zila Parishad for the district, and the State legislature for a rule that covers everyone. Shows how village plans and funds move up the chain. For Panchayati Raj, local self-government, the three levels of rural local government, and democracy at the grass roots.',
     sliders: [['level', 'Climb the chain, from the village up', 0, 3, 1, 0]],
