@@ -46,7 +46,7 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 export const WIDGETS = {
   reproduce: {
     subject: 'science', about: 'How one parent makes more of itself: an amoeba splits in two (binary fission), yeast grows a bud that breaks off (budding), spirogyra breaks into pieces that each grow (fragmentation), rhizopus lets spores drift away, and a potato sprouts new plants from its eyes (vegetative propagation). For how organisms reproduce, asexual reproduction, fission, budding, fragmentation, spores, vegetative propagation.',
-    sliders: [['mode', 'Choose the living thing (0 Amoeba, 1 Yeast, 2 Spirogyra, 3 Rhizopus, 4 Potato)', 0, 4, 1, 0], ['grown', 'Let it grow', 0, 10, 1, 0]],
+    sliders: [['mode', 'Choose the living thing', 0, 4, 1, 0], ['grown', 'Let it grow', 0, 10, 1, 0]],
     draw(v) {
       const names = ['Amoeba', 'Yeast', 'Spirogyra', 'Rhizopus', 'Potato'];
       const how = ['binary fission', 'budding', 'fragmentation', 'spore formation', 'vegetative propagation'];
