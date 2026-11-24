@@ -3440,7 +3440,7 @@
       {
        "id": "science-g8-ch2-l1",
        "title": "Seeing the Invisible World",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -3499,6 +3499,38 @@
            "p": 9
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "microscope",
+         "params": {
+          "topic": "micro"
+         },
+         "title": "Look down the microscope",
+         "tasks": [
+          {
+           "say": "Make out the rod-shaped cells clearly.",
+           "when": "zoom >= 60 and at <= 25",
+           "then": "Bacteria: single cells shaped like tiny rods, some in pairs or chains."
+          },
+          {
+           "say": "Find the one-cell fungus with a bud.",
+           "when": "zoom >= 60 and at >= 40 and at <= 60",
+           "then": "Yeast is a fungus: one round cell grows a bud that can break off as a new cell."
+          },
+          {
+           "say": "Find the green cells that make food from sunlight.",
+           "when": "zoom >= 60 and at >= 75",
+           "then": "Microalgae make their own food from sunlight, like a leaf does."
+          }
+         ],
+         "takeaway": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell.",
+         "explanation": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell."
         },
         {
          "type": "worked",
@@ -4867,7 +4899,7 @@
       {
        "id": "science-g8-ch2-l4",
        "title": "Microorganisms and a Cleaner Environment",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -4926,6 +4958,38 @@
            "p": 19
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g8-ch2-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "microscope",
+         "params": {
+          "topic": "micro"
+         },
+         "title": "Look down the microscope",
+         "tasks": [
+          {
+           "say": "Make out the rod-shaped cells clearly.",
+           "when": "zoom >= 60 and at <= 25",
+           "then": "Bacteria: single cells shaped like tiny rods, some in pairs or chains."
+          },
+          {
+           "say": "Find the one-cell fungus with a bud.",
+           "when": "zoom >= 60 and at >= 40 and at <= 60",
+           "then": "Yeast is a fungus: one round cell grows a bud that can break off as a new cell."
+          },
+          {
+           "say": "Find the green cells that make food from sunlight.",
+           "when": "zoom >= 60 and at >= 75",
+           "then": "Microalgae make their own food from sunlight, like a leaf does."
+          }
+         ],
+         "takeaway": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell.",
+         "explanation": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell."
         },
         {
          "type": "worked",

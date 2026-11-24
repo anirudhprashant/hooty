@@ -44,6 +44,81 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
+  microscope: {
+    subject: 'science', about: 'A drop of pond water seen through a microscope: moving the slide finds the different groups and turning the magnification up makes them out. Rod-shaped bacteria, yeast that buds, green microalgae and a shape-changing amoeba, all single cells. For the invisible living world, microscopes, microorganisms, bacteria, yeast, algae and amoeba.',
+    sliders: [['zoom', 'Magnification', 0, 100, 1, 0], ['at', 'Move the slide', 0, 100, 1, 0]],
+    draw(v) {
+      const zoom = Math.max(0, Math.min(100, v.zoom));
+      const at = Math.max(0, Math.min(100, v.at));
+      const mag = Math.round(50 + zoom * 3.5);
+      const scale = 6 + zoom * 0.34;
+      const p = at * 6;                                  // where the eyepiece is looking, in slide coordinates
+      const sx = (home) => home - p + 300;               // slide position -> place on the 600 wide frame
+      const kids = [R(0, 0, W, H, '#eef4fa', { w: 0 })];
+      const uid = `mc${Math.round(zoom)}-${Math.round(at)}`;
+      const field = [];
+      const big = zoom > 18;
+      // At low magnification a drop still reads as full of life: a scatter of specks in four colours, which is what a
+      // child actually sees before turning the lens up.
+      if (!big) {
+        const specks = [[120, 96, '#7b3fa0'], [180, 124, '#d9a441'], [236, 168, '#3fa34d'], [300, 198, '#3a86ff'],
+          [356, 92, '#3fa34d'], [420, 112, '#7b3fa0'], [478, 140, '#d9a441'], [524, 186, '#3fa34d'],
+          [560, 210, '#7b3fa0'], [92, 62, '#3a86ff'], [280, 62, '#3a86ff'], [500, 96, '#3a86ff'],
+          [548, 170, '#d9a441'], [110, 232, '#3a86ff'], [404, 232, '#7b3fa0']];
+        for (const [dx, dy, col] of specks) field.push(CIRC(sx(dx), dy, 2.4, col, { w: 0 }));
+      }
+      // bacteria: tiny rods, in pairs and short chains
+      for (const [bx, by] of [[64, 104], [76, 146], [68, 188], [128, 116], [140, 158], [132, 200]]) {
+        const x = sx(bx);
+        if (big) {
+          field.push(R(x - scale * 0.9, by - scale * 0.35, scale * 1.8, scale * 0.7, '#7b3fa0', { w: 1.5, r: scale * 0.35 }));
+          if (zoom > 70) field.push(R(x + scale * 0.9, by - scale * 0.35, scale * 1.8, scale * 0.7, '#9a5cbd', { w: 1.5, r: scale * 0.35 }));
+        } else field.push(CIRC(x, by, 2.2, '#7b3fa0'));
+      }
+      // yeast: round cells, one with a bud
+      for (const [yx, yy, bud] of [[300, 116, 0], [296, 152, 1], [304, 186, 0]]) {
+        const x = sx(yx);
+        if (big) {
+          field.push(CIRC(x, yy, scale * 0.55, '#d9a441', { w: 2 }));
+          if (bud) field.push(CIRC(x + scale * 0.75, yy - scale * 0.5, scale * 0.26, '#e8c27a', { w: 1.5 }));
+        } else field.push(CIRC(x, yy, 2.2, '#d9a441'));
+      }
+      // microalgae: green cells in a small colony
+      for (const [gx, gy] of [[498, 120], [524, 138], [504, 160], [530, 178], [498, 188]]) {
+        const x = sx(gx);
+        if (big) field.push(CIRC(x, gy, scale * 0.42, '#3fa34d', { w: 1.5 }));
+        else field.push(CIRC(x, gy, 2.2, '#3fa34d'));
+      }
+      // amoeba: one cell whose shape changes as it moves
+      {
+        const x = sx(620), y = 150;
+        if (big) {
+          const pts = [];
+          for (let i = 0; i < 40; i++) {
+            const a = (i / 40) * Math.PI * 2;
+            const rr = scale * (1 + 0.2 * Math.sin(3 * a + 1) + 0.08 * Math.sin(5 * a));
+            pts.push(`${(x + Math.cos(a) * rr).toFixed(1)},${(y + Math.sin(a) * rr).toFixed(1)}`);
+          }
+          field.push(s('polygon', { points: pts.join(' '), fill: '#bde0fe', stroke: INK, 'stroke-width': 2 }));
+          field.push(CIRC(x, y, scale * 0.22, '#3a86ff', { w: 1.5 }));
+        } else field.push(CIRC(x, y, 2.2, '#3a86ff'));
+      }
+      kids.push(s('clipPath', { id: uid }, [CIRC(300, 150, 118, '#fff')]));
+      kids.push(s('g', { 'clip-path': `url(#${uid})` }, [CIRC(300, 150, 118, '#f7fcff', { w: 0 }), ...field]));
+      kids.push(CIRC(300, 150, 118, 'none', { w: 6, s: '#2a1a4a' }));
+      kids.push(T(300, 292, `about ${mag}x`, { z: 14, f: '#4a5a6a' }));
+      const group = p < 200 ? 0 : p < 400 ? 1 : p < 560 ? 2 : 3;
+      const say = !big
+        ? `At ${mag}x a drop of pond water looks almost empty: only tiny specks. Your eyes could never see these at all. Turn the magnification up to make them out.`
+        : [
+          `Bacteria at ${mag}x: single cells shaped like tiny rods, some in pairs or chains. They are far too small to see without a lens.`,
+          `Yeast at ${mag}x: a fungus that is one round cell. The small bump is a bud growing out of it, which can break off as a new cell.`,
+          `Microalgae at ${mag}x: green single cells that make their own food from sunlight, as a leaf does.`,
+          `Amoeba at ${mag}x: a single cell that keeps changing shape as it moves, with its nucleus inside.`,
+        ][group];
+      return { kids, say };
+    },
+  },
   landform: {
     subject: 'social', about: 'A walk across the land from a snow-capped mountain, over a plateau, across a river plain and into a desert, with the read-out saying what makes each landform what it is. For landforms, mountains, plateaus, plains and deserts, and how people live on them.',
     sliders: [['x', 'Walk across the land', 0, 100, 1, 0]],

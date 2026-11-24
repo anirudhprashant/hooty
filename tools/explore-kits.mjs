@@ -3,6 +3,22 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  microscope: {
+    // Microbes are the Class 8 chapter, and the same words turn up in Class 6 (curd, yeast) and Class 9 (microscopes,
+    // cells). The match asks for the group names, not "cells", which would pull in every biology chapter.
+    grades: [6, 9], subject: 'science',
+    match: [/microscope/, /microorganisms?|micro-organisms?/, /uni-?cellular/, /\bamoeba\b/, /\balgae\b|\bmicroalgae\b/, /\bbacteria\b/, /\byeast\b/, /\brhizobium\b/, /\blactobacillus\b/, /invisible world/],
+    // "Amoeba" and "unicellular" are also the words of a reproduction lesson, which has nothing to do with looking down
+    // a microscope: a lesson about reproduction is turned away whatever else its facts mention.
+    params: (text) => ({ topic: /reproduction|fission|gamete|meiosis|fertilis/.test(text || '') ? 'repro' : 'micro' }),
+    usable: (p) => p.topic === 'micro',
+    title: 'Look down the microscope', takeaway: 'Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell.',
+    tasks: [
+      { say: 'Make out the rod-shaped cells clearly.', when: 'zoom >= 60 and at <= 25', then: 'Bacteria: single cells shaped like tiny rods, some in pairs or chains.' },
+      { say: 'Find the one-cell fungus with a bud.', when: 'zoom >= 60 and at >= 40 and at <= 60', then: 'Yeast is a fungus: one round cell grows a bud that can break off as a new cell.' },
+      { say: 'Find the green cells that make food from sunlight.', when: 'zoom >= 60 and at >= 75', then: 'Microalgae make their own food from sunlight, like a leaf does.' },
+    ],
+  },
   landform: {
     // Landforms are Class 6 in the new NCERT book, but mountains, plateaus and plains are met from Class 4 onwards, so the
     // same walk serves the earlier books. The match words are the lesson's own subject words, so a chapter that merely
