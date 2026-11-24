@@ -3,6 +3,19 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  panchayat: {
+    // The Panchayati Raj chapter is the home of this one. The match asks for the bodies by name, not "local government",
+    // which would also pull in the city chapters this walk does not cover.
+    grades: [5, 8], subjects: ['social'],
+    match: [/gram panchayat/, /gram sabha/, /panchayat samiti/, /zila parishad/, /panchayati raj/, /\bsarpanch\b|\bpradhan\b/, /panchayat secretary/, /bal panchayat/, /local self-government/],
+    title: 'Climb the chain of village government', takeaway: 'Plans and money move up the chain: the Gram Sabha and Gram Panchayat decide for a village, the Panchayat Samiti joins the plans of a block of villages, the Zila Parishad sets the district work, and a rule for the whole State is made in the State legislature by the MLAs.',
+    // The walk opens on the village, so no challenge asks for it: a challenge has to be something the child has to do.
+    tasks: [
+      { say: 'Find the body that joins the plans of several villages.', when: 'level == 1', then: 'The Panchayat Samiti, at block level, collects and joins the plans of all the Gram Panchayats.' },
+      { say: 'Find the body that sets the work for a whole district.', when: 'level == 2', then: 'The Zila Parishad is the district body; it receives the block plans and passes the money down.' },
+      { say: 'Find the body that makes a rule for the whole State.', when: 'level == 3', then: 'The State legislature, with the MLAs elected from each area, makes the rule for the whole State.' },
+    ],
+  },
   germs: {
     // The Class 8 health chapter is the home of this one, but the same idea is met in Class 7 (hygiene) and Class 9 (why
     // we fall ill). The match asks for disease and hygiene words, never "health" alone, which is too broad.

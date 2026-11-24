@@ -44,6 +44,48 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
+  panchayat: {
+    subject: 'social', about: 'Who decides what, from the village up: the Gram Sabha and Gram Panchayat for a village, the Panchayat Samiti for a group of villages, the Zila Parishad for the district, and the State legislature for a rule that covers everyone. Shows how village plans and funds move up the chain. For Panchayati Raj, local self-government, the three levels of rural local government, and democracy at the grass roots.',
+    sliders: [['level', 'Climb the chain, from the village up', 0, 3, 1, 0]],
+    draw(v) {
+      const level = Math.max(0, Math.min(3, v.level | 0));
+      const cases = [
+        ['The lanes need cleaning and the', 'school needs a safer wall.'],
+        ['Three villages want one road', 'and an ambulance to share.'],
+        ['Every school and health centre', 'in the district needs money.'],
+        ['A rule about single-use plastic', 'for the whole State.'],
+      ];
+      const names = [['Gram Panchayat', 'the village'], ['Panchayat Samiti', 'the block'], ['Zila Parishad', 'the district'], ['State legislature', 'the State']];
+      const kids = [R(0, 0, W, H, '#fffaf0', { w: 0 })];
+      // the case for this level, in a card at the top
+      kids.push(R(40, 16, 520, 58, '#ffffff', { w: 2, s: '#e3d9c6', r: 12 }));
+      kids.push(T(52, 38, 'Who decides?', { z: 12, a: 'start', f: '#8a6d3b', w: 700 }));
+      kids.push(T(52, 60, cases[level][0], { z: 15, a: 'start' }));
+      kids.push(T(52, 78, cases[level][1], { z: 15, a: 'start' }));
+      // four platforms, rising left to right: name, tier, and a little council of three people
+      const bw = 132, bh = 74, gap = 16;
+      for (let i = 0; i < 4; i++) {
+        const on = i === level;
+        const x = 12 + i * (bw + gap), y = 274 - bh - i * 34;
+        kids.push(R(x, y, bw, bh, on ? '#ffe9a8' : '#f1f4ee', { w: on ? 4 : 2, s: on ? '#e09f00' : '#cfd8cc', r: 12 }));
+        kids.push(T(x + bw / 2, y + 20, names[i][0], { z: 12, f: on ? '#5c4300' : '#5d6b63', w: 700 }));
+        kids.push(T(x + bw / 2, y + 38, names[i][1], { z: 11, f: '#8a978f', w: 600 }));
+        for (let k = 0; k < 3; k++) {
+          const px = x + bw / 2 - 22 + k * 22;
+          kids.push(CIRC(px, y + 54, 5.5, on ? '#e09f00' : '#9fb3a6', { w: 0 }));
+          kids.push(s('path', { d: `M ${px - 8} ${y + 68} Q ${px} ${y + 58} ${px + 8} ${y + 68}`, fill: 'none', stroke: on ? '#e09f00' : '#9fb3a6', 'stroke-width': 3.5 }));
+        }
+      }
+      kids.push(T(12, 292, 'plans and money move up this stair; decisions come back down it', { z: 11, a: 'start', f: '#8a7a5c', w: 600 }));
+      const say = [
+        'A village decides for itself. All the adults on the voters list meet in the Gram Sabha and say what the village needs; the Gram Panchayat, with its Sarpanch and Panchayat Secretary, carries the work out.',
+        'Several villages together make a block. The Panchayat Samiti collects the plans of all the Gram Panchayats in the block, joins them, and sends them up so the road and the ambulance can be paid for together.',
+        'The district body is the Zila Parishad. It receives the block plans, decides what the whole district will do this year, and passes the money down to the blocks and villages.',
+        'A rule for the whole State is not made by a panchayat. It is made in the State legislature, where the MLAs elected from each area sit. Local bodies carry those rules out; they do not write them.',
+      ][level];
+      return { kids, say };
+    },
+  },
   germs: {
     subject: 'science', about: 'A room of a hundred and forty-four people, three of them ill: move the day forward and the illness passes from neighbour to neighbour by contact. People who wash their hands do not pick it up, so the more who wash, the sooner the chain breaks. For communicable diseases, how they spread, and how handwashing and cleanliness prevent them.',
     sliders: [['wash', 'People who wash their hands (in 100)', 0, 100, 1, 0], ['day', 'Day', 0, 14, 1, 0]],
