@@ -3,6 +3,19 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  landform: {
+    // Landforms are Class 6 in the new NCERT book, but mountains, plateaus and plains are met from Class 4 onwards, so the
+    // same walk serves the earlier books. The match words are the lesson's own subject words, so a chapter that merely
+    // mentions a plain in passing scores nothing: the bar is one title hit, or three fact hits.
+    grades: [4, 6], subjects: ['social'],
+    match: [/landforms?/, /plateaus?/, /\bplains?\b/, /\bdeserts?\b/, /mountains? and (plateaus|plains)/, /deccan plateau|tibetan plateau/, /rise no more than 300 metres/, /broad base, steep slopes/],
+    title: 'Walk across the land', takeaway: 'Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.',
+    tasks: [
+      { say: 'Climb to the snow on the highest land.', when: 'x >= 9 and x <= 11', then: 'A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts.' },
+      { say: 'Stand on the raised land with a flat top.', when: 'x >= 33 and x <= 40', then: 'A plateau: more or less flat on top, and higher than the land around it.' },
+      { say: 'Stop where a river spreads soil for farms.', when: 'x >= 55 and x <= 65', then: 'A plain: rivers carry sediment and spread it, and the deposits make very fertile soil.' },
+    ],
+  },
   reproduce: {
     // Reproduction is one chapter in Class 10 and a whole idea in Classes 7 and 8 (plants, and budding and fission in
     // animals), so the same widget serves all three. The lesson words that carry it are the mode names, not the chapter.

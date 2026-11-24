@@ -44,6 +44,59 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
+  landform: {
+    subject: 'social', about: 'A walk across the land from a snow-capped mountain, over a plateau, across a river plain and into a desert, with the read-out saying what makes each landform what it is. For landforms, mountains, plateaus, plains and deserts, and how people live on them.',
+    sliders: [['x', 'Walk across the land', 0, 100, 1, 0]],
+    draw(v) {
+      // The ground line the child walks on, in the 600 x 300 frame: peak at 60, plateau top 170..255, plain, desert dunes.
+      const PROFILE = [
+        [0, 242], [30, 230], [55, 168], [72, 108], [90, 168], [112, 228], [140, 236],
+        [160, 210], [178, 141], [255, 141],
+        [272, 205], [300, 205], [420, 197], [452, 206], [480, 199], [520, 209], [560, 201], [600, 210],
+      ];
+      const groundAt = (px) => {
+        for (let i = 1; i < PROFILE.length; i++) {
+          if (px <= PROFILE[i][0]) {
+            const [x0, y0] = PROFILE[i - 1], [x1, y1] = PROFILE[i];
+            return y0 + ((y1 - y0) * (px - x0)) / (x1 - x0 || 1);
+          }
+        }
+        return PROFILE[PROFILE.length - 1][1];
+      };
+      const px = Math.max(0, Math.min(100, v.x)) * 6;
+      const kids = [R(0, 0, W, H, '#eaf6ff', { w: 0 })];
+      const outline = [[0, H], ...PROFILE, [W, H]].map(([a, b]) => `${a},${b}`).join(' ');
+      kids.push(s('polygon', { points: outline, fill: '#cfe8c2', stroke: INK, 'stroke-width': 3 }));
+      // sand over the dry end of the walk
+      kids.push(s('polygon', { points: '452,300 452,206 480,199 520,209 560,201 600,210 600,300', fill: '#f0dfb2', stroke: INK, 'stroke-width': 3 }));
+      // snow on the summit, where it never melts
+      kids.push(s('polygon', { points: '56,152 72,108 88,152', fill: '#ffffff', stroke: INK, 'stroke-width': 2 }));
+      // the river that carries sediment across the plain
+      kids.push(s('path', { d: 'M 250 146 C 292 172 310 192 344 198 T 440 200', fill: 'none', stroke: '#4a90d9', 'stroke-width': 5, 'stroke-linecap': 'round' }));
+      for (const [fx, fw, col] of [[300, 34, '#9cc46f'], [340, 30, '#b8d489'], [386, 32, '#9cc46f'], [420, 26, '#b8d489']]) {
+        kids.push(R(fx, groundAt(fx) + 3, fw, 14, col, { w: 1.5, s: '#7f9b5c' }));
+      }
+      kids.push(s('path', { d: 'M 470 210 Q 490 192 512 208', fill: 'none', stroke: '#c9ab6a', 'stroke-width': 3 }));
+      kids.push(s('path', { d: 'M 528 212 Q 552 194 578 210', fill: 'none', stroke: '#c9ab6a', 'stroke-width': 3 }));
+      kids.push(T(26, 205, 'mountain', { z: 13, a: 'start', f: '#4a5a6a' }));
+      kids.push(T(212, 128, 'plateau', { z: 13, f: '#4a5a6a' }));
+      kids.push(T(370, 186, 'plain', { z: 13, f: '#4a5a6a' }));
+      kids.push(T(530, 190, 'desert', { z: 13, f: '#4a5a6a' }));
+      // the child, standing on the ground at this point of the walk
+      const gy = groundAt(px);
+      kids.push(CIRC(px, gy - 30, 7, C.y, { w: 2 }));
+      kids.push(L(px, gy - 23, px, gy - 8, INK, 3));
+      kids.push(L(px, gy - 8, px - 7, gy, INK, 3), L(px, gy - 8, px + 7, gy, INK, 3));
+      const zone = px < 150 ? 0 : px < 272 ? 1 : px < 452 ? 2 : 3;
+      const say = [
+        'A mountain is much higher than the land around it, with a broad base, steep slopes and a narrow summit. At very high altitude snow never melts, so the top stays snowcapped.',
+        'A plateau is raised land with a broad top that is more or less flat. Some are a few hundred metres high and some are several thousand.',
+        'A plain is low and flat: it rises no more than about 300 metres above sea level. Rivers carry sediment and spread it, and those deposits make very fertile soil, which is why the first civilisations grew beside rivers.',
+        'A desert gets very little rain. The Sahara and the Thar are hot deserts and the Gobi is a cold one, and people have adapted to living in all of them.',
+      ][zone];
+      return { kids, say };
+    },
+  },
   reproduce: {
     subject: 'science', about: 'How one parent makes more of itself: an amoeba splits in two (binary fission), yeast grows a bud that breaks off (budding), spirogyra breaks into pieces that each grow (fragmentation), rhizopus lets spores drift away, and a potato sprouts new plants from its eyes (vegetative propagation). For how organisms reproduce, asexual reproduction, fission, budding, fragmentation, spores, vegetative propagation.',
     sliders: [['mode', 'Choose the living thing', 0, 4, 1, 0], ['grown', 'Let it grow', 0, 10, 1, 0]],
