@@ -3,6 +3,18 @@
 // grades: the classes where the idea is taught. tasks: challenges a child completes by moving the sliders; each must be
 // false at the start and reachable, which auto-explore checks before using it. params(text) can tune a widget to the lesson.
 export const KITS = {
+  rhyme: {
+    // The rhyming lessons of Classes 1, 2 and 4. Poems are left out on purpose: a cloud poem or a night poem uses rhyme,
+    // but these fixed word families are not that poem's words, so the walk belongs on the lessons about rhyme itself.
+    grades: [1, 4], subject: 'english',
+    match: [/rhym/, /word famil/, /tongue twister/, /same (ending|sound)/, /words that sound (the same|alike)/],
+    title: 'Words that rhyme', takeaway: 'Words that end with the same sound rhyme. Cat, bat, hat and mat share the ending -at; cake, lake, make and take share -ake. Hearing the ending is what makes a rhyme.',
+    // The walk opens on -at, so no challenge asks for it.
+    tasks: [
+      { say: 'Find the family that rhymes with ring.', when: 'family == 2', then: 'Ring, sing, king and wing all end with the same sound, -ing.' },
+      { say: 'Find the family that rhymes with clock.', when: 'family == 3', then: 'Clock, rock, sock and lock all end with the same sound, -ock.' },
+    ],
+  },
   organs: {
     // Part 1 of the civics chapters: the three organs, their separation, and the three tiers. The match asks for the
     // organs by name; "government" alone is in every civics lesson and would swallow this one.

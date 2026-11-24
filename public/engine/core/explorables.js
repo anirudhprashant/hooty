@@ -44,6 +44,41 @@ const signed = (n) => (n < 0 ? `- ${num(-n)}` : `+ ${num(n)}`);
 // Each widget: about (what it can teach, read by the model that picks one), sliders [key, label, min, max, step, start], draw(v, p).
 // draw returns { kids: svg nodes, say: the read-out sentence }. p holds lesson-specific settings, listed in "params".
 export const WIDGETS = {
+  rhyme: {
+    subject: 'english', about: 'Word families that rhyme: the same ending gives the same sound. Cat, bat, hat and mat all end in -at; cake, lake, make and take in -ake. For rhyming words, word families, and hearing the ending of a word.',
+    sliders: [['family', 'Choose a word family', 0, 3, 1, 0]],
+    draw(v) {
+      const fam = Math.max(0, Math.min(3, v.family | 0));
+      const families = [
+        ['-at', ['cat', 'bat', 'hat', 'mat'], '#ffd166'],
+        ['-ake', ['cake', 'lake', 'make', 'take'], '#a0e7a0'],
+        ['-ing', ['ring', 'sing', 'king', 'wing'], '#9ad0f5'],
+        ['-ock', ['clock', 'rock', 'sock', 'lock'], '#f5a9c8'],
+      ];
+      const [ending, words, accent] = families[fam];
+      const kids = [R(0, 0, W, H, '#fffdf7', { w: 0 })];
+      kids.push(T(24, 28, 'Words that rhyme', { z: 20, a: 'start' }));
+      kids.push(T(24, 50, 'Same ending, same sound.', { z: 12, a: 'start', f: '#7d7a70', w: 600 }));
+      // the family's ending, big, as a pill
+      kids.push(R(430, 12, 146, 46, accent, { w: 3, s: '#2a1a4a', r: 23 }));
+      kids.push(T(503, 43, ending, { z: 24, f: '#2a1a4a' }));
+      // four word cards in a two-by-two
+      const cardW = 252, cardH = 74;
+      words.forEach((word, i) => {
+        const x = 24 + (i % 2) * (cardW + 24), y = 78 + Math.floor(i / 2) * (cardH + 18);
+        kids.push(R(x, y, cardW, cardH, '#ffffff', { w: 3, s: '#e3dccb', r: 14 }));
+        const stem = word.slice(0, word.length - (ending.length - 1));
+        kids.push(T(x + 22, y + 46, stem, { z: 26, a: 'start', f: '#2a1a4a' }));
+        // the shared ending, in the family colour, so the eye lands on what makes the rhyme
+        const stemW = Math.max(0, stem.length) * 15.5;
+        kids.push(R(x + 22 + stemW + 4, y + 20, 18 + (ending.length - 1) * 15.5, 40, accent, { w: 0, r: 10 }));
+        kids.push(T(x + 22 + stemW + 8, y + 46, word.slice(stem.length), { z: 26, a: 'start', f: '#2a1a4a' }));
+      });
+      kids.push(T(300, 268, 'say them aloud: the last part sounds the same in every card', { z: 12, f: '#7d7a70', w: 600 }));
+      const say = `${words.slice(0, 3).map((w) => w[0].toUpperCase() + w.slice(1)).join(', ')} and ${words[3]} all end with the same sound, ${ending}. Words that end with the same sound rhyme.`;
+      return { kids, say };
+    },
+  },
   organs: {
     subject: 'social', about: 'The three organs of government and what each one does with a law: the legislature makes it, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. For the three organs of government, the legislature, executive and judiciary, separation of powers, and how each organ checks the others.',
     sliders: [['stage', 'Follow one law through the government', 0, 2, 1, 0]],
