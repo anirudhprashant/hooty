@@ -57,8 +57,7 @@ export const WIDGETS = {
       ];
       const [ending, words, accent] = families[fam];
       const kids = [R(0, 0, W, H, '#fffdf7', { w: 0 })];
-      kids.push(T(24, 28, 'Words that rhyme', { z: 20, a: 'start' }));
-      kids.push(T(24, 50, 'Same ending, same sound.', { z: 12, a: 'start', f: '#7d7a70', w: 600 }));
+      kids.push(T(24, 40, 'Same ending, same sound.', { z: 15, a: 'start', f: '#6b6a60', w: 600 }));
       // the family's ending, big, as a pill
       kids.push(R(430, 12, 146, 46, accent, { w: 3, s: '#2a1a4a', r: 23 }));
       kids.push(T(503, 43, ending, { z: 24, f: '#2a1a4a' }));
