@@ -1223,7 +1223,7 @@ export const WIDGETS = {
     draw(v, p) {
       const dice = p.kind === 'dice', sides = dice ? 6 : 2, rnd = seeded(2026), hit = [];
       for (let i = 0; i < 500; i++) hit.push(Math.floor(rnd() * sides) === 0 ? 1 : 0);
-      const X = (i) => 50 + (i / v.n) * 520, Y = (f) => 260 - f * 220, pr = 1 / sides, kids = [L(50, Y(0), 575, Y(0), INK, 3), L(50, Y(0), 50, Y(1), INK, 3), L(50, Y(pr), 575, Y(pr), C.o, 3, { 'stroke-dasharray': '8 6' }), T(560, Y(pr) - 8, dice ? 'true chance 1/6' : 'true chance 1/2', { a: 'end', z: 13, f: '#d9531e' }), T(34, Y(1) + 4, '1', { z: 13, a: 'end' }), T(34, Y(0) + 4, '0', { z: 13, a: 'end' }), T(310, 288, 'number of tries', { z: 13, w: 600, f: '#6b5a8a' }), T(570, 280, v.n, { z: 13, a: 'end' })];
+      const X = (i) => 50 + (i / v.n) * 520, Y = (f) => 260 - f * 220, pr = 1 / sides, kids = [L(50, Y(0), 575, Y(0), INK, 3), L(50, Y(0), 50, Y(1), INK, 3), L(50, Y(pr), 575, Y(pr), C.o, 3, { 'stroke-dasharray': '8 6' }), T(560, Y(pr) - 10, dice ? 'true chance 1/6' : 'true chance 1/2', { a: 'end', z: 16, f: '#d9531e' }), T(34, Y(1) + 5, '1', { z: 16, a: 'end' }), T(34, Y(0) + 5, '0', { z: 16, a: 'end' }), T(310, 290, 'number of tries', { z: 16, w: 600, f: '#6b5a8a' }), T(570, 278, v.n, { z: 16, a: 'end' })];
       let h = 0; const pts = [];
       for (let i = 0; i < v.n; i++) { h += hit[i]; pts.push(`${X(i + 1).toFixed(1)},${Y(h / (i + 1)).toFixed(1)}`); }
       kids.push(s('polyline', { points: pts.join(' '), fill: 'none', stroke: C.b, 'stroke-width': 4, 'stroke-linejoin': 'round' }));
@@ -2080,7 +2080,7 @@ export const WIDGETS = {
     draw(v, p) {
       const sub = p.kind === 'sub', kids = [], cx = [95, 165, 235], nm = ['ones', 'tens', 'hundreds'];
       const A = [v.a % 10, Math.floor(v.a / 10) % 10, Math.floor(v.a / 100)], B = [v.b % 10, Math.floor(v.b / 10) % 10, Math.floor(v.b / 100)];
-      if (sub && v.b > v.a) return { kids: [T(300, 150, `${v.b} is more than ${v.a}`, { z: 20, f: '#c0392b' }), T(300, 184, 'you cannot take away more than you have', { z: 14, w: 600, f: '#6b5a8a' })], say: `You cannot take ${v.b} away from ${v.a}: it is more than you have. Make the second number smaller.` };
+      if (sub && v.b > v.a) return { kids: [T(300, 150, `${v.b} is more than ${v.a}`, { z: 20, f: '#c0392b' }), T(300, 184, 'you cannot take away more than you have', { z: 17, w: 600, f: '#6b5a8a' })], say: `You cannot take ${v.b} away from ${v.a}: it is more than you have. Make the second number smaller.` };
       // work each column from the ones: carry (add) or borrow (subtract) moves to the next column
       const res = [0, 0, 0], mark = [0, 0, 0];
       let c = 0;
@@ -2092,13 +2092,13 @@ export const WIDGETS = {
       kids.push(T(60, 84, sub ? '' : '', { z: 10 }), L(50, 196, 280, 196, INK, 4), T(62, 178, sub ? '−' : '+', { z: 34, w: 700, f: C.o }));
       for (let i = 0; i < 3; i++) {
         const x = cx[2 - i];
-        kids.push(T(x, 112, A[i] || i === 0 || v.a >= 10 ** i ? String(A[i]) : '', { z: 34, w: 700 }), T(x, 168, B[i] || i === 0 || v.b >= 10 ** i ? String(B[i]) : '', { z: 34, w: 700, f: '#1f63d9' }), T(x, 40, nm[i], { z: 11, w: 600, f: '#6b5a8a' }));
+        kids.push(T(x, 112, A[i] || i === 0 || v.a >= 10 ** i ? String(A[i]) : '', { z: 34, w: 700 }), T(x, 168, B[i] || i === 0 || v.b >= 10 ** i ? String(B[i]) : '', { z: 34, w: 700, f: '#1f63d9' }), T(x, 40, nm[i], { z: 16, w: 600, f: '#6b5a8a' }));
       }
       for (let i = 0; i < 3; i++) {
         if (v.step > i) {
           const x = cx[2 - i];
           if (!lead(i)) kids.push(T(x, 246, String(res[i]), { z: 34, w: 700, f: '#058a68' }), R(x - 30, 214, 60, 44, 'none', { s: '#058a68', w: 2.5, r: 6 }));
-          if (mark[i] && i < 2) kids.push(T(cx[2 - i - 1], 80, sub ? '−1' : '1', { z: 18, w: 700, f: '#c2510e' }), T(x + 26, 100, sub ? '+10' : '', { z: 12, w: 700, f: '#c2510e' }));
+          if (mark[i] && i < 2) kids.push(T(cx[2 - i - 1], 80, sub ? '−1' : '1', { z: 18, w: 700, f: '#c2510e' }), T(x + 26, 102, sub ? '+10' : '', { z: 15, w: 700, f: '#c2510e' }));
         }
       }
       const i = Math.min(v.step, 3) - 1, lines = [];
