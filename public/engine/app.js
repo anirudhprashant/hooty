@@ -745,7 +745,7 @@ function followBookLanguage(pack) {
 function screenPath() {
   const l = activeLearner();
   const pack = currentPack();
-  const wrap = el('div', { class: 'page screen' });
+  const wrap = el('div', { class: 'page screen screen--path' });
 
   if (!pack) {
     wrap.append(el('div', { class: 'empty' }, [el('p', { text: t('noPacks') })]));

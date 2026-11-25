@@ -1348,6 +1348,18 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 }
 .unit-jump__chip:active { background: var(--primary-soft, #f1e4ff); }
 
+/* A phone's first screen after a book is chosen should show the next lesson, not the shop around it. The class and
+   subject rows stay, because they are how a child switches book; the search card keeps its title but drops the hint
+   line, and the keep-this-book offer becomes a small pill, so the first node begins higher up the screen. */
+@media (max-width: 560px) {
+  .screen--path .section-title { margin-top: var(--s3); }
+  .screen--path .section-sub { margin-bottom: var(--s2); }
+  .screen--path .catalogue-link { padding: 6px 12px; }
+  .screen--path .catalogue-link__sub { display: none; }
+  .screen--path .offline-row { margin-bottom: var(--s2); }
+  .screen--path .offline-btn { min-height: 40px; padding: 6px 16px; }
+}
+
 /* Printing a progress report: a parent prints the Grown-ups screen for a meeting, so hide the app's chrome, drop the
    pink background, and keep the numbers. */
 @media print {
