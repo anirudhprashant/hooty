@@ -4134,6 +4134,41 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  romannum: {
+    subject: 'maths',
+    about: 'Roman numerals from 1 to 100: the symbols I, V, X, L and C, the four subtractive pairs (IV, IX, XL, XC), and how a bigger symbol after a smaller one adds while a smaller before a bigger one subtracts. For Roman numerals, number systems, the history of counting, and reading an old inscription.',
+    params: {},
+    sliders: [['n', 'Pick a number', 1, 100, 1, 1]],
+    draw(v) {
+      const n = Math.max(1, Math.min(100, v.n | 0));
+      const table = [[100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+      let rest = n, roman = '';
+      const parts = [];
+      for (const [val, sym] of table) while (rest >= val) { roman += sym; parts.push(sym); rest -= val; }
+      const pair = { IV: 'Four is one before five', IX: 'Nine is one before ten', XL: 'Forty is ten before fifty', XC: 'Ninety is ten before a hundred' };
+      const subs = parts.filter((p) => p.length === 2);
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 21, 'Roman numerals', { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
+      // the five symbols and what each is worth, always in sight
+      const ref = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100]];
+      ref.forEach(([sym, val], i) => {
+        const x = 300 + i * 57;
+        kids.push(R(x, 5, 50, 22, '#ffffff', { w: 1.5, s: '#e3dccb', r: 6 }));
+        kids.push(T(x + 25, 21, `${sym} ${val}`, { z: 12.5, w: 700, f: INK }));
+      });
+      // the numeral itself, big enough to read on a phone
+      kids.push(R(10, 48, 580, 118, '#fff3d6', { w: 2.5, s: '#e8b44a', r: 16 }));
+      kids.push(T(300, 132, roman, { z: roman.length > 6 ? 54 : 72, w: 800, f: '#3a2a00' }));
+      kids.push(T(300, 196, `= ${n}`, { z: 26, w: 800, f: '#7a5b00' }));
+      // the sum that makes it, in the order the symbols are written
+      kids.push(T(300, 232, parts.join(' + '), { z: 16, w: 600, f: '#6b5a8a' }));
+      kids.push(T(300, 266, subs.length ? 'A small symbol before a big one takes away.' : 'Add the symbols from the largest to the smallest.', { z: 14, w: 600, f: '#8a7aa8' }));
+      const say = `${n} is written ${roman} in Roman numerals. ` + (subs.length
+        ? `${subs.map((s) => pair[s]).join('. ')}. In ${roman}, a smaller symbol before a larger one subtracts, so the value is ${n}.`
+        : `Every symbol adds: ${parts.join(' + ')} = ${n}.`);
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

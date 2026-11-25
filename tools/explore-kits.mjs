@@ -756,7 +756,7 @@ export const KITS = {
   seabreeze: {
     // "How winds form" names the coast only in its facts ("air flows from the high-pressure sea region towards the land",
     // "wind blows from the land towards the sea"), so the match has to know those phrasings too.
-    grades: [6, 8], match: [/sea breezes?|land breezes?/, /\bconvection\b/, /land (heats|is hotter|warmer)/, /air flows from the (sea|land)/, /wind blows from the (land|sea)/, /pressure differences? over land and sea/],
+    grades: [6, 10], perChapter: 1, avoid: [/solar radiation/i, /ozone/i, /photosynthesis/i], match: [/sea breezes?|land breezes?/, /\bconvection\b/, /land (heats|is hotter|warmer)/, /air flows from the (sea|land)/, /wind blows from the (land|sea)/, /pressure differences?/, /uneven heating/, /\bwinds?\b/],
     title: 'Watch the coast breathe', takeaway: 'Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.',
     tasks: [
       { say: 'Make a sea breeze.', when: 'hour >= 10 and hour <= 17', then: 'By day the land is hotter, so air rises over it and the sea air blows in.' },
@@ -1545,6 +1545,19 @@ export const KITS = {
       { say: 'Make AB a diameter, with the angle at the centre 180 degrees.', when: 'mode == 0 and a == 180', then: 'The angle at C is 90 degrees: a diameter makes a right angle at the circle.' },
       { say: 'Move C right across to the other side of the big arc.', when: 'mode == 0 and c >= 85', then: 'The angle at C is still half the angle at the centre: every point on the same arc sees AB at the same angle.' },
       { say: 'Switch to the four-sided shape and look at the opposite angles.', when: 'mode == 1', then: 'The two pairs of opposite angles each add up to 180 degrees.' },
+    ],
+  },
+  romannum: {
+    // The two lessons of "A Story of Numbers" that teach Roman numerals by name. The kit asks for the four numbers that
+    // need subtraction (IV, IX, XL, XC), because those are what the placement questions in the book test.
+    grades: [5, 8], subjects: ['maths'], perChapter: 1,
+    match: [/roman numerals?/, /roman (number|numeral) system/, /numeral systems?/, /early number systems?/, /tally (marks?|system)/],
+    title: 'Roman numerals', takeaway: 'Roman numerals use I, V, X, L and C. Symbols add from the largest down (XII is ten and one and one); a smaller symbol before a bigger one subtracts, which gives IV, IX, XL and XC.',
+    tasks: [
+      { say: 'Make 4 the Roman way.', when: 'n == 4', then: 'IV: one before five means four. The smaller symbol takes away.' },
+      { say: 'Make 9.', when: 'n == 9', then: 'IX: one before ten means nine.' },
+      { say: 'Make 40.', when: 'n == 40', then: 'XL: ten before fifty means forty.' },
+      { say: 'Make 90.', when: 'n == 90', then: 'XC: ten before a hundred means ninety.' },
     ],
   },
   wordlab: {
