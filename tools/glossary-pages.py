@@ -420,7 +420,7 @@ def build():
           f'books, each in plain language, with the chapter and page it came from. Free, no ads, no sign-up.</p>'
         + '<div class="searchbox">'
         + '<label for="word-search">Search every word</label>'
-        + '<input id="word-search" type="search" placeholder="for example, evaporation or gram sabha" autocomplete="off">'
+        + '<input id="word-search" type="search" placeholder="evaporation or gram sabha" autocomplete="off">'
         + '<p class="note" id="word-search-status" aria-live="polite"></p>'
         + '<ul id="word-results"></ul>'
         + '</div>'
