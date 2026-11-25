@@ -964,9 +964,9 @@ function screenLesson() {
       }),
       lesson.sceneCaption || lesson.sceneCredit ? el('figcaption', { class: 'lesson__scene-cap' }, [
         lesson.sceneCaption ? el('span', { text: lesson.sceneCaption }) : null,
-        lesson.sceneCredit ? (lesson.sceneCredit.url
-          ? el('a', { class: 'credit-link', href: safeLink(lesson.sceneCredit.url), target: '_blank', rel: 'noopener noreferrer', text: `${t('pictureCredit')}: ${lesson.sceneCredit.text}` })
-          : el('span', { class: 'credit-note', text: lesson.sceneCredit.text })) : null,
+        // Credit, not a door: a lesson never sends a child out of the app. The licence and its link are on the
+        // grown-ups screen, where someone can follow it.
+        lesson.sceneCredit ? el('span', { class: 'credit-note', text: lesson.sceneCredit.url ? `${t('pictureCredit')}: ${lesson.sceneCredit.text}` : lesson.sceneCredit.text }) : null,
       ]) : null,
     ]));
   }
@@ -2001,6 +2001,16 @@ function screenParent() {
   const l = activeLearner();
   const wrap = el('div', { class: 'page screen' });
   wrap.append(el('div', { class: 'privacy-note', style: { marginTop: 'var(--s2)' } }, [icon('lock', { size: 22 }), t('privacyNote')]));
+  // What a parent wants to know before handing over the phone, in four lines rather than a policy page.
+  wrap.append(el('section', { class: 'growth-card safety' }, [
+    el('h2', { class: 'section-title', text: t('safetyTitle') }),
+    el('ul', { class: 'growth-list' }, [
+      el('li', { text: t('safetyNoAccount') }),
+      el('li', { text: t('safetyNoTracking') }),
+      el('li', { text: t('safetyNoExit') }),
+      el('li', { text: t('safetyData') }),
+    ]),
+  ]));
   const install = installCard();
   if (install) wrap.append(install);
 
@@ -2202,6 +2212,17 @@ function screenParent() {
     }
   });
   dl.append(el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => fileInput.click() }, [icon('upload', { size: 22 }), t('importData')]), fileInput);
+  // The last word on data staying on this device: a family can take it away, and can also erase it here without
+  // hunting through browser settings. Two asks, because there is no undo.
+  dl.append(el('button', {
+    class: 'btn btn--ghost btn--danger', type: 'button', onclick: async () => {
+      if (!window.confirm(t('eraseAsk'))) return;
+      if (!window.confirm(t('eraseConfirm'))) return;
+      await wipe();
+      toast(t('eraseDone'));
+      location.reload();
+    },
+  }, [icon('cross', { size: 22 }), t('eraseData')]));
   // A parent taking the numbers to a school meeting: the browser's own print dialog, which every phone and computer has,
   // and which can save a PDF. No extra download, and it keeps working offline.
   dl.append(el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => window.print() }, [icon('download', { size: 22 }), t('printReport')]));
