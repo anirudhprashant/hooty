@@ -192,8 +192,8 @@ pack['units'].sort(key=lambda u: order.index(u['id']) if u['id'] in order else (
 
 # ---- content lint: mechanical problems in what the model wrote. Text is cleaned; an unfair question is dropped,
 # as long as its lesson keeps at least 5 questions. Hand-written Social Science chapter 1 is left alone.
-LEAK = [(re.compile(r'\b(in|from|on) the fact sheet\b', re.I), r'\1 the lesson'), (re.compile(r'\bthe fact sheet\b', re.I), 'the lesson'),
-        (re.compile(r'\bfact sheet\b', re.I), 'lesson'), (re.compile(r'\s*\(?\bFACT \d+\.\d+\)?', re.I), '')]
+LEAK = [(re.compile(r'\b(in|from|on) the fact sheet\b', re.I), r'\1 the text'), (re.compile(r'\bthe fact sheet\b', re.I), 'the text'),
+        (re.compile(r'\bfact sheet\b', re.I), 'text'), (re.compile(r'\s*\(?\bFACT \d+\.\d+\)?', re.I), '')]
 def clean(o):
     if isinstance(o, str):
         for rx, to in LEAK: o = rx.sub(to, o)
