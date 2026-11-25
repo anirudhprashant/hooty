@@ -36227,7 +36227,7 @@
       {
        "id": "social-science-g10-ch11-l1",
        "title": "Production Across Countries and Interlinking",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -36282,68 +36282,6 @@
            "p": 57
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch11-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "foreign investment",
-           "globalisation",
-           "multinational corporation",
-           "information and communication technology"
-          ],
-          "meanings": [
-           "This includes telecommunications, computers and the Internet.",
-           "This is investment made by an MNC in another country.",
-           "This means the rapid integration and interconnection of countries.",
-           "This is a company that owns or controls production in more than one nation."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "Investment made by MNCs is called foreign investment.",
-           "Globalisation is this process of rapid integration or interconnection between countries.",
-           "A MNC is a company that owns or controls production",
-           "Even more remarkable have been the developments in information and communication technology."
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"foreign investment\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"foreign investment\" means: This is investment made by an MNC in another country."
-          },
-          {
-           "say": "Choose what \"globalisation\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"globalisation\" means: This means the rapid integration and interconnection of countries."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -36785,7 +36723,7 @@
       {
        "id": "social-science-g10-ch11-l2",
        "title": "Foreign Trade and Integration of Markets",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -36845,6 +36783,26 @@
            "p": 57
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch11-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "trade",
+         "params": {},
+         "title": "Two toys in the shop",
+         "tasks": [
+          {
+           "say": "Set a tax that makes the imported toy dearer than the Indian one.",
+           "when": "tariff >= 30 and cost == 250",
+           "then": "At a 25% tax the import costs ₹250, the same as the Indian toy; above that, buyers switch to the Indian toy."
+          }
+         ],
+         "takeaway": "A tax on imports is a trade barrier. It raises the price of the imported good, so buyers switch to the one made at home, which protects the home producer but makes buyers pay more.",
+         "explanation": "A tax on imports is a trade barrier. It raises the price of the imported good, so buyers switch to the one made at home, which protects the home producer but makes buyers pay more."
         },
         {
          "type": "worked",
@@ -59027,7 +58985,7 @@
       {
        "id": "social-science-g10-ch17-l1",
        "title": "First Printed Books",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 6,
        "activities": [
         {
          "type": "hook",
@@ -59087,68 +59045,6 @@
            "p": 106
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch17-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "accordion book",
-           "calligraphy",
-           "ukiyo",
-           "vellum"
-          ],
-          "meanings": [
-           "This was a parchment made from the skin of animals.",
-           "This was a Chinese book folded and stitched at the side.",
-           "This is the art of beautiful and stylised writing.",
-           "This was an art form showing ordinary human experiences, especially urban ones."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "",
-           "The art of beautiful and stylised writing",
-           "",
-           "A parchment made from the skin of animals"
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"accordion book\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"accordion book\" means: This was a Chinese book folded and stitched at the side."
-          },
-          {
-           "say": "Choose what \"calligraphy\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"calligraphy\" means: This is the art of beautiful and stylised writing."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -59483,7 +59379,7 @@
       {
        "id": "social-science-g10-ch17-l2",
        "title": "Print Comes to Europe",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -59556,6 +59452,31 @@
            "p": 108
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch17-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "printing",
+         "params": {},
+         "title": "Hand copy or printing press?",
+         "tasks": [
+          {
+           "say": "Print 100 copies by printing press.",
+           "when": "method == 2 and copies == 100",
+           "then": "The press prints a hundred copies in about two days; a scribe would need years."
+          },
+          {
+           "say": "See how long one copy by hand takes.",
+           "when": "method == 0 and copies == 1",
+           "then": "A scribe copies about five pages a day, so one hundred pages take about twenty days."
+          }
+         ],
+         "takeaway": "A scribe could copy a few pages a day; a printing press could print thousands. That is why printed books became cheap, why more people learned to read, and why new ideas could spread across a country in years instead of centuries.",
+         "explanation": "A scribe could copy a few pages a day; a printing press could print thousands. That is why printed books became cheap, why more people learned to read, and why new ideas could spread across a country in years instead of centuries."
         },
         {
          "type": "worked",
