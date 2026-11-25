@@ -1104,12 +1104,12 @@
          ],
          "prompt": "What is halfway between the North Pole and the South Pole?",
          "options": [
-          "The scale",
+          "The Equator",
           "A symbol",
-          "An atlas",
-          "The Equator"
+          "The scale",
+          "An atlas"
          ],
-         "answer": 3,
+         "answer": 0,
          "explanation": "The Equator is halfway between the two poles.",
          "id": "ch1-l4-a2",
          "src": [
@@ -1175,9 +1175,9 @@
          "prompt": "What does latitude measure?",
          "options": [
           "How far a place is from the Equator",
+          "How high a mountain is",
           "How old a map is",
-          "How big a country is",
-          "How high a mountain is"
+          "How big a country is"
          ],
          "answer": 0,
          "explanation": "Latitude measures the distance from the Equator.",
@@ -1199,12 +1199,12 @@
          ],
          "prompt": "Which way does a parallel of latitude run?",
          "options": [
-          "Only around the North Pole",
           "East to west, parallel to the Equator",
+          "From pole to pole",
           "Straight up into the sky",
-          "From pole to pole"
+          "Only around the North Pole"
          ],
-         "answer": 1,
+         "answer": 0,
          "explanation": "Parallels run east to west. They are parallel to the Equator.",
          "id": "ch1-l4-a6",
          "src": [
@@ -1587,12 +1587,12 @@
          ],
          "prompt": "Delhi is at 77°E. What does E mean?",
          "options": [
-          "Delhi is at the North Pole",
-          "Delhi is on the Equator",
           "Delhi is east of the Prime Meridian",
-          "Delhi is 77 km from Greenwich"
+          "Delhi is on the Equator",
+          "Delhi is 77 km from Greenwich",
+          "Delhi is at the North Pole"
          ],
-         "answer": 2,
+         "answer": 0,
          "explanation": "E means east. Delhi is 77° east of the Prime Meridian.",
          "id": "ch1-l5-a7",
          "src": [
@@ -1684,12 +1684,12 @@
          ],
          "prompt": "Delhi is at 29°N and 77°E. Which number is the latitude?",
          "options": [
-          "29°N",
-          "77°E",
+          "180°",
           "0°",
-          "180°"
+          "77°E",
+          "29°N"
          ],
-         "answer": 0,
+         "answer": 3,
          "explanation": "Latitude is north or south of the Equator. 29°N is the latitude. 77°E is the longitude.",
          "id": "ch1-l5-a10",
          "src": [
@@ -1914,12 +1914,12 @@
          ],
          "prompt": "About how long ago did Varahamihira live in Ujjayinī?",
          "options": [
-          "About 100 years ago",
-          "About 500 years ago",
           "About 1,500 years ago",
-          "About 150 years ago"
+          "About 500 years ago",
+          "About 150 years ago",
+          "About 100 years ago"
          ],
-         "answer": 2,
+         "answer": 0,
          "explanation": "The book says Varahamihira lived and worked there about 1,500 years ago.",
          "id": "ch1-l6-a6",
          "src": [
@@ -1990,12 +1990,12 @@
          ],
          "prompt": "Some old cities were a little away from the Ujjayinī meridian. Why?",
          "options": [
-          "People could not measure time well then. Finding longitude needs good time.",
           "The meridian kept moving.",
-          "Those cities were in the sea.",
-          "Astronomers did not make maps."
+          "People could not measure time well then. Finding longitude needs good time.",
+          "Astronomers did not make maps.",
+          "Those cities were in the sea."
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "Finding longitude needs good timekeeping. Long ago, people could not measure time as well as they do today.",
          "id": "ch1-l6-a9",
          "src": [
@@ -2150,12 +2150,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 15°E?",
          "options": [
-          "12 midnight",
           "1 pm",
+          "11 am",
           "2 pm",
-          "11 am"
+          "12 midnight"
          ],
-         "answer": 1,
+         "answer": 0,
          "explanation": "Going east adds one hour for every 15°. So noon becomes 1 pm.",
          "id": "ch1-l7-a5",
          "src": [
@@ -2414,12 +2414,12 @@
          ],
          "prompt": "Which country has 11 time zones?",
          "options": [
+          "Russia",
           "The USA",
           "India",
-          "Russia",
           "Greenwich"
          ],
-         "answer": 2,
+         "answer": 0,
          "explanation": "The USA has six time zones. Russia has 11.",
          "id": "ch1-l8-a3",
          "src": [
@@ -2547,9 +2547,9 @@
          "prompt": "A ship crosses the International Date Line going west. Before this, it was Sunday. What is the new day?",
          "options": [
           "It becomes Monday",
+          "It becomes Saturday",
           "It stays Sunday",
-          "It becomes Tuesday",
-          "It becomes Saturday"
+          "It becomes Tuesday"
          ],
          "answer": 0,
          "explanation": "Going west across the Date Line, you add a day. Sunday becomes Monday.",
@@ -2875,9 +2875,9 @@
         "prompt": "India’s own prime meridian passed through which city?",
         "options": [
          "Ujjayinī (Ujjain)",
+         "Greenwich",
          "Delhi",
-         "Tokyo",
-         "Greenwich"
+         "Tokyo"
         ],
         "answer": 0,
         "explanation": "The madhya rekhā passed through Ujjayinī, which is Ujjain today.",
@@ -2931,12 +2931,12 @@
         ],
         "prompt": "It is 12 noon in London. Why is it 5:30 pm in India?",
         "options": [
-         "India's time is 5 hours 30 minutes ahead of GMT",
-         "India is closer to the Equator",
          "India uses the Date Line",
-         "Clocks run faster in India"
+         "Clocks run faster in India",
+         "India's time is 5 hours 30 minutes ahead of GMT",
+         "India is closer to the Equator"
         ],
-        "answer": 0,
+        "answer": 2,
         "explanation": "IST is 5 hours 30 minutes ahead of Greenwich Mean Time. So noon in London is 5:30 pm in India.",
         "id": "ch1-boss-a10",
         "src": [
@@ -8987,7 +8987,7 @@
          "answers": [
           "Ganga"
          ],
-         "hint": "Use the river name from the lesson.",
+         "hint": "Use the river name from the text.",
          "explanation": "Correct! About 40 crore people live in the Ganga plain.",
          "src": [
           {
@@ -16772,7 +16772,7 @@
           "heavenly",
           "master"
          ],
-         "prompt": "Which meaning of Tianzhu is given in the lesson?",
+         "prompt": "Which meaning of Tianzhu is given in the text?",
          "options": [
           "The Indus River",
           "Heavenly master",
@@ -16808,7 +16808,7 @@
           "It first appeared in a Persian inscription."
          ],
          "answer": 3,
-         "explanation": "the lesson directly links Hindustān's first appearance with a Persian inscription.",
+         "explanation": "the text directly links Hindustān's first appearance with a Persian inscription.",
          "src": [
           {
            "ch": 5,
@@ -18468,15 +18468,15 @@
           "rivers",
           "cities"
          ],
-         "prompt": "What does the text say about Harappa and Mohenjo-daro?",
+         "prompt": "A guide visits Harappa and Mohenjo-daro. What does the text say?",
          "options": [
-          "They were the first two cities dug up.",
-          "They are names for the people who lived there.",
+          "They were the first two cities excavated.",
+          "They are names for the Harappan inhabitants.",
           "They stood only on the Sarasvatī River.",
           "They both grew along rivers."
          ],
          "answer": 3,
-         "explanation": "Harappa and Mohenjo-daro were important cities. Both grew along rivers.",
+         "explanation": "Both Harappa and Mohenjo-daro were important cities that grew along rivers.",
          "src": [
           {
            "ch": 6,
@@ -23884,7 +23884,7 @@
            "Folk, tribal and Hindu systems sharing similar concepts"
           ]
          ],
-         "explanation": "Each pair connects a tradition with the lesson's description.",
+         "explanation": "Each pair connects a tradition with the text's description.",
          "src": [
           {
            "ch": 7,
@@ -26659,10 +26659,10 @@
           "India has no festivals.",
           "India has only one festival.",
           "India celebrates festivals only in October.",
-          "India has many kinds of festivals."
+          "India has an immense variety of festivals."
          ],
          "answer": 3,
-         "explanation": "India has many kinds of festivals. So there are many celebrations to enjoy.",
+         "explanation": "India has an immense variety of festivals, so there are many different celebrations to enjoy.",
          "src": [
           {
            "ch": 8,
@@ -29321,7 +29321,7 @@
           "grocery"
          ],
          "hint": "The blank describes the kind of shop he runs.",
-         "explanation": "the lesson says that his father runs a small grocery store.",
+         "explanation": "the text says that his father runs a small grocery store.",
          "src": [
           {
            "ch": 9,
@@ -37467,7 +37467,7 @@
          "answers": [
           "six"
          ],
-         "hint": "the lesson gives this number.",
+         "hint": "the text gives this number.",
          "explanation": "Kamble won against six other candidates.",
          "src": [
           {
@@ -38602,7 +38602,7 @@
            "Connects the Gram Panchayat with the Zila Parishad"
           ]
          ],
-         "explanation": "Each pair shows a role or rule described in the lesson.",
+         "explanation": "Each pair shows a role or rule described in the text.",
          "src": [
           {
            "ch": 11,
@@ -39772,7 +39772,7 @@
         "title": "Life in Rural Areas",
         "prompt": "Almost two-thirds of India's population lives in rural areas.",
         "answer": true,
-        "explanation": "the lesson says this. India has great size and diversity.",
+        "explanation": "the text says this. India has great size and diversity.",
         "src": [
          {
           "ch": 11,
@@ -41918,7 +41918,7 @@
           "1792 act"
          ],
          "title": "Why Did Municipal Administration Begin?",
-         "prompt": "Why does the lesson say that municipal administration properly began in 1792?",
+         "prompt": "Why does the text say that municipal administration properly began in 1792?",
          "options": [
           "The city gained power to levy municipal taxes.",
           "The Madras Corporation changed its name.",
@@ -44084,7 +44084,7 @@
           "pilot"
          ],
          "hint": "She flies an aircraft.",
-         "explanation": "the lesson says Geeta Aunty is a pilot.",
+         "explanation": "the text says Geeta Aunty is a pilot.",
          "src": [
           {
            "ch": 13,
@@ -45615,7 +45615,7 @@
           "600"
          ],
          "hint": "Think about the amount Rajesh pays for wood.",
-         "explanation": "the lesson says that Rajesh pays ₹600 for the wood.",
+         "explanation": "the text says that Rajesh pays ₹600 for the wood.",
          "src": [
           {
            "ch": 13,
