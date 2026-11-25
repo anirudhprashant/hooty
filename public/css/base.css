@@ -45,8 +45,10 @@
   --on-success: #ffffff;
   --on-danger: #ffffff;
   --on-secondary: #ffffff;
-  --font-display: "Fredoka", "Baloo 2", system-ui, sans-serif;
-  --font-body: "Nunito", system-ui, sans-serif;
+  --font-display: "Fredoka", "Baloo 2", "Noto Sans Devanagari", "Nirmala UI", "Mangal", system-ui, sans-serif;
+  /* Nunito and Fredoka are Latin only. Hindi lessons are a third of the catalogue, so the Devanagari faces are
+     named before the generic: no download, and no chance of falling through to a serif. */
+  --font-body: "Nunito", "Noto Sans Devanagari", "Nirmala UI", "Mangal", "Noto Sans", system-ui, sans-serif;
 
   /* derived, so every theme gets matching steps for free */
   --tone-1: color-mix(in srgb, var(--text) 6%, transparent);
