@@ -46903,60 +46903,28 @@
          "tags": [
           "explore"
          ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "neighbourhood",
-           "maritime neighbour",
-           "regionalism",
-           "Partition"
-          ],
-          "meanings": [
-           "The 1947 separation that left Pakistan no longer part of India.",
-           "A country sharing a land boundary with another country.",
-           "A country connected to another by a shared sea or ocean.",
-           "Cooperation among countries for the benefit of the whole region."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "",
-           "A maritime neighbour is a country connected to another by",
-           "Such involvement is called regionalism and helps create peace",
-           "Before the 1947 Partition — a legacy of the colonial era that"
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
+         "widget": "neighbours",
+         "params": {},
+         "title": "India and her neighbours",
          "tasks": [
           {
-           "say": "Choose what \"neighbourhood\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"neighbourhood\" means: A country sharing a land boundary with another country."
+           "say": "Find the neighbour to the east.",
+           "when": "pick == 5",
+           "then": "Bangladesh lies to the east, sharing a land border and a language with West Bengal."
           },
           {
-           "say": "Choose what \"maritime neighbour\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"maritime neighbour\" means: A country connected to another by a shared sea or ocean."
+           "say": "Find the island neighbour across the sea.",
+           "when": "pick == 7",
+           "then": "Sri Lanka is an island to the south, across the sea, not on a land border."
+          },
+          {
+           "say": "Find the largest neighbour, to the north.",
+           "when": "pick == 2",
+           "then": "China is India’s largest neighbour, with the Himalayas between them."
           }
          ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
+         "takeaway": "India sits in the middle: Pakistan and Afghanistan to the north-west, China and Nepal to the north, Bhutan to the north-east, Bangladesh and Myanmar to the east, and Sri Lanka across the sea to the south.",
+         "explanation": "India sits in the middle: Pakistan and Afghanistan to the north-west, China and Nepal to the north, Bhutan to the north-east, Bangladesh and Myanmar to the east, and Sri Lanka across the sea to the south."
         },
         {
          "type": "worked",
