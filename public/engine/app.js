@@ -1381,6 +1381,10 @@ function updateProgress() {
   s.progressFill.style.width = pct + '%';
   s.progressText.textContent = `${s.index}/${s.queue.length}`;
   if (pct >= 50 && !s.halfway) { s.halfway = true; sound('halfway'); }
+  // The simulation file is the heaviest thing the engine ships (about 129 KB compressed). It used to start downloading
+  // as the lesson opened, where it competed with the picture on the opening card; now it waits until the child has
+  // turned that card, which leaves the first screen alone and still arrives several cards before the simulation.
+  if (s.index >= 1 && !widgetsLoaded() && (s.queue || []).some((a) => a.type === 'explore')) loadWidgets().catch(() => {});
   // The topic picture is the same on every card. On a phone, where it is stacked above the card rather than beside it,
   // it has done its job by the end of the opening card, so it steps aside and the question gets the screen.
   if (s.side) s.side.classList.toggle('lesson__side--opened', s.index >= 1);
@@ -1535,7 +1539,9 @@ function renderCelebration() {
   const upNext = s.lesson.isPractice && !s.lesson.isFix ? null : nextLesson();
   // The child is about to read the words below; that is the moment to fetch the next lesson's picture, so the button
   // they will tap opens with its photograph already there. Low priority, and a failure costs nothing.
-  if (upNext?.topicScene) {
+  // A phone on Save-Data or a 2G link should not download a picture for a lesson the child may not open: the offer
+  // still works, it just arrives the ordinary way.
+  if (upNext?.topicScene && !dataFrugal()) {
     try {
       const img = new Image();
       img.decoding = 'async';
@@ -2648,9 +2654,7 @@ function render() {
   // every screen; it now names where you are, in the app's language.
   document.title = title ? `${title} · ${t('appName')}` : document.title.replace(/^.*? · /, '');
 
-  // A lesson with a simulation in it needs the widget file; start that download now, while the child reads the opening
-  // cards, instead of when the simulation card appears.
-  if (session?.queue?.some((a) => a.type === 'explore') && !widgetsLoaded()) loadWidgets().catch(() => {});
+
 
   const focus = router.screen === 'lesson';
   const shell = el('div', { class: `shell${focus ? ' shell--focus' : ''}` });
