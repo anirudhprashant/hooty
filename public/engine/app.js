@@ -817,7 +817,9 @@ function screenPath() {
       upNextShown = true;
       const lessonLike = { packId: pack.id };
       body.append(el('aside', { class: 'trail-side' }, [
-        upNext.lesson.topicScene ? el('img', { class: 'trail-side__art', src: resolveMediaPath(upNext.lesson.topicScene, lessonLike), alt: upNext.lesson.sceneAlt || '' }) : null,
+        // The packs ship a thumbnail beside every photograph. This card is one column wide, so the full image was a
+        // hundred kilobytes shown at the size of a postage stamp; the thumb says the same thing for a tenth of it.
+        upNext.lesson.topicScene ? el('img', { class: 'trail-side__art', src: resolveMediaPath(upNext.lesson.topicScene, lessonLike).replace(/\/media\/([^/]+\.webp)$/, '/media/thumbs/$1'), alt: upNext.lesson.sceneAlt || '', loading: 'lazy', decoding: 'async' }) : null,
         el('div', { class: 'trail-side__body' }, [
           el('span', { class: 'trail-side__kicker', text: t('upNext') }),
           el('h3', { text: upNext.chapter.title }),
