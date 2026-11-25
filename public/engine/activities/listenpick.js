@@ -14,7 +14,7 @@ export default {
 
     const doSpeak = () => {
       const ok = speak(activity.speech || activity.prompt, ctx.locale || 'en-IN');
-      if (!ok) ctx.flash('Audio is not available in this browser. Read the text instead: ' + (activity.speech || activity.prompt));
+      if (!ok) ctx.flash(t('audioUnavailable', { text: activity.speech || activity.prompt || '' }));
     };
     play.addEventListener('click', doSpeak);
     playAgain.addEventListener('click', doSpeak);

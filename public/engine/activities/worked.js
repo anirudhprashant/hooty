@@ -10,7 +10,7 @@ export default {
   render(activity, ctx) {
     const w = (t) => bookWord(ctx.bookLang, t);
     const root = el('div', { class: 'activity activity--worked' });
-    const steps = activity.steps?.length ? activity.steps : [activity.explanation || `The answer is ${activity.result ?? ''}.`];
+    const steps = activity.steps?.length ? activity.steps : [activity.explanation || t('workedAnswer', { answer: activity.result ?? '' })];
     const model = activity.modelSpec ? renderModel(activity.modelSpec) : null;
 
     const list = el('ol', { class: 'worked__steps', 'aria-live': 'polite' });

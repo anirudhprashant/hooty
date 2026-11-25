@@ -14,7 +14,7 @@ export default {
     const img = el('img', {
       class: 'label-stage__img',
       src: activity.image,
-      alt: activity.alt || activity.prompt || 'Diagram to label',
+      alt: activity.alt || activity.prompt || t('diagramToLabel'),
       draggable: 'false',
     });
     stage.append(img);

@@ -39,7 +39,7 @@ export default {
       node.addEventListener('click', () => {
         if (ctx.locked || matchedRightIdx.has(ri)) return;
         if (selectedLeft === null) {
-          ctx.flash('Pick an item on the left first.');
+          ctx.flash(t('matchPickLeft'));
           return;
         }
         // The two columns hold DIFFERENT strings (e.g. "Rajagriha" on the

@@ -1131,7 +1131,7 @@ function screenLesson() {
         el('img', {
           class: 'lesson__comic-img',
           src: wide,
-          alt: lesson.comicAlt || 'A comic strip recapping this lesson.',
+          alt: lesson.comicAlt || t('comicAlt'),
           loading: 'eager',
           decoding: 'async',
         }),
@@ -1543,9 +1543,7 @@ function renderCelebration() {
       el('div', { class: 'celebrate__stat' }, [el('b', { text: `${accuracy}%` }), el('span', { text: t('accurate') })]),
       el('div', { class: 'celebrate__stat' }, [el('b', { text: `${minutes}m` }), el('span', { text: t('statTime') })]),
     ]),
-    s.recoveredIds?.length ? el('p', { class: 'celebrate__fixed', text: s.recoveredIds.length === 1
-      ? 'One tricky idea is fixed, because you thought about it again.'
-      : `${s.recoveredIds.length} tricky ideas are fixed, because you thought about them again.` }) : null,
+    s.recoveredIds?.length ? el('p', { class: 'celebrate__fixed', text: t(s.recoveredIds.length === 1 ? 'ideaFixedOne' : 'ideaFixedMany', { n: s.recoveredIds.length }) }) : null,
   ]);
 
   const facts = s.lesson.funFacts || [];
@@ -1750,7 +1748,7 @@ function highlightToggle() {
     document.body.classList.toggle('hl-on', v);
     b.setAttribute('aria-pressed', String(v));
     if (l) { l.highlight = v; await persist(); }
-    toast(v ? 'Key words are highlighted.' : 'Highlighting is off.', 1600);
+    toast(t(v ? 'highlightOn' : 'highlightOff'), 1600);
   });
   return b;
 }
@@ -2041,7 +2039,7 @@ function screenAddBook() {
     ...own.map((b) => el('div', { class: 'addbook__row' }, [
       el('span', { text: b.title }),
       el('button', { class: 'btn btn--ghost btn--sm', type: 'button', onclick: async () => {
-        if (!confirm(`Remove ${b.title} from this device?`)) return;
+        if (!confirm(t('removeBookAsk', { title: b.title }))) return;
         await deleteBook(b.id);
         packIndex = packIndex.filter((p) => p.id !== b.id); packs = packs.filter((p) => p.id !== b.id);
         const l = activeLearner(); if (l?.grade === 'mine' && !packIndex.some((p) => p.local)) l.grade = '6';
