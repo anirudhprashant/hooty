@@ -23,10 +23,10 @@ export default {
     let placedCount = 0;
     let activeLabel = null;
 
-    const labelBar = el('div', { class: 'label-bar', role: 'list', 'aria-label': t('labelsGroup') });
+    const labelBar = el('div', { class: 'label-bar', role: 'group', 'aria-label': t('labelsGroup') });
 
     const makeLabel = (label) => {
-      const node = el('button', { class: 'label-chip', type: 'button', role: 'listitem' }, [label.text]);
+      const node = el('button', { class: 'label-chip', type: 'button' }, [label.text]);
       node.dataset.labelId = label.text;
       node.addEventListener('click', () => {
         if (ctx.locked || node.classList.contains('label-chip--placed')) return;

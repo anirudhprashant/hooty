@@ -10,8 +10,8 @@ export default {
   type: 'dragorder',
   render(activity, ctx) {
     const root = el('div', { class: 'activity activity--order' });
-    const pool = el('div', { class: 'order-pool', role: 'list', 'aria-label': t('itemsToArrange') });
-    const answerRow = el('div', { class: 'order-answer', role: 'list', 'aria-label': t('yourAnswer') });
+    const pool = el('div', { class: 'order-pool', role: 'group', 'aria-label': t('itemsToArrange') });
+    const answerRow = el('div', { class: 'order-answer', role: 'group', 'aria-label': t('yourAnswer') });
     const checkBtn = el('button', { class: 'btn btn--primary', type: 'button' }, [t('checkOrder')]);
 
     const items = activity.items || [];
@@ -21,7 +21,7 @@ export default {
       pool.replaceChildren();
       const rest = items.map((_, i) => i).filter((i) => !placed.includes(i));
       shuffle(rest).forEach((i) => {
-        const b = el('button', { class: 'order-chip', type: 'button', role: 'listitem' }, [items[i]]);
+        const b = el('button', { class: 'order-chip', type: 'button' }, [items[i]]);
         b.addEventListener('click', () => {
           if (ctx.locked) return;
           placed.push(i);

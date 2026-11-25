@@ -9,15 +9,15 @@ export default {
     const lefts = pairs.map((p) => p[0]);
     const rights = shuffle(pairs.map((p) => p[1]));
 
-    const leftCol = el('div', { class: 'match-col', role: 'list', 'aria-label': t('leftColumn') });
-    const rightCol = el('div', { class: 'match-col', role: 'list', 'aria-label': t('rightColumn') });
+    const leftCol = el('div', { class: 'match-col', role: 'group', 'aria-label': t('leftColumn') });
+    const rightCol = el('div', { class: 'match-col', role: 'group', 'aria-label': t('rightColumn') });
 
     let selectedLeft = null;
     const matchedRightIdx = new Set();
     const matchedLeft = new Set();
 
     const leftNodes = lefts.map((text, i) => {
-      const node = el('button', { class: 'match-item', type: 'button', role: 'listitem' }, [text]);
+      const node = el('button', { class: 'match-item', type: 'button' }, [text]);
       node.addEventListener('click', () => {
         if (ctx.locked || matchedLeft.has(i)) return;
         if (selectedLeft === i) { node.classList.remove('match-item--selected'); selectedLeft = null; return; }
@@ -35,7 +35,7 @@ export default {
     });
 
     const rightNodes = rights.map((text, ri) => {
-      const node = el('button', { class: 'match-item', type: 'button', role: 'listitem' }, [text]);
+      const node = el('button', { class: 'match-item', type: 'button' }, [text]);
       node.addEventListener('click', () => {
         if (ctx.locked || matchedRightIdx.has(ri)) return;
         if (selectedLeft === null) {
