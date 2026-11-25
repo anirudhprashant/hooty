@@ -27258,7 +27258,7 @@
       {
        "id": "social-science-g10-ch8-l4",
        "title": "Income and other development criteria",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -27301,6 +27301,31 @@
            "p": 11
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch8-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "incomedist",
+         "params": {},
+         "title": "The average hides the distribution",
+         "tasks": [
+          {
+           "say": "Let the richest tenth take 60% of the income.",
+           "when": "rich == 60",
+           "then": "The average is still $10,000, but a typical person now has about $4,400."
+          },
+          {
+           "say": "Make the country almost equal, with the richest tenth taking 10%.",
+           "when": "rich == 10",
+           "then": "When the share is close to equal, the average and the typical person are close too."
+          }
+         ],
+         "takeaway": "Two countries can have the same average income and very different lives. If the richest tenth takes most of it, the average says little about what a typical person has, which is why distribution is asked about too.",
+         "explanation": "Two countries can have the same average income and very different lives. If the richest tenth takes most of it, the average says little about what a typical person has, which is why distribution is asked about too."
         },
         {
          "type": "worked",
