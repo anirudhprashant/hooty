@@ -168,10 +168,10 @@ export const WIDGETS = {
         }
         kids.push(L(x + 10, base, x + panelW - 10, base, edge, 2));
         kids.push(T(x + panelW / 2, y0 + 138, bodies[i][0], { z: 14, f: on ? '#5c4300' : '#3d4a56', w: 700 }));
-        if (bodies[i][1]) kids.push(T(x + panelW / 2, y0 + 155, bodies[i][1], { z: 12.5, f: '#7d8a96', w: 600 }));
+        if (bodies[i][1]) kids.push(T(x + panelW / 2, y0 + 155, bodies[i][1], { z: 16, f: '#7d8a96', w: 600 }));
       }
-      kids.push(T(300, 250, 'roads · water · drains · garbage · street lights · markets · property tax', { z: 14.5, f: '#4a5a6a', w: 600 }));
-      kids.push(T(300, 272, 'each ward elects a councillor, and the ward committee speaks for that neighbourhood', { z: 12.5, f: '#7d8a96', w: 600 }));
+      kids.push(T(300, 250, 'roads · water · drains · garbage · street lights · markets · property tax', { z: 16, f: '#4a5a6a', w: 600 }));
+      kids.push(T(300, 272, 'each ward elects a councillor for its neighbourhood', { z: 16, f: '#7d8a96', w: 600 }));
       const say = [
         'A town has a Nagar Panchayat. It keeps the streets, the drains, the water and the street lights working, and it collects local taxes to pay for them.',
         'A city of one to ten lakh people has a Municipal Council, also called a Nagar Palika. It looks after the same services for a much larger area, through its elected councillors.',
@@ -2021,10 +2021,10 @@ export const WIDGETS = {
       const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], wk = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       const leap = (v.year % 4 === 0 && v.year % 100 !== 0) || v.year % 400 === 0, first = new Date(Date.UTC(v.year, v.month - 1, 1)).getUTCDay(), days = new Date(Date.UTC(v.year, v.month, 0)).getUTCDate();
       const x0 = 40, y0 = 70, cw = 46, ch = 34, kids = [T(x0 + 3.5 * cw, 32, `${names[v.month - 1]} ${v.year}`, { z: 20 })];
-      wk.forEach((d, i) => kids.push(T(x0 + i * cw + cw / 2, y0 - 8, d, { z: 13.5, w: 700, f: i === 0 ? '#c0392b' : '#6b5a8a' })));
+      wk.forEach((d, i) => kids.push(T(x0 + i * cw + cw / 2, y0 - 8, d, { z: 16, w: 700, f: i === 0 ? '#c0392b' : '#6b5a8a' })));
       for (let d = 1; d <= days; d++) {
         const k = first + d - 1, c = k % 7, r = Math.floor(k / 7), extra = v.month === 2 && d === 29;
-        kids.push(R(x0 + c * cw + 2, y0 + r * ch + 2, cw - 4, ch - 4, extra ? '#ffcc33' : '#f3f0ff', { w: extra ? 2.5 : 1, r: 5 }), T(x0 + c * cw + cw / 2, y0 + r * ch + ch / 2 + 5, String(d), { z: 14, w: 600, f: c === 0 ? '#c0392b' : INK }));
+        kids.push(R(x0 + c * cw + 2, y0 + r * ch + 2, cw - 4, ch - 4, extra ? '#ffcc33' : '#f3f0ff', { w: extra ? 2.5 : 1, r: 5 }), T(x0 + c * cw + cw / 2, y0 + r * ch + ch / 2 + 5, String(d), { z: 16, w: 600, f: c === 0 ? '#c0392b' : INK }));
       }
       kids.push(T(470, 90, `${days} days`, { z: 22, w: 700, f: '#c2510e' }), T(470, 130, leap ? `${v.year} is a leap year` : `${v.year} is not a leap year`, { z: 15, w: 700, f: leap ? '#058a68' : INK }), T(470, 158, `${leap ? 366 : 365} days in the year`, { z: 14, w: 600, f: '#6b5a8a' }), T(470, 200, `1 ${names[v.month - 1]} is a ${['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][first]}`, { z: 14, w: 600 }));
       return { kids, say: `${names[v.month - 1]} ${v.year} has ${days} days and starts on a ${['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][first]}. ${v.month === 2 ? (leap ? `${v.year} is a leap year, so February has an extra day, the 29th.` : `${v.year} is not a leap year, so February has 28 days.`) : `${v.year} has ${leap ? 366 : 365} days${leap ? ': it is a leap year' : ''}.`}` };
@@ -2546,7 +2546,7 @@ export const WIDGETS = {
       kids.push(R(40, 100, len * sc, 34, '#e8d7a8', { w: 3, r: 4 }), T(40, 90, names[v.obj], { a: 'start', z: 16, w: 700 }));
       for (let i = 0; i < n; i++) {
         const x = 40 + i * sz * sc, w = Math.min(sz * sc, 40 + len * sc - x);
-        if (w > 1) kids.push(R(x, 146, w - 1.5, 26, i % 2 ? '#f2a33a' : '#5fc9b8', { w: 1.5, r: 3 }), ...(w >= 18 ? [T(x + w / 2, 164, String(i + 1), { z: 11, w: 700, f: '#ffffff' })] : []));
+        if (w > 1) kids.push(R(x, 146, w - 1.5, 26, i % 2 ? '#f2a33a' : '#5fc9b8', { w: 1.5, r: 3 }), ...(w >= 18 ? [T(x + w / 2, 164, String(i + 1), { z: 15, w: 700, f: '#ffffff' })] : []));
       }
       kids.push(T(300, 218, `about ${n} ${unit}${n === 1 ? '' : 's'}`, { z: 26, w: 700, f: '#058a68' }), T(300, 248, `measured with a ${who} ${foot ? 'foot' : 'hand'}`, { z: 14, w: 600, f: '#6b5a8a' }), T(300, 272, v.size === 2 ? 'a bigger one fits fewer times' : v.size === 0 ? 'a smaller one fits more times' : '', { z: 16, w: 600, f: '#c2510e' }));
       return { kids, say: `The ${names[v.obj]} is about ${n} ${unit}${n === 1 ? '' : 's'} long measured with a ${who} ${foot ? 'foot' : 'hand'}. ${v.size === 2 ? 'A bigger ' + (foot ? 'foot' : 'hand') + ' covers more each time, so you need fewer.' : v.size === 0 ? 'A smaller ' + (foot ? 'foot' : 'hand') + ' covers less each time, so you need more.' : 'Try a smaller or a bigger one and see how the number changes.'}` };
