@@ -894,7 +894,7 @@ export const WIDGETS = {
       kids.push(...clipTo(`mpMoon${Math.round(mx)}_${Math.round(my)}`, mx - 14, my - 14, 14, 28, [CIRC(mx, my, 14, '#f5f1e6', { s: 'none', w: 0 })]));
       // the same Moon as a child sees it from Earth
       const ix = 514, iy = 96, ir = 52, litSide = waning ? -1 : 1;
-      kids.push(T(ix, iy + ir + 20, 'the Moon seen from Earth', { z: 16, f: '#cfd6ff', w: 600 }));
+      kids.push(T(ix, iy + ir + 20, 'seen from Earth', { z: 16, f: '#cfd6ff', w: 600 }));
       kids.push(CIRC(ix, iy, ir, '#232347', { s: '#cfd6ff', w: 2 }));
       kids.push(...clipTo(`mpLit${day}`, litSide < 0 ? ix - ir : ix, iy - ir, ir, 2 * ir, [CIRC(ix, iy, ir, '#f5f1e6', { s: 'none', w: 0 })]));
       if (k > 0.5) {
