@@ -1970,9 +1970,18 @@ function label(sentence) {
   const cut = c.replace(DATE_TAIL, '').trim();
   if (cut.split(' ').length >= 3) c = cut;
   c = c.split(/[;:]/)[0].replace(/[,]\s*$/, '').trim();
-  if (c.length > 52) c = c.slice(0, 52).replace(/\s+\S*$/, '').replace(/[,]$/, '') + '\u2026';
-  for (let prev = ''; prev !== c;) { prev = c; c = c.replace(/\s+(the|a|an|of|in|to|and|from|by|was|were|is|are|with|at|on)$/i, ''); }
-  return c;
+  // The card already shows the year beside the label, so a leading "In 1832, " or "By 1887, " only repeats it.
+  // The comma is required, which keeps a real change of meaning ("From 1850 onwards") intact.
+  const stripped = c.replace(/^(?:In|By|Around|About|From|Of|During|Until|Till)\s+(?:\d{1,2}\s+)?(?:(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+)?\d{1,4}\s*(?:BCE|BC|CE|AD)?\s*[,:]\s*/i, '');
+  if (stripped !== c && stripped.length > 12) c = stripped.charAt(0).toUpperCase() + stripped.slice(1);
+  let ell = false;
+  if (c.length > 52) { c = c.slice(0, 52).replace(/\s+\S*$/, ''); ell = true; }
+  // Cut a dangling connector before the ellipsis is added: "Greece became an independent nation under the…" used to
+  // end on "the" because the ellipsis stopped the old loop from matching the last word.
+  const TAIL = /\s+(?:the|a|an|of|in|to|and|or|from|by|was|were|is|are|with|at|on|as|that|which|who|when|while|but|for|about|around|into|over|after|before|during|between|under|only|also|its|his|her|their|this|these|those|than|then|there|here|called|named|near|upon|including|especially|such|\d[\d,.]*)$/i;
+  for (let prev = ''; prev !== c;) { prev = c; c = c.replace(TAIL, ''); }
+  c = c.replace(/[,]$/, '').trim();
+  return c + (ell ? '\u2026' : '');
 }
 export function datedEvents(facts, need = 3) {
   let out = [];
