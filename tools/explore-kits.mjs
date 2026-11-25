@@ -1251,14 +1251,16 @@ export const KITS = {
       /सन्|संवत्|ईस्वी/, /शताब्दी/, /राजवंश|साम्राज्य|सम्राट/, /इतिहास/, /(?:1[6-9]\d{2}|20[0-2]\d)/],
     // the lesson's own dates if it has three, otherwise the whole chapter's dates when this lesson mentions one of them.
     // A bare year only counts in a lesson that also reads as history, so an economics chart of 2025 gets no timeline.
-    params: (text, facts, chapter) => {
-      // a Hindi chapter: the words around the year are Hindi, so the English date reader finds nothing
-      if (/[\u0900-\u097F]/.test(text || '')) {
+    params: (text, facts, chapter, grade, lang) => {
+      // a Hindi chapter: the words around the year are Hindi, so the English date reader finds nothing. Some Hindi
+      // books carry their fact sheets in English while the child reads Hindi, so go by the book's language, not by
+      // whether a Devanagari character happens to appear in the facts.
+      if (lang === 'hi' || /[\u0900-\u097F]/.test(text || '')) {
         // A single lesson rarely has three dated facts of its own, so fall back to the dates the whole chapter mentions,
         // which is what the English side does too: the idea is the chapter's, not the lesson's.
         const own = datedEventsHi(facts || []);
         const events = own.length >= 3 ? own : datedEventsHi(chapter || []);
-        return { events, hist: HI_HIST.test(text || ''), hi: true };
+        return { events, hist: HI_HIST.test(text || '') || (lang === 'hi' && /\b(?:born|died|passed away|life|poet|writer|author|novelist)\b/i.test(text || '')), hi: true };
       }
       const own = datedEvents(facts || []);
       // A lesson about measuring time ('Timelines, Centuries and Millenniums') has no dated events of its own, and the
@@ -1551,33 +1553,50 @@ const DATE_TAIL = /[,]?\s*(?:\b(?:in|around|about|by|from|of|during|until|till|a
 // Hindi dates. datedEvents above looks for English month names and prepositions ("in 1916"), which a Hindi sentence
 // never has, so a Hindi chapter about a poet's life had years in it and still produced no timeline. A year counts only
 // when it is used as a date: सन् / ई. / संवत् before it, or a Hindi time word right after it.
-const HI_HIST = /इतिहास|प्राचीन|मध्यकाल|शताब्दी|राजवंश|साम्राज्य|सम्राट|शासन|स्वतंत्रता|आंदोलन|संग्राम|युद्ध|संविधान|कवि|रचना|जन्म|स्थापना|निर्माण/;
+const HI_HIST = /इतिहास|प्राचीन|मध्यकाल|शताब्दी|राजवंश|साम्राज्य|सम्राट|शासन|स्वतंत्रता|आंदोलन|संग्राम|युद्ध|संविधान|कवि|रचना|जन्म|स्थापना|निर्माण|आत्मकथा|जीवन|परिचय/;
 function labelHi(sentence) {
   let c = sentence.replace(/\s+/g, ' ').trim().replace(/[।.!]+$/, '');
   if (c.length > 52) c = c.slice(0, 52).replace(/\s+\S*$/, '');
   return c;
 }
+// A timeline label should name the event in a word or two, not repeat the whole sentence. A birth, a death and a
+// book's publication have an obvious short name; anything else keeps the shortened sentence.
+function shortHi(sentence) {
+  if (/जन्म|\bborn\b/i.test(sentence)) return 'जन्म';
+  if (/निधन|देहांत|मृत्यु|\b(?:passed away|died|death)\b/i.test(sentence)) return 'निधन';
+  if (/प्रकाशित|\bpublished\b/i.test(sentence)) return 'रचना प्रकाशित';
+  if (/रचना|रचित|\b(?:composed|wrote|written)\b/i.test(sentence)) return 'रचना';
+  if (/स्थापना|\b(?:founded|established)\b/i.test(sentence)) return 'स्थापना';
+  return labelHi(sentence);
+}
 function datedEventsHi(facts, need = 3) {
   const out = [], seen = new Set();
   for (const f of facts || []) {
     const sentence = String(f.say || '').replace(/\s+/g, ' ').trim();
-    const m = sentence.match(/(?<!\d)(1[6-9]\d{2}|20[0-2]\d)(?!\d)/);
-    if (!m) continue;
-    const y = Number(m[1]);
-    if (seen.has(y)) continue;
-    const near = sentence.slice(Math.max(0, m.index - 22), m.index + m[0].length + 16);
-    const before = /सन्|ई\.|ईस्वी|संवत्|शताब्दी/.test(near);
-    const after = /^\s*(?:में|को|तक|से|के\s+(?:बाद|पहले|समय|दौरान|जन्म)|की\s+(?:रचना|स्थापना))/.test(sentence.slice(m.index + m[0].length));
-    if (!before && !after) continue;
-    // A sentence that starts with a pronoun means nothing on its own: "वह घटना सन् 1933 की है" ("that event was in
-    // 1933") became a timeline label that pointed at a sentence the child never sees. datedEvents above drops the same
-    // shape in English and the Hindi side was missing it.
-    // A pronoun pointing back at another *event* is worthless on a timeline: "वह घटना सन् 1933 की है" (that event was
-    // in 1933) names nothing. A pronoun pointing at a person is fine here, because the person is the chapter's
-    // subject: "उनका पहला कहानी संग्रह 1958 में छपा" reads perfectly. So drop only the event-shaped ones.
+    // Read every year in the sentence, not just the first: a life span written on one line ("जीवनकाल 1923 से 2007
+    // तक", "His life lasted from 1897 to 1927") carries both a birth and a death, and the old reader kept 1923 only.
+    const years = [...sentence.matchAll(/(?<!\d)(1[6-9]\d{2}|20[0-2]\d)(?!\d)/g)].map((m) => ({ y: Number(m[1]), i: m.index, s: m[0] }));
+    if (!years.length) continue;
+    // A pronoun pointing at another event names nothing: "वह घटना सन् 1933 की है" ("that event was in 1933"). A
+    // pronoun pointing at a person is fine, because the person is the chapter's subject.
     if (/^(?:वह|वे|वो|यह|ये|इस|उस|उन|इन)\s+(?:घटना|बात|प्रसंग|उदाहरण|समय|वर्ष|साल)(?:\s|[,.।]|$)/.test(sentence)) continue;
-    seen.add(y);
-    out.push({ year: y, label: labelHi(sentence) });
+    const span = years.length >= 2 && /जीवन\s*काल|जीवनकाल|\blife\b|\blived\b|\bborn\b[^.]*\b(?:died|passed away)\b/i.test(sentence);
+    if (span) {
+      const first = years[0], last = years[years.length - 1];
+      if (!seen.has(first.y)) { seen.add(first.y); out.push({ year: first.y, label: 'जन्म' }); }
+      if (!seen.has(last.y)) { seen.add(last.y); out.push({ year: last.y, label: 'निधन' }); }
+      continue;
+    }
+    // Not a life span: a range like "the period 1907–1991" would make two meaningless points, so keep its first year.
+    const h = years[0];
+    if (seen.has(h.y)) continue;
+    const near = sentence.slice(Math.max(0, h.i - 22), h.i + h.s.length + 16);
+    const before = /सन्|ई\.|ईस्वी|संवत्|शताब्दी|\b(?:born|died|passed away|published|composed|founded|established|wrote|written|life|from)\b/i.test(near);
+    const after = /^\s*(?:में|को|तक|से|के\s+(?:बाद|पहले|समय|दौरान|जन्म)|की\s+(?:रचना|स्थापना))/.test(sentence.slice(h.i + h.s.length))
+      || /[.,;]\s*$/.test(sentence.slice(Math.max(0, h.i - 2), h.i + h.s.length + 1)) || h.i + h.s.length === sentence.length;
+    if (!before && !after) continue;
+    seen.add(h.y);
+    out.push({ year: h.y, label: shortHi(sentence) });
   }
   // three dates are what the widget needs to be worth showing
   return out.length >= (need === 1 ? 1 : Math.min(need, out.length)) ? out.sort((a, b) => a.year - b.year) : out.sort((a, b) => a.year - b.year);
