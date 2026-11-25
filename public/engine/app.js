@@ -983,6 +983,7 @@ function screenLesson() {
   strip.append(mascotImg, bubble);
   side.append(strip);
 
+  session.side = side;
   const stage = el('div', { class: 'lesson__stage' });
   // Declare the language of the lesson itself. A child can read a Hindi or Kannada book with the app's buttons
   // in English, and without this a screen reader pronounces the lesson as English.
@@ -1011,6 +1012,7 @@ function screenLesson() {
     ]);
     wrap.append(recap);
     session.recap = recap;
+    session.side = side;
   }
 
   session.wrap = wrap;
@@ -1295,6 +1297,9 @@ function updateProgress() {
   s.progressFill.style.width = pct + '%';
   s.progressText.textContent = `${s.index}/${s.queue.length}`;
   if (pct >= 50 && !s.halfway) { s.halfway = true; sound('halfway'); }
+  // The topic picture is the same on every card. On a phone, where it is stacked above the card rather than beside it,
+  // it has done its job by the end of the opening card, so it steps aside and the question gets the screen.
+  if (s.side) s.side.classList.toggle('lesson__side--opened', s.index >= 1);
 }
 
 // After a lesson: how far through the chapter the child is, and where to read this in the real book.
