@@ -1397,10 +1397,10 @@ export const WIDGETS = {
     subject: 'maths', about: 'A square of side a + b cut into an a-by-a square, a b-by-b square and two a-by-b rectangles, so the child sees that (a + b) squared is a squared plus two ab plus b squared. For algebraic identities, the square of a sum, expanding and factorising perfect squares.',
     sliders: [['a', 'a', 1, 10, 1, 3], ['b', 'b', 1, 10, 1, 2]],
     draw(v) {
-      const side = v.a + v.b, u = Math.min(230 / side, 36), x0 = 40, y0 = 32, z = Math.max(11, Math.min(22, u * 0.5)), kids = [];
+      const side = v.a + v.b, u = Math.min(230 / side, 36), x0 = 40, y0 = 32, z = Math.max(14, Math.min(22, u * 0.5)), kids = [];
       const A = v.a * u, B = v.b * u, fc = { a: 'middle', z, f: '#fff' };
-      kids.push(R(x0, y0, A, A, C.sky, { w: 3 }), T(x0 + A / 2, y0 + A / 2 + z / 3, `a² = ${v.a * v.a}`, fc));
-      kids.push(R(x0 + A, y0 + A, B, B, C.y, { w: 3 }), T(x0 + A + B / 2, y0 + A + B / 2 + z / 3, `b² = ${v.b * v.b}`, { ...fc, f: INK }));
+      kids.push(R(x0, y0, A, A, C.sky, { w: 3 }), T(x0 + A / 2, y0 + A / 2 + z / 3, A > 52 ? `a² = ${v.a * v.a}` : 'a²', fc));
+      kids.push(R(x0 + A, y0 + A, B, B, C.y, { w: 3 }), T(x0 + A + B / 2, y0 + A + B / 2 + z / 3, B > 52 ? `b² = ${v.b * v.b}` : 'b²', { ...fc, f: INK }));
       kids.push(R(x0 + A, y0, B, A, C.g, { w: 3 }), T(x0 + A + B / 2, y0 + A / 2 + z / 3, B > 52 ? `ab = ${v.a * v.b}` : 'ab', fc));
       kids.push(R(x0, y0 + A, A, B, C.o, { w: 3 }), T(x0 + A / 2, y0 + A + B / 2 + z / 3, A > 52 ? `ab = ${v.a * v.b}` : 'ab', fc));
       kids.push(R(x0, y0, A + B, A + B, 'none', { w: 5 }), T(x0 + (A + B) / 2, y0 + A + B + 26, `side = ${v.a} + ${v.b} = ${side}`, { z: 16 }));
