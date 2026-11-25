@@ -44,6 +44,15 @@ def build():
         v = subprocess.run(['node', f'{HERE}/validate-pack.mjs', f], capture_output=True, text=True)
         if v.returncode: sys.exit(f'{f} does not validate:\n{v.stdout[-600:]}')
 
+def pages():
+    """The catalogue and the word bank are generated from the packs, so a search page never describes an old site.
+    They are static files, so a failure here must not block a content fix: say it and keep the old pages."""
+    r = subprocess.run([sys.executable, f'{HERE}/landing-pages.py'], cwd=ROOT, capture_output=True, text=True)
+    lines = (r.stdout.strip() or r.stderr.strip()).splitlines()
+    say('pages |', (lines[-1] if lines else 'done')[:150])
+    if r.returncode:
+        say('pages | failed, the last good catalogue stays live')
+
 def audio():
     """Record any missing clip, when this machine can. Recording needs a home connection (Microsoft blocks the
     datacentre), so on oracle the honest answer is a one-line skip, not a traceback in the publish log."""
@@ -313,6 +322,7 @@ def finish_check():
 
 if '--no-build' not in args:
     build()
+    pages()
     if '--audio' in args and '--no-audio' not in args: audio()   # recording is a laptop job: opt in with --audio
 thumbs(); stamp(); finish_check(); upload(); smoke()
 

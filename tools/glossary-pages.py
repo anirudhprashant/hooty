@@ -355,7 +355,7 @@ def build():
                 + f'<p class="lede">{len(words):,} words, explained in plain language, with the book and the page each one '
                   f'comes from.</p>'
                 + rail
-                + ''.join(word_card(r, level=2) for r in words)
+                + '<div class="word-grid">' + ''.join(word_card(r, level=2) for r in words) + '</div>'
                 + nav)
         title = f'Words that start with {letter.upper()} — Hooty word bank'
         path = f'/glossary/{letter}.html'
@@ -374,7 +374,7 @@ def build():
     hi_rail_cells = []
     for (letter, slug), words in sorted(hi_letters.items(), key=lambda kv: kv[0][0]):
         words.sort(key=lambda r: (r['term'], r['meaning']))
-        cells = ''.join(word_card(r, level=2) for r in words)
+        cells = '<div class="word-grid">' + ''.join(word_card(r, level=2) for r in words) + '</div>'
         body = (body_head
                 + f'<h1>{esc(letter)} से शुरू होने वाले शब्द</h1>'
                 + f'<p class="lede">{len(words):,} शब्द, आसान भाषा में, हर शब्द के साथ उसकी किताब और पृष्ठ।</p>'
@@ -468,7 +468,7 @@ def build():
                 heading = f'<a href="{SITE}/books/{b["id"]}/{lp.page_slug(c)}.html">{heading}</a>' if False else \
                           f'<a href="/books/{b["id"]}/{lp.page_slug(c)}.html">{heading}</a>'
             parts.append(f'<h2>{heading}</h2>')
-            parts.extend(word_card(r, in_book=True) for r in grouped[ch])
+            parts.append('<div class="word-grid">' + ''.join(word_card(r, in_book=True) for r in grouped[ch]) + '</div>')
         parts.append(f'<p class="more"><a class="cta cta--quiet" href="/books/{b["id"]}.html">All chapters of this book</a></p>')
         d = os.path.join(PUB, 'books', b['id'])
         os.makedirs(d, exist_ok=True)
