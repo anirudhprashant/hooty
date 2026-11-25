@@ -1786,21 +1786,25 @@ function hintFor(activity, response = {}) {
       if (other != null) out.push(other);
     }
     const why = activity.why?.[activity.options[response.choice]];
-    return { text: why || `Not that one. ${out.length > 1 ? 'Two wrong answers are crossed out' : 'It is crossed out'}, so think again about what the question asks.`, out };
+    // The lesson's own note if the book carries one (that text is already in the book's language), otherwise a nudge in
+    // the app's language: this used to be English written into the code, in a Hindi book too.
+    return { text: why || t(out.length > 1 ? 'hintCrossedTwo' : 'hintCrossedOne'), out };
   }
   if (type === 'fillblank' || type === 'typeanswer') {
-    if (activity.steps?.length) return { text: `First step: ${activity.steps[0]}` };
+    if (activity.steps?.length) return { text: t('hintFirstStep', { step: activity.steps[0] }) };
     const a = String((activity.answers || [])[0] ?? '').trim();
     if (!a) return null;
     if (/^-?\d+$/.test(a)) {
       const n = Number(a), digits = String(Math.abs(n)).length, step = Math.max(5, 10 ** (digits - 1)), lo = Math.floor(n / step) * step;
-      return { text: `The answer is a whole number between ${lo} and ${lo + step}.` };
+      return { text: t('hintNumberRange', { lo, hi: lo + step }) };
     }
     if (/^-?[\d./]+$/.test(a)) return null;
     const words = a.split(/\s+/);
-    return { text: words.length > 1 ? `The answer is ${words.length} words and begins with "${a[0].toUpperCase()}".` : `The answer begins with "${a[0].toUpperCase()}" and has ${a.length} letters.` };
+    return { text: words.length > 1
+      ? t('hintWords', { n: words.length, first: a[0].toUpperCase() })
+      : t('hintLetters', { first: a[0].toUpperCase(), n: a.length }) };
   }
-  if (type === 'dragorder' && activity.items?.length > 2) return { text: `Start with "${activity.items[0]}".` };
+  if (type === 'dragorder' && activity.items?.length > 2) return { text: t('hintStartWith', { item: activity.items[0] }) };
   return null;
 }
 
