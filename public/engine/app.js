@@ -2355,8 +2355,12 @@ function screenParent() {
       const blob = new Blob([exportSave()], { type: 'application/json' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'hooty-progress.json';
+      // Dated, because a family that backs up twice in a month ends up with "progress (1).json" and cannot tell which
+      // file is which. The date is the child's own, the same one the streak counts.
+      a.download = `hooty-progress-${todayKey()}.json`;
       a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      toast(t('exportDone'));
     },
   }, [icon('download', { size: 22 }), t('exportData')]));
   const fileInput = el('input', { type: 'file', accept: 'application/json', style: { display: 'none' } });
