@@ -2009,6 +2009,9 @@ function screenParent() {
       el('li', { text: t('safetyNoTracking') }),
       el('li', { text: t('safetyNoExit') }),
       el('li', { text: t('safetyData') }),
+      // A free app still needs a way to hear about a mistake: one mail link, on the grown-ups screen only, so a child
+      // never sees it and no form or account is needed.
+      el('li', {}, [el('span', { text: t('reportProblem') }), ' ', el('a', { class: 'credit-link', href: `mailto:anirudhprashant@gmail.com?subject=${encodeURIComponent('Hooty feedback')}`, text: 'anirudhprashant@gmail.com' })]),
     ]),
   ]));
   const install = installCard();
