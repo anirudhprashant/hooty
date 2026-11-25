@@ -4456,6 +4456,68 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  materials: {
+    subject: 'science',
+    about: 'Clay, mud and grass turned into the things people use: a pot shaped and fired, a brick moulded and baked, a wall built and plastered. For natural materials, shaping, drying, firing and how a material becomes a useful thing.',
+    params: {},
+    sliders: [['what', 'What are we making? (0 clay pot, 1 brick, 2 mud wall)', 0, 2, 1, 0], ['step', 'Which step? (0 raw material, 1 shaped, 2 finished)', 0, 2, 1, 0]],
+    draw(v) {
+      const w = Math.max(0, Math.min(2, v.what | 0)), st = Math.max(0, Math.min(2, v.step | 0));
+      const ways = [
+        { name: 'Clay pot', steps: [['wet clay', 'dug and pounded'], ['shaped pot', 'shaped by hand'], ['fired pot', 'fired in the kiln']] },
+        { name: 'Brick', steps: [['wet mud', 'mixed with water'], ['moulded brick', 'pressed in a mould'], ['baked brick', 'fired in the kiln']] },
+        { name: 'Mud wall', steps: [['mud and grass', 'mixed with straw'], ['wall', 'built in layers'], ['plastered house', 'smoothed smooth']] },
+      ];
+      const way = ways[w];
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, way.name, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, `${st + 1} of 3`, { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      way.steps.forEach(([label, note], i) => {
+        const x = 18 + i * 194, on = i === st, done = i < st;
+        kids.push(R(x, 54, 176, 168, on ? '#fff3d6' : '#ffffff', { w: on ? 4 : 2, s: on ? '#e8b44a' : done ? '#a8c98f' : '#e3dccb', r: 14 }));
+        // a simple shape for each step: raw lump, shaped thing, fired thing
+        const c = w === 0 ? (st >= 2 ? '#b56527' : '#c98a54') : w === 1 ? (st >= 2 ? '#a95a2e' : '#c98a54') : '#b98a5e';
+        if (i === 0) kids.push(R(x + 58, 96, 60, 34, c, { w: 2, r: 16 }));
+        if (i === 1) kids.push(w === 1 ? R(x + 48, 92, 80, 34, c, { w: 2, r: 4 }) : s('path', { d: `M ${x + 56} 96 L ${x + 120} 96 L ${x + 112} 128 L ${x + 64} 128 Z`, fill: c, stroke: '#7a4a20', 'stroke-width': 2 }));
+        if (i === 2) kids.push(w === 1 ? R(x + 48, 92, 80, 34, '#8a4a24', { w: 2, r: 4 }) : w === 0 ? s('path', { d: `M ${x + 56} 96 L ${x + 120} 96 L ${x + 112} 128 L ${x + 64} 128 Z`, fill: '#8a4a24', stroke: '#5a3010', 'stroke-width': 2 }) : R(x + 40, 82, 96, 52, '#c9a06a', { w: 2, r: 3 }));
+        kids.push(T(x + 88, 160, label, { z: 16, w: 800 }));
+        kids.push(T(x + 88, 180, note, { z: 12, w: 600, f: '#7a6b99' }));
+        kids.push(T(x + 88, 204, done ? 'done' : on ? 'here' : 'next', { z: 12, w: 700, f: done ? '#1d7a45' : on ? '#a05600' : '#a99fc0' }));
+      });
+      const [label, note] = way.steps[st];
+      return { kids, say: st === 0 ? `${way.name} starts with ${label}: ${note}.` : st === 1 ? `The ${label} is shaped from the ${way.steps[0][0]}.` : `${label}: ${note}. Heat or drying makes it hard and strong.` };
+    },
+  },
+  incomedist: {
+    subject: 'social',
+    about: 'A country whose average income is $10,000 a person, and who actually gets it: slide how much the richest tenth takes and watch the typical person fall or rise while the average stays still. For average income, distribution, and why one number cannot describe how people live.',
+    params: {},
+    sliders: [['rich', 'Share of the richest 10 people (%)', 10, 80, 5, 20]],
+    draw(v) {
+      const share = Math.max(10, Math.min(80, v.rich)), total = 1000000, avg = 10000;
+      const poorEach = Math.round(((100 - share) / 100) * total / 90);
+      const richEach = Math.round((share / 100) * total / 10);
+      const maxP = Math.max(avg, richEach, poorEach) * 1.05;
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, 'Average income: $10,000 a person', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, `the richest tenth take ${share}%`, { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      const bars = [
+        { label: 'the average', note: 'what the one number says', worth: avg, colour: '#9b90b5' },
+        { label: 'a typical person', note: 'one of the other 90', worth: poorEach, colour: C.g },
+        { label: 'one of the richest 10', note: 'their share, split ten ways', worth: richEach, colour: C.o },
+      ];
+      bars.forEach((b, i) => {
+        const y = 60 + i * 66, bw = Math.max(6, (b.worth / maxP) * 250);
+        kids.push(T(24, y + 18, b.label, { z: 16, w: 800, a: 'start', f: INK }));
+        kids.push(T(24, y + 37, b.note, { z: 12, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(R(200, y + 8, 320, 24, '#f1ecdf', { w: 0, r: 8 }));
+        kids.push(R(200, y + 8, Math.min(320, bw), 24, b.colour, { w: 0, r: 8 }));
+        kids.push(T(586, y + 25, `$${b.worth.toLocaleString('en-IN')}`, { z: 16, w: 800, a: 'end', f: INK }));
+      });
+      const gap = Math.round(avg / poorEach * 10) / 10;
+      return { kids, say: `The average stays at $10,000 a person whatever the share. With the richest tenth taking ${share}%, a typical person gets about $${poorEach.toLocaleString('en-IN')}, so the average is ${gap} times what most people live on. That is why income distribution is asked about, not just the average.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

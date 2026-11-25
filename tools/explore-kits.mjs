@@ -1777,6 +1777,28 @@ export const KITS = {
       ? { say: 'खाली जगह में सही शब्द चुनिए।', when: `item == ${p.items.indexOf(it)} and choice == ${it.answer}`, then: `सही वाक्य: ${it.before} ${it.options[it.answer]} ${it.after}` }
       : { say: 'Choose the word that completes the sentence.', when: `item == ${p.items.indexOf(it)} and choice == ${it.answer}`, then: `The sentence is: ${it.before} ${it.options[it.answer]} ${it.after}` }),
   },
+  materials: {
+    // The World Around Us Class 3, "Making Things": clay, bricks and mud walls, the same idea of shaping a natural
+    // material and then drying or firing it hard.
+    grades: [2, 5], subjects: ['science'], perChapter: 1,
+    match: [/\bclay\b/, /\bpots?\b/, /\bbricks?\b/, /\bmud (houses?|walls?|huts?)/, /\bkilns?\b/, /\bmoulds?\b/, /natural materials?/, /making things/],
+    title: 'From clay to pot', takeaway: 'Clay is dug, wetted and pounded; then it is shaped; then it is dried or fired, which makes it hard. Bricks and mud walls follow the same three steps, which is why people have built with earth for thousands of years.',
+    tasks: [
+      { say: 'Fire the clay pot in the kiln.', when: 'what == 0 and step == 2', then: 'Heat drives the water out and the pot becomes hard and strong.' },
+      { say: 'Bake the brick in the kiln.', when: 'what == 1 and step == 2', then: 'A brick is mud pressed into a mould and then baked hard.' },
+      { say: 'Build the mud wall up in layers.', when: 'what == 2 and step == 1', then: 'Mud mixed with grass is built up in layers, then smoothed with plaster.' },
+    ],
+  },
+  incomedist: {
+    // Class 10 "Development", the lesson on average income and its distribution.
+    grades: [9, 10], subjects: ['social'], perChapter: 1,
+    match: [/per capita income/, /average income/, /distribution of (income|wealth)/, /income (by itself|alone)|cannot fully (show|measure)/, /money alone/, /high income|low income countries?/],
+    title: 'The average hides the distribution', takeaway: 'Two countries can have the same average income and very different lives. If the richest tenth takes most of it, the average says little about what a typical person has, which is why distribution is asked about too.',
+    tasks: [
+      { say: 'Let the richest tenth take 60% of the income.', when: 'rich == 60', then: 'The average is still $10,000, but a typical person now has about $4,400.' },
+      { say: 'Make the country almost equal, with the richest tenth taking 10%.', when: 'rich == 10', then: 'When the share is close to equal, the average and the typical person are close too.' },
+    ],
+  },
   wordlab: {
     // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
     // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only
