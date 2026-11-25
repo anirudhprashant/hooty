@@ -1560,6 +1560,74 @@ export const KITS = {
       { say: 'Make 90.', when: 'n == 90', then: 'XC: ten before a hundred means ninety.' },
     ],
   },
+  federalism: {
+    // Class 10 civics, "Federalism": the Seventh Schedule splits subjects between the Union, the States and both
+    // together. The sort is the idea itself, so no other chapter should borrow it.
+    widget: 'sortlab', grades: [9, 10], subjects: ['social'], perChapter: 1,
+    match: [/\bfederalism\b/, /union list/, /state list/, /concurrent list/, /division of powers/, /seventh schedule/, /centre and the states?/],
+    title: 'Who decides what?', takeaway: 'India has three lists. The Union List holds subjects for the whole country (defence, currency, railways); the State List holds local ones (police, agriculture, public health); the Concurrent List holds both (education, forests, marriage), where the Centre and the States decide together.',
+    params: () => ({
+      bins: ['Union List', 'State List', 'Concurrent List'],
+      items: [
+        { t: 'Police', b: 1, why: 'Each State runs its own police, so it is a State subject.' },
+        { t: 'Defence of the country', b: 0, why: 'One army for the whole country: a Union subject.' },
+        { t: 'Education', b: 2, why: 'Both levels decide it, so it is on the Concurrent List.' },
+        { t: 'Currency', b: 0, why: 'One currency for the whole country: a Union subject.' },
+        { t: 'Agriculture', b: 1, why: 'Farming is looked after by the States.' },
+        { t: 'Forests', b: 2, why: 'Forests are on the Concurrent List, so the Centre and the States both make rules.' },
+      ],
+      labels: { heading: 'Union, State or Concurrent?', pickItem: 'Pick a subject', pickBin: 'Which list?', yes: 'Yes.', goes: 'belongs on the', pick: 'Which list does "{t}" belong to?', no: 'Not that list.', readAgain: 'Ask who runs it: one country, one State, or both.' },
+    }),
+    tasks: [
+      { say: 'Put the police on the right list.', when: 'item == 0 and bin == 1', then: 'Police is a State subject: each State runs its own police force.' },
+      { say: 'Put education on the right list.', when: 'item == 2 and bin == 2', then: 'Education is on the Concurrent List: the Centre and the States both have a say.' },
+    ],
+  },
+  sectorsort: {
+    // The three sectors of the economy, from the Class 6 chapter "Economic Activities Around Us" to the Class 10
+    // "Manufacturing Industries" chapter. The sort asks for the work, not for a value chain.
+    widget: 'sortlab', grades: [6, 10], subjects: ['social'], perChapter: 1, avoid: [/non-economic/i],
+    match: [/primary sector/, /secondary sector/, /tertiary sector/, /three sectors/, /economic activities/, /types of economic activities/, /value of work/],
+    title: 'Primary, secondary or tertiary?', takeaway: 'Primary activities take something from nature (farming, fishing, mining). Secondary activities make it into something new (weaving, sugar, a car factory). Tertiary activities give a service (a bank, a teacher, a shop).',
+    params: () => ({
+      bins: ['Primary', 'Secondary', 'Tertiary'],
+      items: [
+        { t: 'Sugar mill', b: 1, why: 'It turns cane into sugar, so it is a secondary activity.' },
+        { t: 'Farmer', b: 0, why: 'The farmer grows from the land: a primary activity.' },
+        { t: 'Bank', b: 2, why: 'A bank gives a service, so it is tertiary.' },
+        { t: 'Car factory', b: 1, why: 'Steel and parts become a car: secondary.' },
+        { t: 'Teacher', b: 2, why: 'Teaching is a service: tertiary.' },
+        { t: 'Miner', b: 0, why: 'Coal is taken from the earth: primary.' },
+      ],
+      labels: { heading: 'Which sector of the economy?', pickItem: 'Pick the work', pickBin: 'Which sector?', yes: 'Yes.', goes: 'is a', pick: 'Which sector does "{t}" work in?', no: 'Not that sector.', readAgain: 'Ask: is something taken from nature, made into a new thing, or is it a service?' },
+    }),
+    tasks: [
+      { say: 'Put the sugar mill in the right sector.', when: 'item == 0 and bin == 1', then: 'A sugar mill makes sugar from cane: a secondary activity.' },
+      { say: 'Put the farmer in the right sector.', when: 'item == 1 and bin == 0', then: 'Farming takes from the land: a primary activity.' },
+    ],
+  },
+  rightsduties: {
+    // The citizenship chapter: a right is something a citizen is owed; a duty is what the citizen owes. Two bins.
+    widget: 'sortlab', grades: [6, 10], subjects: ['social'], perChapter: 1,
+    match: [/rights and duties/, /fundamental rights/, /fundamental duties/, /citizenship/, /duties of (a )?citizen/, /rights of (a )?citizen/],
+    title: 'Right or duty?', takeaway: 'A right is what a citizen is owed: clean water, schooling, equal treatment. A duty is what a citizen owes in return: keeping shared places clean, respecting other religions, protecting public property.',
+    params: () => ({
+      bins: ['Right', 'Duty'],
+      items: [
+        { t: 'To keep the street clean', b: 1, why: 'Keeping shared places clean is something you owe your neighbours.' },
+        { t: 'To get clean drinking water', b: 0, why: 'Clean water is something a citizen is owed.' },
+        { t: 'To go to school', b: 0, why: 'Every child has a right to schooling.' },
+        { t: 'To respect every religion', b: 1, why: 'Respecting others is a duty of every citizen.' },
+        { t: 'To be treated equally', b: 0, why: 'Equality is a right.' },
+        { t: 'To protect public property', b: 1, why: 'What belongs to everyone must be protected by everyone: a duty.' },
+      ],
+      labels: { heading: 'A right, or a duty?', pickItem: 'Pick one', pickBin: 'Right or duty?', yes: 'Yes.', goes: 'is a', pick: 'Is "{t}" a right or a duty?', no: 'Not that one.', readAgain: 'A right is owed to the citizen; a duty is owed by the citizen.' },
+    }),
+    tasks: [
+      { say: 'Sort the first one: keeping the street clean.', when: 'item == 0 and bin == 1', then: 'Keeping shared places clean is a duty: what each citizen owes the others.' },
+      { say: 'Sort going to school.', when: 'item == 2 and bin == 0', then: 'Going to school is a right: the law promises it to every child.' },
+    ],
+  },
   wordlab: {
     // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
     // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only

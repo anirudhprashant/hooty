@@ -58,20 +58,21 @@ for (const slug of books) {
     // the per-chapter limit counts each mode of a widget apart (weighing and pouring, winnowing and settling)
     const slot = (id, params) => (params?.kind ? `${id}:${params.kind}` : id);
     for (const v of Object.values(have)) if (v?.widget) used[slot(v.widget, v.params)] = (used[slot(v.widget, v.params)] || 0) + 1;
-    const allowed = ([id, k]) => WIDGETS[id] && (k.languages || ['en']).includes(lang)
-      && [WIDGETS[id].subject, ...(k.subjects || [])].some((x) => kinds.includes(x)) && grade >= k.grades[0] && grade <= k.grades[1];
+    const allowed = ([id, k]) => { const w = WIDGETS[k.widget || id]; return !!w && (k.languages || ['en']).includes(lang)
+      && [w.subject, ...(k.subjects || [])].some((x) => kinds.includes(x)) && grade >= k.grades[0] && grade <= k.grades[1]; };
     // Try one kit on one lesson: build its params, refuse a cap that is full and a challenge that cannot be reached,
     // and write the record when everything holds. Returns true when it was placed.
     const place = (lesson, key, title, text, id, kit) => {
+      const wid = kit.widget || id;   // several kits can drive one widget (sortlab, seasons) when the idea is the same
       const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || []), grade, lang, words) : {};
       if (kit.usable && !kit.usable(params)) { if (process.env.AE_DEBUG) console.log('   x', id, 'usable'); return false; }
       const cap = typeof kit.perChapter === 'object' ? (kit.perChapter[grade] ?? 2) : (kit.perChapter || 2);   // a number, or { grade: number } to raise it for one class
-      if ((used[slot(id, params)] || 0) >= cap) { if (process.env.AE_DEBUG) console.log('   x', id, 'cap', cap); return false; }
-      const full = { ...(WIDGETS[id].params || {}), ...params };
-      const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params, lang) : kit.tasks).map((t) => ({ ...t, say: pick(t.say, lang), then: pick(t.then, lang) })).filter((t) => { try { return t.ok || canReach(id, full, t.when); } catch { return false; } });   // t.ok: true = checked by hand (the search is a sample, so an exact sum over many sliders can be missed)
+      if ((used[slot(wid, params)] || 0) >= cap) { if (process.env.AE_DEBUG) console.log('   x', id, 'cap', cap); return false; }
+      const full = { ...(WIDGETS[wid].params || {}), ...params };
+      const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params, lang) : kit.tasks).map((t) => ({ ...t, say: pick(t.say, lang), then: pick(t.then, lang) })).filter((t) => { try { return t.ok || canReach(wid, full, t.when); } catch { return false; } });   // t.ok: true = checked by hand (the search is a sample, so an exact sum over many sliders can be missed)
       if (!tasks.length) { if (process.env.AE_DEBUG) console.log('   x', id, 'no tasks'); return false; }
-      have[key] = { widget: id, ...(kit.params ? { params } : {}), title: pick(kit.title, lang), tasks: tasks.map(({ ok, ...t }) => t), takeaway: pick(kit.takeaway, lang), auto: true };
-      used[slot(id, params)] = (used[slot(id, params)] || 0) + 1; added++; tally[id] = (tally[id] || 0) + 1;
+      have[key] = { widget: wid, ...(kit.params ? { params } : {}), title: pick(kit.title, lang), tasks: tasks.map(({ ok, ...t }) => t), takeaway: pick(kit.takeaway, lang), auto: true };
+      used[slot(wid, params)] = (used[slot(wid, params)] || 0) + 1; added++; tally[wid] = (tally[wid] || 0) + 1;
       console.log(`${slug} ${ch} lesson ${key} "${title.slice(0, 50)}": ${id}`);
       return true;
     };

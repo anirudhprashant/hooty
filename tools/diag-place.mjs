@@ -23,9 +23,10 @@ for (const lesson of facts.lessons || []) {
   const title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
   console.log(`\n"${title}"`);
   for (const [id, kit] of Object.entries(KITS)) {
-    if (!WIDGETS[id]) continue;
+    const wid = kit.widget || id;
+    if (!WIDGETS[wid]) continue;
     if (!(kit.languages || ['en']).includes(lang)) continue;
-    if (![WIDGETS[id].subject, ...(kit.subjects || [])].some((x) => kinds.includes(x))) continue;
+    if (![WIDGETS[wid].subject, ...(kit.subjects || [])].some((x) => kinds.includes(x))) continue;
     if (grade < kit.grades[0] || grade > kit.grades[1]) continue;
     let score = 0;
     for (const p of kit.match) { const re = new RegExp(p.source, 'i'); if (re.test(title)) score += 3; else if (!kit.titleOnly && re.test(text)) score += 1; }
@@ -35,11 +36,11 @@ for (const lesson of facts.lessons || []) {
     let params = {};
     try { params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || []), grade, lang, words) : {}; } catch (e) { why = 'params threw ' + e.message; }
     if (!why && kit.usable && !kit.usable(params)) why = 'usable() false ' + JSON.stringify(params).slice(0, 80);
-    const full = { ...(WIDGETS[id].params || {}), ...params };
+    const full = { ...(WIDGETS[wid].params || {}), ...params };
     let tasks = [];
     if (!why) {
       try {
-        tasks = (typeof kit.tasks === 'function' ? kit.tasks(params, lang) : kit.tasks).map((t) => ({ ...t, say: pick(t.say), then: pick(t.then) })).filter((t) => { try { return t.ok || reachable(slidersOf(id, full), t.when); } catch { return false; } });
+        tasks = (typeof kit.tasks === 'function' ? kit.tasks(params, lang) : kit.tasks).map((t) => ({ ...t, say: pick(t.say), then: pick(t.then) })).filter((t) => { try { return t.ok || reachable(slidersOf(wid, full), t.when); } catch { return false; } });
       } catch (e) { why = 'tasks threw ' + e.message; }
       if (!why && !tasks.length) why = 'no reachable task';
     }

@@ -4108,8 +4108,8 @@ export const WIDGETS = {
       // wrap on spaces: SVG text does not wrap itself, and a Hindi meaning is no longer than an English one
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 22, `${wi + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 22, L.heading || 'One word, one sentence', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(14, 21, `${wi + 1} / ${n}`, { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 21, L.heading || 'One word, one sentence', { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
       // the word, big enough to read on a phone, because every card here is read
       kids.push(R(14, 38, 250, 46, C.y, { w: 2.5, r: 12 }));
       kids.push(T(139, 70, word, { z: 26, w: 800 }));
@@ -4148,13 +4148,13 @@ export const WIDGETS = {
       const pair = { IV: 'Four is one before five', IX: 'Nine is one before ten', XL: 'Forty is ten before fifty', XC: 'Ninety is ten before a hundred' };
       const subs = parts.filter((p) => p.length === 2);
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 22, 'Roman numerals', { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(14, 21, 'Roman numerals', { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
       // the five symbols and what each is worth, always in sight
       const ref = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100]];
       ref.forEach(([sym, val], i) => {
         const x = 300 + i * 57;
-        kids.push(R(x, 5, 52, 24, '#ffffff', { w: 1.5, s: '#e3dccb', r: 6 }));
-        kids.push(T(x + 26, 22, `${sym} ${val}`, { z: 15, w: 700, f: INK }));
+        kids.push(R(x, 5, 50, 22, '#ffffff', { w: 1.5, s: '#e3dccb', r: 6 }));
+        kids.push(T(x + 25, 21, `${sym} ${val}`, { z: 12.5, w: 700, f: INK }));
       });
       // the numeral itself, big enough to read on a phone
       kids.push(R(10, 48, 580, 118, '#fff3d6', { w: 2.5, s: '#e8b44a', r: 16 }));
@@ -4166,6 +4166,52 @@ export const WIDGETS = {
       const say = `${n} is written ${roman} in Roman numerals. ` + (subs.length
         ? `${subs.map((s) => pair[s]).join('. ')}. In ${roman}, a smaller symbol before a larger one subtracts, so the value is ${n}.`
         : `Every symbol adds: ${parts.join(' + ')} = ${n}.`);
+      return { kids, say };
+    },
+  },
+  sortlab: {
+    subject: 'social',
+    about: 'Sort one item at a time into the right labelled group: the Union, State and Concurrent lists of powers, the primary, secondary and tertiary sectors of the economy, or rights and duties. Two or three groups, six items, one right home for each. For classification, lists of powers, economic sectors, rights and duties.',
+    params: { bins: [], items: [], labels: {} },
+    dynamicSliders: (p) => {
+      const n = Math.max(1, Math.min(6, (p.items || []).length)), m = Math.max(2, (p.bins || []).length), L = p.labels || {};
+      return [['item', L.pickItem || 'Pick an item', 0, n - 1, 1, 0], ['bin', L.pickBin || 'Which group?', 0, m - 1, 1, 0]];
+    },
+    draw(v, p) {
+      const items = (p.items || []).slice(0, 6), bins = p.bins || [], L = p.labels || {};
+      const n = Math.max(1, Math.min(6, items.length)), m = Math.max(2, bins.length);
+      const ii = Math.max(0, Math.min(n - 1, v.item | 0)), bi = Math.max(0, Math.min(m - 1, v.bin | 0));
+      const item = items[ii] || {}, good = item.b === bi;
+      const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 21, `${ii + 1} / ${n}`, { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 21, L.heading || 'Which group does it belong to?', { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      // the item, big enough to read on a phone
+      kids.push(R(10, 38, 580, 56, '#fff3d6', { w: 2.5, s: '#e8b44a', r: 14 }));
+      fit(item.t, 42).slice(0, 2).forEach((ln, i) => kids.push(T(300, 63 + i * 20, ln, { z: 19, w: 800, f: '#3a2a00' })));
+      // the groups
+      const bw = (580 - (m - 1) * 10) / m;
+      bins.forEach((name, j) => {
+        const x = 10 + j * (bw + 10), y = 108, h = 176;
+        // the group slider opens on the first bin, so that is not an attempt: it must not look like a wrong answer
+        const untouched = bi === 0;
+        const sel = j === bi, right = sel && good, wrong = sel && !good && !untouched;
+        kids.push(R(x, y, bw, h, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel && !untouched ? 5 : 2.5, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 14 }));
+        kids.push(R(x + 10, y + 10, bw - 20, 40, right ? '#bfe9cf' : '#f1ecdf', { w: 0, r: 9 }));
+        fit(name, Math.max(10, Math.floor(bw / 10))).slice(0, 2).forEach((ln, i) => kids.push(T(x + bw / 2, y + 27 + i * 15, ln, { z: 13.5, w: 800, f: '#3d2d5e' })));
+        if (right) {
+          fit(item.t, Math.max(10, Math.floor(bw / 11))).slice(0, 3).forEach((ln, i) => kids.push(T(x + bw / 2, y + 92 + i * 18, ln, { z: 14, w: 700, f: '#136134' })));
+          kids.push(T(x + bw - 17, y + 62, '\u2713', { z: 18, w: 800, f: '#1d7a45' }));
+        } else {
+          const hint = sel && !untouched ? (L.tryAgain || 'try another') : (L.tap || 'choose me');
+          kids.push(T(x + bw / 2, y + 96, hint, { z: 13, w: 600, f: sel && !untouched ? '#a02d1e' : '#9b90b5' }));
+        }
+      });
+      const lead = L.sentence || '';
+      const say = !n ? (L.empty || 'Nothing to sort here yet.')
+        : good ? `${L.yes || 'Yes.'} ${item.t} ${L.goes || 'belongs with'} ${bins[bi]}.${item.why ? ' ' + item.why : ''}`
+          : bi === 0 ? `${lead}${(L.pick || 'Where does "{t}" go?').replace('{t}', item.t)}`
+            : `${L.no || 'Not that group.'} ${L.readAgain || 'Think about what the groups have in common, then try again.'}`;
       return { kids, say };
     },
   },
