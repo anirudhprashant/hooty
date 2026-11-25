@@ -1560,8 +1560,8 @@ export const KITS = {
     },
     params: (text, facts, chapter, grade, lang, glossaryWords) => {
       const L = lang === 'hi'
-        ? { heading: 'एक शब्द, एक वाक्य', pickWord: 'शब्द चुनिए', pickMeaning: 'इसका अर्थ क्या है?', yes: 'हाँ!', no: 'यह नहीं।', means: 'का अर्थ है', readAgain: 'ऊपर का वाक्य फिर पढ़िए, फिर दूसरा अर्थ चुनिए।', pick: 'वह अर्थ चुनिए जो वाक्य में फिट बैठे।', empty: 'इस अध्याय के शब्द अभी तैयार नहीं हैं।' }
-        : { heading: 'One word, one sentence', pickWord: 'Pick a word', pickMeaning: 'Which meaning fits?', yes: 'Yes.', no: 'Not this one.', means: 'means', readAgain: 'Read the sentence above, then try another meaning.', pick: 'Choose the meaning that fits the sentence.', empty: 'No words for this chapter yet.' };
+        ? { heading: 'एक शब्द, एक वाक्य', pickWord: 'शब्द चुनिए', pickMeaning: 'इसका अर्थ क्या है?', yes: 'हाँ!', no: 'यह नहीं।', means: 'का अर्थ है', readAgain: 'ऊपर का वाक्य फिर पढ़िए, फिर दूसरा अर्थ चुनिए।', pick: 'इस वाक्य में "{w}" का कौन-सा अर्थ फिट बैठता है?', sentence: 'किताब से', empty: 'इस अध्याय के शब्द अभी तैयार नहीं हैं।' }
+        : { heading: 'One word, one sentence', pickWord: 'Pick a word', pickMeaning: 'Which meaning fits?', yes: 'Yes.', no: 'Not this one.', means: 'means', readAgain: 'Read the sentence again, then try another meaning.', pick: 'Which meaning fits "{w}" here?', sentence: 'From the book', empty: 'No words for this chapter yet.' };
       const say = String(text || '').toLowerCase();
       const pool = (glossaryWords || [])
         .filter((t) => t && t.term && t.meaning && String(t.term).length > 1 && String(t.meaning).length > 3)
@@ -1571,7 +1571,7 @@ export const KITS = {
       for (const t of pool.sort((a, b) => b.own - a.own)) {
         if (seen.has(t.m)) continue;
         seen.add(t.m); picked.push(t);
-        if (picked.length >= 6) break;
+        if (picked.length >= 4) break;
       }
       if (picked.length < 3) return { words: [], meanings: [], key: [], sents: [], labels: L };
       const words = picked.map((t) => t.w), sents = picked.map((t) => t.s), truth = picked.map((t) => t.m);
