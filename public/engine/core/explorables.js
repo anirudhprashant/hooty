@@ -894,7 +894,7 @@ export const WIDGETS = {
       kids.push(...clipTo(`mpMoon${Math.round(mx)}_${Math.round(my)}`, mx - 14, my - 14, 14, 28, [CIRC(mx, my, 14, '#f5f1e6', { s: 'none', w: 0 })]));
       // the same Moon as a child sees it from Earth
       const ix = 514, iy = 96, ir = 52, litSide = waning ? -1 : 1;
-      kids.push(T(ix, iy + ir + 20, 'the Moon seen from Earth', { z: 12, f: '#cfd6ff', w: 600 }));
+      kids.push(T(ix, iy + ir + 20, 'the Moon seen from Earth', { z: 16, f: '#cfd6ff', w: 600 }));
       kids.push(CIRC(ix, iy, ir, '#232347', { s: '#cfd6ff', w: 2 }));
       kids.push(...clipTo(`mpLit${day}`, litSide < 0 ? ix - ir : ix, iy - ir, ir, 2 * ir, [CIRC(ix, iy, ir, '#f5f1e6', { s: 'none', w: 0 })]));
       if (k > 0.5) {
@@ -1415,7 +1415,7 @@ export const WIDGETS = {
     draw(v) {
       const u = 36, x0 = 30, y = 170, X = (mm) => x0 + (mm / 10) * u, kids = [R(x0 - 10, y, 15 * u + 20, 64, '#ffe9a8', { r: 6, w: 3 })];
       for (let mm = 0; mm <= 150; mm++) { const big = mm % 10 === 0, mid = mm % 5 === 0; kids.push(L(X(mm), y, X(mm), y + (big ? 24 : mid ? 16 : 9), INK, big ? 2.5 : 1.2)); if (big) kids.push(T(X(mm), y + 44, mm / 10, { z: 15 })); }
-      kids.push(T(x0 + 15 * u - 2, y + 58, 'cm', { z: 12, a: 'end', w: 600 }));
+      kids.push(T(x0 + 15 * u - 2, y + 58, 'cm', { z: 16, a: 'end', w: 600 }));
       const a = v.start * 10, b = a + v.len;
       kids.push(s('polygon', { points: `${X(a)},${y - 30} ${X(b) - 24},${y - 30} ${X(b)},${y - 18} ${X(b) - 24},${y - 6} ${X(a)},${y - 6}`, fill: C.o, stroke: INK, 'stroke-width': 3, 'stroke-linejoin': 'round' }), R(X(a), y - 30, 18, 24, '#f4b6c2', { w: 3 }));
       kids.push(L(X(a), y - 40, X(a), y + 2, C.b, 2.5, { 'stroke-dasharray': '4 4' }), L(X(b), y - 40, X(b), y + 2, C.b, 2.5, { 'stroke-dasharray': '4 4' }));
@@ -1932,7 +1932,7 @@ export const WIDGETS = {
       kids.push(L(cx - dx, cy - dy, cx + dx, cy + dy, C.o, 4, { 'stroke-dasharray': '10 6' }), L(cx, cy, cx + rad, cy, '#058a68', 4));
       // the compass: needle on the centre, pencil on the circle
       kids.push(L(cx, cy, cx + rad / 2, cy - 70, INK, 4), L(cx + rad / 2, cy - 70, cx + rad, cy, '#e2583e', 4), CIRC(cx + rad / 2, cy - 72, 6, INK, { w: 0 }));
-      kids.push(CIRC(cx, cy, 5, INK, { w: 0 }), T(cx - 14, cy + 20, 'centre', { z: 12, w: 600 }));
+      kids.push(CIRC(cx, cy, 5, INK, { w: 0 }), T(cx - 14, cy + 20, 'centre', { z: 16, w: 600 }));
       kids.push(T(470, 70, `radius: ${v.r} cm`, { z: 18, w: 700, f: '#058a68' }), T(470, 110, `diameter: ${2 * v.r} cm`, { z: 18, w: 700, f: '#c2510e' }), T(470, 150, `${v.r} + ${v.r} = ${2 * v.r}`, { z: 16, w: 600 }));
       return { kids, say: `With the compass open to ${v.r} cm, every point on the circle is ${v.r} cm from the centre: that is the radius. The fold line is a diameter. Wherever it is turned it passes through the centre and is ${2 * v.r} cm long, twice the radius.` };
     },
@@ -1944,7 +1944,7 @@ export const WIDGETS = {
       const x0 = 90, y0 = 270, sz = 60, cell = (c, r) => [x0 + c * sz + sz / 2, y0 - r * sz - sz / 2], kids = [];
       const things = [['flower', 2, 3, '\u{1F33C}'], ['mango', 3, 1, '\u{1F96D}'], ['orange', 1, 2, '\u{1F34A}']];
       for (let c = 0; c < 4; c++) for (let r = 0; r < 4; r++) kids.push(R(x0 + c * sz, y0 - (r + 1) * sz, sz, sz, (c + r) % 2 ? '#f3f0ff' : '#ffffff', { w: 2 }));
-      for (let i = 0; i < 4; i++) kids.push(T(x0 + i * sz + sz / 2, y0 + 20, `col ${i + 1}`, { z: 11, w: 600, f: '#6b5a8a' }), T(x0 - 26, y0 - i * sz - sz / 2 + 4, `row ${i + 1}`, { z: 11, w: 600, f: '#6b5a8a' }));
+      for (let i = 0; i < 4; i++) kids.push(T(x0 + i * sz + sz / 2, y0 + 20, `col ${i + 1}`, { z: 16, w: 600, f: '#6b5a8a' }), T(x0 - 26, y0 - i * sz - sz / 2 + 4, `row ${i + 1}`, { z: 16, w: 600, f: '#6b5a8a' }));
       for (const [, c, r, e] of things) { const [x, y] = cell(c, r); kids.push(T(x, y + 10, e, { z: 30 })); }
       let path = `M ${cell(0, 0).join(' ')}`; for (let i = 1; i <= v.right; i++) path += ` L ${cell(i, 0).join(' ')}`; for (let j = 1; j <= v.up; j++) path += ` L ${cell(v.right, j).join(' ')}`;
       kids.push(s('path', { d: path, fill: 'none', stroke: C.o, 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
@@ -1982,7 +1982,7 @@ export const WIDGETS = {
       const ha = ((h12 % 12) + v.minute / 60) / 12 * Math.PI * 2, ma = (v.minute / 60) * Math.PI * 2;
       kids.push(L(cx, cy, cx + 55 * Math.sin(ha), cy - 55 * Math.cos(ha), INK, 7), L(cx, cy, cx + 82 * Math.sin(ma), cy - 82 * Math.cos(ma), C.o, 4), CIRC(cx, cy, 6, INK, { w: 0 }));
       kids.push(T(440, 70, night ? '\u{1F319}' : '☀️', { z: 34 }), T(440, 128, `${h12}:${pad(v.minute)} ${ampm}`, { z: 26, w: 700 }));
-      kids.push(R(350, 158, 180, 58, '#1d2350', { w: 3, r: 8 }), T(440, 198, `${pad(v.hour)}:${pad(v.minute)}`, { z: 30, w: 700, f: '#7dffb0' }), T(440, 240, '24-hour digital clock', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(R(350, 158, 180, 58, '#1d2350', { w: 3, r: 8 }), T(440, 198, `${pad(v.hour)}:${pad(v.minute)}`, { z: 30, w: 700, f: '#7dffb0' }), T(440, 240, '24-hour digital clock', { z: 16, w: 600, f: '#6b5a8a' }));
       const words = v.minute === 0 ? `${h12} o’clock` : v.minute === 15 ? `quarter past ${h12}` : v.minute === 30 ? `half past ${h12}` : v.minute === 45 ? `quarter to ${h12 % 12 + 1}` : `${v.minute} minutes past ${h12}`;
       return { kids, say: `It is ${words}, ${h12}:${pad(v.minute)} ${ampm}${v.hour === 12 && v.minute === 0 ? ' (noon)' : v.hour === 0 && v.minute === 0 ? ' (midnight)' : ''}. A 24-hour digital clock shows ${pad(v.hour)}:${pad(v.minute)}.` };
     },
@@ -2258,7 +2258,7 @@ export const WIDGETS = {
         if (v.look === 2) kids.push(CIRC(190, 55, 9, '#c0392b', { w: 2 }));
       } else if (v.shape === 3) {
         kids.push(s('path', { d: 'M 128 90 L 128 210 A 62 20 0 0 0 252 210 L 252 90 Z', fill: curvC, stroke: INK, 'stroke-width': 3 }), s('ellipse', { cx: 190, cy: 90, rx: 62, ry: 20, fill: flatC, stroke: INK, 'stroke-width': 3 }));
-        if (v.look === 1) kids.push(T(190, 262, 'the bottom is flat too', { z: 12, w: 600, f: '#c2510e' }));
+        if (v.look === 1) kids.push(T(190, 262, 'the bottom is flat too', { z: 16, w: 600, f: '#c2510e' }));
       } else {
         kids.push(CIRC(190, 150, 88, curvC, { w: 3 }), s('ellipse', { cx: 160, cy: 112, rx: 22, ry: 13, fill: '#ffffff', opacity: 0.55 }));
       }
@@ -2276,7 +2276,7 @@ export const WIDGETS = {
       const at = (val) => [x0 + ((val - 1) % 10) * cell, y0 + Math.floor((val - 1) / 10) * cell], kids = [], on = new Set(seq);
       for (let val = 1; val <= 100; val++) {
         const [x, y] = at(val), idx = seq.indexOf(val);
-        kids.push(R(x, y, cell - 2, cell - 2, idx >= 0 ? (idx === 0 ? '#2fa84f' : '#ffcc33') : (Math.floor((val - 1) / 10) % 2 ? '#f3f0ff' : '#ffffff'), { w: 1, r: 4 }), T(x + (cell - 2) / 2, y + cell / 2 + 3, String(val), { z: 11, w: on.has(val) ? 700 : 500, f: idx === 0 ? '#ffffff' : INK }));
+        kids.push(R(x, y, cell - 2, cell - 2, idx >= 0 ? (idx === 0 ? '#2fa84f' : '#ffcc33') : (Math.floor((val - 1) / 10) % 2 ? '#f3f0ff' : '#ffffff'), { w: 1, r: 4 }), T(x + (cell - 2) / 2, y + cell / 2 + 3, String(val), { z: 16, w: on.has(val) ? 700 : 500, f: idx === 0 ? '#ffffff' : INK }));
       }
       if ([9, 10, 11].includes(Math.abs(v.step))) for (let i = 1; i < seq.length; i++) { const [ax, ay] = at(seq[i - 1]), [bx, by] = at(seq[i]); kids.push(L(ax + cell / 2 - 1, ay + cell / 2 - 1, bx + cell / 2 - 1, by + cell / 2 - 1, '#c2510e', 2, { opacity: 0.6 })); }
       const rule = v.step === 0 ? 'the same number again' : v.step > 0 ? `add ${v.step} each time` : `take away ${-v.step} each time`;
@@ -2407,7 +2407,7 @@ export const WIDGETS = {
         kids.push(R(x, y, cw - 4, cw - 4, '#f3f0ff', { w: 2, r: 5 }));
         if (k < v.n) kids.push(CIRC(x + (cw - 4) / 2, y + (cw - 4) / 2, 14, fr ? '#f2a33a' : '#5fc9b8', { w: 2 }));
       }
-      kids.push(T(x0 + 100, 36, 'a frame holds ten', { z: 11, w: 600, f: '#6b5a8a' }), T(430, 90, String(v.n), { z: 72, w: 700 }), T(430, 140, names[v.n], { z: 24, w: 700, f: '#6b45c8' }));
+      kids.push(T(x0 + 100, 36, 'a frame holds ten', { z: 16, w: 600, f: '#6b5a8a' }), T(430, 90, String(v.n), { z: 72, w: 700 }), T(430, 140, names[v.n], { z: 24, w: 700, f: '#6b45c8' }));
       kids.push(T(430, 192, v.n < 20 ? `one more is ${v.n + 1}` : 'that is the most here', { z: 15, w: 700, f: '#058a68' }), T(430, 220, v.n > 0 ? `one less is ${v.n - 1}` : 'nothing yet', { z: 15, w: 700, f: '#c2510e' }));
       return { kids, say: v.n === 0 ? 'There are none yet. Add one and there is one.' : `${names[v.n][0].toUpperCase()}${names[v.n].slice(1)}: ${v.n}. ${v.n < 20 ? `One more makes ${names[v.n + 1]}` : 'That is twenty'}, and one less is ${names[v.n - 1]}.` };
     },
@@ -2548,7 +2548,7 @@ export const WIDGETS = {
         const x = 40 + i * sz * sc, w = Math.min(sz * sc, 40 + len * sc - x);
         if (w > 1) kids.push(R(x, 146, w - 1.5, 26, i % 2 ? '#f2a33a' : '#5fc9b8', { w: 1.5, r: 3 }), ...(w >= 18 ? [T(x + w / 2, 164, String(i + 1), { z: 11, w: 700, f: '#ffffff' })] : []));
       }
-      kids.push(T(300, 218, `about ${n} ${unit}${n === 1 ? '' : 's'}`, { z: 26, w: 700, f: '#058a68' }), T(300, 248, `measured with a ${who} ${foot ? 'foot' : 'hand'}`, { z: 14, w: 600, f: '#6b5a8a' }), T(300, 272, v.size === 2 ? 'a bigger one fits fewer times' : v.size === 0 ? 'a smaller one fits more times' : '', { z: 12, w: 600, f: '#c2510e' }));
+      kids.push(T(300, 218, `about ${n} ${unit}${n === 1 ? '' : 's'}`, { z: 26, w: 700, f: '#058a68' }), T(300, 248, `measured with a ${who} ${foot ? 'foot' : 'hand'}`, { z: 14, w: 600, f: '#6b5a8a' }), T(300, 272, v.size === 2 ? 'a bigger one fits fewer times' : v.size === 0 ? 'a smaller one fits more times' : '', { z: 16, w: 600, f: '#c2510e' }));
       return { kids, say: `The ${names[v.obj]} is about ${n} ${unit}${n === 1 ? '' : 's'} long measured with a ${who} ${foot ? 'foot' : 'hand'}. ${v.size === 2 ? 'A bigger ' + (foot ? 'foot' : 'hand') + ' covers more each time, so you need fewer.' : v.size === 0 ? 'A smaller ' + (foot ? 'foot' : 'hand') + ' covers less each time, so you need more.' : 'Try a smaller or a bigger one and see how the number changes.'}` };
     },
   },
@@ -2622,7 +2622,7 @@ export const WIDGETS = {
       const kids = [R(0, 0, W, H, '#f6f9ff', { w: 0 }), R(0, floor, W, 68, '#efeaf8', { w: 0 }), L(0, floor, W, floor, INK, 4)];
       kids.push(R(186, top, 90, 62, C.o, { r: 8, w: 3 }), T(231, top + 40, `${v.force} N`, { z: 17, f: '#fff' }));
       if (v.dist > 0) kids.push(L(326, floor, 326, bottom, C.b, 4, { 'stroke-dasharray': '7 6' }), L(316, bottom, 336, bottom, C.b, 3), L(316, floor, 336, floor, C.b, 3), T(352, (floor + bottom) / 2 + 6, `${v.dist} m`, { z: 16, a: 'start', f: C.b }));
-      kids.push(CIRC(500, 84, 38, '#fff', { w: 4, s: C.p }), CIRC(500, 84, 4, INK, { w: 0 }), L(500, 84, 500, 58, C.p, 4), T(500, 142, `${v.secs} s`, { z: 18, f: C.p }), T(500, 36, 'stopwatch', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(CIRC(500, 84, 38, '#fff', { w: 4, s: C.p }), CIRC(500, 84, 4, INK, { w: 0 }), L(500, 84, 500, 58, C.p, 4), T(500, 142, `${v.secs} s`, { z: 18, f: C.p }), T(500, 36, 'stopwatch', { z: 16, w: 600, f: '#6b5a8a' }));
       kids.push(T(300, 270, `work = ${v.force} N × ${v.dist} m = ${num(wd)} J`, { z: 18 }));
       kids.push(T(300, 292, wd ? `power = ${num(wd)} J ÷ ${v.secs} s = ${num(pw, 1)} W` : 'no distance moved, so no work and no power', { z: 14, w: 600, f: wd ? '#058a68' : '#c2510e' }));
       return { kids, say: v.dist === 0 ? `You push with ${v.force} N but the bag does not move, so the work is 0 J and the power is 0 W.` : `You do ${num(wd)} J of work in ${v.secs} s, so the power is ${num(wd)} ÷ ${v.secs} = ${num(pw, 1)} W.${v.secs === 4 && wd === 100 ? ' The same work in twice the time needs only half the power.' : ''}` };
@@ -2732,7 +2732,7 @@ export const WIDGETS = {
         const wx = 466 + k * 16;
         kids.push(s('path', { d: `M ${wx} ${ey - 18} Q ${wx + 10} ${ey} ${wx} ${ey + 18}`, fill: 'none', stroke: C.o, 'stroke-width': 3, opacity: 0.2 + 0.7 * loud }));
       }
-      kids.push(L(jx + 32, jy + jh, jx + 32, jy + jh + 16, INK, 4), R(jx + 8, jy + jh + 16, 80, 24, '#e6e0f2', { w: 3, r: 6 }), T(jx + 48, jy + jh + 34, 'pump', { z: 12 }));
+      kids.push(L(jx + 32, jy + jh, jx + 32, jy + jh + 16, INK, 4), R(jx + 8, jy + jh + 16, 80, 24, '#e6e0f2', { w: 3, r: 6 }), T(jx + 48, jy + jh + 34, 'pump', { z: 16 }));
       kids.push(T(300, 30, v.air === 0 ? 'vacuum: the bell shakes, but no sound can travel' : `air inside the jar: ${v.air}%`, { z: 18, f: v.air === 0 ? '#c2510e' : '#058a68', w: 700 }));
       const note = loud >= 0.55 ? 'a loud sound' : loud >= 0.2 ? 'a soft sound' : 'a faint sound';
       const say = v.air === 0
@@ -3639,7 +3639,7 @@ export const WIDGETS = {
         const ny = y0 + (woven + 0.5) * rh;
         kids.push(R(x0 - 34, ny - 7, 20, 14, '#ff7a59', { w: 2, r: 4 }));
         kids.push(s('path', { d: `M ${x0 - 10} ${ny} l -8 -5 l 0 10 Z`, fill: '#ff7a59' }));
-        kids.push(T(x0 - 38, ny + 4, 'shuttle', { z: 11, a: 'end', f: '#c2510e' }));
+        kids.push(T(x0 - 38, ny + 4, 'shuttle', { z: 16, a: 'end', f: '#c2510e' }));
       }
       kids.push(T(16, y0 + rows * rh + 34, `${woven} of ${rows} rows woven`, { z: 15, a: 'start', f: '#2a1a4a' }));
       const cloth = group === 2 ? 'Two threads cross together, so the marks are bigger: this is a basket weave.' : 'Each row goes over one thread and under the next, so the threads lock together: this is plain weave.';
@@ -3868,7 +3868,7 @@ export const WIDGETS = {
       kids.push(s('path', { d: 'M 192 108 L 192 236 Q 192 250 206 250 L 394 250 Q 408 250 408 236 L 408 108 Z', fill: liquidCol, stroke: 'none' }));
       kids.push(s('path', { d: beakerPath, fill: 'none', stroke: INK, 'stroke-width': 4, 'stroke-linejoin': 'round' }));
       kids.push(L(186, 64, 414, 64, INK, 3));
-      kids.push(T(300, 244, liquidNames[liq], { z: 12, w: 600, f: '#4a6a88' }));
+      kids.push(T(300, 244, liquidNames[liq], { z: 16, w: 600, f: '#4a6a88' }));
       kids.push(R(278, 104, 44, 124, '#c9cdd6', { r: 4, s: '#8d93a3', w: 2 }));
       if (kind === 'displace') kids.push(R(278, 104, 44, 124, '#b5652e', { r: 4, s: '#8a4a20', w: 2, x: { opacity: 0.8 } }));
       kids.push(T(300, 172, met.sym, { z: 20, w: 700, f: kind === 'displace' ? '#fff3e8' : '#3a3f4a' }));
@@ -4065,7 +4065,7 @@ export const WIDGETS = {
         kids.push(CIRC(ptA.x, ptA.y, 6, C.b), CIRC(ptB.x, ptB.y, 6, C.b), CIRC(ptC.x, ptC.y, 7, C.o));
         kids.push(T(ptA.x + 16, ptA.y - 6, 'A', { z: 17 }), T(ptB.x - 16, ptB.y - 6, 'B', { z: 17 }), T(ptC.x, ptC.y + 26, 'C', { z: 17, f: '#d9531e' }));
         kids.push(T(cx, cy - 14, `${v.a}°`, { z: 15, f: '#8a6a00' }), T(ptC.x, ptC.y - 16, `${half}°`, { z: 15, f: '#d9531e' }));
-        kids.push(T(cx, cy + 24, 'centre', { z: 11, w: 600, f: '#6b5a8a' }));
+        kids.push(T(cx, cy + 24, 'centre', { z: 16, w: 600, f: '#6b5a8a' }));
         kids.push(R(96, 262, 408, 30, '#eef7ff', { s: '#b8cde8', w: 1, r: 8 }));
         kids.push(T(300, 282, `angle at centre ${v.a}°, angle at C ${half}°`, { z: 14, w: 700, f: '#2a4a6a' }));
         return { kids, say: `The chord AB makes ${v.a} degrees at the centre. From point C on the far arc it makes ${half} degrees, which is always half. Move C along the arc and watch the angle stay the same.` };
@@ -4082,7 +4082,7 @@ export const WIDGETS = {
       put(p1, `${Math.round(a1)}°`, '#d9531e'); put(p2, `${Math.round(a2)}°`, '#3a86ff'); put(p3, `${Math.round(a3)}°`, '#d9531e'); put(p4, `${Math.round(a4)}°`, '#3a86ff');
       const s13 = Math.round(a1 + a3), s24 = Math.round(a2 + a4);
       kids.push(R(96, 262, 408, 30, '#eef7ff', { s: '#b8cde8', w: 1, r: 8 }));
-      kids.push(T(300, 282, `opposite pairs: ${Math.round(a1)} + ${Math.round(a3)} = ${s13}°, ${Math.round(a2)} + ${Math.round(a4)} = ${s24}°`, { z: 13, w: 700, f: '#2a4a6a' }));
+      kids.push(T(300, 282, `opposite pairs: ${Math.round(a1)} + ${Math.round(a3)} = ${s13}°, ${Math.round(a2)} + ${Math.round(a4)} = ${s24}°`, { z: 16, w: 700, f: '#2a4a6a' }));
       return { kids, say: `Four points sit on one circle. The orange angles are opposite each other and add to ${s13} degrees. The blue angles are the other opposite pair and add to ${s24} degrees. Both pairs always add to 180.` };
     },
   },
