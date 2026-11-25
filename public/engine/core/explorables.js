@@ -129,7 +129,7 @@ export const WIDGETS = {
         }
       }
       kids.push(T(300, 246, 'each organ can check the other two, and none may take over their work', { z: 15, f: '#5d6b63', w: 600 }));
-      kids.push(T(300, 272, 'a court can strike down a law; the assembly can question the government', { z: 13.5, f: '#8a7a5c', w: 600 }));
+      kids.push(T(300, 272, 'a court can strike down a law; the assembly can question the government', { z: 14.5, f: '#8a7a5c', w: 600 }));
       const say = [
         'The legislature is the assembly of elected representatives. It debates the problem, writes the law against digital fraud and passes it. Making the law is its job alone.',
         'The executive is the part of government that carries laws out: the ministries, the police, the tax offices. It puts the new law to work, but it does not write the law.',
@@ -954,7 +954,7 @@ export const WIDGETS = {
         kids.push(R(62, 190, 116, 42, '#3d3d3d', { r: 8 }), CIRC(96, 190, 20, '#3d3d3d'), CIRC(142, 190, 18, '#3d3d3d'));
         kids.push(s('polygon', { points: '146,188 168,140 190,188', fill: C.o, stroke: INK }), CIRC(120, 206, 8, C.y, { w: 0 }));
         kids.push(CIRC(168, 168, 16, '#b8b8c0', { w: 0 }), CIRC(190, 138, 21, '#c9c9d1', { w: 0 }), CIRC(166, 106, 25, '#dadade', { w: 0 }), T(120, 154, 'Coal', { z: 17 }));
-        kids.push(T(196, 232, 'smoke and dirty air', { z: 13, w: 600, a: 'start' }));
+        kids.push(T(196, 232, 'smoke and dirty air', { z: 15, w: 600, a: 'start' }));
       }
       kids.push(R(258, 116, 104, 96, '#fff', { r: 12 }), T(310, 154, 'power', { z: 16 }), T(310, 176, 'station', { z: 16 }));
       kids.push(L(362, 164, 414, 164, INK, 5), L(414, 164, 414, 126, INK, 5), L(414, 126, 434, 126, INK, 5));
@@ -1498,8 +1498,8 @@ export const WIDGETS = {
       const kids = [T(300, 42, indian, { z: 30 }), T(300, 70, `International: ${intl}`, { z: 16, w: 600, f: '#6b5a8a' })];
       const cols = [['Crore', 'crore'], ['Ten lakh', 'lakh'], ['Lakh', 'lakh'], ['Ten thousand', 'thousand'], ['Thousand', 'thousand'], ['Hundred', 'one'], ['Ten', 'one'], ['One', 'one']];
       const fill = { crore: '#e8dbff', lakh: '#d6ecff', thousand: '#fff0c8', one: '#d9f5e8' }, digits = str.padStart(8, '0'), cw = 66, x0 = 300 - (cols.length * cw) / 2;
-      cols.forEach(([lab, g], i) => { const x = x0 + i * cw, lead = digits.slice(0, i + 1).replace(/0/g, '') === '' && i < 7; const words = lab.split(' '); kids.push(R(x, 100, cw - 6, 74, fill[g], { r: 8, w: 2 }), ...words.map((w, k) => T(x + (cw - 6) / 2, 116 + k * 13 - (words.length - 1) * 3, w, { z: 11, w: 600, f: '#6b5a8a' })), T(x + (cw - 6) / 2, 162, lead ? '' : digits[i], { z: 26, f: lead ? '#bbb' : INK })); });
-      kids.push(T(300, 214, nameIn, { z: nameIn.length > 60 ? 13 : 15 }), T(300, 240, `(international: ${nameInt})`, { z: nameInt.length > 60 ? 11 : 13, w: 600, f: '#6b5a8a' }));
+      cols.forEach(([lab, g], i) => { const x = x0 + i * cw, lead = digits.slice(0, i + 1).replace(/0/g, '') === '' && i < 7; const words = lab.split(' '); kids.push(R(x, 100, cw - 6, 74, fill[g], { r: 8, w: 2 }), ...words.map((w, k) => T(x + (cw - 6) / 2, 116 + k * 13 - (words.length - 1) * 3, w, { z: 12, w: 600, f: '#6b5a8a' })), T(x + (cw - 6) / 2, 162, lead ? '' : digits[i], { z: 26, f: lead ? '#bbb' : INK })); });
+      kids.push(T(300, 214, nameIn, { z: nameIn.length > 60 ? 13 : 15 }), T(300, 240, `(international: ${nameInt})`, { z: nameInt.length > 60 ? 12.5 : 14, w: 600, f: '#6b5a8a' }));
       return { kids, say: `${indian} in the Indian system (${nameIn}) is ${intl} in the international system (${nameInt}). Indian commas group in twos after the first three digits; international commas group in threes.` };
     },
   },
@@ -1599,7 +1599,7 @@ export const WIDGETS = {
       const temp = (k) => Math.min(60, 25 + k * 1.1 * v.t), [name, fillc, absorb] = shades[v.colour], tw = temp(0.2), tc = temp(absorb);
       const kids = [CIRC(300, 34, 24, '#ffcc33', { s: '#ffb000', w: 3 })];
       for (let i = 0; i < 7; i++) kids.push(L(250 + i * 17, 64, 160 + i * 47, 140, '#ffcc33', 2.5));
-      const can = (x, col, t, label) => [R(x, 150, 90, 110, col, { r: 8, w: 3 }), s('ellipse', { cx: x + 45, cy: 150, rx: 45, ry: 10, fill: col, stroke: INK, 'stroke-width': 3 }), T(x + 45, 286, label, { z: 13, w: 600 }), T(x + 45, 210, `${num(t, 0)} °C`, { z: 20, f: col === '#222222' || col === '#6d6d6d' ? '#ffffff' : INK })];
+      const can = (x, col, t, label) => [R(x, 150, 90, 110, col, { r: 8, w: 3 }), s('ellipse', { cx: x + 45, cy: 150, rx: 45, ry: 10, fill: col, stroke: INK, 'stroke-width': 3 }), T(x + 45, 286, label, { z: 15, w: 600 }), T(x + 45, 210, `${num(t, 0)} °C`, { z: 20, f: col === '#222222' || col === '#6d6d6d' ? '#ffffff' : INK })];
       kids.push(...can(140, '#f7f7f7', tw, 'white can'), ...can(370, fillc, tc, `${name} can`));
       kids.push(T(14, 24, v.t ? `after ${v.t} minutes (about)` : 'both start at 25 °C', { a: 'start', z: 14, w: 600, f: '#6b5a8a' }));
       return { kids, say: v.t ? `After ${v.t} minutes in the sun the white can is about ${num(tw, 0)} °C and the ${name} can about ${num(tc, 0)} °C. ${v.colour ? 'Darker surfaces absorb more of the Sun’s heat; white reflects most of it.' : 'Both are white, so they warm the same: white reflects most of the heat.'}` : 'Both cans start at 25 °C. Let time pass in the sunshine.' };
@@ -1782,7 +1782,7 @@ export const WIDGETS = {
         kids.push(R(x - 8, 184, 166, 13, lit ? col : '#d8d3e8', { w: 3, r: 5 }), R(x + 52, 190, 46, 7, lit ? '#ffffff' : '#b7b0cc', { w: 0, r: 3 }));
         kids.push(s('path', { d: `M ${x} 202 L ${x + 16} 274 L ${x + 134} 274 L ${x + 150} 202 Z`, fill: lit ? col : '#f8f5ee', stroke: ring ? '#c0392b' : INK, 'stroke-width': ring ? 6 : 3 }));
         kids.push(T(x + 75, 244, label, { z: 17, w: 700, f: lit ? '#ffffff' : '#3d2d5e' }));
-        kids.push(T(x + 75, 288, lit ? 'yes, here' : ring ? 'not here' : 'choose me', { z: 13, w: 600, f: lit ? '#1d7a45' : ring ? '#c0392b' : '#7a6b99' }));
+        kids.push(T(x + 75, 288, lit ? 'yes, here' : ring ? 'not here' : 'choose me', { z: 14.5, w: 600, f: lit ? '#1d7a45' : ring ? '#c0392b' : '#7a6b99' }));
       };
       const wantGreen = kind === 'green';
       binAt(70, '#2e9e5b', 'GREEN BIN', right && wantGreen, chosen && !right && v.bin === 0);
@@ -1820,7 +1820,7 @@ export const WIDGETS = {
         const fill = ok ? '#d8f3e0' : wrong ? '#fde3e3' : '#ffffff';
         kids.push(R(x, 150, 170, 110, fill, { w: ok || wrong ? 6 : 3, s: ok ? '#1d7a45' : wrong ? '#c0392b' : INK, r: 12 }));
         kids.push(T(x + 85, 194, label, { z: 18, w: 700, f: ok ? '#1d7a45' : wrong ? '#c0392b' : INK }));
-        kids.push(T(x + 85, 226, ok ? 'yes' : wrong ? 'no' : 'choose me', { z: 13, w: 600, f: ok ? '#1d7a45' : wrong ? '#c0392b' : '#7a6b99' }));
+        kids.push(T(x + 85, 226, ok ? 'yes' : wrong ? 'no' : 'choose me', { z: 14.5, w: 600, f: ok ? '#1d7a45' : wrong ? '#c0392b' : '#7a6b99' }));
       };
       boxAt(30, names[0], 0);
       boxAt(215, names[1], 1);
@@ -2021,12 +2021,12 @@ export const WIDGETS = {
       const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], wk = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       const leap = (v.year % 4 === 0 && v.year % 100 !== 0) || v.year % 400 === 0, first = new Date(Date.UTC(v.year, v.month - 1, 1)).getUTCDay(), days = new Date(Date.UTC(v.year, v.month, 0)).getUTCDate();
       const x0 = 40, y0 = 70, cw = 46, ch = 34, kids = [T(x0 + 3.5 * cw, 32, `${names[v.month - 1]} ${v.year}`, { z: 20 })];
-      wk.forEach((d, i) => kids.push(T(x0 + i * cw + cw / 2, y0 - 8, d, { z: 12, w: 700, f: i === 0 ? '#c0392b' : '#6b5a8a' })));
+      wk.forEach((d, i) => kids.push(T(x0 + i * cw + cw / 2, y0 - 8, d, { z: 13.5, w: 700, f: i === 0 ? '#c0392b' : '#6b5a8a' })));
       for (let d = 1; d <= days; d++) {
         const k = first + d - 1, c = k % 7, r = Math.floor(k / 7), extra = v.month === 2 && d === 29;
         kids.push(R(x0 + c * cw + 2, y0 + r * ch + 2, cw - 4, ch - 4, extra ? '#ffcc33' : '#f3f0ff', { w: extra ? 2.5 : 1, r: 5 }), T(x0 + c * cw + cw / 2, y0 + r * ch + ch / 2 + 5, String(d), { z: 14, w: 600, f: c === 0 ? '#c0392b' : INK }));
       }
-      kids.push(T(470, 90, `${days} days`, { z: 22, w: 700, f: '#c2510e' }), T(470, 130, leap ? `${v.year} is a leap year` : `${v.year} is not a leap year`, { z: 15, w: 700, f: leap ? '#058a68' : INK }), T(470, 158, `${leap ? 366 : 365} days in the year`, { z: 14, w: 600, f: '#6b5a8a' }), T(470, 200, `1 ${names[v.month - 1]} is a ${['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][first]}`, { z: 13, w: 600 }));
+      kids.push(T(470, 90, `${days} days`, { z: 22, w: 700, f: '#c2510e' }), T(470, 130, leap ? `${v.year} is a leap year` : `${v.year} is not a leap year`, { z: 15, w: 700, f: leap ? '#058a68' : INK }), T(470, 158, `${leap ? 366 : 365} days in the year`, { z: 14, w: 600, f: '#6b5a8a' }), T(470, 200, `1 ${names[v.month - 1]} is a ${['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][first]}`, { z: 14, w: 600 }));
       return { kids, say: `${names[v.month - 1]} ${v.year} has ${days} days and starts on a ${['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][first]}. ${v.month === 2 ? (leap ? `${v.year} is a leap year, so February has an extra day, the 29th.` : `${v.year} is not a leap year, so February has 28 days.`) : `${v.year} has ${leap ? 366 : 365} days${leap ? ': it is a leap year' : ''}.`}` };
     },
   },
@@ -2133,7 +2133,7 @@ export const WIDGETS = {
       const lo = Math.floor(v.n / 100) * 100, hi = lo + 100, x = (m) => 40 + ((m - lo) / 100) * 520, y = 170, kids = [L(x(lo), y, x(hi), y, INK, 4)];
       for (let m = lo; m <= hi; m += 10) kids.push(L(x(m), y - (m % 50 ? 7 : 12), x(m), y + (m % 50 ? 7 : 12), INK, m % 50 ? 2 : 3), ...(m % 50 === 0 ? [T(x(m), y + 34, String(m), { z: 15, w: 700 })] : []));
       const left = v.n - lo, right = hi - v.n;
-      kids.push(L(x(lo), y - 52, x(v.n), y - 52, '#1f63d9', 4), L(x(v.n), y - 52, x(hi), y - 52, '#c2510e', 4), T((x(lo) + x(v.n)) / 2, y - 62, `${left} from ${lo}`, { z: 13, w: 700, f: '#1f63d9' }), T((x(v.n) + x(hi)) / 2, y - 62, `${right} to ${hi}`, { z: 13, w: 700, f: '#c2510e' }));
+      kids.push(L(x(lo), y - 52, x(v.n), y - 52, '#1f63d9', 4), L(x(v.n), y - 52, x(hi), y - 52, '#c2510e', 4), T((x(lo) + x(v.n)) / 2, y - 62, `${left} from ${lo}`, { z: 14.5, w: 700, f: '#1f63d9' }), T((x(v.n) + x(hi)) / 2, y - 62, `${right} to ${hi}`, { z: 14.5, w: 700, f: '#c2510e' }));
       kids.push(L(x(v.n), y - 52, x(v.n), y, '#6b45c8', 2, { 'stroke-dasharray': '4 4' }), CIRC(x(v.n), y, 10, C.p, { w: 3 }), T(x(v.n), y + 62, String(v.n), { z: 26, w: 700, f: '#6b45c8' }));
       kids.push(T(300, 40, `${v.n} is between ${lo} and ${hi}`, { z: 18 }));
       return { kids, say: `${v.n} sits between ${lo} and ${hi}. It is ${left} more than ${lo}, and ${right} more makes ${hi}.` };
@@ -2160,10 +2160,10 @@ export const WIDGETS = {
         title = 'a triangle'; facts = ['3 sides', '3 corners'];
       } else {
         const r = Math.min(v.w, 4.5) * u, cx = ox + 4 * u, cy = oy - 4 * u;
-        kids.push(CIRC(cx, cy, r, '#d9f2e6', { w: 4 }), L(cx - r, cy, cx + r, cy, '#6b45c8', 3, { 'stroke-dasharray': '8 5' }), L(cx, cy - r, cx, cy + r, '#6b45c8', 3, { 'stroke-dasharray': '8 5' }), CIRC(cx, cy, 6, '#c0392b', { w: 0 }), T(cx + 16, cy - 10, 'centre', { a: 'start', z: 13, w: 700, f: '#c0392b' }));
+        kids.push(CIRC(cx, cy, r, '#d9f2e6', { w: 4 }), L(cx - r, cy, cx + r, cy, '#6b45c8', 3, { 'stroke-dasharray': '8 5' }), L(cx, cy - r, cx, cy + r, '#6b45c8', 3, { 'stroke-dasharray': '8 5' }), CIRC(cx, cy, 6, '#c0392b', { w: 0 }), T(cx + 16, cy - 10, 'centre', { a: 'start', z: 14, w: 700, f: '#c0392b' }));
         title = 'a circle'; facts = ['no straight sides, no corners', 'two folds meet at the centre'];
       }
-      kids.push(T(470, 70, title, { z: 22, w: 700 }), ...facts.map((f, i) => T(470, 108 + i * 28, f, { z: 13, w: 600, f: '#6b5a8a' })));
+      kids.push(T(470, 70, title, { z: 22, w: 700 }), ...facts.map((f, i) => T(470, 108 + i * 28, f, { z: 14, w: 600, f: '#6b5a8a' })));
       return { kids, say: v.shape === 1 ? (v.w === v.h ? `Both sticks are ${v.w} long, so the four sides are equal: this is a square, with 4 square corners.` : `The sides are ${v.w} and ${v.h} sticks. Opposite sides are equal and all 4 corners are square corners: this is a rectangle. Make both the same and it becomes a square.`) : v.shape === 0 ? 'A triangle has 3 sides and 3 corners.' : 'A circle has no straight sides and no corners. Folding it in half twice makes two lines that meet at its centre.' };
     },
   },
@@ -2513,10 +2513,10 @@ export const WIDGETS = {
         kids.push(CIRC(cx, cy, 13, col, { w: 2 }));
         if (take && c >= left) kids.push(L(cx - 9, cy - 9, cx + 9, cy + 9, '#c0392b', 3), L(cx + 9, cy - 9, cx - 9, cy + 9, '#c0392b', 3));
       }
-      if (take && v.k > v.n) kids.push(T(400, 250, 'you cannot take away more than you have', { z: 12, w: 600, f: '#c0392b' }));
+      if (take && v.k > v.n) kids.push(T(400, 250, 'you cannot take away more than you have', { z: 14, w: 600, f: '#c0392b' }));
       kids.push(T(400, 80, take ? `${v.n} − ${Math.min(v.k, v.n)} = ${left}` : `${v.a} + ${v.b} = ${total}`, { z: 34, w: 700 }));
       kids.push(T(400, 130, take ? `${left} left` : total === 10 && v.a > 0 && v.b > 0 ? `${v.a} and ${v.b} make 10` : `${total} in all`, { z: 18, w: 700, f: take ? '#c2510e' : '#058a68' }));
-      if (!take) kids.push(T(400, 170, v.b === 0 || v.a === 0 ? 'adding none changes nothing' : v.a === v.b ? 'the same number twice: a double' : '', { z: 13, w: 600, f: '#6b5a8a' }));
+      if (!take) kids.push(T(400, 170, v.b === 0 || v.a === 0 ? 'adding none changes nothing' : v.a === v.b ? 'the same number twice: a double' : '', { z: 14.5, w: 600, f: '#6b5a8a' }));
       return { kids, say: take ? (v.k > v.n ? `You cannot take away ${v.k} from ${v.n}: there are not enough.` : `${v.n} take away ${v.k} leaves ${left}.${left === 0 ? ' None are left.' : ''}`) : `${v.a} and ${v.b} together make ${total}: ${v.a} + ${v.b} = ${total}.${total === 10 && v.a > 0 && v.b > 0 ? ' These two numbers make 10.' : ''}` };
     },
   },
@@ -3295,7 +3295,7 @@ export const WIDGETS = {
       else if (shp === 1) kids.push(s('polygon', { points: `235,${topY} 365,${topY} 345,${topY + 84} 255,${topY + 84}`, fill: silver, stroke: edge, 'stroke-width': 3 }), s('polygon', { points: `245,${topY + 8} 355,${topY + 8} 338,${topY + 76} 262,${topY + 76}`, fill: '#eef1f5', stroke: 'none' }));
       else kids.push(R(150, topY, 300, 14, silver, { w: 3, s: edge, r: 4 }));
       kids.push(T(300, 30, 'the same piece of foil every time', { z: 15, w: 600, f: '#6b5a8a' }));
-      if (floats) { kids.push(T(300, topY - 14, 'floats: it pushes aside more water than it weighs', { z: 13, f: '#04795c' })); }
+      if (floats) { kids.push(T(300, topY - 14, 'floats: it pushes aside more water than it weighs', { z: 14.5, f: '#04795c' })); }
       else kids.push(T(300, topY - 16, 'sinks: it pushes aside too little water', { z: 14, f: '#c2510e' }));
       const name = ['a tight ball', 'a cup', 'a flat sheet'][shp];
       const why = shp === 0 ? 'squeezed into a tight ball it pushes aside only a little water, less than it weighs' : shp === 1 ? 'shaped into a cup it traps air and pushes aside more water than it weighs' : 'spread out flat it pushes aside a wide sheet of water, more than it weighs';
