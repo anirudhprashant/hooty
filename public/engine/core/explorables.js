@@ -1497,9 +1497,11 @@ export const WIDGETS = {
       const nameInt = say([[Math.floor(n / 1e9), 'billion'], [Math.floor(n / 1e6) % 1000, 'million'], [Math.floor(n / 1e3) % 1000, 'thousand'], [n % 1000, 'ones']]);
       const kids = [T(300, 42, indian, { z: 30 }), T(300, 70, `International: ${intl}`, { z: 16, w: 600, f: '#6b5a8a' })];
       const cols = [['Crore', 'crore'], ['Ten lakh', 'lakh'], ['Lakh', 'lakh'], ['Ten thousand', 'thousand'], ['Thousand', 'thousand'], ['Hundred', 'one'], ['Ten', 'one'], ['One', 'one']];
-      const fill = { crore: '#e8dbff', lakh: '#d6ecff', thousand: '#fff0c8', one: '#d9f5e8' }, digits = str.padStart(8, '0'), cw = 66, x0 = 300 - (cols.length * cw) / 2;
-      cols.forEach(([lab, g], i) => { const x = x0 + i * cw, lead = digits.slice(0, i + 1).replace(/0/g, '') === '' && i < 7; const words = lab.split(' '); kids.push(R(x, 100, cw - 6, 74, fill[g], { r: 8, w: 2 }), ...words.map((w, k) => T(x + (cw - 6) / 2, 116 + k * 13 - (words.length - 1) * 3, w, { z: 12, w: 600, f: '#6b5a8a' })), T(x + (cw - 6) / 2, 162, lead ? '' : digits[i], { z: 26, f: lead ? '#bbb' : INK })); });
-      kids.push(T(300, 214, nameIn, { z: nameIn.length > 60 ? 13 : 15 }), T(300, 240, `(international: ${nameInt})`, { z: nameInt.length > 60 ? 12.5 : 14, w: 600, f: '#6b5a8a' }));
+      const fill = { crore: '#e8dbff', lakh: '#d6ecff', thousand: '#fff0c8', one: '#d9f5e8' }, digits = str.padStart(8, '0'), cw = 72, x0 = 300 - (cols.length * cw) / 2;
+      cols.forEach(([lab, g], i) => { const x = x0 + i * cw, lead = digits.slice(0, i + 1).replace(/0/g, '') === '' && i < 7; const words = lab.split(' '); kids.push(R(x, 100, cw - 6, 74, fill[g], { r: 8, w: 2 }), ...words.map((w, k) => T(x + (cw - 6) / 2, 122 + k * 16 - (words.length - 1) * 8, w, { z: 14, w: 600, f: '#6b5a8a' })), T(x + (cw - 6) / 2, 162, lead ? '' : digits[i], { z: 26, f: lead ? '#bbb' : INK })); });
+      const wrap = (text, max) => { const lines = []; let line = ''; for (const w of text.split(' ')) { if (line && (line + ' ' + w).length > max) { lines.push(line); line = w; } else line = line ? `${line} ${w}` : w; } if (line) lines.push(line); return lines; };
+      const inLines = wrap(nameIn, 54), intLines = wrap(`international: ${nameInt}`, 66);
+      kids.push(...inLines.map((l, i) => T(300, (inLines.length === 1 ? 214 : 202) + i * 21, l, { z: 16 })), ...intLines.map((l, i) => T(300, 254 + i * 18, `${i === 0 ? '(' : ''}${l}${i === intLines.length - 1 ? ')' : ''}`, { z: 15, w: 600, f: '#6b5a8a' })));
       return { kids, say: `${indian} in the Indian system (${nameIn}) is ${intl} in the international system (${nameInt}). Indian commas group in twos after the first three digits; international commas group in threes.` };
     },
   },
