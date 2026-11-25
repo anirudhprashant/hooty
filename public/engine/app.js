@@ -1955,11 +1955,11 @@ function screenAddBook() {
   go2.addEventListener('click', async () => {
     const files = [...input.files];
     if (files.reduce((n, f) => n + f.size, 0) > 400 * 1048576) { status.textContent = t('addBookTooBig'); return; }
-    go2.disabled = true; meter.hidden = false; status.textContent = 'Reading your book…';
+    go2.disabled = true; meter.hidden = false; status.textContent = t('addBookReading');
     try {
       const { readPdf, makeBook } = await import('./core/bookmaker.js');
       const docs = await readPdf(files.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true })), (f) => { bar.style.width = `${Math.round(f * 100)}%`; });
-      status.textContent = 'Making your lessons…';
+      status.textContent = t('addBookMaking');
       await new Promise((r) => setTimeout(r, 30));
       const pack = makeBook(docs, { title: name.value.trim() || 'My book' });
       await saveBook(pack);
@@ -1970,6 +1970,10 @@ function screenAddBook() {
       const l = activeLearner(); if (l) { l.grade = 'mine'; l.packId = pack.id; await persist(); }
       router.packId = pack.id;
       sound('next');
+      // Say it worked, and say how much of it there is: the screen changes underneath, so a silent jump leaves a family
+      // wondering whether anything happened.
+      const made = (pack.units || []).reduce((n, u) => n + (u.chapters || []).reduce((m, c) => m + (c.lessons || []).length, 0), 0);
+      toast(t(made === 1 ? 'addBookReadyOne' : 'addBookReady', { n: made }));
       go('path');
     } catch (e) {
       console.warn('book failed', e);
