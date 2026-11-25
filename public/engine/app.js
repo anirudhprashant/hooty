@@ -1370,7 +1370,25 @@ function renderCelebration() {
   const box = el('div', { class: 'celebrate' }, [
     el('img', { class: 'celebrate__art', src: mascotImage(accuracy >= 60 ? 'happy' : 'idle') || '', alt: '' }),
     el('h2', { class: 'celebrate__title', text: s.lesson.isFix ? t('practiceCompleteFix') : s.lesson.isPractice ? t('practiceDone') : (getLocale() === 'en' ? (getTheme()?.copy?.celebrateTitle || t('lessonComplete')) : t('lessonComplete')) }),
-    el('div', { class: 'xp-pill' }, [icon('star', { size: 26 }), `+${xpGained} ${t('xp')}`]),
+    (() => {
+      // The number counts up: the child watches the reward arrive instead of reading a finished total. A child who has
+      // asked their phone for less motion gets the final number straight away.
+      const label = el('span', { text: `+${xpGained} ${t('xp')}` });
+      const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+      if (xpGained > 0 && !reduced) {
+        label.textContent = `+0 ${t('xp')}`;
+        const started = performance.now();
+        const step = (now) => {
+          const k = Math.min(1, (now - started) / 700);
+          const eased = 1 - (1 - k) ** 3;
+          label.textContent = `+${Math.round(xpGained * eased)} ${t('xp')}`;
+          if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        setTimeout(() => { label.textContent = `+${xpGained} ${t('xp')}`; }, 900);
+      }
+      return el('div', { class: 'xp-pill' }, [icon('star', { size: 26 }), label]);
+    })(),
     el('p', { class: 'celebrate__body', text: praise }),
     el('div', { class: 'celebrate__stats' }, [
       el('div', { class: 'celebrate__stat' }, [el('b', { text: `${s.correct}/${s.total}` }), el('span', { text: t('statCorrect') })]),
