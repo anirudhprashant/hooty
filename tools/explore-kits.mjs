@@ -465,7 +465,7 @@ export const KITS = {
     ],
   },
   seasons: {
-    grades: [5, 9], subjects: ['social'], titleOnly: true, match: [/^(?![^\n]*\blocal winds?\b)[^\n]*\bseasons?\b/, /\brotation and revolution\b/, /\brevolutions? (of|around) the (sun|earth)\b/, /\btilt(ed)?\b/, /\baxis\b/, /\bsummer\b|\bwinter\b/],
+    grades: [5, 9], subjects: ['social', 'science'], titleOnly: true, match: [/^(?![^\n]*\blocal winds?\b)[^\n]*\bseasons?\b/, /\brotation and revolution\b/, /\brevolutions? (of|around) the (sun|earth)\b/, /\btilt(ed)?\b/, /\baxis\b/, /\bsummer\b|\bwinter\b/],
     // a lesson on local winds and India's season list is not about the Earth's tilt, and this kit calls July summer
     title: 'Go round the Sun', takeaway: 'The tilted Earth leans each half toward the Sun in turn, which makes the seasons.',
     tasks: [{ say: 'Go to December.', when: 'month == 12', then: 'Now the southern half leans toward the Sun: summer there, winter in India.' }],
@@ -819,7 +819,7 @@ export const KITS = {
   },
   plantparts: {
     grades: [3, 6], titleOnly: true,
-    match: [/parts? of (a |the )?plants?/, /plant parts/, /getting to know plants/, /\broots?,? stems? and leaves?\b/, /roots, stems, leaves, flowers/],
+    match: [/parts? of (a |the )?plants?/, /plant parts/, /getting to know plants/, /\broots?,? stems? and leaves?\b/, /roots, stems, leaves, flowers/, /leaves,? roots? and seeds?/, /grouping plants and animals/],
     title: 'Tap the parts of a plant', takeaway: 'Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them.',
     tasks: [
       { say: 'Find the part that holds the plant in the soil.', when: 'part == 0', then: 'The roots grip the soil and also take in water.' },
@@ -1042,7 +1042,7 @@ export const KITS = {
     ],
   },
   halfdouble: {
-    grades: [3, 3], match: [/\bhalf and double\b/, /\bdouble\b/, /half of\b|half as many/, /\bhalving\b|\bdoubling\b/],
+    grades: [3, 5], match: [/\bhalf and double\b/, /\bdouble\b/, /half of\b|half as many/, /\bhalving\b|\bdoubling\b/],
     title: 'Half and double', takeaway: 'Double is twice as many and half is one of two equal shares; an odd number has no whole half.',
     tasks: [
       { say: 'Show that 3 is half of 6.', when: 'n == 6 and who == 0', then: 'Half of 6 is 3, and 6 is double 3.' },

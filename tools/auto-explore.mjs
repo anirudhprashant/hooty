@@ -64,12 +64,12 @@ for (const slug of books) {
     // and write the record when everything holds. Returns true when it was placed.
     const place = (lesson, key, title, text, id, kit) => {
       const params = kit.params ? kit.params(`${title} ${text}`.toLowerCase(), lesson.facts || [], (facts.lessons || []).flatMap((l) => l.facts || []), grade, lang, words) : {};
-      if (kit.usable && !kit.usable(params)) return false;
+      if (kit.usable && !kit.usable(params)) { if (process.env.AE_DEBUG) console.log('   x', id, 'usable'); return false; }
       const cap = typeof kit.perChapter === 'object' ? (kit.perChapter[grade] ?? 2) : (kit.perChapter || 2);   // a number, or { grade: number } to raise it for one class
-      if ((used[slot(id, params)] || 0) >= cap) return false;
+      if ((used[slot(id, params)] || 0) >= cap) { if (process.env.AE_DEBUG) console.log('   x', id, 'cap', cap); return false; }
       const full = { ...(WIDGETS[id].params || {}), ...params };
       const tasks = (typeof kit.tasks === 'function' ? kit.tasks(params, lang) : kit.tasks).map((t) => ({ ...t, say: pick(t.say, lang), then: pick(t.then, lang) })).filter((t) => { try { return t.ok || canReach(id, full, t.when); } catch { return false; } });   // t.ok: true = checked by hand (the search is a sample, so an exact sum over many sliders can be missed)
-      if (!tasks.length) return false;
+      if (!tasks.length) { if (process.env.AE_DEBUG) console.log('   x', id, 'no tasks'); return false; }
       have[key] = { widget: id, ...(kit.params ? { params } : {}), title: pick(kit.title, lang), tasks: tasks.map(({ ok, ...t }) => t), takeaway: pick(kit.takeaway, lang), auto: true };
       used[slot(id, params)] = (used[slot(id, params)] || 0) + 1; added++; tally[id] = (tally[id] || 0) + 1;
       console.log(`${slug} ${ch} lesson ${key} "${title.slice(0, 50)}": ${id}`);
