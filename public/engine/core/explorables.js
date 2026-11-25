@@ -4113,13 +4113,16 @@ export const WIDGETS = {
       // the word, big enough to read on a phone, because every card here is read
       kids.push(R(14, 38, 250, 46, C.y, { w: 2.5, r: 12 }));
       kids.push(T(139, 70, word, { z: 26, w: 800 }));
-      // four meaning cards, big type: this is a reading card, not a diagram
+      // four meaning cards, big type: this is a reading card, not a diagram. Three lines fit a long book meaning;
+      // anything longer ends in an ellipsis rather than being cut off silently.
       meanings.slice(0, 4).forEach((m, j) => {
-        const x = 10 + (j % 2) * 292, y = 96 + Math.floor(j / 2) * 88;
+        const x = 10 + (j % 2) * 292, y = 92 + Math.floor(j / 2) * 98;
         const sel = j === mi, right = sel && key[wi] === j, wrong = sel && key[wi] !== j && mi !== 0;
-        kids.push(R(x, y, 288, 80, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel ? 5 : 2.5, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 14 }));
-        fit(m, 25).slice(0, 2).forEach((ln, i) => kids.push(T(x + 144, y + 33 + i * 25, ln, { z: 20, w: sel ? 700 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
-        if (right) kids.push(T(x + 264, y + 22, '\u2713', { z: 19, w: 800, f: '#1d7a45' }));
+        kids.push(R(x, y, 288, 90, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel ? 5 : 2.5, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 14 }));
+        const lines = fit(m, 24), shown = lines.slice(0, 3);
+        if (lines.length > 3) shown[2] = shown[2].replace(/\s\S*$/, '') + '\u2026';
+        shown.forEach((ln, i) => kids.push(T(x + 144, y + 30 + i * 24, ln, { z: 19, w: sel ? 700 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
+        if (right) kids.push(T(x + 266, y + 20, '\u2713', { z: 18, w: 800, f: '#1d7a45' }));
       });
       // the sentence lives in the read-out under the stage, at full size, where a child can actually read it
       const lead = sent ? `${L.sentence || 'From the book'}: "${sent.replace(/[.\u0964]+$/, '')}". ` : '';

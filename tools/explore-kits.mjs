@@ -1565,7 +1565,13 @@ export const KITS = {
       const say = String(text || '').toLowerCase();
       const pool = (glossaryWords || [])
         .filter((t) => t && t.term && t.meaning && String(t.term).length > 1 && String(t.meaning).length > 3)
-        .map((t) => ({ w: String(t.term), m: String(t.meaning), s: String(((t.src || []).find((x) => x && x.ev) || {}).ev || ''), own: say.includes(String(t.term).toLowerCase()) ? 1 : 0 }));
+        .map((t) => {
+          const raw = String(((t.src || []).find((x) => x && x.ev) || {}).ev || '').trim();
+          // an excerpt often ends at a dash or a comma; a broken one starts on a vowel sign or mid-word
+          const clean = raw.replace(/[\s,;:\u2014\u2013-]+$/, '');
+          const okStart = /^["'(]?[A-Z\u0904-\u0939]/.test(clean);
+          return { w: String(t.term), m: String(t.meaning), s: clean.length >= 15 && okStart ? clean : '', own: say.includes(String(t.term).toLowerCase()) ? 1 : 0 };
+        });
       // one meaning per card, so no card ever has two right answers; the lesson's own words come first
       const seen = new Set(), picked = [];
       for (const t of pool.sort((a, b) => b.own - a.own)) {
