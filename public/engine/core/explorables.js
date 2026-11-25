@@ -4091,6 +4091,44 @@ export const WIDGETS = {
       return { kids, say: `Four points sit on one circle. The orange angles are opposite each other and add to ${s13} degrees. The blue angles are the other opposite pair and add to ${s24} degrees. Both pairs always add to 180.` };
     },
   },
+  wordlab: {
+    subject: 'english',
+    about: 'A word a chapter teaches, the sentence the book uses it in, and six meanings on cards. Pick the meaning that fits the sentence. For vocabulary, word meanings, reading a word inside its own sentence, words a chapter teaches, and using context to guess a meaning.',
+    params: { words: [], meanings: [], key: [], sents: [], labels: {} },
+    dynamicSliders: (p) => {
+      const n = Math.max(1, (p.words || []).length), L = p.labels || {};
+      return [['word', L.pickWord || 'Pick a word', 0, n - 1, 1, 0], ['meaning', L.pickMeaning || 'Which meaning fits?', 0, n - 1, 1, 0]];
+    },
+    draw(v, p) {
+      const words = p.words || [], meanings = p.meanings || [], sents = p.sents || [], key = p.key || [], L = p.labels || {};
+      const n = Math.max(1, Math.min(words.length, meanings.length));
+      const wi = Math.max(0, Math.min(n - 1, v.word | 0)), mi = Math.max(0, Math.min(n - 1, v.meaning | 0));
+      const word = words[wi] || '', sent = sents[wi] || '', good = key[wi] === mi;
+      // wrap on spaces: SVG text does not wrap itself, and a Hindi meaning is no longer than an English one
+      const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 20, `${wi + 1} / ${n}`, { z: 12, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 20, L.heading || 'One word, one sentence', { z: 12, w: 700, a: 'end', f: '#7a6b99' }));
+      // the word on a yellow pill, and beside it the book's own sentence, so the word is met where it lives
+      kids.push(R(14, 40, 212, 38, C.y, { w: 2.5, r: 11 }));
+      kids.push(T(120, 66, word, { z: 21, w: 800 }));
+      if (sent) fit(sent, 44).slice(0, 3).forEach((ln, i) => kids.push(T(240, 54 + i * 16, `"${ln}"`, { z: 12.5, w: 500, a: 'start', f: '#4a3b6b' })));
+      // six meaning cards; the chosen one is outlined, green when it fits the sentence and red when it does not
+      const cw = 182, chh = 60;
+      meanings.slice(0, 6).forEach((m, j) => {
+        const x = 12 + (j % 3) * (cw + 8), y = 100 + Math.floor(j / 3) * (chh + 10);
+        const sel = j === mi, right = sel && key[wi] === j, wrong = sel && key[wi] !== j;
+        kids.push(R(x, y, cw, chh, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel ? 4 : 2, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 10 }));
+        fit(m, 27).slice(0, 2).forEach((ln, i) => kids.push(T(x + cw / 2, y + 24 + i * 17, ln, { z: 12.5, w: sel ? 700 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
+        if (right) kids.push(T(x + cw - 15, y + 16, '\u2713', { z: 15, w: 800, f: '#1d7a45' }));
+      });
+      const say = !words.length ? (L.empty || 'No words for this chapter yet.')
+        : good ? `${L.yes || 'Yes.'} ${word} ${L.means || 'means'} ${meanings[mi]}`
+          : mi === 0 ? (L.pick || 'Choose the meaning that fits the sentence.')
+            : `${L.no || 'Not this one.'} ${L.readAgain || 'Read the sentence above, then try another meaning.'}`;
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

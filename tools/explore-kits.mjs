@@ -95,7 +95,7 @@ export const KITS = {
     // Landforms are Class 6 in the new NCERT book, but mountains, plateaus and plains are met from Class 4 onwards, so the
     // same walk serves the earlier books. The match words are the lesson's own subject words, so a chapter that merely
     // mentions a plain in passing scores nothing: the bar is one title hit, or three fact hits.
-    grades: [4, 6], subjects: ['social'],
+    grades: [4, 10], subjects: ['social'], titleOnly: true,
     match: [/landforms?/, /plateaus?/, /\bplains?\b/, /\bdeserts?\b/, /mountains? and (plateaus|plains)/, /deccan plateau|tibetan plateau/, /rise no more than 300 metres/, /broad base, steep slopes/],
     title: 'Walk across the land', takeaway: 'Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.',
     tasks: [
@@ -328,7 +328,7 @@ export const KITS = {
     ],
   },
   symmetry: {
-    grades: [4, 7], match: [/(?<!rotational )symmetr/, /mirror line/],
+    grades: [3, 7], match: [/(?<!rotational )symmetr/, /mirror line/, /mirror image/],
     title: 'Lines of symmetry', takeaway: 'A regular shape has as many lines of symmetry as it has sides.',
     tasks: [{ say: 'Make a shape with 6 lines of symmetry.', when: 'n == 6', then: 'A regular hexagon has 6 sides and 6 lines of symmetry.' }],
   },
@@ -357,7 +357,7 @@ export const KITS = {
     ],
   },
   algebratiles: {
-    grades: [6, 8], match: [/algebraic expressions?/, /\bvariables?\b/, /letter[- ]numbers?/, /like terms/, /\balgebra\b/],
+    grades: [6, 9], avoid: [/parity/i, /integers?/i], match: [/algebraic expressions?/, /\bvariables?\b/, /letter[- ]numbers?/, /like terms/, /\balgebra\b/, /\bexpressions?\b/],
     title: 'Stretch the x bars', takeaway: 'A letter stands for a number: change x and every x in the expression changes with it.',
     tasks: [
       { say: 'Make 3x + 2 equal 14.', when: 'x == 4', then: '3 x 4 + 2 = 14.' },
@@ -383,7 +383,7 @@ export const KITS = {
     ],
   },
   thermometer: {
-    grades: [6, 8], subjects: ['social'], match: [/thermometers?/, /\bfever\b/, /celsius|fahrenheit/, /hot (or|and) cold/, /measuring temperature|temperature and precipitation/],
+    grades: [5, 10], subjects: ['social'], avoid: [/density/i, /pressure/i], match: [/thermometers?/, /\bfever\b/, /celsius|fahrenheit/, /hot (or|and) cold/, /measuring temperature|temperature and precipitation/, /\btemperature\b/],
     params: (text) => ({ kind: /\bbody\b|\bfever\b|clinical|doctor|\bpatient\b/.test(text) && !/laboratory|\blab\b/.test(text) ? 'clinical' : 'lab' }),
     title: 'Read the thermometer', takeaway: 'Find the value of one small mark first, then count the marks.',
     tasks: (p) => (p.kind === 'clinical'
@@ -646,7 +646,7 @@ export const KITS = {
     ]),
   },
   shadow: {
-    grades: [4, 7], match: [/shadows?/, /\bopaque\b|\btranslucent\b|\btransparent\b/, /light travels in (a )?straight/],
+    grades: [2, 7], subjects: ['maths'], match: [/shadows?/, /\bopaque\b|\btranslucent\b|\btransparent\b/, /light travels in (a )?straight/],
     title: 'Make a shadow', takeaway: 'Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.',
     tasks: [{ say: 'Make the shadow as big as you can.', when: 'd == 10', then: 'Closest to the lamp, the object blocks the most light.' }],
   },
@@ -670,7 +670,7 @@ export const KITS = {
     ],
   },
   watercycle: {
-    grades: [3, 7], match: [/water cycle/, /evaporat/, /condens/, /precipitat/, /\brainwater\b/, /\bground ?water\b/, /\bevaporation\b/],
+    grades: [3, 7], match: [/water cycle/, /evaporat/, /condens/, /precipitat/, /\brainwater\b/, /\bground ?water\b/, /\bevaporation\b/, /where (the )?water goes/, /\brains?\b/],
     title: 'Follow a drop', takeaway: 'Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle.',
     tasks: [{ say: 'Follow the water until it falls as rain.', when: 'step == 3', then: 'Drops in the clouds grow heavy and fall.' }, { say: 'Finish the cycle.', when: 'step == 4', then: 'Rivers carry the water back to the sea, ready to start again.' }],
   },
@@ -842,7 +842,7 @@ export const KITS = {
     ],
   },
   twobins: {
-    grades: [3, 4], match: [/\bgreen (dust)?bin\b/, /\bblue (dust)?bin\b/, /separat(e|ing) (the )?waste/, /waste[^.\n]{0,30}\bseparat/, /dustbins? of two colou?rs/, /\bcompost/],
+    grades: [3, 6], match: [/\bgreen (dust)?bin\b/, /\bblue (dust)?bin\b/, /separat(e|ing) (the )?waste/, /waste[^.\n]{0,30}\bseparat/, /dustbins? of two colou?rs/, /\bcompost/, /waste management/],
     title: 'Sort the waste into two bins', takeaway: 'Green bin: peels, leaves and eggshells rot into compost. Blue bin: glass, plastic and paper can be made into new things.',
     tasks: [
       { say: 'Put the banana peel in the green bin.', when: 'item == 0 and bin == 0', then: 'Food scraps rot and become compost, food for plants.' },
@@ -940,7 +940,7 @@ export const KITS = {
     ],
   },
   money: {
-    grades: [1, 8], perChapter: { 1: 5, 2: 5 }, minScore: { 1: 4 }, params: (text, f, all, grade) => ({ kind: grade <= 2 ? 'small' : 'rupees' }), match: [/\bdenominations?\b/, /\bdifferent amounts\b/, /\bspent\b|\bspend\b/, /\bbuying\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b|\bshops?\b/, /\bbalances? to customers\b/, /\bbarter\b/, /\bmedium of exchange\b/],
+    grades: [1, 10], subjects: ['social'], avoid: [/rights?|duties|fundamental/i], perChapter: { 1: 5, 2: 5 }, minScore: { 1: 4 }, params: (text, f, all, grade) => ({ kind: grade <= 2 ? 'small' : 'rupees' }), match: [/\bdenominations?\b/, /\bdifferent amounts\b/, /\bspent\b|\bspend\b/, /\bbuying\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b|\bshops?\b/, /\bbalances? to customers\b/, /\bbarter\b/, /\bmedium of exchange\b/],
     title: 'Pay the exact amount', takeaway: 'The same amount can be made with different notes and coins; big notes first uses the fewest.',
     tasks: (p) => p.kind === 'small' ? [
       { say: 'Pay \u20b966 using the notes and coins.', when: 'amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66', then: 'For example \u20b950 + \u20b910 + \u20b95 + \u20b91 = \u20b966.' },
@@ -1060,7 +1060,7 @@ export const KITS = {
     ],
   },
   numberchart: {
-    grades: [2, 2], perChapter: { 2: 3 }, match: [/number charts?|hundred chart/, /number patterns?/, /counting backwards?|count backwards?|backward sequence/, /\bjump(s|ing|y)?\b|skip count/],
+    grades: [2, 4], perChapter: { 2: 3 }, match: [/number charts?|hundred chart/, /addition chart/, /number patterns?/, /counting backwards?|count backwards?|backward sequence/, /\bjump(s|ing|y)?\b|skip count/],
     title: 'Colour the pattern on the chart', takeaway: 'Number patterns make shapes on a chart: counting by 10 goes straight down, and 1, 12, 23 slants.',
     tasks: [
       { say: 'Show the pattern 1, 4, 7 and keep going.', when: 'start == 1 and step == 3 and n >= 5', then: 'Add 3 each time: 1, 4, 7, 10, 13.' },
@@ -1187,7 +1187,7 @@ export const KITS = {
          { say: 'Add 7 and 3.', when: 'a == 7 and b == 3', then: '7 + 3 = 10.' }]),
   },
   numberwords: {
-    grades: [1, 1], perChapter: { 1: 6 }, match: [/counting \d+ to \d+|\d+ to \d+/, /\bwritten as\b/, /\btens? frames?\b/, /\bnumber (names?|list)\b/, /\bmissing numbers?\b/, /\beach box can hold ten\b|\btens\b/],
+    grades: [1, 3], perChapter: { 1: 6 }, match: [/counting \d+ to \d+|\d+ to \d+/, /\bwritten as\b/, /\btens? frames?\b/, /\bnumber (names?|list)\b/, /\bmissing numbers?\b/, /\beach box can hold ten\b|\btens\b/],
     title: 'Count to a hundred', takeaway: 'Every full row is a ten: tens and ones tell you the number, and the number name says it in words.',
     tasks: [
       { say: 'Show thirty six. How many tens and ones?', when: 'n == 36', then: 'Thirty Six is 3 tens and 6 ones.' },
@@ -1326,7 +1326,7 @@ export const KITS = {
     ],
   },
   barter: {
-    grades: [6, 8], subjects: ['social'], perChapter: 2,
+    grades: [3, 10], subjects: ['social'], perChapter: 2,
     match: [/\bbarter\b/, /double coincidence of wants/, /medium of exchange/, /forms? of money/, /earliest form of exchange/, /why do we need money|need (for )?money/],
     title: 'Swap in the village market',
     takeaway: 'Barter needs a double coincidence of wants: each person must want what the other has. Money is accepted by everyone, so it replaces barter.',
@@ -1485,7 +1485,7 @@ export const KITS = {
     ],
   },
   river: {
-    grades: [4, 6], subjects: ['social'], perChapter: 1,
+    grades: [4, 10], subjects: ['social'], perChapter: 1,
     match: [/tributar/, /\bdelta\b/, /mountain to sea/, /source to sea/, /\bstreams?\b/, /\breservoir\b/, /\bdams?\b/],
     title: 'Follow the river to the sea', takeaway: 'A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta.',
     tasks: [
@@ -1546,6 +1546,54 @@ export const KITS = {
       { say: 'Move C right across to the other side of the big arc.', when: 'mode == 0 and c >= 85', then: 'The angle at C is still half the angle at the centre: every point on the same arc sees AB at the same angle.' },
       { say: 'Switch to the four-sided shape and look at the opposite angles.', when: 'mode == 1', then: 'The two pairs of opposite angles each add up to 180 degrees.' },
     ],
+  },
+  wordlab: {
+    // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
+    // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only
+    // when no kit above fits, so a real simulation always wins; `fallback` is what tools/auto-explore.mjs looks for.
+    grades: [1, 10], subjects: ['english', 'hindi', 'social', 'science', 'maths'], languages: ['en', 'hi'],
+    fallback: true, minScore: 999, perChapter: 1, match: [],
+    title: { en: 'Word lab', hi: 'शब्द की प्रयोगशाला' },
+    takeaway: {
+      en: 'A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.',
+      hi: 'शब्द वाक्य के अंदर सबसे आसानी से याद रहता है। वाक्य पढ़िए, वह अर्थ चुनिए जो उसमें फिट बैठे, और शब्द आपका हो गया।',
+    },
+    params: (text, facts, chapter, grade, lang, glossaryWords) => {
+      const L = lang === 'hi'
+        ? { heading: 'एक शब्द, एक वाक्य', pickWord: 'शब्द चुनिए', pickMeaning: 'इसका अर्थ क्या है?', yes: 'हाँ!', no: 'यह नहीं।', means: 'का अर्थ है', readAgain: 'ऊपर का वाक्य फिर पढ़िए, फिर दूसरा अर्थ चुनिए।', pick: 'वह अर्थ चुनिए जो वाक्य में फिट बैठे।', empty: 'इस अध्याय के शब्द अभी तैयार नहीं हैं।' }
+        : { heading: 'One word, one sentence', pickWord: 'Pick a word', pickMeaning: 'Which meaning fits?', yes: 'Yes.', no: 'Not this one.', means: 'means', readAgain: 'Read the sentence above, then try another meaning.', pick: 'Choose the meaning that fits the sentence.', empty: 'No words for this chapter yet.' };
+      const say = String(text || '').toLowerCase();
+      const pool = (glossaryWords || [])
+        .filter((t) => t && t.term && t.meaning && String(t.term).length > 1 && String(t.meaning).length > 3)
+        .map((t) => ({ w: String(t.term), m: String(t.meaning), s: String(((t.src || []).find((x) => x && x.ev) || {}).ev || ''), own: say.includes(String(t.term).toLowerCase()) ? 1 : 0 }));
+      // one meaning per card, so no card ever has two right answers; the lesson's own words come first
+      const seen = new Set(), picked = [];
+      for (const t of pool.sort((a, b) => b.own - a.own)) {
+        if (seen.has(t.m)) continue;
+        seen.add(t.m); picked.push(t);
+        if (picked.length >= 6) break;
+      }
+      if (picked.length < 3) return { words: [], meanings: [], key: [], sents: [], labels: L };
+      const words = picked.map((t) => t.w), sents = picked.map((t) => t.s), truth = picked.map((t) => t.m);
+      // a derangement: card j never holds word j's meaning, so the lab opens unanswered and the position gives nothing away
+      const order = truth.map((_, i) => i);
+      let seed = 7;
+      for (let i = 0; i < picked.length; i++) { seed = (seed * 1103515245 + 12345) % 2147483647; const j = i + (seed % (picked.length - i)); [order[i], order[j]] = [order[j], order[i]]; }
+      for (let i = 0; i < order.length; i++) if (order[i] === i) { const j = (i + 1) % order.length; [order[i], order[j]] = [order[j], order[i]]; }
+      return { words, meanings: order.map((k) => truth[k]), key: words.map((_, i) => order.indexOf(i)), sents, labels: L };
+    },
+    usable: (p) => !!(p && p.words && p.words.length >= 3 && p.key && p.key.every((k, i) => k !== i)),
+    tasks: (p, lang) => {
+      const out = [];
+      for (let i = 0; i < p.words.length && out.length < 2; i++) {
+        const k = p.key[i];
+        if (k === 0) continue;   // the meaning slider opens at 0, so a challenge there would already be true
+        out.push(lang === 'hi'
+          ? { say: `"${p.words[i]}" का अर्थ चुनिए।`, when: `word == ${i} and meaning == ${k}`, then: `"${p.words[i]}" का अर्थ है: ${p.meanings[k]}` }
+          : { say: `Choose what "${p.words[i]}" means.`, when: `word == ${i} and meaning == ${k}`, then: `"${p.words[i]}" means: ${p.meanings[k]}` });
+      }
+      return out;
+    },
   },
 };
 
