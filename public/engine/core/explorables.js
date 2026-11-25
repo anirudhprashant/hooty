@@ -4352,6 +4352,68 @@ export const WIDGETS = {
       return { kids, say: `${area} sq km can hold about ${cap} tigers. With ${v.protect}% protection, about ${alive} survive: poaching, shrinking habitat and fewer prey are what take the rest.` };
     },
   },
+  trade: {
+    subject: 'social',
+    about: 'A tax on an imported toy and what it does to the price, against a toy made at home: the buyer switches when the import becomes dearer, which is what a trade barrier is for. For foreign trade, imports, trade barriers, tariffs and protecting domestic producers.',
+    params: {},
+    sliders: [['tariff', 'Tax on the imported toy (%)', 0, 100, 5, 0], ['cost', 'Price of the Indian toy (₹)', 150, 400, 10, 250]],
+    draw(v) {
+      const base = 200, price = Math.round(base * (1 + v.tariff / 100)), home = v.cost, importWins = price < home;
+      const maxP = Math.max(price, home) * 1.1;
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, 'Two toys in the shop', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, `tax ${v.tariff}%`, { z: 14, w: 700, a: 'end', f: INK }));
+      const cols = [
+        { x: 40, name: 'Imported toy', note: `₹200 + ${v.tariff}% tax`, worth: price, colour: importWins ? C.b : '#a9c4e8' },
+        { x: 330, name: 'Indian toy', note: 'made at home', worth: home, colour: importWins ? '#e3c98f' : C.y },
+      ];
+      cols.forEach((c) => {
+        const h = (c.worth / maxP) * 122, y = 252 - h;
+        kids.push(R(c.x, 60, 230, 196, '#ffffff', { w: 1.5, s: '#e3dccb', r: 14 }));
+        kids.push(T(c.x + 115, 80, c.name, { z: 16, w: 800 }));
+        kids.push(T(c.x + 115, 99, c.note, { z: 12, w: 600, f: '#7a6b99' }));
+        kids.push(R(c.x + 45, y, 140, h, c.colour, { w: 2, r: 8 }));
+        kids.push(T(c.x + 115, y - 9, `₹${c.worth}`, { z: 18, w: 800 }));
+      });
+      const chosen = importWins ? 'the imported toy' : 'the Indian toy';
+      kids.push(T(300, 280, `buyers choose ${chosen}`, { z: 16, w: 800, f: importWins ? '#1f63d9' : '#a05600' }));
+      const say = v.tariff === 0
+        ? `With no tax, the imported toy costs ₹${price} and the Indian toy ₹${home}, so buyers choose ${chosen}. A tax is what a government uses to change that.`
+        : `With a ${v.tariff}% tax the imported toy costs ₹${price} and the Indian toy ₹${home}, so buyers choose ${chosen}. The tax is a trade barrier: it protects the maker at home, and buyers pay more.`;
+      return { kids, say };
+    },
+  },
+  printing: {
+    subject: 'social',
+    about: 'A hundred-page book made by hand, by woodblock or by printing press, and how many days each takes for a run of copies. For the print revolution, the cost of books, the reading public and why print spread ideas so fast.',
+    params: {},
+    sliders: [['method', 'How is the book made? (0 hand copy, 1 woodblock, 2 printing press)', 0, 2, 1, 0], ['copies', 'How many copies?', 1, 1000, 1, 100]],
+    draw(v) {
+      const pages = 100, copies = v.copies, method = Math.max(0, Math.min(2, v.method | 0));
+      const ways = [
+        { n: 'Hand copy', pd: 5, note: 'a scribe, one book at a time' },
+        { n: 'Woodblock', pd: 60, note: 'a carved block, one page at a time' },
+        { n: 'Printing press', pd: 5000, note: 'movable type, page after page' },
+      ];
+      const rows = ways.map((w, i) => ({ ...w, i, days: Math.max(1, Math.round((pages * copies) / w.pd)) }));
+      const maxDays = Math.max(...rows.map((r) => r.days));
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, `${copies} copies of a ${pages}-page book`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'how long each way takes', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      rows.forEach((r, j) => {
+        const y = 52 + j * 62, sel = j === method;
+        const bw = Math.max(8, (Math.log10(r.days + 1) / Math.log10(maxDays + 1)) * 340);
+        kids.push(R(12, y, 576, 54, sel ? '#fff3d6' : '#ffffff', { w: sel ? 3 : 1.5, s: sel ? '#e8b44a' : '#e3dccb', r: 12 }));
+        kids.push(T(30, y + 24, r.n, { z: 16, w: 800, a: 'start', f: INK }));
+        kids.push(T(30, y + 43, r.note, { z: 12, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(R(250, y + 20, 340, 14, '#f1ecdf', { w: 0, r: 7 }));
+        kids.push(R(250, y + 20, Math.min(340, bw), 14, sel ? C.o : C.b, { w: 0, r: 7 }));
+        kids.push(T(566, y + 34, r.days >= 365 ? `${(r.days / 365).toFixed(1)} years` : `${r.days} days`, { z: 15, w: 800, a: 'end', f: sel ? '#a05600' : '#4a3b6b' }));
+      });
+      const chosen = rows[method];
+      return { kids, say: `By ${chosen.n.toLowerCase()}, ${copies} copies of a ${pages}-page book take about ${chosen.days >= 365 ? (chosen.days / 365).toFixed(1) + ' years' : chosen.days + ' days'}. The press is so much faster that books became cheap, and more people could read them.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

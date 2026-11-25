@@ -1643,8 +1643,8 @@ export const KITS = {
   freight: {
     // Class 10 "Lifelines of National Economy". The costs are rough teaching rates: what matters is the trade-off
     // between cheap and slow, and fast and dear.
-    grades: [8, 10], subjects: ['social'], perChapter: 1, avoid: [/portuguese|dutch|french|british|colonial|trenches?|reefs?|globalis|globaliz/i],
-    match: [/transport/, /roadways?|railways?/, /waterways?|sea ports?|ports?/, /airways?|air transport/, /lifelines?/, /pipelines?/, /freight|goods trains?/],
+    grades: [8, 10], subjects: ['social'], titleOnly: true, perChapter: 1, avoid: [/portuguese|dutch|french|british|colonial|trenches?|reefs?|globalis|globaliz/i],
+    match: [/transport/, /roadways?|railways?/, /waterways?|sea ?ports?|\bports?\b/, /airways?|air transport/, /lifelines?/, /pipelines?/, /freight|goods trains?/],
     title: 'Send one tonne', takeaway: 'Road carries goods door to door, rail is cheap for bulk over long distances, air is fastest and dearest, and water is the cheapest but the slowest. A country needs all of them, which is why they are called its lifelines.',
     tasks: [
       { say: 'Send it by rail.', when: 'mode == 1', then: 'Rail is cheaper than road for bulk over long distances.' },
@@ -1697,6 +1697,27 @@ export const KITS = {
       { say: 'Give the reserve full protection from poaching.', when: 'protect == 100', then: 'With full protection, every tiger the forest can hold survives.' },
       { say: 'Grow the reserve so it can hold about 50 tigers.', when: 'area == 1000', then: 'At about twenty square kilometres for each tiger, 1,000 sq km holds around fifty.' },
       { say: 'Remove protection completely and watch the tigers fall.', when: 'protect == 0', then: 'Without guards, poaching leaves only a fraction of the tigers the forest could hold.' },
+    ],
+  },
+  trade: {
+    // Class 10 "Globalisation and the Indian Economy", the trade-barrier lesson. The prices are a teaching example:
+    // what matters is that a tax lifts the import above the home price and buyers switch.
+    grades: [9, 10], subjects: ['social'], perChapter: 1,
+    match: [/\btariffs?\b/, /trade barriers?/, /tax on imports?/, /imported toys?|chinese toys?/, /protect(ing)? domestic producers?/, /foreign trade/],
+    title: 'Two toys in the shop', takeaway: 'A tax on imports is a trade barrier. It raises the price of the imported good, so buyers switch to the one made at home, which protects the home producer but makes buyers pay more.',
+    tasks: [
+      { say: 'Set a tax that makes the imported toy dearer than the Indian one.', when: 'tariff >= 30 and cost == 250', then: 'At a 25% tax the import costs ₹250, the same as the Indian toy; above that, buyers switch to the Indian toy.' },
+      { say: 'Remove the tax completely.', when: 'tariff == 0', then: 'With no tax the imported toy is cheaper, so buyers choose it and the home maker loses customers.' },
+    ],
+  },
+  printing: {
+    // Class 10 "Print Culture and the Modern World": the print revolution as speed.
+    grades: [8, 10], subjects: ['social'], perChapter: 1,
+    match: [/print(ing)? (revolution|culture|press)/, /woodblock/, /movable type/, /handwrit|manuscript/, /reading (public|mania)/, /printed books?/],
+    title: 'Hand copy or printing press?', takeaway: 'A scribe could copy a few pages a day; a printing press could print thousands. That is why printed books became cheap, why more people learned to read, and why new ideas could spread across a country in years instead of centuries.',
+    tasks: [
+      { say: 'Print 100 copies by printing press.', when: 'method == 2 and copies == 100', then: 'The press prints a hundred copies in about two days; a scribe would need years.' },
+      { say: 'See how long one copy by hand takes.', when: 'method == 0 and copies == 1', then: 'A scribe copies about five pages a day, so one hundred pages take about twenty days.' },
     ],
   },
   wordlab: {
