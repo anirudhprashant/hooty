@@ -4608,7 +4608,7 @@ export const WIDGETS = {
       const pick = Math.max(0, Math.min(7, v.pick | 0));
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, 'India and her neighbours', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, 'N up the page', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'N up the page', { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
       // a three by three compass: the cells hold the neighbours that lie that way
       const cells = [
         { gx: 0, gy: 0, title: 'north-west', names: [0, 1] },
@@ -4625,24 +4625,25 @@ export const WIDGETS = {
         const x = 18 + c.gx * 190, y = 48 + c.gy * 74;
         const isIndia = c.title === 'India';
         kids.push(R(x, y, 176, 64, isIndia ? '#f1e6ff' : '#ffffff', { w: 2, s: isIndia ? '#9b7bd0' : '#e3dccb', r: 12 }));
-        kids.push(T(x + 88, y + 16, c.title, { z: 11, w: 700, f: isIndia ? '#6b4a9e' : '#9b90b5' }));
+        kids.push(T(x + 88, y + 15, c.title, { z: 14, w: 700, f: isIndia ? '#6b4a9e' : '#9b90b5' }));
         if (isIndia) {
-          kids.push(T(x + 88, y + 44, 'India', { z: 18, w: 800, f: '#4b2597' }));
+          kids.push(T(x + 88, y + 45, 'India', { z: 19, w: 800, f: '#4b2597' }));
           return;
         }
         if (!c.names.length) {
           const sea = c.title === 'south-east' ? 'Bay of Bengal' : 'Arabian Sea';
-          kids.push(T(x + 88, y + 42, sea, { z: 12, w: 600, f: '#7aa2c8' }));
+          kids.push(T(x + 88, y + 43, sea, { z: 14, w: 600, f: '#7aa2c8' }));
           return;
         }
+        const two = c.names.length > 1;
         c.names.forEach((idx, k) => {
           const on = idx === pick;
-          const cy = y + 34 + k * 15;
-          kids.push(T(x + 88, cy, all[idx].n, { z: on ? 16 : 13, w: on ? 800 : 600, f: on ? '#a05600' : INK }));
+          const cy = y + (two ? 29 : 36) + k * (two ? 19 : 0);
+          kids.push(T(x + 88, cy, all[idx].n, { z: on ? (two ? 17 : 19) : (two ? 16 : 17), w: on ? 800 : 600, f: on ? '#a05600' : INK }));
         });
       });
       const it = all[pick];
-      kids.push(T(300, 285, `${it.n}: to the ${it.dir}, ${it.sea ? 'across the sea' : 'on land'} \u2014 ${it.note}`, { z: 13, w: 700, f: '#4a3b6b' }));
+      kids.push(T(300, 283, `${it.n}, to the ${it.dir}, ${it.sea ? 'across the sea' : 'on land'}.`, { z: 16, w: 700, f: '#4a3b6b' }));
       return { kids, say: `${it.n} lies to the ${it.dir} of India${it.sea ? ', across the sea' : ''}. ${it.note}` };
     },
   },
@@ -4670,12 +4671,12 @@ export const WIDGETS = {
       const rows = ways.map((w, i) => ({ ...w, i, hours: time(i) }));
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, `A message to go ${km} km`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, 'how long it takes', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'how long it takes', { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
       rows.forEach((r, j) => {
         const y = 50 + j * 46, sel = j === how;
         kids.push(R(12, y, 576, 40, sel ? '#fff3d6' : '#ffffff', { w: sel ? 3 : 1.5, s: sel ? '#e8b44a' : '#e3dccb', r: 11 }));
         kids.push(T(28, y + 25, r.n, { z: 16, w: 800, a: 'start', f: INK }));
-        kids.push(T(170, y + 25, r.note, { z: 12, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(170, y + 25, r.note, { z: 14, w: 600, a: 'start', f: '#8a7aa8' }));
         const days = (h) => (h / 24 >= 10 ? String(Math.round(h / 24)) : (h / 24).toFixed(1));
         const label = r.hours === null ? 'not that far' : r.hours === 0 ? 'at once' : r.hours < 24 ? `${r.hours} h` : `${days(r.hours)} days`;
         kids.push(T(566, y + 25, label, { z: 15, w: 800, a: 'end', f: sel ? '#a05600' : '#4a3b6b' }));
