@@ -55,7 +55,7 @@ export const KITS = {
   germs: {
     // The Class 8 health chapter is the home of this one, but the same idea is met in Class 7 (hygiene) and Class 9 (why
     // we fall ill). The match asks for disease and hygiene words, never "health" alone, which is too broad.
-    grades: [3, 9], subject: 'science', avoid: [/\bteeth\b|dental|oral hygiene/i],
+    grades: [3, 9], subject: 'science', avoid: [/chewing|oral hygiene|dental care/i],
     match: [/communicable/, /diseases?/, /germs?/, /hand ?wash/, /hygiene/, /pathogens?/, /prevention of disease/, /clean water/, /vaccin/, /sanitation/, /clean(ing)? (teeth|hands|body)/, /daily habits?/, /healthy habits?/],
     title: 'Watch an illness spread', takeaway: 'A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner.',
     tasks: [
@@ -1797,6 +1797,27 @@ export const KITS = {
     tasks: [
       { say: 'Let the richest tenth take 60% of the income.', when: 'rich == 60', then: 'The average is still $10,000, but a typical person now has about $4,400.' },
       { say: 'Make the country almost equal, with the richest tenth taking 10%.', when: 'rich == 10', then: 'When the share is close to equal, the average and the typical person are close too.' },
+    ],
+  },
+  startup: {
+    // Class 9 "From Ideas to Startups": price, units, costs, profit and the break-even point.
+    grades: [9, 10], subjects: ['social'], perChapter: 1,
+    match: [/entrepreneur/, /\bprofit\b/, /business venture|start a business|run a business|businesses?/, /costs? of production/, /break[- ]even/],
+    title: 'Run a small business', takeaway: 'Revenue is the price times the units sold; cost is the fixed cost plus the cost of each unit; profit is what is left. Below the break-even number of sales, the business loses money even though it is selling.',
+    tasks: [
+      { say: 'Break even, with no profit and no loss.', when: 'profit == 0', then: 'At ₹140 for 100 units, revenue and cost are both ₹14,000: the break-even point.' },
+      { say: 'Make a loss.', when: 'profit < 0', then: 'When costs are larger than the money coming in, the business loses money.' },
+      { say: 'Sell 200 units at ₹200.', when: 'units == 200 and price == 200', then: 'Revenue ₹40,000, cost ₹26,000, profit ₹14,000.' },
+    ],
+  },
+  budget: {
+    // Class 9 "Governance and Public Policy": taxes pay for schools, roads and health.
+    grades: [9, 10], subjects: ['social'], perChapter: 1, avoid: [/democracy|constitution|parliament|elections?|judiciary/i],
+    match: [/public services?/, /tax(es|ation)?/, /\bgovernance\b/, /public (money|funds?|spending)/, /\bbudget\b/],
+    title: 'What taxes pay for', takeaway: 'Public services are paid for out of taxes. A higher tax rate collects more money for schools, roads and health; the same money can be shared differently between them, so a budget is a set of choices.',
+    tasks: [
+      { say: 'Raise the tax to 30%.', when: 'tax == 30', then: 'At 30% the same 100 people pay ₹30,00,000, enough for more schools, roads and health.' },
+      { say: 'Send half the money to schools.', when: 'schools == 50', then: 'Half to schools leaves a quarter each for roads and health.' },
     ],
   },
   wordlab: {
