@@ -3554,7 +3554,7 @@
       {
        "id": "social-science-g10-ch2-l1",
        "title": "Flora and Fauna in India",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -3602,68 +3602,6 @@
            "p": 13
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch2-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "biodiversity",
-           "habitat",
-           "conservation",
-           "endangered species"
-          ],
-          "meanings": [
-           "Species whose remaining population is at risk and needs protection.",
-           "The rich variety of wildlife and cultivated species, diverse in form and function, closely integrated in nature.",
-           "The natural home of plants and animals.",
-           "Protection of forests and wildlife to preserve ecological and genetic diversity."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "Biodiversity or Biological Diversity is immensely rich in wildlife",
-           "",
-           "Conservation preserves the ecological diversity and our life support systems",
-           ""
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"biodiversity\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"biodiversity\" means: The rich variety of wildlife and cultivated species, diverse in form and function, closely integrated in nature."
-          },
-          {
-           "say": "Choose what \"habitat\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"habitat\" means: The natural home of plants and animals."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -4538,7 +4476,7 @@
       {
        "id": "social-science-g10-ch2-l3",
        "title": "Project Tiger",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -4589,6 +4527,36 @@
            "p": 14
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch2-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "tigerreserve",
+         "params": {},
+         "title": "A tiger reserve",
+         "tasks": [
+          {
+           "say": "Give the reserve full protection from poaching.",
+           "when": "protect == 100",
+           "then": "With full protection, every tiger the forest can hold survives."
+          },
+          {
+           "say": "Grow the reserve so it can hold about 50 tigers.",
+           "when": "area == 1000",
+           "then": "At about twenty square kilometres for each tiger, 1,000 sq km holds around fifty."
+          },
+          {
+           "say": "Remove protection completely and watch the tigers fall.",
+           "when": "protect == 0",
+           "then": "Without guards, poaching leaves only a fraction of the tigers the forest could hold."
+          }
+         ],
+         "takeaway": "A forest holds only as many tigers as its area and its prey allow, about one tiger per twenty square kilometres, and poaching takes the rest. That is why Project Tiger set up reserves and guards them.",
+         "explanation": "A forest holds only as many tigers as its area and its prey allow, about one tiger per twenty square kilometres, and poaching takes the rest. That is why Project Tiger set up reserves and guards them."
         },
         {
          "type": "worked",
@@ -10685,7 +10653,7 @@
       {
        "id": "social-science-g10-ch4-l1",
        "title": "Agriculture and the Main Farming Types",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -10752,68 +10720,6 @@
            "p": 30
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch4-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "agriculture",
-           "primary activity",
-           "subsistence farming",
-           "commercial farming"
-          ],
-          "meanings": [
-           "Farming that uses modern inputs and grows crops mainly for sale in markets.",
-           "The economic activity of growing crops and producing food and raw materials.",
-           "An activity that directly produces basic goods such as food.",
-           "Farming mainly carried out to meet the food needs of the farmer’s family."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "Agriculture is an age-old economic activity in",
-           "Agriculture is a primary",
-           "Farming varies from subsistence to commercial type.",
-           "Farming varies from subsistence to commercial type."
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"agriculture\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"agriculture\" means: The economic activity of growing crops and producing food and raw materials."
-          },
-          {
-           "say": "Choose what \"primary activity\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"primary activity\" means: An activity that directly produces basic goods such as food."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -11615,7 +11521,7 @@
       {
        "id": "social-science-g10-ch4-l3",
        "title": "Cropping Seasons",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -11679,6 +11585,36 @@
            "p": 32
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "cropyear",
+         "params": {},
+         "title": "India's cropping year",
+         "tasks": [
+          {
+           "say": "Find the month rabi crops are sown.",
+           "when": "month == 11",
+           "then": "Rabi is sown from October to December: wheat, barley, peas, gram and mustard."
+          },
+          {
+           "say": "Find the month wheat is harvested.",
+           "when": "month == 4",
+           "then": "The rabi harvest comes in March and April."
+          },
+          {
+           "say": "Find a month when the zaid crops grow.",
+           "when": "month == 5",
+           "then": "Zaid is the short summer season: watermelon, cucumber and fodder."
+          }
+         ],
+         "takeaway": "Kharif is sown with the monsoon in June and July and harvested in October and November; rabi is sown in October to December and harvested in March and April; zaid is the short summer season in between.",
+         "explanation": "Kharif is sown with the monsoon in June and July and harvested in October and November; rabi is sown in October to December and harvested in March and April; zaid is the short summer season in between."
         },
         {
          "type": "worked",
@@ -18111,7 +18047,7 @@
       {
        "id": "social-science-g10-ch6-l1",
        "title": "Manufacturing and its importance",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -18154,68 +18090,6 @@
            "p": 58
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch6-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "manufacturing",
-           "secondary sector",
-           "foreign exchange",
-           "agro-based"
-          ],
-          "meanings": [
-           "Industries that obtain their raw materials from agriculture.",
-           "Making goods in large quantities by processing raw materials into more valuable products.",
-           "The part of the economy where primary materials are made into finished goods.",
-           "Money earned by selling goods and services to other countries."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "Production of goods in large quantities after processing from raw materials",
-           "",
-           "",
-           ""
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"manufacturing\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"manufacturing\" means: Making goods in large quantities by processing raw materials into more valuable products."
-          },
-          {
-           "say": "Choose what \"secondary sector\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"secondary sector\" means: The part of the economy where primary materials are made into finished goods."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -18763,7 +18637,7 @@
       {
        "id": "social-science-g10-ch6-l2",
        "title": "How industries are classified",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -18807,6 +18681,36 @@
            "p": 59
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sectors",
+         "params": {},
+         "title": "Follow a crop to the shop",
+         "tasks": [
+          {
+           "say": "Send the cotton to the factory and make cloth.",
+           "when": "stage == 1",
+           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
+          },
+          {
+           "say": "Take the shirt all the way to the shop.",
+           "when": "stage == 2",
+           "then": "The shop adds more value by selling the finished shirt: that is a service."
+          },
+          {
+           "say": "Show a country where most workers are in services.",
+           "when": "advance == 2",
+           "then": "As a country develops, workers move from farms to factories and then to services."
+          }
+         ],
+         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
+         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
         },
         {
          "type": "worked",
@@ -19380,7 +19284,7 @@
       {
        "id": "social-science-g10-ch6-l3",
        "title": "Agro-based industries",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -19439,6 +19343,36 @@
            "p": 62
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch6-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sectors",
+         "params": {},
+         "title": "Follow a crop to the shop",
+         "tasks": [
+          {
+           "say": "Send the cotton to the factory and make cloth.",
+           "when": "stage == 1",
+           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
+          },
+          {
+           "say": "Take the shirt all the way to the shop.",
+           "when": "stage == 2",
+           "then": "The shop adds more value by selling the finished shirt: that is a service."
+          },
+          {
+           "say": "Show a country where most workers are in services.",
+           "when": "advance == 2",
+           "then": "As a country develops, workers move from farms to factories and then to services."
+          }
+         ],
+         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
+         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
         },
         {
          "type": "worked",
