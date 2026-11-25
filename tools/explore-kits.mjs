@@ -1720,6 +1720,63 @@ export const KITS = {
       { say: 'See how long one copy by hand takes.', when: 'method == 0 and copies == 1', then: 'A scribe copies about five pages a day, so one hundred pages take about twenty days.' },
     ],
   },
+  clozeline: {
+    // The other literature lab: the book's own sentence with one word blanked out. Same glossary as the word lab,
+    // different work: read the words around the gap. Used before the word lab, so a chapter with sentences to spare
+    // gets one of each rather than two copies of the same idea.
+    grades: [1, 10], subjects: ['english', 'hindi', 'social', 'science', 'maths'], languages: ['en', 'hi'],
+    fallback: true, minScore: 999, perChapter: 1, match: [],
+    title: { en: 'Finish the sentence', hi: 'वाक्य पूरा कीजिए' },
+    takeaway: {
+      en: 'The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.',
+      hi: 'खाली जगह के दोनों ओर के शब्द बताते हैं कि उसमें क्या फिट बैठेगा। पूरा वाक्य पढ़कर चुनिए, वाक्य का अर्थ ही सुराग है।',
+    },
+    params: (text, facts, chapter, grade, lang, glossaryWords) => {
+      const L = lang === 'hi'
+        ? { heading: 'वाक्य पूरा कीजिए', pickItem: 'वाक्य चुनिए', pickChoice: 'खाली जगह में कौन-सा शब्द आएगा?', yes: 'हाँ!', no: 'यह शब्द नहीं।', readAgain: 'खाली जगह के दोनों ओर के शब्द फिर पढ़िए।', pick: 'कौन-सा शब्द वाक्य पूरा करता है?' }
+        : { heading: 'Finish the sentence', pickItem: 'Pick a sentence', pickChoice: 'Which word fills the gap?', yes: 'Yes.', no: 'Not that word.', readAgain: 'Read the words on both sides of the gap.', pick: 'Which word completes the sentence?' };
+      const norm = (x) => String(x || '').replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
+      const clean = (x) => String(x || '').replace(/\s+/g, ' ').trim();
+      const pool = (glossaryWords || []).filter((t) => t && t.term && t.meaning);
+      const found = [];
+      for (const t of pool) {
+        const src = (t.src || []).find((x) => x && x.ev);
+        if (!src) continue;
+        const sent = clean(src.ev);
+        if (sent.length < 24 || sent.length > 110) continue;
+        const term = norm(t.term);
+        if (term.length < 2) continue;
+        const words = [];
+        const re = /[\p{L}\p{N}\p{M}]+/gu;   // Devanagari matras are marks: without \p{M} the gap eats half a word
+        let m;
+        while ((m = re.exec(sent))) words.push(m);
+        const hits = words.filter((w) => norm(w[0]).startsWith(term));
+        if (hits.length !== 1) continue;   // the answer must appear once, or the gap gives itself away
+        const hit = hits[0], at = hit.index, len = hit[0].length;
+        const before = clean(sent.slice(0, at)), after = clean(sent.slice(at + len));
+        if (!before || !after) continue;
+        found.push({ answer: hit[0], before, after });
+        if (found.length >= 6) break;
+      }
+      if (found.length < 2) return { items: [], labels: L };
+      const seen = new Set(), picked = [];
+      for (const f of found) { if (seen.has(f.answer.toLowerCase())) continue; seen.add(f.answer.toLowerCase()); picked.push(f); if (picked.length >= 4) break; }
+      if (picked.length < 2) return { items: [], labels: L };
+      const poolWords = pool.map((t) => String(t.term)).filter((w) => w.length > 1);
+      let seed = 11;
+      const shuffle = (arr) => { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { seed = (seed * 1103515245 + 12345) % 2147483648; const j = seed % (i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+      const items = picked.map((f, i) => {
+        const others = shuffle(poolWords.filter((w) => w.toLowerCase() !== f.answer.toLowerCase())).slice(0, 3);
+        const options = shuffle([f.answer, ...others]);
+        return { before: f.before, after: f.after, options, answer: options.indexOf(f.answer) };
+      });
+      return { items, labels: L };
+    },
+    usable: (p) => !!(p && p.items && p.items.length >= 2),
+    tasks: (p, lang) => p.items.slice(0, 2).map((it) => lang === 'hi'
+      ? { say: 'खाली जगह में सही शब्द चुनिए।', when: `item == ${p.items.indexOf(it)} and choice == ${it.answer}`, then: `सही वाक्य: ${it.before} ${it.options[it.answer]} ${it.after}` }
+      : { say: 'Choose the word that completes the sentence.', when: `item == ${p.items.indexOf(it)} and choice == ${it.answer}`, then: `The sentence is: ${it.before} ${it.options[it.answer]} ${it.after}` }),
+  },
   wordlab: {
     // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
     // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only
