@@ -756,6 +756,10 @@ function screenPath() {
 const QUESTIONS = new Set(['mcq', 'truefalse', 'fillblank', 'matchpairs', 'dragorder', 'draglabel', 'typeanswer', 'listenpick']);
 const questionCount = (lesson) => lesson.activities.filter((a) => QUESTIONS.has(a.type)).length;
 
+// The trail is a grid of narrow cells: on a phone the third line of a node is one word too long, so the words are
+// dropped there and a play badge says the same thing at a glance.
+const narrowTrail = () => window.matchMedia?.('(max-width: 560px)')?.matches ?? false;
+
 function trailNode(it, rec, isCurrent, cell, pack, unit) {
   const boss = it.kind === 'boss';
   const title = boss ? (it.lesson.title || t('bossChallenge')) : it.lesson.title;
@@ -773,7 +777,7 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
       ? `${t('branchTest')} · ${nQuestions} ${questionsWord}`
       : savedAt
       ? `${t('startedWord')} · ${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}`
-      : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}${hasTry ? ` · ${t('tryItYourself')}` : ''}`;
+      : `${it.lesson.estimatedMinutes || 4} ${t('minutes')} · ${nQuestions} ${questionsWord}${hasTry && !narrowTrail() ? ` · ${t('tryItYourself')}` : ''}`;
   // A lesson the child started and left: it keeps its place, and says so.
   const started = !rec && !!activeLearner()?.inProgress?.[it.id];
   const glyph = rec ? icon('check', { size: 40 }) : boss ? icon('crown', { size: 40 }) : isCurrent ? icon('play', { size: 44 }) : icon('star', { size: 40 });
@@ -785,6 +789,8 @@ function trailNode(it, rec, isCurrent, cell, pack, unit) {
     el('span', { class: 'node__body' }, [
       el('span', { class: 'node__title', text: title }),
       el('span', { class: 'node__meta', text: meta }),
+      hasTry ? el('span', { class: 'node__play', 'aria-hidden': 'true' }, [icon('play', { size: 12 })]) : null,
+      hasTry ? el('span', { class: 'visually-hidden', text: t('tryItYourself') }) : null,
       rec ? el('span', { class: 'visually-hidden', text: t('doneA11y') })
         : started ? el('span', { class: 'visually-hidden', text: t('startedA11y') })
           : isCurrent ? el('span', { class: 'visually-hidden', text: t('nextUpA11y') }) : null,
