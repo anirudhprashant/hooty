@@ -912,6 +912,13 @@ body.hl-on .key {
   mask-image: linear-gradient(90deg, transparent 0, #000 var(--gutter), #000 calc(100% - 28px), transparent 100%);
 }
 .subject-tabs::-webkit-scrollbar { display: none; }
+/* There are only three subject tabs. Scrolling them cuts the last one at the screen edge, which reads as a mistake, so
+   below a tablet width they wrap instead and the mask (that fade is there to promise more content) comes off. */
+@media (max-width: 720px) {
+  /* Three to five subjects wrap into two rows, so no label is cut at the edge. The eleven class chips share this class
+     and keep their single scrolling line: wrapping them would push the book itself off the screen. */
+  .subject-tabs:not(.grade-tabs) { flex-wrap: wrap; overflow: visible; mask-image: none; -webkit-mask-image: none; }
+}
 .subject-tab {
   flex: 0 0 auto; scroll-snap-align: start; white-space: nowrap;
   min-height: 44px; padding: 0 var(--s4); border: 2px solid var(--tone-3); border-radius: var(--radius-pill);
@@ -1301,6 +1308,8 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .unit-jump {
   display: flex;
   gap: var(--s2, 8px);
+  mask-image: linear-gradient(90deg, #000 calc(100% - 26px), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 26px), transparent 100%);
   margin: 0 0 var(--s4, 16px);
   padding: 2px 0 6px;
   overflow-x: auto;
