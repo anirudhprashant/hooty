@@ -489,6 +489,25 @@ function practiceSet(size = 10) {
 }
 
 // A short mixed quiz from what the child already got right, oldest first: remembering is what makes it stick.
+// Review cards that can actually be played. A card remembers the question by its id, and a rebuilt book can leave a card
+// pointing at a question that no longer exists: practiceSet() drops those, so a count that did not drop them could say
+// "2 tricky questions are waiting" under the heading "No mistakes to fix". Cards from a book that is not loaded on this
+// screen are counted as they are, because there is no way to tell yet whether their question is still there.
+function mistakeCount() {
+  const l = activeLearner();
+  if (!l) return 0;
+  const index = activityIndex();
+  const loadedPrefixes = packs.map((p) => `${p.id}-`);
+  let n = 0;
+  for (const card of Object.values(l.cards || {})) {
+    if (!isMistake(card)) continue;
+    if (index.has(card.id)) { n += 1; continue; }
+    if (!loadedPrefixes.some((pre) => String(card.id).startsWith(pre))) { n += 1; continue; }
+    delete l.cards[card.id];   // the book is here, the question is gone: this card can never come back
+  }
+  return n;
+}
+
 function quickQuiz(size = 5) {
   const l = activeLearner();
   if (!l) return [];
@@ -1939,7 +1958,7 @@ function screenPractice() {
   }
 
   const finished = l?.practiceDay === todayKey();
-  const later = Object.values(l?.cards || {}).filter(isMistake).length;
+  const later = mistakeCount();
   const mascot = mascotImage('happy');
   const next = nextLesson();
   const quiz = quickQuiz(5);
