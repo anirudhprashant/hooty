@@ -1376,7 +1376,7 @@ function renderCelebration() {
   // said once, on the lesson that crosses it, so it reads as an occasion rather than a counter.
   const goalXp = l?.dailyGoal || 50;
   const goalFresh = !!l && (l.dailyXp || 0) >= goalXp && l.goalDay !== todayKey();
-  if (goalFresh) l.goalDay = todayKey();
+  if (goalFresh) { l.goalDay = todayKey(); persist(); }
   const praise = accuracy >= 90 ? t('praiseHigh') : accuracy >= 60 ? t('praiseMid') : t('praiseLow');
   const box = el('div', { class: 'celebrate' }, [
     el('img', { class: 'celebrate__art', src: mascotImage(accuracy >= 60 ? 'happy' : 'idle') || '', alt: '' }),
