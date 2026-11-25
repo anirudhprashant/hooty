@@ -1963,7 +1963,7 @@ export const WIDGETS = {
     draw(v) {
       const zoo = [['frog', 3, '#2fa84f'], ['squirrel', 4, '#c2510e'], ['rabbit', 6, '#6b45c8'], ['kangaroo', 8, '#1f63d9']], top = 48;
       const [an, ja, ca] = zoo[v.a], [bn, jb, cb] = zoo[v.b], x = (n) => 30 + (n / top) * 540, y = 160, kids = [L(x(0), y, x(top), y, INK, 3)];
-      for (let n = 0; n <= top; n++) kids.push(L(x(n), y - (n % 6 ? 5 : 9), x(n), y + (n % 6 ? 5 : 9), INK, n % 6 ? 1.2 : 2), ...(n % 6 ? [] : [T(x(n), y + (v.a === v.b ? 28 : 34 + jb * 7), String(n), { z: 12, w: 600 })]));
+      for (let n = 0; n <= top; n++) kids.push(L(x(n), y - (n % 6 ? 5 : 9), x(n), y + (n % 6 ? 5 : 9), INK, n % 6 ? 1.2 : 2), ...(n % 6 ? [] : [T(x(n), y + (v.a === v.b ? 28 : 34 + jb * 7), String(n), { z: 14, w: 600 })]));
       const arcs = (j, col, up) => { for (let n = 0; n + j <= top; n += j) kids.push(s('path', { d: `M ${x(n)} ${y} Q ${(x(n) + x(n + j)) / 2} ${y + (up ? -1 : 1) * (14 + j * 7)} ${x(n + j)} ${y}`, fill: 'none', stroke: col, 'stroke-width': 2.5 })); };
       arcs(ja, ca, true); if (v.b !== v.a) arcs(jb, cb, false);
       const both = []; for (let n = 1; n <= top; n++) if (n % ja === 0 && n % jb === 0) both.push(n);
@@ -2063,7 +2063,10 @@ export const WIDGETS = {
     draw(v) {
       const total = 1000 * v.th + 100 * v.hu + 10 * v.te + v.on, kids = [];
       // each kind of block in its own column: a thousand is a big square, a hundred a flat, a ten a rod, a one a dot
-      for (let i = 0; i < v.th; i++) kids.push(R(24 + i * 30, 26, 26, 26, '#9fd3f2', { w: 2.5, r: 3 }), T(37 + i * 30, 45, '1000', { z: 11, w: 700 }));
+      // One label for the whole row: written under every square it had to be tiny to fit, and a child could not read
+      // it anyway. The number belongs to the column, so it is said once, above it.
+      for (let i = 0; i < v.th; i++) kids.push(R(24 + i * 30, 26, 26, 26, '#9fd3f2', { w: 2.5, r: 3 }));
+      if (v.th) kids.push(T(24, 16, '1000', { z: 14, w: 700, a: 'start' }));
       for (let i = 0; i < v.hu; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(24 + c * 34, 70 + r * 34, 30, 30, '#7fb3d5', { w: 2, r: 3 })); for (let g = 1; g < 3; g++) kids.push(L(24 + c * 34 + g * 10, 70 + r * 34, 24 + c * 34 + g * 10, 100 + r * 34, '#4f84ad', 1), L(24 + c * 34, 70 + r * 34 + g * 10, 54 + c * 34, 70 + r * 34 + g * 10, '#4f84ad', 1)); }
       for (let i = 0; i < v.te; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(200 + c * 14, 70 + r * 66, 11, 60, '#5fc9b8', { w: 2, r: 2 })); for (let g = 1; g < 6; g++) kids.push(L(200 + c * 14, 70 + r * 66 + g * 10, 211 + c * 14, 70 + r * 66 + g * 10, '#2f8f82', 1)); }
       for (let i = 0; i < v.on; i++) { const c = i % 5, r = Math.floor(i / 5); kids.push(R(300 + c * 16, 70 + r * 16, 12, 12, '#f2a33a', { w: 2, r: 2 })); }
@@ -2091,7 +2094,7 @@ export const WIDGETS = {
         else { const t = A[i] + B[i] + c; res[i] = t % 10; c = t >= 10 ? 1 : 0; mark[i] = c; }
       }
       const total = sub ? v.a - v.b : v.a + v.b, lead = (i) => i === 2 && !res[2] && !A[2] && !B[2];
-      kids.push(T(60, 84, sub ? '' : '', { z: 10 }), L(50, 196, 280, 196, INK, 4), T(62, 178, sub ? '−' : '+', { z: 34, w: 700, f: C.o }));
+      kids.push(L(50, 196, 280, 196, INK, 4), T(62, 178, sub ? '−' : '+', { z: 34, w: 700, f: C.o }));
       for (let i = 0; i < 3; i++) {
         const x = cx[2 - i];
         kids.push(T(x, 112, A[i] || i === 0 || v.a >= 10 ** i ? String(A[i]) : '', { z: 34, w: 700 }), T(x, 168, B[i] || i === 0 || v.b >= 10 ** i ? String(B[i]) : '', { z: 34, w: 700, f: '#1f63d9' }), T(x, 40, nm[i], { z: 16, w: 600, f: '#6b5a8a' }));
@@ -2991,7 +2994,7 @@ export const WIDGETS = {
         else if (kind === 'salt') { out.push(s('path', { d: `M ${cx - 26} ${cy + 16} q 26 -34 52 0 Z`, fill: '#f3f7fd', stroke: C.b, 'stroke-width': 2 })); for (const [dx, dy] of [[-8, 6], [6, 8], [0, 0], [-14, 12], [14, 12]]) out.push(CIRC(cx + dx, cy + dy, 2, '#9fb8d8', { w: 0 })); }
         else if (kind === 'blanket') { out.push(R(cx - 26, cy - 14, 52, 32, C.p, { s: INK, w: 2, r: 5 })); for (const dx of [-14, 0, 14]) out.push(L(cx + dx, cy - 14, cx + dx, cy + 18, '#c9aef0', 3)); }
         else if (kind === 'rice') { out.push(s('path', { d: `M ${cx - 28} ${cy} q 28 30 56 0 Z`, fill: '#fff', stroke: INK, 'stroke-width': 2 })); for (const [dx, dy] of [[-10, -2], [0, -4], [10, -2], [-4, 4], [6, 4]]) out.push(s('ellipse', { cx: cx + dx, cy: cy + dy, rx: 4, ry: 2, fill: '#e9e2cc', stroke: '#b9ad8a', 'stroke-width': 1 })); }
-        else if (kind === 'coins') { for (const dy of [10, 0, -10]) { out.push(s('ellipse', { cx, cy: cy + dy, rx: 22, ry: 8, fill: '#ffd166', stroke: '#b8860b', 'stroke-width': 2 })); } out.push(T(cx, cy - 6, '\u20b9', { z: 13, f: '#8a6500' })); }
+        else if (kind === 'coins') { for (const dy of [10, 0, -10]) { out.push(s('ellipse', { cx, cy: cy + dy, rx: 22, ry: 8, fill: '#ffd166', stroke: '#b8860b', 'stroke-width': 2 })); } out.push(T(cx, cy - 6, '\u20b9', { z: 14, f: '#8a6500' })); }
         else { out.push(R(cx - 24, cy - 16, 48, 32, pale || '#e8eef7', { s: INK, w: 2, r: 4 })); for (const dx of [-12, 0, 12]) out.push(L(cx + dx, cy - 16, cx + dx, cy + 16, '#9fb0c8', 2)); }
         return out;
       };
