@@ -2,7 +2,7 @@
 // after the first visit. Never caches anything that identifies a child:
 // there is nothing to cache but static files.
 
-const CACHE = 'sparkle-e94b91176c';
+const CACHE = 'sparkle-e566b8143c';
 
 const SHELL = [
   './',
