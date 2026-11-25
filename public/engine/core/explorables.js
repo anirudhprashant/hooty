@@ -4108,8 +4108,8 @@ export const WIDGETS = {
       // wrap on spaces: SVG text does not wrap itself, and a Hindi meaning is no longer than an English one
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 21, `${wi + 1} / ${n}`, { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 21, L.heading || 'One word, one sentence', { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(14, 22, `${wi + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 22, L.heading || 'One word, one sentence', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
       // the word, big enough to read on a phone, because every card here is read
       kids.push(R(14, 38, 250, 46, C.y, { w: 2.5, r: 12 }));
       kids.push(T(139, 70, word, { z: 26, w: 800 }));
@@ -4148,13 +4148,13 @@ export const WIDGETS = {
       const pair = { IV: 'Four is one before five', IX: 'Nine is one before ten', XL: 'Forty is ten before fifty', XC: 'Ninety is ten before a hundred' };
       const subs = parts.filter((p) => p.length === 2);
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 21, 'Roman numerals', { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(14, 22, 'Roman numerals', { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
       // the five symbols and what each is worth, always in sight
       const ref = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100]];
       ref.forEach(([sym, val], i) => {
         const x = 300 + i * 57;
-        kids.push(R(x, 5, 50, 22, '#ffffff', { w: 1.5, s: '#e3dccb', r: 6 }));
-        kids.push(T(x + 25, 21, `${sym} ${val}`, { z: 12.5, w: 700, f: INK }));
+        kids.push(R(x, 5, 52, 24, '#ffffff', { w: 1.5, s: '#e3dccb', r: 6 }));
+        kids.push(T(x + 26, 22, `${sym} ${val}`, { z: 15, w: 700, f: INK }));
       });
       // the numeral itself, big enough to read on a phone
       kids.push(R(10, 48, 580, 118, '#fff3d6', { w: 2.5, s: '#e8b44a', r: 16 }));
