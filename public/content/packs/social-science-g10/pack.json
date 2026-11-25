@@ -51473,7 +51473,7 @@
       {
        "id": "social-science-g10-ch15-l1",
        "title": "The Pre-modern World",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -51536,68 +51536,6 @@
            "p": 53
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch15-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "silk routes",
-           "cowries",
-           "Corn Laws",
-           "primary products"
-          ],
-          "meanings": [
-           "Agricultural goods and minerals sold in international trade.",
-           "Overland and sea trade routes linking Asia with Europe and northern Africa.",
-           "Shells used as a form of currency.",
-           "Laws used by Britain’s government to restrict corn imports."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "Historians have identified several silk routes, over land and by sea",
-           "",
-           "",
-           "Nearly 60 per cent of this trade comprised ‘primary products’"
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"silk routes\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"silk routes\" means: Overland and sea trade routes linking Asia with Europe and northern Africa."
-          },
-          {
-           "say": "Choose what \"cowries\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"cowries\" means: Shells used as a form of currency."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -53636,7 +53574,7 @@
       {
        "id": "social-science-g10-ch15-l5",
        "title": "The Inter-war Economy",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -53704,6 +53642,43 @@
            "p": 53
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch15-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": 1921,
+            "label": "In 1921, one in every five British workers was out…"
+           },
+           {
+            "year": 1929,
+            "label": "The Great Depression began"
+           }
+          ],
+          "hist": true
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move forward to when this happened: The Great Depression began.",
+           "when": "y >= 1929",
+           "then": "That was 1929 CE."
+          },
+          {
+           "say": "Now go back to before the first event.",
+           "when": "y < 1921",
+           "then": "The first event is 1921 CE and the second is 1929 CE: 8 years apart."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",
@@ -66323,7 +66298,7 @@
       {
        "id": "social-science-g10-ch19-l4",
        "title": "Centre-State relations and language policy",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -66398,6 +66373,47 @@
            "p": 17
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch19-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": 1947,
+            "label": "In 1947, the boundaries of several old states were…"
+           },
+           {
+            "year": 1990,
+            "label": "Regional political parties began to rise"
+           },
+           {
+            "year": 1992,
+            "label": "Before 1992, local governments were directly…"
+           }
+          ],
+          "hist": true
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move to when this happened: Regional political parties began to rise.",
+           "when": "y >= 1990",
+           "then": "That was 1990 CE."
+          },
+          {
+           "say": "Go forward to the last event.",
+           "when": "y >= 1992",
+           "then": "The latest event here is from 1992 CE."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",
