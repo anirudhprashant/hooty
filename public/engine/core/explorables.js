@@ -327,7 +327,7 @@ export const WIDGETS = {
         kids.push(L(cx, cy + 46, cx, cy - 44, '#3f7d3a', 4));
         kids.push(s('ellipse', { cx: cx - 22, cy: cy - 16, rx: 22, ry: 11, fill: '#8fd18a', stroke: '#2f6b2c', 'stroke-width': 2, transform: `rotate(-28 ${cx - 22} ${cy - 16})` }));
         kids.push(s('ellipse', { cx: cx + 22, cy: cy + 8, rx: 22, ry: 11, fill: '#8fd18a', stroke: '#2f6b2c', 'stroke-width': 2, transform: `rotate(28 ${cx + 22} ${cy + 8})` }));
-        kids.push(T(cx, cy + 56, 'stem + leaves', { z: 13, f: '#2f6b2c' }));
+        kids.push(T(cx, cy + 56, 'stem + leaves', { z: 15, f: '#2f6b2c' }));
       });
       // 5. the whole plant: an organism
       panel(4, (cx, cy) => {
@@ -1113,7 +1113,7 @@ export const WIDGETS = {
       e.left.forEach((it, i) => kids.push(...chip(24, leftY[i], it)));
       e.right.forEach((it, i) => kids.push(...chip(410, rightY[i], it)));
       kids.push(L(196, 150, 388, 150, INK, 4), s('path', { d: 'M 388 150 l -14 -8 l 0 16 Z', fill: INK, stroke: INK, 'stroke-width': 1 }));
-      kids.push(T(300, 28, e.type, { z: 21, f: e.col }), T(300, 50, e.heat, { z: 14, w: 600, f: '#6b5a8a' }), T(300, 286, 'Move the slider to try another reaction.', { z: 13, w: 600, f: '#8a7aa8' }));
+      kids.push(T(300, 28, e.type, { z: 21, f: e.col }), T(300, 50, e.heat, { z: 14, w: 600, f: '#6b5a8a' }), T(300, 286, 'Move the slider to try another reaction.', { z: 15, w: 600, f: '#8a7aa8' }));
       return { kids, say: e.say };
     },
   },
@@ -1160,7 +1160,7 @@ export const WIDGETS = {
       const sp = m === 0 ? '' : m === 1 ? 'x' : m === -1 ? '-x' : `${num(m)}x`;
       const eq = sp && c ? `${sp} ${signed(c)}` : sp || String(num(c));
       const kids = [...P.kids, ...clipTo('xp-line', X(-8), Y(4), 16 * u, 8 * u, [L(X(-8), Y(-8 * m + c), X(8), Y(8 * m + c), C.o, 6)])];
-      if (m !== 0) kids.push(L(X(0), Y(c), X(1), Y(c), C.b, 4, { 'stroke-dasharray': '6 5' }), L(X(1), Y(c), X(1), Y(c + m), C.g, 5), T(X(0.5), Y(c) + (m > 0 ? 22 : -10), '1', { z: 16, f: C.b }), T(X(1) + 8, Y(c + m / 2) + 5, `${num(Math.abs(m))} ${m > 0 ? 'up' : 'down'}`, { z: 13, f: '#058a68', a: 'start' }));
+      if (m !== 0) kids.push(L(X(0), Y(c), X(1), Y(c), C.b, 4, { 'stroke-dasharray': '6 5' }), L(X(1), Y(c), X(1), Y(c + m), C.g, 5), T(X(0.5), Y(c) + (m > 0 ? 22 : -10), '1', { z: 16, f: C.b }), T(X(1) + 8, Y(c + m / 2) + 5, `${num(Math.abs(m))} ${m > 0 ? 'up' : 'down'}`, { z: 15, f: '#058a68', a: 'start' }));
       kids.push(CIRC(X(0), Y(c), 7, C.y, { w: 3 }));
       return { kids, say: `y = ${eq}. ${m === 0 ? 'The slope is 0, so the line is flat.' : `For every 1 step right, the line goes ${num(Math.abs(m))} ${m > 0 ? 'up' : 'down'}.`} It crosses the y-axis at ${num(c)}.` };
     },
@@ -1212,7 +1212,7 @@ export const WIDGETS = {
       if (tan !== null && v.t > 0) kids.push(L(cx + r, cy, cx + r, Math.max(cy - r * tan, cy - r - 30), C.b, 7));
       kids.push(CIRC(px, py, 8, C.y, { w: 3 }), s('path', { d: `M ${cx + 34} ${cy} A 34 34 0 0 0 ${cx + 34 * Math.cos(th)} ${cy - 34 * Math.sin(th)}`, fill: 'none', stroke: INK, 'stroke-width': 3 }));
       kids.push(T(370, 100, `sin ${v.t}° = ${num(sin, 3)}`, { a: 'start', f: '#d9531e', z: 22 }), T(370, 150, `cos ${v.t}° = ${num(cos, 3)}`, { a: 'start', f: '#058a68', z: 22 }), T(370, 200, `tan ${v.t}° = ${tan === null ? 'not defined' : num(tan, 3)}`, { a: 'start', f: '#1f63d9', z: 22 }));
-      kids.push(T(370, 240, 'height  ·  width  ·  steepness', { a: 'start', z: 13, w: 600, f: '#6b5a8a' }));
+      kids.push(T(370, 240, 'height  ·  width  ·  steepness', { a: 'start', z: 15, w: 600, f: '#6b5a8a' }));
       return { kids, say: `At ${v.t}°: sin (the height) is ${num(sin, 3)}, cos (the width) is ${num(cos, 3)}${tan === null ? ', and tan is not defined because the line goes straight up' : `, and tan (the steepness) is ${num(tan, 3)}`}. Notice sin² + cos² = ${num(sin * sin + cos * cos, 2)}.` };
     },
   },
@@ -1997,7 +1997,7 @@ export const WIDGETS = {
       if (ml) {
         // the 1-litre bottle with a 1000 ml mark, filled by the small bottles
         const bx = 90, by = 50, bw = 120, bh = 220, lvl = Math.min(total, 1000) / 1000;
-        kids.push(R(bx, by, bw, bh, '#ffffff', { w: 3, r: 10 }), R(bx + 3, by + bh - 3 - lvl * (bh - 6), bw - 6, lvl * (bh - 6), '#7fbfff', { w: 0 }), L(bx - 10, by + 3, bx + bw + 10, by + 3, '#c0392b', 2, { 'stroke-dasharray': '6 4' }), T(bx + bw / 2, by - 10, '1 litre = 1000 ml', { z: 13, w: 700, f: '#c0392b' }));
+        kids.push(R(bx, by, bw, bh, '#ffffff', { w: 3, r: 10 }), R(bx + 3, by + bh - 3 - lvl * (bh - 6), bw - 6, lvl * (bh - 6), '#7fbfff', { w: 0 }), L(bx - 10, by + 3, bx + bw + 10, by + 3, '#c0392b', 2, { 'stroke-dasharray': '6 4' }), T(bx + bw / 2, by - 10, '1 litre = 1000 ml', { z: 15, w: 700, f: '#c0392b' }));
         if (total > 1000) kids.push(T(bx + bw / 2, by + 40, 'overflowing!', { z: 15, w: 700, f: '#c0392b' }));
       } else {
         const tilt = Math.max(-1, Math.min(1, (total - 1000) / 1000)) * 14, a = (tilt * Math.PI) / 180, cx = 190, cy = 100, arm = 125;
@@ -2236,7 +2236,7 @@ export const WIDGETS = {
       const y2 = 62 + Math.ceil(v.n / 10) * sp + 44;
       kids.push(T(30, y2 - 22, v.who === 0 ? (odd ? 'Half is not a whole number' : `Second child (half): ${second}`) : `Second child (double): ${second}`, { a: 'start', z: 15, w: 700, f: odd && v.who === 0 ? '#c0392b' : '#c2510e' }));
       if (!(v.who === 0 && odd)) dots(second, y2, '#f2a33a');
-      else { dots(second, y2, '#f2a33a'); kids.push(CIRC(30 + (second % 10) * sp + 0, y2 + Math.floor(second / 10) * sp, r, 'none', { s: '#c0392b', w: 2, x: { 'stroke-dasharray': '3 3' } }), T(30 + (second % 10) * sp + 20, y2 + Math.floor(second / 10) * sp + 5, 'one left over', { a: 'start', z: 12, w: 600, f: '#c0392b' })); }
+      else { dots(second, y2, '#f2a33a'); kids.push(CIRC(30 + (second % 10) * sp + 0, y2 + Math.floor(second / 10) * sp, r, 'none', { s: '#c0392b', w: 2, x: { 'stroke-dasharray': '3 3' } }), T(30 + (second % 10) * sp + 20, y2 + Math.floor(second / 10) * sp + 5, 'one left over', { a: 'start', z: 15, w: 600, f: '#c0392b' })); }
       const lines = v.who === 0 ? (odd ? [`${v.n} is odd`, 'it cannot be shared', 'into two equal halves'] : [`half of ${v.n} is ${second}`, `${v.n} is double ${second}`]) : [`double ${v.n} is ${second}`, `${v.n} is half of ${second}`];
       lines.forEach((t, i) => kids.push(T(470, 70 + i * 34, t, { z: 17, w: 700, f: i === 0 ? '#058a68' : INK })));
       return { kids, say: v.who === 0 ? (odd ? `${v.n} is an odd number: share it between two and one marble is left over, so it has no whole half.` : `Half of ${v.n} is ${second}, and ${v.n} is double ${second}.`) : `Double ${v.n} is ${second}: twice as many. And ${v.n} is half of ${second}.` };
@@ -2310,7 +2310,7 @@ export const WIDGETS = {
         const te = Math.floor(n / 10), on = n % 10;
         for (let i = 0; i < te; i++) kids.push(R(x0 + i * 15, 56, 12, 70, col[0], { w: 1.8, r: 2 }));
         for (let i = 0; i < on; i++) kids.push(CIRC(x0 + 7 + (i % 5) * 20, 150 + Math.floor(i / 5) * 22, 8, col[1], { w: 1.8 }));
-        kids.push(T(x0 + 65, 38, String(n), { z: 26, w: 700 }), T(x0 + 65, 216, `${te} ten${te === 1 ? '' : 's'}, ${on} one${on === 1 ? '' : 's'}`, { z: 13, w: 600, f: '#6b5a8a' }));
+        kids.push(T(x0 + 65, 38, String(n), { z: 26, w: 700 }), T(x0 + 65, 216, `${te} ten${te === 1 ? '' : 's'}, ${on} one${on === 1 ? '' : 's'}`, { z: 15, w: 600, f: '#6b5a8a' }));
       };
       show(v.a, 30, ['#5fc9b8', '#f2a33a']); show(v.b, 340, ['#5fc9b8', '#f2a33a']);
       const sym = v.a === v.b ? '=' : v.a > v.b ? '>' : '<', ta = Math.floor(v.a / 10), tb = Math.floor(v.b / 10);
@@ -2374,7 +2374,7 @@ export const WIDGETS = {
       pile(A, v.lc, -1); pile(B, v.rc, 1);
       const name = (it, n) => `${n} ${n === 1 ? it[0] : it[1]}`;
       const verdict = close ? 'they balance' : wl > wr ? 'the left side goes down' : 'the right side goes down';
-      kids.push(T(470, 78, `left: ${name(A, v.lc)}`, { z: 14, w: 700 }), T(470, 108, `right: ${name(B, v.rc)}`, { z: 14, w: 700 }), T(470, 160, verdict, { z: 18, w: 700, f: close ? '#058a68' : '#c2510e' }), T(470, 188, close ? 'about the same weight' : wl > wr ? 'the left side is heavier' : 'the right side is heavier', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(470, 78, `left: ${name(A, v.lc)}`, { z: 14, w: 700 }), T(470, 108, `right: ${name(B, v.rc)}`, { z: 14, w: 700 }), T(470, 160, verdict, { z: 18, w: 700, f: close ? '#058a68' : '#c2510e' }), T(470, 188, close ? 'about the same weight' : wl > wr ? 'the left side is heavier' : 'the right side is heavier', { z: 15, w: 600, f: '#6b5a8a' }));
       return { kids, say: close ? `${name(A, v.lc)} and ${name(B, v.rc)} weigh about the same, so the see-saw stays level.` : `${wl > wr ? `${name(A, v.lc)} ${v.lc === 1 ? 'is' : 'are'} heavier than ${name(B, v.rc)}, so the left side goes down` : `${name(B, v.rc)} ${v.rc === 1 ? 'is' : 'are'} heavier than ${name(A, v.lc)}, so the right side goes down`}. The lighter side goes up.` };
     },
   },
@@ -2392,7 +2392,7 @@ export const WIDGETS = {
       };
       bottle(4, 60, 'Raghu’s bottle', '#7fbfff'); bottle(v.friend, 250, 'friend’s bottle', '#5fc9b8');
       const cmp = v.friend === 4 ? 'the same as' : v.friend > 4 ? 'more than' : 'less than';
-      kids.push(T(480, 80, `${v.poured} glass${v.poured === 1 ? '' : 'es'} poured into each`, { a: 'middle', z: 14, w: 700 }), T(480, 130, `friend’s bottle holds`, { a: 'middle', z: 13, w: 600, f: '#6b5a8a' }), T(480, 160, cmp, { a: 'middle', z: 20, w: 700, f: v.friend === 4 ? '#058a68' : '#c2510e' }), T(480, 188, 'Raghu’s bottle', { a: 'middle', z: 13, w: 600, f: '#6b5a8a' }));
+      kids.push(T(480, 80, `${v.poured} glass${v.poured === 1 ? '' : 'es'} poured into each`, { a: 'middle', z: 14, w: 700 }), T(480, 130, `friend’s bottle holds`, { a: 'middle', z: 16, w: 600, f: '#6b5a8a' }), T(480, 160, cmp, { a: 'middle', z: 20, w: 700, f: v.friend === 4 ? '#058a68' : '#c2510e' }), T(480, 188, 'Raghu’s bottle', { a: 'middle', z: 16, w: 600, f: '#6b5a8a' }));
       return { kids, say: `Raghu’s bottle holds 4 glasses and the friend’s holds ${v.friend}: the friend’s bottle holds ${cmp} Raghu’s.${v.poured ? ` After ${v.poured} glass${v.poured === 1 ? '' : 'es'} in each, ${v.poured >= 4 ? 'Raghu’s bottle is full' + (v.poured > 4 ? ' and overflowing' : '') : 'Raghu’s bottle is not full yet'}${v.poured >= v.friend ? ` and the friend’s is full${v.poured > v.friend ? ' and overflowing' : ''}` : ' and the friend’s is not full yet'}.` : ''}` };
     },
   },
@@ -2532,7 +2532,7 @@ export const WIDGETS = {
         kids.push(R(18, y - 11, 236, 22, r < t ? '#e3f6f1' : '#f6f3fc', { w: 1.5, r: 5 }));
         for (let c = 0; c < 10; c++) { const k = r * 10 + c; if (k < v.n) kids.push(CIRC(32 + c * 22, y, 8, r < t ? '#5fc9b8' : '#f2a33a', { w: 1.5 })); }
       }
-      kids.push(T(430, 88, String(v.n), { z: 64, w: 700 }), T(430, 138, word, { z: 22, w: 700, f: '#6b45c8' }), T(430, 184, `${t} ten${t === 1 ? '' : 's'}${v.n < 100 ? ` and ${o} one${o === 1 ? '' : 's'}` : ''}`, { z: 16, w: 700, f: '#058a68' }), T(430, 212, v.n === 100 ? 'ten tens make one hundred' : t ? 'each full row is a ten' : '', { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(430, 88, String(v.n), { z: 64, w: 700 }), T(430, 138, word, { z: 22, w: 700, f: '#6b45c8' }), T(430, 184, `${t} ten${t === 1 ? '' : 's'}${v.n < 100 ? ` and ${o} one${o === 1 ? '' : 's'}` : ''}`, { z: 16, w: 700, f: '#058a68' }), T(430, 212, v.n === 100 ? 'ten tens make one hundred' : t ? 'each full row is a ten' : '', { z: 15, w: 600, f: '#6b5a8a' }));
       return { kids, say: v.n === 0 ? 'Zero: no counters.' : `${word}: ${v.n} is ${t} ${t === 1 ? 'ten' : 'tens'}${v.n < 100 ? ` and ${o} ${o === 1 ? 'one' : 'ones'}` : ', which is one hundred'}.` };
     },
   },
@@ -2652,7 +2652,7 @@ export const WIDGETS = {
       const net = v.push - v.back, acc = net / v.mass, floor = 224;
       const shift = net > 0 ? Math.min(80, (net / v.mass) * 7) : net < 0 ? -Math.min(80, (-net / v.mass) * 7) : 0;
       const left = 240 + shift, right = left + 104;
-      const arrow = (x, y, len, dir, colour, word) => [L(x, y, x + dir * len, y, colour, 6), s('polygon', { points: `${x + dir * (len + 12)},${y} ${x + dir * len},${y - 9} ${x + dir * len},${y + 9}`, fill: colour }), T(x + dir * (len / 2), y - 14, word, { z: 13, f: colour })];
+      const arrow = (x, y, len, dir, colour, word) => [L(x, y, x + dir * len, y, colour, 6), s('polygon', { points: `${x + dir * (len + 12)},${y} ${x + dir * len},${y - 9} ${x + dir * len},${y + 9}`, fill: colour }), T(x + dir * (len / 2), y - 14, word, { z: 16, f: colour })];
       const kids = [R(0, floor, W, 76, '#efeaf8', { w: 0 }), L(0, floor, W, floor, INK, 4), R(left, floor - 66, 104, 66, C.o, { r: 6, w: 3 }), T(left + 52, floor - 24, `${v.mass} kg`, { z: 17, f: '#fff' })];
       const pushLen = 18 + v.push * 3.4, backLen = 18 + v.back * 5;
       if (v.push > 0) kids.push(...arrow(left - 34 - pushLen, floor - 33, pushLen, 1, C.p, `${v.push} N push`));
@@ -2697,7 +2697,7 @@ export const WIDGETS = {
     draw(v, p, t = 0) {
       const cy = 154, phase = t * Math.min(v.freq, 800) * 1.1, cycles = v.freq / 45, pts = [];
       for (let x = 0; x <= 600; x += 4) pts.push(`${x === 0 ? 'M' : 'L'} ${x} ${cy - v.amp * 8 * Math.sin((x / 600) * cycles * 2 * Math.PI + phase)}`);
-      const kids = [R(0, 0, W, H, '#f4f0ff', { w: 0 }), L(30, cy, 570, cy, '#c9c4d6', 2), s('path', { d: pts.join(' '), fill: 'none', stroke: C.p, 'stroke-width': 4 }), CIRC(34, cy, 17, C.o, { w: 3 }), T(34, cy + 52, 'speaker', { z: 13 }), T(300, 34, v.freq >= 600 ? 'a high, shrill note' : v.freq <= 200 ? 'a low, deep note' : 'a middling note', { z: 22 }), T(300, 62, `${v.freq} vibrations each second`, { z: 16, w: 600 })];
+      const kids = [R(0, 0, W, H, '#f4f0ff', { w: 0 }), L(30, cy, 570, cy, '#c9c4d6', 2), s('path', { d: pts.join(' '), fill: 'none', stroke: C.p, 'stroke-width': 4 }), CIRC(34, cy, 17, C.o, { w: 3 }), T(34, cy + 52, 'speaker', { z: 16 }), T(300, 34, v.freq >= 600 ? 'a high, shrill note' : v.freq <= 200 ? 'a low, deep note' : 'a middling note', { z: 22 }), T(300, 62, `${v.freq} vibrations each second`, { z: 16, w: 600 })];
       const tall = v.amp >= 7, soft = v.amp <= 3;
       kids.push(T(300, 292, tall ? 'tall wave: loud sound' : soft ? 'short wave: soft sound' : 'medium wave: medium loudness', { z: 15, f: C.b, w: 600 }));
       return { kids, say: `The speaker vibrates ${v.freq} times each second, which we hear as ${v.freq >= 600 ? 'a high pitch' : v.freq <= 200 ? 'a low pitch' : 'a middling pitch'}. ${tall ? 'The wave is tall, so the sound is loud.' : soft ? 'The wave is short, so the sound is soft.' : 'The wave is medium height, so the sound is medium loud.'} Bigger amplitude means more energy.` };
@@ -2865,7 +2865,7 @@ export const WIDGETS = {
         }
       });
       // a small key for the three particles
-      kids.push(CIRC(360, 274, 6, C.o, { s: INK, w: 1 }), T(372, 279, 'proton', { a: 'start', z: 15, w: 600 }), CIRC(438, 274, 6, '#9aa5b1', { s: INK, w: 1 }), T(450, 279, 'neutron', { a: 'start', z: 12, w: 600 }), CIRC(522, 274, 6, C.b, { s: INK, w: 1 }), T(534, 279, 'electron', { a: 'start', z: 12, w: 600 }));
+      kids.push(CIRC(360, 274, 6, C.o, { s: INK, w: 1 }), T(372, 279, 'proton', { a: 'start', z: 15, w: 600 }), CIRC(438, 274, 6, '#9aa5b1', { s: INK, w: 1 }), T(450, 279, 'neutron', { a: 'start', z: 15, w: 600 }), CIRC(522, 274, 6, C.b, { s: INK, w: 1 }), T(534, 279, 'electron', { a: 'start', z: 15, w: 600 }));
       const outer = shells[shells.length - 1] || 0;
       const noble = elec === 2 || elec === 10 || elec === 18;
       const val = elec === 0 || noble ? 0 : outer <= 4 ? outer : 8 - outer;
@@ -2909,7 +2909,7 @@ export const WIDGETS = {
         const lastAnchor = i === shown - 1 ? 'end' : undefined, lx = i === shown - 1 ? cx2 + 40 : cx2;
         const h = baseH * heights[i];
         kids.push(R(cx2 - 7, cardTop - 14 - h, 14, h, part.fill, { w: 2, x: { opacity: 0.85 } }));
-        kids.push(T(cx2, cardTop - 20 - h, i === 0 ? '1 of 100' : 'less', { z: 13, f: '#5b4a7a', w: 600 }));
+        kids.push(T(cx2, cardTop - 20 - h, i === 0 ? '1 of 100' : 'less', { z: 15, f: '#5b4a7a', w: 600 }));
         kids.push(R(cx2 - 42, cardTop, 84, cardH, '#fff', { r: 10, w: 2, s: '#7a6b9a' }));
         if (i === 0) {
           for (let b = -1; b <= 1; b++) kids.push(s('path', { d: `M ${cx2 + b * 9} ${cy2 + 22} Q ${cx2 + b * 16} ${cy2 + 2} ${cx2 + b * 20} ${cy2 - 14}`, fill: 'none', stroke: C.g, 'stroke-width': 4, 'stroke-linecap': 'round' }));
@@ -2926,7 +2926,7 @@ export const WIDGETS = {
           kids.push(CIRC(cx2 + 22, cy2 - 6, 7, part.fill, { w: 2 }));
         }
         kids.push(T(lx, cardTop + cardH + 20, part.name, { z: 15, a: lastAnchor }));
-        kids.push(T(lx, cardTop + cardH + 38, part.role, { z: 13, w: 600, f: '#5b4a7a', a: lastAnchor }));
+        kids.push(T(lx, cardTop + cardH + 38, part.role, { z: 15, w: 600, f: '#5b4a7a', a: lastAnchor }));
         kids.push(T(lx, cardTop + cardH + 56, part.level, { z: 14, w: 600, f: '#8338ec', a: lastAnchor }));
         if (i < shown - 1) {
           const x1 = cx2 + 42, x2 = 130 + gap * (i + 1) - 42, y0 = midY;
@@ -3308,7 +3308,7 @@ export const WIDGETS = {
     draw(v) {
       const press = v.force / v.area, floor = 214, sink = Math.min(34, press / 7);
       const w = 26 + Math.sqrt(v.area) * 24, h = 46, x = 300 - w / 2, yTop = floor - h + sink;
-      const arrow = (cx, top, len, colour, word) => [L(cx, top - len, cx, top - 6, colour, 6), s('polygon', { points: `${cx - 9},${top - len + 12} ${cx + 9},${top - len + 12} ${cx},${top - 2}`, fill: colour }), T(cx, top - len - 8, word, { z: 13, f: colour })];
+      const arrow = (cx, top, len, colour, word) => [L(cx, top - len, cx, top - 6, colour, 6), s('polygon', { points: `${cx - 9},${top - len + 12} ${cx + 9},${top - len + 12} ${cx},${top - 2}`, fill: colour }), T(cx, top - len - 8, word, { z: 16, f: colour })];
       const kids = [
         R(0, floor, W, 90, '#f4e6c8', { w: 0 }),
         L(0, floor, W, floor, '#8a6d3b', 3),
@@ -3317,7 +3317,7 @@ export const WIDGETS = {
         ...arrow(300, yTop, 26 + v.force / 8, C.p, `${v.force} N`),
         T(300, 40, press >= 60 ? 'It presses hard, so it sinks deep' : press >= 15 ? 'It presses firmly and sinks a little' : 'It is spread out, so it hardly sinks', { z: 22, f: press >= 60 ? '#058a68' : press >= 15 ? '#c2510e' : '#6b5a8a' }),
         T(300, 70, `Pressure = ${v.force} N ÷ ${v.area} cm² = ${num(press, 1)} N per cm²`, { z: 16, w: 600 }),
-        T(300, 300, v.area >= 10 ? `The same ${v.force} N over ${v.area} cm² is only ${num(press, 1)} N per cm²: a wide area shares the push.` : `The same ${v.force} N in ${v.area} cm² is ${num(press, 1)} N per cm²: a small area presses harder.`, { z: 15, w: 600, f: '#6b5a8a' }),
+        T(300, 286, v.area >= 10 ? `The same ${v.force} N over ${v.area} cm² is only ${num(press, 1)} N per cm²: a wide area shares the push.` : `The same ${v.force} N in ${v.area} cm² is ${num(press, 1)} N per cm²: a small area presses harder.`, { z: 15, w: 600, f: '#6b5a8a' }),
         T(x + w / 2, floor + 22, `${v.area} cm² touching the sand`, { z: 14, f: '#6b5a8a' }),
       ];
       const say = press >= 60
@@ -3743,7 +3743,7 @@ export const WIDGETS = {
         const bx = x0 + i * (cw + gap), cx = bx + cw / 2, cy = y0 + 84;
         kids.push(R(bx, y0, cw, chh, i === k ? '#fff2d6' : '#fbf8f0', { w: i === k ? 4 : 2, s: i === k ? C.o : '#e3dccb', r: 14 }));
         kids.push(...icon(i, cx, cy));
-        kids.push(T(cx, y0 + chh - 12, stageNames[i], { z: 13, f: i === k ? INK : '#8a7fa0' }));
+        kids.push(T(cx, y0 + chh - 12, stageNames[i], { z: 15, f: i === k ? INK : '#8a7fa0' }));
         if (i < 3) kids.push(T(bx + cw + gap / 2, cy + 6, '\u203A', { z: 26, f: '#b9aed0' }));
       }
       const tail = (c === 0 || c === 1 || c === 2) ? ' The young looks nothing like the adult: it changes form completely, and that is called metamorphosis.' : ' The new seed can grow into another plant, so the cycle never stops.';
