@@ -33,8 +33,8 @@ function plane(xmin, xmax, ymin, ymax, u, ox, oy) {
   const X = (x) => ox + x * u, Y = (y) => oy - y * u, kids = [];
   for (let x = xmin; x <= xmax; x++) kids.push(L(X(x), Y(ymin), X(x), Y(ymax), x === 0 ? INK : '#ddd6ee', x === 0 ? 3 : 1.5));
   for (let y = ymin; y <= ymax; y++) kids.push(L(X(xmin), Y(y), X(xmax), Y(y), y === 0 ? INK : '#ddd6ee', y === 0 ? 3 : 1.5));
-  for (let x = xmin; x <= xmax; x++) if (x && x % 2 === 0) kids.push(T(X(x), Y(0) + 17, x, { z: 12, w: 600, f: '#6b5a8a' }));
-  for (let y = ymin; y <= ymax; y++) if (y && y % 2 === 0) kids.push(T(X(0) - 8, Y(y) + 4, y, { z: 12, w: 600, f: '#6b5a8a', a: 'end' }));
+  for (let x = xmin; x <= xmax; x++) if (x && x % 2 === 0) kids.push(T(X(x), Y(0) + 18, x, { z: 14, w: 600, f: '#6b5a8a' }));
+  for (let y = ymin; y <= ymax; y++) if (y && y % 2 === 0) kids.push(T(X(0) - 8, Y(y) + 4, y, { z: 14, w: 600, f: '#6b5a8a', a: 'end' }));
   return { X, Y, kids };
 }
 const clipTo = (id, x, y, w, h, kids) => [s('clipPath', { id }, R(x, y, w, h, '#000', { w: 0 })), s('g', { 'clip-path': `url(#${id})` }, kids)];
@@ -814,7 +814,7 @@ export const WIDGETS = {
     sliders: [['a', 'Monday', 0, 100, 10, 40], ['b', 'Tuesday', 0, 100, 10, 70], ['c', 'Wednesday', 0, 100, 10, 20], ['scale', 'Scale: 1 mark stands for', 10, 50, 10, 20]],
     draw(v) {
       const base = 250, h = 2.1, kids = [L(70, 20, 70, base), L(70, base, 560, base)];
-      for (let m = 0; m <= 100; m += v.scale) { const y = base - m * h; kids.push(L(62, y, 560, y, '#c9c4d6', 1), T(54, y + 5, m, { a: 'end', z: 13 })); }
+      for (let m = 0; m <= 100; m += v.scale) { const y = base - m * h; kids.push(L(62, y, 560, y, '#c9c4d6', 1), T(54, y + 5, m, { a: 'end', z: 14 })); }
       [['a', 'Monday', C.o], ['b', 'Tuesday', C.b], ['c', 'Wednesday', C.g]].forEach(([k, l, c], i) => { const x = 110 + i * 150; kids.push(R(x, base - v[k] * h, 90, v[k] * h, c, { w: 3 }), T(x + 45, base + 24, l, { z: 15 })); });
       const m = Math.max(v.a, v.b, v.c), day = v.a === m ? 'Monday' : v.b === m ? 'Tuesday' : 'Wednesday';
       return { kids, say: `The tallest bar is ${day} with ${m}. In all: ${v.a + v.b + v.c}. One mark on the side stands for ${v.scale}.` };
@@ -1160,7 +1160,7 @@ export const WIDGETS = {
       const sp = m === 0 ? '' : m === 1 ? 'x' : m === -1 ? '-x' : `${num(m)}x`;
       const eq = sp && c ? `${sp} ${signed(c)}` : sp || String(num(c));
       const kids = [...P.kids, ...clipTo('xp-line', X(-8), Y(4), 16 * u, 8 * u, [L(X(-8), Y(-8 * m + c), X(8), Y(8 * m + c), C.o, 6)])];
-      if (m !== 0) kids.push(L(X(0), Y(c), X(1), Y(c), C.b, 4, { 'stroke-dasharray': '6 5' }), L(X(1), Y(c), X(1), Y(c + m), C.g, 5), T(X(0.5), Y(c) + (m > 0 ? 22 : -10), '1', { z: 16, f: C.b }), T(X(1) + 8, Y(c + m / 2) + 5, `${num(Math.abs(m))} ${m > 0 ? 'up' : 'down'}`, { z: 15, f: '#058a68', a: 'start' }));
+      if (m !== 0) kids.push(L(X(0), Y(c), X(1), Y(c), C.b, 4, { 'stroke-dasharray': '6 5' }), L(X(1), Y(c), X(1), Y(c + m), C.g, 5), T(X(0.5), Y(c) + (m > 0 ? 22 : -10), '1', { z: 16, f: C.b }), T(X(1) + 8, Math.max(16, Math.min(286, Y(c + m / 2) + 5)), `${num(Math.abs(m))} ${m > 0 ? 'up' : 'down'}`, { z: 15, f: '#058a68', a: 'start' }));
       kids.push(CIRC(X(0), Y(c), 7, C.y, { w: 3 }));
       return { kids, say: `y = ${eq}. ${m === 0 ? 'The slope is 0, so the line is flat.' : `For every 1 step right, the line goes ${num(Math.abs(m))} ${m > 0 ? 'up' : 'down'}.`} It crosses the y-axis at ${num(c)}.` };
     },
@@ -1447,7 +1447,7 @@ export const WIDGETS = {
       for (const [q, qx, qy] of [['I', 6, 3.3], ['II', -6, 3.3], ['III', -6, -3.3], ['IV', 6, -3.3]]) kids.push(T(X(qx), Y(qy), q, { z: 20, f: '#c9b8e8' }));
       kids.push(L(X(x), Y(0), X(x), Y(y), C.b, 2.5, { 'stroke-dasharray': '6 5' }), L(X(0), Y(y), X(x), Y(y), C.g, 2.5, { 'stroke-dasharray': '6 5' }), L(X(0), Y(0), X(x), Y(y), C.o, 3));
       if (x) kids.push(CIRC(X(-x), Y(y), 7, '#fff', { w: 3, s: C.p }));
-      kids.push(CIRC(X(x), Y(y), 9, C.y, { w: 3 }), T(X(x) + (x >= 0 ? 12 : -12), Y(y) - 12, `(${x}, ${y})`, { z: 16, a: x >= 0 ? 'start' : 'end' }));
+      kids.push(CIRC(X(x), Y(y), 9, C.y, { w: 3 }), T(X(x) + (x >= 0 ? 12 : -12), Math.max(18, Y(y) - 12), `(${x}, ${y})`, { z: 16, a: x >= 0 ? 'start' : 'end' }));
       const where = x === 0 && y === 0 ? 'at the origin' : x === 0 ? 'on the y-axis' : y === 0 ? 'on the x-axis' : `in quadrant ${x > 0 ? (y > 0 ? 'I' : 'IV') : y > 0 ? 'II' : 'III'}`;
       const dist = Math.abs(d - Math.round(d)) < 1e-9 ? `${Math.round(d)}` : `√${x * x + y * y} ≈ ${num(d, 2)}`;
       const lr = x === 0 ? '' : x > 0 ? `${x} right` : `${-x} left`, ud = y === 0 ? '' : y > 0 ? `${y} up` : `${-y} down`, sq = (n) => (n < 0 ? `(${n})` : n);
