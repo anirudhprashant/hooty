@@ -14806,7 +14806,7 @@
       {
        "id": "the-world-around-us-g3-ch5-l1",
        "title": "Animals Living with Plants",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -14882,68 +14882,6 @@
            "p": 63
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "the-world-around-us-g3-ch5-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "soil",
-           "earthworms",
-           "topmost",
-           "Earth’s surface"
-          ],
-          "meanings": [
-           "The Earth’s surface is the outside layer of Earth.",
-           "Soil is the topmost layer of the Earth’s surface.",
-           "Earthworms are creatures that may appear in wet soil after rain.",
-           "Topmost means the very highest part."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "Soil is the topmost layer of the Earth’s surface.",
-           "",
-           "Soil is the topmost layer of the Earth’s surface.",
-           "Soil is the topmost layer of the Earth’s surface."
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"soil\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"soil\" means: Soil is the topmost layer of the Earth’s surface."
-          },
-          {
-           "say": "Choose what \"earthworms\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"earthworms\" means: Earthworms are creatures that may appear in wet soil after rain."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -15759,7 +15697,7 @@
       {
        "id": "the-world-around-us-g3-ch5-l3",
        "title": "How Animals Use Plants",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -15823,6 +15761,36 @@
            "p": 68
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "foodchain",
+         "params": {},
+         "title": "Build a food chain",
+         "tasks": [
+          {
+           "say": "Build the longest chain: grass, grasshopper, frog and snake.",
+           "when": "links == 4",
+           "then": "Four living things make four trophic levels, from the producer up to the largest carnivore."
+          },
+          {
+           "say": "Cut the chain down to just the grass and the grasshopper.",
+           "when": "links == 2",
+           "then": "The grass is the producer at trophic level 1; the grasshopper is a herbivore at trophic level 2."
+          },
+          {
+           "say": "Give the grass the most sunlight you can.",
+           "when": "sun == 1000",
+           "then": "Green plants capture only about 1 part in 100 of sunlight, so from 1000 units the grass stores about 10."
+          }
+         ],
+         "takeaway": "A food chain shows who eats whom: green plants are the producer at the first trophic level, each animal after that is a consumer at the next level, energy flows only one way, and less of it is left at each step.",
+         "explanation": "A food chain shows who eats whom: green plants are the producer at the first trophic level, each animal after that is a consumer at the next level, energy flows only one way, and less of it is left at each step."
         },
         {
          "type": "worked",
