@@ -1531,6 +1531,15 @@ function renderCelebration() {
 
   // Keep the momentum: the very next lesson is one tap away, so finishing is not a place to stop.
   const upNext = s.lesson.isPractice && !s.lesson.isFix ? null : nextLesson();
+  // The child is about to read the words below; that is the moment to fetch the next lesson's picture, so the button
+  // they will tap opens with its photograph already there. Low priority, and a failure costs nothing.
+  if (upNext?.topicScene) {
+    try {
+      const img = new Image();
+      img.decoding = 'async';
+      img.src = resolveMediaPath(upNext.topicScene, upNext);
+    } catch { /* no picture, no problem */ }
+  }
   // Maths with generated problems: as many fresh rounds as the child wants, with new numbers each time.
   const gens = (s.lesson.activities || []).filter((a) => a.gen);
   const more = gens.length >= 3 ? el('button', { class: `btn${upNext ? ' btn--ghost' : ''} btn--block`, type: 'button', onclick: () => {
