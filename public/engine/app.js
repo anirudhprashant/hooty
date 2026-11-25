@@ -444,7 +444,7 @@ function navBar() {
       class: `nav__item${item.id === active ? ' is-active' : ''}`, type: 'button',
       'aria-current': item.id === active ? 'page' : undefined,
       onclick: () => go(item.id),
-    }, [icon(item.icon, { size: 26 }), el('span', { text: item.label() })]);
+    }, [icon(item.icon, { size: 26 }), el('span', { class: 'nav__label', text: item.label() })]);
     if (item.id === 'practice' && due) b.append(el('span', { class: 'nav__badge', 'aria-label': t('nToTry', { n: due }), text: String(due) }));
     nav.append(b);
   }

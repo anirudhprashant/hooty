@@ -103,6 +103,10 @@ html {
   background: var(--bg);
   -webkit-text-size-adjust: 100%;
   color-scheme: light;
+  /* Text size, from Settings. Every size in the app is written in rem, and rem follows this one number, so the setting
+     reaches the lesson text and not just the page background. Body no longer multiplies by it (that scaled one element
+     twice and everything else not at all). */
+  font-size: calc(100% * var(--font-scale, 1));
 }
 html[data-dark="true"] {
   color-scheme: dark;
@@ -117,7 +121,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: calc(var(--fs-md) * var(--font-scale, 1));
+  font-size: var(--fs-md);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
