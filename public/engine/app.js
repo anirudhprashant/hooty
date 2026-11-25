@@ -1473,6 +1473,13 @@ function renderCelebration() {
       ? el('button', { class: 'btn btn--primary btn--block', type: 'button', text: t('pickAnotherClass'), onclick: () => { session = null; go('path'); } })
       : el('button', { class: 'btn btn--ghost btn--block', type: 'button', text: t('path'), onclick: () => { session = null; go('path'); } }),
   ]));
+  // On a phone the words card fills the screen, so the buttons that carry the child onward are placed above it: the
+  // next lesson is one tap from the stats, and the words are there for whoever wants to read them.
+  if (window.matchMedia?.('(max-width: 720px)')?.matches) {
+    const wordsBlock = box.querySelector('.celebrate__words');
+    const actionsBlock = box.querySelector('.activity__actions');
+    if (wordsBlock && actionsBlock) box.insertBefore(actionsBlock, wordsBlock);
+  }
 
   s.done = true;
   clearLessonPosition(s.lesson.lessonId);
