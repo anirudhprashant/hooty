@@ -30,7 +30,7 @@
       {
        "id": "science-g9-ch1-l1",
        "title": "Curiosity and careful exploration",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -94,6 +94,68 @@
            "p": 1
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch1-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "model",
+           "equation",
+           "assumption",
+           "air resistance"
+          ],
+          "meanings": [
+           "An effect of air on a moving object that a simple model may leave out.",
+           "A simplified way to study a real system by keeping only important details.",
+           "A compact statement showing how certain quantities or things are related.",
+           "An idea accepted while building a model, even when some details are ignored."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "simplified ways of looking at real systems that focus only on what",
+           "it is a compact statement about how certain things are related.",
+           "Building such models involves making assumptions and deliberately ignoring certain details.",
+           "air resistance may be neglected to understand the basic effect of gravity"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"model\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"model\" means: A simplified way to study a real system by keeping only important details."
+          },
+          {
+           "say": "Choose what \"equation\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"equation\" means: A compact statement showing how certain quantities or things are related."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -44372,7 +44434,7 @@
       {
        "id": "science-g9-ch13-l1",
        "title": "Earth as One Connected System",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -44444,6 +44506,68 @@
            "p": 253
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch13-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "Geosphere",
+           "Hydrosphere",
+           "Cryosphere",
+           "Atmosphere"
+          ],
+          "meanings": [
+           "The layer of gases surrounding Earth.",
+           "The solid part of Earth, including rocks, soil, landforms and the interior.",
+           "All of Earth’s liquid water, including oceans, rivers, lakes and groundwater.",
+           "The frozen part of Earth, including ice, snow and glaciers."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Solid rocks, soil, landforms",
+           "Liquid water in the form of surface water",
+           "Solid form of water, such as ice and snow",
+           "The air surrounding the Earth that we breathe"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"Geosphere\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"Geosphere\" means: The solid part of Earth, including rocks, soil, landforms and the interior."
+          },
+          {
+           "say": "Choose what \"Hydrosphere\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"Hydrosphere\" means: All of Earth’s liquid water, including oceans, rivers, lakes and groundwater."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",

@@ -30,7 +30,7 @@
       {
        "id": "english-g2-ch1-l1",
        "title": "My Bicycle and Its Parts",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -101,6 +101,68 @@
            "p": 2
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch1-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "pedal",
+           "aside",
+           "sometimes",
+           "track"
+          ],
+          "meanings": [
+           "The way or path the bicycle stays on.",
+           "The action the child does when riding the bicycle.",
+           "Out of the way, as the friends move.",
+           "At one time and not at another time."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "I pedal and I ride.",
+           "Makes my friends move aside.",
+           "Sometimes fast, sometimes slow,",
+           "But my bicycle is always on track."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"pedal\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"pedal\" means: The action the child does when riding the bicycle."
+          },
+          {
+           "say": "Choose what \"aside\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"aside\" means: Out of the way, as the friends move."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -3809,7 +3871,7 @@
       {
        "id": "english-g2-ch2-l1",
        "title": "Let us read: A holiday game",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -3889,6 +3951,68 @@
            "p": 11
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "holiday",
+           "skipped",
+           "rope",
+           "bat"
+          ],
+          "meanings": [
+           "It was the object Jeet picked to hit the ball.",
+           "A special day when Jeet and Babli played many games.",
+           "They moved over the rope without stepping on it.",
+           "It was the long object that Jeet and Babli skipped over."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "It was a holiday.",
+           "Both of them skipped the rope.",
+           "Both of them skipped the rope.",
+           "This time Babli picked the ball. Jeet picked the bat."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"holiday\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"holiday\" means: A special day when Jeet and Babli played many games."
+          },
+          {
+           "say": "Choose what \"skipped\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"skipped\" means: They moved over the rope without stepping on it."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -7283,7 +7407,7 @@
       {
        "id": "english-g2-ch3-l1",
        "title": "Fun Things We Can Do",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -7350,6 +7474,68 @@
            "p": 19
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch3-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "fun",
+           "climb",
+           "leap",
+           "swim"
+          ],
+          "meanings": [
+           "A fish swims in the poem.",
+           "The poem says that being this or that is fun.",
+           "A cat climbs in the poem.",
+           "A lamb leaps in the poem."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "It’s fun to be this,",
+           "To climb like a cat.",
+           "To leap like a lamb,",
+           "To swim like a fish,"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"fun\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"fun\" means: The poem says that being this or that is fun."
+          },
+          {
+           "say": "Choose what \"climb\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"climb\" means: A cat climbs in the poem."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -10301,7 +10487,7 @@
       {
        "id": "english-g2-ch4-l1",
        "title": "The Quiet New Boy",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -10372,6 +10558,68 @@
            "p": 27
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch4-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "quiet",
+           "front",
+           "sniff",
+           "remove"
+          ],
+          "meanings": [
+           "To remove means to take something away.",
+           "Quiet means making very little sound.",
+           "The front desk is the desk at the front of the class.",
+           "To sniff means to smell with your nose."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "“Onshangla you are very quiet today,” said Ava.",
+           "The teacher helped him sit in the front desk,",
+           "Onshangla bent forward and sniffed at it.",
+           "Now I will remove the scarf."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"quiet\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"quiet\" means: Quiet means making very little sound."
+          },
+          {
+           "say": "Choose what \"front\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"front\" means: The front desk is the desk at the front of the class."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -13959,7 +14207,7 @@
       {
        "id": "english-g2-ch5-l1",
        "title": "Let us recite",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -14023,6 +14271,68 @@
            "p": 38
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "recite",
+           "rocket",
+           "train",
+           "near"
+          ],
+          "meanings": [
+           "Not far away.",
+           "To say the poem aloud.",
+           "A vehicle that can take you to the moon.",
+           "One of the travel choices in the poem."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Let us recite Take a bus",
+           "Take a rocket To the moon,",
+           "Take a bus Or take a train,",
+           "Maybe near Or maybe far,"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"recite\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"recite\" means: To say the poem aloud."
+          },
+          {
+           "say": "Choose what \"rocket\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"rocket\" means: A vehicle that can take you to the moon."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -20985,7 +21295,7 @@
       {
        "id": "english-g2-ch7-l1",
        "title": "This is My Town",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -21061,6 +21371,68 @@
            "p": 48
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "town",
+           "street",
+           "house",
+           "room"
+          ],
+          "meanings": [
+           "A room is a part of a house where we sleep or sit.",
+           "A town is the place where people live, work and play.",
+           "A street is the road in a town where the houses stand.",
+           "A house is the building where a family lives."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "What is the name of your town/city?",
+           "House in the street.",
+           "Room in the house.",
+           "Bed in the room."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"town\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"town\" means: A town is the place where people live, work and play."
+          },
+          {
+           "say": "Choose what \"street\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"street\" means: A street is the road in a town where the houses stand."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -23768,7 +24140,7 @@
       {
        "id": "english-g2-ch8-l1",
        "title": "The cloud poem",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -23841,6 +24213,68 @@
            "p": 55
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch8-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "clouds",
+           "sky",
+           "lie",
+           "back"
+          ],
+          "meanings": [
+           "The back is the body side on which the child is resting.",
+           "Clouds are shapes in the sky that the child watches and imagines.",
+           "The sky is the place above the child where clouds are seen.",
+           "To lie means to rest with the body down."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "the clouds go by",
+           "Looking up at the sky.",
+           "As I lie on my back,",
+           "As I lie on my back,"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"clouds\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"clouds\" means: Clouds are shapes in the sky that the child watches and imagines."
+          },
+          {
+           "say": "Choose what \"sky\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"sky\" means: The sky is the place above the child where clouds are seen."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -26973,7 +27407,7 @@
       {
        "id": "english-g2-ch9-l1",
        "title": "Let us read — The Fly and the Ant",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -27048,6 +27482,68 @@
            "p": 61
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "ant",
+           "shade",
+           "forgotten",
+           "grass"
+          ],
+          "meanings": [
+           "The grass is what the cow eats.",
+           "An ant is one of the creatures the fly asks about his name.",
+           "The shade is the place where the cow is sleeping.",
+           "Forgotten means that the fly did not know his own name."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "The ant said, “I don’t know.",
+           "cow sleeping in my shade.",
+           "He had forgotten his name.",
+           "You may ask the grass I eat."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"ant\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"ant\" means: An ant is one of the creatures the fly asks about his name."
+          },
+          {
+           "say": "Choose what \"shade\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"shade\" means: The shade is the place where the cow is sleeping."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -34245,7 +34741,7 @@
       {
        "id": "english-g2-ch11-l1",
        "title": "The trip to the market",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -34331,6 +34827,68 @@
            "p": 77
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch11-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "market",
+           "water bottle",
+           "groundnuts",
+           "juice"
+          ],
+          "meanings": [
+           "Juice is a drink that the girls have.",
+           "A market is a place where people go to buy things.",
+           "A water bottle is a bottle used for carrying water.",
+           "Groundnuts are the food that the girls take out and eat."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "One day Anju and Farida went to the market.",
+           "Anju bought a bag and Farida bought a water bottle.",
+           "groundnuts are also known as peanuts.",
+           "Then they drank the juice and threw down the bottle."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"market\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"market\" means: A market is a place where people go to buy things."
+          },
+          {
+           "say": "Choose what \"water bottle\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"water bottle\" means: A water bottle is a bottle used for carrying water."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -41517,7 +42075,7 @@
       {
        "id": "english-g2-ch13-l1",
        "title": "Children from Many States",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -41592,6 +42150,68 @@
            "p": 92
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g2-ch13-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "festival",
+           "puppet",
+           "travel",
+           "painting"
+          ],
+          "meanings": [
+           "Painting is one of the things Badal likes doing.",
+           "Pongal and Phool Dei are festivals mentioned in the chapter.",
+           "Gulabo enjoys seeing puppet shows.",
+           "The children travel by camel or visit places such as Ellora and Ajanta."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "My favourite festival is Pongal.",
+           "I enjoy seeing puppet shows.",
+           "I travel by camel.",
+           "I like painting and music."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"festival\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"festival\" means: Pongal and Phool Dei are festivals mentioned in the chapter."
+          },
+          {
+           "say": "Choose what \"puppet\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"puppet\" means: Gulabo enjoys seeing puppet shows."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",

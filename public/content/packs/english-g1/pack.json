@@ -30,7 +30,7 @@
       {
        "id": "english-g1-ch1-l1",
        "title": "Two Little Hands",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -97,6 +97,68 @@
            "p": 2
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g1-ch1-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "hand",
+           "leg",
+           "head",
+           "eye"
+          ],
+          "meanings": [
+           "the body part used for seeing",
+           "the body part used for clapping",
+           "the body part used for walking",
+           "the body part that can move"
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "I clap with my hands.",
+           "I walk with my legs.",
+           "Head to move, eyes to see",
+           "I see with my eyes."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"hand\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"hand\" means: the body part used for clapping"
+          },
+          {
+           "say": "Choose what \"leg\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"leg\" means: the body part used for walking"
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -3220,7 +3282,7 @@
       {
        "id": "english-g1-ch2-l1",
        "title": "Greetings",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -3291,6 +3353,68 @@
            "p": 15
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g1-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "Namaste",
+           "morning",
+           "afternoon",
+           "evening"
+          ],
+          "meanings": [
+           "The later part of the day before night.",
+           "A polite greeting said when meeting someone.",
+           "The early part of the day.",
+           "The part of the day after midday."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "When I meet someone, I say ‘Namaste’.",
+           "When I meet someone in the morning, I say ‘Good morning’.",
+           "When I meet someone in the afternoon, I say ‘Good afternoon’.",
+           "When I meet someone in the evening, I say ‘Good evening’."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"Namaste\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"Namaste\" means: A polite greeting said when meeting someone."
+          },
+          {
+           "say": "Choose what \"morning\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"morning\" means: The early part of the day."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -9549,7 +9673,7 @@
       {
        "id": "english-g1-ch4-l1",
        "title": "The Cap-seller and the Monkeys: opening",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -9628,6 +9752,68 @@
            "p": 55
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g1-ch4-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "cap-seller",
+           "basket",
+           "empty",
+           "woke up"
+          ],
+          "meanings": [
+           "Stopped sleeping.",
+           "A person who sells caps.",
+           "A container used to carry things.",
+           "Having nothing inside."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "He was a cap-seller.",
+           "caps in a basket on his head.",
+           "into the empty basket.",
+           "The cap-seller woke up."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"cap-seller\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"cap-seller\" means: A person who sells caps."
+          },
+          {
+           "say": "Choose what \"basket\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"basket\" means: A container used to carry things."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -12538,7 +12724,7 @@
       {
        "id": "english-g1-ch5-l1",
        "title": "A Farm: The Cow",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -12598,6 +12784,68 @@
            "p": 75
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g1-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "farm",
+           "grandpa",
+           "cow",
+           "moo-moo"
+          ],
+          "meanings": [
+           "The sound a cow makes in the song.",
+           "The place where Grandpa had a cow and a hen.",
+           "The dear grandfather in the song.",
+           "An animal on the farm that makes moo-moo."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "My dear grandpa had a farm",
+           "My dear grandpa had a farm",
+           "He had a cow",
+           "With a moo-moo here"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"farm\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"farm\" means: The place where Grandpa had a cow and a hen."
+          },
+          {
+           "say": "Choose what \"grandpa\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"grandpa\" means: The dear grandfather in the song."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -15433,7 +15681,7 @@
       {
        "id": "english-g1-ch6-l1",
        "title": "Five Yellow Mangoes",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -15504,6 +15752,68 @@
            "p": 86
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g1-ch6-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "traveller",
+           "nests",
+           "squirrel",
+           "rabbit"
+          ],
+          "meanings": [
+           "The animal in the song that lives under the tree.",
+           "A person who rests under the tree in the song.",
+           "The bird makes a home on the tree.",
+           "The animal in the song that runs up the tree."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "One for the traveller who rests",
+           "who nests on the tree",
+           "the squirrel who runs up the tree",
+           "the rabbit who lives under the tree"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"traveller\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"traveller\" means: A person who rests under the tree in the song."
+          },
+          {
+           "say": "Choose what \"nests\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"nests\" means: The bird makes a home on the tree."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -18515,7 +18825,7 @@
       {
        "id": "english-g1-ch7-l1",
        "title": "Lunch boxes",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -18590,6 +18900,68 @@
            "p": 98
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g1-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "poori",
+           "aloo",
+           "sabzi",
+           "roti"
+          ],
+          "meanings": [
+           "A food that is eaten with sabzi.",
+           "A food that is eaten with aloo sabzi.",
+           "A food that comes with poori.",
+           "A food that is eaten with roti."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "poori with aloo sabzi",
+           "aloo sabzi",
+           "roti with sabzi",
+           "roti with sabzi"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"poori\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"poori\" means: A food that is eaten with aloo sabzi."
+          },
+          {
+           "say": "Choose what \"aloo\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"aloo\" means: A food that comes with poori."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -21285,7 +21657,7 @@
       {
        "id": "english-g1-ch8-l1",
        "title": "Spring and Summer",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -21353,6 +21725,68 @@
            "p": 106
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g1-ch8-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "spring",
+           "bloom",
+           "summer",
+           "cool"
+          ],
+          "meanings": [
+           "Not hot; a little cold in a pleasing way.",
+           "The season when children play and flowers bloom.",
+           "To open as a flower.",
+           "A hot season."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Spring is a time,",
+           "Flowers bloom,",
+           "Summer is hot.",
+           "To stay cool,"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"spring\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"spring\" means: The season when children play and flowers bloom."
+          },
+          {
+           "say": "Choose what \"bloom\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"bloom\" means: To open as a flower."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -24812,7 +25246,7 @@
       {
        "id": "english-g1-ch9-l1",
        "title": "Rain, Sleep and Waking",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -24874,6 +25308,68 @@
            "p": 115
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g1-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "rainbow",
+           "outside",
+           "fast asleep",
+           "dreaming"
+          ],
+          "meanings": [
+           "seeing pictures in your mind while you sleep.",
+           "a curve of many colours in the sky.",
+           "not inside a place.",
+           "sleeping deeply."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Anandi’s Rainbow",
+           "It was raining outside.",
+           "Anandi was fast asleep",
+           "dreaming of rainbows."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"rainbow\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"rainbow\" means: a curve of many colours in the sky."
+          },
+          {
+           "say": "Choose what \"outside\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"outside\" means: not inside a place."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",

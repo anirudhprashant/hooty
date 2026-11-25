@@ -1024,7 +1024,7 @@
       {
        "id": "social-science-g7-ch1-l3",
        "title": "Ladakh and the Gangetic Plains",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -1103,6 +1103,36 @@
            "p": 10
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch1-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "landform",
+         "params": {},
+         "title": "Walk across the land",
+         "tasks": [
+          {
+           "say": "Climb to the snow on the highest land.",
+           "when": "x >= 9 and x <= 11",
+           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
+          },
+          {
+           "say": "Stand on the raised land with a flat top.",
+           "when": "x >= 33 and x <= 40",
+           "then": "A plateau: more or less flat on top, and higher than the land around it."
+          },
+          {
+           "say": "Stop where a river spreads soil for farms.",
+           "when": "x >= 55 and x <= 65",
+           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
+          }
+         ],
+         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
+         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
         },
         {
          "type": "worked",
@@ -1387,7 +1417,7 @@
       {
        "id": "social-science-g7-ch1-l4",
        "title": "The Thar Desert and the Aravalli Hills",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -1459,6 +1489,36 @@
            "p": 15
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch1-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "landform",
+         "params": {},
+         "title": "Walk across the land",
+         "tasks": [
+          {
+           "say": "Climb to the snow on the highest land.",
+           "when": "x >= 9 and x <= 11",
+           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
+          },
+          {
+           "say": "Stand on the raised land with a flat top.",
+           "when": "x >= 33 and x <= 40",
+           "then": "A plateau: more or less flat on top, and higher than the land around it."
+          },
+          {
+           "say": "Stop where a river spreads soil for farms.",
+           "when": "x >= 55 and x <= 65",
+           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
+          }
+         ],
+         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
+         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
         },
         {
          "type": "worked",
@@ -11489,7 +11549,7 @@
       {
        "id": "social-science-g7-ch4-l4",
        "title": "Iron, Coins and Trade",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -11548,6 +11608,43 @@
            "p": 74
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch4-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "money",
+         "params": {
+          "kind": "rupees"
+         },
+         "title": "Pay the exact amount",
+         "tasks": [
+          {
+           "say": "Make ₹36.",
+           "when": "amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36",
+           "then": "For example 3 × ₹10 + 1 × ₹5 + 1 × ₹1."
+          },
+          {
+           "say": "Make ₹163 with just 6 notes and coins.",
+           "when": "amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6",
+           "then": "₹100 + ₹50 + ₹10 + ₹1 + ₹1 + ₹1: big notes first."
+          },
+          {
+           "say": "Pay ₹55 in two different ways, one after the other.",
+           "when": "amt == 7 and 100 * h + 50 * f + 10 * t + 5 * v + o == 55 and h == 0",
+           "then": "For example 5 × ₹10 + 1 × ₹5, or ₹50 + ₹5: the same amount can be paid in many ways."
+          },
+          {
+           "say": "Make ₹183 a different way, using no ₹100 note.",
+           "when": "amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0",
+           "then": "Lots of ways make the same amount."
+          }
+         ],
+         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
+         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
         },
         {
          "type": "worked",
@@ -20529,7 +20626,7 @@
       {
        "id": "social-science-g7-ch7-l1",
        "title": "A New Power Emerges",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -20584,6 +20681,68 @@
            "p": 146
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "corrosion",
+           "dynasty",
+           "inscription",
+           "praśhasti"
+          ],
+          "meanings": [
+           "A praśhasti is an inscription that praises a ruler’s achievements.",
+           "Corrosion is the damage that happens when iron rusts.",
+           "A dynasty is a line of rulers from the same family.",
+           "An inscription is words or pictures written or carved on a lasting surface."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "protecting it from corrosion",
+           "the new actor on this stage was the Gupta dynasty",
+           "a pillar inscription in Prayagraj, praises the achievements of Samudragupta",
+           "The prayāga praśhasti, a pillar inscription in Prayagraj, praises the achievements"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"corrosion\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"corrosion\" means: Corrosion is the damage that happens when iron rusts."
+          },
+          {
+           "say": "Choose what \"dynasty\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"dynasty\" means: A dynasty is a line of rulers from the same family."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -23888,7 +24047,7 @@
       {
        "id": "social-science-g7-ch8-l1",
        "title": "What Is Sacredness?",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -23945,6 +24104,68 @@
            "p": 168
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch8-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "sacredness",
+           "pilgrimage",
+           "shrine",
+           "relic"
+          ],
+          "meanings": [
+           "A relic is a holy person's body part or belonging kept with respect.",
+           "Sacredness means deep religious or spiritual importance that deserves respect.",
+           "A pilgrimage means a special journey to a sacred place.",
+           "A shrine is a holy place linked with the divine, a relic or a spiritual figure."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "finding something of deep religious or spiritual significance, worthy of respect",
+           "A journey to a sacred place that is significant within a religion",
+           "A place regarded as holy because of its associations with the divine",
+           "A part of a saint’s or other spiritual figure’s body"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"sacredness\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"sacredness\" means: Sacredness means deep religious or spiritual importance that deserves respect."
+          },
+          {
+           "say": "Choose what \"pilgrimage\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"pilgrimage\" means: A pilgrimage means a special journey to a sacred place."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -31682,7 +31903,7 @@
       {
        "id": "social-science-g7-ch10-l1",
        "title": "What Is a Constitution?",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -31742,6 +31963,31 @@
            "p": 211
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch10-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "organs",
+         "params": {},
+         "title": "One law, three organs",
+         "tasks": [
+          {
+           "say": "Find the organ that carries the law out.",
+           "when": "stage == 1",
+           "then": "The executive puts the law to work: the ministries, the police and the tax offices."
+          },
+          {
+           "say": "Find the organ that decides a case under the law.",
+           "when": "stage == 2",
+           "then": "The judiciary, the courts, hear the case and can strike down a law that breaks the Constitution."
+          }
+         ],
+         "takeaway": "The legislature makes the law, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. Each organ can check the other two, and none may take over their work.",
+         "explanation": "The legislature makes the law, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. Each organ can check the other two, and none may take over their work."
         },
         {
          "type": "worked",
@@ -33261,7 +33507,7 @@
       {
        "id": "social-science-g7-ch10-l4",
        "title": "Key Features of the Constitution of India",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -33339,6 +33585,31 @@
            "p": 221
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch10-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "organs",
+         "params": {},
+         "title": "One law, three organs",
+         "tasks": [
+          {
+           "say": "Find the organ that carries the law out.",
+           "when": "stage == 1",
+           "then": "The executive puts the law to work: the ministries, the police and the tax offices."
+          },
+          {
+           "say": "Find the organ that decides a case under the law.",
+           "when": "stage == 2",
+           "then": "The judiciary, the courts, hear the case and can strike down a law that breaks the Constitution."
+          }
+         ],
+         "takeaway": "The legislature makes the law, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. Each organ can check the other two, and none may take over their work.",
+         "explanation": "The legislature makes the law, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. Each organ can check the other two, and none may take over their work."
         },
         {
          "type": "worked",
@@ -37475,7 +37746,7 @@
       {
        "id": "social-science-g7-ch11-l5",
        "title": "Paper Money and Currency",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -37542,6 +37813,43 @@
            "p": 243
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch11-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "money",
+         "params": {
+          "kind": "rupees"
+         },
+         "title": "Pay the exact amount",
+         "tasks": [
+          {
+           "say": "Make ₹36.",
+           "when": "amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36",
+           "then": "For example 3 × ₹10 + 1 × ₹5 + 1 × ₹1."
+          },
+          {
+           "say": "Make ₹163 with just 6 notes and coins.",
+           "when": "amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6",
+           "then": "₹100 + ₹50 + ₹10 + ₹1 + ₹1 + ₹1: big notes first."
+          },
+          {
+           "say": "Pay ₹55 in two different ways, one after the other.",
+           "when": "amt == 7 and 100 * h + 50 * f + 10 * t + 5 * v + o == 55 and h == 0",
+           "then": "For example 5 × ₹10 + 1 × ₹5, or ₹50 + ₹5: the same amount can be paid in many ways."
+          },
+          {
+           "say": "Make ₹183 a different way, using no ₹100 note.",
+           "when": "amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0",
+           "then": "Lots of ways make the same amount."
+          }
+         ],
+         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
+         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
         },
         {
          "type": "worked",
@@ -46446,7 +46754,7 @@
       {
        "id": "social-science-g7-ch14-l1",
        "title": "Understanding India’s Neighbourhood",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -46506,6 +46814,68 @@
            "p": 32
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch14-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "neighbourhood",
+           "maritime neighbour",
+           "regionalism",
+           "Partition"
+          ],
+          "meanings": [
+           "The 1947 separation that left Pakistan no longer part of India.",
+           "A country sharing a land boundary with another country.",
+           "A country connected to another by a shared sea or ocean.",
+           "Cooperation among countries for the benefit of the whole region."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "a country that shares a land boundary with us",
+           "A maritime neighbour is a country connected to another by",
+           "Such involvement is called regionalism and helps create peace",
+           "Before the 1947 Partition — a legacy of the colonial era that"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"neighbourhood\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"neighbourhood\" means: A country sharing a land boundary with another country."
+          },
+          {
+           "say": "Choose what \"maritime neighbour\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"maritime neighbour\" means: A country connected to another by a shared sea or ocean."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -57296,7 +57666,7 @@
       {
        "id": "social-science-g7-ch17-l1",
        "title": "Jews in India",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -57352,6 +57722,68 @@
            "p": 127
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch17-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "Jew",
+           "persecution",
+           "migrant",
+           "Zoroastrianism"
+          ],
+          "meanings": [
+           "An old religion based on the worship of Ahurā Mazdā and choosing good over evil.",
+           "A member of a people and culture connected with the ancient Hebrews and Judaism.",
+           "Hostility towards people because of religious, ethnic, social or political reasons.",
+           "A person who lives away from their birthplace or original community."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Jews are members of the people and the cultural community",
+           "Hostility, generally arising from religious, ethnic, social or political motives",
+           "people not living near their birthplace or with their original community.",
+           "It is based on the worship of one God, Ahurā Mazdā."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"Jew\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"Jew\" means: A member of a people and culture connected with the ancient Hebrews and Judaism."
+          },
+          {
+           "say": "Choose what \"persecution\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"persecution\" means: Hostility towards people because of religious, ethnic, social or political reasons."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -62697,7 +63129,7 @@
       {
        "id": "social-science-g7-ch18-l4",
        "title": "Legislature and Executive",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -62760,6 +63192,31 @@
            "p": 153
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch18-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "organs",
+         "params": {},
+         "title": "One law, three organs",
+         "tasks": [
+          {
+           "say": "Find the organ that carries the law out.",
+           "when": "stage == 1",
+           "then": "The executive puts the law to work: the ministries, the police and the tax offices."
+          },
+          {
+           "say": "Find the organ that decides a case under the law.",
+           "when": "stage == 2",
+           "then": "The judiciary, the courts, hear the case and can strike down a law that breaks the Constitution."
+          }
+         ],
+         "takeaway": "The legislature makes the law, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. Each organ can check the other two, and none may take over their work.",
+         "explanation": "The legislature makes the law, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. Each organ can check the other two, and none may take over their work."
         },
         {
          "type": "worked",
@@ -63254,7 +63711,7 @@
       {
        "id": "social-science-g7-ch18-l5",
        "title": "The Government, Citizens and Judiciary",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -63325,6 +63782,31 @@
            "p": 160
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch18-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "organs",
+         "params": {},
+         "title": "One law, three organs",
+         "tasks": [
+          {
+           "say": "Find the organ that carries the law out.",
+           "when": "stage == 1",
+           "then": "The executive puts the law to work: the ministries, the police and the tax offices."
+          },
+          {
+           "say": "Find the organ that decides a case under the law.",
+           "when": "stage == 2",
+           "then": "The judiciary, the courts, hear the case and can strike down a law that breaks the Constitution."
+          }
+         ],
+         "takeaway": "The legislature makes the law, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. Each organ can check the other two, and none may take over their work.",
+         "explanation": "The legislature makes the law, the executive carries it out, and the judiciary decides whether it has been followed and whether it is fair. Each organ can check the other two, and none may take over their work."
         },
         {
          "type": "worked",
@@ -65050,7 +65532,7 @@
       {
        "id": "social-science-g7-ch19-l1",
        "title": "What Physical Infrastructure Does",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -65103,6 +65585,68 @@
            "p": 170
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch19-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "physical infrastructure",
+           "utilities",
+           "communication networks",
+           "irrigation"
+          ],
+          "meanings": [
+           "Supplying water to fields so that crops can grow.",
+           "Tangible structures and networks that keep cities and villages working.",
+           "Services such as electricity and water that people need.",
+           "Systems that carry messages, images and videos through cables, towers and satellites."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Physical infrastructure is the backbone of our nation",
+           "How would you access utilities like electricity and water?",
+           "enables transmitting messages, images, and videos",
+           "canals and electric water pumps helped irrigation"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"physical infrastructure\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"physical infrastructure\" means: Tangible structures and networks that keep cities and villages working."
+          },
+          {
+           "say": "Choose what \"utilities\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"utilities\" means: Services such as electricity and water that people need."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",

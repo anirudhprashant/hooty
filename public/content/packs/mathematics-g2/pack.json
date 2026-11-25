@@ -19382,7 +19382,7 @@
       {
        "id": "mathematics-g2-ch4-l1",
        "title": "Shadow Story and Shadow Role-Play",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -19514,6 +19514,26 @@
           "3 (generated problem)",
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g2-ch4-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "shadow",
+         "params": {},
+         "title": "Make a shadow",
+         "tasks": [
+          {
+           "say": "Make the shadow as big as you can.",
+           "when": "d == 10",
+           "then": "Closest to the lamp, the object blocks the most light."
+          }
+         ],
+         "takeaway": "Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.",
+         "explanation": "Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more."
         },
         {
          "type": "worked",

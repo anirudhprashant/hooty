@@ -3554,7 +3554,7 @@
       {
        "id": "social-science-g10-ch2-l1",
        "title": "Flora and Fauna in India",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -3602,6 +3602,68 @@
            "p": 13
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "biodiversity",
+           "habitat",
+           "conservation",
+           "endangered species"
+          ],
+          "meanings": [
+           "Species whose remaining population is at risk and needs protection.",
+           "The rich variety of wildlife and cultivated species, diverse in form and function, closely integrated in nature.",
+           "The natural home of plants and animals.",
+           "Protection of forests and wildlife to preserve ecological and genetic diversity."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Biodiversity or Biological Diversity is immensely rich in wildlife",
+           "giving legal protection to their habitats",
+           "Conservation preserves the ecological diversity and our life support systems",
+           "protecting the remaining population of certain endangered species"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"biodiversity\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"biodiversity\" means: The rich variety of wildlife and cultivated species, diverse in form and function, closely integrated in nature."
+          },
+          {
+           "say": "Choose what \"habitat\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"habitat\" means: The natural home of plants and animals."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -8101,7 +8163,7 @@
       {
        "id": "social-science-g10-ch3-l3",
        "title": "Dams and Multi-Purpose River Projects",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -8164,6 +8226,36 @@
            "p": 22
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch3-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "river",
+         "params": {},
+         "title": "Follow the river to the sea",
+         "tasks": [
+          {
+           "say": "Make the river wider as small streams join it.",
+           "when": "stage == 2",
+           "then": "The joining streams are tributaries: each one adds water, so the river grows wider and stronger."
+          },
+          {
+           "say": "Stop the river with a giant wall and store its water.",
+           "when": "stage == 4",
+           "then": "A dam blocks the flow and holds the water in a reservoir for drinking, crops and electricity."
+          },
+          {
+           "say": "Take the river all the way to the sea.",
+           "when": "stage == 5",
+           "then": "Near the sea the river splits into many small streams and makes a delta, where mangroves grow."
+          }
+         ],
+         "takeaway": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta.",
+         "explanation": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta."
         },
         {
          "type": "worked",
@@ -10593,7 +10685,7 @@
       {
        "id": "social-science-g10-ch4-l1",
        "title": "Agriculture and the Main Farming Types",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -10660,6 +10752,68 @@
            "p": 30
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch4-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "agriculture",
+           "primary activity",
+           "subsistence farming",
+           "commercial farming"
+          ],
+          "meanings": [
+           "Farming that uses modern inputs and grows crops mainly for sale in markets.",
+           "The economic activity of growing crops and producing food and raw materials.",
+           "An activity that directly produces basic goods such as food.",
+           "Farming mainly carried out to meet the food needs of the farmer’s family."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Agriculture is an age-old economic activity in",
+           "Agriculture is a primary",
+           "Farming varies from subsistence to commercial type.",
+           "Farming varies from subsistence to commercial type."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"agriculture\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"agriculture\" means: The economic activity of growing crops and producing food and raw materials."
+          },
+          {
+           "say": "Choose what \"primary activity\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"primary activity\" means: An activity that directly produces basic goods such as food."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -17957,7 +18111,7 @@
       {
        "id": "social-science-g10-ch6-l1",
        "title": "Manufacturing and its importance",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -18000,6 +18154,68 @@
            "p": 58
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch6-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "manufacturing",
+           "secondary sector",
+           "foreign exchange",
+           "agro-based"
+          ],
+          "meanings": [
+           "Industries that obtain their raw materials from agriculture.",
+           "Making goods in large quantities by processing raw materials into more valuable products.",
+           "The part of the economy where primary materials are made into finished goods.",
+           "Money earned by selling goods and services to other countries."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Production of goods in large quantities after processing from raw materials",
+           "manufacture the primary materials into finished goods.",
+           "industrial production, employment generation and foreign exchange earnings",
+           "industries are based on agricultural raw materials."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"manufacturing\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"manufacturing\" means: Making goods in large quantities by processing raw materials into more valuable products."
+          },
+          {
+           "say": "Choose what \"secondary sector\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"secondary sector\" means: The part of the economy where primary materials are made into finished goods."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -21754,7 +21970,7 @@
       {
        "id": "social-science-g10-ch7-l1",
        "title": "Transport and Roadways",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -21810,6 +22026,68 @@
            "p": 72
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "transport",
+           "State Highways",
+           "Border Roads",
+           "trade"
+          ],
+          "meanings": [
+           "Trade is the exchange of goods among people, states and countries.",
+           "Transport moves goods and services from where they are available to where they are needed.",
+           "State Highways connect a state capital with different district headquarters.",
+           "Border Roads are built and maintained in strategically important border areas."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "movement of these goods and services from their supply locations to demand",
+           "Roads linking a state capital with different district headquarters",
+           "constructs and maintains roads in the bordering areas of the",
+           "The exchange of goods among people, states and countries"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"transport\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"transport\" means: Transport moves goods and services from where they are available to where they are needed."
+          },
+          {
+           "say": "Choose what \"State Highways\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"State Highways\" means: State Highways connect a state capital with different district headquarters."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -32919,7 +33197,7 @@
       {
        "id": "social-science-g10-ch10-l1",
        "title": "Money Makes Exchange Easier",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -32978,6 +33256,43 @@
            "p": 40
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch10-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "money",
+         "params": {
+          "kind": "rupees"
+         },
+         "title": "Pay the exact amount",
+         "tasks": [
+          {
+           "say": "Make ₹36.",
+           "when": "amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36",
+           "then": "For example 3 × ₹10 + 1 × ₹5 + 1 × ₹1."
+          },
+          {
+           "say": "Make ₹163 with just 6 notes and coins.",
+           "when": "amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6",
+           "then": "₹100 + ₹50 + ₹10 + ₹1 + ₹1 + ₹1: big notes first."
+          },
+          {
+           "say": "Pay ₹55 in two different ways, one after the other.",
+           "when": "amt == 7 and 100 * h + 50 * f + 10 * t + 5 * v + o == 55 and h == 0",
+           "then": "For example 5 × ₹10 + 1 × ₹5, or ₹50 + ₹5: the same amount can be paid in many ways."
+          },
+          {
+           "say": "Make ₹183 a different way, using no ₹100 note.",
+           "when": "amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0",
+           "then": "Lots of ways make the same amount."
+          }
+         ],
+         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
+         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
         },
         {
          "type": "worked",
@@ -36010,7 +36325,7 @@
       {
        "id": "social-science-g10-ch11-l1",
        "title": "Production Across Countries and Interlinking",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -36065,6 +36380,68 @@
            "p": 57
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch11-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "foreign investment",
+           "globalisation",
+           "multinational corporation",
+           "information and communication technology"
+          ],
+          "meanings": [
+           "This includes telecommunications, computers and the Internet.",
+           "This is investment made by an MNC in another country.",
+           "This means the rapid integration and interconnection of countries.",
+           "This is a company that owns or controls production in more than one nation."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Investment made by MNCs is called foreign investment.",
+           "Globalisation is this process of rapid integration or interconnection between countries.",
+           "A MNC is a company that owns or controls production",
+           "Even more remarkable have been the developments in information and communication technology."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"foreign investment\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"foreign investment\" means: This is investment made by an MNC in another country."
+          },
+          {
+           "say": "Choose what \"globalisation\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"globalisation\" means: This means the rapid integration and interconnection of countries."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -39850,7 +40227,7 @@
       {
        "id": "social-science-g10-ch12-l1",
        "title": "Consumers in the marketplace",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -39921,6 +40298,68 @@
            "p": 76
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch12-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "consumer",
+           "marketplace",
+           "rules and regulations",
+           "exploitation"
+          ],
+          "meanings": [
+           "Unfair treatment that takes advantage of people.",
+           "A person who buys and uses goods and services.",
+           "The market where consumers buy goods and services.",
+           "Required directions that protect people and guide their behaviour."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Consumers participate in the market when they purchase goods",
+           "protection of the consumers in the marketplace",
+           "rules and regulations are also required for protecting",
+           "To prevent such exploitation"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"consumer\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"consumer\" means: A person who buys and uses goods and services."
+          },
+          {
+           "say": "Choose what \"marketplace\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"marketplace\" means: The market where consumers buy goods and services."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -51138,7 +51577,7 @@
       {
        "id": "social-science-g10-ch15-l1",
        "title": "The Pre-modern World",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -51201,6 +51640,68 @@
            "p": 53
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch15-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "silk routes",
+           "cowries",
+           "Corn Laws",
+           "primary products"
+          ],
+          "meanings": [
+           "Agricultural goods and minerals sold in international trade.",
+           "Overland and sea trade routes linking Asia with Europe and northern Africa.",
+           "Shells used as a form of currency.",
+           "Laws used by Britain’s government to restrict corn imports."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Historians have identified several silk routes, over land and by sea",
+           "cowries (the Hindi cowdi or seashells, used as a form of currency)",
+           "commonly known as the ‘Corn Laws’",
+           "Nearly 60 per cent of this trade comprised ‘primary products’"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"silk routes\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"silk routes\" means: Overland and sea trade routes linking Asia with Europe and northern Africa."
+          },
+          {
+           "say": "Choose what \"cowries\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"cowries\" means: Shells used as a form of currency."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -58613,7 +59114,7 @@
       {
        "id": "social-science-g10-ch17-l1",
        "title": "First Printed Books",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -58673,6 +59174,68 @@
            "p": 106
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch17-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "accordion book",
+           "calligraphy",
+           "ukiyo",
+           "vellum"
+          ],
+          "meanings": [
+           "This was a parchment made from the skin of animals.",
+           "This was a Chinese book folded and stitched at the side.",
+           "This is the art of beautiful and stylised writing.",
+           "This was an art form showing ordinary human experiences, especially urban ones."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "the traditional Chinese ‘accordion book’ was folded and stitched at the side",
+           "The art of beautiful and stylised writing",
+           "ukiyo (‘pictures of the floating world’)",
+           "A parchment made from the skin of animals"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"accordion book\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"accordion book\" means: This was a Chinese book folded and stitched at the side."
+          },
+          {
+           "say": "Choose what \"calligraphy\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"calligraphy\" means: This is the art of beautiful and stylised writing."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -64243,7 +64806,7 @@
       {
        "id": "social-science-g10-ch19-l1",
        "title": "What is federalism?",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -64298,6 +64861,68 @@
            "p": 15
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch19-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "Federalism",
+           "Unitary system",
+           "Jurisdiction",
+           "Union List"
+          ],
+          "meanings": [
+           "The list of subjects of national importance handled by the Union Government.",
+           "A system in which power is divided between a central authority and constituent units.",
+           "A system in which local or provincial units remain subordinate to the central government.",
+           "The area over which someone has legal authority."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "divided between a central authority and various constituent units of the country.",
+           "the sub-units are subordinate to the central government.",
+           "The area over which someone has legal authority.",
+           "Union List includes subjects of national importance"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"Federalism\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"Federalism\" means: A system in which power is divided between a central authority and constituent units."
+          },
+          {
+           "say": "Choose what \"Unitary system\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"Unitary system\" means: A system in which local or provincial units remain subordinate to the central government."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -75582,7 +76207,7 @@
       {
        "id": "social-science-g10-ch22-l1",
        "title": "How should we assess democracy’s outcomes?",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -75645,6 +76270,68 @@
            "p": 64
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g10-ch22-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "dictatorship",
+           "dignity",
+           "norms",
+           "transparency"
+          ],
+          "meanings": [
+           "Openness that allows people to examine how government decisions are made.",
+           "A system of government in which rulers do not depend on citizens’ elected representatives.",
+           "The quality of being treated with respect and as a person of worth.",
+           "Accepted rules or standards that guide behaviour and decisions."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "compared with dictatorship or any other alternative.",
+           "respect and freedom are the basis of democracy.",
+           "decision making will be based on norms and procedures.",
+           "This is known as transparency."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"dictatorship\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"dictatorship\" means: A system of government in which rulers do not depend on citizens’ elected representatives."
+          },
+          {
+           "say": "Choose what \"dignity\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"dignity\" means: The quality of being treated with respect and as a person of worth."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",

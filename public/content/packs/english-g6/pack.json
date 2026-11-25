@@ -30,7 +30,7 @@
       {
        "id": "english-g6-ch1-l1",
        "title": "Rama Natha and the Magic Potion",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -106,6 +106,67 @@
            "p": 2
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g6-ch1-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "potion",
+           "landlord",
+           "dew",
+           "sage"
+          ],
+          "meanings": [
+           "a very wise old man",
+           "a liquid that is believed to have magic power",
+           "a person who owns land and rents it to others",
+           "tiny drops of water that settle on leaves in the early morning"
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "He believed that a magic potion could turn any object into gold.",
+           "Rama Natha was the son of a rich landlord.",
+           "Winter morning dew rested on the leaves.",
+           "He was to bring the sage five litres of dew."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence above, then try another meaning.",
+           "pick": "Choose the meaning that fits the sentence.",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"potion\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"potion\" means: a liquid that is believed to have magic power"
+          },
+          {
+           "say": "Choose what \"landlord\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"landlord\" means: a person who owns land and rents it to others"
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours."
         },
         {
          "type": "worked",
@@ -4052,7 +4113,7 @@
       {
        "id": "english-g6-ch2-l1",
        "title": "A New Friend Arrives",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -4140,6 +4201,68 @@
            "p": 41
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g6-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "booth",
+           "stables",
+           "mahout",
+           "stray"
+          ],
+          "meanings": [
+           "An animal that has come to a place by mistake.",
+           "A rectangular space in a stable where an animal lives.",
+           "Living spaces for animals.",
+           "A person who trains and looks after an elephant."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "the best booth of",
+           "the royal stables",
+           "The mahout, or elephant trainer",
+           "One late evening, a dog strayed into the stable."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"booth\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"booth\" means: A rectangular space in a stable where an animal lives."
+          },
+          {
+           "say": "Choose what \"stables\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"stables\" means: Living spaces for animals."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -8302,7 +8425,7 @@
       {
        "id": "english-g6-ch3-l1",
        "title": "Meeting Neem Baba",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -8390,6 +8513,67 @@
            "p": 76
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g6-ch3-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "shade",
+           "cure",
+           "bitter",
+           "courtyard"
+          ],
+          "meanings": [
+           "an open space inside or just outside a house",
+           "a place away from the direct light of the sun",
+           "to make a sick person well again",
+           "having a sharp taste that is not sweet"
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Amber sat in the shade of the neem tree in her courtyard.",
+           "Arishta means the one who cures diseases.",
+           "Scientists call neem the bitter grace of God.",
+           "Amber sat in the shade of the neem tree in her courtyard."
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence above, then try another meaning.",
+           "pick": "Choose the meaning that fits the sentence.",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"shade\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"shade\" means: a place away from the direct light of the sun"
+          },
+          {
+           "say": "Choose what \"cure\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"cure\" means: to make a sick person well again"
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours."
         },
         {
          "type": "worked",
@@ -11480,7 +11664,7 @@
       {
        "id": "english-g6-ch4-l1",
        "title": "Change of Heart: The Badminton Match",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -11568,6 +11752,68 @@
            "p": 105
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g6-ch4-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "defeat",
+           "on the contrary",
+           "terrible",
+           "sensed"
+          ],
+          "meanings": [
+           "Sensed means had known or felt sure about something.",
+           "A defeat means a loss.",
+           "This phrase means just the opposite.",
+           "Here, terrible means unhappy."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "defeat: loss",
+           "on the contrary: just the opposite",
+           "terrible : unhappy",
+           "sensed: had known"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"defeat\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"defeat\" means: A defeat means a loss."
+          },
+          {
+           "say": "Choose what \"on the contrary\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"on the contrary\" means: This phrase means just the opposite."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -15362,7 +15608,7 @@
       {
        "id": "english-g6-ch5-l1",
        "title": "Bharat: Unity in Diversity",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -15455,6 +15701,68 @@
            "p": 140
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g6-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "Aipan",
+           "geru",
+           "carve",
+           "scrap"
+          ],
+          "meanings": [
+           "Scrap means small unwanted pieces.",
+           "Aipan is a folk art drawn with rice-flour paste on walls and floors.",
+           "Geru is red clay used as colour.",
+           "To carve means to make a design with a sharp tool."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Aipan, our folk art, that we draw on family functions",
+           "geru: red clay used as colour",
+           "carve: to make design with sharp tool",
+           "scrap: small unwanted pieces"
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"Aipan\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"Aipan\" means: Aipan is a folk art drawn with rice-flour paste on walls and floors."
+          },
+          {
+           "say": "Choose what \"geru\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"geru\" means: Geru is red clay used as colour."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
