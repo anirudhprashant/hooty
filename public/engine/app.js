@@ -8,7 +8,7 @@ import { realise } from './core/gen.js';
 import { renderModel } from './core/models.js';
 import { state, boot, activeLearner, persist, addXP,
   heartsRegenerated, touchStreak, recordActivity, recordLesson, weakSpots,
-  unlockReward, todayKey, exportSave, importSave, setActiveLearner, learnerList, createLearner } from './core/state.js';
+  unlockReward, todayKey, exportSave, importSave, setActiveLearner, learnerList, createLearner, wipe } from './core/state.js';
 import { applyTheme, getTheme, themeAsset, assetFor, mascotImage, mascotAvatar, themeCopy, setGuide, currentGuide, guideAvatarSrc } from './core/theme.js';
 // Brand art (tools/brand/make.sh): blob Hooty as the logo mark.
 const BRAND_MARK = './characters/blob/hooty-mark.webp';
