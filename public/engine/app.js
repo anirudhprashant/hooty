@@ -2704,6 +2704,16 @@ function render() {
   // The tab, the history entry and the screen-reader announcement all use the page title. It said the site name on
   // every screen; it now names where you are, in the app's language.
   document.title = title ? `${title} · ${t('appName')}` : document.title.replace(/^.*? · /, '');
+  // The phone's toolbar and status bar take their colour from theme-color, which the page declares once. Every world has
+  // its own ground, so the declared colour is refreshed from the page it is actually painting: a navy world no longer
+  // sits under a pink bar, and a light one no longer sits under a dark bar.
+  {
+    const bar = document.querySelector('meta[name="theme-color"]');
+    if (bar) {
+      const ground = getComputedStyle(document.body).backgroundColor;
+      if (ground && bar.getAttribute('content') !== ground) bar.setAttribute('content', ground);
+    }
+  }
 
 
 
