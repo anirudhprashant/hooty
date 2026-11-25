@@ -55,8 +55,8 @@ export const KITS = {
   germs: {
     // The Class 8 health chapter is the home of this one, but the same idea is met in Class 7 (hygiene) and Class 9 (why
     // we fall ill). The match asks for disease and hygiene words, never "health" alone, which is too broad.
-    grades: [6, 9], subject: 'science',
-    match: [/communicable/, /diseases?/, /germs?/, /hand ?wash/, /hygiene/, /pathogens?/, /prevention of disease/, /clean water/, /vaccin/, /sanitation/],
+    grades: [3, 9], subject: 'science', avoid: [/\bteeth\b|dental|oral hygiene/i],
+    match: [/communicable/, /diseases?/, /germs?/, /hand ?wash/, /hygiene/, /pathogens?/, /prevention of disease/, /clean water/, /vaccin/, /sanitation/, /clean(ing)? (teeth|hands|body)/, /daily habits?/, /healthy habits?/],
     title: 'Watch an illness spread', takeaway: 'A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner.',
     tasks: [
       { say: 'Let the illness reach most of the group.', when: 'wash <= 10 and day >= 12', then: 'With almost nobody washing, the germs pass from neighbour to neighbour until nearly the whole group has been ill.' },
@@ -603,7 +603,7 @@ export const KITS = {
   },
   foodchain: {
     grades: [3, 10], titleOnly: true,
-    match: [/food ?chains?/, /food ?webs?/, /\btrophic\b/, /who eats whom/, /(?![^\n]*\b(?:one earth|one family|vasudhaiva)\b)[^\n]*web of life/],
+    match: [/food ?chains?/, /food ?webs?/, /\btrophic\b/, /who eats whom/, /(?![^\n]*\b(?:one earth|one family|vasudhaiva)\b)[^\n]*web of life/, /plants and animals (live|together)/, /animals (living|use) (with|plants)/],
     title: 'Build a food chain', takeaway: 'A food chain shows who eats whom: green plants are the producer at the first trophic level, each animal after that is a consumer at the next level, energy flows only one way, and less of it is left at each step.',
     tasks: [
       { say: 'Build the longest chain: grass, grasshopper, frog and snake.', when: 'links == 4', then: 'Four living things make four trophic levels, from the producer up to the largest carnivore.' },
@@ -866,7 +866,7 @@ export const KITS = {
   },
   plate: {
     grades: [3, 6], perChapter: { 4: 3, 6: 2 },
-    match: [/\bbalanced (plate|meal|diet|food)\b/, /\benergy[- ]giving\b|\benergy[- ]providing\b|\bprovide energy\b|\brich in energy\b/, /\bbody[- ]building\b/, /\bprotective food/, /\bfood groups?\b/, /\bjunk food\b/],
+    match: [/\bbalanced (plate|meal|diet|food)\b/, /\benergy[- ]giving\b|\benergy[- ]providing\b|\bprovide energy\b|\brich in energy\b/, /\bbody[- ]building\b/, /\bprotective food/, /\bfood groups?\b/, /\bjunk food\b/, /mindful eating/, /happy about food/],
     title: 'Fill a balanced plate', takeaway: 'A balanced plate has protective food as its biggest part, with body-building food and some energy food. Junk food is a sometimes food.',
     tasks: [
       { say: 'Put some energy food on the plate.', when: 'grain >= 1', then: 'Rice, roti and potato give you energy to run and play.' },
@@ -940,7 +940,7 @@ export const KITS = {
     ],
   },
   money: {
-    grades: [1, 10], subjects: ['social'], avoid: [/rights?|duties|fundamental/i], perChapter: { 1: 5, 2: 5 }, minScore: { 1: 4 }, params: (text, f, all, grade) => ({ kind: grade <= 2 ? 'small' : 'rupees' }), match: [/\bdenominations?\b/, /\bdifferent amounts\b/, /\bspent\b|\bspend\b/, /\bbuying\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b|\bshops?\b/, /\bbalances? to customers\b/, /\bbarter\b/, /\bmedium of exchange\b/],
+    grades: [1, 10], subjects: ['social'], avoid: [/rights?|duties|fundamental/i], perChapter: { 1: 5, 2: 5 }, minScore: { 1: 4 }, params: (text, f, all, grade) => ({ kind: grade <= 2 ? 'small' : 'rupees' }), match: [/\bdenominations?\b/, /\bdifferent amounts\b/, /\bspent\b|\bspend\b/, /\bbuying\b/, /\bcoins?\b/, /\brupees?\b|\u20b9/, /\bshopping\b|\bshops?\b/, /\bbalances? to customers\b/, /\bbarter\b/, /\bmedium of exchange\b/, /currency notes?/, /rupee notes?/],
     title: 'Pay the exact amount', takeaway: 'The same amount can be made with different notes and coins; big notes first uses the fewest.',
     tasks: (p) => p.kind === 'small' ? [
       { say: 'Pay \u20b966 using the notes and coins.', when: 'amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66', then: 'For example \u20b950 + \u20b910 + \u20b95 + \u20b91 = \u20b966.' },
@@ -1626,6 +1626,53 @@ export const KITS = {
     tasks: [
       { say: 'Sort the first one: keeping the street clean.', when: 'item == 0 and bin == 1', then: 'Keeping shared places clean is a duty: what each citizen owes the others.' },
       { say: 'Sort going to school.', when: 'item == 2 and bin == 0', then: 'Going to school is a right: the law promises it to every child.' },
+    ],
+  },
+  population: {
+    // Class 8 "Dynamics of Population": births and deaths per thousand, the growth rate and the doubling time. The
+    // numbers are a teaching model of one town, not a census.
+    grades: [8, 10], subjects: ['social'], perChapter: 1,
+    match: [/population/, /birth ?rate/, /death ?rate/, /growth rate/, /demograph/, /doubling time/],
+    title: 'A town grows', takeaway: 'A population grows when more people are born than die. Births minus deaths per thousand gives the yearly growth: 30 births and 10 deaths per thousand is 2% a year, and a population growing at 2% doubles in about 35 years.',
+    tasks: [
+      { say: 'Set births to 30 and deaths to 10.', when: 'b == 30 and d == 10', then: '2% a year: the town doubles in about 35 years.' },
+      { say: 'Make the town shrink.', when: 'b < d', then: 'When deaths are more than births, the population falls.' },
+      { say: 'Make the town stay the same size.', when: 'b == d', then: 'Births equal deaths: zero growth, so the bars stay level.' },
+    ],
+  },
+  freight: {
+    // Class 10 "Lifelines of National Economy". The costs are rough teaching rates: what matters is the trade-off
+    // between cheap and slow, and fast and dear.
+    grades: [8, 10], subjects: ['social'], perChapter: 1, avoid: [/portuguese|dutch|french|british|colonial|trenches?|reefs?|globalis|globaliz/i],
+    match: [/transport/, /roadways?|railways?/, /waterways?|sea ports?|ports?/, /airways?|air transport/, /lifelines?/, /pipelines?/, /freight|goods trains?/],
+    title: 'Send one tonne', takeaway: 'Road carries goods door to door, rail is cheap for bulk over long distances, air is fastest and dearest, and water is the cheapest but the slowest. A country needs all of them, which is why they are called its lifelines.',
+    tasks: [
+      { say: 'Send it by rail.', when: 'mode == 1', then: 'Rail is cheaper than road for bulk over long distances.' },
+      { say: 'Find the cheapest way to send it.', when: 'mode == 3', then: 'Water is the cheapest for heavy goods, but slow, and only between ports.' },
+      { say: 'Find the fastest way.', when: 'mode == 2', then: 'Air is the fastest and the most expensive: for urgent, light goods.' },
+    ],
+  },
+  consumerrights: {
+    // Class 10 "Consumer Rights": which right covers a problem in the market. Three of the six rights, because the
+    // sort needs groups a child can tell apart.
+    widget: 'sortlab', grades: [8, 10], subjects: ['social'], perChapter: 1,
+    match: [/consumer rights?/, /consumer protection/, /redressal/, /right to (safety|information|choose|be heard)/, /consumer movement/, /exploitation of consumers?/],
+    title: 'Which consumer right?', takeaway: 'The right to safety covers goods that can hurt you; the right to information covers what you are not told, like a price or an expiry date; the right to redressal covers a complaint that is not answered or a faulty good not replaced.',
+    params: () => ({
+      bins: ['Right to safety', 'Right to information', 'Right to redressal'],
+      items: [
+        { t: 'No price printed on a packet', b: 1, why: 'You cannot choose without knowing the price: the right to information.' },
+        { t: 'A heater with a loose wire', b: 0, why: 'A loose wire can shock or burn: the right to safety.' },
+        { t: 'A shop will not replace a broken fan', b: 2, why: 'A faulty good must be replaced or repaid: the right to redressal.' },
+        { t: 'The expiry date is hidden on a medicine', b: 1, why: 'You are not told what you need to know: the right to information.' },
+        { t: 'A pressure cooker bursts while cooking', b: 0, why: 'A cooker that bursts is unsafe: the right to safety.' },
+        { t: 'A complaint gets no answer for months', b: 2, why: 'Being heard and getting it put right is the right to redressal.' },
+      ],
+      labels: { heading: 'Which right protects the buyer?', pickItem: 'Pick the problem', pickBin: 'Which right?', yes: 'Yes.', goes: 'is covered by the', pick: 'Which consumer right covers "{t}"?', no: 'Not that right.', readAgain: 'Ask: is it unsafe, is something hidden from you, or is a complaint ignored?' },
+    }),
+    tasks: [
+      { say: 'Sort the missing price.', when: 'item == 0 and bin == 1', then: 'A price that is not shown hides information: the right to information.' },
+      { say: 'Sort the shop that will not replace a broken fan.', when: 'item == 2 and bin == 2', then: 'A faulty good must be put right: the right to redressal.' },
     ],
   },
   wordlab: {

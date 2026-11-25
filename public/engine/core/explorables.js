@@ -4215,6 +4215,71 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  population: {
+    subject: 'social',
+    about: 'A town of 1,000 people and what births and deaths do to it: births and deaths per thousand each year, the yearly growth rate, the population after ten, twenty and thirty years, and the doubling time. For population, birth rate, death rate, growth rate, and why a population grows or shrinks.',
+    params: {},
+    sliders: [['b', 'Births each year (per 1,000 people)', 5, 45, 1, 20], ['d', 'Deaths each year (per 1,000 people)', 5, 45, 1, 10]],
+    draw(v) {
+      const b = v.b, d = v.d, r = (b - d) / 1000;
+      const fmt = (n) => n.toLocaleString('en-IN');
+      const pop = (t) => Math.round(1000 * Math.pow(1 + r, t));
+      const years = [0, 10, 20, 30], vals = years.map(pop);
+      const top = Math.max(...vals, 1000) * 1.12;
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, 'A town of 1,000 people', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, r > 0 ? `growing ${Math.round(r * 1000) / 10}% a year` : r < 0 ? `falling ${Math.round(-r * 1000) / 10}% a year` : 'not growing', { z: 14, w: 700, a: 'end', f: r > 0 ? '#1d7a45' : r < 0 ? '#c0392b' : '#7a6b99' }));
+      const base = 252, maxH = 168;
+      years.forEach((t, i) => {
+        const x = 74 + i * 136, h = Math.max(8, (vals[i] / top) * maxH), y = base - h;
+        kids.push(R(x, y, 86, h, r > 0 ? C.b : r < 0 ? C.o : '#9b90b5', { w: 2, r: 8 }));
+        kids.push(T(x + 43, y - 10, fmt(vals[i]), { z: 16, w: 800, f: INK }));
+        kids.push(T(x + 43, base + 22, t === 0 ? 'now' : `in ${t} years`, { z: 13, w: 600, f: '#7a6b99' }));
+      });
+      kids.push(L(24, base, 576, base, '#c9b6d8', 2));
+      const words = r > 0
+        ? `Births ${b}, deaths ${d} for every thousand people: the town grows by ${Math.round(r * 1000) / 10}% a year. In 30 years it has about ${fmt(vals[3])} people, doubling in about ${Math.round(70 / (r * 100))} years.`
+        : r < 0
+          ? `Births ${b}, deaths ${d}: more people die than are born, so the town falls to about ${fmt(vals[3])} in 30 years.`
+          : `Births and deaths are equal at ${b}: the town stays at about 1,000 people.`;
+      return { kids, say: words };
+    },
+  },
+  freight: {
+    subject: 'social',
+    about: 'Moving one tonne of goods 100 to 2,000 km by road, rail, air or water, with the cost and the time each takes. The cheapest way is slow; the fastest is dear. For transport, roadways, railways, airways, waterways, and the lifelines of a country.',
+    params: {},
+    sliders: [['mode', 'How is it carried? (0 road, 1 rail, 2 air, 3 water)', 0, 3, 1, 0], ['km', 'Distance (km)', 100, 2000, 100, 500]],
+    draw(v) {
+      const km = v.km, mode = Math.max(0, Math.min(3, v.mode | 0));
+      const ways = [
+        { n: 'Road', rate: 8, speed: 45, load: 2 },
+        { n: 'Rail', rate: 2, speed: 55, load: 6 },
+        { n: 'Air', rate: 25, speed: 700, load: 4 },
+        { n: 'Water', rate: 1.2, speed: 20, load: 12 },
+      ];
+      const rows = ways.map((w, i) => ({ ...w, i, cost: Math.round(w.rate * km), hours: Math.round((km / w.speed + w.load) * 10) / 10 }));
+      const maxCost = Math.max(...rows.map((r) => r.cost));
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, `One tonne of goods, ${km} km`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'cost and time by each way', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      rows.forEach((r, j) => {
+        const y = 52 + j * 52, sel = j === mode;
+        kids.push(R(12, y, 576, 44, sel ? '#fff3d6' : '#ffffff', { w: sel ? 3 : 1.5, s: sel ? '#e8b44a' : '#e3dccb', r: 12 }));
+        kids.push(T(30, y + 28, r.n, { z: 17, w: 800, a: 'start', f: INK }));
+        const bw = Math.max(6, (r.cost / maxCost) * 240);
+        kids.push(R(116, y + 15, 240, 14, '#f1ecdf', { w: 0, r: 7 }));
+        kids.push(R(116, y + 15, bw, 14, sel ? C.o : C.b, { w: 0, r: 7 }));
+        kids.push(T(368, y + 28, `₹${r.cost.toLocaleString('en-IN')}`, { z: 15, w: 700, a: 'start', f: sel ? '#a05600' : '#4a3b6b' }));
+        kids.push(T(500, y + 28, `${r.hours} h`, { z: 15, w: 700, a: 'start', f: '#4a3b6b' }));
+      });
+      kids.push(T(300, 282, 'road: door to door · rail: bulk, long distance · air: urgent and light · water: heavy and slow', { z: 12, w: 600, f: '#8a7aa8' }));
+      const r = rows[mode];
+      const cheap = rows.reduce((a, x) => (x.cost < a.cost ? x : a), rows[0]);
+      const fast = rows.reduce((a, x) => (x.hours < a.hours ? x : a), rows[0]);
+      return { kids, say: `By ${r.n.toLowerCase()}: about ₹${r.cost.toLocaleString('en-IN')} and ${r.hours} hours for one tonne over ${km} km. ${cheap.n.toLowerCase()} is the cheapest way and ${fast.n.toLowerCase()} the fastest, so the choice depends on what the goods are and how soon they are needed.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
