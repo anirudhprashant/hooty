@@ -1305,6 +1305,9 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 }
 
 /* The trail's unit jump row: one line, scrolled sideways, so a long book name never stacks the whole list vertically. */
+/* Keep-this-book sits under the trail's introduction: a quiet offer, not a demand. */
+.offline-row { margin: 0 0 var(--s4); }
+.offline-btn { font-size: var(--fs-sm); }
 .unit-jump {
   display: flex;
   gap: var(--s2, 8px);

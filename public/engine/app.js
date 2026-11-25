@@ -132,6 +132,50 @@ async function loadGrade(grade) {
   if (got.length === want.length) loadedGrades.add(grade);
 }
 
+// A book is text, pictures and diagrams. The text arrives with the book; the pictures are fetched per lesson, so a
+// book that has never been read on this phone shows blank frames offline. This walks the whole book once and asks the
+// browser for every picture, which the service worker keeps, so the book then works with no connection at all.
+function bookMediaUrls(pack) {
+  const urls = new Set();
+  const add = (p) => {
+    if (typeof p !== 'string' || !p) return;
+    if (/^(https?:|data:|blob:)/.test(p)) return;
+    const rel = p.replace(/^\.?\//, '');
+    urls.add(`${pack.base}/${rel}`);
+    // Diagrams ship a tall version for phones; keep it too, so a narrow screen offline is not the one that breaks.
+    if (p.endsWith('.svg')) urls.add(`${pack.base}/${rel.replace(/\.svg$/, '-stack.svg')}`);
+  };
+  for (const unit of pack.units || []) {
+    for (const chapter of unit.chapters || []) {
+      for (const lesson of [...(chapter.lessons || []), chapter.boss].filter(Boolean)) {
+        add(lesson.topicScene);
+        add(lesson.comic);
+      }
+    }
+  }
+  return [...urls];
+}
+
+async function saveBookOffline(pack, onProgress) {
+  const queue = bookMediaUrls(pack);
+  const total = queue.length;
+  let done = 0;
+  const pull = async () => {
+    while (queue.length) {
+      const url = queue.shift();
+      try {
+        await fetch(url, { credentials: 'same-origin' });
+      } catch {
+        // a picture that will not come is not worth stopping the rest for
+      }
+      done += 1;
+      if (onProgress) onProgress(done, total);
+    }
+  };
+  await Promise.all([0, 1, 2, 3].map(pull));
+  return { total };
+}
+
 // Only the book on screen is worth waiting for. The rest of the class follows quietly once the home screen is up,
 // so review questions and grown-up progress fill in moments later.
 async function ensurePack(id) {
@@ -659,6 +703,31 @@ function screenPath() {
     : t('bookTitle', { subject: subjectName(String(pack.subject || '').replace(/\bScience\b/, 'Science')) || pack.subject, n: pack.grade });
   wrap.append(el('h2', { class: 'section-title', text: bookTitle }));
   wrap.append(el('p', { class: 'section-sub', text: t('trailIntro') }));
+  // A parent about to travel can keep the whole book here, in one tap, and the button says how far it got.
+  {
+    const kept = !!l?.offlineBooks?.[pack.id];
+    const label = el('span', { text: kept ? t('savedOffline') : t('saveOffline') });
+    const btn = el('button', { class: `btn ${kept ? 'btn--primary' : 'btn--ghost'} offline-btn`, type: 'button' }, [
+      icon(kept ? 'check' : 'download', { size: 20 }), label,
+    ]);
+    btn.addEventListener('click', async () => {
+      if (btn.disabled || l?.offlineBooks?.[pack.id]) return;
+      btn.disabled = true;
+      label.textContent = t('savingOffline', { done: 0, total: bookMediaUrls(pack).length });
+      await saveBookOffline(pack, (done, all) => { label.textContent = t('savingOffline', { done, total: all }); });
+      if (l) {
+        l.offlineBooks = { ...(l.offlineBooks || {}), [pack.id]: Date.now() };
+        await persist();
+      }
+      label.textContent = t('savedOffline');
+      btn.classList.remove('btn--ghost');
+      btn.classList.add('btn--primary');
+      btn.disabled = false;
+      toast(t('savedOfflineToast'));
+      warmServiceWorker();
+    });
+    wrap.append(el('div', { class: 'offline-row' }, [btn]));
+  }
 
   // A big book is fifteen screens of trail. A row of unit chips at the top lets a child jump to the part they want
   // instead of scrolling past everything they have already done.

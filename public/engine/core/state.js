@@ -41,6 +41,7 @@ function freshLearner(name = 'Learner') {
     board: [],              // stickers placed on the sticker board, 'id@x,y' with x and y in percent
     secondsLearned: 0,
     days: {},               // 'YYYY-MM-DD' -> xp earned that day (last 60), for the Grown-ups week strip
+    offlineBooks: {},       // packId -> when this book was kept on the phone
     pre: {},                // chapterId -> { n, c } score before the chapter was taught
     post: {},               // chapterId -> { pct, title } first score on the chapter challenge
     retakes: { n: 0, fixed: 0 },   // different questions asked after a re-teach, and how many the child then got right
