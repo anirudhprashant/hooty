@@ -1259,7 +1259,9 @@ export const KITS = {
         // A single lesson rarely has three dated facts of its own, so fall back to the dates the whole chapter mentions,
         // which is what the English side does too: the idea is the chapter's, not the lesson's.
         const own = datedEventsHi(facts || []);
-        const events = own.length >= 3 ? own : datedEventsHi(chapter || []);
+        // Two dates from this lesson already make a real timeline, so keep them: falling back to the chapter here
+        // pulled a different poet's event into the lesson (ch11 lesson 1 was showing lesson 3's 1916 shehnai).
+        const events = own.length >= 2 ? own : datedEventsHi(chapter || []);
         return { events, hist: HI_HIST.test(text || '') || (lang === 'hi' && /\b(?:born|died|passed away|life|poet|writer|author|novelist)\b/i.test(text || '')), hi: true };
       }
       const own = datedEvents(facts || []);
@@ -1591,7 +1593,8 @@ function datedEventsHi(facts, need = 3) {
     const h = years[0];
     if (seen.has(h.y)) continue;
     const near = sentence.slice(Math.max(0, h.i - 22), h.i + h.s.length + 16);
-    const before = /सन्|ई\.|ईस्वी|संवत्|शताब्दी|\b(?:born|died|passed away|published|composed|founded|established|wrote|written|life|from)\b/i.test(near);
+    // A Hindi book can carry English fact sheets, so the date words may be English too: "born in 1977", "in 1999".
+    const before = /सन्|ई\.|ईस्वी|संवत्|शताब्दी|\b(?:born|died|passed away|published|composed|founded|established|wrote|written|life|from|in|on|by|around|before|after|until|till|of|between|during)\b/i.test(near);
     const after = /^\s*(?:में|को|तक|से|के\s+(?:बाद|पहले|समय|दौरान|जन्म)|की\s+(?:रचना|स्थापना))/.test(sentence.slice(h.i + h.s.length))
       || /[.,;]\s*$/.test(sentence.slice(Math.max(0, h.i - 2), h.i + h.s.length + 1)) || h.i + h.s.length === sentence.length;
     if (!before && !after) continue;
