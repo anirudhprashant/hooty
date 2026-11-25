@@ -4589,6 +4589,102 @@ export const WIDGETS = {
       return { kids, say: `At ${tax}% tax, 100 people pay ₹${revenue.toLocaleString('en-IN')}. With ${share}% to schools, schools get ₹${school.toLocaleString('en-IN')}, and roads and health get ₹${rest.toLocaleString('en-IN')} each. Public services are paid for out of taxes, so the rate decides how much can be done.` };
     },
   },
+  neighbours: {
+    subject: 'social',
+    about: 'India in the middle of a compass: which country lies in each direction, whether the border is on land or across the sea, and how far each one reaches. For India and her neighbours, directions, land borders and maritime neighbours.',
+    params: {},
+    sliders: [['pick', 'Which neighbour? (slide to look around)', 0, 7, 1, 0]],
+    draw(v) {
+      const all = [
+        { n: 'Pakistan', dir: 'north-west', sea: false, note: 'It shares a long land border with India.' },
+        { n: 'Afghanistan', dir: 'north-west', sea: false, note: 'It lies beyond the north-west, on land.' },
+        { n: 'China', dir: 'north', sea: false, note: 'It is the largest neighbour, with the Himalayas between.' },
+        { n: 'Nepal', dir: 'north', sea: false, note: 'It is a Himalayan land neighbour.' },
+        { n: 'Bhutan', dir: 'north-east', sea: false, note: 'It is a small Himalayan land neighbour.' },
+        { n: 'Bangladesh', dir: 'east', sea: false, note: 'It shares history, culture and language with India.' },
+        { n: 'Myanmar', dir: 'east', sea: false, note: 'It is India\u2019s eastern land neighbour.' },
+        { n: 'Sri Lanka', dir: 'south', sea: true, note: 'It is an island across the sea.' },
+      ];
+      const pick = Math.max(0, Math.min(7, v.pick | 0));
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, 'India and her neighbours', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'N up the page', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      // a three by three compass: the cells hold the neighbours that lie that way
+      const cells = [
+        { gx: 0, gy: 0, title: 'north-west', names: [0, 1] },
+        { gx: 1, gy: 0, title: 'north', names: [2, 3] },
+        { gx: 2, gy: 0, title: 'north-east', names: [4] },
+        { gx: 0, gy: 1, title: 'west', names: [] },
+        { gx: 1, gy: 1, title: 'India', names: [] },
+        { gx: 2, gy: 1, title: 'east', names: [5, 6] },
+        { gx: 0, gy: 2, title: 'south-west', names: [] },
+        { gx: 1, gy: 2, title: 'south', names: [7] },
+        { gx: 2, gy: 2, title: 'south-east', names: [] },
+      ];
+      cells.forEach((c) => {
+        const x = 18 + c.gx * 190, y = 48 + c.gy * 74;
+        const isIndia = c.title === 'India';
+        kids.push(R(x, y, 176, 64, isIndia ? '#f1e6ff' : '#ffffff', { w: 2, s: isIndia ? '#9b7bd0' : '#e3dccb', r: 12 }));
+        kids.push(T(x + 88, y + 16, c.title, { z: 11, w: 700, f: isIndia ? '#6b4a9e' : '#9b90b5' }));
+        if (isIndia) {
+          kids.push(T(x + 88, y + 44, 'India', { z: 18, w: 800, f: '#4b2597' }));
+          return;
+        }
+        if (!c.names.length) {
+          const sea = c.title === 'south-east' ? 'Bay of Bengal' : 'Arabian Sea';
+          kids.push(T(x + 88, y + 42, sea, { z: 12, w: 600, f: '#7aa2c8' }));
+          return;
+        }
+        c.names.forEach((idx, k) => {
+          const on = idx === pick;
+          const cy = y + 34 + k * 15;
+          kids.push(T(x + 88, cy, all[idx].n, { z: on ? 16 : 13, w: on ? 800 : 600, f: on ? '#a05600' : INK }));
+        });
+      });
+      const it = all[pick];
+      kids.push(T(300, 285, `${it.n}: to the ${it.dir}, ${it.sea ? 'across the sea' : 'on land'} \u2014 ${it.note}`, { z: 13, w: 700, f: '#4a3b6b' }));
+      return { kids, say: `${it.n} lies to the ${it.dir} of India${it.sea ? ', across the sea' : ''}. ${it.note}` };
+    },
+  },
+  messages: {
+    subject: 'science',
+    about: 'How a message crosses a distance: a drum, a runner, a pigeon, the post or a telephone, and the time each takes. For how people communicated long ago and how the post and the telephone changed it.',
+    params: {},
+    sliders: [['how', 'How is the message sent? (slide to change)', 0, 4, 1, 0], ['km', 'Distance (km)', 10, 1000, 10, 100]],
+    draw(v) {
+      const how = Math.max(0, Math.min(4, v.how | 0)), km = v.km;
+      const ways = [
+        { n: 'Drum', note: 'only as far as it can be heard' },
+        { n: 'Runner', note: 'about 40 km a day on foot' },
+        { n: 'Pigeon', note: 'about 60 km an hour' },
+        { n: 'Post', note: 'a letter, sorted and carried' },
+        { n: 'Telephone', note: 'the moment you speak' },
+      ];
+      const time = (i) => {
+        if (i === 0) return km <= 10 ? 1 : null;
+        if (i === 4) return 0;
+        if (i === 1) return Math.round((km / 40) * 24);          // days of walking, in hours
+        if (i === 2) return Math.round((km / 60) * 10) / 10;     // hours of flight
+        return Math.round(48 + (km / 500) * 24);                 // two days of sorting plus the journey
+      };
+      const rows = ways.map((w, i) => ({ ...w, i, hours: time(i) }));
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, `A message to go ${km} km`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'how long it takes', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      rows.forEach((r, j) => {
+        const y = 50 + j * 46, sel = j === how;
+        kids.push(R(12, y, 576, 40, sel ? '#fff3d6' : '#ffffff', { w: sel ? 3 : 1.5, s: sel ? '#e8b44a' : '#e3dccb', r: 11 }));
+        kids.push(T(28, y + 25, r.n, { z: 16, w: 800, a: 'start', f: INK }));
+        kids.push(T(170, y + 25, r.note, { z: 12, w: 600, a: 'start', f: '#8a7aa8' }));
+        const days = (h) => (h / 24 >= 10 ? String(Math.round(h / 24)) : (h / 24).toFixed(1));
+        const label = r.hours === null ? 'not that far' : r.hours === 0 ? 'at once' : r.hours < 24 ? `${r.hours} h` : `${days(r.hours)} days`;
+        kids.push(T(566, y + 25, label, { z: 15, w: 800, a: 'end', f: sel ? '#a05600' : '#4a3b6b' }));
+      });
+      const r = rows[how];
+      const label = r.hours === null ? `A drum cannot be heard ${km} km away.` : r.hours === 0 ? 'A telephone message arrives at once, wherever the two people are.' : `By ${r.n.toLowerCase()}, a message ${km} km away takes about ${r.hours < 24 ? r.hours + ' hours' : (r.hours / 24 >= 10 ? Math.round(r.hours / 24) : (r.hours / 24).toFixed(1)) + ' days'}.`;
+      return { kids, say: `${label} Long ago people used drums, runners and pigeons; the post and then the telephone made a message travel in hours or at once.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

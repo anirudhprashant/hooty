@@ -1820,6 +1820,28 @@ export const KITS = {
       { say: 'Send half the money to schools.', when: 'schools == 50', then: 'Half to schools leaves a quarter each for roads and health.' },
     ],
   },
+  neighbours: {
+    // Class 7 "India and Her Neighbours": direction and land or sea, not a map quiz.
+    grades: [6, 8], subjects: ['social'], perChapter: 1, avoid: [/partition|freedom struggle|1947|independence movement/i],
+    match: [/neighbours?/, /pakistan|nepal|bhutan|bangladesh|myanmar|sri lanka|maldives/, /land borders?/, /maritime/, /himalayas separate/],
+    title: 'India and her neighbours', takeaway: 'India sits in the middle: Pakistan and Afghanistan to the north-west, China and Nepal to the north, Bhutan to the north-east, Bangladesh and Myanmar to the east, and Sri Lanka across the sea to the south.',
+    tasks: [
+      { say: 'Find the neighbour to the east.', when: 'pick == 5', then: 'Bangladesh lies to the east, sharing a land border and a language with West Bengal.' },
+      { say: 'Find the island neighbour across the sea.', when: 'pick == 7', then: 'Sri Lanka is an island to the south, across the sea, not on a land border.' },
+      { say: 'Find the largest neighbour, to the north.', when: 'pick == 2', then: 'China is India\u2019s largest neighbour, with the Himalayas between them.' },
+    ],
+  },
+  messages: {
+    // The World Around Us Class 4, "How People Communicate" and "Fast Travel".
+    grades: [3, 5], subjects: ['science'], perChapter: 1,
+    match: [/communicat/, /post office|postal service/, /pigeons?|messengers?|letters?/, /drumbeats?/, /telephone|mobile|phone/],
+    title: 'How a message travels', takeaway: 'A drum carries only as far as it can be heard; a runner, a pigeon and the post take hours or days; a telephone carries a message at once. Each step changed how far and how fast people could talk.',
+    tasks: [
+      { say: 'Send the message by telephone.', when: 'how == 4', then: 'A telephone message arrives at once, however far away the other person is.' },
+      { say: 'Send a letter 400 km by post.', when: 'how == 3 and km == 400', then: 'A letter is sorted and carried: about two days plus the journey.' },
+      { say: 'Send it by pigeon.', when: 'how == 2', then: 'A pigeon flies at about 60 km an hour, faster than a runner over a long distance.' },
+    ],
+  },
   wordlab: {
     // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
     // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only
