@@ -1247,7 +1247,7 @@ export const KITS = {
   },
   timeline: {
     subjects: ['social', 'hindi'], languages: ['en', 'hi'],
-    grades: [6, 10], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/, /\b(?:1[0-9]{3}|20[0-2][0-9])\b/, /\b\d{1,2}(?:st|nd|rd|th) century\b/, /\bmaurya|gupta|mughal|chola|sultanate|harappan?\b/,
+    grades: [6, 10], avoid: [/neighbours?/i], match: [/\bBCE\b/, /\bCE\b/, /centur(y|ies)/, /\bdynasty\b/, /\bempire\b/, /\breign\b|\bruled\b/, /\bhistory\b/, /\bancient\b/, /\b(?:1[0-9]{3}|20[0-2][0-9])\b/, /\b\d{1,2}(?:st|nd|rd|th) century\b/, /\bmaurya|gupta|mughal|chola|sultanate|harappan?\b/,
       /सन्|संवत्|ईस्वी/, /शताब्दी/, /राजवंश|साम्राज्य|सम्राट/, /इतिहास/, /(?:1[6-9]\d{2}|20[0-2]\d)/],
     // the lesson's own dates if it has three, otherwise the whole chapter's dates when this lesson mentions one of them.
     // A bare year only counts in a lesson that also reads as history, so an economics chart of 2025 gets no timeline.
@@ -1264,7 +1264,7 @@ export const KITS = {
         const events = own.length >= 2 ? own : datedEventsHi(chapter || []);
         return { events, hist: HI_HIST.test(text || '') || (lang === 'hi' && /\b(?:born|died|passed away|life|poet|writer|author|novelist)\b/i.test(text || '')), hi: true };
       }
-      const own = datedEvents(facts || []);
+      const own = datedEvents(facts || [], 2);
       // A lesson about measuring time ('Timelines, Centuries and Millenniums') has no dated events of its own, and the
       // widget refuses to attach without three. Give it the standard anchors so the idea can still be shown.
       // Only a lesson that is ABOUT time: the words 'century' or 'CE' alone appear in ordinary history lessons,
@@ -1276,8 +1276,19 @@ export const KITS = {
         return { events: anchored, hist: true };   // usable() also wants hist, or the anchor branch is never used
       }
       const hist = /\b(?:history|ancient|medieval|centur|dynasty|empire|emperor|king|queen|ruled|reign|bce|war|battle|revolution|revolt|movement|freedom|independence|coloni[sz]|british|mughal|sultan|treaty|parliament|harappa|civilisation|civilization)\b/.test(text);
-      if (own.length) return { events: own, hist };
-      return { events: datedEvents(facts || [], 1).length ? datedEvents(chapter || []) : [], hist };
+      // One date in the lesson is not a timeline, but the chapter around it often has more. Only borrow the chapter's
+      // events when the lesson's own date falls inside their span, or "The Pre-modern World" gets a 1890-1950 timeline
+      // from a chapter whose other lessons discuss the world wars.
+      const ownAll = own.length ? own : datedEvents(facts || [], 1);
+      if (ownAll.length >= 2) return { events: ownAll, hist };
+      if (ownAll.length === 1 && hist) {
+        const chap = datedEvents(chapter || [], 2);
+        if (chap.length >= 2) {
+          const lo = Math.min(...chap.map((e) => e.year)), hi = Math.max(...chap.map((e) => e.year));
+          if (ownAll[0].year >= lo - 80 && ownAll[0].year <= hi + 80) return { events: chap, hist };
+        }
+      }
+      return { events: ownAll, hist };
     },
     // Two dated events still make a real timeline (a birth and a first book, a birth and a death), and a Hindi
     // biography often has only two. The challenges are written to match, so two points are worth showing.
@@ -1959,7 +1970,7 @@ function label(sentence) {
   const cut = c.replace(DATE_TAIL, '').trim();
   if (cut.split(' ').length >= 3) c = cut;
   c = c.split(/[;:]/)[0].replace(/[,]\s*$/, '').trim();
-  if (c.length > 52) c = c.slice(0, 52).replace(/\s+\S*$/, '').replace(/[,]$/, '');
+  if (c.length > 52) c = c.slice(0, 52).replace(/\s+\S*$/, '').replace(/[,]$/, '') + '\u2026';
   for (let prev = ''; prev !== c;) { prev = c; c = c.replace(/\s+(the|a|an|of|in|to|and|from|by|was|were|is|are|with|at|on)$/i, ''); }
   return c;
 }
@@ -1976,10 +1987,16 @@ export function datedEvents(facts, need = 3) {
     // a month name before the year: "in January 1915", "on 6 April 1919"
     else if ((m = t.match(/\b(?:in|on|by|from|around|before|after|until|till|of|between)\s+(?:\d{1,2}\s+)?(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{3,4})\b/i))) y = Number(m[1]);
     else if ((m = t.match(/\b\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})\b/i))) y = Number(m[1]);
-    else if ((m = t.match(/\b(?:in|around|by|from|of|year|until|till|after|before|between) (1[0-9]{3}|20[0-2][0-9])\b/))) y = Number(m[1]);
+    else if ((m = t.match(/\b(?:in|around|by|from|of|year|until|till|after|before|between) (1[0-9]{3}|20[0-2][0-9])\b/i))) y = Number(m[1]);
     if (y === null || y === 0 || seen.has(y)) continue;
     if (/^(this|these|that|those|it|its|they|their|he|she|his|her|here|there)\b/i.test(t.trim())) continue;   // needs the sentence before it to make sense
     seen.add(y); out.push({ year: y, label: label(t) });
+    // "from the 3rd to the 6th century CE" is a range, not one point: read every century in the sentence.
+    for (const cm of t.matchAll(/(\d{1,2})(?:st|nd|rd|th) century(?:\s*(BCE|BC|CE|AD))?/gi)) {
+      const yy = cm[2] && /BC/i.test(cm[2]) ? -(Number(cm[1]) * 100 - 50) : Number(cm[1]) * 100 - 50;
+      if (yy === y || seen.has(yy)) continue;
+      seen.add(yy); out.push({ year: yy, label: label(t) });
+    }
   }
   // one era per timeline: ancient and modern dates together squash one end flat, so keep the larger group
   const old = out.filter((e) => e.year < 1000), recent = out.filter((e) => e.year >= 1000);
