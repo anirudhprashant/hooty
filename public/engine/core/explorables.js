@@ -4280,6 +4280,78 @@ export const WIDGETS = {
       return { kids, say: `By ${r.n.toLowerCase()}: about ₹${r.cost.toLocaleString('en-IN')} and ${r.hours} hours for one tonne over ${km} km. ${cheap.n.toLowerCase()} is the cheapest way and ${fast.n.toLowerCase()} the fastest, so the choice depends on what the goods are and how soon they are needed.` };
     },
   },
+  cropyear: {
+    subject: 'social',
+    about: 'India\'s cropping year, month by month: the three seasons (kharif, rabi and zaid), when each is sown, when it grows and when it is harvested, and the crops that belong to each. For cropping seasons, kharif and rabi crops, and the agricultural calendar.',
+    params: {},
+    sliders: [['month', 'Month of the year', 1, 12, 1, 1]],
+    draw(v) {
+      const m = Math.max(1, Math.min(12, v.month | 0));
+      const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const short = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+      const state = (sow, grow, harvest) => {
+        const within = (a, b) => a <= b ? m >= a && m <= b : m >= a || m <= b;
+        if (within(...sow)) return 'sowing';
+        if (within(...grow)) return 'growing';
+        if (within(...harvest)) return 'harvesting';
+        return 'not in the field';
+      };
+      const seasons = [
+        { name: 'Kharif', colour: C.g, pale: '#e6f7f1', sow: [6, 7], grow: [8, 9], harv: [10, 11], crops: 'rice, maize, cotton, groundnut' },
+        { name: 'Rabi', colour: C.y, pale: '#fff7df', sow: [10, 12], grow: [1, 3], harv: [4, 5], crops: 'wheat, barley, peas, gram, mustard' },
+        { name: 'Zaid', colour: C.o, pale: '#fff0eb', sow: [3, 3], grow: [4, 5], harv: [6, 6], crops: 'watermelon, cucumber, fodder' },
+      ];
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, "India's cropping year", { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, names[m - 1], { z: 15, w: 800, a: 'end', f: INK }));
+      short.forEach((s, i) => {
+        const on = i + 1 === m;
+        kids.push(R(12 + i * 48, 44, 44, 34, on ? C.hero : '#ffffff', { w: on ? 3 : 1.5, s: on ? C.hero : '#e3dccb', r: 9 }));
+        kids.push(T(34 + i * 48, 67, s, { z: 16, w: 800, f: on ? '#ffffff' : '#7a6b99' }));
+      });
+      seasons.forEach((s, i) => {
+        const y = 96 + i * 66, st = state(s.sow, s.grow, s.harv);
+        kids.push(R(12, y, 576, 58, s.pale, { w: 2, s: s.colour, r: 12 }));
+        kids.push(T(28, y + 24, s.name, { z: 18, w: 800, a: 'start', f: '#3a2a00' }));
+        kids.push(T(28, y + 46, st, { z: 14, w: 700, a: 'start', f: st === 'not in the field' ? '#9b90b5' : '#6b5a8a' }));
+        kids.push(T(566, y + 24, s.crops, { z: 13, w: 600, a: 'end', f: '#4a3b6b' }));
+        kids.push(T(566, y + 45, i === 0 ? 'sown Jun-Jul, harvested Oct-Nov' : i === 1 ? 'sown Oct-Dec, harvested Mar-Apr' : 'grown Mar-Jun', { z: 12, w: 600, a: 'end', f: '#8a7aa8' }));
+      });
+      const doing = seasons.filter((s) => state(s.sow, s.grow, s.harv) !== 'not in the field').map((s) => `${s.name.toLowerCase()} crops are ${state(s.sow, s.grow, s.harv)}`);
+      return { kids, say: `${names[m - 1]}: ${doing.join('; ') || 'the fields are between seasons'}. Kharif is the monsoon crop, rabi the winter crop, and zaid the short summer season.` };
+    },
+  },
+  tigerreserve: {
+    subject: 'social',
+    about: 'A tiger reserve of a chosen size and how well it is protected: about one tiger needs twenty square kilometres, and poaching takes the rest. For wildlife conservation, Project Tiger, habitat, prey and poaching.',
+    params: {},
+    sliders: [['area', 'Forest in the reserve (sq km)', 100, 1000, 50, 500], ['protect', 'Protection from poaching (0-100)', 0, 100, 10, 50]],
+    draw(v) {
+      const area = v.area, prot = v.protect / 100;
+      const cap = Math.round(area / 20), alive = Math.round(cap * (0.2 + 0.8 * prot));
+      const kids = [R(0, 0, W, H, '#f4fbf3', { w: 0 }), R(0, 0, W, 34, '#e4f2df', { w: 0 })];
+      kids.push(T(14, 23, 'A tiger reserve', { z: 15, w: 700, a: 'start', f: '#3d6b45' }));
+      kids.push(T(586, 23, `${area} sq km`, { z: 14, w: 700, a: 'end', f: '#3d6b45' }));
+      // the forest block grows with the area
+      const w = 120 + (area / 1000) * 180;
+      kids.push(R(24, 54, w, 210, '#cfe9c4', { w: 3, s: '#7fae6d', r: 18 }));
+      kids.push(T(24 + w / 2, 170, 'forest', { z: 16, w: 700, f: '#3d6b45' }));
+      // the two bars: what the forest can hold, and what survives
+      const bars = [
+        { label: 'the forest can hold', n: cap, colour: '#7fae6d' },
+        { label: 'tigers that survive', n: alive, colour: C.o },
+      ];
+      bars.forEach((b, i) => {
+        const y = 70 + i * 96;
+        kids.push(T(250, y + 18, b.label, { z: 15, w: 600, a: 'start', f: '#4a3b6b' }));
+        kids.push(R(250, y + 28, 300, 26, '#e9f2e5', { w: 0, r: 8 }));
+        kids.push(R(250, y + 28, Math.max(6, (b.n / 60) * 300), 26, b.colour, { w: 0, r: 8 }));
+        kids.push(T(250, y + 76, `${b.n} tigers`, { z: 19, w: 800, a: 'start', f: INK }));
+      });
+      kids.push(T(300, 288, 'one tiger needs about 20 sq km · poaching, shrinking habitat and less prey are the threats', { z: 12, w: 600, f: '#6b8a63' }));
+      return { kids, say: `${area} sq km can hold about ${cap} tigers. With ${v.protect}% protection, about ${alive} survive: poaching, shrinking habitat and fewer prey are what take the rest.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

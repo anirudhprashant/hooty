@@ -1338,7 +1338,7 @@ export const KITS = {
   },
   sectors: {
     grades: [8, 10], subjects: ['social'], perChapter: 2,
-    match: [/three sectors/, /sectors? of the (indian )?economy|importance of sectors/, /primary,? secondary/, /\btertiary sector\b/, /value added|intermediate goods/],
+    match: [/three sectors/, /sectors? of the (indian )?economy|importance of sectors/, /primary,? secondary/, /\btertiary sector\b/, /value added|intermediate goods/, /manufactur/, /industries? (are )?classif/, /agro-based industries?/],
     title: 'Follow a crop to the shop',
     takeaway: 'Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.',
     tasks: [
@@ -1673,6 +1673,30 @@ export const KITS = {
     tasks: [
       { say: 'Sort the missing price.', when: 'item == 0 and bin == 1', then: 'A price that is not shown hides information: the right to information.' },
       { say: 'Sort the shop that will not replace a broken fan.', when: 'item == 2 and bin == 2', then: 'A faulty good must be put right: the right to redressal.' },
+    ],
+  },
+  cropyear: {
+    // Class 10 Geography, "Cropping Seasons". The three seasons and their months are what the placement questions
+    // ask, so the lab moves a single month and shows all three at once.
+    grades: [8, 10], subjects: ['social'], perChapter: 1,
+    match: [/cropping seasons?|cropping patterns?/, /kharif/, /rabi/, /zaid/, /sown? from (june|july|october|november)/, /harvested? (in|from)/],
+    title: "India's cropping year", takeaway: 'Kharif is sown with the monsoon in June and July and harvested in October and November; rabi is sown in October to December and harvested in March and April; zaid is the short summer season in between.',
+    tasks: [
+      { say: 'Find the month rabi crops are sown.', when: 'month == 11', then: 'Rabi is sown from October to December: wheat, barley, peas, gram and mustard.' },
+      { say: 'Find the month wheat is harvested.', when: 'month == 4', then: 'The rabi harvest comes in March and April.' },
+      { say: 'Find a month when the zaid crops grow.', when: 'month == 5', then: 'Zaid is the short summer season: watermelon, cucumber and fodder.' },
+    ],
+  },
+  tigerreserve: {
+    // Class 10 "Forest and Wildlife Resources", the Project Tiger lesson. The sizes and the one-tiger-per-twenty-square-
+    // kilometres rule are a teaching model, not a census.
+    grades: [8, 10], subjects: ['social'], perChapter: 1,
+    match: [/project tiger/, /tiger reserves?/, /wildlife conservation/, /poaching/, /national parks?|wildlife sanctuar/, /habitat loss|shrinking habitat/],
+    title: 'A tiger reserve', takeaway: 'A forest holds only as many tigers as its area and its prey allow, about one tiger per twenty square kilometres, and poaching takes the rest. That is why Project Tiger set up reserves and guards them.',
+    tasks: [
+      { say: 'Give the reserve full protection from poaching.', when: 'protect == 100', then: 'With full protection, every tiger the forest can hold survives.' },
+      { say: 'Grow the reserve so it can hold about 50 tigers.', when: 'area == 1000', then: 'At about twenty square kilometres for each tiger, 1,000 sq km holds around fifty.' },
+      { say: 'Remove protection completely and watch the tigers fall.', when: 'protect == 0', then: 'Without guards, poaching leaves only a fraction of the tigers the forest could hold.' },
     ],
   },
   wordlab: {
