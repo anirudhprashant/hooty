@@ -80,6 +80,22 @@ self.addEventListener('activate', (event) => {
 // controlled it sends the addresses it used; keep them, and the next offline visit works.
 self.addEventListener('message', (event) => {
   const data = event.data || {};
+  // A book kept on the phone can be let go again: drop everything under its folder, so the space comes back.
+  if (data.type === 'forget' && typeof data.prefix === 'string') {
+    event.waitUntil(
+      caches.open(CACHE).then(async (cache) => {
+        const keys = await cache.keys();
+        let gone = 0;
+        for (const req of keys) {
+          const url = new URL(req.url);
+          if (url.pathname.includes(data.prefix)) { await cache.delete(req); gone += 1; }
+        }
+        return gone;
+      }),
+    );
+    return;
+  }
+
   if (data.type !== 'warm' || !Array.isArray(data.urls)) return;
   event.waitUntil(
     caches.open(CACHE).then(async (cache) => {

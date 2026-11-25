@@ -1305,6 +1305,11 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 }
 
 /* The trail's unit jump row: one line, scrolled sideways, so a long book name never stacks the whole list vertically. */
+/* The list of books kept on the phone, on the grown-ups screen. */
+.kept-row { display: flex; align-items: center; gap: var(--s3); padding: var(--s3) 0; border-bottom: 1px solid var(--primary-soft); }
+.kept-row:last-child { border-bottom: 0; }
+.kept-row__name { flex: 1; min-width: 0; font-weight: 700; }
+.kept-row .btn--sm { flex: 0 0 auto; min-height: 40px; padding: 6px 14px; font-size: var(--fs-sm); }
 /* Keep-this-book sits under the trail's introduction: a quiet offer, not a demand. */
 .offline-row { margin: 0 0 var(--s4); }
 .offline-btn { font-size: var(--fs-sm); }

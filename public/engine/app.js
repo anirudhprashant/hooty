@@ -176,6 +176,19 @@ async function saveBookOffline(pack, onProgress) {
   return { total };
 }
 
+// Letting a kept book go: the flag goes, and the service worker drops the pictures it kept for it, so the space really
+// does come back instead of just being forgotten.
+async function forgetBookOffline(packId) {
+  try {
+    navigator.serviceWorker?.controller?.postMessage({ type: 'forget', prefix: `/content/packs/${packId}/` });
+  } catch { /* no worker: nothing is cached anyway */ }
+  const l = activeLearner();
+  if (l?.offlineBooks?.[packId]) {
+    delete l.offlineBooks[packId];
+    await persist();
+  }
+}
+
 // Only the book on screen is worth waiting for. The rest of the class follows quietly once the home screen is up,
 // so review questions and grown-up progress fill in moments later.
 async function ensurePack(id) {
@@ -2122,7 +2135,11 @@ function screenParent() {
       el('li', { text: t('safetyData') }),
       // A free app still needs a way to hear about a mistake: one mail link, on the grown-ups screen only, so a child
       // never sees it and no form or account is needed.
-      el('li', {}, [el('span', { text: t('reportProblem') }), ' ', el('a', { class: 'credit-link', href: `mailto:anirudhprashant@gmail.com?subject=${encodeURIComponent('Hooty feedback')}`, text: 'anirudhprashant@gmail.com' })]),
+      el('li', {}, [
+        el('span', { text: t('reportProblem') }),
+        el('br'),
+        el('a', { class: 'credit-link', href: `mailto:anirudhprashant@gmail.com?subject=${encodeURIComponent('Hooty feedback')}`, text: 'anirudhprashant@gmail.com' }),
+      ]),
     ]),
   ]));
   const install = installCard();
@@ -2342,6 +2359,30 @@ function screenParent() {
   dl.append(el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => window.print() }, [icon('download', { size: 22 }), t('printReport')]));
   wrap.append(dl);
   wrap.append(el('p', { class: 'section-sub', text: t('importNote') }));
+
+  // Books kept for offline use, with the way to let one go. A parent who kept five books for a journey should be able
+  // to see them and take one back without hunting through browser settings.
+  const keptIds = Object.keys(l?.offlineBooks || {});
+  if (keptIds.length) {
+    wrap.append(el('h2', { class: 'section-title', text: t('keptBooks') }));
+    wrap.append(el('p', { class: 'section-sub', text: t('keptBooksSub', { n: keptIds.length }) }));
+    const rows = el('div', { class: 'kept-list' });
+    for (const id of keptIds) {
+      const card = packIndex.find((p) => p.id === id);
+      rows.append(el('div', { class: 'kept-row' }, [
+        el('span', { class: 'kept-row__name', text: card?.title || id }),
+        el('button', {
+          class: 'btn btn--ghost btn--sm', type: 'button', onclick: async () => {
+            if (!window.confirm(t('forgetBookAsk'))) return;
+            await forgetBookOffline(id);
+            toast(t('forgetBookDone'));
+            render();
+          },
+        }, [icon('cross', { size: 18 }), t('forgetBook')]),
+      ]));
+    }
+    wrap.append(rows);
+  }
   return wrap;
 }
 
