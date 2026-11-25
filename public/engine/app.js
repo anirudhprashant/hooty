@@ -1372,6 +1372,11 @@ function renderCelebration() {
   // The celebration brings its own Hooty: drop the topic picture and the speech strip so nothing from the last question lingers.
   s.wrap?.classList.add('is-finished');
 
+  // The day's goal is the one number a child can move by themselves, and until now only Grown-ups knew about it. It is
+  // said once, on the lesson that crosses it, so it reads as an occasion rather than a counter.
+  const goalXp = l?.dailyGoal || 50;
+  const goalFresh = !!l && (l.dailyXp || 0) >= goalXp && l.goalDay !== todayKey();
+  if (goalFresh) l.goalDay = todayKey();
   const praise = accuracy >= 90 ? t('praiseHigh') : accuracy >= 60 ? t('praiseMid') : t('praiseLow');
   const box = el('div', { class: 'celebrate' }, [
     el('img', { class: 'celebrate__art', src: mascotImage(accuracy >= 60 ? 'happy' : 'idle') || '', alt: '' }),
@@ -1395,6 +1400,7 @@ function renderCelebration() {
       }
       return el('div', { class: 'xp-pill' }, [icon('star', { size: 26 }), label]);
     })(),
+    goalFresh ? el('p', { class: 'celebrate__goal' }, [icon('crown', { size: 20 }), el('span', { text: t('goalReached', { n: goalXp }) })]) : null,
     el('p', { class: 'celebrate__body', text: praise }),
     el('div', { class: 'celebrate__stats' }, [
       el('div', { class: 'celebrate__stat' }, [el('b', { text: `${s.correct}/${s.total}` }), el('span', { text: t('statCorrect') })]),

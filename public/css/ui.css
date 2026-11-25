@@ -576,6 +576,13 @@
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 .celebrate__title { font-size: var(--fs-xl); }
 .celebrate__body { color: var(--text-muted); margin-bottom: var(--s4); }
+.celebrate__goal {
+  display: inline-flex; align-items: center; gap: var(--s2); margin: 0 auto var(--s4);
+  padding: 10px 20px; border-radius: var(--radius-pill);
+  background: var(--secondary-soft); color: var(--secondary);
+  font-family: var(--font-display); font-weight: 700;
+  animation: pop 0.6s 0.5s var(--ease-spring) both;
+}
 .xp-pill {
   display: inline-flex; align-items: center; gap: var(--s2); margin-bottom: var(--s4);
   padding: 8px 22px; border-radius: var(--radius-pill);
