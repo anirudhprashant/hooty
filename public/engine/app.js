@@ -556,7 +556,8 @@ function screenHome() {
   const l = activeLearner();
   const wrap = el('div', { class: 'page screen screen--home' });
   { const tabs = subjectTabs(); if (tabs) wrap.append(tabs); }
-  const next = nextLesson();
+  const paused = pausedLesson();
+  const next = paused || nextLesson();
   const ready = !!currentPack();   // the book is still downloading on a slow connection: paint the stage, not a lie
   const started = Object.keys(l?.lessonsDone || {}).length > 0;
   const named = l?.name && !/^learner$/i.test(l.name);
@@ -571,13 +572,13 @@ function screenHome() {
   const copy = el('div', { class: 'stage__copy' });
   copy.append(
     el('h2', { class: 'stage__title', text: named ? t('hiName', { name: l.name }) : t('readyToLearn') }),
-    el('p', { class: 'stage__sub', text: !ready ? t('bookLoading') : next ? (started ? t('nextAdventure') : t('firstLesson')) : t('allDone') }),
+    el('p', { class: 'stage__sub', text: !ready ? t('bookLoading') : paused ? t('pausedHint') : next ? (started ? t('nextAdventure') : t('firstLesson')) : t('allDone') }),
   );
   const actions = el('div', { class: 'stage__actions' });
   const cta = el('button', { class: 'btn big-cta', type: 'button' }, [
     el('span', { class: 'big-cta__play' }, [icon('play', { size: 24 })]),
     el('span', { class: 'big-cta__text' }, [
-      el('span', { class: 'big-cta__label', text: next ? (started ? t('continue') : t('start')) : t('practiseTab') }),
+      el('span', { class: 'big-cta__label', text: next ? (paused || started ? t('continue') : t('start')) : t('practiseTab') }),
       next ? el('span', { class: 'big-cta__sub', text: next.title }) : null,
     ]),
   ]);
@@ -668,6 +669,29 @@ function screenPacks() {
 }
 
 // --- screens ---------------------------------------------------------------
+
+// The lesson a child was in the middle of, if they left one unfinished. nextLesson() walks the book in order and knows
+// nothing about the card a child stopped on, so without this the big button offers the first unread lesson and quietly
+// abandons the one they were halfway through. The most recent unfinished lesson wins, and only one from the book on
+// screen, so the button never jumps to another subject.
+function pausedLesson() {
+  const l = activeLearner();
+  const pack = currentPack();
+  if (!l?.inProgress || !pack) return null;
+  const entries = Object.entries(l.inProgress)
+    .filter(([id, rec]) => rec?.activityId && !l.lessonsDone[id])
+    .sort((a, b) => (b[1].at || 0) - (a[1].at || 0));
+  for (const [id] of entries) {
+    for (const unit of pack.units || []) {
+      for (const chapter of unit.chapters || []) {
+        for (const lesson of [...(chapter.lessons || []), chapter.boss].filter(Boolean)) {
+          if (lesson.id === id) return { ...lesson, packId: pack.id, unitId: unit.id, chapterId: chapter.id, lessonId: lesson.id };
+        }
+      }
+    }
+  }
+  return null;
+}
 
 function nextLesson() {
   const l = activeLearner();
