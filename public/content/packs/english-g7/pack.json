@@ -577,7 +577,7 @@
       {
        "id": "english-g7-ch1-l2",
        "title": "Jahnavi Begins School",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -632,6 +632,87 @@
            "p": 5
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g7-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "A big bright tear",
+            "after": "down her nose.",
+            "options": [
+             "strive",
+             "clump",
+             "thicket",
+             "splashed"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "A green lizard",
+            "after": "down to the river’s edge",
+            "options": [
+             "murmuring",
+             "rustle",
+             "thicket",
+             "slithered"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "said a sleepy,",
+            "after": "voice",
+            "options": [
+             "clump",
+             "braced",
+             "slithered",
+             "murmuring"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Jahnavi was",
+            "after": ", because she was sure",
+            "options": [
+             "braced",
+             "thicket",
+             "slithered",
+             "startled"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: A big bright tear splashed down her nose."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: A green lizard slithered down to the river’s edge"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -4411,7 +4492,7 @@
       {
        "id": "english-g7-ch2-l2",
        "title": "Animals, Birds, and Dr. Dolittle: Language and Care",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -4484,6 +4565,87 @@
            "p": 58
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g7-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "my wife, Theodosia, is a",
+            "after": ", and she read your book",
+            "options": [
+             "suffix",
+             "phrasal verb",
+             "cellar",
+             "scholar"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "wearing glasses in the",
+            "after": ", round Puddleby",
+            "options": [
+             "cracker",
+             "compound word",
+             "cellar",
+             "countryside"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "A",
+            "after": "is a nonsensical and funny verse consisting of five lines.",
+            "options": [
+             "palindrome",
+             "present perfect continuous",
+             "cracker",
+             "limerick"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Such word endings are called",
+            "after": ".",
+            "options": [
+             "cracker",
+             "compound word",
+             "countryside",
+             "suffixes"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: my wife, Theodosia, is a scholar , and she read your book"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: wearing glasses in the countryside , round Puddleby"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -7846,7 +8008,7 @@
       {
        "id": "english-g7-ch3-l2",
        "title": "How the Alarm Fails",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -7918,6 +8080,87 @@
            "p": 93
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g7-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "what the",
+            "after": "was all about",
+            "options": [
+             "crestfallen look",
+             "clanging",
+             "tinkering",
+             "racket"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Papa standing there,",
+            "after": "wet and scowling",
+            "options": [
+             "scowling",
+             "dynamos",
+             "tinkering",
+             "sopping"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "He loves",
+            "after": "with all sorts of electrical gadgets",
+            "options": [
+             "clanging",
+             "ruffianly",
+             "sopping",
+             "tinkering"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "the",
+            "after": "drawing of doors, wires, and bells",
+            "options": [
+             "ruffianly",
+             "rigged up",
+             "sopping",
+             "elaborate"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: what the racket was all about"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Papa standing there, sopping wet and scowling"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -11499,7 +11742,7 @@
       {
        "id": "english-g7-ch4-l2",
        "title": "Exploring the Dark Tunnel",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -11558,6 +11801,87 @@
            "p": 142
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g7-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "Heat waves",
+            "after": "along the railway embankment where",
+            "options": [
+             "cutting",
+             "swishing",
+             "scrub-covered",
+             "shimmered"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Suraj stood near the",
+            "after": ", waiting for the midday train.",
+            "options": [
+             "flinch",
+             "instinctively",
+             "shisham",
+             "cutting"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Even the trees seemed to",
+            "after": "from the noise and heat.",
+            "options": [
+             "railway embankment",
+             "scrub-covered",
+             "swishing",
+             "flinch"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "over the tall",
+            "after": "trees.",
+            "options": [
+             "railway embankment",
+             "flinch",
+             "scrub-covered",
+             "shisham"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: Heat waves shimmered along the railway embankment where"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Suraj stood near the cutting , waiting for the midday train."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -15317,7 +15641,7 @@
       {
        "id": "english-g7-ch5-l2",
        "title": "Lance Naik Albert Ekka’s Extraordinary Courage",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -15390,6 +15714,87 @@
            "p": 183
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g7-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "\"It was",
+            "after": "and then inaugurated by India’s Prime Minister\"",
+            "options": [
+             "wreaths",
+             "posthumously",
+             "tribute",
+             "envisioned"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "\"near the",
+            "after": "India Gate\"",
+            "options": [
+             "territorial integrity",
+             "etched",
+             "tribute",
+             "iconic"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "\"a",
+            "after": "to some of the bravest Indians\"",
+            "options": [
+             "posthumously",
+             "interminable",
+             "territorial integrity",
+             "tribute"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "\"names of fallen soldiers have been",
+            "after": "\"",
+            "options": [
+             "interminable",
+             "iconic",
+             "territorial integrity",
+             "etched"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: \"It was envisioned and then inaugurated by India’s Prime Minister\""
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: \"near the iconic India Gate\""
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

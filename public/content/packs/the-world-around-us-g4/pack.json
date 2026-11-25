@@ -573,7 +573,7 @@
       {
        "id": "the-world-around-us-g4-ch1-l2",
        "title": "Planning Van Mahotsav",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -637,6 +637,87 @@
            "p": 6
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "People and places are part of our",
+            "after": ".",
+            "options": [
+             "Magh Bihu",
+             "ant colony",
+             "community feast",
+             "community"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "community as a space of togetherness and",
+            "after": ".",
+            "options": [
+             "Khetala",
+             "trowel",
+             "Magh Bihu",
+             "interdependence"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "I will bring some",
+            "after": "from my plant",
+            "options": [
+             "interdependence",
+             "nursery",
+             "trowel",
+             "saplings"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "I will bring some saplings from my plant",
+            "after": ".",
+            "options": [
+             "ant colony",
+             "Magh Bihu",
+             "interdependence",
+             "nursery"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: People and places are part of our community ."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: community as a space of togetherness and interdependence ."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -4253,7 +4334,7 @@
       {
        "id": "the-world-around-us-g4-ch2-l2",
        "title": "How People Communicate",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -4312,6 +4393,87 @@
            "p": 19
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "Then, the",
+            "after": "would take them",
+            "options": [
+             "directions",
+             "metro",
+             "messenger",
+             "postman"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "send letters,",
+            "after": "and important documents",
+            "options": [
+             "messenger",
+             "parcel",
+             "post office",
+             "parcels"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "sending letters carried by",
+            "after": "and pigeons",
+            "options": [
+             "pigeon",
+             "flyover",
+             "post office",
+             "messengers"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "the",
+            "after": "trains travel very fast",
+            "options": [
+             "landmarks",
+             "directions",
+             "post office",
+             "metro"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: Then, the postman would take them"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: send letters, parcels and important documents"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -11951,7 +12113,7 @@
       {
        "id": "the-world-around-us-g4-ch4-l2",
        "title": "Art and Natural Dyes",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -12022,6 +12184,65 @@
            "p": 60
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "leaving behind the natural",
+            "after": ".",
+            "options": [
+             "mosquito repellent",
+             "bamboo basket",
+             "Gond art",
+             "dye"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "When they collect honey from",
+            "after": ", they sing songs to apologise",
+            "options": [
+             "Gond art",
+             "dye",
+             "solar-powered",
+             "beehives"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: leaving behind the natural dye ."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: When they collect honey from beehives , they sing songs to apologise"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -18552,7 +18773,7 @@
       {
        "id": "the-world-around-us-g4-ch6-l1",
        "title": "Happy About Food",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -18626,6 +18847,41 @@
            "p": 86
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch6-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "plate",
+         "params": {},
+         "title": "Fill a balanced plate",
+         "tasks": [
+          {
+           "say": "Put some energy food on the plate.",
+           "when": "grain >= 1",
+           "then": "Rice, roti and potato give you energy to run and play."
+          },
+          {
+           "say": "Add some body-building food.",
+           "when": "protein >= 1",
+           "then": "Dal, pulses, egg and milk help you grow and build strong muscles."
+          },
+          {
+           "say": "Make protective food the biggest part of the plate.",
+           "when": "veg >= 2 and veg > grain and veg > protein",
+           "then": "Vegetables and fruits should fill the most of a balanced plate: they help you fight illness."
+          },
+          {
+           "say": "Fill the plate with only junk food.",
+           "when": "junk >= 3 and grain == 0 and protein == 0 and veg == 0",
+           "then": "Chips, soft drinks and fried food have a lot of oil, salt and sugar. They are sometimes food, not a meal."
+          }
+         ],
+         "takeaway": "A balanced plate has protective food as its biggest part, with body-building food and some energy food. Junk food is a sometimes food.",
+         "explanation": "A balanced plate has protective food as its biggest part, with body-building food and some energy food. Junk food is a sometimes food."
         },
         {
          "type": "worked",
@@ -25894,7 +26150,7 @@
       {
        "id": "the-world-around-us-g4-ch8-l2",
        "title": "Making Recycled Paper",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -25958,6 +26214,87 @@
            "p": 119
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "People in India also used palm leaves called",
+            "after": ".",
+            "options": [
+             "Reduce",
+             "environment-friendly",
+             "binding material",
+             "talapatra"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The",
+            "after": "system helps visually challenged people to read and write",
+            "options": [
+             "paper pulp",
+             "natural dyes",
+             "binding material",
+             "Braille"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "They are called the",
+            "after": "of waste management.",
+            "options": [
+             "talapatra",
+             "Reuse",
+             "paper pulp",
+             "5Rs"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Using things carefully so that we can",
+            "after": "the waste we generate.",
+            "options": [
+             "Reuse",
+             "binding material",
+             "paper pulp",
+             "reduce"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: People in India also used palm leaves called talapatra ."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: The Braille system helps visually challenged people to read and write"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -29680,7 +30017,7 @@
       {
        "id": "the-world-around-us-g4-ch9-l2",
        "title": "In the Land of Agriculture, with Gurpreet",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -29748,6 +30085,87 @@
            "p": 134
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch9-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "Mountains are rocky",
+            "after": "that rise high above the ground.",
+            "options": [
+             "coastal region",
+             "fertile",
+             "Gurudwara",
+             "landforms"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The soil was rich and",
+            "after": ", and many people were engaged",
+            "options": [
+             "community service",
+             "langar sewa",
+             "Gurudwara",
+             "fertile"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "is one of the most famous",
+            "after": ".",
+            "options": [
+             "community service",
+             "tanka",
+             "fertile",
+             "Gurudwaras"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "has a serene",
+            "after": "(water tank) surrounding it.",
+            "options": [
+             "sel roti",
+             "thukpa",
+             "fertile",
+             "sarovar"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: Mountains are rocky landforms that rise high above the ground."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: The soil was rich and fertile , and many people were engaged"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

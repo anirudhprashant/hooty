@@ -260,9 +260,9 @@
          ],
          "prompt": "You want a map. It shows all the States of India and their capitals. Which kind of map is it?",
          "options": [
-          "A physical map",
+          "A thematic map",
           "A political map",
-          "A thematic map"
+          "A physical map"
          ],
          "answer": 1,
          "explanation": "A map of India with its States and capitals is a political map.",
@@ -504,10 +504,10 @@
          ],
          "prompt": "On a map, 1 cm stands for 500 m. Two places are 2 cm apart on the map. How far apart are they in real life?",
          "options": [
-          "250 m",
+          "2,000 m",
           "500 m",
           "1,000 m",
-          "2,000 m"
+          "250 m"
          ],
          "answer": 2,
          "explanation": "1 cm is 500 m. So 2 cm is 500 m + 500 m = 1,000 m.",
@@ -812,12 +812,12 @@
          ],
          "prompt": "What does the orange peel trick show?",
          "options": [
-          "A round shape cannot be made flat without tearing",
-          "Oranges are bigger than the Earth",
           "All maps are torn",
-          "Paper is heavier than peel"
+          "Paper is heavier than peel",
+          "A round shape cannot be made flat without tearing",
+          "Oranges are bigger than the Earth"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "You cannot make the peel flat without tearing it. A sphere is a round ball shape. A sphere cannot be shown exactly on flat paper.",
          "id": "ch1-l3-a3",
          "src": [
@@ -922,12 +922,12 @@
          ],
          "prompt": "A friend says, “Meet me at the 7th shop in the 5th row.” What do the two numbers do?",
          "options": [
-          "Together they show one exact place",
+          "They show how big the market is",
           "They show the price of the shop",
           "They show the time",
-          "They show how big the market is"
+          "Together they show one exact place"
          ],
-         "answer": 0,
+         "answer": 3,
          "explanation": "A row number and a shop number together tell your friend the exact place.",
          "id": "ch1-l3-a7",
          "src": [
@@ -1104,12 +1104,12 @@
          ],
          "prompt": "What is halfway between the North Pole and the South Pole?",
          "options": [
-          "The scale",
-          "A symbol",
           "An atlas",
-          "The Equator"
+          "A symbol",
+          "The Equator",
+          "The scale"
          ],
-         "answer": 3,
+         "answer": 2,
          "explanation": "The Equator is halfway between the two poles.",
          "id": "ch1-l4-a2",
          "src": [
@@ -1175,9 +1175,9 @@
          "prompt": "What does latitude measure?",
          "options": [
           "How far a place is from the Equator",
-          "How old a map is",
           "How big a country is",
-          "How high a mountain is"
+          "How high a mountain is",
+          "How old a map is"
          ],
          "answer": 0,
          "explanation": "Latitude measures the distance from the Equator.",
@@ -1199,12 +1199,12 @@
          ],
          "prompt": "Which way does a parallel of latitude run?",
          "options": [
+          "From pole to pole",
           "Only around the North Pole",
-          "East to west, parallel to the Equator",
           "Straight up into the sky",
-          "From pole to pole"
+          "East to west, parallel to the Equator"
          ],
-         "answer": 1,
+         "answer": 3,
          "explanation": "Parallels run east to west. They are parallel to the Equator.",
          "id": "ch1-l4-a6",
          "src": [
@@ -1529,12 +1529,12 @@
          ],
          "prompt": "The Prime Meridian goes through a place in London. What is its name?",
          "options": [
-          "Greenwich",
           "Delhi",
+          "Greenwich",
           "Tokyo",
           "New York"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "The Prime Meridian goes through Greenwich, an area of London in England.",
          "id": "ch1-l5-a5",
          "src": [
@@ -1587,12 +1587,12 @@
          ],
          "prompt": "Delhi is at 77°E. What does E mean?",
          "options": [
-          "Delhi is at the North Pole",
+          "Delhi is 77 km from Greenwich",
           "Delhi is on the Equator",
-          "Delhi is east of the Prime Meridian",
-          "Delhi is 77 km from Greenwich"
+          "Delhi is at the North Pole",
+          "Delhi is east of the Prime Meridian"
          ],
-         "answer": 2,
+         "answer": 3,
          "explanation": "E means east. Delhi is 77° east of the Prime Meridian.",
          "id": "ch1-l5-a7",
          "src": [
@@ -1684,12 +1684,12 @@
          ],
          "prompt": "Delhi is at 29°N and 77°E. Which number is the latitude?",
          "options": [
-          "29°N",
           "77°E",
-          "0°",
-          "180°"
+          "180°",
+          "29°N",
+          "0°"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "Latitude is north or south of the Equator. 29°N is the latitude. 77°E is the longitude.",
          "id": "ch1-l5-a10",
          "src": [
@@ -1824,8 +1824,8 @@
          "prompt": "Which city did India’s own prime meridian go through?",
          "options": [
           "Ujjayinī (today Ujjain)",
-          "Greenwich",
           "New York",
+          "Greenwich",
           "Tokyo"
          ],
          "answer": 0,
@@ -1914,12 +1914,12 @@
          ],
          "prompt": "About how long ago did Varahamihira live in Ujjayinī?",
          "options": [
-          "About 100 years ago",
+          "About 150 years ago",
           "About 500 years ago",
-          "About 1,500 years ago",
-          "About 150 years ago"
+          "About 100 years ago",
+          "About 1,500 years ago"
          ],
-         "answer": 2,
+         "answer": 3,
          "explanation": "The book says Varahamihira lived and worked there about 1,500 years ago.",
          "id": "ch1-l6-a6",
          "src": [
@@ -1990,12 +1990,12 @@
          ],
          "prompt": "Some old cities were a little away from the Ujjayinī meridian. Why?",
          "options": [
-          "People could not measure time well then. Finding longitude needs good time.",
-          "The meridian kept moving.",
+          "Astronomers did not make maps.",
           "Those cities were in the sea.",
-          "Astronomers did not make maps."
+          "People could not measure time well then. Finding longitude needs good time.",
+          "The meridian kept moving."
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "Finding longitude needs good timekeeping. Long ago, people could not measure time as well as they do today.",
          "id": "ch1-l6-a9",
          "src": [
@@ -2150,12 +2150,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 15°E?",
          "options": [
+          "11 am",
           "12 midnight",
-          "1 pm",
           "2 pm",
-          "11 am"
+          "1 pm"
          ],
-         "answer": 1,
+         "answer": 3,
          "explanation": "Going east adds one hour for every 15°. So noon becomes 1 pm.",
          "id": "ch1-l7-a5",
          "src": [
@@ -2175,12 +2175,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 30°W?",
          "options": [
-          "10 am",
+          "1 pm",
           "2 pm",
           "11 am",
-          "1 pm"
+          "10 am"
          ],
-         "answer": 0,
+         "answer": 3,
          "explanation": "Going west takes away one hour for every 15°. At 30°W, that is two hours less: 10 am.",
          "id": "ch1-l7-a6",
          "src": [
@@ -2256,12 +2256,12 @@
          ],
          "prompt": "It is late afternoon. In Tinsukia (Assam), the Sun has set. In Porbandar (Gujarat), the Sun has not set. Their longitudes differ by about 30°. How many hours ahead is Tinsukia?",
          "options": [
-          "2 hours",
           "1 hour",
+          "2 hours",
           "3 hours",
           "30 hours"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "The Earth turns 15° every hour. 30° ÷ 15° = 2 hours. Tinsukia is east of Porbandar. So its local time is 2 hours ahead. That is why it can be dark in Assam but still light in Gujarat.",
          "derived": [
           "2 hours = 30 / 15",
@@ -2414,12 +2414,12 @@
          ],
          "prompt": "Which country has 11 time zones?",
          "options": [
-          "The USA",
           "India",
           "Russia",
+          "The USA",
           "Greenwich"
          ],
-         "answer": 2,
+         "answer": 1,
          "explanation": "The USA has six time zones. Russia has 11.",
          "id": "ch1-l8-a3",
          "src": [
@@ -2547,9 +2547,9 @@
          "prompt": "A ship crosses the International Date Line going west. Before this, it was Sunday. What is the new day?",
          "options": [
           "It becomes Monday",
-          "It stays Sunday",
           "It becomes Tuesday",
-          "It becomes Saturday"
+          "It becomes Saturday",
+          "It stays Sunday"
          ],
          "answer": 0,
          "explanation": "Going west across the Date Line, you add a day. Sunday becomes Monday.",
@@ -2731,9 +2731,9 @@
         "prompt": "A map has a scale. 1 cm on the map means 500 m on the ground. Two places are 3 cm apart on the map. How far apart are they on the ground?",
         "options": [
          "1,500 m",
-         "500 m",
+         "150 m",
          "3,000 m",
-         "150 m"
+         "500 m"
         ],
         "answer": 0,
         "explanation": "Each 1 cm is 500 m. So 3 cm is 3 × 500 m = 1,500 m.",
@@ -2875,9 +2875,9 @@
         "prompt": "India’s own prime meridian passed through which city?",
         "options": [
          "Ujjayinī (Ujjain)",
-         "Delhi",
          "Tokyo",
-         "Greenwich"
+         "Greenwich",
+         "Delhi"
         ],
         "answer": 0,
         "explanation": "The madhya rekhā passed through Ujjayinī, which is Ujjain today.",
@@ -2899,12 +2899,12 @@
         ],
         "prompt": "Delhi and Bengaluru have almost the same longitude, 77°E. Longitude means how far east or west a place is. What is the time difference between them?",
         "options": [
-         "Almost none",
          "1 hour",
+         "Almost none",
          "2 hours",
          "5 hours 30 minutes"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "Local time depends on longitude. Almost the same longitude means almost the same time.",
         "derived": [
          "1 hour, 2 hours are wrong options"
@@ -2931,12 +2931,12 @@
         ],
         "prompt": "It is 12 noon in London. Why is it 5:30 pm in India?",
         "options": [
+         "Clocks run faster in India",
          "India's time is 5 hours 30 minutes ahead of GMT",
          "India is closer to the Equator",
-         "India uses the Date Line",
-         "Clocks run faster in India"
+         "India uses the Date Line"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "IST is 5 hours 30 minutes ahead of Greenwich Mean Time. So noon in London is 5:30 pm in India.",
         "id": "ch1-boss-a10",
         "src": [
@@ -3510,7 +3510,7 @@
       {
        "id": "ch2-l2",
        "title": "The five oceans",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -3579,6 +3579,65 @@
            "p": 32
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "also underground (the last is called ‘",
+            "after": "’)",
+            "options": [
+             "Landmass",
+             "Eurasia",
+             "Continent",
+             "groundwater"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Geologists, however, often regard them as a single continent called ‘",
+            "after": "’",
+            "options": [
+             "Freshwater",
+             "Island",
+             "Marine",
+             "Eurasia"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: also underground (the last is called ‘ groundwater ’)"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Geologists, however, often regard them as a single continent called ‘ Eurasia ’"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -18233,7 +18292,7 @@
       {
        "id": "ch6-l2",
        "title": "From Village to City",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -18317,6 +18376,65 @@
            "p": 90
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "ost cities seem to have been s rro nded b",
+            "after": "and",
+            "options": [
+             "civilisation",
+             "urbanism",
+             "upper town and lower town",
+             "fortifications"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "were generall made of",
+            "after": ", a soft stone that wo ld",
+            "options": [
+             "civilisation",
+             "urbanism",
+             "elite",
+             "steatite"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: ost cities seem to have been s rro nded b fortifications and"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: were generall made of steatite , a soft stone that wo ld"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -21804,7 +21922,7 @@
       {
        "id": "ch7-l2",
        "title": "Vedic Society",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -21892,6 +22010,87 @@
            "p": 109
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "The word “",
+            "after": "” comes from the Sanskrit vid which",
+            "options": [
+             "ṛitam",
+             "anekāntavāda",
+             "jana",
+             "Veda"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "composed by",
+            "after": "(male seers or sages)",
+            "options": [
+             "oral tradition",
+             "tribe",
+             "aparigraha",
+             "rishis"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "sustained",
+            "after": ", or truth and order",
+            "options": [
+             "rishi",
+             "Upanishads",
+             "Sangha",
+             "ṛitam"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "organised in different",
+            "after": "or ‘clans’, that is, larger groups of people.",
+            "options": [
+             "rishi",
+             "Upanishads",
+             "samiti",
+             "janas"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: The word “ Veda ” comes from the Sanskrit vid which"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: composed by rishis (male seers or sages)"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -25516,7 +25715,7 @@
       {
        "id": "ch8-l2",
        "title": "Food for All",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -25602,6 +25801,87 @@
           }
          ],
          "title": "Food for All"
+        },
+        {
+         "type": "explore",
+         "id": "ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "India offers immense",
+            "after": "in its landscapes, people,",
+            "options": [
+             "adaptation",
+             "chintz",
+             "Anthropological Survey of India",
+             "diversity"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "different",
+            "after": "and traditions",
+            "options": [
+             "Anthropological Survey of India",
+             "migrant",
+             "diversity",
+             "customs"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "many Indians may be called",
+            "after": ", in the sense of people",
+            "options": [
+             "staple grain",
+             "textiles",
+             "diversity",
+             "migrants"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "the plain length of cloth called the",
+            "after": ", a type of clothing",
+            "options": [
+             "folk version",
+             "adaptation",
+             "diversity",
+             "sari"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: India offers immense diversity in its landscapes, people,"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: different customs and traditions"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -28572,7 +28852,7 @@
       {
        "id": "ch9-l2",
        "title": "Family Roles, Duties and Support",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -28664,6 +28944,87 @@
            "p": 141
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "ch9-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "The family is the fundamental and most ancient unit of any",
+            "after": ".",
+            "options": [
+             "Halma",
+             "Residents’ Welfare Associations",
+             "Nuclear family",
+             "society"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "‘",
+            "after": "’ means ‘working together’.",
+            "options": [
+             "Halma",
+             "Jāti",
+             "Family relationships",
+             "Cooperation"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Relationships among family members are based on love, care, cooperation and",
+            "after": ".",
+            "options": [
+             "Joint family",
+             "Jāti",
+             "Family relationships",
+             "interdependence"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "ahimsa,",
+            "after": "(giving), sevā (service) and tyāga (sacrifice).",
+            "options": [
+             "Joint family",
+             "Family relationships",
+             "Halma",
+             "dāna"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: The family is the fundamental and most ancient unit of any society ."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: ‘ Cooperation ’ means ‘working together’."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

@@ -8141,7 +8141,7 @@
       {
        "id": "the-world-around-us-g5-ch3-l2",
        "title": "Why Food Spoils and How to Preserve It",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -8189,6 +8189,87 @@
            "p": 43
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "you need an instrument called a",
+            "after": "to see them",
+            "options": [
+             "air tight",
+             "dehydration",
+             "moisture",
+             "microscope"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "That’s",
+            "after": ", Disha. These tiny living things",
+            "options": [
+             "microscope",
+             "temperature",
+             "moisture",
+             "mould"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "made up of a",
+            "after": "of thousands of microbes",
+            "options": [
+             "dehydration",
+             "digestion",
+             "microscope",
+             "colony"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Microbes need",
+            "after": ", air and the right temperature to grow",
+            "options": [
+             "digestion",
+             "colony",
+             "microscope",
+             "moisture"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: you need an instrument called a microscope to see them"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: That’s mould , Disha. These tiny living things"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -19131,7 +19212,7 @@
       {
        "id": "the-world-around-us-g5-ch6-l2",
        "title": "Island Forests and Safety at Sea",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -19173,6 +19254,87 @@
            "p": 96
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "An",
+            "after": "is a land surrounded by water",
+            "options": [
+             "Seven Sisters",
+             "mangroves",
+             "marine life",
+             "island"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "they went to catch a",
+            "after": "to one of",
+            "options": [
+             "life jacket",
+             "hunter-gatherers",
+             "marine life",
+             "ferry"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "how tiny",
+            "after": "give shelter to many creatures",
+            "options": [
+             "mangroves",
+             "Bhut Jolokia",
+             "life jacket",
+             "corals"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "In 2004, a",
+            "after": "hit the region",
+            "options": [
+             "Bhut Jolokia",
+             "corals",
+             "life jacket",
+             "tsunami"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: An island is a land surrounded by water"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: they went to catch a ferry to one of"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -33562,7 +33724,7 @@
       {
        "id": "the-world-around-us-g5-ch10-l2",
        "title": "Nature Has No Boundaries",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -33605,6 +33767,87 @@
            "p": 163
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "We all are part of",
+            "after": "and the Earth",
+            "options": [
+             "chilli",
+             "Ayurveda",
+             "boundaries",
+             "humanity"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "linked through nature,",
+            "after": ", travel",
+            "options": [
+             "International Space Station",
+             "boundaries",
+             "borders",
+             "trade"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "feed on",
+            "after": "and grasshoppers",
+            "options": [
+             "DIGIPIN",
+             "jaggery",
+             "International Space Station",
+             "locusts"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "helping farmers by eating the",
+            "after": "on the crops",
+            "options": [
+             "jaggery",
+             "borders",
+             "International Space Station",
+             "pests"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: We all are part of humanity and the Earth"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: linked through nature, trade , travel"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

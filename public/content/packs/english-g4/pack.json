@@ -4166,7 +4166,7 @@
       {
        "id": "english-g4-ch2-l2",
        "title": "Kamala Helps Chinna",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -4238,6 +4238,87 @@
            "p": 13
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "Goats under the age of six months are called “",
+            "after": "”.",
+            "options": [
+             "whispered",
+             "stealing",
+             "missing",
+             "kids"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "He went inside the shop and politely asked the",
+            "after": "to show",
+            "options": [
+             "tinkling bells",
+             "dangle",
+             "comparison markers",
+             "shopkeeper"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Kamla",
+            "after": "him, saying, “I’m so sorry,",
+            "options": [
+             "tinkling bells",
+             "stealing",
+             "purchase",
+             "consoled"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Hiding a",
+            "after": "smile, Chinna ran to his",
+            "options": [
+             "dangle",
+             "missing",
+             "purchase",
+             "mischievous"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: Goats under the age of six months are called “ kids ”."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: He went inside the shop and politely asked the shopkeeper to show"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -7903,7 +7984,7 @@
       {
        "id": "english-g4-ch3-l2",
        "title": "Rules 1 to 3: Crossing and Walking Safely",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -7983,6 +8064,87 @@
            "p": 26
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "there is often a lot of",
+            "after": "on roads.",
+            "options": [
+             "countable noun",
+             "accident-free",
+             "safety",
+             "traffic"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "want to share some important",
+            "after": "tips to help you",
+            "options": [
+             "countable noun",
+             "uncountable noun",
+             "traffic lights",
+             "safety"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Footpaths are meant for",
+            "after": ".",
+            "options": [
+             "traffic",
+             "zebra crossing",
+             "footpath",
+             "pedestrians"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "stick some",
+            "after": "stickers on your clothes, so that",
+            "options": [
+             "naming word",
+             "footpath",
+             "pedestrian signal",
+             "reflective"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: there is often a lot of traffic on roads."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: want to share some important safety tips to help you"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -11381,7 +11543,7 @@
       {
        "id": "english-g4-ch4-l2",
        "title": "Focus and Learning",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -11441,6 +11603,87 @@
            "p": 37
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "It improves learning, reduces mistakes and increases",
+            "after": ".",
+            "options": [
+             "p.m.",
+             "Pranayama",
+             "Tree Pose",
+             "efficiency"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "It improves learning, reduces",
+            "after": "and increases efficiency.",
+            "options": [
+             "paragraph",
+             "asanas",
+             "p.m.",
+             "mistakes"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Focus helps us completing",
+            "after": "faster and better.",
+            "options": [
+             "asanas",
+             "focus",
+             "paragraph",
+             "tasks"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "simple yoga",
+            "after": "like: Pranayama, Tree Pose, etc.",
+            "options": [
+             "focus",
+             "routine",
+             "mistakes",
+             "asanas"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: It improves learning, reduces mistakes and increases efficiency ."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: It improves learning, reduces mistakes and increases efficiency."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -14549,7 +14792,7 @@
       {
        "id": "english-g4-ch5-l2",
        "title": "The Stag Falls Ill",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -14616,6 +14859,87 @@
            "p": 44
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "In a",
+            "after": "forest lived an old stag",
+            "options": [
+             "stag",
+             "descriptive words",
+             "hillock",
+             "lush"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The grass is so",
+            "after": "and nice",
+            "options": [
+             "speedy",
+             "recovery",
+             "greed",
+             "tender"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "an old",
+            "after": "who was known for his kindness",
+            "options": [
+             "tender",
+             "recovery",
+             "descriptive words",
+             "stag"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "staying on a small",
+            "after": "with tender grass",
+            "options": [
+             "tender",
+             "resources",
+             "recovery",
+             "hillock"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: In a lush forest lived an old stag"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: The grass is so tender and nice"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -18675,7 +18999,7 @@
       {
        "id": "english-g4-ch6-l2",
        "title": "How Braille Works",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -18746,6 +19070,87 @@
            "p": 56
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "His father, a",
+            "after": ", was working nearby.",
+            "options": [
+             "pincushions",
+             "eyesight",
+             "Braille",
+             "blacksmith"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Within a few days, he became",
+            "after": "in one eye.",
+            "options": [
+             "Night Writing",
+             "alphabet",
+             "Braille symbols",
+             "blind"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "He learnt letters by using wood, cloth or pins arranged in",
+            "after": ".",
+            "options": [
+             "blind",
+             "alphabet",
+             "eyesight",
+             "pincushions"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "It was an",
+            "after": "of raised dots and dashes",
+            "options": [
+             "blind",
+             "raised dots",
+             "Braille",
+             "alphabet"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: His father, a blacksmith , was working nearby."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Within a few days, he became blind in one eye."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -25004,7 +25409,7 @@
       {
        "id": "english-g4-ch8-l2",
        "title": "How Lagori Is Played",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -25079,6 +25484,87 @@
            "p": 75
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "In Rajasthan, we call this game",
+            "after": ".",
+            "options": [
+             "match",
+             "referee",
+             "rebuild",
+             "Satoliya"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The",
+            "after": "blew the whistle and Deepa took the",
+            "options": [
+             "Satoliya",
+             "stack",
+             "whistle",
+             "referee"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The referee blew the",
+            "after": "and Deepa took the",
+            "options": [
+             "Satoliya",
+             "rebuild",
+             "flat stones",
+             "whistle"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Seven flat stones are",
+            "after": "one over the other,",
+            "options": [
+             "stack",
+             "flat stones",
+             "cousin",
+             "stacked"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: In Rajasthan, we call this game Satoliya ."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: The referee blew the whistle and Deepa took the"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -34959,7 +35445,7 @@
       {
        "id": "english-g4-ch11-l2",
        "title": "Lunch by the River and Yaks",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -35026,6 +35512,65 @@
            "p": 113
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch11-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "at the foot of the",
+            "after": "Himalayas",
+            "options": [
+             "Santoor",
+             "achaar",
+             "memories",
+             "mighty"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Always remember to respect and",
+            "after": "them.",
+            "options": [
+             "Sherpa",
+             "memories",
+             "mighty",
+             "protect"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: at the foot of the mighty Himalayas"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Always remember to respect and protect them."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -38656,7 +39201,7 @@
       {
        "id": "english-g4-ch12-l2",
        "title": "A Kind and Wise Ruler",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -38716,6 +39261,87 @@
            "p": 127
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch12-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "a strong and beautiful",
+            "after": "on the banks of the",
+            "options": [
+             "majestic",
+             "handloom weaving",
+             "overhanging balconies",
+             "fort"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "What was Queen Ahilya like as a",
+            "after": "?",
+            "options": [
+             "unique",
+             "overhanging balconies",
+             "kingdom",
+             "ruler"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "family, who ruled the",
+            "after": ".",
+            "options": [
+             "fort",
+             "overhanging balconies",
+             "handloom weaving",
+             "kingdom"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "in front of the palace, like a",
+            "after": "watching over her land.",
+            "options": [
+             "fort",
+             "unique",
+             "overhanging balconies",
+             "guardian"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: a strong and beautiful fort on the banks of the"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: What was Queen Ahilya like as a ruler ?"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

@@ -4690,7 +4690,7 @@
       {
        "id": "english-g6-ch2-l2",
        "title": "Separation Brings Sadness",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -4795,6 +4795,87 @@
            "p": 44
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g6-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "The",
+            "after": ", or elephant trainer",
+            "options": [
+             "joyous",
+             "splashed",
+             "munching",
+             "mahout"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "One late evening, a dog",
+            "after": "into the stable.",
+            "options": [
+             "munching",
+             "stray",
+             "stables",
+             "strayed"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "some of the food he was",
+            "after": "towards",
+            "options": [
+             "stables",
+             "chores",
+             "stray",
+             "munching"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "So, he threw some",
+            "after": "to the dog",
+            "options": [
+             "stables",
+             "accompanied",
+             "stray",
+             "crumbs"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: The mahout , or elephant trainer"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: One late evening, a dog strayed into the stable."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -12345,7 +12426,7 @@
       {
        "id": "english-g6-ch4-l2",
        "title": "Change of Heart: A Change in Prabhat",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -12425,6 +12506,76 @@
            "p": 107
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g6-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "You now know that",
+            "after": "is a water body.",
+            "options": [
+             "harmony",
+             "hopeless",
+             "sensed",
+             "creek"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "This is called",
+            "after": ".",
+            "options": [
+             "on the contrary",
+             "significant",
+             "sensed",
+             "personification"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "we practise yoga",
+            "after": "(postures),",
+            "options": [
+             "on the contrary",
+             "personification",
+             "sensed",
+             "asanas"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: You now know that creek is a water body."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: This is called personification ."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "mcq",
@@ -16197,7 +16348,7 @@
       {
        "id": "english-g6-ch5-l2",
        "title": "Aipan and Dhokra Folk Arts",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -16285,6 +16436,65 @@
            "p": 134
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g6-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "The poet uses",
+            "after": "in 1 and 2 to compare",
+            "options": [
+             "determination",
+             "tamarind",
+             "scrap",
+             "simile"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "This is called",
+            "after": ".",
+            "options": [
+             "geru",
+             "stable",
+             "scrap",
+             "alliteration"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: The poet uses simile in 1 and 2 to compare"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: This is called alliteration ."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

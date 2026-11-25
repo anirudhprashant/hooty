@@ -580,7 +580,7 @@
       {
        "id": "social-science-g9-ch1-l2",
        "title": "Understanding Society Through Time and Traditions",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -647,6 +647,65 @@
            "p": 4
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "The",
+            "after": ", attributed to Kauṭilya, composed about 2,300",
+            "options": [
+             "dharma",
+             "epigraphic source",
+             "empirical evidence",
+             "Arthaśhāstra"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "dharma (moral duty),",
+            "after": "(economic well-being), and rājadharma",
+            "options": [
+             "Pañchamahābhūtas",
+             "empirical evidence",
+             "Arthaśhāstra",
+             "artha"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: The Arthaśhāstra , attributed to Kauṭilya, composed about 2,300"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: dharma (moral duty), artha (economic well-being), and rājadharma"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -15324,7 +15383,7 @@
       {
        "id": "social-science-g9-ch5-l2",
        "title": "From Janapadas to Kingdoms and Republics",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -15383,6 +15442,87 @@
            "p": 105
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "early Vedic society was organised into",
+            "after": ", or clans",
+            "options": [
+             "sabhā",
+             "janapada",
+             "ballot pot",
+             "janas"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The term",
+            "after": "literally means where a people",
+            "options": [
+             "sabhā",
+             "mahājanapada",
+             "jāti",
+             "janapada"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "the term ‘",
+            "after": "’—the Pāli equivalent of the Sanskrit word dharma—is used",
+            "options": [
+             "sabhā",
+             "mahājanapada",
+             "jāti",
+             "dhamma"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "a distinct social structure called",
+            "after": "emerged due to various factors",
+            "options": [
+             "samatva",
+             "Bhakti",
+             "sabhā",
+             "jāti"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: early Vedic society was organised into janas , or clans"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: The term janapada literally means where a people"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -42392,7 +42532,7 @@
       {
        "id": "social-science-g9-ch13-l2",
        "title": "How Governance Evolved in India",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -42459,6 +42599,76 @@
            "p": 85
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g9-ch13-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "A",
+            "after": "explains the plan or approach for achieving that goal.",
+            "options": [
+             "Participation",
+             "E-governance",
+             "Inclusiveness",
+             "programme"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "A",
+            "after": "is a specific action or initiative through which the programme",
+            "options": [
+             "Responsiveness",
+             "Participation",
+             "Inclusiveness",
+             "scheme"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Key",
+            "after": "in Policy-making and Implementation",
+            "options": [
+             "E-governance",
+             "Public policy",
+             "Inclusiveness",
+             "Stakeholders"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: A programme explains the plan or approach for achieving that goal."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: A scheme is a specific action or initiative through which the programme"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

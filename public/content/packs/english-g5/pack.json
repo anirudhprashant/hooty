@@ -4161,7 +4161,7 @@
       {
        "id": "english-g5-ch2-l2",
        "title": "The white ball",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -4217,6 +4217,87 @@
            "p": 12
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "he heard something",
+            "after": "past",
+            "options": [
+             "boast",
+             "goalpost",
+             "hockey ball",
+             "rustling"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "falling with a",
+            "after": "in the garden",
+            "options": [
+             "rustling",
+             "mat",
+             "hockey ball",
+             "thud"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "his eyes fell on a",
+            "after": "of dry leaves",
+            "options": [
+             "goalpost",
+             "unaware",
+             "rustling",
+             "heap"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Ramani",
+            "after": "the ball with the stick",
+            "options": [
+             "rustling",
+             "mat",
+             "heap",
+             "dribbled"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: he heard something rustling past"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: falling with a thud in the garden"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -8052,7 +8133,7 @@
       {
        "id": "english-g5-ch3-l2",
        "title": "New Words and Let us Think",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -8105,6 +8186,87 @@
            "p": 28
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "There are",
+            "after": "on the rivers",
+            "options": [
+             "noun",
+             "handkerchief",
+             "heaven",
+             "bridges"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "But the",
+            "after": "that bridges heaven",
+            "options": [
+             "bridges",
+             "VIBGYOR",
+             "heaven",
+             "bow"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Are",
+            "after": "far than these",
+            "options": [
+             "handkerchief",
+             "verb",
+             "bridges",
+             "prettier"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Write the",
+            "after": "of the following words",
+            "options": [
+             "bridges",
+             "VIBGYOR",
+             "prettier",
+             "opposites"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: There are bridges on the rivers"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: But the bow that bridges heaven"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -11472,7 +11634,7 @@
       {
        "id": "english-g5-ch4-l2",
        "title": "A Message in the Forest",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -11543,6 +11705,87 @@
            "p": 44
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "a rich",
+            "after": "kept a bright",
+            "options": [
+             "tender",
+             "bird sanctuary",
+             "windowsill",
+             "merchant"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "parrot fell from the",
+            "after": "to the floor of the cage.",
+            "options": [
+             "sighed",
+             "distressed",
+             "flight",
+             "perch"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "of the bird and placed it on the",
+            "after": ".",
+            "options": [
+             "perch",
+             "distressed",
+             "bird sanctuary",
+             "windowsill"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The merchant was",
+            "after": "at this.",
+            "options": [
+             "perch",
+             "sorrow",
+             "windowsill",
+             "distressed"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: a rich merchant kept a bright"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: parrot fell from the perch to the floor of the cage."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -15133,7 +15376,7 @@
       {
        "id": "english-g5-ch5-l2",
        "title": "Think, Discuss and Learn",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -15193,6 +15436,87 @@
            "p": 55
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "I",
+            "after": "around, I jump so high,",
+            "options": [
+             "insect",
+             "flick",
+             "damp",
+             "hop"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Or hop about in a",
+            "after": "drain.",
+            "options": [
+             "drain",
+             "beware",
+             "damp",
+             "muddy"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Or hop about in a muddy",
+            "after": ".",
+            "options": [
+             "flick",
+             "moist",
+             "muddy",
+             "drain"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "In places damp with drops of",
+            "after": ".",
+            "options": [
+             "moist",
+             "damp",
+             "muddy",
+             "dew"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: I hop around, I jump so high,"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Or hop about in a muddy drain."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -25764,7 +26088,7 @@
       {
        "id": "english-g5-ch8-l2",
        "title": "Let us Think: The Panchayat’s Judgment",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -25828,6 +26152,87 @@
            "p": 93
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "The members of the",
+            "after": "gathered under the banyan tree",
+            "options": [
+             "priceless",
+             "summon",
+             "cunning",
+             "Panchayat"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "pay a fine as well as",
+            "after": "to the farmer.",
+            "options": [
+             "adamant",
+             "prospered",
+             "cunning",
+             "apologise"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The villagers praised the",
+            "after": "of the Panchayat.",
+            "options": [
+             "summon",
+             "twig",
+             "apologise",
+             "wisdom"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "When he",
+            "after": ", he bought another field.",
+            "options": [
+             "twig",
+             "wisdom",
+             "apologise",
+             "prospered"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: The members of the Panchayat gathered under the banyan tree"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: pay a fine as well as apologise to the farmer."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -29616,7 +30021,7 @@
       {
        "id": "english-g5-ch9-l2",
        "title": "Vocation: The Watchman at Night",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -29687,6 +30092,87 @@
            "p": 107
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch9-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "Talk about the meaning of ‘",
+            "after": "’ and ‘work’",
+            "options": [
+             "lane",
+             "bangles",
+             "giant",
+             "vocation"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Every day I meet the",
+            "after": "crying, “Bangles,",
+            "options": [
+             "spade",
+             "giant",
+             "gardener",
+             "hawker"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "I wish I were a",
+            "after": "digging away at the garden",
+            "options": [
+             "gong",
+             "giant",
+             "bangles",
+             "gardener"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "the",
+            "after": "walking up and down",
+            "options": [
+             "gong",
+             "lantern",
+             "giant",
+             "watchman"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: Talk about the meaning of ‘ vocation ’ and ‘work’"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Every day I meet the hawker crying, “Bangles,"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -33331,7 +33817,7 @@
       {
        "id": "english-g5-ch10-l2",
        "title": "Let us Read – Making the Bangles",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -33390,6 +33876,87 @@
            "p": 120
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "wonderful",
+            "after": "of the artisans",
+            "options": [
+             "besan",
+             "traditional",
+             "clinking",
+             "craftsmanship"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "maintaining the truthfulness of their",
+            "after": "craft",
+            "options": [
+             "artisan",
+             "clinking",
+             "furnace",
+             "traditional"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Diwali is the",
+            "after": "of lights",
+            "options": [
+             "floral pattern",
+             "laddu",
+             "artisan",
+             "festival"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "This is called",
+            "after": "on the Savings Account.",
+            "options": [
+             "besan",
+             "furnace",
+             "artisan",
+             "interest"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: wonderful craftsmanship of the artisans"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: maintaining the truthfulness of their traditional craft"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

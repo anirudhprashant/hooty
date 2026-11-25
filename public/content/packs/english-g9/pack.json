@@ -640,7 +640,7 @@
       {
        "id": "english-g9-ch1-l2",
        "title": "Kashi Yatre and the Grandmother's Love of Stories",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -700,6 +700,87 @@
            "p": 4
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g9-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "her",
+            "after": "desire to go to Kashi or Varanasi.",
+            "options": [
+             "protagonist",
+             "convincing",
+             "savouring",
+             "ardent"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "I knew I loved her",
+            "after": "and there had",
+            "options": [
+             "protagonist",
+             "debate",
+             "taken aback",
+             "immensely"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "This is called a",
+            "after": ".",
+            "options": [
+             "ardent",
+             "debate",
+             "immensely",
+             "binomial"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "the phrase “passed with flying colours” is an",
+            "after": ".",
+            "options": [
+             "ardent",
+             "immensely",
+             "protagonist",
+             "idiom"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: her ardent desire to go to Kashi or Varanasi."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: I knew I loved her immensely and there had"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -4686,7 +4767,7 @@
       {
        "id": "english-g9-ch2-l2",
        "title": "Arenla’s Choice of Weaving",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -4757,6 +4838,87 @@
            "p": 35
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g9-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "to soften it, is also",
+            "after": ".",
+            "options": [
+             "wearily",
+             "follow suit",
+             "deftly",
+             "tedious"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "how",
+            "after": "they rotated the lump",
+            "options": [
+             "indifference",
+             "spatula",
+             "tedious",
+             "deftly"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "One had to",
+            "after": "the fire carefully as over firing",
+            "options": [
+             "follow suit",
+             "momentum",
+             "indifference",
+             "tend"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "When Sentila",
+            "after": "let the misshapen lump fall flat",
+            "options": [
+             "momentum",
+             "tedious",
+             "indifference",
+             "wearily"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: to soften it, is also tedious ."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: how deftly they rotated the lump"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -8739,7 +8901,7 @@
       {
        "id": "english-g9-ch3-l2",
        "title": "Regional pankhas",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -8814,6 +8976,76 @@
            "p": 72
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g9-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "word",
+            "after": "denotes a small plumed fan used in ancient India.",
+            "options": [
+             "allegory",
+             "encrusted",
+             "sola",
+             "pankhi"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "An",
+            "after": "is a literary device used to express larger ideas",
+            "options": [
+             "collocation",
+             "pankha",
+             "antiquity",
+             "allegory"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Such combinations are called",
+            "after": ".",
+            "options": [
+             "innovative",
+             "initiatives",
+             "pankhi",
+             "collocations"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: word pankhi denotes a small plumed fan used in ancient India."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: An allegory is a literary device used to express larger ideas"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -12664,7 +12896,7 @@
       {
        "id": "english-g9-ch4-l2",
        "title": "Looking After Grandpa",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -12733,6 +12965,87 @@
            "p": 104
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g9-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "the",
+            "after": "old figure sitting in the rocking chair",
+            "options": [
+             "bustle",
+             "trailing",
+             "jauntily",
+             "frail"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Ravi",
+            "after": "at the over-loud tone his mother used",
+            "options": [
+             "ducking",
+             "crouch",
+             "deterred",
+             "winced"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Grandpa hated the noise and",
+            "after": "of city life",
+            "options": [
+             "winced",
+             "crouch",
+             "trailing",
+             "bustle"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Ravi, feeling very foolish, had to",
+            "after": "behind a bush",
+            "options": [
+             "winced",
+             "volley",
+             "jauntily",
+             "crouch"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: the frail old figure sitting in the rocking chair"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Ravi winced at the over-loud tone his mother used"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -16274,7 +16587,7 @@
       {
        "id": "english-g9-ch5-l2",
        "title": "Resilience, Advocacy and Determination",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -16337,6 +16650,87 @@
            "p": 142
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g9-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "Paralympics go beyond competition, to",
+            "after": "stereotypes",
+            "options": [
+             "preconceived notions",
+             "coveted",
+             "squander",
+             "quell"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "left an",
+            "after": "mark on innumerable aspiring athletes",
+            "options": [
+             "locomotor",
+             "remorse",
+             "squander",
+             "indelible"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "You’re a",
+            "after": "—the first ever Indian female para-athlete",
+            "options": [
+             "coveted",
+             "inclusivity",
+             "locomotor",
+             "trailblazer"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "You’ve been bestowed with several",
+            "after": "awards too",
+            "options": [
+             "inclusivity",
+             "indelible",
+             "locomotor",
+             "coveted"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: Paralympics go beyond competition, to quell stereotypes"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: left an indelible mark on innumerable aspiring athletes"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -19917,7 +20311,7 @@
       {
        "id": "english-g9-ch6-l2",
        "title": "Act II: Shruti Tells Her Parents",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -19989,6 +20383,65 @@
            "p": 177
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g9-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "To drown your individual style in the",
+            "after": "of an orchestra",
+            "options": [
+             "notes",
+             "painstakingly",
+             "bite the bullet",
+             "hubbub"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "I will",
+            "after": "for your group at the concert!",
+            "options": [
+             "desecration",
+             "contempt",
+             "bite the bullet",
+             "root"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: To drown your individual style in the hubbub of an orchestra"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: I will root for your group at the concert!"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

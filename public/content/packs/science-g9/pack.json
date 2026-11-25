@@ -536,7 +536,7 @@
       {
        "id": "science-g9-ch1-l2",
        "title": "Using simplified models",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -586,6 +586,87 @@
            "p": 2
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "Building such models involves making",
+            "after": "and deliberately ignoring certain details.",
+            "options": [
+             "assumption",
+             "air resistance",
+             "scientific language",
+             "assumptions"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "each associated with a defined",
+            "after": ".",
+            "options": [
+             "assumption",
+             "air resistance",
+             "law",
+             "unit"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "A",
+            "after": "usually describes a regular pattern observed in nature",
+            "options": [
+             "assumption",
+             "unit",
+             "equation",
+             "law"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "a",
+            "after": "does not mean a guess or an untested idea",
+            "options": [
+             "equation",
+             "estimate",
+             "assumption",
+             "theory"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: Building such models involves making assumptions and deliberately ignoring certain details."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: each associated with a defined unit ."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

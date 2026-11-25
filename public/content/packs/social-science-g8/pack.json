@@ -52323,7 +52323,7 @@
       {
        "id": "social-science-g8-ch15-l2",
        "title": "Belief Systems: Bhakti and Sufism",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -52378,6 +52378,76 @@
            "p": 224
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g8-ch15-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "a",
+            "after": "Islam with one prophet",
+            "options": [
+             "maṭha",
+             "pāṭṭachitra",
+             "qawwālī",
+             "monotheistic"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "developing the",
+            "after": ", a form of Sufi devotional song fusing",
+            "options": [
+             "mokṣa",
+             "maṭha",
+             "dhrupad",
+             "qawwālī"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Akbar’s",
+            "after": ", where collaborations among artists were common",
+            "options": [
+             "qawwālī",
+             "mokṣa",
+             "dhrupad",
+             "atelier"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: a monotheistic Islam with one prophet"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: developing the qawwālī , a form of Sufi devotional song fusing"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

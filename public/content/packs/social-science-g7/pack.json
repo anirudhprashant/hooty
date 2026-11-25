@@ -21127,7 +21127,7 @@
       {
        "id": "social-science-g7-ch7-l2",
        "title": "The Warrior King and the Gupta Empire",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -21206,6 +21206,87 @@
            "p": 151
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "a pillar",
+            "after": "in Prayagraj, praises the achievements of Samudragupta",
+            "options": [
+             "codified",
+             "copper plate",
+             "Vaishya",
+             "inscription"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The prayāga",
+            "after": ", a pillar inscription in Prayagraj, praises the achievements",
+            "options": [
+             "corrosion",
+             "regent",
+             "codified",
+             "praśhasti"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "his mount (",
+            "after": ") Garuḍa often appears on many inscriptions",
+            "options": [
+             "regent",
+             "inscription",
+             "corrosion",
+             "vāhana"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "form",
+            "after": "(mitra) as one of the components of the saptānga",
+            "options": [
+             "regent",
+             "outcastes",
+             "inscription",
+             "alliances"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: a pillar inscription in Prayagraj, praises the achievements of Samudragupta"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: The prayāga praśhasti , a pillar inscription in Prayagraj, praises the achievements"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -47382,7 +47463,7 @@
       {
        "id": "social-science-g7-ch14-l2",
        "title": "India, China and Pakistan",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -47449,6 +47530,87 @@
            "p": 35
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch14-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "Such involvement is called",
+            "after": "and helps create peace",
+            "options": [
+             "hydroelectric power",
+             "open border",
+             "landlocked",
+             "regionalism"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Before the 1947",
+            "after": "— a legacy of the colonial era that",
+            "options": [
+             "Gross National Happiness Index",
+             "transboundary river system",
+             "hydroelectric power",
+             "Partition"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "a multiethnic",
+            "after": "country in south-central Asia",
+            "options": [
+             "gurdwara",
+             "maritime neighbour",
+             "Gross National Happiness Index",
+             "landlocked"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Bhutan, called ‘",
+            "after": "’ or ‘Land of the Thunder Dragon’ by its inhabitants",
+            "options": [
+             "maritime neighbour",
+             "SAARC",
+             "Partition",
+             "Drukyul"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: Such involvement is called regionalism and helps create peace"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Before the 1947 Partition — a legacy of the colonial era that"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -58210,7 +58372,7 @@
       {
        "id": "social-science-g7-ch17-l2",
        "title": "Syriac Christians and the Arrival of the Parsis",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -58279,6 +58441,76 @@
            "p": 130
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch17-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "The",
+            "after": "(followers of Zoroastrianism) came to India",
+            "options": [
+             "scheduled tribe",
+             "Avesta",
+             "Mappila Muslim",
+             "Parsis"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "the",
+            "after": ", the Parsis’ ancient sacred text",
+            "options": [
+             "Parsi",
+             "Mappila Muslim",
+             "Zoroastrianism",
+             "Avesta"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The",
+            "after": "are of African origin",
+            "options": [
+             "persecution",
+             "Parsi",
+             "government-in-exile",
+             "Siddis"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: The Parsis (followers of Zoroastrianism) came to India"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: the Avesta , the Parsis’ ancient sacred text"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -66150,7 +66382,7 @@
       {
        "id": "social-science-g7-ch19-l2",
        "title": "Roads, Highways and Living Root Bridges",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -66213,6 +66445,65 @@
            "p": 176
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch19-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "How would you access",
+            "after": "like electricity and water?",
+            "options": [
+             "patent",
+             "railway network",
+             "expressway",
+             "utilities"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "bridges and",
+            "after": "enable ease of access.",
+            "options": [
+             "expressway",
+             "irrigation",
+             "utilities",
+             "tunnels"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: How would you access utilities like electricity and water?"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: bridges and tunnels enable ease of access."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

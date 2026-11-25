@@ -574,7 +574,7 @@
       {
        "id": "the-world-around-us-g3-ch1-l2",
        "title": "Singing Together",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -653,6 +653,87 @@
            "p": 5
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "We play games like",
+            "after": "and snakes and ladders.",
+            "options": [
+             "pakodas",
+             "relatives",
+             "Mausi",
+             "antakshari"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "whom we call Dadiji, make hot",
+            "after": "and tea during the rains.",
+            "options": [
+             "Bhaiya",
+             "antakshari",
+             "Mausi",
+             "pakodas"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "I have two brothers — Banku",
+            "after": "and little Bishu.",
+            "options": [
+             "Mausi",
+             "grandparents",
+             "antakshari",
+             "Bhaiya"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Kusum",
+            "after": "(mother’s close friend who is like a sister)",
+            "options": [
+             "antakshari",
+             "Bhaiya",
+             "groceries",
+             "Mausi"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: We play games like antakshari and snakes and ladders."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: whom we call Dadiji, make hot pakodas and tea during the rains."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -4487,7 +4568,7 @@
       {
        "id": "the-world-around-us-g3-ch2-l2",
        "title": "Getting Ready to Leave",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -4555,6 +4636,87 @@
            "p": 21
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "The",
+            "after": "has finally come to town.",
+            "options": [
+             "trinkets",
+             "stall",
+             "conductor",
+             "mela"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The",
+            "after": "and Nita’s father helped Dadiji get on",
+            "options": [
+             "Dadiji",
+             "autorickshaw",
+             "bus stop",
+             "conductor"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Mohan Chacha and his family also got down from an",
+            "after": ".",
+            "options": [
+             "stall",
+             "dustbin",
+             "Dadiji",
+             "autorickshaw"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Mohan Chacha and Rohit hurried to get a",
+            "after": "for Dadiji.",
+            "options": [
+             "dustbin",
+             "bus stop",
+             "Dadiji",
+             "wheelchair"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: The mela has finally come to town."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: The conductor and Nita’s father helped Dadiji get on"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -7741,7 +7903,7 @@
       {
        "id": "the-world-around-us-g3-ch3-l2",
        "title": "Reaching the Village and Having Lunch",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -7809,6 +7971,87 @@
            "p": 38
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "my Mama (mother’s brother),",
+            "after": "(Mama’s wife)",
+            "options": [
+             "nagada",
+             "auspicious",
+             "amaltas flowers",
+             "Mami"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "dish",
+            "after": "(a kind of leafy vegetable) with hot rice.",
+            "options": [
+             "Mami",
+             "Vishu",
+             "amaltas flowers",
+             "haakh"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "They are called",
+            "after": "(Rhododendron), I said.",
+            "options": [
+             "auspicious",
+             "procession",
+             "Mami",
+             "buransh"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "celebrates a festival called",
+            "after": "at this time.",
+            "options": [
+             "procession",
+             "buransh",
+             "Mami",
+             "Vishu"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: my Mama (mother’s brother), Mami (Mama’s wife)"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: dish haakh (a kind of leafy vegetable) with hot rice."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -14806,7 +15049,7 @@
       {
        "id": "the-world-around-us-g3-ch5-l1",
        "title": "Animals Living with Plants",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -14882,6 +15125,36 @@
            "p": 63
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "foodchain",
+         "params": {},
+         "title": "Build a food chain",
+         "tasks": [
+          {
+           "say": "Build the longest chain: grass, grasshopper, frog and snake.",
+           "when": "links == 4",
+           "then": "Four living things make four trophic levels, from the producer up to the largest carnivore."
+          },
+          {
+           "say": "Cut the chain down to just the grass and the grasshopper.",
+           "when": "links == 2",
+           "then": "The grass is the producer at trophic level 1; the grasshopper is a herbivore at trophic level 2."
+          },
+          {
+           "say": "Give the grass the most sunlight you can.",
+           "when": "sun == 1000",
+           "then": "Green plants capture only about 1 part in 100 of sunlight, so from 1000 units the grass stores about 10."
+          }
+         ],
+         "takeaway": "A food chain shows who eats whom: green plants are the producer at the first trophic level, each animal after that is a consumer at the next level, energy flows only one way, and less of it is left at each step.",
+         "explanation": "A food chain shows who eats whom: green plants are the producer at the first trophic level, each animal after that is a consumer at the next level, energy flows only one way, and less of it is left at each step."
         },
         {
          "type": "worked",
@@ -18492,7 +18765,7 @@
       {
        "id": "the-world-around-us-g3-ch6-l2",
        "title": "The Mango Tree",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -18570,6 +18843,87 @@
            "p": 76
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "They sat under the",
+            "after": "of a huge mango tree.",
+            "options": [
+             "Grey Wagtail",
+             "Valparai",
+             "fruit",
+             "shade"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "We get medicines,",
+            "after": "for clothes and wood for our houses",
+            "options": [
+             "Grey Wagtail",
+             "Vaalatti kuruvi",
+             "balance",
+             "fibre"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Not only",
+            "after": ", we get vegetables and many other things from plants,",
+            "options": [
+             "fibre",
+             "harmony",
+             "dispersing",
+             "fruits"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "maintain",
+            "after": "and balance in various ways",
+            "options": [
+             "jaggery",
+             "fertile",
+             "dispersing",
+             "harmony"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: They sat under the shade of a huge mango tree."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: We get medicines, fibre for clothes and wood for our houses"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -28426,7 +28780,7 @@
       {
        "id": "the-world-around-us-g3-ch9-l2",
        "title": "Cleaning Our Teeth in Different Ways",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -28485,6 +28839,87 @@
            "p": 112
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch9-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "my",
+            "after": "a good massage too.",
+            "options": [
+             "flexibility",
+             "cleaning agents",
+             "twig",
+             "gums"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "remove dirt and",
+            "after": "from surfaces",
+            "options": [
+             "hygiene",
+             "gums",
+             "twig",
+             "germs"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "monkeys sitting and",
+            "after": "each other",
+            "options": [
+             "Reetha or Shikakai",
+             "stamina",
+             "hygiene",
+             "grooming"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "maintaining or enhancing body",
+            "after": ".",
+            "options": [
+             "stamina",
+             "twig",
+             "hygiene",
+             "flexibility"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: my gums a good massage too."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: remove dirt and germs from surfaces"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -35782,7 +36217,7 @@
       {
        "id": "the-world-around-us-g3-ch11-l2",
        "title": "Patterns and Ideas",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -35858,6 +36293,87 @@
            "p": 141
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch11-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "He would add enough water to make the",
+            "after": "he needed.",
+            "options": [
+             "cow dung",
+             "mud",
+             "piggy bank",
+             "consistency"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "A brick becomes hard after it is baked in the",
+            "after": ".",
+            "options": [
+             "Appooppan",
+             "pattern",
+             "piggy bank",
+             "kiln"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "The following are some",
+            "after": "with repeating shapes and lines.",
+            "options": [
+             "kiln",
+             "construction",
+             "potter’s wheel",
+             "patterns"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "These are some beautiful forms of",
+            "after": "from different parts of India.",
+            "options": [
+             "kiln",
+             "pattern",
+             "potter’s wheel",
+             "pottery"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: He would add enough water to make the consistency he needed."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: A brick becomes hard after it is baked in the kiln ."
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",

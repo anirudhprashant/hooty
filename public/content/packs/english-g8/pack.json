@@ -464,7 +464,7 @@
       {
        "id": "english-g8-ch1-l2",
        "title": "The Quarrel in the Palace",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -532,6 +532,87 @@
            "p": 3
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g8-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "The Vijayanagara Empire was",
+            "after": "for its glory",
+            "options": [
+             "absurd",
+             "distraught",
+             "insurmountable",
+             "renowned"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Among its many",
+            "after": "rulers, King Krishnadeva Raya",
+            "options": [
+             "patron",
+             "trivial",
+             "insurmountable",
+             "illustrious"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "A great",
+            "after": "of learning, Krishnadeva Raya",
+            "options": [
+             "distraught",
+             "unfazed",
+             "illustrious",
+             "patron"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "not only an",
+            "after": "warrior but also a gifted poet",
+            "options": [
+             "unfazed",
+             "insurmountable",
+             "illustrious",
+             "eminent"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: The Vijayanagara Empire was renowned for its glory"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Among its many illustrious rulers, King Krishnadeva Raya"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -8614,7 +8695,7 @@
       {
        "id": "english-g8-ch3-l2",
        "title": "The Murder and the Missing Jewellery",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -8686,6 +8767,65 @@
            "p": 104
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g8-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "An",
+            "after": "is a word or phrase that is made by rearranging",
+            "options": [
+             "nominative",
+             "loot",
+             "nursery",
+             "anagram"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Match the different meanings of ‘",
+            "after": "’",
+            "options": [
+             "matter-of-fact manner",
+             "testify",
+             "nursery",
+             "case"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: An anagram is a word or phrase that is made by rearranging"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Match the different meanings of ‘ case ’"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -12626,7 +12766,7 @@
       {
        "id": "english-g8-ch4-l2",
        "title": "Planting the Cherry Seed",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -12693,6 +12833,87 @@
            "p": 157
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g8-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "the dry cold winds",
+            "after": "the growth of most plants.",
+            "options": [
+             "nightjar",
+             "scythe",
+             "plodded",
+             "stunted"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Rakesh lived with his grandfather on the",
+            "after": "of Mussoorie",
+            "options": [
+             "tang",
+             "haunches",
+             "plodded",
+             "outskirts"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "until all the",
+            "after": "had gone.",
+            "options": [
+             "scythe",
+             "cicadas",
+             "outskirts",
+             "tang"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "the earth was soft and",
+            "after": ".",
+            "options": [
+             "cicadas",
+             "plodded",
+             "outskirts",
+             "yielding"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: the dry cold winds stunted the growth of most plants."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: Rakesh lived with his grandfather on the outskirts of Mussoorie"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
@@ -16538,7 +16759,7 @@
       {
        "id": "english-g8-ch5-l2",
        "title": "Feathered Friend: The Canary Saves the Crew",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -16593,6 +16814,87 @@
            "p": 211
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g8-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "there’s never been a",
+            "after": "that forbids one to keep pets",
+            "options": [
+             "girders",
+             "delved",
+             "dovetailed",
+             "regulation"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "he was a",
+            "after": "little fellow, like most of the early spacers",
+            "options": [
+             "intercom",
+             "cubbyhole",
+             "safeguarded",
+             "wiry"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "collecting assorted",
+            "after": "as they floated around in free fall",
+            "options": [
+             "wiry",
+             "cubbyhole",
+             "delved",
+             "girders"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "the little",
+            "after": "laughingly called my office",
+            "options": [
+             "wiry",
+             "keeled",
+             "dovetailed",
+             "cubbyhole"
+            ],
+            "answer": 3
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 3",
+           "then": "The sentence is: there’s never been a regulation that forbids one to keep pets"
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 3",
+           "then": "The sentence is: he was a wiry little fellow, like most of the early spacers"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "worked",
