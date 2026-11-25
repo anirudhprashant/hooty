@@ -11616,7 +11616,7 @@
       {
        "id": "mathematics-g8-ch3-l1",
        "title": "Numbers Begin with Curiosity",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -11767,68 +11767,6 @@
           "90 (generated problem)",
           "94 (generated problem)"
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g8-ch3-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "Mesopotamia",
-           "number system",
-           "numeral",
-           "ring"
-          ],
-          "meanings": [
-           "A ring is a set that stays within itself under addition, subtraction and multiplication.",
-           "Mesopotamia is the region in western Asia where an early civilisation developed numbers.",
-           "A number system is an ordered set of objects, names or symbols used to represent numbers.",
-           "A numeral is a symbol used to write a number in a number system."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "",
-           "Let us call this standard sequence a number system.",
-           "The symbols occurring in a written number system are called numerals.",
-           ""
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"Mesopotamia\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"Mesopotamia\" means: Mesopotamia is the region in western Asia where an early civilisation developed numbers."
-          },
-          {
-           "say": "Choose what \"number system\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"number system\" means: A number system is an ordered set of objects, names or symbols used to represent numbers."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -13538,7 +13476,7 @@
       {
        "id": "mathematics-g8-ch3-l3",
        "title": "Early Number Systems and Roman Numerals",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -13651,6 +13589,41 @@
          "derived": [
           "4 (generated problem)"
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g8-ch3-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "romannum",
+         "params": {},
+         "title": "Roman numerals",
+         "tasks": [
+          {
+           "say": "Make 4 the Roman way.",
+           "when": "n == 4",
+           "then": "IV: one before five means four. The smaller symbol takes away."
+          },
+          {
+           "say": "Make 9.",
+           "when": "n == 9",
+           "then": "IX: one before ten means nine."
+          },
+          {
+           "say": "Make 40.",
+           "when": "n == 40",
+           "then": "XL: ten before fifty means forty."
+          },
+          {
+           "say": "Make 90.",
+           "when": "n == 90",
+           "then": "XC: ten before a hundred means ninety."
+          }
+         ],
+         "takeaway": "Roman numerals use I, V, X, L and C. Symbols add from the largest down (XII is ten and one and one); a smaller symbol before a bigger one subtracts, which gives IV, IX, XL and XC.",
+         "explanation": "Roman numerals use I, V, X, L and C. Symbols add from the largest down (XII is ten and one and one); a smaller symbol before a bigger one subtracts, which gives IV, IX, XL and XC."
         },
         {
          "type": "fillblank",
