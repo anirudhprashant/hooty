@@ -4466,7 +4466,7 @@ export const WIDGETS = {
       const ways = [
         { name: 'Clay pot', steps: [['wet clay', 'dug and pounded'], ['shaped pot', 'shaped by hand'], ['fired pot', 'fired in the kiln']] },
         { name: 'Brick', steps: [['wet mud', 'mixed with water'], ['moulded brick', 'pressed in a mould'], ['baked brick', 'fired in the kiln']] },
-        { name: 'Mud wall', steps: [['mud and grass', 'mixed with straw'], ['wall', 'built in layers'], ['plastered house', 'smoothed over with wet mud']] },
+        { name: 'Mud wall', steps: [['mud and grass', 'mixed with straw'], ['wall', 'built in layers'], ['plastered house', 'smoothed smooth']] },
       ];
       const way = ways[w];
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
@@ -4805,6 +4805,51 @@ export const WIDGETS = {
       });
       const p = places[pick];
       return { kids, say: `${p.n}: ${p.note}. ${pick === 4 ? 'If you lose your family at the mela, go to the lost and found booth or the police post and wait there.' : pick === 5 ? 'First aid helps with cuts, bruises and falls.' : pick === 8 ? 'The map at the entrance shows where everything is, with the ambulance, police jeep and fire engine parked beside it.' : ''}` };
+    },
+  },
+  festivals: {
+    subject: 'science',
+    about: 'The festivals in the Class 3 table placed on the months they come in: Holi and Ugadi around March, Bihu in April, Onam in August and September, Chhath Puja after the monsoon, and Christmas in December. For festivals, seasons and the year.',
+    params: {},
+    sliders: [['month', 'Month of the year', 1, 12, 1, 1]],
+    draw(v) {
+      const m = Math.max(1, Math.min(12, v.month | 0));
+      const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const short = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+      const fests = [
+        { name: 'Holi', month: 3, when: 'at the end of winter, when spring begins' },
+        { name: 'Ugadi', month: 3, when: 'the new year in many parts of the south, in spring' },
+        { name: 'Bihu', month: 4, when: 'the spring festival of Assam' },
+        { name: 'Onam', month: 8, when: 'the harvest festival of Kerala, in the monsoon months' },
+        { name: 'Chhath Puja', month: 10, when: 'after the monsoon, when the rivers are full' },
+        { name: 'Christmas', month: 12, when: 'in the cool winter month of December' },
+      ];
+      const here = fests.filter((f) => f.month === m || (f.name === 'Onam' && m === 9));
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, 'Festivals through the year', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, names[m - 1], { z: 15, w: 800, a: 'end', f: INK }));
+      short.forEach((s, i) => {
+        const on = i + 1 === m, has = fests.some((f) => f.month === i + 1);
+        kids.push(R(12 + i * 48, 44, 44, 40, on ? C.hero : '#ffffff', { w: on ? 3 : 1.5, s: on ? C.hero : '#e3dccb', r: 9 }));
+        kids.push(T(34 + i * 48, 68, s, { z: 16, w: 800, f: on ? '#ffffff' : '#7a6b99' }));
+        if (has) kids.push(s('circle', { cx: 34 + i * 48, cy: 91, r: 4, fill: on ? '#ffc635' : C.o }));
+      });
+      kids.push(R(12, 110, 576, 168, '#ffffff', { w: 1.5, s: '#e3dccb', r: 14 }));
+      if (!here.length) {
+        kids.push(T(300, 170, 'No festival from the book\u2019s table this month', { z: 16, w: 700, f: '#8a7aa8' }));
+        kids.push(T(300, 198, 'The year has quieter months too, between the big festivals.', { z: 12, w: 600, f: '#a99fc0' }));
+      } else {
+        here.slice(0, 2).forEach((f, i) => {
+          const y = 142 + i * 62;
+          kids.push(T(300, y, f.name, { z: 20, w: 800 }));
+          kids.push(T(300, y + 24, f.when, { z: 12, w: 600, f: '#7a6b99' }));
+        });
+      }
+      kids.push(T(300, 291, 'lunar festivals move a little each year, so these are the months to look out for', { z: 11, w: 600, f: '#8a7aa8' }));
+      const say = here.length
+        ? `${names[m - 1]}: ${here.map((f) => f.name).join(' and ')}${here.length > 1 ? ' are' : ' is'} celebrated. ${here[0].when.charAt(0).toUpperCase() + here[0].when.slice(1)}.`
+        : `${names[m - 1]} has no festival from the book\u2019s table: the year has quieter months between the big festivals.`;
+      return { kids, say };
     },
   },
 };

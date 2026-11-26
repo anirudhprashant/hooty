@@ -1888,12 +1888,23 @@ export const KITS = {
   melamap: {
     // The World Around Us Class 3, "Going to the Mela": the map at the entrance and where to go when you need help.
     grades: [2, 4], subjects: ['science'], perChapter: 1,
-    match: [/parade ground/, /lost and found/, /map of the mela/, /mela ground/],
+    match: [/\bmela\b/, /parade ground/, /lost and found/, /map of the/, /fair\b/],
     title: 'The mela ground', takeaway: 'A mela ground has a map at the entrance, and it is worth knowing where the lost and found booth, first aid and the police post are before you need them.',
     tasks: [
       { say: 'Find the lost and found booth.', when: 'place == 4', then: 'Volunteers there help a child who has lost their family, and the police post is the other place to wait.' },
       { say: 'Find the first aid post.', when: 'place == 5', then: 'Cuts, bruises and falls are treated at first aid.' },
       { say: 'Find the map at the entrance.', when: 'place == 8', then: 'The map shows where everything is, with the ambulance, police jeep and fire engine beside it.' },
+    ],
+  },
+  festivals: {
+    // The World Around Us Class 3, "Celebrating Festivals": the book's own list of festivals, on the months they come.
+    grades: [2, 4], subjects: ['science'], perChapter: 1, avoid: [/flowers?|rhododendron|buransh/i],
+    match: [/festivals?/, /\bholi\b|bihu|onam|ugadi|chhath|christmas/, /celebrat(e|ing|ions?)/, /seasons? and special foods/],
+    title: 'Festivals through the year', takeaway: 'Festivals come round with the year: Holi and Ugadi in spring, Bihu in April, Onam after the monsoon, Chhath after the rains and Christmas in December. Lunar festivals move a little each year, so the month is a guide.',
+    tasks: [
+      { say: 'Find the month of Holi and Ugadi.', when: 'month == 3', then: 'Holi and Ugadi come in March, at the end of winter and the start of spring.' },
+      { say: 'Find the month of Onam.', when: 'month == 8', then: 'Onam is the harvest festival of Kerala, in the monsoon months of August and September.' },
+      { say: 'Find the month of Christmas.', when: 'month == 12', then: 'Christmas is in December, in the cool winter.' },
     ],
   },
   wordlab: {
