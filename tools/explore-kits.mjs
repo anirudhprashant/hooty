@@ -1918,6 +1918,18 @@ export const KITS = {
       { say: 'Lay a mud track instead.', when: 'road == 1', then: 'A mud track helps, but rain can close it and the harvest still spoils.' },
     ],
   },
+  preserve: {
+    // The World Around Us Class 5, "Health and Well-being": food spoils because microbes need moisture, air and
+    // warmth; each way of keeping food takes one of those away.
+    grades: [4, 6], subjects: ['science'], perChapter: 1,
+    match: [/food spoilage|spoils?/, /preserv(e|ing|ation)/, /microbes?/, /airtight|air tight/, /pickle/, /fridge|refrigerat/],
+    title: 'Keep the bread good', takeaway: 'Microbes need moisture, air and the right warmth to grow. Oil keeps the air out, an airtight can removes it, and a fridge slows them down, which is why each keeps food for a different length of time.',
+    tasks: [
+      { say: 'Seal the bread in an airtight can.', when: 'how == 2', then: 'No air means no growth: the bread keeps for months.' },
+      { say: 'Cover the bread with a layer of oil.', when: 'how == 1', then: 'Oil keeps the air out, the way a pickle keeps for weeks.' },
+      { say: 'Leave the bread on an open plate.', when: 'how == 0', then: 'With moisture, air and warmth all reaching it, the bread spoils in about two days.' },
+    ],
+  },
   wordlab: {
     // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
     // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only
