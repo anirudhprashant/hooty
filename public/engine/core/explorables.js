@@ -4500,16 +4500,16 @@ export const WIDGETS = {
       const maxP = Math.max(avg, richEach, poorEach) * 1.05;
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, 'Average income: $10,000 a person', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, `the richest tenth take ${share}%`, { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, `the richest tenth take ${share}%`, { z: 14, w: 700, a: 'end', f: '#7a6b99' }));
       const bars = [
-        { label: 'the average', note: 'what the one number says', worth: avg, colour: '#9b90b5' },
+        { label: 'the average', note: 'one number for all', worth: avg, colour: '#9b90b5' },
         { label: 'a typical person', note: 'one of the other 90', worth: poorEach, colour: C.g },
-        { label: 'one of the richest 10', note: 'their share, split ten ways', worth: richEach, colour: C.o },
+        { label: 'one of the richest 10', note: 'share split ten ways', worth: richEach, colour: C.o },
       ];
       bars.forEach((b, i) => {
         const y = 60 + i * 66, bw = Math.max(6, (b.worth / maxP) * 250);
         kids.push(T(24, y + 18, b.label, { z: 16, w: 800, a: 'start', f: INK }));
-        kids.push(T(24, y + 37, b.note, { z: 12, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(24, y + 37, b.note, { z: 14, w: 600, a: 'start', f: '#8a7aa8' }));
         kids.push(R(200, y + 8, 320, 24, '#f1ecdf', { w: 0, r: 8 }));
         kids.push(R(200, y + 8, Math.min(320, bw), 24, b.colour, { w: 0, r: 8 }));
         kids.push(T(586, y + 25, `$${b.worth.toLocaleString('en-IN')}`, { z: 16, w: 800, a: 'end', f: INK }));
@@ -4529,7 +4529,7 @@ export const WIDGETS = {
       const maxBar = Math.max(revenue, cost, 1);
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, `${units} sold at ₹${price} each`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, `costs ₹${unitCost} a piece + ₹${fixed.toLocaleString('en-IN')} to start`, { z: 12, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, `costs ₹${unitCost} a piece + ₹${fixed.toLocaleString('en-IN')} to start`, { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
       const rows = [
         { name: 'Money coming in', worth: revenue, colour: C.g },
         { name: 'Money going out', worth: cost, colour: C.o },
@@ -4545,7 +4545,7 @@ export const WIDGETS = {
       kids.push(T(30, 220, profit >= 0 ? 'Profit' : 'Loss', { z: 17, w: 800, a: 'start', f: profit >= 0 ? '#136134' : '#a02d1e' }));
       kids.push(T(30, 246, `${profit >= 0 ? '₹' : '₹'}${Math.abs(profit).toLocaleString('en-IN')} ${profit >= 0 ? 'kept' : 'short'}`, { z: 22, w: 800, a: 'start', f: profit >= 0 ? '#136134' : '#a02d1e' }));
       const be = price > unitCost ? Math.ceil(fixed / (price - unitCost)) : null;
-      kids.push(T(570, 222, be ? `break even at ${be} sold` : 'each sale loses money', { z: 12, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(570, 222, be ? `break even at ${be} sold` : 'each sale loses money', { z: 14, w: 700, a: 'end', f: '#7a6b99' }));
       const say = profit === 0
         ? `Revenue and cost are both ₹${revenue.toLocaleString('en-IN')}: this is the break-even point, where the business makes no profit and no loss.`
         : profit > 0
