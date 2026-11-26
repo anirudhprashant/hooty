@@ -4670,12 +4670,12 @@ export const WIDGETS = {
       const rows = ways.map((w, i) => ({ ...w, i, hours: time(i) }));
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, `A message to go ${km} km`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, 'how long it takes', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'how long it takes', { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
       rows.forEach((r, j) => {
         const y = 50 + j * 46, sel = j === how;
         kids.push(R(12, y, 576, 40, sel ? '#fff3d6' : '#ffffff', { w: sel ? 3 : 1.5, s: sel ? '#e8b44a' : '#e3dccb', r: 11 }));
         kids.push(T(28, y + 25, r.n, { z: 16, w: 800, a: 'start', f: INK }));
-        kids.push(T(170, y + 25, r.note, { z: 12, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(170, y + 25, r.note, { z: 14, w: 600, a: 'start', f: '#8a7aa8' }));
         const days = (h) => (h / 24 >= 10 ? String(Math.round(h / 24)) : (h / 24).toFixed(1));
         const label = r.hours === null ? 'not that far' : r.hours === 0 ? 'at once' : r.hours < 24 ? `${r.hours} h` : `${days(r.hours)} days`;
         kids.push(T(566, y + 25, label, { z: 15, w: 800, a: 'end', f: sel ? '#a05600' : '#4a3b6b' }));
@@ -4700,18 +4700,18 @@ export const WIDGETS = {
       ];
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, 'Four parts of India', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, 'rainfall in a year', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'rainfall in a year', { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
       places.forEach((p, i) => {
         const y = 44 + i * 58, on = i === r, bw = Math.max(6, (p.rain / 1600) * 220);
         kids.push(R(12, y, 576, 50, on ? '#fff3d6' : '#ffffff', { w: on ? 3 : 1.5, s: on ? '#e8b44a' : '#e3dccb', r: 11 }));
         kids.push(T(28, y + 22, p.name, { z: 15, w: 800, a: 'start', f: INK }));
-        kids.push(T(28, y + 40, p.place, { z: 11, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(28, y + 40, p.place, { z: 14, w: 600, a: 'start', f: '#8a7aa8' }));
         kids.push(R(220, y + 18, 220, 14, '#f1ecdf', { w: 0, r: 7 }));
         kids.push(R(220, y + 18, bw, 14, p.colour, { w: 0, r: 7 }));
-        kids.push(T(568, y + 29, `${p.rain} mm`, { z: 13, w: 700, a: 'end', f: '#4a3b6b' }));
+        kids.push(T(568, y + 29, `${p.rain} mm`, { z: 14, w: 700, a: 'end', f: '#4a3b6b' }));
       });
       const p = places[r];
-      kids.push(T(300, 282, `${p.note} \u00b7 ${p.grow} \u00b7 ${p.home}`, { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(300, 280, `${p.note} \u00b7 ${p.grow} \u00b7 ${p.home}`, { z: 14, w: 600, f: '#6b5a8a' }));
       const cap = (x) => x.charAt(0).toUpperCase() + x.slice(1);
       return { kids, say: `In ${p.place}, about ${p.rain} mm of rain falls in a year: ${p.note}. ${cap(p.grow)} grow there, and people live in ${p.home}.` };
     },
@@ -4835,18 +4835,18 @@ export const WIDGETS = {
         kids.push(T(34 + i * 48, 68, letter, { z: 16, w: 800, f: on ? '#ffffff' : '#7a6b99' }));
         if (has) kids.push(s('circle', { cx: 34 + i * 48, cy: 91, r: 4, fill: on ? '#ffc635' : C.o }));
       });
-      kids.push(R(12, 110, 576, 168, '#ffffff', { w: 1.5, s: '#e3dccb', r: 14 }));
+      kids.push(R(12, 110, 576, 156, '#ffffff', { w: 1.5, s: '#e3dccb', r: 14 }));
       if (!here.length) {
         kids.push(T(300, 170, 'No festival from the book\u2019s table this month', { z: 16, w: 700, f: '#8a7aa8' }));
-        kids.push(T(300, 198, 'The year has quieter months too, between the big festivals.', { z: 12, w: 600, f: '#a99fc0' }));
+        kids.push(T(300, 198, 'The year has quieter months too, between the big festivals.', { z: 14, w: 600, f: '#a99fc0' }));
       } else {
         here.slice(0, 2).forEach((f, i) => {
           const y = 142 + i * 62;
           kids.push(T(300, y, f.name, { z: 20, w: 800 }));
-          kids.push(T(300, y + 24, f.when, { z: 12, w: 600, f: '#7a6b99' }));
+          kids.push(T(300, y + 24, f.when, { z: 14, w: 600, f: '#7a6b99' }));
         });
       }
-      kids.push(T(300, 291, 'lunar festivals move a little each year, so these are the months to look out for', { z: 11, w: 600, f: '#8a7aa8' }));
+      kids.push(T(300, 282, 'lunar festivals move a little each year, so these are the months to look out for', { z: 14, w: 600, f: '#8a7aa8' }));
       const say = here.length
         ? `${names[m - 1]}: ${here.map((f) => f.name).join(' and ')}${here.length > 1 ? ' are' : ' is'} celebrated. ${here[0].when.charAt(0).toUpperCase() + here[0].when.slice(1)}.`
         : `${names[m - 1]} has no festival from the book\u2019s table: the year has quieter months between the big festivals.`;
@@ -4879,10 +4879,10 @@ export const WIDGETS = {
         const y = 46 + i * 66;
         kids.push(R(12, y, 576, 58, k.pale, { w: 2, s: k.colour, r: 12 }));
         kids.push(T(30, y + 24, r.label, { z: 15, w: 700, a: 'start', f: INK }));
-        kids.push(T(30, y + 45, r.icon === 'crop' ? 'produce has to reach the market fresh' : r.icon === 'school' ? 'the school is in the next village' : 'the nearest hospital', { z: 11, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(30, y + 45, r.icon === 'crop' ? 'produce has to reach the market fresh' : r.icon === 'school' ? 'the school is in the next village' : 'the nearest hospital', { z: 14, w: 600, a: 'start', f: '#8a7aa8' }));
         kids.push(T(566, y + 32, r.value, { z: 19, w: 800, a: 'end', f: k.colour === '#c0392b' ? '#a02d1e' : INK }));
       });
-      kids.push(T(300, 270, k.note, { z: 12, w: 600, f: '#6b5a8a' }));
+      kids.push(T(300, 270, k.note, { z: 14, w: 600, f: '#6b5a8a' }));
       const say = road === 0
         ? 'With no road, an ambulance takes about three hours over the fields, and nearly a third of the harvest spoils before it reaches the market.'
         : road === 1
@@ -4957,7 +4957,7 @@ export const WIDGETS = {
       // the route: a curve from the north (top) to India (bottom)
       const x0 = 300, yTop = 56, yBot = 250;
       kids.push(s('path', { d: `M ${x0 - 70} ${yTop} C ${x0 - 120} 120, ${x0 + 120} 180, ${x0 + 60} ${yBot}`, fill: 'none', stroke: '#b9a8d6', 'stroke-width': 4, 'stroke-dasharray': '8 8' }));
-      kids.push(T(x0 - 120, yTop + 6, 'Russia and Mongolia', { z: 12, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(x0 - 140, yTop - 6, 'Russia and Mongolia', { z: 14, w: 700, a: 'start', f: '#7a6b99' }));
       kids.push(T(x0 + 120, yBot - 2, 'India', { z: 14, w: 800, a: 'end', f: '#4b2597' }));
       // a bird marker on the route, following the curve from the north to India
       const by = yTop + (yBot - yTop) * pos;
