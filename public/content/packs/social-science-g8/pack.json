@@ -23303,7 +23303,7 @@
       {
        "id": "social-science-g8-ch7-l3",
        "title": "Building human capital",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -23360,6 +23360,43 @@
            "p": 171
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g8-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": 1932,
+            "label": "J.R.D. Tata started India’s first airline, Tata…"
+           },
+           {
+            "year": 2023,
+            "label": "India’s adult literacy rate for males"
+           }
+          ],
+          "hist": true
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move forward to when this happened: India’s adult literacy rate for males.",
+           "when": "y >= 2023",
+           "then": "That was 2023 CE."
+          },
+          {
+           "say": "Now go back to before the first event.",
+           "when": "y < 1932",
+           "then": "The first event is 1932 CE and the second is 2023 CE: 91 years apart."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "worked",

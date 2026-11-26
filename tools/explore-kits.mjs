@@ -1930,6 +1930,18 @@ export const KITS = {
       { say: 'Leave the bread on an open plate.', when: 'how == 0', then: 'With moisture, air and warmth all reaching it, the bread spoils in about two days.' },
     ],
   },
+  migration: {
+    // The World Around Us Class 5, "Earth \u2014 Our Shared Home": the rosy starling flies from Russia and Mongolia to
+    // India for the winter, across every border on the way.
+    grades: [4, 6], subjects: ['science'], perChapter: 1,
+    match: [/migrat/, /\bstarling/, /thousands of kilometres/, /every winter|winters? in india/, /no boundar/, /flies? to india/],
+    title: "The starling's year", takeaway: 'The rosy starling nests in southern Russia and Mongolia in summer and spends the winter in India, crossing borders on the way. No border stops a bird: air, water, seeds and animals move freely, and nature has no boundaries.',
+    tasks: [
+      { say: 'Find the month the starling is in India.', when: 'month == 1', then: 'In January it is warm in India and the fields are full of insects.' },
+      { say: 'Find the month it nests in the north.', when: 'month == 6', then: 'In June the days are long in Russia and Mongolia, good for raising chicks.' },
+      { say: 'Find a month when it is flying.', when: 'month == 10', then: 'In October it leaves the north as the cold comes and flies south to India.' },
+    ],
+  },
   wordlab: {
     // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
     // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only

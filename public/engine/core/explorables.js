@@ -4937,6 +4937,41 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  migration: {
+    subject: 'science',
+    about: 'The rosy starling\u2019s year: nesting in southern Russia and Mongolia in summer, flying thousands of kilometres to India for the winter, and back again, crossing borders that no bird stops at. For migration, how animals move with the seasons, and why nature has no boundaries.',
+    params: {},
+    sliders: [['month', 'Month of the year', 1, 12, 1, 1]],
+    draw(v) {
+      const m = Math.max(1, Math.min(12, v.month | 0));
+      const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      // 0 at the breeding grounds, 1 in India; the bird is on the move in October, March and April
+      let pos, where, why;
+      if (m >= 4 && m <= 9) { pos = 0.08; where = 'in southern Russia and Mongolia'; why = 'it is summer there, with long days and plenty of insects to nest and raise chicks'; }
+      else if (m === 10 || m === 3 || m === 11) { pos = 0.5; where = 'on the way, flying thousands of kilometres'; why = m === 10 ? 'it leaves the north as the cold comes' : 'it heads back north as spring returns'; }
+      else { pos = 0.94; where = 'in India'; why = 'it is warm here, and the fields and grasslands are full of insects'; }
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, 'The rosy starling\u2019s year', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, names[m - 1], { z: 15, w: 800, a: 'end', f: INK }));
+      // the route: a curve from the north (top) to India (bottom)
+      const x0 = 300, yTop = 56, yBot = 250;
+      kids.push(s('path', { d: `M ${x0 - 70} ${yTop} C ${x0 - 120} 120, ${x0 + 120} 180, ${x0 + 60} ${yBot}`, fill: 'none', stroke: '#b9a8d6', 'stroke-width': 4, 'stroke-dasharray': '8 8' }));
+      kids.push(T(x0 - 120, yTop + 6, 'Russia and Mongolia', { z: 12, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(x0 + 120, yBot - 2, 'India', { z: 14, w: 800, a: 'end', f: '#4b2597' }));
+      // a bird marker on the route, following the curve from the north to India
+      const by = yTop + (yBot - yTop) * pos;
+      const px = (x0 - 70) + 130 * pos + Math.sin(pos * Math.PI) * 26;
+      kids.push(s('path', { d: `M ${px - 16} ${by} l 10 -7 l 0 6 l 8 -4 l -8 10 l 0 -5 Z`, fill: '#c42b78', stroke: '#8a1c50', 'stroke-width': 1.5 }));
+      // the month strip
+      const short = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+      short.forEach((letter, i) => {
+        const on = i + 1 === m;
+        kids.push(R(12 + i * 48, 262, 44, 26, on ? C.hero : '#ffffff', { w: on ? 3 : 1.5, s: on ? C.hero : '#e3dccb', r: 8 }));
+        kids.push(T(34 + i * 48, 280, letter, { z: 14, w: 800, f: on ? '#ffffff' : '#7a6b99' }));
+      });
+      return { kids, say: `In ${names[m - 1]} the rosy starling is ${where}: ${why}. It crosses borders on the way, but no border stops a bird: nature has no boundaries.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
