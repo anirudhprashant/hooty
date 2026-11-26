@@ -1709,6 +1709,30 @@ export const KITS = {
       { say: 'Sort the shop that will not replace a broken fan.', when: 'item == 2 and bin == 2', then: 'A faulty good must be put right: the right to redressal.' },
     ],
   },
+  democracyoutcomes: {
+    // Class 10 civics, "Outcomes of Democracy". The chapter weighs what democracy does well against where it falls
+    // short, so the sort is the chapter's own argument. titleOnly keeps it off any other civics chapter that merely
+    // mentions democratic government.
+    widget: 'sortlab', grades: [9, 10], subjects: ['social'], perChapter: 1, titleOnly: true,
+    match: [/outcomes of democracy/, /democracy[’']?s outcomes/],
+    title: 'What democracy does well, and where it falls short', takeaway: 'The chapter finds a mixed record. Democracy is strong at free and fair elections, at dignity and freedom, and at handling social differences without violence. It is weaker at reducing economic inequality, at matching dictatorships on growth, and at staying completely free of corruption.',
+    params: () => ({
+      bins: ['Strength', 'Shortfall'],
+      items: [
+        { t: 'Reducing economic inequality', b: 1, why: 'The chapter says democracies have not been very successful in reducing economic inequalities.' },
+        { t: 'Free and fair elections and open debate', b: 0, why: 'The chapter calls these the signs of a healthy democracy.' },
+        { t: 'Higher economic growth than dictatorships', b: 1, why: 'Overall, dictatorships had a slightly higher rate of growth, though the gap between poorer countries was small.' },
+        { t: 'Dignity and freedom of citizens', b: 0, why: 'The chapter says democracy is especially successful at promoting individual dignity and freedom.' },
+        { t: 'Staying completely free of corruption', b: 1, why: 'The chapter says democracy is not completely free from corruption.' },
+        { t: 'Handling social differences without violence', b: 0, why: 'Democracy is especially suitable for handling social differences and conflicts.' },
+      ],
+      labels: { heading: 'A strength, or a shortfall?', pickItem: 'Pick the outcome', pickBin: 'Strength or shortfall?', yes: 'Yes.', goes: 'is a', pick: 'Is "{t}" a strength or a shortfall?', no: 'Not that one.', readAgain: 'Ask what the chapter found: did democracy succeed at this, or not?' },
+    }),
+    tasks: [
+      { say: 'Sort dignity and freedom of citizens.', when: 'item == 3 and bin == 0', then: 'The chapter says democracy is especially successful at promoting individual dignity and freedom.' },
+      { say: 'Sort reducing economic inequality.', when: 'item == 0 and bin == 1', then: 'Democracies have not been very successful in reducing economic inequalities.' },
+    ],
+  },
   cropyear: {
     // Class 10 Geography, "Cropping Seasons". The three seasons and their months are what the placement questions
     // ask, so the lab moves a single month and shows all three at once.
