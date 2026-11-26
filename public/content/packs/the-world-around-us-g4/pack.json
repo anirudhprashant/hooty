@@ -11401,7 +11401,7 @@
       {
        "id": "the-world-around-us-g4-ch4-l1",
        "title": "Journey to the Solar-Powered Village",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -11464,6 +11464,31 @@
            "p": 59
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g4-ch4-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "solar",
+         "params": {},
+         "title": "A village runs on sunshine",
+         "tasks": [
+          {
+           "say": "Run the village on 3 panels in 10 hours of sun.",
+           "when": "panels == 3 and sun == 10",
+           "then": "3 panels x 10 hours make 12 kWh, just enough for the 10 the village needs."
+          },
+          {
+           "say": "Show the village running short.",
+           "when": "panels == 1 and sun == 2",
+           "then": "One panel in two hours of sun makes less than 1 kWh, far short of 10."
+          }
+         ],
+         "takeaway": "Each panel makes a little power for every hour of strong sun. Enough panels make enough for the day and charge the battery for the night; too few and the village runs short.",
+         "explanation": "Each panel makes a little power for every hour of strong sun. Enough panels make enough for the day and charge the battery for the night; too few and the village runs short."
         },
         {
          "type": "worked",
@@ -25408,7 +25433,7 @@
       {
        "id": "the-world-around-us-g4-ch8-l1",
        "title": "Paper and Trees",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 7,
        "activities": [
         {
          "type": "hook",
@@ -25471,68 +25496,6 @@
            "p": 119
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "the-world-around-us-g4-ch8-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "recycled paper",
-           "Recycle",
-           "paper pulp",
-           "fenugreek seeds"
-          ],
-          "meanings": [
-           "These seeds help bind the mashed paper together.",
-           "This is paper made again from used paper.",
-           "This means using steps to turn a used thing into something new.",
-           "Pulp is soaked paper mashed into a wet mixture."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "Your recycled paper is ready!",
-           "Recycling is a process which involves steps that can turn",
-           "",
-           ""
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"recycled paper\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"recycled paper\" means: This is paper made again from used paper."
-          },
-          {
-           "say": "Choose what \"Recycle\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"Recycle\" means: This means using steps to turn a used thing into something new."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "worked",
@@ -26047,79 +26010,23 @@
          "tags": [
           "explore"
          ],
-         "widget": "clozeline",
-         "params": {
-          "items": [
-           {
-            "before": "People in India also used palm leaves called",
-            "after": ".",
-            "options": [
-             "Reduce",
-             "environment-friendly",
-             "binding material",
-             "talapatra"
-            ],
-            "answer": 3
-           },
-           {
-            "before": "The",
-            "after": "system helps visually challenged people to read and write",
-            "options": [
-             "paper pulp",
-             "natural dyes",
-             "binding material",
-             "Braille"
-            ],
-            "answer": 3
-           },
-           {
-            "before": "They are called the",
-            "after": "of waste management.",
-            "options": [
-             "talapatra",
-             "Reuse",
-             "paper pulp",
-             "5Rs"
-            ],
-            "answer": 3
-           },
-           {
-            "before": "Using things carefully so that we can",
-            "after": "the waste we generate.",
-            "options": [
-             "Reuse",
-             "binding material",
-             "paper pulp",
-             "reduce"
-            ],
-            "answer": 3
-           }
-          ],
-          "labels": {
-           "heading": "Finish the sentence",
-           "pickItem": "Pick a sentence",
-           "pickChoice": "Which word fills the gap?",
-           "yes": "Yes.",
-           "no": "Not that word.",
-           "readAgain": "Read the words on both sides of the gap.",
-           "pick": "Which word completes the sentence?"
-          }
-         },
-         "title": "Finish the sentence",
+         "widget": "paper",
+         "params": {},
+         "title": "From wood to paper",
          "tasks": [
           {
-           "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
-           "then": "The sentence is: People in India also used palm leaves called talapatra ."
+           "say": "Recycle old newspaper into new paper.",
+           "when": "kind == 1 and step == 3",
+           "then": "Torn, soaked, beaten and dried: old newspaper becomes a new sheet."
           },
           {
-           "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
-           "then": "The sentence is: The Braille system helps visually challenged people to read and write"
+           "say": "Soak the old paper in water.",
+           "when": "kind == 1 and step == 1",
+           "then": "Water softens the fibres so they can be beaten into pulp."
           }
          ],
-         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
-         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
+         "takeaway": "Paper is made from wood or from old paper: the material is torn up, soaked, beaten into pulp, then pressed and dried. Recycled paper uses the paper we already have, so fewer trees are cut.",
+         "explanation": "Paper is made from wood or from old paper: the material is torn up, soaked, beaten into pulp, then pressed and dried. Recycled paper uses the paper we already have, so fewer trees are cut."
         },
         {
          "type": "worked",
