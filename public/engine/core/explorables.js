@@ -4140,6 +4140,13 @@ export const WIDGETS = {
     // items: the chapter's own sentences in the order the book tells them, then shuffled for the cards; rank: where each
     // displayed card really belongs (0 = first). The shuffle is fixed when the card is made, so it is the same every visit.
     params: { items: [], rank: [], labels: {} },
+    // The slider positions are sentences, so the control has to print the one that is currently chosen.
+    sliderText: (v, key, q) => {
+      const LB = q.labels || {}, asks = LB.ask || ['Which happened first?', 'Which happened second?', 'Which happened third?'];
+      if (key === 'pick') return (q.items || [])[v.pick | 0] || '';
+      if (key === 'ask') return asks[v.ask | 0] || '';
+      return '';
+    },
     dynamicSliders: (q) => {
       const n = Math.max(1, Math.min(4, (q.items || []).length)), LB = q.labels || {};
       return [['ask', LB.pickAsk || 'Which question?', 0, Math.max(0, n - 2), 1, 0], ['pick', LB.pickItem || 'Which sentence?', 0, n - 1, 1, 0]];

@@ -65,8 +65,13 @@ export default {
         input.style.setProperty('--fill', `${pct}%`);
       };
       fill();
-      input.addEventListener('input', () => { v[key] = Number(input.value); if (out) out.textContent = input.value; fill(); draw(performance.now() / 1000); check(); });
-      return el('label', { class: 'explore__control' }, [el('span', { class: 'explore__label' }, [label, out]) , input]);
+      // A slider whose positions are sentences or choices has to say which one is chosen: a bare
+      // "Which sentence?" with an empty track tells a child nothing.
+      const name = widget.sliderText ? el('span', { class: 'explore__pick' }) : null;
+      const paintName = () => { if (name) name.textContent = widget.sliderText(v, key, params) || ''; };
+      paintName();
+      input.addEventListener('input', () => { v[key] = Number(input.value); if (out) out.textContent = input.value; fill(); paintName(); draw(performance.now() / 1000); check(); });
+      return el('label', { class: 'explore__control' }, [el('span', { class: 'explore__label' }, [label, out]), input, name]);
     });
     draw(); paintTasks();
     if (widget.animated && !still) {
