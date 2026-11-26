@@ -4134,6 +4134,48 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  storyorder: {
+    subject: 'english',
+    about: 'Four things that happen in a story, jumbled onto four cards, and one question at a time: which happened first, which second, which third. For the order of events in a story, following a narrative, and reading closely enough to say what came before what. Works in English and Hindi.',
+    // items: the chapter's own sentences in the order the book tells them, then shuffled for the cards; rank: where each
+    // displayed card really belongs (0 = first). The shuffle is fixed when the card is made, so it is the same every visit.
+    params: { items: [], rank: [], labels: {} },
+    dynamicSliders: (q) => {
+      const n = Math.max(1, Math.min(4, (q.items || []).length)), LB = q.labels || {};
+      return [['ask', LB.pickAsk || 'Which question?', 0, Math.max(0, n - 2), 1, 0], ['pick', LB.pickItem || 'Which sentence?', 0, n - 1, 1, 0]];
+    },
+    draw(v, q) {
+      const items = (q.items || []).slice(0, 4), rank = q.rank || [], LB = q.labels || {};
+      const n = Math.max(1, Math.min(4, items.length)), asks = LB.ask || ['Which happened first?', 'Which happened second?', 'Which happened third?'];
+      const ai = Math.max(0, Math.min(Math.max(0, n - 2), v.ask | 0)), pi = Math.max(0, Math.min(n - 1, v.pick | 0));
+      const rk = rank[pi] ?? 0, good = rk === ai, earlier = rk < ai;
+      const ord = LB.ord || ['first', 'second', 'third', 'fourth'], wrap = LB.wrap || 30;
+      const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 21, LB.heading || 'Story order', { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 21, asks[ai] || '', { z: 16, w: 800, a: 'end', f: '#4a3b6b' }));
+      // four cards, big type: a child reads these sentences, so nothing here may be small
+      items.slice(0, 4).forEach((txt, j) => {
+        const x = 10 + (j % 2) * 292, y = 36 + Math.floor(j / 2) * 100;
+        // the slider opens on the first card, so that is not an attempt yet: it must not look like a wrong answer
+        const sel = j === pi, untouched = ai === 0 && pi === 0, right = sel && rk === ai, wrong = sel && rk !== ai && !untouched;
+        kids.push(R(x, y, 288, 96, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: right ? 5 : sel ? 4 : 2, s: right ? '#1d7a45' : wrong ? '#c0392b' : sel ? '#e8b44a' : '#e3dccb', r: 14 }));
+        const lines = fit(txt, wrap), shown = lines.slice(0, 3);
+        if (lines.length > 3) shown[2] = shown[2].replace(/\s\S*$/, '') + '\u2026';
+        shown.forEach((ln, i) => kids.push(T(x + 144, y + 31 + i * 21, ln, { z: 18, w: right ? 800 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
+        if (right) kids.push(T(x + 264, y + 24, '\u2713', { z: 18, w: 800, f: '#1d7a45' }));
+      });
+      kids.push(T(14, 282, `${ai + 1} / ${Math.max(1, n - 1)}`, { z: 15, w: 700, a: 'start', f: '#8a7aa8' }));
+      kids.push(T(300, 282, LB.hint || 'Read all four first.', { z: 16, w: 600, f: '#6b5a8a' }));
+      const shownSentence = String(items[pi] || '').replace(/[.\u0964]+$/, '');
+      const say = !items.length ? (LB.empty || 'This story has no sentences to order yet.')
+        : good ? `${LB.yes || 'Yes.'} "${shownSentence}" ${LB.isThe || 'is the'} ${ord[ai] || ''}.`
+          : earlier ? (LB.earlier || 'That sentence comes earlier in the story.')
+            : ai === 0 && pi === 0 ? `${LB.start || 'Read all four sentences.'} ${asks[0]}`
+              : `${LB.no || 'Not this one.'} ${LB.readAgain || 'Read all four again, then choose the one that comes next.'}`;
+      return { kids, say };
+    },
+  },
   romannum: {
     subject: 'maths',
     about: 'Roman numerals from 1 to 100: the symbols I, V, X, L and C, the four subtractive pairs (IV, IX, XL, XC), and how a bigger symbol after a smaller one adds while a smaller before a bigger one subtracts. For Roman numerals, number systems, the history of counting, and reading an old inscription.',

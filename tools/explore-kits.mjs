@@ -1731,6 +1731,100 @@ export const KITS = {
       { say: 'See how long one copy by hand takes.', when: 'method == 0 and copies == 1', then: 'A scribe copies about five pages a day, so one hundred pages take about twenty days.' },
     ],
   },
+  storyorder: {
+    // A reading skill, not a vocabulary one: four events from the chapter's own telling, jumbled onto four cards, and the
+    // child says which came first, then which came next. The sentences and their order are the book's; nothing is invented.
+    // It is `lit`, not `fallback`: it is a real comprehension card, placed in the idea pass, but a literature chapter may
+    // still keep its word lab and cloze on other lessons (auto-explore looks for `lit` when deciding that).
+    grades: [1, 10], subjects: ['english', 'hindi'], languages: ['en', 'hi'],
+    lit: true, minScore: 0, perChapter: 1, match: [],
+    title: { en: 'Story order', hi: 'कहानी का क्रम' },
+    takeaway: {
+      en: 'A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.',
+      hi: 'कहानी का एक क्रम होता है: पहले कुछ होता है, फिर कुछ और, और अंत तभी समझ आता है जब आप बीच का रास्ता पढ़ चुके हों। फिर, उसके बाद, अंत में जैसे शब्द रास्ता दिखाते हैं।',
+    },
+    params: (text, lessonFacts, chapterFacts, grade, lang) => {
+      const hi = lang === 'hi';
+      const LB = hi
+        ? { heading: 'कहानी का क्रम', ask: ['सबसे पहले क्या हुआ?', 'दूसरे नंबर पर क्या हुआ?', 'तीसरे नंबर पर क्या हुआ?'], pickAsk: 'कौन-सा सवाल', pickItem: 'कौन-सा वाक्य', yes: 'हाँ!', isThe: 'यह', ord: ['सबसे पहले आता है', 'दूसरे नंबर पर आता है', 'तीसरे नंबर पर आता है'], earlier: 'यह वाक्य कहानी में पहले आता है।', no: 'यह नहीं।', readAgain: 'चारों वाक्य फिर पढ़िए और क्रम सोचिए।', start: 'चारों वाक्य पढ़िए।', hint: 'पहले चारों वाक्य पढ़िए।', empty: 'इस कहानी में अभी क्रम लगाने के वाक्य नहीं हैं।', wrap: 24 }
+        : { heading: 'Story order', ask: ['Which happened first?', 'Which happened second?', 'Which happened third?'], pickAsk: 'Which question?', pickItem: 'Which sentence?', yes: 'Yes.', isThe: 'is the', ord: ['first.', 'second.', 'third.'], earlier: 'That sentence comes earlier in the story.', no: 'Not this one.', readAgain: 'Read all four again and think about the order.', start: 'Read all four sentences.', hint: 'Read all four first.', empty: 'This story has no sentences to order yet.', wrap: 28 };
+      const EXERCISE = hi
+        ? /(कविता|कवि |कवि$|परिचय|भाव|व्याकरण|शब्द|अभ्यास|बूझो|पंक्तियाँ|पंक्तियों|मिलकर पढ़िए|सुनो|बोलो|लिखो|सोचिए|सोचो|कला की)/
+        : /(\bpoem\b|\bsong\b|grammar|words?,|example|practice|clue|^unit \d|let us (speak|listen|write)|let'?s think|let us think|think about|before the story|before you read)/i;
+      const clean = (x) => String(x || '').replace(/\s+/g, ' ').trim();
+      // a sentence that tells what happened: past-tense narration in the book's own words, not an exercise or a rule
+      const EX = hi
+        ? /(अभ्यास|प्रश्न|उत्तर|लिखिए|बोलिए|पढ़िए|सुनिए|सोचिए|चिह्न|व्याकरण|मिलाइए|जोड़िए|खाली स्थान|बच्चों|बच्चे|गतिविधि|कविता में|कविते में|पंक्तियों में|बताया गया|कहा गया|कही गई|बताई गई|कहा जाता|बताया जाता|बुलाया जाता|जताया|दिखाया गया|दिखाई गई|दिया गया|किया गया|किया जाता|जाता है|जाती है|जाते हैं|कहा जा सकता|कही जा सकती|दिखाता है|दिखाती है|इस पाठ|यह पाठ|इस पुस्तक|पुस्तक में|वाक्य में|यह कहानी|कहानी में|पाठ्यपुस्तक|भाव|करना है|बनाना है|कविता)/
+        : /\b(children|pupils|the (fun )?task|tasks?|activity|activities|exercise|example|examples|practice|workbook|worksheet|grid|clue|alphabet|vowel|consonant|plural|spelling|rearrange|fill in|paste|underline|tick the|match the|asked to|asks us|asks the|asks children|the lesson|this lesson|this chapter|this story (has|begins|says|asks)|the poem (has|asks|names|says)|we add|words? beginning|is called a|are called|marked as|number one|read out|circle the|draw|write|(is|are) said to|tells us|means)\b/i;
+      const DID = hi
+        ? /(था|थी|थे|गया|गयी|गई|गए|आया|आयी|आई|कहा|कही|लिया|दिया|दी|बना|बनी|चला|चली|देखा|देखी|रहा|रही|रहे|हुआ|हुई|पहुँचा|पहुँची|मिला|मिली|सुना|सुनी|पड़ा|पड़ी|उठा|लगा|लगी|शुरू|बताया|पूछा|फैसला|दिखाई|खाया|पीया|बैठा|बैठी|हँसा|हँसी|दौड़ा|दौड़ी|चढ़ा|गिरा|रोया|सोया|जगा|बेचा|खरीदा|लाया|ले गया)/
+        : /\b(was|were|saw|said|says|came|went|brought|found|asked|gave|took|ran|looked|called|lived|began|started|decided|told|put|made|played|opened|chose|bought|felt|wanted|turned|stood|sat|held|caught|laughed|agreed|named|helped|returned|showed|picked|climbed|fell|jumped|walked|ate|drank|slept|woke|flew|swam|built|carried|left|met|heard|watched|waited|arrived|entered|signed|wrote|read|sang|danced|finished)\b/i;
+      // Devanagari matras and the virama are \p{M}, not \p{L}: without \p{M} every Hindi word loses half its letters
+      const toks = (str) => new Set(String(str).toLowerCase().replace(/[^\p{L}\p{N}\p{M}\s]/gu, ' ').split(/\s+/).filter((w) => w.length > 2));
+      const alike = (a, b) => { const A = toks(a), B = toks(b); if (!A.size || !B.size) return 0; let hit = 0; for (const w of A) if (B.has(w)) hit++; return hit / Math.min(A.size, B.size); };
+      // one lesson's own telling, not the whole chapter: a chapter here bundles several texts, and four sentences from
+      // four different pieces are not one story. The lesson with the story in it is the one this finds.
+      // the book's own language, and not a lesson about a poem, the words of a poem or a page of grammar
+      const langOK = hi
+        ? (t) => /[\u0900-\u097F]/.test(t) && (t.match(/[A-Za-z]/g) || []).length < t.length * 0.3
+        : (t) => !/[\u0900-\u097F]/.test(t);
+      // a lesson about a poem, or a page of grammar or word exercises, is not a story: no card
+      if (EXERCISE.test(String(text || '').slice(0, 100))) return { items: [], rank: [], labels: LB };
+      const cands = [];
+      for (const f of lessonFacts || []) {
+        const t = clean(f && f.say);
+        if (t.length < (hi ? 14 : 26) || t.length > (hi ? 70 : 92)) continue;   // a Devanagari sentence is shorter in letters but wider on the card
+        if (!langOK(t)) continue;
+        if (/\?\s*$/.test(t)) continue;                                 // a question is not an event
+        if (EX.test(t) || !DID.test(t)) continue;
+        if (cands.some((c) => alike(c, t) > 0.55)) continue;            // the book often says the same thing twice
+        cands.push(t);
+        if (cands.length >= 12) break;
+      }
+      if (cands.length < 3) return { items: [], rank: [], labels: LB };
+      // A story keeps coming back to the same people and things; a page of rules or a list of examples does not.
+      // Keep only the sentences that mention something the lesson keeps talking about, and refuse the card if there is
+      // no such thread: a chapter with no story in it should fall back to its word lab, not pretend to have one.
+      const stop = new Set(('the and was were his her she him they them their with from that this had has have for into when then but all one out said says very also not are you your our who what which how why there here about after before over some more most its it is be as at by on in of to a an we us i he do did can will would could'.split(' ')));
+      const count = new Map();
+      for (const t of cands) for (const w of toks(t)) if (!stop.has(w)) count.set(w, (count.get(w) || 0) + 1);
+      const need = Math.min(4, Math.max(2, Math.ceil(cands.length * 0.3)));
+      const spine = [...count].filter(([, n]) => n >= need).map(([w]) => w);
+      const strong = cands.filter((t) => { const S = toks(t); return spine.some((w) => S.has(w)); });
+      if (strong.length < 4) return { items: [], rank: [], labels: LB };
+      // spread across the lesson so the four cards come from the opening, the middle and the end
+      const last = strong.length - 1;
+      const at = strong.length <= 4 ? strong.map((_, i) => i) : [0, Math.round(last / 3), Math.round((2 * last) / 3), last];
+      const truth = [...new Set(at)].map((i) => strong[i]);
+      // a chapter that only describes a person or a place has nothing to put in order: at least two of the four
+      // sentences must say that somebody did something, not just what somebody was like
+      const ACTION = hi
+        ? /(गया|गई|गए|कहा|कही|लिया|दिया|दी|बना|बनी|चला|चली|देखा|देखी|पूछा|बैठा|बैठी|उठा|दौड़ा|चढ़ा|गिरा|खाया|बेचा|खरीदा|लाया|सुना|लगाया|फेंका|मिला|पहुँचा|रखा|बुलाया|सिखाया|लिखा|पढ़ा|खोला|तोड़ा|जीता|हारा|गाया|हँसा|रोया|सोया|जगा|बताया|शुरू|समझा|सोचा|चुना|दिखाया|भागा|उड़ा|कर दिए|कर दिया)/
+        : /\b(went|came|took|gave|said|saw|ran|put|made|played|asked|brought|found|looked|opened|decided|chose|bought|turned|stood|sat|held|laughed|agreed|named|helped|returned|showed|picked|climbed|fell|jumped|walked|ate|left|met|heard|watched|built|carried|flew|swam|began|started|told|ran|kicked|threw|caught|paid|sold|slept|woke|drank|sang|danced|wrote|read|hid|climbed|closed|pushed|pulled|filled|emptied)\b/i;
+      if (truth.filter((t) => ACTION.test(t)).length < 2) return { items: [], rank: [], labels: LB };
+      // a fixed shuffle, so the same child sees the same cards again: card 0 is never the true first, or the card opens answered
+      const order = truth.map((_, i) => i);
+      let seed = 13 + truth.length;
+      for (let i = 0; i < order.length; i++) { seed = (seed * 1103515245 + 12345) % 2147483647; const j = i + (seed % (order.length - i)); [order[i], order[j]] = [order[j], order[i]]; }
+      if (order[0] === 0) { const j = 1 + (seed % (order.length - 1)); [order[0], order[j]] = [order[j], order[0]]; }
+      return { items: order.map((t) => truth[t]), rank: order, labels: LB };
+    },
+    usable: (p) => !!(p && p.items && p.items.length >= 3 && p.rank && p.rank[0] !== 0),
+    tasks: (p, lang) => {
+      const ord = (p.labels && p.labels.ord) || [];
+      const out = [];
+      for (let k = 0; k < Math.min(3, p.items.length - 1); k++) {
+        const at = p.rank.indexOf(k);
+        if (at < 0) continue;
+        out.push({
+          say: (p.labels && p.labels.ask ? p.labels.ask[k] : `Which happened ${k + 1}?`),
+          when: `ask == ${k} and pick == ${at}`,
+          then: `${p.labels && p.labels.yes || 'Yes.'} "${p.items[at]}" ${p.labels && p.labels.isThe || 'is the'} ${ord[k] || ''}`,
+        });
+      }
+      return out;
+    },
+  },
   clozeline: {
     // The other literature lab: the book's own sentence with one word blanked out. Same glossary as the word lab,
     // different work: read the words around the gap. Used before the word lab, so a chapter with sentences to spare

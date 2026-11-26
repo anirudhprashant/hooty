@@ -84,12 +84,14 @@ for (const slug of books) {
       const title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
       const ranked = Object.entries(KITS)
         .filter(([id, k]) => allowed([id, k]) && !k.fallback)
-        .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= (typeof x[1].minScore === 'object' ? (x[1].minScore[grade] ?? 3) : (x[1].minScore || 3))).sort((a, b) => b[2] - a[2]);   // best score first. minScore: a number, or { grade: n } to ask for more evidence in one class
+        .map(([id, k]) => [id, k, score(k, title, text)]).filter((x) => x[2] >= (typeof x[1].minScore === 'object' ? (x[1].minScore[grade] ?? 3) : (x[1].minScore ?? 3))).sort((a, b) => b[2] - a[2]);   // best score first. minScore: a number, or { grade: n } to ask for more evidence in one class
       for (const [id, kit] of ranked) if (place(lesson, key, title, text, id, kit)) break;
     }
     // Second pass: only a chapter with no idea to play with gets the word lab. A chapter that already has a real
     // simulation is left alone, so literature and civics get their words and maths and science keep their laws.
-    const hasIdea = Object.entries(have).some(([, v]) => v?.widget && !KITS[v.widget]?.fallback);
+    // A reading card (`lit`) is a real comprehension lab but not an idea simulation: a literature chapter keeps its
+    // word lab and cloze on the other lessons beside it.
+    const hasIdea = Object.entries(have).some(([, v]) => v?.widget && !KITS[v.widget]?.fallback && !KITS[v.widget]?.lit);
     if (!hasIdea) for (const lesson of open.filter((l) => !have[l.id.slice(1)]?.widget)) {
       const key = lesson.id.slice(1), title = lesson.title || '', text = (lesson.facts || []).map((f) => f.say).join(' ');
       for (const [id, kit] of Object.entries(KITS)) if (kit.fallback && allowed([id, kit]) && place(lesson, key, title, text, id, kit)) break;
