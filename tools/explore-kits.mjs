@@ -1888,7 +1888,7 @@ export const KITS = {
   melamap: {
     // The World Around Us Class 3, "Going to the Mela": the map at the entrance and where to go when you need help.
     grades: [2, 4], subjects: ['science'], perChapter: 1,
-    match: [/\bmela\b/, /parade ground/, /lost and found/, /map of the/, /fair\b/],
+    match: [/parade ground/, /lost and found/, /map of the mela/, /mela ground/],
     title: 'The mela ground', takeaway: 'A mela ground has a map at the entrance, and it is worth knowing where the lost and found booth, first aid and the police post are before you need them.',
     tasks: [
       { say: 'Find the lost and found booth.', when: 'place == 4', then: 'Volunteers there help a child who has lost their family, and the police post is the other place to wait.' },

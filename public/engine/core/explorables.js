@@ -4466,7 +4466,7 @@ export const WIDGETS = {
       const ways = [
         { name: 'Clay pot', steps: [['wet clay', 'dug and pounded'], ['shaped pot', 'shaped by hand'], ['fired pot', 'fired in the kiln']] },
         { name: 'Brick', steps: [['wet mud', 'mixed with water'], ['moulded brick', 'pressed in a mould'], ['baked brick', 'fired in the kiln']] },
-        { name: 'Mud wall', steps: [['mud and grass', 'mixed with straw'], ['wall', 'built in layers'], ['plastered house', 'smoothed smooth']] },
+        { name: 'Mud wall', steps: [['mud and grass', 'mixed with straw'], ['wall', 'built in layers'], ['plastered house', 'smoothed over with wet mud']] },
       ];
       const way = ways[w];
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
