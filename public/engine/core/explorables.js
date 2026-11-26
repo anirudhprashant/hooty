@@ -4828,10 +4828,10 @@ export const WIDGETS = {
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, 'Festivals through the year', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
       kids.push(T(586, 23, names[m - 1], { z: 15, w: 800, a: 'end', f: INK }));
-      short.forEach((s, i) => {
+      short.forEach((letter, i) => {
         const on = i + 1 === m, has = fests.some((f) => f.month === i + 1);
         kids.push(R(12 + i * 48, 44, 44, 40, on ? C.hero : '#ffffff', { w: on ? 3 : 1.5, s: on ? C.hero : '#e3dccb', r: 9 }));
-        kids.push(T(34 + i * 48, 68, s, { z: 16, w: 800, f: on ? '#ffffff' : '#7a6b99' }));
+        kids.push(T(34 + i * 48, 68, letter, { z: 16, w: 800, f: on ? '#ffffff' : '#7a6b99' }));
         if (has) kids.push(s('circle', { cx: 34 + i * 48, cy: 91, r: 4, fill: on ? '#ffc635' : C.o }));
       });
       kids.push(R(12, 110, 576, 168, '#ffffff', { w: 1.5, s: '#e3dccb', r: 14 }));
