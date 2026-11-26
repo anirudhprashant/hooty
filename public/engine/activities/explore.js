@@ -40,6 +40,8 @@ export default {
     };
     const paintTasks = () => {
       const cur = tasks.findIndex((t) => !t.done);
+      // One challenge is already written in big words above the card: repeating it as a numbered list is noise.
+      list.hidden = tasks.length <= 1;
       list.replaceChildren(...tasks.map((t, i) => (i > cur && cur >= 0 ? null : el('li', { class: `explore__task${t.done ? ' is-done' : ' is-now'}` }, [
         el('span', { class: 'explore__mark', 'aria-hidden': 'true' }, t.done ? [icon('check', { size: 18 })] : [String(i + 1)]),
         el('span', {}, [el('span', { class: 'explore__ask', text: t.say }), t.done && t.then ? el('span', { class: 'explore__then', text: t.then }) : null]),
@@ -53,7 +55,7 @@ export default {
       try { hit = evaluate(cur.when, v) !== 0; } catch { hit = false; }
       if (hit) { cur.done = true; ctx.sfx?.(tasks.every((t) => t.done) ? 'halfway' : 'pair'); paintTasks(); check(); }   // one move can finish the next challenge too
     };
-    const controls = sl.map(([key, label, min, max, step]) => {
+    const controls = sl.filter(([, , min, max]) => Number(max) > Number(min)).map(([key, label, min, max, step]) => {
       // A small set of positions is a choice, not a measurement: the number means nothing to a child and the
       // old "label 0" row read like a form field. Only show the value when the range is wide enough to matter.
       const showVal = (Number(max) - Number(min)) > 6;
