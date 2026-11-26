@@ -4774,6 +4774,39 @@ export const WIDGETS = {
       return { kids, say: `${panels} panels in ${sun} hours of sun make about ${made} kWh. The village needs ${demand} kWh, so ${enough ? 'the battery fills for the night' : 'the village is short and the lights dim'}.` };
     },
   },
+  melamap: {
+    subject: 'science',
+    about: 'A map of the mela ground: the entrance with its map, food stalls, rides, games, the stage, the lost and found booth, first aid, the police post and the toilets. For reading a map of a place, and knowing where to go if you are lost or hurt.',
+    params: {},
+    sliders: [['place', 'Which place on the map? (slide to look around)', 0, 8, 1, 0]],
+    draw(v) {
+      const places = [
+        { n: 'Food stalls', note: 'hot food and sweets', icon: 'food' },
+        { n: 'Rides', note: 'the giant wheel', icon: 'ride' },
+        { n: 'Games', note: 'ring toss and hoopla', icon: 'game' },
+        { n: 'Stage', note: 'music and dance', icon: 'stage' },
+        { n: 'Lost and found', note: 'volunteers who help', icon: 'lost' },
+        { n: 'First aid', note: 'a nurse and a stretcher', icon: 'aid' },
+        { n: 'Police post', note: 'a police jeep stands here', icon: 'police' },
+        { n: 'Toilets and water', note: 'drinking water taps', icon: 'water' },
+        { n: 'Entrance and map', note: 'the map of the ground', icon: 'map' },
+      ];
+      const pick = Math.max(0, Math.min(8, v.place | 0));
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, 'The mela ground', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'N is up the page', { z: 12, w: 600, a: 'end', f: '#7a6b99' }));
+      places.forEach((p, i) => {
+        const col = i % 3, row = Math.floor(i / 3);
+        const x = 18 + col * 190, y = 46 + row * 78, on = i === pick;
+        kids.push(R(x, y, 176, 68, on ? '#fff3d6' : '#ffffff', { w: on ? 4 : 2, s: on ? '#e8b44a' : '#e3dccb', r: 12 }));
+        kids.push(T(x + 88, y + 22, p.n, { z: 15, w: 800, f: INK }));
+        kids.push(T(x + 88, y + 44, p.note, { z: 11, w: 600, f: '#8a7aa8' }));
+        if (on) kids.push(T(x + 88, y + 61, 'you are here', { z: 10, w: 700, f: '#a05600' }));
+      });
+      const p = places[pick];
+      return { kids, say: `${p.n}: ${p.note}. ${pick === 4 ? 'If you lose your family at the mela, go to the lost and found booth or the police post and wait there.' : pick === 5 ? 'First aid helps with cuts, bruises and falls.' : pick === 8 ? 'The map at the entrance shows where everything is, with the ambulance, police jeep and fire engine parked beside it.' : ''}` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

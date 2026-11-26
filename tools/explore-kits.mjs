@@ -1867,7 +1867,7 @@ export const KITS = {
   paper: {
     // The World Around Us Class 4, "How Things are Made": paper from wood and paper from old paper.
     grades: [3, 5], subjects: ['science'], perChapter: 1,
-    match: [/paper/, /recycl/, /\btrees?\b/, /how things are made/, /pulp/],
+    match: [/\bpaper\b/, /recycl/, /how things are made/, /pulp/],
     title: 'From wood to paper', takeaway: 'Paper is made from wood or from old paper: the material is torn up, soaked, beaten into pulp, then pressed and dried. Recycled paper uses the paper we already have, so fewer trees are cut.',
     tasks: [
       { say: 'Recycle old newspaper into new paper.', when: 'kind == 1 and step == 3', then: 'Torn, soaked, beaten and dried: old newspaper becomes a new sheet.' },
@@ -1883,6 +1883,17 @@ export const KITS = {
     tasks: [
       { say: 'Run the village on 3 panels in 10 hours of sun.', when: 'panels == 3 and sun == 10', then: '3 panels x 10 hours make 12 kWh, just enough for the 10 the village needs.' },
       { say: 'Show the village running short.', when: 'panels == 1 and sun == 2', then: 'One panel in two hours of sun makes less than 1 kWh, far short of 10.' },
+    ],
+  },
+  melamap: {
+    // The World Around Us Class 3, "Going to the Mela": the map at the entrance and where to go when you need help.
+    grades: [2, 4], subjects: ['science'], perChapter: 1,
+    match: [/\bmela\b/, /parade ground/, /lost and found/, /map of the/, /fair\b/],
+    title: 'The mela ground', takeaway: 'A mela ground has a map at the entrance, and it is worth knowing where the lost and found booth, first aid and the police post are before you need them.',
+    tasks: [
+      { say: 'Find the lost and found booth.', when: 'place == 4', then: 'Volunteers there help a child who has lost their family, and the police post is the other place to wait.' },
+      { say: 'Find the first aid post.', when: 'place == 5', then: 'Cuts, bruises and falls are treated at first aid.' },
+      { say: 'Find the map at the entrance.', when: 'place == 8', then: 'The map shows where everything is, with the ambulance, police jeep and fire engine beside it.' },
     ],
   },
   wordlab: {
