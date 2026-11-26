@@ -4234,7 +4234,7 @@ export const WIDGETS = {
         const x = 74 + i * 136, h = Math.max(8, (vals[i] / top) * maxH), y = base - h;
         kids.push(R(x, y, 86, h, r > 0 ? C.b : r < 0 ? C.o : '#9b90b5', { w: 2, r: 8 }));
         kids.push(T(x + 43, y - 10, fmt(vals[i]), { z: 16, w: 800, f: INK }));
-        kids.push(T(x + 43, base + 22, t === 0 ? 'now' : `in ${t} years`, { z: 13, w: 600, f: '#7a6b99' }));
+        kids.push(T(x + 43, base + 22, t === 0 ? 'now' : `in ${t} years`, { z: 15, w: 600, f: '#6b5c88' }));
       });
       kids.push(L(24, base, 576, base, '#c9b6d8', 2));
       const words = r > 0
@@ -4726,9 +4726,10 @@ export const WIDGETS = {
       const steps = kind === 0
         ? [['wood', 'trees are cut into chips'], ['cooked', 'chips are cooked soft'], ['pulp', 'beaten into a wet mash'], ['paper', 'pressed flat and dried']]
         : [['old paper', 'newspapers are collected'], ['soaking', 'torn and left in water'], ['pulp', 'beaten into a wet mash'], ['new paper', 'pressed flat and dried']];
+      const wrap = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, kind === 0 ? 'Paper from wood' : 'Paper from old paper', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, `step ${st + 1} of 4`, { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, `step ${st + 1} of 4`, { z: 15, w: 700, a: 'end', f: '#7a6b99' }));
       steps.forEach(([label, note], i) => {
         const x = 16 + i * 143, on = i === st, done = i < st;
         kids.push(R(x, 52, 132, 150, on ? '#fff3d6' : '#ffffff', { w: on ? 4 : 2, s: on ? '#e8b44a' : done ? '#a8c98f' : '#e3dccb', r: 12 }));
@@ -4738,8 +4739,8 @@ export const WIDGETS = {
         if (i === 1) kids.push(R(cx - 30, 92, 60, 22, '#bfe3f5', { w: 2, r: 5 }));
         if (i === 2) kids.push(s('path', { d: `M ${cx - 30} 96 q 30 26 60 0 l 0 14 q -30 20 -60 0 Z`, fill: '#e6d6bd', stroke: '#b39a72', 'stroke-width': 2 }));
         if (i === 3) kids.push(R(cx - 26, 86, 52, 30, '#ffffff', { w: 2, s: '#b9c2cf', r: 2 }));
-        kids.push(T(cx, 134, label, { z: 14, w: 800 }));
-        kids.push(T(cx, 154, note, { z: 10, w: 600, f: '#8a7aa8' }));
+        kids.push(T(cx, 132, label, { z: 15, w: 800 }));
+        wrap(note, 17).slice(0, 2).forEach((ln, j) => kids.push(T(cx, 151 + j * 16, ln, { z: 14, w: 600, f: '#6b5c88' })));
       });
       const [label, note] = steps[st];
       return { kids, say: st === 0 ? `${kind === 0 ? 'Paper starts with wood: trees are cut into chips' : 'Recycling starts with old newspapers, collected and torn up'}.` : st === 1 ? `${label}: ${note}.` : st === 2 ? 'The soft mixture is beaten into pulp: a wet mash of fibres.' : 'The pulp is pressed flat and dried, and a sheet of paper is left. Recycled paper saves the trees new paper would need.' };
@@ -4763,14 +4764,14 @@ export const WIDGETS = {
       }
       // the sun, in the clear column on the right
       kids.push(s('circle', { cx: 552, cy: 84, r: 24, fill: '#ffc635', stroke: '#d99a00', 'stroke-width': 3 }));
-      kids.push(T(552, 122, `${sun} h of sun`, { z: 11, w: 700, f: '#7a6b99' }));
+      kids.push(T(552, 122, `${sun} h of sun`, { z: 14, w: 700, f: '#6b5c88' }));
       // the battery bar
       const fill = Math.min(1, made / demand);
       kids.push(T(26, 152, 'Energy made today', { z: 15, w: 800, a: 'start', f: INK }));
       kids.push(R(26, 164, 548, 40, '#f1ecdf', { w: 2, s: '#d8cdbb', r: 10 }));
       kids.push(R(28, 166, Math.max(4, 544 * fill), 36, enough ? C.g : C.o, { w: 0, r: 8 }));
       kids.push(T(300, 191, `${made} kWh`, { z: 20, w: 800, f: INK }));
-      kids.push(T(300, 236, enough ? `The battery fills: ${Math.round((made - demand) * 10) / 10} kWh spare for the night.` : `${Math.round((demand - made) * 10) / 10} kWh short, so the village has a brownout.`, { z: 13, w: 700, f: enough ? '#136134' : '#a02d1e' }));
+      kids.push(T(300, 236, enough ? `The battery fills: ${Math.round((made - demand) * 10) / 10} kWh spare for the night.` : `${Math.round((demand - made) * 10) / 10} kWh short, so the village has a brownout.`, { z: 15, w: 700, f: enough ? '#136134' : '#a02d1e' }));
       return { kids, say: `${panels} panels in ${sun} hours of sun make about ${made} kWh. The village needs ${demand} kWh, so ${enough ? 'the battery fills for the night' : 'the village is short and the lights dim'}.` };
     },
   },
