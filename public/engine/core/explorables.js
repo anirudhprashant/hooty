@@ -4787,22 +4787,22 @@ export const WIDGETS = {
         { n: 'Games', note: 'ring toss and hoopla', icon: 'game' },
         { n: 'Stage', note: 'music and dance', icon: 'stage' },
         { n: 'Lost and found', note: 'volunteers who help', icon: 'lost' },
-        { n: 'First aid', note: 'a nurse and a stretcher', icon: 'aid' },
-        { n: 'Police post', note: 'a police jeep stands here', icon: 'police' },
+        { n: 'First aid', note: 'a nurse and stretcher', icon: 'aid' },
+        { n: 'Police post', note: 'a police jeep waits', icon: 'police' },
         { n: 'Toilets and water', note: 'drinking water taps', icon: 'water' },
-        { n: 'Entrance and map', note: 'the map of the ground', icon: 'map' },
+        { n: 'Entrance and map', note: 'a map of the ground', icon: 'map' },
       ];
       const pick = Math.max(0, Math.min(8, v.place | 0));
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, 'The mela ground', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, 'N is up the page', { z: 12, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'N is up the page', { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
       places.forEach((p, i) => {
         const col = i % 3, row = Math.floor(i / 3);
         const x = 18 + col * 190, y = 46 + row * 78, on = i === pick;
         kids.push(R(x, y, 176, 68, on ? '#fff3d6' : '#ffffff', { w: on ? 4 : 2, s: on ? '#e8b44a' : '#e3dccb', r: 12 }));
         kids.push(T(x + 88, y + 22, p.n, { z: 15, w: 800, f: INK }));
-        kids.push(T(x + 88, y + 44, p.note, { z: 11, w: 600, f: '#8a7aa8' }));
-        if (on) kids.push(T(x + 88, y + 61, 'you are here', { z: 10, w: 700, f: '#a05600' }));
+        kids.push(T(x + 88, y + 44, p.note, { z: 14, w: 600, f: '#8a7aa8' }));
+        if (on) kids.push(T(x + 88, y + 62, 'here', { z: 14, w: 700, f: '#a05600' }));
       });
       const p = places[pick];
       return { kids, say: `${p.n}: ${p.note}. ${pick === 4 ? 'If you lose your family at the mela, go to the lost and found booth or the police post and wait there.' : pick === 5 ? 'First aid helps with cuts, bruises and falls.' : pick === 8 ? 'The map at the entrance shows where everything is, with the ambulance, police jeep and fire engine parked beside it.' : ''}` };
@@ -4899,10 +4899,10 @@ export const WIDGETS = {
     draw(v) {
       const how = Math.max(0, Math.min(3, v.how | 0));
       const ways = [
-        { name: 'Open plate', days: 2, why: 'moisture, air and warmth all reach it', ok: false },
-        { name: 'Under a layer of oil', days: 60, why: 'the oil keeps the air out, like a pickle', ok: true },
-        { name: 'Airtight can', days: 365, why: 'no air, so the microbes cannot grow', ok: true },
-        { name: 'In the fridge', days: 7, why: 'the cold slows them down', ok: true },
+        { name: 'Open plate', short: 'Open plate', days: 2, why: 'moisture, air and warmth all reach it', ok: false },
+        { name: 'Under a layer of oil', short: 'Under oil', days: 60, why: 'the oil keeps the air out, like a pickle', ok: true },
+        { name: 'Airtight can', short: 'Airtight can', days: 365, why: 'no air, so the microbes cannot grow', ok: true },
+        { name: 'In the fridge', short: 'In the fridge', days: 7, why: 'the cold slows them down', ok: true },
       ];
       const w = ways[how];
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
@@ -4912,22 +4912,22 @@ export const WIDGETS = {
       ways.forEach((p, i) => {
         const x = 14 + i * 145, on = i === how;
         kids.push(R(x, 46, 132, 128, on ? '#fff3d6' : '#ffffff', { w: on ? 4 : 2, s: on ? '#e8b44a' : '#e3dccb', r: 12 }));
-        kids.push(T(x + 66, 70, p.name, { z: 12, w: 800 }));
+        kids.push(T(x + 66, 70, p.short, { z: 15, w: 800 }));
         // a tiny drawing: a plate, a jar of oil, a can, a fridge
         const cx = x + 66;
         if (i === 0) { kids.push(R(cx - 34, 96, 68, 6, '#d8cbb6', { w: 2, r: 3 })); kids.push(R(cx - 22, 86, 44, 10, '#c98a54', { w: 2, r: 4 })); }
         if (i === 1) { kids.push(R(cx - 22, 84, 44, 30, '#ffd966', { w: 2, r: 6 })); kids.push(R(cx - 22, 84, 44, 10, '#e8b44a', { w: 2, r: 3 })); }
         if (i === 2) { kids.push(R(cx - 20, 84, 40, 32, '#b9c2cf', { w: 2, s: '#8a97a8', r: 4 })); kids.push(L(cx - 20, 94, cx + 20, 94, '#8a97a8', 2)); }
-        if (i === 3) { kids.push(R(cx - 22, 82, 44, 34, '#cfe3f5', { w: 2, s: '#8fb3d9', r: 4 })); kids.push(T(cx, 104, '\u2744', { z: 12, w: 800, f: '#4a7ab5' })); }
-        kids.push(T(cx, 138, p.ok ? 'microbes slowed' : 'microbes grow', { z: 10, w: 700, f: p.ok ? '#1d7a45' : '#a02d1e' }));
-        kids.push(T(cx, 158, `keeps ${p.days} ${p.days === 1 ? 'day' : 'days'}`, { z: 11, w: 700, f: '#6b5a8a' }));
+        if (i === 3) { kids.push(R(cx - 22, 82, 44, 34, '#cfe3f5', { w: 2, s: '#8fb3d9', r: 4 })); kids.push(T(cx, 104, '\u2744', { z: 14, w: 800, f: '#4a7ab5' })); }
+        kids.push(T(cx, 138, p.ok ? 'microbes slowed' : 'microbes grow', { z: 14, w: 700, f: p.ok ? '#1d7a45' : '#a02d1e' }));
+        kids.push(T(cx, 158, `keeps ${p.days} ${p.days === 1 ? 'day' : 'days'}`, { z: 14, w: 700, f: '#6b5a8a' }));
       });
       // a bar for the days, on a log scale so two days and a year both fit
       const bw = Math.max(6, (Math.log10(w.days + 1) / Math.log10(366)) * 520);
       kids.push(T(24, 200, 'How long the bread stays good', { z: 14, w: 800, a: 'start', f: INK }));
       kids.push(R(24, 212, 548, 30, '#f1ecdf', { w: 2, s: '#d8cdbb', r: 9 }));
       kids.push(R(26, 214, Math.min(544, bw), 26, w.ok ? C.g : C.o, { w: 0, r: 8 }));
-      kids.push(T(300, 262, `${w.name}: ${w.why}.`, { z: 13, w: 700 }));
+      kids.push(T(300, 262, `${w.name}: ${w.why}.`, { z: 14, w: 700 }));
       const say = how === 0
         ? 'On an open plate, moisture, air and warmth all reach the bread, so microbes grow and it spoils in about two days.'
         : how === 1
