@@ -1145,7 +1145,7 @@
       {
        "id": "english-g8-ch1-l3",
        "title": "Rama’s Paddy-Seed Strategy",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -1216,6 +1216,73 @@
            "p": 6
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g8-ch1-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "The lively court still felt tense because the quarrel was unresolved.",
+           "Rama said that the real problem was the person sowing the seeds.",
+           "The royal court was busy when Rama began his plan.",
+           "Rama asked for time to find the right strategy."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Rama asked for time to find the right strategy.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"The royal court was busy when Rama began his plan.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"The lively court still felt tense because the quarrel was unresolved.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -5066,7 +5133,7 @@
       {
        "id": "english-g8-ch2-l3",
        "title": "Patrol at Badgam",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -5133,6 +5200,73 @@
            "p": 52
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g8-ch2-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "On 3 November, several companies were sent to patrol and assess threats around Badgam.",
+           "The enemy’s first attack met stiff resistance from Major Somnath and his men.",
+           "The enemy entered Badgam in small groups to avoid being detected.",
+           "Major Somnath Sharma’s left hand was in plaster, but he insisted on joining his company."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Major Somnath Sharma’s left hand was in plaster, but he insisted on joining his company.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"The enemy entered Badgam in small groups to avoid being detected.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"On 3 November, several companies were sent to patrol and assess threats around Badgam.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -13376,7 +13510,7 @@
       {
        "id": "english-g8-ch4-l3",
        "title": "The Young Cherry Tree",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -13455,6 +13589,73 @@
            "p": 159
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g8-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "A goat entered the garden and ate all the leaves of the young tree.",
+           "Grandfather said that cherry trees were tough and could grow again.",
+           "The new cherry tree was about four inches high.",
+           "Rakesh excitedly called Grandfather to see the new cherry tree."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Rakesh excitedly called Grandfather to see the new cherry tree.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"The new cherry tree was about four inches high.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"A goat entered the garden and ate all the leaves of the young tree.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",

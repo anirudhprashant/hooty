@@ -5326,7 +5326,7 @@
       {
        "id": "english-g4-ch2-l4",
        "title": "Following the Story",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -5396,6 +5396,73 @@
            "p": 12
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch2-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "Chinna returned the extra money to the fruit seller.",
+           "Chinna wanted to buy bells for his pet at Chacha’s shop.",
+           "Chinna went to the market with his mother.",
+           "The teacher will read ‘The Tinkling Bells’ aloud again."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"The teacher will read ‘The Tinkling Bells’ aloud again.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"Chinna went to the market with his mother.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"Chinna returned the extra money to the fruit seller.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -15422,7 +15489,7 @@
       {
        "id": "english-g4-ch5-l3",
        "title": "The Friends Become Greedy",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -15494,6 +15561,73 @@
            "p": 45
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "Soon, very little grass was left for the old stag.",
+           "The old stag began becoming weaker as the days passed.",
+           "The elephant said that the grass was tender and nice.",
+           "Before returning to the forest, the animals ate the fresh green grass."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Before returning to the forest, the animals ate the fresh green grass.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"The elephant said that the grass was tender and nice.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"Soon, very little grass was left for the old stag.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -25955,7 +26089,7 @@
       {
        "id": "english-g4-ch8-l3",
        "title": "The Match Begins",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -26023,6 +26157,73 @@
            "p": 76
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch8-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "The Sundarpur Tigers began rebuilding the stack.",
+           "The Green Warriors took the ball and aimed at the Tigers.",
+           "Deepa took the first shot of the match.",
+           "Everyone felt ready for the match."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Everyone felt ready for the match.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"Deepa took the first shot of the match.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"The Sundarpur Tigers began rebuilding the stack.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -35951,7 +36152,7 @@
       {
        "id": "english-g4-ch11-l3",
        "title": "Snow, a Snowman and Mount Everest",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -36010,6 +36211,73 @@
            "p": 114
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g4-ch11-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "Her grandfather said that Mount Everest was the tallest mountain in the world.",
+           "Minam felt happy to live near such wonderful mountains.",
+           "They laughed and played and made memories that Minam would value forever.",
+           "Minam and her grandfather reached a place where the ground was covered with snow."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Minam and her grandfather reached a place where the ground was covered with snow.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"They laughed and played and made memories that Minam would value forever.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"Her grandfather said that Mount Everest was the tallest mountain in the world.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",

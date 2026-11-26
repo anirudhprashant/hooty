@@ -1164,7 +1164,7 @@
       {
        "id": "english-g7-ch1-l3",
        "title": "King Bruce and the Spider",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -1220,6 +1220,73 @@
            "p": 18
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g7-ch1-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "The spider made nine brave attempts to reach its web.",
+           "King Bruce praised the spider and decided to try again.",
+           "King Bruce became very sad and felt like giving up.",
+           "King Bruce was the monarch of Scotland and wore a crown."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"King Bruce was the monarch of Scotland and wore a crown.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"King Bruce became very sad and felt like giving up.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"The spider made nine brave attempts to reach its web.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -8522,7 +8589,7 @@
       {
        "id": "english-g7-ch3-l3",
        "title": "Building the Time Machine",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -8595,6 +8662,73 @@
            "p": 94
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g7-ch3-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "Papa was very firm when he refused Anand’s request.",
+           "Anand promised not to use the time machine until his parents returned.",
+           "Anand made a loud noise by hammering, sawing and clattering.",
+           "Anand took gadgets apart to collect parts for his inventions."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Anand took gadgets apart to collect parts for his inventions.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"Anand made a loud noise by hammering, sawing and clattering.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"Papa was very firm when he refused Anand’s request.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -12253,7 +12387,7 @@
       {
        "id": "english-g7-ch4-l3",
        "title": "Meeting Sunder Singh",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -12309,6 +12443,73 @@
            "p": 143
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g7-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "Suraj had wanted to watch the train and then walk through the tunnel.",
+           "The watchman said that the animal was his leopard.",
+           "He welcomed Suraj and asked why he was inspecting the tunnel.",
+           "The watchman was taking an afternoon nap when Suraj appeared."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"The watchman was taking an afternoon nap when Suraj appeared.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"He welcomed Suraj and asked why he was inspecting the tunnel.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"Suraj had wanted to watch the train and then walk through the tunnel.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",

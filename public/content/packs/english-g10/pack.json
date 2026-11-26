@@ -9621,7 +9621,7 @@
       {
        "id": "english-g10-ch3-l4",
        "title": "The Black Aeroplane — The Strange Pilot",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -9681,6 +9681,73 @@
            "p": 39
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g10-ch3-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "After half an hour the strange black aeroplane was still there in the clouds.",
+           "Suddenly he came out of the clouds and saw two long straight lines of lights.",
+           "He could see the pilot’s face turned towards him and was glad.",
+           "In the black clouds near him, he saw another aeroplane."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"In the black clouds near him, he saw another aeroplane.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"He could see the pilot’s face turned towards him and was glad.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"After half an hour the strange black aeroplane was still there in the clouds.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -18095,7 +18162,7 @@
       {
        "id": "english-g10-ch5-l6",
        "title": "Tea from Assam: Journey, Legends and Tea Garden",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -18144,6 +18211,73 @@
            "p": 10
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g10-ch5-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "Rajvir said no one really knows who discovered tea, but there are many legends.",
+           "Tea was first drunk in China as far back as 2700 BCE.",
+           "The soft green paddy fields gave way to tea bushes.",
+           "Rajvir said that over eighty crore cups of tea are drunk every day throughout the world."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Rajvir said that over eighty crore cups of tea are drunk every day throughout the world.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"The soft green paddy fields gave way to tea bushes.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"Rajvir said no one really knows who discovered tea, but there are many legends.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -20527,7 +20661,7 @@
       {
        "id": "english-g10-ch6-l3",
        "title": "Mijbil in the Bathroom and at Play",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -20588,6 +20722,73 @@
            "p": 84
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g10-ch6-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "In the bathroom, Mij went wild with joy in the water for half an hour.",
+           "Marbles were Mij’s favourite toys, and he rolled them on his belly without dropping one.",
+           "Maxwell made a body-belt and took Mij on a lead to the bathroom.",
+           "On the second night, Mijbil came onto Maxwell’s bed in the small hours."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"On the second night, Mijbil came onto Maxwell’s bed in the small hours.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"Maxwell made a body-belt and took Mij on a lead to the bathroom.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"In the bathroom, Mij went wild with joy in the water for half an hour.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -24745,7 +24946,7 @@
       {
        "id": "english-g10-ch7-l5",
        "title": "Valli's pride, the old woman, and the town",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 9,
        "activities": [
         {
          "type": "hook",
@@ -24800,6 +25001,73 @@
            "p": 99
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g10-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "Valli found the woman absolutely repulsive.",
+           "The old woman asked if it was proper for such a young person to travel alone.",
+           "Valli said she was not a madam and asked for her ticket.",
+           "Valli said there was nobody there who was a child."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Valli said there was nobody there who was a child.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"Valli said she was not a madam and asked for her ticket.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"Valli found the woman absolutely repulsive.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -27636,7 +27904,7 @@
       {
        "id": "english-g10-ch8-l3",
        "title": "Kisa Gotami's Search",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -27704,6 +27972,73 @@
            "p": 2
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g10-ch8-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "She went from house to house, and people pitied her.",
+           "People said the living are few but the dead are many.",
+           "The people said she had lost her senses and the boy was dead.",
+           "In her grief she carried the dead child to all her neighbours."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"In her grief she carried the dead child to all her neighbours.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"The people said she had lost her senses and the boy was dead.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"She went from house to house, and people pitied her.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
@@ -32209,7 +32544,7 @@
       {
        "id": "english-g10-ch9-l4",
        "title": "Natalya and the Oxen Meadows Quarrel Begins",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -32265,6 +32600,73 @@
            "p": 125
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g10-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "storyorder",
+         "params": {
+          "items": [
+           "Lomov says he has made up his mind to ask Natalya to hear him out.",
+           "Lomov says his aunt’s grandmother gave free use of the Meadows in perpetuity.",
+           "Lomov says his lips are trembling and his right eyebrow twitches.",
+           "Lomov says he is already 35, which he calls a critical age."
+          ],
+          "rank": [
+           2,
+           3,
+           1,
+           0
+          ],
+          "labels": {
+           "heading": "Story order",
+           "ask": [
+            "Which happened first?",
+            "Which happened second?",
+            "Which happened third?"
+           ],
+           "pickAsk": "Which question?",
+           "pickItem": "Which sentence?",
+           "yes": "Yes.",
+           "isThe": "is the",
+           "ord": [
+            "first.",
+            "second.",
+            "third."
+           ],
+           "earlier": "That sentence comes earlier in the story.",
+           "no": "Not this one.",
+           "readAgain": "Read all four again and think about the order.",
+           "start": "Read all four sentences.",
+           "hint": "Read all four first.",
+           "empty": "This story has no sentences to order yet.",
+           "wrap": 28
+          }
+         },
+         "title": "Story order",
+         "tasks": [
+          {
+           "say": "Which happened first?",
+           "when": "ask == 0 and pick == 3",
+           "then": "Yes. \"Lomov says he is already 35, which he calls a critical age.\" is the first."
+          },
+          {
+           "say": "Which happened second?",
+           "when": "ask == 1 and pick == 2",
+           "then": "Yes. \"Lomov says his lips are trembling and his right eyebrow twitches.\" is the second."
+          },
+          {
+           "say": "Which happened third?",
+           "when": "ask == 2 and pick == 0",
+           "then": "Yes. \"Lomov says he has made up his mind to ask Natalya to hear him out.\" is the third."
+          }
+         ],
+         "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
+         "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
         },
         {
          "type": "worked",
