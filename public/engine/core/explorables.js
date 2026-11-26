@@ -2553,7 +2553,7 @@ export const WIDGETS = {
         const x = 40 + i * sz * sc, w = Math.min(sz * sc, 40 + len * sc - x);
         if (w > 1) kids.push(R(x, 146, w - 1.5, 26, i % 2 ? '#f2a33a' : '#5fc9b8', { w: 1.5, r: 3 }), ...(w >= 18 ? [T(x + w / 2, 164, String(i + 1), { z: 15, w: 700, f: '#ffffff' })] : []));
       }
-      kids.push(T(300, 218, `about ${n} ${unit}${n === 1 ? '' : 's'}`, { z: 26, w: 700, f: '#058a68' }), T(300, 248, `measured with a ${who} ${foot ? 'foot' : 'hand'}`, { z: 14, w: 600, f: '#6b5a8a' }), T(300, 272, v.size === 2 ? 'a bigger one fits fewer times' : v.size === 0 ? 'a smaller one fits more times' : '', { z: 16, w: 600, f: '#c2510e' }));
+      kids.push(T(300, 218, `about ${n} ${unit}${n === 1 ? '' : 's'}`, { z: 26, w: 700, f: '#058a68' }), T(300, 248, `measured with a ${who} ${foot ? 'foot' : 'hand'}`, { z: 16, w: 600, f: '#6b5a8a' }), T(300, 272, v.size === 2 ? 'a bigger one fits fewer times' : v.size === 0 ? 'a smaller one fits more times' : '', { z: 16, w: 600, f: '#c2510e' }));
       return { kids, say: `The ${names[v.obj]} is about ${n} ${unit}${n === 1 ? '' : 's'} long measured with a ${who} ${foot ? 'foot' : 'hand'}. ${v.size === 2 ? 'A bigger ' + (foot ? 'foot' : 'hand') + ' covers more each time, so you need fewer.' : v.size === 0 ? 'A smaller ' + (foot ? 'foot' : 'hand') + ' covers less each time, so you need more.' : 'Try a smaller or a bigger one and see how the number changes.'}` };
     },
   },
@@ -2687,8 +2687,8 @@ export const WIDGETS = {
       kids.push(T(cx, 62, 'Each cart pushes the other: one force is the action, the other is the reaction.', { z: 16, w: 600, f: '#6b5a8a' }));
       kids.push(T(ax + wA / 2, floor + 30, `${v.mA} kg`, { z: 16 }));
       kids.push(T(bx + wB / 2, floor + 30, `${v.mB} kg`, { z: 16 }));
-      kids.push(T(cx - 6, floor + 54, `a = ${num(aA, 2)} m/s²`, { z: 14, f: C.b, a: 'end' }));
-      kids.push(T(cx + 6, floor + 54, `a = ${num(aB, 2)} m/s²`, { z: 14, f: C.o, a: 'start' }));
+      kids.push(T(cx - 6, floor + 54, `a = ${num(aA, 2)} m/s²`, { z: 16, f: C.b, a: 'end' }));
+      kids.push(T(cx + 6, floor + 54, `a = ${num(aB, 2)} m/s²`, { z: 16, f: C.o, a: 'start' }));
       const lighter = v.mA === v.mB ? null : v.mA < v.mB ? 'A' : 'B';
       const say = v.mA === v.mB
         ? `Both carts have the same mass, so the same ${v.F} N force gives each the same acceleration of ${num(aA, 2)} m/s²: they fly apart at the same rate, in opposite directions.`
@@ -3323,7 +3323,7 @@ export const WIDGETS = {
         T(300, 40, press >= 60 ? 'It presses hard, so it sinks deep' : press >= 15 ? 'It presses firmly and sinks a little' : 'It is spread out, so it hardly sinks', { z: 22, f: press >= 60 ? '#058a68' : press >= 15 ? '#c2510e' : '#6b5a8a' }),
         T(300, 70, `Pressure = ${v.force} N ÷ ${v.area} cm² = ${num(press, 1)} N per cm²`, { z: 16, w: 600 }),
         T(300, 286, v.area >= 10 ? `The same ${v.force} N over ${v.area} cm² is only ${num(press, 1)} N per cm²: a wide area shares the push.` : `The same ${v.force} N in ${v.area} cm² is ${num(press, 1)} N per cm²: a small area presses harder.`, { z: 15, w: 600, f: '#6b5a8a' }),
-        T(x + w / 2, floor + 22, `${v.area} cm² touching the sand`, { z: 14, f: '#6b5a8a' }),
+        T(x + w / 2, floor + 22, `${v.area} cm² touching the sand`, { z: 16, f: '#6b5a8a' }),
       ];
       const say = press >= 60
         ? `You are pushing with ${v.force} newtons on ${v.area} square centimetres, so the pressure is ${num(press, 1)} newtons per square centimetre. A small area makes the same push press much harder, which is why a nail goes in and a flat hand does not.`
@@ -3813,7 +3813,7 @@ export const WIDGETS = {
       kids.push(T(478, 124, 'muscle', { z: 15, f: '#6b5a8a' }));
       kids.push(s('polyline', { points: rp.map((p) => p.join(',')).join(' '), fill: 'none', stroke: C.o, 'stroke-width': 6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', opacity: 0.9 }));
       kids.push(s('polyline', { points: bp.map((p) => p.join(',')).join(' '), fill: 'none', stroke: C.b, 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', opacity: 0.85 }));
-      kids.push(CIRC(120, 158, 9, C.y), T(132, 202, 'receptor', { z: 14, a: 'start', f: '#6b5a8a' }));
+      kids.push(CIRC(120, 158, 9, C.y), T(132, 202, 'receptor', { z: 16, a: 'start', f: '#6b5a8a' }));
       kids.push(CIRC(rx, ry, 8, C.o), CIRC(bx, by, 8, C.b));
       kids.push(CIRC(26, 36, 7, C.o), T(42, 41, 'reflex: turns back at the spinal cord', { z: 15, a: 'start', w: 600 }));
       kids.push(CIRC(26, 62, 7, C.b), T(42, 67, 'long way: up to the brain', { z: 15, a: 'start', w: 600 }));
@@ -4228,7 +4228,7 @@ export const WIDGETS = {
       const top = Math.max(...vals, 1000) * 1.12;
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, 'A town of 1,000 people', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, r > 0 ? `growing ${Math.round(r * 1000) / 10}% a year` : r < 0 ? `falling ${Math.round(-r * 1000) / 10}% a year` : 'not growing', { z: 14, w: 700, a: 'end', f: r > 0 ? '#1d7a45' : r < 0 ? '#c0392b' : '#7a6b99' }));
+      kids.push(T(586, 23, r > 0 ? `growing ${Math.round(r * 1000) / 10}% a year` : r < 0 ? `falling ${Math.round(-r * 1000) / 10}% a year` : 'not growing', { z: 16, w: 700, a: 'end', f: r > 0 ? '#1d7a45' : r < 0 ? '#c0392b' : '#7a6b99' }));
       const base = 252, maxH = 168;
       years.forEach((t, i) => {
         const x = 74 + i * 136, h = Math.max(8, (vals[i] / top) * maxH), y = base - h;
@@ -4273,7 +4273,7 @@ export const WIDGETS = {
         kids.push(T(368, y + 28, `₹${r.cost.toLocaleString('en-IN')}`, { z: 15, w: 700, a: 'start', f: sel ? '#a05600' : '#4a3b6b' }));
         kids.push(T(500, y + 28, `${r.hours} h`, { z: 15, w: 700, a: 'start', f: '#4a3b6b' }));
       });
-      kids.push(T(300, 282, 'road: door to door · rail: bulk · air: urgent · water: heavy and slow', { z: 14, w: 600, f: '#8a7aa8' }));
+      kids.push(T(300, 282, 'road: door to door · rail: bulk · air: urgent · water: heavy and slow', { z: 16, w: 600, f: '#8a7aa8' }));
       const r = rows[mode];
       const cheap = rows.reduce((a, x) => (x.cost < a.cost ? x : a), rows[0]);
       const fast = rows.reduce((a, x) => (x.hours < a.hours ? x : a), rows[0]);
@@ -4313,9 +4313,9 @@ export const WIDGETS = {
         const y = 96 + i * 66, st = state(s.sow, s.grow, s.harv);
         kids.push(R(12, y, 576, 58, s.pale, { w: 2, s: s.colour, r: 12 }));
         kids.push(T(28, y + 24, s.name, { z: 18, w: 800, a: 'start', f: '#3a2a00' }));
-        kids.push(T(28, y + 46, st, { z: 14, w: 700, a: 'start', f: st === 'not in the field' ? '#9b90b5' : '#6b5a8a' }));
+        kids.push(T(28, y + 46, st, { z: 16, w: 700, a: 'start', f: st === 'not in the field' ? '#9b90b5' : '#6b5a8a' }));
         kids.push(T(566, y + 24, s.crops, { z: 15, w: 600, a: 'end', f: '#4a3b6b' }));
-        kids.push(T(566, y + 45, i === 0 ? 'sown Jun-Jul, harvested Oct-Nov' : i === 1 ? 'sown Oct-Dec, harvested Mar-Apr' : 'grown Mar-Jun', { z: 14, w: 600, a: 'end', f: '#8a7aa8' }));
+        kids.push(T(566, y + 45, i === 0 ? 'sown Jun-Jul, harvested Oct-Nov' : i === 1 ? 'sown Oct-Dec, harvested Mar-Apr' : 'grown Mar-Jun', { z: 16, w: 600, a: 'end', f: '#8a7aa8' }));
       });
       const doing = seasons.filter((s) => state(s.sow, s.grow, s.harv) !== 'not in the field').map((s) => `${s.name.toLowerCase()} crops are ${state(s.sow, s.grow, s.harv)}`);
       return { kids, say: `${names[m - 1]}: ${doing.join('; ') || 'the fields are between seasons'}. Kharif is the monsoon crop, rabi the winter crop, and zaid the short summer season.` };
@@ -4331,7 +4331,7 @@ export const WIDGETS = {
       const cap = Math.round(area / 20), alive = Math.round(cap * (0.2 + 0.8 * prot));
       const kids = [R(0, 0, W, H, '#f4fbf3', { w: 0 }), R(0, 0, W, 34, '#e4f2df', { w: 0 })];
       kids.push(T(14, 23, 'A tiger reserve', { z: 15, w: 700, a: 'start', f: '#3d6b45' }));
-      kids.push(T(586, 23, `${area} sq km`, { z: 14, w: 700, a: 'end', f: '#3d6b45' }));
+      kids.push(T(586, 23, `${area} sq km`, { z: 16, w: 700, a: 'end', f: '#3d6b45' }));
       // the forest block grows with the area
       const w = 120 + (area / 1000) * 180;
       kids.push(R(24, 54, w, 210, '#cfe9c4', { w: 3, s: '#7fae6d', r: 18 }));
@@ -4348,7 +4348,7 @@ export const WIDGETS = {
         kids.push(R(250, y + 28, Math.max(6, (b.n / 60) * 300), 26, b.colour, { w: 0, r: 8 }));
         kids.push(T(250, y + 76, `${b.n} tigers`, { z: 19, w: 800, a: 'start', f: INK }));
       });
-      kids.push(T(300, 288, 'one tiger needs about 20 sq km · poaching and less prey are the threats', { z: 14, w: 600, f: '#6b8a63' }));
+      kids.push(T(300, 288, 'one tiger needs about 20 sq km · poaching and less prey are the threats', { z: 16, w: 600, f: '#6b8a63' }));
       return { kids, say: `${area} sq km can hold about ${cap} tigers. With ${v.protect}% protection, about ${alive} survive: poaching, shrinking habitat and fewer prey are what take the rest.` };
     },
   },
@@ -4362,7 +4362,7 @@ export const WIDGETS = {
       const maxP = Math.max(price, home) * 1.1;
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, 'Two toys in the shop', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, `tax ${v.tariff}%`, { z: 14, w: 700, a: 'end', f: INK }));
+      kids.push(T(586, 23, `tax ${v.tariff}%`, { z: 16, w: 700, a: 'end', f: INK }));
       const cols = [
         { x: 40, name: 'Imported toy', note: `₹200 + ${v.tariff}% tax`, worth: price, colour: importWins ? C.b : '#a9c4e8' },
         { x: 330, name: 'Indian toy', note: 'made at home', worth: home, colour: importWins ? '#e3c98f' : C.y },
@@ -4371,7 +4371,7 @@ export const WIDGETS = {
         const h = (c.worth / maxP) * 122, y = 252 - h;
         kids.push(R(c.x, 60, 230, 196, '#ffffff', { w: 1.5, s: '#e3dccb', r: 14 }));
         kids.push(T(c.x + 115, 80, c.name, { z: 16, w: 800 }));
-        kids.push(T(c.x + 115, 99, c.note, { z: 14, w: 600, f: '#7a6b99' }));
+        kids.push(T(c.x + 115, 99, c.note, { z: 16, w: 600, f: '#7a6b99' }));
         kids.push(R(c.x + 45, y, 140, h, c.colour, { w: 2, r: 8 }));
         kids.push(T(c.x + 115, y - 9, `₹${c.worth}`, { z: 18, w: 800 }));
       });
@@ -4405,7 +4405,7 @@ export const WIDGETS = {
         const bw = Math.max(8, (Math.log10(r.days + 1) / Math.log10(maxDays + 1)) * 340);
         kids.push(R(12, y, 576, 54, sel ? '#fff3d6' : '#ffffff', { w: sel ? 3 : 1.5, s: sel ? '#e8b44a' : '#e3dccb', r: 12 }));
         kids.push(T(30, y + 24, r.n, { z: 16, w: 800, a: 'start', f: INK }));
-        kids.push(T(30, y + 43, r.note, { z: 14, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(30, y + 43, r.note, { z: 16, w: 600, a: 'start', f: '#8a7aa8' }));
         kids.push(R(250, y + 20, 340, 14, '#f1ecdf', { w: 0, r: 7 }));
         kids.push(R(250, y + 20, Math.min(340, bw), 14, sel ? C.o : C.b, { w: 0, r: 7 }));
         kids.push(T(566, y + 34, r.days >= 365 ? `${(r.days / 365).toFixed(1)} years` : `${r.days} days`, { z: 15, w: 800, a: 'end', f: sel ? '#a05600' : '#4a3b6b' }));
@@ -4466,7 +4466,7 @@ export const WIDGETS = {
       const ways = [
         { name: 'Clay pot', steps: [['wet clay', 'dug and pounded'], ['shaped pot', 'shaped by hand'], ['fired pot', 'fired in the kiln']] },
         { name: 'Brick', steps: [['wet mud', 'mixed with water'], ['moulded brick', 'pressed in a mould'], ['baked brick', 'fired in the kiln']] },
-        { name: 'Mud wall', steps: [['mud and grass', 'mixed with straw'], ['wall', 'built in layers'], ['plastered house', 'smoothed smooth']] },
+        { name: 'Mud wall', steps: [['mud and grass', 'mixed with straw'], ['wall', 'built in layers'], ['plastered house', 'plastered with mud']] },
       ];
       const way = ways[w];
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
@@ -4481,8 +4481,8 @@ export const WIDGETS = {
         if (i === 1) kids.push(w === 1 ? R(x + 48, 92, 80, 34, c, { w: 2, r: 4 }) : s('path', { d: `M ${x + 56} 96 L ${x + 120} 96 L ${x + 112} 128 L ${x + 64} 128 Z`, fill: c, stroke: '#7a4a20', 'stroke-width': 2 }));
         if (i === 2) kids.push(w === 1 ? R(x + 48, 92, 80, 34, '#8a4a24', { w: 2, r: 4 }) : w === 0 ? s('path', { d: `M ${x + 56} 96 L ${x + 120} 96 L ${x + 112} 128 L ${x + 64} 128 Z`, fill: '#8a4a24', stroke: '#5a3010', 'stroke-width': 2 }) : R(x + 40, 82, 96, 52, '#c9a06a', { w: 2, r: 3 }));
         kids.push(T(x + 88, 160, label, { z: 16, w: 800 }));
-        kids.push(T(x + 88, 180, note, { z: 14, w: 600, f: '#7a6b99' }));
-        kids.push(T(x + 88, 204, done ? 'done' : on ? 'here' : 'next', { z: 14, w: 700, f: done ? '#1d7a45' : on ? '#a05600' : '#a99fc0' }));
+        kids.push(T(x + 88, 180, note, { z: 16, w: 600, f: '#7a6b99' }));
+        kids.push(T(x + 88, 204, done ? 'done' : on ? 'here' : 'next', { z: 16, w: 700, f: done ? '#1d7a45' : on ? '#a05600' : '#a99fc0' }));
       });
       const [label, note] = way.steps[st];
       return { kids, say: st === 0 ? `${way.name} starts with ${label}: ${note}.` : st === 1 ? `The ${label} is shaped from the ${way.steps[0][0]}.` : `${label}: ${note}. Heat or drying makes it hard and strong.` };
@@ -4509,7 +4509,7 @@ export const WIDGETS = {
       bars.forEach((b, i) => {
         const y = 60 + i * 66, bw = Math.max(6, (b.worth / maxP) * 250);
         kids.push(T(24, y + 18, b.label, { z: 16, w: 800, a: 'start', f: INK }));
-        kids.push(T(24, y + 37, b.note, { z: 14, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(24, y + 37, b.note, { z: 16, w: 600, a: 'start', f: '#8a7aa8' }));
         kids.push(R(200, y + 8, 320, 24, '#f1ecdf', { w: 0, r: 8 }));
         kids.push(R(200, y + 8, Math.min(320, bw), 24, b.colour, { w: 0, r: 8 }));
         kids.push(T(586, y + 25, `$${b.worth.toLocaleString('en-IN')}`, { z: 16, w: 800, a: 'end', f: INK }));
@@ -4529,7 +4529,7 @@ export const WIDGETS = {
       const maxBar = Math.max(revenue, cost, 1);
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, `${units} sold at ₹${price} each`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, `costs ₹${unitCost} a piece + ₹${fixed.toLocaleString('en-IN')} to start`, { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, `costs ₹${unitCost} a piece + ₹${fixed.toLocaleString('en-IN')} to start`, { z: 16, w: 600, a: 'end', f: '#7a6b99' }));
       const rows = [
         { name: 'Money coming in', worth: revenue, colour: C.g },
         { name: 'Money going out', worth: cost, colour: C.o },
@@ -4545,7 +4545,7 @@ export const WIDGETS = {
       kids.push(T(30, 220, profit >= 0 ? 'Profit' : 'Loss', { z: 17, w: 800, a: 'start', f: profit >= 0 ? '#136134' : '#a02d1e' }));
       kids.push(T(30, 246, `${profit >= 0 ? '₹' : '₹'}${Math.abs(profit).toLocaleString('en-IN')} ${profit >= 0 ? 'kept' : 'short'}`, { z: 22, w: 800, a: 'start', f: profit >= 0 ? '#136134' : '#a02d1e' }));
       const be = price > unitCost ? Math.ceil(fixed / (price - unitCost)) : null;
-      kids.push(T(570, 222, be ? `break even at ${be} sold` : 'each sale loses money', { z: 14, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(570, 222, be ? `break even at ${be} sold` : 'each sale loses money', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
       const say = profit === 0
         ? `Revenue and cost are both ₹${revenue.toLocaleString('en-IN')}: this is the break-even point, where the business makes no profit and no loss.`
         : profit > 0
@@ -4571,7 +4571,7 @@ export const WIDGETS = {
       ];
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, '100 people, ₹1,00,000 each', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, `tax ${tax}%`, { z: 14, w: 700, a: 'end', f: INK }));
+      kids.push(T(586, 23, `tax ${tax}%`, { z: 16, w: 700, a: 'end', f: INK }));
       kids.push(T(16, 66, `The government collects ₹${revenue.toLocaleString('en-IN')}`, { z: 18, w: 800, a: 'start', f: INK }));
       let x = 16;
       parts.forEach((p) => {
@@ -4671,12 +4671,12 @@ export const WIDGETS = {
       const rows = ways.map((w, i) => ({ ...w, i, hours: time(i) }));
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, `A message to go ${km} km`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, 'how long it takes', { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'how long it takes', { z: 16, w: 600, a: 'end', f: '#7a6b99' }));
       rows.forEach((r, j) => {
         const y = 50 + j * 46, sel = j === how;
         kids.push(R(12, y, 576, 40, sel ? '#fff3d6' : '#ffffff', { w: sel ? 3 : 1.5, s: sel ? '#e8b44a' : '#e3dccb', r: 11 }));
         kids.push(T(28, y + 25, r.n, { z: 16, w: 800, a: 'start', f: INK }));
-        kids.push(T(170, y + 25, r.note, { z: 14, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(170, y + 25, r.note, { z: 16, w: 600, a: 'start', f: '#8a7aa8' }));
         const days = (h) => (h / 24 >= 10 ? String(Math.round(h / 24)) : (h / 24).toFixed(1));
         const label = r.hours === null ? 'not that far' : r.hours === 0 ? 'at once' : r.hours < 24 ? `${r.hours} h` : `${days(r.hours)} days`;
         kids.push(T(566, y + 25, label, { z: 15, w: 800, a: 'end', f: sel ? '#a05600' : '#4a3b6b' }));
