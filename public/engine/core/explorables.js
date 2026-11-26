@@ -2870,19 +2870,19 @@ export const WIDGETS = {
         }
       });
       // a small key for the three particles
-      kids.push(CIRC(360, 274, 6, C.o, { s: INK, w: 1 }), T(372, 279, 'proton', { a: 'start', z: 15, w: 600 }), CIRC(438, 274, 6, '#9aa5b1', { s: INK, w: 1 }), T(450, 279, 'neutron', { a: 'start', z: 15, w: 600 }), CIRC(522, 274, 6, C.b, { s: INK, w: 1 }), T(534, 279, 'electron', { a: 'start', z: 15, w: 600 }));
+      kids.push(CIRC(360, 274, 6, C.o, { s: INK, w: 1 }), T(372, 279, 'proton', { a: 'start', z: 15, w: 600 }), CIRC(438, 274, 6, '#9aa5b1', { s: INK, w: 1 }), T(450, 279, 'neutron', { a: 'start', z: 15, w: 600 }), CIRC(516, 274, 6, C.b, { s: INK, w: 1 }), T(528, 279, 'electron', { a: 'start', z: 15, w: 600 }));
       const outer = shells[shells.length - 1] || 0;
       const noble = elec === 2 || elec === 10 || elec === 18;
       const val = elec === 0 || noble ? 0 : outer <= 4 ? outer : 8 - outer;
       const chargeText = charge === 0 ? '0, a neutral atom' : charge > 0 ? `+${charge} ion` : `−${-charge} ion`;
-      kids.push(T(350, 36, `${name} (${sym})`, { a: 'start', z: 24, f: '#2a1a4a' }));
-      kids.push(T(350, 68, `Protons, the atomic number Z = ${prot}`, { a: 'start', z: 15, w: 600 }));
-      kids.push(T(350, 92, `Neutrons = ${neut}`, { a: 'start', z: 15, w: 600 }));
-      kids.push(T(350, 116, `Mass number A = ${prot} + ${neut} = ${mass}`, { a: 'start', z: 15, w: 600 }));
-      kids.push(T(350, 140, `Electrons = ${elec}`, { a: 'start', z: 15, w: 600 }));
-      kids.push(T(350, 164, `Shells: ${shells.length ? shells.join(', ') : 'none'}`, { a: 'start', z: 15, w: 600, f: '#1f63d9' }));
-      kids.push(T(350, 188, `Outer shell: ${outer} electron${outer === 1 ? '' : 's'}, valency ${val}`, { a: 'start', z: 15, w: 600 }));
-      kids.push(T(350, 212, `Charge: ${chargeText}`, { a: 'start', z: 15, w: 600, f: charge === 0 ? '#058a68' : C.p }));
+      kids.push(T(340, 36, `${name} (${sym})`, { a: 'start', z: 24, f: '#2a1a4a' }));
+      kids.push(T(340, 68, `Protons, the atomic number Z = ${prot}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(340, 92, `Neutrons = ${neut}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(340, 116, `Mass number A = ${prot} + ${neut} = ${mass}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(340, 140, `Electrons = ${elec}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(340, 164, `Shells: ${shells.length ? shells.join(', ') : 'none'}`, { a: 'start', z: 15, w: 600, f: '#1f63d9' }));
+      kids.push(T(340, 188, `Outer shell: ${outer} electron${outer === 1 ? '' : 's'}, valency ${val}`, { a: 'start', z: 15, w: 600 }));
+      kids.push(T(340, 212, `Charge: ${chargeText}`, { a: 'start', z: 15, w: 600, f: charge === 0 ? '#058a68' : C.p }));
       const say = `${sym ? `This is ${name}. ` : ''}${prot} proton${prot === 1 ? ' makes' : 's make'} it ${name} and set${prot === 1 ? 's' : ''} its atomic number to ${prot}. ${neut === 0 ? 'With no neutrons' : `With ${neut} neutron${neut === 1 ? '' : 's'}`} the mass number is ${mass}. ${elec === 0 ? 'It has no electrons, so there are no filled shells' : `${elec} electron${elec === 1 ? ' fills' : 's fill'} the shells as ${shells.join('-')}, so the outer shell holds ${outer}`}. ${charge === 0 ? 'It is neutral because the protons and electrons balance.' : charge > 0 ? `It is a positive ion: ${charge} more proton${charge === 1 ? '' : 's'} than electrons.` : `It is a negative ion: ${-charge} more electron${-charge === 1 ? '' : 's'} than protons.`}`;
       return { kids, say };
     },
@@ -2911,7 +2911,7 @@ export const WIDGETS = {
       for (let i = 0; i < shown; i++) {
         const part = cards[i], cx2 = 130 + gap * i, cy2 = midY;
         // the last card sits near the right edge, so its three lines end at the card instead of running past it
-        const lastAnchor = i === shown - 1 ? 'end' : undefined, lx = i === shown - 1 ? cx2 + 40 : cx2;
+        const lastAnchor = i === shown - 1 ? 'end' : undefined, lx = i === shown - 1 ? cx2 + 28 : cx2;
         const h = baseH * heights[i];
         kids.push(R(cx2 - 7, cardTop - 14 - h, 14, h, part.fill, { w: 2, x: { opacity: 0.85 } }));
         kids.push(T(cx2, cardTop - 20 - h, i === 0 ? '1 of 100' : 'less', { z: 15, f: '#5b4a7a', w: 600 }));
@@ -3190,7 +3190,7 @@ export const WIDGETS = {
       kids.push(T(cx, cy - rr - 14, `r = ${rad0} cm`, { z: 22, w: 700, f: '#5a5170' }));
       kids.push(T((cx + px) / 2, cy + 84, `d = ${dist} cm`, { z: 22, w: 700, f: '#5a5170' }));
       const mid = { x: (px + t1.x) / 2, y: (cy + t1.y) / 2 };
-      kids.push(T(mid.x + 16, mid.y - 6, `tangent ${num(tl, 2)} cm`, { z: 22, w: 700, f: '#c2510e', a: 'start' }));
+      kids.push(T(588, mid.y - 6, `tangent ${num(tl, 2)} cm`, { z: 22, w: 700, f: '#c2510e', a: 'end' }));
       
       const kind = Math.abs(dist - rad0) < 0.001 ? 'The point is on the circle, so the tangent has closed up to nothing.' : `Each tangent is about ${num(tl, 2)} cm long, and both are equal.`;
       return { kids, say: `Radius ${rad0} cm, point ${dist} cm from the centre. ${kind}` };
@@ -4149,24 +4149,32 @@ export const WIDGETS = {
       const n = Math.max(1, Math.min(4, items.length)), asks = LB.ask || ['Which happened first?', 'Which happened second?', 'Which happened third?'];
       const ai = Math.max(0, Math.min(Math.max(0, n - 2), v.ask | 0)), pi = Math.max(0, Math.min(n - 1, v.pick | 0));
       const rk = rank[pi] ?? 0, good = rk === ai, earlier = rk < ai;
-      const ord = LB.ord || ['first', 'second', 'third', 'fourth'], wrap = LB.wrap || 30;
+      const ord = LB.ord || ['first', 'second', 'third', 'fourth'], wrap = LB.wrap || 26;
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
-      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 21, LB.heading || 'Story order', { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 21, asks[ai] || '', { z: 16, w: 800, a: 'end', f: '#4a3b6b' }));
-      // four cards, big type: a child reads these sentences, so nothing here may be small
+      const kids = [R(0, 0, W, H, '#FFF4E0', { w: 0 })];
+      // the question, on its own banner: one line a child reads before anything else
+      kids.push(R(16, 12, 392, 42, '#FFFDF7', { w: 0, r: 21, x: { opacity: 0.96 } }));
+      kids.push(T(34, 40, asks[ai] || '', { z: 21, w: 800, a: 'start', f: '#2F2440' }));
+      // where you are in the three questions, as dots rather than a fraction
+      for (let i = 0; i < Math.max(1, n - 1); i++) {
+        kids.push(CIRC(500 + i * 22, 33, i === ai ? 7 : 5, i < ai ? '#2E8B57' : i === ai ? '#E8853A' : '#E6D6BC', { w: 0 }));
+      }
+      const cards = [];
       items.slice(0, 4).forEach((txt, j) => {
-        const x = 10 + (j % 2) * 292, y = 36 + Math.floor(j / 2) * 100;
-        // the slider opens on the first card, so that is not an attempt yet: it must not look like a wrong answer
+        const x = 16 + (j % 2) * 288, y = 68 + Math.floor(j / 2) * 112;
         const sel = j === pi, untouched = ai === 0 && pi === 0, right = sel && rk === ai, wrong = sel && rk !== ai && !untouched;
-        kids.push(R(x, y, 288, 96, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: right ? 5 : sel ? 4 : 2, s: right ? '#1d7a45' : wrong ? '#c0392b' : sel ? '#e8b44a' : '#e3dccb', r: 14 }));
+        cards.push(R(x + 2, y + 5, 280, 100, '#6B4A1E', { w: 0, r: 16, x: { opacity: sel ? 0.16 : 0.10 } }));
+        cards.push(R(x, y, 280, 100, right ? '#E7F6E9' : wrong ? '#FDEDE8' : '#FFFDF7', { s: right ? '#2E8B57' : wrong ? '#D06A4E' : sel ? '#E8853A' : '#FFFDF7', w: sel || right || wrong ? 4 : 0, r: 16 }));
         const lines = fit(txt, wrap), shown = lines.slice(0, 3);
         if (lines.length > 3) shown[2] = shown[2].replace(/\s\S*$/, '') + '\u2026';
-        shown.forEach((ln, i) => kids.push(T(x + 144, y + 31 + i * 21, ln, { z: 18, w: right ? 800 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
-        if (right) kids.push(T(x + 264, y + 24, '\u2713', { z: 18, w: 800, f: '#1d7a45' }));
+        const top = y + 52 - (shown.length - 1) * 11;
+        shown.forEach((ln, i) => cards.push(T(x + 140, top + i * 23, ln, { z: 18, w: right ? 800 : 600, f: right ? '#1D6B3F' : wrong ? '#A6462C' : '#2F2440' })));
+        if (right) {
+          cards.push(CIRC(x + 254, y + 20, 12, '#2E8B57', { w: 0 }));
+          cards.push(s('path', { d: `M ${x + 248} ${y + 20} l 4 5 l 8 -9`, stroke: '#fff', 'stroke-width': 3, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
+        }
       });
-      kids.push(T(14, 282, `${ai + 1} / ${Math.max(1, n - 1)}`, { z: 15, w: 700, a: 'start', f: '#8a7aa8' }));
-      kids.push(T(300, 282, LB.hint || 'Read all four first.', { z: 16, w: 600, f: '#6b5a8a' }));
+      kids.push(...cards);
       const shownSentence = String(items[pi] || '').replace(/[.\u0964]+$/, '');
       const say = !items.length ? (LB.empty || 'This story has no sentences to order yet.')
         : good ? `${LB.yes || 'Yes.'} "${shownSentence}" ${LB.isThe || 'is the'} ${ord[ai] || ''}.`
@@ -4196,7 +4204,7 @@ export const WIDGETS = {
       ref.forEach(([sym, val], i) => {
         const x = 300 + i * 57;
         kids.push(R(x, 5, 50, 22, '#ffffff', { w: 1.5, s: '#e3dccb', r: 6 }));
-        kids.push(T(x + 25, 21, `${sym} ${val}`, { z: 12.5, w: 700, f: INK }));
+        kids.push(T(x + 25, 21, `${sym} ${val}`, { z: 14, w: 700, f: INK }));
       });
       // the numeral itself, big enough to read on a phone
       kids.push(R(10, 48, 580, 118, '#fff3d6', { w: 2.5, s: '#e8b44a', r: 16 }));
@@ -4304,7 +4312,7 @@ export const WIDGETS = {
       const maxCost = Math.max(...rows.map((r) => r.cost));
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, `One tonne of goods, ${km} km`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, 'cost and time by each way', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'cost and time by each way', { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
       rows.forEach((r, j) => {
         const y = 52 + j * 52, sel = j === mode;
         kids.push(R(12, y, 576, 44, sel ? '#fff3d6' : '#ffffff', { w: sel ? 3 : 1.5, s: sel ? '#e8b44a' : '#e3dccb', r: 12 }));
@@ -4315,7 +4323,7 @@ export const WIDGETS = {
         kids.push(T(368, y + 28, `₹${r.cost.toLocaleString('en-IN')}`, { z: 15, w: 700, a: 'start', f: sel ? '#a05600' : '#4a3b6b' }));
         kids.push(T(500, y + 28, `${r.hours} h`, { z: 15, w: 700, a: 'start', f: '#4a3b6b' }));
       });
-      kids.push(T(300, 282, 'road: door to door · rail: bulk, long distance · air: urgent and light · water: heavy and slow', { z: 12, w: 600, f: '#8a7aa8' }));
+      kids.push(T(300, 282, 'road: door to door · rail: bulk · air: urgent · water: heavy and slow', { z: 14, w: 600, f: '#8a7aa8' }));
       const r = rows[mode];
       const cheap = rows.reduce((a, x) => (x.cost < a.cost ? x : a), rows[0]);
       const fast = rows.reduce((a, x) => (x.hours < a.hours ? x : a), rows[0]);
@@ -4356,8 +4364,8 @@ export const WIDGETS = {
         kids.push(R(12, y, 576, 58, s.pale, { w: 2, s: s.colour, r: 12 }));
         kids.push(T(28, y + 24, s.name, { z: 18, w: 800, a: 'start', f: '#3a2a00' }));
         kids.push(T(28, y + 46, st, { z: 14, w: 700, a: 'start', f: st === 'not in the field' ? '#9b90b5' : '#6b5a8a' }));
-        kids.push(T(566, y + 24, s.crops, { z: 13, w: 600, a: 'end', f: '#4a3b6b' }));
-        kids.push(T(566, y + 45, i === 0 ? 'sown Jun-Jul, harvested Oct-Nov' : i === 1 ? 'sown Oct-Dec, harvested Mar-Apr' : 'grown Mar-Jun', { z: 12, w: 600, a: 'end', f: '#8a7aa8' }));
+        kids.push(T(566, y + 24, s.crops, { z: 14, w: 600, a: 'end', f: '#4a3b6b' }));
+        kids.push(T(566, y + 45, i === 0 ? 'sown Jun-Jul, harvested Oct-Nov' : i === 1 ? 'sown Oct-Dec, harvested Mar-Apr' : 'grown Mar-Jun', { z: 14, w: 600, a: 'end', f: '#8a7aa8' }));
       });
       const doing = seasons.filter((s) => state(s.sow, s.grow, s.harv) !== 'not in the field').map((s) => `${s.name.toLowerCase()} crops are ${state(s.sow, s.grow, s.harv)}`);
       return { kids, say: `${names[m - 1]}: ${doing.join('; ') || 'the fields are between seasons'}. Kharif is the monsoon crop, rabi the winter crop, and zaid the short summer season.` };
@@ -4390,7 +4398,7 @@ export const WIDGETS = {
         kids.push(R(250, y + 28, Math.max(6, (b.n / 60) * 300), 26, b.colour, { w: 0, r: 8 }));
         kids.push(T(250, y + 76, `${b.n} tigers`, { z: 19, w: 800, a: 'start', f: INK }));
       });
-      kids.push(T(300, 288, 'one tiger needs about 20 sq km · poaching, shrinking habitat and less prey are the threats', { z: 12, w: 600, f: '#6b8a63' }));
+      kids.push(T(300, 286, 'one tiger needs about 20 sq km · poaching and shrinking habitat take the rest', { z: 14, w: 600, f: '#6b8a63' }));
       return { kids, say: `${area} sq km can hold about ${cap} tigers. With ${v.protect}% protection, about ${alive} survive: poaching, shrinking habitat and fewer prey are what take the rest.` };
     },
   },
@@ -4513,7 +4521,7 @@ export const WIDGETS = {
       const way = ways[w];
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, way.name, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, `${st + 1} of 3`, { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, `${st + 1} of 3`, { z: 14, w: 700, a: 'end', f: '#7a6b99' }));
       way.steps.forEach(([label, note], i) => {
         const x = 18 + i * 194, on = i === st, done = i < st;
         kids.push(R(x, 54, 176, 168, on ? '#fff3d6' : '#ffffff', { w: on ? 4 : 2, s: on ? '#e8b44a' : done ? '#a8c98f' : '#e3dccb', r: 14 }));
@@ -4523,8 +4531,8 @@ export const WIDGETS = {
         if (i === 1) kids.push(w === 1 ? R(x + 48, 92, 80, 34, c, { w: 2, r: 4 }) : s('path', { d: `M ${x + 56} 96 L ${x + 120} 96 L ${x + 112} 128 L ${x + 64} 128 Z`, fill: c, stroke: '#7a4a20', 'stroke-width': 2 }));
         if (i === 2) kids.push(w === 1 ? R(x + 48, 92, 80, 34, '#8a4a24', { w: 2, r: 4 }) : w === 0 ? s('path', { d: `M ${x + 56} 96 L ${x + 120} 96 L ${x + 112} 128 L ${x + 64} 128 Z`, fill: '#8a4a24', stroke: '#5a3010', 'stroke-width': 2 }) : R(x + 40, 82, 96, 52, '#c9a06a', { w: 2, r: 3 }));
         kids.push(T(x + 88, 160, label, { z: 16, w: 800 }));
-        kids.push(T(x + 88, 180, note, { z: 12, w: 600, f: '#7a6b99' }));
-        kids.push(T(x + 88, 204, done ? 'done' : on ? 'here' : 'next', { z: 12, w: 700, f: done ? '#1d7a45' : on ? '#a05600' : '#a99fc0' }));
+        kids.push(T(x + 88, 180, note, { z: 14, w: 600, f: '#7a6b99' }));
+        kids.push(T(x + 88, 204, done ? 'done' : on ? 'here' : 'next', { z: 14, w: 700, f: done ? '#1d7a45' : on ? '#a05600' : '#a99fc0' }));
       });
       const [label, note] = way.steps[st];
       return { kids, say: st === 0 ? `${way.name} starts with ${label}: ${note}.` : st === 1 ? `The ${label} is shaped from the ${way.steps[0][0]}.` : `${label}: ${note}. Heat or drying makes it hard and strong.` };
@@ -4571,7 +4579,7 @@ export const WIDGETS = {
       const maxBar = Math.max(revenue, cost, 1);
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, `${units} sold at ₹${price} each`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, `costs ₹${unitCost} a piece + ₹${fixed.toLocaleString('en-IN')} to start`, { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(578, 23, `costs ₹${unitCost} a piece + ₹${fixed.toLocaleString('en-IN')} to start`, { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
       const rows = [
         { name: 'Money coming in', worth: revenue, colour: C.g },
         { name: 'Money going out', worth: cost, colour: C.o },
@@ -4581,7 +4589,7 @@ export const WIDGETS = {
         kids.push(T(24, y + 18, r.name, { z: 16, w: 800, a: 'start', f: INK }));
         kids.push(R(210, y + 4, 270, 24, '#f1ecdf', { w: 0, r: 8 }));
         kids.push(R(210, y + 4, bw, 24, r.colour, { w: 0, r: 8 }));
-        kids.push(T(592, y + 22, `₹${r.worth.toLocaleString('en-IN')}`, { z: 15, w: 800, a: 'end', f: INK }));
+        kids.push(T(580, y + 22, `₹${r.worth.toLocaleString('en-IN')}`, { z: 15, w: 800, a: 'end', f: INK }));
       });
       kids.push(R(12, 190, 576, 70, profit >= 0 ? '#e6f7f1' : '#fde8e4', { w: 2, s: profit >= 0 ? '#1d7a45' : '#c0392b', r: 14 }));
       kids.push(T(30, 220, profit >= 0 ? 'Profit' : 'Loss', { z: 17, w: 800, a: 'start', f: profit >= 0 ? '#136134' : '#a02d1e' }));
