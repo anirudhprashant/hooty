@@ -1594,29 +1594,6 @@ export const KITS = {
       { say: 'Put education on the right list.', when: 'item == 2 and bin == 2', then: 'Education is on the Concurrent List: the Centre and the States both have a say.' },
     ],
   },
-  disciplines: {
-    // The opening chapter of Class 9 Social Science: the four core disciplines and what each one studies. Every clue
-    // below is a phrase the chapter itself uses, so a child can match the clue to the lessons they have read.
-    widget: 'sortlab', grades: [8, 10], subjects: ['social'], perChapter: 1,
-    match: [/four core disciplines/, /social science disciplines/, /disciplines? of social science/, /social science is (?:the|a) (?:systematic )?study/, /\bwhat is social science\b/],
-    title: 'Which subject studies it?', takeaway: 'Social Science is not one subject but four together: Geography studies places and the Earth, History studies the human past, Political Science studies power and government, and Economics studies how people use limited resources.',
-    params: () => ({
-      bins: ['Geography', 'History', 'Political Science', 'Economics'],
-      items: [
-        { t: 'Carbon-14 dating and archaeology', b: 1, why: 'These are the methods historians use to study material remains from the past.' },
-        { t: 'Maps, globes and atlases', b: 0, why: 'Geography uses maps and globes to ask why things are found in particular places.' },
-        { t: 'Constitutions and how power is shared', b: 2, why: 'Political Science studies constitutions, governments and state institutions.' },
-        { t: 'Prices, producers and consumers', b: 3, why: 'Economics studies how goods are produced, exchanged and distributed.' },
-        { t: 'Climate, oceans and biomes', b: 0, why: 'These are part of Geography: the processes that shape the Earth and life in different regions.' },
-        { t: 'Travelogues, memoirs and letters', b: 1, why: 'They are historical sources: first-hand records that historians read as evidence.' },
-      ],
-      labels: { heading: 'Which subject studies it?', pickItem: 'Pick a clue', pickBin: 'Which subject?', yes: 'Yes.', goes: 'belongs to', pick: 'Which subject studies "{t}"?', no: 'Not that subject.', readAgain: 'Ask what the clue is about: places, the past, power, or money and goods.' },
-    }),
-    tasks: [
-      { say: 'Put the carbon-14 clue with the subject that uses it.', when: 'item == 0 and bin == 1', then: 'History uses carbon-14 dating and archaeology to study the past.' },
-      { say: 'Put prices and consumers with the subject that studies them.', when: 'item == 3 and bin == 3', then: 'Economics studies how people use limited resources to meet their needs.' },
-    ],
-  },
   sectorsort: {
     // The three sectors of the economy, from the Class 6 chapter "Economic Activities Around Us" to the Class 10
     // "Manufacturing Industries" chapter. The sort asks for the work, not for a value chain.
@@ -1677,7 +1654,7 @@ export const KITS = {
   freight: {
     // Class 10 "Lifelines of National Economy". The costs are rough teaching rates: what matters is the trade-off
     // between cheap and slow, and fast and dear.
-    grades: [7, 8, 10], subjects: ['social'], titleOnly: true, perChapter: 1, minScore: { 7: 4 }, avoid: [/portuguese|dutch|french|british|colonial|trenches?|reefs?|globalis|globaliz/i],
+    grades: [8, 10], subjects: ['social'], titleOnly: true, perChapter: 1, avoid: [/portuguese|dutch|french|british|colonial|trenches?|reefs?|globalis|globaliz/i],
     match: [/transport/, /roadways?|railways?/, /waterways?|sea ?ports?|\bports?\b/, /airways?|air transport/, /lifelines?/, /pipelines?/, /freight|goods trains?/],
     title: 'Send one tonne', takeaway: 'Road carries goods door to door, rail is cheap for bulk over long distances, air is fastest and dearest, and water is the cheapest but the slowest. A country needs all of them, which is why they are called its lifelines.',
     tasks: [
@@ -1707,30 +1684,6 @@ export const KITS = {
     tasks: [
       { say: 'Sort the missing price.', when: 'item == 0 and bin == 1', then: 'A price that is not shown hides information: the right to information.' },
       { say: 'Sort the shop that will not replace a broken fan.', when: 'item == 2 and bin == 2', then: 'A faulty good must be put right: the right to redressal.' },
-    ],
-  },
-  democracyoutcomes: {
-    // Class 10 civics, "Outcomes of Democracy". The chapter weighs what democracy does well against where it falls
-    // short, so the sort is the chapter's own argument. titleOnly keeps it off any other civics chapter that merely
-    // mentions democratic government.
-    widget: 'sortlab', grades: [9, 10], subjects: ['social'], perChapter: 1, titleOnly: true,
-    match: [/outcomes of democracy/, /democracy[’']?s outcomes/],
-    title: 'What democracy does well, and where it falls short', takeaway: 'The chapter finds a mixed record. Democracy is strong at free and fair elections, at dignity and freedom, and at handling social differences without violence. It is weaker at reducing economic inequality, at matching dictatorships on growth, and at staying completely free of corruption.',
-    params: () => ({
-      bins: ['Strength', 'Shortfall'],
-      items: [
-        { t: 'Reducing economic inequality', b: 1, why: 'The chapter says democracies have not been very successful in reducing economic inequalities.' },
-        { t: 'Free and fair elections and open debate', b: 0, why: 'The chapter calls these the signs of a healthy democracy.' },
-        { t: 'Higher economic growth than dictatorships', b: 1, why: 'Overall, dictatorships had a slightly higher rate of growth, though the gap between poorer countries was small.' },
-        { t: 'Dignity and freedom of citizens', b: 0, why: 'The chapter says democracy is especially successful at promoting individual dignity and freedom.' },
-        { t: 'Staying completely free of corruption', b: 1, why: 'The chapter says democracy is not completely free from corruption.' },
-        { t: 'Handling social differences without violence', b: 0, why: 'Democracy is especially suitable for handling social differences and conflicts.' },
-      ],
-      labels: { heading: 'A strength, or a shortfall?', pickItem: 'Pick the outcome', pickBin: 'Strength or shortfall?', yes: 'Yes.', goes: 'is a', pick: 'Is "{t}" a strength or a shortfall?', no: 'Not that one.', readAgain: 'Ask what the chapter found: did democracy succeed at this, or not?' },
-    }),
-    tasks: [
-      { say: 'Sort dignity and freedom of citizens.', when: 'item == 3 and bin == 0', then: 'The chapter says democracy is especially successful at promoting individual dignity and freedom.' },
-      { say: 'Sort reducing economic inequality.', when: 'item == 0 and bin == 1', then: 'Democracies have not been very successful in reducing economic inequalities.' },
     ],
   },
   cropyear: {
@@ -1900,6 +1853,17 @@ export const KITS = {
       { say: 'Send it by pigeon.', when: 'how == 2', then: 'A pigeon flies at about 60 km an hour, faster than a runner over a long distance.' },
     ],
   },
+  landscape: {
+    // The World Around Us Class 4, "Our Environment": the same country, four very different places.
+    grades: [3, 5], subjects: ['science'], perChapter: 1, avoid: [/solar[- ]powered|natural dyes?|honey|cow dung|neem leaves|earthen pots|bamboo baskets/i],
+    match: [/our environment/, /\bdeserts?\b/, /\bplains?\b/, /\bcoast|coastal\b/, /\brainfall\b/, /mountains? and (the )?plains/, /\bsand\b/, /\bfarm(ing|s|ers)?\b|\bfields?\b|\bagriculture\b/, /dry place/],
+    title: 'Four parts of India', takeaway: 'The mountains are cold and steep, the plains are flat and farmed, the desert is dry with cactus and khejri, and the coast is warm and wet. Rainfall, soil and land shape what grows and how people build.',
+    tasks: [
+      { say: 'Find the part with the least rain.', when: 'region == 2', then: 'The desert gets about 200 mm a year, so its plants store water and its houses are made of mud.' },
+      { say: 'Find the part where wheat and rice grow in flat fields.', when: 'region == 1', then: 'The plains have rich soil and farm land, so wheat, rice and sugarcane grow there.' },
+      { say: 'Find the warm, wet part with coconut and fish.', when: 'region == 3', then: 'The coast gets the most rain and people grow rice and coconut and catch fish.' },
+    ],
+  },
   wordlab: {
     // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
     // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only
@@ -2017,18 +1981,9 @@ function label(sentence) {
   const cut = c.replace(DATE_TAIL, '').trim();
   if (cut.split(' ').length >= 3) c = cut;
   c = c.split(/[;:]/)[0].replace(/[,]\s*$/, '').trim();
-  // The card already shows the year beside the label, so a leading "In 1832, " or "By 1887, " only repeats it.
-  // The comma is required, which keeps a real change of meaning ("From 1850 onwards") intact.
-  const stripped = c.replace(/^(?:In|By|Around|About|From|Of|During|Until|Till)\s+(?:\d{1,2}\s+)?(?:(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+)?\d{1,4}\s*(?:BCE|BC|CE|AD)?\s*[,:]\s*/i, '');
-  if (stripped !== c && stripped.length > 12) c = stripped.charAt(0).toUpperCase() + stripped.slice(1);
-  let ell = false;
-  if (c.length > 52) { c = c.slice(0, 52).replace(/\s+\S*$/, ''); ell = true; }
-  // Cut a dangling connector before the ellipsis is added: "Greece became an independent nation under the…" used to
-  // end on "the" because the ellipsis stopped the old loop from matching the last word.
-  const TAIL = /\s+(?:the|a|an|of|in|to|and|or|from|by|was|were|is|are|with|at|on|as|that|which|who|when|while|but|for|about|around|into|over|after|before|during|between|under|only|also|its|his|her|their|this|these|those|than|then|there|here|called|named|near|upon|including|especially|such|\d[\d,.]*)$/i;
-  for (let prev = ''; prev !== c;) { prev = c; c = c.replace(TAIL, ''); }
-  c = c.replace(/[,]$/, '').trim();
-  return c + (ell ? '\u2026' : '');
+  if (c.length > 52) c = c.slice(0, 52).replace(/\s+\S*$/, '').replace(/[,]$/, '') + '\u2026';
+  for (let prev = ''; prev !== c;) { prev = c; c = c.replace(/\s+(the|a|an|of|in|to|and|from|by|was|were|is|are|with|at|on)$/i, ''); }
+  return c;
 }
 export function datedEvents(facts, need = 3) {
   let out = [];
