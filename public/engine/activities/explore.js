@@ -54,10 +54,19 @@ export default {
       if (hit) { cur.done = true; ctx.sfx?.(tasks.every((t) => t.done) ? 'halfway' : 'pair'); paintTasks(); check(); }   // one move can finish the next challenge too
     };
     const controls = sl.map(([key, label, min, max, step]) => {
-      const out = el('output', { class: 'explore__val', text: String(v[key]) });
+      // A small set of positions is a choice, not a measurement: the number means nothing to a child and the
+      // old "label 0" row read like a form field. Only show the value when the range is wide enough to matter.
+      const showVal = (Number(max) - Number(min)) > 6;
+      const out = showVal ? el('output', { class: 'explore__val', text: String(v[key]) }) : null;
       const input = el('input', { class: 'range explore__range', type: 'range', min: String(min), max: String(max), step: String(step), value: String(v[key]), 'aria-label': label });
-      input.addEventListener('input', () => { v[key] = Number(input.value); out.textContent = input.value; draw(performance.now() / 1000); check(); });
-      return el('label', { class: 'explore__control' }, [el('span', { class: 'explore__label' }, [label, ' ', out]), input]);
+      const fill = () => {
+        const lo = Number(min), hi = Number(max), now = Number(input.value);
+        const pct = hi > lo ? Math.round(((now - lo) / (hi - lo)) * 100) : 0;
+        input.style.setProperty('--fill', `${pct}%`);
+      };
+      fill();
+      input.addEventListener('input', () => { v[key] = Number(input.value); if (out) out.textContent = input.value; fill(); draw(performance.now() / 1000); check(); });
+      return el('label', { class: 'explore__control' }, [el('span', { class: 'explore__label' }, [label, out]) , input]);
     });
     draw(); paintTasks();
     if (widget.animated && !still) {
