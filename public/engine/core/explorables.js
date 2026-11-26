@@ -4108,8 +4108,8 @@ export const WIDGETS = {
       // wrap on spaces: SVG text does not wrap itself, and a Hindi meaning is no longer than an English one
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 21, `${wi + 1} / ${n}`, { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 21, L.heading || 'One word, one sentence', { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(14, 21, `${wi + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 21, L.heading || 'One word, one sentence', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
       // the word, big enough to read on a phone, because every card here is read
       kids.push(R(14, 38, 250, 46, C.y, { w: 2.5, r: 12 }));
       kids.push(T(139, 70, word, { z: 26, w: 800 }));
@@ -4148,7 +4148,7 @@ export const WIDGETS = {
       const pair = { IV: 'Four is one before five', IX: 'Nine is one before ten', XL: 'Forty is ten before fifty', XC: 'Ninety is ten before a hundred' };
       const subs = parts.filter((p) => p.length === 2);
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 21, 'Roman numerals', { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(14, 21, 'Roman numerals', { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
       // the five symbols and what each is worth, always in sight
       const ref = [['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100]];
       ref.forEach(([sym, val], i) => {
@@ -4184,8 +4184,8 @@ export const WIDGETS = {
       const item = items[ii] || {}, good = item.b === bi;
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 21, `${ii + 1} / ${n}`, { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 21, L.heading || 'Which group does it belong to?', { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(14, 21, `${ii + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 21, L.heading || 'Which group does it belong to?', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
       // the item, big enough to read on a phone
       kids.push(R(10, 38, 580, 56, '#fff3d6', { w: 2.5, s: '#e8b44a', r: 14 }));
       fit(item.t, 42).slice(0, 2).forEach((ln, i) => kids.push(T(300, 63 + i * 20, ln, { z: 19, w: 800, f: '#3a2a00' })));
@@ -4198,13 +4198,13 @@ export const WIDGETS = {
         const sel = j === bi, right = sel && good, wrong = sel && !good && !untouched;
         kids.push(R(x, y, bw, h, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel && !untouched ? 5 : 2.5, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 14 }));
         kids.push(R(x + 10, y + 10, bw - 20, 40, right ? '#bfe9cf' : '#f1ecdf', { w: 0, r: 9 }));
-        fit(name, Math.max(10, Math.floor(bw / 10))).slice(0, 2).forEach((ln, i) => kids.push(T(x + bw / 2, y + 27 + i * 15, ln, { z: 13.5, w: 800, f: '#3d2d5e' })));
+        fit(name, Math.max(9, Math.floor(bw / 9))).slice(0, 2).forEach((ln, i) => kids.push(T(x + bw / 2, y + 27 + i * 17, ln, { z: 15, w: 800, f: '#3d2d5e' })));
         if (right) {
           fit(item.t, Math.max(10, Math.floor(bw / 11))).slice(0, 3).forEach((ln, i) => kids.push(T(x + bw / 2, y + 92 + i * 18, ln, { z: 14, w: 700, f: '#136134' })));
           kids.push(T(x + bw - 17, y + 62, '\u2713', { z: 18, w: 800, f: '#1d7a45' }));
         } else {
           const hint = sel && !untouched ? (L.tryAgain || 'try another') : (L.tap || 'choose me');
-          kids.push(T(x + bw / 2, y + 96, hint, { z: 13, w: 600, f: sel && !untouched ? '#a02d1e' : '#9b90b5' }));
+          kids.push(T(x + bw / 2, y + 96, hint, { z: 15, w: 600, f: sel && !untouched ? '#a02d1e' : '#9b90b5' }));
         }
       });
       const lead = L.sentence || '';
@@ -4432,8 +4432,8 @@ export const WIDGETS = {
       const cap = (str) => { const x = String(str || ''); return x ? x.charAt(0).toUpperCase() + x.slice(1) : x; };
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 21, `${ii + 1} / ${n}`, { z: 13, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 21, L.heading || 'Finish the sentence', { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      kids.push(T(14, 21, `${ii + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 21, L.heading || 'Finish the sentence', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
       // the sentence, with the gap where the word was
       const gap = it.options[it.answer] === undefined ? '' : '________';
       const lines = fit(`${cap(it.before)} ${gap} ${it.after}`.replace(/\s+/g, ' ').trim(), 46).slice(0, 3);
