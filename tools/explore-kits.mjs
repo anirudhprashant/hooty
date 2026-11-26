@@ -1864,6 +1864,27 @@ export const KITS = {
       { say: 'Find the warm, wet part with coconut and fish.', when: 'region == 3', then: 'The coast gets the most rain and people grow rice and coconut and catch fish.' },
     ],
   },
+  paper: {
+    // The World Around Us Class 4, "How Things are Made": paper from wood and paper from old paper.
+    grades: [3, 5], subjects: ['science'], perChapter: 1,
+    match: [/paper/, /recycl/, /\btrees?\b/, /how things are made/, /pulp/],
+    title: 'From wood to paper', takeaway: 'Paper is made from wood or from old paper: the material is torn up, soaked, beaten into pulp, then pressed and dried. Recycled paper uses the paper we already have, so fewer trees are cut.',
+    tasks: [
+      { say: 'Recycle old newspaper into new paper.', when: 'kind == 1 and step == 3', then: 'Torn, soaked, beaten and dried: old newspaper becomes a new sheet.' },
+      { say: 'Soak the old paper in water.', when: 'kind == 1 and step == 1', then: 'Water softens the fibres so they can be beaten into pulp.' },
+      { say: 'Start new paper from wood.', when: 'kind == 0 and step == 0', then: 'New paper begins with trees cut into chips, which costs the forest.' },
+    ],
+  },
+  solar: {
+    // The World Around Us Class 4, "Growing up with Nature", the solar-powered village.
+    grades: [3, 5], subjects: ['science'], perChapter: 1,
+    match: [/solar/, /sun(light|light|ny)? (energy|power)/, /panels?/, /electricity/, /power(ed|ing)? (the )?village/],
+    title: 'A village runs on sunshine', takeaway: 'Each panel makes a little power for every hour of strong sun. Enough panels make enough for the day and charge the battery for the night; too few and the village runs short.',
+    tasks: [
+      { say: 'Run the village on 3 panels in 10 hours of sun.', when: 'panels == 3 and sun == 10', then: '3 panels x 10 hours make 12 kWh, just enough for the 10 the village needs.' },
+      { say: 'Show the village running short.', when: 'panels == 1 and sun == 2', then: 'One panel in two hours of sun makes less than 1 kWh, far short of 10.' },
+    ],
+  },
   wordlab: {
     // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
     // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only

@@ -4716,6 +4716,64 @@ export const WIDGETS = {
       return { kids, say: `In ${p.place}, about ${p.rain} mm of rain falls in a year: ${p.note}. ${cap(p.grow)} grow there, and people live in ${p.home}.` };
     },
   },
+  paper: {
+    subject: 'science',
+    about: 'Paper: from wood or from old newspaper, through tearing and soaking, beating into pulp, pressing and drying into a sheet. For how things are made, recycling paper, and why paper saves trees.',
+    params: {},
+    sliders: [['kind', 'What is it made from? (0 wood, 1 old newspaper)', 0, 1, 1, 0], ['step', 'Which step? (0 collect, 1 soak, 2 beat to pulp, 3 press and dry)', 0, 3, 1, 0]],
+    draw(v) {
+      const kind = v.kind | 0, st = Math.max(0, Math.min(3, v.step | 0));
+      const steps = kind === 0
+        ? [['wood', 'trees are cut into chips'], ['cooked', 'chips are cooked soft'], ['pulp', 'beaten into a wet mash'], ['paper', 'pressed flat and dried']]
+        : [['old paper', 'newspapers are collected'], ['soaking', 'torn and left in water'], ['pulp', 'beaten into a wet mash'], ['new paper', 'pressed flat and dried']];
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, kind === 0 ? 'Paper from wood' : 'Paper from old paper', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, `step ${st + 1} of 4`, { z: 13, w: 700, a: 'end', f: '#7a6b99' }));
+      steps.forEach(([label, note], i) => {
+        const x = 16 + i * 143, on = i === st, done = i < st;
+        kids.push(R(x, 52, 132, 150, on ? '#fff3d6' : '#ffffff', { w: on ? 4 : 2, s: on ? '#e8b44a' : done ? '#a8c98f' : '#e3dccb', r: 12 }));
+        // a shape for each step: a log, a bowl, a mash, a sheet
+        const cx = x + 66;
+        if (i === 0) kids.push(kind === 0 ? R(cx - 26, 86, 52, 20, '#9b6a3f', { w: 2, r: 8 }) : R(cx - 26, 86, 52, 24, '#dfe3ea', { w: 2, r: 3 }));
+        if (i === 1) kids.push(R(cx - 30, 92, 60, 22, '#bfe3f5', { w: 2, r: 5 }));
+        if (i === 2) kids.push(s('path', { d: `M ${cx - 30} 96 q 30 26 60 0 l 0 14 q -30 20 -60 0 Z`, fill: '#e6d6bd', stroke: '#b39a72', 'stroke-width': 2 }));
+        if (i === 3) kids.push(R(cx - 26, 86, 52, 30, '#ffffff', { w: 2, s: '#b9c2cf', r: 2 }));
+        kids.push(T(cx, 134, label, { z: 14, w: 800 }));
+        kids.push(T(cx, 154, note, { z: 10, w: 600, f: '#8a7aa8' }));
+      });
+      const [label, note] = steps[st];
+      return { kids, say: st === 0 ? `${kind === 0 ? 'Paper starts with wood: trees are cut into chips' : 'Recycling starts with old newspapers, collected and torn up'}.` : st === 1 ? `${label}: ${note}.` : st === 2 ? 'The soft mixture is beaten into pulp: a wet mash of fibres.' : 'The pulp is pressed flat and dried, and a sheet of paper is left. Recycled paper saves the trees new paper would need.' };
+    },
+  },
+  solar: {
+    subject: 'science',
+    about: 'A village running on solar panels: how many panels, how many hours of sun, and whether the battery fills or the village runs short. For solar energy, sunlight, panels, and storing power for the night.',
+    params: {},
+    sliders: [['panels', 'How many solar panels?', 1, 20, 1, 6], ['sun', 'Hours of strong sun a day', 2, 10, 1, 6]],
+    draw(v) {
+      const panels = v.panels, sun = v.sun, demand = 10;
+      const made = Math.round(panels * 0.4 * sun * 10) / 10, enough = made >= demand;
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, `The village needs ${demand} kWh a day`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, enough ? 'enough power' : 'a shortfall', { z: 14, w: 800, a: 'end', f: enough ? '#136134' : '#a02d1e' }));
+      // the panels, a row of them, highlighted by count
+      for (let i = 0; i < 20; i++) {
+        const x = 24 + (i % 10) * 48, y = 54 + Math.floor(i / 10) * 34;
+        kids.push(R(x, y, 42, 26, i < panels ? '#2f63c9' : '#e3dccb', { w: 2, s: i < panels ? '#1d4a9e' : '#cdc4b2', r: 4 }));
+      }
+      // the sun, in the clear column on the right
+      kids.push(s('circle', { cx: 552, cy: 84, r: 24, fill: '#ffc635', stroke: '#d99a00', 'stroke-width': 3 }));
+      kids.push(T(552, 122, `${sun} h of sun`, { z: 11, w: 700, f: '#7a6b99' }));
+      // the battery bar
+      const fill = Math.min(1, made / demand);
+      kids.push(T(26, 152, 'Energy made today', { z: 15, w: 800, a: 'start', f: INK }));
+      kids.push(R(26, 164, 548, 40, '#f1ecdf', { w: 2, s: '#d8cdbb', r: 10 }));
+      kids.push(R(28, 166, Math.max(4, 544 * fill), 36, enough ? C.g : C.o, { w: 0, r: 8 }));
+      kids.push(T(300, 191, `${made} kWh`, { z: 20, w: 800, f: INK }));
+      kids.push(T(300, 236, enough ? `The battery fills: ${Math.round((made - demand) * 10) / 10} kWh spare for the night.` : `${Math.round((demand - made) * 10) / 10} kWh short, so the village has a brownout.`, { z: 13, w: 700, f: enough ? '#136134' : '#a02d1e' }));
+      return { kids, say: `${panels} panels in ${sun} hours of sun make about ${made} kWh. The village needs ${demand} kWh, so ${enough ? 'the battery fills for the night' : 'the village is short and the lights dim'}.` };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }
