@@ -1677,7 +1677,7 @@ export const KITS = {
   freight: {
     // Class 10 "Lifelines of National Economy". The costs are rough teaching rates: what matters is the trade-off
     // between cheap and slow, and fast and dear.
-    grades: [8, 10], subjects: ['social'], titleOnly: true, perChapter: 1, avoid: [/portuguese|dutch|french|british|colonial|trenches?|reefs?|globalis|globaliz/i],
+    grades: [7, 8, 10], subjects: ['social'], titleOnly: true, perChapter: 1, minScore: { 7: 4 }, avoid: [/portuguese|dutch|french|british|colonial|trenches?|reefs?|globalis|globaliz/i],
     match: [/transport/, /roadways?|railways?/, /waterways?|sea ?ports?|\bports?\b/, /airways?|air transport/, /lifelines?/, /pipelines?/, /freight|goods trains?/],
     title: 'Send one tonne', takeaway: 'Road carries goods door to door, rail is cheap for bulk over long distances, air is fastest and dearest, and water is the cheapest but the slowest. A country needs all of them, which is why they are called its lifelines.',
     tasks: [
