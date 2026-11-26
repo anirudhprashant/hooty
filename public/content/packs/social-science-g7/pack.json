@@ -66275,7 +66275,7 @@
       {
        "id": "social-science-g7-ch19-l2",
        "title": "Roads, Highways and Living Root Bridges",
-       "estimatedMinutes": 6,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -66338,6 +66338,31 @@
            "p": 176
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "social-science-g7-ch19-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "villageroad",
+         "params": {},
+         "title": "A road reaches the village",
+         "tasks": [
+          {
+           "say": "Pave the road to the village.",
+           "when": "road == 2",
+           "then": "A paved road brings the ambulance in 25 minutes and the bus to the school."
+          },
+          {
+           "say": "Lay a mud track instead.",
+           "when": "road == 1",
+           "then": "A mud track helps, but rain can close it and the harvest still spoils."
+          }
+         ],
+         "takeaway": "A road is not just a strip of tar: it is how an ambulance arrives, how a harvest reaches the market and how a child gets to school. That is why local roads are built first, and why difficult terrain still has few highways.",
+         "explanation": "A road is not just a strip of tar: it is how an ambulance arrives, how a harvest reaches the market and how a child gets to school. That is why local roads are built first, and why difficult terrain still has few highways."
         },
         {
          "type": "worked",

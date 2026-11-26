@@ -4852,6 +4852,44 @@ export const WIDGETS = {
       return { kids, say };
     },
   },
+  villageroad: {
+    subject: 'social',
+    about: 'One village fifteen kilometres from a hospital and twenty from a market, with no road, a mud track or a paved road: what the journey, the harvest and the school child\u2019s day become. For local roads, how roads help farmers, ambulances and schools, and why difficult terrain still has few highways.',
+    params: {},
+    sliders: [['road', 'The road to the village (0 none, 1 mud track, 2 paved road)', 0, 2, 1, 0]],
+    draw(v) {
+      const road = Math.max(0, Math.min(2, v.road | 0));
+      const kinds = [
+        { name: 'No road', note: 'a footpath through the fields', hospital: '3 hours', crop: 30, school: '1.5 hours', colour: '#c0392b', pale: '#fde8e4' },
+        { name: 'Mud track', note: 'passable on a bullock cart, not after rain', hospital: '1.5 hours', crop: 15, school: '45 minutes', colour: C.o, pale: '#fff0eb' },
+        { name: 'Paved road', note: 'a bus and an ambulance can come', hospital: '25 minutes', crop: 5, school: '20 minutes', colour: C.g, pale: '#e6f7f1' },
+      ];
+      const k = kinds[road];
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
+      kids.push(T(14, 23, 'A village 15 km from a hospital', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, k.name, { z: 14, w: 800, a: 'end', f: INK }));
+      // the three things a road changes
+      const rows = [
+        { label: 'An ambulance to the hospital', value: k.hospital, icon: 'hospital' },
+        { label: 'The harvest that spoils before market', value: `${k.crop}% lost`, icon: 'crop' },
+        { label: 'A child\u2019s walk to school', value: k.school, icon: 'school' },
+      ];
+      rows.forEach((r, i) => {
+        const y = 46 + i * 66;
+        kids.push(R(12, y, 576, 58, k.pale, { w: 2, s: k.colour, r: 12 }));
+        kids.push(T(30, y + 24, r.label, { z: 15, w: 700, a: 'start', f: INK }));
+        kids.push(T(30, y + 45, r.icon === 'crop' ? 'produce has to reach the market fresh' : r.icon === 'school' ? 'the school is in the next village' : 'the nearest hospital', { z: 11, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(566, y + 32, r.value, { z: 19, w: 800, a: 'end', f: k.colour === '#c0392b' ? '#a02d1e' : INK }));
+      });
+      kids.push(T(300, 270, k.note, { z: 12, w: 600, f: '#6b5a8a' }));
+      const say = road === 0
+        ? 'With no road, an ambulance takes about three hours over the fields, and nearly a third of the harvest spoils before it reaches the market.'
+        : road === 1
+          ? 'A mud track lets a bullock cart through, so the ambulance takes about an hour and a half and the harvest loses less, but the rain can close it.'
+          : 'A paved road brings the ambulance in about twenty-five minutes, the harvest reaches the market fresh, and a bus takes the children to school.';
+      return { kids, say };
+    },
+  },
 };
 
 export function slidersOf(id, params) { const w = WIDGETS[id]; return w?.dynamicSliders ? w.dynamicSliders(params || w.params || {}) : w?.sliders || []; }

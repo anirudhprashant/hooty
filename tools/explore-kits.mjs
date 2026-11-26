@@ -1907,6 +1907,17 @@ export const KITS = {
       { say: 'Find the month of Christmas.', when: 'month == 12', then: 'Christmas is in December, in the cool winter.' },
     ],
   },
+  villageroad: {
+    // Class 7 "Infrastructure: Engine of India's Development", the roads lesson. The village and its distances are a
+    // teaching example; the facts say what roads do for ambulances, farmers and schools.
+    grades: [6, 8], subjects: ['social'], perChapter: 1, avoid: [/railway|metro|ports?|airways?/i],
+    match: [/\broads?\b/, /highways?/, /local roads?/, /ambulance/, /farmers? carry|crops? to (the )?market/, /expressways?/],
+    title: 'A road reaches the village', takeaway: 'A road is not just a strip of tar: it is how an ambulance arrives, how a harvest reaches the market and how a child gets to school. That is why local roads are built first, and why difficult terrain still has few highways.',
+    tasks: [
+      { say: 'Pave the road to the village.', when: 'road == 2', then: 'A paved road brings the ambulance in 25 minutes and the bus to the school.' },
+      { say: 'Lay a mud track instead.', when: 'road == 1', then: 'A mud track helps, but rain can close it and the harvest still spoils.' },
+    ],
+  },
   wordlab: {
     // The last resort, and only that: a chapter whose words the book itself defines. A literature chapter has no law to
     // slide, but it does have words, the sentences they live in, and the meanings the book gives them. It is placed only
