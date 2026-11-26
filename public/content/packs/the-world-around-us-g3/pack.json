@@ -5121,7 +5121,7 @@
       {
        "id": "the-world-around-us-g3-ch2-l3",
        "title": "On the Way to the Mela",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -5193,36 +5193,6 @@
            "p": 23
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "the-world-around-us-g3-ch2-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "melamap",
-         "params": {},
-         "title": "The mela ground",
-         "tasks": [
-          {
-           "say": "Find the lost and found booth.",
-           "when": "place == 4",
-           "then": "Volunteers there help a child who has lost their family, and the police post is the other place to wait."
-          },
-          {
-           "say": "Find the first aid post.",
-           "when": "place == 5",
-           "then": "Cuts, bruises and falls are treated at first aid."
-          },
-          {
-           "say": "Find the map at the entrance.",
-           "when": "place == 8",
-           "then": "The map shows where everything is, with the ambulance, police jeep and fire engine beside it."
-          }
-         ],
-         "takeaway": "A mela ground has a map at the entrance, and it is worth knowing where the lost and found booth, first aid and the police post are before you need them.",
-         "explanation": "A mela ground has a map at the entrance, and it is worth knowing where the lost and found booth, first aid and the police post are before you need them."
         },
         {
          "type": "worked",
@@ -5713,7 +5683,7 @@
       {
        "id": "the-world-around-us-g3-ch2-l4",
        "title": "At the Mela",
-       "estimatedMinutes": 7,
+       "estimatedMinutes": 8,
        "activities": [
         {
          "type": "hook",
@@ -5785,6 +5755,36 @@
            "p": 28
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g3-ch2-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "melamap",
+         "params": {},
+         "title": "The mela ground",
+         "tasks": [
+          {
+           "say": "Find the lost and found booth.",
+           "when": "place == 4",
+           "then": "Volunteers there help a child who has lost their family, and the police post is the other place to wait."
+          },
+          {
+           "say": "Find the first aid post.",
+           "when": "place == 5",
+           "then": "Cuts, bruises and falls are treated at first aid."
+          },
+          {
+           "say": "Find the map at the entrance.",
+           "when": "place == 8",
+           "then": "The map shows where everything is, with the ambulance, police jeep and fire engine beside it."
+          }
+         ],
+         "takeaway": "A mela ground has a map at the entrance, and it is worth knowing where the lost and found booth, first aid and the police post are before you need them.",
+         "explanation": "A mela ground has a map at the entrance, and it is worth knowing where the lost and found booth, first aid and the police post are before you need them."
         },
         {
          "type": "worked",
