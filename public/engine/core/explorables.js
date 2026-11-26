@@ -4198,13 +4198,13 @@ export const WIDGETS = {
         const sel = j === bi, right = sel && good, wrong = sel && !good && !untouched;
         kids.push(R(x, y, bw, h, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel && !untouched ? 5 : 2.5, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 14 }));
         kids.push(R(x + 10, y + 10, bw - 20, 40, right ? '#bfe9cf' : '#f1ecdf', { w: 0, r: 9 }));
-        fit(name, Math.max(10, Math.floor(bw / 10))).slice(0, 2).forEach((ln, i) => kids.push(T(x + bw / 2, y + 27 + i * 15, ln, { z: 13.5, w: 800, f: '#3d2d5e' })));
+        fit(name, Math.max(9, Math.floor(bw / 10.5))).slice(0, 2).forEach((ln, i) => kids.push(T(x + bw / 2, y + 26 + i * 18, ln, { z: 16, w: 800, f: '#3d2d5e' })));
         if (right) {
-          fit(item.t, Math.max(10, Math.floor(bw / 11))).slice(0, 3).forEach((ln, i) => kids.push(T(x + bw / 2, y + 92 + i * 18, ln, { z: 14, w: 700, f: '#136134' })));
+          fit(item.t, Math.max(10, Math.floor(bw / 11))).slice(0, 3).forEach((ln, i) => kids.push(T(x + bw / 2, y + 92 + i * 18, ln, { z: 15, w: 700, f: '#136134' })));
           kids.push(T(x + bw - 17, y + 62, '\u2713', { z: 18, w: 800, f: '#1d7a45' }));
         } else {
           const hint = sel && !untouched ? (L.tryAgain || 'try another') : (L.tap || 'choose me');
-          kids.push(T(x + bw / 2, y + 96, hint, { z: 13, w: 600, f: sel && !untouched ? '#a02d1e' : '#9b90b5' }));
+          kids.push(T(x + bw / 2, y + 96, hint, { z: 14, w: 600, f: sel && !untouched ? '#a02d1e' : '#9b90b5' }));
         }
       });
       const lead = L.sentence || '';

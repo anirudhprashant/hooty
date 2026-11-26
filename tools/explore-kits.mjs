@@ -1594,6 +1594,29 @@ export const KITS = {
       { say: 'Put education on the right list.', when: 'item == 2 and bin == 2', then: 'Education is on the Concurrent List: the Centre and the States both have a say.' },
     ],
   },
+  disciplines: {
+    // The opening chapter of Class 9 Social Science: the four core disciplines and what each one studies. Every clue
+    // below is a phrase the chapter itself uses, so a child can match the clue to the lessons they have read.
+    widget: 'sortlab', grades: [8, 10], subjects: ['social'], perChapter: 1,
+    match: [/four core disciplines/, /social science disciplines/, /disciplines? of social science/, /social science is (?:the|a) (?:systematic )?study/, /\bwhat is social science\b/],
+    title: 'Which subject studies it?', takeaway: 'Social Science is not one subject but four together: Geography studies places and the Earth, History studies the human past, Political Science studies power and government, and Economics studies how people use limited resources.',
+    params: () => ({
+      bins: ['Geography', 'History', 'Political Science', 'Economics'],
+      items: [
+        { t: 'Carbon-14 dating and archaeology', b: 1, why: 'These are the methods historians use to study material remains from the past.' },
+        { t: 'Maps, globes and atlases', b: 0, why: 'Geography uses maps and globes to ask why things are found in particular places.' },
+        { t: 'Constitutions and how power is shared', b: 2, why: 'Political Science studies constitutions, governments and state institutions.' },
+        { t: 'Prices, producers and consumers', b: 3, why: 'Economics studies how goods are produced, exchanged and distributed.' },
+        { t: 'Climate, oceans and biomes', b: 0, why: 'These are part of Geography: the processes that shape the Earth and life in different regions.' },
+        { t: 'Travelogues, memoirs and letters', b: 1, why: 'They are historical sources: first-hand records that historians read as evidence.' },
+      ],
+      labels: { heading: 'Which subject studies it?', pickItem: 'Pick a clue', pickBin: 'Which subject?', yes: 'Yes.', goes: 'belongs to', pick: 'Which subject studies "{t}"?', no: 'Not that subject.', readAgain: 'Ask what the clue is about: places, the past, power, or money and goods.' },
+    }),
+    tasks: [
+      { say: 'Put the carbon-14 clue with the subject that uses it.', when: 'item == 0 and bin == 1', then: 'History uses carbon-14 dating and archaeology to study the past.' },
+      { say: 'Put prices and consumers with the subject that studies them.', when: 'item == 3 and bin == 3', then: 'Economics studies how people use limited resources to meet their needs.' },
+    ],
+  },
   sectorsort: {
     // The three sectors of the economy, from the Class 6 chapter "Economic Activities Around Us" to the Class 10
     // "Manufacturing Industries" chapter. The sort asks for the work, not for a value chain.
