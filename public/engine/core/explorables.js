@@ -4371,7 +4371,7 @@ export const WIDGETS = {
         const h = (c.worth / maxP) * 122, y = 252 - h;
         kids.push(R(c.x, 60, 230, 196, '#ffffff', { w: 1.5, s: '#e3dccb', r: 14 }));
         kids.push(T(c.x + 115, 80, c.name, { z: 16, w: 800 }));
-        kids.push(T(c.x + 115, 99, c.note, { z: 12, w: 600, f: '#7a6b99' }));
+        kids.push(T(c.x + 115, 99, c.note, { z: 14, w: 600, f: '#7a6b99' }));
         kids.push(R(c.x + 45, y, 140, h, c.colour, { w: 2, r: 8 }));
         kids.push(T(c.x + 115, y - 9, `₹${c.worth}`, { z: 18, w: 800 }));
       });
@@ -4392,20 +4392,20 @@ export const WIDGETS = {
       const pages = 100, copies = v.copies, method = Math.max(0, Math.min(2, v.method | 0));
       const ways = [
         { n: 'Hand copy', pd: 5, note: 'a scribe, one book at a time' },
-        { n: 'Woodblock', pd: 60, note: 'a carved block, one page at a time' },
-        { n: 'Printing press', pd: 5000, note: 'movable type, page after page' },
+        { n: 'Woodblock', pd: 60, note: 'a carved block, page by page' },
+        { n: 'Printing press', pd: 5000, note: 'movable type, page by page' },
       ];
       const rows = ways.map((w, i) => ({ ...w, i, days: Math.max(1, Math.round((pages * copies) / w.pd)) }));
       const maxDays = Math.max(...rows.map((r) => r.days));
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
       kids.push(T(14, 23, `${copies} copies of a ${pages}-page book`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, 'how long each way takes', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'how long each way takes', { z: 14, w: 600, a: 'end', f: '#7a6b99' }));
       rows.forEach((r, j) => {
         const y = 52 + j * 62, sel = j === method;
         const bw = Math.max(8, (Math.log10(r.days + 1) / Math.log10(maxDays + 1)) * 340);
         kids.push(R(12, y, 576, 54, sel ? '#fff3d6' : '#ffffff', { w: sel ? 3 : 1.5, s: sel ? '#e8b44a' : '#e3dccb', r: 12 }));
         kids.push(T(30, y + 24, r.n, { z: 16, w: 800, a: 'start', f: INK }));
-        kids.push(T(30, y + 43, r.note, { z: 12, w: 600, a: 'start', f: '#8a7aa8' }));
+        kids.push(T(30, y + 43, r.note, { z: 14, w: 600, a: 'start', f: '#8a7aa8' }));
         kids.push(R(250, y + 20, 340, 14, '#f1ecdf', { w: 0, r: 7 }));
         kids.push(R(250, y + 20, Math.min(340, bw), 14, sel ? C.o : C.b, { w: 0, r: 7 }));
         kids.push(T(566, y + 34, r.days >= 365 ? `${(r.days / 365).toFixed(1)} years` : `${r.days} days`, { z: 15, w: 800, a: 'end', f: sel ? '#a05600' : '#4a3b6b' }));
