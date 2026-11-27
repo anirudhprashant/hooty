@@ -38,14 +38,14 @@ REPLACEMENT = '\ufffd'
 
 WORDS = re.compile('[\u0900-\u097F]+')
 # A space that is followed by a combining mark belongs to the previous syllable.
-JOIN_SPACE = re.compile(f'\\s+(?=[{MATRA}{HALANT}{ANUSVARA}\\u093c])')
+JOIN_SPACE = re.compile(f'\\s+(?=[{MATRA}{HALANT}{ANUSVARA}़])')
 DOUBLED = re.compile(f'([{MATRA}{ANUSVARA}])\\1+')
 BROKEN = re.compile(f'[{MATRA}][{MATRA}{HALANT}]|[{ANUSVARA}][{MATRA}{HALANT}]|[{MATRA}{HALANT}][{MATRA}]')
 LEADING_MARK = re.compile(f'^[{MATRA}{HALANT}]')
 
 # Spellings the anagram pass gets right or cannot reach. The dictionary check decides the rest; these
 # are the words it does not carry, read by hand (an incorrect winner here teaches a child a non-word).
-OVERRIDES = {'सदंु': 'सुंदर', 'गँूज': 'गूँज', 'गजँू': 'गूँज', 'मरूित': 'मूर्ति', 'घँुघरू': 'घुँघरू',
+OVERRIDES = {'सबंधित': 'संबंधित', 'सदंु': 'सुंदर', 'गँूज': 'गूँज', 'गजँू': 'गूँज', 'मरूित': 'मूर्ति', 'घँुघरू': 'घुँघरू',
              'चँू': 'चूँ', 'कँू': 'कूँ', 'सँूघकर': 'सूँघकर', 'चतषु्पाद': 'चतुष्पाद', 'औधंा': 'औंधा',
              'बनँगूी': 'बनूँगी', 'मसु्कुराती': 'मुस्कुराती', 'सभंाजीनगर': 'संभाजीनगर', 'सहुावने': 'सुहावने'}
 FORBID = {'गँजू', 'संदु', 'मूरित', 'सघँू'}
@@ -70,6 +70,132 @@ def anomalies(text):
     if BROKEN.search(text):
         found.add('reordered')
     return found
+
+
+# Two shapes the passes above cannot see and a dictionary can: a word cut in two by a space where the
+# fragment after the space starts with a *consonant* ("छे द", "सफ़े द", "के वल", "इजं न"), and an
+# anusvara/chandrabindu printed one consonant to the right of the vowel it belongs to ("इतंज़ार" for
+# "इंतज़ार", "शखं" for "शंख", "मचं" for "मंच"). Both are the same extractor: the PDF draws the combining
+# mark after the next glyph, so the text comes out shifted. Neither is visible to `anomalies()` because
+# the result is legal Devanagari shape for shape, and both need the word list to prove the join.
+DEV_CLASS = f'{CONSONANT}\u0900-\u0963\u0966-\u097F'  # Devanagari, danda excluded
+WORD_SPAN = re.compile(f'[{DEV_CLASS}]+')
+SINGLE_CONSONANT = re.compile(f'^[{CONSONANT}]$')
+MOVED_MARK = 'ँं'
+# Never glue these onto the word before: न is a real word (the negative particle), and a lone क is
+# usually a broken कि/का, not the tail of a split word.
+NEVER_GLUE = {'न', 'क', 'व'}
+# Pairs that join into a real word but are not that word here ("तट का रास्ता के प होटल" is a hotel
+# name, not केप). Refused and left in the review list rather than guessed.
+PAIR_REFUSE = {('के', 'प')}
+# A Latin letter a PDF extractor left inside a Hindi word, and the Devanagari letter it stood for.
+LATIN_LETTERS = {'n': 'न', 'm': 'म', 'h': 'ह', 's': 'स', 'r': 'र', 't': 'त', 'k': 'क',
+                 'l': 'ल', 'p': 'प', 'v': 'व', 'b': 'ब', 'd': 'द', 'g': 'ग', 'j': 'ज',
+                 'y': 'य', 'c': 'च', 'f': 'फ', 'w': 'व'}
+# A sentence that lists letters ("ल र त ज म ख ब स च प घ और") must not be joined into words.
+def letter_run(text):
+    words = WORD_SPAN.findall(text)
+    lone = [bool(SINGLE_CONSONANT.match(w)) for w in words]
+    # A drill lists letters next to each other ("ल र त ज", "ल, र, त"). A damaged word has its fragment
+    # next to a real word ("छे द थे"), so adjacency is the test, not the count.
+    return any(a and b for a, b in zip(lone, lone[1:]))
+
+
+def move_mark_variants(word):
+    """Every spelling with one anusvara/chandrabindu shifted one consonant to the left."""
+    out = set()
+    for i, char in enumerate(word):
+        if char in MOVED_MARK and i >= 1:
+            j = i - 1
+            while j > 0 and (word[j] in MOVED_MARK or word[j] in MATRA or word[j] == HALANT
+                             or word[j] == '़'):
+                j -= 1
+            candidate = word[:j] + char + word[j:i] + word[i + 1:]
+            if candidate != word:
+                out.add(candidate)
+    return out
+
+
+def repair_shapes(text, dictionary, vocab, log, path):
+    """Join split words and move displaced anusvaras, only where the word list agrees."""
+    if not dictionary or not WORD_SPAN.search(text):
+        return text
+    # 1. a Latin letter left inside a Hindi word ("इजं n") is the Devanagari letter it was read as.
+    if re.search('[\u0900-\u097F] [A-Za-z](?=[\\s।,;?!]|$)', text):
+        def letter_sub(match):
+            previous, latin = match.group(1), match.group(2)
+            mapped = LATIN_LETTERS.get(latin.lower())
+            if not mapped:
+                return match.group(0)
+            joined = previous + mapped
+            if joined in dictionary or move_mark_variants(joined) & dictionary:
+                return previous + mapped
+            return match.group(0)
+        text = re.sub('([\u0900-\u097F]+) ([A-Za-z])(?=[\\s।,;?!]|$)', letter_sub, text)
+
+    # 2. join a word split by a space, right-hand fragment starting on a consonant. Token spans, not a
+    # regex scan: "बारह छे द थे" hides the pair "छे द" behind the match "बारह छे" in a non-overlapping
+    # finditer, which is how the first version of this pass missed 96 of 122 "छे द" in the sources.
+    for _ in range(2):
+        if letter_run(text):
+            break
+        found = list(WORD_SPAN.finditer(text))
+        edits = []
+        consumed = -1
+        for current, following in zip(found, found[1:]):
+            if current.start() < consumed:
+                continue
+            if following.start() != current.end() + 1 or text[current.end()] != ' ':
+                continue
+            first, second = current.group(0), following.group(0)
+            # only the right-hand fragment has to start on a consonant; the left one can start on a
+            # vowel when the mark was displaced out of it ("इजं न" for "इंजन").
+            if not SINGLE_CONSONANT.match(second[0]):
+                continue
+            if first == 'और' or len(second) > 3:
+                continue
+            if second in dictionary and not SINGLE_CONSONANT.match(second):
+                continue
+            if (first, second) in PAIR_REFUSE:
+                log['review'].append({'file': path, 'word': f'{first} {second}', 'why': 'ambiguous split',
+                                      'text': text[:160]})
+                continue
+            joined = first + second
+            # न/क/व are real words, so a plain join with them is never taken; the join is still tried
+            # through the mark move ("इजं न" -> इंजन), because that result has to be a dictionary word.
+            fixed, how = (None, 'split+mark')
+            if second not in NEVER_GLUE and joined in dictionary:
+                fixed, how = joined, 'split'
+            elif second not in NEVER_GLUE:
+                variants = sorted(move_mark_variants(joined) & dictionary)
+                fixed = variants[0] if len(variants) == 1 else None
+            else:
+                variants = sorted(move_mark_variants(joined) & dictionary)
+                fixed = variants[0] if len(variants) == 1 else None
+            if not fixed or fixed in FORBID:
+                continue
+            edits.append((current.start(), following.end(), fixed, first, second, how))
+            consumed = following.end()
+        if not edits:
+            break
+        for offset, limit, fixed, first, second, how in reversed(edits):
+            text = text[:offset] + fixed + text[limit:]
+            log['repaired'].append({'file': path, 'from': f'{first} {second}', 'to': fixed, 'how': how})
+
+    # 3. an anusvara sitting one consonant to the right of its vowel.
+    def mark_sub(match):
+        word = match.group(0)
+        if word in OVERRIDES:
+            log['repaired'].append({'file': path, 'from': word, 'to': OVERRIDES[word], 'how': 'override'})
+            return OVERRIDES[word]
+        if word in dictionary or not (set(word) & set(MOVED_MARK)):
+            return word
+        variants = sorted(move_mark_variants(word) & dictionary)
+        if len(variants) != 1:
+            return word
+        log['repaired'].append({'file': path, 'from': word, 'to': variants[0], 'how': 'moved-mark'})
+        return variants[0]
+    return WORD_SPAN.sub(mark_sub, text)
 
 
 def strings(value):
@@ -111,7 +237,7 @@ def load_vocabulary(books):
                 for text in strings(data):
                     if anomalies(text):
                         continue
-                    for word in re.split(f'[^{CONSONANT}\u0900-\u097F]+', text):
+                    for word in re.split(f'[^{DEV_CLASS}]+', text):
                         if len(word) < 2 or LEADING_MARK.match(word):
                             continue
                         if DOUBLED.search(word):
@@ -176,21 +302,21 @@ def repair_word(word, vocab, anagrams, by_length, dictionary=None):
 
 
 def repair_text(text, vocab, anagrams, by_length, log, path, dictionary=None):
-    if not anomalies(text):
-        return text
-    fixed = JOIN_SPACE.sub('', text)
-    fixed = DOUBLED.sub(r'\1', fixed)
-    if not anomalies(fixed) and fixed != text:
-        return fixed          # space join and/or doubling was the whole defect
-    for word in tokens(fixed):
-        if word in fixed and is_broken(word):
-            good, how = repair_word(word, vocab, anagrams, by_length, dictionary)
-            if good and good != word:
-                fixed = re.sub(re.escape(word), good, fixed)
-                log['repaired'].append({'file': path, 'from': word, 'to': good, 'how': how})
-            elif good is None:
-                log['review'].append({'file': path, 'word': word, 'why': how, 'text': fixed[:160]})
-    return fixed
+    fixed = text
+    if anomalies(text):
+        fixed = JOIN_SPACE.sub('', text)
+        fixed = DOUBLED.sub(r'\1', fixed)
+        if anomalies(fixed):
+            for word in tokens(fixed):
+                if word in fixed and is_broken(word):
+                    good, how = repair_word(word, vocab, anagrams, by_length, dictionary)
+                    if good and good != word:
+                        fixed = re.sub(re.escape(word), good, fixed)
+                        log['repaired'].append({'file': path, 'from': word, 'to': good, 'how': how})
+                    elif good is None:
+                        log['review'].append({'file': path, 'word': word, 'why': how,
+                                              'text': fixed[:160]})
+    return repair_shapes(fixed, dictionary, vocab, log, path)
 
 
 def walk(value, vocab, anagrams, by_length, log, path, dictionary=None):
@@ -235,7 +361,7 @@ def main():
                 data = json.loads(raw)
             except (ValueError, OSError):
                 continue
-            if not any(anomalies(text) for text in strings(data)):
+            if not any(WORD_SPAN.search(text) for text in strings(data)):
                 continue
             fixed = walk(data, vocab, anagrams, by_length, log, rel, dictionary or None)
             if fixed != data:
