@@ -90,6 +90,12 @@ def main():
                 problems.append(f'{lane} lane has not run for {age:.0f}h (last {started:%d %b %H:%M})')
             elif VERBOSE:
                 print(f'  {lane:9} last pass {started:%d %b %H:%M} ({age:.1f}h ago), {status}')
+            # A lane that failed twice running is not having a bad day, it is broken.
+            if status == 'completed':
+                both = con.execute('select status from executions where job_id = ? order by started_at desc limit 2',
+                                   (job_id,)).fetchall()
+                if len(both) == 2 and all(row_[0] not in ('completed', 'running') for row_ in both):
+                    problems.append(f'{lane} lane has failed its last two passes: check its last report')
         con.close()
 
     # --- the product itself -----------------------------------------------------------------------
@@ -227,6 +233,17 @@ def main():
             print(f'  hindi     {line}')
     except Exception as e:
         problems.append(f'could not run the text gate: {e}')
+
+    beat = f'{REPO}/work/qa/.watchdog-beat'
+    try:
+        if os.path.exists(beat):
+            gap = (now - dt.datetime.fromtimestamp(os.path.getmtime(beat), IST)).total_seconds() / 3600
+            if gap > 9:      # four-hourly passes plus slack; a gap means nothing was watching
+                problems.append(f'nothing ran the watchdog for {gap:.0f}h (last beat {gap:.0f}h ago) — the '
+                                f'gateway or the cron was down')
+        open(beat, 'w').write(now.isoformat(timespec='seconds'))
+    except OSError:
+        pass
 
     if VERBOSE:
         print(f'problems: {len(problems)}')

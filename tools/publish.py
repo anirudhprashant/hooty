@@ -362,13 +362,21 @@ if '--no-build' not in args:
         sys.exit('PUBLISH REFUSED: this build carries more unreadable Hindi than the last published one. '
                  'Repair the source, rebuild, publish again.')
 
+    # A book that quietly lost chapters or lessons is the other way a build goes wrong without anyone seeing it.
+    counts = subprocess.run([sys.executable, f'{HERE}/pack-counts.py', '--check'], capture_output=True, text=True)
+    say(counts.stdout.strip() or counts.stderr.strip()[-300:])
+    if counts.returncode:
+        sys.exit('PUBLISH REFUSED: a book is smaller than the last published build. Find what stopped it '
+                 'building, fix that, publish again.')
+
 thumbs(); stamp(); finish_check(); upload(); smoke()
 
 # What is live now is the new known-good state for the text gate.
 try:
     subprocess.run([sys.executable, f'{HERE}/text-gate.py', '--update-baseline'], capture_output=True, text=True)
+    subprocess.run([sys.executable, f'{HERE}/pack-counts.py', '--update'], capture_output=True, text=True)
 except Exception as e:
-    say(f'text baseline not updated: {e}')
+    say(f'baselines not updated: {e}')
 
 def push():
     """What just went live also goes to GitHub. A failed push never fails a publish."""
