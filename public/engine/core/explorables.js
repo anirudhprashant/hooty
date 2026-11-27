@@ -4493,13 +4493,16 @@ export const WIDGETS = {
       const pick = Math.max(-1, Math.min(3, (v.choice | 0) - 1));
       const good = pick === it.answer;
       const cap = (str) => { const x = String(str || ''); return x ? x.charAt(0).toUpperCase() + x.slice(1) : x; };
+      // Put the pieces together without the bare spaces a gap leaves before its own punctuation: the book's
+      // sentence "Both of them skipped the ___." must not read "the ___ ." on a child's screen.
+      const glue = (...parts) => parts.join(' ').replace(/\s+/g, ' ').replace(/\s+([,.;:!?…%)\]’”])/g, '$1').replace(/([‘“(\[])\s+/g, '$1').trim();
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
       kids.push(T(14, 21, `${ii + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
       kids.push(T(586, 21, L.heading || 'Finish the sentence', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
       // the sentence, with the gap where the word was
       const gap = it.options[it.answer] === undefined ? '' : '________';
-      const lines = fit(`${cap(it.before)} ${gap} ${it.after}`.replace(/\s+/g, ' ').trim(), 46).slice(0, 3);
+      const lines = fit(cap(glue(it.before, gap, it.after)), 46).slice(0, 3);
       // A one-line sentence used to sit hard against the header with 90 units of empty card below it. Centre the
       // block in the space above the four buttons instead, so a short poem line does not leave the card top-heavy.
       const topY = lines.length <= 1 ? 104 : lines.length === 2 ? 82 : 62;
@@ -4515,7 +4518,7 @@ export const WIDGETS = {
       });
       // Cap the finished sentence, not just its opening words: when the gap is the first word, the answer is the
       // first word of the sentence a child reads back.
-      const sentence = cap(`${it.before} ${it.options[it.answer] || ''} ${it.after}`.replace(/\s+/g, ' ').trim());
+      const sentence = cap(glue(it.before, it.options[it.answer] || '', it.after));
       const say = good
         ? `${L.yes || 'Yes.'} ${sentence}`
         : pick < 0
