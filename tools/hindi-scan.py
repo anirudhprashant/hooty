@@ -11,6 +11,8 @@ Three shapes, all detectable without a dictionary:
   detached     a matra or halant that starts a token, or a space inside a Devanagari word followed by
                a matra ("सधं ्या", "दनि ु या")
   doubled      the same vowel sign twice ("हैंं", "रााजाा")
+  reordered    two vowel signs on one letter, an anusvara before a vowel sign, or a vowel sign before a
+               halant ("भरूी", "दसूरी", "चदंा", "मसु्काते") — the same reorder, with no space to show it
 
   python3 tools/hindi-scan.py                 # every Hindi pack in public/content
   python3 tools/hindi-scan.py --json out.json # machine-readable, per lesson and per string
@@ -36,6 +38,12 @@ DETACHED_START = re.compile(r'[\s"\'(\[{]+[' + MATRA + HALANT + r']')
 SPACE_INSIDE = re.compile(f'[{CONSONANT}][{MATRA}]?[\\s]+[{MATRA}{HALANT}]')
 DOUBLED = re.compile(f'([{MATRA}])\\1')
 STRAY_ZERO_WIDTH = re.compile(f'[{CONSONANT}][{ZERO_WIDTH}][{CONSONANT}]')
+# A vowel sign belongs to the consonant on its left, one per consonant, before any anusvara, and never
+# before a halant. Two vowels on one letter ("भरूी", "दसूरी"), an anusvara then a vowel ("चदंा") or a vowel
+# then a halant ("मसु्काते") is the extractor's own reorder happening *inside* a word, with no space to
+# give it away. `पढ़िए` is not a hit: the nukta (U+093C) is not a vowel sign.
+VOWEL = '\u093e-\u094c\u0951-\u0957\u0962\u0963'
+REORDERED = re.compile(f'[{VOWEL}][{VOWEL}]|[{VOWEL}]{HALANT}|[\u0901\u0902][{VOWEL}]')
 
 
 def strings(value):
@@ -60,6 +68,8 @@ def anomalies(text):
         found.add('doubled')
     if STRAY_ZERO_WIDTH.search(text):
         found.add('zero-width')
+    if REORDERED.search(text):
+        found.add('reordered')
     return found
 
 
