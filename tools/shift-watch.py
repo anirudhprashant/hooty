@@ -158,6 +158,18 @@ def main():
     except Exception as e:
         problems.append(f'could not check the repo lock: {e}')
 
+    # A lane that fixed something and could not wake the publisher leaves this note.
+    marker = f'{REPO}/work/qa/PUBLISH_NOW'
+    if os.path.exists(marker):
+        minutes = (now - dt.datetime.fromtimestamp(os.path.getmtime(marker), IST)).total_seconds() / 60
+        if minutes > 30:
+            try:
+                why = open(marker).read().strip().splitlines()[0][:120]
+            except OSError:
+                why = ''
+            problems.append(f'a lane asked for a publish {minutes:.0f} minutes ago and it has not happened'
+                            + (f': {why}' if why else ''))
+
     try:
         for lane in BRANCHES:
             ahead = subprocess.run(['git', '-C', REPO, 'rev-list', '--count', f'main..shift/{lane}'],
