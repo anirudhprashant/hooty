@@ -583,7 +583,9 @@ export const WIDGETS = {
       const bars = Math.max(1, Math.ceil(v.n / v.d)), bw = 540, kids = [], h = Math.min(70, 200 / bars), pw = bw / v.d;
       for (let b = 0; b < bars; b++) for (let i = 0; i < v.d; i++) kids.push(R(30 + i * pw, 30 + b * (h + 10), pw, h, b * v.d + i < v.n ? C.g : '#fff', { w: 3 }));
       const dec = v.n / v.d;
-      return { kids, say: `${v.n}/${v.d} is ${v.n === v.d ? 'one whole' : v.n > v.d ? 'more than one whole' : 'less than one whole'}, which is ${num(dec, 3)} as a decimal.` };
+      // Two sentences: "which is 0.25" read cold attached itself to "one whole", so one whole appeared to equal 0.25.
+      const whole = v.n === v.d ? 'one whole' : v.n > v.d ? 'more than one whole' : 'less than one whole';
+      return { kids, say: `${v.n}/${v.d} is ${whole}. As a decimal it is ${num(dec, 3)}.` };
     },
   },
   rectangle: {
@@ -4178,16 +4180,31 @@ export const WIDGETS = {
     subject: 'english',
     about: 'A word a chapter teaches and the sentence the book uses it in, with four meanings on big cards. Pick the meaning that fits the sentence. For vocabulary, word meanings, reading a word inside its own sentence, words a chapter teaches, and using context to guess a meaning.',
     params: { words: [], meanings: [], key: [], sents: [], labels: {} },
+    // the meaning choice belongs to the word you are on, so changing the word starts from no meaning chosen, and the
+    // challenge shown is the one for the word on screen (a word with no challenge shows no row)
+    resets: ['meaning'],
+    taskPer: 'word',
+    // The word slider says which word it has picked, because the card shows one word at a time. The meaning slider's
+    // four positions are the four meaning cards drawn on the stage and the chosen one is marked there (ring, fill,
+    // tick or cross), so a third copy of the same sentence under the track would only push Next off a phone screen.
+    sliderText: (v, key, q) => {
+      const words = q.words || [], L = q.labels || {};
+      const n = Math.max(1, Math.min(4, words.length, (q.meanings || []).length));
+      const i = Math.max(0, Math.min(n - 1, v.word | 0));
+      if (key === 'word') return words[i] ? (L.thisWord || '\u201c{w}\u201d').replace('{w}', words[i]) : '';
+      return '';
+    },
     dynamicSliders: (p) => {
       // four cards at most: this is a reading card, so the type must stay big enough to read on a phone
       const n = Math.max(1, Math.min(4, (p.words || []).length)), L = p.labels || {};
       return [['word', L.pickWord || 'Pick a word', 0, n - 1, 1, 0], ['meaning', L.pickMeaning || 'Which meaning fits?', 0, n - 1, 1, 0]];
     },
-    draw(v, p) {
+    draw(v, p, t, sl, touched) {
       const words = p.words || [], meanings = p.meanings || [], sents = p.sents || [], key = p.key || [], L = p.labels || {};
       const n = Math.max(1, Math.min(4, words.length, meanings.length));
       const wi = Math.max(0, Math.min(n - 1, v.word | 0)), mi = Math.max(0, Math.min(n - 1, v.meaning | 0));
-      const word = words[wi] || '', sent = sents[wi] || '', good = key[wi] === mi;
+      const picked = !!(touched && touched.has && touched.has('meaning'));
+      const word = words[wi] || '', sent = sents[wi] || '', good = picked && key[wi] === mi;
       // wrap on spaces: SVG text does not wrap itself, and a Hindi meaning is no longer than an English one
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
@@ -4197,15 +4214,22 @@ export const WIDGETS = {
       kids.push(R(14, 38, 250, 46, C.y, { w: 2.5, r: 12 }));
       kids.push(T(139, 70, word, { z: 26, w: 800 }));
       // four meaning cards, big type: this is a reading card, not a diagram. Three lines fit a long book meaning;
-      // anything longer ends in an ellipsis rather than being cut off silently.
-      meanings.slice(0, 4).forEach((m, j) => {
+      // anything longer ends in an ellipsis rather than being cut off silently. The cards are the control: tapping
+      // one chooses it, and the chosen card says so without relying on colour alone (ring, fill, tick or cross).
+      meanings.slice(0, n).forEach((m, j) => {
         const x = 10 + (j % 2) * 292, y = 92 + Math.floor(j / 2) * 98;
-        const sel = j === mi, right = sel && key[wi] === j, wrong = sel && key[wi] !== j && mi !== 0;
-        kids.push(R(x, y, 288, 90, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel ? 5 : 2.5, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 14 }));
-        const lines = fit(m, 24), shown = lines.slice(0, 3);
+        const chosen = j === mi && picked, right = chosen && key[wi] === j, wrong = chosen && key[wi] !== j;
+        const fill = right ? '#E7F6E9' : wrong ? '#FDEDE8' : '#FFFFFF';
+        const edge = right ? '#2E8B57' : wrong ? '#D06A4E' : '#E6DCC6';
+        const tile = [R(x + 2, y + 5, 288, 90, '#6B4A1E', { w: 0, r: 14, x: { opacity: 0.09 } }),
+          R(x, y, 288, 90, fill, { w: chosen ? 4.5 : 2.5, s: edge, r: 14 })];
+        const lines = fit(m, 22), shown = lines.slice(0, 3);
         if (lines.length > 3) shown[2] = shown[2].replace(/\s\S*$/, '') + '\u2026';
-        shown.forEach((ln, i) => kids.push(T(x + 144, y + 30 + i * 24, ln, { z: 19, w: sel ? 700 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
-        if (right) kids.push(T(x + 266, y + 20, '\u2713', { z: 18, w: 800, f: '#1d7a45' }));
+        shown.forEach((ln, i) => tile.push(T(x + 144, y + 30 + i * 24, ln, { z: 19, w: chosen ? 800 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
+        // a tick means right and a cross means wrong, so the two never look alike in a black-and-white print either
+        if (right) tile.push(T(x + 268, y + 22, '\u2713', { z: 19, w: 800, f: '#1d7a45' }));
+        if (wrong) tile.push(T(x + 268, y + 22, '\u2715', { z: 19, w: 800, f: '#c0392b' }));
+        kids.push(s('g', { 'data-choice': `meaning:${j}`, style: 'cursor:pointer' }, tile));
       });
       // the sentence lives in the read-out under the stage, at full size, where a child can actually read it
       const lead = sent ? `${L.sentence || 'From the book'}: "${sent.replace(/[.\u0964]+$/, '')}". ` : '';

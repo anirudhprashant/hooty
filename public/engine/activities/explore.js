@@ -32,21 +32,50 @@ export default {
     const list = el('ol', { class: 'explore__tasks' });
     const finished = el('p', { class: 'explore__done', hidden: true, text: activity.takeaway || t('wellExplored') });
     const still = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    // Which controls the child has actually moved. A slider whose position 0 is a real choice (the first word,
+    // the first meaning) must not look chosen before it is touched, or the card pre-judges an answer.
+    const touched = new Set();
+    const sync = Object.create(null);   // key -> how to move the matching control when the drawing itself is tapped
 
     const draw = (t = 0) => {
-      const out = widget.draw(v, params, still ? 0 : t, sl);
+      const out = widget.draw(v, params, still ? 0 : t, sl, touched);
       svg.replaceChildren(...out.kids.filter(Boolean));
       if (readout.textContent !== out.say) readout.textContent = out.say;
     };
+    // Challenges that belong to different positions of the first slider ("choose what each of four words means") are
+    // independent, so the row shown has to be the one the child is on, not always the first in the list: a banner that
+    // says "choose what fun means" under a card showing "climb" contradicts the card. A word the pack gave no challenge
+    // for gets no row at all, rather than somebody else's row.
+    const driver = widget.taskPer || (sl[0] ? sl[0][0] : null);
+    const keyed = !!widget.taskPer && !!driver && tasks.some((t) => String(t.when || '').replace(/ /g, '').includes(`${driver}==`));
+    const aimAt = (val) => tasks.findIndex((t) => {
+      const when = String(t.when || '').replace(/ /g, ''), want = `${driver}==${val}`;
+      const at = when.indexOf(want);
+      return at >= 0 && !/[0-9.]/.test(when.charAt(at + want.length) || ' ');
+    });
     const paintTasks = () => {
-      const cur = tasks.findIndex((t) => !t.done);
+      const left = tasks.findIndex((t) => !t.done);
+      const aimed = keyed ? aimAt(v[driver]) : -1;
+      const cur = keyed ? aimed : left;
       // One challenge is already written in big words above the card: repeating it as a numbered list is noise.
-      list.hidden = tasks.length <= 1;
-      list.replaceChildren(...tasks.map((t, i) => (i > cur && cur >= 0 ? null : el('li', { class: `explore__task${t.done ? ' is-done' : ' is-now'}` }, [
+      list.hidden = tasks.length <= 1 || (keyed && aimed < 0 && left >= 0);
+      list.replaceChildren(...tasks.map((t, i) => (t.done || i === cur ? el('li', { class: `explore__task${t.done ? ' is-done' : ' is-now'}` }, [
         el('span', { class: 'explore__mark', 'aria-hidden': 'true' }, t.done ? [icon('check', { size: 18 })] : [String(i + 1)]),
         el('span', {}, [el('span', { class: 'explore__ask', text: t.say }), t.done && t.then ? el('span', { class: 'explore__then', text: t.then }) : null]),
-      ]))).filter(Boolean));
-      finished.hidden = cur >= 0;
+      ]) : null)).filter(Boolean));
+      finished.hidden = left >= 0;
+    };
+    // A widget can say which controls belong to the current position of another one ("the meaning choice belongs to
+    // the word you are on"): moving the word then starts from a clean choice instead of judging the old one against
+    // the new word.
+    const resetSiblings = () => {
+      for (const k of widget.resets || []) {
+        if (!sync[k]) continue;
+        touched.delete(k);
+        v[k] = Number(sync[k].input.min);
+        sync[k].input.value = String(v[k]);
+        sync[k].fill(); sync[k].paintName();
+      }
     };
     const check = () => {
       const cur = tasks.find((t) => !t.done);
@@ -70,10 +99,29 @@ export default {
       // A slider whose positions are sentences or choices has to say which one is chosen: a bare
       // "Which sentence?" with an empty track tells a child nothing.
       const name = widget.sliderText ? el('span', { class: 'explore__pick' }) : null;
-      const paintName = () => { if (name) name.textContent = widget.sliderText(v, key, params) || ''; };
+      const paintName = () => { if (name) name.textContent = widget.sliderText(v, key, params, touched.has(key)) || ''; };
       paintName();
-      input.addEventListener('input', () => { v[key] = Number(input.value); if (out) out.textContent = input.value; fill(); paintName(); draw(performance.now() / 1000); check(); });
+      input.addEventListener('input', () => { touched.add(key); v[key] = Number(input.value); if (key === driver) { resetSiblings(); paintTasks(); } if (out) out.textContent = input.value; fill(); paintName(); draw(performance.now() / 1000); check(); });
+      sync[key] = { input, out, fill, paintName };
       return el('label', { class: 'explore__control' }, [el('span', { class: 'explore__label' }, [label, out]), input, name]);
+    });
+    // A widget can draw its own choices as tappable things (a meaning card, a word tile): the drawn object is the
+    // control, and the slider that shares its key follows along, so both ways of choosing stay in step.
+    svg.addEventListener('click', (ev) => {
+      const hit = ev.target?.closest?.('[data-choice]');
+      if (!hit) return;
+      const raw = String(hit.getAttribute('data-choice') || '');
+      const cut = raw.indexOf(':');
+      const key = raw.slice(0, cut), val = Number(raw.slice(cut + 1));
+      if (!sync[key] || !Number.isFinite(val)) return;
+      touched.add(key);
+      v[key] = val;
+      if (key === driver) { resetSiblings(); paintTasks(); }
+      const st = sync[key];
+      if (st.input) st.input.value = String(val);
+      if (st.out) st.out.textContent = String(val);
+      st.fill(); st.paintName();
+      draw(performance.now() / 1000); check();
     });
     draw(); paintTasks();
     if (widget.animated && !still) {
