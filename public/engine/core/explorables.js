@@ -4664,8 +4664,8 @@ export const WIDGETS = {
       ];
       const pick = Math.max(0, Math.min(7, v.pick | 0));
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 34, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 23, 'India and her neighbours', { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 23, 'N up the page', { z: 13, w: 600, a: 'end', f: '#7a6b99' }));
+      kids.push(T(14, 23, 'India and her neighbours', { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
+      kids.push(T(586, 23, 'N up the page', { z: 15, w: 600, a: 'end', f: '#7a6b99' }));
       // a three by three compass: the cells hold the neighbours that lie that way
       const cells = [
         { gx: 0, gy: 0, title: 'north-west', names: [0, 1] },
@@ -4679,27 +4679,28 @@ export const WIDGETS = {
         { gx: 2, gy: 2, title: 'south-east', names: [] },
       ];
       cells.forEach((c) => {
-        const x = 18 + c.gx * 190, y = 48 + c.gy * 74;
+        const x = 18 + c.gx * 190, y = 42 + c.gy * 72;
         const isIndia = c.title === 'India';
         kids.push(R(x, y, 176, 64, isIndia ? '#f1e6ff' : '#ffffff', { w: 2, s: isIndia ? '#9b7bd0' : '#e3dccb', r: 12 }));
-        kids.push(T(x + 88, y + 16, c.title, { z: 11, w: 700, f: isIndia ? '#6b4a9e' : '#9b90b5' }));
+        kids.push(T(x + 88, y + 17, c.title, { z: 15, w: 700, f: isIndia ? '#6b4a9e' : '#8d80a8' }));
         if (isIndia) {
-          kids.push(T(x + 88, y + 44, 'India', { z: 18, w: 800, f: '#4b2597' }));
+          kids.push(T(x + 88, y + 46, 'India', { z: 19, w: 800, f: '#4b2597' }));
           return;
         }
         if (!c.names.length) {
           const sea = c.title === 'south-east' ? 'Bay of Bengal' : 'Arabian Sea';
-          kids.push(T(x + 88, y + 42, sea, { z: 12, w: 600, f: '#7aa2c8' }));
+          kids.push(T(x + 88, y + 44, sea, { z: 15, w: 600, f: '#5f8dc0' }));
           return;
         }
         c.names.forEach((idx, k) => {
           const on = idx === pick;
-          const cy = y + 34 + k * 15;
-          kids.push(T(x + 88, cy, all[idx].n, { z: on ? 16 : 13, w: on ? 800 : 600, f: on ? '#a05600' : INK }));
+          const cy = y + 37 + k * 16;
+          kids.push(T(x + 88, cy, all[idx].n, { z: on ? 17 : 15, w: on ? 800 : 600, f: on ? '#a05600' : INK }));
         });
       });
       const it = all[pick];
-      kids.push(T(300, 285, `${it.n}: to the ${it.dir}, ${it.sea ? 'across the sea' : 'on land'} \u2014 ${it.note}`, { z: 13, w: 700, f: '#4a3b6b' }));
+      kids.push(T(300, 272, `${it.n}: to the ${it.dir}, ${it.sea ? 'across the sea' : 'on land'}`, { z: 16, w: 700, f: '#4a3b6b' }));
+      kids.push(T(300, 292, it.note, { z: 15, w: 600, f: '#6b5a8a' }));
       return { kids, say: `${it.n} lies to the ${it.dir} of India${it.sea ? ', across the sea' : ''}. ${it.note}` };
     },
   },
