@@ -1930,9 +1930,7 @@ export const KITS = {
           .slice(0, 3);
         if (others.length < 2) continue;                  // three options make a real choice; two is a coin toss
         const options = shuffleFor([f.answer, ...others], 11 + hashSeed(f.answer + f.before));
-        let ans = options.indexOf(f.answer);
-        if (ans === 0) { const k = 1 + (hashSeed(f.answer + '\u0001pos') % 3); [options[0], options[k]] = [options[k], options[0]]; ans = options.indexOf(f.answer); }   // 0 is the card's "nothing chosen" start
-        items.push({ before: f.before, after: f.after, options, answer: ans });
+        items.push({ before: f.before, after: f.after, options, answer: options.indexOf(f.answer) });
       }
       return { items, labels: L };
     },
