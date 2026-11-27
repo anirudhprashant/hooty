@@ -4479,15 +4479,19 @@ export const WIDGETS = {
     params: { items: [], labels: {} },
     dynamicSliders: (p) => {
       const n = Math.max(1, (p.items || []).length), L = p.labels || {};
-      return [['item', L.pickItem || 'Pick a sentence', 0, n - 1, 1, 0], ['choice', L.pickChoice || 'Which word fills the gap?', 0, 3, 1, 0]];
+      // The word slider has five positions, not four: 0 is "nothing chosen yet", 1-4 are the four words. With four
+      // positions the first button could never be picked, because position 0 had to stand for the empty state and
+      // choosing it showed no right/wrong at all.
+      return [['item', L.pickItem || 'Pick a sentence', 0, n - 1, 1, 0], ['choice', L.pickChoice || 'Which word fills the gap?', 0, 4, 1, 0]];
     },
     draw(v, p) {
       const items = (p.items || []).slice(0, 4), L = p.labels || {};
       const n = Math.max(1, Math.min(4, items.length));
       const ii = Math.max(0, Math.min(n - 1, v.item | 0));
       const it = items[ii] || { before: '', after: '', options: [], answer: 0 };
-      const ci = Math.max(0, Math.min(3, v.choice | 0));
-      const good = ci === it.answer;
+      // 0 on the word slider is "nothing chosen yet"; 1-4 are the four buttons, so the first button is pickable.
+      const pick = Math.max(-1, Math.min(3, (v.choice | 0) - 1));
+      const good = pick === it.answer;
       const cap = (str) => { const x = String(str || ''); return x ? x.charAt(0).toUpperCase() + x.slice(1) : x; };
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
       const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
@@ -4496,20 +4500,25 @@ export const WIDGETS = {
       // the sentence, with the gap where the word was
       const gap = it.options[it.answer] === undefined ? '' : '________';
       const lines = fit(`${cap(it.before)} ${gap} ${it.after}`.replace(/\s+/g, ' ').trim(), 46).slice(0, 3);
-      lines.forEach((ln, i) => kids.push(T(16, 62 + i * 26, ln, { z: 19, w: 600, a: 'start', f: INK })));
-      if (!lines.length) kids.push(T(16, 62, gap, { z: 19, w: 600, a: 'start', f: INK }));
+      // A one-line sentence used to sit hard against the header with 90 units of empty card below it. Centre the
+      // block in the space above the four buttons instead, so a short poem line does not leave the card top-heavy.
+      const topY = lines.length <= 1 ? 104 : lines.length === 2 ? 82 : 62;
+      lines.forEach((ln, i) => kids.push(T(16, topY + i * 26, ln, { z: 19, w: 600, a: 'start', f: INK })));
+      if (!lines.length) kids.push(T(16, topY, gap, { z: 19, w: 600, a: 'start', f: INK }));
       // four words: the answer and three more the chapter teaches
       (it.options || []).slice(0, 4).forEach((word, j) => {
         const x = 10 + (j % 2) * 292, y = 156 + Math.floor(j / 2) * 62;
-        const sel = j === ci, right = sel && j === it.answer, wrong = sel && j !== it.answer && ci !== 0;
+        const sel = j === pick, right = sel && j === it.answer, wrong = sel && j !== it.answer;
         kids.push(R(x, y, 288, 54, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel ? 4 : 2, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 12 }));
         kids.push(T(x + 144, y + 35, word, { z: 20, w: sel ? 800 : 700, f: right ? '#136134' : wrong ? '#a02d1e' : INK }));
         if (right) kids.push(T(x + 264, y + 20, '\u2713', { z: 17, w: 800, f: '#1d7a45' }));
       });
-      const sentence = `${cap(it.before)} ${it.options[it.answer] || ''} ${it.after}`.replace(/\s+/g, ' ').trim();
+      // Cap the finished sentence, not just its opening words: when the gap is the first word, the answer is the
+      // first word of the sentence a child reads back.
+      const sentence = cap(`${it.before} ${it.options[it.answer] || ''} ${it.after}`.replace(/\s+/g, ' ').trim());
       const say = good
         ? `${L.yes || 'Yes.'} ${sentence}`
-        : ci === 0
+        : pick < 0
           ? (L.pick || 'Which word completes the sentence? Read the words around the gap.')
           : `${L.no || 'Not that word.'} ${L.readAgain || 'Read the words on both sides of the gap and try again.'}`;
       return { kids, say };

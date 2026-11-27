@@ -1842,45 +1842,104 @@ export const KITS = {
         : { heading: 'Finish the sentence', pickItem: 'Pick a sentence', pickChoice: 'Which word fills the gap?', yes: 'Yes.', no: 'Not that word.', readAgain: 'Read the words on both sides of the gap.', pick: 'Which word completes the sentence?' };
       const norm = (x) => String(x || '').replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
       const clean = (x) => String(x || '').replace(/\s+/g, ' ').trim();
+      // A card is only as good as its sentence. The old floor of 24 characters refused every Class 1 and 2 book,
+      // whose own sentences are shorter than that ("I see with my eyes."), so a chapter that could carry a cloze got
+      // nothing. What has to hold is that the words around the gap pin the answer down: three words or more, at
+      // least ten characters of context besides the answer, and the sentence still running past the gap.
+      // Also refused: glossary evidence that is a dictionary line, not a sentence ("valour: courage",
+      // "समाप्ति: [पु.] – अंत"), and Hindi that the extractor garbled (a copied matra, a matra opening a word),
+      // because a child would be asked to read nonsense.
+      const MINLEN = 15, MAXLEN = 110, MINWORDS = 3, MINCTX = 10;
+      // Hindi the extractor reordered has a shape of its own: a matra cannot open a word or follow another matra,
+      // an anusvara cannot sit before a matra (सदंु र for सुंदर), a virama cannot double up (क््यया). A word that
+      // breaks those rules is a corrupted reading, not Hindi a child should be asked to read.
+      const devBad = (tok) => {
+        let prev = '';
+        for (const ch of tok) {
+          const cat = /[\u0915-\u0939\u0958-\u095F\u0979\u097A]/.test(ch) ? 'C'
+            : ch === '\u093C' ? 'N'
+            : /[\u0904-\u0914\u0960-\u0961\u0972-\u0977]/.test(ch) ? 'I'
+            : /[\u093E-\u094C\u0962\u0963]/.test(ch) ? 'M'
+            : ch === '\u094D' ? 'V'
+            : /[\u0900-\u0903]/.test(ch) ? 'A' : 'O';
+          if (cat === 'M' && !(prev === 'C' || prev === 'N' || prev === 'O')) return true;
+          if (cat === 'V' && !(prev === 'C' || prev === 'N')) return true;
+          if (cat === 'N' && prev !== 'C') return true;
+          if (cat === 'A' && (prev === '' || prev === 'V' || prev === 'A')) return true;
+          prev = cat;
+        }
+        return prev === 'V' || prev === 'N';
+      };
       const pool = (glossaryWords || []).filter((t) => t && t.term && t.meaning);
       const found = [];
       for (const t of pool) {
         const src = (t.src || []).find((x) => x && x.ev);
         if (!src) continue;
         const sent = clean(src.ev);
-        if (sent.length < 24 || sent.length > 110) continue;
+        if (sent.length < MINLEN || sent.length > MAXLEN) continue;
         const term = norm(t.term);
         if (term.length < 2) continue;
         const words = [];
         const re = /[\p{L}\p{N}\p{M}]+/gu;   // Devanagari matras are marks: without \p{M} the gap eats half a word
         let m;
         while ((m = re.exec(sent))) words.push(m);
+        if (words.length < MINWORDS) continue;
         const hits = words.filter((w) => norm(w[0]).startsWith(term));
         if (hits.length !== 1) continue;   // the answer must appear once, or the gap gives itself away
         const hit = hits[0], at = hit.index, len = hit[0].length;
         const before = clean(sent.slice(0, at)), after = clean(sent.slice(at + len));
-        if (!before || !after) continue;
-        found.push({ answer: hit[0], before, after });
+        if (!after) continue;                             // the line must carry on past the gap
+        if (!before && words.length < 4) continue;        // a gap that opens the line needs a longer rest to pin it
+        if (before.length + after.length < MINCTX) continue;
+        if (/[:\uFF1A]\s*$/.test(before)) continue;       // a headword with a gloss after it, not a sentence
+        if (!/^[\p{L}\p{N}]/u.test(after)) continue;      // a gloss follows the gap, not the rest of the sentence
+        if (sent.includes('\uFFFD')) continue;            // broken characters in the extracted text
+        if (/([\u0900-\u097F])\1/u.test(sent)) continue;   // a doubled mark: copied matra, the sentence is garbled
+        if (/\s[\u093E-\u094C\u0962\u0963]/u.test(sent)) continue; // a matra cannot open a word: reordered text
+        if (words.some((w) => devBad(w[0]))) continue;     // matras and anusvaras in an impossible order
+        // The answer keeps the glossary's own spelling, so four buttons never mix "Head" with "hand": the
+        // capital came from the word starting the book's sentence, not from the word itself.
+        const canon = (tok) => { const c = pool.find((t) => norm(t.term) === norm(tok)); return c ? String(c.term) : tok; };
+        found.push({ answer: canon(hit[0]), before, after });
         if (found.length >= 6) break;
       }
       if (found.length < 2) return { items: [], labels: L };
       const seen = new Set(), picked = [];
       for (const f of found) { if (seen.has(f.answer.toLowerCase())) continue; seen.add(f.answer.toLowerCase()); picked.push(f); if (picked.length >= 4) break; }
       if (picked.length < 2) return { items: [], labels: L };
-      const poolWords = pool.map((t) => String(t.term)).filter((w) => w.length > 1);
-      let seed = 11;
-      const shuffle = (arr) => { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { seed = (seed * 1103515245 + 12345) % 2147483648; const j = seed % (i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-      const items = picked.map((f, i) => {
-        const others = shuffle(poolWords.filter((w) => w.toLowerCase() !== f.answer.toLowerCase())).slice(0, 3);
-        const options = shuffle([f.answer, ...others]);
-        return { before: f.before, after: f.after, options, answer: options.indexOf(f.answer) };
-      });
+      // Distractors are single words of a similar length that do not share a stem with the answer: a child must not
+      // be offered "अँधियारा" beside "अँधियारे", or a two-word grammar term beside a one-word noun.
+      const poolWords = [...new Set(pool.map((t) => String(t.term)).filter((w) => w.length > 1 && !devBad(w)))];
+      const stem = (w) => String(w).replace(/\s+/g, '').toLowerCase();
+      const near = (a, b) => { const x = stem(a), y = stem(b); let i = 0; while (i < x.length && i < y.length && x[i] === y[i]) i++; return i >= Math.min(4, x.length, y.length); };
+      // A shuffle seeded once per card put the answer in the same button on all 695 cards ever made (the answer
+      // starts at position 0, so one fixed permutation always moved it to the same place, and a child learns
+      // "always the last one"). Seed per item from its answer, with a 31-bit Park–Miller step that stays inside
+      // exact integer arithmetic; 2^31 * 1.1e9 overflows a double and made the old seed effectively fixed.
+      const hashSeed = (s) => { let x = 0; for (const c of String(s)) x = (x * 31 + c.codePointAt(0)) % 2147483647; return x || 7; };
+      const shuffleFor = (arr, start) => {
+        const a = [...arr]; let seed = start % 2147483647;
+        for (let i = a.length - 1; i > 0; i--) { seed = (seed * 48271) % 2147483647; const j = Math.floor((seed * (i + 1)) / 2147483647); [a[i], a[j]] = [a[j], a[i]]; }   // high bits: an LCG's low bits are not random
+        return a;
+      };
+      const items = [];
+      for (const f of picked) {
+        const others = poolWords
+          .filter((w) => !/\s/.test(w) && !/[-–—]/.test(w) && !near(w, f.answer))
+          .sort((a, b) => Math.abs(a.length - f.answer.length) - Math.abs(b.length - f.answer.length) || a.localeCompare(b))
+          .slice(0, 3);
+        if (others.length < 2) continue;                  // three options make a real choice; two is a coin toss
+        const options = shuffleFor([f.answer, ...others], 11 + hashSeed(f.answer + f.before));
+        let ans = options.indexOf(f.answer);
+        if (ans === 0) { const k = 1 + (hashSeed(f.answer + '\u0001pos') % 3); [options[0], options[k]] = [options[k], options[0]]; ans = options.indexOf(f.answer); }   // 0 is the card's "nothing chosen" start
+        items.push({ before: f.before, after: f.after, options, answer: ans });
+      }
       return { items, labels: L };
     },
     usable: (p) => !!(p && p.items && p.items.length >= 2),
     tasks: (p, lang) => p.items.slice(0, 2).map((it) => lang === 'hi'
-      ? { say: 'खाली जगह में सही शब्द चुनिए।', when: `item == ${p.items.indexOf(it)} and choice == ${it.answer}`, then: `सही वाक्य: ${it.before} ${it.options[it.answer]} ${it.after}` }
-      : { say: 'Choose the word that completes the sentence.', when: `item == ${p.items.indexOf(it)} and choice == ${it.answer}`, then: `The sentence is: ${it.before} ${it.options[it.answer]} ${it.after}` }),
+      ? { say: 'खाली जगह में सही शब्द चुनिए।', when: `item == ${p.items.indexOf(it)} and choice == ${it.answer + 1}`, then: `सही वाक्य: ${it.before} ${it.options[it.answer]} ${it.after}` }
+      : { say: 'Choose the word that completes the sentence.', when: `item == ${p.items.indexOf(it)} and choice == ${it.answer + 1}`, then: `The sentence is: ${it.before} ${it.options[it.answer]} ${it.after}` }),
   },
   materials: {
     // The World Around Us Class 3, "Making Things": clay, bricks and mud walls, the same idea of shaping a natural
