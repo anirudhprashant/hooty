@@ -695,14 +695,67 @@ export const WIDGETS = {
     },
   },
   circuit: {
-    subject: 'science', about: 'A simple circuit with a switch, cells and bulbs in a row; the bulb lights only in a closed circuit and dims with more bulbs. For electricity, circuits, conductors, switches.',
+    subject: 'science', about: 'A simple circuit laid out on a table: cells in a holder, bulbs in their sockets, a switch and the wire that joins them. The bulb lights only when the switch closes the loop, and it shines brighter with more cells for fewer bulbs. For electricity, circuits, conductors, switches, cells and bulbs.', animated: true,
     sliders: [['closed', 'Switch (0 open, 1 closed)', 0, 1, 1, 0], ['cells', 'Cells', 1, 3, 1, 1], ['bulbs', 'Bulbs', 1, 3, 1, 1]],
-    draw(v) {
-      const on = v.closed === 1, bright = on ? Math.min(1, v.cells / v.bulbs / 1.5) : 0, kids = [s('rect', { x: 80, y: 50, width: 440, height: 190, fill: 'none', stroke: on ? C.y : INK, 'stroke-width': 6, rx: 14 })];
-      for (let i = 0; i < v.cells; i++) kids.push(R(120 + i * 44, 225, 36, 30, C.g, { r: 4 }));
-      for (let i = 0; i < v.bulbs; i++) { const x = 300 + (i - (v.bulbs - 1) / 2) * 110; kids.push(CIRC(x, 50, 28, bright ? `rgba(255,214,10,${0.3 + bright * 0.7})` : '#ddd', { w: 3 })); }
-      kids.push(on ? L(400, 240, 470, 240, C.y, 8) : L(400, 240, 462, 200, INK, 8));
-      return { kids, say: on ? `Closed circuit: current flows and the bulb${v.bulbs > 1 ? 's glow' : ' glows'}${v.bulbs > v.cells ? ', dimly because more bulbs share the cells' : ''}.` : 'Open circuit: there is a gap, so no current flows and nothing lights.' };
+    draw(v, p, t = 0) {
+      const on = v.closed === 1, cells = Math.max(1, Math.min(3, v.cells | 0)), bulbs = Math.max(1, Math.min(3, v.bulbs | 0));
+      const per = cells / bulbs, bright = Math.min(1, per / 3);
+      const word = !on ? 'no light' : per >= 2 ? 'bright' : per >= 0.9 ? 'normal' : per >= 0.6 ? 'dim' : 'faint';
+      const kids = [s('defs', {}, [
+        s('linearGradient', { id: 'hw-wall', x1: 0, y1: 0, x2: 0, y2: 1 }, [s('stop', { offset: '0%', 'stop-color': '#FFFDF6' }), s('stop', { offset: '100%', 'stop-color': '#FFEFD6' })]),
+        s('radialGradient', { id: 'hw-glow' }, [s('stop', { offset: '0%', 'stop-color': '#FFE59A', 'stop-opacity': 0.95 }), s('stop', { offset: '60%', 'stop-color': '#FFC94D', 'stop-opacity': 0.4 }), s('stop', { offset: '100%', 'stop-color': '#FFC94D', 'stop-opacity': 0 })]),
+      ])];
+      // the room: a warm wall, and the table the circuit is laid out on
+      kids.push(R(0, 0, W, 246, '#FFFBF1', { w: 0 }), R(0, 246, W, 54, '#E6BE8A', { w: 0 }), R(0, 246, W, 4, '#F2D5AA', { w: 0 }), R(0, 292, W, 8, '#CB9A62', { w: 0 }));
+      kids.push(s('ellipse', { cx: 300, cy: 246, rx: 300, ry: 12, fill: 'rgba(120,74,30,0.10)' }));
+      const bulbX = (i) => 312 + (i - (bulbs - 1) / 2) * 110;
+      // the wires: short leads that sag a little between one part and the next, then one long lead back round the front
+      const leads = [`M 156 240 Q 180 252 ${bulbX(0) - 16} 240`];
+      for (let i = 1; i < bulbs; i++) leads.push(`M ${bulbX(i - 1) + 16} 240 Q ${(bulbX(i - 1) + bulbX(i)) / 2} 252 ${bulbX(i) - 16} 240`);
+      leads.push(`M ${bulbX(bulbs - 1) + 16} 240 Q 458 252 490 240`);
+      leads.push('M 546 240 C 576 240 584 262 566 276 C 540 294 90 298 48 284 C 26 276 20 254 44 240');
+      for (const d of leads) kids.push(s('path', { d, fill: 'none', stroke: 'rgba(96,54,16,0.16)', 'stroke-width': 6, 'stroke-linecap': 'round', transform: 'translate(0,2.5)' }));
+      for (const d of leads) kids.push(s('path', { d, fill: 'none', stroke: '#8A4A24', 'stroke-width': 4, 'stroke-linecap': 'round' }));
+      // current: small beads running round the loop, and only when the switch is closed
+      if (on) for (const d of leads) kids.push(s('path', { d, fill: 'none', stroke: '#FFE9A8', 'stroke-width': 6, 'stroke-linecap': 'round', 'stroke-dasharray': '0 30', 'stroke-dashoffset': -((t * 60) % 30) }));
+      // the cells, standing in their holder on the table
+      kids.push(s('ellipse', { cx: 100, cy: 247, rx: 56, ry: 5, fill: 'rgba(96,54,16,0.20)' }));
+      kids.push(R(44, 216, 112, 30, '#F7F2E6', { w: 3, r: 8 }));
+      for (let i = 0; i < cells; i++) {
+        const bx = 62 + i * 32;
+        kids.push(R(bx - 13, 202, 26, 44, C.g, { w: 2, r: 8 }));
+        kids.push(R(bx - 9, 207, 6, 34, '#8FE0C0', { w: 0, r: 3 }));
+        kids.push(s('ellipse', { cx: bx, cy: 203, rx: 12, ry: 4.5, fill: '#D9E2EC', stroke: INK, 'stroke-width': 2 }));
+        kids.push(R(bx - 4, 196, 8, 7, '#B9C3CE', { w: 2, r: 2 }));
+      }
+      // the bulbs: glass on a neck and a socket, standing on the table
+      for (let i = 0; i < bulbs; i++) {
+        const x = bulbX(i);
+        kids.push(s('ellipse', { cx: x, cy: 247, rx: 19, ry: 4, fill: 'rgba(96,54,16,0.20)' }));
+        if (on) kids.push(CIRC(x, 184, 30 + bright * 18, 'url(#hw-glow)', { w: 0, x: { opacity: 0.35 + bright * 0.65 } }));
+        if (on) kids.push(s('ellipse', { cx: x, cy: 250, rx: 32, ry: 7, fill: '#FFD75E', opacity: 0.16 + bright * 0.34 }));
+        kids.push(R(x - 7, 196, 14, 22, on ? '#FFE08F' : '#E4DCCB', { w: 2, r: 2 }));
+        kids.push(R(x - 16, 214, 32, 32, '#8C7BB0', { w: 3, r: 6 }));
+        kids.push(R(x - 16, 214, 32, 8, '#A697C9', { w: 0, r: 4 }));
+        kids.push(CIRC(x, 184, 22, on ? '#FFDE6B' : '#F0EADD', { s: INK, w: 3 }));
+        kids.push(s('path', { d: `M ${x - 6} 194 L ${x - 6} 184 L ${x - 2} 190 L ${x + 1} 182 L ${x + 4} 190 L ${x + 6} 184 L ${x + 6} 194`, fill: 'none', stroke: on ? '#B24A10' : '#B7AE9E', 'stroke-width': 3, 'stroke-linejoin': 'round' }));
+      }
+      // the switch: a little base, two metal posts, and a lever that either bridges them or lifts away
+      kids.push(s('ellipse', { cx: 514, cy: 247, rx: 44, ry: 4, fill: 'rgba(96,54,16,0.20)' }));
+      kids.push(R(476, 236, 80, 10, '#C9A06A', { w: 2, r: 4 }));
+      kids.push(R(482, 222, 8, 16, '#B9C3CE', { w: 2, r: 3 }), R(538, 222, 8, 16, '#B9C3CE', { w: 2, r: 3 }));
+      if (on) { kids.push(L(486, 224, 542, 224, '#6F6480', 8)); kids.push(CIRC(542, 224, 6, '#6F6480', { w: 2 })); }
+      else { kids.push(L(486, 224, 522, 192, '#6F6480', 8)); kids.push(CIRC(522, 192, 6, '#6F6480', { w: 2 })); }
+      // what the child reads: the state on the wall, and one clear readout panel
+      kids.push(T(24, 40, on ? 'The switch is closed' : 'The switch is open', { z: 20, w: 700, a: 'start', f: on ? '#2E8B57' : '#C4651F' }));
+      kids.push(T(24, 68, on ? 'current flows all the way round' : 'a gap stops the current', { z: 17, w: 600, a: 'start', f: '#7a6b99' }));
+      kids.push(R(346, 14, 240, 96, '#EBD9BC', { w: 0, r: 18 }), R(346, 10, 240, 96, '#FFFFFF', { w: 3, s: '#E6DAC0', r: 18 }));
+      kids.push(T(466, 58, word, { z: 32, w: 800 }));
+      kids.push(T(466, 88, `${cells} cell${cells === 1 ? '' : 's'} · ${bulbs} bulb${bulbs === 1 ? '' : 's'}`, { z: 16, w: 600, f: '#7a6b99' }));
+      const say = !on
+        ? 'The switch has left a gap in the wire, so the path is broken. No current can flow and the bulbs stay dark, however many cells there are.'
+        : `Closed circuit: current flows all the way round the loop${bulbs > 1 ? `, through all ${bulbs} bulbs` : ''}. ${per >= 2 ? `With ${cells} cells for ${bulbs === 1 ? 'one bulb' : `${bulbs} bulbs`} there is plenty of push, so the light is bright.` : per >= 1 ? `With ${cells} cell${cells === 1 ? '' : 's'} for ${bulbs} bulb${bulbs === 1 ? '' : 's'}, each bulb gets about one cell's worth, so it glows steadily.` : `The ${cells} cell${cells === 1 ? '' : 's'} must be shared out among ${bulbs} bulbs, so each bulb gets only a small share and the light is ${word}.`}`;
+      return { kids, say };
     },
   },
   floatsink: {
