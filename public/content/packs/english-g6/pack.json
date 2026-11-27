@@ -4877,45 +4877,45 @@
             "before": "The",
             "after": ", or elephant trainer",
             "options": [
+             "munching",
              "joyous",
-             "mahout",
              "splashed",
-             "munching"
+             "mahout"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "One late evening, a dog",
             "after": "into the stable.",
             "options": [
-             "stray",
+             "strayed",
              "stables",
              "munching",
-             "strayed"
+             "stray"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "some of the food he was",
             "after": "towards",
             "options": [
-             "stables",
              "stray",
+             "munching",
              "chores",
-             "munching"
+             "stables"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "So, he threw some",
             "after": "to the dog",
             "options": [
              "stray",
-             "crumbs",
              "accompanied",
-             "stables"
+             "stables",
+             "crumbs"
             ],
-            "answer": 1
+            "answer": 3
            }
           ],
           "labels": {
@@ -4932,12 +4932,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: The mahout , or elephant trainer"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: One late evening, a dog strayed into the stable."
           }
          ],
@@ -12655,34 +12655,34 @@
             "before": "You now know that",
             "after": "is a water body.",
             "options": [
-             "hopeless",
-             "harmony",
+             "sensed",
              "creek",
-             "sensed"
+             "hopeless",
+             "harmony"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "This is called",
             "after": ".",
             "options": [
              "sensed",
-             "on the contrary",
              "personification",
-             "significant"
+             "significant",
+             "on the contrary"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "we practise yoga",
             "after": "(postures),",
             "options": [
-             "on the contrary",
-             "asanas",
+             "sensed",
              "personification",
-             "sensed"
+             "on the contrary",
+             "asanas"
             ],
-            "answer": 1
+            "answer": 3
            }
           ],
           "labels": {
@@ -12699,12 +12699,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: You now know that creek is a water body."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: This is called personification ."
           }
          ],
@@ -16586,22 +16586,22 @@
             "after": "in 1 and 2 to compare",
             "options": [
              "tamarind",
-             "simile",
+             "determination",
              "scrap",
-             "determination"
+             "simile"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "This is called",
             "after": ".",
             "options": [
-             "geru",
              "stable",
              "alliteration",
-             "scrap"
+             "scrap",
+             "geru"
             ],
-            "answer": 2
+            "answer": 1
            }
           ],
           "labels": {
@@ -16618,12 +16618,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: The poet uses simile in 1 and 2 to compare"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: This is called alliteration ."
           }
          ],

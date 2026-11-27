@@ -4253,45 +4253,45 @@
             "before": "Goats under the age of six months are called “",
             "after": "”.",
             "options": [
-             "missing",
-             "whispered",
+             "stealing",
              "kids",
-             "stealing"
+             "missing",
+             "whispered"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "He went inside the shop and politely asked the",
             "after": "to show",
             "options": [
-             "tinkling bells",
-             "dangle",
              "shopkeeper",
-             "comparison markers"
+             "tinkling bells",
+             "comparison markers",
+             "dangle"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "Kamla",
             "after": "him, saying, “I’m so sorry,",
             "options": [
-             "tinkling bells",
-             "purchase",
              "consoled",
-             "stealing"
+             "tinkling bells",
+             "stealing",
+             "purchase"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "Hiding a",
             "after": "smile, Chinna ran to his",
             "options": [
              "purchase",
+             "missing",
              "mischievous",
-             "dangle",
-             "missing"
+             "dangle"
             ],
-            "answer": 1
+            "answer": 2
            }
           ],
           "labels": {
@@ -4308,12 +4308,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: Goats under the age of six months are called “ kids ”."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: He went inside the shop and politely asked the shopkeeper to show"
           }
          ],
@@ -8147,44 +8147,44 @@
             "after": "on roads.",
             "options": [
              "safety",
-             "traffic",
              "countable noun",
+             "traffic",
              "accident-free"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "want to share some important",
             "after": "tips to help you",
             "options": [
              "traffic lights",
-             "countable noun",
+             "safety",
              "uncountable noun",
-             "safety"
+             "countable noun"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Footpaths are meant for",
             "after": ".",
             "options": [
-             "footpath",
-             "pedestrians",
              "traffic",
-             "zebra crossing"
+             "zebra crossing",
+             "footpath",
+             "pedestrians"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "stick some",
             "after": "stickers on your clothes, so that",
             "options": [
-             "footpath",
-             "naming word",
              "reflective",
-             "pedestrian signal"
+             "pedestrian signal",
+             "naming word",
+             "footpath"
             ],
-            "answer": 2
+            "answer": 0
            }
           ],
           "labels": {
@@ -8201,12 +8201,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: there is often a lot of traffic on roads."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: want to share some important safety tips to help you"
           }
          ],
@@ -11685,32 +11685,32 @@
             "before": "It improves learning, reduces mistakes and increases",
             "after": ".",
             "options": [
-             "p.m.",
              "Pranayama",
              "efficiency",
-             "Tree Pose"
+             "Tree Pose",
+             "p.m."
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "It improves learning, reduces",
             "after": "and increases efficiency.",
             "options": [
+             "paragraph",
              "p.m.",
              "mistakes",
-             "asanas",
-             "paragraph"
+             "asanas"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "Focus helps us completing",
             "after": "faster and better.",
             "options": [
-             "paragraph",
+             "focus",
              "tasks",
              "asanas",
-             "focus"
+             "paragraph"
             ],
             "answer": 1
            },
@@ -11718,12 +11718,12 @@
             "before": "simple yoga",
             "after": "like: Pranayama, Tree Pose, etc.",
             "options": [
-             "mistakes",
              "routine",
-             "focus",
-             "asanas"
+             "asanas",
+             "mistakes",
+             "focus"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -11740,12 +11740,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: It improves learning, reduces mistakes and increases efficiency ."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: It improves learning, reduces mistakes and increases efficiency."
           }
          ],
@@ -14942,44 +14942,44 @@
             "after": "forest lived an old stag",
             "options": [
              "hillock",
+             "stag",
              "descriptive words",
-             "lush",
-             "stag"
+             "lush"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "The grass is so",
             "after": "and nice",
             "options": [
              "greed",
-             "tender",
              "recovery",
-             "speedy"
+             "speedy",
+             "tender"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "an old",
             "after": "who was known for his kindness",
             "options": [
              "recovery",
+             "stag",
              "descriptive words",
-             "tender",
-             "stag"
+             "tender"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "staying on a small",
             "after": "with tender grass",
             "options": [
-             "recovery",
-             "resources",
+             "tender",
              "hillock",
-             "tender"
+             "recovery",
+             "resources"
             ],
-            "answer": 2
+            "answer": 1
            }
           ],
           "labels": {
@@ -14996,12 +14996,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: In a lush forest lived an old stag"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: The grass is so tender and nice"
           }
          ],
@@ -19220,44 +19220,44 @@
             "after": ", was working nearby.",
             "options": [
              "Braille",
-             "eyesight",
              "pincushions",
-             "blacksmith"
+             "blacksmith",
+             "eyesight"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Within a few days, he became",
             "after": "in one eye.",
             "options": [
-             "Night Writing",
-             "Braille symbols",
+             "blind",
              "alphabet",
-             "blind"
+             "Night Writing",
+             "Braille symbols"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "He learnt letters by using wood, cloth or pins arranged in",
             "after": ".",
             "options": [
-             "alphabet",
              "eyesight",
              "pincushions",
+             "alphabet",
              "blind"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "It was an",
             "after": "of raised dots and dashes",
             "options": [
-             "blind",
-             "Braille",
+             "raised dots",
              "alphabet",
-             "raised dots"
+             "Braille",
+             "blind"
             ],
-            "answer": 2
+            "answer": 1
            }
           ],
           "labels": {
@@ -19274,12 +19274,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: His father, a blacksmith , was working nearby."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: Within a few days, he became blind in one eye."
           }
          ],
@@ -25634,44 +25634,44 @@
             "after": ".",
             "options": [
              "match",
-             "referee",
+             "Satoliya",
              "rebuild",
-             "Satoliya"
+             "referee"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "The",
             "after": "blew the whistle and Deepa took the",
             "options": [
              "whistle",
-             "stack",
+             "referee",
              "Satoliya",
-             "referee"
+             "stack"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "The referee blew the",
             "after": "and Deepa took the",
             "options": [
              "flat stones",
-             "rebuild",
+             "whistle",
              "Satoliya",
-             "whistle"
+             "rebuild"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Seven flat stones are",
             "after": "one over the other,",
             "options": [
+             "flat stones",
              "stack",
              "stacked",
-             "flat stones",
              "cousin"
             ],
-            "answer": 1
+            "answer": 2
            }
           ],
           "labels": {
@@ -25688,12 +25688,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: In Rajasthan, we call this game Satoliya ."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: The referee blew the whistle and Deepa took the"
           }
          ],
@@ -35729,22 +35729,22 @@
             "after": "Himalayas",
             "options": [
              "achaar",
-             "Santoor",
              "mighty",
-             "memories"
+             "memories",
+             "Santoor"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "Always remember to respect and",
             "after": "them.",
             "options": [
-             "mighty",
-             "memories",
              "protect",
-             "Sherpa"
+             "memories",
+             "Sherpa",
+             "mighty"
             ],
-            "answer": 2
+            "answer": 0
            }
           ],
           "labels": {
@@ -35761,12 +35761,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: at the foot of the mighty Himalayas"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: Always remember to respect and protect them."
           }
          ],
@@ -39544,45 +39544,45 @@
             "before": "a strong and beautiful",
             "after": "on the banks of the",
             "options": [
-             "handloom weaving",
              "overhanging balconies",
-             "fort",
-             "majestic"
+             "handloom weaving",
+             "majestic",
+             "fort"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "What was Queen Ahilya like as a",
             "after": "?",
             "options": [
-             "overhanging balconies",
-             "kingdom",
              "unique",
-             "ruler"
+             "ruler",
+             "overhanging balconies",
+             "kingdom"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "family, who ruled the",
             "after": ".",
             "options": [
-             "handloom weaving",
              "kingdom",
+             "overhanging balconies",
              "fort",
-             "overhanging balconies"
+             "handloom weaving"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "in front of the palace, like a",
             "after": "watching over her land.",
             "options": [
+             "guardian",
              "unique",
-             "overhanging balconies",
              "fort",
-             "guardian"
+             "overhanging balconies"
             ],
-            "answer": 3
+            "answer": 0
            }
           ],
           "labels": {
@@ -39599,12 +39599,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: a strong and beautiful fort on the banks of the"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: What was Queen Ahilya like as a ruler ?"
           }
          ],

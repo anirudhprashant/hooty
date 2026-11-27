@@ -19152,44 +19152,44 @@
             "after": "is a land surrounded by water",
             "options": [
              "marine life",
-             "island",
              "mangroves",
+             "island",
              "Seven Sisters"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "they went to catch a",
             "after": "to one of",
             "options": [
-             "hunter-gatherers",
              "marine life",
-             "ferry",
-             "life jacket"
+             "hunter-gatherers",
+             "life jacket",
+             "ferry"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "how tiny",
             "after": "give shelter to many creatures",
             "options": [
-             "life jacket",
-             "Bhut Jolokia",
+             "corals",
              "mangroves",
-             "corals"
+             "Bhut Jolokia",
+             "life jacket"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "In 2004, a",
             "after": "hit the region",
             "options": [
              "corals",
+             "tsunami",
              "Bhut Jolokia",
-             "life jacket",
-             "tsunami"
+             "life jacket"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -19206,12 +19206,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: An island is a land surrounded by water"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: they went to catch a ferry to one of"
           }
          ],
@@ -33652,45 +33652,45 @@
             "before": "We all are part of",
             "after": "and the Earth",
             "options": [
-             "Ayurveda",
-             "humanity",
              "chilli",
-             "boundaries"
+             "Ayurveda",
+             "boundaries",
+             "humanity"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "linked through nature,",
             "after": ", travel",
             "options": [
              "borders",
-             "trade",
              "International Space Station",
-             "boundaries"
+             "boundaries",
+             "trade"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "feed on",
             "after": "and grasshoppers",
             "options": [
-             "DIGIPIN",
              "locusts",
+             "jaggery",
              "International Space Station",
-             "jaggery"
+             "DIGIPIN"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "helping farmers by eating the",
             "after": "on the crops",
             "options": [
              "borders",
-             "pests",
              "International Space Station",
+             "pests",
              "jaggery"
             ],
-            "answer": 1
+            "answer": 2
            }
           ],
           "labels": {
@@ -33707,12 +33707,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: We all are part of humanity and the Earth"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: linked through nature, trade , travel"
           }
          ],

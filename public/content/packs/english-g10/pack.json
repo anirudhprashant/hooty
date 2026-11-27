@@ -639,43 +639,43 @@
             "options": [
              "draped",
              "hemlock",
-             "intimately",
-             "crest"
+             "crest",
+             "intimately"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "needed was a",
             "after": "or at least a shower",
             "options": [
              "locusts",
+             "downpour",
              "conscience",
-             "contentment",
-             "downpour"
+             "contentment"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "A plague of",
             "after": "would",
             "options": [
-             "downpour",
              "locusts",
-             "draped",
-             "hemlock"
+             "downpour",
+             "hemlock",
+             "draped"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "experiencing the",
             "after": "of a man",
             "options": [
-             "draped",
              "contentment",
+             "downpour",
              "conscience",
-             "downpour"
+             "draped"
             ],
-            "answer": 1
+            "answer": 0
            }
           ],
           "labels": {
@@ -692,12 +692,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: sat on the crest of a low hill"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: needed was a downpour or at least a shower"
           }
          ],
@@ -4564,33 +4564,33 @@
             "after": "ceremony took place in the Union",
             "options": [
              "besieged",
-             "inauguration",
              "confer",
-             "spectacular array"
+             "spectacular array",
+             "inauguration"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "pleasantly",
             "after": "by dignitaries and world leaders",
             "options": [
-             "African National Congress",
+             "besieged",
              "supremacy",
              "amphitheatre",
-             "besieged"
+             "African National Congress"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "We, who were",
             "after": "not so long ago",
             "options": [
-             "rainbow gathering",
              "African National Congress",
              "outlaws",
-             "not unmindful of"
+             "not unmindful of",
+             "rainbow gathering"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "bondage of poverty,",
@@ -4598,10 +4598,10 @@
             "options": [
              "amphitheatre",
              "African National Congress",
-             "not unmindful of",
-             "deprivation"
+             "deprivation",
+             "not unmindful of"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -4618,12 +4618,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: the inauguration ceremony took place in the Union"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: pleasantly besieged by dignitaries and world leaders"
           }
          ],
@@ -8580,45 +8580,45 @@
             "before": "how to",
             "after": "the waves and how to dive",
             "options": [
+             "skim",
              "preening",
-             "peppered",
              "dizzy",
-             "skim"
+             "peppered"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "catch his first",
             "after": "and devour it",
             "options": [
-             "upbraiding",
              "herring",
-             "whet",
-             "preening"
+             "upbraiding",
+             "preening",
+             "whet"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "His father was",
             "after": "the feathers on his white back.",
             "options": [
+             "caress",
              "dizzy",
              "preening",
-             "caress",
              "upbraiding"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "scrapping his beak now and again to",
             "after": "it",
             "options": [
-             "upbraiding",
-             "caress",
+             "herring",
              "whet",
-             "herring"
+             "caress",
+             "upbraiding"
             ],
-            "answer": 2
+            "answer": 1
            }
           ],
           "labels": {
@@ -8635,12 +8635,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: how to skim the waves and how to dive"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: catch his first herring and devour it"
           }
          ],
@@ -16306,45 +16306,45 @@
             "before": "OUR elders are often heard",
             "after": "nostalgically",
             "options": [
+             "reminiscing",
              "most decorated",
              "fragrance",
-             "reminiscing",
              "drifted from"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "reminiscing",
             "after": "about those good old Portuguese days",
             "options": [
-             "fragrance",
-             "plump physique",
              "heralding",
-             "nostalgically"
+             "nostalgically",
+             "plump physique",
+             "fragrance"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "bamboo,",
             "after": "his arrival in the morning",
             "options": [
-             "drifted from",
              "heralding",
-             "nostalgically",
-             "laidback"
+             "laidback",
+             "drifted from",
+             "nostalgically"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "the typical",
             "after": "of those loaves",
             "options": [
-             "rebuke",
-             "fragrance",
+             "laidback",
              "nostalgically",
-             "laidback"
+             "rebuke",
+             "fragrance"
             ],
-            "answer": 1
+            "answer": 3
            }
           ],
           "labels": {
@@ -16361,12 +16361,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: OUR elders are often heard reminiscing nostalgically"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: reminiscing nostalgically about those good old Portuguese days"
           }
          ],
@@ -20167,45 +20167,45 @@
             "before": "I",
             "after": "to England, and when, three days later,",
             "options": [
+             "thraldom",
              "aloof and indifferent",
              "cabled",
-             "ricochetting bullet",
-             "thraldom"
+             "ricochetting bullet"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "a sack that",
             "after": "from time to time",
             "options": [
-             "a stone’s throw",
+             "thraldom",
              "fixation",
-             "squirmed",
-             "thraldom"
+             "a stone’s throw",
+             "squirmed"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "It is, in effect, a",
             "after": "to otters",
             "options": [
              "a stone’s throw",
+             "thraldom",
              "portly",
-             "aloof and indifferent",
-             "thraldom"
+             "aloof and indifferent"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "an otter",
             "after": ", that I have since found",
             "options": [
-             "portly",
-             "squirmed",
              "a stone’s throw",
-             "fixation"
+             "fixation",
+             "squirmed",
+             "portly"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -20222,12 +20222,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: I cabled to England, and when, three days later,"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: a sack that squirmed from time to time"
           }
          ],
@@ -23454,30 +23454,30 @@
             "after": "at the people",
             "options": [
              "curtly",
+             "merchandise",
              "slack time",
-             "wistfully",
-             "merchandise"
+             "wistfully"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "Their faces would",
             "after": "in her longings",
             "options": [
              "haughtily",
-             "kindle",
              "slang expression",
+             "kindle",
              "slack time"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "she said",
             "after": ". “I’ve paid",
             "options": [
-             "spreadeagled",
-             "kindle",
              "curtly",
+             "kindle",
+             "spreadeagled",
              "haughtily"
             ],
             "answer": 3
@@ -23487,11 +23487,11 @@
             "after": ". “And I’ve got",
             "options": [
              "discreet questions",
-             "kindle",
+             "curtly",
              "spreadeagled",
-             "curtly"
+             "kindle"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -23508,12 +23508,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: Valli would stare wistfully at the people"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: Their faces would kindle in her longings"
           }
          ],
@@ -27418,34 +27418,34 @@
             "before": "he became known as the",
             "after": "(the Awakened or the Enlightened)",
             "options": [
-             "valley of desolation",
-             "dipping places",
              "Buddha",
-             "Bodhi Tree"
+             "Bodhi Tree",
+             "dipping places",
+             "valley of desolation"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "Go to",
             "after": ", the Buddha",
             "options": [
-             "inscrutable",
              "Sakyamuni",
-             "dipping places",
-             "enlightenment"
+             "inscrutable",
+             "enlightenment",
+             "dipping places"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "nor",
             "after": "their relations",
             "options": [
-             "valley of desolation",
+             "kinsmen",
              "enlightenment",
              "Buddha",
-             "kinsmen"
+             "valley of desolation"
             ],
-            "answer": 3
+            "answer": 0
            }
           ],
           "labels": {
@@ -27462,12 +27462,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: he became known as the Buddha (the Awakened or the Enlightened)"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: Go to Sakyamuni , the Buddha"
           }
          ],
@@ -31443,45 +31443,45 @@
             "before": "I suffer from",
             "after": ", I’m excitable",
             "options": [
-             "accustomed",
+             "misfortune",
              "pedigree",
-             "palpitations",
-             "misfortune"
+             "accustomed",
+             "palpitations"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "Hear me out, I",
             "after": "you!",
             "options": [
-             "interfere",
-             "principle",
              "implore",
-             "pedigree"
+             "pedigree",
+             "principle",
+             "interfere"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "our Squeezer is a",
             "after": "animal",
             "options": [
              "temporary",
+             "misfortune",
              "thoroughbred",
-             "interfere",
-             "misfortune"
+             "interfere"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "no getting at the",
             "after": "of your dog",
             "options": [
+             "interfere",
              "thoroughbred",
              "pedigree",
-             "temporary",
-             "interfere"
+             "temporary"
             ],
-            "answer": 1
+            "answer": 2
            }
           ],
           "labels": {
@@ -31498,12 +31498,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: I suffer from palpitations , I’m excitable"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: Hear me out, I implore you!"
           }
          ],

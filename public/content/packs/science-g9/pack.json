@@ -601,21 +601,21 @@
             "before": "Building such models involves making",
             "after": "and deliberately ignoring certain details.",
             "options": [
-             "assumption",
-             "air resistance",
              "scientific language",
-             "assumptions"
+             "assumptions",
+             "air resistance",
+             "assumption"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "each associated with a defined",
             "after": ".",
             "options": [
+             "law",
              "air resistance",
-             "assumption",
              "unit",
-             "law"
+             "assumption"
             ],
             "answer": 2
            },
@@ -623,23 +623,23 @@
             "before": "A",
             "after": "usually describes a regular pattern observed in nature",
             "options": [
-             "unit",
              "assumption",
              "law",
+             "unit",
              "equation"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "a",
             "after": "does not mean a guess or an untested idea",
             "options": [
-             "assumption",
              "estimate",
-             "theory",
-             "equation"
+             "assumption",
+             "equation",
+             "theory"
             ],
-            "answer": 2
+            "answer": 3
            }
           ],
           "labels": {
@@ -656,7 +656,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: Building such models involves making assumptions and deliberately ignoring certain details."
           },
           {

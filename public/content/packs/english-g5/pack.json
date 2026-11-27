@@ -4233,22 +4233,22 @@
             "after": "past",
             "options": [
              "goalpost",
-             "rustling",
              "boast",
-             "hockey ball"
+             "hockey ball",
+             "rustling"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "falling with a",
             "after": "in the garden",
             "options": [
-             "hockey ball",
              "rustling",
-             "mat",
-             "thud"
+             "hockey ball",
+             "thud",
+             "mat"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "his eyes fell on a",
@@ -4256,21 +4256,21 @@
             "options": [
              "rustling",
              "unaware",
-             "goalpost",
-             "heap"
+             "heap",
+             "goalpost"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Ramani",
             "after": "the ball with the stick",
             "options": [
+             "dribbled",
              "rustling",
-             "mat",
              "heap",
-             "dribbled"
+             "mat"
             ],
-            "answer": 3
+            "answer": 0
            }
           ],
           "labels": {
@@ -4287,12 +4287,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: he heard something rustling past"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: falling with a thud in the garden"
           }
          ],
@@ -8268,45 +8268,45 @@
             "before": "There are",
             "after": "on the rivers",
             "options": [
-             "handkerchief",
-             "noun",
+             "bridges",
              "heaven",
-             "bridges"
+             "handkerchief",
+             "noun"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "But the",
             "after": "that bridges heaven",
             "options": [
-             "bridges",
-             "VIBGYOR",
              "bow",
-             "heaven"
+             "bridges",
+             "heaven",
+             "VIBGYOR"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "Are",
             "after": "far than these",
             "options": [
+             "handkerchief",
              "bridges",
              "verb",
-             "prettier",
-             "handkerchief"
+             "prettier"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "Write the",
             "after": "of the following words",
             "options": [
-             "VIBGYOR",
              "opposites",
-             "bridges",
-             "prettier"
+             "VIBGYOR",
+             "prettier",
+             "bridges"
             ],
-            "answer": 1
+            "answer": 0
            }
           ],
           "labels": {
@@ -8323,12 +8323,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: There are bridges on the rivers"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: But the bow that bridges heaven"
           }
          ],
@@ -11787,34 +11787,34 @@
             "before": "a rich",
             "after": "kept a bright",
             "options": [
-             "windowsill",
-             "tender",
              "bird sanctuary",
-             "merchant"
+             "merchant",
+             "tender",
+             "windowsill"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "parrot fell from the",
             "after": "to the floor of the cage.",
             "options": [
-             "flight",
-             "perch",
+             "distressed",
              "sighed",
-             "distressed"
+             "perch",
+             "flight"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "of the bird and placed it on the",
             "after": ".",
             "options": [
+             "windowsill",
              "bird sanctuary",
              "distressed",
-             "windowsill",
              "perch"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "The merchant was",
@@ -11822,10 +11822,10 @@
             "options": [
              "perch",
              "sorrow",
-             "windowsill",
-             "distressed"
+             "distressed",
+             "windowsill"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -11842,12 +11842,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: a rich merchant kept a bright"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: parrot fell from the perch to the floor of the cage."
           }
          ],
@@ -15518,42 +15518,42 @@
             "before": "I",
             "after": "around, I jump so high,",
             "options": [
-             "flick",
              "damp",
-             "hop",
-             "insect"
+             "insect",
+             "flick",
+             "hop"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "Or hop about in a",
             "after": "drain.",
             "options": [
-             "drain",
-             "muddy",
              "damp",
-             "beware"
+             "drain",
+             "beware",
+             "muddy"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "Or hop about in a muddy",
             "after": ".",
             "options": [
+             "drain",
              "flick",
-             "moist",
              "muddy",
-             "drain"
+             "moist"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "In places damp with drops of",
             "after": ".",
             "options": [
-             "damp",
-             "muddy",
              "moist",
+             "muddy",
+             "damp",
              "dew"
             ],
             "answer": 3
@@ -15573,12 +15573,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: I hop around, I jump so high,"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: Or hop about in a muddy drain."
           }
          ],
@@ -26301,45 +26301,45 @@
             "before": "The members of the",
             "after": "gathered under the banyan tree",
             "options": [
-             "priceless",
              "Panchayat",
-             "summon",
-             "cunning"
+             "cunning",
+             "priceless",
+             "summon"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "pay a fine as well as",
             "after": "to the farmer.",
             "options": [
-             "prospered",
              "cunning",
              "apologise",
+             "prospered",
              "adamant"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "The villagers praised the",
             "after": "of the Panchayat.",
             "options": [
-             "apologise",
-             "twig",
+             "summon",
              "wisdom",
-             "summon"
+             "apologise",
+             "twig"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "When he",
             "after": ", he bought another field.",
             "options": [
-             "wisdom",
              "apologise",
              "twig",
-             "prospered"
+             "prospered",
+             "wisdom"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -26356,12 +26356,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: The members of the Panchayat gathered under the banyan tree"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: pay a fine as well as apologise to the farmer."
           }
          ],
@@ -30241,45 +30241,45 @@
             "before": "Talk about the meaning of ‘",
             "after": "’ and ‘work’",
             "options": [
-             "lane",
+             "vocation",
              "bangles",
              "giant",
-             "vocation"
+             "lane"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "Every day I meet the",
             "after": "crying, “Bangles,",
             "options": [
-             "spade",
              "gardener",
-             "hawker",
-             "giant"
+             "spade",
+             "giant",
+             "hawker"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "I wish I were a",
             "after": "digging away at the garden",
             "options": [
-             "giant",
-             "gardener",
+             "gong",
              "bangles",
-             "gong"
+             "giant",
+             "gardener"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "the",
             "after": "walking up and down",
             "options": [
              "lantern",
-             "giant",
+             "watchman",
              "gong",
-             "watchman"
+             "giant"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -30296,12 +30296,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: Talk about the meaning of ‘ vocation ’ and ‘work’"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: Every day I meet the hawker crying, “Bangles,"
           }
          ],
@@ -34026,44 +34026,44 @@
             "after": "of the artisans",
             "options": [
              "traditional",
-             "craftsmanship",
+             "clinking",
              "besan",
-             "clinking"
+             "craftsmanship"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "maintaining the truthfulness of their",
             "after": "craft",
             "options": [
-             "artisan",
-             "furnace",
+             "traditional",
              "clinking",
-             "traditional"
+             "artisan",
+             "furnace"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "Diwali is the",
             "after": "of lights",
             "options": [
-             "laddu",
-             "festival",
+             "artisan",
              "floral pattern",
-             "artisan"
+             "festival",
+             "laddu"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "This is called",
             "after": "on the Savings Account.",
             "options": [
-             "besan",
              "artisan",
-             "furnace",
-             "interest"
+             "besan",
+             "interest",
+             "furnace"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -34080,12 +34080,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: wonderful craftsmanship of the artisans"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: maintaining the truthfulness of their traditional craft"
           }
          ],

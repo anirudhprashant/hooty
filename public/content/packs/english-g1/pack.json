@@ -622,34 +622,34 @@
             "before": "",
             "after": "to move, eyes to see",
             "options": [
-             "knee",
-             "hand",
-             "clap",
-             "head"
-            ],
-            "answer": 3
-           },
-           {
-            "before": "Head, shoulders,",
-            "after": "and toes",
-            "options": [
-             "clap",
-             "mouth",
-             "hand",
-             "knees"
-            ],
-            "answer": 3
-           },
-           {
-            "before": "I",
-            "after": "with my hands.",
-            "options": [
              "hand",
              "head",
              "clap",
              "knee"
             ],
-            "answer": 2
+            "answer": 1
+           },
+           {
+            "before": "Head, shoulders,",
+            "after": "and toes",
+            "options": [
+             "knees",
+             "mouth",
+             "clap",
+             "hand"
+            ],
+            "answer": 0
+           },
+           {
+            "before": "I",
+            "after": "with my hands.",
+            "options": [
+             "clap",
+             "knee",
+             "hand",
+             "head"
+            ],
+            "answer": 0
            }
           ],
           "labels": {
@@ -666,12 +666,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is:  head to move, eyes to see"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: Head, shoulders, knees and toes"
           }
          ],
@@ -4016,45 +4016,45 @@
             "before": "When I meet someone, I say ‘",
             "after": "’.",
             "options": [
+             "Namaste",
              "sparrow",
              "hop",
-             "Namaste",
              "bed"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "When I go to",
             "after": ", I say ‘Good night’.",
             "options": [
-             "morning",
              "evening",
              "comb",
-             "bed"
+             "bed",
+             "morning"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Hop a little,",
             "after": "a little,",
             "options": [
-             "bell",
-             "nest",
              "morning",
-             "jump"
+             "nest",
+             "jump",
+             "bell"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Stamp a little,",
             "after": "a little,",
             "options": [
              "nest",
-             "morning",
              "evening",
-             "skip"
+             "skip",
+             "morning"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -4071,12 +4071,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: When I meet someone, I say ‘ Namaste ’."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: When I go to bed , I say ‘Good night’."
           }
          ],
@@ -10453,23 +10453,23 @@
             "before": "caps in a",
             "after": "on his head.",
             "options": [
-             "woke up",
              "empty",
-             "lid",
-             "basket"
+             "basket",
+             "woke up",
+             "lid"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "The cap-seller shook his",
             "after": "at",
             "options": [
-             "wearing",
-             "fists",
+             "idea",
              "woke up",
-             "idea"
+             "wearing",
+             "fists"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "The cap-seller",
@@ -10477,21 +10477,21 @@
             "options": [
              "basket",
              "lid",
-             "woke up",
-             "scratched"
+             "scratched",
+             "woke up"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "The cap-seller had an",
             "after": "!",
             "options": [
              "basket",
-             "fists",
              "idea",
-             "woke up"
+             "woke up",
+             "fists"
             ],
-            "answer": 2
+            "answer": 1
            }
           ],
           "labels": {
@@ -10508,12 +10508,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: caps in a basket on his head."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: The cap-seller shook his fists at"
           }
          ],
@@ -13524,32 +13524,32 @@
             "before": "My dear",
             "after": "had a farm",
             "options": [
-             "crow",
              "cow",
              "hen",
-             "grandpa"
+             "grandpa",
+             "crow"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "the",
             "after": "of my house",
             "options": [
-             "moo-moo",
              "field",
-             "hen",
-             "verandah"
+             "moo-moo",
+             "verandah",
+             "hen"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "There is a",
             "after": "beside my house",
             "options": [
-             "grandpa",
+             "hen",
              "field",
-             "crow",
-             "hen"
+             "grandpa",
+             "crow"
             ],
             "answer": 1
            },
@@ -13558,11 +13558,11 @@
             "after": "in it",
             "options": [
              "peacock",
+             "snakes",
              "parrot",
-             "monkey",
-             "snakes"
+             "monkey"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -13579,12 +13579,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: My dear grandpa had a farm"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: the verandah of my house"
           }
          ],
@@ -16624,12 +16624,12 @@
             "before": "Mini’s father is a",
             "after": ".",
             "options": [
+             "vegetables",
              "jasmine",
              "farmer",
-             "vegetables",
              "traveller"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "He sells them in the",
@@ -16637,32 +16637,32 @@
             "options": [
              "nests",
              "share",
-             "squirrel",
-             "market"
+             "market",
+             "squirrel"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "He grows",
             "after": "in his",
             "options": [
              "nests",
+             "vegetables",
              "market",
-             "jasmine",
-             "vegetables"
+             "jasmine"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "One for the",
             "after": "who rests",
             "options": [
-             "nests",
-             "traveller",
+             "market",
              "rabbit",
-             "market"
+             "traveller",
+             "nests"
             ],
-            "answer": 1
+            "answer": 2
            }
           ],
           "labels": {
@@ -16679,12 +16679,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: Mini’s father is a farmer ."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: He sells them in the market ."
           }
          ],
@@ -19757,23 +19757,23 @@
             "before": "We make",
             "after": "and butter from the milk",
             "options": [
-             "sabzi",
-             "curds",
+             "lunch",
              "aloo",
-             "lunch"
+             "sabzi",
+             "curds"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "We make curds and",
             "after": "from the milk",
             "options": [
-             "idli",
-             "gobhi paratha",
+             "butter",
              "roti",
-             "butter"
+             "idli",
+             "gobhi paratha"
             ],
-            "answer": 3
+            "answer": 0
            }
           ],
           "labels": {
@@ -19790,12 +19790,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: We make curds and butter from the milk"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: We make curds and butter from the milk"
           }
          ],
@@ -22699,34 +22699,34 @@
             "before": "Prithvi has gone to",
             "after": ".",
             "options": [
-             "monsoon",
-             "cool",
              "rays",
-             "Shimla"
+             "cool",
+             "Shimla",
+             "monsoon"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "She is wearing a cotton",
             "after": ".",
             "options": [
-             "dip",
              "frock",
              "cool",
+             "dip",
              "bloom"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "Pitter patter",
             "after": ",",
             "options": [
-             "monsoon",
-             "bloom",
+             "Hyderabad",
              "raindrops",
-             "Hyderabad"
+             "bloom",
+             "monsoon"
             ],
-            "answer": 2
+            "answer": 1
            }
           ],
           "labels": {
@@ -22743,12 +22743,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: Prithvi has gone to Shimla ."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: She is wearing a cotton frock ."
           }
          ],
@@ -26397,34 +26397,34 @@
             "before": "across a",
             "after": "blue sky.",
             "options": [
-             "draw",
              "clear",
              "gay",
+             "draw",
              "huge"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "loved to draw and",
             "after": ".",
             "options": [
-             "bright",
              "huge",
              "paint",
+             "bright",
              "dreaming"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "the",
             "after": "of the rainbow.",
             "options": [
-             "favourite",
              "dreaming",
-             "indigo",
-             "glory"
+             "glory",
+             "favourite",
+             "indigo"
             ],
-            "answer": 2
+            "answer": 3
            }
           ],
           "labels": {
@@ -26441,12 +26441,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: across a clear blue sky."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: loved to draw and paint ."
           }
          ],

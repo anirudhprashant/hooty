@@ -712,10 +712,10 @@
             "before": "Makes my friends move",
             "after": ".",
             "options": [
+             "air",
              "disabled",
-             "helmet",
              "aside",
-             "air"
+             "helmet"
             ],
             "answer": 2
            },
@@ -725,32 +725,32 @@
             "options": [
              "helmet",
              "everywhere",
-             "track",
-             "aside"
+             "aside",
+             "track"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "I put on my little",
             "after": ",",
             "options": [
-             "aside",
-             "air",
              "helmet",
-             "movement"
+             "movement",
+             "aside",
+             "air"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "And go happily",
             "after": ".",
             "options": [
+             "track",
              "movement",
              "aside",
-             "everywhere",
-             "track"
+             "everywhere"
             ],
-            "answer": 2
+            "answer": 3
            }
           ],
           "labels": {
@@ -772,7 +772,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: But my bicycle is always on track ."
           }
          ],
@@ -4613,45 +4613,45 @@
             "before": "Both of them",
             "after": "the rope.",
             "options": [
-             "tied",
-             "locked",
              "skipped",
-             "ball"
+             "locked",
+             "ball",
+             "tied"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "Both of them skipped the",
             "after": ".",
             "options": [
-             "threw",
-             "ball",
+             "rope",
              "skipped",
-             "rope"
+             "ball",
+             "threw"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "This time Babli picked the ball. Jeet picked the",
             "after": ".",
             "options": [
              "scattered",
+             "skipped",
              "locked",
-             "bat",
-             "skipped"
+             "bat"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "This time Babli picked the",
             "after": ". Jeet picked the bat.",
             "options": [
-             "scattered",
              "bat",
              "ball",
-             "skipped"
+             "skipped",
+             "scattered"
             ],
-            "answer": 2
+            "answer": 1
            }
           ],
           "labels": {
@@ -4668,12 +4668,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: Both of them skipped the rope."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: Both of them skipped the rope ."
           }
          ],
@@ -8266,45 +8266,45 @@
             "before": "Can you identify the",
             "after": "?",
             "options": [
+             "sounds",
              "climb",
-             "leap",
              "letter",
-             "sounds"
+             "leap"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "quack of a duck,",
             "after": "of a sheep, etc.",
             "options": [
-             "sounds",
-             "bleat",
+             "trot",
              "swim",
-             "trot"
+             "bleat",
+             "sounds"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "I is both a",
             "after": "and a word (clap clap clap)",
             "options": [
              "swim",
-             "climb",
              "letter",
-             "bleat"
+             "bleat",
+             "climb"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "I is both a letter and a",
             "after": "(clap clap clap)",
             "options": [
-             "climb",
-             "word",
              "fly",
-             "swim"
+             "climb",
+             "swim",
+             "word"
             ],
-            "answer": 1
+            "answer": 3
            }
           ],
           "labels": {
@@ -8321,12 +8321,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: Can you identify the sounds ?"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: quack of a duck, bleat of a sheep, etc."
           }
          ],
@@ -11436,42 +11436,42 @@
             "after": "today,” said Ava.",
             "options": [
              "exercise",
-             "sniff",
+             "quiet",
              "remove",
-             "quiet"
+             "sniff"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "The teacher helped him sit in the",
             "after": "desk,",
             "options": [
-             "blink",
              "front",
+             "joy",
              "identify",
-             "joy"
+             "blink"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "Onshangla bent forward and",
             "after": "at it.",
             "options": [
-             "direction",
-             "blink",
              "front",
-             "sniffed"
+             "blink",
+             "sniffed",
+             "direction"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Now I will",
             "after": "the scarf.",
             "options": [
+             "protect",
              "mother tongue",
-             "joy",
              "remove",
-             "protect"
+             "joy"
             ],
             "answer": 2
            }
@@ -11490,12 +11490,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: “Onshangla you are very quiet today,” said Ava."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: The teacher helped him sit in the front desk,"
           }
          ],
@@ -15112,21 +15112,21 @@
             "before": "Draw the",
             "after": "that you like the most.",
             "options": [
-             "train",
-             "recite",
              "wings",
-             "vehicle"
+             "recite",
+             "vehicle",
+             "train"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Sort out the different means of",
             "after": "given in the boxes",
             "options": [
-             "train",
+             "near",
              "wheels",
              "transport",
-             "near"
+             "train"
             ],
             "answer": 2
            },
@@ -15134,23 +15134,23 @@
             "before": "depending on the",
             "after": "they move on.",
             "options": [
-             "wheels",
-             "transport",
+             "near",
              "surface",
-             "near"
+             "wheels",
+             "transport"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "Help children to",
             "after": "the names of vehicles.",
             "options": [
              "real",
+             "classify",
              "transport",
-             "taxi",
-             "classify"
+             "taxi"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -15167,7 +15167,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: Draw the vehicle that you like the most."
           },
           {
@@ -22361,44 +22361,44 @@
             "after": "/city?",
             "options": [
              "room",
-             "house",
              "town",
-             "differences"
+             "differences",
+             "house"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "Can you spot the",
             "after": "?",
             "options": [
-             "bed",
-             "flower",
              "differences",
-             "room"
+             "bed",
+             "room",
+             "flower"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "Then frame a",
             "after": "using that word.",
             "options": [
-             "area",
-             "sentence",
              "room",
-             "street"
+             "area",
+             "street",
+             "sentence"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "Point to the",
             "after": "that represents the word.",
             "options": [
-             "basket",
-             "room",
              "object",
-             "street"
+             "room",
+             "street",
+             "basket"
             ],
-            "answer": 2
+            "answer": 0
            }
           ],
           "labels": {
@@ -22415,12 +22415,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: What is the name of your town /city?"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: Can you spot the differences ?"
           }
          ],
@@ -25392,9 +25392,9 @@
             "after": "on my back,",
             "options": [
              "sky",
-             "back",
+             "sea",
              "lie",
-             "sea"
+             "back"
             ],
             "answer": 2
            },
@@ -25403,8 +25403,8 @@
             "after": "sailing,",
             "options": [
              "lie",
-             "bear",
              "back",
+             "bear",
              "ship"
             ],
             "answer": 3
@@ -25413,10 +25413,10 @@
             "before": "Waving its",
             "after": "at me.",
             "options": [
-             "bear",
+             "back",
              "trunk",
-             "clouds",
-             "back"
+             "bear",
+             "clouds"
             ],
             "answer": 1
            },
@@ -25424,12 +25424,12 @@
             "before": "",
             "after": "its trunk at me.",
             "options": [
-             "sailing",
-             "clouds",
+             "colours",
              "waving",
-             "colours"
+             "sailing",
+             "clouds"
             ],
-            "answer": 2
+            "answer": 1
            }
           ],
           "labels": {
@@ -28675,21 +28675,21 @@
             "before": "The",
             "after": "said, “I don’t know.",
             "options": [
-             "wind",
-             "breeze",
              "grass",
-             "ant"
+             "wind",
+             "ant",
+             "breeze"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "cow sleeping in my",
             "after": ".",
             "options": [
-             "chirp",
+             "remembered",
              "shade",
              "forgotten",
-             "remembered"
+             "chirp"
             ],
             "answer": 1
            },
@@ -28698,22 +28698,22 @@
             "after": "I eat.",
             "options": [
              "remembered",
-             "grass",
              "breeze",
-             "shade"
+             "shade",
+             "grass"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "Seeing this, the fly",
             "after": "his name!",
             "options": [
-             "caw",
-             "wind",
+             "remembered",
              "shade",
-             "remembered"
+             "wind",
+             "caw"
             ],
-            "answer": 3
+            "answer": 0
            }
           ],
           "labels": {
@@ -28730,7 +28730,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: The ant said, “I don’t know."
           },
           {
@@ -35945,45 +35945,45 @@
             "before": "One day Anju and Farida went to the",
             "after": ".",
             "options": [
-             "nearby",
              "packet",
              "groundnuts",
-             "market"
+             "market",
+             "nearby"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "bought a",
             "after": "of groundnuts and a bottle of juice.",
             "options": [
-             "bench",
-             "peel",
+             "packet",
              "juice",
-             "packet"
+             "bench",
+             "peel"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "Then they drank the",
             "after": "and threw down the bottle.",
             "options": [
-             "groundnuts",
              "water bottle",
-             "nearby",
-             "juice"
+             "juice",
+             "groundnuts",
+             "nearby"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "They sat on a",
             "after": "under a tree to rest.",
             "options": [
              "water bottle",
+             "groundnuts",
              "branch",
-             "bench",
-             "groundnuts"
+             "bench"
             ],
-            "answer": 2
+            "answer": 3
            }
           ],
           "labels": {
@@ -36000,12 +36000,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 3",
            "then": "The sentence is: One day Anju and Farida went to the market ."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 4",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: bought a packet of groundnuts and a bottle of juice."
           }
          ],
@@ -43448,44 +43448,44 @@
             "after": "is Pongal.",
             "options": [
              "Mahatma Gandhi",
+             "festival",
              "Aadi Perukku",
-             "neighbour",
-             "festival"
+             "neighbour"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "I enjoy seeing",
             "after": "shows.",
             "options": [
+             "unique",
              "neighbour",
              "puppet",
-             "travel",
-             "unique"
+             "travel"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "I like",
             "after": "and music.",
             "options": [
-             "Pang Lhabsol",
-             "painting",
+             "puppet",
              "Mahatma Gandhi",
-             "puppet"
+             "Pang Lhabsol",
+             "painting"
             ],
-            "answer": 1
+            "answer": 3
            },
            {
             "before": "My",
             "after": "Mallika likes to do Bhangra.",
             "options": [
              "puppet",
-             "painting",
              "neighbour",
-             "Pang Lhabsol"
+             "Pang Lhabsol",
+             "painting"
             ],
-            "answer": 2
+            "answer": 1
            }
           ],
           "labels": {
@@ -43502,12 +43502,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: My favourite festival is Pongal."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: I enjoy seeing puppet shows."
           }
          ],

@@ -647,45 +647,45 @@
             "before": "A big bright tear",
             "after": "down her nose.",
             "options": [
+             "splashed",
              "strive",
              "thicket",
-             "clump",
-             "splashed"
+             "clump"
             ],
-            "answer": 3
+            "answer": 0
            },
            {
             "before": "A green lizard",
             "after": "down to the river’s edge",
             "options": [
+             "thicket",
              "rustle",
              "slithered",
-             "murmuring",
-             "thicket"
+             "murmuring"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "said a sleepy,",
             "after": "voice",
             "options": [
-             "clump",
-             "braced",
              "murmuring",
-             "slithered"
+             "clump",
+             "slithered",
+             "braced"
             ],
-            "answer": 2
+            "answer": 0
            },
            {
             "before": "Jahnavi was",
             "after": ", because she was sure",
             "options": [
-             "slithered",
              "thicket",
-             "startled",
-             "braced"
+             "braced",
+             "slithered",
+             "startled"
             ],
-            "answer": 2
+            "answer": 3
            }
           ],
           "labels": {
@@ -702,12 +702,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: A big bright tear splashed down her nose."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 3",
            "then": "The sentence is: A green lizard slithered down to the river’s edge"
           }
          ],
@@ -4647,45 +4647,45 @@
             "before": "my wife, Theodosia, is a",
             "after": ", and she read your book",
             "options": [
-             "suffix",
              "scholar",
              "phrasal verb",
+             "suffix",
              "cellar"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "wearing glasses in the",
             "after": ", round Puddleby",
             "options": [
-             "compound word",
              "cracker",
              "countryside",
-             "cellar"
+             "cellar",
+             "compound word"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "A",
             "after": "is a nonsensical and funny verse consisting of five lines.",
             "options": [
-             "present perfect continuous",
-             "limerick",
              "cracker",
-             "palindrome"
+             "palindrome",
+             "limerick",
+             "present perfect continuous"
             ],
-            "answer": 1
+            "answer": 2
            },
            {
             "before": "Such word endings are called",
             "after": ".",
             "options": [
+             "suffixes",
              "countryside",
              "cracker",
-             "suffixes",
              "compound word"
             ],
-            "answer": 2
+            "answer": 0
            }
           ],
           "labels": {
@@ -4702,12 +4702,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: my wife, Theodosia, is a scholar , and she read your book"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: wearing glasses in the countryside , round Puddleby"
           }
          ],
@@ -8163,44 +8163,44 @@
             "after": "was all about",
             "options": [
              "clanging",
+             "racket",
              "tinkering",
-             "crestfallen look",
-             "racket"
+             "crestfallen look"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Papa standing there,",
             "after": "wet and scowling",
             "options": [
-             "tinkering",
+             "scowling",
              "dynamos",
-             "sopping",
-             "scowling"
+             "tinkering",
+             "sopping"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "He loves",
             "after": "with all sorts of electrical gadgets",
             "options": [
              "ruffianly",
-             "clanging",
              "tinkering",
-             "sopping"
+             "sopping",
+             "clanging"
             ],
-            "answer": 2
+            "answer": 1
            },
            {
             "before": "the",
             "after": "drawing of doors, wires, and bells",
             "options": [
+             "elaborate",
              "sopping",
-             "ruffianly",
              "rigged up",
-             "elaborate"
+             "ruffianly"
             ],
-            "answer": 3
+            "answer": 0
            }
           ],
           "labels": {
@@ -8217,12 +8217,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: what the racket was all about"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: Papa standing there, sopping wet and scowling"
           }
          ],
@@ -11950,34 +11950,34 @@
             "before": "Heat waves",
             "after": "along the railway embankment where",
             "options": [
-             "cutting",
              "shimmered",
-             "scrub-covered",
-             "swishing"
+             "swishing",
+             "cutting",
+             "scrub-covered"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "Suraj stood near the",
             "after": ", waiting for the midday train.",
             "options": [
-             "instinctively",
              "cutting",
-             "shisham",
-             "flinch"
+             "flinch",
+             "instinctively",
+             "shisham"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "Even the trees seemed to",
             "after": "from the noise and heat.",
             "options": [
-             "railway embankment",
-             "swishing",
              "scrub-covered",
-             "flinch"
+             "flinch",
+             "railway embankment",
+             "swishing"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "over the tall",
@@ -11985,10 +11985,10 @@
             "options": [
              "scrub-covered",
              "flinch",
-             "railway embankment",
-             "shisham"
+             "shisham",
+             "railway embankment"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -12005,12 +12005,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 2",
+           "when": "item == 0 and choice == 1",
            "then": "The sentence is: Heat waves shimmered along the railway embankment where"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: Suraj stood near the cutting , waiting for the midday train."
           }
          ],
@@ -15930,10 +15930,10 @@
             "before": "\"It was",
             "after": "and then inaugurated by India’s Prime Minister\"",
             "options": [
-             "posthumously",
+             "wreaths",
              "envisioned",
              "tribute",
-             "wreaths"
+             "posthumously"
             ],
             "answer": 1
            },
@@ -15941,34 +15941,34 @@
             "before": "\"near the",
             "after": "India Gate\"",
             "options": [
-             "etched",
              "iconic",
-             "territorial integrity",
-             "tribute"
+             "tribute",
+             "etched",
+             "territorial integrity"
             ],
-            "answer": 1
+            "answer": 0
            },
            {
             "before": "\"a",
             "after": "to some of the bravest Indians\"",
             "options": [
-             "territorial integrity",
              "interminable",
-             "tribute",
-             "posthumously"
+             "territorial integrity",
+             "posthumously",
+             "tribute"
             ],
-            "answer": 2
+            "answer": 3
            },
            {
             "before": "\"names of fallen soldiers have been",
             "after": "\"",
             "options": [
-             "iconic",
-             "interminable",
              "territorial integrity",
-             "etched"
+             "etched",
+             "interminable",
+             "iconic"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -15990,7 +15990,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
+           "when": "item == 1 and choice == 1",
            "then": "The sentence is: \"near the iconic India Gate\""
           }
          ],
