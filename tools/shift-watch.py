@@ -43,6 +43,17 @@ def main():
     now = dt.datetime.now(IST)
     problems = []
 
+    # When each job was created, so a brand-new lane is not reported as broken before its first slot.
+    job_created = {}
+    try:
+        raw = json.load(open('/home/ubuntu/.hermes/cron/jobs.json'))
+        for job in (raw if isinstance(raw, list) else raw.get('jobs', [])):
+            stamp = job.get('created_at')
+            if stamp:
+                job_created[job.get('id') or job.get('job_id')] = dt.datetime.fromisoformat(str(stamp)).astimezone(IST)
+    except Exception:
+        pass
+
     # --- lanes: did each one run lately, and did it end well? -------------------------------------
     con = None
     try:
@@ -55,6 +66,11 @@ def main():
             row = con.execute('select status, started_at, error from executions where job_id = ? '
                               'order by started_at desc limit 1', (job_id,)).fetchone()
             if not row:
+                # A lane added in the last ten hours has simply not had its first slot yet; complaining
+                # would teach Anirudh to ignore this watchdog, which is worse than staying quiet.
+                created = job_created.get(job_id)
+                if created and (now - created).total_seconds() < 10 * 3600:
+                    continue
                 problems.append(f'{lane} lane has never run')
                 continue
             status, started_at, error = row
