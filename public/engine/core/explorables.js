@@ -1078,7 +1078,8 @@ export const WIDGETS = {
       const vol = v.pick === 0 ? Math.PI * v.rr ** 2 * v.ht : v.pick === 1 ? (Math.PI * v.rr ** 2 * v.ht) / 3 : (4 * Math.PI * v.rr ** 3) / 3;
       const area = v.pick === 0 ? 2 * Math.PI * v.rr * (v.rr + v.ht) : v.pick === 1 ? Math.PI * v.rr * (v.rr + Math.hypot(v.rr, v.ht)) : 4 * Math.PI * v.rr ** 2;
       const rule = v.pick === 0 ? 'V = pi x r x r x h' : v.pick === 1 ? 'V = one third of pi x r x r x h' : 'V = four thirds of pi x r x r x r';
-      kids.push(T(300, 286, `${rule}, so volume = ${num(vol, 1)} cm3 and surface area = ${num(area, 1)} cm2.`, { z: 15, f: '#4b3a6b' }));
+      kids.push(T(300, 26, rule, { z: 17, f: '#4b3a6b' }));
+      kids.push(T(300, 272, `volume = ${num(vol, 1)} cm3`, { z: 16, f: '#4b3a6b' }), T(300, 292, `surface area = ${num(area, 1)} cm2`, { z: 16, f: '#4b3a6b' }));
       const say = v.pick === 2
         ? `The sphere has radius ${v.rr} cm. Volume = 4/3 x pi x ${v.rr} x ${v.rr} x ${v.rr} = ${num(vol, 1)} cm3. Surface area = 4 x pi x ${v.rr} x ${v.rr} = ${num(area, 1)} cm2. The height slider does not change a sphere.`
         : `The ${names[v.pick]} has radius ${v.rr} cm and height ${v.ht} cm. Volume = ${num(vol, 1)} cm3 and surface area = ${num(area, 1)} cm2.`;
@@ -2042,12 +2043,13 @@ export const WIDGETS = {
       const pieces = small ? [[50, v.f, '#5fc9b8', true], [20, v.tw, '#b794f4', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [2, v.two, '#d9b3a0', false], [1, v.o, '#c8c8c8', false]] : [[100, v.h, '#7fb3d5', true], [50, v.f, '#5fc9b8', true], [10, v.t, '#c9a46a', true], [5, v.v, '#e0c050', false], [1, v.o, '#c8c8c8', false]];
       const got = pieces.reduce((a, [val, n]) => a + val * n, 0), kids = [T(300, 32, `Make ₹${want}`, { z: 22 })];
       // lay the notes and coins out in rows, smaller when there are many so they stay above the total
-      const many = pieces.reduce((a, [, n]) => a + n, 0), sc = many > 24 ? 0.6 : many > 14 ? 0.78 : 1, shown = [];
+      const many = pieces.reduce((a, [, n]) => a + n, 0), sc = many > 14 ? 0.85 : 1, shown = [];
+      const noteZ = Math.round(17 / sc), coinZ = Math.round(16 / sc);
       let x = 30, y = 60;
       for (const [val, n, col, note] of pieces) for (let i = 0; i < n; i++) {
         if (x > 30 + 490 / sc) { x = 30; y += 54; }
-        if (note) shown.push(R(x, y, 74, 40, col, { w: 2, r: 4 }), T(x + 37, y + 27, `₹${val}`, { z: 16, w: 700 }));
-        else shown.push(CIRC(x + 20, y + 20, 19, col, { w: 2 }), T(x + 20, y + 26, `₹${val}`, { z: 15, w: 700 }));
+        if (note) shown.push(R(x, y, 74, 40, col, { w: 2, r: 4 }), T(x + 37, y + 27, `₹${val}`, { z: noteZ, w: 700 }));
+        else shown.push(CIRC(x + 20, y + 20, 19, col, { w: 2 }), T(x + 20, y + 26, `₹${val}`, { z: coinZ, w: 700 }));
         x += note ? 82 : 46;
       }
       kids.push(s('g', { transform: `translate(30 60) scale(${sc}) translate(-30 -60)` }, shown));
@@ -2303,7 +2305,7 @@ export const WIDGETS = {
       const name = v.slack > 0 ? 'a curved line' : v.tilt === 90 ? 'a standing (vertical) line' : v.tilt === 0 ? 'a sleeping (horizontal) line' : 'a slanting line';
       const kids = [s('path', { d: `M ${p1[0]} ${p1[1]} Q ${ctl[0] * 2 - (p1[0] + p2[0]) / 2} ${ctl[1] * 2 - (p1[1] + p2[1]) / 2} ${p2[0]} ${p2[1]}`, fill: 'none', stroke: '#c2510e', 'stroke-width': 5, 'stroke-linecap': 'round' })];
       for (const [px, py] of [p1, p2]) kids.push(CIRC(px, py, 15, '#f2c9a0', { w: 3 }));
-      kids.push(T(486, 110, name, { z: 20, w: 700, f: v.slack > 0 ? '#1f6fb8' : '#058a68' }), T(486, 146, v.slack > 0 ? 'the thread is loose' : 'the thread is pulled tight', { z: 14, w: 600, f: '#6b5a8a' }), T(486, 172, v.slack > 0 ? 'so it is not straight' : 'so it is a straight line', { z: 14, w: 600, f: '#6b5a8a' }));
+      kids.push(T(462, 110, name, { z: 18, w: 700, f: v.slack > 0 ? '#1f6fb8' : '#058a68' }), T(462, 146, v.slack > 0 ? 'the thread is loose' : 'the thread is pulled tight', { z: 15, w: 600, f: '#6b5a8a' }), T(462, 172, v.slack > 0 ? 'so it is not straight' : 'so it is a straight line', { z: 15, w: 600, f: '#6b5a8a' }));
       return { kids, say: v.slack > 0 ? 'With the hands brought closer the thread is loose and droops: it is a curved line, not a straight one.' : v.tilt === 90 ? 'Pulled tight and pointing up and down, the thread is a straight line. A standing line is also called a vertical line.' : v.tilt === 0 ? 'Pulled tight and lying flat, the thread is a straight line. A sleeping line is also called a horizontal line.' : 'Pulled tight but tilted between standing and sleeping, the thread is a slanting line, which is still straight.' };
     },
   },
@@ -2702,7 +2704,7 @@ export const WIDGETS = {
     draw(v, p, t = 0) {
       const cy = 154, phase = t * Math.min(v.freq, 800) * 1.1, cycles = v.freq / 45, pts = [];
       for (let x = 0; x <= 600; x += 4) pts.push(`${x === 0 ? 'M' : 'L'} ${x} ${cy - v.amp * 8 * Math.sin((x / 600) * cycles * 2 * Math.PI + phase)}`);
-      const kids = [R(0, 0, W, H, '#f4f0ff', { w: 0 }), L(30, cy, 570, cy, '#c9c4d6', 2), s('path', { d: pts.join(' '), fill: 'none', stroke: C.p, 'stroke-width': 4 }), CIRC(34, cy, 17, C.o, { w: 3 }), T(34, cy + 52, 'speaker', { z: 16 }), T(300, 34, v.freq >= 600 ? 'a high, shrill note' : v.freq <= 200 ? 'a low, deep note' : 'a middling note', { z: 22 }), T(300, 62, `${v.freq} vibrations each second`, { z: 16, w: 600 })];
+      const kids = [R(0, 0, W, H, '#f4f0ff', { w: 0 }), L(30, cy, 570, cy, '#c9c4d6', 2), s('path', { d: pts.join(' '), fill: 'none', stroke: C.p, 'stroke-width': 4 }), CIRC(52, cy, 17, C.o, { w: 3 }), T(52, cy + 52, 'speaker', { z: 16 }), T(300, 34, v.freq >= 600 ? 'a high, shrill note' : v.freq <= 200 ? 'a low, deep note' : 'a middling note', { z: 22 }), T(300, 62, `${v.freq} vibrations each second`, { z: 16, w: 600 })];
       const tall = v.amp >= 7, soft = v.amp <= 3;
       kids.push(T(300, 292, tall ? 'tall wave: loud sound' : soft ? 'short wave: soft sound' : 'medium wave: medium loudness', { z: 15, f: C.b, w: 600 }));
       return { kids, say: `The speaker vibrates ${v.freq} times each second, which we hear as ${v.freq >= 600 ? 'a high pitch' : v.freq <= 200 ? 'a low pitch' : 'a middling pitch'}. ${tall ? 'The wave is tall, so the sound is loud.' : soft ? 'The wave is short, so the sound is soft.' : 'The wave is medium height, so the sound is medium loud.'} Bigger amplitude means more energy.` };
