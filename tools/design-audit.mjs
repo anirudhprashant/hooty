@@ -13,6 +13,10 @@
  *     at about 340 on a phone, so 14 units reads as roughly 8 pixels)
  *   - text whose box runs past the card's safe area (8 units inside each edge)
  *   - text outside the card entirely
+ * Boxes are measured after every group transform, so a widget that scales its own drawing down is
+ * judged where its text actually lands, and a scaled label counts at its on-card size.
+ * Marks that belong to the drawing itself (the words inside the food packets, hatch grains) are
+ * listed once in BY_DESIGN and printed separately; they do not count as flags.
  * It exits 1 when anything is flagged, so a publish gate can refuse on it.
  *
  * --shots DIR writes a 390-wide PNG of every flagged widget (or of every widget with --all), for a
@@ -67,16 +71,25 @@ const report = await page.evaluate(async (min) => {
         r.drew++;
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svg.setAttribute('viewBox', '0 0 600 300');
+        // Pin the card at 600x300 so one CSS pixel is one card unit; measure what lands on the card rather
+        // than what a child element says before its group transform. A widget that scales its own group
+        // down (money's dense rows do) used to report text far outside the card that is drawn inside it.
+        svg.setAttribute('width', '600');
+        svg.setAttribute('height', '300');
         for (const k of res.kids) svg.append(k);
         document.body.innerHTML = ''; document.body.append(svg);
+        const sr = svg.getBoundingClientRect(), rootA = (svg.getScreenCTM() || { a: 1 }).a || 1;
         for (const t of svg.querySelectorAll('text')) {
           const txt = (t.textContent || '').slice(0, 18);
           if (!txt.trim()) continue;   // an empty <text> has a zero box and is not a design problem
-          const fs = parseFloat(getComputedStyle(t).fontSize) || 0;
-          if (fs && fs < min) r.small.push(`${fs}:${txt}`);
-          let b; try { b = t.getBBox(); } catch { continue; }
-          if (b.x < -1 || b.y < -1 || b.x + b.width > 601 || b.y + b.height > 301) r.outside.push(txt);
-          else if (fs && (b.x < 8 || 592 < b.x + b.width)) r.tight.push(`${txt}@${Math.round(b.x)}-${Math.round(b.x + b.width)}`);
+          let scale = 1; try { scale = ((t.getScreenCTM() || { a: rootA }).a || rootA) / rootA; } catch { /* identity */ }
+          const fs = (parseFloat(getComputedStyle(t).fontSize) || 0) * scale;
+          if (fs && fs < min) r.small.push(`${Math.round(fs * 10) / 10}:${txt}`);
+          let bb; try { bb = t.getBoundingClientRect(); } catch { continue; }
+          if (!bb.width && !bb.height) continue;
+          const x = bb.left - sr.left, y = bb.top - sr.top, w = bb.width, h = bb.height;
+          if (x < -1 || y < -1 || x + w > 601 || y + h > 301) r.outside.push(txt);
+          else if (fs && (x < 8 || 592 < x + w)) r.tight.push(`${txt}@${Math.round(x)}-${Math.round(x + w)}`);
         }
       }
     } catch (e) { r.err = e.message.slice(0, 40); }
@@ -85,6 +98,20 @@ const report = await page.evaluate(async (min) => {
   }
   return out;
 }, min);
+
+// Marks that are part of the drawing, not words a child has to read: the pictogram words inside the
+// junk-food packets and the hatch grains on the friction card. Anything not listed here still fails,
+// so the audit can be a gate without hiding a new small label behind an old exception.
+const BY_DESIGN = { plate: ['chips', 'drink'], friction: ['\\'] };
+for (const r of report) {
+  const keep = [];
+  for (const s of r.small) {
+    const txt = s.slice(s.indexOf(':') + 1);
+    if ((BY_DESIGN[r.id] || []).some((a) => txt.includes(a))) (r.byDesign ||= []).push(s);
+    else keep.push(s);
+  }
+  r.small = keep;
+}
 
 const bad = report.filter((r) => r.err || r.small.length || r.outside.length || r.tight.length);
 console.log(`widgets: ${report.length}, drawn: ${report.filter((r) => r.drew).length}, flagged: ${bad.length}`);
@@ -96,6 +123,8 @@ for (const r of bad) {
   if (r.tight.length) bits.push(`near-edge: ${r.tight.join(' | ')}`);
   console.log(`  ${r.id.padEnd(16)} ${bits.join('  //  ')}`);
 }
+const designed = report.filter((r) => r.byDesign && r.byDesign.length);
+if (designed.length) console.log(`by design (drawing marks, not labels): ${designed.map((r) => `${r.id} ${r.byDesign.join(' ')}`).join(' | ')}`);
 if (!bad.length) console.log(`clean: every widget's text is ${min} units or more and inside the safe area`);
 
 if (shots) {
