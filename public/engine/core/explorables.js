@@ -695,65 +695,93 @@ export const WIDGETS = {
     },
   },
   circuit: {
-    subject: 'science', about: 'A simple circuit laid out on a table: cells in a holder, bulbs in their sockets, a switch and the wire that joins them. The bulb lights only when the switch closes the loop, and it shines brighter with more cells for fewer bulbs. For electricity, circuits, conductors, switches, cells and bulbs.', animated: true,
-    sliders: [['closed', 'Switch (0 open, 1 closed)', 0, 1, 1, 0], ['cells', 'Cells', 1, 3, 1, 1], ['bulbs', 'Bulbs', 1, 3, 1, 1]],
+    subject: 'science', about: 'A simple circuit laid out on a table: cells lying in a row, bulbs standing in their sockets, a switch and the wire that joins them end to end. The bulb lights only when the switch closes the loop, and it shines brighter with more cells for fewer bulbs. For electricity, circuits, conductors, switches, cells and bulbs.', animated: true,
+    sliders: [['closed', 'Switch', 0, 1, 1, 0], ['cells', 'Cells', 1, 3, 1, 1], ['bulbs', 'Bulbs', 1, 3, 1, 1]],
+    // the switch's two positions are words, so the chosen word is printed under its track
+    sliderText: (v, key) => (key === 'closed' ? (v.closed === 1 ? 'closed' : 'open') : ''),
     draw(v, p, t = 0) {
       const on = v.closed === 1, cells = Math.max(1, Math.min(3, v.cells | 0)), bulbs = Math.max(1, Math.min(3, v.bulbs | 0));
       const per = cells / bulbs, bright = Math.min(1, per / 3);
-      const word = !on ? 'no light' : per >= 2 ? 'bright' : per >= 0.9 ? 'normal' : per >= 0.6 ? 'dim' : 'faint';
+      const word = !on ? 'not lit' : per >= 2 ? 'bright' : per >= 0.9 ? 'lit' : per >= 0.6 ? 'dim' : 'faint';
       const kids = [s('defs', {}, [
-        s('linearGradient', { id: 'hw-wall', x1: 0, y1: 0, x2: 0, y2: 1 }, [s('stop', { offset: '0%', 'stop-color': '#FFFDF6' }), s('stop', { offset: '100%', 'stop-color': '#FFEFD6' })]),
         s('radialGradient', { id: 'hw-glow' }, [s('stop', { offset: '0%', 'stop-color': '#FFE59A', 'stop-opacity': 0.95 }), s('stop', { offset: '60%', 'stop-color': '#FFC94D', 'stop-opacity': 0.4 }), s('stop', { offset: '100%', 'stop-color': '#FFC94D', 'stop-opacity': 0 })]),
       ])];
-      // the room: a warm wall, and the table the circuit is laid out on
-      kids.push(R(0, 0, W, 246, '#FFFBF1', { w: 0 }), R(0, 246, W, 54, '#E6BE8A', { w: 0 }), R(0, 246, W, 4, '#F2D5AA', { w: 0 }), R(0, 292, W, 8, '#CB9A62', { w: 0 }));
-      kids.push(s('ellipse', { cx: 300, cy: 246, rx: 300, ry: 12, fill: 'rgba(120,74,30,0.10)' }));
-      const bulbX = (i) => 312 + (i - (bulbs - 1) / 2) * 110;
-      // the wires: short leads that sag a little between one part and the next, then one long lead back round the front
-      const leads = [`M 156 240 Q 180 252 ${bulbX(0) - 16} 240`];
-      for (let i = 1; i < bulbs; i++) leads.push(`M ${bulbX(i - 1) + 16} 240 Q ${(bulbX(i - 1) + bulbX(i)) / 2} 252 ${bulbX(i) - 16} 240`);
-      leads.push(`M ${bulbX(bulbs - 1) + 16} 240 Q 458 252 490 240`);
-      leads.push('M 546 240 C 576 240 584 262 566 276 C 540 294 90 298 48 284 C 26 276 20 254 44 240');
-      for (const d of leads) kids.push(s('path', { d, fill: 'none', stroke: 'rgba(96,54,16,0.16)', 'stroke-width': 6, 'stroke-linecap': 'round', transform: 'translate(0,2.5)' }));
-      for (const d of leads) kids.push(s('path', { d, fill: 'none', stroke: '#8A4A24', 'stroke-width': 4, 'stroke-linecap': 'round' }));
-      // current: small beads running round the loop, and only when the switch is closed
-      if (on) for (const d of leads) kids.push(s('path', { d, fill: 'none', stroke: '#FFE9A8', 'stroke-width': 6, 'stroke-linecap': 'round', 'stroke-dasharray': '0 30', 'stroke-dashoffset': -((t * 60) % 30) }));
-      // the cells, standing in their holder on the table
-      kids.push(s('ellipse', { cx: 100, cy: 247, rx: 56, ry: 5, fill: 'rgba(96,54,16,0.20)' }));
-      kids.push(R(44, 216, 112, 30, '#F7F2E6', { w: 3, r: 8 }));
-      for (let i = 0; i < cells; i++) {
-        const bx = 62 + i * 32;
-        kids.push(R(bx - 13, 202, 26, 44, C.g, { w: 2, r: 8 }));
-        kids.push(R(bx - 9, 207, 6, 34, '#8FE0C0', { w: 0, r: 3 }));
-        kids.push(s('ellipse', { cx: bx, cy: 203, rx: 12, ry: 4.5, fill: '#D9E2EC', stroke: INK, 'stroke-width': 2 }));
-        kids.push(R(bx - 4, 196, 8, 7, '#B9C3CE', { w: 2, r: 2 }));
+      // the room: a warm wall, and the wooden table everything stands on
+      const top = 226, wy = 216;
+      kids.push(R(0, 0, W, top, '#FFFBF1', { w: 0 }), R(0, top, W, H - top, '#E4B983', { w: 0 }), R(0, top, W, 5, '#F3D6AC', { w: 0 }));
+      kids.push(s('path', { d: 'M 0 252 Q 150 246 300 252 T 600 250', fill: 'none', stroke: 'rgba(150,100,50,0.13)', 'stroke-width': 3 }));
+      kids.push(s('path', { d: 'M 0 272 Q 170 278 340 271 T 600 274', fill: 'none', stroke: 'rgba(150,100,50,0.11)', 'stroke-width': 3 }));
+      const bulbX = (i) => 330 + (i - (bulbs - 1) / 2) * 96;
+      // a bulb's glass gets deeper gold the more current it carries
+      const mixc = (h1, h2, f) => {
+        const n = (h) => [1, 3, 5].map((k) => parseInt(h.slice(k, k + 2), 16));
+        const a = n(h1), b = n(h2);
+        return '#' + a.map((x, k) => Math.round(x + (b[k] - x) * f).toString(16).padStart(2, '0')).join('');
+      };
+      const brass = '#C9A227';
+      const cellR = 44 + cells * 36 - 4;   // where the last cell's + ends and the wire begins
+      // the wire, broken at every part so each one is visibly wired in at both ends
+      const leads = [`M ${cellR} ${wy} Q ${(cellR + bulbX(0) - 17) / 2} 228 ${bulbX(0) - 17} ${wy}`];
+      for (let i = 1; i < bulbs; i++) leads.push(`M ${bulbX(i - 1) + 17} ${wy} Q ${(bulbX(i - 1) + bulbX(i)) / 2} 228 ${bulbX(i) - 17} ${wy}`);
+      leads.push(`M ${bulbX(bulbs - 1) + 17} ${wy} Q 452 228 468 ${wy}`);
+      leads.push(`M 562 ${wy} C 592 ${wy} 598 232 578 244 C 556 258 92 260 46 252 C 26 248 20 232 44 ${wy}`);
+      for (const d of leads) kids.push(s('path', { d, fill: 'none', stroke: 'rgba(96,54,16,0.18)', 'stroke-width': 5.5, 'stroke-linecap': 'round', transform: 'translate(0,2)' }));
+      for (const d of leads) kids.push(s('path', { d, fill: 'none', stroke: '#7A3E1C', 'stroke-width': 3.6, 'stroke-linecap': 'round' }));
+      for (const d of leads) kids.push(s('path', { d, fill: 'none', stroke: '#D08B52', 'stroke-width': 1.2, 'stroke-linecap': 'round', transform: 'translate(0,-0.9)' }));
+      // current: little arrows round the loop, and only when the switch is closed
+      const arrow = (px, py, dx, dy) => {
+        const len = Math.hypot(dx, dy) || 1, ux = dx / len, uy = dy / len;
+        kids.push(s('polygon', { points: `${px + ux * 9},${py + uy * 9} ${px - ux * 5 - uy * 7},${py - uy * 5 + ux * 7} ${px - ux * 5 + uy * 7},${py - uy * 5 - ux * 7}`, fill: '#FFC94D', stroke: '#7A3E1C', 'stroke-width': 1.4 }));
+      };
+      if (on) {
+        for (const u of [0.16, 0.5, 0.84]) {
+          const a = (1 - u) * (1 - u), b = 2 * (1 - u) * u, c = u * u;
+          arrow(a * 578 + b * 556 + c * 46, a * 244 + b * 258 + c * 252, 2 * (1 - u) * (556 - 578) + 2 * u * (46 - 556), 2 * (1 - u) * (258 - 244) + 2 * u * (252 - 258));
+        }
       }
-      // the bulbs: glass on a neck and a socket, standing on the table
+      // the cells, lying end to end on the table: a wire to the flat end on the left and to the nub on the right
+      kids.push(s('ellipse', { cx: (44 + cellR) / 2, cy: top + 2, rx: (cellR - 44) / 2 + 8, ry: 4, fill: 'rgba(96,54,16,0.20)' }));
+      for (let i = 0; i < cells; i++) {
+        const cx0 = 44 + i * 36;
+        kids.push(R(cx0, 202, 34, 24, C.g, { w: 2, r: 5 }));
+        kids.push(R(cx0 + 4, 207, 26, 5, '#8FE0C0', { w: 0, r: 2 }));
+        kids.push(R(cx0 + 24, 202, 10, 24, '#C9D3DD', { w: 0, r: 5 }));
+        kids.push(R(cx0 + 34, 209, 5, 10, '#B9C3CE', { w: 1.5, r: 1 }));
+      }
+      // the bulbs: glass on a neck and a socket standing on the table
       for (let i = 0; i < bulbs; i++) {
         const x = bulbX(i);
-        kids.push(s('ellipse', { cx: x, cy: 247, rx: 19, ry: 4, fill: 'rgba(96,54,16,0.20)' }));
-        if (on) kids.push(CIRC(x, 184, 30 + bright * 18, 'url(#hw-glow)', { w: 0, x: { opacity: 0.35 + bright * 0.65 } }));
-        if (on) kids.push(s('ellipse', { cx: x, cy: 250, rx: 32, ry: 7, fill: '#FFD75E', opacity: 0.16 + bright * 0.34 }));
-        kids.push(R(x - 7, 196, 14, 22, on ? '#FFE08F' : '#E4DCCB', { w: 2, r: 2 }));
-        kids.push(R(x - 16, 214, 32, 32, '#8C7BB0', { w: 3, r: 6 }));
-        kids.push(R(x - 16, 214, 32, 8, '#A697C9', { w: 0, r: 4 }));
-        kids.push(CIRC(x, 184, 22, on ? '#FFDE6B' : '#F0EADD', { s: INK, w: 3 }));
-        kids.push(s('path', { d: `M ${x - 6} 194 L ${x - 6} 184 L ${x - 2} 190 L ${x + 1} 182 L ${x + 4} 190 L ${x + 6} 184 L ${x + 6} 194`, fill: 'none', stroke: on ? '#B24A10' : '#B7AE9E', 'stroke-width': 3, 'stroke-linejoin': 'round' }));
+        kids.push(s('ellipse', { cx: x, cy: top + 2, rx: 20, ry: 4, fill: 'rgba(96,54,16,0.20)' }));
+        if (on) kids.push(CIRC(x, 158, 34 + bright * 20, 'url(#hw-glow)', { w: 0, x: { opacity: 0.35 + bright * 0.65 } }));
+        if (on) kids.push(s('ellipse', { cx: x, cy: top + 5, rx: 30, ry: 6, fill: '#FFD75E', opacity: 0.16 + bright * 0.34 }));
+        kids.push(R(x - 7, 182, 14, 22, on ? '#FFE08F' : '#E4DCCB', { w: 2, r: 2 }));
+        kids.push(R(x - 17, 204, 34, 22, '#8C7BB0', { w: 3, r: 6 }));
+        kids.push(R(x - 17, 204, 34, 6, '#A697C9', { w: 0, r: 3 }));
+        kids.push(CIRC(x, 158, 24, on ? mixc('#FFF7DE', '#F7BE33', 0.2 + bright * 0.8) : '#F0EADD', { s: INK, w: 3 }));
+        kids.push(s('path', { d: `M ${x - 7} 170 L ${x - 7} 159 L ${x - 3} 166 L ${x + 1} 157 L ${x + 5} 166 L ${x + 7} 159 L ${x + 7} 170`, fill: 'none', stroke: on ? '#B24A10' : '#B7AE9E', 'stroke-width': 3, 'stroke-linejoin': 'round' }));
       }
-      // the switch: a little base, two metal posts, and a lever that either bridges them or lifts away
-      kids.push(s('ellipse', { cx: 514, cy: 247, rx: 44, ry: 4, fill: 'rgba(96,54,16,0.20)' }));
-      kids.push(R(476, 236, 80, 10, '#C9A06A', { w: 2, r: 4 }));
-      kids.push(R(482, 222, 8, 16, '#B9C3CE', { w: 2, r: 3 }), R(538, 222, 8, 16, '#B9C3CE', { w: 2, r: 3 }));
-      if (on) { kids.push(L(486, 224, 542, 224, '#6F6480', 8)); kids.push(CIRC(542, 224, 6, '#6F6480', { w: 2 })); }
-      else { kids.push(L(486, 224, 522, 192, '#6F6480', 8)); kids.push(CIRC(522, 192, 6, '#6F6480', { w: 2 })); }
+      // the switch: two brass posts on the table, joined by a lever that lifts away when open
+      kids.push(s('ellipse', { cx: 515, cy: top + 2, rx: 46, ry: 4, fill: 'rgba(96,54,16,0.20)' }));
+      kids.push(R(466, 194, 10, 32, '#B9C3CE', { w: 2, r: 2 }), R(552, 194, 10, 32, '#B9C3CE', { w: 2, r: 2 }));
+      if (on) { kids.push(L(465, 197, 563, 197, '#6F6480', 8)); kids.push(CIRC(563, 197, 6, '#6F6480', { w: 2 })); }
+      else { kids.push(L(471, 197, 532, 164, '#6F6480', 8)); kids.push(CIRC(532, 164, 6, '#6F6480', { w: 2 })); }
+      // the parts named, so a child never has to guess which is which
+      kids.push(T((44 + cellR) / 2, 192, 'cell', { z: 16, w: 600, f: '#6d5c8c' }));
+      kids.push(T(515, 242, 'switch', { z: 16, w: 600, f: '#6d5c8c' }));
+      // the brass contacts, where each wire meets a part
+      for (const [cx, cy] of [[44, wy], [cellR, wy], [468, wy], [562, wy]]) kids.push(CIRC(cx, cy, 4, brass, { w: 1.5 }));
+      for (let i = 0; i < bulbs; i++) { kids.push(CIRC(bulbX(i) - 17, wy, 4, brass, { w: 1.5 }), CIRC(bulbX(i) + 17, wy, 4, brass, { w: 1.5 })); }
+      // the table's front edge
+      kids.push(R(0, 292, W, 8, '#C2915A', { w: 0 }));
       // what the child reads: the state on the wall, and one clear readout panel
-      kids.push(T(24, 40, on ? 'The switch is closed' : 'The switch is open', { z: 20, w: 700, a: 'start', f: on ? '#2E8B57' : '#C4651F' }));
-      kids.push(T(24, 68, on ? 'current flows all the way round' : 'a gap stops the current', { z: 17, w: 600, a: 'start', f: '#7a6b99' }));
-      kids.push(R(346, 14, 240, 96, '#EBD9BC', { w: 0, r: 18 }), R(346, 10, 240, 96, '#FFFFFF', { w: 3, s: '#E6DAC0', r: 18 }));
-      kids.push(T(466, 58, word, { z: 32, w: 800 }));
-      kids.push(T(466, 88, `${cells} cell${cells === 1 ? '' : 's'} · ${bulbs} bulb${bulbs === 1 ? '' : 's'}`, { z: 16, w: 600, f: '#7a6b99' }));
+      kids.push(T(24, 42, on ? 'The switch is closed' : 'The switch is open', { z: 20, w: 700, a: 'start', f: on ? '#2E8B57' : '#C4651F' }));
+      kids.push(T(24, 72, on ? 'current flows all the way round' : 'a gap stops the current', { z: 18, w: 600, a: 'start', f: '#5b4a7a' }));
+      kids.push(R(346, 12, 240, 104, '#EBD9BC', { w: 0, r: 18 }), R(346, 8, 240, 104, '#FFFFFF', { w: 3, s: '#E6DAC0', r: 18 }));
+      kids.push(T(466, 36, 'the bulb is', { z: 18, w: 600, f: '#6d5c8c' }));
+      kids.push(T(466, 74, word, { z: 30, w: 800 }));
+      kids.push(T(466, 99, `${cells} cell${cells === 1 ? '' : 's'} · ${bulbs} bulb${bulbs === 1 ? '' : 's'}`, { z: 17, w: 600, f: '#5b4a7a' }));
       const say = !on
-        ? 'The switch has left a gap in the wire, so the path is broken. No current can flow and the bulbs stay dark, however many cells there are.'
+        ? `The switch has left a gap in the wire, so the path is broken. No current can flow and the ${bulbs === 1 ? 'bulb stays' : 'bulbs stay'} dark, however many cells there are.`
         : `Closed circuit: current flows all the way round the loop${bulbs > 1 ? `, through all ${bulbs} bulbs` : ''}. ${per >= 2 ? `With ${cells} cells for ${bulbs === 1 ? 'one bulb' : `${bulbs} bulbs`} there is plenty of push, so the light is bright.` : per >= 1 ? `With ${cells} cell${cells === 1 ? '' : 's'} for ${bulbs} bulb${bulbs === 1 ? '' : 's'}, each bulb gets about one cell's worth, so it glows steadily.` : `The ${cells} cell${cells === 1 ? '' : 's'} must be shared out among ${bulbs} bulbs, so each bulb gets only a small share and the light is ${word}.`}`;
       return { kids, say };
     },
