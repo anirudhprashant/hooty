@@ -2424,6 +2424,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch1-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seepage",
+         "params": {},
+         "title": "Pour the water",
+         "tasks": [
+          {
+           "say": "Let 3 minutes pass.",
+           "when": "t == 3",
+           "then": "Gravel has let through the most water: its particles have the widest gaps."
+          },
+          {
+           "say": "Wait until all the water is through the gravel.",
+           "when": "t >= 4",
+           "then": "All 100 ml is through the gravel, while clay has let through only a little."
+          }
+         ],
+         "takeaway": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type.",
+         "explanation": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch1-l6-t1",
          "difficulty": 1,
@@ -2454,31 +2479,6 @@
            "p": 1
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch1-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seepage",
-         "params": {},
-         "title": "Pour the water",
-         "tasks": [
-          {
-           "say": "Let 3 minutes pass.",
-           "when": "t == 3",
-           "then": "Gravel has let through the most water: its particles have the widest gaps."
-          },
-          {
-           "say": "Wait until all the water is through the gravel.",
-           "when": "t >= 4",
-           "then": "All 100 ml is through the gravel, while clay has let through only a little."
-          }
-         ],
-         "takeaway": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type.",
-         "explanation": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type."
         },
         {
          "type": "mcq",
@@ -4529,6 +4529,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch2-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "tigerreserve",
+         "params": {},
+         "title": "A tiger reserve",
+         "tasks": [
+          {
+           "say": "Give the reserve full protection from poaching.",
+           "when": "protect == 100",
+           "then": "With full protection, every tiger the forest can hold survives."
+          },
+          {
+           "say": "Grow the reserve so it can hold about 50 tigers.",
+           "when": "area == 1000",
+           "then": "At about twenty square kilometres for each tiger, 1,000 sq km holds around fifty."
+          },
+          {
+           "say": "Remove protection completely and watch the tigers fall.",
+           "when": "protect == 0",
+           "then": "Without guards, poaching leaves only a fraction of the tigers the forest could hold."
+          }
+         ],
+         "takeaway": "A forest holds only as many tigers as its area and its prey allow, about one tiger per twenty square kilometres, and poaching takes the rest. That is why Project Tiger set up reserves and guards them.",
+         "explanation": "A forest holds only as many tigers as its area and its prey allow, about one tiger per twenty square kilometres, and poaching takes the rest. That is why Project Tiger set up reserves and guards them."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch2-l3-t1",
          "difficulty": 1,
@@ -4559,36 +4589,6 @@
            "p": 14
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch2-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "tigerreserve",
-         "params": {},
-         "title": "A tiger reserve",
-         "tasks": [
-          {
-           "say": "Give the reserve full protection from poaching.",
-           "when": "protect == 100",
-           "then": "With full protection, every tiger the forest can hold survives."
-          },
-          {
-           "say": "Grow the reserve so it can hold about 50 tigers.",
-           "when": "area == 1000",
-           "then": "At about twenty square kilometres for each tiger, 1,000 sq km holds around fifty."
-          },
-          {
-           "say": "Remove protection completely and watch the tigers fall.",
-           "when": "protect == 0",
-           "then": "Without guards, poaching leaves only a fraction of the tigers the forest could hold."
-          }
-         ],
-         "takeaway": "A forest holds only as many tigers as its area and its prey allow, about one tiger per twenty square kilometres, and poaching takes the rest. That is why Project Tiger set up reserves and guards them.",
-         "explanation": "A forest holds only as many tigers as its area and its prey allow, about one tiger per twenty square kilometres, and poaching takes the rest. That is why Project Tiger set up reserves and guards them."
         },
         {
          "type": "truefalse",
@@ -8196,6 +8196,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch3-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "river",
+         "params": {},
+         "title": "Follow the river to the sea",
+         "tasks": [
+          {
+           "say": "Make the river wider as small streams join it.",
+           "when": "stage == 2",
+           "then": "The joining streams are tributaries: each one adds water, so the river grows wider and stronger."
+          },
+          {
+           "say": "Stop the river with a giant wall and store its water.",
+           "when": "stage == 4",
+           "then": "A dam blocks the flow and holds the water in a reservoir for drinking, crops and electricity."
+          },
+          {
+           "say": "Take the river all the way to the sea.",
+           "when": "stage == 5",
+           "then": "Near the sea the river splits into many small streams and makes a delta, where mangroves grow."
+          }
+         ],
+         "takeaway": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta.",
+         "explanation": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch3-l3-t1",
          "difficulty": 1,
@@ -8246,36 +8276,6 @@
            "p": 22
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch3-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "river",
-         "params": {},
-         "title": "Follow the river to the sea",
-         "tasks": [
-          {
-           "say": "Make the river wider as small streams join it.",
-           "when": "stage == 2",
-           "then": "The joining streams are tributaries: each one adds water, so the river grows wider and stronger."
-          },
-          {
-           "say": "Stop the river with a giant wall and store its water.",
-           "when": "stage == 4",
-           "then": "A dam blocks the flow and holds the water in a reservoir for drinking, crops and electricity."
-          },
-          {
-           "say": "Take the river all the way to the sea.",
-           "when": "stage == 5",
-           "then": "Near the sea the river splits into many small streams and makes a delta, where mangroves grow."
-          }
-         ],
-         "takeaway": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta.",
-         "explanation": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta."
         },
         {
          "type": "mcq",
@@ -9168,6 +9168,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch3-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seepage",
+         "params": {},
+         "title": "Pour the water",
+         "tasks": [
+          {
+           "say": "Let 3 minutes pass.",
+           "when": "t == 3",
+           "then": "Gravel has let through the most water: its particles have the widest gaps."
+          },
+          {
+           "say": "Wait until all the water is through the gravel.",
+           "when": "t >= 4",
+           "then": "All 100 ml is through the gravel, while clay has let through only a little."
+          }
+         ],
+         "takeaway": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type.",
+         "explanation": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch3-l5-t1",
          "difficulty": 1,
@@ -9203,31 +9228,6 @@
            "p": 26
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch3-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seepage",
-         "params": {},
-         "title": "Pour the water",
-         "tasks": [
-          {
-           "say": "Let 3 minutes pass.",
-           "when": "t == 3",
-           "then": "Gravel has let through the most water: its particles have the widest gaps."
-          },
-          {
-           "say": "Wait until all the water is through the gravel.",
-           "when": "t >= 4",
-           "then": "All 100 ml is through the gravel, while clay has let through only a little."
-          }
-         ],
-         "takeaway": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type.",
-         "explanation": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles. Sandy soil takes water in quickly and clay holds it, which is why farmers and water harvesters care about soil type."
         },
         {
          "type": "mcq",
@@ -11587,6 +11587,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "cropyear",
+         "params": {},
+         "title": "India's cropping year",
+         "tasks": [
+          {
+           "say": "Find the month rabi crops are sown.",
+           "when": "month == 11",
+           "then": "Rabi is sown from October to December: wheat, barley, peas, gram and mustard."
+          },
+          {
+           "say": "Find the month wheat is harvested.",
+           "when": "month == 4",
+           "then": "The rabi harvest comes in March and April."
+          },
+          {
+           "say": "Find a month when the zaid crops grow.",
+           "when": "month == 5",
+           "then": "Zaid is the short summer season: watermelon, cucumber and fodder."
+          }
+         ],
+         "takeaway": "Kharif is sown with the monsoon in June and July and harvested in October and November; rabi is sown in October to December and harvested in March and April; zaid is the short summer season in between.",
+         "explanation": "Kharif is sown with the monsoon in June and July and harvested in October and November; rabi is sown in October to December and harvested in March and April; zaid is the short summer season in between."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch4-l3-t1",
          "difficulty": 1,
@@ -11632,36 +11662,6 @@
            "p": 32
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch4-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "cropyear",
-         "params": {},
-         "title": "India's cropping year",
-         "tasks": [
-          {
-           "say": "Find the month rabi crops are sown.",
-           "when": "month == 11",
-           "then": "Rabi is sown from October to December: wheat, barley, peas, gram and mustard."
-          },
-          {
-           "say": "Find the month wheat is harvested.",
-           "when": "month == 4",
-           "then": "The rabi harvest comes in March and April."
-          },
-          {
-           "say": "Find a month when the zaid crops grow.",
-           "when": "month == 5",
-           "then": "Zaid is the short summer season: watermelon, cucumber and fodder."
-          }
-         ],
-         "takeaway": "Kharif is sown with the monsoon in June and July and harvested in October and November; rabi is sown in October to December and harvested in March and April; zaid is the short summer season in between.",
-         "explanation": "Kharif is sown with the monsoon in June and July and harvested in October and November; rabi is sown in October to December and harvested in March and April; zaid is the short summer season in between."
         },
         {
          "type": "mcq",
@@ -16393,6 +16393,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch5-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "energysource",
+         "params": {},
+         "title": "Send the power",
+         "tasks": [
+          {
+           "say": "Make electricity from moving air.",
+           "when": "source == 2",
+           "then": "Windmills spin in the moving air, and their turning makes electricity."
+          },
+          {
+           "say": "Find the source that sends up smoke.",
+           "when": "source == 4",
+           "then": "Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air."
+          },
+          {
+           "say": "Choose the Sun, the main source of energy for life on Earth.",
+           "when": "source == 1",
+           "then": "Sunlight gives light and heat, and solar panels turn it into electricity without any smoke."
+          }
+         ],
+         "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
+         "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch5-l5-t1",
          "difficulty": 1,
@@ -16428,36 +16458,6 @@
            "p": 45
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch5-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "energysource",
-         "params": {},
-         "title": "Send the power",
-         "tasks": [
-          {
-           "say": "Make electricity from moving air.",
-           "when": "source == 2",
-           "then": "Windmills spin in the moving air, and their turning makes electricity."
-          },
-          {
-           "say": "Find the source that sends up smoke.",
-           "when": "source == 4",
-           "then": "Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air."
-          },
-          {
-           "say": "Choose the Sun, the main source of energy for life on Earth.",
-           "when": "source == 1",
-           "then": "Sunlight gives light and heat, and solar panels turn it into electricity without any smoke."
-          }
-         ],
-         "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
-         "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
         },
         {
          "type": "mcq",
@@ -16911,33 +16911,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g10-ch5-l6-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A school trip uses separate vehicles for every child. The teacher wants to save energy. What should the teacher choose?",
-         "steps": [
-          "Public transport helps save energy.",
-          "The trip should use it instead of separate vehicles.",
-          "This saves energy because it replaces separate vehicle journeys.",
-          "Therefore, public transport is the right choice for an energy-saving trip."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "6.9"
-         ],
-         "src": [
-          {
-           "ch": 5,
-           "p": 45
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g10-ch5-l6-play",
          "difficulty": 1,
@@ -16966,6 +16939,33 @@
          ],
          "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
          "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g10-ch5-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A school trip uses separate vehicles for every child. The teacher wants to save energy. What should the teacher choose?",
+         "steps": [
+          "Public transport helps save energy.",
+          "The trip should use it instead of separate vehicles.",
+          "This saves energy because it replaces separate vehicle journeys.",
+          "Therefore, public transport is the right choice for an energy-saving trip."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.9"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 45
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -18683,6 +18683,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sectors",
+         "params": {},
+         "title": "Follow a crop to the shop",
+         "tasks": [
+          {
+           "say": "Send the cotton to the factory and make cloth.",
+           "when": "stage == 1",
+           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
+          },
+          {
+           "say": "Take the shirt all the way to the shop.",
+           "when": "stage == 2",
+           "then": "The shop adds more value by selling the finished shirt: that is a service."
+          },
+          {
+           "say": "Show a country where most workers are in services.",
+           "when": "advance == 2",
+           "then": "As a country develops, workers move from farms to factories and then to services."
+          }
+         ],
+         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
+         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch6-l2-t1",
          "difficulty": 1,
@@ -18718,36 +18748,6 @@
            "p": 59
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch6-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "sectors",
-         "params": {},
-         "title": "Follow a crop to the shop",
-         "tasks": [
-          {
-           "say": "Send the cotton to the factory and make cloth.",
-           "when": "stage == 1",
-           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
-          },
-          {
-           "say": "Take the shirt all the way to the shop.",
-           "when": "stage == 2",
-           "then": "The shop adds more value by selling the finished shirt: that is a service."
-          },
-          {
-           "say": "Show a country where most workers are in services.",
-           "when": "advance == 2",
-           "then": "As a country develops, workers move from farms to factories and then to services."
-          }
-         ],
-         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
-         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
         },
         {
          "type": "concept",
@@ -19345,6 +19345,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch6-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sectors",
+         "params": {},
+         "title": "Follow a crop to the shop",
+         "tasks": [
+          {
+           "say": "Send the cotton to the factory and make cloth.",
+           "when": "stage == 1",
+           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
+          },
+          {
+           "say": "Take the shirt all the way to the shop.",
+           "when": "stage == 2",
+           "then": "The shop adds more value by selling the finished shirt: that is a service."
+          },
+          {
+           "say": "Show a country where most workers are in services.",
+           "when": "advance == 2",
+           "then": "As a country develops, workers move from farms to factories and then to services."
+          }
+         ],
+         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
+         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch6-l3-t1",
          "difficulty": 1,
@@ -19375,36 +19405,6 @@
            "p": 60
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch6-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "sectors",
-         "params": {},
-         "title": "Follow a crop to the shop",
-         "tasks": [
-          {
-           "say": "Send the cotton to the factory and make cloth.",
-           "when": "stage == 1",
-           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
-          },
-          {
-           "say": "Take the shirt all the way to the shop.",
-           "when": "stage == 2",
-           "then": "The shop adds more value by selling the finished shirt: that is a service."
-          },
-          {
-           "say": "Show a country where most workers are in services.",
-           "when": "advance == 2",
-           "then": "As a country develops, workers move from farms to factories and then to services."
-          }
-         ],
-         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
-         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
         },
         {
          "type": "fillblank",
@@ -22396,6 +22396,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "freight",
+         "params": {},
+         "title": "Send one tonne",
+         "tasks": [
+          {
+           "say": "Send it by rail.",
+           "when": "mode == 1",
+           "then": "Rail is cheaper than road for bulk over long distances."
+          },
+          {
+           "say": "Find the cheapest way to send it.",
+           "when": "mode == 3",
+           "then": "Water is the cheapest for heavy goods, but slow, and only between ports."
+          },
+          {
+           "say": "Find the fastest way.",
+           "when": "mode == 2",
+           "then": "Air is the fastest and the most expensive: for urgent, light goods."
+          }
+         ],
+         "takeaway": "Road carries goods door to door, rail is cheap for bulk over long distances, air is fastest and dearest, and water is the cheapest but the slowest. A country needs all of them, which is why they are called its lifelines.",
+         "explanation": "Road carries goods door to door, rail is cheap for bulk over long distances, air is fastest and dearest, and water is the cheapest but the slowest. A country needs all of them, which is why they are called its lifelines."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch7-l2-t1",
          "difficulty": 1,
@@ -22431,36 +22461,6 @@
            "p": 73
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch7-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "freight",
-         "params": {},
-         "title": "Send one tonne",
-         "tasks": [
-          {
-           "say": "Send it by rail.",
-           "when": "mode == 1",
-           "then": "Rail is cheaper than road for bulk over long distances."
-          },
-          {
-           "say": "Find the cheapest way to send it.",
-           "when": "mode == 3",
-           "then": "Water is the cheapest for heavy goods, but slow, and only between ports."
-          },
-          {
-           "say": "Find the fastest way.",
-           "when": "mode == 2",
-           "then": "Air is the fastest and the most expensive: for urgent, light goods."
-          }
-         ],
-         "takeaway": "Road carries goods door to door, rail is cheap for bulk over long distances, air is fastest and dearest, and water is the cheapest but the slowest. A country needs all of them, which is why they are called its lifelines.",
-         "explanation": "Road carries goods door to door, rail is cheap for bulk over long distances, air is fastest and dearest, and water is the cheapest but the slowest. A country needs all of them, which is why they are called its lifelines."
         },
         {
          "type": "mcq",
@@ -26859,6 +26859,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch8-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "income",
+         "params": {},
+         "title": "Two countries, the same average",
+         "tasks": [
+          {
+           "say": "Make Country B the same as Country A: every family earns 5 thousand.",
+           "when": "rich == 5",
+           "then": "Now both countries look the same: every family earns 5 thousand and the average is 5 thousand."
+          },
+          {
+           "say": "Make the other nine families in Country B get only 1 thousand each.",
+           "when": "rich == 41",
+           "then": "One family has 41 thousand and nine have 1 thousand, yet the average is still 5 thousand."
+          },
+          {
+           "say": "Make one family in Country B earn 50 thousand a year.",
+           "when": "rich == 50",
+           "then": "One family takes the whole 50 thousand and nine get nothing: the average still reads 5 thousand, but that average hides a very unequal country."
+          }
+         ],
+         "takeaway": "Average income is handy for comparing countries, but two countries with the same average can share it very differently: one may have every family on 5 thousand rupees a year while another has one rich family and nine poor ones.",
+         "explanation": "Average income is handy for comparing countries, but two countries with the same average can share it very differently: one may have every family on 5 thousand rupees a year while another has one rich family and nine poor ones."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch8-l3-t1",
          "difficulty": 1,
@@ -26899,36 +26929,6 @@
            "p": 9
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch8-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "income",
-         "params": {},
-         "title": "Two countries, the same average",
-         "tasks": [
-          {
-           "say": "Make Country B the same as Country A: every family earns 5 thousand.",
-           "when": "rich == 5",
-           "then": "Now both countries look the same: every family earns 5 thousand and the average is 5 thousand."
-          },
-          {
-           "say": "Make the other nine families in Country B get only 1 thousand each.",
-           "when": "rich == 41",
-           "then": "One family has 41 thousand and nine have 1 thousand, yet the average is still 5 thousand."
-          },
-          {
-           "say": "Make one family in Country B earn 50 thousand a year.",
-           "when": "rich == 50",
-           "then": "One family takes the whole 50 thousand and nine get nothing: the average still reads 5 thousand, but that average hides a very unequal country."
-          }
-         ],
-         "takeaway": "Average income is handy for comparing countries, but two countries with the same average can share it very differently: one may have every family on 5 thousand rupees a year while another has one rich family and nine poor ones.",
-         "explanation": "Average income is handy for comparing countries, but two countries with the same average can share it very differently: one may have every family on 5 thousand rupees a year while another has one rich family and nine poor ones."
         },
         {
          "type": "mcq",
@@ -27303,6 +27303,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch8-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "incomedist",
+         "params": {},
+         "title": "The average hides the distribution",
+         "tasks": [
+          {
+           "say": "Let the richest tenth take 60% of the income.",
+           "when": "rich == 60",
+           "then": "The average is still $10,000, but a typical person now has about $4,400."
+          },
+          {
+           "say": "Make the country almost equal, with the richest tenth taking 10%.",
+           "when": "rich == 10",
+           "then": "When the share is close to equal, the average and the typical person are close too."
+          }
+         ],
+         "takeaway": "Two countries can have the same average income and very different lives. If the richest tenth takes most of it, the average says little about what a typical person has, which is why distribution is asked about too.",
+         "explanation": "Two countries can have the same average income and very different lives. If the richest tenth takes most of it, the average says little about what a typical person has, which is why distribution is asked about too."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch8-l4-t1",
          "difficulty": 1,
@@ -27338,31 +27363,6 @@
            "p": 11
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch8-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "incomedist",
-         "params": {},
-         "title": "The average hides the distribution",
-         "tasks": [
-          {
-           "say": "Let the richest tenth take 60% of the income.",
-           "when": "rich == 60",
-           "then": "The average is still $10,000, but a typical person now has about $4,400."
-          },
-          {
-           "say": "Make the country almost equal, with the richest tenth taking 10%.",
-           "when": "rich == 10",
-           "then": "When the share is close to equal, the average and the typical person are close too."
-          }
-         ],
-         "takeaway": "Two countries can have the same average income and very different lives. If the richest tenth takes most of it, the average says little about what a typical person has, which is why distribution is asked about too.",
-         "explanation": "Two countries can have the same average income and very different lives. If the richest tenth takes most of it, the average says little about what a typical person has, which is why distribution is asked about too."
         },
         {
          "type": "mcq",
@@ -29397,6 +29397,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sectors",
+         "params": {},
+         "title": "Follow a crop to the shop",
+         "tasks": [
+          {
+           "say": "Send the cotton to the factory and make cloth.",
+           "when": "stage == 1",
+           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
+          },
+          {
+           "say": "Take the shirt all the way to the shop.",
+           "when": "stage == 2",
+           "then": "The shop adds more value by selling the finished shirt: that is a service."
+          },
+          {
+           "say": "Show a country where most workers are in services.",
+           "when": "advance == 2",
+           "then": "As a country develops, workers move from farms to factories and then to services."
+          }
+         ],
+         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
+         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch9-l1-t1",
          "difficulty": 1,
@@ -29442,36 +29472,6 @@
            "p": 18
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch9-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "sectors",
-         "params": {},
-         "title": "Follow a crop to the shop",
-         "tasks": [
-          {
-           "say": "Send the cotton to the factory and make cloth.",
-           "when": "stage == 1",
-           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
-          },
-          {
-           "say": "Take the shirt all the way to the shop.",
-           "when": "stage == 2",
-           "then": "The shop adds more value by selling the finished shirt: that is a service."
-          },
-          {
-           "say": "Show a country where most workers are in services.",
-           "when": "advance == 2",
-           "then": "As a country develops, workers move from farms to factories and then to services."
-          }
-         ],
-         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
-         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
         },
         {
          "type": "mcq",
@@ -30487,6 +30487,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch9-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sectors",
+         "params": {},
+         "title": "Follow a crop to the shop",
+         "tasks": [
+          {
+           "say": "Send the cotton to the factory and make cloth.",
+           "when": "stage == 1",
+           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
+          },
+          {
+           "say": "Take the shirt all the way to the shop.",
+           "when": "stage == 2",
+           "then": "The shop adds more value by selling the finished shirt: that is a service."
+          },
+          {
+           "say": "Show a country where most workers are in services.",
+           "when": "advance == 2",
+           "then": "As a country develops, workers move from farms to factories and then to services."
+          }
+         ],
+         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
+         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch9-l3-t1",
          "difficulty": 1,
@@ -30537,36 +30567,6 @@
            "p": 18
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch9-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "sectors",
-         "params": {},
-         "title": "Follow a crop to the shop",
-         "tasks": [
-          {
-           "say": "Send the cotton to the factory and make cloth.",
-           "when": "stage == 1",
-           "then": "The factory adds value by turning cotton into cloth: that is the secondary sector."
-          },
-          {
-           "say": "Take the shirt all the way to the shop.",
-           "when": "stage == 2",
-           "then": "The shop adds more value by selling the finished shirt: that is a service."
-          },
-          {
-           "say": "Show a country where most workers are in services.",
-           "when": "advance == 2",
-           "then": "As a country develops, workers move from farms to factories and then to services."
-          }
-         ],
-         "takeaway": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services.",
-         "explanation": "Growing cotton is primary work, making cloth is secondary and selling the shirt is a service. Each stage adds value, and as a country develops most workers move from farms to factories and then to services."
         },
         {
          "type": "mcq",
@@ -33185,6 +33185,43 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch10-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "money",
+         "params": {
+          "kind": "rupees"
+         },
+         "title": "Pay the exact amount",
+         "tasks": [
+          {
+           "say": "Make ₹36.",
+           "when": "amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36",
+           "then": "For example 3 × ₹10 + 1 × ₹5 + 1 × ₹1."
+          },
+          {
+           "say": "Make ₹163 with just 6 notes and coins.",
+           "when": "amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6",
+           "then": "₹100 + ₹50 + ₹10 + ₹1 + ₹1 + ₹1: big notes first."
+          },
+          {
+           "say": "Pay ₹55 in two different ways, one after the other.",
+           "when": "amt == 7 and 100 * h + 50 * f + 10 * t + 5 * v + o == 55 and h == 0",
+           "then": "For example 5 × ₹10 + 1 × ₹5, or ₹50 + ₹5: the same amount can be paid in many ways."
+          },
+          {
+           "say": "Make ₹183 a different way, using no ₹100 note.",
+           "when": "amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0",
+           "then": "Lots of ways make the same amount."
+          }
+         ],
+         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
+         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch10-l1-t1",
          "difficulty": 1,
@@ -33225,43 +33262,6 @@
            "p": 39
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch10-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "money",
-         "params": {
-          "kind": "rupees"
-         },
-         "title": "Pay the exact amount",
-         "tasks": [
-          {
-           "say": "Make ₹36.",
-           "when": "amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36",
-           "then": "For example 3 × ₹10 + 1 × ₹5 + 1 × ₹1."
-          },
-          {
-           "say": "Make ₹163 with just 6 notes and coins.",
-           "when": "amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6",
-           "then": "₹100 + ₹50 + ₹10 + ₹1 + ₹1 + ₹1: big notes first."
-          },
-          {
-           "say": "Pay ₹55 in two different ways, one after the other.",
-           "when": "amt == 7 and 100 * h + 50 * f + 10 * t + 5 * v + o == 55 and h == 0",
-           "then": "For example 5 × ₹10 + 1 × ₹5, or ₹50 + ₹5: the same amount can be paid in many ways."
-          },
-          {
-           "say": "Make ₹183 a different way, using no ₹100 note.",
-           "when": "amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0",
-           "then": "Lots of ways make the same amount."
-          }
-         ],
-         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
-         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
         },
         {
          "type": "mcq",
@@ -34129,6 +34129,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "interest",
+         "params": {},
+         "title": "Watch a loan grow",
+         "tasks": [
+          {
+           "say": "Borrow at 20% or more for ten years and see how big the debt becomes.",
+           "when": "rate >= 20 and years == 10",
+           "then": "A high rate left for many years turns even a small loan into a huge debt: that is a debt trap."
+          },
+          {
+           "say": "Make what you owe more than double the money you borrowed.",
+           "when": "P * (1 + rate / 100) ** years > 2 * P",
+           "then": "Once the interest adds up to more than the loan itself, you owe more than double what you borrowed."
+          },
+          {
+           "say": "Keep the extra you pay under ₹600.",
+           "when": "P * (1 + rate / 100) ** years - P <= 600",
+           "then": "A small loan for a short time at a low rate costs only a little extra."
+          }
+         ],
+         "takeaway": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year.",
+         "explanation": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch10-l3-t1",
          "difficulty": 1,
@@ -34179,36 +34209,6 @@
            "p": 41
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch10-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "interest",
-         "params": {},
-         "title": "Watch a loan grow",
-         "tasks": [
-          {
-           "say": "Borrow at 20% or more for ten years and see how big the debt becomes.",
-           "when": "rate >= 20 and years == 10",
-           "then": "A high rate left for many years turns even a small loan into a huge debt: that is a debt trap."
-          },
-          {
-           "say": "Make what you owe more than double the money you borrowed.",
-           "when": "P * (1 + rate / 100) ** years > 2 * P",
-           "then": "Once the interest adds up to more than the loan itself, you owe more than double what you borrowed."
-          },
-          {
-           "say": "Keep the extra you pay under ₹600.",
-           "when": "P * (1 + rate / 100) ** years - P <= 600",
-           "then": "A small loan for a short time at a low rate costs only a little extra."
-          }
-         ],
-         "takeaway": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year.",
-         "explanation": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year."
         },
         {
          "type": "truefalse",
@@ -34616,6 +34616,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch10-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "interest",
+         "params": {},
+         "title": "Watch a loan grow",
+         "tasks": [
+          {
+           "say": "Borrow at 20% or more for ten years and see how big the debt becomes.",
+           "when": "rate >= 20 and years == 10",
+           "then": "A high rate left for many years turns even a small loan into a huge debt: that is a debt trap."
+          },
+          {
+           "say": "Make what you owe more than double the money you borrowed.",
+           "when": "P * (1 + rate / 100) ** years > 2 * P",
+           "then": "Once the interest adds up to more than the loan itself, you owe more than double what you borrowed."
+          },
+          {
+           "say": "Keep the extra you pay under ₹600.",
+           "when": "P * (1 + rate / 100) ** years - P <= 600",
+           "then": "A small loan for a short time at a low rate costs only a little extra."
+          }
+         ],
+         "takeaway": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year.",
+         "explanation": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch10-l4-t1",
          "difficulty": 1,
@@ -34661,36 +34691,6 @@
            "p": 41
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch10-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "interest",
-         "params": {},
-         "title": "Watch a loan grow",
-         "tasks": [
-          {
-           "say": "Borrow at 20% or more for ten years and see how big the debt becomes.",
-           "when": "rate >= 20 and years == 10",
-           "then": "A high rate left for many years turns even a small loan into a huge debt: that is a debt trap."
-          },
-          {
-           "say": "Make what you owe more than double the money you borrowed.",
-           "when": "P * (1 + rate / 100) ** years > 2 * P",
-           "then": "Once the interest adds up to more than the loan itself, you owe more than double what you borrowed."
-          },
-          {
-           "say": "Keep the extra you pay under ₹600.",
-           "when": "P * (1 + rate / 100) ** years - P <= 600",
-           "then": "A small loan for a short time at a low rate costs only a little extra."
-          }
-         ],
-         "takeaway": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year.",
-         "explanation": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year."
         },
         {
          "type": "mcq",
@@ -36810,6 +36810,26 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch11-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "trade",
+         "params": {},
+         "title": "Two toys in the shop",
+         "tasks": [
+          {
+           "say": "Set a tax that makes the imported toy dearer than the Indian one.",
+           "when": "tariff >= 30 and cost == 250",
+           "then": "At a 25% tax the import costs ₹250, the same as the Indian toy; above that, buyers switch to the Indian toy."
+          }
+         ],
+         "takeaway": "A tax on imports is a trade barrier. It raises the price of the imported good, so buyers switch to the one made at home, which protects the home producer but makes buyers pay more.",
+         "explanation": "A tax on imports is a trade barrier. It raises the price of the imported good, so buyers switch to the one made at home, which protects the home producer but makes buyers pay more."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch11-l2-t1",
          "difficulty": 1,
@@ -36845,26 +36865,6 @@
            "p": 57
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch11-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "trade",
-         "params": {},
-         "title": "Two toys in the shop",
-         "tasks": [
-          {
-           "say": "Set a tax that makes the imported toy dearer than the Indian one.",
-           "when": "tariff >= 30 and cost == 250",
-           "then": "At a 25% tax the import costs ₹250, the same as the Indian toy; above that, buyers switch to the Indian toy."
-          }
-         ],
-         "takeaway": "A tax on imports is a trade barrier. It raises the price of the imported good, so buyers switch to the one made at home, which protects the home producer but makes buyers pay more.",
-         "explanation": "A tax on imports is a trade barrier. It raises the price of the imported good, so buyers switch to the one made at home, which protects the home producer but makes buyers pay more."
         },
         {
          "type": "mcq",
@@ -40670,58 +40670,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g10-ch12-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Food is being hoarded during a shortage. What should consumers do?",
-         "steps": [
-          "Consumers should speak out because hoarding helped start the movement.",
-          "They should spread awareness because people need consumer protection.",
-          "They should use COPRA because consumers once lacked legal protection.",
-          "Consumer pressure can protect interests because it can correct unfair conduct."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.2",
-          "2.5",
-          "2.6",
-          "2.7",
-          "2.10",
-          "2.11"
-         ],
-         "src": [
-          {
-           "ch": 12,
-           "p": 77
-          },
-          {
-           "ch": 12,
-           "p": 77
-          },
-          {
-           "ch": 12,
-           "p": 77
-          },
-          {
-           "ch": 12,
-           "p": 77
-          },
-          {
-           "ch": 12,
-           "p": 78
-          },
-          {
-           "ch": 12,
-           "p": 78
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g10-ch12-l2-play",
          "difficulty": 1,
@@ -40793,6 +40741,58 @@
          ],
          "takeaway": "The right to safety covers goods that can hurt you; the right to information covers what you are not told, like a price or an expiry date; the right to redressal covers a complaint that is not answered or a faulty good not replaced.",
          "explanation": "The right to safety covers goods that can hurt you; the right to information covers what you are not told, like a price or an expiry date; the right to redressal covers a complaint that is not answered or a faulty good not replaced."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g10-ch12-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Food is being hoarded during a shortage. What should consumers do?",
+         "steps": [
+          "Consumers should speak out because hoarding helped start the movement.",
+          "They should spread awareness because people need consumer protection.",
+          "They should use COPRA because consumers once lacked legal protection.",
+          "Consumer pressure can protect interests because it can correct unfair conduct."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.2",
+          "2.5",
+          "2.6",
+          "2.7",
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 77
+          },
+          {
+           "ch": 12,
+           "p": 77
+          },
+          {
+           "ch": 12,
+           "p": 77
+          },
+          {
+           "ch": 12,
+           "p": 77
+          },
+          {
+           "ch": 12,
+           "p": 78
+          },
+          {
+           "ch": 12,
+           "p": 78
+          }
+         ]
         },
         {
          "type": "concept",
@@ -44278,43 +44278,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g10-ch13-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A child claims special rights because of family birth. Another person owns property. What should the new rules do?",
-         "steps": [
-          "Uniform laws should cover every citizen because the Revolution stressed unity and equal rights.",
-          "Napoleon's Code ended birth privileges, removing special rights based on birth.",
-          "It also protected property, so ownership had legal protection.",
-          "Therefore, the child should face equal law while property stays protected."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.3",
-          "2.6",
-          "2.9"
-         ],
-         "src": [
-          {
-           "ch": 13,
-           "p": 1
-          },
-          {
-           "ch": 13,
-           "p": 1
-          },
-          {
-           "ch": 13,
-           "p": 1
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g10-ch13-l2-play",
          "difficulty": 1,
@@ -44370,6 +44333,43 @@
          ],
          "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
          "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g10-ch13-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child claims special rights because of family birth. Another person owns property. What should the new rules do?",
+         "steps": [
+          "Uniform laws should cover every citizen because the Revolution stressed unity and equal rights.",
+          "Napoleon's Code ended birth privileges, removing special rights based on birth.",
+          "It also protected property, so ownership had legal protection.",
+          "Therefore, the child should face equal law while property stays protected."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.3",
+          "2.6",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 1
+          },
+          {
+           "ch": 13,
+           "p": 1
+          },
+          {
+           "ch": 13,
+           "p": 1
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -47672,6 +47672,47 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch14-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "timeline",
+         "params": {
+          "events": [
+           {
+            "year": 1913,
+            "label": "Prices doubled between 1913 and 1918 and caused"
+           },
+           {
+            "year": 1915,
+            "label": "Mahatma Gandhi returned to India"
+           },
+           {
+            "year": 1921,
+            "label": "The census of 1921 recorded that 12 to 13 million"
+           }
+          ],
+          "hist": true
+         },
+         "title": "Walk through time",
+         "tasks": [
+          {
+           "say": "Move to when this happened: Mahatma Gandhi returned to India.",
+           "when": "y >= 1915",
+           "then": "That was 1915 CE."
+          },
+          {
+           "say": "Go forward to the last event.",
+           "when": "y >= 1921",
+           "then": "The latest event here is from 1921 CE."
+          }
+         ],
+         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
+         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch14-l1-t1",
          "difficulty": 1,
@@ -47732,47 +47773,6 @@
            "p": 29
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch14-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "timeline",
-         "params": {
-          "events": [
-           {
-            "year": 1913,
-            "label": "Prices doubled between 1913 and 1918 and caused"
-           },
-           {
-            "year": 1915,
-            "label": "Mahatma Gandhi returned to India"
-           },
-           {
-            "year": 1921,
-            "label": "The census of 1921 recorded that 12 to 13 million"
-           }
-          ],
-          "hist": true
-         },
-         "title": "Walk through time",
-         "tasks": [
-          {
-           "say": "Move to when this happened: Mahatma Gandhi returned to India.",
-           "when": "y >= 1915",
-           "then": "That was 1915 CE."
-          },
-          {
-           "say": "Go forward to the last event.",
-           "when": "y >= 1921",
-           "then": "The latest event here is from 1921 CE."
-          }
-         ],
-         "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
-         "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
         },
         {
          "type": "mcq",
@@ -52074,6 +52074,65 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch15-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "clozeline",
+         "params": {
+          "items": [
+           {
+            "before": "Then came",
+            "after": ", a devastating cattle disease.",
+            "options": [
+             "Great Depression",
+             "Corn Laws",
+             "silk routes",
+             "Rinderpest"
+            ],
+            "answer": 3
+           },
+           {
+            "before": "Multinational corporations (",
+            "after": ") are large companies that operate",
+            "options": [
+             "colonialism",
+             "MNCs",
+             "primary products",
+             "regional specialisation"
+            ],
+            "answer": 1
+           }
+          ],
+          "labels": {
+           "heading": "Finish the sentence",
+           "pickItem": "Pick a sentence",
+           "pickChoice": "Which word fills the gap?",
+           "yes": "Yes.",
+           "no": "Not that word.",
+           "readAgain": "Read the words on both sides of the gap.",
+           "pick": "Which word completes the sentence?"
+          }
+         },
+         "title": "Finish the sentence",
+         "tasks": [
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 0 and choice == 4",
+           "then": "The sentence is: Then came Rinderpest , a devastating cattle disease."
+          },
+          {
+           "say": "Choose the word that completes the sentence.",
+           "when": "item == 1 and choice == 2",
+           "then": "The sentence is: Multinational corporations ( MNCs ) are large companies that operate"
+          }
+         ],
+         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
+         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch15-l2-t1",
          "difficulty": 1,
@@ -52139,65 +52198,6 @@
            "p": 53
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch15-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "clozeline",
-         "params": {
-          "items": [
-           {
-            "before": "Then came",
-            "after": ", a devastating cattle disease.",
-            "options": [
-             "Great Depression",
-             "Corn Laws",
-             "silk routes",
-             "Rinderpest"
-            ],
-            "answer": 3
-           },
-           {
-            "before": "Multinational corporations (",
-            "after": ") are large companies that operate",
-            "options": [
-             "colonialism",
-             "MNCs",
-             "primary products",
-             "regional specialisation"
-            ],
-            "answer": 1
-           }
-          ],
-          "labels": {
-           "heading": "Finish the sentence",
-           "pickItem": "Pick a sentence",
-           "pickChoice": "Which word fills the gap?",
-           "yes": "Yes.",
-           "no": "Not that word.",
-           "readAgain": "Read the words on both sides of the gap.",
-           "pick": "Which word completes the sentence?"
-          }
-         },
-         "title": "Finish the sentence",
-         "tasks": [
-          {
-           "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 4",
-           "then": "The sentence is: Then came Rinderpest , a devastating cattle disease."
-          },
-          {
-           "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 2",
-           "then": "The sentence is: Multinational corporations ( MNCs ) are large companies that operate"
-          }
-         ],
-         "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
-         "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
         },
         {
          "type": "mcq",
@@ -53644,43 +53644,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g10-ch15-l5-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A car maker wants to sell vehicles at lower prices. How can mass production help?",
-         "steps": [
-          "The maker can use assembly lines because they allow faster and cheaper vehicle production.",
-          "Mass production lowers the costs of making engineered goods.",
-          "When costs fall, goods can be sold at lower prices.",
-          "Therefore, the maker can offer vehicles more cheaply by using mass production."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "5.7",
-          "5.8",
-          "5.9"
-         ],
-         "src": [
-          {
-           "ch": 15,
-           "p": 53
-          },
-          {
-           "ch": 15,
-           "p": 53
-          },
-          {
-           "ch": 15,
-           "p": 53
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g10-ch15-l5-play",
          "difficulty": 1,
@@ -53716,6 +53679,43 @@
          ],
          "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
          "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g10-ch15-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A car maker wants to sell vehicles at lower prices. How can mass production help?",
+         "steps": [
+          "The maker can use assembly lines because they allow faster and cheaper vehicle production.",
+          "Mass production lowers the costs of making engineered goods.",
+          "When costs fall, goods can be sold at lower prices.",
+          "Therefore, the maker can offer vehicles more cheaply by using mass production."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.7",
+          "5.8",
+          "5.9"
+         ],
+         "src": [
+          {
+           "ch": 15,
+           "p": 53
+          },
+          {
+           "ch": 15,
+           "p": 53
+          },
+          {
+           "ch": 15,
+           "p": 53
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -57371,38 +57371,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g10-ch16-l5-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A worker leaves home and travels far to work in a mill. Why might this happen?",
-         "steps": [
-          "Workers travelled long distances because mills offered employment.",
-          "Mill owners wanted workers, so they usually used jobbers.",
-          "Jobbers recruited and controlled new workers for industrialists.",
-          "Therefore, travelling and jobbers were linked to finding and controlling mill workers."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "5.9",
-          "5.10"
-         ],
-         "src": [
-          {
-           "ch": 16,
-           "p": 95
-          },
-          {
-           "ch": 16,
-           "p": 96
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g10-ch16-l5-play",
          "difficulty": 1,
@@ -57446,6 +57414,38 @@
          ],
          "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
          "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g10-ch16-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A worker leaves home and travels far to work in a mill. Why might this happen?",
+         "steps": [
+          "Workers travelled long distances because mills offered employment.",
+          "Mill owners wanted workers, so they usually used jobbers.",
+          "Jobbers recruited and controlled new workers for industrialists.",
+          "Therefore, travelling and jobbers were linked to finding and controlling mill workers."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.9",
+          "5.10"
+         ],
+         "src": [
+          {
+           "ch": 16,
+           "p": 95
+          },
+          {
+           "ch": 16,
+           "p": 96
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -59513,6 +59513,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch17-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "printing",
+         "params": {},
+         "title": "Hand copy or printing press?",
+         "tasks": [
+          {
+           "say": "Print 100 copies by printing press.",
+           "when": "method == 2 and copies == 100",
+           "then": "The press prints a hundred copies in about two days; a scribe would need years."
+          },
+          {
+           "say": "See how long one copy by hand takes.",
+           "when": "method == 0 and copies == 1",
+           "then": "A scribe copies about five pages a day, so one hundred pages take about twenty days."
+          }
+         ],
+         "takeaway": "A scribe could copy a few pages a day; a printing press could print thousands. That is why printed books became cheap, why more people learned to read, and why new ideas could spread across a country in years instead of centuries.",
+         "explanation": "A scribe could copy a few pages a day; a printing press could print thousands. That is why printed books became cheap, why more people learned to read, and why new ideas could spread across a country in years instead of centuries."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch17-l2-t1",
          "difficulty": 1,
@@ -59548,31 +59573,6 @@
            "p": 108
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch17-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "printing",
-         "params": {},
-         "title": "Hand copy or printing press?",
-         "tasks": [
-          {
-           "say": "Print 100 copies by printing press.",
-           "when": "method == 2 and copies == 100",
-           "then": "The press prints a hundred copies in about two days; a scribe would need years."
-          },
-          {
-           "say": "See how long one copy by hand takes.",
-           "when": "method == 0 and copies == 1",
-           "then": "A scribe copies about five pages a day, so one hundred pages take about twenty days."
-          }
-         ],
-         "takeaway": "A scribe could copy a few pages a day; a printing press could print thousands. That is why printed books became cheap, why more people learned to read, and why new ideas could spread across a country in years instead of centuries.",
-         "explanation": "A scribe could copy a few pages a day; a printing press could print thousands. That is why printed books became cheap, why more people learned to read, and why new ideas could spread across a country in years instead of centuries."
         },
         {
          "type": "truefalse",
@@ -65281,53 +65281,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g10-ch19-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A child asks: Who makes a law about a local matter?",
-         "steps": [
-          "India is a Union of States, so it has both a Union Government and State Governments.",
-          "Federalism places different subjects in different lists, so each level has a clear law-making role.",
-          "Local importance points to the State List, so only State Governments can make such laws.",
-          "Panchayats and Municipalities later added a third tier, so India's federal system includes local bodies."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.2",
-          "2.3",
-          "2.6",
-          "2.7"
-         ],
-         "src": [
-          {
-           "ch": 19,
-           "p": 16
-          },
-          {
-           "ch": 19,
-           "p": 16
-          },
-          {
-           "ch": 19,
-           "p": 16
-          },
-          {
-           "ch": 19,
-           "p": 16
-          },
-          {
-           "ch": 19,
-           "p": 16
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g10-ch19-l2-play",
          "difficulty": 1,
@@ -65399,6 +65352,53 @@
          ],
          "takeaway": "India has three lists. The Union List holds subjects for the whole country (defence, currency, railways); the State List holds local ones (police, agriculture, public health); the Concurrent List holds both (education, forests, marriage), where the Centre and the States decide together.",
          "explanation": "India has three lists. The Union List holds subjects for the whole country (defence, currency, railways); the State List holds local ones (police, agriculture, public health); the Concurrent List holds both (education, forests, marriage), where the Centre and the States decide together."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g10-ch19-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child asks: Who makes a law about a local matter?",
+         "steps": [
+          "India is a Union of States, so it has both a Union Government and State Governments.",
+          "Federalism places different subjects in different lists, so each level has a clear law-making role.",
+          "Local importance points to the State List, so only State Governments can make such laws.",
+          "Panchayats and Municipalities later added a third tier, so India's federal system includes local bodies."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.6",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 19,
+           "p": 16
+          },
+          {
+           "ch": 19,
+           "p": 16
+          },
+          {
+           "ch": 19,
+           "p": 16
+          },
+          {
+           "ch": 19,
+           "p": 16
+          },
+          {
+           "ch": 19,
+           "p": 16
+          }
+         ]
         },
         {
          "type": "concept",
@@ -66375,38 +66375,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g10-ch19-l4-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "The Centre and a state have the same party. How does this affect state autonomy?",
-         "steps": [
-          "Same-party rule can stop states using their full autonomy.",
-          "This happens because the Centre and state share one party.",
-          "Different-party rule can make the Centre weaken state power.",
-          "So party differences can shape how much state power is used."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "4.1",
-          "4.2"
-         ],
-         "src": [
-          {
-           "ch": 19,
-           "p": 17
-          },
-          {
-           "ch": 19,
-           "p": 17
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g10-ch19-l4-play",
          "difficulty": 1,
@@ -66446,6 +66414,38 @@
          ],
          "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
          "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g10-ch19-l4-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "The Centre and a state have the same party. How does this affect state autonomy?",
+         "steps": [
+          "Same-party rule can stop states using their full autonomy.",
+          "This happens because the Centre and state share one party.",
+          "Different-party rule can make the Centre weaken state power.",
+          "So party differences can shape how much state power is used."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "4.1",
+          "4.2"
+         ],
+         "src": [
+          {
+           "ch": 19,
+           "p": 17
+          },
+          {
+           "ch": 19,
+           "p": 17
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -71402,6 +71402,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch20-l7-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seats",
+         "params": {},
+         "title": "Turn votes into seats",
+         "tasks": [
+          {
+           "say": "Give party A 51% of the votes and count its seats.",
+           "when": "share == 51",
+           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
+          },
+          {
+           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
+           "when": "spread == 0 and share > 50",
+           "then": "With no local differences at all, a one-point lead wins every seat."
+          },
+          {
+           "say": "Take the swings to their widest and see who wins where.",
+           "when": "spread == 20",
+           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
+          }
+         ],
+         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
+         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch20-l7-t1",
          "difficulty": 1,
@@ -71452,36 +71482,6 @@
            "p": 29
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch20-l7-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seats",
-         "params": {},
-         "title": "Turn votes into seats",
-         "tasks": [
-          {
-           "say": "Give party A 51% of the votes and count its seats.",
-           "when": "share == 51",
-           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
-          },
-          {
-           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
-           "when": "spread == 0 and share > 50",
-           "then": "With no local differences at all, a one-point lead wins every seat."
-          },
-          {
-           "say": "Take the swings to their widest and see who wins where.",
-           "when": "spread == 20",
-           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
-          }
-         ],
-         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
-         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
         },
         {
          "type": "mcq",
@@ -72684,6 +72684,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch21-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seats",
+         "params": {},
+         "title": "Turn votes into seats",
+         "tasks": [
+          {
+           "say": "Give party A 51% of the votes and count its seats.",
+           "when": "share == 51",
+           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
+          },
+          {
+           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
+           "when": "spread == 0 and share > 50",
+           "then": "With no local differences at all, a one-point lead wins every seat."
+          },
+          {
+           "say": "Take the swings to their widest and see who wins where.",
+           "when": "spread == 20",
+           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
+          }
+         ],
+         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
+         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch21-l1-t1",
          "difficulty": 1,
@@ -72719,36 +72749,6 @@
            "p": 47
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch21-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seats",
-         "params": {},
-         "title": "Turn votes into seats",
-         "tasks": [
-          {
-           "say": "Give party A 51% of the votes and count its seats.",
-           "when": "share == 51",
-           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
-          },
-          {
-           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
-           "when": "spread == 0 and share > 50",
-           "then": "With no local differences at all, a one-point lead wins every seat."
-          },
-          {
-           "say": "Take the swings to their widest and see who wins where.",
-           "when": "spread == 20",
-           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
-          }
-         ],
-         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
-         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
         },
         {
          "type": "mcq",
@@ -73188,6 +73188,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g10-ch21-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seats",
+         "params": {},
+         "title": "Turn votes into seats",
+         "tasks": [
+          {
+           "say": "Give party A 51% of the votes and count its seats.",
+           "when": "share == 51",
+           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
+          },
+          {
+           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
+           "when": "spread == 0 and share > 50",
+           "then": "With no local differences at all, a one-point lead wins every seat."
+          },
+          {
+           "say": "Take the swings to their widest and see who wins where.",
+           "when": "spread == 20",
+           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
+          }
+         ],
+         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
+         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
+        },
+        {
          "type": "worked",
          "id": "social-science-g10-ch21-l2-t1",
          "difficulty": 1,
@@ -73233,36 +73263,6 @@
            "p": 49
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g10-ch21-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seats",
-         "params": {},
-         "title": "Turn votes into seats",
-         "tasks": [
-          {
-           "say": "Give party A 51% of the votes and count its seats.",
-           "when": "share == 51",
-           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
-          },
-          {
-           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
-           "when": "spread == 0 and share > 50",
-           "then": "With no local differences at all, a one-point lead wins every seat."
-          },
-          {
-           "say": "Take the swings to their widest and see who wins where.",
-           "when": "spread == 20",
-           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
-          }
-         ],
-         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
-         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
         },
         {
          "type": "mcq",
@@ -76217,53 +76217,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g10-ch22-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Two classmates want different playground rules. How should their class decide?",
-         "steps": [
-          "Both classmates should speak because democracy values equal treatment.",
-          "They should vote because democracy gives people a way to resolve conflicts.",
-          "A wrong rule can change because democracy leaves room for correcting mistakes.",
-          "Everyone should help improve the rule because democracy cannot achieve goals alone."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.2",
-          "1.5",
-          "1.6",
-          "1.9",
-          "1.11"
-         ],
-         "src": [
-          {
-           "ch": 22,
-           "p": 64
-          },
-          {
-           "ch": 22,
-           "p": 64
-          },
-          {
-           "ch": 22,
-           "p": 64
-          },
-          {
-           "ch": 22,
-           "p": 64
-          },
-          {
-           "ch": 22,
-           "p": 64
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g10-ch22-l1-play",
          "difficulty": 1,
@@ -76334,6 +76287,53 @@
          ],
          "takeaway": "The chapter finds a mixed record. Democracy is strong at free and fair elections, at dignity and freedom, and at handling social differences without violence. It is weaker at reducing economic inequality, at matching dictatorships on growth, and at staying completely free of corruption.",
          "explanation": "The chapter finds a mixed record. Democracy is strong at free and fair elections, at dignity and freedom, and at handling social differences without violence. It is weaker at reducing economic inequality, at matching dictatorships on growth, and at staying completely free of corruption."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g10-ch22-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Two classmates want different playground rules. How should their class decide?",
+         "steps": [
+          "Both classmates should speak because democracy values equal treatment.",
+          "They should vote because democracy gives people a way to resolve conflicts.",
+          "A wrong rule can change because democracy leaves room for correcting mistakes.",
+          "Everyone should help improve the rule because democracy cannot achieve goals alone."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.2",
+          "1.5",
+          "1.6",
+          "1.9",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 22,
+           "p": 64
+          },
+          {
+           "ch": 22,
+           "p": 64
+          },
+          {
+           "ch": 22,
+           "p": 64
+          },
+          {
+           "ch": 22,
+           "p": 64
+          },
+          {
+           "ch": 22,
+           "p": 64
+          }
+         ]
         },
         {
          "type": "concept",
@@ -76798,63 +76798,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g10-ch22-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "The local council wants new playground rules. How should it decide so people trust the result?",
-         "steps": [
-          "The council follows agreed steps because democratic decisions depend on accepted procedures.",
-          "It shares how the choice was made because transparency lets citizens examine it.",
-          "It listens and includes residents because it must be accountable and responsive to them.",
-          "The council's democratic choice is legitimate because it is the people's own government."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.3",
-          "2.4",
-          "2.5",
-          "2.6",
-          "2.7",
-          "2.12"
-         ],
-         "src": [
-          {
-           "ch": 22,
-           "p": 65
-          },
-          {
-           "ch": 22,
-           "p": 65
-          },
-          {
-           "ch": 22,
-           "p": 65
-          },
-          {
-           "ch": 22,
-           "p": 65
-          },
-          {
-           "ch": 22,
-           "p": 65
-          },
-          {
-           "ch": 22,
-           "p": 65
-          },
-          {
-           "ch": 22,
-           "p": 66
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g10-ch22-l2-play",
          "difficulty": 1,
@@ -76934,6 +76877,63 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g10-ch22-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "The local council wants new playground rules. How should it decide so people trust the result?",
+         "steps": [
+          "The council follows agreed steps because democratic decisions depend on accepted procedures.",
+          "It shares how the choice was made because transparency lets citizens examine it.",
+          "It listens and includes residents because it must be accountable and responsive to them.",
+          "The council's democratic choice is legitimate because it is the people's own government."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.3",
+          "2.4",
+          "2.5",
+          "2.6",
+          "2.7",
+          "2.12"
+         ],
+         "src": [
+          {
+           "ch": 22,
+           "p": 65
+          },
+          {
+           "ch": 22,
+           "p": 65
+          },
+          {
+           "ch": 22,
+           "p": 65
+          },
+          {
+           "ch": 22,
+           "p": 65
+          },
+          {
+           "ch": 22,
+           "p": 65
+          },
+          {
+           "ch": 22,
+           "p": 65
+          },
+          {
+           "ch": 22,
+           "p": 66
+          }
+         ]
         },
         {
          "type": "mcq",

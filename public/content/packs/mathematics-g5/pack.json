@@ -3564,6 +3564,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g5-ch1-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "placevalue",
+         "params": {},
+         "title": "Build a big number",
+         "tasks": [
+          {
+           "say": "Make one lakh.",
+           "when": "crores == 0 and lakhs == 1 and thousands == 0 and ones == 0",
+           "then": "1,00,000 in the Indian system is 100,000: a hundred thousand."
+          },
+          {
+           "say": "Make ten lakh.",
+           "when": "crores == 0 and lakhs == 10 and thousands == 0 and ones == 0",
+           "then": "10,00,000 is 1,000,000: ten lakh is one million."
+          },
+          {
+           "say": "Make one crore.",
+           "when": "crores == 1 and lakhs == 0 and thousands == 0 and ones == 0",
+           "then": "1,00,00,000 is 10,000,000: one crore is ten million."
+          }
+         ],
+         "takeaway": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million.",
+         "explanation": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g5-ch1-l5-t1",
          "difficulty": 1,
@@ -3599,36 +3629,6 @@
            "p": 10
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g5-ch1-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "placevalue",
-         "params": {},
-         "title": "Build a big number",
-         "tasks": [
-          {
-           "say": "Make one lakh.",
-           "when": "crores == 0 and lakhs == 1 and thousands == 0 and ones == 0",
-           "then": "1,00,000 in the Indian system is 100,000: a hundred thousand."
-          },
-          {
-           "say": "Make ten lakh.",
-           "when": "crores == 0 and lakhs == 10 and thousands == 0 and ones == 0",
-           "then": "10,00,000 is 1,000,000: ten lakh is one million."
-          },
-          {
-           "say": "Make one crore.",
-           "when": "crores == 1 and lakhs == 0 and thousands == 0 and ones == 0",
-           "then": "1,00,00,000 is 10,000,000: one crore is ten million."
-          }
-         ],
-         "takeaway": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million.",
-         "explanation": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million."
         },
         {
          "type": "mcq",
@@ -7265,6 +7265,41 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g5-ch2-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Shade the fraction",
+         "tasks": [
+          {
+           "say": "Show one half.",
+           "when": "n * 2 == d",
+           "then": "Any fraction whose top is half its bottom equals one half."
+          },
+          {
+           "say": "Show a fraction bigger than one whole.",
+           "when": "n > d",
+           "then": "When the top is bigger than the bottom you have more than a whole."
+          }
+         ],
+         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
+         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
+        },
+        {
+         "type": "hook",
+         "id": "mathematics-g5-ch2-l3-hook",
+         "difficulty": 1,
+         "tags": [
+          "hook"
+         ],
+         "prompt": "Ready to discover which chikki fraction is bigger without counting every piece?",
+         "explanation": "Now read on to find out."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g5-ch2-l3-t1",
          "difficulty": 1,
@@ -7305,41 +7340,6 @@
            "p": 23
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g5-ch2-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "fraction",
-         "params": {},
-         "title": "Shade the fraction",
-         "tasks": [
-          {
-           "say": "Show one half.",
-           "when": "n * 2 == d",
-           "then": "Any fraction whose top is half its bottom equals one half."
-          },
-          {
-           "say": "Show a fraction bigger than one whole.",
-           "when": "n > d",
-           "then": "When the top is bigger than the bottom you have more than a whole."
-          }
-         ],
-         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
-         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
-        },
-        {
-         "type": "hook",
-         "id": "mathematics-g5-ch2-l3-hook",
-         "difficulty": 1,
-         "tags": [
-          "hook"
-         ],
-         "prompt": "Ready to discover which chikki fraction is bigger without counting every piece?",
-         "explanation": "Now read on to find out."
         },
         {
          "type": "mcq",
@@ -16692,6 +16692,43 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g5-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "column",
+         "params": {
+          "kind": "add"
+         },
+         "title": "Add and subtract in columns",
+         "tasks": [
+          {
+           "say": "Add 438 and 476, one column at a time.",
+           "when": "a == 438 and b == 476 and step == 3",
+           "then": "438 + 476 = 914, and regrouping carried a 1 twice."
+          },
+          {
+           "say": "The bus had 18 litres and now has 65. Add 18 and 47 to check.",
+           "when": "a == 18 and b == 47 and step == 3",
+           "then": "18 + 47 = 65: adding checks the subtraction."
+          },
+          {
+           "say": "Add 36 and 47. What carries?",
+           "when": "a == 36 and b == 47 and step == 3",
+           "then": "The ones total 13: write 3 and carry 1 ten. 36 + 47 = 83."
+          },
+          {
+           "say": "Add 185 and 125.",
+           "when": "a == 185 and b == 125 and step == 3",
+           "then": "185 + 125 = 310: 10 ones and 10 tens both regrouped."
+          }
+         ],
+         "takeaway": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column.",
+         "explanation": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g5-ch4-l2-t1",
          "difficulty": 1,
@@ -16737,43 +16774,6 @@
            "p": 44
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g5-ch4-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "column",
-         "params": {
-          "kind": "add"
-         },
-         "title": "Add and subtract in columns",
-         "tasks": [
-          {
-           "say": "Add 438 and 476, one column at a time.",
-           "when": "a == 438 and b == 476 and step == 3",
-           "then": "438 + 476 = 914, and regrouping carried a 1 twice."
-          },
-          {
-           "say": "The bus had 18 litres and now has 65. Add 18 and 47 to check.",
-           "when": "a == 18 and b == 47 and step == 3",
-           "then": "18 + 47 = 65: adding checks the subtraction."
-          },
-          {
-           "say": "Add 36 and 47. What carries?",
-           "when": "a == 36 and b == 47 and step == 3",
-           "then": "The ones total 13: write 3 and carry 1 ten. 36 + 47 = 83."
-          },
-          {
-           "say": "Add 185 and 125.",
-           "when": "a == 185 and b == 125 and step == 3",
-           "then": "185 + 125 = 310: 10 ones and 10 tens both regrouped."
-          }
-         ],
-         "takeaway": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column.",
-         "explanation": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column."
         },
         {
          "type": "mcq",
@@ -17567,6 +17567,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g5-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "placevalue",
+         "params": {},
+         "title": "Build a big number",
+         "tasks": [
+          {
+           "say": "Make one lakh.",
+           "when": "crores == 0 and lakhs == 1 and thousands == 0 and ones == 0",
+           "then": "1,00,000 in the Indian system is 100,000: a hundred thousand."
+          },
+          {
+           "say": "Make ten lakh.",
+           "when": "crores == 0 and lakhs == 10 and thousands == 0 and ones == 0",
+           "then": "10,00,000 is 1,000,000: ten lakh is one million."
+          },
+          {
+           "say": "Make one crore.",
+           "when": "crores == 1 and lakhs == 0 and thousands == 0 and ones == 0",
+           "then": "1,00,00,000 is 10,000,000: one crore is ten million."
+          }
+         ],
+         "takeaway": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million.",
+         "explanation": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g5-ch4-l3-t1",
          "difficulty": 1,
@@ -17607,36 +17637,6 @@
            "p": 47
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g5-ch4-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "placevalue",
-         "params": {},
-         "title": "Build a big number",
-         "tasks": [
-          {
-           "say": "Make one lakh.",
-           "when": "crores == 0 and lakhs == 1 and thousands == 0 and ones == 0",
-           "then": "1,00,000 in the Indian system is 100,000: a hundred thousand."
-          },
-          {
-           "say": "Make ten lakh.",
-           "when": "crores == 0 and lakhs == 10 and thousands == 0 and ones == 0",
-           "then": "10,00,000 is 1,000,000: ten lakh is one million."
-          },
-          {
-           "say": "Make one crore.",
-           "when": "crores == 1 and lakhs == 0 and thousands == 0 and ones == 0",
-           "then": "1,00,00,000 is 10,000,000: one crore is ten million."
-          }
-         ],
-         "takeaway": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million.",
-         "explanation": "One lakh is a hundred thousand, ten lakh is a million, and one crore is ten million."
         },
         {
          "type": "truefalse",
@@ -33452,8 +33452,8 @@
          "answer": 3,
          "why": {
           "36": "36 is reached after the first doubling.",
-          "54": "54 comes from six times nine, not the doubling steps.",
-          "90": "90 is reached after adding 18 to 72."
+          "90": "90 is reached after adding 18 to 72.",
+          "54": "54 comes from six times nine, not the doubling steps."
          },
          "explanation": "72 is reached after doubling 36.",
          "anchor": "mathematics-g5-ch6-l3-a1",
@@ -33477,9 +33477,9 @@
          ],
          "answer": 1,
          "why": {
+          "90": "90 is the product of 18 and 5, not the changed product.",
           "10": "10 is the product of 2 and 5.",
-          "54": "54 is six times nine.",
-          "90": "90 is the product of 18 and 5, not the changed product."
+          "54": "54 is six times nine."
          },
          "explanation": "100 is the product of 20 and 5.",
          "anchor": "mathematics-g5-ch6-l1-t1",
@@ -50691,9 +50691,9 @@
          ],
          "answer": 1,
          "why": {
+          "200": "200 ignores the 48 counters that were also divided.",
           "8": "8 is only the result of dividing 48 by 6.",
-          "48": "48 is the smaller part, not the amount in each box.",
-          "200": "200 ignores the 48 counters that were also divided."
+          "48": "48 is the smaller part, not the amount in each box."
          },
          "explanation": "208 is 200 + 8, so it includes both parts of 1,248.",
          "anchor": "mathematics-g5-ch9-l2-t1",
@@ -52999,6 +52999,26 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g5-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "rotation",
+         "params": {},
+         "title": "Turn the shape",
+         "tasks": [
+          {
+           "say": "Turn the shape until it looks the same again.",
+           "when": "turn == 120",
+           "then": "A three-armed shape matches itself every 120 degrees, so its order is 3."
+          }
+         ],
+         "takeaway": "The number of times a shape looks the same in one full turn is its order of rotational symmetry.",
+         "explanation": "The number of times a shape looks the same in one full turn is its order of rotational symmetry."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g5-ch10-l3-t1",
          "difficulty": 1,
@@ -53044,26 +53064,6 @@
            "p": 138
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g5-ch10-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "rotation",
-         "params": {},
-         "title": "Turn the shape",
-         "tasks": [
-          {
-           "say": "Turn the shape until it looks the same again.",
-           "when": "turn == 120",
-           "then": "A three-armed shape matches itself every 120 degrees, so its order is 3."
-          }
-         ],
-         "takeaway": "The number of times a shape looks the same in one full turn is its order of rotational symmetry.",
-         "explanation": "The number of times a shape looks the same in one full turn is its order of rotational symmetry."
         },
         {
          "type": "mcq",
@@ -71924,6 +71924,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g5-ch13-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g5-ch13-l2-t1",
          "difficulty": 1,
@@ -71969,36 +71999,6 @@
            "p": 165
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g5-ch13-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "factors",
-         "params": {},
-         "title": "Rectangles of dots",
-         "tasks": [
-          {
-           "say": "Make 24. How many rectangles can it make?",
-           "when": "n == 24",
-           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
-          },
-          {
-           "say": "Find a prime number bigger than 20.",
-           "when": "n == 23 or n == 29 or n == 31 or n == 37",
-           "then": "It makes only one long row, so it has just two factors: it is prime."
-          },
-          {
-           "say": "Find the number up to 40 with 9 factors.",
-           "when": "n == 36",
-           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
-          }
-         ],
-         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
-         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "mcq",
@@ -72397,6 +72397,26 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g5-ch13-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "jumps",
+         "params": {},
+         "title": "Who lands together?",
+         "tasks": [
+          {
+           "say": "Find two animals whose first common landing is 24.",
+           "when": "(a == 2 and b == 3) or (a == 3 and b == 2) or (a == 0 and b == 3) or (a == 3 and b == 0)",
+           "then": "6 and 8, or 3 and 8, both meet first at 24."
+          }
+         ],
+         "takeaway": "An animal lands on the multiples of its jump; where two land together are common multiples.",
+         "explanation": "An animal lands on the multiples of its jump; where two land together are common multiples."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g5-ch13-l3-t1",
          "difficulty": 1,
@@ -72452,26 +72472,6 @@
            "p": 167
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g5-ch13-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "jumps",
-         "params": {},
-         "title": "Who lands together?",
-         "tasks": [
-          {
-           "say": "Find two animals whose first common landing is 24.",
-           "when": "(a == 2 and b == 3) or (a == 3 and b == 2) or (a == 0 and b == 3) or (a == 3 and b == 0)",
-           "then": "6 and 8, or 3 and 8, both meet first at 24."
-          }
-         ],
-         "takeaway": "An animal lands on the multiples of its jump; where two land together are common multiples.",
-         "explanation": "An animal lands on the multiples of its jump; where two land together are common multiples."
         },
         {
          "type": "concept",

@@ -1132,6 +1132,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch1-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "See what happens when water is heated or cooled",
+         "tasks": [
+          {
+           "say": "Move the temperature above 100°C.",
+           "when": "temp > 100",
+           "then": "The water particles fly apart and water changes into steam."
+          },
+          {
+           "say": "Move the temperature below 0°C.",
+           "when": "temp < 0",
+           "then": "The water particles become closely held and water changes into ice."
+          },
+          {
+           "say": "Warm the water above 20°C and watch the particles.",
+           "when": "temp > 20",
+           "then": "Heating makes the particles move faster, so the change happens more quickly."
+          }
+         ],
+         "takeaway": "Materials can change when heated or cooled, and some changes can be reversed.",
+         "explanation": "Materials can change when heated or cooled, and some changes can be reversed."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch1-l3-t1",
          "difficulty": 1,
@@ -1162,36 +1192,6 @@
            "p": 3
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch1-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "particles",
-         "params": {},
-         "title": "See what happens when water is heated or cooled",
-         "tasks": [
-          {
-           "say": "Move the temperature above 100°C.",
-           "when": "temp > 100",
-           "then": "The water particles fly apart and water changes into steam."
-          },
-          {
-           "say": "Move the temperature below 0°C.",
-           "when": "temp < 0",
-           "then": "The water particles become closely held and water changes into ice."
-          },
-          {
-           "say": "Warm the water above 20°C and watch the particles.",
-           "when": "temp > 20",
-           "then": "Heating makes the particles move faster, so the change happens more quickly."
-          }
-         ],
-         "takeaway": "Materials can change when heated or cooled, and some changes can be reversed.",
-         "explanation": "Materials can change when heated or cooled, and some changes can be reversed."
         },
         {
          "type": "mcq",
@@ -1755,6 +1755,26 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch1-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "shadow",
+         "params": {},
+         "title": "Make a shadow",
+         "tasks": [
+          {
+           "say": "Make the shadow as big as you can.",
+           "when": "d == 10",
+           "then": "Closest to the lamp, the object blocks the most light."
+          }
+         ],
+         "takeaway": "Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.",
+         "explanation": "Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch1-l4-t1",
          "difficulty": 1,
@@ -1795,26 +1815,6 @@
            "p": 4
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch1-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "shadow",
-         "params": {},
-         "title": "Make a shadow",
-         "tasks": [
-          {
-           "say": "Make the shadow as big as you can.",
-           "when": "d == 10",
-           "then": "Closest to the lamp, the object blocks the most light."
-          }
-         ],
-         "takeaway": "Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more.",
-         "explanation": "Light travels in straight lines, so an object blocks a patch of it; nearer the lamp, it blocks more."
         },
         {
          "type": "concept",
@@ -2201,6 +2201,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch1-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "eclipse",
+         "params": {},
+         "title": "Explore Solar and Lunar Eclipses",
+         "tasks": [
+          {
+           "say": "Move the Moon to 180 degrees and look for the Moon between the Sun and Earth.",
+           "when": "moon == 180",
+           "then": "You found a solar eclipse, when the Moon blocks sunlight from reaching Earth."
+          },
+          {
+           "say": "Move the Moon to 0 degrees and see what happens when it is behind Earth.",
+           "when": "moon == 0",
+           "then": "You found a lunar eclipse, when Earth’s shadow falls on the Moon."
+          }
+         ],
+         "takeaway": "Because light travels in straight lines, the Moon can block the Sun’s light and the Earth can block the Sun’s light from reaching the Moon.",
+         "explanation": "Because light travels in straight lines, the Moon can block the Sun’s light and the Earth can block the Sun’s light from reaching the Moon."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch1-l5-t1",
          "difficulty": 1,
@@ -2246,31 +2271,6 @@
            "p": 5
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch1-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "eclipse",
-         "params": {},
-         "title": "Explore Solar and Lunar Eclipses",
-         "tasks": [
-          {
-           "say": "Move the Moon to 180 degrees and look for the Moon between the Sun and Earth.",
-           "when": "moon == 180",
-           "then": "You found a solar eclipse, when the Moon blocks sunlight from reaching Earth."
-          },
-          {
-           "say": "Move the Moon to 0 degrees and see what happens when it is behind Earth.",
-           "when": "moon == 0",
-           "then": "You found a lunar eclipse, when Earth’s shadow falls on the Moon."
-          }
-         ],
-         "takeaway": "Because light travels in straight lines, the Moon can block the Sun’s light and the Earth can block the Sun’s light from reaching the Moon.",
-         "explanation": "Because light travels in straight lines, the Moon can block the Sun’s light and the Earth can block the Sun’s light from reaching the Moon."
         },
         {
          "type": "mcq",
@@ -3912,6 +3912,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "phscale",
+         "params": {},
+         "title": "Slide along the pH scale",
+         "tasks": [
+          {
+           "say": "Make a strong acid.",
+           "when": "ph <= 2",
+           "then": "At pH 2 there are far more hydrogen ions than in pure water, so the acid is strong."
+          },
+          {
+           "say": "Make the solution exactly neutral.",
+           "when": "ph == 7",
+           "then": "At pH 7 the solution is neutral, like pure water."
+          },
+          {
+           "say": "Make a strong base.",
+           "when": "ph >= 12",
+           "then": "At pH 12 there are very few hydrogen ions and many hydroxide ions: a strong base."
+          }
+         ],
+         "takeaway": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes.",
+         "explanation": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch2-l1-t1",
          "difficulty": 1,
@@ -3962,36 +3992,6 @@
            "p": 10
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch2-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "phscale",
-         "params": {},
-         "title": "Slide along the pH scale",
-         "tasks": [
-          {
-           "say": "Make a strong acid.",
-           "when": "ph <= 2",
-           "then": "At pH 2 there are far more hydrogen ions than in pure water, so the acid is strong."
-          },
-          {
-           "say": "Make the solution exactly neutral.",
-           "when": "ph == 7",
-           "then": "At pH 7 the solution is neutral, like pure water."
-          },
-          {
-           "say": "Make a strong base.",
-           "when": "ph >= 12",
-           "then": "At pH 12 there are very few hydrogen ions and many hydroxide ions: a strong base."
-          }
-         ],
-         "takeaway": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes.",
-         "explanation": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes."
         },
         {
          "type": "mcq",
@@ -4421,6 +4421,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "phscale",
+         "params": {},
+         "title": "Slide along the pH scale",
+         "tasks": [
+          {
+           "say": "Make a strong acid.",
+           "when": "ph <= 2",
+           "then": "At pH 2 there are far more hydrogen ions than in pure water, so the acid is strong."
+          },
+          {
+           "say": "Make the solution exactly neutral.",
+           "when": "ph == 7",
+           "then": "At pH 7 the solution is neutral, like pure water."
+          },
+          {
+           "say": "Make a strong base.",
+           "when": "ph >= 12",
+           "then": "At pH 12 there are very few hydrogen ions and many hydroxide ions: a strong base."
+          }
+         ],
+         "takeaway": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes.",
+         "explanation": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch2-l2-t1",
          "difficulty": 1,
@@ -4471,36 +4501,6 @@
            "p": 13
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch2-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "phscale",
-         "params": {},
-         "title": "Slide along the pH scale",
-         "tasks": [
-          {
-           "say": "Make a strong acid.",
-           "when": "ph <= 2",
-           "then": "At pH 2 there are far more hydrogen ions than in pure water, so the acid is strong."
-          },
-          {
-           "say": "Make the solution exactly neutral.",
-           "when": "ph == 7",
-           "then": "At pH 7 the solution is neutral, like pure water."
-          },
-          {
-           "say": "Make a strong base.",
-           "when": "ph >= 12",
-           "then": "At pH 12 there are very few hydrogen ions and many hydroxide ions: a strong base."
-          }
-         ],
-         "takeaway": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes.",
-         "explanation": "The pH scale runs from 0 to 14. Below 7 a solution is acidic, at 7 it is neutral, and above 7 it is basic, and the universal indicator changes colour as the pH changes."
         },
         {
          "type": "mcq",
@@ -5358,6 +5358,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch2-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "neutral",
+         "params": {},
+         "title": "Watch an indicator show acid or base",
+         "tasks": [
+          {
+           "say": "Use more acid than base and add another acid drop.",
+           "when": "acid > base && acid > 4",
+           "then": "The litmus turns red, showing that the mixture is acidic."
+          },
+          {
+           "say": "Make the numbers of acid and base drops equal.",
+           "when": "acid == base",
+           "then": "The litmus shows a neutral colour when equal strengths mix."
+          },
+          {
+           "say": "Use more base than acid and add another base drop.",
+           "when": "base > acid && base > 1",
+           "then": "The litmus turns blue, showing that the mixture is basic."
+          }
+         ],
+         "takeaway": "An indicator, including an olfactory indicator, can reveal whether a substance is acidic or basic.",
+         "explanation": "An indicator, including an olfactory indicator, can reveal whether a substance is acidic or basic."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch2-l4-t1",
          "difficulty": 1,
@@ -5408,36 +5438,6 @@
            "p": 16
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch2-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "neutral",
-         "params": {},
-         "title": "Watch an indicator show acid or base",
-         "tasks": [
-          {
-           "say": "Use more acid than base and add another acid drop.",
-           "when": "acid > base && acid > 4",
-           "then": "The litmus turns red, showing that the mixture is acidic."
-          },
-          {
-           "say": "Make the numbers of acid and base drops equal.",
-           "when": "acid == base",
-           "then": "The litmus shows a neutral colour when equal strengths mix."
-          },
-          {
-           "say": "Use more base than acid and add another base drop.",
-           "when": "base > acid && base > 1",
-           "then": "The litmus turns blue, showing that the mixture is basic."
-          }
-         ],
-         "takeaway": "An indicator, including an olfactory indicator, can reveal whether a substance is acidic or basic.",
-         "explanation": "An indicator, including an olfactory indicator, can reveal whether a substance is acidic or basic."
         },
         {
          "type": "truefalse",
@@ -5846,6 +5846,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch2-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "neutral",
+         "params": {},
+         "title": "Neutralise an acid",
+         "tasks": [
+          {
+           "say": "Add base until it is neutral.",
+           "when": "acid == base and acid == 4",
+           "then": "Acid and base have cancelled each other out."
+          },
+          {
+           "say": "Add one more drop of base.",
+           "when": "base == acid + 1",
+           "then": "Now it is basic."
+          }
+         ],
+         "takeaway": "An acid and a base can neutralise each other.",
+         "explanation": "An acid and a base can neutralise each other."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch2-l5-t1",
          "difficulty": 1,
@@ -5916,31 +5941,6 @@
            "p": 18
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch2-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "neutral",
-         "params": {},
-         "title": "Neutralise an acid",
-         "tasks": [
-          {
-           "say": "Add base until it is neutral.",
-           "when": "acid == base and acid == 4",
-           "then": "Acid and base have cancelled each other out."
-          },
-          {
-           "say": "Add one more drop of base.",
-           "when": "base == acid + 1",
-           "then": "Now it is basic."
-          }
-         ],
-         "takeaway": "An acid and a base can neutralise each other.",
-         "explanation": "An acid and a base can neutralise each other."
         },
         {
          "type": "mcq",
@@ -6370,6 +6370,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch2-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "neutral",
+         "params": {},
+         "title": "Neutralise an acid",
+         "tasks": [
+          {
+           "say": "Add base until it is neutral.",
+           "when": "acid == base and acid == 4",
+           "then": "Acid and base have cancelled each other out."
+          },
+          {
+           "say": "Add one more drop of base.",
+           "when": "base == acid + 1",
+           "then": "Now it is basic."
+          }
+         ],
+         "takeaway": "An acid and a base can neutralise each other.",
+         "explanation": "An acid and a base can neutralise each other."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch2-l6-t1",
          "difficulty": 1,
@@ -6410,31 +6435,6 @@
            "p": 19
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch2-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "neutral",
-         "params": {},
-         "title": "Neutralise an acid",
-         "tasks": [
-          {
-           "say": "Add base until it is neutral.",
-           "when": "acid == base and acid == 4",
-           "then": "Acid and base have cancelled each other out."
-          },
-          {
-           "say": "Add one more drop of base.",
-           "when": "base == acid + 1",
-           "then": "Now it is basic."
-          }
-         ],
-         "takeaway": "An acid and a base can neutralise each other.",
-         "explanation": "An acid and a base can neutralise each other."
         },
         {
          "type": "mcq",
@@ -8044,6 +8044,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "circuit",
+         "params": {},
+         "title": "Build a battery-powered circuit",
+         "tasks": [
+          {
+           "say": "Close the switch with one cell and one bulb.",
+           "when": "closed == 1 and cells == 1 and bulbs == 1",
+           "then": "The bulb lights because the circuit is closed."
+          },
+          {
+           "say": "Close the switch with three cells and one bulb.",
+           "when": "closed == 1 and cells == 3 and bulbs == 1",
+           "then": "More cells provide more energy to the circuit."
+          },
+          {
+           "say": "Open the switch with three cells and one bulb.",
+           "when": "closed == 0 and cells == 3 and bulbs == 1",
+           "then": "The bulb goes out because the circuit is open."
+          }
+         ],
+         "takeaway": "A battery is made from cells joined together, and its cells provide electrical energy when the circuit is closed.",
+         "explanation": "A battery is made from cells joined together, and its cells provide electrical energy when the circuit is closed."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch3-l2-t1",
          "difficulty": 1,
@@ -8089,36 +8119,6 @@
            "p": 26
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch3-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "circuit",
-         "params": {},
-         "title": "Build a battery-powered circuit",
-         "tasks": [
-          {
-           "say": "Close the switch with one cell and one bulb.",
-           "when": "closed == 1 and cells == 1 and bulbs == 1",
-           "then": "The bulb lights because the circuit is closed."
-          },
-          {
-           "say": "Close the switch with three cells and one bulb.",
-           "when": "closed == 1 and cells == 3 and bulbs == 1",
-           "then": "More cells provide more energy to the circuit."
-          },
-          {
-           "say": "Open the switch with three cells and one bulb.",
-           "when": "closed == 0 and cells == 3 and bulbs == 1",
-           "then": "The bulb goes out because the circuit is open."
-          }
-         ],
-         "takeaway": "A battery is made from cells joined together, and its cells provide electrical energy when the circuit is closed.",
-         "explanation": "A battery is made from cells joined together, and its cells provide electrical energy when the circuit is closed."
         },
         {
          "type": "mcq",
@@ -9149,6 +9149,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch3-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "circuit",
+         "params": {},
+         "title": "Light the bulb",
+         "tasks": [
+          {
+           "say": "Close the switch.",
+           "when": "closed == 1",
+           "then": "With no gap, current can flow and the bulb lights."
+          },
+          {
+           "say": "Open it again.",
+           "when": "closed == 0 and cells >= 1 and bulbs >= 2 or closed == 0 and cells == 2",
+           "then": "A gap anywhere stops the current."
+          }
+         ],
+         "takeaway": "Current flows only around a closed path.",
+         "explanation": "Current flows only around a closed path."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch3-l4-t1",
          "difficulty": 1,
@@ -9189,31 +9214,6 @@
            "p": 30
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch3-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "circuit",
-         "params": {},
-         "title": "Light the bulb",
-         "tasks": [
-          {
-           "say": "Close the switch.",
-           "when": "closed == 1",
-           "then": "With no gap, current can flow and the bulb lights."
-          },
-          {
-           "say": "Open it again.",
-           "when": "closed == 0 and cells >= 1 and bulbs >= 2 or closed == 0 and cells == 2",
-           "then": "A gap anywhere stops the current."
-          }
-         ],
-         "takeaway": "Current flows only around a closed path.",
-         "explanation": "Current flows only around a closed path."
         },
         {
          "type": "mcq",
@@ -9602,6 +9602,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch3-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "circuit",
+         "params": {},
+         "title": "Change the circuit",
+         "tasks": [
+          {
+           "say": "Close the switch.",
+           "when": "closed == 1",
+           "then": "The bulb lights."
+          },
+          {
+           "say": "Add a second bulb.",
+           "when": "closed == 1 and bulbs == 2",
+           "then": "Two bulbs share one cell, so they glow less."
+          },
+          {
+           "say": "Add another cell.",
+           "when": "closed == 1 and bulbs == 2 and cells == 2",
+           "then": "More cells make them brighter."
+          }
+         ],
+         "takeaway": "A switch opens or closes the path for current.",
+         "explanation": "A switch opens or closes the path for current."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch3-l5-t1",
          "difficulty": 1,
@@ -9632,36 +9662,6 @@
            "p": 32
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch3-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "circuit",
-         "params": {},
-         "title": "Change the circuit",
-         "tasks": [
-          {
-           "say": "Close the switch.",
-           "when": "closed == 1",
-           "then": "The bulb lights."
-          },
-          {
-           "say": "Add a second bulb.",
-           "when": "closed == 1 and bulbs == 2",
-           "then": "Two bulbs share one cell, so they glow less."
-          },
-          {
-           "say": "Add another cell.",
-           "when": "closed == 1 and bulbs == 2 and cells == 2",
-           "then": "More cells make them brighter."
-          }
-         ],
-         "takeaway": "A switch opens or closes the path for current.",
-         "explanation": "A switch opens or closes the path for current."
         },
         {
          "type": "concept",
@@ -12554,6 +12554,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "circuit",
+         "params": {},
+         "title": "Light the bulb",
+         "tasks": [
+          {
+           "say": "Light the bulb.",
+           "when": "closed == 1",
+           "then": "Closing the switch completes the circuit, so current flows."
+          },
+          {
+           "say": "Make the bulb brighter.",
+           "when": "closed == 1 and cells > bulbs",
+           "then": "More cells for each bulb push more current through it."
+          }
+         ],
+         "takeaway": "Current flows only round a closed circuit; more cells push more current.",
+         "explanation": "Current flows only round a closed circuit; more cells push more current."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch4-l3-t1",
          "difficulty": 1,
@@ -12593,31 +12618,6 @@
            "p": 47
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch4-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "circuit",
-         "params": {},
-         "title": "Light the bulb",
-         "tasks": [
-          {
-           "say": "Light the bulb.",
-           "when": "closed == 1",
-           "then": "Closing the switch completes the circuit, so current flows."
-          },
-          {
-           "say": "Make the bulb brighter.",
-           "when": "closed == 1 and cells > bulbs",
-           "then": "More cells for each bulb push more current through it."
-          }
-         ],
-         "takeaway": "Current flows only round a closed circuit; more cells push more current.",
-         "explanation": "Current flows only round a closed circuit; more cells push more current."
         },
         {
          "type": "mcq",
@@ -15163,6 +15163,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch5-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "Explore water as its temperature changes",
+         "tasks": [
+          {
+           "say": "Set the temperature to -10°C.",
+           "when": "temp == -10",
+           "then": "The water particles stay in place, showing that water has become solid ice."
+          },
+          {
+           "say": "Set the temperature to 50°C.",
+           "when": "temp == 50",
+           "then": "The particles slide past each other, showing that water is liquid."
+          },
+          {
+           "say": "Set the temperature to 110°C.",
+           "when": "temp == 110",
+           "then": "The particles fly apart, showing that water has become steam."
+          }
+         ],
+         "takeaway": "Heating or cooling water changes how its particles move and the state of the water.",
+         "explanation": "Heating or cooling water changes how its particles move and the state of the water."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch5-l1-t1",
          "difficulty": 1,
@@ -15198,36 +15228,6 @@
            "p": 58
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch5-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "particles",
-         "params": {},
-         "title": "Explore water as its temperature changes",
-         "tasks": [
-          {
-           "say": "Set the temperature to -10°C.",
-           "when": "temp == -10",
-           "then": "The water particles stay in place, showing that water has become solid ice."
-          },
-          {
-           "say": "Set the temperature to 50°C.",
-           "when": "temp == 50",
-           "then": "The particles slide past each other, showing that water is liquid."
-          },
-          {
-           "say": "Set the temperature to 110°C.",
-           "when": "temp == 110",
-           "then": "The particles fly apart, showing that water has become steam."
-          }
-         ],
-         "takeaway": "Heating or cooling water changes how its particles move and the state of the water.",
-         "explanation": "Heating or cooling water changes how its particles move and the state of the water."
         },
         {
          "type": "mcq",
@@ -15621,6 +15621,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "Explore how water changes",
+         "tasks": [
+          {
+           "say": "Set the temperature below 0°C.",
+           "when": "temp < 0",
+           "then": "The water becomes solid ice, but it is still water."
+          },
+          {
+           "say": "Set the temperature above 100°C.",
+           "when": "temp > 100",
+           "then": "The water becomes a gas, but no new substance is formed."
+          }
+         ],
+         "takeaway": "Heating or cooling changes water's state and appearance without making a new substance.",
+         "explanation": "Heating or cooling changes water's state and appearance without making a new substance."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch5-l2-t1",
          "difficulty": 1,
@@ -15665,31 +15690,6 @@
            "p": 59
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch5-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "particles",
-         "params": {},
-         "title": "Explore how water changes",
-         "tasks": [
-          {
-           "say": "Set the temperature below 0°C.",
-           "when": "temp < 0",
-           "then": "The water becomes solid ice, but it is still water."
-          },
-          {
-           "say": "Set the temperature above 100°C.",
-           "when": "temp > 100",
-           "then": "The water becomes a gas, but no new substance is formed."
-          }
-         ],
-         "takeaway": "Heating or cooling changes water's state and appearance without making a new substance.",
-         "explanation": "Heating or cooling changes water's state and appearance without making a new substance."
         },
         {
          "type": "concept",
@@ -20630,6 +20630,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch6-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "germs",
+         "params": {},
+         "title": "Watch an illness spread",
+         "tasks": [
+          {
+           "say": "Let the illness reach most of the group.",
+           "when": "wash <= 10 and day >= 12",
+           "then": "With almost nobody washing, the germs pass from neighbour to neighbour until nearly the whole group has been ill."
+          },
+          {
+           "say": "Break the chain: make most people wash their hands.",
+           "when": "wash >= 70 and day >= 12",
+           "then": "Most people wash their hands, so the illness keeps meeting people who do not take it in and stops after a few."
+          }
+         ],
+         "takeaway": "A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner.",
+         "explanation": "A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch6-l4-t1",
          "difficulty": 1,
@@ -20670,31 +20695,6 @@
            "p": 80
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch6-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "germs",
-         "params": {},
-         "title": "Watch an illness spread",
-         "tasks": [
-          {
-           "say": "Let the illness reach most of the group.",
-           "when": "wash <= 10 and day >= 12",
-           "then": "With almost nobody washing, the germs pass from neighbour to neighbour until nearly the whole group has been ill."
-          },
-          {
-           "say": "Break the chain: make most people wash their hands.",
-           "when": "wash >= 70 and day >= 12",
-           "then": "Most people wash their hands, so the illness keeps meeting people who do not take it in and stops after a few."
-          }
-         ],
-         "takeaway": "A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner.",
-         "explanation": "A communicable disease passes from a sick person to others by contact, water, food or air. A person who washes their hands does not pick the germs up, so every one who washes breaks the chain and the illness stops sooner."
         },
         {
          "type": "mcq",
@@ -22925,6 +22925,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "conduction",
+         "params": {},
+         "title": "Heat the strip",
+         "tasks": [
+          {
+           "say": "Heat the copper strip until all four pins fall.",
+           "when": "material == 0 and t >= 40",
+           "then": "The pin nearest the candle fell first: heat travels along the metal."
+          },
+          {
+           "say": "Try wood for two minutes. Does any pin fall?",
+           "when": "material == 2 and t == 120",
+           "then": "None falls: wood is an insulator."
+          }
+         ],
+         "takeaway": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators.",
+         "explanation": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch7-l1-t1",
          "difficulty": 1,
@@ -22965,31 +22990,6 @@
            "p": 91
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch7-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "conduction",
-         "params": {},
-         "title": "Heat the strip",
-         "tasks": [
-          {
-           "say": "Heat the copper strip until all four pins fall.",
-           "when": "material == 0 and t >= 40",
-           "then": "The pin nearest the candle fell first: heat travels along the metal."
-          },
-          {
-           "say": "Try wood for two minutes. Does any pin fall?",
-           "when": "material == 2 and t == 120",
-           "then": "None falls: wood is an insulator."
-          }
-         ],
-         "takeaway": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators.",
-         "explanation": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators."
         },
         {
          "type": "mcq",
@@ -23415,6 +23415,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "conduction",
+         "params": {},
+         "title": "Heat the strip",
+         "tasks": [
+          {
+           "say": "Heat the copper strip until all four pins fall.",
+           "when": "material == 0 and t >= 40",
+           "then": "The pin nearest the candle fell first: heat travels along the metal."
+          },
+          {
+           "say": "Try wood for two minutes. Does any pin fall?",
+           "when": "material == 2 and t == 120",
+           "then": "None falls: wood is an insulator."
+          }
+         ],
+         "takeaway": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators.",
+         "explanation": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch7-l2-t1",
          "difficulty": 1,
@@ -23455,31 +23480,6 @@
            "p": 91
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch7-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "conduction",
-         "params": {},
-         "title": "Heat the strip",
-         "tasks": [
-          {
-           "say": "Heat the copper strip until all four pins fall.",
-           "when": "material == 0 and t >= 40",
-           "then": "The pin nearest the candle fell first: heat travels along the metal."
-          },
-          {
-           "say": "Try wood for two minutes. Does any pin fall?",
-           "when": "material == 2 and t == 120",
-           "then": "None falls: wood is an insulator."
-          }
-         ],
-         "takeaway": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators.",
-         "explanation": "In conduction heat passes along a solid from the hot end; metals conduct well, wood and glass are insulators."
         },
         {
          "type": "mcq",
@@ -23902,6 +23902,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seabreeze",
+         "params": {},
+         "title": "Watch the coast breathe",
+         "tasks": [
+          {
+           "say": "Make a sea breeze.",
+           "when": "hour >= 10 and hour <= 17",
+           "then": "By day the land is hotter, so air rises over it and the sea air blows in."
+          },
+          {
+           "say": "Make a land breeze.",
+           "when": "hour >= 21 or hour <= 5",
+           "then": "At night the land is cooler, so the breeze blows out to sea."
+          }
+         ],
+         "takeaway": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.",
+         "explanation": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch7-l3-t1",
          "difficulty": 1,
@@ -23942,31 +23967,6 @@
            "p": 93
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch7-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seabreeze",
-         "params": {},
-         "title": "Watch the coast breathe",
-         "tasks": [
-          {
-           "say": "Make a sea breeze.",
-           "when": "hour >= 10 and hour <= 17",
-           "then": "By day the land is hotter, so air rises over it and the sea air blows in."
-          },
-          {
-           "say": "Make a land breeze.",
-           "when": "hour >= 21 or hour <= 5",
-           "then": "At night the land is cooler, so the breeze blows out to sea."
-          }
-         ],
-         "takeaway": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.",
-         "explanation": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze."
         },
         {
          "type": "mcq",
@@ -24394,6 +24394,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "radiation",
+         "params": {},
+         "title": "Paint the can",
+         "tasks": [
+          {
+           "say": "Paint the can black and leave it 20 minutes.",
+           "when": "colour == 3 and t >= 20",
+           "then": "The black can is much hotter: dark colours absorb more heat."
+          },
+          {
+           "say": "Paint it white too. Which can is hotter now?",
+           "when": "colour == 0 and t >= 20",
+           "then": "Neither: both reflect most of the heat. That is why light clothes keep us cool in summer."
+          }
+         ],
+         "takeaway": "Dark surfaces absorb more of the Sun’s heat; light ones reflect it.",
+         "explanation": "Dark surfaces absorb more of the Sun’s heat; light ones reflect it."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch7-l4-t1",
          "difficulty": 1,
@@ -24434,31 +24459,6 @@
            "p": 96
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch7-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "radiation",
-         "params": {},
-         "title": "Paint the can",
-         "tasks": [
-          {
-           "say": "Paint the can black and leave it 20 minutes.",
-           "when": "colour == 3 and t >= 20",
-           "then": "The black can is much hotter: dark colours absorb more heat."
-          },
-          {
-           "say": "Paint it white too. Which can is hotter now?",
-           "when": "colour == 0 and t >= 20",
-           "then": "Neither: both reflect most of the heat. That is why light clothes keep us cool in summer."
-          }
-         ],
-         "takeaway": "Dark surfaces absorb more of the Sun’s heat; light ones reflect it.",
-         "explanation": "Dark surfaces absorb more of the Sun’s heat; light ones reflect it."
         },
         {
          "type": "concept",
@@ -24971,6 +24971,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "watercycle",
+         "params": {},
+         "title": "Follow a drop of water",
+         "tasks": [
+          {
+           "say": "Go to the clouds.",
+           "when": "step == 2",
+           "then": "Vapour cools high up and condenses."
+          },
+          {
+           "say": "Make it rain.",
+           "when": "step == 3",
+           "then": "Heavy drops fall."
+          },
+          {
+           "say": "Bring it back to the sea.",
+           "when": "step == 4",
+           "then": "Then the cycle begins again."
+          }
+         ],
+         "takeaway": "Water keeps moving between the sea, the air and the land.",
+         "explanation": "Water keeps moving between the sea, the air and the land."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch7-l5-t1",
          "difficulty": 1,
@@ -25011,36 +25041,6 @@
            "p": 98
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch7-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "watercycle",
-         "params": {},
-         "title": "Follow a drop of water",
-         "tasks": [
-          {
-           "say": "Go to the clouds.",
-           "when": "step == 2",
-           "then": "Vapour cools high up and condenses."
-          },
-          {
-           "say": "Make it rain.",
-           "when": "step == 3",
-           "then": "Heavy drops fall."
-          },
-          {
-           "say": "Bring it back to the sea.",
-           "when": "step == 4",
-           "then": "Then the cycle begins again."
-          }
-         ],
-         "takeaway": "Water keeps moving between the sea, the air and the land.",
-         "explanation": "Water keeps moving between the sea, the air and the land."
         },
         {
          "type": "mcq",
@@ -25536,6 +25536,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch7-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seepage",
+         "params": {},
+         "title": "Pour the water",
+         "tasks": [
+          {
+           "say": "Let 3 minutes pass.",
+           "when": "t == 3",
+           "then": "Gravel has let through the most water: its particles have the widest gaps."
+          },
+          {
+           "say": "Wait until all the water is through the gravel.",
+           "when": "t >= 4",
+           "then": "All 100 ml is through the gravel, while clay has let through only a little."
+          }
+         ],
+         "takeaway": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles.",
+         "explanation": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch7-l6-t1",
          "difficulty": 1,
@@ -25566,31 +25591,6 @@
            "p": 100
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch7-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seepage",
-         "params": {},
-         "title": "Pour the water",
-         "tasks": [
-          {
-           "say": "Let 3 minutes pass.",
-           "when": "t == 3",
-           "then": "Gravel has let through the most water: its particles have the widest gaps."
-          },
-          {
-           "say": "Wait until all the water is through the gravel.",
-           "when": "t >= 4",
-           "then": "All 100 ml is through the gravel, while clay has let through only a little."
-          }
-         ],
-         "takeaway": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles.",
-         "explanation": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles."
         },
         {
          "type": "mcq",
@@ -27737,6 +27737,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch8-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pendulum",
+         "params": {},
+         "title": "Change the length",
+         "tasks": [
+          {
+           "say": "Make the string 100 cm long.",
+           "when": "len == 100",
+           "then": "A long pendulum takes about 2 seconds for each swing."
+          },
+          {
+           "say": "Make it 25 cm long.",
+           "when": "len == 25",
+           "then": "A shorter pendulum swings faster."
+          }
+         ],
+         "takeaway": "The time period depends on the length of the pendulum.",
+         "explanation": "The time period depends on the length of the pendulum."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch8-l3-t1",
          "difficulty": 1,
@@ -27761,31 +27786,6 @@
            "p": 110
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch8-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "pendulum",
-         "params": {},
-         "title": "Change the length",
-         "tasks": [
-          {
-           "say": "Make the string 100 cm long.",
-           "when": "len == 100",
-           "then": "A long pendulum takes about 2 seconds for each swing."
-          },
-          {
-           "say": "Make it 25 cm long.",
-           "when": "len == 25",
-           "then": "A shorter pendulum swings faster."
-          }
-         ],
-         "takeaway": "The time period depends on the length of the pendulum.",
-         "explanation": "The time period depends on the length of the pendulum."
         },
         {
          "type": "concept",
@@ -28563,6 +28563,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch8-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "speed",
+         "params": {},
+         "title": "Race two cars",
+         "tasks": [
+          {
+           "say": "Make the two cars level.",
+           "when": "a == b",
+           "then": "Same speed, same distance in the same time."
+          },
+          {
+           "say": "Make red twice as fast as blue.",
+           "when": "a == 2 * b",
+           "then": "In the same time, red goes twice as far."
+          }
+         ],
+         "takeaway": "Speed is the distance covered in one unit of time.",
+         "explanation": "Speed is the distance covered in one unit of time."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch8-l5-t1",
          "difficulty": 1,
@@ -28592,31 +28617,6 @@
            "p": 113
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch8-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "speed",
-         "params": {},
-         "title": "Race two cars",
-         "tasks": [
-          {
-           "say": "Make the two cars level.",
-           "when": "a == b",
-           "then": "Same speed, same distance in the same time."
-          },
-          {
-           "say": "Make red twice as fast as blue.",
-           "when": "a == 2 * b",
-           "then": "In the same time, red goes twice as far."
-          }
-         ],
-         "takeaway": "Speed is the distance covered in one unit of time.",
-         "explanation": "Speed is the distance covered in one unit of time."
         },
         {
          "type": "mcq",
@@ -29088,6 +29088,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch8-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "speed",
+         "params": {},
+         "title": "Race two cars",
+         "tasks": [
+          {
+           "say": "Make the two cars level.",
+           "when": "a == b",
+           "then": "Same speed, same distance in the same time."
+          },
+          {
+           "say": "Make red twice as fast as blue.",
+           "when": "a == 2 * b",
+           "then": "In the same time, red goes twice as far."
+          }
+         ],
+         "takeaway": "Speed is the distance covered in one unit of time.",
+         "explanation": "Speed is the distance covered in one unit of time."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch8-l6-t1",
          "difficulty": 1,
@@ -29123,31 +29148,6 @@
            "p": 117
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch8-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "speed",
-         "params": {},
-         "title": "Race two cars",
-         "tasks": [
-          {
-           "say": "Make the two cars level.",
-           "when": "a == b",
-           "then": "Same speed, same distance in the same time."
-          },
-          {
-           "say": "Make red twice as fast as blue.",
-           "when": "a == 2 * b",
-           "then": "In the same time, red goes twice as far."
-          }
-         ],
-         "takeaway": "Speed is the distance covered in one unit of time.",
-         "explanation": "Speed is the distance covered in one unit of time."
         },
         {
          "type": "truefalse",
@@ -31805,6 +31805,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "airpath",
+         "params": {},
+         "title": "Follow a breath",
+         "tasks": [
+          {
+           "say": "Find where dust is trapped.",
+           "when": "step == 2",
+           "then": "Tiny hair and mucus in the nasal passages trap dust and dirt."
+          },
+          {
+           "say": "Find where oxygen goes into the blood.",
+           "when": "step == 5",
+           "then": "In the alveoli, tiny balloon-like sacs at the end of the branches."
+          }
+         ],
+         "takeaway": "Air goes in through the nostrils, down the windpipe into the lungs, and in the alveoli oxygen passes into the blood.",
+         "explanation": "Air goes in through the nostrils, down the windpipe into the lungs, and in the alveoli oxygen passes into the blood."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch9-l4-t1",
          "difficulty": 1,
@@ -31840,31 +31865,6 @@
            "p": 129
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch9-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "airpath",
-         "params": {},
-         "title": "Follow a breath",
-         "tasks": [
-          {
-           "say": "Find where dust is trapped.",
-           "when": "step == 2",
-           "then": "Tiny hair and mucus in the nasal passages trap dust and dirt."
-          },
-          {
-           "say": "Find where oxygen goes into the blood.",
-           "when": "step == 5",
-           "then": "In the alveoli, tiny balloon-like sacs at the end of the branches."
-          }
-         ],
-         "takeaway": "Air goes in through the nostrils, down the windpipe into the lungs, and in the alveoli oxygen passes into the blood.",
-         "explanation": "Air goes in through the nostrils, down the windpipe into the lungs, and in the alveoli oxygen passes into the blood."
         },
         {
          "type": "mcq",
@@ -34332,6 +34332,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "photosynthesis",
+         "params": {},
+         "title": "Run the leaf factory",
+         "tasks": [
+          {
+           "say": "Turn off the light.",
+           "when": "light == 0",
+           "then": "With no light, photosynthesis stops completely."
+          },
+          {
+           "say": "Make carbon dioxide the one holding the leaf back.",
+           "when": "co2 < light and co2 < water",
+           "then": "Now carbon dioxide is in shortest supply, so it sets the speed."
+          },
+          {
+           "say": "Run the leaf at full speed.",
+           "when": "light == 10 and co2 == 10 and water == 10",
+           "then": "All three inputs at the top: the most sugar and oxygen."
+          }
+         ],
+         "takeaway": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food.",
+         "explanation": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch10-l2-t1",
          "difficulty": 1,
@@ -34372,36 +34402,6 @@
            "p": 140
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch10-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "photosynthesis",
-         "params": {},
-         "title": "Run the leaf factory",
-         "tasks": [
-          {
-           "say": "Turn off the light.",
-           "when": "light == 0",
-           "then": "With no light, photosynthesis stops completely."
-          },
-          {
-           "say": "Make carbon dioxide the one holding the leaf back.",
-           "when": "co2 < light and co2 < water",
-           "then": "Now carbon dioxide is in shortest supply, so it sets the speed."
-          },
-          {
-           "say": "Run the leaf at full speed.",
-           "when": "light == 10 and co2 == 10 and water == 10",
-           "then": "All three inputs at the top: the most sugar and oxygen."
-          }
-         ],
-         "takeaway": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food.",
-         "explanation": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food."
         },
         {
          "type": "mcq",
@@ -34849,6 +34849,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "photosynthesis",
+         "params": {},
+         "title": "Run the leaf factory",
+         "tasks": [
+          {
+           "say": "Turn off the light.",
+           "when": "light == 0",
+           "then": "With no light, photosynthesis stops completely."
+          },
+          {
+           "say": "Make carbon dioxide the one holding the leaf back.",
+           "when": "co2 < light and co2 < water",
+           "then": "Now carbon dioxide is in shortest supply, so it sets the speed."
+          },
+          {
+           "say": "Run the leaf at full speed.",
+           "when": "light == 10 and co2 == 10 and water == 10",
+           "then": "All three inputs at the top: the most sugar and oxygen."
+          }
+         ],
+         "takeaway": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food.",
+         "explanation": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch10-l3-t1",
          "difficulty": 1,
@@ -34894,36 +34924,6 @@
            "p": 144
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch10-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "photosynthesis",
-         "params": {},
-         "title": "Run the leaf factory",
-         "tasks": [
-          {
-           "say": "Turn off the light.",
-           "when": "light == 0",
-           "then": "With no light, photosynthesis stops completely."
-          },
-          {
-           "say": "Make carbon dioxide the one holding the leaf back.",
-           "when": "co2 < light and co2 < water",
-           "then": "Now carbon dioxide is in shortest supply, so it sets the speed."
-          },
-          {
-           "say": "Run the leaf at full speed.",
-           "when": "light == 10 and co2 == 10 and water == 10",
-           "then": "All three inputs at the top: the most sugar and oxygen."
-          }
-         ],
-         "takeaway": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food.",
-         "explanation": "A leaf needs light, carbon dioxide and water together; the scarcest one sets how fast it can make food."
         },
         {
          "type": "concept",
@@ -38545,6 +38545,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch11-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "shadow",
+         "params": {},
+         "title": "Explore shadows and straight-line light",
+         "tasks": [
+          {
+           "say": "Move the object closer to the lamp than it starts.",
+           "when": "d < 25",
+           "then": "The shadow becomes bigger because light travels in straight lines."
+          },
+          {
+           "say": "Now move the object farther from the lamp than it starts.",
+           "when": "d > 25",
+           "then": "The shadow becomes smaller as the object moves farther away."
+          }
+         ],
+         "takeaway": "Light travels in straight lines, so an object blocks the light and forms a shadow.",
+         "explanation": "Light travels in straight lines, so an object blocks the light and forms a shadow."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch11-l2-t1",
          "difficulty": 1,
@@ -38600,31 +38625,6 @@
            "p": 155
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch11-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "shadow",
-         "params": {},
-         "title": "Explore shadows and straight-line light",
-         "tasks": [
-          {
-           "say": "Move the object closer to the lamp than it starts.",
-           "when": "d < 25",
-           "then": "The shadow becomes bigger because light travels in straight lines."
-          },
-          {
-           "say": "Now move the object farther from the lamp than it starts.",
-           "when": "d > 25",
-           "then": "The shadow becomes smaller as the object moves farther away."
-          }
-         ],
-         "takeaway": "Light travels in straight lines, so an object blocks the light and forms a shadow.",
-         "explanation": "Light travels in straight lines, so an object blocks the light and forms a shadow."
         },
         {
          "type": "mcq",
@@ -39075,6 +39075,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch11-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "shadow",
+         "params": {},
+         "title": "Change a shadow",
+         "tasks": [
+          {
+           "say": "Move the object close to the lamp.",
+           "when": "d <= 15",
+           "then": "The shadow grows large."
+          },
+          {
+           "say": "Move it far from the lamp.",
+           "when": "d >= 40",
+           "then": "The shadow shrinks towards the size of the object."
+          }
+         ],
+         "takeaway": "Light travels in straight lines, and an object blocks it to make a shadow.",
+         "explanation": "Light travels in straight lines, and an object blocks it to make a shadow."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch11-l3-t1",
          "difficulty": 1,
@@ -39120,31 +39145,6 @@
            "p": 158
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch11-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "shadow",
-         "params": {},
-         "title": "Change a shadow",
-         "tasks": [
-          {
-           "say": "Move the object close to the lamp.",
-           "when": "d <= 15",
-           "then": "The shadow grows large."
-          },
-          {
-           "say": "Move it far from the lamp.",
-           "when": "d >= 40",
-           "then": "The shadow shrinks towards the size of the object."
-          }
-         ],
-         "takeaway": "Light travels in straight lines, and an object blocks it to make a shadow.",
-         "explanation": "Light travels in straight lines, and an object blocks it to make a shadow."
         },
         {
          "type": "mcq",
@@ -39586,6 +39586,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch11-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reflection",
+         "params": {},
+         "title": "Bounce light off a mirror",
+         "tasks": [
+          {
+           "say": "Make the ray come in at 60 degrees.",
+           "when": "i == 60",
+           "then": "It leaves at 60 degrees too."
+          },
+          {
+           "say": "Shine it straight down the normal.",
+           "when": "i == 0",
+           "then": "It comes straight back."
+          }
+         ],
+         "takeaway": "The angle going out always equals the angle coming in.",
+         "explanation": "The angle going out always equals the angle coming in."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch11-l4-t1",
          "difficulty": 1,
@@ -39621,31 +39646,6 @@
            "p": 162
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch11-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "reflection",
-         "params": {},
-         "title": "Bounce light off a mirror",
-         "tasks": [
-          {
-           "say": "Make the ray come in at 60 degrees.",
-           "when": "i == 60",
-           "then": "It leaves at 60 degrees too."
-          },
-          {
-           "say": "Shine it straight down the normal.",
-           "when": "i == 0",
-           "then": "It comes straight back."
-          }
-         ],
-         "takeaway": "The angle going out always equals the angle coming in.",
-         "explanation": "The angle going out always equals the angle coming in."
         },
         {
          "type": "mcq",
@@ -40509,6 +40509,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch11-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reflection",
+         "params": {},
+         "title": "Bounce the light",
+         "tasks": [
+          {
+           "say": "Shine the ray straight at the mirror.",
+           "when": "i == 0",
+           "then": "Straight in, straight back out: both angles are 0."
+          },
+          {
+           "say": "Make the incoming angle 60 degrees.",
+           "when": "i == 60",
+           "then": "The reflected ray also leaves at 60 degrees."
+          }
+         ],
+         "takeaway": "Light leaves a mirror at the same angle it arrives: angle in equals angle out.",
+         "explanation": "Light leaves a mirror at the same angle it arrives: angle in equals angle out."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch11-l6-t1",
          "difficulty": 1,
@@ -40539,31 +40564,6 @@
            "p": 164
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch11-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "reflection",
-         "params": {},
-         "title": "Bounce the light",
-         "tasks": [
-          {
-           "say": "Shine the ray straight at the mirror.",
-           "when": "i == 0",
-           "then": "Straight in, straight back out: both angles are 0."
-          },
-          {
-           "say": "Make the incoming angle 60 degrees.",
-           "when": "i == 60",
-           "then": "The reflected ray also leaves at 60 degrees."
-          }
-         ],
-         "takeaway": "Light leaves a mirror at the same angle it arrives: angle in equals angle out.",
-         "explanation": "Light leaves a mirror at the same angle it arrives: angle in equals angle out."
         },
         {
          "type": "mcq",
@@ -41704,6 +41704,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch12-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "daynight",
+         "params": {},
+         "title": "Spin the Earth",
+         "tasks": [
+          {
+           "say": "Go to midnight.",
+           "when": "hour == 0 or hour == 24",
+           "then": "The place faces away from the Sun."
+          },
+          {
+           "say": "Bring it to sunrise.",
+           "when": "hour == 6",
+           "then": "It turns into the sunlight."
+          }
+         ],
+         "takeaway": "Day and night happen because the Earth spins.",
+         "explanation": "Day and night happen because the Earth spins."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch12-l1-t1",
          "difficulty": 1,
@@ -41744,31 +41769,6 @@
            "p": 171
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch12-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "daynight",
-         "params": {},
-         "title": "Spin the Earth",
-         "tasks": [
-          {
-           "say": "Go to midnight.",
-           "when": "hour == 0 or hour == 24",
-           "then": "The place faces away from the Sun."
-          },
-          {
-           "say": "Bring it to sunrise.",
-           "when": "hour == 6",
-           "then": "It turns into the sunlight."
-          }
-         ],
-         "takeaway": "Day and night happen because the Earth spins.",
-         "explanation": "Day and night happen because the Earth spins."
         },
         {
          "type": "mcq",
@@ -42202,6 +42202,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch12-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "daynight",
+         "params": {},
+         "title": "Spin the Earth",
+         "tasks": [
+          {
+           "say": "Go to midnight.",
+           "when": "hour == 0 or hour == 24",
+           "then": "The place faces away from the Sun."
+          },
+          {
+           "say": "Bring it to sunrise.",
+           "when": "hour == 6",
+           "then": "It turns into the sunlight."
+          }
+         ],
+         "takeaway": "Day and night happen because the Earth spins.",
+         "explanation": "Day and night happen because the Earth spins."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch12-l2-t1",
          "difficulty": 1,
@@ -42242,31 +42267,6 @@
            "p": 173
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch12-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "daynight",
-         "params": {},
-         "title": "Spin the Earth",
-         "tasks": [
-          {
-           "say": "Go to midnight.",
-           "when": "hour == 0 or hour == 24",
-           "then": "The place faces away from the Sun."
-          },
-          {
-           "say": "Bring it to sunrise.",
-           "when": "hour == 6",
-           "then": "It turns into the sunlight."
-          }
-         ],
-         "takeaway": "Day and night happen because the Earth spins.",
-         "explanation": "Day and night happen because the Earth spins."
         },
         {
          "type": "mcq",
@@ -42695,6 +42695,26 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch12-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seasons",
+         "params": {},
+         "title": "Go round the Sun",
+         "tasks": [
+          {
+           "say": "Go to December.",
+           "when": "month == 12",
+           "then": "Now the southern half leans toward the Sun: summer there, winter in India."
+          }
+         ],
+         "takeaway": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons.",
+         "explanation": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch12-l3-t1",
          "difficulty": 1,
@@ -42730,26 +42750,6 @@
            "p": 176
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch12-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seasons",
-         "params": {},
-         "title": "Go round the Sun",
-         "tasks": [
-          {
-           "say": "Go to December.",
-           "when": "month == 12",
-           "then": "Now the southern half leans toward the Sun: summer there, winter in India."
-          }
-         ],
-         "takeaway": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons.",
-         "explanation": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons."
         },
         {
          "type": "concept",
@@ -43176,6 +43176,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch12-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seasons",
+         "params": {},
+         "title": "Travel round the Sun",
+         "tasks": [
+          {
+           "say": "Go to December.",
+           "when": "month == 12",
+           "then": "The north leans away from the Sun: winter there."
+          },
+          {
+           "say": "Go to March.",
+           "when": "month == 3",
+           "then": "Neither half leans towards the Sun."
+          }
+         ],
+         "takeaway": "The tilt of the Earth makes the seasons.",
+         "explanation": "The tilt of the Earth makes the seasons."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch12-l4-t1",
          "difficulty": 1,
@@ -43226,31 +43251,6 @@
            "p": 178
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch12-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seasons",
-         "params": {},
-         "title": "Travel round the Sun",
-         "tasks": [
-          {
-           "say": "Go to December.",
-           "when": "month == 12",
-           "then": "The north leans away from the Sun: winter there."
-          },
-          {
-           "say": "Go to March.",
-           "when": "month == 3",
-           "then": "Neither half leans towards the Sun."
-          }
-         ],
-         "takeaway": "The tilt of the Earth makes the seasons.",
-         "explanation": "The tilt of the Earth makes the seasons."
         },
         {
          "type": "concept",
@@ -43718,6 +43718,26 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch12-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "eclipse",
+         "params": {},
+         "title": "Make a solar eclipse",
+         "tasks": [
+          {
+           "say": "Put the Moon between the Sun and the Earth.",
+           "when": "moon == 180",
+           "then": "The shadow of the Moon falls on the Earth: a solar eclipse."
+          }
+         ],
+         "takeaway": "A solar eclipse happens when the Moon is between the Sun and the Earth.",
+         "explanation": "A solar eclipse happens when the Moon is between the Sun and the Earth."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch12-l5-t1",
          "difficulty": 1,
@@ -43757,26 +43777,6 @@
            "p": 180
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch12-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "eclipse",
-         "params": {},
-         "title": "Make a solar eclipse",
-         "tasks": [
-          {
-           "say": "Put the Moon between the Sun and the Earth.",
-           "when": "moon == 180",
-           "then": "The shadow of the Moon falls on the Earth: a solar eclipse."
-          }
-         ],
-         "takeaway": "A solar eclipse happens when the Moon is between the Sun and the Earth.",
-         "explanation": "A solar eclipse happens when the Moon is between the Sun and the Earth."
         },
         {
          "type": "mcq",
@@ -44204,6 +44204,26 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "science-g7-ch12-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "eclipse",
+         "params": {},
+         "title": "Make a lunar eclipse",
+         "tasks": [
+          {
+           "say": "Put the Moon behind the Earth.",
+           "when": "moon == 0",
+           "then": "The Moon moves into the shadow of the Earth: a lunar eclipse."
+          }
+         ],
+         "takeaway": "A lunar eclipse happens when the Earth is between the Sun and the Moon.",
+         "explanation": "A lunar eclipse happens when the Earth is between the Sun and the Moon."
+        },
+        {
          "type": "worked",
          "id": "science-g7-ch12-l6-t1",
          "difficulty": 1,
@@ -44239,26 +44259,6 @@
            "p": 183
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "science-g7-ch12-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "eclipse",
-         "params": {},
-         "title": "Make a lunar eclipse",
-         "tasks": [
-          {
-           "say": "Put the Moon behind the Earth.",
-           "when": "moon == 0",
-           "then": "The Moon moves into the shadow of the Earth: a lunar eclipse."
-          }
-         ],
-         "takeaway": "A lunar eclipse happens when the Earth is between the Sun and the Moon.",
-         "explanation": "A lunar eclipse happens when the Earth is between the Sun and the Moon."
         },
         {
          "type": "mcq",

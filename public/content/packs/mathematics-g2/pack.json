@@ -7103,9 +7103,9 @@
          ],
          "answer": 1,
          "why": {
-          "0": "0 is a one-digit number outside the interval.",
           "47": "47 is within the interval, but it is not above 50.",
-          "50": "50 is not greater than 50."
+          "50": "50 is not greater than 50.",
+          "0": "0 is a one-digit number outside the interval."
          },
          "explanation": "59 is above 50 and within the stated interval.",
          "anchor": "mathematics-g2-ch1-l6-a7",
@@ -8816,6 +8816,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g2-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "roundsolids",
+         "params": {},
+         "title": "Look at the solid",
+         "tasks": [
+          {
+           "say": "Find a solid with no corners at all.",
+           "when": "(shape == 3 or shape == 4) and look == 2",
+           "then": "The cylinder and the sphere have no corners."
+          },
+          {
+           "say": "Find the solid with exactly one corner and show it.",
+           "when": "shape == 2 and look == 2",
+           "then": "The cone has one corner, at its tip."
+          },
+          {
+           "say": "Show the flat faces of the cube. How many are there?",
+           "when": "shape == 0 and look == 1",
+           "then": "A cube has 6 flat faces, like a gift box."
+          }
+         ],
+         "takeaway": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none.",
+         "explanation": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g2-ch2-l2-t1",
          "difficulty": 1,
@@ -8855,36 +8885,6 @@
            "p": 20
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g2-ch2-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "roundsolids",
-         "params": {},
-         "title": "Look at the solid",
-         "tasks": [
-          {
-           "say": "Find a solid with no corners at all.",
-           "when": "(shape == 3 or shape == 4) and look == 2",
-           "then": "The cylinder and the sphere have no corners."
-          },
-          {
-           "say": "Find the solid with exactly one corner and show it.",
-           "when": "shape == 2 and look == 2",
-           "then": "The cone has one corner, at its tip."
-          },
-          {
-           "say": "Show the flat faces of the cube. How many are there?",
-           "when": "shape == 0 and look == 1",
-           "then": "A cube has 6 flat faces, like a gift box."
-          }
-         ],
-         "takeaway": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none.",
-         "explanation": "Solid shapes have flat faces, curved surfaces and corners: a box has 6 faces and 8 corners, a ball has none."
         },
         {
          "type": "mcq",
@@ -17300,8 +17300,8 @@
          "answer": 3,
          "why": {
           "17": "This wrongly thinks 17 also appears in the fives skip.",
-          "24": "This wrongly thinks 24 also appears in the fives skip.",
-          "55": "This wrongly thinks 55 also appears in the twos skip."
+          "55": "This wrongly thinks 55 also appears in the twos skip.",
+          "24": "This wrongly thinks 24 also appears in the fives skip."
          },
          "explanation": "40 appears in both the twos and fives skips.",
          "f": [
@@ -36383,38 +36383,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "mathematics-g2-ch6-l5-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "There are 37 blocks. We subtract 24 blocks. How many blocks are left?",
-         "steps": [
-          "Thirty-seven is 3 tens and 7 ones, so we can take it apart.",
-          "Take away 2 tens because 24 has 2 tens.",
-          "Take away 4 ones because 24 has 4 ones.",
-          "Join the remaining 1 ten and 3 ones, so 13 blocks are left."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "5.1",
-          "5.2"
-         ],
-         "src": [
-          {
-           "ch": 6,
-           "p": 63
-          },
-          {
-           "ch": 6,
-           "p": 63
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "mathematics-g2-ch6-l5-play",
          "difficulty": 1,
@@ -36445,6 +36413,38 @@
          ],
          "takeaway": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column.",
          "explanation": "Work one column at a time, starting with the ones: when a column reaches 10 you regroup into the next column."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g2-ch6-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "There are 37 blocks. We subtract 24 blocks. How many blocks are left?",
+         "steps": [
+          "Thirty-seven is 3 tens and 7 ones, so we can take it apart.",
+          "Take away 2 tens because 24 has 2 tens.",
+          "Take away 4 ones because 24 has 4 ones.",
+          "Join the remaining 1 ten and 3 ones, so 13 blocks are left."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.1",
+          "5.2"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 63
+          },
+          {
+           "ch": 6,
+           "p": 63
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -70984,7 +70984,7 @@
            },
            {
             "label": "spinach",
-            "v": 2
+            "v": 2.0
            }
           ]
          },
@@ -71350,7 +71350,7 @@
            },
            {
             "label": "spinach",
-            "v": 5
+            "v": 5.0
            }
           ]
          },

@@ -91040,6 +91040,38 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g4-ch14-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "picturechart",
+         "params": {
+          "kind": "foods"
+         },
+         "title": "Fill the picture chart",
+         "tasks": [
+          {
+           "say": "Make the first row the longest.",
+           "when": "a > b and a > c and a > d",
+           "then": "The longest row is the one chosen by the most children."
+          },
+          {
+           "say": "Make the second row shorter than the first but longer than the third.",
+           "when": "b < a and b > c",
+           "then": "The second row has fewer than the first and more than the third."
+          },
+          {
+           "say": "Make every row the same length.",
+           "when": "a == b and b == c and c == d",
+           "then": "When every row has the same number, no one is the most or the least."
+          }
+         ],
+         "takeaway": "One face stands for one child: the longest row is the most liked, the shortest the least.",
+         "explanation": "One face stands for one child: the longest row is the most liked, the shortest the least."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g4-ch14-l6-t1",
          "difficulty": 1,
@@ -91100,38 +91132,6 @@
            "p": 208
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g4-ch14-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "picturechart",
-         "params": {
-          "kind": "foods"
-         },
-         "title": "Fill the picture chart",
-         "tasks": [
-          {
-           "say": "Make the first row the longest.",
-           "when": "a > b and a > c and a > d",
-           "then": "The longest row is the one chosen by the most children."
-          },
-          {
-           "say": "Make the second row shorter than the first but longer than the third.",
-           "when": "b < a and b > c",
-           "then": "The second row has fewer than the first and more than the third."
-          },
-          {
-           "say": "Make every row the same length.",
-           "when": "a == b and b == c and c == d",
-           "then": "When every row has the same number, no one is the most or the least."
-          }
-         ],
-         "takeaway": "One face stands for one child: the longest row is the most liked, the shortest the least.",
-         "explanation": "One face stands for one child: the longest row is the most liked, the shortest the least."
         },
         {
          "type": "mcq",

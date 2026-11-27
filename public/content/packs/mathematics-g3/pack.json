@@ -2389,6 +2389,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch1-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberwords",
+         "params": {},
+         "title": "Count to a hundred",
+         "tasks": [
+          {
+           "say": "Show fifty: five full rows.",
+           "when": "n == 50",
+           "then": "Fifty is 5 tens and no ones."
+          },
+          {
+           "say": "Show twenty five.",
+           "when": "n == 25",
+           "then": "Twenty Five is 2 tens and 5 ones."
+          },
+          {
+           "say": "Fill every row: show one hundred.",
+           "when": "n == 100",
+           "then": "Ten tens make one hundred."
+          }
+         ],
+         "takeaway": "Every full row is a ten: tens and ones tell you the number, and the number name says it in words.",
+         "explanation": "Every full row is a ten: tens and ones tell you the number, and the number name says it in words."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g3-ch1-l3-t1",
          "difficulty": 1,
@@ -2434,36 +2464,6 @@
            "p": 4
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g3-ch1-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "numberwords",
-         "params": {},
-         "title": "Count to a hundred",
-         "tasks": [
-          {
-           "say": "Show fifty: five full rows.",
-           "when": "n == 50",
-           "then": "Fifty is 5 tens and no ones."
-          },
-          {
-           "say": "Show twenty five.",
-           "when": "n == 25",
-           "then": "Twenty Five is 2 tens and 5 ones."
-          },
-          {
-           "say": "Fill every row: show one hundred.",
-           "when": "n == 100",
-           "then": "Ten tens make one hundred."
-          }
-         ],
-         "takeaway": "Every full row is a ten: tens and ones tell you the number, and the number name says it in words.",
-         "explanation": "Every full row is a ten: tens and ones tell you the number, and the number name says it in words."
         },
         {
          "type": "mcq",
@@ -22316,6 +22316,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberjump",
+         "params": {},
+         "title": "Hop along the number line",
+         "tasks": [
+          {
+           "say": "Go back from 52 in jumps of 10, three times.",
+           "when": "start == 52 and jump == 10 and hops == 3 and back == 1",
+           "then": "52, 42, 32, 22: jumping back takes away."
+          },
+          {
+           "say": "Find a start and jump that reach exactly 100 after 5 jumps.",
+           "when": "back == 0 and hops == 5 and start + 5 * jump == 100",
+           "then": "Five equal jumps land on 100: for example from 0 in jumps of 20."
+          }
+         ],
+         "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
+         "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g3-ch4-l2-t1",
          "difficulty": 1,
@@ -22351,31 +22376,6 @@
            "p": 32
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g3-ch4-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "numberjump",
-         "params": {},
-         "title": "Hop along the number line",
-         "tasks": [
-          {
-           "say": "Go back from 52 in jumps of 10, three times.",
-           "when": "start == 52 and jump == 10 and hops == 3 and back == 1",
-           "then": "52, 42, 32, 22: jumping back takes away."
-          },
-          {
-           "say": "Find a start and jump that reach exactly 100 after 5 jumps.",
-           "when": "back == 0 and hops == 5 and start + 5 * jump == 100",
-           "then": "Five equal jumps land on 100: for example from 0 in jumps of 20."
-          }
-         ],
-         "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
-         "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
         },
         {
          "type": "truefalse",
@@ -30883,6 +30883,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch5-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "flatshape",
+         "params": {},
+         "title": "Build the shape",
+         "tasks": [
+          {
+           "say": "Make a square.",
+           "when": "shape == 1 and w == h",
+           "then": "All four sides are the same length: a square."
+          },
+          {
+           "say": "Now try a triangle. How many sides and corners?",
+           "when": "shape == 0",
+           "then": "3 sides and 3 corners."
+          }
+         ],
+         "takeaway": "A square has four equal sides; a rectangle has equal opposite sides. Both have four square corners.",
+         "explanation": "A square has four equal sides; a rectangle has equal opposite sides. Both have four square corners."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g3-ch5-l5-t1",
          "difficulty": 1,
@@ -30913,31 +30938,6 @@
            "p": 57
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g3-ch5-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "flatshape",
-         "params": {},
-         "title": "Build the shape",
-         "tasks": [
-          {
-           "say": "Make a square.",
-           "when": "shape == 1 and w == h",
-           "then": "All four sides are the same length: a square."
-          },
-          {
-           "say": "Now try a triangle. How many sides and corners?",
-           "when": "shape == 0",
-           "then": "3 sides and 3 corners."
-          }
-         ],
-         "takeaway": "A square has four equal sides; a rectangle has equal opposite sides. Both have four square corners.",
-         "explanation": "A square has four equal sides; a rectangle has equal opposite sides. Both have four square corners."
         },
         {
          "type": "truefalse",
@@ -38001,9 +38001,9 @@
          ],
          "answer": 1,
          "why": {
-          "10": "10 would restart the count.",
           "270": "270 would repeat the number already counted.",
-          "280": "280 would skip the next number."
+          "280": "280 would skip the next number.",
+          "10": "10 would restart the count."
          },
          "explanation": "271 immediately follows 270.",
          "anchor": "mathematics-g3-ch6-l1-a1",
@@ -40749,6 +40749,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "numberjump",
+         "params": {},
+         "title": "Hop along the number line",
+         "tasks": [
+          {
+           "say": "Go back from 52 in jumps of 10, three times.",
+           "when": "start == 52 and jump == 10 and hops == 3 and back == 1",
+           "then": "52, 42, 32, 22: jumping back takes away."
+          },
+          {
+           "say": "Find a start and jump that reach exactly 100 after 5 jumps.",
+           "when": "back == 0 and hops == 5 and start + 5 * jump == 100",
+           "then": "Five equal jumps land on 100: for example from 0 in jumps of 20."
+          }
+         ],
+         "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
+         "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g3-ch7-l4-t1",
          "difficulty": 1,
@@ -40799,31 +40824,6 @@
            "p": 94
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g3-ch7-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "numberjump",
-         "params": {},
-         "title": "Hop along the number line",
-         "tasks": [
-          {
-           "say": "Go back from 52 in jumps of 10, three times.",
-           "when": "start == 52 and jump == 10 and hops == 3 and back == 1",
-           "then": "52, 42, 32, 22: jumping back takes away."
-          },
-          {
-           "say": "Find a start and jump that reach exactly 100 after 5 jumps.",
-           "when": "back == 0 and hops == 5 and start + 5 * jump == 100",
-           "then": "Five equal jumps land on 100: for example from 0 in jumps of 20."
-          }
-         ],
-         "takeaway": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step.",
-         "explanation": "Jumping forward adds and jumping back takes away; equal jumps count in tens, fives or any step."
         },
         {
          "type": "mcq",
@@ -44888,6 +44888,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Shade the fraction",
+         "tasks": [
+          {
+           "say": "Show one half.",
+           "when": "n * 2 == d",
+           "then": "Any fraction whose top is half its bottom equals one half."
+          },
+          {
+           "say": "Show a fraction bigger than one whole.",
+           "when": "n > d",
+           "then": "When the top is bigger than the bottom you have more than a whole."
+          }
+         ],
+         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
+         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g3-ch8-l2-t1",
          "difficulty": 1,
@@ -44917,31 +44942,6 @@
            "p": 109
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g3-ch8-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "fraction",
-         "params": {},
-         "title": "Shade the fraction",
-         "tasks": [
-          {
-           "say": "Show one half.",
-           "when": "n * 2 == d",
-           "then": "Any fraction whose top is half its bottom equals one half."
-          },
-          {
-           "say": "Show a fraction bigger than one whole.",
-           "when": "n > d",
-           "then": "When the top is bigger than the bottom you have more than a whole."
-          }
-         ],
-         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
-         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
         },
         {
          "type": "mcq",
@@ -47911,6 +47911,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch8-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "fraction",
+         "params": {},
+         "title": "Shade the fraction",
+         "tasks": [
+          {
+           "say": "Show one half.",
+           "when": "n * 2 == d",
+           "then": "Any fraction whose top is half its bottom equals one half."
+          },
+          {
+           "say": "Show a fraction bigger than one whole.",
+           "when": "n > d",
+           "then": "When the top is bigger than the bottom you have more than a whole."
+          }
+         ],
+         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
+         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g3-ch8-l5-t1",
          "difficulty": 1,
@@ -47945,31 +47970,6 @@
            "p": 112
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g3-ch8-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "fraction",
-         "params": {},
-         "title": "Shade the fraction",
-         "tasks": [
-          {
-           "say": "Show one half.",
-           "when": "n * 2 == d",
-           "then": "Any fraction whose top is half its bottom equals one half."
-          },
-          {
-           "say": "Show a fraction bigger than one whole.",
-           "when": "n > d",
-           "then": "When the top is bigger than the bottom you have more than a whole."
-          }
-         ],
-         "takeaway": "The bottom number says how many equal parts, the top says how many are taken.",
-         "explanation": "The bottom number says how many equal parts, the top says how many are taken."
         },
         {
          "type": "truefalse",
@@ -50579,6 +50579,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "between",
+         "params": {},
+         "title": "Place it between the hundreds",
+         "tasks": [
+          {
+           "say": "Find the number exactly halfway between 400 and 500.",
+           "when": "n == 450",
+           "then": "450 is 50 from both 400 and 500."
+          },
+          {
+           "say": "Find a number only 1 away from 500.",
+           "when": "n == 499",
+           "then": "499 is just 1 less than 500."
+          }
+         ],
+         "takeaway": "A three-digit number sits between two hundreds: how far it is from each tells you where it belongs.",
+         "explanation": "A three-digit number sits between two hundreds: how far it is from each tells you where it belongs."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g3-ch9-l1-t1",
          "difficulty": 1,
@@ -50604,31 +50629,6 @@
            "p": 118
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g3-ch9-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "between",
-         "params": {},
-         "title": "Place it between the hundreds",
-         "tasks": [
-          {
-           "say": "Find the number exactly halfway between 400 and 500.",
-           "when": "n == 450",
-           "then": "450 is 50 from both 400 and 500."
-          },
-          {
-           "say": "Find a number only 1 away from 500.",
-           "when": "n == 499",
-           "then": "499 is just 1 less than 500."
-          }
-         ],
-         "takeaway": "A three-digit number sits between two hundreds: how far it is from each tells you where it belongs.",
-         "explanation": "A three-digit number sits between two hundreds: how far it is from each tells you where it belongs."
         },
         {
          "type": "mcq",
@@ -51126,9 +51126,9 @@
          ],
          "answer": 0,
          "why": {
-          "540": "540 is farther from 1000 than 963 is.",
+          "696": "696 is farther from 1000 than 963 is.",
           "590": "590 is farther from 1000 than 963 is.",
-          "696": "696 is farther from 1000 than 963 is."
+          "540": "540 is farther from 1000 than 963 is."
          },
          "explanation": "963 is closer to 1000 than 696, 590 and 540.",
          "f": [
@@ -53494,9 +53494,9 @@
          ],
          "answer": 0,
          "why": {
-          "942": "942 is wrong because it belongs to the +100 pattern.",
+          "944": "944 is wrong because it does not add the full 25.",
           "943": "943 is wrong because it copies a nearby pattern number.",
-          "944": "944 is wrong because it does not add the full 25."
+          "942": "942 is wrong because it belongs to the +100 pattern."
          },
          "explanation": "945 is right because 920 + 25 = 945.",
          "f": [
@@ -53601,9 +53601,9 @@
          ],
          "answer": 1,
          "why": {
-          "860": "860 is wrong because it moves down instead of forward.",
           "949": "949 is wrong because it copies a nearby pattern number.",
-          "950": "950 is wrong because it does not make the 30-step jump."
+          "950": "950 is wrong because it does not make the 30-step jump.",
+          "860": "860 is wrong because it moves down instead of forward."
          },
          "explanation": "905 is right because 875 + 30 = 905.",
          "f": [
@@ -54519,8 +54519,8 @@
          "answer": 3,
          "why": {
           "210": "It has zeroes, but its ends do not match.",
-          "353": "It looks the same both ways, but it has no zero.",
-          "800": "It has zeroes, but its ends do not match."
+          "800": "It has zeroes, but its ends do not match.",
+          "353": "It looks the same both ways, but it has no zero."
          },
          "explanation": "404 has zeroes and looks the same both ways.",
          "f": [
@@ -61099,6 +61099,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch10-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "metrerope",
+         "params": {},
+         "title": "Lay the metre ropes",
+         "tasks": [
+          {
+           "say": "Lay half-metre ropes end to end until you have exactly one metre.",
+           "when": "piece == 1 and count == 2",
+           "then": "Two half-metres make one metre."
+          },
+          {
+           "say": "Now do it with quarter-metre ropes.",
+           "when": "piece == 2 and count == 4",
+           "then": "Four quarter-metres make one metre."
+          },
+          {
+           "say": "Make a length longer than one metre.",
+           "when": "piece == 1 and count == 3",
+           "then": "Three half-metres are one and a half metres, longer than one metre."
+          }
+         ],
+         "takeaway": "A metre folded in half is a half-metre, and in half again a quarter-metre: two halves or four quarters make one metre.",
+         "explanation": "A metre folded in half is a half-metre, and in half again a quarter-metre: two halves or four quarters make one metre."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g3-ch10-l5-t1",
          "difficulty": 1,
@@ -61128,36 +61158,6 @@
            "p": 136
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g3-ch10-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "metrerope",
-         "params": {},
-         "title": "Lay the metre ropes",
-         "tasks": [
-          {
-           "say": "Lay half-metre ropes end to end until you have exactly one metre.",
-           "when": "piece == 1 and count == 2",
-           "then": "Two half-metres make one metre."
-          },
-          {
-           "say": "Now do it with quarter-metre ropes.",
-           "when": "piece == 2 and count == 4",
-           "then": "Four quarter-metres make one metre."
-          },
-          {
-           "say": "Make a length longer than one metre.",
-           "when": "piece == 1 and count == 3",
-           "then": "Three half-metres are one and a half metres, longer than one metre."
-          }
-         ],
-         "takeaway": "A metre folded in half is a half-metre, and in half again a quarter-metre: two halves or four quarters make one metre.",
-         "explanation": "A metre folded in half is a half-metre, and in half again a quarter-metre: two halves or four quarters make one metre."
         },
         {
          "type": "mcq",
@@ -74624,6 +74624,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g3-ch13-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "calendar",
+         "params": {},
+         "title": "Flip the calendar",
+         "tasks": [
+          {
+           "say": "Show February 2024. How many days does it have?",
+           "when": "year == 2024 and month == 2",
+           "then": "29 days: 2024 is a leap year."
+          },
+          {
+           "say": "Find the next February with 29 days after 2024.",
+           "when": "year == 2028 and month == 2",
+           "then": "Leap years come every four years: 2020, 2024, 2028."
+          },
+          {
+           "say": "Show July 2024. What day is 1 July?",
+           "when": "year == 2024 and month == 7",
+           "then": "A Monday, so the next Mondays are 8 July and 15 July."
+          }
+         ],
+         "takeaway": "February has 29 days only in a leap year, which comes every four years and has 366 days.",
+         "explanation": "February has 29 days only in a leap year, which comes every four years and has 366 days."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g3-ch13-l1-t1",
          "difficulty": 1,
@@ -74679,36 +74709,6 @@
            "p": 166
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g3-ch13-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "calendar",
-         "params": {},
-         "title": "Flip the calendar",
-         "tasks": [
-          {
-           "say": "Show February 2024. How many days does it have?",
-           "when": "year == 2024 and month == 2",
-           "then": "29 days: 2024 is a leap year."
-          },
-          {
-           "say": "Find the next February with 29 days after 2024.",
-           "when": "year == 2028 and month == 2",
-           "then": "Leap years come every four years: 2020, 2024, 2028."
-          },
-          {
-           "say": "Show July 2024. What day is 1 July?",
-           "when": "year == 2024 and month == 7",
-           "then": "A Monday, so the next Mondays are 8 July and 15 July."
-          }
-         ],
-         "takeaway": "February has 29 days only in a leap year, which comes every four years and has 366 days.",
-         "explanation": "February has 29 days only in a leap year, which comes every four years and has 366 days."
         },
         {
          "type": "mcq",

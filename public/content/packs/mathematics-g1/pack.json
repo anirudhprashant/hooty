@@ -705,6 +705,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g1-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "position",
+         "params": {},
+         "title": "Where is the ball?",
+         "tasks": [
+          {
+           "say": "Now put it under the table.",
+           "when": "place == 2",
+           "then": "Under means below, hidden beneath."
+          },
+          {
+           "say": "Throw the ball IN the basket.",
+           "when": "place == 4",
+           "then": "In: the ball is inside the basket."
+          },
+          {
+           "say": "Now it is OUT of the basket.",
+           "when": "place == 5",
+           "then": "Out: the ball is outside the basket."
+          }
+         ],
+         "takeaway": "Position words say where something is: above, on, under, near, in and out.",
+         "explanation": "Position words say where something is: above, on, under, near, in and out."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g1-ch1-l2-t1",
          "difficulty": 1,
@@ -744,36 +774,6 @@
            "p": 4
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g1-ch1-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "position",
-         "params": {},
-         "title": "Where is the ball?",
-         "tasks": [
-          {
-           "say": "Now put it under the table.",
-           "when": "place == 2",
-           "then": "Under means below, hidden beneath."
-          },
-          {
-           "say": "Throw the ball IN the basket.",
-           "when": "place == 4",
-           "then": "In: the ball is inside the basket."
-          },
-          {
-           "say": "Now it is OUT of the basket.",
-           "when": "place == 5",
-           "then": "Out: the ball is outside the basket."
-          }
-         ],
-         "takeaway": "Position words say where something is: above, on, under, near, in and out.",
-         "explanation": "Position words say where something is: above, on, under, near, in and out."
         },
         {
          "type": "mcq",
@@ -12064,6 +12064,41 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g1-ch3-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "counting",
+         "params": {},
+         "title": "Count the counters",
+         "tasks": [
+          {
+           "say": "Show five.",
+           "when": "n == 5",
+           "then": "Five fills the top frame: five counters."
+          },
+          {
+           "say": "Now add one more counter. What number is it?",
+           "when": "n == 6",
+           "then": "One more than five is six."
+          },
+          {
+           "say": "Show nine, the biggest number in the book.",
+           "when": "n == 9",
+           "then": "Nine is one less than ten."
+          },
+          {
+           "say": "Fill a whole frame: show ten.",
+           "when": "n == 10",
+           "then": "Ten counters fill one frame."
+          }
+         ],
+         "takeaway": "Each counter you add makes one more: the number goes up by one.",
+         "explanation": "Each counter you add makes one more: the number goes up by one."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g1-ch3-l1-t1",
          "difficulty": 1,
@@ -12134,41 +12169,6 @@
            "p": 19
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g1-ch3-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "counting",
-         "params": {},
-         "title": "Count the counters",
-         "tasks": [
-          {
-           "say": "Show five.",
-           "when": "n == 5",
-           "then": "Five fills the top frame: five counters."
-          },
-          {
-           "say": "Now add one more counter. What number is it?",
-           "when": "n == 6",
-           "then": "One more than five is six."
-          },
-          {
-           "say": "Show nine, the biggest number in the book.",
-           "when": "n == 9",
-           "then": "Nine is one less than ten."
-          },
-          {
-           "say": "Fill a whole frame: show ten.",
-           "when": "n == 10",
-           "then": "Ten counters fill one frame."
-          }
-         ],
-         "takeaway": "Each counter you add makes one more: the number goes up by one.",
-         "explanation": "Each counter you add makes one more: the number goes up by one."
         },
         {
          "type": "mcq",
@@ -34029,6 +34029,38 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g1-ch6-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "addtake",
+         "params": {
+          "kind": "add"
+         },
+         "title": "Join or take away",
+         "tasks": [
+          {
+           "say": "Join 4 and 2. How many in all?",
+           "when": "a == 4 and b == 2",
+           "then": "4 and 2 together make 6."
+          },
+          {
+           "say": "Find two groups that make 10.",
+           "when": "a + b == 10 and a > 0 and b > 0",
+           "then": "These two numbers make 10: a number pair for ten."
+          },
+          {
+           "say": "Add 7 and 3.",
+           "when": "a == 7 and b == 3",
+           "then": "7 + 3 = 10."
+          }
+         ],
+         "takeaway": "Joining groups makes a bigger number and taking some away leaves a smaller one.",
+         "explanation": "Joining groups makes a bigger number and taking some away leaves a smaller one."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g1-ch6-l3-t1",
          "difficulty": 1,
@@ -34084,38 +34116,6 @@
            "p": 68
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g1-ch6-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "addtake",
-         "params": {
-          "kind": "add"
-         },
-         "title": "Join or take away",
-         "tasks": [
-          {
-           "say": "Join 4 and 2. How many in all?",
-           "when": "a == 4 and b == 2",
-           "then": "4 and 2 together make 6."
-          },
-          {
-           "say": "Find two groups that make 10.",
-           "when": "a + b == 10 and a > 0 and b > 0",
-           "then": "These two numbers make 10: a number pair for ten."
-          },
-          {
-           "say": "Add 7 and 3.",
-           "when": "a == 7 and b == 3",
-           "then": "7 + 3 = 10."
-          }
-         ],
-         "takeaway": "Joining groups makes a bigger number and taking some away leaves a smaller one.",
-         "explanation": "Joining groups makes a bigger number and taking some away leaves a smaller one."
         },
         {
          "type": "mcq",
@@ -38971,8 +38971,8 @@
          ],
          "answer": 2,
          "why": {
-          "12": "12 is the number counted before 4 more are added.",
           "13": "13 is the result for 8 + 5, not for 5 + 3.",
+          "12": "12 is the number counted before 4 more are added.",
           "16": "16 comes from 12 + 4, not from 5 + 3."
          },
          "explanation": "The given fact says that 5 + 3 is 8.",
@@ -76280,6 +76280,53 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g1-ch12-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "money",
+         "params": {
+          "kind": "small"
+         },
+         "title": "Pay the exact amount",
+         "tasks": [
+          {
+           "say": "Pay ₹66 using the notes and coins.",
+           "when": "amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66",
+           "then": "For example ₹50 + ₹10 + ₹5 + ₹1 = ₹66."
+          },
+          {
+           "say": "Now pay ₹66 a different way, with no ₹50 note.",
+           "when": "amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66 and f == 0",
+           "then": "The same amount can be paid in many different ways."
+          },
+          {
+           "say": "The ball costs ₹20. Pay with only ₹5 coins. How many?",
+           "when": "amt == 7 and v == 4 and f + tw + t + two + o == 0",
+           "then": "4 coins of ₹5 make ₹20."
+          },
+          {
+           "say": "Now pay ₹20 with only ₹10 notes.",
+           "when": "amt == 7 and t == 2 and f + tw + v + two + o == 0",
+           "then": "2 notes of ₹10 make ₹20."
+          },
+          {
+           "say": "Make ₹54.",
+           "when": "amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54",
+           "then": "For example ₹50 + ₹2 + ₹2, or ₹20 + ₹20 + ₹10 + ₹2 + ₹2."
+          },
+          {
+           "say": "Make ₹85 with as few notes and coins as you can.",
+           "when": "amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5",
+           "then": "₹50 + ₹20 + ₹10 + ₹5: big notes first uses the fewest."
+          }
+         ],
+         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
+         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g1-ch12-l2-t1",
          "difficulty": 1,
@@ -76330,53 +76377,6 @@
            "p": 116
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g1-ch12-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "money",
-         "params": {
-          "kind": "small"
-         },
-         "title": "Pay the exact amount",
-         "tasks": [
-          {
-           "say": "Pay ₹66 using the notes and coins.",
-           "when": "amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66",
-           "then": "For example ₹50 + ₹10 + ₹5 + ₹1 = ₹66."
-          },
-          {
-           "say": "Now pay ₹66 a different way, with no ₹50 note.",
-           "when": "amt == 0 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 66 and f == 0",
-           "then": "The same amount can be paid in many different ways."
-          },
-          {
-           "say": "The ball costs ₹20. Pay with only ₹5 coins. How many?",
-           "when": "amt == 7 and v == 4 and f + tw + t + two + o == 0",
-           "then": "4 coins of ₹5 make ₹20."
-          },
-          {
-           "say": "Now pay ₹20 with only ₹10 notes.",
-           "when": "amt == 7 and t == 2 and f + tw + v + two + o == 0",
-           "then": "2 notes of ₹10 make ₹20."
-          },
-          {
-           "say": "Make ₹54.",
-           "when": "amt == 1 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 54",
-           "then": "For example ₹50 + ₹2 + ₹2, or ₹20 + ₹20 + ₹10 + ₹2 + ₹2."
-          },
-          {
-           "say": "Make ₹85 with as few notes and coins as you can.",
-           "when": "amt == 2 and 50 * f + 20 * tw + 10 * t + 5 * v + 2 * two + o == 85 and f + tw + t + v + two + o <= 5",
-           "then": "₹50 + ₹20 + ₹10 + ₹5: big notes first uses the fewest."
-          }
-         ],
-         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
-         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
         },
         {
          "type": "mcq",
@@ -84272,43 +84272,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "mathematics-g1-ch13-l6-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Sarita has four coins. She must spend exactly 49. How can she use the fewest coins?",
-         "steps": [
-          "She must reach exactly 49, because the puzzle says to spend that amount.",
-          "She should check coin combinations, because each combination shows a possible payment.",
-          "She should count the coins in each combination, because the goal is to use the fewest.",
-          "She should choose the valid combination with the smallest count, because it meets both goals."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "6.1",
-          "6.2",
-          "6.3"
-         ],
-         "src": [
-          {
-           "ch": 13,
-           "p": 127
-          },
-          {
-           "ch": 13,
-           "p": 128
-          },
-          {
-           "ch": 13,
-           "p": 128
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "mathematics-g1-ch13-l6-play",
          "difficulty": 1,
@@ -84354,6 +84317,43 @@
          ],
          "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
          "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
+        },
+        {
+         "type": "worked",
+         "id": "mathematics-g1-ch13-l6-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Sarita has four coins. She must spend exactly 49. How can she use the fewest coins?",
+         "steps": [
+          "She must reach exactly 49, because the puzzle says to spend that amount.",
+          "She should check coin combinations, because each combination shows a possible payment.",
+          "She should count the coins in each combination, because the goal is to use the fewest.",
+          "She should choose the valid combination with the smallest count, because it meets both goals."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "6.1",
+          "6.2",
+          "6.3"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 127
+          },
+          {
+           "ch": 13,
+           "p": 128
+          },
+          {
+           "ch": 13,
+           "p": 128
+          }
+         ]
         },
         {
          "type": "concept",

@@ -5354,9 +5354,9 @@
          ],
          "answer": 2,
          "why": {
+          "-8": "-8 is a square root, but this chapter excludes the negative one.",
           "49": "49 is the area of the first square, not the square root of 64.",
-          "64": "64 is the number being checked, not its square root.",
-          "-8": "-8 is a square root, but this chapter excludes the negative one."
+          "64": "64 is the number being checked, not its square root."
          },
          "explanation": "8 is the positive square root chosen in this chapter.",
          "anchor": "mathematics-g8-ch1-l4-t1",
@@ -51993,6 +51993,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g8-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pythagoras",
+         "params": {},
+         "title": "Squares on the sides",
+         "tasks": [
+          {
+           "say": "Swap the sides: make a = 4 and b = 3.",
+           "when": "a == 4 and b == 3",
+           "then": "Swapping the short sides does not change the long side: it is still 5."
+          },
+          {
+           "say": "Find another whole-number triangle: make the sides 6 and 8.",
+           "when": "a == 6 and b == 8",
+           "then": "36 + 64 = 100 = 10 x 10. Doubling a triple gives another triple."
+          },
+          {
+           "say": "Make both short sides equal.",
+           "when": "a == b",
+           "then": "Then c x c = 2 x a x a, so the long side is a times about 1.414."
+          }
+         ],
+         "takeaway": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side.",
+         "explanation": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g8-ch9-l4-t1",
          "difficulty": 1,
@@ -52038,36 +52068,6 @@
            "p": 43
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g8-ch9-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "pythagoras",
-         "params": {},
-         "title": "Squares on the sides",
-         "tasks": [
-          {
-           "say": "Swap the sides: make a = 4 and b = 3.",
-           "when": "a == 4 and b == 3",
-           "then": "Swapping the short sides does not change the long side: it is still 5."
-          },
-          {
-           "say": "Find another whole-number triangle: make the sides 6 and 8.",
-           "when": "a == 6 and b == 8",
-           "then": "36 + 64 = 100 = 10 x 10. Doubling a triple gives another triple."
-          },
-          {
-           "say": "Make both short sides equal.",
-           "when": "a == b",
-           "then": "Then c x c = 2 x a x a, so the long side is a times about 1.414."
-          }
-         ],
-         "takeaway": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side.",
-         "explanation": "In every right-angled triangle, the squares on the two short sides add up to the square on the long side."
         },
         {
          "type": "mcq",
@@ -69663,6 +69663,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g8-ch12-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "dotplot",
+         "params": {},
+         "title": "Mean, median and range",
+         "tasks": [
+          {
+           "say": "Change only Number 5 to 10. Which moved: the mean or the median?",
+           "when": "v5 == 10",
+           "then": "The mean moved to 5.4 but the median stayed at 5: one big value pulls the mean, not the median."
+          },
+          {
+           "say": "Make the mean exactly 6.",
+           "when": "v1 + v2 + v3 + v4 + v5 == 30",
+           "then": "Mean = total divided by 5, so the five numbers must add up to 30."
+          }
+         ],
+         "takeaway": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are.",
+         "explanation": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g8-ch12-l3-t1",
          "difficulty": 1,
@@ -69703,31 +69728,6 @@
            "p": 109
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g8-ch12-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "dotplot",
-         "params": {},
-         "title": "Mean, median and range",
-         "tasks": [
-          {
-           "say": "Change only Number 5 to 10. Which moved: the mean or the median?",
-           "when": "v5 == 10",
-           "then": "The mean moved to 5.4 but the median stayed at 5: one big value pulls the mean, not the median."
-          },
-          {
-           "say": "Make the mean exactly 6.",
-           "when": "v1 + v2 + v3 + v4 + v5 == 30",
-           "then": "Mean = total divided by 5, so the five numbers must add up to 30."
-          }
-         ],
-         "takeaway": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are.",
-         "explanation": "The mean is the balance point and feels every value; the median is the middle and ignores how far out the ends are."
         },
         {
          "type": "concept",
@@ -72793,9 +72793,9 @@
          ],
          "answer": 2,
          "why": {
-          "7": "The value 7 belongs to the other pair and is its mean.",
           "8": "The mean of 8 and 9 is exactly halfway between them, so it is 8.5.",
-          "9": "Choosing 9 selects one value instead of calculating the mean."
+          "9": "Choosing 9 selects one value instead of calculating the mean.",
+          "7": "The value 7 belongs to the other pair and is its mean."
          },
          "explanation": "Choosing 8 selects one value instead of calculating the mean."
         },
@@ -80456,6 +80456,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "mathematics-g8-ch14-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "rectangle",
+         "params": {},
+         "title": "Build the rectangle",
+         "tasks": [
+          {
+           "say": "Make a square.",
+           "when": "l == b",
+           "then": "A square is a rectangle whose sides are equal."
+          },
+          {
+           "say": "Make a different rectangle with area 24.",
+           "when": "l * b == 24",
+           "then": "Different rectangles can share an area: 24 = 6 x 4 = 8 x 3 = 12 x 2."
+          }
+         ],
+         "takeaway": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width)).",
+         "explanation": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width))."
+        },
+        {
          "type": "worked",
          "id": "mathematics-g8-ch14-l1-t1",
          "difficulty": 1,
@@ -80506,31 +80531,6 @@
            "p": 149
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "mathematics-g8-ch14-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "rectangle",
-         "params": {},
-         "title": "Build the rectangle",
-         "tasks": [
-          {
-           "say": "Make a square.",
-           "when": "l == b",
-           "then": "A square is a rectangle whose sides are equal."
-          },
-          {
-           "say": "Make a different rectangle with area 24.",
-           "when": "l * b == 24",
-           "then": "Different rectangles can share an area: 24 = 6 x 4 = 8 x 3 = 12 x 2."
-          }
-         ],
-         "takeaway": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width)).",
-         "explanation": "Area counts the squares inside (length x width); perimeter is the distance around (2 x (length + width))."
         },
         {
          "type": "truefalse",
@@ -86142,9 +86142,9 @@
          ],
          "answer": 3,
          "why": {
-          "24": "The full rectangle has area 28, and each triangle is half of it.",
           "28": "The full rectangle has area 28, not each triangle.",
-          "Half of 24": "The 24 area belongs to the other rectangle."
+          "Half of 24": "The 24 area belongs to the other rectangle.",
+          "24": "The full rectangle has area 28, and each triangle is half of it."
          },
          "explanation": "Each triangle has half the rectangle's area, which is 28.",
          "anchor": "mathematics-g8-ch14-l1-t1",

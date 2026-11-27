@@ -103,68 +103,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g9-ch1-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Why does a simple meal need many people and systems?",
-         "steps": [
-          "Much of our food comes from different parts of the country, because many people work together.",
-          "They bring food from farms to our plates, so simple meals depend on shared work.",
-          "Roads, schools, and electricity also matter, because daily activities depend on social and natural systems.",
-          "Social scientists use observation, evidence, and logical reasoning, because these help them find answers about society."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.1",
-          "1.4",
-          "1.5",
-          "1.6",
-          "1.7",
-          "1.8",
-          "1.9",
-          "1.11"
-         ],
-         "src": [
-          {
-           "ch": 1,
-           "p": 1
-          },
-          {
-           "ch": 1,
-           "p": 1
-          },
-          {
-           "ch": 1,
-           "p": 1
-          },
-          {
-           "ch": 1,
-           "p": 1
-          },
-          {
-           "ch": 1,
-           "p": 1
-          },
-          {
-           "ch": 1,
-           "p": 1
-          },
-          {
-           "ch": 1,
-           "p": 2
-          },
-          {
-           "ch": 1,
-           "p": 2
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g9-ch1-l1-play",
          "difficulty": 1,
@@ -237,6 +175,68 @@
          ],
          "takeaway": "Social Science is not one subject but four together: Geography studies places and the Earth, History studies the human past, Political Science studies power and government, and Economics studies how people use limited resources.",
          "explanation": "Social Science is not one subject but four together: Geography studies places and the Earth, History studies the human past, Political Science studies power and government, and Economics studies how people use limited resources."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g9-ch1-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why does a simple meal need many people and systems?",
+         "steps": [
+          "Much of our food comes from different parts of the country, because many people work together.",
+          "They bring food from farms to our plates, so simple meals depend on shared work.",
+          "Roads, schools, and electricity also matter, because daily activities depend on social and natural systems.",
+          "Social scientists use observation, evidence, and logical reasoning, because these help them find answers about society."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.4",
+          "1.5",
+          "1.6",
+          "1.7",
+          "1.8",
+          "1.9",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 2
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -4660,6 +4660,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch2-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "landform",
+         "params": {},
+         "title": "Walk across the land",
+         "tasks": [
+          {
+           "say": "Climb to the snow on the highest land.",
+           "when": "x >= 9 and x <= 11",
+           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
+          },
+          {
+           "say": "Stand on the raised land with a flat top.",
+           "when": "x >= 33 and x <= 40",
+           "then": "A plateau: more or less flat on top, and higher than the land around it."
+          },
+          {
+           "say": "Stop where a river spreads soil for farms.",
+           "when": "x >= 55 and x <= 65",
+           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
+          }
+         ],
+         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
+         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch2-l3-t1",
          "difficulty": 1,
@@ -4690,36 +4720,6 @@
            "p": 20
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch2-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "landform",
-         "params": {},
-         "title": "Walk across the land",
-         "tasks": [
-          {
-           "say": "Climb to the snow on the highest land.",
-           "when": "x >= 9 and x <= 11",
-           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
-          },
-          {
-           "say": "Stand on the raised land with a flat top.",
-           "when": "x >= 33 and x <= 40",
-           "then": "A plateau: more or less flat on top, and higher than the land around it."
-          },
-          {
-           "say": "Stop where a river spreads soil for farms.",
-           "when": "x >= 55 and x <= 65",
-           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
-          }
-         ],
-         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
-         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
         },
         {
          "type": "mcq",
@@ -5726,6 +5726,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch2-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "landform",
+         "params": {},
+         "title": "Walk across the land",
+         "tasks": [
+          {
+           "say": "Climb to the snow on the highest land.",
+           "when": "x >= 9 and x <= 11",
+           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
+          },
+          {
+           "say": "Stand on the raised land with a flat top.",
+           "when": "x >= 33 and x <= 40",
+           "then": "A plateau: more or less flat on top, and higher than the land around it."
+          },
+          {
+           "say": "Stop where a river spreads soil for farms.",
+           "when": "x >= 55 and x <= 65",
+           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
+          }
+         ],
+         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
+         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch2-l5-t1",
          "difficulty": 1,
@@ -5755,36 +5785,6 @@
            "p": 20
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch2-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "landform",
-         "params": {},
-         "title": "Walk across the land",
-         "tasks": [
-          {
-           "say": "Climb to the snow on the highest land.",
-           "when": "x >= 9 and x <= 11",
-           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
-          },
-          {
-           "say": "Stand on the raised land with a flat top.",
-           "when": "x >= 33 and x <= 40",
-           "then": "A plateau: more or less flat on top, and higher than the land around it."
-          },
-          {
-           "say": "Stop where a river spreads soil for farms.",
-           "when": "x >= 55 and x <= 65",
-           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
-          }
-         ],
-         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
-         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
         },
         {
          "type": "mcq",
@@ -9203,6 +9203,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch3-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "monsoon",
+         "params": {},
+         "title": "Follow the monsoon winds",
+         "tasks": [
+          {
+           "say": "Move the month to July, in the middle of the summer monsoon.",
+           "when": "month == 7",
+           "then": "In July the land is hotter than the sea, so low pressure sits over the land and moist winds come in from the sea. This is the summer monsoon, and it brings most of India's rain."
+          },
+          {
+           "say": "Move the month to December, in the winter monsoon.",
+           "when": "month == 12",
+           "then": "In December the land is cooler than the sea, so the pressure is low over the sea and cool, dry winds blow from the land out to sea. Little rain falls."
+          },
+          {
+           "say": "Find another month when the wind blows from the land to the sea.",
+           "when": "month >= 1 and month <= 2",
+           "then": "January and February work too: the winter monsoon lasts through these months, with dry winds blowing out to sea."
+          }
+         ],
+         "takeaway": "The monsoon is a yearly reversal of the winds. In summer the land is hotter, so moist sea air blows in and brings rain; in winter the sea is warmer, so cool dry air blows from the land out to sea.",
+         "explanation": "The monsoon is a yearly reversal of the winds. In summer the land is hotter, so moist sea air blows in and brings rain; in winter the sea is warmer, so cool dry air blows from the land out to sea."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch3-l5-t1",
          "difficulty": 1,
@@ -9248,36 +9278,6 @@
            "p": 44
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch3-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "monsoon",
-         "params": {},
-         "title": "Follow the monsoon winds",
-         "tasks": [
-          {
-           "say": "Move the month to July, in the middle of the summer monsoon.",
-           "when": "month == 7",
-           "then": "In July the land is hotter than the sea, so low pressure sits over the land and moist winds come in from the sea. This is the summer monsoon, and it brings most of India's rain."
-          },
-          {
-           "say": "Move the month to December, in the winter monsoon.",
-           "when": "month == 12",
-           "then": "In December the land is cooler than the sea, so the pressure is low over the sea and cool, dry winds blow from the land out to sea. Little rain falls."
-          },
-          {
-           "say": "Find another month when the wind blows from the land to the sea.",
-           "when": "month >= 1 and month <= 2",
-           "then": "January and February work too: the winter monsoon lasts through these months, with dry winds blowing out to sea."
-          }
-         ],
-         "takeaway": "The monsoon is a yearly reversal of the winds. In summer the land is hotter, so moist sea air blows in and brings rain; in winter the sea is warmer, so cool dry air blows from the land out to sea.",
-         "explanation": "The monsoon is a yearly reversal of the winds. In summer the land is hotter, so moist sea air blows in and brings rain; in winter the sea is warmer, so cool dry air blows from the land out to sea."
         },
         {
          "type": "mcq",
@@ -12164,53 +12164,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g9-ch4-l3-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A family plants wheat and barley and keeps goats. It stays together and makes food tools. Why is its life changing?",
-         "steps": [
-          "The family controls chosen goats, so this is domestication.",
-          "The family grows wheat and barley, so they now produce food.",
-          "They make food tools, so their work is organised around producing food.",
-          "Their settled farming life shows the Neolithic change to village living."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "3.1",
-          "3.2",
-          "3.3",
-          "3.5",
-          "3.9"
-         ],
-         "src": [
-          {
-           "ch": 4,
-           "p": 71
-          },
-          {
-           "ch": 4,
-           "p": 71
-          },
-          {
-           "ch": 4,
-           "p": 71
-          },
-          {
-           "ch": 4,
-           "p": 71
-          },
-          {
-           "ch": 4,
-           "p": 73
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g9-ch4-l3-play",
          "difficulty": 1,
@@ -12266,6 +12219,53 @@
          ],
          "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
          "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g9-ch4-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A family plants wheat and barley and keeps goats. It stays together and makes food tools. Why is its life changing?",
+         "steps": [
+          "The family controls chosen goats, so this is domestication.",
+          "The family grows wheat and barley, so they now produce food.",
+          "They make food tools, so their work is organised around producing food.",
+          "Their settled farming life shows the Neolithic change to village living."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.5",
+          "3.9"
+         ],
+         "src": [
+          {
+           "ch": 4,
+           "p": 71
+          },
+          {
+           "ch": 4,
+           "p": 71
+          },
+          {
+           "ch": 4,
+           "p": 71
+          },
+          {
+           "ch": 4,
+           "p": 71
+          },
+          {
+           "ch": 4,
+           "p": 73
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -14830,43 +14830,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g9-ch5-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A neighbourhood shares land, food habits, and belonging. A nearby town has an organised political system based on laws. Why are the two groups different?",
-         "steps": [
-          "The neighbourhood is a society because people share territory, culture, and belonging.",
-          "Its customs and practices mainly guide it rather than formal written laws.",
-          "The town is a state because its political system is organised.",
-          "Its rules and laws explain why it differs from the neighbourhood."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.1",
-          "1.2",
-          "1.3"
-         ],
-         "src": [
-          {
-           "ch": 5,
-           "p": 97
-          },
-          {
-           "ch": 5,
-           "p": 97
-          },
-          {
-           "ch": 5,
-           "p": 97
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g9-ch5-l1-play",
          "difficulty": 1,
@@ -14927,6 +14890,43 @@
          ],
          "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
          "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g9-ch5-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A neighbourhood shares land, food habits, and belonging. A nearby town has an organised political system based on laws. Why are the two groups different?",
+         "steps": [
+          "The neighbourhood is a society because people share territory, culture, and belonging.",
+          "Its customs and practices mainly guide it rather than formal written laws.",
+          "The town is a state because its political system is organised.",
+          "Its rules and laws explain why it differs from the neighbourhood."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 97
+          },
+          {
+           "ch": 5,
+           "p": 97
+          },
+          {
+           "ch": 5,
+           "p": 97
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -15397,43 +15397,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g9-ch5-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Clans join larger areas on a map. Why does political identity change?",
-         "steps": [
-          "Clans gradually joined larger territorial units because political organisation was growing.",
-          "People began sharing a territory instead of tracing kinship because political belonging changed.",
-          "These larger units were janapadas, so territorial identity had replaced family identity.",
-          "Later, still larger mahājanapadas developed, showing that political units kept growing."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.2",
-          "2.3"
-         ],
-         "src": [
-          {
-           "ch": 5,
-           "p": 103
-          },
-          {
-           "ch": 5,
-           "p": 103
-          },
-          {
-           "ch": 5,
-           "p": 103
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g9-ch5-l2-play",
          "difficulty": 1,
@@ -15513,6 +15476,43 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g9-ch5-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Clans join larger areas on a map. Why does political identity change?",
+         "steps": [
+          "Clans gradually joined larger territorial units because political organisation was growing.",
+          "People began sharing a territory instead of tracing kinship because political belonging changed.",
+          "These larger units were janapadas, so territorial identity had replaced family identity.",
+          "Later, still larger mahājanapadas developed, showing that political units kept growing."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 103
+          },
+          {
+           "ch": 5,
+           "p": 103
+          },
+          {
+           "ch": 5,
+           "p": 103
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -18938,6 +18938,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch6-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seats",
+         "params": {},
+         "title": "Turn votes into seats",
+         "tasks": [
+          {
+           "say": "Give party A 51% of the votes and count its seats.",
+           "when": "share == 51",
+           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
+          },
+          {
+           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
+           "when": "spread == 0 and share > 50",
+           "then": "With no local differences at all, a one-point lead wins every seat."
+          },
+          {
+           "say": "Take the swings to their widest and see who wins where.",
+           "when": "spread == 20",
+           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
+          }
+         ],
+         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
+         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch6-l4-t1",
          "difficulty": 1,
@@ -18968,36 +18998,6 @@
            "p": 152
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch6-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seats",
-         "params": {},
-         "title": "Turn votes into seats",
-         "tasks": [
-          {
-           "say": "Give party A 51% of the votes and count its seats.",
-           "when": "share == 51",
-           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
-          },
-          {
-           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
-           "when": "spread == 0 and share > 50",
-           "then": "With no local differences at all, a one-point lead wins every seat."
-          },
-          {
-           "say": "Take the swings to their widest and see who wins where.",
-           "when": "spread == 20",
-           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
-          }
-         ],
-         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
-         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
         },
         {
          "type": "concept",
@@ -20138,6 +20138,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seats",
+         "params": {},
+         "title": "Turn votes into seats",
+         "tasks": [
+          {
+           "say": "Give party A 51% of the votes and count its seats.",
+           "when": "share == 51",
+           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
+          },
+          {
+           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
+           "when": "spread == 0 and share > 50",
+           "then": "With no local differences at all, a one-point lead wins every seat."
+          },
+          {
+           "say": "Take the swings to their widest and see who wins where.",
+           "when": "spread == 20",
+           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
+          }
+         ],
+         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
+         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch7-l1-t1",
          "difficulty": 1,
@@ -20167,36 +20197,6 @@
            "p": 161
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch7-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seats",
-         "params": {},
-         "title": "Turn votes into seats",
-         "tasks": [
-          {
-           "say": "Give party A 51% of the votes and count its seats.",
-           "when": "share == 51",
-           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
-          },
-          {
-           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
-           "when": "spread == 0 and share > 50",
-           "then": "With no local differences at all, a one-point lead wins every seat."
-          },
-          {
-           "say": "Take the swings to their widest and see who wins where.",
-           "when": "spread == 20",
-           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
-          }
-         ],
-         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
-         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
         },
         {
          "type": "mcq",
@@ -20637,6 +20637,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seats",
+         "params": {},
+         "title": "Turn votes into seats",
+         "tasks": [
+          {
+           "say": "Give party A 51% of the votes and count its seats.",
+           "when": "share == 51",
+           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
+          },
+          {
+           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
+           "when": "spread == 0 and share > 50",
+           "then": "With no local differences at all, a one-point lead wins every seat."
+          },
+          {
+           "say": "Take the swings to their widest and see who wins where.",
+           "when": "spread == 20",
+           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
+          }
+         ],
+         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
+         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch7-l2-t1",
          "difficulty": 1,
@@ -20677,36 +20707,6 @@
            "p": 164
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch7-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seats",
-         "params": {},
-         "title": "Turn votes into seats",
-         "tasks": [
-          {
-           "say": "Give party A 51% of the votes and count its seats.",
-           "when": "share == 51",
-           "then": "A lead of one point in the votes is worth far more than one point of seats: every constituency that flips goes to A alone."
-          },
-          {
-           "say": "Flatten the swings: make every constituency vote the same way while A is ahead.",
-           "when": "spread == 0 and share > 50",
-           "then": "With no local differences at all, a one-point lead wins every seat."
-          },
-          {
-           "say": "Take the swings to their widest and see who wins where.",
-           "when": "spread == 20",
-           "then": "When the local differences are large, the national vote share tells you much less about who wins a seat."
-          }
-         ],
-         "takeaway": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats.",
-         "explanation": "Each constituency is won outright, so seats can run well ahead of votes: the same share of votes can mean a very different number of seats."
         },
         {
          "type": "mcq",
@@ -23830,6 +23830,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch8-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ppc",
+         "params": {},
+         "title": "Grow barley or wheat",
+         "tasks": [
+          {
+           "say": "Grow 6 quintals of barley and 8 of wheat: a point exactly on the curve.",
+           "when": "b == 6 and w == 8",
+           "then": "On the curve all the land and workers are used, so this is an efficient combination."
+          },
+          {
+           "say": "Move to a point inside the curve, where some land or workers are left idle.",
+           "when": "b * b + w * w < 100",
+           "then": "Inside the curve the farm could grow more of one crop without giving up the other, because something is idle."
+          },
+          {
+           "say": "Try a combination the farm cannot reach.",
+           "when": "b * b + w * w > 100",
+           "then": "Outside the curve there is not enough land and labour, so this combination is impossible."
+          }
+         ],
+         "takeaway": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost.",
+         "explanation": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch8-l1-t1",
          "difficulty": 1,
@@ -23870,36 +23900,6 @@
            "p": 184
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch8-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "ppc",
-         "params": {},
-         "title": "Grow barley or wheat",
-         "tasks": [
-          {
-           "say": "Grow 6 quintals of barley and 8 of wheat: a point exactly on the curve.",
-           "when": "b == 6 and w == 8",
-           "then": "On the curve all the land and workers are used, so this is an efficient combination."
-          },
-          {
-           "say": "Move to a point inside the curve, where some land or workers are left idle.",
-           "when": "b * b + w * w < 100",
-           "then": "Inside the curve the farm could grow more of one crop without giving up the other, because something is idle."
-          },
-          {
-           "say": "Try a combination the farm cannot reach.",
-           "when": "b * b + w * w > 100",
-           "then": "Outside the curve there is not enough land and labour, so this combination is impossible."
-          }
-         ],
-         "takeaway": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost.",
-         "explanation": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost."
         },
         {
          "type": "concept",
@@ -24447,6 +24447,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ppc",
+         "params": {},
+         "title": "Grow barley or wheat",
+         "tasks": [
+          {
+           "say": "Grow 6 quintals of barley and 8 of wheat: a point exactly on the curve.",
+           "when": "b == 6 and w == 8",
+           "then": "On the curve all the land and workers are used, so this is an efficient combination."
+          },
+          {
+           "say": "Move to a point inside the curve, where some land or workers are left idle.",
+           "when": "b * b + w * w < 100",
+           "then": "Inside the curve the farm could grow more of one crop without giving up the other, because something is idle."
+          },
+          {
+           "say": "Try a combination the farm cannot reach.",
+           "when": "b * b + w * w > 100",
+           "then": "Outside the curve there is not enough land and labour, so this combination is impossible."
+          }
+         ],
+         "takeaway": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost.",
+         "explanation": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch8-l2-t1",
          "difficulty": 1,
@@ -24497,36 +24527,6 @@
            "p": 185
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch8-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "ppc",
-         "params": {},
-         "title": "Grow barley or wheat",
-         "tasks": [
-          {
-           "say": "Grow 6 quintals of barley and 8 of wheat: a point exactly on the curve.",
-           "when": "b == 6 and w == 8",
-           "then": "On the curve all the land and workers are used, so this is an efficient combination."
-          },
-          {
-           "say": "Move to a point inside the curve, where some land or workers are left idle.",
-           "when": "b * b + w * w < 100",
-           "then": "Inside the curve the farm could grow more of one crop without giving up the other, because something is idle."
-          },
-          {
-           "say": "Try a combination the farm cannot reach.",
-           "when": "b * b + w * w > 100",
-           "then": "Outside the curve there is not enough land and labour, so this combination is impossible."
-          }
-         ],
-         "takeaway": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost.",
-         "explanation": "The curve shows every combination of barley and wheat the farm can grow when all its land and workers are used. A point inside the curve leaves resources idle; a point outside cannot be reached. More barley means less wheat, and the wheat given up is the opportunity cost."
         },
         {
          "type": "mcq",
@@ -27055,6 +27055,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "market",
+         "params": {},
+         "title": "Run the market",
+         "tasks": [
+          {
+           "say": "Set the price where buyers want exactly what sellers bring.",
+           "when": "price == 100 and buyers == 0",
+           "then": "At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium."
+          },
+          {
+           "say": "Make a shortage: set the price below the equilibrium.",
+           "when": "price == 70",
+           "then": "At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise."
+          },
+          {
+           "say": "Add four buyers, then set the new equilibrium price.",
+           "when": "price == 120 and buyers == 4",
+           "then": "Four more buyers shift demand right, so the market settles at the higher price of ₹120."
+          }
+         ],
+         "takeaway": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.",
+         "explanation": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch9-l1-t1",
          "difficulty": 1,
@@ -27090,36 +27120,6 @@
            "p": 196
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch9-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "market",
-         "params": {},
-         "title": "Run the market",
-         "tasks": [
-          {
-           "say": "Set the price where buyers want exactly what sellers bring.",
-           "when": "price == 100 and buyers == 0",
-           "then": "At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium."
-          },
-          {
-           "say": "Make a shortage: set the price below the equilibrium.",
-           "when": "price == 70",
-           "then": "At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise."
-          },
-          {
-           "say": "Add four buyers, then set the new equilibrium price.",
-           "when": "price == 120 and buyers == 4",
-           "then": "Four more buyers shift demand right, so the market settles at the higher price of ₹120."
-          }
-         ],
-         "takeaway": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.",
-         "explanation": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet."
         },
         {
          "type": "mcq",
@@ -28084,6 +28084,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch9-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "market",
+         "params": {},
+         "title": "Run the market",
+         "tasks": [
+          {
+           "say": "Set the price where buyers want exactly what sellers bring.",
+           "when": "price == 100 and buyers == 0",
+           "then": "At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium."
+          },
+          {
+           "say": "Make a shortage: set the price below the equilibrium.",
+           "when": "price == 70",
+           "then": "At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise."
+          },
+          {
+           "say": "Add four buyers, then set the new equilibrium price.",
+           "when": "price == 120 and buyers == 4",
+           "then": "Four more buyers shift demand right, so the market settles at the higher price of ₹120."
+          }
+         ],
+         "takeaway": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.",
+         "explanation": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch9-l3-t1",
          "difficulty": 1,
@@ -28114,36 +28144,6 @@
            "p": 200
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch9-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "market",
-         "params": {},
-         "title": "Run the market",
-         "tasks": [
-          {
-           "say": "Set the price where buyers want exactly what sellers bring.",
-           "when": "price == 100 and buyers == 0",
-           "then": "At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium."
-          },
-          {
-           "say": "Make a shortage: set the price below the equilibrium.",
-           "when": "price == 70",
-           "then": "At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise."
-          },
-          {
-           "say": "Add four buyers, then set the new equilibrium price.",
-           "when": "price == 120 and buyers == 4",
-           "then": "Four more buyers shift demand right, so the market settles at the higher price of ₹120."
-          }
-         ],
-         "takeaway": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.",
-         "explanation": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet."
         },
         {
          "type": "truefalse",
@@ -29058,6 +29058,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch9-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "market",
+         "params": {},
+         "title": "Run the market",
+         "tasks": [
+          {
+           "say": "Set the price where buyers want exactly what sellers bring.",
+           "when": "price == 100 and buyers == 0",
+           "then": "At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium."
+          },
+          {
+           "say": "Make a shortage: set the price below the equilibrium.",
+           "when": "price == 70",
+           "then": "At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise."
+          },
+          {
+           "say": "Add four buyers, then set the new equilibrium price.",
+           "when": "price == 120 and buyers == 4",
+           "then": "Four more buyers shift demand right, so the market settles at the higher price of ₹120."
+          }
+         ],
+         "takeaway": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.",
+         "explanation": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch9-l5-t1",
          "difficulty": 1,
@@ -29098,36 +29128,6 @@
            "p": 204
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch9-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "market",
-         "params": {},
-         "title": "Run the market",
-         "tasks": [
-          {
-           "say": "Set the price where buyers want exactly what sellers bring.",
-           "when": "price == 100 and buyers == 0",
-           "then": "At ₹100 a kg, buyers want 12 kg and sellers bring 12 kg: that is the equilibrium."
-          },
-          {
-           "say": "Make a shortage: set the price below the equilibrium.",
-           "when": "price == 70",
-           "then": "At ₹70 buyers want 15 kg but sellers bring only 9 kg, so the price would rise."
-          },
-          {
-           "say": "Add four buyers, then set the new equilibrium price.",
-           "when": "price == 120 and buyers == 4",
-           "then": "Four more buyers shift demand right, so the market settles at the higher price of ₹120."
-          }
-         ],
-         "takeaway": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet.",
-         "explanation": "Demand falls when the price rises and supply rises with the price; the market settles where the two curves meet."
         },
         {
          "type": "mcq",
@@ -31208,6 +31208,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "landform",
+         "params": {},
+         "title": "Walk across the land",
+         "tasks": [
+          {
+           "say": "Climb to the snow on the highest land.",
+           "when": "x >= 9 and x <= 11",
+           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
+          },
+          {
+           "say": "Stand on the raised land with a flat top.",
+           "when": "x >= 33 and x <= 40",
+           "then": "A plateau: more or less flat on top, and higher than the land around it."
+          },
+          {
+           "say": "Stop where a river spreads soil for farms.",
+           "when": "x >= 55 and x <= 65",
+           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
+          }
+         ],
+         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
+         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch10-l2-t1",
          "difficulty": 1,
@@ -31253,36 +31283,6 @@
            "p": 5
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch10-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "landform",
-         "params": {},
-         "title": "Walk across the land",
-         "tasks": [
-          {
-           "say": "Climb to the snow on the highest land.",
-           "when": "x >= 9 and x <= 11",
-           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
-          },
-          {
-           "say": "Stand on the raised land with a flat top.",
-           "when": "x >= 33 and x <= 40",
-           "then": "A plateau: more or less flat on top, and higher than the land around it."
-          },
-          {
-           "say": "Stop where a river spreads soil for farms.",
-           "when": "x >= 55 and x <= 65",
-           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
-          }
-         ],
-         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
-         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
         },
         {
          "type": "concept",
@@ -35356,6 +35356,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch11-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "landform",
+         "params": {},
+         "title": "Walk across the land",
+         "tasks": [
+          {
+           "say": "Climb to the snow on the highest land.",
+           "when": "x >= 9 and x <= 11",
+           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
+          },
+          {
+           "say": "Stand on the raised land with a flat top.",
+           "when": "x >= 33 and x <= 40",
+           "then": "A plateau: more or less flat on top, and higher than the land around it."
+          },
+          {
+           "say": "Stop where a river spreads soil for farms.",
+           "when": "x >= 55 and x <= 65",
+           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
+          }
+         ],
+         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
+         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch11-l3-t1",
          "difficulty": 1,
@@ -35385,36 +35415,6 @@
            "p": 25
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch11-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "landform",
-         "params": {},
-         "title": "Walk across the land",
-         "tasks": [
-          {
-           "say": "Climb to the snow on the highest land.",
-           "when": "x >= 9 and x <= 11",
-           "then": "A mountain: broad base, steep slopes and a narrow summit. At very high altitude the snow never melts."
-          },
-          {
-           "say": "Stand on the raised land with a flat top.",
-           "when": "x >= 33 and x <= 40",
-           "then": "A plateau: more or less flat on top, and higher than the land around it."
-          },
-          {
-           "say": "Stop where a river spreads soil for farms.",
-           "when": "x >= 55 and x <= 65",
-           "then": "A plain: rivers carry sediment and spread it, and the deposits make very fertile soil."
-          }
-         ],
-         "takeaway": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain.",
-         "explanation": "Mountains are much higher than the land around them, with steep slopes and narrow summits. Plateaus are raised land with a broad, nearly flat top. Plains are low and flat, and rivers spread fertile soil across them. Deserts are dry, with very little rain."
         },
         {
          "type": "mcq",
@@ -38566,63 +38566,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g9-ch12-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A ruler wants Rajput support, but Mewar keeps resisting. What is the wise way forward?",
-         "steps": [
-          "The Mughals wanted Rajputs because they offered military, political and administrative support.",
-          "The Kachhwāha Rajputs of Amber chose cooperation, so this was another possible approach.",
-          "Mewar’s route was different because its resistance remained strong, and Pratāp used guerrilla warfare in the Aravalli terrain.",
-          "Therefore, the ruler should negotiate a final treaty recognising Mewar’s continued autonomy."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.3",
-          "2.4",
-          "2.5",
-          "2.7",
-          "2.8",
-          "2.11",
-          "2.12"
-         ],
-         "src": [
-          {
-           "ch": 12,
-           "p": 50
-          },
-          {
-           "ch": 12,
-           "p": 50
-          },
-          {
-           "ch": 12,
-           "p": 50
-          },
-          {
-           "ch": 12,
-           "p": 51
-          },
-          {
-           "ch": 12,
-           "p": 51
-          },
-          {
-           "ch": 12,
-           "p": 52
-          },
-          {
-           "ch": 12,
-           "p": 53
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g9-ch12-l2-play",
          "difficulty": 1,
@@ -38678,6 +38621,63 @@
          ],
          "takeaway": "Put events in order, and remember that BCE years count down towards 1 CE.",
          "explanation": "Put events in order, and remember that BCE years count down towards 1 CE."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g9-ch12-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A ruler wants Rajput support, but Mewar keeps resisting. What is the wise way forward?",
+         "steps": [
+          "The Mughals wanted Rajputs because they offered military, political and administrative support.",
+          "The Kachhwāha Rajputs of Amber chose cooperation, so this was another possible approach.",
+          "Mewar’s route was different because its resistance remained strong, and Pratāp used guerrilla warfare in the Aravalli terrain.",
+          "Therefore, the ruler should negotiate a final treaty recognising Mewar’s continued autonomy."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.3",
+          "2.4",
+          "2.5",
+          "2.7",
+          "2.8",
+          "2.11",
+          "2.12"
+         ],
+         "src": [
+          {
+           "ch": 12,
+           "p": 50
+          },
+          {
+           "ch": 12,
+           "p": 50
+          },
+          {
+           "ch": 12,
+           "p": 50
+          },
+          {
+           "ch": 12,
+           "p": 51
+          },
+          {
+           "ch": 12,
+           "p": 51
+          },
+          {
+           "ch": 12,
+           "p": 52
+          },
+          {
+           "ch": 12,
+           "p": 53
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -42492,53 +42492,6 @@
          ]
         },
         {
-         "type": "worked",
-         "id": "social-science-g9-ch13-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A village changes rules after independence. What should guide the new rules?",
-         "steps": [
-          "Many societies used organic local systems, so older self-government already existed.",
-          "Colonial institutions often influenced society after independence, so old habits remained.",
-          "India preserved old traditions, so its Constitution followed Indian values.",
-          "Modern institutions adapted old ideas to democracy, so rules should respect both."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.2",
-          "2.3",
-          "2.4",
-          "2.5"
-         ],
-         "src": [
-          {
-           "ch": 13,
-           "p": 84
-          },
-          {
-           "ch": 13,
-           "p": 84
-          },
-          {
-           "ch": 13,
-           "p": 84
-          },
-          {
-           "ch": 13,
-           "p": 84
-          },
-          {
-           "ch": 13,
-           "p": 84
-          }
-         ]
-        },
-        {
          "type": "explore",
          "id": "social-science-g9-ch13-l2-play",
          "difficulty": 1,
@@ -42607,6 +42560,53 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
+        },
+        {
+         "type": "worked",
+         "id": "social-science-g9-ch13-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A village changes rules after independence. What should guide the new rules?",
+         "steps": [
+          "Many societies used organic local systems, so older self-government already existed.",
+          "Colonial institutions often influenced society after independence, so old habits remained.",
+          "India preserved old traditions, so its Constitution followed Indian values.",
+          "Modern institutions adapted old ideas to democracy, so rules should respect both."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.4",
+          "2.5"
+         ],
+         "src": [
+          {
+           "ch": 13,
+           "p": 84
+          },
+          {
+           "ch": 13,
+           "p": 84
+          },
+          {
+           "ch": 13,
+           "p": 84
+          },
+          {
+           "ch": 13,
+           "p": 84
+          },
+          {
+           "ch": 13,
+           "p": 84
+          }
+         ]
         },
         {
          "type": "mcq",
@@ -43100,6 +43100,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch13-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "budget",
+         "params": {},
+         "title": "What taxes pay for",
+         "tasks": [
+          {
+           "say": "Raise the tax to 30%.",
+           "when": "tax == 30",
+           "then": "At 30% the same 100 people pay ₹30,00,000, enough for more schools, roads and health."
+          },
+          {
+           "say": "Send half the money to schools.",
+           "when": "schools == 50",
+           "then": "Half to schools leaves a quarter each for roads and health."
+          }
+         ],
+         "takeaway": "Public services are paid for out of taxes. A higher tax rate collects more money for schools, roads and health; the same money can be shared differently between them, so a budget is a set of choices.",
+         "explanation": "Public services are paid for out of taxes. A higher tax rate collects more money for schools, roads and health; the same money can be shared differently between them, so a budget is a set of choices."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch13-l3-t1",
          "difficulty": 1,
@@ -43140,31 +43165,6 @@
            "p": 88
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch13-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "budget",
-         "params": {},
-         "title": "What taxes pay for",
-         "tasks": [
-          {
-           "say": "Raise the tax to 30%.",
-           "when": "tax == 30",
-           "then": "At 30% the same 100 people pay ₹30,00,000, enough for more schools, roads and health."
-          },
-          {
-           "say": "Send half the money to schools.",
-           "when": "schools == 50",
-           "then": "Half to schools leaves a quarter each for roads and health."
-          }
-         ],
-         "takeaway": "Public services are paid for out of taxes. A higher tax rate collects more money for schools, roads and health; the same money can be shared differently between them, so a budget is a set of choices.",
-         "explanation": "Public services are paid for out of taxes. A higher tax rate collects more money for schools, roads and health; the same money can be shared differently between them, so a budget is a set of choices."
         },
         {
          "type": "truefalse",
@@ -46015,6 +46015,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch14-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "interest",
+         "params": {},
+         "title": "Watch a loan grow",
+         "tasks": [
+          {
+           "say": "Borrow at 20% or more for ten years and see how big the debt becomes.",
+           "when": "rate >= 20 and years == 10",
+           "then": "A high rate left for many years turns even a small loan into a huge debt: that is a debt trap."
+          },
+          {
+           "say": "Make what you owe more than double the money you borrowed.",
+           "when": "P * (1 + rate / 100) ** years > 2 * P",
+           "then": "Once the interest adds up to more than the loan itself, you owe more than double what you borrowed."
+          },
+          {
+           "say": "Keep the extra you pay under ₹600.",
+           "when": "P * (1 + rate / 100) ** years - P <= 600",
+           "then": "A small loan for a short time at a low rate costs only a little extra."
+          }
+         ],
+         "takeaway": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year.",
+         "explanation": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch14-l1-t1",
          "difficulty": 1,
@@ -46055,36 +46085,6 @@
            "p": 108
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch14-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "interest",
-         "params": {},
-         "title": "Watch a loan grow",
-         "tasks": [
-          {
-           "say": "Borrow at 20% or more for ten years and see how big the debt becomes.",
-           "when": "rate >= 20 and years == 10",
-           "then": "A high rate left for many years turns even a small loan into a huge debt: that is a debt trap."
-          },
-          {
-           "say": "Make what you owe more than double the money you borrowed.",
-           "when": "P * (1 + rate / 100) ** years > 2 * P",
-           "then": "Once the interest adds up to more than the loan itself, you owe more than double what you borrowed."
-          },
-          {
-           "say": "Keep the extra you pay under ₹600.",
-           "when": "P * (1 + rate / 100) ** years - P <= 600",
-           "then": "A small loan for a short time at a low rate costs only a little extra."
-          }
-         ],
-         "takeaway": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year.",
-         "explanation": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year."
         },
         {
          "type": "concept",
@@ -46948,6 +46948,36 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch14-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "interest",
+         "params": {},
+         "title": "Watch a loan grow",
+         "tasks": [
+          {
+           "say": "Borrow at 20% or more for ten years and see how big the debt becomes.",
+           "when": "rate >= 20 and years == 10",
+           "then": "A high rate left for many years turns even a small loan into a huge debt: that is a debt trap."
+          },
+          {
+           "say": "Make what you owe more than double the money you borrowed.",
+           "when": "P * (1 + rate / 100) ** years > 2 * P",
+           "then": "Once the interest adds up to more than the loan itself, you owe more than double what you borrowed."
+          },
+          {
+           "say": "Keep the extra you pay under ₹600.",
+           "when": "P * (1 + rate / 100) ** years - P <= 600",
+           "then": "A small loan for a short time at a low rate costs only a little extra."
+          }
+         ],
+         "takeaway": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year.",
+         "explanation": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch14-l3-t1",
          "difficulty": 1,
@@ -46998,36 +47028,6 @@
            "p": 111
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch14-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "interest",
-         "params": {},
-         "title": "Watch a loan grow",
-         "tasks": [
-          {
-           "say": "Borrow at 20% or more for ten years and see how big the debt becomes.",
-           "when": "rate >= 20 and years == 10",
-           "then": "A high rate left for many years turns even a small loan into a huge debt: that is a debt trap."
-          },
-          {
-           "say": "Make what you owe more than double the money you borrowed.",
-           "when": "P * (1 + rate / 100) ** years > 2 * P",
-           "then": "Once the interest adds up to more than the loan itself, you owe more than double what you borrowed."
-          },
-          {
-           "say": "Keep the extra you pay under ₹600.",
-           "when": "P * (1 + rate / 100) ** years - P <= 600",
-           "then": "A small loan for a short time at a low rate costs only a little extra."
-          }
-         ],
-         "takeaway": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year.",
-         "explanation": "Simple interest is charged only on the money borrowed; compound interest is also charged on last year’s interest, so the amount owed grows faster every year."
         },
         {
          "type": "truefalse",
@@ -48226,6 +48226,31 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch14-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "budget",
+         "params": {},
+         "title": "What taxes pay for",
+         "tasks": [
+          {
+           "say": "Raise the tax to 30%.",
+           "when": "tax == 30",
+           "then": "At 30% the same 100 people pay ₹30,00,000, enough for more schools, roads and health."
+          },
+          {
+           "say": "Send half the money to schools.",
+           "when": "schools == 50",
+           "then": "Half to schools leaves a quarter each for roads and health."
+          }
+         ],
+         "takeaway": "Public services are paid for out of taxes. A higher tax rate collects more money for schools, roads and health; the same money can be shared differently between them, so a budget is a set of choices.",
+         "explanation": "Public services are paid for out of taxes. A higher tax rate collects more money for schools, roads and health; the same money can be shared differently between them, so a budget is a set of choices."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch14-l6-t1",
          "difficulty": 1,
@@ -48271,31 +48296,6 @@
            "p": 120
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch14-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "budget",
-         "params": {},
-         "title": "What taxes pay for",
-         "tasks": [
-          {
-           "say": "Raise the tax to 30%.",
-           "when": "tax == 30",
-           "then": "At 30% the same 100 people pay ₹30,00,000, enough for more schools, roads and health."
-          },
-          {
-           "say": "Send half the money to schools.",
-           "when": "schools == 50",
-           "then": "Half to schools leaves a quarter each for roads and health."
-          }
-         ],
-         "takeaway": "Public services are paid for out of taxes. A higher tax rate collects more money for schools, roads and health; the same money can be shared differently between them, so a budget is a set of choices.",
-         "explanation": "Public services are paid for out of taxes. A higher tax rate collects more money for schools, roads and health; the same money can be shared differently between them, so a budget is a set of choices."
         },
         {
          "type": "mcq",
@@ -49484,6 +49484,26 @@
          ]
         },
         {
+         "type": "explore",
+         "id": "social-science-g9-ch15-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "startup",
+         "params": {},
+         "title": "Run a small business",
+         "tasks": [
+          {
+           "say": "Sell 200 units at ₹200.",
+           "when": "units == 200 and price == 200",
+           "then": "Revenue ₹40,000, cost ₹26,000, profit ₹14,000."
+          }
+         ],
+         "takeaway": "Revenue is the price times the units sold; cost is the fixed cost plus the cost of each unit; profit is what is left. Below the break-even number of sales, the business loses money even though it is selling.",
+         "explanation": "Revenue is the price times the units sold; cost is the fixed cost plus the cost of each unit; profit is what is left. Below the break-even number of sales, the business loses money even though it is selling."
+        },
+        {
          "type": "worked",
          "id": "social-science-g9-ch15-l1-t1",
          "difficulty": 1,
@@ -49529,26 +49549,6 @@
            "p": 126
           }
          ]
-        },
-        {
-         "type": "explore",
-         "id": "social-science-g9-ch15-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "startup",
-         "params": {},
-         "title": "Run a small business",
-         "tasks": [
-          {
-           "say": "Sell 200 units at ₹200.",
-           "when": "units == 200 and price == 200",
-           "then": "Revenue ₹40,000, cost ₹26,000, profit ₹14,000."
-          }
-         ],
-         "takeaway": "Revenue is the price times the units sold; cost is the fixed cost plus the cost of each unit; profit is what is left. Below the break-even number of sales, the business loses money even though it is selling.",
-         "explanation": "Revenue is the price times the units sold; cost is the fixed cost plus the cost of each unit; profit is what is left. Below the break-even number of sales, the business loses money even though it is selling."
         },
         {
          "type": "mcq",
