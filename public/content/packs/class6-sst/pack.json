@@ -260,9 +260,9 @@
          ],
          "prompt": "You want a map. It shows all the States of India and their capitals. Which kind of map is it?",
          "options": [
-          "A thematic map",
+          "A physical map",
           "A political map",
-          "A physical map"
+          "A thematic map"
          ],
          "answer": 1,
          "explanation": "A map of India with its States and capitals is a political map.",
@@ -504,10 +504,10 @@
          ],
          "prompt": "On a map, 1 cm stands for 500 m. Two places are 2 cm apart on the map. How far apart are they in real life?",
          "options": [
-          "2,000 m",
+          "250 m",
           "500 m",
           "1,000 m",
-          "250 m"
+          "2,000 m"
          ],
          "answer": 2,
          "explanation": "1 cm is 500 m. So 2 cm is 500 m + 500 m = 1,000 m.",
@@ -812,12 +812,12 @@
          ],
          "prompt": "What does the orange peel trick show?",
          "options": [
-          "All maps are torn",
-          "Paper is heavier than peel",
           "A round shape cannot be made flat without tearing",
-          "Oranges are bigger than the Earth"
+          "Oranges are bigger than the Earth",
+          "All maps are torn",
+          "Paper is heavier than peel"
          ],
-         "answer": 2,
+         "answer": 0,
          "explanation": "You cannot make the peel flat without tearing it. A sphere is a round ball shape. A sphere cannot be shown exactly on flat paper.",
          "id": "ch1-l3-a3",
          "src": [
@@ -922,12 +922,12 @@
          ],
          "prompt": "A friend says, “Meet me at the 7th shop in the 5th row.” What do the two numbers do?",
          "options": [
-          "They show how big the market is",
+          "Together they show one exact place",
           "They show the price of the shop",
           "They show the time",
-          "Together they show one exact place"
+          "They show how big the market is"
          ],
-         "answer": 3,
+         "answer": 0,
          "explanation": "A row number and a shop number together tell your friend the exact place.",
          "id": "ch1-l3-a7",
          "src": [
@@ -1104,12 +1104,12 @@
          ],
          "prompt": "What is halfway between the North Pole and the South Pole?",
          "options": [
-          "The Equator",
-          "A symbol",
           "The scale",
-          "An atlas"
+          "A symbol",
+          "An atlas",
+          "The Equator"
          ],
-         "answer": 0,
+         "answer": 3,
          "explanation": "The Equator is halfway between the two poles.",
          "id": "ch1-l4-a2",
          "src": [
@@ -1175,9 +1175,9 @@
          "prompt": "What does latitude measure?",
          "options": [
           "How far a place is from the Equator",
-          "How high a mountain is",
           "How old a map is",
-          "How big a country is"
+          "How big a country is",
+          "How high a mountain is"
          ],
          "answer": 0,
          "explanation": "Latitude measures the distance from the Equator.",
@@ -1199,12 +1199,12 @@
          ],
          "prompt": "Which way does a parallel of latitude run?",
          "options": [
+          "Only around the North Pole",
           "East to west, parallel to the Equator",
-          "From pole to pole",
           "Straight up into the sky",
-          "Only around the North Pole"
+          "From pole to pole"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "Parallels run east to west. They are parallel to the Equator.",
          "id": "ch1-l4-a6",
          "src": [
@@ -1529,12 +1529,12 @@
          ],
          "prompt": "The Prime Meridian goes through a place in London. What is its name?",
          "options": [
-          "Delhi",
           "Greenwich",
+          "Delhi",
           "Tokyo",
           "New York"
          ],
-         "answer": 1,
+         "answer": 0,
          "explanation": "The Prime Meridian goes through Greenwich, an area of London in England.",
          "id": "ch1-l5-a5",
          "src": [
@@ -1587,12 +1587,12 @@
          ],
          "prompt": "Delhi is at 77°E. What does E mean?",
          "options": [
-          "Delhi is east of the Prime Meridian",
+          "Delhi is at the North Pole",
           "Delhi is on the Equator",
-          "Delhi is 77 km from Greenwich",
-          "Delhi is at the North Pole"
+          "Delhi is east of the Prime Meridian",
+          "Delhi is 77 km from Greenwich"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "E means east. Delhi is 77° east of the Prime Meridian.",
          "id": "ch1-l5-a7",
          "src": [
@@ -1684,12 +1684,12 @@
          ],
          "prompt": "Delhi is at 29°N and 77°E. Which number is the latitude?",
          "options": [
-          "77°E",
           "180°",
-          "29°N",
-          "0°"
+          "0°",
+          "77°E",
+          "29°N"
          ],
-         "answer": 2,
+         "answer": 3,
          "explanation": "Latitude is north or south of the Equator. 29°N is the latitude. 77°E is the longitude.",
          "id": "ch1-l5-a10",
          "src": [
@@ -1824,8 +1824,8 @@
          "prompt": "Which city did India’s own prime meridian go through?",
          "options": [
           "Ujjayinī (today Ujjain)",
-          "New York",
           "Greenwich",
+          "New York",
           "Tokyo"
          ],
          "answer": 0,
@@ -1914,12 +1914,12 @@
          ],
          "prompt": "About how long ago did Varahamihira live in Ujjayinī?",
          "options": [
-          "About 1,500 years ago",
+          "About 100 years ago",
           "About 500 years ago",
-          "About 150 years ago",
-          "About 100 years ago"
+          "About 1,500 years ago",
+          "About 150 years ago"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "The book says Varahamihira lived and worked there about 1,500 years ago.",
          "id": "ch1-l6-a6",
          "src": [
@@ -1990,12 +1990,12 @@
          ],
          "prompt": "Some old cities were a little away from the Ujjayinī meridian. Why?",
          "options": [
-          "Astronomers did not make maps.",
-          "Those cities were in the sea.",
+          "The meridian kept moving.",
           "People could not measure time well then. Finding longitude needs good time.",
-          "The meridian kept moving."
+          "Astronomers did not make maps.",
+          "Those cities were in the sea."
          ],
-         "answer": 2,
+         "answer": 1,
          "explanation": "Finding longitude needs good timekeeping. Long ago, people could not measure time as well as they do today.",
          "id": "ch1-l6-a9",
          "src": [
@@ -2150,12 +2150,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 15°E?",
          "options": [
+          "12 midnight",
           "1 pm",
-          "11 am",
           "2 pm",
-          "12 midnight"
+          "11 am"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "Going east adds one hour for every 15°. So noon becomes 1 pm.",
          "id": "ch1-l7-a5",
          "src": [
@@ -2175,12 +2175,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 30°W?",
          "options": [
-          "1 pm",
+          "10 am",
           "2 pm",
           "11 am",
-          "10 am"
+          "1 pm"
          ],
-         "answer": 3,
+         "answer": 0,
          "explanation": "Going west takes away one hour for every 15°. At 30°W, that is two hours less: 10 am.",
          "id": "ch1-l7-a6",
          "src": [
@@ -2256,12 +2256,12 @@
          ],
          "prompt": "It is late afternoon. In Tinsukia (Assam), the Sun has set. In Porbandar (Gujarat), the Sun has not set. Their longitudes differ by about 30°. How many hours ahead is Tinsukia?",
          "options": [
-          "1 hour",
           "2 hours",
+          "1 hour",
           "3 hours",
           "30 hours"
          ],
-         "answer": 1,
+         "answer": 0,
          "explanation": "The Earth turns 15° every hour. 30° ÷ 15° = 2 hours. Tinsukia is east of Porbandar. So its local time is 2 hours ahead. That is why it can be dark in Assam but still light in Gujarat.",
          "derived": [
           "2 hours = 30 / 15",
@@ -2414,12 +2414,12 @@
          ],
          "prompt": "Which country has 11 time zones?",
          "options": [
-          "Russia",
           "The USA",
           "India",
+          "Russia",
           "Greenwich"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "The USA has six time zones. Russia has 11.",
          "id": "ch1-l8-a3",
          "src": [
@@ -2547,9 +2547,9 @@
          "prompt": "A ship crosses the International Date Line going west. Before this, it was Sunday. What is the new day?",
          "options": [
           "It becomes Monday",
-          "It becomes Saturday",
           "It stays Sunday",
-          "It becomes Tuesday"
+          "It becomes Tuesday",
+          "It becomes Saturday"
          ],
          "answer": 0,
          "explanation": "Going west across the Date Line, you add a day. Sunday becomes Monday.",
@@ -2731,9 +2731,9 @@
         "prompt": "A map has a scale. 1 cm on the map means 500 m on the ground. Two places are 3 cm apart on the map. How far apart are they on the ground?",
         "options": [
          "1,500 m",
-         "150 m",
+         "500 m",
          "3,000 m",
-         "500 m"
+         "150 m"
         ],
         "answer": 0,
         "explanation": "Each 1 cm is 500 m. So 3 cm is 3 × 500 m = 1,500 m.",
@@ -2875,9 +2875,9 @@
         "prompt": "India’s own prime meridian passed through which city?",
         "options": [
          "Ujjayinī (Ujjain)",
-         "Greenwich",
          "Delhi",
-         "Tokyo"
+         "Tokyo",
+         "Greenwich"
         ],
         "answer": 0,
         "explanation": "The madhya rekhā passed through Ujjayinī, which is Ujjain today.",
@@ -2899,12 +2899,12 @@
         ],
         "prompt": "Delhi and Bengaluru have almost the same longitude, 77°E. Longitude means how far east or west a place is. What is the time difference between them?",
         "options": [
-         "1 hour",
          "Almost none",
+         "1 hour",
          "2 hours",
          "5 hours 30 minutes"
         ],
-        "answer": 1,
+        "answer": 0,
         "explanation": "Local time depends on longitude. Almost the same longitude means almost the same time.",
         "derived": [
          "1 hour, 2 hours are wrong options"
@@ -2931,12 +2931,12 @@
         ],
         "prompt": "It is 12 noon in London. Why is it 5:30 pm in India?",
         "options": [
+         "India uses the Date Line",
          "Clocks run faster in India",
          "India's time is 5 hours 30 minutes ahead of GMT",
-         "India is closer to the Equator",
-         "India uses the Date Line"
+         "India is closer to the Equator"
         ],
-        "answer": 1,
+        "answer": 2,
         "explanation": "IST is 5 hours 30 minutes ahead of Greenwich Mean Time. So noon in London is 5:30 pm in India.",
         "id": "ch1-boss-a10",
         "src": [
@@ -3015,7 +3015,7 @@
       {
        "id": "ch2-l1",
        "title": "The blue planet",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -3226,6 +3226,22 @@
            "ch": 2,
            "p": 31
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch2-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What secrets can you discover while touring our planet from space?",
+         "answer": "Oceans have smaller extensions, such as seas, bays and gulfs. Most of Earth's water is in the oceans. Seawater is salty and unfit for most land animals, including humans. Freshwater is only a very small part of Earth's water. It is found in glaciers, rivers, lakes, the atmosphere and underground. Water underground is called groundwater.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Oceans contain most of Earth's water.",
+          "Seawater is salty and unfit for most land animals.",
+          "Freshwater is a very small part of Earth's water."
          ]
         },
         {
@@ -3510,7 +3526,7 @@
       {
        "id": "ch2-l2",
        "title": "The five oceans",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -3578,6 +3594,22 @@
            "ch": 2,
            "p": 32
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch2-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How do the oceans connect, and what makes each one special?",
+         "answer": "There are five oceans: Pacific, Atlantic, Indian, Arctic and Southern. They are connected, and map lines only mark agreed boundaries. Seawater flows between them and supports rich marine life. The Pacific is largest, and the Atlantic comes next. The Indian Ocean is third largest, the Southern is fourth, and the Arctic is smallest.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "The five oceans are Pacific, Atlantic, Indian, Arctic and Southern.",
+          "Map lines are conventions, and seawater flows between oceans.",
+          "The Pacific is the largest ocean, while the Arctic is the smallest."
          ]
         },
         {
@@ -4050,7 +4082,7 @@
       {
        "id": "ch2-l3",
        "title": "Rain, storms and tsunamis",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -4127,6 +4159,22 @@
            "ch": 2,
            "p": 34
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch2-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Clouds, storms and ocean waves can change where we live. How do they do that?",
+         "answer": "White shapes from space are cloud masses. Clouds bring rain to continents. India's monsoon rains begin in the ocean. Oceans create cyclones that damage coastal regions. Tsunamis are huge waves caused by earthquakes or volcanic eruptions at the ocean bottom. They travel thousands of kilometres and submerge coastal areas. Tsunamis can often be detected before hitting a coast. Disaster management handles loss of life and property.",
+         "explanation": "Now read on to find out.",
+         "points": [
+          "Clouds bring rain to continents.",
+          "Cyclones can damage coastal regions.",
+          "Tsunamis are huge, powerful waves."
          ]
         },
         {
@@ -4514,7 +4562,7 @@
       {
        "id": "ch2-l4",
        "title": "Seven continents (or four, or five, or six)",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -4585,6 +4633,22 @@
            "ch": 2,
            "p": 35
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch2-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How many continents might be hiding in our world?",
+         "answer": "People count the world’s continents in different ways. Some count four, while others count five, six or seven. North and South America may be joined. Europe and Asia share one landmass, a large connected piece of land. This landmass is often called Eurasia. Africa and Eurasia may also be counted together. The seven-continent list is most widely used. A hemisphere is half of Earth. Inhabited means having people living there.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Continents can be counted in several ways.",
+          "Some joined landmasses may count as one continent.",
+          "The seven-continent list is most widely used."
          ]
         },
         {
@@ -4981,7 +5045,7 @@
       {
        "id": "ch2-l5",
        "title": "Islands and the icy south",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -5053,6 +5117,22 @@
            "ch": 2,
            "p": 37
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch2-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What can islands and the icy south teach us about our planet?",
+         "answer": "Islands are small pieces of land with water on every side. Continents have water around them too, but they are very large. Lakhs means very many. India has two main island groups. Andaman and Nicobar Islands lie in the Bay of Bengal. Lakshadweep Islands lie in the Arabian Sea. Antarctica is a cold, icy continent where Indian scientists do research.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Islands have water on all sides.",
+          "Continents are too large to be islands.",
+          "Indian scientists research climate and environment in Antarctica."
          ]
         },
         {
@@ -5490,7 +5570,7 @@
       {
        "id": "ch2-l6",
        "title": "Oceans and life",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -5558,6 +5638,22 @@
            "ch": 2,
            "p": 38
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch2-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What amazing things are under the waves? How does the sea affect your life?",
+         "answer": "Oceans are vital to life on Earth. They send rain to continents as part of the Earth's water cycle. Without oceans, rainfall would disappear and Earth would become a desert. Ocean plants (flora) produce more than half the world's oxygen. This is why oceans are called the planet's lungs. They also regulate climate and sustain life.",
+         "explanation": "Now read on to find out.",
+         "points": [
+          "Oceans send rain and help the Earth's water cycle.",
+          "Without oceans, Earth would be a desert.",
+          "Ocean plants make oxygen and help sustain life."
          ]
         },
         {
@@ -6705,7 +6801,7 @@
       {
        "id": "ch3-l1",
        "title": "Landforms: Three Main Types",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -6781,6 +6877,22 @@
            "ch": 3,
            "p": 42
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch3-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What makes Earth’s land look so different from place to place?",
+         "answer": "Land has many forms, and its appearance changes greatly from one region to another. A landform is a physical feature on Earth's surface. Landforms take millions of years to form. The three main types are mountains, plateaus and plains. They have different climates and support varied plants and animals. Humans have adapted to all three.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "A landform is a physical feature on Earth's surface.",
+          "The three main types are mountains, plateaus and plains.",
+          "Different landforms have different climates, plants and animals."
          ]
         },
         {
@@ -7196,7 +7308,7 @@
       {
        "id": "ch3-l2",
        "title": "Mountains: Their Shapes and World Locations",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -7287,6 +7399,22 @@
            "ch": 3,
            "p": 46
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch3-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Ready to discover what makes mountains look so different from one another?",
+         "answer": "Hills are lower, less steep and more rounded than mountains. The Himalayas, Alps and Andes are mountain ranges. Mount Everest and Kanchenjunga are the highest Himalayan peaks. Mount Aconcagua is highest in the Andes, while Mont Blanc is highest in the Alps. Mount Kilimanjaro is isolated. The Himalayas are relatively young. The Aravalli hills are older and rounded by erosion. Upliftment and erosion continue today.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Hills are lower, less steep and more rounded than mountains.",
+          "Mountain ranges contain famous peaks.",
+          "Some mountains are young, while others are older and changing."
          ]
         },
         {
@@ -7725,7 +7853,7 @@
       {
        "id": "ch3-l3",
        "title": "Mountain Environment and Life",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -7818,6 +7946,22 @@
            "ch": 3,
            "p": 49
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch3-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What can you discover while travelling through a mountain environment?",
+         "answer": "Mountain slopes often have montane forests. Conifers are tall, cone-shaped and have thin, pointed leaves. Higher up, trees give way to grasses, mosses and lichen. Mountain forests, rivers, lakes, grasslands and caves have diverse fauna. Diverse fauna means many animals live there. Only some valleys allow regular farming. Terrace farming cuts steps into mountain slopes. Herding is often preferred to agriculture. Tourism often provides mountain communities with income.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Montane forests often cover mountain slopes.",
+          "Higher slopes have grasses, mosses and lichen.",
+          "Farming, herding and tourism shape mountain life."
          ]
         },
         {
@@ -8171,7 +8315,7 @@
       {
        "id": "ch3-l4",
        "title": "Plateaus: Raised Land with Broad Surfaces",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -8254,6 +8398,22 @@
            "ch": 3,
            "p": 52
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch3-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What can you discover while touring a plateau?",
+         "answer": "A plateau is raised land with a more or less flat surface. Its height can range from a few hundred metres to several thousand metres. Plateaus may be young or old in Earth’s history. They are rich in mineral deposits, so mining is important. Many have rocky soil, while lava plateaus often have rich black soil. Many spectacular waterfalls are found on them.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "A plateau has a more or less flat surface.",
+          "Plateau heights vary greatly.",
+          "Plateaus can be young or old."
          ]
         },
         {
@@ -8722,7 +8882,7 @@
       {
        "id": "ch3-l5",
        "title": "Plains and River Life",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -8902,6 +9062,22 @@
            "ch": 3,
            "p": 55
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch3-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What makes river plains special for people, farms and communities?",
+         "answer": "Irrigation has increased farm production, but it has also reduced groundwater. River life includes agriculture and river fishing. Rivers are easy to navigate on plains because their slope is gentle. Many communities hold festivals, ceremonies and rituals at sacred river locations. These facts show how river plains support work, travel and community life.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Irrigation increases farm production.",
+          "Irrigation also reduces groundwater.",
+          "Sacred river locations hold community gatherings."
          ]
         },
         {
@@ -9341,7 +9517,7 @@
       {
        "id": "ch3-l6",
        "title": "Deserts and the Bigger Picture",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -9425,6 +9601,22 @@
            "ch": 3,
            "p": 57
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch3-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How do people and animals find a way in deserts?",
+         "answer": "Deserts have unique plants and animals. The Sahara and Thar are hot deserts. The Gobi is cold. Humans have adapted to most deserts despite harsh conditions. Ancient Tamil Sangam poetry describes five landscape types called tiṇais. A tiṇai is one type in this classification. They use a different landform classification from the three main types. Landforms matter to culture around the world. Every landform offers both challenges and opportunities.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Hot deserts include the Sahara and Thar.",
+          "The Gobi is a cold desert.",
+          "Five tiṇais use a different classification from the three main types."
          ]
         },
         {
@@ -10551,7 +10743,7 @@
       {
        "id": "ch4-l1",
        "title": "How We Learn About the Past",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -10638,6 +10830,22 @@
            "ch": 4,
            "p": 61
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch4-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What can we discover by looking back?",
+         "answer": "The Earth has a very, very long history, and humans occupy only a tiny, recent part of it. Many people study this history. Geologists examine soil, stones, hills, mountains and rivers. Palaeontologists study fossils, which can be footprints or preserved parts of plants and animals. Anthropologists study human societies and cultures. Archaeologists dig up remains from the past.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Earth's history is very long, while humans occupy only a tiny, recent part.",
+          "Different researchers study Earth features, fossils, human cultures and remains.",
+          "Fossils can include footprints or preserved parts of plants and animals."
          ]
         },
         {
@@ -10964,7 +11172,7 @@
       {
        "id": "ch4-l2",
        "title": "How Time Is Measured in History",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -11051,6 +11259,22 @@
            "ch": 4,
            "p": 63
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch4-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How do people count years before and after today?",
+         "answer": "Different societies and cultures have measured time in their own ways. Important events, such as a ruler’s reign beginning, have marked new eras. The Gregorian calendar has twelve months and 365 days. Jesus Christ’s conventional birth year became the starting point. Time before it is BCE, and time after it is CE. Between BCE and CE dates, add the dates and subtract one. The Gregorian calendar has no year zero.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Different cultures have their own ways of measuring time.",
+          "Important events can mark new eras.",
+          "BCE and CE count years around Jesus Christ’s birth year."
          ]
         },
         {
@@ -11380,7 +11604,7 @@
       {
        "id": "ch4-l3",
        "title": "Timelines, Centuries and Millenniums",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -11467,6 +11691,22 @@
            "ch": 4,
            "p": 65
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch4-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can one line guide you through centuries and millennia?",
+         "answer": "Timelines place historical events in date order. A dotted part shows a period that has been skipped. A decade lasts ten years. A century lasts 100 years. A millennium lasts 1,000 years. The 21st century CE runs from 2001 to 2100. The 3rd millennium CE began in 2001 and will end in 3000.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Timelines show the order of historical events.",
+          "A decade has ten years, a century has 100 years, and a millennium has 1,000 years.",
+          "The 21st century CE runs from 2001 to 2100."
          ]
         },
         {
@@ -11888,7 +12128,7 @@
       {
        "id": "ch4-l4",
        "title": "What Are the Sources of History?",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -11963,6 +12203,22 @@
            "ch": 4,
            "p": 68
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch4-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What secrets might the past reveal when we look for clues together?",
+         "answer": "History has many sources. A source can be a place, person, text or object that gives information about the past. Every object or structure can tell a story about the past. Family histories can be learnt from photographs, diaries, identity cards and memories. Historians gather many sources and check where they agree. Some pieces of the historical puzzle may remain missing.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Sources can be places, people, texts or objects.",
+          "Objects and structures can tell stories about the past.",
+          "Historians gather and check many sources."
          ]
         },
         {
@@ -12404,7 +12660,7 @@
       {
        "id": "ch4-l5",
        "title": "The Beginnings of Human History",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -12499,6 +12755,22 @@
            "ch": 4,
            "p": 71
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch4-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How did our earliest ancestors find food, shelter, and one another?",
+         "answer": "Modern humans have walked the Earth for about 300,000 years. Human history is only a tiny part of Earth's history. Early humans lived in bands to help each other. They searched for shelter and food, mainly through hunting and gathering. They used fire, made stone tools, and wore ornaments. They had beliefs about nature and perhaps life after death. Their languages are now lost, but their lives appear in rock paintings.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Human history is a tiny part of Earth's history.",
+          "Early humans lived in groups and helped each other.",
+          "Their lives can be seen in rock paintings."
          ]
         },
         {
@@ -12821,7 +13093,7 @@
       {
        "id": "ch4-l6",
        "title": "First Crops and Growing Communities",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -12908,6 +13180,22 @@
            "ch": 4,
            "p": 73
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch4-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What made people settle down and grow together?",
+         "answer": "Human living conditions improved in many parts of the world. People settled down and grew cereals and grains. They domesticated cattle and goats. More food allowed communities to grow in size and number. Communities often settled near rivers. Chieftains were responsible for community well-being. The land was worked collectively, meaning people worked together. Villages exchanged food, clothing and tools. New technologies included pottery and metals such as copper and iron.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "People settled down and grew cereals and grains.",
+          "More food helped communities grow.",
+          "People worked together and exchanged goods."
          ]
         },
         {
@@ -14068,7 +14356,7 @@
       {
        "id": "ch5-l1",
        "title": "India in the Past and the First Indian Names",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -14144,6 +14432,22 @@
            "ch": 5,
            "p": 77
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch5-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What stories might help us understand India’s past?",
+         "answer": "India has defined borders, defined states and a known population today. Long ago, it looked very different. The subcontinent means the Indian land area. It has had many names and changing boundaries. We can learn about India’s past from old texts, travellers’ accounts, pilgrims’ accounts and inscriptions. Inscriptions are written marks from the past. The Ṛig Veda is India’s oldest text and is several thousand years old.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "India looked very different long ago.",
+          "Old sources help us learn about India’s past.",
+          "The Ṛig Veda is India’s oldest text."
          ]
         },
         {
@@ -14498,7 +14802,7 @@
       {
        "id": "ch5-l2",
        "title": "Regional Names in the Mahābhārata",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -14580,6 +14884,22 @@
            "ch": 5,
            "p": 78
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch5-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Where might you travel while exploring names in the Mahābhārata?",
+         "answer": "The Mahābhārata is one of India's most famous texts. It lists many regional names used in old writings. A regional name is an old name for a part of India. Kāshmīra roughly refers to today's Kashmir. Kurukṣhetra refers to parts of today's Haryana. Vanga refers to parts of Bengal. Prāgjyotiṣha roughly refers to today's Assam. Kaccha is today's Kutch. Kerala was used for roughly today's Kerala.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "The Mahābhārata lists many regions.",
+          "Old writings used regional names for different parts of India.",
+          "These names help us connect the text with modern places."
          ]
         },
         {
@@ -14970,7 +15290,7 @@
       {
        "id": "ch5-l3",
        "title": "Two Names for the Whole Indian Subcontinent",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -15135,6 +15455,22 @@
            "ch": 5,
            "p": 78
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch5-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What if one place had two ancient names?",
+         "answer": "The name Bharata first appears in the Ṛig Veda. There, Bharata refers to one of the main Vedic groups of people. Later writings mention several kings named Bharata. In the Mahābhārata, Bhāratavarṣa is the wider name for the Indian Subcontinent. The text mentions many rivers and peoples under this wider name.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Bharata first appears in the Ṛig Veda.",
+          "It first refers to a main Vedic group of people.",
+          "Bhāratavarṣa has a wider meaning in the Mahābhārata."
          ]
         },
         {
@@ -15515,7 +15851,7 @@
       {
        "id": "ch5-l4",
        "title": "Aśhoka, Bhārata and India's Ancient Geography",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -15732,6 +16068,22 @@
            "ch": 5,
            "p": 80
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch5-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What might you discover about an ancient name?",
+         "answer": "The Viṣhṇu Purāṇa is an ancient text that describes Bhārata. Bhārata was called the country north of the ocean. It was also called the country south of the snowy mountains. A few centuries after Aśhoka, Bhārata became the general name for the Indian Subcontinent. The name remains in use today.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "The Viṣhṇu Purāṇa is an ancient text describing Bhārata.",
+          "Bhārata lay north of the ocean and south of snowy mountains.",
+          "The name Bhārata is still used today."
          ]
         },
         {
@@ -16015,7 +16367,7 @@
       {
        "id": "ch5-l5",
        "title": "How Persians and Greeks Named India",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -16102,6 +16454,23 @@
            "ch": 5,
            "p": 81
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch5-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Why do we call this place India?",
+         "answer": "The ancient Persians were the first foreign people to mention India. The Indus River region was earlier called Sindhu. Persian records called India Hind, Hidu or Hindu. These names were changed forms of Sindhu. In ancient Persian, Hindu was only a name for the place. It did not refer to the Hindu religion. Greeks called the region Indoi or Indike. Greeks dropped h, which their language did not contain.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Persians first mentioned India among foreign peoples.",
+          "Persian names came from the earlier name Sindhu.",
+          "Hindu was a place name, not a religion, in ancient Persian.",
+          "Greeks used Indoi and Indike after dropping h."
          ]
         },
         {
@@ -16540,7 +16909,7 @@
       {
        "id": "ch5-l6",
        "title": "Chinese Names, Travellers and Hindustān",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -16721,6 +17090,22 @@
            "ch": 5,
            "p": 84
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch5-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What might an ancient traveller’s name for India tell us?",
+         "answer": "Foreign visitors mostly took their names for India from Sindhu. Sindhu is also called the Indus River. One Chinese name, Tianzhu, came from Sindhu. It could also mean heavenly master. Hindustān first appeared in a Persian inscription about 1,800 years ago. Most invaders later used Hindustān for the Indian Subcontinent.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Most foreign names for India came from the Sindhu or Indus River.",
+          "Tianzhu was a Chinese name derived from Sindhu.",
+          "Most later invaders used Hindustān for the Indian Subcontinent."
          ]
         },
         {
@@ -17677,7 +18062,7 @@
       {
        "id": "ch6-l1",
        "title": "What Is a Civilisation?",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -17766,6 +18151,22 @@
            "ch": 6,
            "p": 86
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch6-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What helps people build a busy, well-run society together?",
+         "answer": "A civilisation is an advanced stage of human society. It needs government and administration to manage society. Urbanism includes town planning, city growth and city management. Town planning often includes water management and drainage. People make crafts from stone or metal. Trade happens within a city or region, and with distant places. Culture appears in art, architecture, literature, oral traditions and social customs. Productive agriculture gives enough food for villages and cities.",
+         "explanation": "Now read on to find out.",
+         "points": [
+          "Civilisation needs government and administration to manage society.",
+          "Urbanism covers town planning, city growth and city management.",
+          "Culture uses art, architecture, literature, oral traditions and social customs."
          ]
         },
         {
@@ -18292,7 +18693,7 @@
       {
        "id": "ch6-l2",
        "title": "From Village to City",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -18375,6 +18776,22 @@
            "ch": 6,
            "p": 90
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch6-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What might you discover on a journey beside India’s ancient rivers?",
+         "answer": "The Harappan civilisation was India's earliest civilisation. It had several names, including Harappan, Indus and Indus-Sarasvatī Civilisation. Its people were called Harappans. Harappa in Sindh was the first city excavated. This means people dug at its site. Important cities, including Mohenjo-daro and Harappa, grew along rivers.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "The Harappan civilisation was India's earliest civilisation.",
+          "Its inhabitants were called Harappans.",
+          "Harappa was the first city excavated."
          ]
         },
         {
@@ -18765,7 +19182,7 @@
       {
        "id": "ch6-l3",
        "title": "Town-Planning",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -18837,6 +19254,22 @@
            "ch": 6,
            "p": 91
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch6-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How were early towns organised, and how were their streets planned?",
+         "answer": "Large Harappan cities were built using precise plans. Many streets ran towards the cardinal directions, which mean the main directions. Most cities had fortification walls and two distinct parts. The upper town was probably home to the local elite. Common people lived in the lower town. Some large buildings served collective purposes. Most of these buildings were generally made of bricks.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Streets often faced the cardinal directions.",
+          "Most cities had walls and two distinct parts.",
+          "The elite probably lived in the upper town."
          ]
         },
         {
@@ -19245,7 +19678,7 @@
       {
        "id": "ch6-l4",
        "title": "Water Management",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -19329,6 +19762,23 @@
            "ch": 6,
            "p": 95
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch6-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How did ancient people manage water and keep their homes clean?",
+         "answer": "Harappans valued water management, which means caring for water and using it properly. They also valued cleanliness. Often, homes had separate bathing areas. These joined larger drains below streets, which carried waste water. In Mohenjo-daro, people used hundreds of brick wells. Elsewhere, people may have taken water from ponds, streams or reservoirs. Dholavira had at least six large reservoirs. Most were linked by underground drains.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Harappans valued water management and cleanliness.",
+          "Home bathing areas joined larger drains.",
+          "Mohenjo-daro had hundreds of wells made from bricks.",
+          "Most reservoirs at Dholavira were linked by underground drains."
          ]
         },
         {
@@ -19693,7 +20143,7 @@
       {
        "id": "ch6-l5",
        "title": "Food, Farming and Trade",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -19785,6 +20235,22 @@
            "ch": 6,
            "p": 99
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch6-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Ready to discover how people grew food, made cloth, and traded together?",
+         "answer": "Harappans settled beside rivers because river water made nearby soil richer. They grew cereals, pulses, vegetables and sometimes rice. They were South Asia's first cotton growers and wove it into cloth. They domesticated animals for meat and fished. They made ploughs and worked copper and bronze. Traders used land, rivers and the sea. Lothal had a huge dockyard for receiving and sending boats.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Rivers made nearby soil richer for farming.",
+          "Harappans grew crops, raised animals and fished.",
+          "Trade used land, rivers and the sea."
          ]
         },
         {
@@ -20221,7 +20687,7 @@
       {
        "id": "ch6-l6",
        "title": "The Lives of the Ancients and the End of the Cities",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -20302,6 +20768,22 @@
            "ch": 6,
            "p": 103
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch6-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What happened when the Harappan cities began to grow quiet?",
+         "answer": "Archaeologists have found many objects made and used by Harappans. These include games and toys for adults and children. Later, the Indus-Sarasvatī civilisation began to fall apart despite its achievements. A climatic change brought less rain and a drier phase. Cities were abandoned one by one. Many people adopted a rural lifestyle. This means living in villages and countryside. Available evidence suggests the civilisation was relatively peaceful.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Harappans made games and toys for adults and children.",
+          "Climate change reduced rainfall and cities were abandoned.",
+          "Many Harappans adopted a peaceful, rural lifestyle."
          ]
         },
         {
@@ -21415,7 +21897,7 @@
       {
        "id": "ch7-l1",
        "title": "India's Cultural Roots and the Vedas",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -21494,6 +21976,22 @@
            "ch": 7,
            "p": 107
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch7-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What old stories shaped India's culture? What do the Vedas say?",
+         "answer": "Indian culture is thousands of years old. Some of its roots go back to the Indus civilisation. Schools of thought are groups of thinkers who share similar ideas. The four Vedas are the Rig Veda, Yajur Veda, Sama Veda and Atharva Veda. Their thousands of hymns were poems and songs. They were recited aloud. The texts were memorised and passed on with very few changes.",
+         "explanation": "Read on to find out.",
+         "points": [
+          "Some cultural roots go back to the Indus civilisation.",
+          "Schools of thought share similar ideas.",
+          "The four Vedas contain thousands of hymns."
          ]
         },
         {
@@ -21922,7 +22420,7 @@
       {
        "id": "ch7-l2",
        "title": "Vedic Society",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -22009,6 +22507,22 @@
            "ch": 7,
            "p": 109
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch7-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What would you discover on a journey into Vedic society?",
+         "answer": "Early Vedic society was organised into janas, which were clans. The Rig Veda lists more than 30 janas. Bharatas, Purus, Kurus and Yadus were examples. Each clan was linked to a region in the northwest of the Subcontinent. The Vedas mention a king or ruler called rājā. Sabha and samiti were collective gatherings. Farmers, weavers, potters, builders, carpenters, healers and priests also had places in Vedic society.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Janas were clans in early Vedic society.",
+          "The Vedas mention rulers, gatherings and many professions.",
+          "Each clan was linked to a region in the northwest."
          ]
         },
         {
@@ -22442,7 +22956,7 @@
       {
        "id": "ch7-l3",
        "title": "Upanishads, Vedanta and Yoga",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -22534,6 +23048,22 @@
            "ch": 7,
            "p": 110
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch7-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can old ideas help you understand yourself and the world?",
+         "answer": "The Upanishads built on Vedic ideas and introduced new ideas about rebirth and karma. Brahman is the divine essence, while ātman means the Self. Ātman is present as divine essence in every being. The Upanishads teach that everything is connected. One prayer wishes happiness for all creatures. Several schools grew from the Vedas and became foundations of Hinduism. Yoga developed methods for realising brahman in consciousness.",
+         "explanation": "Read on to find out.",
+         "points": [
+          "The Upanishads taught rebirth and karma.",
+          "Brahman is the divine essence, and ātman is the Self.",
+          "Yoga developed methods for realising brahman in consciousness."
          ]
         },
         {
@@ -22848,7 +23378,7 @@
       {
        "id": "ch7-l4",
        "title": "Buddhism and the Buddha",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -22941,6 +23471,22 @@
            "ch": 7,
            "p": 113
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch7-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can we understand why people suffer?",
+         "answer": "Buddhism was a school of thought, meaning shared ideas. It did not accept Vedic authority. Siddhārtha Gautama was born as a prince in Lumbini. At 29, he saw an old person, a sick person and a dead body. He left palace life and searched for human suffering's cause. Under a pipal tree, he meditated and gained enlightenment. Enlightenment means deep understanding. He taught that ignorance and attachment cause suffering.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Gautama left palace life to search for suffering's cause.",
+          "Ignorance and attachment cause suffering.",
+          "Ahimsa means non-hurting or non-injuring."
          ]
         },
         {
@@ -23381,7 +23927,7 @@
       {
        "id": "ch7-l5",
        "title": "Jainism and Other Schools of Thought",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -23476,6 +24022,22 @@
            "ch": 7,
            "p": 119
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch7-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Ready to explore how different schools of thought see life?",
+         "answer": "Jainism is said to have roots much older than Buddhism. Prince Vardhamāna was born into a royal family. At 30, he left home to seek knowledge. After 12 years, he achieved supreme wisdom and became Mahāvīra, meaning great hero. Anekāntavāda teaches that truth has many aspects. Aparigraha means non-possession and limiting material belongings. Jainism stresses that all living creatures are interconnected. The Chārvāka school believed only the material world exists.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Jainism has roots much older than Buddhism.",
+          "Anekāntavāda teaches that truth has many aspects.",
+          "The Chārvāka school believed only the material world exists."
          ]
         },
         {
@@ -23858,7 +24420,7 @@
       {
        "id": "ch7-l6",
        "title": "Folk and Tribal Roots",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -23945,6 +24507,22 @@
            "ch": 7,
            "p": 121
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch7-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How do communities pass traditions without using books?",
+         "answer": "Oral traditions are teachings and practices passed on without written texts. Folk traditions pass through common people, while tribal traditions pass through tribes. A tribe includes families or clans with shared ancestry. These groups commonly share a culture and language and live close together. Some may have a chief and no private property. Folk, tribal and Hindu beliefs also share and exchange ideas.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Oral traditions need no written texts.",
+          "Folk traditions pass through common people.",
+          "Tribal traditions pass through tribes."
          ]
         },
         {
@@ -25133,7 +25711,7 @@
       {
        "id": "ch8-l1",
        "title": "India’s Rich Diversity",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -25367,6 +25945,22 @@
            "ch": 8,
            "p": 126
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch8-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What will you discover on a journey across India?",
+         "answer": "The Anthropological Survey of India is a national organisation. It studied 4,635 communities across all States. It counted 325 languages written using 25 scripts. India has over 1.4 billion people. The chapter calls a migrant someone who does not live near their birthplace or original community.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "The survey covered communities across all States.",
+          "It counted languages and the scripts used to write them.",
+          "A migrant does not live near their birthplace or original community."
          ]
         },
         {
@@ -25715,7 +26309,7 @@
       {
        "id": "ch8-l2",
        "title": "Food for All",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -25801,6 +26395,22 @@
           }
          ],
          "title": "Food for All"
+        },
+        {
+         "type": "explain",
+         "id": "ch8-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can shared ingredients create so many different dishes?",
+         "answer": "India's foods vary by region, but some grains are common nationwide. Common cereals include rice, barley and wheat. Dals are pulses eaten in India. Staple grains are the basic food for most Indians. Common spices include turmeric, cumin, cardamom and ginger. India has thousands or even lakhs of different dishes and preparations. Different combinations of shared ingredients create endless dish variety.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "People eat foods from different regions of India.",
+          "Some food grains are common throughout almost the whole country.",
+          "Shared ingredients create different combinations and endless dish variety."
+         ]
         },
         {
          "type": "explore",
@@ -26307,7 +26917,7 @@
       {
        "id": "ch8-l3",
        "title": "Textiles and Clothing",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -26390,6 +27000,22 @@
            "ch": 8,
            "p": 129
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch8-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What can a length of cloth tell us about a place?",
+         "answer": "Every Indian region and community has developed its own clothing styles. Traditional Indian clothes share some features, even when their materials differ. A sari is a plain, unstitched length of cloth. Saris may use cotton, silk or synthetic fabrics. Their designs may be woven in or printed later. Indian textiles were once exported to Europe. Chintz became popular there. England and France later banned Indian chintz imports.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Indian regions and communities have developed their own clothing styles.",
+          "Traditional Indian clothes share some features.",
+          "A sari is a plain, unstitched length of cloth."
          ]
         },
         {
@@ -26795,7 +27421,7 @@
       {
        "id": "ch8-l4",
        "title": "Festivals Galore",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -26882,6 +27508,23 @@
            "ch": 8,
            "p": 133
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch8-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Ready to discover what India's festival map can show you?",
+         "answer": "India has an immense variety of festivals. A few festivals are celebrated across India, and common festivals often happen at about the same time. Similar festivals can have different names in different regions. Makara Sankrānti marks the beginning of the harvest season in many parts of India. It is celebrated on or around January 14. Many major festivals take place during October and November.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "India has many different festivals.",
+          "Some festivals are celebrated across India.",
+          "Similar festivals can have different names.",
+          "Makara Sankrānti begins the harvest season in many parts."
          ]
         },
         {
@@ -27234,7 +27877,7 @@
       {
        "id": "ch8-l5",
        "title": "An Epic Spread",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -27325,6 +27968,22 @@
            "ch": 8,
            "p": 135
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch8-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can stories spread so widely and still feel close to home?",
+         "answer": "The Rāmāyaṇa and Mahābhārata are two Sanskrit epics. Together, they might fill about 7,000 pages. They contain shorter stories about values, right and wrong, and people helping one another. The Pañchatantra uses animals as main characters. Its stories have many adaptations. Folk versions show that Indian culture values diversity and unity.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "The two Sanskrit epics might fill about 7,000 pages together.",
+          "Shorter stories ask what is right and wrong.",
+          "Indian culture values diversity and unity."
          ]
         },
         {
@@ -28333,7 +28992,7 @@
       {
        "id": "ch9-l1",
        "title": "Family Types and Relationships",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -28408,6 +29067,22 @@
            "ch": 9,
            "p": 138
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch9-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What makes each family different, yet connected?",
+         "answer": "Families are the oldest and most basic unit of society, and almost everyone lives in one. A joint family has several generations living together. A nuclear family mainly includes a couple and their children. Sometimes, a nuclear family has one parent and children. Family ties create deep bonds among all the children in a family.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "A joint family has several generations living together.",
+          "A nuclear family mainly includes a couple and their children.",
+          "Family ties create deep bonds among all the children."
          ]
         },
         {
@@ -28852,7 +29527,7 @@
       {
        "id": "ch9-l2",
        "title": "Family Roles, Duties and Support",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -28943,6 +29618,22 @@
            "ch": 9,
            "p": 141
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch9-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How does a family help each other grow?",
+         "answer": "Family relationships grow through love, care, cooperation and interdependence. Cooperation means working together. Parents have a duty to raise happy, responsible children. As children grow, they take on more home responsibilities and learn through daily practice. Families also pass on traditions and values. Doing one’s duty is important in Indian culture. Family members may give up their needs, as Shalini’s family shared what they had.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Love, care, cooperation and interdependence support family relationships.",
+          "Children learn duties and traditions through daily practice.",
+          "Family members support each other through sharing and care."
          ]
         },
         {
@@ -29507,7 +30198,7 @@
       {
        "id": "ch9-l3",
        "title": "Tenzing’s Family and Shared Responsibilities",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -29602,6 +30293,22 @@
            "ch": 9,
            "p": 142
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch9-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How do Tenzing’s family members share responsibilities?",
+         "answer": "Tenzing’s family shares many responsibilities. His father runs a small grocery store and helps with household chores. His mother became busy working in a local handicraft cooperative. When she became busy, his father joined in cleaning the house. His grandmother tells lively stories with humour and wisdom. His grandfather helps with homework and does social work in the colony. The family discusses special expenses and saves money for unexpected needs.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Family members share work at home and in the colony.",
+          "Grandparents help with learning, stories and social work.",
+          "The family plans expenses and saves for unexpected needs."
          ]
         },
         {
@@ -29994,7 +30701,7 @@
       {
        "id": "ch9-l4",
        "title": "What Is a Community?",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -30066,6 +30773,22 @@
            "ch": 9,
            "p": 144
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch9-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What helps people live and work together in a community?",
+         "answer": "Families are connected with other families and the people around them. A group of connected people may be called a community. Community members come together for different reasons. They organise festivals, feasts, weddings and other events. Members also perform duties, so their community can function smoothly.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Families are connected with other families.",
+          "Connected people may form a community.",
+          "Members come together and perform duties."
          ]
         },
         {
@@ -30527,7 +31250,7 @@
       {
        "id": "ch9-l5",
        "title": "Communities Acting for Others",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -30618,6 +31341,22 @@
            "ch": 9,
            "p": 146
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch9-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can communities help people and nature?",
+         "answer": "Halma is a tradition that brings people together. Its main aim is to serve Mother Earth. The Bhils dug trenches to conserve rainwater. They did this unpaid work as a duty to their community and the environment. Other groups cooked and distributed food to people who needed it. Kamal Parmar taught children every evening, gave them dinner, and later had older pupils help as volunteers.",
+         "explanation": "Now read on to find out.",
+         "points": [
+          "Halma brings people together to support anyone facing a crisis.",
+          "The Bhils conserved rainwater through community service.",
+          "Kamal Parmar supported children through teaching and free meals."
          ]
         },
         {
@@ -31052,7 +31791,7 @@
       {
        "id": "ch9-l6",
        "title": "Different Communities and Interdependence",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -31139,6 +31878,22 @@
            "ch": 9,
            "p": 148
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch9-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How do people in your area depend on each other?",
+         "answer": "A community is people who share religion, region, work or interest. New types of communities have appeared in recent decades. A Residents’ Welfare Association is an urban community. Its members help make rules about waste, cleanliness and pet care. Such communities need a trading community for supplies and municipal workers for waste. In complex societies, everyone depends on other people and communities.",
+         "explanation": "Now read on to find out.",
+         "points": [
+          "Residents’ Welfare Associations are urban communities.",
+          "Members help make rules about waste, cleanliness and pet care.",
+          "Communities depend on a trading community, municipal workers and one another."
          ]
         },
         {
@@ -32401,7 +33156,7 @@
       {
        "id": "ch10-l1",
        "title": "Rules, Governance and Government",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -32503,6 +33258,22 @@
            "ch": 10,
            "p": 151
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch10-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can a community work well when people disagree?",
+         "answer": "People have lived in communities for a very long time. Living together can cause disagreements and disorder. Society could not function if nobody followed rules. Families, schools, examinations and roads all have rules. Governance means making decisions, organising society and making sure rules are followed. A government makes rules and makes sure they are followed. Laws are especially important rules. Rules and laws can change, and citizens can have a say about them.",
+         "explanation": "Read on to find out.",
+         "points": [
+          "Communities need rules to function.",
+          "Governance organises society and makes sure rules are followed.",
+          "Citizens can have a say about laws and rules."
          ]
         },
         {
@@ -32917,7 +33688,7 @@
       {
        "id": "ch10-l2",
        "title": "The Three Organs of Government",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -33003,6 +33774,23 @@
            "ch": 10,
            "p": 154
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch10-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can government help stop digital crime?",
+         "answer": "Digital technology gives criminals new ways to steal money. Cybercrime means criminal activities carried out through digital methods. Governments have passed new laws to fight cybercrime. The legislature is a group of representatives. It makes and updates laws. The executive puts these laws into action. The judiciary uses courts to decide whether someone broke a law. These three branches of government work together.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Crime through digital methods is cybercrime.",
+          "New laws can fight cybercrime.",
+          "Each branch has a different job.",
+          "Three branches work together."
          ]
         },
         {
@@ -33531,7 +34319,7 @@
       {
        "id": "ch10-l3",
        "title": "Separation of Powers and Three Tiers",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -33618,6 +34406,22 @@
            "ch": 10,
            "p": 155
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch10-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can three government parts stay separate and still cooperate?",
+         "answer": "Good governance needs the three organs of government to remain separate. Each organ should stay within its expected role. At the same time, the organs interact, work together, and check one another. They can restore balance when things do not work properly. India’s democratic government functions at three levels: local, state or regional, and national. Each level handles different matters.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Each organ should remain within its expected role.",
+          "The organs interact, work together, and check one another.",
+          "India has local, state or regional, and national tiers."
          ]
         },
         {
@@ -34087,7 +34891,7 @@
       {
        "id": "ch10-l4",
        "title": "Government at Local, State and National Levels",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -34188,6 +34992,22 @@
            "ch": 10,
            "p": 157
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch10-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Who helps people, and how are governments organised?",
+         "answer": "India has local, State, and Central governments. Local authorities may deal with small floods. State Government may send rescue teams. Central Government may help during massive floods. Lok Sabha and Rajya Sabha formulate national laws. The President is nominal head of the Central executive. The Prime Minister is the Central Government's executive head. The Governor is nominal head of a State Government. The Chief Minister is the State Government's executive head.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Local authorities may deal with a small flood.",
+          "State Government may send rescue teams.",
+          "Central Government may help during a massive flood."
          ]
         },
         {
@@ -34757,7 +35577,7 @@
       {
        "id": "ch10-l5",
        "title": "Leadership and Service to the People",
-       "estimatedMinutes": 11,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -34918,6 +35738,22 @@
            "ch": 10,
            "p": 158
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch10-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can someone use knowledge and humility to serve a whole nation?",
+         "answer": "Even as President, he remained connected to the people. He cared about good education and innovation. Innovation means new ideas. He encouraged young Indians to dream big and work hard. His humility and dedication inspired many people. His position was nominal, yet he made a positive difference.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "He stayed connected to the people.",
+          "He encouraged young Indians to dream big and work hard.",
+          "He could make a positive difference despite his nominal position."
          ]
         },
         {
@@ -35384,7 +36220,7 @@
       {
        "id": "ch10-l6",
        "title": "Democracy and Grassroots Democracy",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -35467,6 +36303,22 @@
            "ch": 10,
            "p": 159
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch10-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can ordinary people influence decisions about the country they live in?",
+         "answer": "Democracy is a foundation stone of the governance system adopted by most countries. The word democracy comes from two Greek words. Kratos means rule or power. Democracy literally means the rule of the people. India is a representative democracy. At State and national levels, people vote for elected representatives. MLAs represent people at State level. MPs represent people at national level.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Democracy means the rule of the people.",
+          "India is a representative democracy.",
+          "MLAs and MPs represent people at different levels."
          ]
         },
         {
@@ -36591,7 +37443,7 @@
       {
        "id": "ch11-l1",
        "title": "Panchayati Raj: Local Government in Rural India",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -36686,6 +37538,22 @@
            "ch": 11,
            "p": 165
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch11-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can a village council make everyday life better for its people?",
+         "answer": "India is very large and varied. About two-thirds of India's population lives in rural areas. A Panchayat is a village council. Panchayati Raj means self-government by local people. It brings government closer to rural communities. Local people can join decisions, solve local problems and promote development. The system has three levels. Its work includes agriculture, housing, roads and water resources.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "A Panchayat is a village council.",
+          "Panchayati Raj is self-government by local people.",
+          "It has three levels and covers local development work."
          ]
         },
         {
@@ -37234,7 +38102,7 @@
       {
        "id": "ch11-l2",
        "title": "The Gram Panchayat and Gram Sabha",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -37327,6 +38195,22 @@
            "ch": 11,
            "p": 167
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch11-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How do villagers choose the people who guide their village?",
+         "answer": "The Gram Panchayat is the level closest to rural people. Its members are chosen directly by the Gram Sabha. This group consists of village adults enrolled as voters. Women and men discuss matters concerning their area. The Gram Panchayat elects a head called the Sarpanch or Pradhan. A Panchayat Secretary helps with administrative work, calls meetings and keeps records. A Patwari helps and keeps villagers’ land records and old maps.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "The Gram Panchayat is closest to rural people.",
+          "The Gram Sabha chooses members and discusses local matters.",
+          "The Secretary and Patwari keep records."
          ]
         },
         {
@@ -37635,7 +38519,7 @@
       {
        "id": "ch11-l3",
        "title": "Exemplary Sarpanchs",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -37722,6 +38606,22 @@
            "ch": 11,
            "p": 166
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch11-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can one village leader inspire an entire community?",
+         "answer": "Dnyaneshwar Kamble became Tarangfal village’s Sarpanch. His motto, lok seva, gram seva, meant serving the village is serving the public. Vandana Bahadur Maida challenged patriarchal norms, ideas favouring men. She became her village’s first female Sarpanch. She brought women into Sabha meetings and handled education and sanitation. Hiware Bazar’s Sarpanch saved rainwater and planted lakhs of trees. The village became green and prosperous within a few years.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Kamble’s motto linked village service with public service.",
+          "Maida became her village’s first female Sarpanch.",
+          "Water work and tree planting helped Hiware Bazar prosper."
          ]
         },
         {
@@ -38140,7 +39040,7 @@
       {
        "id": "ch11-l4",
        "title": "Child-Friendly Panchayats and Children's Parliament",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -38240,6 +39140,22 @@
            "ch": 11,
            "p": 168
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch11-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can children help shape the places where they live and learn?",
+         "answer": "Bal Panchayats work together for children. They persuade adults to end child labour and child marriage. This means stopping marriages for girls who should be studying. They bring many children back to school. Gram Panchayats can build safer schools and school kitchens. Democratic participation means taking part in decisions.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Bal Panchayats support children's schooling and rights.",
+          "Some Gram Panchayats build safer schools and kitchens.",
+          "The Children's Parliament includes children in democratic participation."
          ]
         },
         {
@@ -38702,7 +39618,7 @@
       {
        "id": "ch11-l5",
        "title": "Panchayat Samiti and Zila Parishad",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 11,
        "activities": [
         {
          "type": "hook",
@@ -38786,6 +39702,22 @@
            "ch": 11,
            "p": 169
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch11-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What happens when Gram Panchayats share their development plans?",
+         "answer": "Panchayat Samitis help local people take part in development. Their composition differs between States, but their role stays the same. They collect plans from all Gram Panchayats and combine them. They present these plans at district or State levels, helping provide funds for development projects. The Panchayat Samiti connects the Gram Panchayat with the Zila Parishad. Special rules help disadvantaged sections make their needs heard.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Their role in strengthening local participation remains the same.",
+          "Development plans are combined and presented at district or State levels.",
+          "One-third of seats are reserved for women at all three levels."
          ]
         },
         {
@@ -39222,7 +40154,7 @@
       {
        "id": "ch11-l6",
        "title": "Local Self-Government and Old Ideas of Administration",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -39317,6 +40249,22 @@
            "ch": 11,
            "p": 171
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch11-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How do villages govern (rule) themselves? What can we learn from the past?",
+         "answer": "Panchayati Raj lets villagers take an active part. Their work includes developing villages and local areas. Its functions differ a little among States because States have authority over it. The Arthaśhāstra is an ancient text about governance. Kauṭilya wrote it about 2,300 years ago. Sangrahaṇa, kārvaṭika, droṇamukha and sthānīya were four village administration categories. Panchayati Raj democracy uses direct participation and elected representatives.",
+         "explanation": "Read on to find out.",
+         "points": [
+          "Villagers take an active part in local development.",
+          "States have authority over Panchayati Raj institutions.",
+          "The Arthaśhāstra lists four village administration categories."
          ]
         },
         {
@@ -40402,7 +41350,7 @@
       {
        "id": "ch12-l1",
        "title": "How Democracy Works in Cities",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -40482,6 +41430,22 @@
            "ch": 12,
            "p": 175
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch12-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can your voice shape the city you live in?",
+         "answer": "Good governance in a democracy aims to empower citizens so they can take part. Citizens can take part at rural, regional, urban, state and national levels. Sharing power in decision-making is called participatory democracy. This lesson looks at its basic principles in urban areas. Urban areas are generally more complex and diverse than rural areas. The Union Government is at the top of the governance pyramid.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Good governance empowers citizens.",
+          "Sharing power in decision-making is participatory democracy.",
+          "Urban governance needs to be more complex."
          ]
         },
         {
@@ -40811,7 +41775,7 @@
       {
        "id": "ch12-l2",
        "title": "Urban Local Bodies and Wards",
-       "estimatedMinutes": 12,
+       "estimatedMinutes": 14,
        "activities": [
         {
          "type": "hook",
@@ -40896,6 +41860,23 @@
            "ch": 12,
            "p": 176
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch12-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How could your neighbourhood have a say in local decisions?",
+         "answer": "Urban local bodies are the local government structures in cities and towns. They are decentralised, meaning decisions are made closer to local communities. Local communities have a direct say in managing their areas. Cities and towns are divided into smaller areas called wards. Ward committees organise activities, watch for problems, and report them to authorities. The way wards function differs from State to State.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Urban local bodies are decentralised local government structures.",
+          "Local communities have a direct say in managing their areas.",
+          "Wards are smaller areas within cities and towns.",
+          "Ward committees organise activities and report problems to authorities."
          ]
         },
         {
@@ -41440,7 +42421,7 @@
       {
        "id": "ch12-l3",
        "title": "Functions of Urban Local Bodies",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 13,
        "activities": [
         {
          "type": "hook",
@@ -41531,6 +42512,22 @@
            "ch": 12,
            "p": 177
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch12-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What makes our neighbourhood work, and how can you help?",
+         "answer": "Urban local bodies look after local infrastructure, meaning the basic facilities in your area. They maintain burial grounds and collect and dispose of garbage. They check government schemes, collect local taxes and fines, and help plan economic and social development. Citizens must perform their duties, show care and concern, separate waste correctly, follow waste-segregation instructions, and report leaking water pipes promptly.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Urban local bodies perform many functions.",
+          "They look after infrastructure and help plan development.",
+          "Citizens must perform duties and care for their area."
          ]
         },
         {
@@ -41925,7 +42922,7 @@
       {
        "id": "ch12-l4",
        "title": "The History of Municipal Corporations",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -42008,6 +43005,22 @@
            "ch": 12,
            "p": 177
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch12-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How did cities begin caring for their own communities?",
+         "answer": "The Madras Corporation is now called the Greater Chennai Corporation. It was established on 29 September 1688, making it India's oldest municipal institution. The East India Company issued its charter one year earlier. The charter included Fort St. George and nearby territories. An Act of Parliament passed in 1792 gave it power to levy municipal taxes. Municipal administration properly began then.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "The Madras Corporation was established on 29 September 1688.",
+          "The East India Company issued the charter.",
+          "The 1792 Act gave the corporation power to levy municipal taxes."
          ]
         },
         {
@@ -42433,7 +43446,7 @@
       {
        "id": "ch12-l5",
        "title": "Types of Urban Local Bodies and Their Services",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -42524,6 +43537,22 @@
            "ch": 12,
            "p": 178
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch12-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "A city needs help with water, waste, or certificates. What happens then?",
+         "answer": "Urban local bodies have different highest bodies. Cities above 10 lakhs have a Municipal Corporation, called a Mahanagar Nigam. Cities with 1 to 10 lakhs have a Municipal Council, called a Nagar Palika. Smaller towns and cities have a Nagar Panchayat. Indore Municipal Corporation provides listed services, including property tax, water charges and solid waste management. Its citizen services include certificates, fire services, licences, water tankers and debris clearance.",
+         "explanation": "Now read on to find out.",
+         "points": [
+          "Municipal Corporations serve cities above 10 lakhs.",
+          "Municipal Councils serve cities with 1 to 10 lakhs.",
+          "Nagar Panchayats serve smaller cities and towns."
          ]
         },
         {
@@ -42908,7 +43937,7 @@
       {
        "id": "ch12-l6",
        "title": "Citizen Voice and Shared Responsibility",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -42996,6 +44025,22 @@
            "ch": 12,
            "p": 181
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch12-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What can your voice change about the place where you live?",
+         "answer": "City life is busy, crowded, noisy, and often full of rushing people. Residents may be independent and may not know their neighbours. Yet cities can show strong community spirit. During heavy rains, dozens gathered after a house collapsed. They cleared rubble and checked for trapped people. Democracy gives everyone a voice. Elected local representatives speak for citizens and their interests.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Cities are busy, crowded, noisy, and often rushed.",
+          "Communities can support people during hard times.",
+          "Everyone's voice matters in democracy."
          ]
         },
         {
@@ -44223,7 +45268,7 @@
       {
        "id": "ch13-l1",
        "title": "The Work Around Us",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -44305,6 +45350,22 @@
            "ch": 13,
            "p": 184
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch13-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What work surrounds you at home and in your neighbourhood?",
+         "answer": "People around us do different work. Geeta Aunty is a pilot in the Indian Air Force. Kabir’s grandfather retired from the Border Security Force, and now tends a vegetable garden and runs home errands. Anu’s parents sell uniforms and ready-made garments. Anu’s mother teaches stitching in a voluntary group. Rohan is a software engineer and teaches computer skills at weekends. Free Geography classes are provided for neighbourhood children.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "People have different kinds of work.",
+          "Some people help their families and neighbourhoods.",
+          "Work can include teaching and helping others."
          ]
         },
         {
@@ -44726,7 +45787,7 @@
       {
        "id": "ch13-l2",
        "title": "Economic and Non-Economic Activities",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -44811,6 +45872,22 @@
            "ch": 13,
            "p": 186
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch13-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Which activities are economic, and which are non-economic?",
+         "answer": "Activities are divided into economic and non-economic activities. Economic activities involve money or payment in money’s worth. Money’s worth is the monetary value a person places on an object. A market is where people exchange goods and services. Goods and services can also be exchanged for other goods and services. A fee is payment for professional advice or services. Non-economic activities do not generate income or wealth.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Economic activities involve money or payment in money’s worth.",
+          "Non-economic activities do not generate income or wealth.",
+          "A market is a place where people exchange goods and services."
          ]
         },
         {
@@ -45269,7 +46346,7 @@
       {
        "id": "ch13-l3",
        "title": "Types of Economic Activities",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -45365,6 +46442,22 @@
            "ch": 13,
            "p": 189
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch13-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What might you discover about work and payment on a village tour?",
+         "answer": "A highway is being built near Kavya’s village. Technicians operate excavators and bulldozers there. Kavya’s uncle operates a bulldozer and receives a monthly salary. His aunt works at the village post office. She conducts online classes and charges a weekly fee. Sahil tills land using a tractor. He earns a daily wage, partly in cash and partly in mangoes. Payment in kind means paying with goods instead of money.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "People do different kinds of work.",
+          "Workers receive payment in different ways.",
+          "Mangoes are payment in kind."
          ]
         },
         {
@@ -45791,7 +46884,7 @@
       {
        "id": "ch13-l4",
        "title": "Payments and Value Addition",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -45882,6 +46975,22 @@
            "ch": 13,
            "p": 189
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch13-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How can you discover the value someone adds while making an object?",
+         "answer": "Rajesh is a carpenter who buys wood. He pays ₹600 for the wood and uses tools and other materials to build furniture. He sells each chair for ₹1,000. The remaining ₹400 is value added through his skill, time and effort. Buying and selling are economic activities because they involve payment. Value addition means changing something into another form. Payment in kind is non-cash payment for work.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Rajesh turns wood into furniture.",
+          "The value added to each chair is ₹400.",
+          "Payment in kind is non-cash payment."
          ]
         },
         {
@@ -46350,7 +47459,7 @@
       {
        "id": "ch13-l5",
        "title": "The Importance of Non-Economic Activities",
-       "estimatedMinutes": 9,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -46437,6 +47546,22 @@
            "ch": 13,
            "p": 192
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch13-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What makes non-economic activities valuable in our lives?",
+         "answer": "Non-economic activities help people and communities without needing money. Examples include cooking for your family and helping children with schoolwork. Caring for grandparents and renovating your house are also examples. Their value is important in our lives. Sevā is seen in temples, gurudwaras, mosques and churches. It contributes to society without expecting anything in return.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "They may not involve money.",
+          "They create important value.",
+          "Sevā serves society."
          ]
         },
         {
@@ -46848,7 +47973,7 @@
       {
        "id": "ch13-l6",
        "title": "The Strength of Community Participation",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -46940,6 +48065,22 @@
            "ch": 13,
            "p": 193
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch13-l6-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What happens when a whole community works together?",
+         "answer": "People work together to keep their surroundings clean. The Swachh Bharat Abhiyan depends on all Indian citizens working together. People also clean their homes individually, meaning each person does their part. People clean streets, roads, parks and other public places. Together, these efforts can make the home, neighbourhood, society and nation clean. Van Mahotsav brings the community together for tree plantation drives and awareness about trees' value.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Every citizen's efforts help keep surroundings clean.",
+          "People clean shared places together.",
+          "Van Mahotsav promotes trees and tree plantation drives."
          ]
         },
         {
@@ -48260,7 +49401,7 @@
       {
        "id": "ch14-l1",
        "title": "The Primary Sector",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -48344,6 +49485,22 @@
            "ch": 14,
            "p": 198
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch14-l1-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "Which jobs begin with nature’s help?",
+         "answer": "Primary activities depend directly on nature to make goods. This means people take raw materials straight from nature. These activities are also called the primary sector. Farming, fishing and forestry are examples. They include growing grains and vegetables, taking fish, collecting wood, and getting eggs.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Primary activities depend directly on nature.",
+          "They take raw materials straight from nature.",
+          "Farming, fishing and forestry are examples."
          ]
         },
         {
@@ -48863,7 +50020,7 @@
       {
        "id": "ch14-l2",
        "title": "The Secondary Sector",
-       "estimatedMinutes": 10,
+       "estimatedMinutes": 12,
        "activities": [
         {
          "type": "hook",
@@ -48939,6 +50096,22 @@
            "ch": 14,
            "p": 199
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch14-l2-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What can grains, wood and cotton become after some clever work?",
+         "answer": "The secondary sector includes work that makes things and provides services. Builders construct houses, roads and other structures. Providers supply water, electricity and gas. Factories and production units manufacture and process goods. Mills turn farm grains into flour. Forest wood can become furniture and paper. Cotton is used to make clothes.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "Secondary work includes construction and supplying services.",
+          "Factories and production units manufacture and process goods.",
+          "Raw materials become useful products such as flour, furniture, paper and clothes."
          ]
         },
         {
@@ -49415,7 +50588,7 @@
       {
        "id": "ch14-l3",
        "title": "The Tertiary Sector",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -49489,6 +50662,22 @@
            "ch": 14,
            "p": 201
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch14-l3-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What could you discover about different kinds of work?",
+         "answer": "The tertiary sector is also called the service sector. Technicians repair and service electronic items such as mobile phones and televisions. Mechanics repair vehicles such as cars and tractors. Electricians make sure electricity is supplied regularly. Mobile and internet services are part of this sector. Fruit and vegetable vendors sell farm produce to households. Software development and services in hotels and restaurants are also tertiary activities.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "The tertiary sector is also called the service sector.",
+          "Technicians, mechanics and electricians provide services.",
+          "Mobile, internet, hotel and restaurant services are tertiary activities."
          ]
         },
         {
@@ -49847,7 +51036,7 @@
       {
        "id": "ch14-l4",
        "title": "The Story of the Anand Milk Cooperative",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -49939,6 +51128,22 @@
            "ch": 14,
            "p": 204
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch14-l4-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "What happens when farmers choose to work together?",
+         "answer": "Farmers around Anand sold milk to a nearby dairy. They approached Sardar Vallabhbhai Patel together. Patel advised them to form a cooperative and become independent. A cooperative means farmers work together as a group. Independent means free from needing middlemen. The group collected, processed and distributed milk. They set up a factory in Anand. AMUL was set up in 1946 CE. Sharing tasks helped their income rise slowly.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "A cooperative is farmers working together as a group.",
+          "AMUL was set up in 1946 CE.",
+          "Sharing tasks helped farmers raise their income slowly."
          ]
         },
         {
@@ -50291,7 +51496,7 @@
       {
        "id": "ch14-l5",
        "title": "How the Three Sectors Work Together",
-       "estimatedMinutes": 8,
+       "estimatedMinutes": 10,
        "activities": [
         {
          "type": "hook",
@@ -50367,6 +51572,22 @@
            "ch": 14,
            "p": 202
           }
+         ]
+        },
+        {
+         "type": "explain",
+         "id": "ch14-l5-chk",
+         "difficulty": 1,
+         "tags": [
+          "checkpoint"
+         ],
+         "prompt": "How does a book travel from raw materials to your hands?",
+         "answer": "The three sectors work together at every stage of making books. Together, they help turn natural raw materials into finished goods for people to use. Used paper can be recycled to make new paper. Recycling one tonne of paper saves 17 trees. It also saves space in places where waste is dumped.",
+         "explanation": "Compare what you said with the page.",
+         "points": [
+          "All three sectors work together at every stage of making books.",
+          "They turn natural raw materials into finished goods.",
+          "Recycling paper saves trees and space in waste dump places."
          ]
         },
         {
