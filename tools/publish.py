@@ -23,6 +23,18 @@ URL = os.environ.get('SPARKLE_URL', '')
 args = set(sys.argv[1:])
 def say(*a): print(*a, flush=True)
 
+# One publish at a time, enforced rather than checked. Two publishes race over the git index, over the same
+# pack files and over the live upload, and the loser can leave a half-built tree on the site. The old note in
+# LOOP.md asked a human to look at `ps` before publishing; a lock is the only version of that nobody forgets.
+import fcntl
+os.makedirs(f'{ROOT}/work/qa', exist_ok=True)
+_publish_lock = open(f'{ROOT}/work/qa/.publish.lock', 'w')
+try:
+    fcntl.flock(_publish_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+except OSError:
+    say('another publish is running (work/qa/.publish.lock is held); not starting')
+    sys.exit(3)
+
 def build():
     for key, s in SUBJECTS.items():
         if not os.path.isdir(f"{ROOT}/{s['work']}"): continue
