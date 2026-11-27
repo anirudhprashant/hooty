@@ -203,23 +203,18 @@ def main():
     except Exception as e:
         problems.append(f'could not run the teaching audit: {e}')
 
-    # Readable Devanagari is a quality promise, so it gets the same treatment as the teaching numbers.
+    # Readable Devanagari is a quality promise, so it gets the same treatment as the teaching numbers. The
+    # gate owns the comparison (and the checker's own self-test), so there is one place that decides.
     try:
-        hindi = subprocess.run(['python3', f'{REPO}/tools/hindi-scan.py', '--json', '/tmp/hooty-hindi-watch.json'],
-                               capture_output=True, text=True, cwd=REPO, timeout=900)
-        if hindi.returncode == 1:
-            rows = json.load(open('/tmp/hooty-hindi-watch.json'))
-            base_path = f'{REPO}/work/qa/hindi-baseline.json'
-            if not os.path.exists(base_path):
-                json.dump({'lessons': len(rows)}, open(base_path, 'w'), indent=1)
-            else:
-                baseline = json.load(open(base_path)).get('lessons', 0)
-                if len(rows) > baseline:
-                    problems.append(f'unreadable Devanagari grew: {len(rows)} lessons, baseline {baseline}')
-                elif VERBOSE:
-                    print(f'  hindi     {len(rows)} lessons still to repair (baseline {baseline})')
+        gate = subprocess.run([sys.executable, f'{REPO}/tools/text-gate.py'],
+                              capture_output=True, text=True, cwd=REPO, timeout=300)
+        line = (gate.stdout.strip().splitlines() or [''])[-1]
+        if gate.returncode:
+            problems.append('unreadable Devanagari: ' + '; '.join(gate.stdout.strip().splitlines()[:4]))
+        elif VERBOSE:
+            print(f'  hindi     {line}')
     except Exception as e:
-        problems.append(f'could not run the Hindi scan: {e}')
+        problems.append(f'could not run the text gate: {e}')
 
     if VERBOSE:
         print(f'problems: {len(problems)}')
