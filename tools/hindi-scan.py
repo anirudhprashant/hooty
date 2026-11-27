@@ -12,7 +12,10 @@ Three shapes, all detectable without a dictionary:
                a matra ("सधं ्या", "दनि ु या")
   doubled      the same vowel sign twice ("हैंं", "रााजाा")
   reordered    two vowel signs on one letter, an anusvara before a vowel sign, or a vowel sign before a
-               halant ("भरूी", "दसूरी", "चदंा", "मसु्काते") — the same reorder, with no space to show it
+               halant ("भरूी", "चदंा", "मसु्काते") — the same reorder, with no space to show it.
+               A reorder that lands the vowel on the *next* consonant ("दसूरी" for "दूसरी") is legal-looking
+               shape for shape, so this scan cannot prove it: that one needs the word matcher in
+               tools/hindi-repair.py, and tools/text-gate.py tests both layers.
 
   python3 tools/hindi-scan.py                 # every Hindi pack in public/content
   python3 tools/hindi-scan.py --json out.json # machine-readable, per lesson and per string

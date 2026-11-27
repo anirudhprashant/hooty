@@ -167,6 +167,17 @@ def stamp():
     s = re.sub(r"const CACHE = '[^']*';", f"const CACHE = 'sparkle-{h.hexdigest()[:10]}';", s, count=1)
     open(f'{PUB}/sw.js', 'w').write(s)
 
+    # When this build was made and from which commit. The watchdog reads it off the live site, so "the site is
+    # serving an older build than the sources" is a fact it can check instead of something we find out by luck.
+    try:
+        head = subprocess.run(['git', '-C', ROOT, 'rev-parse', '--short', 'HEAD'],
+                              capture_output=True, text=True).stdout.strip()
+        json.dump({'built_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                   'commit': head, 'books': len(idx['packs'])},
+                  open(f'{PUB}/content/build.json', 'w'), indent=1)
+    except Exception as e:
+        say('build stamp skipped:', str(e)[:120])
+
 def upload():
     r = subprocess.run(['rsync', '-a', '--exclude', 'work', '--exclude', 'sources', '--exclude', 'node_modules', '--exclude', '.venv-audio', '--exclude', '__pycache__', f'{ROOT}/', TARGET], capture_output=True, text=True)
     if r.returncode not in (0, 24): sys.exit('upload failed: ' + r.stderr[-300:])
@@ -336,7 +347,28 @@ if '--no-build' not in args:
     build()
     pages()
     if '--audio' in args and '--no-audio' not in args: audio()   # recording is a laptop job: opt in with --audio
+
+    # Text gate. On 27 Nov the site served broken Hindi for hours because a repair reached the sources and
+    # never reached a rebuild, and because the checker that was supposed to catch it had gone half blind.
+    # So: test the checker, then test the packs it just produced, and refuse to upload rather than ship either.
+    selftest = subprocess.run([sys.executable, f'{HERE}/text-gate.py', '--self-test'], capture_output=True, text=True)
+    say(selftest.stdout.strip() or selftest.stderr.strip()[-300:])
+    if selftest.returncode:
+        sys.exit('PUBLISH REFUSED: the Hindi checker does not pass its own test — fix the checker first, '
+                 'otherwise a broken number would look like good news')
+    gate = subprocess.run([sys.executable, f'{HERE}/text-gate.py'], capture_output=True, text=True)
+    say(gate.stdout.strip() or gate.stderr.strip()[-300:])
+    if gate.returncode:
+        sys.exit('PUBLISH REFUSED: this build carries more unreadable Hindi than the last published one. '
+                 'Repair the source, rebuild, publish again.')
+
 thumbs(); stamp(); finish_check(); upload(); smoke()
+
+# What is live now is the new known-good state for the text gate.
+try:
+    subprocess.run([sys.executable, f'{HERE}/text-gate.py', '--update-baseline'], capture_output=True, text=True)
+except Exception as e:
+    say(f'text baseline not updated: {e}')
 
 def push():
     """What just went live also goes to GitHub. A failed push never fails a publish."""

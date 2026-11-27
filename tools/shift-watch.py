@@ -10,12 +10,14 @@ This prints nothing when everything is healthy, so its cron delivers nothing on 
 hand any time with --verbose to see what it looked at.
 """
 import datetime as dt
+import glob
 import json
 import os
 import shutil
 import sqlite3
 import subprocess
 import sys
+import urllib.error
 import urllib.request
 from zoneinfo import ZoneInfo
 
@@ -104,6 +106,38 @@ def main():
             problems.append('hooty.org answered 200 but the page does not look like the app')
     except Exception as e:
         problems.append(f'hooty.org is not reachable: {e}')
+
+    # Is the site serving the build its sources produced? On 27 Nov it was not: the Hindi sources were repaired
+    # at 14:23 and the site kept serving the 13:22 build, and nothing said a word for two hours.
+    try:
+        request = urllib.request.Request(f'{SITE.rstrip("/")}/content/build.json?x={os.urandom(3).hex()}',
+                                         headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) Firefox/126.0'})
+        live = json.loads(urllib.request.urlopen(request, timeout=20).read())
+        built_at = dt.datetime.strptime(live['built_at'], '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=dt.timezone.utc)
+        newest, newest_file = 0, ''
+        for path in glob.glob(f'{REPO}/work/*/ch*/**/*.json', recursive=True):
+            if '/built/' in path:
+                continue
+            stamp = os.path.getmtime(path)
+            if stamp > newest:
+                newest, newest_file = stamp, path
+        newest_dt = dt.datetime.fromtimestamp(newest, dt.timezone.utc)
+        # A minute of slack: a build reads its sources, so the newest source is always slightly older than the build.
+        if newest_dt > built_at + dt.timedelta(minutes=2):
+            problems.append(f'hooty.org is serving a build from {built_at.astimezone(IST):%d %b %H:%M} but '
+                            f'{os.path.relpath(newest_file, REPO)} changed at {newest_dt.astimezone(IST):%H:%M}; '
+                            f'the source is ahead of the site')
+        elif VERBOSE:
+            print(f'  live build {built_at.astimezone(IST):%d %b %H:%M} ({live.get("commit")}), '
+                  f'sources newest {newest_dt.astimezone(IST):%H:%M}')
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            if VERBOSE:
+                print('  live build no stamp yet (publish writes public/content/build.json)')
+        else:
+            problems.append(f'could not read the live build stamp: {e}')
+    except Exception as e:
+        problems.append(f'could not read the live build stamp: {e}')
 
     # Disk: publishing writes audio and screenshots, and this box has been close to full all month.
     total_bytes, used_bytes, _free = shutil.disk_usage('/')

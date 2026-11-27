@@ -35,10 +35,20 @@ spec = importlib.util.spec_from_file_location('hindiscan', f'{HERE}/hindi-scan.p
 hindiscan = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(hindiscan)
 
+repair_spec = importlib.util.spec_from_file_location('hindirepair', f'{HERE}/hindi-repair.py')
+hindirepair = importlib.util.module_from_spec(repair_spec)
+repair_spec.loader.exec_module(hindirepair)
+
+# A reorder that moves a vowel onto the *next* consonant ("दसूरी" for "दूसरी") carries no shape a regex can
+# prove — the letters are all legal, in a legal order. Only a word list can see it, so that layer is tested
+# too: the repair must find the right word, and must refuse when the evidence is a coin toss.
+WORD_VOCAB = {'दूसरी': 40, 'दसूरी': 1, 'दुनिया': 50, 'दनिया': 1, 'संध्या': 30}
+WORD_CASES = [('दसूरी', 'दूसरी'), ('दनिया', 'दुनिया')]
+WORD_REFUSALS = ['ज़रिएकी', 'क्क्क्क']
+
 # Each of these was taken off the live site or out of the repaired sources. The left column must be
 # caught; the right column is correct Hindi and must never be reported, or the gate would block good text.
 BROKEN = [
-    ('दसूरी दनिया', 'reordered'),
     ('भरूी', 'reordered'),
     ('चदंा', 'reordered'),
     ('हम सधं ्या', 'detached'),
@@ -70,12 +80,26 @@ def self_test():
         found = hindiscan.anomalies(text)
         if found:
             failures.append(f'wrongly flagged ({sorted(found)}): {text!r}')
+
+    # Layer two: the word matcher that catches a reorder no shape can prove.
+    vocab = dict(WORD_VOCAB)
+    anagrams, by_length = hindirepair.index(vocab)
+    for broken, correct in WORD_CASES:
+        fixed, how = hindirepair.repair_word(broken, vocab, anagrams, by_length)
+        if fixed != correct:
+            failures.append(f'word matcher left {broken!r} as {fixed!r} ({how}), wanted {correct!r}')
+    for word in WORD_REFUSALS:
+        fixed, how = hindirepair.repair_word(word, vocab, anagrams, by_length)
+        if fixed is not None:
+            failures.append(f'word matcher guessed {word!r} -> {fixed!r} ({how}), it must refuse')
+
     if failures:
         print('THE HINDI CHECKER IS NOT TRUSTWORTHY:')
         for line in failures:
             print('  ' + line)
         return 1
-    print(f'hindi checker self-test: {len(BROKEN)} broken shapes caught, {len(CLEAN)} clean strings left alone')
+    print(f'hindi checker self-test: {len(BROKEN)} broken shapes caught, {len(CLEAN)} clean strings left alone, '
+          f'{len(WORD_CASES)} reorders repaired, {len(WORD_REFUSALS)} guesses refused')
     return 0
 
 
