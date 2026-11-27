@@ -1041,6 +1041,7 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 .explain__reveal { margin-top: var(--s4); padding: var(--s4); border-radius: var(--radius-md); background: var(--success-soft); }
 .explain__head { margin: 0 0 var(--s2); font-family: var(--font-display); font-size: var(--fs-md); }
 .explain__answer { margin: 0 0 var(--s4); line-height: 1.6; }
+.explain__hint { margin: var(--s3) 0 0; font-size: var(--fs-sm); font-weight: 700; color: var(--muted, #6b5a8a); text-align: center; }
 .explain__points { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
 .explain__points label { display: flex; gap: var(--s3); align-items: flex-start; min-height: 44px; cursor: pointer; line-height: 1.45; }
 .explain__points input { width: 24px; height: 24px; flex: 0 0 24px; accent-color: var(--success); }

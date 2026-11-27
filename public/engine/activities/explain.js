@@ -26,7 +26,13 @@ export default {
     // the old behaviour: there the child is comparing, not being caught skimming.
     if (box && (activity.tags || []).includes('checkpoint')) {
       next.disabled = true;
-      box.addEventListener('input', () => { next.disabled = box.value.trim().length < 8; });
+      if (activity.hint) {
+        const note = el('p', { class: 'explain__hint', text: activity.hint });
+        root.appendChild(note);
+        box.addEventListener('input', () => { const short = box.value.trim().length < 8; next.disabled = short; note.hidden = !short; });
+      } else {
+        box.addEventListener('input', () => { next.disabled = box.value.trim().length < 8; });
+      }
     }
     next.addEventListener('click', () => {
       stopSpeech();

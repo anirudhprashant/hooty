@@ -19,6 +19,7 @@ FILLER = {
     'say_back': {'en': 'In your own words: ', 'hi': 'अपने शब्दों में: '},
     'say_aloud': {'en': 'Say it out loud first.', 'hi': 'पहले ज़ोर से बोलिए।'},
     'check_note': {'en': 'Compare what you said with the page.', 'hi': 'आपने जो कहा, उसकी तुलना पृष्ठ से कीजिए।'},
+    'write_first': {'en': 'Write a line or two first, then compare.', 'hi': 'पहले एक-दो पंक्तियाँ लिखिए, फिर मिलाइए।'},
 }
 WLANG = SUBJ.get('language', 'en')
 W = lambda k: FILLER[k].get(WLANG) or FILLER[k]['en']
@@ -311,7 +312,7 @@ for u in pack['units']:
                     prompt = hook['prompt'] if hook else (W('say_back') + (concept.get('title') or ''))
                     card = {'type': 'explain', 'id': f"{lesson['id']}-chk", 'difficulty': 1, 'tags': ['checkpoint'],
                             'kicker': W('say_aloud') if grade <= 3 else None,
-                            'prompt': prompt, 'answer': concept['body'], 'explanation': W('check_note'),
+                            'prompt': prompt, 'answer': concept['body'], 'explanation': W('check_note'), 'hint': W('write_first'),
                             'points': (concept.get('keyPoints') or [])[:4]}
                     if grade <= 3: card['spoken'] = True
                     card = {k: v for k, v in card.items() if v is not None}
