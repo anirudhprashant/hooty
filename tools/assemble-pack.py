@@ -268,6 +268,18 @@ for u in pack['units']:
                         teach.insert(at, worked(w1, 1))
                     dropped['recall questions trimmed for problems'] = dropped.get('recall questions trimmed for problems', 0) + len(keep) - len([x for x in teach if x['type'] != 'worked']) - len([x for x in rest if x['type'] != 'worked'])
                     lesson['activities'] = keep = teach + rest
+            # I do, we do, you do belongs to every subject, not only maths: a worked example that arrives after the
+            # questions has already made the child struggle blind. Move the first worked card in front of the first
+            # graded question. This is the fix that survived a publish; editing pack.json directly does not, because
+            # this script rebuilds every pack from the chapter sources.
+            if lesson is not c['boss']:
+                wi = next((i for i, a in enumerate(lesson['activities']) if a.get('type') == 'worked'), -1)
+                qi = next((i for i, a in enumerate(lesson['activities']) if GRADED(a)), -1)
+                if wi > qi >= 0:
+                    worked_card = lesson['activities'].pop(wi)
+                    qi = next((i for i, a in enumerate(lesson['activities']) if GRADED(a)), -1)
+                    lesson['activities'].insert(qi, worked_card)
+                    keep = lesson['activities']
             # a lesson must teach before it tests: if its opening card was lost, write one from its checked facts
             key = lesson['id'].split('-l')[-1]
             if lesson is not c['boss'] and facts and not any(a['type'] == 'concept' for a in keep):

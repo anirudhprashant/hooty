@@ -14,6 +14,10 @@ import { join } from 'node:path';
 const PACKS = 'public/content/packs';
 const QUESTION = new Set(['mcq', 'truefalse', 'fillblank', 'matchpairs', 'dragorder', 'explore', 'cloze', 'storyorder', 'wordlab', 'numeric', 'shortanswer']);
 const INTERACTIVE = new Set(['explore', 'cloze', 'storyorder', 'wordlab', 'matchpairs', 'dragorder']);
+// Graded means it is scored. Exploration and word lab are not: an explore card before a worked example is
+// the child poking at the thing first, which is good, and counting it as "practice before teaching" was
+// the audit's own false positive.
+const GRADED = new Set(['mcq', 'truefalse', 'fillblank', 'matchpairs', 'dragorder', 'cloze', 'storyorder', 'numeric', 'shortanswer']);
 const EXERCISE_RE = /\b(write (it |them )?in your|in your notebook|in your copy|discuss (it )?with your (teacher|partner|parents)|ask your (teacher|parents)|with your teacher)\b/i;
 
 const args = process.argv.slice(2);
@@ -33,7 +37,7 @@ for (const book of books) {
     const flags = [];
     const detail = [];
     if (!qIdx.length) { flags.push('no-retrieval'); detail.push('nothing is ever asked'); }
-    const firstWorked = types.indexOf('worked'), firstQ = qIdx.length ? qIdx[0] : -1;
+    const firstWorked = types.indexOf('worked'), firstQ = types.findIndex((t) => GRADED.has(t));
     if (firstWorked >= 0 && firstQ >= 0 && firstWorked > firstQ) { flags.push('worked-after-practice'); detail.push(`worked example comes at step ${firstWorked + 1}, questions start at ${firstQ + 1}`); }
     const qs = acts.filter((a) => QUESTION.has(a.type) && a.type !== 'explore');
     if (qs.length >= 3) {
