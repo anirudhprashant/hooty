@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""What the Hooty team spent today, in tokens.
+"""What the Hooty team spent today, in tokens. Information, not a limit.
 
-Token counts are the budget that matters on this box: the model is billed by usage window, not by
-dollars, and the plan has already hit a 5-hour limit once. Hermes records every session in
-~/.hermes/state.db (input, output, cache-read, API calls), so this reads that ledger rather than
-estimating.
+Tokens are NOT the budget here. Anirudh's instruction, 27 Nov: "I don't care if tokens go higher,
+quality is what I care about." So this meter is information, not rationing: it exists so a session
+that has gone into a loop is visible, not so anyone spends less on looking, reading or redoing bad
+work. Hermes records every session in ~/.hermes/state.db (input, output, cache-read, API calls).
 
   python3 tools/token-meter.py            # today, Hooty sessions only, human lines
   python3 tools/token-meter.py --all      # every session today
@@ -21,8 +21,10 @@ from zoneinfo import ZoneInfo
 
 IST = ZoneInfo('Asia/Kolkata')
 DB = '/home/ubuntu/.hermes/state.db'
-DAY_BUDGET = int(os.environ.get('HOOTY_TOKEN_BUDGET', 4_000_000))   # input+output, whole team, per day
-SESSION_BUDGET = int(os.environ.get('HOOTY_SESSION_BUDGET', 1_200_000))
+# Runaway guards, not budgets: a session this large has stopped working and started spinning.
+RUNWAY_SESSION = int(os.environ.get('HOOTY_RUNAWAY_SESSION', 4_000_000))
+RUNWAY_DAY = int(os.environ.get('HOOTY_RUNAWAY_DAY', 15_000_000))
+RUNWAY_CALLS = int(os.environ.get('HOOTY_RUNAWAY_CALLS', 400))
 
 ARGS = sys.argv[1:]
 SHOW_ALL = '--all' in ARGS
@@ -76,7 +78,7 @@ def main():
             rows = [r for r in sessions_between(lo, hi) if is_hooty(r)]
             total = sum((r[2] or 0) + (r[3] or 0) for r in rows)
             print(f'  {day}  {len(rows):>2} sessions  {human(total):>7}'
-                  + ('  OVER BUDGET' if total > DAY_BUDGET else ''))
+                  + ('  <- looks stuck' if total > RUNWAY_DAY else ''))
         return
 
     lo, hi = day_bounds(today)
@@ -96,21 +98,20 @@ def main():
         if ended_at:
             span = f' {(ended_at - started_at) / 60:.0f}m'
         used = (i or 0) + (o or 0)
-        flag = '  <- over session budget' if used > SESSION_BUDGET else ''
+        flag = '  <- looks stuck' if used > RUNWAY_SESSION or (api or 0) > RUNWAY_CALLS else ''
         label = (title or 'untitled').split(' · ')[0][:38]
         print(f'  {when}{span:>5}  {label:38}  in {human(i or 0):>6}  out {human(o or 0):>5}'
               f'  cache {human(cache or 0):>6}  {api or 0:>3} calls{flag}')
         tin += i or 0
         tout += o or 0
         tcache += cache or 0
-        if used > SESSION_BUDGET:
-            problems.append(f'one session used {human(used)} tokens ({label})')
+        if used > RUNWAY_SESSION or (api or 0) > RUNWAY_CALLS:
+            problems.append(f'a session may be looping: {human(used)} tokens, {api or 0} calls ({label})')
 
     total = tin + tout
-    print(f'  total: {human(tin)} in, {human(tout)} out = {human(total)} tokens '
-          f'(cache reads {human(tcache)}), budget {human(DAY_BUDGET)}')
-    if total > DAY_BUDGET:
-        problems.append(f'team spent {human(total)} tokens today, over the {human(DAY_BUDGET)} budget')
+    print(f'  total: {human(tin)} in, {human(tout)} out = {human(total)} tokens (cache reads {human(tcache)})')
+    if total > RUNWAY_DAY:
+        problems.append(f'the day is at {human(total)} tokens, which usually means a loop somewhere')
     for line in problems:
         print(f'Hooty tokens: {line}')
 
