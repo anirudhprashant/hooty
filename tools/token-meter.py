@@ -21,8 +21,8 @@ from zoneinfo import ZoneInfo
 
 IST = ZoneInfo('Asia/Kolkata')
 DB = '/home/ubuntu/.hermes/state.db'
-DAY_BUDGET = int(os.environ.get('HOOTY_TOKEN_BUDGET', 3_000_000))   # input+output, whole team, per day
-SESSION_BUDGET = int(os.environ.get('HOOTY_SESSION_BUDGET', 900_000))
+DAY_BUDGET = int(os.environ.get('HOOTY_TOKEN_BUDGET', 4_000_000))   # input+output, whole team, per day
+SESSION_BUDGET = int(os.environ.get('HOOTY_SESSION_BUDGET', 1_200_000))
 
 ARGS = sys.argv[1:]
 SHOW_ALL = '--all' in ARGS
