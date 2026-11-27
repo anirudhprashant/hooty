@@ -162,7 +162,10 @@ for (; steps < 60; steps++) {
     const prompt = (await page.locator('.activity__prompt').first().textContent().catch(() => '')) || '';
     const answer = answerFor(answers, prompt);
     if (answer != null) await input.fill(answer).catch(() => {});
-    else if (state.kind !== 'explain') problems.push(`no answer on file for text input: ${prompt.trim().slice(0, 80)}`);
+    // A checkpoint disables its reveal until something is written, so the walk has to write something or it
+    // sits on a disabled button and reports a false stuck-lesson.
+    else if (state.kind === 'explain') await input.fill('I read the page and this is my answer.').catch(() => {});
+    else problems.push(`no answer on file for text input: ${prompt.trim().slice(0, 80)}`);
   }
 
   trace('  match pairs');

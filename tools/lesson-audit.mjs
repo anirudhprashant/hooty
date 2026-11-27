@@ -51,6 +51,9 @@ for (const book of books) {
     const reused = qs.filter((a) => EXERCISE_RE.test(String(a.prompt || '')));
     if (reused.length) { flags.push('textbook-exercise'); detail.push(`asks the textbook's own task: "${String(reused[0].prompt).slice(0, 80)}"`); }
     if (!types.some((t) => INTERACTIVE.has(t))) { flags.push('no-interaction'); detail.push('nothing to touch'); }
+    // The checkpoint is the "did the page go in" card between teaching and practice.
+    const isExam = l.id.endsWith('-exam') || !qIdx.length;
+    if (!isExam && !acts.some((a) => (a.tags || []).includes('checkpoint'))) { flags.push('no-checkpoint'); detail.push('teaching goes straight to the test'); }
     const long = qs.filter((a) => String(a.prompt || '').length > 220);
     if (long.length) { flags.push('long-prompt'); detail.push(`${long.length} question(s) over 220 characters`); }
     // Ends-flat was checked per lesson and fired on all 3,619, because no lesson has a closing card at

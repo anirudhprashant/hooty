@@ -16,6 +16,9 @@ FILLER = {
     'think': {'en': 'Think it through with Hooty.', 'hi': 'हूटी के साथ मिलकर सोचिए।'},
     'exam': {'en': 'Compare your answer with the points a marker looks for.', 'hi': 'अपने उत्तर को उन बिंदुओं से मिलाइए जो जाँचने वाला देखता है।'},
     'explore': {'en': 'Play with it and see what changes.', 'hi': 'इसे चलाकर देखिए क्या बदलता है।'},
+    'say_back': {'en': 'In your own words: ', 'hi': 'अपने शब्दों में: '},
+    'say_aloud': {'en': 'Say it out loud first.', 'hi': 'पहले ज़ोर से बोलिए।'},
+    'check_note': {'en': 'Compare what you said with the page.', 'hi': 'आपने जो कहा, उसकी तुलना पृष्ठ से कीजिए।'},
 }
 WLANG = SUBJ.get('language', 'en')
 W = lambda k: FILLER[k].get(WLANG) or FILLER[k]['en']
@@ -280,7 +283,6 @@ for u in pack['units']:
                     qi = next((i for i, a in enumerate(lesson['activities']) if GRADED(a)), -1)
                     lesson['activities'].insert(qi, worked_card)
                     keep = lesson['activities']
-            # a lesson must teach before it tests: if its opening card was lost, write one from its checked facts
             key = lesson['id'].split('-l')[-1]
             if lesson is not c['boss'] and facts and not any(a['type'] == 'concept' for a in keep):
                 fl = next((l['facts'] for l in facts['lessons'] if l['id'] == 'l' + key), None)
@@ -291,6 +293,29 @@ for u in pack['units']:
                         'explanation': 'अब कुछ सवाल करते हैं।' if hi else 'Now try some questions.',
                         'src': [{'ch': n, 'p': f['p']} for f in fl[:5]]})
                     dropped['opening card rebuilt'] = dropped.get('opening card rebuilt', 0) + 1
+            # A child who skimmed the page should be caught at the teaching, not at the test. Straight after the
+            # last concept card comes a checkpoint: the lesson's own opening question, answered in the child's
+            # words, with the page's own text revealed as the good answer and its key points to tick off.
+            # Classes 1-3 say it aloud instead of typing, because a six-year-old on a phone keyboard is a
+            # usability bug, not a learning activity.
+            if lesson is not c['boss'] and not lesson['id'].endswith('-exam'):
+                acts = lesson['activities']
+                cps = [a for a in acts if 'checkpoint' in (a.get('tags') or [])]
+                last_concept = max((i for i, a in enumerate(acts) if a.get('type') == 'concept'), default=-1)
+                concept = acts[last_concept] if last_concept >= 0 else None
+                hook = next((a for a in acts if a.get('type') == 'hook' and a.get('prompt')), None)
+                if not cps and concept and concept.get('body'):
+                    grade = int(str(SUBJ.get('grade', '6')).split('.')[0] or 6)
+                    # The kicker already says 'in your own words', so the question itself is the hook's own question,
+                    # not that phrase stacked twice.
+                    prompt = hook['prompt'] if hook else (W('say_back') + (concept.get('title') or ''))
+                    card = {'type': 'explain', 'id': f"{lesson['id']}-chk", 'difficulty': 1, 'tags': ['checkpoint'],
+                            'kicker': W('say_aloud') if grade <= 3 else None,
+                            'prompt': prompt, 'answer': concept['body'], 'explanation': W('check_note'),
+                            'points': (concept.get('keyPoints') or [])[:4]}
+                    if grade <= 3: card['spoken'] = True
+                    card = {k: v for k, v in card.items() if v is not None}
+                    acts.insert(last_concept + 1, card)
 if dropped: print('lint:', dropped)
 
 # a chapter cannot cite a page past its own end (answer-key pages at the back of a PDF have no printed number)
