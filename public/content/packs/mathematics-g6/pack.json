@@ -20499,38 +20499,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "mathematics-g6-ch4-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "picturechart",
-         "params": {
-          "kind": "things"
-         },
-         "title": "Fill the picture chart",
-         "tasks": [
-          {
-           "say": "Make the first row the longest.",
-           "when": "a > b and a > c and a > d",
-           "then": "The longest row is the one chosen by the most children."
-          },
-          {
-           "say": "Make the second row shorter than the first but longer than the third.",
-           "when": "b < a and b > c",
-           "then": "The second row has fewer than the first and more than the third."
-          },
-          {
-           "say": "Make every row the same length.",
-           "when": "a == b and b == c and c == d",
-           "then": "When every row has the same number, no one is the most or the least."
-          }
-         ],
-         "takeaway": "One face stands for one child: the longest row is the most liked, the shortest the least.",
-         "explanation": "One face stands for one child: the longest row is the most liked, the shortest the least."
-        },
-        {
          "type": "worked",
          "id": "mathematics-g6-ch4-l2-t1",
          "difficulty": 1,
@@ -20576,6 +20544,38 @@
            "p": 83
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "picturechart",
+         "params": {
+          "kind": "things"
+         },
+         "title": "Fill the picture chart",
+         "tasks": [
+          {
+           "say": "Make the first row the longest.",
+           "when": "a > b and a > c and a > d",
+           "then": "The longest row is the one chosen by the most children."
+          },
+          {
+           "say": "Make the second row shorter than the first but longer than the third.",
+           "when": "b < a and b > c",
+           "then": "The second row has fewer than the first and more than the third."
+          },
+          {
+           "say": "Make every row the same length.",
+           "when": "a == b and b == c and c == d",
+           "then": "When every row has the same number, no one is the most or the least."
+          }
+         ],
+         "takeaway": "One face stands for one child: the longest row is the most liked, the shortest the least.",
+         "explanation": "One face stands for one child: the longest row is the most liked, the shortest the least."
         },
         {
          "type": "mcq",
@@ -25954,36 +25954,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "mathematics-g6-ch5-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "factors",
-         "params": {},
-         "title": "Rectangles of dots",
-         "tasks": [
-          {
-           "say": "Make 24. How many rectangles can it make?",
-           "when": "n == 24",
-           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
-          },
-          {
-           "say": "Find a prime number bigger than 20.",
-           "when": "n == 23 or n == 29 or n == 31 or n == 37",
-           "then": "It makes only one long row, so it has just two factors: it is prime."
-          },
-          {
-           "say": "Find the number up to 40 with 9 factors.",
-           "when": "n == 36",
-           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
-          }
-         ],
-         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
-         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
-        },
-        {
          "type": "worked",
          "id": "mathematics-g6-ch5-l2-t1",
          "difficulty": 1,
@@ -26019,6 +25989,36 @@
            "p": 112
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "mathematics-g6-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "factors",
+         "params": {},
+         "title": "Rectangles of dots",
+         "tasks": [
+          {
+           "say": "Make 24. How many rectangles can it make?",
+           "when": "n == 24",
+           "then": "24 makes 4 rectangles: 1 x 24, 2 x 12, 3 x 8 and 4 x 6."
+          },
+          {
+           "say": "Find a prime number bigger than 20.",
+           "when": "n == 23 or n == 29 or n == 31 or n == 37",
+           "then": "It makes only one long row, so it has just two factors: it is prime."
+          },
+          {
+           "say": "Find the number up to 40 with 9 factors.",
+           "when": "n == 36",
+           "then": "36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36. Square numbers have an odd number of factors."
+          }
+         ],
+         "takeaway": "Every rectangle a number can make is a factor pair; a prime can only make one long row.",
+         "explanation": "Every rectangle a number can make is a factor pair; a prime can only make one long row."
         },
         {
          "type": "mcq",
@@ -30067,9 +30067,9 @@
          ],
          "answer": 1,
          "why": {
+          "1": "1 is part of the co-prime rule, not the number of pegs.",
           "3": "3 is the thread-gap, not the number of pegs.",
-          "9": "9 is part of the safe pair, not this diagram's peg count.",
-          "1": "1 is part of the co-prime rule, not the number of pegs."
+          "9": "9 is part of the safe pair, not this diagram's peg count."
          },
          "explanation": "There are 13 pegs, and the thread is tied to every one.",
          "anchor": "mathematics-g6-ch5-l3-read",

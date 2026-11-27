@@ -2190,31 +2190,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch1-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "pendulum",
-         "params": {},
-         "title": "Test a guess with a pendulum",
-         "tasks": [
-          {
-           "say": "I guess a short string swings quickly. Set it to 10 cm and watch.",
-           "when": "len == 10",
-           "then": "The short pendulum swings quickly."
-          },
-          {
-           "say": "Now set the string to 100 cm and test your guess again.",
-           "when": "len == 100",
-           "then": "The longer string swings more slowly."
-          }
-         ],
-         "takeaway": "By observing, guessing, and changing one thing to test the guess, we can find the answer.",
-         "explanation": "By observing, guessing, and changing one thing to test the guess, we can find the answer."
-        },
-        {
          "type": "worked",
          "id": "science-ch1-l5-t1",
          "difficulty": 1,
@@ -2265,6 +2240,31 @@
            "p": 6
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch1-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pendulum",
+         "params": {},
+         "title": "Test a guess with a pendulum",
+         "tasks": [
+          {
+           "say": "I guess a short string swings quickly. Set it to 10 cm and watch.",
+           "when": "len == 10",
+           "then": "The short pendulum swings quickly."
+          },
+          {
+           "say": "Now set the string to 100 cm and test your guess again.",
+           "when": "len == 100",
+           "then": "The longer string swings more slowly."
+          }
+         ],
+         "takeaway": "By observing, guessing, and changing one thing to test the guess, we can find the answer.",
+         "explanation": "By observing, guessing, and changing one thing to test the guess, we can find the answer."
         },
         {
          "type": "truefalse",
@@ -4355,41 +4355,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch2-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "plantparts",
-         "params": {},
-         "title": "Tap the parts of a plant",
-         "tasks": [
-          {
-           "say": "Find the part that carries water up to the leaves.",
-           "when": "part == 1",
-           "then": "The stem is like a pipe from the roots to the leaves."
-          },
-          {
-           "say": "Find the part that makes food using sunlight.",
-           "when": "part == 2",
-           "then": "Leaves make food for the whole plant."
-          },
-          {
-           "say": "Find the part that makes the fruit and seeds.",
-           "when": "part == 3",
-           "then": "The flower makes the fruit, and the fruit holds the seeds."
-          },
-          {
-           "say": "Find the part a new plant can grow from.",
-           "when": "part == 5",
-           "then": "A seed can grow into a new plant."
-          }
-         ],
-         "takeaway": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them.",
-         "explanation": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them."
-        },
-        {
          "type": "worked",
          "id": "science-ch2-l2-t1",
          "difficulty": 1,
@@ -4445,6 +4410,41 @@
            "p": 17
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "plantparts",
+         "params": {},
+         "title": "Tap the parts of a plant",
+         "tasks": [
+          {
+           "say": "Find the part that carries water up to the leaves.",
+           "when": "part == 1",
+           "then": "The stem is like a pipe from the roots to the leaves."
+          },
+          {
+           "say": "Find the part that makes food using sunlight.",
+           "when": "part == 2",
+           "then": "Leaves make food for the whole plant."
+          },
+          {
+           "say": "Find the part that makes the fruit and seeds.",
+           "when": "part == 3",
+           "then": "The flower makes the fruit, and the fruit holds the seeds."
+          },
+          {
+           "say": "Find the part a new plant can grow from.",
+           "when": "part == 5",
+           "then": "A seed can grow into a new plant."
+          }
+         ],
+         "takeaway": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them.",
+         "explanation": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them."
         },
         {
          "type": "concept",
@@ -5077,41 +5077,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch2-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "plantparts",
-         "params": {},
-         "title": "Tap the parts of a plant",
-         "tasks": [
-          {
-           "say": "Find the part that carries water up to the leaves.",
-           "when": "part == 1",
-           "then": "The stem is like a pipe from the roots to the leaves."
-          },
-          {
-           "say": "Find the part that makes food using sunlight.",
-           "when": "part == 2",
-           "then": "Leaves make food for the whole plant."
-          },
-          {
-           "say": "Find the part that makes the fruit and seeds.",
-           "when": "part == 3",
-           "then": "The flower makes the fruit, and the fruit holds the seeds."
-          },
-          {
-           "say": "Find the part a new plant can grow from.",
-           "when": "part == 5",
-           "then": "A seed can grow into a new plant."
-          }
-         ],
-         "takeaway": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them.",
-         "explanation": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them."
-        },
-        {
          "type": "worked",
          "id": "science-ch2-l3-t1",
          "difficulty": 1,
@@ -5157,6 +5122,41 @@
            "p": 19
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch2-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "plantparts",
+         "params": {},
+         "title": "Tap the parts of a plant",
+         "tasks": [
+          {
+           "say": "Find the part that carries water up to the leaves.",
+           "when": "part == 1",
+           "then": "The stem is like a pipe from the roots to the leaves."
+          },
+          {
+           "say": "Find the part that makes food using sunlight.",
+           "when": "part == 2",
+           "then": "Leaves make food for the whole plant."
+          },
+          {
+           "say": "Find the part that makes the fruit and seeds.",
+           "when": "part == 3",
+           "then": "The flower makes the fruit, and the fruit holds the seeds."
+          },
+          {
+           "say": "Find the part a new plant can grow from.",
+           "when": "part == 5",
+           "then": "A seed can grow into a new plant."
+          }
+         ],
+         "takeaway": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them.",
+         "explanation": "Roots hold the plant and take in water, the stem carries water up, leaves make food, flowers make seeds and fruit protects them."
         },
         {
          "type": "concept",
@@ -10758,41 +10758,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch3-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "plate",
-         "params": {},
-         "title": "Fill a balanced plate",
-         "tasks": [
-          {
-           "say": "Put some energy food on the plate.",
-           "when": "grain >= 1",
-           "then": "Rice, roti and potato give you energy to run and play."
-          },
-          {
-           "say": "Add some body-building food.",
-           "when": "protein >= 1",
-           "then": "Dal, pulses, egg and milk help you grow and build strong muscles."
-          },
-          {
-           "say": "Make protective food the biggest part of the plate.",
-           "when": "veg >= 2 and veg > grain and veg > protein",
-           "then": "Vegetables and fruits should fill the most of a balanced plate: they help you fight illness."
-          },
-          {
-           "say": "Fill the plate with only junk food.",
-           "when": "junk >= 3 and grain == 0 and protein == 0 and veg == 0",
-           "then": "Chips, soft drinks and fried food have a lot of oil, salt and sugar. They are sometimes food, not a meal."
-          }
-         ],
-         "takeaway": "A balanced plate has protective food as its biggest part, with body-building food and some energy food. Junk food is a sometimes food.",
-         "explanation": "A balanced plate has protective food as its biggest part, with body-building food and some energy food. Junk food is a sometimes food."
-        },
-        {
          "type": "worked",
          "id": "science-ch3-l6-t1",
          "difficulty": 1,
@@ -10838,6 +10803,41 @@
            "p": 52
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch3-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "plate",
+         "params": {},
+         "title": "Fill a balanced plate",
+         "tasks": [
+          {
+           "say": "Put some energy food on the plate.",
+           "when": "grain >= 1",
+           "then": "Rice, roti and potato give you energy to run and play."
+          },
+          {
+           "say": "Add some body-building food.",
+           "when": "protein >= 1",
+           "then": "Dal, pulses, egg and milk help you grow and build strong muscles."
+          },
+          {
+           "say": "Make protective food the biggest part of the plate.",
+           "when": "veg >= 2 and veg > grain and veg > protein",
+           "then": "Vegetables and fruits should fill the most of a balanced plate: they help you fight illness."
+          },
+          {
+           "say": "Fill the plate with only junk food.",
+           "when": "junk >= 3 and grain == 0 and protein == 0 and veg == 0",
+           "then": "Chips, soft drinks and fried food have a lot of oil, salt and sugar. They are sometimes food, not a meal."
+          }
+         ],
+         "takeaway": "A balanced plate has protective food as its biggest part, with body-building food and some energy food. Junk food is a sometimes food.",
+         "explanation": "A balanced plate has protective food as its biggest part, with body-building food and some energy food. Junk food is a sometimes food."
         },
         {
          "type": "concept",
@@ -12770,31 +12770,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch4-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "magnets",
-         "params": {},
-         "title": "Bring two magnets together",
-         "tasks": [
-          {
-           "say": "Flip the right magnet.",
-           "when": "flip == 1",
-           "then": "Like poles face each other and push apart."
-          },
-          {
-           "say": "Flip it back and bring them close.",
-           "when": "flip == 0 and gap <= 30",
-           "then": "Unlike poles pull together, more strongly when close."
-          }
-         ],
-         "takeaway": "Like poles repel and unlike poles attract.",
-         "explanation": "Like poles repel and unlike poles attract."
-        },
-        {
          "type": "worked",
          "id": "science-ch4-l2-t1",
          "difficulty": 1,
@@ -12845,6 +12820,31 @@
            "p": 65
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch4-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "magnets",
+         "params": {},
+         "title": "Bring two magnets together",
+         "tasks": [
+          {
+           "say": "Flip the right magnet.",
+           "when": "flip == 1",
+           "then": "Like poles face each other and push apart."
+          },
+          {
+           "say": "Flip it back and bring them close.",
+           "when": "flip == 0 and gap <= 30",
+           "then": "Unlike poles pull together, more strongly when close."
+          }
+         ],
+         "takeaway": "Like poles repel and unlike poles attract.",
+         "explanation": "Like poles repel and unlike poles attract."
         },
         {
          "type": "truefalse",
@@ -14332,36 +14332,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch4-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "magnets",
-         "params": {},
-         "title": "Explore attraction and repulsion!",
-         "tasks": [
-          {
-           "say": "Set the gap to 10 and leave flip at 0. Watch the facing poles.",
-           "when": "gap == 10 and flip == 0",
-           "then": "The two magnets show either attraction or repulsion when their poles are close."
-          },
-          {
-           "say": "Keep the gap at 10 and change flip to 1. Compare the movement.",
-           "when": "gap == 10 and flip == 1",
-           "then": "Flipping one magnet reverses whether the facing poles attract or repel."
-          },
-          {
-           "say": "Start at a gap of 80, then make the gap larger than 80 and compare.",
-           "when": "gap > 80 and flip == 0",
-           "then": "The magnetic effect becomes stronger when the magnets are closer together."
-          }
-         ],
-         "takeaway": "Unlike poles attract, like poles repel, and magnets have a stronger effect when they are close.",
-         "explanation": "Unlike poles attract, like poles repel, and magnets have a stronger effect when they are close."
-        },
-        {
          "type": "worked",
          "id": "science-ch4-l5-t1",
          "difficulty": 1,
@@ -14397,6 +14367,36 @@
            "p": 71
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch4-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "magnets",
+         "params": {},
+         "title": "Explore attraction and repulsion!",
+         "tasks": [
+          {
+           "say": "Set the gap to 10 and leave flip at 0. Watch the facing poles.",
+           "when": "gap == 10 and flip == 0",
+           "then": "The two magnets show either attraction or repulsion when their poles are close."
+          },
+          {
+           "say": "Keep the gap at 10 and change flip to 1. Compare the movement.",
+           "when": "gap == 10 and flip == 1",
+           "then": "Flipping one magnet reverses whether the facing poles attract or repel."
+          },
+          {
+           "say": "Start at a gap of 80, then make the gap larger than 80 and compare.",
+           "when": "gap > 80 and flip == 0",
+           "then": "The magnetic effect becomes stronger when the magnets are closer together."
+          }
+         ],
+         "takeaway": "Unlike poles attract, like poles repel, and magnets have a stronger effect when they are close.",
+         "explanation": "Unlike poles attract, like poles repel, and magnets have a stronger effect when they are close."
         },
         {
          "type": "concept",
@@ -14819,36 +14819,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch4-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "magnets",
-         "params": {},
-         "title": "Explore Magnet Push and Pull",
-         "tasks": [
-          {
-           "say": "Flip the right magnet at a gap of 80 and compare it with the starting arrangement.",
-           "when": "flip == 1 and gap == 80",
-           "then": "Different pole arrangements can make magnets move together or apart."
-          },
-          {
-           "say": "Keep this arrangement and reduce the gap to 20.",
-           "when": "flip == 1 and gap == 20",
-           "then": "The magnetic push or pull becomes stronger when magnets are closer."
-          },
-          {
-           "say": "Keep the small gap and restore the starting orientation.",
-           "when": "flip == 0 and gap == 20",
-           "then": "Turning a magnet around changes attraction into repulsion, or repulsion into attraction."
-          }
-         ],
-         "takeaway": "Like poles repel and unlike poles attract, and magnetic force is stronger when magnets are closer.",
-         "explanation": "Like poles repel and unlike poles attract, and magnetic force is stronger when magnets are closer."
-        },
-        {
          "type": "worked",
          "id": "science-ch4-l6-t1",
          "difficulty": 1,
@@ -14879,6 +14849,36 @@
            "p": 72
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch4-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "magnets",
+         "params": {},
+         "title": "Explore Magnet Push and Pull",
+         "tasks": [
+          {
+           "say": "Flip the right magnet at a gap of 80 and compare it with the starting arrangement.",
+           "when": "flip == 1 and gap == 80",
+           "then": "Different pole arrangements can make magnets move together or apart."
+          },
+          {
+           "say": "Keep this arrangement and reduce the gap to 20.",
+           "when": "flip == 1 and gap == 20",
+           "then": "The magnetic push or pull becomes stronger when magnets are closer."
+          },
+          {
+           "say": "Keep the small gap and restore the starting orientation.",
+           "when": "flip == 0 and gap == 20",
+           "then": "Turning a magnet around changes attraction into repulsion, or repulsion into attraction."
+          }
+         ],
+         "takeaway": "Like poles repel and unlike poles attract, and magnetic force is stronger when magnets are closer.",
+         "explanation": "Like poles repel and unlike poles attract, and magnetic force is stronger when magnets are closer."
         },
         {
          "type": "truefalse",
@@ -16530,36 +16530,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch5-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "ruler",
-         "params": {},
-         "title": "Measure the pencil",
-         "tasks": [
-          {
-           "say": "Line the pencil up with the zero mark.",
-           "when": "start == 0",
-           "then": "Starting at 0, you can read the length straight off the end."
-          },
-          {
-           "say": "Make a pencil exactly 10 cm long.",
-           "when": "len == 100",
-           "then": "10 cm = 100 mm."
-          },
-          {
-           "say": "Start at the 3 cm mark and make it 5 cm long.",
-           "when": "start == 3 and len == 50",
-           "then": "It ends at 8 cm: 8 - 3 = 5 cm."
-          }
-         ],
-         "takeaway": "Length = where it ends minus where it starts. 1 cm = 10 mm.",
-         "explanation": "Length = where it ends minus where it starts. 1 cm = 10 mm."
-        },
-        {
          "type": "worked",
          "id": "science-ch5-l2-t1",
          "difficulty": 1,
@@ -16605,6 +16575,36 @@
            "p": 82
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ruler",
+         "params": {},
+         "title": "Measure the pencil",
+         "tasks": [
+          {
+           "say": "Line the pencil up with the zero mark.",
+           "when": "start == 0",
+           "then": "Starting at 0, you can read the length straight off the end."
+          },
+          {
+           "say": "Make a pencil exactly 10 cm long.",
+           "when": "len == 100",
+           "then": "10 cm = 100 mm."
+          },
+          {
+           "say": "Start at the 3 cm mark and make it 5 cm long.",
+           "when": "start == 3 and len == 50",
+           "then": "It ends at 8 cm: 8 - 3 = 5 cm."
+          }
+         ],
+         "takeaway": "Length = where it ends minus where it starts. 1 cm = 10 mm.",
+         "explanation": "Length = where it ends minus where it starts. 1 cm = 10 mm."
         },
         {
          "type": "mcq",
@@ -17096,36 +17096,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch5-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "ruler",
-         "params": {},
-         "title": "Measure the pencil",
-         "tasks": [
-          {
-           "say": "Line the pencil up with the zero mark.",
-           "when": "start == 0",
-           "then": "Starting at 0, you can read the length straight off the end."
-          },
-          {
-           "say": "Make a pencil exactly 10 cm long.",
-           "when": "len == 100",
-           "then": "10 cm = 100 mm."
-          },
-          {
-           "say": "Start at the 3 cm mark and make it 5 cm long.",
-           "when": "start == 3 and len == 50",
-           "then": "It ends at 8 cm: 8 - 3 = 5 cm."
-          }
-         ],
-         "takeaway": "Length = where it ends minus where it starts. 1 cm = 10 mm.",
-         "explanation": "Length = where it ends minus where it starts. 1 cm = 10 mm."
-        },
-        {
          "type": "worked",
          "id": "science-ch5-l3-t1",
          "difficulty": 1,
@@ -17166,6 +17136,36 @@
            "p": 86
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "ruler",
+         "params": {},
+         "title": "Measure the pencil",
+         "tasks": [
+          {
+           "say": "Line the pencil up with the zero mark.",
+           "when": "start == 0",
+           "then": "Starting at 0, you can read the length straight off the end."
+          },
+          {
+           "say": "Make a pencil exactly 10 cm long.",
+           "when": "len == 100",
+           "then": "10 cm = 100 mm."
+          },
+          {
+           "say": "Start at the 3 cm mark and make it 5 cm long.",
+           "when": "start == 3 and len == 50",
+           "then": "It ends at 8 cm: 8 - 3 = 5 cm."
+          }
+         ],
+         "takeaway": "Length = where it ends minus where it starts. 1 cm = 10 mm.",
+         "explanation": "Length = where it ends minus where it starts. 1 cm = 10 mm."
         },
         {
          "type": "matchpairs",
@@ -18531,31 +18531,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch5-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "pendulum",
-         "params": {},
-         "title": "Explore swinging motion",
-         "tasks": [
-          {
-           "say": "Make the string longer than 40 cm and watch the swing.",
-           "when": "len > 40",
-           "then": "A longer pendulum swings more slowly."
-          },
-          {
-           "say": "Make the string shorter than 40 cm and watch the swing.",
-           "when": "len < 40",
-           "then": "A shorter pendulum swings more quickly."
-          }
-         ],
-         "takeaway": "A pendulum shows oscillatory motion: it moves to and fro, repeating its path after a fixed interval of time.",
-         "explanation": "A pendulum shows oscillatory motion: it moves to and fro, repeating its path after a fixed interval of time."
-        },
-        {
          "type": "worked",
          "id": "science-ch5-l6-t1",
          "difficulty": 1,
@@ -18606,6 +18581,31 @@
            "p": 94
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch5-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "pendulum",
+         "params": {},
+         "title": "Explore swinging motion",
+         "tasks": [
+          {
+           "say": "Make the string longer than 40 cm and watch the swing.",
+           "when": "len > 40",
+           "then": "A longer pendulum swings more slowly."
+          },
+          {
+           "say": "Make the string shorter than 40 cm and watch the swing.",
+           "when": "len < 40",
+           "then": "A shorter pendulum swings more quickly."
+          }
+         ],
+         "takeaway": "A pendulum shows oscillatory motion: it moves to and fro, repeating its path after a fixed interval of time.",
+         "explanation": "A pendulum shows oscillatory motion: it moves to and fro, repeating its path after a fixed interval of time."
         },
         {
          "type": "matchpairs",
@@ -21061,31 +21061,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch6-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seethrough",
-         "params": {},
-         "title": "Look through it",
-         "tasks": [
-          {
-           "say": "Find a sheet that makes the star blurry.",
-           "when": "m == 3 or m == 4",
-           "then": "Butter paper and frosted glass are translucent."
-          },
-          {
-           "say": "Find a sheet that hides the star completely.",
-           "when": "m >= 5",
-           "then": "Wood, cardboard and metal are opaque."
-          }
-         ],
-         "takeaway": "Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all.",
-         "explanation": "Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all."
-        },
-        {
          "type": "worked",
          "id": "science-ch6-l4-t1",
          "difficulty": 1,
@@ -21125,6 +21100,31 @@
            "p": 109
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch6-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seethrough",
+         "params": {},
+         "title": "Look through it",
+         "tasks": [
+          {
+           "say": "Find a sheet that makes the star blurry.",
+           "when": "m == 3 or m == 4",
+           "then": "Butter paper and frosted glass are translucent."
+          },
+          {
+           "say": "Find a sheet that hides the star completely.",
+           "when": "m >= 5",
+           "then": "Wood, cardboard and metal are opaque."
+          }
+         ],
+         "takeaway": "Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all.",
+         "explanation": "Transparent: seen clearly. Translucent: seen, but not clearly. Opaque: not seen at all."
         },
         {
          "type": "mcq",
@@ -21618,36 +21618,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch6-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "tumblers",
-         "params": {},
-         "title": "Same tumbler, different water",
-         "tasks": [
-          {
-           "say": "Make tumbler A hold more water than B. Which is heavier?",
-           "when": "a > b",
-           "then": "A has more volume of water and more mass, so A is heavier: the balance tips towards it."
-          },
-          {
-           "say": "Fill both tumblers right to the top.",
-           "when": "a == 250 and b == 250",
-           "then": "Same capacity and both full: the same volume, 250 mL, and about the same mass."
-          },
-          {
-           "say": "Empty tumbler B and fill A. What does the balance show?",
-           "when": "a == 250 and b == 0",
-           "then": "A has volume and mass; B has none, so the balance tips right down towards A."
-          }
-         ],
-         "takeaway": "Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass.",
-         "explanation": "Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass."
-        },
-        {
          "type": "worked",
          "id": "science-ch6-l5-t1",
          "difficulty": 1,
@@ -21677,6 +21647,36 @@
            "p": 114
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch6-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "tumblers",
+         "params": {},
+         "title": "Same tumbler, different water",
+         "tasks": [
+          {
+           "say": "Make tumbler A hold more water than B. Which is heavier?",
+           "when": "a > b",
+           "then": "A has more volume of water and more mass, so A is heavier: the balance tips towards it."
+          },
+          {
+           "say": "Fill both tumblers right to the top.",
+           "when": "a == 250 and b == 250",
+           "then": "Same capacity and both full: the same volume, 250 mL, and about the same mass."
+          },
+          {
+           "say": "Empty tumbler B and fill A. What does the balance show?",
+           "when": "a == 250 and b == 0",
+           "then": "A has volume and mass; B has none, so the balance tips right down towards A."
+          }
+         ],
+         "takeaway": "Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass.",
+         "explanation": "Capacity is how much a container can hold; volume is how much space the water takes up; the one with more water has more mass."
         },
         {
          "type": "mcq",
@@ -23424,33 +23424,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch7-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "thermometer",
-         "params": {
-          "kind": "clinical"
-         },
-         "title": "Read the thermometer",
-         "tasks": [
-          {
-           "say": "Show normal body temperature.",
-           "when": "t >= 36.9 and t <= 37.1",
-           "then": "Normal body temperature is about 37 degrees Celsius."
-          },
-          {
-           "say": "Show a fever.",
-           "when": "t >= 38",
-           "then": "From about 38 degrees we call it a fever."
-          }
-         ],
-         "takeaway": "Find the value of one small mark first, then count the marks.",
-         "explanation": "Find the value of one small mark first, then count the marks."
-        },
-        {
          "type": "worked",
          "id": "science-ch7-l1-t1",
          "difficulty": 1,
@@ -23511,6 +23484,33 @@
            "p": 125
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "thermometer",
+         "params": {
+          "kind": "clinical"
+         },
+         "title": "Read the thermometer",
+         "tasks": [
+          {
+           "say": "Show normal body temperature.",
+           "when": "t >= 36.9 and t <= 37.1",
+           "then": "Normal body temperature is about 37 degrees Celsius."
+          },
+          {
+           "say": "Show a fever.",
+           "when": "t >= 38",
+           "then": "From about 38 degrees we call it a fever."
+          }
+         ],
+         "takeaway": "Find the value of one small mark first, then count the marks.",
+         "explanation": "Find the value of one small mark first, then count the marks."
         },
         {
          "type": "mcq",
@@ -23937,33 +23937,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch7-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "thermometer",
-         "params": {
-          "kind": "lab"
-         },
-         "title": "Read the thermometer",
-         "tasks": [
-          {
-           "say": "Show where water freezes.",
-           "when": "t <= 0 and t >= -1",
-           "then": "Water freezes at 0 degrees Celsius."
-          },
-          {
-           "say": "Show where water boils.",
-           "when": "t >= 100 and t <= 101",
-           "then": "Water boils at 100 degrees Celsius."
-          }
-         ],
-         "takeaway": "Find the value of one small mark first, then count the marks.",
-         "explanation": "Find the value of one small mark first, then count the marks."
-        },
-        {
          "type": "worked",
          "id": "science-ch7-l2-t1",
          "difficulty": 1,
@@ -24004,6 +23977,33 @@
            "p": 125
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "thermometer",
+         "params": {
+          "kind": "lab"
+         },
+         "title": "Read the thermometer",
+         "tasks": [
+          {
+           "say": "Show where water freezes.",
+           "when": "t <= 0 and t >= -1",
+           "then": "Water freezes at 0 degrees Celsius."
+          },
+          {
+           "say": "Show where water boils.",
+           "when": "t >= 100 and t <= 101",
+           "then": "Water boils at 100 degrees Celsius."
+          }
+         ],
+         "takeaway": "Find the value of one small mark first, then count the marks.",
+         "explanation": "Find the value of one small mark first, then count the marks."
         },
         {
          "type": "mcq",
@@ -24579,33 +24579,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch7-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "thermometer",
-         "params": {
-          "kind": "clinical"
-         },
-         "title": "Read the thermometer",
-         "tasks": [
-          {
-           "say": "Show normal body temperature.",
-           "when": "t >= 36.9 and t <= 37.1",
-           "then": "Normal body temperature is about 37 degrees Celsius."
-          },
-          {
-           "say": "Show a fever.",
-           "when": "t >= 38",
-           "then": "From about 38 degrees we call it a fever."
-          }
-         ],
-         "takeaway": "Find the value of one small mark first, then count the marks.",
-         "explanation": "Find the value of one small mark first, then count the marks."
-        },
-        {
          "type": "worked",
          "id": "science-ch7-l3-t1",
          "difficulty": 1,
@@ -24646,6 +24619,33 @@
            "p": 127
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "thermometer",
+         "params": {
+          "kind": "clinical"
+         },
+         "title": "Read the thermometer",
+         "tasks": [
+          {
+           "say": "Show normal body temperature.",
+           "when": "t >= 36.9 and t <= 37.1",
+           "then": "Normal body temperature is about 37 degrees Celsius."
+          },
+          {
+           "say": "Show a fever.",
+           "when": "t >= 38",
+           "then": "From about 38 degrees we call it a fever."
+          }
+         ],
+         "takeaway": "Find the value of one small mark first, then count the marks.",
+         "explanation": "Find the value of one small mark first, then count the marks."
         },
         {
          "type": "mcq",
@@ -27145,31 +27145,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch8-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "particles",
-         "params": {},
-         "title": "Heat and cool water",
-         "tasks": [
-          {
-           "say": "Cool it until it freezes.",
-           "when": "temp <= 0",
-           "then": "Ice keeps its own shape: its particles stay in place."
-          },
-          {
-           "say": "Warm it up to 40 degrees.",
-           "when": "temp == 40",
-           "then": "Liquid water flows and changes shape."
-          }
-         ],
-         "takeaway": "Heating and cooling change the state of water.",
-         "explanation": "Heating and cooling change the state of water."
-        },
-        {
          "type": "worked",
          "id": "science-ch8-l1-t1",
          "difficulty": 1,
@@ -27210,6 +27185,31 @@
            "p": 145
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch8-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "Heat and cool water",
+         "tasks": [
+          {
+           "say": "Cool it until it freezes.",
+           "when": "temp <= 0",
+           "then": "Ice keeps its own shape: its particles stay in place."
+          },
+          {
+           "say": "Warm it up to 40 degrees.",
+           "when": "temp == 40",
+           "then": "Liquid water flows and changes shape."
+          }
+         ],
+         "takeaway": "Heating and cooling change the state of water.",
+         "explanation": "Heating and cooling change the state of water."
         },
         {
          "type": "mcq",
@@ -27658,31 +27658,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch8-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "watercycle",
-         "params": {},
-         "title": "Follow water vapour as it becomes droplets",
-         "tasks": [
-          {
-           "say": "Move to the step where water vapour cools into clouds.",
-           "when": "step == 2",
-           "then": "Cooling water vapour forms tiny liquid water droplets."
-          },
-          {
-           "say": "Move to the step where water falls as rain.",
-           "when": "step == 3",
-           "then": "The liquid water droplets combine and fall as rain."
-          }
-         ],
-         "takeaway": "When water vapour cools and changes into liquid water droplets, condensation occurs.",
-         "explanation": "When water vapour cools and changes into liquid water droplets, condensation occurs."
-        },
-        {
          "type": "worked",
          "id": "science-ch8-l2-t1",
          "difficulty": 1,
@@ -27717,6 +27692,31 @@
            "p": 149
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "watercycle",
+         "params": {},
+         "title": "Follow water vapour as it becomes droplets",
+         "tasks": [
+          {
+           "say": "Move to the step where water vapour cools into clouds.",
+           "when": "step == 2",
+           "then": "Cooling water vapour forms tiny liquid water droplets."
+          },
+          {
+           "say": "Move to the step where water falls as rain.",
+           "when": "step == 3",
+           "then": "The liquid water droplets combine and fall as rain."
+          }
+         ],
+         "takeaway": "When water vapour cools and changes into liquid water droplets, condensation occurs.",
+         "explanation": "When water vapour cools and changes into liquid water droplets, condensation occurs."
         },
         {
          "type": "mcq",
@@ -28164,36 +28164,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch8-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "particles",
-         "params": {},
-         "title": "The three states of water",
-         "tasks": [
-          {
-           "say": "Make ice.",
-           "when": "temp <= 0",
-           "then": "Solid: it holds its shape."
-          },
-          {
-           "say": "Warm it to 50 degrees.",
-           "when": "temp == 50",
-           "then": "Liquid: it flows."
-          },
-          {
-           "say": "Boil it into a gas.",
-           "when": "temp >= 100",
-           "then": "Gas: it spreads through all the space."
-          }
-         ],
-         "takeaway": "The same water can be a solid, a liquid or a gas.",
-         "explanation": "The same water can be a solid, a liquid or a gas."
-        },
-        {
          "type": "worked",
          "id": "science-ch8-l3-t1",
          "difficulty": 1,
@@ -28239,6 +28209,36 @@
            "p": 151
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch8-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "The three states of water",
+         "tasks": [
+          {
+           "say": "Make ice.",
+           "when": "temp <= 0",
+           "then": "Solid: it holds its shape."
+          },
+          {
+           "say": "Warm it to 50 degrees.",
+           "when": "temp == 50",
+           "then": "Liquid: it flows."
+          },
+          {
+           "say": "Boil it into a gas.",
+           "when": "temp >= 100",
+           "then": "Gas: it spreads through all the space."
+          }
+         ],
+         "takeaway": "The same water can be a solid, a liquid or a gas.",
+         "explanation": "The same water can be a solid, a liquid or a gas."
         },
         {
          "type": "concept",
@@ -29158,36 +29158,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch8-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "watercycle",
-         "params": {},
-         "title": "Follow a drop of water",
-         "tasks": [
-          {
-           "say": "Go to the clouds.",
-           "when": "step == 2",
-           "then": "Vapour cools high up and condenses."
-          },
-          {
-           "say": "Make it rain.",
-           "when": "step == 3",
-           "then": "Heavy drops fall."
-          },
-          {
-           "say": "Bring it back to the sea.",
-           "when": "step == 4",
-           "then": "Then the cycle begins again."
-          }
-         ],
-         "takeaway": "Water keeps moving between the sea, the air and the land.",
-         "explanation": "Water keeps moving between the sea, the air and the land."
-        },
-        {
          "type": "worked",
          "id": "science-ch8-l5-t1",
          "difficulty": 1,
@@ -29223,6 +29193,36 @@
            "p": 158
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch8-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "watercycle",
+         "params": {},
+         "title": "Follow a drop of water",
+         "tasks": [
+          {
+           "say": "Go to the clouds.",
+           "when": "step == 2",
+           "then": "Vapour cools high up and condenses."
+          },
+          {
+           "say": "Make it rain.",
+           "when": "step == 3",
+           "then": "Heavy drops fall."
+          },
+          {
+           "say": "Bring it back to the sea.",
+           "when": "step == 4",
+           "then": "Then the cycle begins again."
+          }
+         ],
+         "takeaway": "Water keeps moving between the sea, the air and the land.",
+         "explanation": "Water keeps moving between the sea, the air and the land."
         },
         {
          "type": "mcq",
@@ -31075,28 +31075,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch9-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "separate",
-         "params": {
-          "kind": "winnow"
-         },
-         "title": "Separate the mixture",
-         "tasks": [
-          {
-           "say": "Blow enough wind to carry the husk away from the grain.",
-           "when": "wind >= 6",
-           "then": "The light husk blows away and the heavy grain falls close: winnowing."
-          }
-         ],
-         "takeaway": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink.",
-         "explanation": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink."
-        },
-        {
          "type": "worked",
          "id": "science-ch9-l2-t1",
          "difficulty": 1,
@@ -31142,6 +31120,28 @@
            "p": 177
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch9-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "separate",
+         "params": {
+          "kind": "winnow"
+         },
+         "title": "Separate the mixture",
+         "tasks": [
+          {
+           "say": "Blow enough wind to carry the husk away from the grain.",
+           "when": "wind >= 6",
+           "then": "The light husk blows away and the heavy grain falls close: winnowing."
+          }
+         ],
+         "takeaway": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink.",
+         "explanation": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink."
         },
         {
          "type": "concept",
@@ -31540,31 +31540,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch9-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "particles",
-         "params": {},
-         "title": "Heat the water",
-         "tasks": [
-          {
-           "say": "Freeze the water.",
-           "when": "temp < 0",
-           "then": "Below 0 degrees water is ice: its particles can only jiggle in place."
-          },
-          {
-           "say": "Boil it.",
-           "when": "temp >= 100",
-           "then": "At 100 degrees water boils and its particles fly apart as steam."
-          }
-         ],
-         "takeaway": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.",
-         "explanation": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam."
-        },
-        {
          "type": "worked",
          "id": "science-ch9-l3-t1",
          "difficulty": 1,
@@ -31610,6 +31585,31 @@
            "p": 168
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch9-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "Heat the water",
+         "tasks": [
+          {
+           "say": "Freeze the water.",
+           "when": "temp < 0",
+           "then": "Below 0 degrees water is ice: its particles can only jiggle in place."
+          },
+          {
+           "say": "Boil it.",
+           "when": "temp >= 100",
+           "then": "At 100 degrees water boils and its particles fly apart as steam."
+          }
+         ],
+         "takeaway": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.",
+         "explanation": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam."
         },
         {
          "type": "fillblank",
@@ -32009,33 +32009,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch9-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "separate",
-         "params": {
-          "kind": "settle"
-         },
-         "title": "Separate the mixture",
-         "tasks": [
-          {
-           "say": "Let the tea stand until the leaves settle.",
-           "when": "min >= 6",
-           "then": "The leaves have sunk to the bottom: sedimentation."
-          },
-          {
-           "say": "Now pour off the tea.",
-           "when": "min >= 6 and tilt == 1",
-           "then": "Pouring the liquid off the settled leaves is decantation."
-          }
-         ],
-         "takeaway": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink.",
-         "explanation": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink."
-        },
-        {
          "type": "worked",
          "id": "science-ch9-l4-t1",
          "difficulty": 1,
@@ -32091,6 +32064,33 @@
            "p": 170
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "separate",
+         "params": {
+          "kind": "settle"
+         },
+         "title": "Separate the mixture",
+         "tasks": [
+          {
+           "say": "Let the tea stand until the leaves settle.",
+           "when": "min >= 6",
+           "then": "The leaves have sunk to the bottom: sedimentation."
+          },
+          {
+           "say": "Now pour off the tea.",
+           "when": "min >= 6 and tilt == 1",
+           "then": "Pouring the liquid off the settled leaves is decantation."
+          }
+         ],
+         "takeaway": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink.",
+         "explanation": "Mixtures are separated by a difference between their parts: weight, size, or whether they sink."
         },
         {
          "type": "mcq",
@@ -32521,31 +32521,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch9-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "magnets",
-         "params": {},
-         "title": "Push and pull",
-         "tasks": [
-          {
-           "say": "Make the magnets push each other away.",
-           "when": "flip == 1",
-           "then": "Like poles facing each other repel."
-          },
-          {
-           "say": "Bring them very close.",
-           "when": "gap <= 20",
-           "then": "Closer magnets pull or push much harder."
-          }
-         ],
-         "takeaway": "Unlike poles attract, like poles repel, and both get stronger when the magnets are close.",
-         "explanation": "Unlike poles attract, like poles repel, and both get stronger when the magnets are close."
-        },
-        {
          "type": "worked",
          "id": "science-ch9-l5-t1",
          "difficulty": 1,
@@ -32581,6 +32556,31 @@
            "p": 175
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch9-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "magnets",
+         "params": {},
+         "title": "Push and pull",
+         "tasks": [
+          {
+           "say": "Make the magnets push each other away.",
+           "when": "flip == 1",
+           "then": "Like poles facing each other repel."
+          },
+          {
+           "say": "Bring them very close.",
+           "when": "gap <= 20",
+           "then": "Closer magnets pull or push much harder."
+          }
+         ],
+         "takeaway": "Unlike poles attract, like poles repel, and both get stronger when the magnets are close.",
+         "explanation": "Unlike poles attract, like poles repel, and both get stronger when the magnets are close."
         },
         {
          "type": "mcq",
@@ -34352,38 +34352,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch10-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "lifecycle",
-         "params": {
-          "creature": 3
-         },
-         "title": "Follow a life cycle",
-         "tasks": [
-          {
-           "say": "Show a seed that has just begun to sprout.",
-           "when": "creature == 3 and stage == 1",
-           "then": "A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up."
-          },
-          {
-           "say": "Take the bean plant all the way to its last stage.",
-           "when": "creature == 3 and stage == 3",
-           "then": "At the last stage the plant has made its own seeds, so the cycle can begin again."
-          },
-          {
-           "say": "Now see how a frog begins.",
-           "when": "creature == 0 and stage == 0",
-           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
-          }
-         ],
-         "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
-         "explanation": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult."
-        },
-        {
          "type": "worked",
          "id": "science-ch10-l2-t1",
          "difficulty": 1,
@@ -34429,6 +34397,38 @@
            "p": 190
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lifecycle",
+         "params": {
+          "creature": 3
+         },
+         "title": "Follow a life cycle",
+         "tasks": [
+          {
+           "say": "Show a seed that has just begun to sprout.",
+           "when": "creature == 3 and stage == 1",
+           "then": "A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up."
+          },
+          {
+           "say": "Take the bean plant all the way to its last stage.",
+           "when": "creature == 3 and stage == 3",
+           "then": "At the last stage the plant has made its own seeds, so the cycle can begin again."
+          },
+          {
+           "say": "Now see how a frog begins.",
+           "when": "creature == 0 and stage == 0",
+           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
+          }
+         ],
+         "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
+         "explanation": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult."
         },
         {
          "type": "mcq",
@@ -35392,38 +35392,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch10-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "lifecycle",
-         "params": {
-          "creature": 3
-         },
-         "title": "Follow a life cycle",
-         "tasks": [
-          {
-           "say": "Show a seed that has just begun to sprout.",
-           "when": "creature == 3 and stage == 1",
-           "then": "A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up."
-          },
-          {
-           "say": "Take the bean plant all the way to its last stage.",
-           "when": "creature == 3 and stage == 3",
-           "then": "At the last stage the plant has made its own seeds, so the cycle can begin again."
-          },
-          {
-           "say": "Now see how a frog begins.",
-           "when": "creature == 0 and stage == 0",
-           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
-          }
-         ],
-         "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
-         "explanation": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult."
-        },
-        {
          "type": "worked",
          "id": "science-ch10-l4-t1",
          "difficulty": 1,
@@ -35479,6 +35447,38 @@
            "p": 195
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch10-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lifecycle",
+         "params": {
+          "creature": 3
+         },
+         "title": "Follow a life cycle",
+         "tasks": [
+          {
+           "say": "Show a seed that has just begun to sprout.",
+           "when": "creature == 3 and stage == 1",
+           "then": "A seed needs water and warmth. It sprouts: a root goes down and a shoot comes up."
+          },
+          {
+           "say": "Take the bean plant all the way to its last stage.",
+           "when": "creature == 3 and stage == 3",
+           "then": "At the last stage the plant has made its own seeds, so the cycle can begin again."
+          },
+          {
+           "say": "Now see how a frog begins.",
+           "when": "creature == 0 and stage == 0",
+           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
+          }
+         ],
+         "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
+         "explanation": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult."
         },
         {
          "type": "mcq",
@@ -35984,38 +35984,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch10-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "lifecycle",
-         "params": {
-          "creature": 1
-         },
-         "title": "Follow a life cycle",
-         "tasks": [
-          {
-           "say": "Show the mosquito stage that wriggles in water.",
-           "when": "creature == 1 and stage == 1",
-           "then": "The larva wriggles in water and comes up to breathe. It looks nothing like the adult."
-          },
-          {
-           "say": "Take the mosquito all the way to its last stage.",
-           "when": "creature == 1 and stage == 3",
-           "then": "At the last stage the adult can lay eggs of its own, so the cycle can begin again."
-          },
-          {
-           "say": "Now see how a silk moth begins.",
-           "when": "creature == 2 and stage == 0",
-           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
-          }
-         ],
-         "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
-         "explanation": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult."
-        },
-        {
          "type": "worked",
          "id": "science-ch10-l5-t1",
          "difficulty": 1,
@@ -36056,6 +36024,38 @@
            "p": 199
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch10-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lifecycle",
+         "params": {
+          "creature": 1
+         },
+         "title": "Follow a life cycle",
+         "tasks": [
+          {
+           "say": "Show the mosquito stage that wriggles in water.",
+           "when": "creature == 1 and stage == 1",
+           "then": "The larva wriggles in water and comes up to breathe. It looks nothing like the adult."
+          },
+          {
+           "say": "Take the mosquito all the way to its last stage.",
+           "when": "creature == 1 and stage == 3",
+           "then": "At the last stage the adult can lay eggs of its own, so the cycle can begin again."
+          },
+          {
+           "say": "Now see how a silk moth begins.",
+           "when": "creature == 2 and stage == 0",
+           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
+          }
+         ],
+         "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
+         "explanation": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult."
         },
         {
          "type": "concept",
@@ -36528,38 +36528,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch10-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "lifecycle",
-         "params": {
-          "creature": 0
-         },
-         "title": "Follow a life cycle",
-         "tasks": [
-          {
-           "say": "Show the frog when it is a tadpole.",
-           "when": "creature == 0 and stage == 1",
-           "then": "The tadpole lives in water, breathes with gills and swims with its tail. Later it grows legs."
-          },
-          {
-           "say": "Take the frog all the way to its last stage.",
-           "when": "creature == 0 and stage == 3",
-           "then": "At the last stage the adult can lay eggs of its own, so the cycle can begin again."
-          },
-          {
-           "say": "Now see how a mosquito begins.",
-           "when": "creature == 1 and stage == 0",
-           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
-          }
-         ],
-         "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
-         "explanation": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult."
-        },
-        {
          "type": "worked",
          "id": "science-ch10-l6-t1",
          "difficulty": 1,
@@ -36600,6 +36568,38 @@
            "p": 201
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch10-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lifecycle",
+         "params": {
+          "creature": 0
+         },
+         "title": "Follow a life cycle",
+         "tasks": [
+          {
+           "say": "Show the frog when it is a tadpole.",
+           "when": "creature == 0 and stage == 1",
+           "then": "The tadpole lives in water, breathes with gills and swims with its tail. Later it grows legs."
+          },
+          {
+           "say": "Take the frog all the way to its last stage.",
+           "when": "creature == 0 and stage == 3",
+           "then": "At the last stage the adult can lay eggs of its own, so the cycle can begin again."
+          },
+          {
+           "say": "Now see how a mosquito begins.",
+           "when": "creature == 1 and stage == 0",
+           "then": "Every life cycle starts the same way: an egg, or a seed, that holds the young one."
+          }
+         ],
+         "takeaway": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult.",
+         "explanation": "Every living thing has a life cycle: an egg or seed, a young one, and then an adult that lays eggs or makes seeds again. In a frog, a mosquito and a silk moth the young looks nothing like the adult."
         },
         {
          "type": "mcq",
@@ -37769,31 +37769,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch11-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seabreeze",
-         "params": {},
-         "title": "Watch the coast breathe",
-         "tasks": [
-          {
-           "say": "Make a sea breeze.",
-           "when": "hour >= 10 and hour <= 17",
-           "then": "By day the land is hotter, so air rises over it and the sea air blows in."
-          },
-          {
-           "say": "Make a land breeze.",
-           "when": "hour >= 21 or hour <= 5",
-           "then": "At night the land is cooler, so the breeze blows out to sea."
-          }
-         ],
-         "takeaway": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.",
-         "explanation": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze."
-        },
-        {
          "type": "worked",
          "id": "science-ch11-l1-t1",
          "difficulty": 1,
@@ -37828,6 +37803,31 @@
            "p": 210
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch11-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seabreeze",
+         "params": {},
+         "title": "Watch the coast breathe",
+         "tasks": [
+          {
+           "say": "Make a sea breeze.",
+           "when": "hour >= 10 and hour <= 17",
+           "then": "By day the land is hotter, so air rises over it and the sea air blows in."
+          },
+          {
+           "say": "Make a land breeze.",
+           "when": "hour >= 21 or hour <= 5",
+           "then": "At night the land is cooler, so the breeze blows out to sea."
+          }
+         ],
+         "takeaway": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.",
+         "explanation": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze."
         },
         {
          "type": "mcq",
@@ -40517,36 +40517,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch11-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "watercycle",
-         "params": {},
-         "title": "Follow water as it is renewed",
-         "tasks": [
-          {
-           "say": "Move to the evaporation step.",
-           "when": "step == 2",
-           "then": "You saw water rise from the sea and enter the air."
-          },
-          {
-           "say": "Continue until the water forms clouds.",
-           "when": "step == 3",
-           "then": "You saw the water cool and become clouds."
-          },
-          {
-           "say": "Move to the final step.",
-           "when": "step == 4",
-           "then": "You saw water fall as rain and return to the sea."
-          }
-         ],
-         "takeaway": "Water is a renewable resource because it is naturally replenished through the water cycle.",
-         "explanation": "Water is a renewable resource because it is naturally replenished through the water cycle."
-        },
-        {
          "type": "worked",
          "id": "science-ch11-l6-t1",
          "difficulty": 1,
@@ -40597,6 +40567,36 @@
            "p": 225
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch11-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "watercycle",
+         "params": {},
+         "title": "Follow water as it is renewed",
+         "tasks": [
+          {
+           "say": "Move to the evaporation step.",
+           "when": "step == 2",
+           "then": "You saw water rise from the sea and enter the air."
+          },
+          {
+           "say": "Continue until the water forms clouds.",
+           "when": "step == 3",
+           "then": "You saw the water cool and become clouds."
+          },
+          {
+           "say": "Move to the final step.",
+           "when": "step == 4",
+           "then": "You saw water fall as rain and return to the sea."
+          }
+         ],
+         "takeaway": "Water is a renewable resource because it is naturally replenished through the water cycle.",
+         "explanation": "Water is a renewable resource because it is naturally replenished through the water cycle."
         },
         {
          "type": "mcq",
@@ -42984,36 +42984,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch12-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "solarsystem",
-         "params": {},
-         "title": "Run the solar system",
-         "tasks": [
-          {
-           "say": "Let one Earth year pass.",
-           "when": "days >= 360 and days <= 370",
-           "then": "Earth has gone round once, and Mercury about four times."
-          },
-          {
-           "say": "Let Jupiter go all the way round once.",
-           "when": "days >= 4330 and days <= 4340",
-           "then": "A year on Jupiter lasts about 12 Earth years."
-          },
-          {
-           "say": "Let Saturn finish one orbit.",
-           "when": "days >= 10750",
-           "then": "Saturn takes about 29 and a half Earth years."
-          }
-         ],
-         "takeaway": "Planets nearer the Sun go round faster; the further out, the longer the year.",
-         "explanation": "Planets nearer the Sun go round faster; the further out, the longer the year."
-        },
-        {
          "type": "worked",
          "id": "science-ch12-l3-t1",
          "difficulty": 1,
@@ -43049,6 +43019,36 @@
            "p": 240
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch12-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "solarsystem",
+         "params": {},
+         "title": "Run the solar system",
+         "tasks": [
+          {
+           "say": "Let one Earth year pass.",
+           "when": "days >= 360 and days <= 370",
+           "then": "Earth has gone round once, and Mercury about four times."
+          },
+          {
+           "say": "Let Jupiter go all the way round once.",
+           "when": "days >= 4330 and days <= 4340",
+           "then": "A year on Jupiter lasts about 12 Earth years."
+          },
+          {
+           "say": "Let Saturn finish one orbit.",
+           "when": "days >= 10750",
+           "then": "Saturn takes about 29 and a half Earth years."
+          }
+         ],
+         "takeaway": "Planets nearer the Sun go round faster; the further out, the longer the year.",
+         "explanation": "Planets nearer the Sun go round faster; the further out, the longer the year."
         },
         {
          "type": "mcq",
@@ -43560,36 +43560,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-ch12-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "solarsystem",
-         "params": {},
-         "title": "Run the solar system",
-         "tasks": [
-          {
-           "say": "Let one Earth year pass.",
-           "when": "days >= 360 and days <= 370",
-           "then": "Earth has gone round once, and Mercury about four times."
-          },
-          {
-           "say": "Let Jupiter go all the way round once.",
-           "when": "days >= 4330 and days <= 4340",
-           "then": "A year on Jupiter lasts about 12 Earth years."
-          },
-          {
-           "say": "Let Saturn finish one orbit.",
-           "when": "days >= 10750",
-           "then": "Saturn takes about 29 and a half Earth years."
-          }
-         ],
-         "takeaway": "Planets nearer the Sun go round faster; the further out, the longer the year.",
-         "explanation": "Planets nearer the Sun go round faster; the further out, the longer the year."
-        },
-        {
          "type": "worked",
          "id": "science-ch12-l4-t1",
          "difficulty": 1,
@@ -43620,6 +43590,36 @@
            "p": 242
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-ch12-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "solarsystem",
+         "params": {},
+         "title": "Run the solar system",
+         "tasks": [
+          {
+           "say": "Let one Earth year pass.",
+           "when": "days >= 360 and days <= 370",
+           "then": "Earth has gone round once, and Mercury about four times."
+          },
+          {
+           "say": "Let Jupiter go all the way round once.",
+           "when": "days >= 4330 and days <= 4340",
+           "then": "A year on Jupiter lasts about 12 Earth years."
+          },
+          {
+           "say": "Let Saturn finish one orbit.",
+           "when": "days >= 10750",
+           "then": "Saturn takes about 29 and a half Earth years."
+          }
+         ],
+         "takeaway": "Planets nearer the Sun go round faster; the further out, the longer the year.",
+         "explanation": "Planets nearer the Sun go round faster; the further out, the longer the year."
         },
         {
          "type": "mcq",

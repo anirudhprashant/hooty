@@ -1893,41 +1893,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "english-g5-ch1-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "spelling",
-         "params": {},
-         "title": "The spelling machine",
-         "tasks": [
-          {
-           "say": "Find a word where -es is added.",
-           "when": "w == 1",
-           "then": "After s, x, ch and sh, -es adds a beat so the ending can be heard."
-          },
-          {
-           "say": "Find the word where y turns into i.",
-           "when": "w == 3",
-           "then": "A consonant before y makes the y into i before -es."
-          },
-          {
-           "say": "Find the word whose last letter doubles in the -ing form.",
-           "when": "w == 6",
-           "then": "Run becomes running: doubling keeps the u short."
-          },
-          {
-           "say": "Find the word that doubles its last letter for the past.",
-           "when": "w == 9",
-           "then": "Stop becomes stopped: the p doubles so the o stays short."
-          }
-         ],
-         "takeaway": "Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e.",
-         "explanation": "Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e."
-        },
-        {
          "type": "worked",
          "id": "english-g5-ch1-l5-t1",
          "difficulty": 1,
@@ -1968,6 +1933,41 @@
            "p": 6
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch1-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "spelling",
+         "params": {},
+         "title": "The spelling machine",
+         "tasks": [
+          {
+           "say": "Find a word where -es is added.",
+           "when": "w == 1",
+           "then": "After s, x, ch and sh, -es adds a beat so the ending can be heard."
+          },
+          {
+           "say": "Find the word where y turns into i.",
+           "when": "w == 3",
+           "then": "A consonant before y makes the y into i before -es."
+          },
+          {
+           "say": "Find the word whose last letter doubles in the -ing form.",
+           "when": "w == 6",
+           "then": "Run becomes running: doubling keeps the u short."
+          },
+          {
+           "say": "Find the word that doubles its last letter for the past.",
+           "when": "w == 9",
+           "then": "Stop becomes stopped: the p doubles so the o stays short."
+          }
+         ],
+         "takeaway": "Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e.",
+         "explanation": "Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e."
         },
         {
          "type": "mcq",
@@ -3588,68 +3588,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "english-g5-ch2-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordlab",
-         "params": {
-          "words": [
-           "veranda",
-           "rustling",
-           "thud",
-           "heap"
-          ],
-          "meanings": [
-           "A pile of things.",
-           "A covered open area attached to a house.",
-           "A soft crackling sound, like dry leaves moving.",
-           "A dull sound made by something heavy falling."
-          ],
-          "key": [
-           1,
-           2,
-           3,
-           0
-          ],
-          "sents": [
-           "Gopi was sitting in the veranda",
-           "",
-           "",
-           ""
-          ],
-          "labels": {
-           "heading": "One word, one sentence",
-           "pickWord": "Pick a word",
-           "pickMeaning": "Which meaning fits?",
-           "yes": "Yes.",
-           "no": "Not this one.",
-           "means": "means",
-           "readAgain": "Read the sentence again, then try another meaning.",
-           "pick": "Which meaning fits \"{w}\" here?",
-           "sentence": "From the book",
-           "empty": "No words for this chapter yet."
-          }
-         },
-         "title": "Word lab",
-         "tasks": [
-          {
-           "say": "Choose what \"veranda\" means.",
-           "when": "word == 0 and meaning == 1",
-           "then": "\"veranda\" means: A covered open area attached to a house."
-          },
-          {
-           "say": "Choose what \"rustling\" means.",
-           "when": "word == 1 and meaning == 2",
-           "then": "\"rustling\" means: A soft crackling sound, like dry leaves moving."
-          }
-         ],
-         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
-         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
-        },
-        {
          "type": "worked",
          "id": "english-g5-ch2-l1-t1",
          "difficulty": 1,
@@ -3725,6 +3663,68 @@
            "p": 11
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordlab",
+         "params": {
+          "words": [
+           "veranda",
+           "rustling",
+           "thud",
+           "heap"
+          ],
+          "meanings": [
+           "A pile of things.",
+           "A covered open area attached to a house.",
+           "A soft crackling sound, like dry leaves moving.",
+           "A dull sound made by something heavy falling."
+          ],
+          "key": [
+           1,
+           2,
+           3,
+           0
+          ],
+          "sents": [
+           "Gopi was sitting in the veranda",
+           "",
+           "",
+           ""
+          ],
+          "labels": {
+           "heading": "One word, one sentence",
+           "pickWord": "Pick a word",
+           "pickMeaning": "Which meaning fits?",
+           "yes": "Yes.",
+           "no": "Not this one.",
+           "means": "means",
+           "readAgain": "Read the sentence again, then try another meaning.",
+           "pick": "Which meaning fits \"{w}\" here?",
+           "sentence": "From the book",
+           "empty": "No words for this chapter yet."
+          }
+         },
+         "title": "Word lab",
+         "tasks": [
+          {
+           "say": "Choose what \"veranda\" means.",
+           "when": "word == 0 and meaning == 1",
+           "then": "\"veranda\" means: A covered open area attached to a house."
+          },
+          {
+           "say": "Choose what \"rustling\" means.",
+           "when": "word == 1 and meaning == 2",
+           "then": "\"rustling\" means: A soft crackling sound, like dry leaves moving."
+          }
+         ],
+         "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
+         "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
         },
         {
          "type": "mcq",
@@ -4219,6 +4219,58 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch2-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why did Gopi look outside after taking the white ball?",
+         "steps": [
+          "Gopi took the ball because he had noticed it on the dry leaves.",
+          "He wondered whose ball it was because he did not know the owner.",
+          "He looked around and peeped outside the gate to find the owner.",
+          "No one was outside, so Gopi did not find the owner there."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.3",
+          "2.5",
+          "2.6",
+          "2.7",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 11
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch2-l2-play",
          "difficulty": 1,
@@ -4298,58 +4350,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch2-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Why did Gopi look outside after taking the white ball?",
-         "steps": [
-          "Gopi took the ball because he had noticed it on the dry leaves.",
-          "He wondered whose ball it was because he did not know the owner.",
-          "He looked around and peeped outside the gate to find the owner.",
-          "No one was outside, so Gopi did not find the owner there."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.3",
-          "2.5",
-          "2.6",
-          "2.7",
-          "2.8"
-         ],
-         "src": [
-          {
-           "ch": 2,
-           "p": 11
-          },
-          {
-           "ch": 2,
-           "p": 11
-          },
-          {
-           "ch": 2,
-           "p": 12
-          },
-          {
-           "ch": 2,
-           "p": 12
-          },
-          {
-           "ch": 2,
-           "p": 12
-          },
-          {
-           "ch": 2,
-           "p": 12
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -4829,6 +4829,63 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch2-l3-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Gopi found a ball. How can he find the person who lost it?",
+         "steps": [
+          "He cannot keep it because someone may have lost it.",
+          "He will ask around because he wants to find the owner.",
+          "The playground is useful because his friends gather there regularly.",
+          "Ramani may be the owner because she says the ball is hers."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "3.4",
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.8",
+          "3.9",
+          "3.12"
+         ],
+         "src": [
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          },
+          {
+           "ch": 2,
+           "p": 12
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch2-l3-play",
          "difficulty": 1,
@@ -4894,63 +4951,6 @@
          ],
          "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
          "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch2-l3-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Gopi found a ball. How can he find the person who lost it?",
-         "steps": [
-          "He cannot keep it because someone may have lost it.",
-          "He will ask around because he wants to find the owner.",
-          "The playground is useful because his friends gather there regularly.",
-          "Ramani may be the owner because she says the ball is hers."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "3.4",
-          "3.5",
-          "3.6",
-          "3.7",
-          "3.8",
-          "3.9",
-          "3.12"
-         ],
-         "src": [
-          {
-           "ch": 2,
-           "p": 12
-          },
-          {
-           "ch": 2,
-           "p": 12
-          },
-          {
-           "ch": 2,
-           "p": 12
-          },
-          {
-           "ch": 2,
-           "p": 12
-          },
-          {
-           "ch": 2,
-           "p": 12
-          },
-          {
-           "ch": 2,
-           "p": 12
-          },
-          {
-           "ch": 2,
-           "p": 12
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -7671,6 +7671,47 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch3-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child watches boats and clouds and wonders which the poem calls prettier.",
+         "steps": [
+          "Boats and ships sail on water, so they form the first comparison.",
+          "Clouds sail across the sky, so they can be compared with boats and ships.",
+          "The poem calls clouds prettier than both, so clouds are the clear favourite."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.3",
+          "1.4",
+          "1.5",
+          "1.6"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch3-l1-play",
          "difficulty": 1,
@@ -7731,47 +7772,6 @@
          ],
          "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
          "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch3-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A child watches boats and clouds and wonders which the poem calls prettier.",
-         "steps": [
-          "Boats and ships sail on water, so they form the first comparison.",
-          "Clouds sail across the sky, so they can be compared with boats and ships.",
-          "The poem calls clouds prettier than both, so clouds are the clear favourite."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.3",
-          "1.4",
-          "1.5",
-          "1.6"
-         ],
-         "src": [
-          {
-           "ch": 3,
-           "p": 27
-          },
-          {
-           "ch": 3,
-           "p": 27
-          },
-          {
-           "ch": 3,
-           "p": 27
-          },
-          {
-           "ch": 3,
-           "p": 27
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -8255,6 +8255,43 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch3-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why does the poem's bow seem special beside trees and bridges?",
+         "steps": [
+          "The bow overtops the trees, because it rises above them.",
+          "The bow is prettier than the bridges, because the poem compares their beauty.",
+          "The bow builds a road from earth to sky, so it joins the ground and sky.",
+          "Therefore, the bow seems special because it is beautiful and reaches high."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.10",
+          "2.11",
+          "2.12"
+         ],
+         "src": [
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          },
+          {
+           "ch": 3,
+           "p": 27
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch3-l2-play",
          "difficulty": 1,
@@ -8334,43 +8371,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch3-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Why does the poem's bow seem special beside trees and bridges?",
-         "steps": [
-          "The bow overtops the trees, because it rises above them.",
-          "The bow is prettier than the bridges, because the poem compares their beauty.",
-          "The bow builds a road from earth to sky, so it joins the ground and sky.",
-          "Therefore, the bow seems special because it is beautiful and reaches high."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.10",
-          "2.11",
-          "2.12"
-         ],
-         "src": [
-          {
-           "ch": 3,
-           "p": 27
-          },
-          {
-           "ch": 3,
-           "p": 27
-          },
-          {
-           "ch": 3,
-           "p": 27
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -11262,6 +11262,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch4-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "The merchant goes far away for business. What should he bring back for the parrot?",
+         "steps": [
+          "The parrot has already tasted tender fruits and chillies, so food is not its main wish.",
+          "Stories and songs already entertain the merchant, so they are not its deepest wish.",
+          "The parrot wants open skies, green trees, and the joy of flying.",
+          "Therefore, the merchant should bring back something that lets the parrot enjoy flying."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.5",
+          "1.7",
+          "1.8",
+          "1.10",
+          "1.11"
+         ],
+         "src": [
+          {
+           "ch": 4,
+           "p": 41
+          },
+          {
+           "ch": 4,
+           "p": 41
+          },
+          {
+           "ch": 4,
+           "p": 41
+          },
+          {
+           "ch": 4,
+           "p": 42
+          },
+          {
+           "ch": 4,
+           "p": 42
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch4-l1-play",
          "difficulty": 1,
@@ -11322,53 +11369,6 @@
          ],
          "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
          "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch4-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "The merchant goes far away for business. What should he bring back for the parrot?",
-         "steps": [
-          "The parrot has already tasted tender fruits and chillies, so food is not its main wish.",
-          "Stories and songs already entertain the merchant, so they are not its deepest wish.",
-          "The parrot wants open skies, green trees, and the joy of flying.",
-          "Therefore, the merchant should bring back something that lets the parrot enjoy flying."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.5",
-          "1.7",
-          "1.8",
-          "1.10",
-          "1.11"
-         ],
-         "src": [
-          {
-           "ch": 4,
-           "p": 41
-          },
-          {
-           "ch": 4,
-           "p": 41
-          },
-          {
-           "ch": 4,
-           "p": 41
-          },
-          {
-           "ch": 4,
-           "p": 42
-          },
-          {
-           "ch": 4,
-           "p": 42
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -11774,6 +11774,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch4-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A pet bird falls from its perch. Why might its owner think it has died?",
+         "steps": [
+          "The pet fell from the perch, so the merchant thought it had died suddenly.",
+          "He placed it on the windowsill so it could reach the open sky.",
+          "The parrot stretched its wings and flew, so it was alive.",
+          "Its friend taught it to escape, so the merchant's fear was wrong."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.7",
+          "2.8",
+          "2.9",
+          "2.10",
+          "2.11"
+         ],
+         "src": [
+          {
+           "ch": 4,
+           "p": 43
+          },
+          {
+           "ch": 4,
+           "p": 44
+          },
+          {
+           "ch": 4,
+           "p": 44
+          },
+          {
+           "ch": 4,
+           "p": 44
+          },
+          {
+           "ch": 4,
+           "p": 44
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch4-l2-play",
          "difficulty": 1,
@@ -11853,53 +11900,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch4-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A pet bird falls from its perch. Why might its owner think it has died?",
-         "steps": [
-          "The pet fell from the perch, so the merchant thought it had died suddenly.",
-          "He placed it on the windowsill so it could reach the open sky.",
-          "The parrot stretched its wings and flew, so it was alive.",
-          "Its friend taught it to escape, so the merchant's fear was wrong."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.7",
-          "2.8",
-          "2.9",
-          "2.10",
-          "2.11"
-         ],
-         "src": [
-          {
-           "ch": 4,
-           "p": 43
-          },
-          {
-           "ch": 4,
-           "p": 44
-          },
-          {
-           "ch": 4,
-           "p": 44
-          },
-          {
-           "ch": 4,
-           "p": 44
-          },
-          {
-           "ch": 4,
-           "p": 44
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -15005,6 +15005,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch5-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A frog sits in the rain and then in a muddy drain. You think it is stuck. Why should you think differently?",
+         "steps": [
+          "Frogs sit in ponds and rain, so wet places suit them.",
+          "Frogs hop about in muddy drains, so this frog can move.",
+          "Webbed feet help them swim easily in water.",
+          "The frog is not stuck; it moves on land and in water."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.6",
+          "1.12"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 55
+          },
+          {
+           "ch": 5,
+           "p": 55
+          },
+          {
+           "ch": 5,
+           "p": 55
+          },
+          {
+           "ch": 5,
+           "p": 55
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch5-l1-play",
          "difficulty": 1,
@@ -15065,48 +15107,6 @@
          ],
          "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
          "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch5-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A frog sits in the rain and then in a muddy drain. You think it is stuck. Why should you think differently?",
-         "steps": [
-          "Frogs sit in ponds and rain, so wet places suit them.",
-          "Frogs hop about in muddy drains, so this frog can move.",
-          "Webbed feet help them swim easily in water.",
-          "The frog is not stuck; it moves on land and in water."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.1",
-          "1.2",
-          "1.6",
-          "1.12"
-         ],
-         "src": [
-          {
-           "ch": 5,
-           "p": 55
-          },
-          {
-           "ch": 5,
-           "p": 55
-          },
-          {
-           "ch": 5,
-           "p": 55
-          },
-          {
-           "ch": 5,
-           "p": 55
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -15505,6 +15505,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch5-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A child sees a frog near a pond after rain. A muddy drain is nearby. How can it move and stay safe?",
+         "steps": [
+          "A frog likes ponds and rain, because it likes wet places.",
+          "It hops through a muddy drain, because mud does not stop hops.",
+          "Grass and leaves help it hide, because they give cover from danger.",
+          "Thus, it can move through mud and hide among leaves from snakes."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.5",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 5,
+           "p": 55
+          },
+          {
+           "ch": 5,
+           "p": 55
+          },
+          {
+           "ch": 5,
+           "p": 55
+          },
+          {
+           "ch": 5,
+           "p": 57
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch5-l2-play",
          "difficulty": 1,
@@ -15584,48 +15626,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch5-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A child sees a frog near a pond after rain. A muddy drain is nearby. How can it move and stay safe?",
-         "steps": [
-          "A frog likes ponds and rain, because it likes wet places.",
-          "It hops through a muddy drain, because mud does not stop hops.",
-          "Grass and leaves help it hide, because they give cover from danger.",
-          "Thus, it can move through mud and hide among leaves from snakes."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.2",
-          "2.5",
-          "2.8"
-         ],
-         "src": [
-          {
-           "ch": 5,
-           "p": 55
-          },
-          {
-           "ch": 5,
-           "p": 55
-          },
-          {
-           "ch": 5,
-           "p": 55
-          },
-          {
-           "ch": 5,
-           "p": 57
-          }
-         ]
         },
         {
          "type": "concept",
@@ -19057,31 +19057,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "english-g5-ch6-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordbuild",
-         "params": {},
-         "title": "Word builder",
-         "tasks": [
-          {
-           "say": "Find the word that means \"build again\".",
-           "when": "w == 1",
-           "then": "re- means again, so rebuild means build again."
-          },
-          {
-           "say": "Find the contraction that does not follow the usual pattern.",
-           "when": "w == 8",
-           "then": "Will not becomes won't: the vowels change too, so it is the odd one out."
-          }
-         ],
-         "takeaway": "A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap.",
-         "explanation": "A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap."
-        },
-        {
          "type": "worked",
          "id": "english-g5-ch6-l3-t1",
          "difficulty": 1,
@@ -19132,6 +19107,31 @@
            "p": 70
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch6-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordbuild",
+         "params": {},
+         "title": "Word builder",
+         "tasks": [
+          {
+           "say": "Find the word that means \"build again\".",
+           "when": "w == 1",
+           "then": "re- means again, so rebuild means build again."
+          },
+          {
+           "say": "Find the contraction that does not follow the usual pattern.",
+           "when": "w == 8",
+           "then": "Will not becomes won't: the vowels change too, so it is the odd one out."
+          }
+         ],
+         "takeaway": "A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap.",
+         "explanation": "A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap."
         },
         {
          "type": "mcq",
@@ -20122,6 +20122,37 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch6-l5-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can a child save water while brushing their teeth?",
+         "steps": [
+          "Stop the tap because running water while brushing wastes much water.",
+          "Turn it on only when needed because unused water should not be wasted.",
+          "Keep this habit because stopping waste is the simplest water-saving way."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "5.2",
+          "5.3"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 73
+          },
+          {
+           "ch": 6,
+           "p": 73
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch6-l5-play",
          "difficulty": 1,
@@ -20187,37 +20218,6 @@
          ],
          "takeaway": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts.",
          "explanation": "A story has an order: something happens first, then something else, and the ending only makes sense if you followed the way there. Words like then, after and at last are the signposts."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch6-l5-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "How can a child save water while brushing their teeth?",
-         "steps": [
-          "Stop the tap because running water while brushing wastes much water.",
-          "Turn it on only when needed because unused water should not be wasted.",
-          "Keep this habit because stopping waste is the simplest water-saving way."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "5.2",
-          "5.3"
-         ],
-         "src": [
-          {
-           "ch": 6,
-           "p": 73
-          },
-          {
-           "ch": 6,
-           "p": 73
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -22530,31 +22530,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "english-g5-ch7-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "wordbuild",
-         "params": {},
-         "title": "Word builder",
-         "tasks": [
-          {
-           "say": "Find the word that means \"build again\".",
-           "when": "w == 1",
-           "then": "re- means again, so rebuild means build again."
-          },
-          {
-           "say": "Find the contraction that does not follow the usual pattern.",
-           "when": "w == 8",
-           "then": "Will not becomes won't: the vowels change too, so it is the odd one out."
-          }
-         ],
-         "takeaway": "A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap.",
-         "explanation": "A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap."
-        },
-        {
          "type": "worked",
          "id": "english-g5-ch7-l2-t1",
          "difficulty": 1,
@@ -22610,6 +22585,31 @@
            "p": 82
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "wordbuild",
+         "params": {},
+         "title": "Word builder",
+         "tasks": [
+          {
+           "say": "Find the word that means \"build again\".",
+           "when": "w == 1",
+           "then": "re- means again, so rebuild means build again."
+          },
+          {
+           "say": "Find the contraction that does not follow the usual pattern.",
+           "when": "w == 8",
+           "then": "Will not becomes won't: the vowels change too, so it is the odd one out."
+          }
+         ],
+         "takeaway": "A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap.",
+         "explanation": "A prefix changes the meaning of a word (un- not, re- again, dis- the opposite, pre- before, mis- wrongly), and a contraction squeezes two words into one with an apostrophe marking the gap."
         },
         {
          "type": "mcq",
@@ -23567,41 +23567,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "english-g5-ch7-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "spelling",
-         "params": {},
-         "title": "The spelling machine",
-         "tasks": [
-          {
-           "say": "Find a word where -es is added.",
-           "when": "w == 1",
-           "then": "After s, x, ch and sh, -es adds a beat so the ending can be heard."
-          },
-          {
-           "say": "Find the word where y turns into i.",
-           "when": "w == 3",
-           "then": "A consonant before y makes the y into i before -es."
-          },
-          {
-           "say": "Find the word whose last letter doubles in the -ing form.",
-           "when": "w == 6",
-           "then": "Run becomes running: doubling keeps the u short."
-          },
-          {
-           "say": "Find the word that doubles its last letter for the past.",
-           "when": "w == 9",
-           "then": "Stop becomes stopped: the p doubles so the o stays short."
-          }
-         ],
-         "takeaway": "Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e.",
-         "explanation": "Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e."
-        },
-        {
          "type": "worked",
          "id": "english-g5-ch7-l4-t1",
          "difficulty": 1,
@@ -23662,6 +23627,41 @@
            "p": 86
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "english-g5-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "spelling",
+         "params": {},
+         "title": "The spelling machine",
+         "tasks": [
+          {
+           "say": "Find a word where -es is added.",
+           "when": "w == 1",
+           "then": "After s, x, ch and sh, -es adds a beat so the ending can be heard."
+          },
+          {
+           "say": "Find the word where y turns into i.",
+           "when": "w == 3",
+           "then": "A consonant before y makes the y into i before -es."
+          },
+          {
+           "say": "Find the word whose last letter doubles in the -ing form.",
+           "when": "w == 6",
+           "then": "Run becomes running: doubling keeps the u short."
+          },
+          {
+           "say": "Find the word that doubles its last letter for the past.",
+           "when": "w == 9",
+           "then": "Stop becomes stopped: the p doubles so the o stays short."
+          }
+         ],
+         "takeaway": "Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e.",
+         "explanation": "Most words add -s; after s, x, ch and sh you add -es; a consonant before y becomes -ies; some f endings become -ves; -ing doubles the last letter or drops the silent e."
         },
         {
          "type": "concept",
@@ -25722,6 +25722,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch8-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why would a neighbour sell a well and then stop its buyer taking water?",
+         "steps": [
+          "The farmer needed water, so buying the well seemed useful.",
+          "The neighbour planned to cheat the farmer, making the purchase deceptive.",
+          "Stopping the farmer from taking water showed the plan at work.",
+          "Therefore, the farmer could not rely on the neighbour for water."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.6",
+          "1.7",
+          "1.9",
+          "1.12"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 91
+          },
+          {
+           "ch": 8,
+           "p": 91
+          },
+          {
+           "ch": 8,
+           "p": 91
+          },
+          {
+           "ch": 8,
+           "p": 92
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch8-l1-play",
          "difficulty": 1,
@@ -25782,48 +25824,6 @@
          ],
          "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
          "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch8-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Why would a neighbour sell a well and then stop its buyer taking water?",
-         "steps": [
-          "The farmer needed water, so buying the well seemed useful.",
-          "The neighbour planned to cheat the farmer, making the purchase deceptive.",
-          "Stopping the farmer from taking water showed the plan at work.",
-          "Therefore, the farmer could not rely on the neighbour for water."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.6",
-          "1.7",
-          "1.9",
-          "1.12"
-         ],
-         "src": [
-          {
-           "ch": 8,
-           "p": 91
-          },
-          {
-           "ch": 8,
-           "p": 91
-          },
-          {
-           "ch": 8,
-           "p": 91
-          },
-          {
-           "ch": 8,
-           "p": 92
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -26288,6 +26288,73 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch8-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "A farmer does not know what to do after a neighbour stops him. What should the Panchayat decide?",
+         "steps": [
+          "The farmer explains his problem to the chief, because he needs help.",
+          "The chief calls a Panchayat meeting, so everyone can hear the issue.",
+          "The Panchayat says only the well was sold, and the water belongs to its owner if the neighbour does not use it.",
+          "The neighbour must pay a fine and apologise, because the Panchayat’s judgment is against him."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.4",
+          "2.5",
+          "2.9",
+          "2.10",
+          "2.11",
+          "2.12"
+         ],
+         "src": [
+          {
+           "ch": 8,
+           "p": 92
+          },
+          {
+           "ch": 8,
+           "p": 92
+          },
+          {
+           "ch": 8,
+           "p": 92
+          },
+          {
+           "ch": 8,
+           "p": 92
+          },
+          {
+           "ch": 8,
+           "p": 93
+          },
+          {
+           "ch": 8,
+           "p": 93
+          },
+          {
+           "ch": 8,
+           "p": 94
+          },
+          {
+           "ch": 8,
+           "p": 94
+          },
+          {
+           "ch": 8,
+           "p": 94
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch8-l2-play",
          "difficulty": 1,
@@ -26367,73 +26434,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch8-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "A farmer does not know what to do after a neighbour stops him. What should the Panchayat decide?",
-         "steps": [
-          "The farmer explains his problem to the chief, because he needs help.",
-          "The chief calls a Panchayat meeting, so everyone can hear the issue.",
-          "The Panchayat says only the well was sold, and the water belongs to its owner if the neighbour does not use it.",
-          "The neighbour must pay a fine and apologise, because the Panchayat’s judgment is against him."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.2",
-          "2.3",
-          "2.4",
-          "2.5",
-          "2.9",
-          "2.10",
-          "2.11",
-          "2.12"
-         ],
-         "src": [
-          {
-           "ch": 8,
-           "p": 92
-          },
-          {
-           "ch": 8,
-           "p": 92
-          },
-          {
-           "ch": 8,
-           "p": 92
-          },
-          {
-           "ch": 8,
-           "p": 92
-          },
-          {
-           "ch": 8,
-           "p": 93
-          },
-          {
-           "ch": 8,
-           "p": 93
-          },
-          {
-           "ch": 8,
-           "p": 94
-          },
-          {
-           "ch": 8,
-           "p": 94
-          },
-          {
-           "ch": 8,
-           "p": 94
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -29593,6 +29593,53 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch9-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why might the speaker want the gardener's job?",
+         "steps": [
+          "The hawker's place and homecoming time are not fixed.",
+          "The gardener can use his spade as he likes.",
+          "No one takes him to task when he gets baked.",
+          "This is why the speaker wishes to be a gardener."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.4",
+          "1.5",
+          "1.9",
+          "1.11",
+          "1.12"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 105
+          },
+          {
+           "ch": 9,
+           "p": 105
+          },
+          {
+           "ch": 9,
+           "p": 106
+          },
+          {
+           "ch": 9,
+           "p": 106
+          },
+          {
+           "ch": 9,
+           "p": 106
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch9-l1-play",
          "difficulty": 1,
@@ -29653,53 +29700,6 @@
          ],
          "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
          "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch9-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Why might the speaker want the gardener's job?",
-         "steps": [
-          "The hawker's place and homecoming time are not fixed.",
-          "The gardener can use his spade as he likes.",
-          "No one takes him to task when he gets baked.",
-          "This is why the speaker wishes to be a gardener."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.4",
-          "1.5",
-          "1.9",
-          "1.11",
-          "1.12"
-         ],
-         "src": [
-          {
-           "ch": 9,
-           "p": 105
-          },
-          {
-           "ch": 9,
-           "p": 105
-          },
-          {
-           "ch": 9,
-           "p": 106
-          },
-          {
-           "ch": 9,
-           "p": 106
-          },
-          {
-           "ch": 9,
-           "p": 106
-          }
-         ]
         },
         {
          "type": "concept",
@@ -30228,6 +30228,63 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch9-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why does the speaker want to be a watchman at night?",
+         "steps": [
+          "The speaker is sent to bed, but the watchman stays awake all night.",
+          "Because the lane is dark and lonely, the watchman's job feels unusual.",
+          "The swinging lantern and walking shadow make a scene the speaker can imagine.",
+          "He imagines the watchman chasing shadows, so he wishes he could join that night life."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.3",
+          "2.5",
+          "2.6",
+          "2.7",
+          "2.8",
+          "2.9"
+         ],
+         "src": [
+          {
+           "ch": 9,
+           "p": 107
+          },
+          {
+           "ch": 9,
+           "p": 107
+          },
+          {
+           "ch": 9,
+           "p": 107
+          },
+          {
+           "ch": 9,
+           "p": 107
+          },
+          {
+           "ch": 9,
+           "p": 107
+          },
+          {
+           "ch": 9,
+           "p": 107
+          },
+          {
+           "ch": 9,
+           "p": 107
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch9-l2-play",
          "difficulty": 1,
@@ -30307,63 +30364,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch9-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Why does the speaker want to be a watchman at night?",
-         "steps": [
-          "The speaker is sent to bed, but the watchman stays awake all night.",
-          "Because the lane is dark and lonely, the watchman's job feels unusual.",
-          "The swinging lantern and walking shadow make a scene the speaker can imagine.",
-          "He imagines the watchman chasing shadows, so he wishes he could join that night life."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.3",
-          "2.5",
-          "2.6",
-          "2.7",
-          "2.8",
-          "2.9"
-         ],
-         "src": [
-          {
-           "ch": 9,
-           "p": 107
-          },
-          {
-           "ch": 9,
-           "p": 107
-          },
-          {
-           "ch": 9,
-           "p": 107
-          },
-          {
-           "ch": 9,
-           "p": 107
-          },
-          {
-           "ch": 9,
-           "p": 107
-          },
-          {
-           "ch": 9,
-           "p": 107
-          },
-          {
-           "ch": 9,
-           "p": 107
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -33438,6 +33438,58 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch10-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why does Ravi’s workshop always feel lively?",
+         "steps": [
+          "Ravi’s family has made beautiful bangles for a very long time.",
+          "The workshop is busy because artisans are working there.",
+          "Clinking glass and a gentle hum show work and talk continue.",
+          "Therefore, the workshop feels alive because skilled people are making art together."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.3",
+          "1.5",
+          "1.6",
+          "1.8",
+          "1.9",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 119
+          },
+          {
+           "ch": 10,
+           "p": 119
+          },
+          {
+           "ch": 10,
+           "p": 119
+          },
+          {
+           "ch": 10,
+           "p": 119
+          },
+          {
+           "ch": 10,
+           "p": 119
+          },
+          {
+           "ch": 10,
+           "p": 119
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch10-l1-play",
          "difficulty": 1,
@@ -33498,58 +33550,6 @@
          ],
          "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
          "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch10-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Why does Ravi’s workshop always feel lively?",
-         "steps": [
-          "Ravi’s family has made beautiful bangles for a very long time.",
-          "The workshop is busy because artisans are working there.",
-          "Clinking glass and a gentle hum show work and talk continue.",
-          "Therefore, the workshop feels alive because skilled people are making art together."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.3",
-          "1.5",
-          "1.6",
-          "1.8",
-          "1.9",
-          "1.10"
-         ],
-         "src": [
-          {
-           "ch": 10,
-           "p": 119
-          },
-          {
-           "ch": 10,
-           "p": 119
-          },
-          {
-           "ch": 10,
-           "p": 119
-          },
-          {
-           "ch": 10,
-           "p": 119
-          },
-          {
-           "ch": 10,
-           "p": 119
-          },
-          {
-           "ch": 10,
-           "p": 119
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -34012,6 +34012,63 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "english-g5-ch10-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "How can Ravi make every glass bangle beautiful and long-lasting?",
+         "steps": [
+          "They heat glass in a furnace, because hot glass must be shaped.",
+          "They shape each bangle with full attention, because great skill is needed.",
+          "They add colours and designs, because every bangle should be beautiful.",
+          "They cool the decorated bangles to perfection, so every bangle will last."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.4",
+          "2.5",
+          "2.6",
+          "2.7"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 120
+          },
+          {
+           "ch": 10,
+           "p": 120
+          },
+          {
+           "ch": 10,
+           "p": 120
+          },
+          {
+           "ch": 10,
+           "p": 120
+          },
+          {
+           "ch": 10,
+           "p": 120
+          },
+          {
+           "ch": 10,
+           "p": 120
+          },
+          {
+           "ch": 10,
+           "p": 120
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "english-g5-ch10-l2-play",
          "difficulty": 1,
@@ -34091,63 +34148,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "english-g5-ch10-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "How can Ravi make every glass bangle beautiful and long-lasting?",
-         "steps": [
-          "They heat glass in a furnace, because hot glass must be shaped.",
-          "They shape each bangle with full attention, because great skill is needed.",
-          "They add colours and designs, because every bangle should be beautiful.",
-          "They cool the decorated bangles to perfection, so every bangle will last."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.2",
-          "2.3",
-          "2.4",
-          "2.5",
-          "2.6",
-          "2.7"
-         ],
-         "src": [
-          {
-           "ch": 10,
-           "p": 120
-          },
-          {
-           "ch": 10,
-           "p": 120
-          },
-          {
-           "ch": 10,
-           "p": 120
-          },
-          {
-           "ch": 10,
-           "p": 120
-          },
-          {
-           "ch": 10,
-           "p": 120
-          },
-          {
-           "ch": 10,
-           "p": 120
-          },
-          {
-           "ch": 10,
-           "p": 120
-          }
-         ]
         },
         {
          "type": "mcq",

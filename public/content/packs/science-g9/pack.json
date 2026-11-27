@@ -96,6 +96,48 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g9-ch1-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why do buses sometimes arrive in a repeating pattern?",
+         "steps": [
+          "You watch buses closely because science invites careful observation.",
+          "You use symbols for arrival times because symbols can show patterns.",
+          "You test other days because good science recognises limits.",
+          "The conclusion states the pattern and where it does not apply."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.3",
+          "1.6",
+          "1.10"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          },
+          {
+           "ch": 1,
+           "p": 1
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "science-g9-ch1-l1-play",
          "difficulty": 1,
@@ -156,48 +198,6 @@
          ],
          "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
          "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
-        },
-        {
-         "type": "worked",
-         "id": "science-g9-ch1-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Why do buses sometimes arrive in a repeating pattern?",
-         "steps": [
-          "You watch buses closely because science invites careful observation.",
-          "You use symbols for arrival times because symbols can show patterns.",
-          "You test other days because good science recognises limits.",
-          "The conclusion states the pattern and where it does not apply."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.1",
-          "1.3",
-          "1.6",
-          "1.10"
-         ],
-         "src": [
-          {
-           "ch": 1,
-           "p": 1
-          },
-          {
-           "ch": 1,
-           "p": 1
-          },
-          {
-           "ch": 1,
-           "p": 1
-          },
-          {
-           "ch": 1,
-           "p": 1
-          }
-         ]
         },
         {
          "type": "mcq",
@@ -588,6 +588,43 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "science-g9-ch1-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Why does a useful model of falling leave out air resistance?",
+         "steps": [
+          "The question only needs gravity’s basic effect on falling.",
+          "Leave out air resistance because that detail is not needed yet.",
+          "Keep the model simple because ignored details are deliberate choices.",
+          "Therefore, it shows gravity’s basic effect without showing every detail."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.5",
+          "2.6",
+          "2.8"
+         ],
+         "src": [
+          {
+           "ch": 1,
+           "p": 2
+          },
+          {
+           "ch": 1,
+           "p": 2
+          },
+          {
+           "ch": 1,
+           "p": 2
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "science-g9-ch1-l2-play",
          "difficulty": 1,
@@ -667,43 +704,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "science-g9-ch1-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Why does a useful model of falling leave out air resistance?",
-         "steps": [
-          "The question only needs gravity’s basic effect on falling.",
-          "Leave out air resistance because that detail is not needed yet.",
-          "Keep the model simple because ignored details are deliberate choices.",
-          "Therefore, it shows gravity’s basic effect without showing every detail."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.5",
-          "2.6",
-          "2.8"
-         ],
-         "src": [
-          {
-           "ch": 1,
-           "p": 2
-          },
-          {
-           "ch": 1,
-           "p": 2
-          },
-          {
-           "ch": 1,
-           "p": 2
-          }
-         ]
         },
         {
          "type": "concept",
@@ -3901,38 +3901,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch2-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "microscope",
-         "params": {
-          "topic": "micro"
-         },
-         "title": "Look down the microscope",
-         "tasks": [
-          {
-           "say": "Make out the rod-shaped cells clearly.",
-           "when": "zoom >= 60 and at <= 25",
-           "then": "Bacteria: single cells shaped like tiny rods, some in pairs or chains."
-          },
-          {
-           "say": "Find the one-cell fungus with a bud.",
-           "when": "zoom >= 60 and at >= 40 and at <= 60",
-           "then": "Yeast is a fungus: one round cell grows a bud that can break off as a new cell."
-          },
-          {
-           "say": "Find the green cells that make food from sunlight.",
-           "when": "zoom >= 60 and at >= 75",
-           "then": "Microalgae make their own food from sunlight, like a leaf does."
-          }
-         ],
-         "takeaway": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell.",
-         "explanation": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch2-l1-t1",
          "difficulty": 1,
@@ -3973,6 +3941,38 @@
            "p": 10
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "microscope",
+         "params": {
+          "topic": "micro"
+         },
+         "title": "Look down the microscope",
+         "tasks": [
+          {
+           "say": "Make out the rod-shaped cells clearly.",
+           "when": "zoom >= 60 and at <= 25",
+           "then": "Bacteria: single cells shaped like tiny rods, some in pairs or chains."
+          },
+          {
+           "say": "Find the one-cell fungus with a bud.",
+           "when": "zoom >= 60 and at >= 40 and at <= 60",
+           "then": "Yeast is a fungus: one round cell grows a bud that can break off as a new cell."
+          },
+          {
+           "say": "Find the green cells that make food from sunlight.",
+           "when": "zoom >= 60 and at >= 75",
+           "then": "Microalgae make their own food from sunlight, like a leaf does."
+          }
+         ],
+         "takeaway": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell.",
+         "explanation": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell."
         },
         {
          "type": "concept",
@@ -4470,36 +4470,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch2-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "osmosis",
-         "params": {},
-         "title": "Water through a membrane",
-         "tasks": [
-          {
-           "say": "Make the water cross to the right.",
-           "when": "right > left and mins >= 5",
-           "then": "The right side is stronger, so water moves right: the right level rises."
-          },
-          {
-           "say": "Make the water cross to the left.",
-           "when": "left > right and mins >= 5",
-           "then": "The left side is stronger, so water moves left: the left level rises."
-          },
-          {
-           "say": "Make both sides equally strong so the levels stay the same.",
-           "when": "left == right and mins >= 5",
-           "then": "Equal strength on both sides means equal water movement each way."
-          }
-         ],
-         "takeaway": "Water moves from the dilute side to the concentrated side through a selectively permeable membrane; the dissolved substance cannot cross.",
-         "explanation": "Water moves from the dilute side to the concentrated side through a selectively permeable membrane; the dissolved substance cannot cross."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch2-l2-t1",
          "difficulty": 1,
@@ -4535,6 +4505,36 @@
            "p": 12
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch2-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "osmosis",
+         "params": {},
+         "title": "Water through a membrane",
+         "tasks": [
+          {
+           "say": "Make the water cross to the right.",
+           "when": "right > left and mins >= 5",
+           "then": "The right side is stronger, so water moves right: the right level rises."
+          },
+          {
+           "say": "Make the water cross to the left.",
+           "when": "left > right and mins >= 5",
+           "then": "The left side is stronger, so water moves left: the left level rises."
+          },
+          {
+           "say": "Make both sides equally strong so the levels stay the same.",
+           "when": "left == right and mins >= 5",
+           "then": "Equal strength on both sides means equal water movement each way."
+          }
+         ],
+         "takeaway": "Water moves from the dilute side to the concentrated side through a selectively permeable membrane; the dissolved substance cannot cross.",
+         "explanation": "Water moves from the dilute side to the concentrated side through a selectively permeable membrane; the dissolved substance cannot cross."
         },
         {
          "type": "mcq",
@@ -7823,36 +7823,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch3-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "levels",
-         "params": {},
-         "title": "From one cell to a whole plant",
-         "tasks": [
-          {
-           "say": "Show the level where many similar cells work together.",
-           "when": "stage == 1",
-           "then": "A group of similar cells doing one job is a tissue."
-          },
-          {
-           "say": "Show the level that is several organs working together.",
-           "when": "stage == 3",
-           "then": "Several organs working together make an organ system."
-          },
-          {
-           "say": "Show the whole living thing.",
-           "when": "stage == 4",
-           "then": "All the organ systems working together make the organism."
-          }
-         ],
-         "takeaway": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together.",
-         "explanation": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch3-l1-t1",
          "difficulty": 1,
@@ -7898,6 +7868,36 @@
            "p": 28
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch3-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "levels",
+         "params": {},
+         "title": "From one cell to a whole plant",
+         "tasks": [
+          {
+           "say": "Show the level where many similar cells work together.",
+           "when": "stage == 1",
+           "then": "A group of similar cells doing one job is a tissue."
+          },
+          {
+           "say": "Show the level that is several organs working together.",
+           "when": "stage == 3",
+           "then": "Several organs working together make an organ system."
+          },
+          {
+           "say": "Show the whole living thing.",
+           "when": "stage == 4",
+           "then": "All the organ systems working together make the organism."
+          }
+         ],
+         "takeaway": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together.",
+         "explanation": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together."
         },
         {
          "type": "concept",
@@ -8396,36 +8396,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch3-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "levels",
-         "params": {},
-         "title": "From one cell to a whole plant",
-         "tasks": [
-          {
-           "say": "Show the level where many similar cells work together.",
-           "when": "stage == 1",
-           "then": "A group of similar cells doing one job is a tissue."
-          },
-          {
-           "say": "Show the level that is several organs working together.",
-           "when": "stage == 3",
-           "then": "Several organs working together make an organ system."
-          },
-          {
-           "say": "Show the whole living thing.",
-           "when": "stage == 4",
-           "then": "All the organ systems working together make the organism."
-          }
-         ],
-         "takeaway": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together.",
-         "explanation": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch3-l2-t1",
          "difficulty": 1,
@@ -8481,6 +8451,36 @@
            "p": 31
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "levels",
+         "params": {},
+         "title": "From one cell to a whole plant",
+         "tasks": [
+          {
+           "say": "Show the level where many similar cells work together.",
+           "when": "stage == 1",
+           "then": "A group of similar cells doing one job is a tissue."
+          },
+          {
+           "say": "Show the level that is several organs working together.",
+           "when": "stage == 3",
+           "then": "Several organs working together make an organ system."
+          },
+          {
+           "say": "Show the whole living thing.",
+           "when": "stage == 4",
+           "then": "All the organ systems working together make the organism."
+          }
+         ],
+         "takeaway": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together.",
+         "explanation": "Life is built in steps: a cell, a group of similar cells that is a tissue, an organ made of several tissues, an organ system made of several organs, and the whole organism with all its systems working together."
         },
         {
          "type": "mcq",
@@ -12479,31 +12479,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch4-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "speed",
-         "params": {},
-         "title": "Race the cars",
-         "tasks": [
-          {
-           "say": "Make the two cars cover the same distance.",
-           "when": "a == b",
-           "then": "Same speed for the same time means the same distance."
-          },
-          {
-           "say": "Make the red car cover 200 m.",
-           "when": "a * t == 200",
-           "then": "Speed x time = distance, so this gives 200 m."
-          }
-         ],
-         "takeaway": "Distance = speed x time.",
-         "explanation": "Distance = speed x time."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch4-l3-t1",
          "difficulty": 1,
@@ -12554,6 +12529,31 @@
            "p": 54
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "speed",
+         "params": {},
+         "title": "Race the cars",
+         "tasks": [
+          {
+           "say": "Make the two cars cover the same distance.",
+           "when": "a == b",
+           "then": "Same speed for the same time means the same distance."
+          },
+          {
+           "say": "Make the red car cover 200 m.",
+           "when": "a * t == 200",
+           "then": "Speed x time = distance, so this gives 200 m."
+          }
+         ],
+         "takeaway": "Distance = speed x time.",
+         "explanation": "Distance = speed x time."
         },
         {
          "type": "truefalse",
@@ -12925,36 +12925,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch4-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "motiongraph",
-         "params": {},
-         "title": "Draw the motion",
-         "tasks": [
-          {
-           "say": "Stop the car and keep it stopped.",
-           "when": "u == 0 and acc == 0",
-           "then": "With no speed and no acceleration the graph is flat: the car stays in the same place."
-          },
-          {
-           "say": "Make the graph a straight line that climbs steadily.",
-           "when": "acc == 0 and u > 0",
-           "then": "A straight position-time graph means steady speed: equal distances in equal times."
-          },
-          {
-           "say": "Let the car slow down so much that the graph turns downward.",
-           "when": "acc < 0 and u > 0 and t == 10",
-           "then": "The graph bends down and then falls: the car slows, stops and comes back."
-          }
-         ],
-         "takeaway": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down.",
-         "explanation": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch4-l4-t1",
          "difficulty": 1,
@@ -12995,6 +12965,36 @@
            "p": 59
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch4-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "motiongraph",
+         "params": {},
+         "title": "Draw the motion",
+         "tasks": [
+          {
+           "say": "Stop the car and keep it stopped.",
+           "when": "u == 0 and acc == 0",
+           "then": "With no speed and no acceleration the graph is flat: the car stays in the same place."
+          },
+          {
+           "say": "Make the graph a straight line that climbs steadily.",
+           "when": "acc == 0 and u > 0",
+           "then": "A straight position-time graph means steady speed: equal distances in equal times."
+          },
+          {
+           "say": "Let the car slow down so much that the graph turns downward.",
+           "when": "acc < 0 and u > 0 and t == 10",
+           "then": "The graph bends down and then falls: the car slows, stops and comes back."
+          }
+         ],
+         "takeaway": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down.",
+         "explanation": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down."
         },
         {
          "type": "mcq",
@@ -13393,36 +13393,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch4-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "motiongraph",
-         "params": {},
-         "title": "Draw the motion",
-         "tasks": [
-          {
-           "say": "Stop the car and keep it stopped.",
-           "when": "u == 0 and acc == 0",
-           "then": "With no speed and no acceleration the graph is flat: the car stays in the same place."
-          },
-          {
-           "say": "Make the graph a straight line that climbs steadily.",
-           "when": "acc == 0 and u > 0",
-           "then": "A straight position-time graph means steady speed: equal distances in equal times."
-          },
-          {
-           "say": "Let the car slow down so much that the graph turns downward.",
-           "when": "acc < 0 and u > 0 and t == 10",
-           "then": "The graph bends down and then falls: the car slows, stops and comes back."
-          }
-         ],
-         "takeaway": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down.",
-         "explanation": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch4-l5-t1",
          "difficulty": 1,
@@ -13463,6 +13433,36 @@
            "p": 65
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch4-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "motiongraph",
+         "params": {},
+         "title": "Draw the motion",
+         "tasks": [
+          {
+           "say": "Stop the car and keep it stopped.",
+           "when": "u == 0 and acc == 0",
+           "then": "With no speed and no acceleration the graph is flat: the car stays in the same place."
+          },
+          {
+           "say": "Make the graph a straight line that climbs steadily.",
+           "when": "acc == 0 and u > 0",
+           "then": "A straight position-time graph means steady speed: equal distances in equal times."
+          },
+          {
+           "say": "Let the car slow down so much that the graph turns downward.",
+           "when": "acc < 0 and u > 0 and t == 10",
+           "then": "The graph bends down and then falls: the car slows, stops and comes back."
+          }
+         ],
+         "takeaway": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down.",
+         "explanation": "On a position-time graph the slope is the speed: flat means stopped, a straight climb means steady speed, and a bend means the car is speeding up or slowing down."
         },
         {
          "type": "mcq",
@@ -15610,36 +15610,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch5-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "dissolve",
-         "params": {},
-         "title": "Dissolve the sugar",
-         "tasks": [
-          {
-           "say": "Warm the water to 50 °C and watch all five spoons dissolve.",
-           "when": "temp == 50 and spoons == 5",
-           "then": "Warm water can hold more sugar, so the solution becomes unsaturated and all of it dissolves."
-          },
-          {
-           "say": "At 20 °C add ten spoons and see the extra sugar settle at the bottom.",
-           "when": "spoons == 10 and temp == 20",
-           "then": "At 20 °C the water holds only 4 spoons, so 6 spoons stay at the bottom as crystals: the solution is saturated."
-          },
-          {
-           "say": "Make a solution that could still dissolve more sugar.",
-           "when": "spoons < 2 + temp / 10",
-           "then": "Below the limit the solution is unsaturated, so more sugar would still dissolve."
-          }
-         ],
-         "takeaway": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated.",
-         "explanation": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch5-l2-t1",
          "difficulty": 1,
@@ -15675,6 +15645,36 @@
            "p": 75
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch5-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "dissolve",
+         "params": {},
+         "title": "Dissolve the sugar",
+         "tasks": [
+          {
+           "say": "Warm the water to 50 °C and watch all five spoons dissolve.",
+           "when": "temp == 50 and spoons == 5",
+           "then": "Warm water can hold more sugar, so the solution becomes unsaturated and all of it dissolves."
+          },
+          {
+           "say": "At 20 °C add ten spoons and see the extra sugar settle at the bottom.",
+           "when": "spoons == 10 and temp == 20",
+           "then": "At 20 °C the water holds only 4 spoons, so 6 spoons stay at the bottom as crystals: the solution is saturated."
+          },
+          {
+           "say": "Make a solution that could still dissolve more sugar.",
+           "when": "spoons < 2 + temp / 10",
+           "then": "Below the limit the solution is unsaturated, so more sugar would still dissolve."
+          }
+         ],
+         "takeaway": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated.",
+         "explanation": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated."
         },
         {
          "type": "mcq",
@@ -16064,36 +16064,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch5-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "dissolve",
-         "params": {},
-         "title": "Dissolve the sugar",
-         "tasks": [
-          {
-           "say": "Warm the water to 50 °C and watch all five spoons dissolve.",
-           "when": "temp == 50 and spoons == 5",
-           "then": "Warm water can hold more sugar, so the solution becomes unsaturated and all of it dissolves."
-          },
-          {
-           "say": "At 20 °C add ten spoons and see the extra sugar settle at the bottom.",
-           "when": "spoons == 10 and temp == 20",
-           "then": "At 20 °C the water holds only 4 spoons, so 6 spoons stay at the bottom as crystals: the solution is saturated."
-          },
-          {
-           "say": "Make a solution that could still dissolve more sugar.",
-           "when": "spoons < 2 + temp / 10",
-           "then": "Below the limit the solution is unsaturated, so more sugar would still dissolve."
-          }
-         ],
-         "takeaway": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated.",
-         "explanation": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch5-l3-t1",
          "difficulty": 1,
@@ -16134,6 +16104,36 @@
            "p": 78
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "dissolve",
+         "params": {},
+         "title": "Dissolve the sugar",
+         "tasks": [
+          {
+           "say": "Warm the water to 50 °C and watch all five spoons dissolve.",
+           "when": "temp == 50 and spoons == 5",
+           "then": "Warm water can hold more sugar, so the solution becomes unsaturated and all of it dissolves."
+          },
+          {
+           "say": "At 20 °C add ten spoons and see the extra sugar settle at the bottom.",
+           "when": "spoons == 10 and temp == 20",
+           "then": "At 20 °C the water holds only 4 spoons, so 6 spoons stay at the bottom as crystals: the solution is saturated."
+          },
+          {
+           "say": "Make a solution that could still dissolve more sugar.",
+           "when": "spoons < 2 + temp / 10",
+           "then": "Below the limit the solution is unsaturated, so more sugar would still dissolve."
+          }
+         ],
+         "takeaway": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated.",
+         "explanation": "Water dissolves only so much sugar at a given temperature. Warm water holds more, and any extra sugar stays at the bottom as crystals, so the solution is saturated."
         },
         {
          "type": "concept",
@@ -18888,36 +18888,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch6-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "newton",
-         "params": {},
-         "title": "Push, mass and acceleration",
-         "tasks": [
-          {
-           "say": "Make the box much heavier and keep the push the same. Watch the acceleration fall.",
-           "when": "mass == 8",
-           "then": "The same force on a bigger mass gives a smaller acceleration."
-          },
-          {
-           "say": "Balance the push with friction so the speed stops changing.",
-           "when": "push == back and push > 0",
-           "then": "When the forces balance, the net force is zero and the box keeps its speed."
-          },
-          {
-           "say": "Double both the force and the mass, so the acceleration stays the same.",
-           "when": "push == 20 and mass == 4 and back == 0",
-           "then": "20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg."
-          }
-         ],
-         "takeaway": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.",
-         "explanation": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch6-l1-t1",
          "difficulty": 1,
@@ -18958,6 +18928,36 @@
            "p": 95
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch6-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "newton",
+         "params": {},
+         "title": "Push, mass and acceleration",
+         "tasks": [
+          {
+           "say": "Make the box much heavier and keep the push the same. Watch the acceleration fall.",
+           "when": "mass == 8",
+           "then": "The same force on a bigger mass gives a smaller acceleration."
+          },
+          {
+           "say": "Balance the push with friction so the speed stops changing.",
+           "when": "push == back and push > 0",
+           "then": "When the forces balance, the net force is zero and the box keeps its speed."
+          },
+          {
+           "say": "Double both the force and the mass, so the acceleration stays the same.",
+           "when": "push == 20 and mass == 4 and back == 0",
+           "then": "20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg."
+          }
+         ],
+         "takeaway": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.",
+         "explanation": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged."
         },
         {
          "type": "mcq",
@@ -19327,36 +19327,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch6-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "newton",
-         "params": {},
-         "title": "Push, mass and acceleration",
-         "tasks": [
-          {
-           "say": "Make the box much heavier and keep the push the same. Watch the acceleration fall.",
-           "when": "mass == 8",
-           "then": "The same force on a bigger mass gives a smaller acceleration."
-          },
-          {
-           "say": "Balance the push with friction so the speed stops changing.",
-           "when": "push == back and push > 0",
-           "then": "When the forces balance, the net force is zero and the box keeps its speed."
-          },
-          {
-           "say": "Double both the force and the mass, so the acceleration stays the same.",
-           "when": "push == 20 and mass == 4 and back == 0",
-           "then": "20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg."
-          }
-         ],
-         "takeaway": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.",
-         "explanation": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch6-l2-t1",
          "difficulty": 1,
@@ -19397,6 +19367,36 @@
            "p": 96
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch6-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "newton",
+         "params": {},
+         "title": "Push, mass and acceleration",
+         "tasks": [
+          {
+           "say": "Make the box much heavier and keep the push the same. Watch the acceleration fall.",
+           "when": "mass == 8",
+           "then": "The same force on a bigger mass gives a smaller acceleration."
+          },
+          {
+           "say": "Balance the push with friction so the speed stops changing.",
+           "when": "push == back and push > 0",
+           "then": "When the forces balance, the net force is zero and the box keeps its speed."
+          },
+          {
+           "say": "Double both the force and the mass, so the acceleration stays the same.",
+           "when": "push == 20 and mass == 4 and back == 0",
+           "then": "20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg."
+          }
+         ],
+         "takeaway": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.",
+         "explanation": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged."
         },
         {
          "type": "truefalse",
@@ -19924,36 +19924,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch6-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "friction",
-         "params": {},
-         "title": "Push the box",
-         "tasks": [
-          {
-           "say": "Push hard enough to start the box moving.",
-           "when": "push > (rough / 100) * weight",
-           "then": "Once the push is bigger than friction, the extra force starts the box moving."
-          },
-          {
-           "say": "Slide the box on a surface with no friction at all.",
-           "when": "rough == 0 and push > 0",
-           "then": "With no friction, even a small push sets the box moving."
-          },
-          {
-           "say": "Make the surface so rough that even your hardest push cannot move the box.",
-           "when": "push == 20 and (rough / 100) * weight >= 20",
-           "then": "A heavy box on a very rough surface needs a bigger push than you can give."
-          }
-         ],
-         "takeaway": "A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give.",
-         "explanation": "A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch6-l3-t1",
          "difficulty": 1,
@@ -19999,6 +19969,36 @@
            "p": 98
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch6-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "friction",
+         "params": {},
+         "title": "Push the box",
+         "tasks": [
+          {
+           "say": "Push hard enough to start the box moving.",
+           "when": "push > (rough / 100) * weight",
+           "then": "Once the push is bigger than friction, the extra force starts the box moving."
+          },
+          {
+           "say": "Slide the box on a surface with no friction at all.",
+           "when": "rough == 0 and push > 0",
+           "then": "With no friction, even a small push sets the box moving."
+          },
+          {
+           "say": "Make the surface so rough that even your hardest push cannot move the box.",
+           "when": "push == 20 and (rough / 100) * weight >= 20",
+           "then": "A heavy box on a very rough surface needs a bigger push than you can give."
+          }
+         ],
+         "takeaway": "A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give.",
+         "explanation": "A push can start a box moving, but friction pushes back the other way, and the box moves only when the push beats the greatest friction the surface can give."
         },
         {
          "type": "concept",
@@ -20460,36 +20460,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch6-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "newton",
-         "params": {},
-         "title": "Push, mass and acceleration",
-         "tasks": [
-          {
-           "say": "Make the box much heavier and keep the push the same. Watch the acceleration fall.",
-           "when": "mass == 8",
-           "then": "The same force on a bigger mass gives a smaller acceleration."
-          },
-          {
-           "say": "Balance the push with friction so the speed stops changing.",
-           "when": "push == back and push > 0",
-           "then": "When the forces balance, the net force is zero and the box keeps its speed."
-          },
-          {
-           "say": "Double both the force and the mass, so the acceleration stays the same.",
-           "when": "push == 20 and mass == 4 and back == 0",
-           "then": "20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg."
-          }
-         ],
-         "takeaway": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.",
-         "explanation": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch6-l4-t1",
          "difficulty": 1,
@@ -20535,6 +20505,36 @@
            "p": 101
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch6-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "newton",
+         "params": {},
+         "title": "Push, mass and acceleration",
+         "tasks": [
+          {
+           "say": "Make the box much heavier and keep the push the same. Watch the acceleration fall.",
+           "when": "mass == 8",
+           "then": "The same force on a bigger mass gives a smaller acceleration."
+          },
+          {
+           "say": "Balance the push with friction so the speed stops changing.",
+           "when": "push == back and push > 0",
+           "then": "When the forces balance, the net force is zero and the box keeps its speed."
+          },
+          {
+           "say": "Double both the force and the mass, so the acceleration stays the same.",
+           "when": "push == 20 and mass == 4 and back == 0",
+           "then": "20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg."
+          }
+         ],
+         "takeaway": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.",
+         "explanation": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged."
         },
         {
          "type": "mcq",
@@ -20897,36 +20897,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch6-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "newton",
-         "params": {},
-         "title": "Push, mass and acceleration",
-         "tasks": [
-          {
-           "say": "Make the box much heavier and keep the push the same. Watch the acceleration fall.",
-           "when": "mass == 8",
-           "then": "The same force on a bigger mass gives a smaller acceleration."
-          },
-          {
-           "say": "Balance the push with friction so the speed stops changing.",
-           "when": "push == back and push > 0",
-           "then": "When the forces balance, the net force is zero and the box keeps its speed."
-          },
-          {
-           "say": "Double both the force and the mass, so the acceleration stays the same.",
-           "when": "push == 20 and mass == 4 and back == 0",
-           "then": "20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg."
-          }
-         ],
-         "takeaway": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.",
-         "explanation": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch6-l5-t1",
          "difficulty": 1,
@@ -20957,6 +20927,36 @@
            "p": 103
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch6-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "newton",
+         "params": {},
+         "title": "Push, mass and acceleration",
+         "tasks": [
+          {
+           "say": "Make the box much heavier and keep the push the same. Watch the acceleration fall.",
+           "when": "mass == 8",
+           "then": "The same force on a bigger mass gives a smaller acceleration."
+          },
+          {
+           "say": "Balance the push with friction so the speed stops changing.",
+           "when": "push == back and push > 0",
+           "then": "When the forces balance, the net force is zero and the box keeps its speed."
+          },
+          {
+           "say": "Double both the force and the mass, so the acceleration stays the same.",
+           "when": "push == 20 and mass == 4 and back == 0",
+           "then": "20 N on 4 kg gives the same 5 m/s² as 10 N on 2 kg."
+          }
+         ],
+         "takeaway": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged.",
+         "explanation": "The net force is push minus friction. The same force on a heavier box gives less acceleration, and balanced forces leave the speed unchanged."
         },
         {
          "type": "fillblank",
@@ -21373,36 +21373,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch6-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "thirdlaw",
-         "params": {},
-         "title": "Push two carts apart",
-         "tasks": [
-          {
-           "say": "Give both carts the same mass. What happens to their accelerations?",
-           "when": "mA == mB",
-           "then": "With equal masses the same force gives the same acceleration, so they fly apart at the same rate."
-          },
-          {
-           "say": "Make cart A very light and cart B very heavy, then push.",
-           "when": "mA == 1 and mB == 10",
-           "then": "Both feel the same force, but the light cart gets ten times the acceleration of the heavy one."
-          },
-          {
-           "say": "Push harder, with a force of 40 N.",
-           "when": "F == 40",
-           "then": "The force on each cart is 40 N, one forwards and one backwards: the two forces are equal and opposite."
-          }
-         ],
-         "takeaway": "Forces come in pairs: when one object pushes another, it gets the same size push back the other way, but the lighter object speeds up more.",
-         "explanation": "Forces come in pairs: when one object pushes another, it gets the same size push back the other way, but the lighter object speeds up more."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch6-l6-t1",
          "difficulty": 1,
@@ -21443,6 +21413,36 @@
            "p": 108
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch6-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "thirdlaw",
+         "params": {},
+         "title": "Push two carts apart",
+         "tasks": [
+          {
+           "say": "Give both carts the same mass. What happens to their accelerations?",
+           "when": "mA == mB",
+           "then": "With equal masses the same force gives the same acceleration, so they fly apart at the same rate."
+          },
+          {
+           "say": "Make cart A very light and cart B very heavy, then push.",
+           "when": "mA == 1 and mB == 10",
+           "then": "Both feel the same force, but the light cart gets ten times the acceleration of the heavy one."
+          },
+          {
+           "say": "Push harder, with a force of 40 N.",
+           "when": "F == 40",
+           "then": "The force on each cart is 40 N, one forwards and one backwards: the two forces are equal and opposite."
+          }
+         ],
+         "takeaway": "Forces come in pairs: when one object pushes another, it gets the same size push back the other way, but the lighter object speeds up more.",
+         "explanation": "Forces come in pairs: when one object pushes another, it gets the same size push back the other way, but the lighter object speeds up more."
         },
         {
          "type": "concept",
@@ -22778,36 +22778,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch7-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "work",
-         "params": {},
-         "title": "Lift the bag",
-         "tasks": [
-          {
-           "say": "Lift without moving the bag. How much work is done?",
-           "when": "dist == 0",
-           "then": "No distance moved means no work is done, however hard you push."
-          },
-          {
-           "say": "Do exactly 100 joules of work.",
-           "when": "force * dist == 100",
-           "then": "Work = force x distance, so 50 N over 2 m gives 100 J."
-          },
-          {
-           "say": "Keep the force at 20 N and lift twice as far as at the start.",
-           "when": "force == 20 and dist == 4",
-           "then": "4 m is twice 2 m, so the work doubles from 40 J to 80 J."
-          }
-         ],
-         "takeaway": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work.",
-         "explanation": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch7-l1-t1",
          "difficulty": 1,
@@ -22843,6 +22813,36 @@
            "p": 117
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "work",
+         "params": {},
+         "title": "Lift the bag",
+         "tasks": [
+          {
+           "say": "Lift without moving the bag. How much work is done?",
+           "when": "dist == 0",
+           "then": "No distance moved means no work is done, however hard you push."
+          },
+          {
+           "say": "Do exactly 100 joules of work.",
+           "when": "force * dist == 100",
+           "then": "Work = force x distance, so 50 N over 2 m gives 100 J."
+          },
+          {
+           "say": "Keep the force at 20 N and lift twice as far as at the start.",
+           "when": "force == 20 and dist == 4",
+           "then": "4 m is twice 2 m, so the work doubles from 40 J to 80 J."
+          }
+         ],
+         "takeaway": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work.",
+         "explanation": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work."
         },
         {
          "type": "mcq",
@@ -23338,36 +23338,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch7-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "work",
-         "params": {},
-         "title": "Lift the bag",
-         "tasks": [
-          {
-           "say": "Lift without moving the bag. How much work is done?",
-           "when": "dist == 0",
-           "then": "No distance moved means no work is done, however hard you push."
-          },
-          {
-           "say": "Do exactly 100 joules of work.",
-           "when": "force * dist == 100",
-           "then": "Work = force x distance, so 50 N over 2 m gives 100 J."
-          },
-          {
-           "say": "Keep the force at 20 N and lift twice as far as at the start.",
-           "when": "force == 20 and dist == 4",
-           "then": "4 m is twice 2 m, so the work doubles from 40 J to 80 J."
-          }
-         ],
-         "takeaway": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work.",
-         "explanation": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch7-l2-t1",
          "difficulty": 1,
@@ -23418,6 +23388,36 @@
            "p": 121
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "work",
+         "params": {},
+         "title": "Lift the bag",
+         "tasks": [
+          {
+           "say": "Lift without moving the bag. How much work is done?",
+           "when": "dist == 0",
+           "then": "No distance moved means no work is done, however hard you push."
+          },
+          {
+           "say": "Do exactly 100 joules of work.",
+           "when": "force * dist == 100",
+           "then": "Work = force x distance, so 50 N over 2 m gives 100 J."
+          },
+          {
+           "say": "Keep the force at 20 N and lift twice as far as at the start.",
+           "when": "force == 20 and dist == 4",
+           "then": "4 m is twice 2 m, so the work doubles from 40 J to 80 J."
+          }
+         ],
+         "takeaway": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work.",
+         "explanation": "Work = force x distance, measured in joules; if nothing moves there is no work, and doubling the force or the distance doubles the work."
         },
         {
          "type": "concept",
@@ -23963,36 +23963,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch7-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "energy",
-         "params": {},
-         "title": "Roll the ball down the ramp",
-         "tasks": [
-          {
-           "say": "Put the ball on a ramp 5 metres high.",
-           "when": "height == 5",
-           "then": "From 5 m the ball reaches 10 m/s at the bottom, whatever its mass."
-          },
-          {
-           "say": "Make the stored energy exactly 200 joules.",
-           "when": "mass * 10 * height == 200",
-           "then": "Mass x 10 x height = 200 J."
-          },
-          {
-           "say": "Use the heaviest ball on the highest ramp.",
-           "when": "mass == 5 and height == 10",
-           "then": "500 J: this set-up stores the most energy."
-          }
-         ],
-         "takeaway": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another.",
-         "explanation": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch7-l3-t1",
          "difficulty": 1,
@@ -24027,6 +23997,36 @@
            "p": 122
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "energy",
+         "params": {},
+         "title": "Roll the ball down the ramp",
+         "tasks": [
+          {
+           "say": "Put the ball on a ramp 5 metres high.",
+           "when": "height == 5",
+           "then": "From 5 m the ball reaches 10 m/s at the bottom, whatever its mass."
+          },
+          {
+           "say": "Make the stored energy exactly 200 joules.",
+           "when": "mass * 10 * height == 200",
+           "then": "Mass x 10 x height = 200 J."
+          },
+          {
+           "say": "Use the heaviest ball on the highest ramp.",
+           "when": "mass == 5 and height == 10",
+           "then": "500 J: this set-up stores the most energy."
+          }
+         ],
+         "takeaway": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another.",
+         "explanation": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another."
         },
         {
          "type": "mcq",
@@ -24417,36 +24417,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch7-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "energy",
-         "params": {},
-         "title": "Roll the ball down the ramp",
-         "tasks": [
-          {
-           "say": "Put the ball on a ramp 5 metres high.",
-           "when": "height == 5",
-           "then": "From 5 m the ball reaches 10 m/s at the bottom, whatever its mass."
-          },
-          {
-           "say": "Make the stored energy exactly 200 joules.",
-           "when": "mass * 10 * height == 200",
-           "then": "Mass x 10 x height = 200 J."
-          },
-          {
-           "say": "Use the heaviest ball on the highest ramp.",
-           "when": "mass == 5 and height == 10",
-           "then": "500 J: this set-up stores the most energy."
-          }
-         ],
-         "takeaway": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another.",
-         "explanation": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch7-l4-t1",
          "difficulty": 1,
@@ -24487,6 +24457,36 @@
            "p": 127
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "energy",
+         "params": {},
+         "title": "Roll the ball down the ramp",
+         "tasks": [
+          {
+           "say": "Put the ball on a ramp 5 metres high.",
+           "when": "height == 5",
+           "then": "From 5 m the ball reaches 10 m/s at the bottom, whatever its mass."
+          },
+          {
+           "say": "Make the stored energy exactly 200 joules.",
+           "when": "mass * 10 * height == 200",
+           "then": "Mass x 10 x height = 200 J."
+          },
+          {
+           "say": "Use the heaviest ball on the highest ramp.",
+           "when": "mass == 5 and height == 10",
+           "then": "500 J: this set-up stores the most energy."
+          }
+         ],
+         "takeaway": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another.",
+         "explanation": "At the top the ball stores potential energy, mass x 10 x height. At the bottom that is all kinetic energy, so the same amount of energy now makes the ball move. Energy is never lost, only changed from one form to another."
         },
         {
          "type": "mcq",
@@ -24903,36 +24903,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch7-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "power",
-         "params": {},
-         "title": "Time the work",
-         "tasks": [
-          {
-           "say": "Do exactly 100 joules of work in 2 seconds, so the power is 50 watts.",
-           "when": "force * dist == 100 and secs == 2",
-           "then": "100 J in 2 s is 50 W: power is work divided by time."
-          },
-          {
-           "say": "Do the same 100 joules, but take 4 seconds this time.",
-           "when": "force * dist == 100 and secs == 4",
-           "then": "The same work in twice the time is only 25 W, half the power."
-          },
-          {
-           "say": "Lift the heaviest bag the longest distance in the shortest time.",
-           "when": "force == 100 and dist == 10 and secs == 1",
-           "then": "1000 J in 1 s is 1000 W: the most power you can show here."
-          }
-         ],
-         "takeaway": "Power is the rate of doing work: work divided by time, in watts. The same work done in half the time takes twice the power.",
-         "explanation": "Power is the rate of doing work: work divided by time, in watts. The same work done in half the time takes twice the power."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch7-l5-t1",
          "difficulty": 1,
@@ -24968,6 +24938,36 @@
            "p": 129
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "power",
+         "params": {},
+         "title": "Time the work",
+         "tasks": [
+          {
+           "say": "Do exactly 100 joules of work in 2 seconds, so the power is 50 watts.",
+           "when": "force * dist == 100 and secs == 2",
+           "then": "100 J in 2 s is 50 W: power is work divided by time."
+          },
+          {
+           "say": "Do the same 100 joules, but take 4 seconds this time.",
+           "when": "force * dist == 100 and secs == 4",
+           "then": "The same work in twice the time is only 25 W, half the power."
+          },
+          {
+           "say": "Lift the heaviest bag the longest distance in the shortest time.",
+           "when": "force == 100 and dist == 10 and secs == 1",
+           "then": "1000 J in 1 s is 1000 W: the most power you can show here."
+          }
+         ],
+         "takeaway": "Power is the rate of doing work: work divided by time, in watts. The same work done in half the time takes twice the power.",
+         "explanation": "Power is the rate of doing work: work divided by time, in watts. The same work done in half the time takes twice the power."
         },
         {
          "type": "mcq",
@@ -25392,36 +25392,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch7-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "lever",
-         "params": {},
-         "title": "Balance the load",
-         "tasks": [
-          {
-           "say": "Balance the beam without changing the load or the two arms.",
-           "when": "effort * effortArm == load * loadArm",
-           "then": "Load times load arm equals effort times effort arm: the beam is level."
-          },
-          {
-           "say": "Give yourself a long effort arm and a short load arm, so the load is easy to lift.",
-           "when": "effortArm >= 4 and loadArm <= 1",
-           "then": "With a long effort arm and a short load arm, a small effort can lift a big load."
-          },
-          {
-           "say": "Make the effort arm shorter than the load arm and watch what the load does.",
-           "when": "effortArm < loadArm",
-           "then": "With the effort arm shorter than the load arm, the effort must be bigger than the load: the mechanical advantage is below 1."
-          }
-         ],
-         "takeaway": "A lever balances when load times load arm equals effort times effort arm. A longer effort arm lets you lift the same load with less effort, but a machine cannot reduce the total work.",
-         "explanation": "A lever balances when load times load arm equals effort times effort arm. A longer effort arm lets you lift the same load with less effort, but a machine cannot reduce the total work."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch7-l6-t1",
          "difficulty": 1,
@@ -25457,6 +25427,36 @@
            "p": 130
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch7-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "lever",
+         "params": {},
+         "title": "Balance the load",
+         "tasks": [
+          {
+           "say": "Balance the beam without changing the load or the two arms.",
+           "when": "effort * effortArm == load * loadArm",
+           "then": "Load times load arm equals effort times effort arm: the beam is level."
+          },
+          {
+           "say": "Give yourself a long effort arm and a short load arm, so the load is easy to lift.",
+           "when": "effortArm >= 4 and loadArm <= 1",
+           "then": "With a long effort arm and a short load arm, a small effort can lift a big load."
+          },
+          {
+           "say": "Make the effort arm shorter than the load arm and watch what the load does.",
+           "when": "effortArm < loadArm",
+           "then": "With the effort arm shorter than the load arm, the effort must be bigger than the load: the mechanical advantage is below 1."
+          }
+         ],
+         "takeaway": "A lever balances when load times load arm equals effort times effort arm. A longer effort arm lets you lift the same load with less effort, but a machine cannot reduce the total work.",
+         "explanation": "A lever balances when load times load arm equals effort times effort arm. A longer effort arm lets you lift the same load with less effort, but a machine cannot reduce the total work."
         },
         {
          "type": "mcq",
@@ -28057,36 +28057,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch8-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "atom",
-         "params": {},
-         "title": "Build an atom",
-         "tasks": [
-          {
-           "say": "Build a neutral carbon atom: 6 protons, 6 neutrons and 6 electrons.",
-           "when": "p == 6 and n == 6 and e == 6",
-           "then": "Carbon always has 6 protons. With 6 neutrons and 6 electrons it is neutral carbon-12."
-          },
-          {
-           "say": "Make a heavy isotope of carbon: 6 protons but 8 neutrons.",
-           "when": "p == 6 and n == 8",
-           "then": "Same protons, more neutrons: that is the isotope carbon-14."
-          },
-          {
-           "say": "Make a sodium ion: 11 protons but only 10 electrons.",
-           "when": "p == 11 and e == 10",
-           "then": "Sodium loses one electron, so it has a 1+ charge and a full 2, 8 outer shell."
-          }
-         ],
-         "takeaway": "Protons set which element it is, neutrons change the mass, and electrons fill shells and decide the charge.",
-         "explanation": "Protons set which element it is, neutrons change the mass, and electrons fill shells and decide the charge."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch8-l4-t1",
          "difficulty": 1,
@@ -28122,6 +28092,36 @@
            "p": 146
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch8-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "atom",
+         "params": {},
+         "title": "Build an atom",
+         "tasks": [
+          {
+           "say": "Build a neutral carbon atom: 6 protons, 6 neutrons and 6 electrons.",
+           "when": "p == 6 and n == 6 and e == 6",
+           "then": "Carbon always has 6 protons. With 6 neutrons and 6 electrons it is neutral carbon-12."
+          },
+          {
+           "say": "Make a heavy isotope of carbon: 6 protons but 8 neutrons.",
+           "when": "p == 6 and n == 8",
+           "then": "Same protons, more neutrons: that is the isotope carbon-14."
+          },
+          {
+           "say": "Make a sodium ion: 11 protons but only 10 electrons.",
+           "when": "p == 11 and e == 10",
+           "then": "Sodium loses one electron, so it has a 1+ charge and a full 2, 8 outer shell."
+          }
+         ],
+         "takeaway": "Protons set which element it is, neutrons change the mass, and electrons fill shells and decide the charge.",
+         "explanation": "Protons set which element it is, neutrons change the mass, and electrons fill shells and decide the charge."
         },
         {
          "type": "mcq",
@@ -28551,36 +28551,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch8-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "atom",
-         "params": {},
-         "title": "Build an atom",
-         "tasks": [
-          {
-           "say": "Build a neutral carbon atom: 6 protons, 6 neutrons and 6 electrons.",
-           "when": "p == 6 and n == 6 and e == 6",
-           "then": "Carbon always has 6 protons. With 6 neutrons and 6 electrons it is neutral carbon-12."
-          },
-          {
-           "say": "Make a heavy isotope of carbon: 6 protons but 8 neutrons.",
-           "when": "p == 6 and n == 8",
-           "then": "Same protons, more neutrons: that is the isotope carbon-14."
-          },
-          {
-           "say": "Make a sodium ion: 11 protons but only 10 electrons.",
-           "when": "p == 11 and e == 10",
-           "then": "Sodium loses one electron, so it has a 1+ charge and a full 2, 8 outer shell."
-          }
-         ],
-         "takeaway": "Protons set which element it is, neutrons change the mass, and electrons fill shells and decide the charge.",
-         "explanation": "Protons set which element it is, neutrons change the mass, and electrons fill shells and decide the charge."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch8-l5-t1",
          "difficulty": 1,
@@ -28631,6 +28601,36 @@
            "p": 147
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch8-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "atom",
+         "params": {},
+         "title": "Build an atom",
+         "tasks": [
+          {
+           "say": "Build a neutral carbon atom: 6 protons, 6 neutrons and 6 electrons.",
+           "when": "p == 6 and n == 6 and e == 6",
+           "then": "Carbon always has 6 protons. With 6 neutrons and 6 electrons it is neutral carbon-12."
+          },
+          {
+           "say": "Make a heavy isotope of carbon: 6 protons but 8 neutrons.",
+           "when": "p == 6 and n == 8",
+           "then": "Same protons, more neutrons: that is the isotope carbon-14."
+          },
+          {
+           "say": "Make a sodium ion: 11 protons but only 10 electrons.",
+           "when": "p == 11 and e == 10",
+           "then": "Sodium loses one electron, so it has a 1+ charge and a full 2, 8 outer shell."
+          }
+         ],
+         "takeaway": "Protons set which element it is, neutrons change the mass, and electrons fill shells and decide the charge.",
+         "explanation": "Protons set which element it is, neutrons change the mass, and electrons fill shells and decide the charge."
         },
         {
          "type": "concept",
@@ -30263,31 +30263,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch9-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "masskeep",
-         "params": {},
-         "title": "Weigh it before and after",
-         "tasks": [
-          {
-           "say": "Run the reaction with the flask open. What happens to the reading?",
-           "when": "pick == 1",
-           "then": "The reading falls from 250.0 g to 248.6 g: carbon dioxide escaped into the air."
-          },
-          {
-           "say": "Trap the gas with a balloon and run it again.",
-           "when": "pick == 2",
-           "then": "The reading stays at 250.0 g. Mass is conserved when nothing escapes."
-          }
-         ],
-         "takeaway": "In a closed flask the total mass stays the same through a chemical reaction, because the gas cannot escape. In an open flask the reading falls by the mass of the gas that left, so nothing is really lost.",
-         "explanation": "In a closed flask the total mass stays the same through a chemical reaction, because the gas cannot escape. In an open flask the reading falls by the mass of the gas that left, so nothing is really lost."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch9-l1-t1",
          "difficulty": 1,
@@ -30338,6 +30313,31 @@
            "p": 165
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch9-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "masskeep",
+         "params": {},
+         "title": "Weigh it before and after",
+         "tasks": [
+          {
+           "say": "Run the reaction with the flask open. What happens to the reading?",
+           "when": "pick == 1",
+           "then": "The reading falls from 250.0 g to 248.6 g: carbon dioxide escaped into the air."
+          },
+          {
+           "say": "Trap the gas with a balloon and run it again.",
+           "when": "pick == 2",
+           "then": "The reading stays at 250.0 g. Mass is conserved when nothing escapes."
+          }
+         ],
+         "takeaway": "In a closed flask the total mass stays the same through a chemical reaction, because the gas cannot escape. In an open flask the reading falls by the mass of the gas that left, so nothing is really lost.",
+         "explanation": "In a closed flask the total mass stays the same through a chemical reaction, because the gas cannot escape. In an open flask the reading falls by the mass of the gas that left, so nothing is really lost."
         },
         {
          "type": "mcq",
@@ -33347,36 +33347,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch10-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "sound",
-         "params": {},
-         "title": "See the sound",
-         "tasks": [
-          {
-           "say": "Make a high, shrill note.",
-           "when": "freq >= 600",
-           "then": "More vibrations each second means a higher pitch."
-          },
-          {
-           "say": "Make the sound very loud.",
-           "when": "amp >= 8",
-           "then": "A taller wave carries more energy, so the sound is louder."
-          },
-          {
-           "say": "Make the deepest note on the slider.",
-           "when": "freq == 100",
-           "then": "Fewer vibrations each second means a lower pitch."
-          }
-         ],
-         "takeaway": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy.",
-         "explanation": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch10-l1-t1",
          "difficulty": 1,
@@ -33411,6 +33381,36 @@
            "p": 185
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch10-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sound",
+         "params": {},
+         "title": "See the sound",
+         "tasks": [
+          {
+           "say": "Make a high, shrill note.",
+           "when": "freq >= 600",
+           "then": "More vibrations each second means a higher pitch."
+          },
+          {
+           "say": "Make the sound very loud.",
+           "when": "amp >= 8",
+           "then": "A taller wave carries more energy, so the sound is louder."
+          },
+          {
+           "say": "Make the deepest note on the slider.",
+           "when": "freq == 100",
+           "then": "Fewer vibrations each second means a lower pitch."
+          }
+         ],
+         "takeaway": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy.",
+         "explanation": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy."
         },
         {
          "type": "mcq",
@@ -33850,36 +33850,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch10-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "soundtravel",
-         "params": {},
-         "title": "Does sound travel without air?",
-         "tasks": [
-          {
-           "say": "Pump all the air out of the jar and listen.",
-           "when": "air == 0",
-           "then": "The bell still shakes, but with no air there is nothing to carry the sound to your ear."
-          },
-          {
-           "say": "Now, in the vacuum, strike the bell as hard as you can.",
-           "when": "air == 0 and hit == 100",
-           "then": "Even the hardest strike is silent: sound must have a material medium to travel through."
-          },
-          {
-           "say": "Pump the air back in and listen again.",
-           "when": "air == 100",
-           "then": "The air particles carry the vibrations again, so the bell can be heard. Air is the medium here."
-          }
-         ],
-         "takeaway": "Sound is carried by the shaking of particles. Pump the air out of the jar and the bell still shakes, but with no particles to pass the vibration on, nothing reaches your ear: sound needs a material medium.",
-         "explanation": "Sound is carried by the shaking of particles. Pump the air out of the jar and the bell still shakes, but with no particles to pass the vibration on, nothing reaches your ear: sound needs a material medium."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch10-l2-t1",
          "difficulty": 1,
@@ -33935,6 +33905,36 @@
            "p": 187
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch10-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "soundtravel",
+         "params": {},
+         "title": "Does sound travel without air?",
+         "tasks": [
+          {
+           "say": "Pump all the air out of the jar and listen.",
+           "when": "air == 0",
+           "then": "The bell still shakes, but with no air there is nothing to carry the sound to your ear."
+          },
+          {
+           "say": "Now, in the vacuum, strike the bell as hard as you can.",
+           "when": "air == 0 and hit == 100",
+           "then": "Even the hardest strike is silent: sound must have a material medium to travel through."
+          },
+          {
+           "say": "Pump the air back in and listen again.",
+           "when": "air == 100",
+           "then": "The air particles carry the vibrations again, so the bell can be heard. Air is the medium here."
+          }
+         ],
+         "takeaway": "Sound is carried by the shaking of particles. Pump the air out of the jar and the bell still shakes, but with no particles to pass the vibration on, nothing reaches your ear: sound needs a material medium.",
+         "explanation": "Sound is carried by the shaking of particles. Pump the air out of the jar and the bell still shakes, but with no particles to pass the vibration on, nothing reaches your ear: sound needs a material medium."
         },
         {
          "type": "concept",
@@ -34881,36 +34881,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch10-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "sound",
-         "params": {},
-         "title": "See the sound",
-         "tasks": [
-          {
-           "say": "Make a high, shrill note.",
-           "when": "freq >= 600",
-           "then": "More vibrations each second means a higher pitch."
-          },
-          {
-           "say": "Make the sound very loud.",
-           "when": "amp >= 8",
-           "then": "A taller wave carries more energy, so the sound is louder."
-          },
-          {
-           "say": "Make the deepest note on the slider.",
-           "when": "freq == 100",
-           "then": "Fewer vibrations each second means a lower pitch."
-          }
-         ],
-         "takeaway": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy.",
-         "explanation": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch10-l4-t1",
          "difficulty": 1,
@@ -34946,6 +34916,36 @@
            "p": 192
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch10-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sound",
+         "params": {},
+         "title": "See the sound",
+         "tasks": [
+          {
+           "say": "Make a high, shrill note.",
+           "when": "freq >= 600",
+           "then": "More vibrations each second means a higher pitch."
+          },
+          {
+           "say": "Make the sound very loud.",
+           "when": "amp >= 8",
+           "then": "A taller wave carries more energy, so the sound is louder."
+          },
+          {
+           "say": "Make the deepest note on the slider.",
+           "when": "freq == 100",
+           "then": "Fewer vibrations each second means a lower pitch."
+          }
+         ],
+         "takeaway": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy.",
+         "explanation": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy."
         },
         {
          "type": "truefalse",
@@ -35368,36 +35368,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch10-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "sound",
-         "params": {},
-         "title": "See the sound",
-         "tasks": [
-          {
-           "say": "Make a high, shrill note.",
-           "when": "freq >= 600",
-           "then": "More vibrations each second means a higher pitch."
-          },
-          {
-           "say": "Make the sound very loud.",
-           "when": "amp >= 8",
-           "then": "A taller wave carries more energy, so the sound is louder."
-          },
-          {
-           "say": "Make the deepest note on the slider.",
-           "when": "freq == 100",
-           "then": "Fewer vibrations each second means a lower pitch."
-          }
-         ],
-         "takeaway": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy.",
-         "explanation": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch10-l5-t1",
          "difficulty": 1,
@@ -35438,6 +35408,36 @@
            "p": 194
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch10-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "sound",
+         "params": {},
+         "title": "See the sound",
+         "tasks": [
+          {
+           "say": "Make a high, shrill note.",
+           "when": "freq >= 600",
+           "then": "More vibrations each second means a higher pitch."
+          },
+          {
+           "say": "Make the sound very loud.",
+           "when": "amp >= 8",
+           "then": "A taller wave carries more energy, so the sound is louder."
+          },
+          {
+           "say": "Make the deepest note on the slider.",
+           "when": "freq == 100",
+           "then": "Fewer vibrations each second means a lower pitch."
+          }
+         ],
+         "takeaway": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy.",
+         "explanation": "More vibrations each second make a higher note, and a taller wave means a louder sound with more energy."
         },
         {
          "type": "mcq",
@@ -37636,36 +37636,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch11-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "reproduce",
-         "params": {},
-         "title": "One parent, many copies",
-         "tasks": [
-          {
-           "say": "Split one amoeba into two identical cells.",
-           "when": "mode == 0 and grown >= 8",
-           "then": "Binary fission: the parent copies its nucleus, then divides. Two amoebas, one parent."
-          },
-          {
-           "say": "Grow a bud on the yeast cell and let it break off.",
-           "when": "mode == 1 and grown >= 8",
-           "then": "Budding: the bud grows out of the parent and then lives on its own, as a new yeast cell."
-          },
-          {
-           "say": "Break the green thread into pieces that can each grow.",
-           "when": "mode == 2 and grown >= 8",
-           "then": "Fragmentation: each broken piece of spirogyra grows into a new thread."
-          }
-         ],
-         "takeaway": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent.",
-         "explanation": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch11-l2-t1",
          "difficulty": 1,
@@ -37706,6 +37676,36 @@
            "p": 209
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch11-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reproduce",
+         "params": {},
+         "title": "One parent, many copies",
+         "tasks": [
+          {
+           "say": "Split one amoeba into two identical cells.",
+           "when": "mode == 0 and grown >= 8",
+           "then": "Binary fission: the parent copies its nucleus, then divides. Two amoebas, one parent."
+          },
+          {
+           "say": "Grow a bud on the yeast cell and let it break off.",
+           "when": "mode == 1 and grown >= 8",
+           "then": "Budding: the bud grows out of the parent and then lives on its own, as a new yeast cell."
+          },
+          {
+           "say": "Break the green thread into pieces that can each grow.",
+           "when": "mode == 2 and grown >= 8",
+           "then": "Fragmentation: each broken piece of spirogyra grows into a new thread."
+          }
+         ],
+         "takeaway": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent.",
+         "explanation": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent."
         },
         {
          "type": "mcq",
@@ -38135,36 +38135,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch11-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "reproduce",
-         "params": {},
-         "title": "One parent, many copies",
-         "tasks": [
-          {
-           "say": "Split one amoeba into two identical cells.",
-           "when": "mode == 0 and grown >= 8",
-           "then": "Binary fission: the parent copies its nucleus, then divides. Two amoebas, one parent."
-          },
-          {
-           "say": "Grow a bud on the yeast cell and let it break off.",
-           "when": "mode == 1 and grown >= 8",
-           "then": "Budding: the bud grows out of the parent and then lives on its own, as a new yeast cell."
-          },
-          {
-           "say": "Break the green thread into pieces that can each grow.",
-           "when": "mode == 2 and grown >= 8",
-           "then": "Fragmentation: each broken piece of spirogyra grows into a new thread."
-          }
-         ],
-         "takeaway": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent.",
-         "explanation": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch11-l3-t1",
          "difficulty": 1,
@@ -38205,6 +38175,36 @@
            "p": 211
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch11-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "reproduce",
+         "params": {},
+         "title": "One parent, many copies",
+         "tasks": [
+          {
+           "say": "Split one amoeba into two identical cells.",
+           "when": "mode == 0 and grown >= 8",
+           "then": "Binary fission: the parent copies its nucleus, then divides. Two amoebas, one parent."
+          },
+          {
+           "say": "Grow a bud on the yeast cell and let it break off.",
+           "when": "mode == 1 and grown >= 8",
+           "then": "Budding: the bud grows out of the parent and then lives on its own, as a new yeast cell."
+          },
+          {
+           "say": "Break the green thread into pieces that can each grow.",
+           "when": "mode == 2 and grown >= 8",
+           "then": "Fragmentation: each broken piece of spirogyra grows into a new thread."
+          }
+         ],
+         "takeaway": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent.",
+         "explanation": "In asexual reproduction one parent alone makes new individuals: an amoeba splits in two, yeast buds, a spirogyra thread breaks into pieces, rhizopus sends out spores and a potato sprouts from its eyes. The new ones are copies of the parent."
         },
         {
          "type": "truefalse",
@@ -41714,38 +41714,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch12-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "microscope",
-         "params": {
-          "topic": "micro"
-         },
-         "title": "Look down the microscope",
-         "tasks": [
-          {
-           "say": "Make out the rod-shaped cells clearly.",
-           "when": "zoom >= 60 and at <= 25",
-           "then": "Bacteria: single cells shaped like tiny rods, some in pairs or chains."
-          },
-          {
-           "say": "Find the one-cell fungus with a bud.",
-           "when": "zoom >= 60 and at >= 40 and at <= 60",
-           "then": "Yeast is a fungus: one round cell grows a bud that can break off as a new cell."
-          },
-          {
-           "say": "Find the green cells that make food from sunlight.",
-           "when": "zoom >= 60 and at >= 75",
-           "then": "Microalgae make their own food from sunlight, like a leaf does."
-          }
-         ],
-         "takeaway": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell.",
-         "explanation": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch12-l3-t1",
          "difficulty": 1,
@@ -41781,6 +41749,38 @@
            "p": 235
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch12-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "microscope",
+         "params": {
+          "topic": "micro"
+         },
+         "title": "Look down the microscope",
+         "tasks": [
+          {
+           "say": "Make out the rod-shaped cells clearly.",
+           "when": "zoom >= 60 and at <= 25",
+           "then": "Bacteria: single cells shaped like tiny rods, some in pairs or chains."
+          },
+          {
+           "say": "Find the one-cell fungus with a bud.",
+           "when": "zoom >= 60 and at >= 40 and at <= 60",
+           "then": "Yeast is a fungus: one round cell grows a bud that can break off as a new cell."
+          },
+          {
+           "say": "Find the green cells that make food from sunlight.",
+           "when": "zoom >= 60 and at >= 75",
+           "then": "Microalgae make their own food from sunlight, like a leaf does."
+          }
+         ],
+         "takeaway": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell.",
+         "explanation": "Eyes cannot see objects below a certain size, so a microscope uses lenses to make them bigger. In a drop of pond water the same field holds rod-shaped bacteria, yeast that buds, green microalgae and an amoeba, and each one is a single cell."
         },
         {
          "type": "mcq",
@@ -46120,31 +46120,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "science-g9-ch13-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seabreeze",
-         "params": {},
-         "title": "Watch the coast breathe",
-         "tasks": [
-          {
-           "say": "Make a sea breeze.",
-           "when": "hour >= 10 and hour <= 17",
-           "then": "By day the land is hotter, so air rises over it and the sea air blows in."
-          },
-          {
-           "say": "Make a land breeze.",
-           "when": "hour >= 21 or hour <= 5",
-           "then": "At night the land is cooler, so the breeze blows out to sea."
-          }
-         ],
-         "takeaway": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.",
-         "explanation": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze."
-        },
-        {
          "type": "worked",
          "id": "science-g9-ch13-l4-t1",
          "difficulty": 1,
@@ -46180,6 +46155,31 @@
            "p": 259
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "science-g9-ch13-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seabreeze",
+         "params": {},
+         "title": "Watch the coast breathe",
+         "tasks": [
+          {
+           "say": "Make a sea breeze.",
+           "when": "hour >= 10 and hour <= 17",
+           "then": "By day the land is hotter, so air rises over it and the sea air blows in."
+          },
+          {
+           "say": "Make a land breeze.",
+           "when": "hour >= 21 or hour <= 5",
+           "then": "At night the land is cooler, so the breeze blows out to sea."
+          }
+         ],
+         "takeaway": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze.",
+         "explanation": "Warm air rises and cooler air moves in: by day a sea breeze, by night a land breeze."
         },
         {
          "type": "mcq",

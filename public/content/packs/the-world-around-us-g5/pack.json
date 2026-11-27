@@ -544,31 +544,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch1-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "particles",
-         "params": {},
-         "title": "Heat the water",
-         "tasks": [
-          {
-           "say": "Freeze the water.",
-           "when": "temp < 0",
-           "then": "Below 0 degrees water is ice: its particles can only jiggle in place."
-          },
-          {
-           "say": "Boil it.",
-           "when": "temp >= 100",
-           "then": "At 100 degrees water boils and its particles fly apart as steam."
-          }
-         ],
-         "takeaway": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.",
-         "explanation": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch1-l2-t1",
          "difficulty": 1,
@@ -599,6 +574,31 @@
            "p": 8
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch1-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "particles",
+         "params": {},
+         "title": "Heat the water",
+         "tasks": [
+          {
+           "say": "Freeze the water.",
+           "when": "temp < 0",
+           "then": "Below 0 degrees water is ice: its particles can only jiggle in place."
+          },
+          {
+           "say": "Boil it.",
+           "when": "temp >= 100",
+           "then": "At 100 degrees water boils and its particles fly apart as steam."
+          }
+         ],
+         "takeaway": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam.",
+         "explanation": "Heating gives particles more energy: held in place in ice, sliding in water, flying apart as steam."
         },
         {
          "type": "concept",
@@ -1028,31 +1028,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch1-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "watercycle",
-         "params": {},
-         "title": "Follow a drop",
-         "tasks": [
-          {
-           "say": "Follow the water until it falls as rain.",
-           "when": "step == 3",
-           "then": "Drops in the clouds grow heavy and fall."
-          },
-          {
-           "say": "Finish the cycle.",
-           "when": "step == 4",
-           "then": "Rivers carry the water back to the sea, ready to start again."
-          }
-         ],
-         "takeaway": "Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle.",
-         "explanation": "Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch1-l3-t1",
          "difficulty": 1,
@@ -1088,6 +1063,31 @@
            "p": 8
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch1-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "watercycle",
+         "params": {},
+         "title": "Follow a drop",
+         "tasks": [
+          {
+           "say": "Follow the water until it falls as rain.",
+           "when": "step == 3",
+           "then": "Drops in the clouds grow heavy and fall."
+          },
+          {
+           "say": "Finish the cycle.",
+           "when": "step == 4",
+           "then": "Rivers carry the water back to the sea, ready to start again."
+          }
+         ],
+         "takeaway": "Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle.",
+         "explanation": "Water evaporates, condenses into clouds, falls as rain and flows back: the water cycle."
         },
         {
          "type": "mcq",
@@ -1527,31 +1527,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch1-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seepage",
-         "params": {},
-         "title": "Pour the water",
-         "tasks": [
-          {
-           "say": "Let 3 minutes pass.",
-           "when": "t == 3",
-           "then": "Gravel has let through the most water: its particles have the widest gaps."
-          },
-          {
-           "say": "Wait until all the water is through the gravel.",
-           "when": "t >= 4",
-           "then": "All 100 ml is through the gravel, while clay has let through only a little."
-          }
-         ],
-         "takeaway": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles.",
-         "explanation": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch1-l4-t1",
          "difficulty": 1,
@@ -1592,6 +1567,31 @@
            "p": 9
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch1-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seepage",
+         "params": {},
+         "title": "Pour the water",
+         "tasks": [
+          {
+           "say": "Let 3 minutes pass.",
+           "when": "t == 3",
+           "then": "Gravel has let through the most water: its particles have the widest gaps."
+          },
+          {
+           "say": "Wait until all the water is through the gravel.",
+           "when": "t >= 4",
+           "then": "All 100 ml is through the gravel, while clay has let through only a little."
+          }
+         ],
+         "takeaway": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles.",
+         "explanation": "Water seeps fastest through gravel and slowest through clay, because of the gaps between the particles."
         },
         {
          "type": "mcq",
@@ -3897,36 +3897,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch2-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "river",
-         "params": {},
-         "title": "Follow the river to the sea",
-         "tasks": [
-          {
-           "say": "Make the river wider as small streams join it.",
-           "when": "stage == 2",
-           "then": "The joining streams are tributaries: each one adds water, so the river grows wider and stronger."
-          },
-          {
-           "say": "Stop the river with a giant wall and store its water.",
-           "when": "stage == 4",
-           "then": "A dam blocks the flow and holds the water in a reservoir for drinking, crops and electricity."
-          },
-          {
-           "say": "Take the river all the way to the sea.",
-           "when": "stage == 5",
-           "then": "Near the sea the river splits into many small streams and makes a delta, where mangroves grow."
-          }
-         ],
-         "takeaway": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta.",
-         "explanation": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch2-l1-t1",
          "difficulty": 1,
@@ -3957,6 +3927,36 @@
            "p": 21
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch2-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "river",
+         "params": {},
+         "title": "Follow the river to the sea",
+         "tasks": [
+          {
+           "say": "Make the river wider as small streams join it.",
+           "when": "stage == 2",
+           "then": "The joining streams are tributaries: each one adds water, so the river grows wider and stronger."
+          },
+          {
+           "say": "Stop the river with a giant wall and store its water.",
+           "when": "stage == 4",
+           "then": "A dam blocks the flow and holds the water in a reservoir for drinking, crops and electricity."
+          },
+          {
+           "say": "Take the river all the way to the sea.",
+           "when": "stage == 5",
+           "then": "Near the sea the river splits into many small streams and makes a delta, where mangroves grow."
+          }
+         ],
+         "takeaway": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta.",
+         "explanation": "A river starts as a small stream in the hills. Tributaries join it and make it wider. It can be blocked by a dam and its reservoir, and near the sea it splits into a delta."
         },
         {
          "type": "concept",
@@ -8129,31 +8129,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch3-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "preserve",
-         "params": {},
-         "title": "Keep the bread good",
-         "tasks": [
-          {
-           "say": "Seal the bread in an airtight can.",
-           "when": "how == 2",
-           "then": "No air means no growth: the bread keeps for months."
-          },
-          {
-           "say": "Cover the bread with a layer of oil.",
-           "when": "how == 1",
-           "then": "Oil keeps the air out, the way a pickle keeps for weeks."
-          }
-         ],
-         "takeaway": "Microbes need moisture, air and the right warmth to grow. Oil keeps the air out, an airtight can removes it, and a fridge slows them down, which is why each keeps food for a different length of time.",
-         "explanation": "Microbes need moisture, air and the right warmth to grow. Oil keeps the air out, an airtight can removes it, and a fridge slows them down, which is why each keeps food for a different length of time."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch3-l2-t1",
          "difficulty": 1,
@@ -8184,6 +8159,31 @@
            "p": 43
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch3-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "preserve",
+         "params": {},
+         "title": "Keep the bread good",
+         "tasks": [
+          {
+           "say": "Seal the bread in an airtight can.",
+           "when": "how == 2",
+           "then": "No air means no growth: the bread keeps for months."
+          },
+          {
+           "say": "Cover the bread with a layer of oil.",
+           "when": "how == 1",
+           "then": "Oil keeps the air out, the way a pickle keeps for weeks."
+          }
+         ],
+         "takeaway": "Microbes need moisture, air and the right warmth to grow. Oil keeps the air out, an airtight can removes it, and a fridge slows them down, which is why each keeps food for a different length of time.",
+         "explanation": "Microbes need moisture, air and the right warmth to grow. Oil keeps the air out, an airtight can removes it, and a fridge slows them down, which is why each keeps food for a different length of time."
         },
         {
          "type": "mcq",
@@ -12091,41 +12091,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch4-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "twobins",
-         "params": {},
-         "title": "Sort the waste into two bins",
-         "tasks": [
-          {
-           "say": "Put the banana peel in the green bin.",
-           "when": "item == 0 and bin == 0",
-           "then": "Food scraps rot and become compost, food for plants."
-          },
-          {
-           "say": "Put the glass bottle in the blue bin.",
-           "when": "item == 1 and bin == 1",
-           "then": "Glass can be washed and made into new glass."
-          },
-          {
-           "say": "Put the eggshell in the green bin.",
-           "when": "item == 4 and bin == 0",
-           "then": "Eggshells are food waste, so they go in the green bin."
-          },
-          {
-           "say": "Put the plastic bag in the blue bin.",
-           "when": "item == 3 and bin == 1",
-           "then": "Plastic can be recycled into new things."
-          }
-         ],
-         "takeaway": "Green bin: peels, leaves and eggshells rot into compost. Blue bin: glass, plastic and paper can be made into new things.",
-         "explanation": "Green bin: peels, leaves and eggshells rot into compost. Blue bin: glass, plastic and paper can be made into new things."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch4-l3-t1",
          "difficulty": 1,
@@ -12171,6 +12136,41 @@
            "p": 61
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch4-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "twobins",
+         "params": {},
+         "title": "Sort the waste into two bins",
+         "tasks": [
+          {
+           "say": "Put the banana peel in the green bin.",
+           "when": "item == 0 and bin == 0",
+           "then": "Food scraps rot and become compost, food for plants."
+          },
+          {
+           "say": "Put the glass bottle in the blue bin.",
+           "when": "item == 1 and bin == 1",
+           "then": "Glass can be washed and made into new glass."
+          },
+          {
+           "say": "Put the eggshell in the green bin.",
+           "when": "item == 4 and bin == 0",
+           "then": "Eggshells are food waste, so they go in the green bin."
+          },
+          {
+           "say": "Put the plastic bag in the blue bin.",
+           "when": "item == 3 and bin == 1",
+           "then": "Plastic can be recycled into new things."
+          }
+         ],
+         "takeaway": "Green bin: peels, leaves and eggshells rot into compost. Blue bin: glass, plastic and paper can be made into new things.",
+         "explanation": "Green bin: peels, leaves and eggshells rot into compost. Blue bin: glass, plastic and paper can be made into new things."
         },
         {
          "type": "mcq",
@@ -15851,43 +15851,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch5-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "money",
-         "params": {
-          "kind": "rupees"
-         },
-         "title": "Pay the exact amount",
-         "tasks": [
-          {
-           "say": "Make ₹36.",
-           "when": "amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36",
-           "then": "For example 3 × ₹10 + 1 × ₹5 + 1 × ₹1."
-          },
-          {
-           "say": "Make ₹163 with just 6 notes and coins.",
-           "when": "amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6",
-           "then": "₹100 + ₹50 + ₹10 + ₹1 + ₹1 + ₹1: big notes first."
-          },
-          {
-           "say": "Pay ₹55 in two different ways, one after the other.",
-           "when": "amt == 7 and 100 * h + 50 * f + 10 * t + 5 * v + o == 55 and h == 0",
-           "then": "For example 5 × ₹10 + 1 × ₹5, or ₹50 + ₹5: the same amount can be paid in many ways."
-          },
-          {
-           "say": "Make ₹183 a different way, using no ₹100 note.",
-           "when": "amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0",
-           "then": "Lots of ways make the same amount."
-          }
-         ],
-         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
-         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch5-l3-t1",
          "difficulty": 1,
@@ -15923,6 +15886,43 @@
            "p": 81
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch5-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "money",
+         "params": {
+          "kind": "rupees"
+         },
+         "title": "Pay the exact amount",
+         "tasks": [
+          {
+           "say": "Make ₹36.",
+           "when": "amt == 0 and 100 * h + 50 * f + 10 * t + 5 * v + o == 36",
+           "then": "For example 3 × ₹10 + 1 × ₹5 + 1 × ₹1."
+          },
+          {
+           "say": "Make ₹163 with just 6 notes and coins.",
+           "when": "amt == 2 and 100 * h + 50 * f + 10 * t + 5 * v + o == 163 and h + f + t + v + o == 6",
+           "then": "₹100 + ₹50 + ₹10 + ₹1 + ₹1 + ₹1: big notes first."
+          },
+          {
+           "say": "Pay ₹55 in two different ways, one after the other.",
+           "when": "amt == 7 and 100 * h + 50 * f + 10 * t + 5 * v + o == 55 and h == 0",
+           "then": "For example 5 × ₹10 + 1 × ₹5, or ₹50 + ₹5: the same amount can be paid in many ways."
+          },
+          {
+           "say": "Make ₹183 a different way, using no ₹100 note.",
+           "when": "amt == 3 and 100 * h + 50 * f + 10 * t + 5 * v + o == 183 and h == 0",
+           "then": "Lots of ways make the same amount."
+          }
+         ],
+         "takeaway": "The same amount can be made with different notes and coins; big notes first uses the fewest.",
+         "explanation": "The same amount can be made with different notes and coins; big notes first uses the fewest."
         },
         {
          "type": "concept",
@@ -18538,6 +18538,63 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "the-world-around-us-g5-ch6-l1-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Shanti wants to see more of her country. Her parents are busy planning the summer vacation. Where should the trip begin so her wish comes true?",
+         "steps": [
+          "Shanti wants to see more of her country, so the trip must show her new and special places.",
+          "Her parents are busy planning, so they must pick places that fit into one long trip.",
+          "The southernmost tip of India, Indira Point, is a special place at the very bottom of the map, so it is a good starting point.",
+          "The Andaman and Nicobar Islands are a long chain of islands near it, so the family can see many islands in one trip."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "1.4",
+          "1.5",
+          "1.6",
+          "1.7"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 94
+          },
+          {
+           "ch": 6,
+           "p": 94
+          },
+          {
+           "ch": 6,
+           "p": 94
+          },
+          {
+           "ch": 6,
+           "p": 94
+          },
+          {
+           "ch": 6,
+           "p": 94
+          },
+          {
+           "ch": 6,
+           "p": 95
+          },
+          {
+           "ch": 6,
+           "p": 95
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "the-world-around-us-g5-ch6-l1-play",
          "difficulty": 1,
@@ -18598,63 +18655,6 @@
          ],
          "takeaway": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence.",
          "explanation": "A word is easiest to remember inside a sentence. Read the sentence, choose the meaning that fits, and the word is yours. The same word can look different in another sentence."
-        },
-        {
-         "type": "worked",
-         "id": "the-world-around-us-g5-ch6-l1-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Shanti wants to see more of her country. Her parents are busy planning the summer vacation. Where should the trip begin so her wish comes true?",
-         "steps": [
-          "Shanti wants to see more of her country, so the trip must show her new and special places.",
-          "Her parents are busy planning, so they must pick places that fit into one long trip.",
-          "The southernmost tip of India, Indira Point, is a special place at the very bottom of the map, so it is a good starting point.",
-          "The Andaman and Nicobar Islands are a long chain of islands near it, so the family can see many islands in one trip."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "1.1",
-          "1.2",
-          "1.3",
-          "1.4",
-          "1.5",
-          "1.6",
-          "1.7"
-         ],
-         "src": [
-          {
-           "ch": 6,
-           "p": 94
-          },
-          {
-           "ch": 6,
-           "p": 94
-          },
-          {
-           "ch": 6,
-           "p": 94
-          },
-          {
-           "ch": 6,
-           "p": 94
-          },
-          {
-           "ch": 6,
-           "p": 94
-          },
-          {
-           "ch": 6,
-           "p": 95
-          },
-          {
-           "ch": 6,
-           "p": 95
-          }
-         ]
         },
         {
          "type": "concept",
@@ -19138,6 +19138,38 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "the-world-around-us-g5-ch6-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Shanti saw a very big tree on the island. Its roots spread out wide, like a flat mat on the ground. She was curious and asked why the roots grow like that.",
+         "steps": [
+          "The tree is very big and heavy, so it needs strong support.",
+          "The ground on the island can be soft, so a thin base may not hold it.",
+          "Wide roots hold the ground over a big area, so they support the tree.",
+          "So the roots spread out wide to keep the big tree standing safely."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 6,
+           "p": 96
+          },
+          {
+           "ch": 6,
+           "p": 96
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "the-world-around-us-g5-ch6-l2-play",
          "difficulty": 1,
@@ -19217,38 +19249,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "the-world-around-us-g5-ch6-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Shanti saw a very big tree on the island. Its roots spread out wide, like a flat mat on the ground. She was curious and asked why the roots grow like that.",
-         "steps": [
-          "The tree is very big and heavy, so it needs strong support.",
-          "The ground on the island can be soft, so a thin base may not hold it.",
-          "Wide roots hold the ground over a big area, so they support the tree.",
-          "So the roots spread out wide to keep the big tree standing safely."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.2",
-          "2.3"
-         ],
-         "src": [
-          {
-           "ch": 6,
-           "p": 96
-          },
-          {
-           "ch": 6,
-           "p": 96
-          }
-         ]
         },
         {
          "type": "concept",
@@ -22234,36 +22234,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch7-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "energysource",
-         "params": {},
-         "title": "Send the power",
-         "tasks": [
-          {
-           "say": "Make electricity from moving air.",
-           "when": "source == 2",
-           "then": "Windmills spin in the moving air, and their turning makes electricity."
-          },
-          {
-           "say": "Find the source that sends up smoke.",
-           "when": "source == 4",
-           "then": "Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air."
-          },
-          {
-           "say": "Choose the Sun, the main source of energy for life on Earth.",
-           "when": "source == 1",
-           "then": "Sunlight gives light and heat, and solar panels turn it into electricity without any smoke."
-          }
-         ],
-         "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
-         "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch7-l1-t1",
          "difficulty": 1,
@@ -22309,6 +22279,36 @@
            "p": 115
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch7-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "energysource",
+         "params": {},
+         "title": "Send the power",
+         "tasks": [
+          {
+           "say": "Make electricity from moving air.",
+           "when": "source == 2",
+           "then": "Windmills spin in the moving air, and their turning makes electricity."
+          },
+          {
+           "say": "Find the source that sends up smoke.",
+           "when": "source == 4",
+           "then": "Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air."
+          },
+          {
+           "say": "Choose the Sun, the main source of energy for life on Earth.",
+           "when": "source == 1",
+           "then": "Sunlight gives light and heat, and solar panels turn it into electricity without any smoke."
+          }
+         ],
+         "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
+         "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
         },
         {
          "type": "concept",
@@ -23267,36 +23267,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch7-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "energysource",
-         "params": {},
-         "title": "Send the power",
-         "tasks": [
-          {
-           "say": "Make electricity from moving air.",
-           "when": "source == 2",
-           "then": "Windmills spin in the moving air, and their turning makes electricity."
-          },
-          {
-           "say": "Find the source that sends up smoke.",
-           "when": "source == 4",
-           "then": "Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air."
-          },
-          {
-           "say": "Choose the Sun, the main source of energy for life on Earth.",
-           "when": "source == 1",
-           "then": "Sunlight gives light and heat, and solar panels turn it into electricity without any smoke."
-          }
-         ],
-         "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
-         "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch7-l3-t1",
          "difficulty": 1,
@@ -23332,6 +23302,36 @@
            "p": 118
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch7-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "energysource",
+         "params": {},
+         "title": "Send the power",
+         "tasks": [
+          {
+           "say": "Make electricity from moving air.",
+           "when": "source == 2",
+           "then": "Windmills spin in the moving air, and their turning makes electricity."
+          },
+          {
+           "say": "Find the source that sends up smoke.",
+           "when": "source == 4",
+           "then": "Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air."
+          },
+          {
+           "say": "Choose the Sun, the main source of energy for life on Earth.",
+           "when": "source == 1",
+           "then": "Sunlight gives light and heat, and solar panels turn it into electricity without any smoke."
+          }
+         ],
+         "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
+         "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
         },
         {
          "type": "mcq",
@@ -23736,31 +23736,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch7-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "solar",
-         "params": {},
-         "title": "A village runs on sunshine",
-         "tasks": [
-          {
-           "say": "Run the village on 3 panels in 10 hours of sun.",
-           "when": "panels == 3 and sun == 10",
-           "then": "3 panels x 10 hours make 12 kWh, just enough for the 10 the village needs."
-          },
-          {
-           "say": "Show the village running short.",
-           "when": "panels == 1 and sun == 2",
-           "then": "One panel in two hours of sun makes less than 1 kWh, far short of 10."
-          }
-         ],
-         "takeaway": "Each panel makes a little power for every hour of strong sun. Enough panels make enough for the day and charge the battery for the night; too few and the village runs short.",
-         "explanation": "Each panel makes a little power for every hour of strong sun. Enough panels make enough for the day and charge the battery for the night; too few and the village runs short."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch7-l4-t1",
          "difficulty": 1,
@@ -23801,6 +23776,31 @@
            "p": 122
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch7-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "solar",
+         "params": {},
+         "title": "A village runs on sunshine",
+         "tasks": [
+          {
+           "say": "Run the village on 3 panels in 10 hours of sun.",
+           "when": "panels == 3 and sun == 10",
+           "then": "3 panels x 10 hours make 12 kWh, just enough for the 10 the village needs."
+          },
+          {
+           "say": "Show the village running short.",
+           "when": "panels == 1 and sun == 2",
+           "then": "One panel in two hours of sun makes less than 1 kWh, far short of 10."
+          }
+         ],
+         "takeaway": "Each panel makes a little power for every hour of strong sun. Enough panels make enough for the day and charge the battery for the night; too few and the village runs short.",
+         "explanation": "Each panel makes a little power for every hour of strong sun. Enough panels make enough for the day and charge the battery for the night; too few and the village runs short."
         },
         {
          "type": "concept",
@@ -24288,36 +24288,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch7-l5-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "energysource",
-         "params": {},
-         "title": "Send the power",
-         "tasks": [
-          {
-           "say": "Make electricity from moving air.",
-           "when": "source == 2",
-           "then": "Windmills spin in the moving air, and their turning makes electricity."
-          },
-          {
-           "say": "Find the source that sends up smoke.",
-           "when": "source == 4",
-           "then": "Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air."
-          },
-          {
-           "say": "Choose the Sun, the main source of energy for life on Earth.",
-           "when": "source == 1",
-           "then": "Sunlight gives light and heat, and solar panels turn it into electricity without any smoke."
-          }
-         ],
-         "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
-         "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch7-l5-t1",
          "difficulty": 1,
@@ -24363,6 +24333,36 @@
            "p": 126
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch7-l5-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "energysource",
+         "params": {},
+         "title": "Send the power",
+         "tasks": [
+          {
+           "say": "Make electricity from moving air.",
+           "when": "source == 2",
+           "then": "Windmills spin in the moving air, and their turning makes electricity."
+          },
+          {
+           "say": "Find the source that sends up smoke.",
+           "when": "source == 4",
+           "then": "Burning coal makes most of our electricity, but its smoke and harmful gases pollute the air."
+          },
+          {
+           "say": "Choose the Sun, the main source of energy for life on Earth.",
+           "when": "source == 1",
+           "then": "Sunlight gives light and heat, and solar panels turn it into electricity without any smoke."
+          }
+         ],
+         "takeaway": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air.",
+         "explanation": "The Sun, wind and water make electricity without smoke, so they are clean energy. Burning coal also makes electricity, but its smoke and harmful gases dirty the air."
         },
         {
          "type": "mcq",
@@ -25904,36 +25904,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch8-l1-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "loom",
-         "params": {},
-         "title": "Weave a piece of cloth",
-         "tasks": [
-          {
-           "say": "Send the shuttle across once to weave the first row.",
-           "when": "row == 1",
-           "then": "The weft crosses the warp: over one thread and under the next."
-          },
-          {
-           "say": "Weave every row and finish the cloth.",
-           "when": "row == 8",
-           "then": "When the rows fill the warp, the threads lock together into cloth."
-          },
-          {
-           "say": "Cross two threads at a time to make a basket pattern.",
-           "when": "over == 2",
-           "then": "With two threads crossing together the marks get bigger: this is basket weave."
-          }
-         ],
-         "takeaway": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together.",
-         "explanation": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch8-l1-t1",
          "difficulty": 1,
@@ -25974,6 +25944,36 @@
            "p": 131
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch8-l1-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "loom",
+         "params": {},
+         "title": "Weave a piece of cloth",
+         "tasks": [
+          {
+           "say": "Send the shuttle across once to weave the first row.",
+           "when": "row == 1",
+           "then": "The weft crosses the warp: over one thread and under the next."
+          },
+          {
+           "say": "Weave every row and finish the cloth.",
+           "when": "row == 8",
+           "then": "When the rows fill the warp, the threads lock together into cloth."
+          },
+          {
+           "say": "Cross two threads at a time to make a basket pattern.",
+           "when": "over == 2",
+           "then": "With two threads crossing together the marks get bigger: this is basket weave."
+          }
+         ],
+         "takeaway": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together.",
+         "explanation": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together."
         },
         {
          "type": "mcq",
@@ -26390,36 +26390,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch8-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "loom",
-         "params": {},
-         "title": "Weave a piece of cloth",
-         "tasks": [
-          {
-           "say": "Send the shuttle across once to weave the first row.",
-           "when": "row == 1",
-           "then": "The weft crosses the warp: over one thread and under the next."
-          },
-          {
-           "say": "Weave every row and finish the cloth.",
-           "when": "row == 8",
-           "then": "When the rows fill the warp, the threads lock together into cloth."
-          },
-          {
-           "say": "Cross two threads at a time to make a basket pattern.",
-           "when": "over == 2",
-           "then": "With two threads crossing together the marks get bigger: this is basket weave."
-          }
-         ],
-         "takeaway": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together.",
-         "explanation": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch8-l2-t1",
          "difficulty": 1,
@@ -26455,6 +26425,36 @@
            "p": 134
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch8-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "loom",
+         "params": {},
+         "title": "Weave a piece of cloth",
+         "tasks": [
+          {
+           "say": "Send the shuttle across once to weave the first row.",
+           "when": "row == 1",
+           "then": "The weft crosses the warp: over one thread and under the next."
+          },
+          {
+           "say": "Weave every row and finish the cloth.",
+           "when": "row == 8",
+           "then": "When the rows fill the warp, the threads lock together into cloth."
+          },
+          {
+           "say": "Cross two threads at a time to make a basket pattern.",
+           "when": "over == 2",
+           "then": "With two threads crossing together the marks get bigger: this is basket weave."
+          }
+         ],
+         "takeaway": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together.",
+         "explanation": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together."
         },
         {
          "type": "fillblank",
@@ -26925,36 +26925,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch8-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "loom",
-         "params": {},
-         "title": "Weave a piece of cloth",
-         "tasks": [
-          {
-           "say": "Send the shuttle across once to weave the first row.",
-           "when": "row == 1",
-           "then": "The weft crosses the warp: over one thread and under the next."
-          },
-          {
-           "say": "Weave every row and finish the cloth.",
-           "when": "row == 8",
-           "then": "When the rows fill the warp, the threads lock together into cloth."
-          },
-          {
-           "say": "Cross two threads at a time to make a basket pattern.",
-           "when": "over == 2",
-           "then": "With two threads crossing together the marks get bigger: this is basket weave."
-          }
-         ],
-         "takeaway": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together.",
-         "explanation": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch8-l3-t1",
          "difficulty": 1,
@@ -26985,6 +26955,36 @@
            "p": 134
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch8-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "loom",
+         "params": {},
+         "title": "Weave a piece of cloth",
+         "tasks": [
+          {
+           "say": "Send the shuttle across once to weave the first row.",
+           "when": "row == 1",
+           "then": "The weft crosses the warp: over one thread and under the next."
+          },
+          {
+           "say": "Weave every row and finish the cloth.",
+           "when": "row == 8",
+           "then": "When the rows fill the warp, the threads lock together into cloth."
+          },
+          {
+           "say": "Cross two threads at a time to make a basket pattern.",
+           "when": "over == 2",
+           "then": "With two threads crossing together the marks get bigger: this is basket weave."
+          }
+         ],
+         "takeaway": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together.",
+         "explanation": "Cloth is made by crossing two sets of thread: the warp goes up and down, the weft goes over one thread and under the next, and they lock together."
         },
         {
          "type": "mcq",
@@ -28243,31 +28243,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch8-l6-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "paper",
-         "params": {},
-         "title": "From wood to paper",
-         "tasks": [
-          {
-           "say": "Recycle old newspaper into new paper.",
-           "when": "kind == 1 and step == 3",
-           "then": "Torn, soaked, beaten and dried: old newspaper becomes a new sheet."
-          },
-          {
-           "say": "Soak the old paper in water.",
-           "when": "kind == 1 and step == 1",
-           "then": "Water softens the fibres so they can be beaten into pulp."
-          }
-         ],
-         "takeaway": "Paper is made from wood or from old paper: the material is torn up, soaked, beaten into pulp, then pressed and dried. Recycled paper uses the paper we already have, so fewer trees are cut.",
-         "explanation": "Paper is made from wood or from old paper: the material is torn up, soaked, beaten into pulp, then pressed and dried. Recycled paper uses the paper we already have, so fewer trees are cut."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch8-l6-t1",
          "difficulty": 1,
@@ -28298,6 +28273,31 @@
            "p": 138
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch8-l6-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "paper",
+         "params": {},
+         "title": "From wood to paper",
+         "tasks": [
+          {
+           "say": "Recycle old newspaper into new paper.",
+           "when": "kind == 1 and step == 3",
+           "then": "Torn, soaked, beaten and dried: old newspaper becomes a new sheet."
+          },
+          {
+           "say": "Soak the old paper in water.",
+           "when": "kind == 1 and step == 1",
+           "then": "Water softens the fibres so they can be beaten into pulp."
+          }
+         ],
+         "takeaway": "Paper is made from wood or from old paper: the material is torn up, soaked, beaten into pulp, then pressed and dried. Recycled paper uses the paper we already have, so fewer trees are cut.",
+         "explanation": "Paper is made from wood or from old paper: the material is torn up, soaked, beaten into pulp, then pressed and dried. Recycled paper uses the paper we already have, so fewer trees are cut."
         },
         {
          "type": "concept",
@@ -30016,31 +30016,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch9-l2-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "daynight",
-         "params": {},
-         "title": "Spin the Earth",
-         "tasks": [
-          {
-           "say": "Turn to midnight.",
-           "when": "hour == 0 or hour == 24",
-           "then": "Your place has turned away from the Sun."
-          },
-          {
-           "say": "Find sunrise.",
-           "when": "hour == 6",
-           "then": "At sunrise your place is turning into the sunlight."
-          }
-         ],
-         "takeaway": "The Earth spins once a day, so each place turns into the sunlight and out of it again.",
-         "explanation": "The Earth spins once a day, so each place turns into the sunlight and out of it again."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch9-l2-t1",
          "difficulty": 1,
@@ -30081,6 +30056,31 @@
            "p": 150
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch9-l2-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "daynight",
+         "params": {},
+         "title": "Spin the Earth",
+         "tasks": [
+          {
+           "say": "Turn to midnight.",
+           "when": "hour == 0 or hour == 24",
+           "then": "Your place has turned away from the Sun."
+          },
+          {
+           "say": "Find sunrise.",
+           "when": "hour == 6",
+           "then": "At sunrise your place is turning into the sunlight."
+          }
+         ],
+         "takeaway": "The Earth spins once a day, so each place turns into the sunlight and out of it again.",
+         "explanation": "The Earth spins once a day, so each place turns into the sunlight and out of it again."
         },
         {
          "type": "mcq",
@@ -30543,26 +30543,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch9-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seasons",
-         "params": {},
-         "title": "Go round the Sun",
-         "tasks": [
-          {
-           "say": "Go to December.",
-           "when": "month == 12",
-           "then": "Now the southern half leans toward the Sun: summer there, winter in India."
-          }
-         ],
-         "takeaway": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons.",
-         "explanation": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch9-l3-t1",
          "difficulty": 1,
@@ -30593,6 +30573,26 @@
            "p": 151
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch9-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seasons",
+         "params": {},
+         "title": "Go round the Sun",
+         "tasks": [
+          {
+           "say": "Go to December.",
+           "when": "month == 12",
+           "then": "Now the southern half leans toward the Sun: summer there, winter in India."
+          }
+         ],
+         "takeaway": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons.",
+         "explanation": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons."
         },
         {
          "type": "concept",
@@ -31018,26 +31018,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch9-l4-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "seasons",
-         "params": {},
-         "title": "Go round the Sun",
-         "tasks": [
-          {
-           "say": "Go to December.",
-           "when": "month == 12",
-           "then": "Now the southern half leans toward the Sun: summer there, winter in India."
-          }
-         ],
-         "takeaway": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons.",
-         "explanation": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch9-l4-t1",
          "difficulty": 1,
@@ -31089,6 +31069,26 @@
            "p": 152
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch9-l4-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "seasons",
+         "params": {},
+         "title": "Go round the Sun",
+         "tasks": [
+          {
+           "say": "Go to December.",
+           "when": "month == 12",
+           "then": "Now the southern half leans toward the Sun: summer there, winter in India."
+          }
+         ],
+         "takeaway": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons.",
+         "explanation": "The tilted Earth leans each half toward the Sun in turn, which makes the seasons."
         },
         {
          "type": "mcq",
@@ -33639,6 +33639,43 @@
          ]
         },
         {
+         "type": "worked",
+         "id": "the-world-around-us-g5-ch10-l2-t1",
+         "difficulty": 1,
+         "tags": [
+          "deep",
+          "think"
+         ],
+         "kicker": "Let us think it through",
+         "prompt": "Meera sees a bird fly over her house and fly over the next town. She asks: does the bird cross a border line in the sky?",
+         "steps": [
+          "The bird flies high above the ground, so it is like looking from far above, where we do not see borders or lines between countries.",
+          "Nature has no boundaries, so the sky does not stop the bird at any line.",
+          "Air, water, clouds, seeds and animals move freely across the world, so the bird can fly anywhere it needs.",
+          "So the bird crosses no real line, because nature has no boundaries."
+         ],
+         "explanation": "Think it through with Hooty.",
+         "f": [
+          "2.1",
+          "2.2",
+          "2.3"
+         ],
+         "src": [
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          },
+          {
+           "ch": 10,
+           "p": 163
+          }
+         ]
+        },
+        {
          "type": "explore",
          "id": "the-world-around-us-g5-ch10-l2-play",
          "difficulty": 1,
@@ -33718,43 +33755,6 @@
          ],
          "takeaway": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue.",
          "explanation": "The words on either side of a gap tell you what fits in it. Read the whole sentence before choosing, and the meaning of the sentence is the clue."
-        },
-        {
-         "type": "worked",
-         "id": "the-world-around-us-g5-ch10-l2-t1",
-         "difficulty": 1,
-         "tags": [
-          "deep",
-          "think"
-         ],
-         "kicker": "Let us think it through",
-         "prompt": "Meera sees a bird fly over her house and fly over the next town. She asks: does the bird cross a border line in the sky?",
-         "steps": [
-          "The bird flies high above the ground, so it is like looking from far above, where we do not see borders or lines between countries.",
-          "Nature has no boundaries, so the sky does not stop the bird at any line.",
-          "Air, water, clouds, seeds and animals move freely across the world, so the bird can fly anywhere it needs.",
-          "So the bird crosses no real line, because nature has no boundaries."
-         ],
-         "explanation": "Think it through with Hooty.",
-         "f": [
-          "2.1",
-          "2.2",
-          "2.3"
-         ],
-         "src": [
-          {
-           "ch": 10,
-           "p": 163
-          },
-          {
-           "ch": 10,
-           "p": 163
-          },
-          {
-           "ch": 10,
-           "p": 163
-          }
-         ]
         },
         {
          "type": "concept",
@@ -34251,31 +34251,6 @@
          ]
         },
         {
-         "type": "explore",
-         "id": "the-world-around-us-g5-ch10-l3-play",
-         "difficulty": 1,
-         "tags": [
-          "explore"
-         ],
-         "widget": "migration",
-         "params": {},
-         "title": "The starling's year",
-         "tasks": [
-          {
-           "say": "Find the month it nests in the north.",
-           "when": "month == 6",
-           "then": "In June the days are long in Russia and Mongolia, good for raising chicks."
-          },
-          {
-           "say": "Find a month when it is flying.",
-           "when": "month == 10",
-           "then": "In October it leaves the north as the cold comes and flies south to India."
-          }
-         ],
-         "takeaway": "The rosy starling nests in southern Russia and Mongolia in summer and spends the winter in India, crossing borders on the way. No border stops a bird: air, water, seeds and animals move freely, and nature has no boundaries.",
-         "explanation": "The rosy starling nests in southern Russia and Mongolia in summer and spends the winter in India, crossing borders on the way. No border stops a bird: air, water, seeds and animals move freely, and nature has no boundaries."
-        },
-        {
          "type": "worked",
          "id": "the-world-around-us-g5-ch10-l3-t1",
          "difficulty": 1,
@@ -34311,6 +34286,31 @@
            "p": 164
           }
          ]
+        },
+        {
+         "type": "explore",
+         "id": "the-world-around-us-g5-ch10-l3-play",
+         "difficulty": 1,
+         "tags": [
+          "explore"
+         ],
+         "widget": "migration",
+         "params": {},
+         "title": "The starling's year",
+         "tasks": [
+          {
+           "say": "Find the month it nests in the north.",
+           "when": "month == 6",
+           "then": "In June the days are long in Russia and Mongolia, good for raising chicks."
+          },
+          {
+           "say": "Find a month when it is flying.",
+           "when": "month == 10",
+           "then": "In October it leaves the north as the cold comes and flies south to India."
+          }
+         ],
+         "takeaway": "The rosy starling nests in southern Russia and Mongolia in summer and spends the winter in India, crossing borders on the way. No border stops a bird: air, water, seeds and animals move freely, and nature has no boundaries.",
+         "explanation": "The rosy starling nests in southern Russia and Mongolia in summer and spends the winter in India, crossing borders on the way. No border stops a bird: air, water, seeds and animals move freely, and nature has no boundaries."
         },
         {
          "type": "concept",
