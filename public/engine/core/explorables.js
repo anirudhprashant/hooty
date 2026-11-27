@@ -4207,36 +4207,83 @@ export const WIDGETS = {
       const word = words[wi] || '', sent = sents[wi] || '', good = picked && key[wi] === mi;
       // wrap on spaces: SVG text does not wrap itself, and a Hindi meaning is no longer than an English one
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
-      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 21, `${wi + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 21, L.heading || 'One word, one sentence', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
-      // the word, big enough to read on a phone, because every card here is read
-      kids.push(R(14, 38, 250, 46, C.y, { w: 2.5, r: 12 }));
-      kids.push(T(139, 70, word, { z: 26, w: 800 }));
-      // four meaning cards, big type: this is a reading card, not a diagram. Three lines fit a long book meaning;
-      // anything longer ends in an ellipsis rather than being cut off silently. The cards are the control: tapping
-      // one chooses it, and the chosen card says so without relying on colour alone (ring, fill, tick or cross).
-      meanings.slice(0, n).forEach((m, j) => {
-        const x = 10 + (j % 2) * 292, y = 92 + Math.floor(j / 2) * 98;
-        const chosen = j === mi && picked, right = chosen && key[wi] === j, wrong = chosen && key[wi] !== j;
-        const fill = right ? '#E7F6E9' : wrong ? '#FDEDE8' : '#FFFFFF';
-        const edge = right ? '#2E8B57' : wrong ? '#D06A4E' : '#E6DCC6';
-        const tile = [R(x + 2, y + 5, 288, 90, '#6B4A1E', { w: 0, r: 14, x: { opacity: 0.09 } }),
-          R(x, y, 288, 90, fill, { w: chosen ? 4.5 : 2.5, s: edge, r: 14 })];
-        const lines = fit(m, 22), shown = lines.slice(0, 3);
-        if (lines.length > 3) shown[2] = shown[2].replace(/\s\S*$/, '') + '\u2026';
-        shown.forEach((ln, i) => tile.push(T(x + 144, y + 30 + i * 24, ln, { z: 19, w: chosen ? 800 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
-        // a tick means right and a cross means wrong, so the two never look alike in a black-and-white print either
-        if (right) tile.push(T(x + 268, y + 22, '\u2713', { z: 19, w: 800, f: '#1d7a45' }));
-        if (wrong) tile.push(T(x + 268, y + 22, '\u2715', { z: 19, w: 800, f: '#c0392b' }));
-        kids.push(s('g', { 'data-choice': `meaning:${j}`, style: 'cursor:pointer' }, tile));
-      });
+      // Layout is decided by the text before anything is drawn. A 288-wide tile holds three lines of a book
+      // meaning, and four of the thirty-four chapters with a long glossary need a fourth: an option a child
+      // cannot finish reading is not an option. Those cards switch to a full-width list, where every meaning is
+      // set two lines deep and nothing is ever cut off with an ellipsis.
+      const opts = meanings.slice(0, n);
+      const wide = opts.some((m) => fit(m, 22).length > 3);
+      // A headword wider than its chip grows the chip instead of spilling out of the yellow box: 250 units holds
+      // about fifteen characters at 26 units, and "territorial integrity" is twenty-one.
+      const chipW = Math.max(250, Math.min(566, Math.round(word.length * 0.58 * 26) + 30));
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 })];
+      if (wide) {
+        // the word is the headword of the page, so it lives in the band at the top and the meanings get the body
+        kids.push(R(0, 0, W, 38, '#efe7d6', { w: 0 }));
+        kids.push(T(14, 25, `${wi + 1} / ${n}`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
+        // the heading yields to a headword long enough to reach it, rather than sitting on top of the word
+        if (word.length * 0.58 * 26 < 270) kids.push(T(586, 25, L.heading || 'One word, one sentence', { z: 15, w: 700, a: 'end', f: '#7a6b99' }));
+        kids.push(T(300, 31, word, { z: 26, w: 800 }));
+      } else {
+        kids.push(R(0, 0, W, 30, '#efe7d6', { w: 0 }));
+        kids.push(T(14, 21, `${wi + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
+        kids.push(T(586, 21, L.heading || 'One word, one sentence', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
+        // the word, big enough to read on a phone, because every card here is read
+        kids.push(R(14, 38, chipW, 46, C.y, { w: 2.5, r: 12 }));
+        kids.push(T(14 + chipW / 2, 70, word, { z: 26, w: 800 }));
+      }
+      if (wide) {
+        // Rows of 21-unit lines, sized to the lines each meaning needs, then stretched to fill the card: a card
+        // whose rows stop halfway down leaves a dead band of cream and looks unfitted. Leading steps down only
+        // for the one card whose four meanings all run to three lines, so it still ends inside the card.
+        const top = 44, avail = 286 - top;
+        const rows = opts.map((m) => fit(m, 48));
+        let lh = 21, gap = 8, bases = rows.map((ls) => ls.length * lh + 5);
+        for (const [l, g] of [[20, 6], [19, 5]]) {
+          if (bases.reduce((a, b) => a + b, 0) + gap * (n - 1) <= avail) break;
+          lh = l; gap = g; bases = rows.map((ls) => ls.length * lh + 5);
+        }
+        const uni = Math.floor((avail - gap * (n - 1)) / n);
+        let hs = bases.every((b) => b <= uni) ? bases.map(() => uni) : bases.slice();
+        const spare = Math.max(0, avail - (hs.reduce((a, b) => a + b, 0) + gap * (n - 1))) / n;
+        hs = hs.map((h) => h + spare);
+        let y = top;
+        opts.forEach((m, j) => {
+          const lines = rows[j], h = hs[j];
+          const chosen = j === mi && picked, right = chosen && key[wi] === j, wrong = chosen && key[wi] !== j;
+          const fill = right ? '#E7F6E9' : wrong ? '#FDEDE8' : '#FFFFFF';
+          const edge = right ? '#2E8B57' : wrong ? '#D06A4E' : '#E6DCC6';
+          const tile = [R(12, y + 3, 576, h, '#6B4A1E', { w: 0, r: 13, x: { opacity: 0.08 } }),
+            R(10, y, 580, h, fill, { w: chosen ? 4.5 : 2.5, s: edge, r: 13 })];
+          const first = y + (h - (lines.length - 1) * lh) / 2 + 6.5;
+          lines.forEach((ln, i) => tile.push(T(32, first + i * lh, ln, { z: 19, w: chosen ? 800 : 600, a: 'start', f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
+          // a tick means right and a cross means wrong, so the two never look alike in a black-and-white print either
+          if (right) tile.push(T(558, y + h / 2 + 7, '\u2713', { z: 21, w: 800, f: '#1d7a45' }));
+          if (wrong) tile.push(T(558, y + h / 2 + 7, '\u2715', { z: 21, w: 800, f: '#c0392b' }));
+          kids.push(s('g', { 'data-choice': `meaning:${j}`, style: 'cursor:pointer' }, tile));
+          y += h + gap;
+        });
+      } else {
+        opts.forEach((m, j) => {
+          const x = 10 + (j % 2) * 292, y = 92 + Math.floor(j / 2) * 98;
+          const chosen = j === mi && picked, right = chosen && key[wi] === j, wrong = chosen && key[wi] !== j;
+          const fill = right ? '#E7F6E9' : wrong ? '#FDEDE8' : '#FFFFFF';
+          const edge = right ? '#2E8B57' : wrong ? '#D06A4E' : '#E6DCC6';
+          const tile = [R(x + 2, y + 5, 288, 90, '#6B4A1E', { w: 0, r: 14, x: { opacity: 0.09 } }),
+            R(x, y, 288, 90, fill, { w: chosen ? 4.5 : 2.5, s: edge, r: 14 })];
+          const lines = fit(m, 22), shown = lines.slice(0, 3);
+          shown.forEach((ln, i) => tile.push(T(x + 144, y + 30 + i * 24, ln, { z: 19, w: chosen ? 800 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
+          if (right) tile.push(T(x + 268, y + 22, '\u2713', { z: 19, w: 800, f: '#1d7a45' }));
+          if (wrong) tile.push(T(x + 268, y + 22, '\u2715', { z: 19, w: 800, f: '#c0392b' }));
+          kids.push(s('g', { 'data-choice': `meaning:${j}`, style: 'cursor:pointer' }, tile));
+        });
+      }
       // the sentence lives in the read-out under the stage, at full size, where a child can actually read it
       const lead = sent ? `${L.sentence || 'From the book'}: "${sent.replace(/[.\u0964]+$/, '')}". ` : '';
       const ask = (L.pick || 'Which meaning fits "{w}" here?').replace('{w}', word);
       const say = !words.length ? (L.empty || 'No words for this chapter yet.')
         : lead + (good ? `${L.yes || 'Yes.'} ${word} ${L.means || 'means'} ${meanings[mi]}`
-          : mi === 0 ? ask
+          : !picked ? ask
             : `${L.no || 'Not this one.'} ${L.readAgain || 'Read the sentence again, then try another meaning.'}`);
       return { kids, say };
     },
