@@ -664,19 +664,19 @@
             "after": ".",
             "options": [
              "Khetala",
-             "trowel",
+             "interdependence",
              "Magh Bihu",
-             "interdependence"
+             "trowel"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "I will bring some",
             "after": "from my plant",
             "options": [
-             "interdependence",
-             "nursery",
              "trowel",
+             "nursery",
+             "interdependence",
              "saplings"
             ],
             "answer": 3
@@ -685,9 +685,9 @@
             "before": "I will bring some saplings from my plant",
             "after": ".",
             "options": [
-             "ant colony",
              "Magh Bihu",
              "interdependence",
+             "ant colony",
              "nursery"
             ],
             "answer": 3
@@ -707,12 +707,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: People and places are part of our community ."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: community as a space of togetherness and interdependence ."
           }
          ],
@@ -12049,23 +12049,23 @@
             "before": "leaving behind the natural",
             "after": ".",
             "options": [
-             "mosquito repellent",
              "bamboo basket",
-             "Gond art",
-             "dye"
+             "mosquito repellent",
+             "dye",
+             "Gond art"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "When they collect honey from",
             "after": ", they sing songs to apologise",
             "options": [
-             "Gond art",
              "dye",
-             "solar-powered",
-             "beehives"
+             "beehives",
+             "Gond art",
+             "solar-powered"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -12087,7 +12087,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: When they collect honey from beehives , they sing songs to apologise"
           }
          ],

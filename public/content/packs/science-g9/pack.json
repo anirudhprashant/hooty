@@ -612,34 +612,34 @@
             "before": "each associated with a defined",
             "after": ".",
             "options": [
-             "assumption",
              "air resistance",
-             "law",
-             "unit"
+             "assumption",
+             "unit",
+             "law"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "A",
             "after": "usually describes a regular pattern observed in nature",
             "options": [
-             "assumption",
              "unit",
-             "equation",
-             "law"
+             "assumption",
+             "law",
+             "equation"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "a",
             "after": "does not mean a guess or an untested idea",
             "options": [
-             "equation",
-             "estimate",
              "assumption",
-             "theory"
+             "estimate",
+             "theory",
+             "equation"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -656,7 +656,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: Building such models involves making assumptions and deliberately ignoring certain details."
           },
           {

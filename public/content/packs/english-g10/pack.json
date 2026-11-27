@@ -637,9 +637,9 @@
             "before": "sat on the",
             "after": "of a low hill",
             "options": [
-             "intimately",
-             "hemlock",
              "draped",
+             "hemlock",
+             "intimately",
              "crest"
             ],
             "answer": 3
@@ -648,8 +648,8 @@
             "before": "needed was a",
             "after": "or at least a shower",
             "options": [
-             "conscience",
              "locusts",
+             "conscience",
              "contentment",
              "downpour"
             ],
@@ -660,22 +660,22 @@
             "after": "would",
             "options": [
              "downpour",
+             "locusts",
              "draped",
-             "hemlock",
-             "locusts"
+             "hemlock"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "experiencing the",
             "after": "of a man",
             "options": [
-             "downpour",
-             "conscience",
              "draped",
-             "contentment"
+             "contentment",
+             "conscience",
+             "downpour"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -692,12 +692,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: sat on the crest of a low hill"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: needed was a downpour or at least a shower"
           }
          ],
@@ -4563,12 +4563,12 @@
             "before": "the",
             "after": "ceremony took place in the Union",
             "options": [
-             "spectacular array",
-             "confer",
              "besieged",
-             "inauguration"
+             "inauguration",
+             "confer",
+             "spectacular array"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "pleasantly",
@@ -4586,19 +4586,19 @@
             "after": "not so long ago",
             "options": [
              "rainbow gathering",
-             "not unmindful of",
              "African National Congress",
-             "outlaws"
+             "outlaws",
+             "not unmindful of"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "bondage of poverty,",
             "after": ", suffering",
             "options": [
-             "not unmindful of",
              "amphitheatre",
              "African National Congress",
+             "not unmindful of",
              "deprivation"
             ],
             "answer": 3
@@ -4618,12 +4618,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: the inauguration ceremony took place in the Union"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: pleasantly besieged by dignitaries and world leaders"
           }
          ],
@@ -8580,9 +8580,9 @@
             "before": "how to",
             "after": "the waves and how to dive",
             "options": [
+             "preening",
              "peppered",
              "dizzy",
-             "preening",
              "skim"
             ],
             "answer": 3
@@ -8592,33 +8592,33 @@
             "after": "and devour it",
             "options": [
              "upbraiding",
+             "herring",
              "whet",
-             "preening",
-             "herring"
+             "preening"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "His father was",
             "after": "the feathers on his white back.",
             "options": [
              "dizzy",
+             "preening",
              "caress",
-             "upbraiding",
-             "preening"
+             "upbraiding"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "scrapping his beak now and again to",
             "after": "it",
             "options": [
-             "caress",
-             "herring",
              "upbraiding",
-             "whet"
+             "caress",
+             "whet",
+             "herring"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -8635,12 +8635,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: how to skim the waves and how to dive"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: catch his first herring and devour it"
           }
          ],
@@ -16307,19 +16307,19 @@
             "after": "nostalgically",
             "options": [
              "most decorated",
-             "drifted from",
              "fragrance",
-             "reminiscing"
+             "reminiscing",
+             "drifted from"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "reminiscing",
             "after": "about those good old Portuguese days",
             "options": [
-             "heralding",
-             "plump physique",
              "fragrance",
+             "plump physique",
+             "heralding",
              "nostalgically"
             ],
             "answer": 3
@@ -16329,22 +16329,22 @@
             "after": "his arrival in the morning",
             "options": [
              "drifted from",
-             "laidback",
+             "heralding",
              "nostalgically",
-             "heralding"
+             "laidback"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "the typical",
             "after": "of those loaves",
             "options": [
-             "laidback",
              "rebuke",
+             "fragrance",
              "nostalgically",
-             "fragrance"
+             "laidback"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -16366,7 +16366,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: reminiscing nostalgically about those good old Portuguese days"
           }
          ],
@@ -20167,12 +20167,12 @@
             "before": "I",
             "after": "to England, and when, three days later,",
             "options": [
-             "ricochetting bullet",
              "aloof and indifferent",
-             "thraldom",
-             "cabled"
+             "cabled",
+             "ricochetting bullet",
+             "thraldom"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "a sack that",
@@ -20180,18 +20180,18 @@
             "options": [
              "a stone’s throw",
              "fixation",
-             "thraldom",
-             "squirmed"
+             "squirmed",
+             "thraldom"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "It is, in effect, a",
             "after": "to otters",
             "options": [
-             "aloof and indifferent",
-             "portly",
              "a stone’s throw",
+             "portly",
+             "aloof and indifferent",
              "thraldom"
             ],
             "answer": 3
@@ -20222,7 +20222,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: I cabled to England, and when, three days later,"
           },
           {
@@ -23453,31 +23453,31 @@
             "before": "Valli would stare",
             "after": "at the people",
             "options": [
-             "merchandise",
              "curtly",
              "slack time",
-             "wistfully"
+             "wistfully",
+             "merchandise"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Their faces would",
             "after": "in her longings",
             "options": [
-             "slang expression",
              "haughtily",
-             "slack time",
-             "kindle"
+             "kindle",
+             "slang expression",
+             "slack time"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "she said",
             "after": ". “I’ve paid",
             "options": [
-             "curtly",
              "spreadeagled",
              "kindle",
+             "curtly",
              "haughtily"
             ],
             "answer": 3
@@ -23486,9 +23486,9 @@
             "before": "she answered",
             "after": ". “And I’ve got",
             "options": [
-             "spreadeagled",
              "discreet questions",
              "kindle",
+             "spreadeagled",
              "curtly"
             ],
             "answer": 3
@@ -23513,7 +23513,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: Their faces would kindle in her longings"
           }
          ],
@@ -27418,31 +27418,31 @@
             "before": "he became known as the",
             "after": "(the Awakened or the Enlightened)",
             "options": [
-             "Bodhi Tree",
              "valley of desolation",
              "dipping places",
-             "Buddha"
+             "Buddha",
+             "Bodhi Tree"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Go to",
             "after": ", the Buddha",
             "options": [
-             "enlightenment",
              "inscrutable",
+             "Sakyamuni",
              "dipping places",
-             "Sakyamuni"
+             "enlightenment"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "nor",
             "after": "their relations",
             "options": [
              "valley of desolation",
-             "Buddha",
              "enlightenment",
+             "Buddha",
              "kinsmen"
             ],
             "answer": 3
@@ -27467,7 +27467,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: Go to Sakyamuni , the Buddha"
           }
          ],
@@ -31444,11 +31444,11 @@
             "after": ", I’m excitable",
             "options": [
              "accustomed",
-             "misfortune",
              "pedigree",
-             "palpitations"
+             "palpitations",
+             "misfortune"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Hear me out, I",
@@ -31456,32 +31456,32 @@
             "options": [
              "interfere",
              "principle",
-             "pedigree",
-             "implore"
+             "implore",
+             "pedigree"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "our Squeezer is a",
             "after": "animal",
             "options": [
-             "misfortune",
              "temporary",
+             "thoroughbred",
              "interfere",
-             "thoroughbred"
+             "misfortune"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "no getting at the",
             "after": "of your dog",
             "options": [
-             "temporary",
              "thoroughbred",
-             "interfere",
-             "pedigree"
+             "pedigree",
+             "temporary",
+             "interfere"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {

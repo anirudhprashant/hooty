@@ -21196,9 +21196,9 @@
             "before": "a pillar",
             "after": "in Prayagraj, praises the achievements of Samudragupta",
             "options": [
+             "Vaishya",
              "codified",
              "copper plate",
-             "Vaishya",
              "inscription"
             ],
             "answer": 3
@@ -21207,9 +21207,9 @@
             "before": "The prayāga",
             "after": ", a pillar inscription in Prayagraj, praises the achievements",
             "options": [
+             "codified",
              "corrosion",
              "regent",
-             "codified",
              "praśhasti"
             ],
             "answer": 3
@@ -21219,18 +21219,18 @@
             "after": ") Garuḍa often appears on many inscriptions",
             "options": [
              "regent",
-             "inscription",
+             "vāhana",
              "corrosion",
-             "vāhana"
+             "inscription"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "form",
             "after": "(mitra) as one of the components of the saptānga",
             "options": [
-             "regent",
              "outcastes",
+             "regent",
              "inscription",
              "alliances"
             ],
@@ -21251,12 +21251,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: a pillar inscription in Prayagraj, praises the achievements of Samudragupta"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: The prayāga praśhasti , a pillar inscription in Prayagraj, praises the achievements"
           }
          ],
@@ -47488,20 +47488,20 @@
             "before": "Such involvement is called",
             "after": "and helps create peace",
             "options": [
-             "hydroelectric power",
-             "open border",
              "landlocked",
-             "regionalism"
+             "regionalism",
+             "open border",
+             "hydroelectric power"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Before the 1947",
             "after": "— a legacy of the colonial era that",
             "options": [
-             "Gross National Happiness Index",
-             "transboundary river system",
              "hydroelectric power",
+             "transboundary river system",
+             "Gross National Happiness Index",
              "Partition"
             ],
             "answer": 3
@@ -47510,23 +47510,23 @@
             "before": "a multiethnic",
             "after": "country in south-central Asia",
             "options": [
-             "gurdwara",
              "maritime neighbour",
-             "Gross National Happiness Index",
-             "landlocked"
+             "landlocked",
+             "gurdwara",
+             "Gross National Happiness Index"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Bhutan, called ‘",
             "after": "’ or ‘Land of the Thunder Dragon’ by its inhabitants",
             "options": [
-             "maritime neighbour",
-             "SAARC",
              "Partition",
-             "Drukyul"
+             "Drukyul",
+             "SAARC",
+             "maritime neighbour"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -47543,12 +47543,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: Such involvement is called regionalism and helps create peace"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: Before the 1947 Partition — a legacy of the colonial era that"
           }
          ],
@@ -58411,20 +58411,20 @@
             "before": "The",
             "after": "(followers of Zoroastrianism) came to India",
             "options": [
-             "scheduled tribe",
-             "Avesta",
              "Mappila Muslim",
-             "Parsis"
+             "Parsis",
+             "Avesta",
+             "scheduled tribe"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "the",
             "after": ", the Parsis’ ancient sacred text",
             "options": [
-             "Parsi",
-             "Mappila Muslim",
              "Zoroastrianism",
+             "Mappila Muslim",
+             "Parsi",
              "Avesta"
             ],
             "answer": 3
@@ -58433,12 +58433,12 @@
             "before": "The",
             "after": "are of African origin",
             "options": [
-             "persecution",
-             "Parsi",
              "government-in-exile",
-             "Siddis"
+             "persecution",
+             "Siddis",
+             "Parsi"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -58455,12 +58455,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: The Parsis (followers of Zoroastrianism) came to India"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: the Avesta , the Parsis’ ancient sacred text"
           }
          ],

@@ -19151,31 +19151,31 @@
             "before": "An",
             "after": "is a land surrounded by water",
             "options": [
-             "Seven Sisters",
-             "mangroves",
              "marine life",
-             "island"
+             "island",
+             "mangroves",
+             "Seven Sisters"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "they went to catch a",
             "after": "to one of",
             "options": [
-             "life jacket",
              "hunter-gatherers",
              "marine life",
-             "ferry"
+             "ferry",
+             "life jacket"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "how tiny",
             "after": "give shelter to many creatures",
             "options": [
-             "mangroves",
-             "Bhut Jolokia",
              "life jacket",
+             "Bhut Jolokia",
+             "mangroves",
              "corals"
             ],
             "answer": 3
@@ -19184,8 +19184,8 @@
             "before": "In 2004, a",
             "after": "hit the region",
             "options": [
-             "Bhut Jolokia",
              "corals",
+             "Bhut Jolokia",
              "life jacket",
              "tsunami"
             ],
@@ -19206,7 +19206,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: An island is a land surrounded by water"
           },
           {
@@ -33652,45 +33652,45 @@
             "before": "We all are part of",
             "after": "and the Earth",
             "options": [
-             "chilli",
              "Ayurveda",
-             "boundaries",
-             "humanity"
+             "humanity",
+             "chilli",
+             "boundaries"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "linked through nature,",
             "after": ", travel",
             "options": [
-             "International Space Station",
-             "boundaries",
              "borders",
-             "trade"
+             "trade",
+             "International Space Station",
+             "boundaries"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "feed on",
             "after": "and grasshoppers",
             "options": [
              "DIGIPIN",
-             "jaggery",
+             "locusts",
              "International Space Station",
-             "locusts"
+             "jaggery"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "helping farmers by eating the",
             "after": "on the crops",
             "options": [
-             "jaggery",
              "borders",
+             "pests",
              "International Space Station",
-             "pests"
+             "jaggery"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -33707,12 +33707,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: We all are part of humanity and the Earth"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: linked through nature, trade , travel"
           }
          ],

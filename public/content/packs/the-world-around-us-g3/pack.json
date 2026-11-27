@@ -668,12 +668,12 @@
             "before": "We play games like",
             "after": "and snakes and ladders.",
             "options": [
-             "pakodas",
-             "relatives",
              "Mausi",
-             "antakshari"
+             "pakodas",
+             "antakshari",
+             "relatives"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "whom we call Dadiji, make hot",
@@ -701,8 +701,8 @@
             "before": "Kusum",
             "after": "(mother’s close friend who is like a sister)",
             "options": [
-             "antakshari",
              "Bhaiya",
+             "antakshari",
              "groceries",
              "Mausi"
             ],
@@ -728,7 +728,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: whom we call Dadiji, make hot pakodas and tea during the rains."
           }
          ],
@@ -4591,18 +4591,18 @@
             "options": [
              "trinkets",
              "stall",
-             "conductor",
-             "mela"
+             "mela",
+             "conductor"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "The",
             "after": "and Nita’s father helped Dadiji get on",
             "options": [
-             "Dadiji",
-             "autorickshaw",
              "bus stop",
+             "autorickshaw",
+             "Dadiji",
              "conductor"
             ],
             "answer": 3
@@ -4611,23 +4611,23 @@
             "before": "Mohan Chacha and his family also got down from an",
             "after": ".",
             "options": [
-             "stall",
              "dustbin",
-             "Dadiji",
-             "autorickshaw"
+             "autorickshaw",
+             "stall",
+             "Dadiji"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Mohan Chacha and Rohit hurried to get a",
             "after": "for Dadiji.",
             "options": [
              "dustbin",
-             "bus stop",
              "Dadiji",
-             "wheelchair"
+             "wheelchair",
+             "bus stop"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -4649,7 +4649,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: The conductor and Nita’s father helped Dadiji get on"
           }
          ],
@@ -18713,19 +18713,19 @@
             "before": "They sat under the",
             "after": "of a huge mango tree.",
             "options": [
-             "Grey Wagtail",
              "Valparai",
-             "fruit",
-             "shade"
+             "shade",
+             "Grey Wagtail",
+             "fruit"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "We get medicines,",
             "after": "for clothes and wood for our houses",
             "options": [
-             "Grey Wagtail",
              "Vaalatti kuruvi",
+             "Grey Wagtail",
              "balance",
              "fibre"
             ],
@@ -18735,23 +18735,23 @@
             "before": "Not only",
             "after": ", we get vegetables and many other things from plants,",
             "options": [
-             "fibre",
-             "harmony",
              "dispersing",
-             "fruits"
+             "fruits",
+             "fibre",
+             "harmony"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "maintain",
             "after": "and balance in various ways",
             "options": [
-             "jaggery",
              "fertile",
-             "dispersing",
-             "harmony"
+             "jaggery",
+             "harmony",
+             "dispersing"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -18768,12 +18768,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: They sat under the shade of a huge mango tree."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: We get medicines, fibre for clothes and wood for our houses"
           }
          ],
@@ -28672,9 +28672,9 @@
             "before": "my",
             "after": "a good massage too.",
             "options": [
-             "flexibility",
-             "cleaning agents",
              "twig",
+             "cleaning agents",
+             "flexibility",
              "gums"
             ],
             "answer": 3
@@ -28683,9 +28683,9 @@
             "before": "remove dirt and",
             "after": "from surfaces",
             "options": [
-             "hygiene",
-             "gums",
              "twig",
+             "gums",
+             "hygiene",
              "germs"
             ],
             "answer": 3
@@ -28694,9 +28694,9 @@
             "before": "monkeys sitting and",
             "after": "each other",
             "options": [
-             "Reetha or Shikakai",
-             "stamina",
              "hygiene",
+             "stamina",
+             "Reetha or Shikakai",
              "grooming"
             ],
             "answer": 3
@@ -28706,8 +28706,8 @@
             "after": ".",
             "options": [
              "stamina",
-             "twig",
              "hygiene",
+             "twig",
              "flexibility"
             ],
             "answer": 3
@@ -28727,12 +28727,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: my gums a good massage too."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: remove dirt and germs from surfaces"
           }
          ],
@@ -36075,9 +36075,9 @@
             "before": "A brick becomes hard after it is baked in the",
             "after": ".",
             "options": [
+             "piggy bank",
              "Appooppan",
              "pattern",
-             "piggy bank",
              "kiln"
             ],
             "answer": 3
@@ -36086,9 +36086,9 @@
             "before": "The following are some",
             "after": "with repeating shapes and lines.",
             "options": [
-             "kiln",
              "construction",
              "potter’s wheel",
+             "kiln",
              "patterns"
             ],
             "answer": 3
@@ -36097,12 +36097,12 @@
             "before": "These are some beautiful forms of",
             "after": "from different parts of India.",
             "options": [
-             "kiln",
              "pattern",
-             "potter’s wheel",
-             "pottery"
+             "kiln",
+             "pottery",
+             "potter’s wheel"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -36119,12 +36119,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: He would add enough water to make the consistency he needed."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: A brick becomes hard after it is baked in the kiln ."
           }
          ],

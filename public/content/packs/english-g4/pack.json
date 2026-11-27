@@ -4253,12 +4253,12 @@
             "before": "Goats under the age of six months are called “",
             "after": "”.",
             "options": [
-             "whispered",
-             "stealing",
              "missing",
-             "kids"
+             "whispered",
+             "kids",
+             "stealing"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "He went inside the shop and politely asked the",
@@ -4266,32 +4266,32 @@
             "options": [
              "tinkling bells",
              "dangle",
-             "comparison markers",
-             "shopkeeper"
+             "shopkeeper",
+             "comparison markers"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Kamla",
             "after": "him, saying, “I’m so sorry,",
             "options": [
              "tinkling bells",
-             "stealing",
              "purchase",
-             "consoled"
+             "consoled",
+             "stealing"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Hiding a",
             "after": "smile, Chinna ran to his",
             "options": [
-             "dangle",
-             "missing",
              "purchase",
-             "mischievous"
+             "mischievous",
+             "dangle",
+             "missing"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -8146,20 +8146,20 @@
             "before": "there is often a lot of",
             "after": "on roads.",
             "options": [
-             "countable noun",
-             "accident-free",
              "safety",
-             "traffic"
+             "traffic",
+             "countable noun",
+             "accident-free"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "want to share some important",
             "after": "tips to help you",
             "options": [
+             "traffic lights",
              "countable noun",
              "uncountable noun",
-             "traffic lights",
              "safety"
             ],
             "answer": 3
@@ -8168,23 +8168,23 @@
             "before": "Footpaths are meant for",
             "after": ".",
             "options": [
-             "traffic",
-             "zebra crossing",
              "footpath",
-             "pedestrians"
+             "pedestrians",
+             "traffic",
+             "zebra crossing"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "stick some",
             "after": "stickers on your clothes, so that",
             "options": [
-             "naming word",
              "footpath",
-             "pedestrian signal",
-             "reflective"
+             "naming word",
+             "reflective",
+             "pedestrian signal"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -8201,12 +8201,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: there is often a lot of traffic on roads."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: want to share some important safety tips to help you"
           }
          ],
@@ -11687,40 +11687,40 @@
             "options": [
              "p.m.",
              "Pranayama",
-             "Tree Pose",
-             "efficiency"
+             "efficiency",
+             "Tree Pose"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "It improves learning, reduces",
             "after": "and increases efficiency.",
             "options": [
-             "paragraph",
-             "asanas",
              "p.m.",
-             "mistakes"
+             "mistakes",
+             "asanas",
+             "paragraph"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Focus helps us completing",
             "after": "faster and better.",
             "options": [
-             "asanas",
-             "focus",
              "paragraph",
-             "tasks"
+             "tasks",
+             "asanas",
+             "focus"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "simple yoga",
             "after": "like: Pranayama, Tree Pose, etc.",
             "options": [
-             "focus",
-             "routine",
              "mistakes",
+             "routine",
+             "focus",
              "asanas"
             ],
             "answer": 3
@@ -11745,7 +11745,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: It improves learning, reduces mistakes and increases efficiency."
           }
          ],
@@ -14941,31 +14941,31 @@
             "before": "In a",
             "after": "forest lived an old stag",
             "options": [
-             "stag",
-             "descriptive words",
              "hillock",
-             "lush"
+             "descriptive words",
+             "lush",
+             "stag"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "The grass is so",
             "after": "and nice",
             "options": [
-             "speedy",
-             "recovery",
              "greed",
-             "tender"
+             "tender",
+             "recovery",
+             "speedy"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "an old",
             "after": "who was known for his kindness",
             "options": [
-             "tender",
              "recovery",
              "descriptive words",
+             "tender",
              "stag"
             ],
             "answer": 3
@@ -14974,12 +14974,12 @@
             "before": "staying on a small",
             "after": "with tender grass",
             "options": [
-             "tender",
-             "resources",
              "recovery",
-             "hillock"
+             "resources",
+             "hillock",
+             "tender"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -15001,7 +15001,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: The grass is so tender and nice"
           }
          ],
@@ -19219,9 +19219,9 @@
             "before": "His father, a",
             "after": ", was working nearby.",
             "options": [
-             "pincushions",
-             "eyesight",
              "Braille",
+             "eyesight",
+             "pincushions",
              "blacksmith"
             ],
             "answer": 3
@@ -19231,8 +19231,8 @@
             "after": "in one eye.",
             "options": [
              "Night Writing",
-             "alphabet",
              "Braille symbols",
+             "alphabet",
              "blind"
             ],
             "answer": 3
@@ -19241,23 +19241,23 @@
             "before": "He learnt letters by using wood, cloth or pins arranged in",
             "after": ".",
             "options": [
-             "blind",
              "alphabet",
              "eyesight",
-             "pincushions"
+             "pincushions",
+             "blind"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "It was an",
             "after": "of raised dots and dashes",
             "options": [
              "blind",
-             "raised dots",
              "Braille",
-             "alphabet"
+             "alphabet",
+             "raised dots"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -19274,12 +19274,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: His father, a blacksmith , was working nearby."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: Within a few days, he became blind in one eye."
           }
          ],
@@ -25644,9 +25644,9 @@
             "before": "The",
             "after": "blew the whistle and Deepa took the",
             "options": [
-             "Satoliya",
-             "stack",
              "whistle",
+             "stack",
+             "Satoliya",
              "referee"
             ],
             "answer": 3
@@ -25655,9 +25655,9 @@
             "before": "The referee blew the",
             "after": "and Deepa took the",
             "options": [
-             "Satoliya",
-             "rebuild",
              "flat stones",
+             "rebuild",
+             "Satoliya",
              "whistle"
             ],
             "answer": 3
@@ -25667,11 +25667,11 @@
             "after": "one over the other,",
             "options": [
              "stack",
+             "stacked",
              "flat stones",
-             "cousin",
-             "stacked"
+             "cousin"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -25688,12 +25688,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: In Rajasthan, we call this game Satoliya ."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: The referee blew the whistle and Deepa took the"
           }
          ],
@@ -35728,23 +35728,23 @@
             "before": "at the foot of the",
             "after": "Himalayas",
             "options": [
-             "Santoor",
              "achaar",
-             "memories",
-             "mighty"
+             "Santoor",
+             "mighty",
+             "memories"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Always remember to respect and",
             "after": "them.",
             "options": [
-             "Sherpa",
-             "memories",
              "mighty",
-             "protect"
+             "memories",
+             "protect",
+             "Sherpa"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -39544,20 +39544,20 @@
             "before": "a strong and beautiful",
             "after": "on the banks of the",
             "options": [
-             "majestic",
              "handloom weaving",
              "overhanging balconies",
-             "fort"
+             "fort",
+             "majestic"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "What was Queen Ahilya like as a",
             "after": "?",
             "options": [
-             "unique",
              "overhanging balconies",
              "kingdom",
+             "unique",
              "ruler"
             ],
             "answer": 3
@@ -39566,20 +39566,20 @@
             "before": "family, who ruled the",
             "after": ".",
             "options": [
-             "fort",
-             "overhanging balconies",
              "handloom weaving",
-             "kingdom"
+             "kingdom",
+             "fort",
+             "overhanging balconies"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "in front of the palace, like a",
             "after": "watching over her land.",
             "options": [
-             "fort",
              "unique",
              "overhanging balconies",
+             "fort",
              "guardian"
             ],
             "answer": 3
@@ -39604,7 +39604,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: What was Queen Ahilya like as a ruler ?"
           }
          ],

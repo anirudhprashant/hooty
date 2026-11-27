@@ -15410,34 +15410,34 @@
             "before": "early Vedic society was organised into",
             "after": ", or clans",
             "options": [
-             "sabhā",
              "janapada",
-             "ballot pot",
-             "janas"
+             "janas",
+             "sabhā",
+             "ballot pot"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "The term",
             "after": "literally means where a people",
             "options": [
-             "sabhā",
-             "mahājanapada",
              "jāti",
-             "janapada"
+             "janapada",
+             "sabhā",
+             "mahājanapada"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "the term ‘",
             "after": "’—the Pāli equivalent of the Sanskrit word dharma—is used",
             "options": [
-             "sabhā",
-             "mahājanapada",
              "jāti",
-             "dhamma"
+             "dhamma",
+             "mahājanapada",
+             "sabhā"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "a distinct social structure called",
@@ -15445,10 +15445,10 @@
             "options": [
              "samatva",
              "Bhakti",
-             "sabhā",
-             "jāti"
+             "jāti",
+             "sabhā"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -15465,12 +15465,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: early Vedic society was organised into janas , or clans"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: The term janapada literally means where a people"
           }
          ],
@@ -42507,10 +42507,10 @@
             "options": [
              "Participation",
              "E-governance",
-             "Inclusiveness",
-             "programme"
+             "programme",
+             "Inclusiveness"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "A",
@@ -42554,7 +42554,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: A scheme is a specific action or initiative through which the programme"
           }
          ],

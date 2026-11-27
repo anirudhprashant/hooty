@@ -52431,11 +52431,11 @@
             "after": "Islam with one prophet",
             "options": [
              "maṭha",
+             "monotheistic",
              "pāṭṭachitra",
-             "qawwālī",
-             "monotheistic"
+             "qawwālī"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "developing the",
@@ -52452,12 +52452,12 @@
             "before": "Akbar’s",
             "after": ", where collaborations among artists were common",
             "options": [
-             "qawwālī",
-             "mokṣa",
              "dhrupad",
-             "atelier"
+             "mokṣa",
+             "atelier",
+             "qawwālī"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -52474,12 +52474,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: a monotheistic Islam with one prophet"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: developing the qawwālī , a form of Sufi devotional song fusing"
           }
          ],

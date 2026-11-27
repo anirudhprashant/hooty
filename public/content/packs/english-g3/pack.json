@@ -664,44 +664,44 @@
             "after": ", let us go.",
             "options": [
              "alphabetical order",
-             "crayon",
              "plan",
-             "ducklings"
+             "ducklings",
+             "crayon"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "We have reached the",
             "after": ".",
             "options": [
-             "ducklings",
-             "share",
              "plan",
-             "stream"
+             "stream",
+             "share",
+             "ducklings"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "If we",
             "after": "our crayons, we have a full pack!",
             "options": [
              "crayon",
+             "share",
              "friend-word",
-             "ducklings",
-             "share"
+             "ducklings"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "This is a green",
             "after": ". The word green begins with ‘gr’.",
             "options": [
-             "friend-word",
-             "stream",
              "ducklings",
-             "crayon"
+             "friend-word",
+             "crayon",
+             "stream"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -723,7 +723,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: We have reached the stream ."
           }
          ],
@@ -4391,30 +4391,30 @@
             "after": "shivering in the cold",
             "options": [
              "Maa",
-             "neighbours",
              "favourite",
-             "puppy"
+             "puppy",
+             "neighbours"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "a puppy",
             "after": "in the cold",
             "options": [
              "promise",
-             "lane",
              "favourite",
-             "shivering"
+             "shivering",
+             "lane"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "you",
             "after": "to take care of the puppy",
             "options": [
-             "neighbours",
              "past tense",
              "shivering",
+             "neighbours",
              "promise"
             ],
             "answer": 3
@@ -4423,12 +4423,12 @@
             "before": "They played their",
             "after": "games together.",
             "options": [
-             "past tense",
              "take care of",
-             "shivering",
-             "favourite"
+             "past tense",
+             "favourite",
+             "shivering"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -8316,20 +8316,20 @@
             "before": "all of them are",
             "after": "in size.",
             "options": [
-             "singular",
              "wise",
+             "equal",
              "consonant",
-             "equal"
+             "singular"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "You could create the most beautiful pictures and",
             "after": "!",
             "options": [
+             "mistake",
              "sharp edge",
              "rectangle",
-             "mistake",
              "patterns"
             ],
             "answer": 3
@@ -8339,11 +8339,11 @@
             "after": "and things in all the shapes.",
             "options": [
              "rectangle",
-             "chirp",
+             "designs",
              "sharp edge",
-             "designs"
+             "chirp"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "The friends realised their",
@@ -8371,12 +8371,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: all of them are equal in size."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: You could create the most beautiful pictures and patterns !"
           }
          ],
@@ -12408,12 +12408,12 @@
             "before": "The boys are playing with",
             "after": ".",
             "options": [
-             "puppet",
-             "throw",
              "kite",
-             "marbles"
+             "marbles",
+             "throw",
+             "puppet"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "A girl is playing",
@@ -12421,32 +12421,32 @@
             "options": [
              "spinning top",
              "recite",
-             "kite",
-             "hopscotch"
+             "hopscotch",
+             "kite"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "A boy is holding a",
             "after": ".",
             "options": [
-             "throw",
-             "gum",
              "hopscotch",
-             "kite"
+             "throw",
+             "kite",
+             "gum"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "woollen threads and",
             "after": ".",
             "options": [
-             "puppet",
-             "blindfolded",
              "hopscotch",
-             "gum"
+             "gum",
+             "blindfolded",
+             "puppet"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -12463,7 +12463,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: The boys are playing with marbles ."
           },
           {
@@ -19526,22 +19526,22 @@
             "after": "paper boats in the stream.",
             "options": [
              "preposition",
-             "glass ball",
              "overturning",
-             "several"
+             "several",
+             "glass ball"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "“Why are you",
             "after": "the paper boats?”",
             "options": [
-             "preposition",
-             "top",
              "launched",
-             "overturning"
+             "overturning",
+             "top",
+             "preposition"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "The boy",
@@ -19549,17 +19549,17 @@
             "options": [
              "several",
              "top",
-             "launched",
-             "watched"
+             "watched",
+             "launched"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "She bent a little and",
             "after": "a paper boat.",
             "options": [
-             "several",
              "watched",
+             "several",
              "preposition",
              "launched"
             ],
@@ -19585,7 +19585,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: “Why are you overturning the paper boats?”"
           }
          ],
@@ -22790,45 +22790,45 @@
             "before": "Khichdi is usually cooked with rice and",
             "after": "together.",
             "options": [
-             "Bihari khichdi",
-             "splish-splash",
              "khichdi",
-             "lentils"
+             "Bihari khichdi",
+             "lentils",
+             "splish-splash"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Khichdi is a traditional dish prepared especially during the",
             "after": "festival.",
             "options": [
-             "lentils",
              "Bajra khichdi",
-             "splish-splash",
-             "Sankranti"
+             "Sankranti",
+             "lentils",
+             "splish-splash"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Gujarati khichdi, Gujarat.",
             "after": ", Tamil Nadu.",
             "options": [
-             "khichdi",
-             "Kichuri",
              "lentils",
-             "Pongal"
+             "Kichuri",
+             "Pongal",
+             "khichdi"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Bajra khichdi, Rajasthan.",
             "after": ", West Bengal.",
             "options": [
              "Sun God",
+             "Kichuri",
              "lentils",
-             "Pongal",
-             "Kichuri"
+             "Pongal"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -22850,7 +22850,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: Khichdi is a traditional dish prepared especially during the Sankranti festival."
           }
          ],
@@ -30282,8 +30282,8 @@
             "after": ".",
             "options": [
              "immediately",
-             "kind",
              "instead",
+             "kind",
              "forever"
             ],
             "answer": 3
@@ -30292,34 +30292,34 @@
             "before": "May all this food",
             "after": ", and let me have water instead.",
             "options": [
-             "savouries",
-             "appeared",
              "hiccups",
-             "disappear"
+             "disappear",
+             "appeared",
+             "savouries"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "May all this food disappear, and let me have water",
             "after": ".",
             "options": [
-             "disappear",
              "appeared",
-             "kind",
-             "instead"
+             "disappear",
+             "instead",
+             "kind"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "a basket full of laddoos",
             "after": ".",
             "options": [
-             "disappear",
              "thirsty",
              "instead",
-             "appeared"
+             "appeared",
+             "disappear"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -30336,12 +30336,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: I can ask for different types of food, and enjoy them forever ."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: May all this food disappear , and let me have water instead."
           }
          ],
@@ -34175,9 +34175,9 @@
             "before": "It sinks behind a",
             "after": "hill",
             "options": [
-             "sunset",
              "sunrise",
              "stars",
+             "sunset",
              "distant"
             ],
             "answer": 3
@@ -34186,23 +34186,23 @@
             "before": "Until the day begins to",
             "after": ".",
             "options": [
-             "distant",
              "sunrise",
-             "guess",
-             "peep"
+             "distant",
+             "peep",
+             "guess"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "I wonder where it goes at",
             "after": ".",
             "options": [
-             "distant",
              "sky",
+             "night",
              "sunrise",
-             "night"
+             "distant"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -34219,12 +34219,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: I wonder where it goes at night."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: It sinks behind a distant hill"
           }
          ],
@@ -38095,19 +38095,19 @@
             "after": "the stars.",
             "options": [
              "round",
+             "counting",
              "tears",
-             "thread",
-             "counting"
+             "thread"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "At times",
             "after": "as a circle and at times different.",
             "options": [
+             "too many",
              "tears",
              "location",
-             "too many",
              "round"
             ],
             "answer": 3
@@ -38116,9 +38116,9 @@
             "before": "On seeing his",
             "after": ", the Sun smiled,",
             "options": [
-             "round",
-             "distance",
              "too many",
+             "distance",
+             "round",
              "tears"
             ],
             "answer": 3
@@ -38127,12 +38127,12 @@
             "before": "tell us about the",
             "after": "of ‘sharpener’ and ‘crayons’.",
             "options": [
-             "too many",
              "scissors",
-             "round",
-             "location"
+             "location",
+             "too many",
+             "round"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -38149,12 +38149,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: he started counting the stars."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: At times round as a circle and at times different."
           }
          ],

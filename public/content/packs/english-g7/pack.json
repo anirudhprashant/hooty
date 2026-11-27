@@ -648,8 +648,8 @@
             "after": "down her nose.",
             "options": [
              "strive",
-             "clump",
              "thicket",
+             "clump",
              "splashed"
             ],
             "answer": 3
@@ -658,12 +658,12 @@
             "before": "A green lizard",
             "after": "down to the river’s edge",
             "options": [
-             "murmuring",
              "rustle",
-             "thicket",
-             "slithered"
+             "slithered",
+             "murmuring",
+             "thicket"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "said a sleepy,",
@@ -671,21 +671,21 @@
             "options": [
              "clump",
              "braced",
-             "slithered",
-             "murmuring"
+             "murmuring",
+             "slithered"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Jahnavi was",
             "after": ", because she was sure",
             "options": [
-             "braced",
-             "thicket",
              "slithered",
-             "startled"
+             "thicket",
+             "startled",
+             "braced"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -702,12 +702,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: A big bright tear splashed down her nose."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: A green lizard slithered down to the river’s edge"
           }
          ],
@@ -4648,44 +4648,44 @@
             "after": ", and she read your book",
             "options": [
              "suffix",
+             "scholar",
              "phrasal verb",
-             "cellar",
-             "scholar"
+             "cellar"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "wearing glasses in the",
             "after": ", round Puddleby",
             "options": [
-             "cracker",
              "compound word",
-             "cellar",
-             "countryside"
+             "cracker",
+             "countryside",
+             "cellar"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "A",
             "after": "is a nonsensical and funny verse consisting of five lines.",
             "options": [
-             "palindrome",
              "present perfect continuous",
+             "limerick",
              "cracker",
-             "limerick"
+             "palindrome"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Such word endings are called",
             "after": ".",
             "options": [
-             "cracker",
-             "compound word",
              "countryside",
-             "suffixes"
+             "cracker",
+             "suffixes",
+             "compound word"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -4702,7 +4702,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: my wife, Theodosia, is a scholar , and she read your book"
           },
           {
@@ -8162,9 +8162,9 @@
             "before": "what the",
             "after": "was all about",
             "options": [
-             "crestfallen look",
              "clanging",
              "tinkering",
+             "crestfallen look",
              "racket"
             ],
             "answer": 3
@@ -8173,31 +8173,31 @@
             "before": "Papa standing there,",
             "after": "wet and scowling",
             "options": [
-             "scowling",
-             "dynamos",
              "tinkering",
-             "sopping"
+             "dynamos",
+             "sopping",
+             "scowling"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "He loves",
             "after": "with all sorts of electrical gadgets",
             "options": [
-             "clanging",
              "ruffianly",
-             "sopping",
-             "tinkering"
+             "clanging",
+             "tinkering",
+             "sopping"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "the",
             "after": "drawing of doors, wires, and bells",
             "options": [
+             "sopping",
              "ruffianly",
              "rigged up",
-             "sopping",
              "elaborate"
             ],
             "answer": 3
@@ -8217,7 +8217,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: what the racket was all about"
           },
           {
@@ -11951,30 +11951,30 @@
             "after": "along the railway embankment where",
             "options": [
              "cutting",
-             "swishing",
+             "shimmered",
              "scrub-covered",
-             "shimmered"
+             "swishing"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Suraj stood near the",
             "after": ", waiting for the midday train.",
             "options": [
-             "flinch",
              "instinctively",
+             "cutting",
              "shisham",
-             "cutting"
+             "flinch"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Even the trees seemed to",
             "after": "from the noise and heat.",
             "options": [
              "railway embankment",
-             "scrub-covered",
              "swishing",
+             "scrub-covered",
              "flinch"
             ],
             "answer": 3
@@ -11983,9 +11983,9 @@
             "before": "over the tall",
             "after": "trees.",
             "options": [
-             "railway embankment",
-             "flinch",
              "scrub-covered",
+             "flinch",
+             "railway embankment",
              "shisham"
             ],
             "answer": 3
@@ -12005,12 +12005,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: Heat waves shimmered along the railway embankment where"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: Suraj stood near the cutting , waiting for the midday train."
           }
          ],
@@ -15930,41 +15930,41 @@
             "before": "\"It was",
             "after": "and then inaugurated by India’s Prime Minister\"",
             "options": [
-             "wreaths",
              "posthumously",
+             "envisioned",
              "tribute",
-             "envisioned"
+             "wreaths"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "\"near the",
             "after": "India Gate\"",
             "options": [
-             "territorial integrity",
              "etched",
-             "tribute",
-             "iconic"
+             "iconic",
+             "territorial integrity",
+             "tribute"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "\"a",
             "after": "to some of the bravest Indians\"",
             "options": [
-             "posthumously",
-             "interminable",
              "territorial integrity",
-             "tribute"
+             "interminable",
+             "tribute",
+             "posthumously"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "\"names of fallen soldiers have been",
             "after": "\"",
             "options": [
-             "interminable",
              "iconic",
+             "interminable",
              "territorial integrity",
              "etched"
             ],
@@ -15985,12 +15985,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: \"It was envisioned and then inaugurated by India’s Prime Minister\""
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: \"near the iconic India Gate\""
           }
          ],

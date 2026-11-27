@@ -715,30 +715,30 @@
             "before": "her",
             "after": "desire to go to Kashi or Varanasi.",
             "options": [
-             "protagonist",
              "convincing",
+             "ardent",
              "savouring",
-             "ardent"
+             "protagonist"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "I knew I loved her",
             "after": "and there had",
             "options": [
              "protagonist",
-             "debate",
+             "immensely",
              "taken aback",
-             "immensely"
+             "debate"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "This is called a",
             "after": ".",
             "options": [
-             "ardent",
              "debate",
+             "ardent",
              "immensely",
              "binomial"
             ],
@@ -749,11 +749,11 @@
             "after": ".",
             "options": [
              "ardent",
-             "immensely",
              "protagonist",
-             "idiom"
+             "idiom",
+             "immensely"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -770,12 +770,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: her ardent desire to go to Kashi or Varanasi."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: I knew I loved her immensely and there had"
           }
          ],
@@ -4921,11 +4921,11 @@
             "after": ".",
             "options": [
              "wearily",
+             "tedious",
              "follow suit",
-             "deftly",
-             "tedious"
+             "deftly"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "how",
@@ -4942,9 +4942,9 @@
             "before": "One had to",
             "after": "the fire carefully as over firing",
             "options": [
+             "indifference",
              "follow suit",
              "momentum",
-             "indifference",
              "tend"
             ],
             "answer": 3
@@ -4953,12 +4953,12 @@
             "before": "When Sentila",
             "after": "let the misshapen lump fall flat",
             "options": [
-             "momentum",
-             "tedious",
              "indifference",
-             "wearily"
+             "wearily",
+             "momentum",
+             "tedious"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -4975,12 +4975,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: to soften it, is also tedious ."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: how deftly they rotated the lump"
           }
          ],
@@ -9125,9 +9125,9 @@
             "before": "word",
             "after": "denotes a small plumed fan used in ancient India.",
             "options": [
-             "allegory",
-             "encrusted",
              "sola",
+             "encrusted",
+             "allegory",
              "pankhi"
             ],
             "answer": 3
@@ -9138,18 +9138,18 @@
             "options": [
              "collocation",
              "pankha",
-             "antiquity",
-             "allegory"
+             "allegory",
+             "antiquity"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Such combinations are called",
             "after": ".",
             "options": [
              "innovative",
-             "initiatives",
              "pankhi",
+             "initiatives",
              "collocations"
             ],
             "answer": 3
@@ -9169,7 +9169,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: word pankhi denotes a small plumed fan used in ancient India."
           },
           {
@@ -13181,20 +13181,20 @@
             "before": "the",
             "after": "old figure sitting in the rocking chair",
             "options": [
-             "bustle",
              "trailing",
-             "jauntily",
-             "frail"
+             "bustle",
+             "frail",
+             "jauntily"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Ravi",
             "after": "at the over-loud tone his mother used",
             "options": [
+             "deterred",
              "ducking",
              "crouch",
-             "deterred",
              "winced"
             ],
             "answer": 3
@@ -13205,21 +13205,21 @@
             "options": [
              "winced",
              "crouch",
-             "trailing",
-             "bustle"
+             "bustle",
+             "trailing"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Ravi, feeling very foolish, had to",
             "after": "behind a bush",
             "options": [
              "winced",
-             "volley",
+             "crouch",
              "jauntily",
-             "crouch"
+             "volley"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -13241,7 +13241,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: Ravi winced at the over-loud tone his mother used"
           }
          ],
@@ -16934,44 +16934,44 @@
             "after": "stereotypes",
             "options": [
              "preconceived notions",
-             "coveted",
+             "quell",
              "squander",
-             "quell"
+             "coveted"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "left an",
             "after": "mark on innumerable aspiring athletes",
             "options": [
-             "locomotor",
-             "remorse",
              "squander",
-             "indelible"
+             "remorse",
+             "indelible",
+             "locomotor"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "You’re a",
             "after": "—the first ever Indian female para-athlete",
             "options": [
              "coveted",
-             "inclusivity",
+             "trailblazer",
              "locomotor",
-             "trailblazer"
+             "inclusivity"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "You’ve been bestowed with several",
             "after": "awards too",
             "options": [
              "inclusivity",
+             "coveted",
              "indelible",
-             "locomotor",
-             "coveted"
+             "locomotor"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -16988,7 +16988,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: Paralympics go beyond competition, to quell stereotypes"
           },
           {
@@ -20734,22 +20734,22 @@
             "after": "of an orchestra",
             "options": [
              "notes",
+             "hubbub",
              "painstakingly",
-             "bite the bullet",
-             "hubbub"
+             "bite the bullet"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "I will",
             "after": "for your group at the concert!",
             "options": [
-             "desecration",
-             "contempt",
              "bite the bullet",
-             "root"
+             "contempt",
+             "root",
+             "desecration"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -20766,7 +20766,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: To drown your individual style in the hubbub of an orchestra"
           },
           {

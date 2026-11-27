@@ -52087,20 +52087,20 @@
             "before": "Then came",
             "after": ", a devastating cattle disease.",
             "options": [
-             "silk routes",
-             "Great Depression",
              "Corn Laws",
-             "Rinderpest"
+             "Great Depression",
+             "Rinderpest",
+             "silk routes"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "Multinational corporations (",
             "after": ") are large companies that operate",
             "options": [
+             "colonialism",
              "regional specialisation",
              "primary products",
-             "colonialism",
              "MNCs"
             ],
             "answer": 3
@@ -52125,7 +52125,7 @@
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: Multinational corporations ( MNCs ) are large companies that operate"
           }
          ],
@@ -76812,11 +76812,11 @@
             "after": "or any other alternative.",
             "options": [
              "transparency",
+             "dictatorship",
              "majority rule",
-             "accountability",
-             "dictatorship"
+             "accountability"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "decision making will be based on",
@@ -76824,32 +76824,32 @@
             "options": [
              "legitimacy",
              "responsiveness",
-             "negotiation",
-             "norms"
+             "norms",
+             "negotiation"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "This is known as",
             "after": ".",
             "options": [
-             "norms",
              "responsiveness",
+             "transparency",
              "majority rule",
-             "transparency"
+             "norms"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "Democracy is based on the idea of",
             "after": "and negotiation.",
             "options": [
-             "norms",
              "legitimacy",
              "accountability",
-             "deliberation"
+             "deliberation",
+             "norms"
             ],
-            "answer": 3
+            "answer": 2
            }
           ],
           "labels": {
@@ -76866,7 +76866,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: compared with dictatorship or any other alternative."
           },
           {

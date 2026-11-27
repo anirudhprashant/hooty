@@ -547,9 +547,9 @@
             "before": "The Vijayanagara Empire was",
             "after": "for its glory",
             "options": [
-             "absurd",
-             "distraught",
              "insurmountable",
+             "distraught",
+             "absurd",
              "renowned"
             ],
             "answer": 3
@@ -558,31 +558,31 @@
             "before": "Among its many",
             "after": "rulers, King Krishnadeva Raya",
             "options": [
-             "patron",
              "trivial",
-             "insurmountable",
-             "illustrious"
+             "patron",
+             "illustrious",
+             "insurmountable"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "A great",
             "after": "of learning, Krishnadeva Raya",
             "options": [
-             "distraught",
              "unfazed",
+             "patron",
              "illustrious",
-             "patron"
+             "distraught"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "not only an",
             "after": "warrior but also a gifted poet",
             "options": [
-             "unfazed",
-             "insurmountable",
              "illustrious",
+             "insurmountable",
+             "unfazed",
              "eminent"
             ],
             "answer": 3
@@ -602,7 +602,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: The Vijayanagara Empire was renowned for its glory"
           },
           {
@@ -8916,8 +8916,8 @@
             "before": "An",
             "after": "is a word or phrase that is made by rearranging",
             "options": [
-             "nominative",
              "loot",
+             "nominative",
              "nursery",
              "anagram"
             ],
@@ -8927,9 +8927,9 @@
             "before": "Match the different meanings of ‘",
             "after": "’",
             "options": [
-             "matter-of-fact manner",
              "testify",
              "nursery",
+             "matter-of-fact manner",
              "case"
             ],
             "answer": 3
@@ -8949,12 +8949,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: An anagram is a word or phrase that is made by rearranging"
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 4",
            "then": "The sentence is: Match the different meanings of ‘ case ’"
           }
          ],
@@ -12982,9 +12982,9 @@
             "before": "the dry cold winds",
             "after": "the growth of most plants.",
             "options": [
-             "nightjar",
              "scythe",
              "plodded",
+             "nightjar",
              "stunted"
             ],
             "answer": 3
@@ -12994,33 +12994,33 @@
             "after": "of Mussoorie",
             "options": [
              "tang",
+             "outskirts",
              "haunches",
-             "plodded",
-             "outskirts"
+             "plodded"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "until all the",
             "after": "had gone.",
             "options": [
-             "scythe",
              "cicadas",
-             "outskirts",
-             "tang"
+             "tang",
+             "scythe",
+             "outskirts"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "the earth was soft and",
             "after": ".",
             "options": [
              "cicadas",
-             "plodded",
+             "yielding",
              "outskirts",
-             "yielding"
+             "plodded"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -13037,12 +13037,12 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 4",
            "then": "The sentence is: the dry cold winds stunted the growth of most plants."
           },
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 1 and choice == 3",
+           "when": "item == 1 and choice == 2",
            "then": "The sentence is: Rakesh lived with his grandfather on the outskirts of Mussoorie"
           }
          ],
@@ -17030,45 +17030,45 @@
             "before": "there’s never been a",
             "after": "that forbids one to keep pets",
             "options": [
-             "girders",
-             "delved",
              "dovetailed",
-             "regulation"
+             "regulation",
+             "delved",
+             "girders"
             ],
-            "answer": 3
+            "answer": 1
            },
            {
             "before": "he was a",
             "after": "little fellow, like most of the early spacers",
             "options": [
-             "intercom",
-             "cubbyhole",
              "safeguarded",
-             "wiry"
+             "cubbyhole",
+             "wiry",
+             "intercom"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "collecting assorted",
             "after": "as they floated around in free fall",
             "options": [
-             "wiry",
-             "cubbyhole",
              "delved",
-             "girders"
+             "wiry",
+             "girders",
+             "cubbyhole"
             ],
-            "answer": 3
+            "answer": 2
            },
            {
             "before": "the little",
             "after": "laughingly called my office",
             "options": [
-             "wiry",
              "keeled",
-             "dovetailed",
-             "cubbyhole"
+             "cubbyhole",
+             "wiry",
+             "dovetailed"
             ],
-            "answer": 3
+            "answer": 1
            }
           ],
           "labels": {
@@ -17085,7 +17085,7 @@
          "tasks": [
           {
            "say": "Choose the word that completes the sentence.",
-           "when": "item == 0 and choice == 3",
+           "when": "item == 0 and choice == 2",
            "then": "The sentence is: there’s never been a regulation that forbids one to keep pets"
           },
           {
