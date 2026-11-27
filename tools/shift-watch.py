@@ -24,11 +24,17 @@ from zoneinfo import ZoneInfo
 
 IST = ZoneInfo('Asia/Kolkata')
 UTC = ZoneInfo('UTC')
-JOB = '5d42a68983a6'                      # "Hooty shift (9-12 IST)"
+# The team: lane -> (job id, the hour it starts, IST). Each is a separate cron session.
+JOBS = {
+    'design':    ('bef7b64d4018', 9),
+    'teach':     ('9c70c69f3991', 9),
+    'verify':    ('d5fbe248bac5', 10),   # starts at 10:30
+    'integrate': ('5d42a68983a6', 11),
+}
+LANES = ('design', 'teach')          # branches that must be merged into main by the integrator
 DB = '/home/ubuntu/.hermes/cron/executions.db'
 REPO = '/home/ubuntu/agent-workspace/hooty-build'
 SITE = 'https://hooty.org/'
-SLOTS = (9, 10, 11)
 VERBOSE = '--verbose' in sys.argv
 
 
@@ -53,30 +59,38 @@ def main():
     try:
         con = sqlite3.connect(f'file:{DB}?mode=ro', uri=True)
         runs = con.execute(
-            'select status, started_at, finished_at, error from executions '
-            'where job_id = ? and started_at >= ? and started_at <= ? order by started_at',
-            (JOB, lo, hi)).fetchall()
+            'select job_id, status, started_at, finished_at, error from executions '
+            'where started_at >= ? and started_at <= ? order by started_at', (lo, hi)).fetchall()
         con.close()
     except Exception as e:                                    # a broken ledger is itself a finding
         problems.append(f'could not read the cron ledger: {e}')
 
-    started_hours = set()
-    for status, started_at, _finished, error in runs:
-        try:
-            hour = dt.datetime.fromisoformat(started_at).astimezone(IST).hour
-        except Exception:
-            hour = None
-        if hour is not None:
-            started_hours.add(hour)
+    seen = {lane: [] for lane in JOBS}
+    for job_id, status, started_at, _finished, error in runs:
+        lane = next((l for l, (jid, _h) in JOBS.items() if jid == job_id), None)
+        if lane is None:
+            continue
+        seen[lane].append(status)
         if status not in ('completed', 'running'):
             detail = (error or '').strip().splitlines()[:2]
-            problems.append(f'{hour:02d}:00 session ended {status}' + (f': {" / ".join(detail)}' if detail else ''))
+            problems.append(f'{lane} session ended {status}' + (f': {" / ".join(detail)}' if detail else ''))
 
-    # Only complain about a missing slot once its hour is safely over.
-    for hour in SLOTS:
-        if now.hour > hour or (now.hour == hour and now.minute > 40):
-            if hour not in started_hours:
-                problems.append(f'{hour:02d}:00 session never started')
+    # Only complain about a lane that never started once its hour is safely over.
+    for lane, (_jid, hour) in JOBS.items():
+        if now.hour > hour or (now.hour == hour and now.minute > 45):
+            if not seen[lane]:
+                problems.append(f'{lane} session never started today')
+
+    # A lane that finished but whose commits never reached main means the integrator missed them.
+    if now.hour >= 12:
+        for lane in LANES:
+            try:
+                ahead = subprocess.run(['git', '-C', REPO, 'rev-list', '--count', f'main..shift/{lane}'],
+                                       capture_output=True, text=True).stdout.strip()
+                if ahead.isdigit() and int(ahead) > 0:
+                    problems.append(f'{lane} lane has {ahead} commits that never reached main')
+            except Exception:
+                pass
 
     # The site itself: up, and still serving the real app rather than an error page.
     try:
@@ -156,7 +170,8 @@ def main():
         problems.append(f'could not run the teaching audit: {e}')
 
     if VERBOSE:
-        print(f'runs today: {len(runs)} at hours {sorted(started_hours)}; problems: {len(problems)}')
+        summary = ', '.join(f'{lane} {len(seen[lane])}' for lane in JOBS)
+        print(f'runs today: {len(runs)} ({summary}); problems: {len(problems)}')
     for line in problems:
         print(f'Hooty shift: {line}')
 
