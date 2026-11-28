@@ -111,7 +111,7 @@ def lessons_of(slug):
         end_part, end_page = part, 10 ** 6
         if index + 1 < len(starts):
             end_part, end_page = starts[index + 1][2], starts[index + 1][3]
-        paragraphs, dropped, kept = [], 0, 0
+        paragraphs, damaged, dropped, kept = [], [], 0, 0
         for path, page_part, page_number in pages:
             if page_part != part and page_part != end_part:
                 if not (part <= page_part <= end_part):
@@ -126,9 +126,13 @@ def lessons_of(slug):
                     paragraphs.append(cleaned)
                     kept += 1
                 elif len(WORD.findall(line)) >= 3:
+                    # Nothing is thrown away: a line the converter could not finish is kept here so the repair
+                    # pass can work on it, and so a lesson can never quietly lose a paragraph.
+                    damaged.append(' '.join(line.split()))
                     dropped += 1
         out.append({'lesson': number, 'title': title or f'ಪಾಠ {number}', 'part': part,
-                    'from': page, 'paragraphs': paragraphs, 'clean_lines': kept, 'dropped_lines': dropped})
+                    'from': page, 'paragraphs': paragraphs, 'damaged': damaged,
+                    'clean_lines': kept, 'dropped_lines': dropped})
     return out
 
 
@@ -153,7 +157,8 @@ def main():
         os.makedirs(target, exist_ok=True)
         for lesson in lessons:
             json.dump(lesson, open(f"{target}/ch{lesson['lesson']:02d}.json", 'w'), ensure_ascii=False, indent=1)
-        json.dump({'slug': slug, 'lessons': [{k: v for k, v in l.items() if k != 'paragraphs'} for l in lessons]},
+        json.dump({'slug': slug, 'lessons': [{k: v for k, v in l.items() if k not in ('paragraphs', 'damaged')}
+                                             for l in lessons]},
                   open(f'{target}/index.json', 'w'), ensure_ascii=False, indent=1)
         total_lessons += len(lessons)
         clean = sum(l['clean_lines'] for l in lessons)
