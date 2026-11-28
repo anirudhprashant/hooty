@@ -44,10 +44,14 @@ MATRA = '\u093a-\u094c\u0951-\u0957\u0962\u0963'
 HALANT = '\u094d'
 ZERO_WIDTH = '\u200c\u200d\ufeff'
 
-DETACHED_START = re.compile(r'[\s"\'(\[{]+[' + MATRA + HALANT + r']')
+DETACHED_START = re.compile(r'[\s"\'(\\[{]+[' + MATRA + HALANT + r']')
 SPACE_INSIDE = re.compile(f'[{CONSONANT}][{MATRA}]?[\\s]+[{MATRA}{HALANT}]')
 DOUBLED = re.compile(f'([{MATRA}])\\1')
 STRAY_ZERO_WIDTH = re.compile(f'[{CONSONANT}][{ZERO_WIDTH}][{CONSONANT}]')
+# An English word left inside Hindi text ("जिसे अ unclean माना जाता है", "पद्म Shri", "Preethibhoj").
+# A Hindi book names these in Devanagari (इसरो, पद्म श्री), and a child reading Hindi cannot read the
+# English one. Not a matra fault, but the same kind of unreadable text.
+LATIN_WORD = re.compile(r'(?<![A-Za-z])[A-Za-z]{2,}(?![A-Za-z])')
 # A vowel sign belongs to the consonant on its left, one per consonant, before any anusvara, and never
 # before a halant. Two vowels on one letter ("भरूी", "दसूरी"), an anusvara then a vowel ("चदंा") or a vowel
 # then a halant ("मसु्काते") is the extractor's own reorder happening *inside* a word, with no space to
@@ -147,6 +151,26 @@ def anomalies(text, dictionary=None):
     return found
 
 
+# The fields a child reads. An activity's id, type, tags, gen and src are plumbing and are full of Latin
+# letters; only these carry the words the lesson is teaching, so the English-word check looks at them.
+CONTENT_KEYS = {'prompt', 'options', 'body', 'text', 'explanation', 'title', 'items', 'pairs', 'points',
+                'keyPoints', 'meaning', 'term', 'aka', 'answers', 'context', 'kicker', 'caption',
+                'sceneCaption', 'why', 'hook', 'passage', 'steps', 'result'}
+
+
+def content_texts(value, key=None):
+    """Every string under a child-facing field, with the field name it came from."""
+    if isinstance(value, str):
+        if key in CONTENT_KEYS:
+            yield key, value
+    elif isinstance(value, dict):
+        for k, item in value.items():
+            yield from content_texts(item, k)
+    elif isinstance(value, list):
+        for item in value:
+            yield from content_texts(item, key)
+
+
 def scan_pack(path_or_dict, label, dictionary=None):
     data = path_or_dict
     if isinstance(path_or_dict, str):
@@ -162,9 +186,43 @@ def scan_pack(path_or_dict, label, dictionary=None):
                         if shapes:
                             hits.append({'activity': activity.get('id') or activity.get('type'),
                                          'shapes': sorted(shapes), 'text': text[:300]})
+                for activity in lesson.get('activities', []):
+                    for field, text in content_texts(activity):
+                        if LATIN_WORD.search(text):
+                            hits.append({'activity': activity.get('id') or activity.get('type'),
+                                         'shapes': ['latin'], 'text': text[:300]})
                 if hits:
                     rows.append({'book': label, 'lesson': lesson.get('id'), 'hits': hits})
     return rows
+
+
+def scan_glossary(data, label, dictionary=None):
+    """The pack's own glossary — what the child sees in "शब्द देखिए" — is a separate file and was not
+    being measured, so a stale term kept its broken spelling while the scan read zero.
+
+    A term's `src.ev` quote is provenance, not content: the popover renders only the chapter and page
+    (`public/engine/core/glossary.js`), so a broken quote is reported apart instead of counted as a
+    lesson a child cannot read. The quote still has to be fixed at the source; it is just not a child's
+    reading text.
+    """
+    rows, provenance = [], []
+    for term in (data or {}).get('terms', []):
+        visible = [term.get('term'), term.get('meaning')] + list(term.get('aka') or [])
+        for text in visible:
+            for piece in strings(text):
+                shapes = anomalies(piece, dictionary)
+                if shapes:
+                    rows.append({'activity': 'glossary: ' + str(term.get('term')), 'shapes': sorted(shapes),
+                                 'text': piece[:300]})
+        for entry in term.get('src') or []:
+            for piece in strings(entry.get('ev') if isinstance(entry, dict) else None):
+                shapes = anomalies(piece, dictionary)
+                if shapes:
+                    provenance.append({'term': term.get('term'), 'shapes': sorted(shapes),
+                                       'text': piece[:160]})
+    if rows:
+        return [{'book': label, 'lesson': 'glossary', 'hits': rows}], provenance
+    return [], provenance
 
 
 def fetch_live(book):
@@ -172,6 +230,16 @@ def fetch_live(book):
     request = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'})
     with urllib.request.urlopen(request, timeout=60) as response:
         return json.loads(response.read())
+
+
+def fetch_live_glossary(book):
+    url = f'https://hooty.org/content/packs/{book}/glossary.json?x={os.urandom(3).hex()}'
+    request = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'})
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return json.loads(response.read())
+    except Exception:
+        return {}
 
 
 def main():
@@ -194,20 +262,35 @@ def main():
     if live:
         books = [only] if only else [f'hindi-g{i}' for i in range(1, 11)]
         packs = {book: fetch_live(book) for book in books}
+        glossaries = {book: fetch_live_glossary(book) for book in books}
         source = 'live site'
     else:
         paths = sorted(glob.glob(f'{ROOT}/public/content/packs/hindi-*/pack.json'))
         if only:
             paths = [p for p in paths if f'/{only}/' in p]
         packs = {os.path.basename(os.path.dirname(p)): p for p in paths}
+        glossaries = {book: json.load(open(f'{ROOT}/public/content/packs/{book}/glossary.json'))
+                      for book in packs
+                      if os.path.exists(f'{ROOT}/public/content/packs/{book}/glossary.json')}
         source = 'local packs'
 
     all_rows = []
     per_book = {}
+    provenance = []
     for book, pack in sorted(packs.items()):
-        rows = scan_pack(pack, book, dictionary)
+        rows, prov = scan_glossary(glossaries.get(book), book, dictionary)
+        rows = scan_pack(pack, book, dictionary) + rows
         all_rows.extend(rows)
         per_book[book] = rows
+        if prov:
+            provenance.extend({'book': book, **row} for row in prov)
+    for book, gloss in sorted(glossaries.items()):
+        if book not in packs:
+            rows, prov = scan_glossary(gloss, book, dictionary)
+            all_rows.extend(rows)
+            per_book[book] = rows
+            if prov:
+                provenance.extend({'book': book, **row} for row in prov)
 
     print(f'Devanagari scan of the {source} (word list {len(dictionary)} words'
           f'{'' if dictionary else ', NOT FOUND — split/moved-mark not checked'}):')
@@ -229,6 +312,10 @@ def main():
     if total:
         example = all_rows[0]
         print(f'  example: {example["book"]}/{example["lesson"]} — {example["hits"][0]["text"][:90]!r}')
+    if provenance:
+        print(f'  provenance quotes (a page reference, never shown to a child): {len(provenance)}')
+        for row in provenance[:8]:
+            print(f'    {row["book"]} {row["term"]!r}: {row["text"][:70]!r}')
     if out:
         json.dump(all_rows, open(out, 'w'), ensure_ascii=False, indent=1)
         print(f'  written to {out}')

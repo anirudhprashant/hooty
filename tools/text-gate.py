@@ -83,13 +83,21 @@ def self_test():
 
     # Layer two: the word matcher that catches a reorder no shape can prove.
     vocab = dict(WORD_VOCAB)
-    anagrams, by_length = hindirepair.index(vocab)
+    # The matcher's signature grew when the two lanes' repairs became one tool: it now takes the word list
+    # and the reviewed cases as arguments, so the gate passes both.
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    dictionary = set()
+    words_file = os.path.join(root, 'work/qa/hindi-words.txt')
+    if os.path.exists(words_file):
+        dictionary = {line.strip().split()[0] for line in open(words_file, encoding='utf-8') if line.strip()}
+    _, cases = hindirepair.load_cases()
+    anagrams, by_length = hindirepair.index(vocab, dictionary)
     for broken, correct in WORD_CASES:
-        fixed, how = hindirepair.repair_word(broken, vocab, anagrams, by_length)
+        fixed, how = hindirepair.repair_word(broken, vocab, anagrams, by_length, dictionary, cases)
         if fixed != correct:
             failures.append(f'word matcher left {broken!r} as {fixed!r} ({how}), wanted {correct!r}')
     for word in WORD_REFUSALS:
-        fixed, how = hindirepair.repair_word(word, vocab, anagrams, by_length)
+        fixed, how = hindirepair.repair_word(word, vocab, anagrams, by_length, dictionary, cases)
         if fixed is not None:
             failures.append(f'word matcher guessed {word!r} -> {fixed!r} ({how}), it must refuse')
 
