@@ -5045,13 +5045,13 @@
           "The product must be split again to restore the original factors.",
           "The order may change, but the prime factorisation remains the same.",
           "The arrangement becomes a new prime factorisation each time.",
-          "Only the first prime factor should appear on the card."
+          "The first prime factor should appear on the card."
          ],
          "answer": 1,
          "why": {
           "The arrangement becomes a new prime factorisation each time.": "New arrangements are not new prime factorisations.",
           "The product must be split again to restore the original factors.": "The product already shows its three prime-number factors, so another split is unnecessary.",
-          "Only the first prime factor should appear on the card.": "All three prime-number factors should be included in the product."
+          "The first prime factor should appear on the card.": "All three prime-number factors should be included in the product."
          },
          "explanation": "Only the order can change because the factorisation is unique apart from order.",
          "anchor": "mathematics-g10-ch1-l2-a1",
@@ -18952,12 +18952,12 @@
          "options": [
           "Neither model, because the second model once looked cubic.",
           "Only the second model, because its simplified equation has x².",
-          "Only the first model, because x² appears in it.",
+          "The first model, because x² appears in it.",
           "Both models, because x² appears somewhere in each."
          ],
          "answer": 1,
          "why": {
-          "Only the first model, because x² appears in it.": "It trusts an appearance instead of checking the simplified equation.",
+          "The first model, because x² appears in it.": "It trusts an appearance instead of checking the simplified equation.",
           "Both models, because x² appears somewhere in each.": "It wrongly counts an x² term before simplification.",
           "Neither model, because the second model once looked cubic.": "It wrongly treats an earlier cubic-looking form as final."
          },
@@ -19833,15 +19833,15 @@
          ],
          "prompt": "A puzzle has one repeated linear factor. How should its root appear on the answer card?",
          "options": [
-          "Only once, no matter how many copies appear.",
+          "Once, no matter how many copies appear.",
           "Once for each copy of that repeated factor.",
-          "Only after the middle term has been split.",
+          "After the middle term has been split.",
           "As two different roots after the factor is repeated."
          ],
          "answer": 1,
          "why": {
-          "Only once, no matter how many copies appear.": "It ignores the extra copy of the repeated factor.",
-          "Only after the middle term has been split.": "It confuses repeated factors with the middle-term splitting step.",
+          "Once, no matter how many copies appear.": "It ignores the extra copy of the repeated factor.",
+          "After the middle term has been split.": "It confuses repeated factors with the middle-term splitting step.",
           "As two different roots after the factor is repeated.": "It confuses repeated copies with different roots."
          },
          "explanation": "The root is repeated for each repeated factor.",
@@ -21176,14 +21176,14 @@
          ],
          "prompt": "A polynomial is written as (x + 12)(x − 5). A student says its zeroes must be positive. How should this be corrected?",
          "options": [
-          "Only 5 is a zero because zeroes cannot be negative.",
+          "5 is a zero because zeroes cannot be negative.",
           "Neither is a zero because the factors must be equal.",
           "Both are zeroes, but neither can be a distance.",
           "Both 5 and −12 are zeroes; only 5 can be a distance."
          ],
          "answer": 3,
          "why": {
-          "Only 5 is a zero because zeroes cannot be negative.": "A zero can be negative; positivity matters for the distance.",
+          "5 is a zero because zeroes cannot be negative.": "A zero can be negative; positivity matters for the distance.",
           "Both are zeroes, but neither can be a distance.": "This wrongly treats the negative root as impossible for a distance.",
           "Neither is a zero because the factors must be equal.": "A product is zero when either factor is zero, not when factors match."
          },
@@ -23095,13 +23095,13 @@
           "The rule and the listed amounts do not match.",
           "The rule and the listed amounts match exactly.",
           "The first two amounts prove every later amount.",
-          "Only the 12-year amount follows the five-times rule."
+          "The 12-year amount follows the five-times rule."
          ],
          "answer": 0,
          "why": {
           "The rule and the listed amounts match exactly.": "Wrong: it overlooks the mismatch between the rule and amounts.",
           "The first two amounts prove every later amount.": "Wrong: two amounts cannot prove every later amount.",
-          "Only the 12-year amount follows the five-times rule.": "Wrong: even the first change does not multiply by five."
+          "The 12-year amount follows the five-times rule.": "Wrong: even the first change does not multiply by five."
          },
          "explanation": "Correct: ₹12,500 is not five times ₹10,000.",
          "f": [
@@ -27169,16 +27169,16 @@
          ],
          "prompt": "The forward row from 1 to 100 totals 5050. What totals both rows together?",
          "options": [
-          "Only 5050, because one row is ignored",
-          "Only 100, because the first pair is used",
+          "5050, because one row is ignored",
+          "100, because the first pair is used",
           "Twice 5050, because both rows are added",
-          "Only 101, because one pair is used"
+          "101, because one pair is used"
          ],
          "answer": 2,
          "why": {
-          "Only 5050, because one row is ignored": "This ignores the reversed row that was also added.",
-          "Only 101, because one pair is used": "This uses one pair instead of the two full rows.",
-          "Only 100, because the first pair is used": "This uses the first pair instead of the two full rows."
+          "5050, because one row is ignored": "This ignores the reversed row that was also added.",
+          "101, because one pair is used": "This uses one pair instead of the two full rows.",
+          "100, because the first pair is used": "This uses the first pair instead of the two full rows."
          },
          "explanation": "Adding two rows gives twice the original sum.",
          "f": [
@@ -31666,13 +31666,13 @@
           "The first polygon is similar to the third polygon.",
           "The first polygon must be larger than the third polygon.",
           "The first polygon must have the same size as the third.",
-          "Only the second polygon can use a scale factor."
+          "The second polygon can use a scale factor."
          ],
          "answer": 0,
          "why": {
           "The first polygon must be larger than the third polygon.": "Linked similarity does not tell us which polygon is larger.",
           "The first polygon must have the same size as the third.": "Similar polygons can have different sizes, as shadows show.",
-          "Only the second polygon can use a scale factor.": "Similarity does not belong only to the middle polygon."
+          "The second polygon can use a scale factor.": "Similarity does not belong only to the middle polygon."
          },
          "explanation": "The rule about linked similarities gives this conclusion directly.",
          "f": [
@@ -33462,12 +33462,12 @@
           "The red path and the blue path must cross each other.",
           "The red path must be parallel to the green path only.",
           "The red path and the blue path are parallel to each other.",
-          "Only the green path can be parallel to another path."
+          "The green path can be parallel to another path."
          ],
          "answer": 2,
          "why": {
           "The red path and the blue path must cross each other.": "This wrongly assumes that parallel paths must cross.",
-          "Only the green path can be parallel to another path.": "This wrongly treats the shared line as the only parallel path.",
+          "The green path can be parallel to another path.": "This wrongly treats the shared line as the only parallel path.",
           "The red path must be parallel to the green path only.": "This forgets that the blue path is also parallel to the green path."
          },
          "explanation": "Lines parallel to the same line are parallel to each other.",
@@ -38265,14 +38265,14 @@
          "prompt": "Two dots sit in different quadrants on a classroom grid.\nOne dot is left and below the other.\nThe x2 – x1 and y2 – y1 differences are both negative.\nWhich result can represent their direct distance?",
          "options": [
           "Either sign is allowed",
-          "Only a negative number",
+          "A negative number",
           "Only a positive number",
-          "Only the number zero"
+          "The number zero"
          ],
          "answer": 2,
          "why": {
-          "Only a negative number": "It treats signed coordinate differences as the final distance.",
-          "Only the number zero": "It ignores the gaps between the two points.",
+          "A negative number": "It treats signed coordinate differences as the final distance.",
+          "The number zero": "It ignores the gaps between the two points.",
           "Either sign is allowed": "It ignores that distance is never negative."
          },
          "explanation": "Distance is never negative, so the positive value is used.",
@@ -46846,14 +46846,14 @@
          "prompt": "At 0°, tangent is 0 and cotangent is not defined. At 90°, tangent is not defined. A game awards a point when either value is undefined. Which check earns a point?",
          "options": [
           "Neither the 0° nor the 90° check earns a point.",
-          "Only the 0° check earns a point.",
-          "Only the 90° check earns a point.",
+          "The 0° check earns a point.",
+          "The 90° check earns a point.",
           "Both the 0° check and the 90° check."
          ],
          "answer": 3,
          "why": {
-          "Only the 0° check earns a point.": "This mistake misses that tangent is undefined at 90°.",
-          "Only the 90° check earns a point.": "This mistake misses that cotangent is undefined at 0°.",
+          "The 0° check earns a point.": "This mistake misses that tangent is undefined at 90°.",
+          "The 90° check earns a point.": "This mistake misses that cotangent is undefined at 0°.",
           "Neither the 0° nor the 90° check earns a point.": "This mistake treats undefined values as ordinary numbers."
          },
          "explanation": "At 0°, cotangent is undefined, and at 90°, tangent is undefined.",
@@ -64376,7 +64376,7 @@
          ],
          "prompt": "In triangle OAB, OA and OB are equal. OM is perpendicular to AB. Triangles AMO and BMO are congruent by RHS. What follows about their areas?",
          "options": [
-          "Only triangle AMO has an area.",
+          "Triangle AMO has an area.",
           "The two triangles have equal areas.",
           "The two triangles have different areas.",
           "Their equal areas depend on AB alone."
@@ -64384,7 +64384,7 @@
          "answer": 1,
          "why": {
           "The two triangles have different areas.": "Congruence shows equal areas, not different areas.",
-          "Only triangle AMO has an area.": "Both triangles have an area because both are triangles.",
+          "Triangle AMO has an area.": "Both triangles have an area because both are triangles.",
           "Their equal areas depend on AB alone.": "Equal areas follow from congruence, not from AB alone."
          },
          "explanation": "Congruent triangles match exactly, so their areas are equal.",
@@ -68135,14 +68135,14 @@
          "prompt": "A toy top joins a cone to a hemisphere. A child adds both total areas. What is wrong?",
          "options": [
           "Both total areas should be added twice for a smooth outside.",
-          "Only one total area is needed because the other part is hidden.",
+          "One total area is needed because the other part is hidden.",
           "Hidden flat faces do not count, so add only the curved areas.",
           "The top needs both total areas plus the joined circle’s area."
          ],
          "answer": 2,
          "why": {
           "The top needs both total areas plus the joined circle’s area.": "This mistake counts the hidden joined circle in addition to both parts.",
-          "Only one total area is needed because the other part is hidden.": "This mistake hides a whole visible part, not only the joined faces.",
+          "One total area is needed because the other part is hidden.": "This mistake hides a whole visible part, not only the joined faces.",
           "Both total areas should be added twice for a smooth outside.": "This mistake doubles the parts and does not remove hidden faces."
          },
          "explanation": "This is right because hidden flat faces cannot be included.",
@@ -79345,7 +79345,7 @@
          ],
          "prompt": "A coin is turned once. Its outcomes are written H and T. Which choice explains these events?",
          "options": [
-          "Only H is elementary because T has two possible outcomes.",
+          "H is elementary because T has two possible outcomes.",
           "Neither is elementary because the coin has two written outcomes.",
           "Both H and T are not elementary because each has one outcome.",
           "Both H and T are elementary because each has one outcome."
@@ -79353,7 +79353,7 @@
          "answer": 3,
          "why": {
           "Both H and T are not elementary because each has one outcome.": "This mistake confuses having one outcome with not being elementary.",
-          "Only H is elementary because T has two possible outcomes.": "This mistake treats T as if it had more than one outcome.",
+          "H is elementary because T has two possible outcomes.": "This mistake treats T as if it had more than one outcome.",
           "Neither is elementary because the coin has two written outcomes.": "This mistake looks at all outcomes instead of each event."
          },
          "explanation": "This is right because each coin event has only one outcome.",
@@ -81830,14 +81830,14 @@
          "context": "At a school fair, a fair coin is tossed at random and allowed to fall freely without bias or interference. A bag contains red and blue balls, including four red balls. A ball is drawn, and then a fair die is thrown. The activity aims to compare the chances of different outcomes and explain why the number of outcomes alone does not show whether they are equally likely.",
          "prompt": "When the fair die is thrown, which conclusion is justified?",
          "options": [
-          "Only one of its numbers should have a possibility of showing up.",
+          "One of its numbers should have a possibility of showing up.",
           "The numbers should not have equal possibilities because there are six of them.",
           "One number should be more likely to show up than the others.",
           "Each of 1, 2, 3, 4, 5 and 6 should have the same possibility of showing up."
          ],
          "answer": 3,
          "why": {
-          "Only one of its numbers should have a possibility of showing up.": "A fair die has more than one possible outcome.",
+          "One of its numbers should have a possibility of showing up.": "A fair die has more than one possible outcome.",
           "One number should be more likely to show up than the others.": "A fair die does not favour one number.",
           "The numbers should not have equal possibilities because there are six of them.": "Having six possible outcomes does not prevent them from being equally likely."
          },
@@ -82112,7 +82112,7 @@
          "context": "A school probability display has three activities. Visitors throw two dice together, noting all 36 possible outcomes. A carton contains shirts, and drawing one shirt gives 100 equally likely outcomes; 88 are acceptable to Jimmy. Outside, a helicopter is equally likely to crash anywhere in a circular region containing a lake of area 7.5 square kilometres. The display compares counting outcomes with using areas.",
          "prompt": "Why should the display use an area ratio for the helicopter rather than list every possible crash point?",
          "options": [
-          "Only the 36 dice outcomes can be counted, so no crash probability can be discussed.",
+          "The 36 dice outcomes can be counted, so no crash probability can be discussed.",
           "Every crash point should be counted separately, making the number of outcomes finite.",
           "The lake's 7.5 square kilometres should replace the total area in every probability ratio.",
           "There are infinitely many points in the circle, so probability must be extended to areas."
@@ -82120,7 +82120,7 @@
          "answer": 3,
          "why": {
           "Every crash point should be counted separately, making the number of outcomes finite.": "Counting the points does not make their infinite number finite.",
-          "Only the 36 dice outcomes can be counted, so no crash probability can be discussed.": "The equally likely crash locations allow probability to be expressed using areas.",
+          "The 36 dice outcomes can be counted, so no crash probability can be discussed.": "The equally likely crash locations allow probability to be expressed using areas.",
           "The lake's 7.5 square kilometres should replace the total area in every probability ratio.": "The total area remains the denominator; the favourable lake area is the numerator only if crashing in the lake is the favourable event."
          },
          "explanation": "Infinitely many points cannot all be counted, and probability can be extended to an area ratio.",

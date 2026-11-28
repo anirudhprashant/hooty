@@ -1070,7 +1070,7 @@
          ],
          "prompt": "A family makes marks for cows leaving. It forgets to cross out returning cows. What will the wall show?",
          "options": [
-          "Only marks for cows that never left will remain.",
+          "Marks for cows that never left will remain.",
           "Many marks will remain after all the cows return.",
           "Every mark will be crossed out after the cows return.",
           "No marks will remain after all the cows return."
@@ -1078,7 +1078,7 @@
          "answer": 1,
          "why": {
           "No marks will remain after all the cows return.": "It assumes returning cows cross out their own marks.",
-          "Only marks for cows that never left will remain.": "It forgets that every leaving cow was given a mark.",
+          "Marks for cows that never left will remain.": "It forgets that every leaving cow was given a mark.",
           "Every mark will be crossed out after the cows return.": "It assumes a return crosses out a mark without being told."
          },
          "explanation": "Cows that returned did not have their marks crossed out.",
@@ -6370,12 +6370,12 @@
          "options": [
           "At least Mala, because she has that style.",
           "Every child, because they all use that style.",
-          "Only Mala, because no other child can have it.",
+          "Mala, because no other child can have it.",
           "No child, because her mother combed her hair."
          ],
          "answer": 0,
          "why": {
-          "Only Mala, because no other child can have it.": "It assumes no other child can have the same hair style.",
+          "Mala, because no other child can have it.": "It assumes no other child can have the same hair style.",
           "Every child, because they all use that style.": "It wrongly treats one hair style as the style of everyone.",
           "No child, because her mother combed her hair.": "It ignores that Mala actually has two ponytails."
          },
@@ -6554,13 +6554,13 @@
          "options": [
           "All departure marks would still be there.",
           "Two marks would be left.",
-          "Only the last cow's mark would be left.",
+          "The last cow's mark would be left.",
           "No marks would be left."
          ],
          "answer": 0,
          "why": {
           "No marks would be left.": "This wrongly assumes that returning cows clear the marks by themselves.",
-          "Only the last cow's mark would be left.": "This wrongly treats each new mark as replacing earlier marks.",
+          "The last cow's mark would be left.": "This wrongly treats each new mark as replacing earlier marks.",
           "Two marks would be left.": "This guesses that only two marks would remain without following the rule."
          },
          "explanation": "Forgetting to strike out marks leaves every departure mark on the wall.",
@@ -6781,13 +6781,13 @@
          "prompt": "If Teji changes the first sorting rule to the electricity rule, what would happen?",
          "options": [
           "The two groups would still divide objects according to whether they eat food.",
-          "Only one group would remain because both rules separate the same things.",
+          "One group would remain because both rules separate the same things.",
           "The two groups would divide objects according to their need for electricity.",
           "The object names would replace the two groups entirely."
          ],
          "answer": 2,
          "why": {
-          "Only one group would remain because both rules separate the same things.": "The changed rule still makes two groups.",
+          "One group would remain because both rules separate the same things.": "The changed rule still makes two groups.",
           "The two groups would still divide objects according to whether they eat food.": "This would describe the original food-based sorting.",
           "The object names would replace the two groups entirely.": "Writing names does not replace sorting groups."
          },
@@ -47083,13 +47083,13 @@
           "The two parts should have different sizes.",
           "One part should cover the whole sheet.",
           "The two parts should have the same size.",
-          "Only one part should remain after folding."
+          "One part should remain after folding."
          ],
          "answer": 2,
          "why": {
           "The two parts should have different sizes.": "This mistake thinks a half has two unequal parts.",
           "One part should cover the whole sheet.": "This mistake thinks one part should cover the whole sheet.",
-          "Only one part should remain after folding.": "This mistake thinks folding removes half of the paper."
+          "One part should remain after folding.": "This mistake thinks folding removes half of the paper."
          },
          "explanation": "Folding in half makes two parts with the same size.",
          "f": [
@@ -50970,12 +50970,12 @@
           "Each child should receive an equal fourth of the whole chikki.",
           "Each child should receive one of three equal portions.",
           "Each child should receive half of the whole chikki.",
-          "Only one child should receive the whole chikki."
+          "One child should receive the whole chikki."
          ],
          "answer": 0,
          "why": {
           "Each child should receive half of the whole chikki.": "Half is larger than one quarter-sized share.",
-          "Only one child should receive the whole chikki.": "One child cannot receive the whole when it is shared equally.",
+          "One child should receive the whole chikki.": "One child cannot receive the whole when it is shared equally.",
           "Each child should receive one of three equal portions.": "The three remaining quarters are not the equal portions for sharing the whole."
          },
          "explanation": "A whole shared equally among four people gives each person one quarter.",
@@ -52676,13 +52676,13 @@
          "options": [
           "Both plans fit the crane's jump rule.",
           "Neither plan fits the crane's jump rule.",
-          "Only the three-jump plan fits the crane's rule.",
-          "Only the two-jump plan fits the crane's rule."
+          "The three-jump plan fits the crane's rule.",
+          "The two-jump plan fits the crane's rule."
          ],
          "answer": 0,
          "why": {
-          "Only the two-jump plan fits the crane's rule.": "Two jumps fit, but the three-jump plan does not.",
-          "Only the three-jump plan fits the crane's rule.": "Three jumps fit, but the two-jump plan does not.",
+          "The two-jump plan fits the crane's rule.": "Two jumps fit, but the three-jump plan does not.",
+          "The three-jump plan fits the crane's rule.": "Three jumps fit, but the two-jump plan does not.",
           "Neither plan fits the crane's jump rule.": "Both jump counts are inside the allowed two or three."
          },
          "explanation": "The crane can reach its food in two or three jumps.",
@@ -69805,11 +69805,11 @@
           "The jug will be full, and all the measured milk will fit inside it.",
           "The jug will overflow because the measuring cup holds more than the jug.",
           "The jug will need the milk poured in more than once to become full.",
-          "Only part of the jug will be filled, so some milk will remain."
+          "Part of the jug will be filled, so some milk will remain."
          ],
          "answer": 0,
          "why": {
-          "Only part of the jug will be filled, so some milk will remain.": "Wrong: the jug’s capacity matches the milk.",
+          "Part of the jug will be filled, so some milk will remain.": "Wrong: the jug’s capacity matches the milk.",
           "The jug will overflow because the measuring cup holds more than the jug.": "Wrong: the measuring cup does not hold more.",
           "The jug will need the milk poured in more than once to become full.": "Wrong: one measured litre is enough."
          },

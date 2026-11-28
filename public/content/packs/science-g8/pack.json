@@ -2752,13 +2752,13 @@
          "options": [
           "No measurements or observations, only a final guess.",
           "Puffing times, oil temperature, dough thickness, and all observations.",
-          "Only how many puris looked tasty in the hot oil.",
-          "Only the final puffing time, with no other observations."
+          "How many puris looked tasty in the hot oil.",
+          "The final puffing time, with no other observations."
          ],
          "answer": 1,
          "why": {
-          "Only the final puffing time, with no other observations.": "This leaves out other observations and the changed factors.",
-          "Only how many puris looked tasty in the hot oil.": "This counts looks instead of measuring the puffing time.",
+          "The final puffing time, with no other observations.": "This leaves out other observations and the changed factors.",
+          "How many puris looked tasty in the hot oil.": "This counts looks instead of measuring the puffing time.",
           "No measurements or observations, only a final guess.": "This uses a guess instead of keeping evidence."
          },
          "explanation": "This records measurements and everything seen or sensed.",
@@ -5488,13 +5488,13 @@
          "prompt": "A child sees one microorganism. Which observation shows it is multicellular?",
          "options": [
           "Several cells are visible inside the microorganism.",
-          "Only one cell is visible inside the microorganism.",
+          "One cell is visible inside the microorganism.",
           "It lives in water and cannot be seen directly.",
           "Its shape changes while the microorganism moves."
          ],
          "answer": 0,
          "why": {
-          "Only one cell is visible inside the microorganism.": "This mistake confuses unicellular and multicellular microorganisms.",
+          "One cell is visible inside the microorganism.": "This mistake confuses unicellular and multicellular microorganisms.",
           "Its shape changes while the microorganism moves.": "This mistake treats different shapes as proof of many cells.",
           "It lives in water and cannot be seen directly.": "This mistake uses a habitat instead of the number of cells."
          },
@@ -10562,12 +10562,12 @@
           "Focus on air quality alone, since loneliness cannot influence health.",
           "Clean the shared surroundings, use the Air Quality Index, and make time for family and friends.",
           "Keep rubbish outside, avoid checking air quality, and stay alone whenever possible.",
-          "Only clean her room, because wider surroundings and feelings never affect health."
+          "Clean her room, because wider surroundings and feelings never affect health."
          ],
          "answer": 1,
          "why": {
           "Keep rubbish outside, avoid checking air quality, and stay alone whenever possible.": "B: Rubbish and isolation could worsen health and feelings.",
-          "Only clean her room, because wider surroundings and feelings never affect health.": "C: Cleaning only the room ignores dirty surroundings and emotional health.",
+          "Clean her room, because wider surroundings and feelings never affect health.": "C: Cleaning only the room ignores dirty surroundings and emotional health.",
           "Focus on air quality alone, since loneliness cannot influence health.": "D: Air quality matters, but loneliness can also affect how someone feels."
          },
          "explanation": "A: This supports cleanliness, awareness of air quality and emotional wellbeing.",
@@ -12796,14 +12796,14 @@
          "options": [
           "Wire material, thickness, length, and current strength.",
           "Wire colour, thickness, length, and current strength.",
-          "Only cell count and wire thickness.",
-          "Only wire length and current strength."
+          "Cell count and wire thickness.",
+          "Wire length and current strength."
          ],
          "answer": 0,
          "why": {
           "Wire colour, thickness, length, and current strength.": "This mistake treats colour as a factor in heating.",
-          "Only wire length and current strength.": "This mistake thinks length alone controls heating.",
-          "Only cell count and wire thickness.": "This mistake ignores material, length, and current strength."
+          "Wire length and current strength.": "This mistake thinks length alone controls heating.",
+          "Cell count and wire thickness.": "This mistake ignores material, length, and current strength."
          },
          "explanation": "This keeps every other heat factor the same.",
          "f": [
@@ -15540,12 +15540,12 @@
          "options": [
           "Neither child's hand feels a force from the rope.",
           "Each child's hand feels a force from the rope.",
-          "Only one child's hand feels a force from the rope.",
+          "One child's hand feels a force from the rope.",
           "Each child's hand feels force only from their own pull."
          ],
          "answer": 1,
          "why": {
-          "Only one child's hand feels a force from the rope.": "This wrongly thinks only one object can feel force.",
+          "One child's hand feels a force from the rope.": "This wrongly thinks only one object can feel force.",
           "Each child's hand feels force only from their own pull.": "This ignores that the other object also acts on each hand.",
           "Neither child's hand feels a force from the rope.": "This wrongly denies force on both interacting objects."
          },
@@ -17774,16 +17774,16 @@
          ],
          "prompt": "A bottle is pushed into water and into oil. What happens each time?",
          "options": [
-          "Only water pushes the bottle upwards.",
-          "Only oil pushes the bottle upwards.",
+          "Water pushes the bottle upwards.",
+          "Oil pushes the bottle upwards.",
           "Each liquid pushes the bottle upwards.",
           "Each liquid pulls the bottle downwards."
          ],
          "answer": 2,
          "why": {
           "Each liquid pulls the bottle downwards.": "This mistake treats gravity as a force from the liquid.",
-          "Only water pushes the bottle upwards.": "This mistake believes only water can give an upward force.",
-          "Only oil pushes the bottle upwards.": "This mistake believes only oil can give an upward force."
+          "Water pushes the bottle upwards.": "This mistake believes only water can give an upward force.",
+          "Oil pushes the bottle upwards.": "This mistake believes only oil can give an upward force."
          },
          "explanation": "Water gives an upward force to the pushed bottle.",
          "f": [
@@ -26490,13 +26490,13 @@
          "options": [
           "The copper and zinc react and form a new substance.",
           "The copper and zinc can be seen separately.",
-          "Only the copper can be seen separately.",
+          "The copper can be seen separately.",
           "The copper and zinc cannot be seen separately."
          ],
          "answer": 3,
          "why": {
           "The copper and zinc can be seen separately.": "This confuses very uniform mixing with visible separate parts.",
-          "Only the copper can be seen separately.": "This wrongly treats one component as the only visible component.",
+          "The copper can be seen separately.": "This wrongly treats one component as the only visible component.",
           "The copper and zinc react and form a new substance.": "This wrongly assumes that mixing causes a chemical reaction."
          },
          "explanation": "This is right: uniform brass has components that cannot be seen separately.",
@@ -28031,14 +28031,14 @@
          "options": [
           "Hydrogen and oxygen are present.",
           "Hydrogen and water vapour are present.",
-          "Only water vapour is present.",
-          "Only hydrogen is present."
+          "Water vapour is present.",
+          "Hydrogen is present."
          ],
          "answer": 0,
          "why": {
           "Hydrogen and water vapour are present.": "You wrongly think the bright flame shows water vapour.",
-          "Only hydrogen is present.": "You ignore the evidence from the brighter flame.",
-          "Only water vapour is present.": "You wrongly think the gases are unchanged water."
+          "Hydrogen is present.": "You ignore the evidence from the brighter flame.",
+          "Water vapour is present.": "You wrongly think the gases are unchanged water."
          },
          "explanation": "The pop shows hydrogen, and the brighter flame shows oxygen.",
          "f": [
@@ -30201,13 +30201,13 @@
          "options": [
           "The salt and sugar will spread evenly, making a solution.",
           "The water will become the solute because the cup is stirred.",
-          "Only the salt will dissolve, while the sugar stays at the bottom.",
+          "The salt will dissolve, while the sugar stays at the bottom.",
           "The salt and sugar will stay separate, making a non-uniform mixture."
          ],
          "answer": 0,
          "why": {
           "The salt and sugar will stay separate, making a non-uniform mixture.": "This mistake assumes adding water will stop the salt and sugar spreading.",
-          "Only the salt will dissolve, while the sugar stays at the bottom.": "This mistake assumes only one solid can spread through the water.",
+          "The salt will dissolve, while the sugar stays at the bottom.": "This mistake assumes only one solid can spread through the water.",
           "The water will become the solute because the cup is stirred.": "This mistake swaps the solvent and solute roles in a solution."
          },
          "explanation": "Salt and sugar in water form a uniform mixture, which is a solution.",
@@ -31216,14 +31216,14 @@
          "options": [
           "Both waters can dissolve exactly the same oxygen.",
           "The warm water can dissolve more oxygen.",
-          "Only warm water can dissolve any oxygen.",
+          "Warm water can dissolve any oxygen.",
           "The cold water can dissolve more oxygen."
          ],
          "answer": 3,
          "why": {
           "The warm water can dissolve more oxygen.": "This reverses the effect of higher temperature on solubility.",
           "Both waters can dissolve exactly the same oxygen.": "This ignores that solubility generally decreases as temperature rises.",
-          "Only warm water can dissolve any oxygen.": "This wrongly suggests that warm water cannot dissolve oxygen."
+          "Warm water can dissolve any oxygen.": "This wrongly suggests that warm water cannot dissolve oxygen."
          },
          "explanation": "Cold water can dissolve more oxygen, so this is right.",
          "f": [
@@ -42193,14 +42193,14 @@
          ],
          "prompt": "Living and non-living parts form an ecosystem. A child says biotic parts cannot affect habitat features. Why is this claim wrong?",
          "options": [
-          "Only non-living parts can change a habitat's physical features.",
+          "Non-living parts can change a habitat's physical features.",
           "Living organisms never affect non-living components.",
           "Habitat features cannot change because interactions have no effects.",
           "Living parts affect non-living parts, which can change habitat features."
          ],
          "answer": 3,
          "why": {
-          "Only non-living parts can change a habitat's physical features.": "This mistake separates biotic effects from abiotic ones.",
+          "Non-living parts can change a habitat's physical features.": "This mistake separates biotic effects from abiotic ones.",
           "Living organisms never affect non-living components.": "This mistake ignores that biotic components affect abiotic ones.",
           "Habitat features cannot change because interactions have no effects.": "This mistake ignores that interactions can influence habitat features."
          },
@@ -43671,14 +43671,14 @@
          "prompt": "An animal gets food; the plant gets help. What happens to both?",
          "options": [
           "Both organisms are harmed by helping each other.",
-          "Only the animal benefits while the plant is harmed.",
-          "Only the animal benefits while the plant is unaffected.",
+          "The animal benefits while the plant is harmed.",
+          "The animal benefits while the plant is unaffected.",
           "Both organisms benefit from helping each other."
          ],
          "answer": 3,
          "why": {
-          "Only the animal benefits while the plant is harmed.": "This wrongly treats mutual help as harm to the plant.",
-          "Only the animal benefits while the plant is unaffected.": "This wrongly leaves the plant without any benefit.",
+          "The animal benefits while the plant is harmed.": "This wrongly treats mutual help as harm to the plant.",
+          "The animal benefits while the plant is unaffected.": "This wrongly leaves the plant without any benefit.",
           "Both organisms are harmed by helping each other.": "This wrongly treats mutual help as harm for both organisms."
          },
          "explanation": "Right, because in mutualism both organisms benefit.",
@@ -44010,14 +44010,14 @@
          "prompt": "If wind, water and animals were unavailable around the flowers, what would most likely happen?",
          "options": [
           "All three would still carry pollen because they are always present.",
-          "Only water would continue carrying pollen between the flowers.",
+          "Water would continue carrying pollen between the flowers.",
           "Pollen would move between flowers more quickly without a carrier.",
           "Pollen would have less help reaching other flowers."
          ],
          "answer": 3,
          "why": {
           "Pollen would move between flowers more quickly without a carrier.": "Removing the carriers would not make pollen transfer faster.",
-          "Only water would continue carrying pollen between the flowers.": "Water would also be unavailable under the changed condition.",
+          "Water would continue carrying pollen between the flowers.": "Water would also be unavailable under the changed condition.",
           "All three would still carry pollen because they are always present.": "The carriers cannot continue helping if they are unavailable."
          },
          "explanation": "These three agents help carry pollen between flowers.",
@@ -46629,14 +46629,14 @@
          "prompt": "Freshwater is needed to grow crops and support people. What may happen if it becomes scarce?",
          "options": [
           "Neither may suffer, because rocks and soil replace water.",
-          "Only people may suffer, because crops need no freshwater.",
+          "People may suffer, because crops need no freshwater.",
           "Crops and people may both suffer from the lack.",
-          "Only crops may suffer, because people need other water."
+          "Crops may suffer, because people need other water."
          ],
          "answer": 2,
          "why": {
-          "Only crops may suffer, because people need other water.": "This wrongly separates crops from people when both need freshwater.",
-          "Only people may suffer, because crops need no freshwater.": "This wrongly treats crops as if they did not need freshwater.",
+          "Crops may suffer, because people need other water.": "This wrongly separates crops from people when both need freshwater.",
+          "People may suffer, because crops need no freshwater.": "This wrongly treats crops as if they did not need freshwater.",
           "Neither may suffer, because rocks and soil replace water.": "This wrongly believes rocks and soil can replace needed freshwater."
          },
          "explanation": "Freshwater supports both crops and people, so scarcity can harm both.",
@@ -47670,13 +47670,13 @@
           "Planets generally become colder as their distance from the Sun increases.",
           "Planets farther from the Sun remain at the same temperature.",
           "Planets generally become hotter as their distance from the Sun increases.",
-          "Only the size of each planet determines its temperature."
+          "The size of each planet determines its temperature."
          ],
          "answer": 0,
          "why": {
           "Planets generally become hotter as their distance from the Sun increases.": "This reverses the stated temperature pattern.",
           "Planets farther from the Sun remain at the same temperature.": "Distance from the Sun affects the general temperature pattern.",
-          "Only the size of each planet determines its temperature.": "Size alone does not determine how temperature changes with distance."
+          "The size of each planet determines its temperature.": "Size alone does not determine how temperature changes with distance."
          },
          "explanation": "This is the stated general pattern for planets moving away from the Sun.",
          "anchor": "science-g8-ch13-l1-t1",

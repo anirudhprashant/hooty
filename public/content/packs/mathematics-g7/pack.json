@@ -11414,11 +11414,11 @@
           "Customers can pay any smaller amount.",
           "Different note combinations can make the same total.",
           "Every customer must use the same notes.",
-          "Only one exact payment is ever possible."
+          "One exact payment is ever possible."
          ],
          "answer": 1,
          "why": {
-          "Only one exact payment is ever possible.": "Saying only one is possible contradicts the shop's statement.",
+          "One exact payment is ever possible.": "Saying only one is possible contradicts the shop's statement.",
           "Every customer must use the same notes.": "Different customers can use different note combinations.",
           "Customers can pay any smaller amount.": "Paying less would not pay the full 432-rupee amount."
          },
@@ -12366,7 +12366,7 @@
          "prompt": "One way splits 63 boxes into 53 and 10. Why does multiplying each part by 18 count them all?",
          "options": [
           "Both parts equal 63 × 18 because 53 + 10 = 63.",
-          "Only the first equals 63 × 18 because 53 + 10 = 63.",
+          "The first equals 63 × 18 because 53 + 10 = 63.",
           "Either part equals 63 × 18 because 53 + 10 = 63.",
           "Both parts equal 53 × 18 because 53 + 10 = 63."
          ],
@@ -12374,7 +12374,7 @@
          "why": {
           "Both parts equal 53 × 18 because 53 + 10 = 63.": "This wrongly makes the two parts equal 53 × 18.",
           "Either part equals 63 × 18 because 53 + 10 = 63.": "This wrongly treats one part as the whole product.",
-          "Only the first equals 63 × 18 because 53 + 10 = 63.": "This wrongly drops the second part from the total."
+          "The first equals 63 × 18 because 53 + 10 = 63.": "This wrongly drops the second part from the total."
          },
          "explanation": "This is right because the two parts together equal 63 × 18.",
          "f": [
@@ -16916,13 +16916,13 @@
          "options": [
           "Both ribbons are 1000 millimetres long.",
           "Both ribbons are 56 millimetres long.",
-          "Only the second ribbon is 56 millimetres long.",
-          "Only the first ribbon is 56 millimetres long."
+          "The second ribbon is 56 millimetres long.",
+          "The first ribbon is 56 millimetres long."
          ],
          "answer": 1,
          "why": {
-          "Only the first ribbon is 56 millimetres long.": "The first ribbon is 56, so saying only is wrong.",
-          "Only the second ribbon is 56 millimetres long.": "The second ribbon is 56, so saying only is wrong.",
+          "The first ribbon is 56 millimetres long.": "The first ribbon is 56, so saying only is wrong.",
+          "The second ribbon is 56 millimetres long.": "The second ribbon is 56, so saying only is wrong.",
           "Both ribbons are 1000 millimetres long.": "1000 confuses centimetres with millimetres in a metre."
          },
          "explanation": "Both are right because 5.6 centimetres equal 56 millimetres.",
@@ -25999,13 +25999,13 @@
          "options": [
           "The first form gives 14, but the second gives a different value.",
           "The two forms must both equal 14.",
-          "Only the simplified form can be used for a perimeter.",
+          "The simplified form can be used for a perimeter.",
           "The perimeter changes when the expression is simplified."
          ],
          "answer": 1,
          "why": {
           "The first form gives 14, but the second gives a different value.": "Simplifying does not change the value.",
-          "Only the simplified form can be used for a perimeter.": "The second form still includes both l and b.",
+          "The simplified form can be used for a perimeter.": "The second form still includes both l and b.",
           "The perimeter changes when the expression is simplified.": "Rewriting an expression does not change its value."
          },
          "explanation": "Both expressions represent the same perimeter.",
@@ -29834,7 +29834,7 @@
          ],
          "prompt": "A child sees two vertically opposite angles at one crossing. You say they can differ. What is wrong with the claim?",
          "options": [
-          "Only one opposite pair can have equal angles.",
+          "One opposite pair can have equal angles.",
           "Vertically opposite angles must have equal measures.",
           "Vertically opposite angles can have any measures.",
           "Other angles at one crossing need not match."
@@ -29842,7 +29842,7 @@
          "answer": 1,
          "why": {
           "Vertically opposite angles can have any measures.": "This forgets the rule that vertically opposite angles are equal.",
-          "Only one opposite pair can have equal angles.": "This misses that all four opposite pairs have equal angles.",
+          "One opposite pair can have equal angles.": "This misses that all four opposite pairs have equal angles.",
           "Other angles at one crossing need not match.": "This confuses matching opposite angles with other angles."
          },
          "explanation": "Every vertically opposite pair has equal angles.",
@@ -32412,15 +32412,15 @@
          "context": "An artist is planning a drawing with two guide lines, l and m, that cross each other. The artist also uses a pair of guide lines that stay apart on the same plane for shading. Later, line segments FG and FH meet at endpoint F, and the angle between them measures 115.3 degrees. The artist checks how the crossing lines, the shading lines, and the joined segments relate before making the drawing.",
          "prompt": "At the intersection of lines l and m, all four angles are equal. Which conclusion is correct?",
          "options": [
-          "Only the two angles on one side measure 90 degrees.",
+          "The two angles on one side measure 90 degrees.",
           "Every one of the four angles measures 90 degrees.",
-          "Only one of the four angles measures 90 degrees.",
+          "One of the four angles measures 90 degrees.",
           "The four angles alternate between 90 and 115.3 degrees."
          ],
          "answer": 1,
          "why": {
-          "Only the two angles on one side measure 90 degrees.": "The condition applies to all four angles, not just two.",
-          "Only one of the four angles measures 90 degrees.": "The condition applies to every angle, not only one.",
+          "The two angles on one side measure 90 degrees.": "The condition applies to all four angles, not just two.",
+          "One of the four angles measures 90 degrees.": "The condition applies to every angle, not only one.",
           "The four angles alternate between 90 and 115.3 degrees.": "All four equal angles are 90 degrees; 115.3 degrees belongs to FG and FH."
          },
          "explanation": "Four equal angles at an intersection must each be right angles.",
@@ -32607,12 +32607,12 @@
           "They are the same line as the scale line.",
           "They are perpendicular to each other.",
           "They are a pair of parallel lines.",
-          "Only one of them is parallel to line l."
+          "One of them is parallel to line l."
          ],
          "answer": 2,
          "why": {
           "They are perpendicular to each other.": "Perpendicular lines are not the conclusion given by equal corresponding angles.",
-          "Only one of them is parallel to line l.": "The marked lines make the same angle with line l.",
+          "One of them is parallel to line l.": "The marked lines make the same angle with line l.",
           "They are the same line as the scale line.": "The scale line is separate from the two newly marked lines."
          },
          "explanation": "Equal corresponding angles show that the new lines are parallel.",
@@ -32633,12 +32633,12 @@
           "One corresponding angle measures 90 degrees while the other does not.",
           "The angle check with l gives matching measures for both marked lines.",
           "The marked lines make different angles with line l.",
-          "Only one marked line forms an angle with line l."
+          "One marked line forms an angle with line l."
          ],
          "answer": 1,
          "why": {
           "The marked lines make different angles with line l.": "The marked lines make the same angle with line l.",
-          "Only one marked line forms an angle with line l.": "Both marked lines form corresponding angles with line l.",
+          "One marked line forms an angle with line l.": "Both marked lines form corresponding angles with line l.",
           "One corresponding angle measures 90 degrees while the other does not.": "Both corresponding angles measure 90 degrees."
          },
          "explanation": "Matching measures give equal corresponding angles.",
@@ -36230,14 +36230,14 @@
          "prompt": "A 3 × 3 grid uses 1 to 9 once. One row sums to 5, and one column sums to 26. What can we say?",
          "options": [
           "Neither line can have its stated sum.",
-          "Only the column's stated sum is possible.",
+          "The column's stated sum is possible.",
           "Both lines can have their stated sums.",
-          "Only the row's stated sum is possible."
+          "The row's stated sum is possible."
          ],
          "answer": 0,
          "why": {
-          "Only the row's stated sum is possible.": "A row sum of 5 is below the smallest possible sum.",
-          "Only the column's stated sum is possible.": "A column sum of 26 is above the largest possible sum.",
+          "The row's stated sum is possible.": "A row sum of 5 is below the smallest possible sum.",
+          "The column's stated sum is possible.": "A column sum of 26 is above the largest possible sum.",
           "Both lines can have their stated sums.": "Both 5 and 26 lie outside the possible line sums."
          },
          "explanation": "Their sums must be at least 6 and at most 24.",
@@ -44898,13 +44898,13 @@
          "options": [
           "The same height will stay unchanged for every base.",
           "The height should be found relative to the newly chosen base.",
-          "Only the original base can be used to measure a height.",
+          "The original base can be used to measure a height.",
           "The original perpendicular will always be the only altitude needed."
          ],
          "answer": 1,
          "why": {
           "The same height will stay unchanged for every base.": "The height changes with the base because different sides are chosen.",
-          "Only the original base can be used to measure a height.": "Any side may be chosen as the base for measuring its height.",
+          "The original base can be used to measure a height.": "Any side may be chosen as the base for measuring its height.",
           "The original perpendicular will always be the only altitude needed.": "Altitudes also include perpendiculars from the other vertices."
          },
          "explanation": "The height depends on the side chosen as the base.",
@@ -48828,13 +48828,13 @@
          "options": [
           "The two orders count different amounts.",
           "Both products give the same cup count.",
-          "Only 2 × 8 gives the cup count.",
-          "Only 8 × 2 gives the cup count."
+          "2 × 8 gives the cup count.",
+          "8 × 2 gives the cup count."
          ],
          "answer": 1,
          "why": {
-          "Only 2 × 8 gives the cup count.": "This mistake thinks only the first order counts the cups.",
-          "Only 8 × 2 gives the cup count.": "This mistake thinks only the second order counts the cups.",
+          "2 × 8 gives the cup count.": "This mistake thinks only the first order counts the cups.",
+          "8 × 2 gives the cup count.": "This mistake thinks only the second order counts the cups.",
           "The two orders count different amounts.": "This mistake thinks the two orders count different groups."
          },
          "explanation": "Changing the order of multiplication does not change the product.",
@@ -54998,14 +54998,14 @@
          "prompt": "A sign maker uses the angles 30°, 70°, and 80°. What can the maker conclude about its size?",
          "options": [
           "Many triangle sizes can use these angles.",
-          "Only two triangle sizes can use these angles.",
+          "Two triangle sizes can use these angles.",
           "These angles cannot make any triangle.",
           "The sign's size is fixed by these angles."
          ],
          "answer": 0,
          "why": {
           "The sign's size is fixed by these angles.": "This confuses fixed angles with a fixed triangle size.",
-          "Only two triangle sizes can use these angles.": "This limits the many possible triangles to only two.",
+          "Two triangle sizes can use these angles.": "This limits the many possible triangles to only two.",
           "These angles cannot make any triangle.": "This wrongly believes the three angles cannot form a triangle."
          },
          "explanation": "Many non-congruent triangles can use the same three angles.",
@@ -55213,14 +55213,14 @@
          "prompt": "Two triangle sketches each have two known sides. In the first, the known angle is between them. In the second, it is not. Which sketch is fixed?",
          "options": [
           "Both sketches are fixed by SAS.",
-          "Only the second sketch is fixed by SAS.",
+          "The second sketch is fixed by SAS.",
           "Only the first sketch is fixed by SAS.",
           "Neither sketch has a fixed triangle."
          ],
          "answer": 2,
          "why": {
           "Both sketches are fixed by SAS.": "The second does not have the angle between the two sides.",
-          "Only the second sketch is fixed by SAS.": "The second angle is not included, so SAS does not apply.",
+          "The second sketch is fixed by SAS.": "The second angle is not included, so SAS does not apply.",
           "Neither sketch has a fixed triangle.": "SSA can give two non-congruent triangles."
          },
          "explanation": "The first has SAS, which can determine a triangle.",
@@ -62710,14 +62710,14 @@
          ],
          "prompt": "One game adds 2 positive tokens on each of 4 turns. Another game removes 2 positive tokens on each of 4 turns. Which game shows –8?",
          "options": [
-          "Only the adding game shows –8.",
+          "The adding game shows –8.",
           "Only the removing game shows –8.",
           "Neither of the games shows –8.",
           "Both games separately show –8."
          ],
          "answer": 1,
          "why": {
-          "Only the adding game shows –8.": "Adding 2 positive tokens four times makes 8 positive tokens.",
+          "The adding game shows –8.": "Adding 2 positive tokens four times makes 8 positive tokens.",
           "Both games separately show –8.": "The two games use opposite signs, so they give opposite results.",
           "Neither of the games shows –8.": "Both games give results, but one is positive and one is negative."
          },
@@ -65664,14 +65664,14 @@
          "options": [
           "The new charge is the old charge plus the positive fee.",
           "The new charge remains at the old value.",
-          "Only the sign of the new charge changes.",
+          "The sign of the new charge changes.",
           "The new charge is the old charge minus the positive fee."
          ],
          "answer": 3,
          "why": {
           "The new charge is the old charge plus the positive fee.": "The fee is positive, so adding it would raise the product instead.",
           "The new charge remains at the old value.": "Lowering the multiplier changes the product rather than leaving it unchanged.",
-          "Only the sign of the new charge changes.": "Changing the multiplier by this amount does not simply reverse the sign."
+          "The sign of the new charge changes.": "Changing the multiplier by this amount does not simply reverse the sign."
          },
          "explanation": "A positive multiplicand makes the product fall by the multiplicand when the multiplier is lowered.",
          "anchor": "mathematics-g7-ch10-l4-t1",
@@ -68665,15 +68665,15 @@
          ],
          "prompt": "Leo writes 105 = 7 × 3 × 5. Mia says the order must be 3 × 5 × 7. Who is right?",
          "options": [
-          "Only Mia is right, because 3 must come first.",
+          "Mia is right, because 3 must come first.",
           "Both are right, because order does not change the product.",
           "Neither is right, because 105 has more factors.",
-          "Only Leo is right, because 7 is the biggest factor."
+          "Leo is right, because 7 is the biggest factor."
          ],
          "answer": 1,
          "why": {
-          "Only Mia is right, because 3 must come first.": "There is no rule that the smallest prime must come first.",
-          "Only Leo is right, because 7 is the biggest factor.": "The size of a factor does not decide which order is allowed.",
+          "Mia is right, because 3 must come first.": "There is no rule that the smallest prime must come first.",
+          "Leo is right, because 7 is the biggest factor.": "The size of a factor does not decide which order is allowed.",
           "Neither is right, because 105 has more factors.": "Both orders use the same prime factors, so both are correct."
          },
          "explanation": "Right. Reordering factors does not change their product.",
@@ -71709,15 +71709,15 @@
          "context": "At a parts workshop, two crates are labelled: one contains 90 parts and the other contains 105 parts. The workers write 90 = 3 × 3 × 2 × 5 and 105 = 3 × 5 × 7 on the labels. A helper thinks the factors for 90 must stay in that order and that changing the order would make a new number. The workers also check which labels should be on a list made with the Sieve of Eratosthenes.",
          "prompt": "Which crate labels should be left off a list of all primes made with the Sieve of Eratosthenes?",
          "options": [
-          "Only the 90 label",
+          "The 90 label",
           "Neither the 90 nor the 105 label",
           "Both the 90 and 105 labels",
-          "Only the 105 label"
+          "The 105 label"
          ],
          "answer": 2,
          "why": {
-          "Only the 90 label": "The label for 105 must also be left off because 105 is written as a product of primes.",
-          "Only the 105 label": "The label for 90 must also be left off because 90 is written as a product of primes.",
+          "The 90 label": "The label for 105 must also be left off because 105 is written as a product of primes.",
+          "The 105 label": "The label for 90 must also be left off because 90 is written as a product of primes.",
           "Neither the 90 nor the 105 label": "Both numbers are shown as products of primes, so both labels must be left off."
          },
          "explanation": "Both labels are written as products of primes, so neither number belongs on a list of primes.",
@@ -77441,14 +77441,14 @@
          "prompt": "At a maths display, 142857 is multiplied by 4. Which result should the child expect?",
          "options": [
           "A completely different set of digits.",
-          "Only the first and last digits.",
+          "The first and last digits.",
           "The same digits in a cyclic order.",
           "The same digits in the old order."
          ],
          "answer": 2,
          "why": {
           "The same digits in the old order.": "It confuses a cyclic arrangement with an unchanged order.",
-          "Only the first and last digits.": "It wrongly assumes that multiplication removes some digits.",
+          "The first and last digits.": "It wrongly assumes that multiplication removes some digits.",
           "A completely different set of digits.": "It wrongly assumes that the product has unrelated digits."
          },
          "explanation": "This is right because multiplying by 4 produces a cyclic arrangement.",
@@ -85437,13 +85437,13 @@
          "options": [
           "The month-by-month comparison between the two places would be lost.",
           "The graph would still compare the two places in every month.",
-          "Only the month with the greatest onion cost would remain visible.",
+          "The month with the greatest onion cost would remain visible.",
           "The vertical markings would reveal both costs in each month."
          ],
          "answer": 0,
          "why": {
           "The graph would still compare the two places in every month.": "One bar per month cannot provide values for both places.",
-          "Only the month with the greatest onion cost would remain visible.": "The change hides one place's value rather than selecting only the greatest month.",
+          "The month with the greatest onion cost would remain visible.": "The change hides one place's value rather than selecting only the greatest month.",
           "The vertical markings would reveal both costs in each month.": "Vertical markings help estimate differences between paired bar heights."
          },
          "explanation": "Removing one bar removes the paired comparison for each month.",
@@ -92101,16 +92101,16 @@
          "context": "An artist is drawing an eye with upper and lower arcs of the same radius. First, the temporary line XY is drawn to support the eye drawing, although it will not be part of the final figure. Arcs are drawn above and below XY from both X and Y. Their intersections mark centres A and B. The line AB passes through O, the midpoint of XY, and is perpendicular to XY.",
          "prompt": "Before using AB as the perpendicular bisector of XY, what should the artist check about the distances?",
          "options": [
-          "Only AX and AY need to be equal",
-          "Only AX and AY need to equal the length of XY",
-          "Only AX and BX need to be equal",
+          "AX and AY need to be equal",
+          "AX and AY need to equal the length of XY",
+          "AX and BX need to be equal",
           "AX, AY, BX and BY must all be equal"
          ],
          "answer": 3,
          "why": {
-          "Only AX and AY need to be equal": "All four distances from A and B to X and Y must be equal.",
-          "Only AX and BX need to be equal": "Checking only AX and AY leaves BX and BY unchecked.",
-          "Only AX and AY need to equal the length of XY": "The distances must equal one another, not the length of XY."
+          "AX and AY need to be equal": "All four distances from A and B to X and Y must be equal.",
+          "AX and BX need to be equal": "Checking only AX and AY leaves BX and BY unchecked.",
+          "AX and AY need to equal the length of XY": "The distances must equal one another, not the length of XY."
          },
          "explanation": "The required check includes all four distances.",
          "anchor": "mathematics-g7-ch14-l1-t1",
@@ -93688,15 +93688,15 @@
          ],
          "prompt": "The scale is balanced. We want sacks on only one plate. What should we remove each time?",
          "options": [
-          "Only weights from the right plate.",
+          "Weights from the right plate.",
           "Every sack from both plates.",
           "Equal weights from both plates.",
-          "Only weights from the left plate."
+          "Weights from the left plate."
          ],
          "answer": 2,
          "why": {
-          "Only weights from the left plate.": "Removing from only one plate breaks the equality between the plates.",
-          "Only weights from the right plate.": "This treats the two sides differently, so equality is lost.",
+          "Weights from the left plate.": "Removing from only one plate breaks the equality between the plates.",
+          "Weights from the right plate.": "This treats the two sides differently, so equality is lost.",
           "Every sack from both plates.": "Removing sacks does not follow the hint about removing objects."
          },
          "explanation": "Removing equal weights from both plates keeps the scale balanced.",

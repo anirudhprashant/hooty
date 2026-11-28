@@ -754,7 +754,7 @@
          ],
          "prompt": "Person 1 opens every locker. Later people also toggle lockers. A child says all lockers stay open. Which correction is best?",
          "options": [
-          "Only prime lockers change state.",
+          "Prime lockers change state.",
           "Person 1 opens every locker twice.",
           "Later toggles can close lockers again.",
           "All lockers ignore later people."
@@ -763,7 +763,7 @@
          "why": {
           "Person 1 opens every locker twice.": "Each person has a turn, not two turns.",
           "All lockers ignore later people.": "The process continues through all 100 people.",
-          "Only prime lockers change state.": "It ignores the other people's toggles."
+          "Prime lockers change state.": "It ignores the other people's toggles."
          },
          "explanation": "An even number of toggles leaves a locker closed.",
          "f": [
@@ -17537,14 +17537,14 @@
          "prompt": "A number gives one place two digits. Can the reading become unclear?",
          "options": [
           "Yes, because each place needs one digit.",
-          "Only when the number has no zero in it.",
+          "When the number has no zero in it.",
           "No, because two digits make every reading clearer.",
           "No, because one place can hold any digits."
          ],
          "answer": 0,
          "why": {
           "No, because two digits make every reading clearer.": "This mistake thinks more digits always make readings clearer.",
-          "Only when the number has no zero in it.": "This mistake thinks ambiguity comes only from missing zero.",
+          "When the number has no zero in it.": "This mistake thinks ambiguity comes only from missing zero.",
           "No, because one place can hold any digits.": "This mistake allows many digits inside one position."
          },
          "explanation": "This is right because one digit in each position prevents ambiguity.",
@@ -23412,11 +23412,11 @@
           "Each triangle contributes 180°, so together they account for 360°.",
           "Each triangle contributes 360°, not 180°.",
           "Both triangle totals together give only 180°.",
-          "Only triangle SEM should be counted, giving a total of 180°."
+          "Triangle SEM should be counted, giving a total of 180°."
          ],
          "answer": 0,
          "why": {
-          "Only triangle SEM should be counted, giving a total of 180°.": "Both triangles form the quadrilateral when the diagonal is drawn.",
+          "Triangle SEM should be counted, giving a total of 180°.": "Both triangles form the quadrilateral when the diagonal is drawn.",
           "Both triangle totals together give only 180°.": "The two triangle totals are added, not combined into 180°.",
           "Each triangle contributes 360°, not 180°.": "Each triangle’s angles add to 180°, not 360°."
          },
@@ -24529,13 +24529,13 @@
          "options": [
           "Both results are even.",
           "Neither result is even.",
-          "Only the first result is even.",
-          "Only the second result is even."
+          "The first result is even.",
+          "The second result is even."
          ],
          "answer": 0,
          "why": {
-          "Only the first result is even.": "The sign change also keeps the second result even.",
-          "Only the second result is even.": "The first result is even, so it cannot be odd.",
+          "The first result is even.": "The sign change also keeps the second result even.",
+          "The second result is even.": "The first result is even, so it cannot be odd.",
           "Neither result is even.": "Both sums are even, so neither result is odd."
          },
          "explanation": "The first sum is even, and the sign change keeps it even.",
@@ -27225,14 +27225,14 @@
          "prompt": "A number is written as dcba. All place values except a are multiples of 10. What must be checked to decide if it is divisible by 2?",
          "options": [
           "The sum of all four digits.",
-          "Only the thousands digit d.",
-          "Only the hundreds digit c.",
+          "The thousands digit d.",
+          "The hundreds digit c.",
           "Only the units digit a."
          ],
          "answer": 3,
          "why": {
-          "Only the hundreds digit c.": "This wrongly checks a middle place instead of the units place.",
-          "Only the thousands digit d.": "This wrongly checks the highest place instead of the units place.",
+          "The hundreds digit c.": "This wrongly checks a middle place instead of the units place.",
+          "The thousands digit d.": "This wrongly checks the highest place instead of the units place.",
           "The sum of all four digits.": "This confuses divisibility by 2 with the digit-sum rule for 3."
          },
          "explanation": "Only a matters because every other place value is a multiple of 10.",
@@ -37695,15 +37695,15 @@
          "prompt": "Images A and C look similar, although their sizes differ. What must be true about their changes?",
          "options": [
           "Both width and height changed by the same factor.",
-          "Only the width changed by one fixed factor.",
+          "The width changed by one fixed factor.",
           "Both width and height changed by different factors.",
-          "Only the height changed by one fixed factor."
+          "The height changed by one fixed factor."
          ],
          "answer": 0,
          "why": {
           "Both width and height changed by different factors.": "This mistake thinks similar images need different size factors.",
-          "Only the width changed by one fixed factor.": "This mistake ignores that both dimensions changed together.",
-          "Only the height changed by one fixed factor.": "This mistake ignores that both dimensions changed together."
+          "The width changed by one fixed factor.": "This mistake ignores that both dimensions changed together.",
+          "The height changed by one fixed factor.": "This mistake ignores that both dimensions changed together."
          },
          "explanation": "This is right because proportional changes use the same factor.",
          "f": [
@@ -61432,14 +61432,14 @@
          "options": [
           "Speed and time change in opposite directions.",
           "Faster travel always means the same time.",
-          "Only distance can change travel time.",
+          "Distance can change travel time.",
           "Speed and time change in the same direction."
          ],
          "answer": 0,
          "why": {
           "Speed and time change in the same direction.": "This wrongly treats speed and time as direct quantities.",
           "Faster travel always means the same time.": "This denies the decrease in time as speed rises.",
-          "Only distance can change travel time.": "This wrongly says distance alone controls travel time."
+          "Distance can change travel time.": "This wrongly says distance alone controls travel time."
          },
          "explanation": "Speed and travel time change in opposite directions.",
          "f": [
@@ -61805,15 +61805,15 @@
          "context": "Viswanath is preparing a spice mix powder. He grinds 8 spoons of coriander seeds, and he also uses 2 spoons of toor dal and 1 spoon of fenugreek seeds. The spice mix has the ratio 8 : 4 : 2 : 1, which has four terms. Puneet has half the number of chillies that Viswanath used. To make his version, Puneet must reduce all the other ingredients to half as well.",
          "prompt": "If all quantities in Puneet's reduced mix need to return to the original scale, what should happen?",
          "options": [
-          "Only the coriander quantity should be doubled while the other quantities stay unchanged.",
+          "The coriander quantity should be doubled while the other quantities stay unchanged.",
           "Every quantity should be changed by the same factor so that the four-term ratio is restored.",
           "The chillies should stay unchanged while all the other quantities are reduced.",
-          "Only the fenugreek quantity should be doubled while the other quantities stay unchanged."
+          "The fenugreek quantity should be doubled while the other quantities stay unchanged."
          ],
          "answer": 1,
          "why": {
-          "Only the coriander quantity should be doubled while the other quantities stay unchanged.": "Changing only one quantity would not restore the original scale.",
-          "Only the fenugreek quantity should be doubled while the other quantities stay unchanged.": "The fenugreek must change together with the other quantities.",
+          "The coriander quantity should be doubled while the other quantities stay unchanged.": "Changing only one quantity would not restore the original scale.",
+          "The fenugreek quantity should be doubled while the other quantities stay unchanged.": "The fenugreek must change together with the other quantities.",
           "The chillies should stay unchanged while all the other quantities are reduced.": "This would reduce the scale instead of restoring it."
          },
          "explanation": "The same factor must be used for every quantity.",
@@ -62761,14 +62761,14 @@
          "prompt": "Trees show trunks, limbs, branches, and branchlets. What makes them self-similar?",
          "options": [
           "Each smaller part repeats the larger tree pattern.",
-          "Only the trunk repeats the larger tree pattern.",
+          "The trunk repeats the larger tree pattern.",
           "Each branch is made by removing a square.",
           "Each tree part has exactly the same size."
          ],
          "answer": 0,
          "why": {
           "Each tree part has exactly the same size.": "This mistake confuses a similar pattern with an identical size.",
-          "Only the trunk repeats the larger tree pattern.": "This mistake forgets that limbs, branches, and branchlets also repeat the pattern.",
+          "The trunk repeats the larger tree pattern.": "This mistake forgets that limbs, branches, and branchlets also repeat the pattern.",
           "Each branch is made by removing a square.": "This mistake mixes tree growth with the carpet's square removal."
          },
          "explanation": "This is right because smaller parts repeat the larger tree pattern.",
@@ -67582,14 +67582,14 @@
          "prompt": "Which observation best explains why the student calls the tree self-similar?",
          "options": [
           "The tree has no parts that resemble one another",
-          "Only the trunk has a repeating form, while the other parts are random",
+          "The trunk has a repeating form, while the other parts are random",
           "A repeated version of the tree’s overall form appears at smaller scales",
           "Every part of the tree has exactly the same size"
          ],
          "answer": 2,
          "why": {
           "Every part of the tree has exactly the same size": "Self-similarity does not mean that all parts have equal size.",
-          "Only the trunk has a repeating form, while the other parts are random": "The trunk, limbs, branches and branchlets all show the repeating pattern.",
+          "The trunk has a repeating form, while the other parts are random": "The trunk, limbs, branches and branchlets all show the repeating pattern.",
           "The tree has no parts that resemble one another": "A self-similar tree has parts that resemble one another."
          },
          "explanation": "Self-similarity means the tree’s parts repeat the overall form at smaller scales.",
@@ -76075,7 +76075,7 @@
          ],
          "prompt": "A friend says this trick needs an even starting number. Why is that wrong?",
          "options": [
-          "Only even starting numbers can be subtracted from x + 2.",
+          "Even starting numbers can be subtracted from x + 2.",
           "Adding four makes every starting number even before the trick begins.",
           "Every starting number works because the original x cancels.",
           "Doubling and dividing are easier when the starting number is even."
@@ -76084,7 +76084,7 @@
          "why": {
           "Doubling and dividing are easier when the starting number is even.": "This wrongly believes even starts are needed for doubling and dividing.",
           "Adding four makes every starting number even before the trick begins.": "This wrongly believes adding four changes every start into an even number.",
-          "Only even starting numbers can be subtracted from x + 2.": "This wrongly believes subtraction only works when x is even."
+          "Even starting numbers can be subtracted from x + 2.": "This wrongly believes subtraction only works when x is even."
          },
          "explanation": "The final result is always 2, whatever the starting number.",
          "f": [
@@ -82086,7 +82086,7 @@
          ],
          "prompt": "A rangoli uses a 7 cm by 4 cm rectangle. Another uses an 8 cm by 3 cm rectangle. Which needs more powder?",
          "options": [
-          "Only perimeter can decide the answer.",
+          "Perimeter can decide the answer.",
           "Both rectangles need equal powder.",
           "The 7 cm by 4 cm rectangle.",
           "The 8 cm by 3 cm rectangle."
@@ -82095,7 +82095,7 @@
          "why": {
           "The 8 cm by 3 cm rectangle.": "Its area is 24 square centimetres, which is smaller than 28.",
           "Both rectangles need equal powder.": "This mistake thinks different areas need the same powder.",
-          "Only perimeter can decide the answer.": "This mistake thinks perimeter alone tells the needed area."
+          "Perimeter can decide the answer.": "This mistake thinks perimeter alone tells the needed area."
          },
          "explanation": "Its area is 28 square centimetres, which is larger than 24.",
          "f": [
@@ -87506,12 +87506,12 @@
          "options": [
           "All four areas remain equal",
           "All four areas become different",
-          "Only two areas remain equal",
+          "Two areas remain equal",
           "One area becomes larger than the others"
          ],
          "answer": 0,
          "why": {
-          "Only two areas remain equal": "The operation does not leave only two equal areas.",
+          "Two areas remain equal": "The operation does not leave only two equal areas.",
           "One area becomes larger than the others": "The areas remain equal, so no one becomes larger.",
           "All four areas become different": "The operation keeps all four areas equal."
          },

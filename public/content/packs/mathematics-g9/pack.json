@@ -7799,13 +7799,13 @@
           "Two variables always make a polynomial degree 2.",
           "A constant term always makes a polynomial degree 2.",
           "Linear means degree 1, not exactly one variable.",
-          "Only one-variable expressions can have powers."
+          "One-variable expressions can have powers."
          ],
          "answer": 2,
          "why": {
           "Two variables always make a polynomial degree 2.": "It wrongly connects the number of variables with the degree.",
           "A constant term always makes a polynomial degree 2.": "It wrongly says a constant term raises the degree to 2.",
-          "Only one-variable expressions can have powers.": "It wrongly thinks having powers requires one variable."
+          "One-variable expressions can have powers.": "It wrongly thinks having powers requires one variable."
          },
          "explanation": "Correct: degree 1 does not mean exactly one variable.",
          "f": [
@@ -20312,7 +20312,7 @@
          "context": "A school exhibition asks students to compare ancient trade with number systems. One display represents Lothal, an important urban centre of the Indus Valley Civilisation, and explains why standardised weights and measures were crucial for trade. Another shows the Ṛigveda’s use of quantities expressed in powers of 10. Students then connect India’s place-value system with the development of zero, Brahmagupta’s transformation of the void, and the Bakhśhālī Manuscript’s use of a bold dot called a bindu for zero.",
          "prompt": "If the traders at the exhibition could no longer use standardised weights and measures, what would most likely happen?",
          "options": [
-          "Only calculations involving large numbers would be affected, while ordinary exchanges would remain unchanged.",
+          "Calculations involving large numbers would be affected, while ordinary exchanges would remain unchanged.",
           "Trade would become more reliable because every trader could set personal rules.",
           "Trade would remain unchanged because powers of 10 would replace the need for common measurements.",
           "Different traders might judge quantities differently, making exchanges less reliable."
@@ -20320,7 +20320,7 @@
          "answer": 3,
          "why": {
           "Trade would become more reliable because every trader could set personal rules.": "Personal rules would weaken the common standard needed for trade.",
-          "Only calculations involving large numbers would be affected, while ordinary exchanges would remain unchanged.": "Standardisation affects ordinary exchanges as well as large-number calculations.",
+          "Calculations involving large numbers would be affected, while ordinary exchanges would remain unchanged.": "Standardisation affects ordinary exchanges as well as large-number calculations.",
           "Trade would remain unchanged because powers of 10 would replace the need for common measurements.": "Powers of 10 organise numbers but cannot replace standardised weights and measures."
          },
          "explanation": "Shared measurements help buyers and sellers judge quantities consistently.",
@@ -28391,7 +28391,7 @@
          ],
          "prompt": "Two points, A and B, are marked on a page. Where can circle centres be?",
          "options": [
-          "Only the midpoint of AB.",
+          "The midpoint of AB.",
           "Points equally distant from A only.",
           "Points equally distant from A and B.",
           "Points on the line AB itself."
@@ -28399,7 +28399,7 @@
          "answer": 2,
          "why": {
           "Points on the line AB itself.": "This confuses AB with its perpendicular bisector.",
-          "Only the midpoint of AB.": "This thinks the midpoint is the only possible centre.",
+          "The midpoint of AB.": "This thinks the midpoint is the only possible centre.",
           "Points equally distant from A only.": "This checks the distance from only one marked point."
          },
          "explanation": "A centre must be equally distant from A and B.",
@@ -31967,13 +31967,13 @@
          "options": [
           "Each point lies on a separate circle.",
           "All four points lie on a single circle.",
-          "Only points C and D lie on a circle.",
-          "Only points A and B lie on a circle."
+          "Points C and D lie on a circle.",
+          "Points A and B lie on a circle."
          ],
          "answer": 1,
          "why": {
-          "Only points A and B lie on a circle.": "This mistakes the segment's endpoints for the whole set.",
-          "Only points C and D lie on a circle.": "This ignores A and B, which also belong to the circle.",
+          "Points A and B lie on a circle.": "This mistakes the segment's endpoints for the whole set.",
+          "Points C and D lie on a circle.": "This ignores A and B, which also belong to the circle.",
           "Each point lies on a separate circle.": "This wrongly assumes equal angles create separate circles."
          },
          "explanation": "Equal angles on the same side prove all four points are concyclic.",
@@ -32147,14 +32147,14 @@
          "prompt": "A student says cyclic quadrilaterals have equal opposite angles. Which explanation corrects this?",
          "options": [
           "Opposite angles add to 180°, so equality is not guaranteed.",
-          "Only the angles inside the circle must be equal.",
+          "The angles inside the circle must be equal.",
           "A cyclic quadrilateral cannot have equal opposite angles.",
           "Equal angles mean the four points lie on separate circles."
          ],
          "answer": 0,
          "why": {
           "Equal angles mean the four points lie on separate circles.": "This wrongly treats equal angles as proof of separate circles.",
-          "Only the angles inside the circle must be equal.": "This confuses interior angles with the opposite-angle rule.",
+          "The angles inside the circle must be equal.": "This confuses interior angles with the opposite-angle rule.",
           "A cyclic quadrilateral cannot have equal opposite angles.": "This wrongly treats equality as impossible under the rule."
          },
          "explanation": "The rule requires a 180° sum, not guaranteed equality.",
@@ -37525,13 +37525,13 @@
           "A bigger shape must have twice the ratio.",
           "A bigger shape must have half the ratio.",
           "A bigger shape can keep exactly the same ratio.",
-          "Only smaller shapes can keep the same ratio."
+          "Smaller shapes can keep the same ratio."
          ],
          "answer": 2,
          "why": {
           "A bigger shape must have twice the ratio.": "This assumes growth must double a fixed ratio.",
           "A bigger shape must have half the ratio.": "This assumes growth must halve a fixed ratio.",
-          "Only smaller shapes can keep the same ratio.": "This wrongly limits fixed ratios to smaller shapes."
+          "Smaller shapes can keep the same ratio.": "This wrongly limits fixed ratios to smaller shapes."
          },
          "explanation": "The scaling rule says that this ratio stays fixed.",
          "f": [
@@ -37961,14 +37961,14 @@
          "context": "A designer compares two congruent circles. Each circle passes through the centre of the other, so the centres and one intersection point form an equilateral triangle. Two semicircular paths marked P and Q have equal length. The designer must find the space occupied by triangular and rectangular shapes. A parallelogram can be changed into a rectangle with the same area, a median will divide the triangle into two equal-area parts, and a rectangle will enclose the triangle.",
          "prompt": "What happens to the areas of the two parts after a median is drawn in the triangle?",
          "options": [
-          "Only one part occupies space.",
+          "One part occupies space.",
           "Both parts occupy equal amounts of space.",
           "Their combined area is half the area of the original triangle.",
           "The parts occupy unequal amounts of space."
          ],
          "answer": 1,
          "why": {
-          "Only one part occupies space.": "Both smaller triangles therefore occupy the same amount of space.",
+          "One part occupies space.": "Both smaller triangles therefore occupy the same amount of space.",
           "The parts occupy unequal amounts of space.": "Unequal areas would contradict the property of a median.",
           "Their combined area is half the area of the original triangle.": "Together, the two parts must equal the area of the original triangle."
          },
@@ -42461,13 +42461,13 @@
          "options": [
           "Theoretical probability does not need trials or collected data.",
           "The fair chance of four can change after many rolls.",
-          "Only collected trial data can describe a fair situation.",
+          "Collected trial data can describe a fair situation.",
           "Theoretical probability needs more data than experimental probability."
          ],
          "answer": 0,
          "why": {
           "Theoretical probability needs more data than experimental probability.": "This wrongly says theory needs more data than experiments.",
-          "Only collected trial data can describe a fair situation.": "A fair situation can be described without collected trial data.",
+          "Collected trial data can describe a fair situation.": "A fair situation can be described without collected trial data.",
           "The fair chance of four can change after many rolls.": "The fair chance does not change just because more rolls occur."
          },
          "explanation": "Theoretical probability does not need an experiment or collected data.",
@@ -46546,7 +46546,7 @@
          ],
          "prompt": "A number trail follows u_n = 2n – 1. A child says, \"I need every earlier term first.\" What is the best reply?",
          "options": [
-          "Only the first term can start a sequence.",
+          "The first term can start a sequence.",
           "The target itself must be used as the position.",
           "The explicit rule finds the new term directly.",
           "Every earlier term must be found first."
@@ -46555,7 +46555,7 @@
          "why": {
           "Every earlier term must be found first.": "This wrongly assumes every earlier term is needed.",
           "The target itself must be used as the position.": "This confuses the target term with its position number.",
-          "Only the first term can start a sequence.": "This wrongly assumes only the first term can be used."
+          "The first term can start a sequence.": "This wrongly assumes only the first term can be used."
          },
          "explanation": "The explicit rule calculates a term without earlier terms.",
          "f": [
@@ -46679,14 +46679,14 @@
          "prompt": "In a number game, 308 follows s_n = 5n – 2. A child says, \"It is at position 69 because that is where 137 sits.\" What is the flaw?",
          "options": [
           "A position must always be smaller than its term.",
-          "Only the odd-number rule can find a position.",
+          "The odd-number rule can find a position.",
           "Each sequence has its own rule and positions.",
           "Every number in a sequence shares one position."
          ],
          "answer": 2,
          "why": {
           "Every number in a sequence shares one position.": "This wrongly treats all sequence terms as sharing one position.",
-          "Only the odd-number rule can find a position.": "This wrongly believes only the odd-number rule finds positions.",
+          "The odd-number rule can find a position.": "This wrongly believes only the odd-number rule finds positions.",
           "A position must always be smaller than its term.": "This wrongly assumes positions must be smaller than terms."
          },
          "explanation": "Position 69 belongs to 137 in the odd-number sequence.",
@@ -55038,7 +55038,7 @@
          "prompt": "A child finds that square numbers have odd factor counts. What must also be true?",
          "options": [
           "A square number must have an even factor count.",
-          "Only square numbers can have factor partners.",
+          "Square numbers can have factor partners.",
           "An odd factor count makes the number a non-square.",
           "An odd factor count also makes the number a square."
          ],
@@ -55046,7 +55046,7 @@
          "why": {
           "An odd factor count makes the number a non-square.": "This reverses the implication between perfect squares and odd factor counts.",
           "A square number must have an even factor count.": "This contradicts the conclusion that square numbers have odd counts.",
-          "Only square numbers can have factor partners.": "This confuses having factor partners with the stated two conditions."
+          "Square numbers can have factor partners.": "This confuses having factor partners with the stated two conditions."
          },
          "explanation": "The two conditions imply each other, so the reverse implication also holds.",
          "f": [
@@ -64326,13 +64326,13 @@
           "The final concentration is always the simple average of the two concentrations.",
           "Each value contributes equally even when the amounts differ.",
           "Each value is weighted by the amount or importance it contributes.",
-          "Only the concentration with the greater numerical percentage contributes."
+          "The concentration with the greater numerical percentage contributes."
          ],
          "answer": 2,
          "why": {
           "Each value contributes equally even when the amounts differ.": "This ignores the effect of unequal quantities.",
           "The final concentration is always the simple average of the two concentrations.": "This contradicts the fact that the result is not always the simple average.",
-          "Only the concentration with the greater numerical percentage contributes.": "This confuses a larger concentration with a larger contributing quantity."
+          "The concentration with the greater numerical percentage contributes.": "This confuses a larger concentration with a larger contributing quantity."
          },
          "explanation": "A weighted average gives each value importance according to its size or contribution.",
          "anchor": "mathematics-g9-ch10-l3-t1",
@@ -66980,16 +66980,16 @@
          ],
          "prompt": "Combining dots and counting their sum defines addition. A child has 33 blue dots and 27 red dots. They put blue dots in tens and red dots in units. Why is this plan flawed?",
          "options": [
-          "Only red dots should belong in the units groups.",
-          "Only blue dots should belong in the tens groups.",
+          "Red dots should belong in the units groups.",
+          "Blue dots should belong in the tens groups.",
           "Blue and red dots should always be counted together.",
           "Each number must be grouped into units, tens, and hundreds."
          ],
          "answer": 3,
          "why": {
           "Blue and red dots should always be counted together.": "This mistake thinks the colors decide the groups.",
-          "Only blue dots should belong in the tens groups.": "This mistake limits tens groups to blue dots.",
-          "Only red dots should belong in the units groups.": "This mistake limits units groups to red dots."
+          "Blue dots should belong in the tens groups.": "This mistake limits tens groups to blue dots.",
+          "Red dots should belong in the units groups.": "This mistake limits units groups to red dots."
          },
          "explanation": "Each number is grouped into units, tens, and hundreds, not by color.",
          "f": [
@@ -76844,7 +76844,7 @@
          "prompt": "Before using the four-corner outline as a quadrilateral, what should the student check?",
          "options": [
           "Three vertices are collinear, but the fourth is in the same plane.",
-          "Only the four vertices matter, so the sides need not be checked.",
+          "The four vertices matter, so the sides need not be checked.",
           "All four vertices are collinear, and they lie in different planes.",
           "All four vertices are in one plane, and no three vertices are collinear."
          ],
@@ -76852,7 +76852,7 @@
          "why": {
           "All four vertices are collinear, and they lie in different planes.": "Having the vertices collinear and in different planes breaks the stated conditions.",
           "Three vertices are collinear, but the fourth is in the same plane.": "Three collinear vertices are not allowed by the given rule.",
-          "Only the four vertices matter, so the sides need not be checked.": "Every point other than the vertices must also lie on exactly one side."
+          "The four vertices matter, so the sides need not be checked.": "Every point other than the vertices must also lie on exactly one side."
          },
          "explanation": "Both conditions are required for the outline to be a quadrilateral.",
          "anchor": "mathematics-g9-ch12-l1-a1",
@@ -77147,7 +77147,7 @@
          "context": "At a display, a student shows how a pantograph makes an exact scaled copy of a drawing. James Watt’s parallel motion linkage formed a part of his steam engine, and parallelograms used in mechanical linkages are nearby. A teacher explains that a law in physics uses parallelograms to combine certain physical quantities. At a geometry table, visitors join triangle side midpoints and draw an auxiliary line through C parallel to BA, making triangles APQ and CRQ congruent by AAS.",
          "prompt": "If the pantograph is used to copy the same drawing at a different scale, what should the result be?",
          "options": [
-          "Only some parts are copied at the correct scale.",
+          "Some parts are copied at the correct scale.",
           "The copy remains exact and correctly scaled.",
           "Every part changes shape during the copying.",
           "Every part is copied at the original size."
@@ -77155,7 +77155,7 @@
          "answer": 1,
          "why": {
           "Every part is copied at the original size.": "Using the original size would ignore the requested scale.",
-          "Only some parts are copied at the correct scale.": "An exact scaled copy must include every part, not only some.",
+          "Some parts are copied at the correct scale.": "An exact scaled copy must include every part, not only some.",
           "Every part changes shape during the copying.": "This mistakes copying for changing the drawing rather than scaling it."
          },
          "explanation": "A pantograph produces an exact scaled copy, so the scale must remain correct.",
@@ -81723,7 +81723,7 @@
          ],
          "prompt": "One student says all six coefficients are real numbers. Another says a2 and b2 cannot both be zero. Which reasoning is correct?",
          "options": [
-          "Only a1 and b1 must be real coefficients.",
+          "A1 and b1 must be real coefficients.",
           "All six are real, so a2 and b2 can both be zero.",
           "All six are real, but a2 and b2 cannot both be zero.",
           "The pair a2 and b2 must both be nonzero."
@@ -81731,7 +81731,7 @@
          "answer": 2,
          "why": {
           "All six are real, so a2 and b2 can both be zero.": "This mistakes being real for allowing any coefficient values.",
-          "Only a1 and b1 must be real coefficients.": "It ignores that all six coefficients must be real.",
+          "A1 and b1 must be real coefficients.": "It ignores that all six coefficients must be real.",
           "The pair a2 and b2 must both be nonzero.": "The rule only says they cannot both be zero."
          },
          "explanation": "Real coefficients are allowed, but both a2 and b2 cannot be zero.",
@@ -82556,13 +82556,13 @@
          "options": [
           "No pair fits both rules.",
           "One pair fits both rules.",
-          "Only the x value fits both rules.",
+          "The x value fits both rules.",
           "Many pairs fit both rules."
          ],
          "answer": 3,
          "why": {
           "One pair fits both rules.": "This mistake treats matching multiples as if only one pair could fit.",
-          "Only the x value fits both rules.": "Even if y changes, x can change with it in matching rules.",
+          "The x value fits both rules.": "Even if y changes, x can change with it in matching rules.",
           "No pair fits both rules.": "This mistake treats matching rules as contradictory."
          },
          "explanation": "Constant multiples allow infinitely many pairs to fit both rules.",
@@ -83818,15 +83818,15 @@
          "prompt": "If the cost of one adult ticket changes, what should happen to the ticket equations?",
          "options": [
           "Neither equation should change, because x and y are just symbols.",
-          "Only the y-symbol should be replaced.",
+          "The y-symbol should be replaced.",
           "Both equations should be checked and reformed using the changed adult-ticket cost.",
-          "Only 2x + 3y = 600 should be used."
+          "2x + 3y = 600 should be used."
          ],
          "answer": 2,
          "why": {
-          "Only the y-symbol should be replaced.": "The change concerns the adult-ticket cost x.",
+          "The y-symbol should be replaced.": "The change concerns the adult-ticket cost x.",
           "Neither equation should change, because x and y are just symbols.": "The variables represent actual ticket costs.",
-          "Only 2x + 3y = 600 should be used.": "A pair requires both equations."
+          "2x + 3y = 600 should be used.": "A pair requires both equations."
          },
          "explanation": "Both groups use adult tickets, so both equations may be affected.",
          "anchor": "mathematics-g9-ch13-l4-a1",

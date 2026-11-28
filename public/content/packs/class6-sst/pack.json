@@ -260,9 +260,9 @@
          ],
          "prompt": "You want a map. It shows all the States of India and their capitals. Which kind of map is it?",
          "options": [
-          "A physical map",
+          "A thematic map",
           "A political map",
-          "A thematic map"
+          "A physical map"
          ],
          "answer": 1,
          "explanation": "A map of India with its States and capitals is a political map.",
@@ -520,10 +520,10 @@
          ],
          "prompt": "On a map, 1 cm stands for 500 m. Two places are 2 cm apart on the map. How far apart are they in real life?",
          "options": [
-          "250 m",
+          "2,000 m",
           "500 m",
           "1,000 m",
-          "2,000 m"
+          "250 m"
          ],
          "answer": 2,
          "explanation": "1 cm is 500 m. So 2 cm is 500 m + 500 m = 1,000 m.",
@@ -843,12 +843,12 @@
          ],
          "prompt": "What does the orange peel trick show?",
          "options": [
-          "A round shape cannot be made flat without tearing",
-          "Oranges are bigger than the Earth",
           "All maps are torn",
-          "Paper is heavier than peel"
+          "Paper is heavier than peel",
+          "A round shape cannot be made flat without tearing",
+          "Oranges are bigger than the Earth"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "You cannot make the peel flat without tearing it. A sphere is a round ball shape. A sphere cannot be shown exactly on flat paper.",
          "id": "ch1-l3-a3",
          "src": [
@@ -969,12 +969,12 @@
          ],
          "prompt": "A friend says, “Meet me at the 7th shop in the 5th row.” What do the two numbers do?",
          "options": [
-          "Together they show one exact place",
+          "They show how big the market is",
           "They show the price of the shop",
           "They show the time",
-          "They show how big the market is"
+          "Together they show one exact place"
          ],
-         "answer": 0,
+         "answer": 3,
          "explanation": "A row number and a shop number together tell your friend the exact place.",
          "id": "ch1-l3-a7",
          "src": [
@@ -1151,12 +1151,12 @@
          ],
          "prompt": "What is halfway between the North Pole and the South Pole?",
          "options": [
-          "The scale",
-          "A symbol",
           "An atlas",
-          "The Equator"
+          "A symbol",
+          "The Equator",
+          "The scale"
          ],
-         "answer": 3,
+         "answer": 2,
          "explanation": "The Equator is halfway between the two poles.",
          "id": "ch1-l4-a2",
          "src": [
@@ -1222,9 +1222,9 @@
          "prompt": "What does latitude measure?",
          "options": [
           "How far a place is from the Equator",
-          "How old a map is",
           "How big a country is",
-          "How high a mountain is"
+          "How high a mountain is",
+          "How old a map is"
          ],
          "answer": 0,
          "explanation": "Latitude measures the distance from the Equator.",
@@ -1246,12 +1246,12 @@
          ],
          "prompt": "Which way does a parallel of latitude run?",
          "options": [
+          "From pole to pole",
           "Only around the North Pole",
-          "East to west, parallel to the Equator",
           "Straight up into the sky",
-          "From pole to pole"
+          "East to west, parallel to the Equator"
          ],
-         "answer": 1,
+         "answer": 3,
          "explanation": "Parallels run east to west. They are parallel to the Equator.",
          "id": "ch1-l4-a6",
          "src": [
@@ -1592,12 +1592,12 @@
          ],
          "prompt": "The Prime Meridian goes through a place in London. What is its name?",
          "options": [
-          "Greenwich",
           "Delhi",
+          "Greenwich",
           "Tokyo",
           "New York"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "The Prime Meridian goes through Greenwich, an area of London in England.",
          "id": "ch1-l5-a5",
          "src": [
@@ -1650,12 +1650,12 @@
          ],
          "prompt": "Delhi is at 77°E. What does E mean?",
          "options": [
-          "Delhi is at the North Pole",
+          "Delhi is 77 km from Greenwich",
           "Delhi is on the Equator",
-          "Delhi is east of the Prime Meridian",
-          "Delhi is 77 km from Greenwich"
+          "Delhi is at the North Pole",
+          "Delhi is east of the Prime Meridian"
          ],
-         "answer": 2,
+         "answer": 3,
          "explanation": "E means east. Delhi is 77° east of the Prime Meridian.",
          "id": "ch1-l5-a7",
          "src": [
@@ -1763,12 +1763,12 @@
          ],
          "prompt": "Delhi is at 29°N and 77°E. Which number is the latitude?",
          "options": [
-          "180°",
           "0°",
-          "77°E",
-          "29°N"
+          "29°N",
+          "180°",
+          "77°E"
          ],
-         "answer": 3,
+         "answer": 1,
          "explanation": "Latitude is north or south of the Equator. 29°N is the latitude. 77°E is the longitude.",
          "id": "ch1-l5-a10",
          "src": [
@@ -1903,8 +1903,8 @@
          "prompt": "Which city did India’s own prime meridian go through?",
          "options": [
           "Ujjayinī (today Ujjain)",
-          "Greenwich",
           "New York",
+          "Greenwich",
           "Tokyo"
          ],
          "answer": 0,
@@ -1993,12 +1993,12 @@
          ],
          "prompt": "About how long ago did Varahamihira live in Ujjayinī?",
          "options": [
-          "About 100 years ago",
+          "About 150 years ago",
           "About 500 years ago",
-          "About 1,500 years ago",
-          "About 150 years ago"
+          "About 100 years ago",
+          "About 1,500 years ago"
          ],
-         "answer": 2,
+         "answer": 3,
          "explanation": "The book says Varahamihira lived and worked there about 1,500 years ago.",
          "id": "ch1-l6-a6",
          "src": [
@@ -2084,12 +2084,12 @@
          ],
          "prompt": "Some old cities were a little away from the Ujjayinī meridian. Why?",
          "options": [
-          "The meridian kept moving.",
-          "People could not measure time well then. Finding longitude needs good time.",
+          "Those cities were in the sea.",
           "Astronomers did not make maps.",
-          "Those cities were in the sea."
+          "The meridian kept moving.",
+          "People could not measure time well then. Finding longitude needs good time."
          ],
-         "answer": 1,
+         "answer": 3,
          "explanation": "Finding longitude needs good timekeeping. Long ago, people could not measure time as well as they do today.",
          "id": "ch1-l6-a9",
          "src": [
@@ -2244,12 +2244,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 15°E?",
          "options": [
+          "11 am",
           "12 midnight",
-          "1 pm",
           "2 pm",
-          "11 am"
+          "1 pm"
          ],
-         "answer": 1,
+         "answer": 3,
          "explanation": "Going east adds one hour for every 15°. So noon becomes 1 pm.",
          "id": "ch1-l7-a5",
          "src": [
@@ -2269,12 +2269,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 30°W?",
          "options": [
-          "10 am",
+          "1 pm",
           "2 pm",
           "11 am",
-          "1 pm"
+          "10 am"
          ],
-         "answer": 0,
+         "answer": 3,
          "explanation": "Going west takes away one hour for every 15°. At 30°W, that is two hours less: 10 am.",
          "id": "ch1-l7-a6",
          "src": [
@@ -2365,12 +2365,12 @@
          ],
          "prompt": "It is late afternoon. In Tinsukia (Assam), the Sun has set. In Porbandar (Gujarat), the Sun has not set. Their longitudes differ by about 30°. How many hours ahead is Tinsukia?",
          "options": [
-          "2 hours",
           "1 hour",
+          "2 hours",
           "3 hours",
           "30 hours"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "The Earth turns 15° every hour. 30° ÷ 15° = 2 hours. Tinsukia is east of Porbandar. So its local time is 2 hours ahead. That is why it can be dark in Assam but still light in Gujarat.",
          "derived": [
           "2 hours = 30 / 15",
@@ -2523,12 +2523,12 @@
          ],
          "prompt": "Which country has 11 time zones?",
          "options": [
-          "The USA",
           "India",
           "Russia",
+          "The USA",
           "Greenwich"
          ],
-         "answer": 2,
+         "answer": 1,
          "explanation": "The USA has six time zones. Russia has 11.",
          "id": "ch1-l8-a3",
          "src": [
@@ -2672,9 +2672,9 @@
          "prompt": "A ship crosses the International Date Line going west. Before this, it was Sunday. What is the new day?",
          "options": [
           "It becomes Monday",
-          "It stays Sunday",
           "It becomes Tuesday",
-          "It becomes Saturday"
+          "It becomes Saturday",
+          "It stays Sunday"
          ],
          "answer": 0,
          "explanation": "Going west across the Date Line, you add a day. Sunday becomes Monday.",
@@ -2856,9 +2856,9 @@
         "prompt": "A map has a scale. 1 cm on the map means 500 m on the ground. Two places are 3 cm apart on the map. How far apart are they on the ground?",
         "options": [
          "1,500 m",
-         "500 m",
+         "150 m",
          "3,000 m",
-         "150 m"
+         "500 m"
         ],
         "answer": 0,
         "explanation": "Each 1 cm is 500 m. So 3 cm is 3 × 500 m = 1,500 m.",
@@ -3000,9 +3000,9 @@
         "prompt": "India’s own prime meridian passed through which city?",
         "options": [
          "Ujjayinī (Ujjain)",
-         "Delhi",
          "Tokyo",
-         "Greenwich"
+         "Greenwich",
+         "Delhi"
         ],
         "answer": 0,
         "explanation": "The madhya rekhā passed through Ujjayinī, which is Ujjain today.",
@@ -3024,12 +3024,12 @@
         ],
         "prompt": "Delhi and Bengaluru have almost the same longitude, 77°E. Longitude means how far east or west a place is. What is the time difference between them?",
         "options": [
-         "Almost none",
          "1 hour",
+         "Almost none",
          "2 hours",
          "5 hours 30 minutes"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "Local time depends on longitude. Almost the same longitude means almost the same time.",
         "derived": [
          "1 hour, 2 hours are wrong options"
@@ -3056,12 +3056,12 @@
         ],
         "prompt": "It is 12 noon in London. Why is it 5:30 pm in India?",
         "options": [
+         "India is closer to the Equator",
          "India uses the Date Line",
          "Clocks run faster in India",
-         "India's time is 5 hours 30 minutes ahead of GMT",
-         "India is closer to the Equator"
+         "India's time is 5 hours 30 minutes ahead of GMT"
         ],
-        "answer": 2,
+        "answer": 3,
         "explanation": "IST is 5 hours 30 minutes ahead of Greenwich Mean Time. So noon in London is 5:30 pm in India.",
         "id": "ch1-boss-a10",
         "src": [
@@ -13844,14 +13844,14 @@
          "prompt": "Which explanation best shows why the student may need several kinds of experts?",
          "options": [
           "Each specialist has a different focus: Earth features, fossils, or remains of past life.",
-          "Only archaeologists can investigate evidence beneath the Earth's surface.",
+          "Archaeologists can investigate evidence beneath the Earth's surface.",
           "Anthropologists examine fossils, while geologists study how people lived together.",
           "They all examine the same kinds of evidence, so one expert is always enough."
          ],
          "answer": 0,
          "why": {
           "They all examine the same kinds of evidence, so one expert is always enough.": "Their areas of study are not identical.",
-          "Only archaeologists can investigate evidence beneath the Earth's surface.": "Archaeologists are not the only relevant specialists.",
+          "Archaeologists can investigate evidence beneath the Earth's surface.": "Archaeologists are not the only relevant specialists.",
           "Anthropologists examine fossils, while geologists study how people lived together.": "Their fields have been confused."
          },
          "explanation": "The specialists study different evidence.",
@@ -19788,12 +19788,12 @@
          "options": [
           "Many streets faced the cardinal directions there.",
           "Most large buildings were made of bricks there.",
-          "Only Harappa and Mohenjo-daro were ever found anywhere.",
+          "Harappa and Mohenjo-daro were ever found anywhere.",
           "Many more sites were found in the Indus plains."
          ],
          "answer": 3,
          "why": {
-          "Only Harappa and Mohenjo-daro were ever found anywhere.": "This confuses the first two cities with all sites ever found.",
+          "Harappa and Mohenjo-daro were ever found anywhere.": "This confuses the first two cities with all sites ever found.",
           "Most large buildings were made of bricks there.": "Building materials do not explain the civilisation's early name.",
           "Many streets faced the cardinal directions there.": "Street directions do not explain the civilisation's early name."
          },
@@ -21354,13 +21354,13 @@
          "prompt": "As the city expands, what should the government and administration coordinate?",
          "options": [
           "New housing while ignoring other community activities.",
-          "Only the work of craftspeople making metal goods.",
+          "The work of craftspeople making metal goods.",
           "The end of all exchanges with distant regions.",
           "The city's many activities so that society remains organised."
          ],
          "answer": 3,
          "why": {
-          "Only the work of craftspeople making metal goods.": "A civilisation has many crafts, so one craft is not enough.",
+          "The work of craftspeople making metal goods.": "A civilisation has many crafts, so one craft is not enough.",
           "New housing while ignoring other community activities.": "Town growth must be managed along with other activities.",
           "The end of all exchanges with distant regions.": "Distant trade is part of the city's economic life."
          },
@@ -23071,14 +23071,14 @@
          "options": [
           "All janas shared exactly the same region.",
           "Each clan had a connection to its own region.",
-          "Only one clan had any regional connection.",
+          "One clan had any regional connection.",
           "Each clan moved constantly and had no region."
          ],
          "answer": 1,
          "why": {
           "Each clan moved constantly and had no region.": "This wrongly treats regional links as if they did not exist.",
           "All janas shared exactly the same region.": "This wrongly makes separate regions into one shared region.",
-          "Only one clan had any regional connection.": "This wrongly thinks only one clan had a regional link."
+          "One clan had any regional connection.": "This wrongly thinks only one clan had a regional link."
          },
          "explanation": "Each clan was linked to a region in the northwest.",
          "f": [
@@ -23998,7 +23998,7 @@
          ],
          "prompt": "Buddhism did not accept Vedic authority. It had enormous influence across India and Asia. What does this show?",
          "options": [
-          "Only Vedic schools could influence places across Asia.",
+          "Vedic schools could influence places across Asia.",
           "Rejecting Vedic authority stops a school from gaining influence.",
           "Wide influence proves Buddhism later accepted Vedic authority.",
           "A school can gain wide influence without accepting Vedic authority."
@@ -24007,7 +24007,7 @@
          "why": {
           "Wide influence proves Buddhism later accepted Vedic authority.": "This assumes wide influence must mean accepting Vedic authority.",
           "Rejecting Vedic authority stops a school from gaining influence.": "This treats rejection of Vedic authority as preventing influence.",
-          "Only Vedic schools could influence places across Asia.": "This wrongly limits wide influence to Vedic schools."
+          "Vedic schools could influence places across Asia.": "This wrongly limits wide influence to Vedic schools."
          },
          "explanation": "The facts show that Buddhism gained wide influence while rejecting Vedic authority.",
          "f": [
@@ -24909,13 +24909,13 @@
          "prompt": "A teacher speaks and shows a craft. Learners follow without written lessons. What makes this an oral tradition?",
          "options": [
           "Teaching and practice pass without written texts.",
-          "Only spoken words pass between learners.",
+          "Spoken words pass between learners.",
           "Every learner must copy from a book.",
           "The craft changes only after written notes."
          ],
          "answer": 0,
          "why": {
-          "Only spoken words pass between learners.": "This mistake treats oral tradition as spoken words only.",
+          "Spoken words pass between learners.": "This mistake treats oral tradition as spoken words only.",
           "Every learner must copy from a book.": "This mistake assumes written books are always needed.",
           "The craft changes only after written notes.": "This mistake assumes notes, not oral passing, cause the craft."
          },
@@ -25491,13 +25491,13 @@
          "options": [
           "The folk tradition will disappear because its stories are not written down.",
           "The traditions will remain completely separate because they began differently.",
-          "Only the tribal tradition will survive because it is shared by a tribe.",
+          "The tribal tradition will survive because it is shared by a tribe.",
           "The traditions may become mutually richer through continued interaction."
          ],
          "answer": 3,
          "why": {
           "The traditions will remain completely separate because they began differently.": "The case already shows that different traditions can interact.",
-          "Only the tribal tradition will survive because it is shared by a tribe.": "Folk traditions are also passed on, so they need not disappear.",
+          "The tribal tradition will survive because it is shared by a tribe.": "Folk traditions are also passed on, so they need not disappear.",
           "The folk tradition will disappear because its stories are not written down.": "A lack of written texts does not prevent traditions from being shared."
          },
          "explanation": "Continued exchange allows each tradition to gain from the other.",
@@ -25516,13 +25516,13 @@
          "prompt": "If the communities exchange concepts, legends and rituals in both directions, what would be a reasonable result?",
          "options": [
           "The traditions would gain nothing because they are different.",
-          "Only the tradition that existed first would gain.",
+          "The tradition that existed first would gain.",
           "Each tradition could gain from the other.",
           "One tradition would have to disappear for both to continue."
          ],
          "answer": 2,
          "why": {
-          "Only the tradition that existed first would gain.": "The given facts do not suggest that only one tradition benefits.",
+          "The tradition that existed first would gain.": "The given facts do not suggest that only one tradition benefits.",
           "The traditions would gain nothing because they are different.": "The case shows different traditions learning from one another.",
           "One tradition would have to disappear for both to continue.": "Mutual enrichment does not require a tradition to disappear."
          },
@@ -26337,12 +26337,12 @@
           "Every place in India has the same food, dress and language.",
           "India has many kinds of people, places, languages and customs.",
           "Train journeys hide the differences between Indian regions.",
-          "Only faraway places in India show signs of diversity."
+          "Faraway places in India show signs of diversity."
          ],
          "answer": 1,
          "why": {
           "Every place in India has the same food, dress and language.": "This mistake believes all Indian places are identical.",
-          "Only faraway places in India show signs of diversity.": "This mistake thinks diversity exists only far from home.",
+          "Faraway places in India show signs of diversity.": "This mistake thinks diversity exists only far from home.",
           "Train journeys hide the differences between Indian regions.": "This mistake believes train travel makes regional differences disappear."
          },
          "explanation": "This is right because one journey reveals many differences across India.",
@@ -26915,14 +26915,14 @@
          "prompt": "A cook mixes dal, rice, and shared spices. What can the cook make?",
          "options": [
           "No dish without a new ingredient.",
-          "Only one dish from these ingredients.",
+          "One dish from these ingredients.",
           "Many dishes with different combinations.",
-          "Only dishes found in one region."
+          "Dishes found in one region."
          ],
          "answer": 2,
          "why": {
-          "Only one dish from these ingredients.": "This mistake thinks shared ingredients have only one possible combination.",
-          "Only dishes found in one region.": "This mistake thinks shared ingredients cannot differ across regions.",
+          "One dish from these ingredients.": "This mistake thinks shared ingredients have only one possible combination.",
+          "Dishes found in one region.": "This mistake thinks shared ingredients cannot differ across regions.",
           "No dish without a new ingredient.": "This mistake thinks every dish needs an ingredient from outside the shared list."
          },
          "explanation": "Different combinations of shared ingredients create endless variety.",
@@ -26961,12 +26961,12 @@
           "All regions eat exactly the same dishes.",
           "Food choices never change between regions.",
           "People's foods can differ across India's regions.",
-          "Only millets are eaten across India."
+          "Millets are eaten across India."
          ],
          "answer": 2,
          "why": {
           "All regions eat exactly the same dishes.": "This mistake ignores the regional differences shown on the map.",
-          "Only millets are eaten across India.": "This mistake treats one grain as the only food across India.",
+          "Millets are eaten across India.": "This mistake treats one grain as the only food across India.",
           "Food choices never change between regions.": "This mistake thinks regional food choices never change."
          },
          "explanation": "People eat foods from different regions, so their foods can differ.",
@@ -28526,12 +28526,12 @@
           "These differences are signs of India’s cultural variety.",
           "All communities must follow exactly the same customs and traditions.",
           "The journey must have crossed separate countries rather than one country.",
-          "Only the landscapes change, while the communities remain culturally the same."
+          "The landscapes change, while the communities remain culturally the same."
          ],
          "answer": 0,
          "why": {
           "All communities must follow exactly the same customs and traditions.": "Incorrect: The journey shows customs that differ from place to place.",
-          "Only the landscapes change, while the communities remain culturally the same.": "Incorrect: Languages, scripts, dress, food, and customs also reveal differences.",
+          "The landscapes change, while the communities remain culturally the same.": "Incorrect: Languages, scripts, dress, food, and customs also reveal differences.",
           "The journey must have crossed separate countries rather than one country.": "Incorrect: The journey is across India and illustrates variety within one country."
          },
          "explanation": "Correct: It connects several cultural differences with India’s diversity.",
@@ -28622,13 +28622,13 @@
           "Every grain-based dish would disappear because dals are the only grains.",
           "A pulse-based dish would be missing, while cereal and spice dishes could remain.",
           "The meal would stay unchanged because dals and cereals are the same food group.",
-          "Only the spice dishes would remain because spices can replace dals."
+          "The spice dishes would remain because spices can replace dals."
          ],
          "answer": 1,
          "why": {
           "Every grain-based dish would disappear because dals are the only grains.": "This wrongly treats dals as the only grains.",
           "The meal would stay unchanged because dals and cereals are the same food group.": "This wrongly places dals and cereals in the same food group.",
-          "Only the spice dishes would remain because spices can replace dals.": "This wrongly suggests that spices can take the place of pulses."
+          "The spice dishes would remain because spices can replace dals.": "This wrongly suggests that spices can take the place of pulses."
          },
          "explanation": "Dals are pulses, so removing them removes that kind of food from the meal.",
          "anchor": "ch8-l2-read",
@@ -28760,12 +28760,12 @@
          "options": [
           "Different communities can keep their own epic versions while sharing a sense of cultural unity.",
           "Animal stories and epic stories belong to separate cultures and cannot be compared.",
-          "Only one community's version can be treated as the correct version of an epic.",
+          "One community's version can be treated as the correct version of an epic.",
           "Different versions show that Indian culture values separation rather than unity."
          ],
          "answer": 0,
          "why": {
-          "Only one community's version can be treated as the correct version of an epic.": "The facts do not say that only one version is correct.",
+          "One community's version can be treated as the correct version of an epic.": "The facts do not say that only one version is correct.",
           "Different versions show that Indian culture values separation rather than unity.": "Different versions do not mean that culture values separation.",
           "Animal stories and epic stories belong to separate cultures and cannot be compared.": "Both animal stories and epic stories are part of Indian culture."
          },
@@ -30775,11 +30775,11 @@
           "Grandparents have no responsibility toward Tenzing or others.",
           "Family members work only for themselves and their jobs.",
           "Family members take different responsibilities for home and colony.",
-          "Only parents are responsible for home and colony."
+          "Parents are responsible for home and colony."
          ],
          "answer": 2,
          "why": {
-          "Only parents are responsible for home and colony.": "This wrongly leaves children and grandparents out of family duties.",
+          "Parents are responsible for home and colony.": "This wrongly leaves children and grandparents out of family duties.",
           "Family members work only for themselves and their jobs.": "This wrongly treats every responsibility as separate and self-focused.",
           "Grandparents have no responsibility toward Tenzing or others.": "This wrongly treats grandparents as people without family duties."
          },
@@ -31333,13 +31333,13 @@
          "prompt": "Families and neighbours share food at a village feast. Why can this be called a community?",
          "options": [
           "Connected people are sharing an event together.",
-          "Only families, not neighbours, share the feast.",
+          "Families, not neighbours, share the feast.",
           "Each neighbour has the same daily duties.",
           "The feast must become a written rule."
          ],
          "answer": 0,
          "why": {
-          "Only families, not neighbours, share the feast.": "This wrongly treats a community as involving only families.",
+          "Families, not neighbours, share the feast.": "This wrongly treats a community as involving only families.",
           "The feast must become a written rule.": "This confuses a feast with a rule that guides behaviour.",
           "Each neighbour has the same daily duties.": "This mistakes taking part together for having identical duties."
          },
@@ -32455,11 +32455,11 @@
           "A jāti and class group must serve the same purpose.",
           "The word community must always mean one fixed group.",
           "The word community can include different kinds of groups.",
-          "Only one kind of group should be called a community."
+          "One kind of group should be called a community."
          ],
          "answer": 2,
          "why": {
-          "Only one kind of group should be called a community.": "The facts show that many kinds of groups can be communities.",
+          "One kind of group should be called a community.": "The facts show that many kinds of groups can be communities.",
           "A jāti and class group must serve the same purpose.": "A jāti and a class community can be different community kinds.",
           "The word community must always mean one fixed group.": "The idea of a community can change according to the situation."
          },
@@ -33695,14 +33695,14 @@
          ],
          "prompt": "Families use simple rules at home. Schools have rules for students and teachers. What do both places show?",
          "options": [
-          "Only children need to follow simple rules.",
+          "Children need to follow simple rules.",
           "Schools and families use exactly the same rules.",
           "People need rules in many different communities.",
           "Rules matter only within school buildings."
          ],
          "answer": 2,
          "why": {
-          "Only children need to follow simple rules.": "This wrongly thinks only children need rules.",
+          "Children need to follow simple rules.": "This wrongly thinks only children need rules.",
           "Schools and families use exactly the same rules.": "This assumes both places use exactly the same rules.",
           "Rules matter only within school buildings.": "This wrongly limits rules to school buildings."
          },
@@ -34980,14 +34980,14 @@
          "options": [
           "Different levels must always handle identical matters.",
           "One level has no matters while another has many.",
-          "Only the local level has powers over government matters.",
+          "The local level has powers over government matters.",
           "Each level of government deals with different matters."
          ],
          "answer": 3,
          "why": {
           "Different levels must always handle identical matters.": "This mistake assumes every level handles the same work.",
           "One level has no matters while another has many.": "This mistake wrongly gives all matters to only some levels.",
-          "Only the local level has powers over government matters.": "This mistake wrongly removes powers from higher levels."
+          "The local level has powers over government matters.": "This mistake wrongly removes powers from higher levels."
          },
          "explanation": "This is right because each level deals with different matters.",
          "f": [
@@ -35554,12 +35554,12 @@
          "options": [
           "Central help can support a massive flood affecting vast areas.",
           "State law-making must include relief supplies and the army.",
-          "Only a one-town flood needs Central help.",
+          "A one-town flood needs Central help.",
           "A nominal State head must organise all flood relief."
          ],
          "answer": 0,
          "why": {
-          "Only a one-town flood needs Central help.": "This mistake confuses one town with vast areas.",
+          "A one-town flood needs Central help.": "This mistake confuses one town with vast areas.",
           "State law-making must include relief supplies and the army.": "This mistake mixes law-making with Central flood help.",
           "A nominal State head must organise all flood relief.": "This mistake thinks nominal heads lead all relief work."
          },
@@ -39639,15 +39639,15 @@
          ],
          "prompt": "An 8-year-old and a 14-year-old join a Children's Parliament meeting. What should the meeting allow?",
          "options": [
-          "Only the 14-year-old should take part because older children know more.",
+          "The 14-year-old should take part because older children know more.",
           "Both children should take part in the governance process.",
           "Neither child should take part because adults must make every decision.",
-          "Only the 8-year-old should take part because children must be young."
+          "The 8-year-old should take part because children must be young."
          ],
          "answer": 1,
          "why": {
-          "Only the 8-year-old should take part because children must be young.": "This mistake treats young age as the only rule, ignoring children up to 14.",
-          "Only the 14-year-old should take part because older children know more.": "This mistake thinks age removes the right to participate before fourteen.",
+          "The 8-year-old should take part because children must be young.": "This mistake treats young age as the only rule, ignoring children up to 14.",
+          "The 14-year-old should take part because older children know more.": "This mistake thinks age removes the right to participate before fourteen.",
           "Neither child should take part because adults must make every decision.": "This mistake assumes adults have all participation rights and children have none."
          },
          "explanation": "Children aged 8 to 14 take part, so both children should participate.",
@@ -40938,16 +40938,16 @@
          "context": "In a village, adults who were enrolled as voters gathered as the Gram Sabha. Women and men discussed matters concerning their area and directly chose the Gram Panchayat members, who then elected a woman as Sarpanch. A Panchayat Secretary called the meeting and kept the records. A Patwari who helped the Gram Panchayat kept records of villagers' land and sometimes kept maps that were many generations old. More women have become Sarpanchs in recent years.",
          "prompt": "Suppose more village adults become enrolled as voters. Who can then directly choose the Gram Panchayat members?",
          "options": [
-          "Only the Sarpanch or Pradhan, because the elected head alone represents the Gram Sabha.",
-          "Only village adults not enrolled as voters, because taking part does not require voter enrollment.",
-          "Only adults selected as Gram Panchayat members, because choosing the members makes them Gram Sabha members.",
+          "The Sarpanch or Pradhan, because the elected head alone represents the Gram Sabha.",
+          "Village adults not enrolled as voters, because taking part does not require voter enrollment.",
+          "Adults selected as Gram Panchayat members, because choosing the members makes them Gram Sabha members.",
           "The newly enrolled adults, because they become Gram Sabha members and directly select the Panchayat members."
          ],
          "answer": 3,
          "why": {
-          "Only adults selected as Gram Panchayat members, because choosing the members makes them Gram Sabha members.": "These adults directly choose Gram Panchayat members.",
-          "Only the Sarpanch or Pradhan, because the elected head alone represents the Gram Sabha.": "Being chosen as a Panchayat member does not make someone a Gram Sabha member.",
-          "Only village adults not enrolled as voters, because taking part does not require voter enrollment.": "The elected head is not the only person in the Gram Sabha."
+          "Adults selected as Gram Panchayat members, because choosing the members makes them Gram Sabha members.": "These adults directly choose Gram Panchayat members.",
+          "The Sarpanch or Pradhan, because the elected head alone represents the Gram Sabha.": "Being chosen as a Panchayat member does not make someone a Gram Sabha member.",
+          "Village adults not enrolled as voters, because taking part does not require voter enrollment.": "The elected head is not the only person in the Gram Sabha."
          },
          "explanation": "The Gram Sabha includes village adults enrolled as voters.",
          "anchor": "ch11-l2-read",
@@ -41884,14 +41884,14 @@
          "options": [
           "Power over the decision is shared.",
           "One person keeps all decision power.",
-          "Only local leaders keep all decision power.",
-          "Only residents keep all decision power."
+          "Local leaders keep all decision power.",
+          "Residents keep all decision power."
          ],
          "answer": 0,
          "why": {
           "One person keeps all decision power.": "This wrongly shows one person holding all decision-making power.",
-          "Only residents keep all decision power.": "This wrongly leaves local leaders without any shared power.",
-          "Only local leaders keep all decision power.": "This wrongly leaves residents without any shared power."
+          "Residents keep all decision power.": "This wrongly leaves local leaders without any shared power.",
+          "Local leaders keep all decision power.": "This wrongly leaves residents without any shared power."
          },
          "explanation": "Participatory democracy means sharing power in decision-making.",
          "f": [
@@ -42454,12 +42454,12 @@
           "Problems must be handled in the same way everywhere.",
           "Ward work can differ from State to State.",
           "Every State must use exactly the same method.",
-          "Only State A has local government bodies."
+          "State A has local government bodies."
          ],
          "answer": 1,
          "why": {
           "Every State must use exactly the same method.": "This mistake assumes all States follow one identical method.",
-          "Only State A has local government bodies.": "This mistake treats one State's example as the rule for all.",
+          "State A has local government bodies.": "This mistake treats one State's example as the rule for all.",
           "Problems must be handled in the same way everywhere.": "This mistake assumes every place handles problems in the same way."
          },
          "explanation": "This is right because ward work can change between States.",
@@ -42488,11 +42488,11 @@
           "Residents help decide on a health camp for their area.",
           "The ward committee should ignore residents' wishes.",
           "People from another city should choose the camp.",
-          "Only distant officials should decide about the camp."
+          "Distant officials should decide about the camp."
          ],
          "answer": 0,
          "why": {
-          "Only distant officials should decide about the camp.": "This mistake gives all local choices to distant officials.",
+          "Distant officials should decide about the camp.": "This mistake gives all local choices to distant officials.",
           "People from another city should choose the camp.": "This mistake moves local decisions to people from another city.",
           "The ward committee should ignore residents' wishes.": "This mistake ignores the community's direct say."
          },
@@ -44486,14 +44486,14 @@
          "prompt": "After heavy rain, a house collapsed in a city. Many residents did not know each other well. Why did they still help?",
          "options": [
           "They all knew each other well before the house fell.",
-          "Only elected representatives were allowed to clear the rubble.",
+          "Elected representatives were allowed to clear the rubble.",
           "Helping neighbours was a special duty for city officials.",
           "They felt shared responsibility for people in their community."
          ],
          "answer": 3,
          "why": {
           "They all knew each other well before the house fell.": "This mistake thinks helping requires knowing every neighbour beforehand.",
-          "Only elected representatives were allowed to clear the rubble.": "This mistake thinks elected representatives should do all the work.",
+          "Elected representatives were allowed to clear the rubble.": "This mistake thinks elected representatives should do all the work.",
           "Helping neighbours was a special duty for city officials.": "This mistake treats helping as an official duty rather than citizen responsibility."
          },
          "explanation": "This is right because helping after a collapse shows shared community responsibility.",
@@ -44531,12 +44531,12 @@
          "options": [
           "Both places appoint all local members without any citizen choice.",
           "Citizens in both places choose local body members through elections.",
-          "Only city residents vote, while villages choose members without elections.",
+          "City residents vote, while villages choose members without elections.",
           "Village members are chosen by city representatives, not by citizens."
          ],
          "answer": 1,
          "why": {
-          "Only city residents vote, while villages choose members without elections.": "This mistake confuses making decisions together with having no elections.",
+          "City residents vote, while villages choose members without elections.": "This mistake confuses making decisions together with having no elections.",
           "Village members are chosen by city representatives, not by citizens.": "This mistake reverses the choice of representatives and the citizens who choose them.",
           "Both places appoint all local members without any citizen choice.": "This mistake ignores the elections held for local body members."
          },
@@ -44850,7 +44850,7 @@
          "context": "A town is divided into wards. In one ward, residents notice a blocked drain and a leaking water pipe. The ward committee has noticed both problems. In another part of the town, residents are concerned about single-use plastics. The committee also learns that ward work is organised differently in another State. Residents believe that their local community should have a direct say in managing these matters.",
          "prompt": "What does learning that ward work is organised differently in another State show?",
          "options": [
-          "Only one State can organise ward activities.",
+          "One State can organise ward activities.",
           "Wards have no role in local communities.",
           "Every State must use exactly the same ward system.",
           "Ward functioning can vary from one State to another."
@@ -44859,7 +44859,7 @@
          "why": {
           "Every State must use exactly the same ward system.": "Different States need not have identical arrangements.",
           "Wards have no role in local communities.": "Ward committees help local communities and report problems.",
-          "Only one State can organise ward activities.": "More than one State can organise ward activities."
+          "One State can organise ward activities.": "More than one State can organise ward activities."
          },
          "explanation": "The way wards function differs between States.",
          "anchor": "ch12-l2-read",
@@ -45095,15 +45095,15 @@
          "prompt": "After the emergency, residents want their urban local body to make decisions that reflect city citizens. Who should the elected representatives listen to?",
          "options": [
           "All citizens affected by local decisions",
-          "Only people who work together in village fields",
-          "Only people who joined the rubble-clearing work",
-          "Only residents who already know one another"
+          "People who work together in village fields",
+          "People who joined the rubble-clearing work",
+          "Residents who already know one another"
          ],
          "answer": 0,
          "why": {
-          "Only residents who already know one another": "Knowing one another should not remove anyone’s democratic voice.",
-          "Only people who joined the rubble-clearing work": "Helpers are not the only citizens whose interests matter.",
-          "Only people who work together in village fields": "Village field workers are not the deciding group for an urban local body."
+          "Residents who already know one another": "Knowing one another should not remove anyone’s democratic voice.",
+          "People who joined the rubble-clearing work": "Helpers are not the only citizens whose interests matter.",
+          "People who work together in village fields": "Village field workers are not the deciding group for an urban local body."
          },
          "explanation": "Representatives represent citizens and their interests.",
          "anchor": "ch12-l6-read",
@@ -47023,14 +47023,14 @@
          ],
          "prompt": "Sahil receives cash and mangoes for his farm work. If the mango payment stopped, what would remain?",
          "options": [
-          "Only the mango part of his daily wage.",
+          "The mango part of his daily wage.",
           "A monthly salary instead of his daily wage.",
           "Both cash and mangoes from his daily wage.",
           "Only the cash part of his daily wage."
          ],
          "answer": 3,
          "why": {
-          "Only the mango part of his daily wage.": "The mango part is exactly what would stop, so it cannot remain.",
+          "The mango part of his daily wage.": "The mango part is exactly what would stop, so it cannot remain.",
           "Both cash and mangoes from his daily wage.": "Stopping the mango part does not remove the cash part.",
           "A monthly salary instead of his daily wage.": "Sahil’s daily wage does not become a monthly salary."
          },
@@ -48043,13 +48043,13 @@
          "options": [
           "The Golden Temple gives prasād to every visitor.",
           "The Golden Temple has a paid restaurant for visitors.",
-          "Only gurudwaras serve food to every visitor.",
+          "Gurudwaras serve food to every visitor.",
           "The Golden Temple is linked with community food service."
          ],
          "answer": 3,
          "why": {
           "The Golden Temple has a paid restaurant for visitors.": "Nothing in the facts says the Golden Temple has a paid restaurant.",
-          "Only gurudwaras serve food to every visitor.": "The facts do not say other places never serve visitors.",
+          "Gurudwaras serve food to every visitor.": "The facts do not say other places never serve visitors.",
           "The Golden Temple gives prasād to every visitor.": "The facts do not say the Golden Temple serves every visitor."
          },
          "explanation": "The map and source together point to community food at the Golden Temple.",
@@ -48521,14 +48521,14 @@
          ],
          "prompt": "A street has rubbish. Families clean their homes, then neighbours clean the street together. What result is most likely?",
          "options": [
-          "Only the family homes will become clean.",
+          "The family homes will become clean.",
           "The street will stay dirty for ever.",
           "The whole neighbourhood will become cleaner.",
           "Public parks will become dirtier."
          ],
          "answer": 2,
          "why": {
-          "Only the family homes will become clean.": "This treats individual home cleaning as enough for shared spaces.",
+          "The family homes will become clean.": "This treats individual home cleaning as enough for shared spaces.",
           "The street will stay dirty for ever.": "This wrongly assumes that working together will not improve the street.",
           "Public parks will become dirtier.": "This confuses the result of shared cleaning with a worsening result."
          },
@@ -51079,15 +51079,15 @@
          "prompt": "A map marks three places: a fruit stall, a vehicle garage, and an electrician's workplace. Which marks belong to the tertiary sector, and why?",
          "options": [
           "All three, because each place provides a service.",
-          "Only the garage, because only repairing is a service.",
-          "Only the stall, because only selling is a service.",
-          "Only the electrician, because only power work is a service."
+          "The garage, because only repairing is a service.",
+          "The stall, because only selling is a service.",
+          "The electrician, because only power work is a service."
          ],
          "answer": 0,
          "why": {
-          "Only the stall, because only selling is a service.": "This wrongly thinks only selling produce is a service.",
-          "Only the garage, because only repairing is a service.": "This wrongly thinks only repairing vehicles is a service.",
-          "Only the electrician, because only power work is a service.": "This wrongly thinks only electricity work is a service."
+          "The stall, because only selling is a service.": "This wrongly thinks only selling produce is a service.",
+          "The garage, because only repairing is a service.": "This wrongly thinks only repairing vehicles is a service.",
+          "The electrician, because only power work is a service.": "This wrongly thinks only electricity work is a service."
          },
          "explanation": "This is right because selling, repairing, and electricity work are services.",
          "f": [

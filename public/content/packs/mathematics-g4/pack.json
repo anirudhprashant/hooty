@@ -342,13 +342,13 @@
          "options": [
           "The two models have their places swapped.",
           "Both models match their places.",
-          "Only the Qutub Minar model matches its place.",
-          "Only the India Gate model matches its place."
+          "The Qutub Minar model matches its place.",
+          "The India Gate model matches its place."
          ],
          "answer": 1,
          "why": {
-          "Only the India Gate model matches its place.": "This ignores the correct Qutub Minar model details.",
-          "Only the Qutub Minar model matches its place.": "This ignores the correct India Gate model details.",
+          "The India Gate model matches its place.": "This ignores the correct Qutub Minar model details.",
+          "The Qutub Minar model matches its place.": "This ignores the correct India Gate model details.",
           "The two models have their places swapped.": "It wrongly swaps the two places and their model details."
          },
          "explanation": "Each model has the material or features given for its place.",
@@ -426,11 +426,11 @@
           "The India Gate model made from wooden blocks.",
           "Every box, bottle, can, and coconut shell.",
           "The street's main buildings in her model.",
-          "Only Qutub Minar's 379 stairs in her model."
+          "Qutub Minar's 379 stairs in her model."
          ],
          "answer": 2,
          "why": {
-          "Only Qutub Minar's 379 stairs in her model.": "It mistakes Qutub Minar's stairs for the whole street project.",
+          "Qutub Minar's 379 stairs in her model.": "It mistakes Qutub Minar's stairs for the whole street project.",
           "The India Gate model made from wooden blocks.": "It repeats her India Gate project instead of observing the street.",
           "Every box, bottle, can, and coconut shell.": "It mistakes useful model materials for the buildings to model."
          },
@@ -7657,12 +7657,12 @@
           "The teacher is kind, so she calls every drawing good.",
           "Each child drew the side in front of them, so both are right.",
           "One child drew from memory, so that drawing must be wrong.",
-          "Only the bigger drawing can be right, because it shows more."
+          "The bigger drawing can be right, because it shows more."
          ],
          "answer": 1,
          "why": {
           "The teacher is kind, so she calls every drawing good.": "Kindness is not the reason; the two views are both real.",
-          "Only the bigger drawing can be right, because it shows more.": "Size does not decide which view is correct.",
+          "The bigger drawing can be right, because it shows more.": "Size does not decide which view is correct.",
           "One child drew from memory, so that drawing must be wrong.": "Drawing from memory is not a mistake by itself."
          },
          "explanation": "Right: different views of one chair can all be correct.",
@@ -17591,14 +17591,14 @@
          "prompt": "For the next task, what must the learner check about the two 2-digit numbers?",
          "options": [
           "Both must be even",
-          "Only the first must be even",
+          "The first must be even",
           "Both must repeat a digit",
           "Both must be odd"
          ],
          "answer": 0,
          "why": {
           "Both must be odd": "The learner has confused even with odd.",
-          "Only the first must be even": "The learner has applied the even rule to only one of the numbers.",
+          "The first must be even": "The learner has applied the even rule to only one of the numbers.",
           "Both must repeat a digit": "The learner has forgotten that digits must be used without repetition."
          },
          "explanation": "This follows the instruction that the chosen 2-digit numbers should be even.",
@@ -21048,14 +21048,14 @@
          "prompt": "Children can write numbers from 1 to 999, and the list continues beyond 1000 to 1100. What is the best next step?",
          "options": [
           "Write 1000 and continue the list.",
-          "Only write numbers below 1000.",
+          "Write numbers below 1000.",
           "Start a list with no numbers.",
           "Stop at 999 and begin again."
          ],
          "answer": 0,
          "why": {
           "Stop at 999 and begin again.": "The text continues with one thousand and larger numbers.",
-          "Only write numbers below 1000.": "This leaves out the larger numbers the text explores.",
+          "Write numbers below 1000.": "This leaves out the larger numbers the text explores.",
           "Start a list with no numbers.": "An empty list does not continue the existing number list."
          },
          "explanation": "This follows the list from 999 towards 1100.",
@@ -26691,13 +26691,13 @@
           "The two-person share is smaller than the four-person share.",
           "The two-person share is larger than the four-person share.",
           "The two-person and four-person shares are the same size.",
-          "Only the four-person shares can make one whole dhokla."
+          "The four-person shares can make one whole dhokla."
          ],
          "answer": 1,
          "why": {
           "The two-person share is smaller than the four-person share.": "It reverses the sizes, because more people make each share smaller.",
           "The two-person and four-person shares are the same size.": "It ignores that more sharing makes each share smaller.",
-          "Only the four-person shares can make one whole dhokla.": "The two-person halves also make one whole dhokla."
+          "The four-person shares can make one whole dhokla.": "The two-person halves also make one whole dhokla."
          },
          "explanation": "Two people each get one-half, while four people each get one-fourth.",
          "f": [
@@ -28015,16 +28015,16 @@
          ],
          "prompt": "Five fractions, each one-fifth of the whole, are joined. What do they make?",
          "options": [
-          "Only one third of the whole.",
-          "Only one fifth of the whole.",
+          "One third of the whole.",
+          "One fifth of the whole.",
           "One complete whole dhokla.",
-          "Only one equal part out of eight."
+          "One equal part out of eight."
          ],
          "answer": 2,
          "why": {
-          "Only one fifth of the whole.": "It mistakes one one-fifth piece for all five pieces.",
-          "Only one third of the whole.": "It counts one piece instead of joining all five.",
-          "Only one equal part out of eight.": "It mistakes one small part for the joined pieces."
+          "One fifth of the whole.": "It mistakes one one-fifth piece for all five pieces.",
+          "One third of the whole.": "It counts one piece instead of joining all five.",
+          "One equal part out of eight.": "It mistakes one small part for the joined pieces."
          },
          "explanation": "Five one-fifth pieces together make one complete whole.",
          "f": [
@@ -31512,13 +31512,13 @@
           "The size of every portion decreases.",
           "The size of every portion increases.",
           "The size of every portion stays the same.",
-          "Only some of the portions decrease."
+          "Some of the portions decrease."
          ],
          "answer": 0,
          "why": {
           "The size of every portion increases.": "The equal parts are made by using the larger number of people.",
           "The size of every portion stays the same.": "Equal sharing does not keep the portion size unchanged when the number of people changes.",
-          "Only some of the portions decrease.": "All eight people receive smaller equal parts, not only some people."
+          "Some of the portions decrease.": "All eight people receive smaller equal parts, not only some people."
          },
          "explanation": "Dividing a whole among more people makes each part smaller.",
          "anchor": "mathematics-g4-ch5-l3-a1",
@@ -54633,7 +54633,7 @@
          ],
          "prompt": "A frog touches 8. A child calls 8 a multiple of 3. Why is the child wrong?",
          "options": [
-          "Only landing numbers above 3 can be multiples.",
+          "Landing numbers above 3 can be multiples.",
           "Multiples of 3 must always be smaller than 3.",
           "8 becomes a multiple because a frog touches it.",
           "8 is not a multiple of 3, so the child is wrong."
@@ -54641,7 +54641,7 @@
          "answer": 3,
          "why": {
           "Multiples of 3 must always be smaller than 3.": "This mistake thinks multiples are smaller than 3.",
-          "Only landing numbers above 3 can be multiples.": "It wrongly leaves out 3, which is a multiple.",
+          "Landing numbers above 3 can be multiples.": "It wrongly leaves out 3, which is a multiple.",
           "8 becomes a multiple because a frog touches it.": "It confuses touching a number with being a multiple."
          },
          "explanation": "8 is not a multiple of 3, so your claim is wrong.",
@@ -67618,13 +67618,13 @@
          "options": [
           "Either move lets the opponent finish at 10 on the next turn.",
           "Neither move lets the opponent finish at 10 on the next turn.",
-          "Only adding 2 lets the opponent finish at 10 on the next turn.",
-          "Only adding 1 lets the opponent finish at 10 on the next turn."
+          "Adding 2 lets the opponent finish at 10 on the next turn.",
+          "Adding 1 lets the opponent finish at 10 on the next turn."
          ],
          "answer": 0,
          "why": {
-          "Only adding 1 lets the opponent finish at 10 on the next turn.": "Adding 2 leaves 9, and the opponent can add 1.",
-          "Only adding 2 lets the opponent finish at 10 on the next turn.": "Both choices allow the opponent to finish.",
+          "Adding 1 lets the opponent finish at 10 on the next turn.": "Adding 2 leaves 9, and the opponent can add 1.",
+          "Adding 2 lets the opponent finish at 10 on the next turn.": "Both choices allow the opponent to finish.",
           "Neither move lets the opponent finish at 10 on the next turn.": "Adding 1 does not allow the opponent to finish immediately."
          },
          "explanation": "Adding 1 leaves 8, and the opponent can add 2.",
@@ -71980,14 +71980,14 @@
          "prompt": "A child says, “Every border shape has a mirror line.” What is wrong?",
          "options": [
           "Some border shapes do not match across a line.",
-          "Only closed border shapes have mirror lines.",
+          "Closed border shapes have mirror lines.",
           "A mirror line must be drawn outside the shape.",
           "Every border shape needs two mirror lines."
          ],
          "answer": 0,
          "why": {
           "Every border shape needs two mirror lines.": "One line is enough when the two parts match.",
-          "Only closed border shapes have mirror lines.": "A closed shape can still lack matching parts.",
+          "Closed border shapes have mirror lines.": "A closed shape can still lack matching parts.",
           "A mirror line must be drawn outside the shape.": "A mirror line lies inside when it splits matching parts."
          },
          "explanation": "Some shapes have no matching parts across any line.",
@@ -73128,14 +73128,14 @@
          "prompt": "The same shapes look different in separate tiles. What does this show?",
          "options": [
           "Different shapes must make the floor pattern overlap.",
-          "Only colour can change a tile when shapes stay still.",
+          "Colour can change a tile when shapes stay still.",
           "Moving and colouring shapes always make the same tile.",
           "Moving and colouring shapes can make different tiles."
          ],
          "answer": 3,
          "why": {
           "Moving and colouring shapes always make the same tile.": "This assumes position and colour never change a tile.",
-          "Only colour can change a tile when shapes stay still.": "This forgets that changing position can also change a tile.",
+          "Colour can change a tile when shapes stay still.": "This forgets that changing position can also change a tile.",
           "Different shapes must make the floor pattern overlap.": "This assumes different shapes must cause overlap."
          },
          "explanation": "This is right because position and colour can create different tiles.",
@@ -74590,7 +74590,7 @@
          "prompt": "When tracing joined shapes to make a path, what should happen where the shapes meet?",
          "options": [
           "The joined shapes should touch so the traced path is continuous.",
-          "Only one shape should be traced while the joined parts are ignored.",
+          "One shape should be traced while the joined parts are ignored.",
           "Spaces should remain between the shapes so each one can be seen clearly.",
           "The shapes should overlap at the joins to make the path stronger."
          ],
@@ -74598,7 +74598,7 @@
          "why": {
           "Spaces should remain between the shapes so each one can be seen clearly.": "Spaces between the shapes would create gaps in the path.",
           "The shapes should overlap at the joins to make the path stronger.": "Overlapping the shapes would create overlaps.",
-          "Only one shape should be traced while the joined parts are ignored.": "Ignoring the joined parts would prevent the shapes from forming one path."
+          "One shape should be traced while the joined parts are ignored.": "Ignoring the joined parts would prevent the shapes from forming one path."
          },
          "explanation": "Touching joined shapes allow the traced path to continue without gaps.",
          "anchor": "mathematics-g4-ch11-l5-a5",
@@ -75910,11 +75910,11 @@
           "Only February 2024 can have the birthday.",
           "Neither February can have the birthday.",
           "Both Februaries can have the birthday.",
-          "Only February 2025 can have the birthday."
+          "February 2025 can have the birthday."
          ],
          "answer": 0,
          "why": {
-          "Only February 2025 can have the birthday.": "February 2025 has 28 days, so it cannot have a 29 February birthday.",
+          "February 2025 can have the birthday.": "February 2025 has 28 days, so it cannot have a 29 February birthday.",
           "Both Februaries can have the birthday.": "This overlooks that February 2025 has only 28 days.",
           "Neither February can have the birthday.": "This overlooks that February 2024 has 29 days."
          },
@@ -92987,7 +92987,7 @@
          "context": "A class is preparing a display about the subjects chosen by its pupils. The displayed responses cover all 45 children in the grade. One display shows the responses as a long list, using letters and P.E. as codes for the subjects. The other display arranges the information in a table, with headings for subjects and numbers of children. Mathematics, Languages, The World Around Us, Physical Education, and Arts each have a row.",
          "prompt": "Why can the two displays represent the same 45 children without needing two different sets of responses?",
          "options": [
-          "Only the table includes all the subjects; the list is not about the same grade.",
+          "The table includes all the subjects; the list is not about the same grade.",
           "They both organize the same displayed responses, one as a list and one as a table.",
           "The list contains 45 extra children, while the table contains none.",
           "The table uses subject rows and the list uses codes, so they must show different children."
@@ -92996,7 +92996,7 @@
          "why": {
           "The list contains 45 extra children, while the table contains none.": "There is only one set of displayed responses covering all 45 children.",
           "The table uses subject rows and the list uses codes, so they must show different children.": "Using rows and codes changes the arrangement, not the children being described.",
-          "Only the table includes all the subjects; the list is not about the same grade.": "Both displays cover the same 45 children in the grade."
+          "The table includes all the subjects; the list is not about the same grade.": "Both displays cover the same 45 children in the grade."
          },
          "explanation": "Correct: both displays are different arrangements of the displayed responses.",
          "anchor": "mathematics-g4-ch14-l3-a1",

@@ -977,12 +977,12 @@
           "A different balloon from each group twice.",
           "All the balloons inside every group.",
           "Just one balloon from every group.",
-          "Only the number of balloon groups."
+          "The number of balloon groups."
          ],
          "answer": 1,
          "why": {
           "Just one balloon from every group.": "This mistake treats one balloon as the whole group.",
-          "Only the number of balloon groups.": "This mistake counts containers instead of the balloons inside.",
+          "The number of balloon groups.": "This mistake counts containers instead of the balloons inside.",
           "A different balloon from each group twice.": "This mistake counts some balloons twice and misses others."
          },
          "explanation": "This is right because a full group includes every balloon.",
@@ -1018,16 +1018,16 @@
          ],
          "prompt": "The bananas are shown in bunches. Surbhi wants the total. What should she count?",
          "options": [
-          "Only the bananas outside the bunches.",
-          "Only the number of banana bunches.",
-          "Only one banana from each bunch.",
+          "The bananas outside the bunches.",
+          "The number of banana bunches.",
+          "One banana from each bunch.",
           "Every banana in all the bunches."
          ],
          "answer": 3,
          "why": {
-          "Only one banana from each bunch.": "This mistake misses the other bananas in each bunch.",
-          "Only the number of banana bunches.": "This mistake treats each bunch as one banana.",
-          "Only the bananas outside the bunches.": "This mistake misses all the bananas inside the bunches."
+          "One banana from each bunch.": "This mistake misses the other bananas in each bunch.",
+          "The number of banana bunches.": "This mistake treats each bunch as one banana.",
+          "The bananas outside the bunches.": "This mistake misses all the bananas inside the bunches."
          },
          "explanation": "This is right because every banana inside every bunch adds to the total.",
          "f": [
@@ -7070,14 +7070,14 @@
          "context": "Rajma and chana are set out as units for a group game. A group of six sits together, and one member is chosen as the banker. Everyone rolls two dice and takes units from the bank. Players exchange ten units for a ten strip, then collect ten strips of ten to complete the 100 units grid. One possible arrangement uses seven yellow ten strips and three red ten strips.",
          "prompt": "In a group of six, what should happen after one member becomes the banker?",
          "options": [
-          "Only the banker should roll two dice.",
+          "The banker should roll two dice.",
           "The banker should roll just one die.",
           "No team member should roll any dice.",
           "Each team member should roll two dice."
          ],
          "answer": 3,
          "why": {
-          "Only the banker should roll two dice.": "The banker is also a team member, so the banker rolls two dice too.",
+          "The banker should roll two dice.": "The banker is also a team member, so the banker rolls two dice too.",
           "The banker should roll just one die.": "The game says that each team member rolls two dice.",
           "No team member should roll any dice.": "The game requires each team member to roll two dice."
          },
@@ -10306,16 +10306,16 @@
          ],
          "prompt": "At school, you make a table for the solid shapes. The table asks what each object looks like. What should each row show?",
          "options": [
-          "Only the faces and corners",
+          "The faces and corners",
           "The faces, edges, and corners",
-          "Only the edges and shape names",
-          "Only the shape names and faces"
+          "The edges and shape names",
+          "The shape names and faces"
          ],
          "answer": 1,
          "why": {
-          "Only the faces and corners": "This ignores the edges column.",
-          "Only the shape names and faces": "This ignores the edges and corners columns.",
-          "Only the edges and shape names": "This ignores the faces and corners columns."
+          "The faces and corners": "This ignores the edges column.",
+          "The shape names and faces": "This ignores the edges and corners columns.",
+          "The edges and shape names": "This ignores the faces and corners columns."
          },
          "explanation": "This fills every column the table asks about.",
          "f": [
@@ -22687,12 +22687,12 @@
          "options": [
           "Triangle and Square wait outside alone.",
           "All the shapes are playing together.",
-          "Only Circle and Rectangle play together.",
+          "Circle and Rectangle play together.",
           "The game ends before they join in."
          ],
          "answer": 1,
          "why": {
-          "Only Circle and Rectangle play together.": "This overlooks that Triangle and Square join the game.",
+          "Circle and Rectangle play together.": "This overlooks that Triangle and Square join the game.",
           "Triangle and Square wait outside alone.": "This overlooks that Triangle and Square join the game.",
           "The game ends before they join in.": "This mistakes joining the game for ending it."
          },
@@ -32273,13 +32273,13 @@
          "prompt": "What will happen if the children keep the paper folded and fold it again?",
          "options": [
           "Additional crease marks will appear on the paper.",
-          "Only the original centre crease will remain.",
+          "The original centre crease will remain.",
           "A curved line will appear without another fold.",
           "No new crease marks will be made."
          ],
          "answer": 0,
          "why": {
-          "Only the original centre crease will remain.": "Further folding does not leave the creases unchanged.",
+          "The original centre crease will remain.": "Further folding does not leave the creases unchanged.",
           "No new crease marks will be made.": "More creases let children see different lines.",
           "A curved line will appear without another fold.": "Curved lines are tried through paper folding."
          },
@@ -47255,15 +47255,15 @@
          "prompt": "Seven cars have started moving near Ramya. Which cars can she count for her wheel count?",
          "options": [
           "All seven moving cars.",
-          "Only three moving cars.",
+          "Three moving cars.",
           "None of the moving cars.",
-          "Only four moving cars."
+          "Four moving cars."
          ],
          "answer": 2,
          "why": {
           "All seven moving cars.": "Ramya misses the cars because they have started moving.",
-          "Only four moving cars.": "The fact does not say that only four cars are moving.",
-          "Only three moving cars.": "Three is the number of wheels on each auto."
+          "Four moving cars.": "The fact does not say that only four cars are moving.",
+          "Three moving cars.": "Three is the number of wheels on each auto."
          },
          "explanation": "Ramya misses all the moving cars.",
          "f": [
@@ -63207,13 +63207,13 @@
           "Four balloons with the smallest money numbers.",
           "Four balloons that are all the same colour.",
           "Four balloons, each a different colour, with big numbers.",
-          "Only three balloons, and save the last chance."
+          "Three balloons, and save the last chance."
          ],
          "answer": 2,
          "why": {
           "Four balloons that are all the same colour.": "Same colour breaks the rule, even with four chances.",
           "Four balloons with the smallest money numbers.": "Small numbers give less money, so this wins less.",
-          "Only three balloons, and save the last chance.": "A saved chance wins nothing at all."
+          "Three balloons, and save the last chance.": "A saved chance wins nothing at all."
          },
          "explanation": "Right, because four chances need four colours with big numbers.",
          "f": [
@@ -68096,7 +68096,7 @@
          "prompt": "A child makes a class favourites chart. Green is written under the number of children heading. Why is this wrong?",
          "options": [
           "That heading needs a colour name, not a count.",
-          "Only yellow may appear under that heading.",
+          "Yellow may appear under that heading.",
           "That heading needs a count, not a colour name.",
           "Every row needs the same colour name twice."
          ],
@@ -68104,7 +68104,7 @@
          "why": {
           "That heading needs a colour name, not a count.": "This swaps the colour row and the number column.",
           "Every row needs the same colour name twice.": "Repeating a colour does not record how many children chose it.",
-          "Only yellow may appear under that heading.": "Other listed colours can also be counted in the table."
+          "Yellow may appear under that heading.": "Other listed colours can also be counted in the table."
          },
          "explanation": "Green tells the colour, but the heading asks how many children.",
          "f": [
@@ -70736,7 +70736,7 @@
          ],
          "prompt": "In a school chart, bus has more faces than autorickshaw. What does this show?",
          "options": [
-          "Only bus is shown in the school chart.",
+          "Bus is shown in the school chart.",
           "More students come to school by bus.",
           "Fewer students come to school by bus.",
           "The same students come to school by bus."
@@ -70745,7 +70745,7 @@
          "why": {
           "Fewer students come to school by bus.": "More faces mean more students, not fewer students.",
           "The same students come to school by bus.": "Equal student numbers would need equal face groups.",
-          "Only bus is shown in the school chart.": "The chart also shows autorickshaw and the other listed modes."
+          "Bus is shown in the school chart.": "The chart also shows autorickshaw and the other listed modes."
          },
          "explanation": "The bus group has more faces, so it has more students.",
          "f": [
@@ -73110,7 +73110,7 @@
          ],
          "prompt": "Children visit nearby families. A child says, 'Recording all people is enough. Grandparents do not matter.' What is the best reply?",
          "options": [
-          "Only families with many people need grandparents recorded.",
+          "Families with many people need grandparents recorded.",
           "The vegetable table can replace the grandparents table.",
           "Grandparents living with families also need recording.",
           "Grandparents can be asked during the vegetable survey."
@@ -73118,7 +73118,7 @@
          "answer": 2,
          "why": {
           "The vegetable table can replace the grandparents table.": "The two tables record different family information.",
-          "Only families with many people need grandparents recorded.": "Grandparents need recording with each family, not only larger families.",
+          "Families with many people need grandparents recorded.": "Grandparents need recording with each family, not only larger families.",
           "Grandparents can be asked during the vegetable survey.": "The grandparents table belongs with family visits, not vegetable talks."
          },
          "explanation": "The project must record which grandparents live with each family.",
