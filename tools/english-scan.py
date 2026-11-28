@@ -92,6 +92,17 @@ def build_vocabulary(packs):
     return counts
 
 
+STRICT = [False]
+
+
+def plausible(word):
+    """Could this be an English word at all? A cut word is usually not: `rro` has no vowel, `nded` starts
+    on four consonants. Used only to narrow the review list under --strict, never to clear a hit."""
+    if set(word) & set('aeiouy'):
+        return not re.search(r'[bcdfghjklmnpqrstvwxz]{4}', word)
+    return False
+
+
 SHORT_OK = {'a', 'i', 'an', 'of', 'to', 'in', 'on', 'at', 'by', 'is', 'it', 'as', 'or', 'no', 'so', 'we',
             'he', 'be', 'do', 'if', 'my', 'up', 'us', 'am', 'me', 'go', 'kg', 'cm', 'mm', 'km', 'ml', 'rs',
             'dr', 'mr', 'mrs', 'ms', 'st', 'vs', 'ph', 'eg', 'ie', 'ok', 'oh', 'ah', 'ha', 'hi', 'id', 'ex'}
@@ -143,13 +154,18 @@ def scan_string(text, counts, rank):
     unseen = {w.lower() for w in tokens
               if len(w) >= 3 and w.lower().isalpha() and counts[w.lower()] <= 1 and not w.isupper()}
     for word in sorted(unseen):
-        hits.append(f'unseen word {word!r} — used nowhere else in the catalogue')
+        if STRICT[0] and plausible(word):
+            continue
+        hits.append(f'single-use word {word!r} — used once in the whole catalogue')
     for i, word in enumerate(tokens):
         if len(word) != 1 or not word.isalpha():
             continue
+        if word.lower() in SHORT_OK:
+            continue                       # "a truck", "I saw": a real short word, not a cut one
         near = [tokens[j] for j in (i - 1, i + 1) if 0 <= j < len(tokens)]
-        if any(n.lower() in unseen for n in near):
-            hits.append(f'split word: lone {word!r} beside {[n for n in near if n.lower() in unseen][0]!r}')
+        broken = [n for n in near if n.lower() in unseen and not plausible(n.lower())]
+        if broken:
+            hits.append(f'split word: lone {word!r} beside {broken[0]!r}')
 
     if tokens and len(tokens) >= 5:
         head = tokens[0]
@@ -209,12 +225,15 @@ def main():
     parser.add_argument('--limit', type=int, default=6)
     parser.add_argument('--rebuild', action='store_true', help='rebuild the cached word list first')
     parser.add_argument('--self-test', action='store_true', help='prove the shapes still see damage')
+    parser.add_argument('--strict', action='store_true',
+                        help='only words that could not be English at all (no vowel, four consonants in a row)')
     args = parser.parse_args()
 
     if args.self_test:
         sys.exit(1 if self_test() else 0)
 
     LIVE_FLAG[0] = args.live
+    STRICT[0] = args.strict
     packs = load_packs(args.book, args.live)
     # The vocabulary has to be the whole catalogue even when only one book is being scanned, or an ordinary
     # word that happens to appear once in that book reads as a fragment ("table" -> "stable").
@@ -236,7 +255,10 @@ def main():
                         per_book[name] += 1
 
     where = 'live site' if args.live else 'local packs'
-    print(f'shredded English in the {where}:')
+    # A review list, not a defect count: our books use a word once in 843 places, and almost all of those
+    # are ordinary vocabulary (playgrounds, monocotyledon). --strict narrows it to the shapes that cannot
+    # be English at all, which is what a repair lane should look at first.
+    print(f'possible shredded English in the {where} (review list, not a defect count):')
     for name, count in per_book.most_common():
         print(f'  {name:22} {count:>3} lessons')
     total = sum(per_book.values())

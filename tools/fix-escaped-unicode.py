@@ -42,7 +42,10 @@ def repair(path, apply):
     if not found:
         return 0
     fixed = ESCAPE.sub(decode, text)
-    json.loads(fixed)                 # refuse to write anything that stops being valid JSON
+    if path.endswith('.py'):
+        compile(fixed, path, 'exec')  # a chapter author script: refuse to break it
+    else:
+        json.loads(fixed)             # refuse to write anything that stops being valid JSON
     if apply:
         open(path, 'w', encoding='utf-8').write(fixed)
     return len(found)
@@ -55,6 +58,9 @@ def main():
     args = parser.parse_args()
 
     targets = sorted(glob.glob(f'{ROOT}/work/**/*.json', recursive=True))
+    # Chapter author scripts carry the same double escape in a Python string, and the assembler reads
+    # their NOTES back as explanations: fixing the pack alone was undone by the next rebuild (sst6 ch1).
+    targets += sorted(glob.glob(f'{ROOT}/work/**/*.py', recursive=True))
     pattern = f'{ROOT}/public/content/packs/{args.only}/pack.json' if args.only else \
         f'{ROOT}/public/content/packs/*/pack.json'
     targets += sorted(glob.glob(pattern))
