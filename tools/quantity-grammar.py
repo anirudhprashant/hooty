@@ -99,12 +99,19 @@ def walk_rewrite(o, hits, where, dry):
     return o
 
 
+UA = {'User-Agent': 'Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131 Safari/537.36'}
+
+
+def get_json(url):
+    return json.loads(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30).read())
+
+
 def scan_packs(live=False):
     total, per, samples = 0, {}, []
     if live:
         base = 'https://hooty.org/content/packs/'
         books = live_books()
-        load = lambda b: json.loads(urllib.request.urlopen(base + b + '/pack.json?scan=1', timeout=30).read())
+        load = lambda b: get_json(base + b + '/pack.json?scan=1')
     else:
         books = [os.path.basename(os.path.dirname(p)) for p in sorted(glob.glob(f'{ROOT}/public/content/packs/*/pack.json'))]
         load = lambda b: json.load(open(f'{ROOT}/public/content/packs/{b}/pack.json'))
@@ -127,7 +134,7 @@ def scan_packs(live=False):
 
 
 def live_books():
-    idx = json.loads(urllib.request.urlopen('https://hooty.org/content/index.json?scan=1', timeout=30).read())
+    idx = get_json('https://hooty.org/content/index.json?scan=1')
     books = []
     for sub in idx.get('subjects', []):
         books.append(sub['pack'])
