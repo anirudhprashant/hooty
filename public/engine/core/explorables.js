@@ -352,6 +352,9 @@ export const WIDGETS = {
   microscope: {
     subject: 'science', about: 'A drop of pond water seen through a microscope: moving the slide finds the different groups and turning the magnification up makes them out. Rod-shaped bacteria, yeast that buds, green microalgae and a shape-changing amoeba, all single cells. For the invisible living world, microscopes, microorganisms, bacteria, yeast, algae and amoeba.',
     sliders: [['zoom', 'Magnification', 0, 100, 1, 0], ['at', 'Move the slide', 0, 100, 1, 0]],
+    // The dial runs 0-100 but the number a child cares about is the lens power it gives, 50x to 400x: the read-out
+    // under the knob and the caption on the drawing must agree, or the first two numbers on the card contradict.
+    sliderValue: (v, key) => (key === 'zoom' ? `${Math.round(50 + Math.max(0, Math.min(100, v.zoom)) * 3.5)}x` : null),
     draw(v) {
       const zoom = Math.max(0, Math.min(100, v.zoom));
       const at = Math.max(0, Math.min(100, v.at));
