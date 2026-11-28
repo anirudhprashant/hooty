@@ -59,7 +59,10 @@ def num(c): return int(re.match(r'ch(\d+)', c['id']).group(1))
 LESSON_NUM = re.compile(r'^\s*(?:Lesson|पाठ)\s+\d+(?:\.\d+)?\s*[:\-–—]\s*', re.I)
 CHAPTER_NUM = re.compile(r'^\s*(?:Chapter|अध्याय)\s*\d+\s*[:\-–—]\s*', re.I)
 have = {num(c): c for u in pack['units'] for c in u['chapters']}
-seen = {t['term'].lower() for t in gloss['terms']}
+# Rebuilt from the chapter sources every run. Keeping the shipped list and only appending is how a
+# meaning corrected in work/<book>/chNN/glossary.json stayed wrong on the celebration screen.
+gloss = {'terms': []}
+seen = set()
 for d in sorted(glob.glob(f'{WORK}/ch*/ship')):
     n = int(re.search(r'ch(\d+)/ship', d).group(1))
     if n < 2 and KEY == 'sst6': continue  # Social Science chapter 1 was assembled by hand
