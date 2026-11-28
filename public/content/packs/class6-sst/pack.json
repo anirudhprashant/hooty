@@ -260,9 +260,9 @@
          ],
          "prompt": "You want a map. It shows all the States of India and their capitals. Which kind of map is it?",
          "options": [
-          "A physical map",
+          "A thematic map",
           "A political map",
-          "A thematic map"
+          "A physical map"
          ],
          "answer": 1,
          "explanation": "A map of India with its States and capitals is a political map.",
@@ -520,10 +520,10 @@
          ],
          "prompt": "On a map, 1 cm stands for 500 m. Two places are 2 cm apart on the map. How far apart are they in real life?",
          "options": [
-          "250 m",
+          "2,000 m",
           "500 m",
           "1,000 m",
-          "2,000 m"
+          "250 m"
          ],
          "answer": 2,
          "explanation": "1 cm is 500 m. So 2 cm is 500 m + 500 m = 1,000 m.",
@@ -843,12 +843,12 @@
          ],
          "prompt": "What does the orange peel trick show?",
          "options": [
-          "A round shape cannot be made flat without tearing",
-          "Oranges are bigger than the Earth",
           "All maps are torn",
-          "Paper is heavier than peel"
+          "Paper is heavier than peel",
+          "A round shape cannot be made flat without tearing",
+          "Oranges are bigger than the Earth"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "You cannot make the peel flat without tearing it. A sphere is a round ball shape. A sphere cannot be shown exactly on flat paper.",
          "id": "ch1-l3-a3",
          "src": [
@@ -969,12 +969,12 @@
          ],
          "prompt": "A friend says, “Meet me at the 7th shop in the 5th row.” What do the two numbers do?",
          "options": [
-          "Together they show one exact place",
+          "They show how big the market is",
           "They show the price of the shop",
           "They show the time",
-          "They show how big the market is"
+          "Together they show one exact place"
          ],
-         "answer": 0,
+         "answer": 3,
          "explanation": "A row number and a shop number together tell your friend the exact place.",
          "id": "ch1-l3-a7",
          "src": [
@@ -1151,12 +1151,12 @@
          ],
          "prompt": "What is halfway between the North Pole and the South Pole?",
          "options": [
-          "The Equator",
-          "A symbol",
           "The scale",
-          "An atlas"
+          "A symbol",
+          "An atlas",
+          "The Equator"
          ],
-         "answer": 0,
+         "answer": 3,
          "explanation": "The Equator is halfway between the two poles.",
          "id": "ch1-l4-a2",
          "src": [
@@ -1222,9 +1222,9 @@
          "prompt": "What does latitude measure?",
          "options": [
           "How far a place is from the Equator",
-          "How high a mountain is",
           "How old a map is",
-          "How big a country is"
+          "How big a country is",
+          "How high a mountain is"
          ],
          "answer": 0,
          "explanation": "Latitude measures the distance from the Equator.",
@@ -1246,12 +1246,12 @@
          ],
          "prompt": "Which way does a parallel of latitude run?",
          "options": [
+          "Only around the North Pole",
           "East to west, parallel to the Equator",
-          "From pole to pole",
           "Straight up into the sky",
-          "Only around the North Pole"
+          "From pole to pole"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "Parallels run east to west. They are parallel to the Equator.",
          "id": "ch1-l4-a6",
          "src": [
@@ -1592,12 +1592,12 @@
          ],
          "prompt": "The Prime Meridian goes through a place in London. What is its name?",
          "options": [
-          "Greenwich",
           "Delhi",
+          "Greenwich",
           "Tokyo",
           "New York"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "The Prime Meridian goes through Greenwich, an area of London in England.",
          "id": "ch1-l5-a5",
          "src": [
@@ -1650,12 +1650,12 @@
          ],
          "prompt": "Delhi is at 77°E. What does E mean?",
          "options": [
-          "Delhi is east of the Prime Meridian",
+          "Delhi is at the North Pole",
           "Delhi is on the Equator",
-          "Delhi is 77 km from Greenwich",
-          "Delhi is at the North Pole"
+          "Delhi is east of the Prime Meridian",
+          "Delhi is 77 km from Greenwich"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "E means east. Delhi is 77° east of the Prime Meridian.",
          "id": "ch1-l5-a7",
          "src": [
@@ -1763,12 +1763,12 @@
          ],
          "prompt": "Delhi is at 29°N and 77°E. Which number is the latitude?",
          "options": [
-          "180°",
           "0°",
-          "77°E",
-          "29°N"
+          "29°N",
+          "180°",
+          "77°E"
          ],
-         "answer": 3,
+         "answer": 1,
          "explanation": "Latitude is north or south of the Equator. 29°N is the latitude. 77°E is the longitude.",
          "id": "ch1-l5-a10",
          "src": [
@@ -1903,8 +1903,8 @@
          "prompt": "Which city did India’s own prime meridian go through?",
          "options": [
           "Ujjayinī (today Ujjain)",
-          "Greenwich",
           "New York",
+          "Greenwich",
           "Tokyo"
          ],
          "answer": 0,
@@ -1993,12 +1993,12 @@
          ],
          "prompt": "About how long ago did Varahamihira live in Ujjayinī?",
          "options": [
-          "About 1,500 years ago",
+          "About 100 years ago",
           "About 500 years ago",
-          "About 150 years ago",
-          "About 100 years ago"
+          "About 1,500 years ago",
+          "About 150 years ago"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "The book says Varahamihira lived and worked there about 1,500 years ago.",
          "id": "ch1-l6-a6",
          "src": [
@@ -2084,12 +2084,12 @@
          ],
          "prompt": "Some old cities were a little away from the Ujjayinī meridian. Why?",
          "options": [
-          "The meridian kept moving.",
-          "People could not measure time well then. Finding longitude needs good time.",
+          "Those cities were in the sea.",
           "Astronomers did not make maps.",
-          "Those cities were in the sea."
+          "The meridian kept moving.",
+          "People could not measure time well then. Finding longitude needs good time."
          ],
-         "answer": 1,
+         "answer": 3,
          "explanation": "Finding longitude needs good timekeeping. Long ago, people could not measure time as well as they do today.",
          "id": "ch1-l6-a9",
          "src": [
@@ -2244,12 +2244,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 15°E?",
          "options": [
+          "12 midnight",
           "1 pm",
-          "11 am",
           "2 pm",
-          "12 midnight"
+          "11 am"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "Going east adds one hour for every 15°. So noon becomes 1 pm.",
          "id": "ch1-l7-a5",
          "src": [
@@ -2269,12 +2269,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 30°W?",
          "options": [
-          "10 am",
+          "1 pm",
           "2 pm",
           "11 am",
-          "1 pm"
+          "10 am"
          ],
-         "answer": 0,
+         "answer": 3,
          "explanation": "Going west takes away one hour for every 15°. At 30°W, that is two hours less: 10 am.",
          "id": "ch1-l7-a6",
          "src": [
@@ -2365,12 +2365,12 @@
          ],
          "prompt": "It is late afternoon. In Tinsukia (Assam), the Sun has set. In Porbandar (Gujarat), the Sun has not set. Their longitudes differ by about 30°. How many hours ahead is Tinsukia?",
          "options": [
-          "2 hours",
           "1 hour",
+          "2 hours",
           "3 hours",
           "30 hours"
          ],
-         "answer": 0,
+         "answer": 1,
          "explanation": "The Earth turns 15° every hour. 30° ÷ 15° = 2 hours. Tinsukia is east of Porbandar. So its local time is 2 hours ahead. That is why it can be dark in Assam but still light in Gujarat.",
          "derived": [
           "2 hours = 30 / 15",
@@ -2523,12 +2523,12 @@
          ],
          "prompt": "Which country has 11 time zones?",
          "options": [
-          "Russia",
           "The USA",
           "India",
+          "Russia",
           "Greenwich"
          ],
-         "answer": 0,
+         "answer": 2,
          "explanation": "The USA has six time zones. Russia has 11.",
          "id": "ch1-l8-a3",
          "src": [
@@ -2672,9 +2672,9 @@
          "prompt": "A ship crosses the International Date Line going west. Before this, it was Sunday. What is the new day?",
          "options": [
           "It becomes Monday",
-          "It becomes Saturday",
           "It stays Sunday",
-          "It becomes Tuesday"
+          "It becomes Tuesday",
+          "It becomes Saturday"
          ],
          "answer": 0,
          "explanation": "Going west across the Date Line, you add a day. Sunday becomes Monday.",
@@ -2856,9 +2856,9 @@
         "prompt": "A map has a scale. 1 cm on the map means 500 m on the ground. Two places are 3 cm apart on the map. How far apart are they on the ground?",
         "options": [
          "1,500 m",
-         "500 m",
+         "150 m",
          "3,000 m",
-         "150 m"
+         "500 m"
         ],
         "answer": 0,
         "explanation": "Each 1 cm is 500 m. So 3 cm is 3 × 500 m = 1,500 m.",
@@ -3000,9 +3000,9 @@
         "prompt": "India’s own prime meridian passed through which city?",
         "options": [
          "Ujjayinī (Ujjain)",
-         "Greenwich",
          "Delhi",
-         "Tokyo"
+         "Tokyo",
+         "Greenwich"
         ],
         "answer": 0,
         "explanation": "The madhya rekhā passed through Ujjayinī, which is Ujjain today.",
@@ -3024,12 +3024,12 @@
         ],
         "prompt": "Delhi and Bengaluru have almost the same longitude, 77°E. Longitude means how far east or west a place is. What is the time difference between them?",
         "options": [
-         "Almost none",
          "1 hour",
+         "Almost none",
          "2 hours",
          "5 hours 30 minutes"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "Local time depends on longitude. Almost the same longitude means almost the same time.",
         "derived": [
          "1 hour, 2 hours are wrong options"
@@ -3056,12 +3056,12 @@
         ],
         "prompt": "It is 12 noon in London. Why is it 5:30 pm in India?",
         "options": [
+         "India is closer to the Equator",
          "India uses the Date Line",
          "Clocks run faster in India",
-         "India's time is 5 hours 30 minutes ahead of GMT",
-         "India is closer to the Equator"
+         "India's time is 5 hours 30 minutes ahead of GMT"
         ],
-        "answer": 2,
+        "answer": 3,
         "explanation": "IST is 5 hours 30 minutes ahead of Greenwich Mean Time. So noon in London is 5:30 pm in India.",
         "id": "ch1-boss-a10",
         "src": [
