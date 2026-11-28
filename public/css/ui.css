@@ -785,6 +785,9 @@ body.hl-on .key {
 .credit-link { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
 .credit-list { margin: 0 0 var(--s4); padding-left: 20px; font-size: var(--fs-sm); line-height: 1.6; }
 .lesson__scene-img { background: var(--surface-alt); }
+/* A scene drawn as a very wide strip: show all of it in a shorter band instead of cropping both ends
+   into a blank middle. Set by the engine when the picture's own ratio is 2.2:1 or wider. */
+.lesson__scene-img.lesson__scene-img--wide { height: 84px; aspect-ratio: auto; max-height: none; object-fit: contain; }
 
 /* ===== Hooty, painted: tall figure on the stage, head-and-shoulders in the strip ===== */
 .stage__mascot { width: auto; height: 94%; max-width: 70%; aspect-ratio: auto; object-fit: contain; object-position: 50% 100%; filter: none; bottom: 0; }

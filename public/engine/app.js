@@ -1087,14 +1087,22 @@ function screenLesson() {
   const side = el('div', { class: 'lesson__side' });
   wrap.append(side);
   if (lesson.topicScene) {
+    const scene = el('img', {
+      class: `lesson__scene-img${/-diagram-[0-9a-f]+\.svg$/.test(lesson.topicScene) ? ' lesson__scene-img--diagram' : ''}`,
+      src: resolveMediaPath(lesson.topicScene, lesson),
+      alt: lesson.sceneAlt || '',
+      loading: 'eager',
+      decoding: 'async',
+    });
+    // A scene drawn as a long, thin strip (the Earth-Moon distance, a number line) is not a 1.64:1
+    // picture: cropping it to the header kept the empty middle and threw both ends away, so the card
+    // read as an image that never loaded. Wide scenes keep their whole width and sit in a shorter band.
+    scene.addEventListener('load', () => {
+      const ar = scene.naturalWidth / Math.max(1, scene.naturalHeight);
+      if (ar >= 2.2) scene.classList.add('lesson__scene-img--wide');
+    });
     side.append(el('figure', { class: 'lesson__scene' }, [
-      el('img', {
-        class: `lesson__scene-img${/-diagram-[0-9a-f]+\.svg$/.test(lesson.topicScene) ? ' lesson__scene-img--diagram' : ''}`,
-        src: resolveMediaPath(lesson.topicScene, lesson),
-        alt: lesson.sceneAlt || '',
-        loading: 'eager',
-        decoding: 'async',
-      }),
+      scene,
       lesson.sceneCaption || lesson.sceneCredit ? el('figcaption', { class: 'lesson__scene-cap' }, [
         lesson.sceneCaption ? el('span', { text: lesson.sceneCaption }) : null,
         // Credit, not a door: a lesson never sends a child out of the app. The licence and its link are on the
