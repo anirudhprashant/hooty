@@ -31,6 +31,10 @@ if not os.path.exists(P + 'pack.json'):  # a new subject starts from the Social 
                'description': f"NCERT Grade {SUBJ.get('grade', '6')} {SUBJ['name']}, chapter by chapter.", 'sources': [{'title': f"NCERT Grade {SUBJ.get('grade', '6')} {SUBJ['name']} textbook.", 'url': 'https://ncert.nic.in/textbook.php'}]}, open(P + 'pack.json', 'w'), indent=1)
     json.dump({'terms': []}, open(P + 'glossary.json', 'w'))
 pack = json.load(open(P + 'pack.json')); gloss = json.load(open(P + 'glossary.json'))
+# The glossary is a build artefact like the pack: rebuilt from the chapter sources every run. Merging into
+# the old copy kept a term alive after its source was repaired or removed, so a child could still be shown
+# a word the source no longer has — and publish rebuilds every book, so it never healed.
+gloss = {**gloss, 'terms': []}
 index = {c['chapter']: c for c in json.load(open(f'{ROOT}/sources/{SUBJ["source"]}/index.json'))['chapters']}
 UNIT = {'A': 'geography', 'B': 'history', 'C': 'culture', 'D': 'civics', 'E': 'economics'} if KEY == 'sst6' else {'A': KEY}
 

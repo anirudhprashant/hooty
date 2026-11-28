@@ -96,11 +96,37 @@ def scan_pack(path_or_dict, label):
     return rows
 
 
+def scan_glossary(data, label):
+    """The pack's own glossary — what the child sees in "शब्द देखिए" — is a separate file and was not
+    being measured, so a stale term kept its broken spelling for months while the scan read zero."""
+    rows = []
+    hits = []
+    for term in (data or {}).get('terms', []):
+        for text in strings(term):
+            shapes = anomalies(text)
+            if shapes:
+                hits.append({'activity': 'glossary: ' + str(term.get('term')), 'shapes': sorted(shapes),
+                             'text': text[:300]})
+    if hits:
+        rows.append({'book': label, 'lesson': 'glossary', 'hits': hits})
+    return rows
+
+
 def fetch_live(book):
     url = f'https://hooty.org/content/packs/{book}/pack.json?x={os.urandom(3).hex()}'
     request = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'})
     with urllib.request.urlopen(request, timeout=60) as response:
         return json.loads(response.read())
+
+
+def fetch_live_glossary(book):
+    url = f'https://hooty.org/content/packs/{book}/glossary.json?x={os.urandom(3).hex()}'
+    request = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)'})
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return json.loads(response.read())
+    except Exception:
+        return {}
 
 
 def main():
@@ -116,20 +142,29 @@ def main():
     if live:
         books = [only] if only else [f'hindi-g{i}' for i in range(1, 11)]
         packs = {book: fetch_live(book) for book in books}
+        glossaries = {book: fetch_live_glossary(book) for book in books}
         source = 'live site'
     else:
         paths = sorted(glob.glob(f'{ROOT}/public/content/packs/hindi-*/pack.json'))
         if only:
             paths = [p for p in paths if f'/{only}/' in p]
         packs = {os.path.basename(os.path.dirname(p)): p for p in paths}
+        glossaries = {book: json.load(open(f'{ROOT}/public/content/packs/{book}/glossary.json'))
+                      for book in packs
+                      if os.path.exists(f'{ROOT}/public/content/packs/{book}/glossary.json')}
         source = 'local packs'
 
     all_rows = []
     per_book = {}
     for book, pack in sorted(packs.items()):
-        rows = scan_pack(pack, book)
+        rows = scan_pack(pack, book) + scan_glossary(glossaries.get(book), book)
         all_rows.extend(rows)
         per_book[book] = rows
+    for book, gloss in sorted(glossaries.items()):
+        if book not in packs:
+            rows = scan_glossary(gloss, book)
+            all_rows.extend(rows)
+            per_book[book] = rows
 
     print(f'Devanagari scan of the {source}:')
     if not all_rows:
