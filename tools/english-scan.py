@@ -118,6 +118,11 @@ def scan_string(text, counts, rank):
         low = word.lower()
         if low in SHORT_OK or not low.isalpha() or len(low) > 3:
             continue
+        if word.isupper():
+            # NE, SE, SW, NW, km, ml: an abbreviation, not a word that was cut in half. The first run of this
+            # scanner counted "SW" from a compass list as a shredded word, which is exactly the kind of false
+            # alarm that makes a repair lane waste an hour.
+            continue
         if counts[low] < 2 and rank.get(low, 10 ** 6) > 3000:
             hits.append(f'fragment {low!r}')
 
