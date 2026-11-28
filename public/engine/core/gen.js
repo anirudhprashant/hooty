@@ -89,10 +89,47 @@ export function evaluate(src, env) {
 // A child can type a whole number or a decimal with at most two places.
 const shortNumber = (x) => Math.abs(x * 100 - Math.round(x * 100)) < 1e-6;
 const fmt = (x) => String(+x.toFixed(2));
+// One counted thing is singular. A recipe pastes a plural noun after whatever number it drew ("The answer is
+// {answer} children"), and the guard below only refuses a *parameter* equal to 1 — a computed answer of 1 still
+// landed in the sentence, which is how a Class 1 child read "The answer is 1 children" as the model answer.
+// Every rendered string passes through fill(), so the agreement is repaired here, once, for every recipe.
+const PLURAL = {
+  children: 'child', people: 'person', students: 'student', passengers: 'passenger', farmers: 'farmer',
+  teachers: 'teacher', players: 'player', workers: 'worker', members: 'member', marbles: 'marble',
+  laddoos: 'laddoo', rotis: 'roti', mangoes: 'mango', apples: 'apple', bananas: 'banana', oranges: 'orange',
+  eggs: 'egg', tomatoes: 'tomato', flowers: 'flower', pots: 'pot', beads: 'bead', buttons: 'button',
+  airplanes: 'airplane', jumps: 'jump', points: 'point', notes: 'note', cubes: 'cube', sides: 'side',
+  circles: 'circle', tiles: 'tile', squares: 'square', groups: 'group', stickers: 'sticker',
+  outcomes: 'outcome', cards: 'card', positions: 'position', diyas: 'diya', scores: 'score',
+  pictures: 'picture', coins: 'coin', books: 'book', pencils: 'pencil', cars: 'car', toys: 'toy',
+  kites: 'kite', balls: 'ball', chairs: 'chair', tables: 'table', candles: 'candle', sweets: 'sweet',
+  chapattis: 'chapatti', chapatis: 'chapati', votes: 'vote', runs: 'run', wickets: 'wicket', turns: 'turn',
+  trials: 'trial', questions: 'question', attempts: 'attempt', pieces: 'piece', letters: 'letter',
+  words: 'word', shapes: 'shape', edges: 'edge', corners: 'corner', faces: 'face', rows: 'row',
+  columns: 'column', plants: 'plant', trees: 'tree', animals: 'animal', birds: 'bird',
+  metres: 'metre', litres: 'litre', kilograms: 'kilogram', kilometres: 'kilometre', centimetres: 'centimetre',
+  millimetres: 'millimetre', millilitres: 'millilitre', milligrams: 'milligram', grams: 'gram',
+  tonnes: 'tonne', quintals: 'quintal', rupees: 'rupee', hours: 'hour', minutes: 'minute', seconds: 'second',
+  days: 'day', weeks: 'week', months: 'month', years: 'year', degrees: 'degree', coulombs: 'coulomb',
+  joules: 'joule', volts: 'volt', ohms: 'ohm', acres: 'acre', hectares: 'hectare', feet: 'foot',
+  inches: 'inch', miles: 'mile', yards: 'yard', units: 'unit', glasses: 'glass', cups: 'cup', spoons: 'spoon',
+  spoonfuls: 'spoonful', pinches: 'pinch', handspans: 'handspan', bottles: 'bottle', packets: 'packet',
+  boxes: 'box', bags: 'bag', sacks: 'sack', bowls: 'bowl', plates: 'plate', ones: 'one', tens: 'ten',
+  hundreds: 'hundred', thousands: 'thousand', lines: 'line', marks: 'mark', steps: 'step',
+};
+export const PLURAL_NOUNS = PLURAL;
+const ONE_NOUN = new RegExp('(?<![A-Za-z0-9.])1 (' + Object.keys(PLURAL).sort((a, b) => b.length - a.length).join('|') + ')\\b', 'gi');
+export function oneIsSingular(text) {
+  return String(text).replace(ONE_NOUN, (m, w) => {
+    const s = PLURAL[w] || PLURAL[w.toLowerCase()];
+    if (!s) return m;
+    return '1 ' + (w[0] === w[0].toUpperCase() ? s[0].toUpperCase() + s.slice(1) : s);
+  });
+}
 const fill = (tpl, vars) => {
   const text = String(tpl).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
   // Clock times must read "7:04 PM", not "7:4 PM": a generated minute is a bare number.
-  return text.replace(/\b(\d{1,2}):(\d)(?!\d)(\s*[ap]\.?m\.?)/gi, (m, h, mm, tail) => `${h}:0${mm}${tail}`);
+  return oneIsSingular(text.replace(/\b(\d{1,2}):(\d)(?!\d)(\s*[ap]\.?m\.?)/gi, (m, h, mm, tail) => `${h}:0${mm}${tail}`));
 };
 const pick = (list, rnd) => list[Math.floor(rnd() * list.length)];
 
