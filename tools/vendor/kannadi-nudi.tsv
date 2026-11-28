@@ -1,0 +1,179 @@
+# SPDX-FileCopyrightText: 2026 The Open Kannada Authors
+# SPDX-License-Identifier: MIT OR Apache-2.0
+#
+# Nudi and Baraha ANSI glyph table.
+#
+# The format is described in src/legacy/table.rs.
+# The codes were identified from the Nudi 01 e font file by rendering each glyph
+# and matching it against the Unicode Nudi font shaped with HarfBuzz, then checked
+# against typed letter charts and Karnataka government pages from 2002.
+#
+# The preferences match how typists stored these glyphs on 35 Karnataka government
+# pages from 2002, archived by the Internet Archive under kar.nic.in/rdpr/kan-www/
+# and kar.nic.in/finance/bud2002-kan/: 9,047 words, counted per glyph sequence.
+# Vowels
+43	letter	ಅ
+44	letter	ಆ
+45	letter	ಇ
+46	letter	ಈ
+47	letter	ಉ
+48	letter	ಊ
+49 C4	letter	ಋ
+49 C6	letter	ೠ
+4A	letter	ಎ
+4B	letter	ಏ
+4C	letter	ಐ
+4D	letter	ಒ
+4E	letter	ಓ
+4F	letter	ಔ
+# Consonant bases
+50	base	ಕ
+53	base	ಖ
+55	base	ಗ
+57	base	ಘ
+5A	base	ಚ
+62	base	ಛ
+65	base	ಜ
+67	base	ರ
+6D	base	ಟ
+6F	base	ಠ
+71	base	ಡ
+75	base	ಣ
+76	base	ತ
+78	base	ಥ
+7A	base	ದ
+A3	base	ನ
+A5	base	ಪ
+A8	base	ಬ
+AA	base	ವ
+AF	base	ಲ
+B1	base	ಶ
+B5	base	ಷ
+B8	base	ಸ
+BA	base	ಹ
+BC	base	ಳ
+# Consonants drawn without the head stroke
+52	letter	ಖ
+59	letter	ಙ
+64	letter	ಜ
+6B	letter	ಞ
+6C	letter	ಟ
+74	letter	ಣ
+A7	letter	ಬ
+AE	letter	ಲ
+BE	letter	ಱ
+BF	letter	ೞ
+# Consonant with vowel sign i
+51	letter	ಕಿ
+54	letter	ಖಿ
+56	letter	ಗಿ
+58	letter	ಘಿ
+61	letter	ಚಿ
+63	letter	ಛಿ
+66	letter	ಜಿ
+6A	letter	ರಿ
+6E	letter	ಟಿ
+70	letter	ಠಿ
+72	letter	ಡಿ
+77	letter	ತಿ
+79	letter	ಥಿ
+A2	letter	ದಿ
+A4	letter	ನಿ
+A6	letter	ಪಿ
+A9	letter	ಬಿ
+AB	letter	ವಿ
+B0	letter	ಲಿ
+B2	letter	ಶಿ
+B6	letter	ಷಿ
+B9	letter	ಸಿ
+BB	letter	ಹಿ
+BD	letter	ಳಿ
+# Consonants built from 2 or 3 glyphs: ಮ from ವ, ಯ from ಂ, ಝ from ರ
+AA C0 C4	letter	ಮ
+AA C0 69	base	ಮ
+AA C9 C4	letter	ಮೆ
+AA C9 C6	letter	ಮೊ
+AB C4	letter	ಮಿ
+41 69 C0 C4	letter	ಯ
+41 69 C0 69	base	ಯ
+41 69 C9 C4	letter	ಯೆ
+41 69 C9 C6	letter	ಯೊ
+AC C4	letter	ಯಿ
+67 C0 68 C4	letter	ಝ
+67 C0 68 69	base	ಝ
+67 C9 68 C4	letter	ಝೆ
+67 C9 68 C6	letter	ಝೊ
+6A 68 C4	letter	ಝಿ
+# Mahaprana mark: turns ಪ ಬ ಡ ದ into ಫ ಭ ಢ ಧ
+73	aspirate	
+FC	aspirate		with ಿ
+# Vowel signs. C0 is the head stroke for the inherent a.
+C0	sign	
+C1	sign	ಾ
+C2	sign	ಿ
+C3	sign	ೕ
+C4	sign	ು
+C5	sign	ು	on ಪ ಫ ವ
+C6	sign	ೂ
+C7	sign	ೂ	on ಪ ಫ ವ
+C8	sign	ೃ
+C9	sign	ೆ
+CA	sign	ೖ
+CB	sign	ೌ
+EF	sign	್
+# Variants found in real documents
+F8	sign	ೃ	after-ottu
+# Modifiers
+41	mod	ಂ
+42	mod	ಃ
+# Subscript consonants (ottu)
+CC	ottu	ಕ
+CD	ottu	ಖ
+CE	ottu	ಗ
+CF	ottu	ಘ
+D0	ottu	ಙ
+D1	ottu	ಚ
+D2	ottu	ಛ
+D3	ottu	ಜ
+D4	ottu	ಝ
+D5	ottu	ಞ
+D6	ottu	ಟ
+D7	ottu	ಠ
+D8	ottu	ಡ
+D9	ottu	ಢ
+DA	ottu	ಣ
+DB	ottu	ತ
+DC	ottu	ಥ
+DD	ottu	ದ
+DE	ottu	ಧ
+DF	ottu	ನ
+E0	ottu	ಪ
+E1	ottu	ಫ
+E2	ottu	ಬ
+E3	ottu	ಭ
+E4	ottu	ಮ
+E5	ottu	ಯ
+E6	ottu	ರ
+E7	ottu	ರ	after-ottu
+E8	ottu	ಲ
+E9	ottu	ವ
+EA	ottu	ಶ
+EB	ottu	ಷ
+EC	ottu	ಸ
+ED	ottu	ಹ
+EE	ottu	ಳ
+F9	ottu	ಱ
+FA	ottu	ೞ
+# Arkavattu (ರ್ before the cluster)
+F0	arka	
+F2	arka	
+# Spacing glyphs with no text value
+F6	ignore	
+F7	ignore	
+# Punctuation drawn as itself or as Indic punctuation
+84	literal	ಽ
+FD	literal	ಽ
+86	literal	।
+8B	literal	.
+8C	literal	.
+87	literal	॥

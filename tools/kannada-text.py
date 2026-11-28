@@ -71,7 +71,15 @@ def extract_pdf(pdf, convert):
     for number in range(1, total + 1):
         raw = subprocess.run(['pdftotext', '-f', str(number), '-l', str(number), '-enc', 'Latin1', pdf, '-'],
                              capture_output=True).stdout
-        text = convert.process_line(raw.decode('cp1252', errors='replace'))
+        page_text = raw.decode('cp1252', errors='replace')
+        # Pages set with every glyph placed separately come out one or two characters to a line, and then a
+        # sequence match can never see `ಪು` because the halves are on different lines. Join those pages before
+        # converting; leave ordinary prose pages alone so their paragraph breaks survive.
+        lines = [line for line in page_text.splitlines() if line.strip()]
+        short = sum(1 for line in lines if len(line.strip()) <= 2)
+        if lines and short / len(lines) > 0.3:
+            page_text = ' '.join(line.strip() for line in lines)
+        text = convert.process_line(page_text)
         for glyph, replacement in fixups.items():
             text = text.replace(glyph, replacement)
         out.append(text)
