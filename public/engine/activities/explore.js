@@ -84,12 +84,56 @@ export default {
       try { hit = evaluate(cur.when, v) !== 0; } catch { hit = false; }
       if (hit) { cur.done = true; ctx.sfx?.(tasks.every((t) => t.done) ? 'halfway' : 'pair'); paintTasks(); check(); }   // one move can finish the next challenge too
     };
+    // A widget can draw a control instead of asking for a slider (tiles a child taps, a page-turner for the sentences
+    // in a pack). Its range input stays in the page as the state holder but hidden, so the child meets only the drawn
+    // thing while the QA walker can still drive a task by setting a value on it.
+    const drawn = new Set(widget.drawnControls || []);
+    // A card whose parts are buttons is not one picture: role="img" would hide everything inside it from a screen
+    // reader, so the stage becomes a group of labelled controls instead.
+    if (drawn.size) { svg.setAttribute('role', 'group'); }
+    const pagers = [];
+    // The ranges of drawn controls stay in the page (hidden) as their state: the QA walker solves a task by setting
+    // a value on them, and the screen reader meets the drawn buttons instead.
+    const ghosts = el('div', { hidden: true, 'aria-hidden': 'true' });
+    // One way in for every kind of choice: a tap on the drawing, a page turn, or the range itself.
+    const choose = (key, val) => {
+      const st = sync[key];
+      if (!st || !Number.isFinite(val)) return;
+      const now = Math.max(st.min, Math.min(st.max, val));
+      touched.add(key);
+      v[key] = now;
+      if (key === driver) { resetSiblings(); paintTasks(); }
+      if (st.input) st.input.value = String(now);
+      if (st.out) st.out.textContent = String(now);
+      st.fill(); st.paintName();
+      for (const paint of pagers) paint();
+      draw(performance.now() / 1000); check();
+    };
+    const chevron = (left) => s('svg', { viewBox: '0 0 24 24', width: '22', height: '22', 'aria-hidden': 'true', focusable: 'false', class: 'explore__chev' },
+      [s('path', { d: left ? 'M 15.5 4 L 7.5 12 L 15.5 20' : 'M 8.5 4 L 16.5 12 L 8.5 20', fill: 'none', stroke: 'currentColor', 'stroke-width': '2.8', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' })]);
+    // A page-turner for a slider that moves between things a child reads (sentences, words). Dragging a slider to
+    // pick the second of four sentences is a form field; two big arrows and a row of dots is how a child turns a page.
+    const pager = (key, label, min, max, step) => {
+      const lo = Number(min), hi = Number(max), inc = Math.max(1, Number(step) || 1);
+      const stops = Math.round((hi - lo) / inc) + 1;
+      const dots = el('span', { class: 'explore__dots', 'aria-hidden': 'true' });
+      const before = el('button', { class: 'explore__step', type: 'button', 'aria-label': `${label}: previous`, onclick: () => choose(key, v[key] - inc) }, [chevron(true)]);
+      const after = el('button', { class: 'explore__step', type: 'button', 'aria-label': `${label}: next`, onclick: () => choose(key, v[key] + inc) }, [chevron(false)]);
+      const paint = () => {
+        const at = Math.round((v[key] - lo) / inc);
+        dots.replaceChildren(...Array.from({ length: stops }, (_, i) => el('span', { class: `explore__dot${i === at ? ' is-on' : ''}` })));
+        before.disabled = at <= 0; after.disabled = at >= stops - 1;
+      };
+      paint(); pagers.push(paint);
+      return el('div', { class: 'explore__pager', role: 'group', 'aria-label': label }, [before, dots, after]);
+    };
     const controls = sl.filter(([, , min, max]) => Number(max) > Number(min)).map(([key, label, min, max, step]) => {
+      const own = drawn.has(key);
       // A small set of positions is a choice, not a measurement: the number means nothing to a child and the
       // old "label 0" row read like a form field. Only show the value when the range is wide enough to matter.
       const showVal = (Number(max) - Number(min)) > 6;
-      const out = showVal ? el('output', { class: 'explore__val', text: String(v[key]) }) : null;
-      const input = el('input', { class: 'range explore__range', type: 'range', min: String(min), max: String(max), step: String(step), value: String(v[key]), 'aria-label': label });
+      const out = !own && showVal ? el('output', { class: 'explore__val', text: String(v[key]) }) : null;
+      const input = el('input', { class: 'range explore__range', type: 'range', min: String(min), max: String(max), step: String(step), value: String(v[key]), 'aria-label': label, ...(own ? { hidden: true, tabindex: '-1' } : {}) });
       const fill = () => {
         const lo = Number(min), hi = Number(max), now = Number(input.value);
         const pct = hi > lo ? Math.round(((now - lo) / (hi - lo)) * 100) : 0;
@@ -98,13 +142,16 @@ export default {
       fill();
       // A slider whose positions are sentences or choices has to say which one is chosen: a bare
       // "Which sentence?" with an empty track tells a child nothing.
-      const name = widget.sliderText ? el('span', { class: 'explore__pick' }) : null;
+      const name = !own && widget.sliderText ? el('span', { class: 'explore__pick' }) : null;
       const paintName = () => { if (name) name.textContent = widget.sliderText(v, key, params, touched.has(key)) || ''; };
       paintName();
-      input.addEventListener('input', () => { touched.add(key); v[key] = Number(input.value); if (key === driver) { resetSiblings(); paintTasks(); } if (out) out.textContent = input.value; fill(); paintName(); draw(performance.now() / 1000); check(); });
-      sync[key] = { input, out, fill, paintName };
+      sync[key] = { input, out, fill, paintName, min: Number(min), max: Number(max) };
+      // The range stays the state holder even when the card is the control, so a value set on it (by a keyboard,
+      // or by the QA walker solving a task) still moves the drawing.
+      input.addEventListener('input', () => choose(key, Number(input.value)));
+      if (own) { ghosts.append(input); return widget.pagedControl === key ? pager(key, label, min, max, step) : null; }
       return el('label', { class: 'explore__control' }, [el('span', { class: 'explore__label' }, [label, out]), input, name]);
-    });
+    }).filter(Boolean);
     // A widget can draw its own choices as tappable things (a meaning card, a word tile): the drawn object is the
     // control, and the slider that shares its key follows along, so both ways of choosing stay in step.
     svg.addEventListener('click', (ev) => {
@@ -112,16 +159,16 @@ export default {
       if (!hit) return;
       const raw = String(hit.getAttribute('data-choice') || '');
       const cut = raw.indexOf(':');
-      const key = raw.slice(0, cut), val = Number(raw.slice(cut + 1));
-      if (!sync[key] || !Number.isFinite(val)) return;
-      touched.add(key);
-      v[key] = val;
-      if (key === driver) { resetSiblings(); paintTasks(); }
-      const st = sync[key];
-      if (st.input) st.input.value = String(val);
-      if (st.out) st.out.textContent = String(val);
-      st.fill(); st.paintName();
-      draw(performance.now() / 1000); check();
+      if (cut < 0) return;
+      choose(raw.slice(0, cut), Number(raw.slice(cut + 1)));
+    });
+    // When the card is the only control, it has to answer the keyboard too: Enter or Space on a drawn tile.
+    svg.addEventListener('keydown', (ev) => {
+      if (ev.key !== 'Enter' && ev.key !== ' ' && ev.key !== 'Spacebar') return;
+      const hit = ev.target?.closest?.('[data-choice]');
+      if (!hit) return;
+      ev.preventDefault();
+      hit.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     });
     draw(); paintTasks();
     if (widget.animated && !still) {
@@ -129,7 +176,7 @@ export default {
       requestAnimationFrame(tick);
     }
     const next = el('button', { class: 'btn btn--primary btn--block', type: 'button', text: t('next'), onclick: () => { stopSpeech(); ctx.submit({ read: true }); } });
-    const nodes = [el('p', { class: 'worked__kicker', text: t('tryItYourself') }), el('h2', { class: 'concept-card__title', text: activity.title || '' }), svg, readout, ...controls, list, finished, el('div', { class: 'activity__actions' }, [next])];
+    const nodes = [el('p', { class: 'worked__kicker', text: t('tryItYourself') }), el('h2', { class: 'concept-card__title', text: activity.title || '' }), ghosts, svg, readout, ...controls, list, finished, el('div', { class: 'activity__actions' }, [next])];
     root.append(...nodes);
     return { root, check() { return true; } };
   },

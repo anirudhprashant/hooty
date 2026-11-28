@@ -7375,11 +7375,11 @@
           "computed"
          ],
          "prompt": "In a cricket game, the score starts at 1 and is multiplied by minus one on each of 2 turns. What is the score after the last turn in runs?",
-         "explanation": "The score begins at 1 and is multiplied by minus one on each of 2 turns. This gives a power of minus one with an even exponent, so the score is positive. The final score is 1 runs.",
+         "explanation": "The score begins at 1 and is multiplied by minus one on each of 2 turns. This gives a power of minus one with an even exponent, so the score is positive. The final score is 1 run.",
          "steps": [
           "The score begins at 1 and is multiplied by minus one on each of 2 turns.",
           "This gives a power of minus one with an even exponent, so the score is positive.",
-          "The final score is 1 runs."
+          "The final score is 1 run."
          ],
          "hint": "Track the sign after each multiplication by minus one.",
          "derived": [
@@ -10024,7 +10024,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "A market pours 300 millilitres of oil and 400 millilitres of juice into a jug. Their combined volume is written as a coefficient times 10 to the power -1 litres; what is the coefficient?",
+         "prompt": "A market pours 300 millilitres of oil and 400 millilitres of juice into a jug. Their combined volume is written as a coefficient times 10 to the power -1 litre; what is the coefficient?",
          "explanation": "Add the volumes: 300 + 400 = 700 millilitres. 10 to the power -1 litre is 100 millilitres, so each unit of the coefficient represents 100 millilitres. Divide the total millilitres by 100: 700 / 100 = 7. The coefficient is 7.",
          "steps": [
           "Add the volumes: 300 + 400 = 700 millilitres.",
@@ -10043,7 +10043,7 @@
           "700 (generated problem)"
          ],
          "gen": {
-          "template": "A market pours {first} millilitres of oil and {second} millilitres of juice into a jug. Their combined volume is written as a coefficient times 10 to the power -1 litres; what is the coefficient?",
+          "template": "A market pours {first} millilitres of oil and {second} millilitres of juice into a jug. Their combined volume is written as a coefficient times 10 to the power -1 litre; what is the coefficient?",
           "params": {
            "first": [
             200,
@@ -30998,10 +30998,10 @@
           "computed"
          ],
          "prompt": "A shop has 2 boxes with 2 marbles in each box. One more box is added, and one more marble is put in every box. How many marbles are there now?",
-         "explanation": "The original number of marbles is 4 marbles. After the changes, there are 2 + 1 boxes and 2 + 1 marbles in each box. The new total is 9 marbles.",
+         "explanation": "The original number of marbles is 4 marbles. After the changes, there are 2 + 1 box and 2 + 1 marble in each box. The new total is 9 marbles.",
          "steps": [
           "The original number of marbles is 4 marbles.",
-          "After the changes, there are 2 + 1 boxes and 2 + 1 marbles in each box.",
+          "After the changes, there are 2 + 1 box and 2 + 1 marble in each box.",
           "The new total is 9 marbles."
          ],
          "hint": "Use the new number of boxes and the new number of marbles in each box.",
@@ -31033,7 +31033,7 @@
           },
           "steps": [
            "The original number of marbles is {original} marbles.",
-           "After the changes, there are {a} + 1 boxes and {b} + 1 marbles in each box.",
+           "After the changes, there are {a} + 1 box and {b} + 1 marble in each box.",
            "The new total is {answer} marbles."
           ],
           "model": {
@@ -31236,7 +31236,7 @@
          "prompt": "There are 3 buses with 4 passengers on each bus. One more bus is added, and one passenger is removed from every bus. How many passengers are there now?",
          "steps": [
           "The original number of passengers is 12 passengers.",
-          "After the changes, there are 3 + 1 buses and 4 - 1 passengers on each bus.",
+          "After the changes, there are 3 + 1 buses and 4 - 1 passenger on each bus.",
           "The new total is 12 passengers."
          ],
          "modelSpec": {
@@ -31267,7 +31267,7 @@
           },
           "steps": [
            "The original number of passengers is {original} passengers.",
-           "After the changes, there are {a} + 1 buses and {b} - 1 passengers on each bus.",
+           "After the changes, there are {a} + 1 buses and {b} - 1 passenger on each bus.",
            "The new total is {answer} passengers."
           ],
           "model": {
@@ -31334,10 +31334,10 @@
           "computed"
          ],
          "prompt": "A shop has 3 boxes with 4 laddoos in each box. One more box is added, and one more laddoo is put in every box. How many laddoos are there now?",
-         "explanation": "The original number of laddoos is 12 laddoos. The new arrangement has 3 + 1 boxes and 4 + 1 laddoos in each box. The new total is 20 laddoos.",
+         "explanation": "The original number of laddoos is 12 laddoos. The new arrangement has 3 + 1 box and 4 + 1 laddoo in each box. The new total is 20 laddoos.",
          "steps": [
           "The original number of laddoos is 12 laddoos.",
-          "The new arrangement has 3 + 1 boxes and 4 + 1 laddoos in each box.",
+          "The new arrangement has 3 + 1 box and 4 + 1 laddoo in each box.",
           "The new total is 20 laddoos."
          ],
          "hint": "First write the new number of boxes and the new number of laddoos per box.",
@@ -31370,7 +31370,7 @@
           },
           "steps": [
            "The original number of laddoos is {original} laddoos.",
-           "The new arrangement has {a} + 1 boxes and {b} + 1 laddoos in each box.",
+           "The new arrangement has {a} + 1 box and {b} + 1 laddoo in each box.",
            "The new total is {answer} laddoos."
           ],
           "model": {
@@ -35002,7 +35002,7 @@
          ],
          "prompt": "At Step 3, a circular pattern has (3 + 1) by (3 + 1) positions with one circle missing. How many circles are there?",
          "steps": [
-          "The full square has 3 plus 1 positions on each side.",
+          "The full square has 3 plus 1 position on each side.",
           "The number of positions in the full square is 16.",
           "Removing the one missing circle gives 15 = 15 circles."
          ],
@@ -35025,7 +35025,7 @@
            "circles": "square-1"
           },
           "steps": [
-           "The full square has {k} plus 1 positions on each side.",
+           "The full square has {k} plus 1 position on each side.",
            "The number of positions in the full square is {square}.",
            "Removing the one missing circle gives {circles} = {answer} circles."
           ],
@@ -35054,7 +35054,7 @@
          "kicker": "Let us think it through",
          "prompt": "A child checks three circle-count methods. Why do all three give the same answer?",
          "steps": [
-          "Method 1 gives (k + 1)² − 1 circles at Step k.",
+          "Method 1 gives (k + 1)² − 1 circle at Step k.",
           "Method 3 gives k × (k + 1) + k at Step k.",
           "Simplify each form, because different forms can describe one count.",
           "They become k² + 2k, so all methods give the same answer."
@@ -35511,7 +35511,7 @@
           "practice",
           "computed"
          ],
-         "prompt": "At Step 2, a pattern has (2 + 1) squared minus 1 circles. If every circle contains 2 dots, how many dots are there altogether?",
+         "prompt": "At Step 2, a pattern has (2 + 1) squared minus 1 circle. If every circle contains 2 dots, how many dots are there altogether?",
          "explanation": "The pattern has 8 circles. Each circle has 2 dots. Multiplying the circles by the dots in each gives 16 = 16 dots.",
          "steps": [
           "The pattern has 8 circles.",
@@ -35526,7 +35526,7 @@
           "8 (generated problem)"
          ],
          "gen": {
-          "template": "At Step {k}, a pattern has ({k} + 1) squared minus 1 circles. If every circle contains {q} dots, how many dots are there altogether?",
+          "template": "At Step {k}, a pattern has ({k} + 1) squared minus 1 circle. If every circle contains {q} dots, how many dots are there altogether?",
           "params": {
            "k": [
             2,
@@ -35582,7 +35582,7 @@
           "deep",
           "compare"
          ],
-         "prompt": "Method 1 gives (k + 1)² − 1 circles at Step k. What check shows that Method 2 gives the same count?",
+         "prompt": "Method 1 gives (k + 1)² − 1 circle at Step k. What check shows that Method 2 gives the same count?",
          "options": [
           "Choose Method 1 because its expression looks larger.",
           "Change Step k before comparing the two methods.",
@@ -54293,7 +54293,7 @@
           ],
           [
            "lotus stem",
-           "x + 1 units"
+           "x + 1 unit"
           ],
           [
            "lake depth",
@@ -54363,13 +54363,13 @@
          ],
          "prompt": "What is the total length of the lotus stem?",
          "options": [
-          "2x + 1 units",
+          "2x + 1 unit",
           "x units",
           "3 units",
-          "x + 1 units"
+          "x + 1 unit"
          ],
          "answer": 3,
-         "explanation": "The lotus stem has a total length of x + 1 units.",
+         "explanation": "The lotus stem has a total length of x + 1 unit.",
          "src": [
           {
            "ch": 9,
@@ -55347,7 +55347,7 @@
          "theorem",
          "equation"
         ],
-        "prompt": "Which equation applies when the lotus stem is x + 1 units long?",
+        "prompt": "Which equation applies when the lotus stem is x + 1 unit long?",
         "options": [
          "3² + x² = (x + 1)²",
          "3² − x² = (x + 1)²",
@@ -61066,11 +61066,11 @@
           "computed"
          ],
          "prompt": "A tap delivers 2 litres per minute for 2 minutes. At 4 litres per minute, how many minutes does it take to deliver the same amount?",
-         "explanation": "The tap delivers 2 x 2 litres. The volume is 4 litres, so the new time is 4 ÷ 4 minutes. The answer is 1 minutes.",
+         "explanation": "The tap delivers 2 x 2 litres. The volume is 4 litres, so the new time is 4 ÷ 4 minutes. The answer is 1 minute.",
          "steps": [
           "The tap delivers 2 x 2 litres.",
           "The volume is 4 litres, so the new time is 4 ÷ 4 minutes.",
-          "The answer is 1 minutes."
+          "The answer is 1 minute."
          ],
          "hint": "First find how many litres the tap delivers.",
          "derived": [
@@ -65722,7 +65722,7 @@
          "steps": [
           "The 2 pictures are rotations or flips of the same cube net.",
           "They count as one net structure, so one copy must be kept.",
-          "2 - 1 = 1, so remove 1 pictures."
+          "2 - 1 = 1, so remove 1 picture."
          ],
          "modelSpec": null,
          "result": "1",
