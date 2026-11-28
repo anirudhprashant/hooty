@@ -24,22 +24,28 @@ import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-WORD = re.compile(r"[A-Za-z][A-Za-z']*")
+WORD = re.compile(r"[A-Za-z][A-Za-z'\u2019]*")
 LIVE_FLAG = [False]
 COMMON_RANK = 400        # a fragment that is itself an everyday word is probably not a fragment
 MIN_JOINED = 6           # "in to" -> "into" is too short to be worth flagging
 MIN_JOINED_USES = 4      # the joined form must appear that often elsewhere to count as a real word
 
 
-def strings(value):
+CODE_KEYS = {'when', 'where'}   # task predicates the engine evaluates, never drawn: `obj == 1 or obj == 2`
+IDENTIFIER = re.compile(r'^[a-z0-9][a-z0-9._-]*$')   # ids, slugs, widget names — not sentences
+
+
+def strings(value, key=None):
+    if key in CODE_KEYS or (key and key.lower().endswith('id')):
+        return
     if isinstance(value, str):
         yield value
     elif isinstance(value, dict):
-        for item in value.values():
-            yield from strings(item)
+        for name, item in value.items():
+            yield from strings(item, name)
     elif isinstance(value, list):
         for item in value:
-            yield from strings(item)
+            yield from strings(item, key)
 
 
 def load_packs(book=None, live=False):
@@ -86,23 +92,35 @@ def build_vocabulary(packs):
     return counts
 
 
+STRICT = [False]
+
+
+_WORDS_FILE = f'{HERE}/vendor/english-words.txt'
+ENGLISH_WORDS = set(open(_WORDS_FILE).read().split()) if os.path.exists(_WORDS_FILE) else set()
+
+
+def plausible(word):
+    """Could this be an English word at all? A cut word is usually not: `rro` has no vowel, `nded` starts
+    on four consonants. A real word is settled by the 51k ordinary-English list rather than a vowel guess
+    (`unobstructed`, `anthropologist` are words and must not be reported). Used only to narrow the review
+    list under --strict, never to clear a hit outside it."""
+    if word.lower() in ENGLISH_WORDS:
+        return True
+    if set(word) & set('aeiouy'):
+        return not re.search(r'[bcdfghjklmnpqrstvwxz]{4}', word)
+    return False
+
+
 SHORT_OK = {'a', 'i', 'an', 'of', 'to', 'in', 'on', 'at', 'by', 'is', 'it', 'as', 'or', 'no', 'so', 'we',
             'he', 'be', 'do', 'if', 'my', 'up', 'us', 'am', 'me', 'go', 'kg', 'cm', 'mm', 'km', 'ml', 'rs',
             'dr', 'mr', 'mrs', 'ms', 'st', 'vs', 'ph', 'eg', 'ie', 'ok', 'oh', 'ah', 'ha', 'hi', 'id', 'ex'}
 
 
-LOOSE = '--loose' in sys.argv
-
-# 51,208 ordinary English words (wordfreq, zipf >= 2.5). A short token that is a real word in its own right
-# is not a word that lost its first letter: raft, topping and specially were all reported as damage before
-# this list existed, and all three were correct English in their sentences.
-_WORDS_FILE = f'{os.path.dirname(os.path.abspath(__file__))}/vendor/english-words.txt'
-ENGLISH_WORDS = set(open(_WORDS_FILE).read().split()) if os.path.exists(_WORDS_FILE) else set()
-
-
 def scan_string(text, counts, rank):
-    """Fragments that rejoin into a word we use elsewhere, and words that lost a leading letter."""
+    """Where this string carries the shape of a word the extractor cut, or None."""
     hits = []
+    if IDENTIFIER.match(text) or len(text) < 12:
+        return hits
     tokens = [m.group(0) for m in WORD.finditer(text)]
 
     def rare(word):
@@ -121,38 +139,90 @@ def scan_string(text, counts, rank):
                     and rare(a) and rare(b) and rare(c)):
                 hits.append(f'{a} {b} {c} -> {joined3}')
 
-    # A lone short token is NOT evidence of damage: compass points, units, abbreviations ("TVs") and
-    # transliterated Sanskrit ("Sam noh Varunah") all look like that. Two runs of this scanner reported 24-26
-    # lessons on this rule and nearly every one was a false alarm, so it only reports with --loose. Real damage
-    # shows in the join rule above and the lost-leading-letter rule below, where a specific word is recoverable.
-    if LOOSE:
-        for word in tokens:
-            low = word.lower()
-            if low in SHORT_OK or not low.isalpha() or len(low) > 3:
-                continue
-            if word.isupper():
-                continue
-            if counts[low] < 2 and rank.get(low, 10 ** 6) > 3000:
-                hits.append(f'suspect fragment {low!r}')
+    # The damage shapes, and why the earlier ones are gone.
+    #
+    # The first version called any rare one-to-three letter token a "fragment". Across the catalogue that
+    # fired 1,910 times over 417 lessons and was almost all clean text: `obj`, `abs`, `hcf`, `gcd`, `lcm`,
+    # `sin`, `arc`, `xy`, `tw` are generator predicates and mathematics variables, `bug` is the word the
+    # Class 1 lesson is about, `maa`/`ji` are Indian names. A second version flagged a lone letter between
+    # two words, which in a maths book is a variable ("If x is 5"), not damage: 8,500 hits, all noise.
+    # Five examples read by eye were clean each time, so the guessing is gone and the check now rests on
+    # the one fact a cut word cannot hide:
+    #
+    #   unseen  a word of three letters or more that occurs exactly once in the forty-three books — that
+    #           once being here. Real English repeats itself somewhere; a single unshared occurrence inside
+    #           a sentence is either a name the books use once or the extractor's debris (`ost`, `rro`,
+    #           `nded`, `generall`).
+    #   split   a lone letter standing next to such a token ("… been s rro nded b walls").
+    #   join    two or three rare tokens that rejoin into a word the rest of our books use. Kept: it is the
+    #           one proof that needs no opinion.
+    #
+    # `tools/english-scan.py --self-test` runs the original damaged sentence and the traps that broke the
+    # first two versions through this code, so a future edit cannot make the check quietly blind.
+    unseen = {w.lower() for w in tokens
+              if len(w) >= 3 and w.lower().isalpha() and counts[w.lower()] <= 1 and not w.isupper()}
+    for word in sorted(unseen):
+        if STRICT[0] and plausible(word):
+            continue
+        hits.append(f'single-use word {word!r} — used once in the whole catalogue')
+    for i, word in enumerate(tokens):
+        if len(word) != 1 or not word.isalpha():
+            continue
+        if word.lower() in SHORT_OK:
+            continue                       # "a truck", "I saw": a real short word, not a cut one
+        near = [tokens[j] for j in (i - 1, i + 1) if 0 <= j < len(tokens)]
+        broken = [n for n in near if n.lower() in unseen and not plausible(n.lower())]
+        if broken:
+            hits.append(f'split word: lone {word!r} beside {broken[0]!r}')
 
-    # A word that lost its first letter: "ost" where "most" is ordinary and "ost" is not. Only judged on
-    # sentence-length strings: `lat == 0` is a variable in a maths lesson, not a word missing its first letter.
-    if len(tokens) < 8:
-        return hits
-    common_endings = {}
-    for i, (word, uses) in enumerate(counts.most_common(4000)):
-        if len(word) >= 4:
-            common_endings.setdefault(word[1:], word)
-    for word in tokens:
-        low = word.lower()
-        if len(low) < 3 or counts[low] >= 2:
-            continue
-        if low in ENGLISH_WORDS:
-            continue
-        longer = common_endings.get(low)
-        if longer and counts[longer] >= 20:
-            hits.append(f'{low!r} missing its first letter ({longer})')
+    if tokens and len(tokens) >= 5:
+        head = tokens[0]
+        if head.islower() and head.isalpha() and len(head) >= 2 and counts[head] <= 1:
+            hits.append(f'sentence opens on a fragment {head!r}')
     return hits
+
+
+DAMAGED = [
+    ('ost cities seem to have been s rro nded b walls and', 'a split word'),
+    ('were generall made of a soft stone that wo ld', 'a word that lost letters'),
+]
+CLEAN = [
+    ('Meet Dotty Bug. A ladybug has dots on her body.', 'a word used once in one book'),
+    ('If x is 5, then twice x is 10. Let b be the number of beads.', 'algebra letters'),
+    ('A child has two bar magnets, an iron bar and a compass.', 'ordinary prose'),
+    ('The vitamins listed are A, B1, C and D.', 'single capitals'),
+    ('Picture the Equator as a belt around the Earth\u2019s middle.', 'a possessive'),
+    ('Add 1 l of water to 2 l of milk.', 'a unit letter'),
+]
+
+
+def self_test():
+    """The check has to still see the damage it was built for, and still ignore the traps that broke the
+    first two versions. Run before trusting a zero."""
+    # A miniature corpus: ordinary English twice over, then each sample exactly once as the books hold it.
+    filler = ('a the of is to and be has was were with from that this they have been made cities seem walls '
+              'stone soft body dots ladybug child two bar magnets iron compass picture equator belt earth '
+              'middle add water milk then twice number vitamins listed are if let five ten one two three '
+              'soft that which')
+    counts = collections.Counter(WORD.findall(filler))
+    counts.update(WORD.findall(filler))
+    for text in [t for t, _ in CLEAN]:
+        counts.update(WORD.findall(text.lower()))
+        counts.update(WORD.findall(text.lower()))
+    bad = 0
+    for text, why in DAMAGED:
+        counts.update(WORD.findall(text.lower()))          # its one occurrence, as in the catalogue
+    for text, why in DAMAGED:
+        if not scan_string(text, counts, {}):
+            print(f'  FAIL it can no longer see {why}: {text[:58]}')
+            bad += 1
+    for text, why in CLEAN:
+        hits = scan_string(text, counts, {})
+        if hits:
+            print(f'  FAIL it now flags {why}: {text[:58]} -> {hits[0]}')
+            bad += 1
+    print(f'  self-test: {len(DAMAGED)} damaged strings, {len(CLEAN)} clean traps, {bad} wrong')
+    return bad
 
 
 def main():
@@ -162,9 +232,16 @@ def main():
     parser.add_argument('--json')
     parser.add_argument('--limit', type=int, default=6)
     parser.add_argument('--rebuild', action='store_true', help='rebuild the cached word list first')
+    parser.add_argument('--self-test', action='store_true', help='prove the shapes still see damage')
+    parser.add_argument('--strict', action='store_true',
+                        help='only words that could not be English at all (no vowel, four consonants in a row)')
     args = parser.parse_args()
 
+    if args.self_test:
+        sys.exit(1 if self_test() else 0)
+
     LIVE_FLAG[0] = args.live
+    STRICT[0] = args.strict
     packs = load_packs(args.book, args.live)
     # The vocabulary has to be the whole catalogue even when only one book is being scanned, or an ordinary
     # word that happens to appear once in that book reads as a fragment ("table" -> "stable").
@@ -186,7 +263,10 @@ def main():
                         per_book[name] += 1
 
     where = 'live site' if args.live else 'local packs'
-    print(f'shredded English in the {where}:')
+    # A review list, not a defect count: our books use a word once in 843 places, and almost all of those
+    # are ordinary vocabulary (playgrounds, monocotyledon). --strict narrows it to the shapes that cannot
+    # be English at all, which is what a repair lane should look at first.
+    print(f'possible shredded English in the {where} (review list, not a defect count):')
     for name, count in per_book.most_common():
         print(f'  {name:22} {count:>3} lessons')
     total = sum(per_book.values())

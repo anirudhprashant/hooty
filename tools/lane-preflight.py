@@ -87,6 +87,21 @@ def restore_sources(lane):
     if not os.path.isdir(MAIN_WORK):
         return ['main has no work/ directory at all']
     notes = []
+    # The `sources/` tree holds the chapter `index.json` every assembler reads (chapter numbers, titles,
+    # units). It is gitignored and untracked, so a worktree does not get it on checkout: without the link
+    # `assemble-pack.py` dies on `sources/<book>/index.json` and the lane cannot rebuild a single book.
+    # Seen 28 Nov 2026 on the teach lane. A symlink is safe as long as it is not tracked; the guard below
+    # untracks it if a pass ever commits it.
+    source_link = f'{WT}/{lane}/sources'
+    # Which worktree is main: ask git, so this does not depend on a hard-coded path.
+    listed = git(lane, 'worktree', 'list', '--porcelain').stdout
+    main_root = next((line.split('worktree ', 1)[1].strip() for line in listed.splitlines()
+                      if line.startswith('worktree ')), None)
+    main_sources = f'{main_root}/sources' if main_root else None
+    if main_sources and os.path.isdir(main_sources) and not os.path.exists(source_link) \
+            and not os.path.islink(source_link):
+        os.symlink(main_sources, source_link)
+        notes.append('restored the link to sources/')
     for name in sorted(os.listdir(MAIN_WORK)):
         if name.startswith('.'):
             continue

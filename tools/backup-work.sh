@@ -4,7 +4,13 @@
 # public repo's rules are untouched. Safe to run any time; does nothing when nothing changed. publish.py runs it after each publish.
 #   tools/backup-work.sh
 set -u
-export GIT_DIR="${HOOTY_WORK_GIT:-$HOME/.hooty-work.git}" GIT_WORK_TREE="$(cd "$(dirname "$0")/.." && pwd)/work"
+# The lane worktrees reach work/ through a symlink to the main repo, so `$(dirname $0)/../work` resolves to
+# a symlink in three of the five lanes. Running the backup with that path made git record EVERY entry as a
+# symlink to /home/ubuntu/agent-workspace/hooty-build/work/... (24,461 "changed" files, none of them
+# content), so the off-box copy restored to a tree of dangling links while the log said it had saved 24,461
+# files. Resolve to the real directory: the backup is only worth anything if the files are in it.
+WORK_TREE="$(readlink -f "$(cd "$(dirname "$0")/.." && pwd)/work")"
+export GIT_DIR="${HOOTY_WORK_GIT:-$HOME/.hooty-work.git}" GIT_WORK_TREE="$WORK_TREE"
 # The systemd units export HOOTY_WORK_GIT; a manual publish from a plain shell does not. Look where the private repo
 # actually lives before giving up, which is how drafts sat unbacked until someone noticed.
 if [ ! -d "$GIT_DIR" ] && [ -d "$HOME/agent-workspace/hooty-env/hooty-work.git" ]; then
