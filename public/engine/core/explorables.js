@@ -4629,8 +4629,15 @@ export const WIDGETS = {
     subject: 'english',
     about: 'A sentence the book uses, with one word taken out: choose the word that completes it from four the chapter teaches. For reading for meaning, using the words around a gap, and vocabulary in context.',
     params: { items: [], labels: {} },
+    // The card is the control: the four words are tiles a child taps, and the sentence is turned between with arrows
+    // under the card. Two sliders over a sentence a child can already see read as a form, not as a card.
+    drawnControls: ['item', 'choice'],
+    pagedControl: 'item',
+    resets: ['choice'],
     dynamicSliders: (p) => {
-      const n = Math.max(1, (p.items || []).length), L = p.labels || {};
+      // Four sentences at most: the card draws four rows of words and slices the pack to four, so the slider must stop
+      // where the card does. It used to allow a fifth position that drew the fourth sentence again.
+      const n = Math.max(1, Math.min(4, (p.items || []).length)), L = p.labels || {};
       // The word slider has five positions, not four: 0 is "nothing chosen yet", 1-4 are the four words. With four
       // positions the first button could never be picked, because position 0 had to stand for the empty state and
       // choosing it showed no right/wrong at all.
@@ -4649,24 +4656,31 @@ export const WIDGETS = {
       // sentence "Both of them skipped the ___." must not read "the ___ ." on a child's screen.
       const glue = (...parts) => parts.join(' ').replace(/\s+/g, ' ').replace(/\s+([,.;:!?…%)\]’”])/g, '$1').replace(/([‘“(\[])\s+/g, '$1').trim();
       const fit = (str, max) => { const ws = String(str || '').split(/\s+/).filter(Boolean), out = []; let line = ''; for (const x of ws) { const next = line ? line + ' ' + x : x; if (next.length > max && line) { out.push(line); line = x; } else line = next; } if (line) out.push(line); return out; };
-      const kids = [R(0, 0, W, H, C.cream, { w: 0 }), R(0, 0, W, 30, '#efe7d6', { w: 0 })];
-      kids.push(T(14, 21, `${ii + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
-      kids.push(T(586, 21, L.heading || 'Finish the sentence', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
+      // No header strip: the card's own title above it already says "Finish the sentence", and a second copy of the
+      // same words inside the picture read as a printing mistake. The sentence is the top of the card.
+      const kids = [R(0, 0, W, H, C.cream, { w: 0 })];
       // the sentence, with the gap where the word was
       const gap = it.options[it.answer] === undefined ? '' : '________';
       const lines = fit(cap(glue(it.before, gap, it.after)), 46).slice(0, 3);
-      // A one-line sentence used to sit hard against the header with 90 units of empty card below it. Centre the
-      // block in the space above the four buttons instead, so a short poem line does not leave the card top-heavy.
-      const topY = lines.length <= 1 ? 104 : lines.length === 2 ? 82 : 62;
+      // Centre the block in the space above the four buttons, so a short poem line does not leave the card top-heavy.
+      const topY = lines.length <= 1 ? 82 : lines.length === 2 ? 70 : 58;
       lines.forEach((ln, i) => kids.push(T(16, topY + i * 26, ln, { z: 19, w: 600, a: 'start', f: INK })));
       if (!lines.length) kids.push(T(16, topY, gap, { z: 19, w: 600, a: 'start', f: INK }));
       // four words: the answer and three more the chapter teaches
       (it.options || []).slice(0, 4).forEach((word, j) => {
-        const x = 10 + (j % 2) * 292, y = 156 + Math.floor(j / 2) * 62;
+        // 62 units tall so the tile is a thumb-sized target on a phone (about 32 px at 390 wide), not a line of text
+        // with a box round it.
+        const x = 16 + (j % 2) * 288, y = 148 + Math.floor(j / 2) * 72;
         const sel = j === pick, right = sel && j === it.answer, wrong = sel && j !== it.answer;
-        kids.push(R(x, y, 288, 54, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel ? 4 : 2, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 12 }));
-        kids.push(T(x + 144, y + 35, word, { z: 20, w: sel ? 800 : 700, f: right ? '#136134' : wrong ? '#a02d1e' : INK }));
-        if (right) kids.push(T(x + 264, y + 20, '\u2713', { z: 17, w: 800, f: '#1d7a45' }));
+        const tile = [
+          R(x, y + 4, 280, 62, '#e8ddc3', { w: 0, r: 14 }),
+          R(x, y, 280, 62, right ? '#d9f5e4' : wrong ? '#fde8e4' : '#ffffff', { w: sel ? 5 : 2, s: right ? '#1d7a45' : wrong ? '#c0392b' : '#e3dccb', r: 14 }),
+          T(x + 140, y + 39, word, { z: 21, w: sel ? 800 : 700, f: right ? '#136134' : wrong ? '#a02d1e' : INK }),
+          right ? T(x + 254, y + 24, '\u2713', { z: 18, w: 800, f: '#1d7a45' }) : null,
+          wrong ? T(x + 254, y + 24, '\u2715', { z: 18, w: 800, f: '#c0392b' }) : null,
+        ];
+        // The tile is the button: a child taps the word, and the whole tile answers, not only its lettering.
+        kids.push(s('g', { 'data-choice': `choice:${j + 1}`, role: 'button', tabindex: '0', 'aria-label': word, style: 'cursor:pointer' }, tile));
       });
       // Cap the finished sentence, not just its opening words: when the gap is the first word, the answer is the
       // first word of the sentence a child reads back.

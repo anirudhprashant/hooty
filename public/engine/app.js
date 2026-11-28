@@ -2820,7 +2820,9 @@ document.addEventListener('keydown', (e) => {
   if (!session || e.ctrlKey || e.metaKey || e.altKey || e.repeat || e.target.closest?.('input, textarea, select, a') || document.querySelector('.term-pop')) return;
   const live = (sel) => [...document.querySelectorAll(sel)].filter((b) => !b.disabled && b.offsetParent);
   if (e.key === 'Enter') {
-    if (e.target.closest?.('button') && !e.target.closest('.option, .tf-btn')) return;
+    // Anything that acts like a button keeps its own Enter: answer options confirm, and a drawn control on a card
+    // (a word tile, a pager arrow) must not answer and move the lesson on in the same keypress.
+    if (e.target.closest?.('button, [role="button"], [data-choice]') && !e.target.closest('.option, .tf-btn')) return;
     const go = live('.sheet .btn--primary, .activity__actions .btn--primary, .input-row .btn--primary')[0];
     if (go) { e.preventDefault(); go.click(); }
     return;
