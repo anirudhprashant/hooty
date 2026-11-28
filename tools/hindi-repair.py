@@ -521,6 +521,10 @@ def repair_text(text, vocab, anagrams, by_length, log, path, dictionary, cases, 
     if not anomalies(text):
         return text
     fixed = JOIN_SPACE.sub('', text)
+    # A zero-width joiner straight after a vowel sign is extractor debris: ZWJ is only ever written after
+    # a halant (र्‍), so after a matra it sits where the reorder happened ("सामहूि‍क"). Removing it lets the
+    # rearrangement rule see the word it was.
+    fixed = re.sub(f'(?<=[{MATRA}])\\u200d', '', fixed)
     fixed = DOUBLED.sub(r'\1', fixed)
     if not anomalies(fixed) and fixed != text:
         return fixed          # space join and/or doubling was the whole defect
@@ -532,10 +536,10 @@ def repair_text(text, vocab, anagrams, by_length, log, path, dictionary, cases, 
             continue
         good, how = repair_word(first + second, vocab, anagrams, by_length, dictionary,
                                 cases, depth=1)
-        if good and plausible(good) and len(good) >= len(first) + len(second) - 1:
-            fixed = fixed.replace(f'{first} {second}', good, 1)
-            log['repaired'].append({'file': path, 'from': f'{first} {second}', 'to': good,
-                                    'how': f'rejoined ({how})'})
+        pair = f'{first} {second}'
+        if good and plausible(good) and len(good) >= len(first) + len(second) - 1 and pair in fixed:
+            fixed = fixed.replace(pair, good, 1)
+            log['repaired'].append({'file': path, 'from': pair, 'to': good, 'how': f'rejoined ({how})'})
 
     for word in tokens(fixed):
         # the word pattern carries the danda; a sentence-ending mark is not part of the word
@@ -601,6 +605,10 @@ def main():
 
     for book in books:
         files = glob.glob(f'{ROOT}/work/{book}/ch*/**/*.json', recursive=True)
+        # `built/`, `draft/` and `review/` are intermediate artefacts of the build, not text that ships or
+        # feeds the next stage: repairing them claimed changes the tool never made (a ZWJ spelling it
+        # could not join was logged as repaired while the file stayed byte-identical).
+        files = [f for f in files if not re.search(r'/(built|draft|review)/', f)]
         # the book-level glossary is assembled into the pack's own glossary.json, which is what a child
         # opens in "शब्द देखिए": it is not under chNN/ and was never walked before
         files += glob.glob(f'{ROOT}/work/{book}/glossary.json')

@@ -44,10 +44,14 @@ MATRA = '\u093a-\u094c\u0951-\u0957\u0962\u0963'
 HALANT = '\u094d'
 ZERO_WIDTH = '\u200c\u200d\ufeff'
 
-DETACHED_START = re.compile(r'[\s"\'(\[{]+[' + MATRA + HALANT + r']')
+DETACHED_START = re.compile(r'[\s"\'(\\[{]+[' + MATRA + HALANT + r']')
 SPACE_INSIDE = re.compile(f'[{CONSONANT}][{MATRA}]?[\\s]+[{MATRA}{HALANT}]')
 DOUBLED = re.compile(f'([{MATRA}])\\1')
 STRAY_ZERO_WIDTH = re.compile(f'[{CONSONANT}][{ZERO_WIDTH}][{CONSONANT}]')
+# An English word left inside Hindi text ("जिसे अ unclean माना जाता है", "पद्म Shri", "Preethibhoj").
+# A Hindi book names these in Devanagari (इसरो, पद्म श्री), and a child reading Hindi cannot read the
+# English one. Not a matra fault, but the same kind of unreadable text.
+LATIN_WORD = re.compile(r'(?<![A-Za-z])[A-Za-z]{2,}(?![A-Za-z])')
 # A vowel sign belongs to the consonant on its left, one per consonant, before any anusvara, and never
 # before a halant. Two vowels on one letter ("भरूी", "दसूरी"), an anusvara then a vowel ("चदंा") or a vowel
 # then a halant ("मसु्काते") is the extractor's own reorder happening *inside* a word, with no space to
@@ -147,6 +151,26 @@ def anomalies(text, dictionary=None):
     return found
 
 
+# The fields a child reads. An activity's id, type, tags, gen and src are plumbing and are full of Latin
+# letters; only these carry the words the lesson is teaching, so the English-word check looks at them.
+CONTENT_KEYS = {'prompt', 'options', 'body', 'text', 'explanation', 'title', 'items', 'pairs', 'points',
+                'keyPoints', 'meaning', 'term', 'aka', 'answers', 'context', 'kicker', 'caption',
+                'sceneCaption', 'why', 'hook', 'passage', 'steps', 'result'}
+
+
+def content_texts(value, key=None):
+    """Every string under a child-facing field, with the field name it came from."""
+    if isinstance(value, str):
+        if key in CONTENT_KEYS:
+            yield key, value
+    elif isinstance(value, dict):
+        for k, item in value.items():
+            yield from content_texts(item, k)
+    elif isinstance(value, list):
+        for item in value:
+            yield from content_texts(item, key)
+
+
 def scan_pack(path_or_dict, label, dictionary=None):
     data = path_or_dict
     if isinstance(path_or_dict, str):
@@ -162,6 +186,11 @@ def scan_pack(path_or_dict, label, dictionary=None):
                         if shapes:
                             hits.append({'activity': activity.get('id') or activity.get('type'),
                                          'shapes': sorted(shapes), 'text': text[:300]})
+                for activity in lesson.get('activities', []):
+                    for field, text in content_texts(activity):
+                        if LATIN_WORD.search(text):
+                            hits.append({'activity': activity.get('id') or activity.get('type'),
+                                         'shapes': ['latin'], 'text': text[:300]})
                 if hits:
                     rows.append({'book': label, 'lesson': lesson.get('id'), 'hits': hits})
     return rows
