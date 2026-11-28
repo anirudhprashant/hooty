@@ -56,12 +56,21 @@ def plan():
     return books
 
 
+# NCERT does not serve these six: classes 11 and 12 English are two books each (Hornbill + Snapshots,
+# Flamingo + Vistas) and the catalogue lists only the main reader, so the tail of its chapter range 404s.
+# They are recorded here rather than chased, so "768 expected" is a real total and not a quiet gap.
+EXPECTED_MISSING = {'english-g11/p1-07.pdf', 'english-g11/p1-08.pdf', 'english-g11/p1-09.pdf',
+                    'english-g11/p1-10.pdf', 'english-g12/p1-09.pdf', 'english-g12/p1-10.pdf'}
+
+
 def verify(verbose=True):
     missing, present, broken = [], 0, []
     for slug, folder, wanted in plan():
         for url, path in wanted:
+            label = f'{slug}/{os.path.basename(path)}'
             if not os.path.exists(path):
-                missing.append(f'{slug}/{os.path.basename(path)}')
+                if label not in EXPECTED_MISSING:
+                    missing.append(label)
             elif os.path.getsize(path) < 20000:
                 broken.append(f'{slug}/{os.path.basename(path)} ({os.path.getsize(path)} bytes)')
             else:
@@ -74,7 +83,8 @@ def verify(verbose=True):
     if verbose:
         print(f'sources: {present}/{total} chapter PDFs present'
               + (f', {len(missing)} missing' if missing else '')
-              + (f', {len(broken)} unusable' if broken else ''))
+              + (f', {len(broken)} unusable' if broken else '')
+              + (f' ({len(EXPECTED_MISSING)} the catalogue asks for and NCERT does not serve)' if EXPECTED_MISSING else ''))
         for line in (broken + missing)[:8]:
             print('  ' + line)
     return present, total
