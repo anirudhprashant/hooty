@@ -31,8 +31,14 @@ PLATITUDE = re.compile(r'^(try again|not quite|incorrect|wrong|no\b|read (it )?a
                        r'better luck|oops|nope)[.!]?$', re.I)
 RECALL = re.compile(r'^(what is|what are|which is|who is|who was|when (did|was|is)|where is|'
                     r'how many|how much|define|name the)\b', re.I)
+# The books are in English and Hindi. A Hindi explanation says "क्योंकि", not "because", so an English-only
+# list scored every Hindi answer as giving no reason: hindi-g9 read as 100 faults per 100 questions.
 REASON = re.compile(r'\b(because|since|so that|this means|that means|which means|therefore|as a result|'
-                    r'for example|reason)\b', re.I)
+                    r'for example|reason)\b|क्योंकि|इसलिए|इसीलिए|इस कारण|कारण|अतः|जिससे|ताकि|'
+                    r'ಏಕೆಂದರೆ|ಆದ್ದರಿಂದ|ಕಾರಣ', re.I)
+# An assertion-reason item offers the same four lines to every child; two of them are the long "Both A and R
+# are true" pair, so the longest-option test cannot tell the answer from the shape.
+ASSERTION = re.compile(r'^(both a and r|a is (true|false)|a और r)', re.I)
 
 
 def questions(pack):
@@ -72,7 +78,8 @@ def faults(activity, grade):
             if not REASON.search(explanation):
                 out.append('no-reason-given')
         lengths = [len(o) for o in options]
-        if answer is not None and isinstance(answer, int) and 0 <= answer < len(lengths) and lengths:
+        templated = sum(1 for o in options if ASSERTION.match(str(o).strip())) >= 3
+        if not templated and answer is not None and isinstance(answer, int) and 0 <= answer < len(lengths) and lengths:
             others = [l for i, l in enumerate(lengths) if i != answer]
             if others and lengths[answer] > 1.4 * statistics.median(others):
                 out.append('answer-is-the-longest-option')
@@ -112,9 +119,12 @@ def audit(book_filter=None):
         for chapter_id, lesson_id, activity in questions(pack):
             total += 1
             counts.update(faults(activity, grade))
+            # A repeat only matters inside one lesson: "match each thing with its description" is the
+            # instruction for a different matchpairs card in every lesson, and counting it book-wide
+            # reported 17 duplicates in english-g10 that a child never meets twice.
             prompt = (activity.get('prompt') or '').strip().lower()
             if prompt:
-                seen[prompt] += 1
+                seen[(lesson_id, prompt)] += 1
             if activity.get('type') == 'mcq' and isinstance(activity.get('answer'), int):
                 answers[activity['answer']] += 1
         repeated = sum(n - 1 for n in seen.values() if n > 1)
