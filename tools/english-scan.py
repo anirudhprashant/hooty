@@ -93,6 +93,12 @@ SHORT_OK = {'a', 'i', 'an', 'of', 'to', 'in', 'on', 'at', 'by', 'is', 'it', 'as'
 
 LOOSE = '--loose' in sys.argv
 
+# 51,208 ordinary English words (wordfreq, zipf >= 2.5). A short token that is a real word in its own right
+# is not a word that lost its first letter: raft, topping and specially were all reported as damage before
+# this list existed, and all three were correct English in their sentences.
+_WORDS_FILE = f'{os.path.dirname(os.path.abspath(__file__))}/vendor/english-words.txt'
+ENGLISH_WORDS = set(open(_WORDS_FILE).read().split()) if os.path.exists(_WORDS_FILE) else set()
+
 
 def scan_string(text, counts, rank):
     """Fragments that rejoin into a word we use elsewhere, and words that lost a leading letter."""
@@ -140,6 +146,8 @@ def scan_string(text, counts, rank):
     for word in tokens:
         low = word.lower()
         if len(low) < 3 or counts[low] >= 2:
+            continue
+        if low in ENGLISH_WORDS:
             continue
         longer = common_endings.get(low)
         if longer and counts[longer] >= 20:
