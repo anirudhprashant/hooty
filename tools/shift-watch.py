@@ -245,6 +245,18 @@ def main():
     except OSError:
         pass
 
+    # Defects that were found and then forgotten are the same failure as a lane that went quiet.
+    try:
+        defects = subprocess.run([sys.executable, f'{REPO}/tools/defects.py', 'stats', '--max-age', '3'],
+                                 capture_output=True, text=True, cwd=REPO, timeout=60)
+        lines = [line for line in defects.stdout.strip().splitlines() if line.strip()]
+        if defects.returncode:
+            problems.append('defects left open too long: ' + '; '.join(lines[:3]))
+        elif VERBOSE and lines:
+            print(f'  defects   {lines[0]}')
+    except Exception as e:
+        problems.append(f'could not read the defect register: {e}')
+
     if VERBOSE:
         print(f'problems: {len(problems)}')
     for line in problems:
