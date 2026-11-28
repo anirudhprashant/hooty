@@ -142,6 +142,7 @@ def main():
     parser.add_argument('--book')
     parser.add_argument('--json')
     parser.add_argument('--limit', type=int, default=6)
+    parser.add_argument('--rebuild', action='store_true', help='rebuild the cached word list first')
     args = parser.parse_args()
 
     LIVE_FLAG[0] = args.live
