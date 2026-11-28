@@ -66,7 +66,14 @@ SPLIT_VOWEL = [('\u093e\u0947', '\u094b'), ('\u093e\u0948', '\u094c')]
 DETACHED_START = re.compile('[\\s"\'(\\[{(]+[' + MATRA + HALANT + ']')
 SPACE_INSIDE = re.compile(f'[{CONSONANT}][{MATRA}]?[\\s]+[{MATRA}{HALANT}]')
 SCAN_DOUBLED = re.compile(f'([{MATRA}])\\1')
-STRAY_ZERO_WIDTH = re.compile(f'[{CONSONANT}][\u200c\u200d\ufeff][{CONSONANT}]')
+STRAY_ZERO_WIDTH = re.compile(f'[{CONSONANT}][\\u200c\\u200d\\ufeff][{CONSONANT}]')
+# A space the extractor left between a word and the punctuation that belongs to it ("डरे -डरे",
+# "धारा ,", "न्यारा ।"). Mirror of the `spacing` shape in tools/hindi-scan.py.
+SPACING = [
+    (re.compile('([\u0900-\u097F]) +([,])'), r'\1\2'),
+    (re.compile('([\u0900-\u097F]) +([।॥])'), r'\1\2'),
+    (re.compile('([\u0900-\u097F]) +([-\u2013\u2014])(?=[\u0900-\u097F])'), r'\1\2'),
+]
 
 CASES = f'{ROOT}/tools/hindi-repair-cases.json'
 
@@ -238,6 +245,8 @@ def anomalies(text):
         found.add('zero-width')
     if BROKEN.search(text):
         found.add('reordered')
+    if any(pattern.search(text) for pattern, _ in SPACING):
+        found.add('spacing')
     return found
 
 
@@ -509,6 +518,16 @@ def repair_word(word, vocab, anagrams, by_length, dictionary, cases, depth=0):
 
 
 def repair_text(text, vocab, anagrams, by_length, log, path, dictionary, cases, phrases):
+    # 0. a space between a word and the punctuation that belongs to it ("डरे -डरे", "धारा ,", "न्यारा ।").
+    # Every other rule here is about matras; this one is whitespace, it is the only defect on some
+    # strings, and it is what makes a sentence read as if a word were missing.
+    for pattern, replacement in SPACING:
+        def tidy(match, replacement=replacement):
+            fixed = match.expand(replacement)
+            if fixed != match.group(0):
+                log['repaired'].append({'file': path, 'from': match.group(0), 'to': fixed, 'how': 'spacing'})
+            return fixed
+        text = pattern.sub(tidy, text)
     # the two shapes only a word list can prove come first: they leave text that `anomalies()` passes
     text = repair_shapes(text, dictionary, log, path, cases)
     if not anomalies(text):

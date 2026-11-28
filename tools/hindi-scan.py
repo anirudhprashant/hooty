@@ -52,6 +52,12 @@ STRAY_ZERO_WIDTH = re.compile(f'[{CONSONANT}][{ZERO_WIDTH}][{CONSONANT}]')
 # A Hindi book names these in Devanagari (इसरो, पद्म श्री), and a child reading Hindi cannot read the
 # English one. Not a matra fault, but the same kind of unreadable text.
 LATIN_WORD = re.compile(r'(?<![A-Za-z])[A-Za-z]{2,}(?![A-Za-z])')
+# A space the extractor left between a word and the punctuation that belongs to it ("डरे -डरे",
+# "धारा ,", "न्यारा ।"). Legal Devanagari shape for shape, so only a spacing rule finds it; a child
+# reads it as a gap in the sentence.
+SPACE_COMMA = re.compile('[\u0900-\u097F] +[,]')
+SPACE_DANDA = re.compile('[\u0900-\u097F] +[।॥]')
+SPACE_HYPHEN = re.compile('[\u0900-\u097F] +[-\u2013\u2014](?=[\u0900-\u097F])')
 # A vowel sign belongs to the consonant on its left, one per consonant, before any anusvara, and never
 # before a halant. Two vowels on one letter ("भरूी", "दसूरी"), an anusvara then a vowel ("चदंा") or a vowel
 # then a halant ("मसु्काते") is the extractor's own reorder happening *inside* a word, with no space to
@@ -148,6 +154,8 @@ def anomalies(text, dictionary=None):
         found.add('zero-width')
     if REORDERED.search(text):
         found.add('reordered')
+    if SPACE_COMMA.search(text) or SPACE_DANDA.search(text) or SPACE_HYPHEN.search(text):
+        found.add('spacing')
     return found
 
 
