@@ -111,6 +111,8 @@ def lessons_of(slug):
         end_part, end_page = part, 10 ** 6
         if index + 1 < len(starts):
             end_part, end_page = starts[index + 1][2], starts[index + 1][3]
+        # Keep the exact place each damaged line came from, so a repair puts it back in the paragraph it
+        # belongs to instead of appending it at the end.
         paragraphs, damaged, dropped, kept = [], [], 0, 0
         for path, page_part, page_number in pages:
             if page_part != part and page_part != end_part:
@@ -128,7 +130,7 @@ def lessons_of(slug):
                 elif len(WORD.findall(line)) >= 3:
                     # Nothing is thrown away: a line the converter could not finish is kept here so the repair
                     # pass can work on it, and so a lesson can never quietly lose a paragraph.
-                    damaged.append(' '.join(line.split()))
+                    damaged.append({'at': len(paragraphs), 'text': ' '.join(line.split())})
                     dropped += 1
         out.append({'lesson': number, 'title': title or f'ಪಾಠ {number}', 'part': part,
                     'from': page, 'paragraphs': paragraphs, 'damaged': damaged,
