@@ -4291,20 +4291,16 @@ export const WIDGETS = {
     subject: 'english',
     about: 'A word a chapter teaches and the sentence the book uses it in, with four meanings on big cards. Pick the meaning that fits the sentence. For vocabulary, word meanings, reading a word inside its own sentence, words a chapter teaches, and using context to guess a meaning.',
     params: { words: [], meanings: [], key: [], sents: [], labels: {} },
+    // The card is the control, in both directions. The four meanings are tiles a child taps (the whole tile answers,
+    // with a ring, a fill and a tick or cross), and the words are turned with the arrows and dots under the card,
+    // the same page-turner the finish-the-sentence card uses. Two sliders over a card that already shows the word and
+    // the four meanings were the last form chrome left in the app: a blank beige track tells a child nothing.
+    drawnControls: ['word', 'meaning'],
+    pagedControl: 'word',
     // the meaning choice belongs to the word you are on, so changing the word starts from no meaning chosen, and the
     // challenge shown is the one for the word on screen (a word with no challenge shows no row)
     resets: ['meaning'],
     taskPer: 'word',
-    // The word slider says which word it has picked, because the card shows one word at a time. The meaning slider's
-    // four positions are the four meaning cards drawn on the stage and the chosen one is marked there (ring, fill,
-    // tick or cross), so a third copy of the same sentence under the track would only push Next off a phone screen.
-    sliderText: (v, key, q) => {
-      const words = q.words || [], L = q.labels || {};
-      const n = Math.max(1, Math.min(4, words.length, (q.meanings || []).length));
-      const i = Math.max(0, Math.min(n - 1, v.word | 0));
-      if (key === 'word') return words[i] ? (L.thisWord || '\u201c{w}\u201d').replace('{w}', words[i]) : '';
-      return '';
-    },
     dynamicSliders: (p) => {
       // four cards at most: this is a reading card, so the type must stay big enough to read on a phone
       const n = Math.max(1, Math.min(4, (p.words || []).length)), L = p.labels || {};
@@ -4324,24 +4320,27 @@ export const WIDGETS = {
       // set two lines deep and nothing is ever cut off with an ellipsis.
       const opts = meanings.slice(0, n);
       const wide = opts.some((m) => fit(m, 22).length > 3);
-      // A headword wider than its chip grows the chip instead of spilling out of the yellow box: 250 units holds
-      // about fifteen characters at 26 units, and "territorial integrity" is twenty-one.
-      const chipW = Math.max(250, Math.min(566, Math.round(word.length * 0.58 * 26) + 30));
       const kids = [R(0, 0, W, H, C.cream, { w: 0 })];
+      // No chrome strip. The page-turner under the card already says which word you are on, and the title above the
+      // card says what the card is, so a "1 / 4" counter beside the dots and a grey "one word, one sentence" label
+      // were a second copy of both. Removing them is what lets the word itself be big.
       if (wide) {
-        // the word is the headword of the page, so it lives in the band at the top and the meanings get the body
-        kids.push(R(0, 0, W, 38, '#efe7d6', { w: 0 }));
-        kids.push(T(14, 25, `${wi + 1} / ${n}`, { z: 15, w: 700, a: 'start', f: '#7a6b99' }));
-        // the heading yields to a headword long enough to reach it, rather than sitting on top of the word
-        if (word.length * 0.58 * 26 < 270) kids.push(T(586, 25, L.heading || 'One word, one sentence', { z: 15, w: 700, a: 'end', f: '#7a6b99' }));
+        // Four meanings that each need a fourth line take nearly the whole card, so the word sits in a wash of warm
+        // light across the top of the paper — not in a flat beige shelf, which reads as a banner — and the rows fill
+        // everything under it.
+        kids.push(s('defs', {}, [s('linearGradient', { id: 'wl-wash', x1: '0', y1: '0', x2: '0', y2: '1' }, [
+          s('stop', { offset: '0', 'stop-color': C.y, 'stop-opacity': '0.46' }),
+          s('stop', { offset: '1', 'stop-color': C.y, 'stop-opacity': '0' }),
+        ])]));
+        kids.push(R(0, 0, W, 56, 'url(#wl-wash)', { w: 0 }));
         kids.push(T(300, 31, word, { z: 26, w: 800 }));
       } else {
-        kids.push(R(0, 0, W, 30, '#efe7d6', { w: 0 }));
-        kids.push(T(14, 21, `${wi + 1} / ${n}`, { z: 16, w: 700, a: 'start', f: '#7a6b99' }));
-        kids.push(T(586, 21, L.heading || 'One word, one sentence', { z: 16, w: 700, a: 'end', f: '#7a6b99' }));
-        // the word, big enough to read on a phone, because every card here is read
-        kids.push(R(14, 38, chipW, 46, C.y, { w: 2.5, r: 12 }));
-        kids.push(T(14 + chipW / 2, 70, word, { z: 26, w: 800 }));
+        // The word is the headword of the card: a snug yellow chip in the middle of the top band, sized to the word so
+        // a four-letter word does not sit in a slab of yellow, and small enough still to hold "territorial integrity".
+        const z = Math.max(20, Math.min(30, (566 - 44) / Math.max(1, word.length * 0.58)));
+        const chipW = Math.round(word.length * 0.58 * z) + 44;
+        kids.push(R(Math.round((W - chipW) / 2), 10, chipW, 52, C.y, { w: 2.5, r: 14 }));
+        kids.push(T(300, 47, word, { z, w: 800 }));
       }
       if (wide) {
         // Rows of 21-unit lines, sized to the lines each meaning needs, then stretched to fill the card: a card
@@ -4371,22 +4370,27 @@ export const WIDGETS = {
           // a tick means right and a cross means wrong, so the two never look alike in a black-and-white print either
           if (right) tile.push(T(558, y + h / 2 + 7, '\u2713', { z: 21, w: 800, f: '#1d7a45' }));
           if (wrong) tile.push(T(558, y + h / 2 + 7, '\u2715', { z: 21, w: 800, f: '#c0392b' }));
-          kids.push(s('g', { 'data-choice': `meaning:${j}`, style: 'cursor:pointer' }, tile));
+          kids.push(s('g', { 'data-choice': `meaning:${j}`, role: 'button', tabindex: '0', 'aria-label': m, style: 'cursor:pointer' }, tile));
           y += h + gap;
         });
       } else {
         opts.forEach((m, j) => {
-          const x = 10 + (j % 2) * 292, y = 92 + Math.floor(j / 2) * 98;
+          // A card with three meanings is the one odd shape in this family: the third tile is centred under the pair
+          // above instead of sitting in the left column with a hole beside it, which read as a missing option.
+          const lone = opts.length % 2 === 1 && j === opts.length - 1;
+          const x = lone ? (W - 288) / 2 : 10 + (j % 2) * 292, y = 76 + Math.floor(j / 2) * 100;
           const chosen = j === mi && picked, right = chosen && key[wi] === j, wrong = chosen && key[wi] !== j;
           const fill = right ? '#E7F6E9' : wrong ? '#FDEDE8' : '#FFFFFF';
           const edge = right ? '#2E8B57' : wrong ? '#D06A4E' : '#E6DCC6';
-          const tile = [R(x + 2, y + 5, 288, 90, '#6B4A1E', { w: 0, r: 14, x: { opacity: 0.09 } }),
-            R(x, y, 288, 90, fill, { w: chosen ? 4.5 : 2.5, s: edge, r: 14 })];
+          const tile = [R(x + 2, y + 5, 288, 96, '#6B4A1E', { w: 0, r: 14, x: { opacity: 0.09 } }),
+            R(x, y, 288, 96, fill, { w: chosen ? 4.5 : 2.5, s: edge, r: 14 })];
+          // the meaning block is centred in its card, so a one-line meaning is not pinned to the top of a tall tile
           const lines = fit(m, 22), shown = lines.slice(0, 3);
-          shown.forEach((ln, i) => tile.push(T(x + 144, y + 30 + i * 24, ln, { z: 19, w: chosen ? 800 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
-          if (right) tile.push(T(x + 268, y + 22, '\u2713', { z: 19, w: 800, f: '#1d7a45' }));
-          if (wrong) tile.push(T(x + 268, y + 22, '\u2715', { z: 19, w: 800, f: '#c0392b' }));
-          kids.push(s('g', { 'data-choice': `meaning:${j}`, style: 'cursor:pointer' }, tile));
+          const first = y + 48 - ((shown.length - 1) * 24) / 2 + 7;
+          shown.forEach((ln, i) => tile.push(T(x + 144, first + i * 24, ln, { z: 19, w: chosen ? 800 : 600, f: right ? '#136134' : wrong ? '#a02d1e' : INK })));
+          if (right) tile.push(T(x + 268, y + 24, '\u2713', { z: 19, w: 800, f: '#1d7a45' }));
+          if (wrong) tile.push(T(x + 268, y + 24, '\u2715', { z: 19, w: 800, f: '#c0392b' }));
+          kids.push(s('g', { 'data-choice': `meaning:${j}`, role: 'button', tabindex: '0', 'aria-label': m, style: 'cursor:pointer' }, tile));
         });
       }
       // the sentence lives in the read-out under the stage, at full size, where a child can actually read it
