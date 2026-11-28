@@ -352,6 +352,9 @@ export const WIDGETS = {
   microscope: {
     subject: 'science', about: 'A drop of pond water seen through a microscope: moving the slide finds the different groups and turning the magnification up makes them out. Rod-shaped bacteria, yeast that buds, green microalgae and a shape-changing amoeba, all single cells. For the invisible living world, microscopes, microorganisms, bacteria, yeast, algae and amoeba.',
     sliders: [['zoom', 'Magnification', 0, 100, 1, 0], ['at', 'Move the slide', 0, 100, 1, 0]],
+    // The dial runs 0-100 but the number a child cares about is the lens power it gives, 50x to 400x: the read-out
+    // under the knob and the caption on the drawing must agree, or the first two numbers on the card contradict.
+    sliderValue: (v, key) => (key === 'zoom' ? `${Math.round(50 + Math.max(0, Math.min(100, v.zoom)) * 3.5)}x` : null),
     draw(v) {
       const zoom = Math.max(0, Math.min(100, v.zoom));
       const at = Math.max(0, Math.min(100, v.at));
@@ -710,7 +713,7 @@ export const WIDGETS = {
       ])];
       // the room: a warm wall, and the wooden table everything stands on
       const top = 226, wy = 216;
-      kids.push(R(0, 0, W, top, '#FFFBF1', { w: 0 }), R(0, top, W, H - top, '#E4B983', { w: 0 }), R(0, top, W, 5, '#F3D6AC', { w: 0 }));
+      kids.push(R(0, 0, W, top, 'url(#rx-wall)', { w: 0 }), R(0, top, W, H - top, '#E4B983', { w: 0 }), R(0, top, W, 5, '#F3D6AC', { w: 0 }));
       kids.push(s('path', { d: 'M 0 252 Q 150 246 300 252 T 600 250', fill: 'none', stroke: 'rgba(150,100,50,0.13)', 'stroke-width': 3 }));
       kids.push(s('path', { d: 'M 0 272 Q 170 278 340 271 T 600 274', fill: 'none', stroke: 'rgba(150,100,50,0.11)', 'stroke-width': 3 }));
       const bulbX = (i) => 330 + (i - (bulbs - 1) / 2) * 96;
@@ -1170,34 +1173,142 @@ export const WIDGETS = {
     },
   },
   reaction: {
-    subject: 'science', about: 'Four reactions from the Class 10 chemistry chapter, one at a time: magnesium burning in oxygen, calcium oxide joining water to make slaked lime, calcium carbonate breaking up on heating, and iron pushing copper out of copper sulphate. Shows the reactants on the left and the products on the right, and names the kind of reaction. For chemical reactions, combination, decomposition, displacement, reactants and products, exothermic and endothermic.',
+    subject: 'science', about: 'Four reactions from the Class 10 chemistry chapter, one at a time: magnesium burning in oxygen, calcium oxide joining water to make slaked lime, calcium carbonate breaking up on heating, and iron pushing copper out of copper sulphate. Each reaction is drawn as its atoms on a bench, so the same atoms can be seen leaving one group and joining another. For chemical reactions, combination, decomposition, displacement, reactants and products, exothermic and endothermic.',
     sliders: [['pick', 'Choose a reaction', 0, 3, 1, 1]],
+    // Four reactions turned between like pages: a slider labelled "Choose a reaction" told a child nothing about which one it was on.
+    drawnControls: ['pick'],
+    pagedControl: 'pick',
     draw(v) {
+      // Atom balls, drawn as a modelling kit: each has a light top-left and a dark rim so it reads as a sphere.
+      const AT = {
+        Mg: ['#F2F5F8', '#C3CCD5', '#7E8A97', '#6B7784', '#2a1a4a'],
+        O: ['#F79C86', '#DD5C41', '#8F3120', '#7C2A1B', '#FFF8F2'],
+        H: ['#FFFFFF', '#F7F2E6', '#BDB6A5', '#A79F8D', '#2a1a4a'],
+        Ca: ['#AFD692', '#6F9A50', '#415C2C', '#37502A', '#FFFDF6'],
+        C: ['#8F99A6', '#5A6470', '#2C333D', '#252B33', '#FFFDF6'],
+        Fe: ['#BAC4D1', '#828D9C', '#434A54', '#39404A', '#FFFDF6'],
+        Cu: ['#E3A06B', '#BD6C34', '#6F3C18', '#5E3113', '#FFF8F2'],
+        SO4: ['#FFE29A', '#E8A93A', '#96690E', '#825B0C', '#2a1a4a'],
+      };
       const E = [
-        { type: 'Combination reaction', heat: 'gives out heat', col: '#058a68',
-          left: [{ t: 'magnesium', c: '#b0bec5' }, { t: 'oxygen', c: '#90caf9' }], right: [{ t: 'magnesium oxide', c: '#eceff1' }],
+        { type: 'Combination reaction', kind: '#2E8B57', energy: 'gives out heat', shape: [2, 1], phrase: 'two join into one', mood: 'hot',
+          left: [{ cy: 211, at: [[-24, 0, 21, 'Mg'], [24, 0, 21, 'Mg']], name: 'magnesium' },
+            { cy: 204, at: [[-15, -8, 19, 'O'], [15, 8, 19, 'O']], name: 'oxygen' }],
+          right: [{ cy: 211, at: [[-71, 0, 21, 'Mg'], [-36, 0, 19, 'O'], [35, 0, 21, 'Mg'], [70, 0, 19, 'O']], name: 'magnesium oxide' }],
           say: 'Magnesium burns in oxygen and the white powder magnesium oxide is formed. Two substances join into one product, so this is a combination reaction, and it gives out heat and light.' },
-        { type: 'Combination reaction', heat: 'gives out a large amount of heat', col: '#058a68',
-          left: [{ t: 'calcium oxide', c: '#e0e0e0' }, { t: 'water', c: '#90caf9' }], right: [{ t: 'slaked lime', c: '#fff3e0' }],
+        { type: 'Combination reaction', kind: '#2E8B57', energy: 'gives out a lot of heat', shape: [2, 1], phrase: 'two join into one', mood: 'hot',
+          left: [{ cy: 210, at: [[-18, 0, 22, 'Ca'], [18, 0, 19, 'O']], name: 'calcium oxide' },
+            { cy: 205, at: [[-24, -12, 15, 'H'], [0, 4, 19, 'O'], [24, -12, 15, 'H']], name: 'water' }],
+          right: [{ cy: 200, at: [[0, 0, 22, 'Ca'], [-32, -17, 19, 'O'], [-58, -31, 14, 'H'], [32, -17, 19, 'O'], [58, -31, 14, 'H']], name: 'slaked lime' }],
           say: 'Calcium oxide reacts vigorously with water and makes slaked lime, which is calcium hydroxide. Two substances join into one product: a combination reaction that gives out a large amount of heat.' },
-        { type: 'Decomposition reaction', heat: 'needs heating', col: '#c2510e',
-          left: [{ t: 'calcium carbonate', c: '#d7ccc8' }], right: [{ t: 'calcium oxide', c: '#e0e0e0' }, { t: 'carbon dioxide', c: '#b3e5fc' }],
+        { type: 'Decomposition reaction', kind: '#C2510E', energy: 'needs heating', shape: [1, 2], phrase: 'one breaks into two', mood: 'heat',
+          left: [{ cy: 192, at: [[-37, 3, 21, 'Ca'], [0, 0, 19, 'C'], [16, -26, 15, 'O'], [32, 0, 15, 'O'], [16, 26, 15, 'O']], name: 'calcium carbonate' }],
+          right: [{ cy: 210, at: [[-18, 0, 22, 'Ca'], [18, 0, 19, 'O']], name: 'calcium oxide' },
+            { cy: 204, at: [[0, 0, 19, 'C'], [-31, 0, 16, 'O'], [31, 0, 16, 'O']], name: 'carbon dioxide' }],
           say: 'On heating, calcium carbonate breaks into calcium oxide and carbon dioxide. One substance breaking into simpler products is a decomposition reaction, and this one happens only when it is heated.' },
-        { type: 'Displacement reaction', heat: 'happens in solution', col: '#1f6fb8',
-          left: [{ t: 'iron', c: '#b0bec5' }, { t: 'copper sulphate', c: '#64b5f6' }], right: [{ t: 'iron sulphate', c: '#a5d6a7' }, { t: 'copper', c: '#c0703a' }],
+        { type: 'Displacement reaction', kind: '#1F6FB8', energy: 'happens in solution', shape: [2, 2], phrase: 'one pushes one out', mood: 'cool',
+          left: [{ cy: 211, at: [[0, 0, 21, 'Fe']], name: 'iron' },
+            { cy: 211, at: [[-20, 0, 21, 'Cu'], [20, 0, 24, 'SO4']], name: 'copper sulphate' }],
+          right: [{ cy: 211, at: [[-20, 0, 21, 'Fe'], [20, 0, 24, 'SO4']], name: 'iron sulphate' },
+            { cy: 211, at: [[0, 0, 21, 'Cu']], name: 'copper' }],
           say: 'Iron is more reactive than copper, so iron takes the sulphate from copper sulphate. Iron sulphate forms and copper is left behind: one element displacing another from its compound is a displacement reaction.' },
       ];
-      const e = E[v.pick] || E[0];
-      const chip = (x, y, item) => {
-        const at = item.t.lastIndexOf(' ', 17), lines = at > 0 ? [item.t.slice(0, at), item.t.slice(at + 1)] : [item.t];
-        return [R(x, y, 164, 56, '#fff', { w: 2.5, r: 10 }), R(x, y, 8, 56, item.c, { w: 0, r: 4 }),
-          ...lines.map((ln, i) => T(x + 88, y + 27 + i * 18 - (lines.length - 1) * 9, ln, { z: 15, w: 700 }))];
+      const e = E[Math.max(0, Math.min(3, v.pick | 0))];
+      const kids = [s('defs', {}, [
+        ...Object.entries(AT).map(([k, [l, f, d]]) => s('radialGradient', { id: `rx-${k}`, cx: '34%', cy: '30%', r: '78%' },
+          [s('stop', { offset: '0%', 'stop-color': l }), s('stop', { offset: '62%', 'stop-color': f }), s('stop', { offset: '100%', 'stop-color': d })])),
+        s('radialGradient', { id: 'rx-halo' }, [s('stop', { offset: '0%', 'stop-color': '#FFCE62', 'stop-opacity': 0.5 }), s('stop', { offset: '100%', 'stop-color': '#FFCE62', 'stop-opacity': 0 })]),
+        s('radialGradient', { id: 'rx-cool' }, [s('stop', { offset: '0%', 'stop-color': '#7FB6E8', 'stop-opacity': 0.4 }), s('stop', { offset: '100%', 'stop-color': '#7FB6E8', 'stop-opacity': 0 })]),
+        s('radialGradient', { id: 'rx-pool' }, [s('stop', { offset: '0%', 'stop-color': '#FFD268', 'stop-opacity': 0.85 }), s('stop', { offset: '72%', 'stop-color': '#FFC24D', 'stop-opacity': 0.34 }), s('stop', { offset: '100%', 'stop-color': '#FFC24D', 'stop-opacity': 0 })]),
+        s('linearGradient', { id: 'rx-wall', x1: '0', y1: '0', x2: '0', y2: '1' }, [s('stop', { offset: '0%', 'stop-color': '#FFF3DC' }), s('stop', { offset: '62%', 'stop-color': '#FFFBF0' }), s('stop', { offset: '100%', 'stop-color': '#FFF7E6' })]),
+        s('radialGradient', { id: 'rx-poolcool' }, [s('stop', { offset: '0%', 'stop-color': '#8FC4EF', 'stop-opacity': 0.35 }), s('stop', { offset: '100%', 'stop-color': '#8FC4EF', 'stop-opacity': 0 })]),
+      ])];
+      // the room: a warm wall, and the bench the models stand on
+      const top = 236;
+      kids.push(R(0, 0, W, top, 'url(#rx-wall)', { w: 0 }), R(0, top, W, H - top, '#E4B983', { w: 0 }), R(0, top, W, 5, '#F3D6AC', { w: 0 }));
+      kids.push(s('path', { d: 'M 0 256 Q 150 250 300 256 T 600 254', fill: 'none', stroke: 'rgba(150,100,50,0.13)', 'stroke-width': 3 }));
+      kids.push(s('path', { d: 'M 0 276 Q 170 282 340 275 T 600 278', fill: 'none', stroke: 'rgba(150,100,50,0.11)', 'stroke-width': 3 }));
+      // the light in the room carries the heat: warm behind a reaction that gives heat out, warm over the
+      // cluster being heated, cool for the one happening in solution
+      if (e.mood === 'hot') kids.push(s('circle', { cx: 320, cy: 196, r: 210, fill: 'url(#rx-halo)' }));
+      else if (e.mood === 'heat') kids.push(s('circle', { cx: 110, cy: 200, r: 170, fill: 'url(#rx-halo)' }));
+      else kids.push(s('circle', { cx: 300, cy: 190, r: 190, fill: 'url(#rx-cool)' }));
+      // the heat itself: light on the bench. Warm light spills round a product that gave heat out, and round a
+      // substance hot enough to break up; a cool spill marks the one happening in solution.
+      const pool = (cx, rx) => s('ellipse', { cx, cy: 248, rx, ry: 20, fill: 'url(#rx-pool)' });
+      if (e.mood === 'hot') kids.push(pool(464, 132));
+      else if (e.mood === 'heat') kids.push(pool(137, 116));
+      // an atom, drawn as a ball of the modelling kit with its symbol on it
+      const ball = (cx, cy, r, key) => {
+        const [, , , rim, ink] = AT[key];
+        const g = [CIRC(cx, cy, r, `url(#rx-${key})`, { s: rim, w: 2.2 })];
+        if (key === 'SO4') {
+          g.push(s('text', { x: cx, y: cy + r * 0.28, 'text-anchor': 'middle', 'font-size': r * 0.7, 'font-weight': 700, fill: ink, 'font-family': 'sans-serif' },
+            ['SO', s('tspan', { 'font-size': r * 0.5, dy: r * 0.14 }, '4')]));
+        } else {
+          g.push(T(cx, cy + r * 0.34, key, { z: Math.max(16, r), w: 800, f: ink }));
+        }
+        return g;
       };
-      const kids = [], leftY = e.left.length === 1 ? [122] : [74, 162], rightY = e.right.length === 1 ? [122] : [74, 162];
-      e.left.forEach((it, i) => kids.push(...chip(24, leftY[i], it)));
-      e.right.forEach((it, i) => kids.push(...chip(410, rightY[i], it)));
-      kids.push(L(196, 150, 388, 150, INK, 4), s('path', { d: 'M 388 150 l -14 -8 l 0 16 Z', fill: INK, stroke: INK, 'stroke-width': 1 }));
-      kids.push(T(300, 28, e.type, { z: 21, f: e.col }), T(300, 50, e.heat, { z: 14, w: 600, f: '#6b5a8a' }), T(300, 286, 'Move the slider to try another reaction.', { z: 15, w: 600, f: '#8a7aa8' }));
+      // the name under a molecule, wrapped at its space rather than run into its neighbour's
+      const wrapName = (name) => {
+        if (name.length <= 12) return [name];
+        const out = [];
+        for (const w of name.split(' ')) {
+          const last = out.length - 1;
+          if (last >= 0 && out[last].length + 1 + w.length <= 11) out[last] += ` ${w}`;
+          else out.push(w);
+        }
+        return out;
+      };
+      // one side of the bench: the substances laid out with room between them, and a plus where two meet.
+      // A name stays on one line unless the side cannot hold it, so the captions under the balls share a baseline.
+      const side = (mols, x0, x1, wrap) => {
+        const shape = mols.map((m) => {
+          const lo = Math.min(...m.at.map((a) => a[0] - a[2])), hi = Math.max(...m.at.map((a) => a[0] + a[2]));
+          return { m, mid: (lo + hi) / 2, atW: hi - lo };
+        });
+        const spanOf = (b, lines) => Math.max(b.atW, Math.max(...lines.map((l) => l.length)) * 11) + 8;
+        const blocks = shape.map((b) => {
+          const lines = wrap ? wrapName(b.m.name) : [b.m.name];
+          return { ...b, lines, span: spanOf(b, lines) };
+        });
+        const total = blocks.reduce((n, b) => n + b.span, 0) + 26 * (blocks.length - 1);
+        let x = x0 + (x1 - x0 - total) / 2;
+        const out = [];
+        blocks.forEach((b, i) => {
+          const cx = x + b.span / 2;
+          out.push(s('g', { class: 'rx-mol' }, [
+            s('ellipse', { cx, cy: 234, rx: b.span / 2 - 2, ry: 6, fill: 'rgba(96,54,16,0.22)' }),
+            ...b.m.at.flatMap(([dx, dy, r, k]) => ball(cx - b.mid + dx, b.m.cy + dy, r, k)),
+            ...b.lines.map((ln, j) => T(cx, b.lines.length === 1 ? 269 : 258 + j * 21, ln, { z: 19, w: 600, f: '#5b4a2e' })),
+          ]));
+          if (i < blocks.length - 1) out.push(T(x + b.span + 13, 267, '+', { z: 23, w: 700, f: '#7a6448' }));
+          x += b.span + 26;
+        });
+        return { out, from: blocks.length ? x0 + (x1 - x0 - total) / 2 : x0, to: x - 26, centre: (x0 + x1) / 2 };
+      };
+      // reactants on the left, products on the right, and an arrow where the change happens
+      const widest = (mols, x0, x1) => mols.reduce((n, m) => {
+        const lo = Math.min(...m.at.map((a) => a[0] - a[2])), hi = Math.max(...m.at.map((a) => a[0] + a[2]));
+        return n + Math.max(hi - lo, m.name.length * 11) + 8;
+      }, 0) + 26 * (mols.length - 1) > x1 - x0 - 4;
+      const wrap = widest(e.left, 24, 248) || widest(e.right, 348, 580);
+      const lft = side(e.left, 24, 248, wrap), rgt = side(e.right, 348, 580, wrap);
+      kids.push(T((lft.from + lft.to) / 2, 138, 'reactants', { z: 19, w: 700, f: '#6b5a8a' }),
+        T((rgt.from + rgt.to) / 2, 138, 'products', { z: 19, w: 700, f: '#6b5a8a' }));
+      kids.push(...lft.out, ...rgt.out);
+      const shaft = 'M 262 198 L 310 198 L 310 189 L 334 202 L 310 215 L 310 206 L 262 206 Z';
+      kids.push(s('path', { d: shaft, fill: 'rgba(60,40,90,0.16)', stroke: 'none', transform: 'translate(1,3)' }));
+      kids.push(s('path', { d: shaft, fill: '#3a2b5e', stroke: '#3a2b5e', 'stroke-width': 1.5, 'stroke-linejoin': 'round' }));
+      // what kind of change it is, on the wall; how many things went in and came out, in the panel
+      kids.push(T(24, 46, e.type, { z: 21, w: 700, a: 'start', f: e.kind }));
+      kids.push(T(24, 78, e.energy, { z: 18, w: 600, a: 'start', f: '#5b4a7a' }));
+      kids.push(R(342, 14, 236, 92, '#EBD9BC', { w: 0, r: 18 }), R(342, 10, 236, 92, '#FFFFFF', { w: 3, s: '#E6DAC0', r: 18 }));
+      kids.push(T(460, 36, 'substances', { z: 17, w: 600, f: '#8a7aa8' }));
+      kids.push(T(406, 76, String(e.shape[0]), { z: 31, w: 700, f: e.kind }), T(514, 76, String(e.shape[1]), { z: 31, w: 700, f: e.kind }));
+      kids.push(L(432, 68, 478, 68, e.kind, 4), s('path', { d: 'M 484 68 l -9 -5 l 0 10 Z', fill: e.kind, stroke: e.kind, 'stroke-width': 1 }));
+      kids.push(T(460, 97, e.phrase, { z: 18, w: 600, f: '#5b4a7a' }));
       return { kids, say: e.say };
     },
   },

@@ -1048,6 +1048,17 @@ button, a, input, select, label, summary, [role="button"], [role="tab"], [role="
 
 /* explorables: a simulation with sliders and self-ticking challenges */
 .explore__stage { display: block; width: 100%; height: auto; border-radius: var(--radius-md); background: #fff7e8; margin: var(--s2) 0; touch-action: pan-y; }
+/* A simulation is the thing a child looks at, so it takes the card's full width instead of the 16px gutter the
+   reading text needs: at 390 that is a tenth more card, which is a tenth more legible on every sim in the app. */
+.activity--explore .explore__stage { width: calc(100% + 32px); max-width: none; margin-left: -16px; margin-right: -16px; border-radius: var(--radius-md); }
+/* A reaction card redraws only when the child turns the page, so an entry animation on each molecule is the
+   change: the groups settle onto the bench instead of blinking into place. */
+@keyframes rx-settle { from { opacity: 0; transform: translateY(-9px); } to { opacity: 1; transform: none; } }
+.explore__stage .rx-mol { animation: rx-settle .3s cubic-bezier(.22, .8, .3, 1) backwards; }
+.explore__stage .rx-mol:nth-of-type(2) { animation-delay: .05s; }
+.explore__stage .rx-mol:nth-of-type(3) { animation-delay: .1s; }
+.explore__stage .rx-mol:nth-of-type(4) { animation-delay: .15s; }
+@media (prefers-reduced-motion: reduce) { .explore__stage .rx-mol { animation: none; } }
 .explore__say { min-height: 3em; margin: var(--s2) 0; font-weight: 700; line-height: 1.4; }
 .explore__control { display: block; margin: 10px 0 2px; }
 .explore__label { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 800; font-size: 17px; line-height: 1.25; color: var(--text); margin-bottom: 6px; }

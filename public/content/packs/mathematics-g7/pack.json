@@ -683,16 +683,16 @@
          ],
          "prompt": "Earlier, the country had about one lakh rice varieties. A seed bank now has about one hundred. Which count is larger, and why?",
          "options": [
-          "One hundred, because one group beats one thousand groups.",
-          "One lakh, because it has one thousand groups of one hundred.",
-          "One lakh, because a handful is larger than one lakh.",
-          "One hundred, because one lakh means only one thousand."
+          "One hundred, because one lakh means only one hundred.",
+          "One lakh, because it is one thousand groups of one hundred.",
+          "One hundred, because ten hundreds make a lakh.",
+          "They are equal, because both are counts of rice varieties."
          ],
          "answer": 1,
          "why": {
-          "One hundred, because one group beats one thousand groups.": "One group is smaller than one thousand groups.",
-          "One lakh, because a handful is larger than one lakh.": "This reverses the comparison because a handful is smaller than one lakh.",
-          "One hundred, because one lakh means only one thousand.": "It mistakes one lakh for one thousand."
+          "One hundred, because one lakh means only one hundred.": "One lakh means one hundred thousand, not one hundred.",
+          "One hundred, because ten hundreds make a lakh.": "Ten hundreds make one thousand; a lakh needs one thousand hundreds.",
+          "They are equal, because both are counts of rice varieties.": "Both count varieties, but one lakh is about one thousand times the bank's count."
          },
          "explanation": "One lakh has one thousand hundreds, while the bank has about one.",
          "f": [
@@ -722,18 +722,18 @@
          ],
          "prompt": "12,78,830 is read as twelve lakh seventy eight thousand eight hundred thirty. Is this number more or less than one lakh?",
          "options": [
-          "No, because one lakh is more than twelve lakh.",
-          "Yes, because twelve lakh is more than one lakh.",
-          "Yes, because thirty is more than one lakh.",
-          "No, because seventy-eight thousand is more than one lakh."
+          "Less, because twelve is smaller than one lakh.",
+          "More, because twelve lakh is greater than one lakh.",
+          "They are the same, because both are written with six digits.",
+          "Less, because seventy-eight thousand is smaller than one lakh."
          ],
          "answer": 1,
          "why": {
-          "No, because one lakh is more than twelve lakh.": "The comparison is reversed because one lakh is much smaller.",
-          "No, because seventy-eight thousand is more than one lakh.": "Seventy-eight thousand is less than one lakh, so it cannot support No.",
-          "Yes, because thirty is more than one lakh.": "Thirty is much smaller, so it cannot show the number is larger."
+          "Less, because twelve is smaller than one lakh.": "The first group is twelve lakh, not twelve: the whole group is read together.",
+          "Less, because seventy-eight thousand is smaller than one lakh.": "The groups are read together, and twelve lakh is already greater than one lakh.",
+          "They are the same, because both are written with six digits.": "One lakh has six digits, but 12,78,830 has seven, so the two numbers are not the same."
          },
-         "explanation": "Its first group is twelve lakh, which is more than one lakh.",
+         "explanation": "Twelve lakh is twelve times one lakh, and the other groups only add to it.",
          "f": [
           "1.11",
           "1.12"

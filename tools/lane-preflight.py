@@ -124,6 +124,27 @@ def merge_main(lane):
     return None
 
 
+def sources_symlink_guard(lane):
+    """A worktree `sources` symlink is fine; a tracked one is not, and main's must never be a symlink.
+
+    On 2026-11-28 a lane committed its own `sources -> hooty-build/sources` symlink. Merging it made
+    main's real `sources/` directory a symlink to itself: every book failed to reassemble in the publish
+    ("Too many levels of symbolic links"), and the NCERT PDFs in that untracked directory were gone.
+    Git silently clobbers ignored paths on checkout, so nothing warns. Refuse to start on that state, and
+    untrack the path in the lane before it can be committed again.
+    """
+    notes, problems = [], []
+    tracked = git(lane, 'ls-files', 'sources').stdout.strip()
+    if tracked:
+        git(lane, 'rm', '--cached', '-q', 'sources')
+        git(lane, 'commit', '-q', '-m', 'lane: drop the worktree sources symlink from the tree (it is not source)')
+        notes.append('untracked a committed `sources` symlink')
+    if os.path.islink(f'{ROOT}/sources'):
+        problems.append(f"main's sources is a symlink ({os.readlink(f'{ROOT}/sources')}); "
+                        'a merge clobbered the real directory — restore it before any lane runs')
+    return notes, problems
+
+
 def main():
     if len(sys.argv) < 2 or sys.argv[1] not in ('design', 'teach', 'fix'):
         sys.exit('usage: lane-preflight.py design|teach|fix')
@@ -133,6 +154,13 @@ def main():
     error = ensure_worktree(lane)
     if error:
         sys.exit(f'PREFLIGHT FAILED for {lane}: {error}')
+
+    guard_notes, guard_problems = sources_symlink_guard(lane)
+    notes += guard_notes
+    if guard_problems:
+        for problem in guard_problems:
+            print(f'{lane}: PROBLEM {problem}')
+        sys.exit(1)
 
     notes += clear_half_finished_git(lane)
     branch_note = right_branch(lane)

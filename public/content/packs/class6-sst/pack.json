@@ -260,9 +260,9 @@
          ],
          "prompt": "You want a map. It shows all the States of India and their capitals. Which kind of map is it?",
          "options": [
-          "A thematic map",
+          "A physical map",
           "A political map",
-          "A physical map"
+          "A thematic map"
          ],
          "answer": 1,
          "explanation": "A map of India with its States and capitals is a political map.",
@@ -520,10 +520,10 @@
          ],
          "prompt": "On a map, 1 cm stands for 500 m. Two places are 2 cm apart on the map. How far apart are they in real life?",
          "options": [
-          "2,000 m",
+          "250 m",
           "500 m",
           "1,000 m",
-          "250 m"
+          "2,000 m"
          ],
          "answer": 2,
          "explanation": "1 cm is 500 m. So 2 cm is 500 m + 500 m = 1,000 m.",
@@ -843,12 +843,12 @@
          ],
          "prompt": "What does the orange peel trick show?",
          "options": [
-          "All maps are torn",
-          "Paper is heavier than peel",
           "A round shape cannot be made flat without tearing",
-          "Oranges are bigger than the Earth"
+          "Oranges are bigger than the Earth",
+          "All maps are torn",
+          "Paper is heavier than peel"
          ],
-         "answer": 2,
+         "answer": 0,
          "explanation": "You cannot make the peel flat without tearing it. A sphere is a round ball shape. A sphere cannot be shown exactly on flat paper.",
          "id": "ch1-l3-a3",
          "src": [
@@ -969,12 +969,12 @@
          ],
          "prompt": "A friend says, “Meet me at the 7th shop in the 5th row.” What do the two numbers do?",
          "options": [
-          "They show how big the market is",
+          "Together they show one exact place",
           "They show the price of the shop",
           "They show the time",
-          "Together they show one exact place"
+          "They show how big the market is"
          ],
-         "answer": 3,
+         "answer": 0,
          "explanation": "A row number and a shop number together tell your friend the exact place.",
          "id": "ch1-l3-a7",
          "src": [
@@ -1592,12 +1592,12 @@
          ],
          "prompt": "The Prime Meridian goes through a place in London. What is its name?",
          "options": [
-          "Delhi",
           "Greenwich",
+          "Delhi",
           "Tokyo",
           "New York"
          ],
-         "answer": 1,
+         "answer": 0,
          "explanation": "The Prime Meridian goes through Greenwich, an area of London in England.",
          "id": "ch1-l5-a5",
          "src": [
@@ -1763,12 +1763,12 @@
          ],
          "prompt": "Delhi is at 29°N and 77°E. Which number is the latitude?",
          "options": [
-          "0°",
-          "29°N",
           "180°",
-          "77°E"
+          "0°",
+          "77°E",
+          "29°N"
          ],
-         "answer": 1,
+         "answer": 3,
          "explanation": "Latitude is north or south of the Equator. 29°N is the latitude. 77°E is the longitude.",
          "id": "ch1-l5-a10",
          "src": [
@@ -1903,8 +1903,8 @@
          "prompt": "Which city did India’s own prime meridian go through?",
          "options": [
           "Ujjayinī (today Ujjain)",
-          "New York",
           "Greenwich",
+          "New York",
           "Tokyo"
          ],
          "answer": 0,
@@ -2084,12 +2084,12 @@
          ],
          "prompt": "Some old cities were a little away from the Ujjayinī meridian. Why?",
          "options": [
-          "Those cities were in the sea.",
-          "Astronomers did not make maps.",
           "The meridian kept moving.",
-          "People could not measure time well then. Finding longitude needs good time."
+          "People could not measure time well then. Finding longitude needs good time.",
+          "Astronomers did not make maps.",
+          "Those cities were in the sea."
          ],
-         "answer": 3,
+         "answer": 1,
          "explanation": "Finding longitude needs good timekeeping. Long ago, people could not measure time as well as they do today.",
          "id": "ch1-l6-a9",
          "src": [
@@ -2269,12 +2269,12 @@
          ],
          "prompt": "It is 12 noon in Greenwich. What is the local time at 30°W?",
          "options": [
-          "1 pm",
+          "10 am",
           "2 pm",
           "11 am",
-          "10 am"
+          "1 pm"
          ],
-         "answer": 3,
+         "answer": 0,
          "explanation": "Going west takes away one hour for every 15°. At 30°W, that is two hours less: 10 am.",
          "id": "ch1-l7-a6",
          "src": [
@@ -2365,12 +2365,12 @@
          ],
          "prompt": "It is late afternoon. In Tinsukia (Assam), the Sun has set. In Porbandar (Gujarat), the Sun has not set. Their longitudes differ by about 30°. How many hours ahead is Tinsukia?",
          "options": [
-          "1 hour",
           "2 hours",
+          "1 hour",
           "3 hours",
           "30 hours"
          ],
-         "answer": 1,
+         "answer": 0,
          "explanation": "The Earth turns 15° every hour. 30° ÷ 15° = 2 hours. Tinsukia is east of Porbandar. So its local time is 2 hours ahead. That is why it can be dark in Assam but still light in Gujarat.",
          "derived": [
           "2 hours = 30 / 15",
@@ -2856,9 +2856,9 @@
         "prompt": "A map has a scale. 1 cm on the map means 500 m on the ground. Two places are 3 cm apart on the map. How far apart are they on the ground?",
         "options": [
          "1,500 m",
-         "150 m",
+         "500 m",
          "3,000 m",
-         "500 m"
+         "150 m"
         ],
         "answer": 0,
         "explanation": "Each 1 cm is 500 m. So 3 cm is 3 × 500 m = 1,500 m.",
@@ -3024,12 +3024,12 @@
         ],
         "prompt": "Delhi and Bengaluru have almost the same longitude, 77°E. Longitude means how far east or west a place is. What is the time difference between them?",
         "options": [
-         "1 hour",
          "Almost none",
+         "1 hour",
          "2 hours",
          "5 hours 30 minutes"
         ],
-        "answer": 1,
+        "answer": 0,
         "explanation": "Local time depends on longitude. Almost the same longitude means almost the same time.",
         "derived": [
          "1 hour, 2 hours are wrong options"
@@ -3056,12 +3056,12 @@
         ],
         "prompt": "It is 12 noon in London. Why is it 5:30 pm in India?",
         "options": [
-         "India is closer to the Equator",
          "India uses the Date Line",
          "Clocks run faster in India",
-         "India's time is 5 hours 30 minutes ahead of GMT"
+         "India's time is 5 hours 30 minutes ahead of GMT",
+         "India is closer to the Equator"
         ],
-        "answer": 3,
+        "answer": 2,
         "explanation": "IST is 5 hours 30 minutes ahead of Greenwich Mean Time. So noon in London is 5:30 pm in India.",
         "id": "ch1-boss-a10",
         "src": [

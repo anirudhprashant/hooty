@@ -36,6 +36,9 @@ export default {
     // the first meaning) must not look chosen before it is touched, or the card pre-judges an answer.
     const touched = new Set();
     const sync = Object.create(null);   // key -> how to move the matching control when the drawing itself is tapped
+    // A widget whose slider is a dial (magnification, temperature) can print the number a child reads instead of the
+    // raw position, so the read-out under the knob and the drawing never disagree.
+    const outText = (key, val) => { const t = widget.sliderValue?.(v, key, params); return t == null ? String(val) : String(t); };
 
     const draw = (t = 0) => {
       const out = widget.draw(v, params, still ? 0 : t, sl, touched);
@@ -104,7 +107,7 @@ export default {
       v[key] = now;
       if (key === driver) { resetSiblings(); paintTasks(); }
       if (st.input) st.input.value = String(now);
-      if (st.out) st.out.textContent = String(now);
+      if (st.out) st.out.textContent = outText(key, now);
       st.fill(); st.paintName();
       for (const paint of pagers) paint();
       draw(performance.now() / 1000); check();
@@ -132,7 +135,7 @@ export default {
       // A small set of positions is a choice, not a measurement: the number means nothing to a child and the
       // old "label 0" row read like a form field. Only show the value when the range is wide enough to matter.
       const showVal = (Number(max) - Number(min)) > 6;
-      const out = !own && showVal ? el('output', { class: 'explore__val', text: String(v[key]) }) : null;
+      const out = !own && showVal ? el('output', { class: 'explore__val', text: outText(key, v[key]) }) : null;
       const input = el('input', { class: 'range explore__range', type: 'range', min: String(min), max: String(max), step: String(step), value: String(v[key]), 'aria-label': label, ...(own ? { hidden: true, tabindex: '-1' } : {}) });
       const fill = () => {
         const lo = Number(min), hi = Number(max), now = Number(input.value);
