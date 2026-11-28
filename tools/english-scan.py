@@ -91,6 +91,9 @@ SHORT_OK = {'a', 'i', 'an', 'of', 'to', 'in', 'on', 'at', 'by', 'is', 'it', 'as'
             'dr', 'mr', 'mrs', 'ms', 'st', 'vs', 'ph', 'eg', 'ie', 'ok', 'oh', 'ah', 'ha', 'hi', 'id', 'ex'}
 
 
+LOOSE = '--loose' in sys.argv
+
+
 def scan_string(text, counts, rank):
     """Fragments that rejoin into a word we use elsewhere, and words that lost a leading letter."""
     hits = []
@@ -112,21 +115,24 @@ def scan_string(text, counts, rank):
                     and rare(a) and rare(b) and rare(c)):
                 hits.append(f'{a} {b} {c} -> {joined3}')
 
-    # a fragment: a one-to-three letter token that is not an ordinary short word. In clean English this is
-    # rare; in extracted text it is the signature of a word that was cut into pieces.
-    for word in tokens:
-        low = word.lower()
-        if low in SHORT_OK or not low.isalpha() or len(low) > 3:
-            continue
-        if word.isupper():
-            # NE, SE, SW, NW, km, ml: an abbreviation, not a word that was cut in half. The first run of this
-            # scanner counted "SW" from a compass list as a shredded word, which is exactly the kind of false
-            # alarm that makes a repair lane waste an hour.
-            continue
-        if counts[low] < 2 and rank.get(low, 10 ** 6) > 3000:
-            hits.append(f'fragment {low!r}')
+    # A lone short token is NOT evidence of damage: compass points, units, abbreviations ("TVs") and
+    # transliterated Sanskrit ("Sam noh Varunah") all look like that. Two runs of this scanner reported 24-26
+    # lessons on this rule and nearly every one was a false alarm, so it only reports with --loose. Real damage
+    # shows in the join rule above and the lost-leading-letter rule below, where a specific word is recoverable.
+    if LOOSE:
+        for word in tokens:
+            low = word.lower()
+            if low in SHORT_OK or not low.isalpha() or len(low) > 3:
+                continue
+            if word.isupper():
+                continue
+            if counts[low] < 2 and rank.get(low, 10 ** 6) > 3000:
+                hits.append(f'suspect fragment {low!r}')
 
-    # a word that lost its first letter: "ost" where "most" is ordinary and "ost" is not
+    # A word that lost its first letter: "ost" where "most" is ordinary and "ost" is not. Only judged on
+    # sentence-length strings: `lat == 0` is a variable in a maths lesson, not a word missing its first letter.
+    if len(tokens) < 8:
+        return hits
     common_endings = {}
     for i, (word, uses) in enumerate(counts.most_common(4000)):
         if len(word) >= 4:
