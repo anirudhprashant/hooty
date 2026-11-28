@@ -2118,12 +2118,24 @@ export const KITS = {
           const okStart = /^["'(]?[A-Z\u0904-\u0939]/.test(clean);
           return { w: String(t.term), m: String(t.meaning), s: clean.length >= 15 && okStart ? clean : '', own: say.includes(String(t.term).toLowerCase()) ? 1 : 0 };
         });
-      // one meaning per card, so no card ever has two right answers; the lesson's own words come first
-      const seen = new Set(), picked = [];
-      for (const t of pool.sort((a, b) => b.own - a.own)) {
+      // one meaning per card, so no card ever has two right answers; the lesson's own words come first.
+      // A word with a real sentence outranks one without, and two words would rather not share a sentence:
+      // the same quote under two headwords teaches neither meaning. But the card draws the meanings as a
+      // two-by-two grid, and a three-word card leaves an empty quadrant that reads as a missing option
+      // (seen at 390 on hindi-g2-ch7-l1), so a repeated sentence is the lesser fault when the chapter has
+      // no fourth distinct one: the top-up pass below fills the grid.
+      const seen = new Set(), seenSent = new Set(), picked = [], spare = [];
+      const poolSorted = pool.sort((a, b) => (b.own - a.own) || ((b.s ? 1 : 0) - (a.s ? 1 : 0)));
+      for (const t of poolSorted) {
+        if (seen.has(t.m)) continue;
+        if (t.s && seenSent.has(t.s)) { spare.push(t); continue; }
+        seen.add(t.m); if (t.s) seenSent.add(t.s); picked.push(t);
+        if (picked.length >= 4) break;
+      }
+      for (const t of spare) {
+        if (picked.length >= 4) break;
         if (seen.has(t.m)) continue;
         seen.add(t.m); picked.push(t);
-        if (picked.length >= 4) break;
       }
       if (picked.length < 3) return { words: [], meanings: [], key: [], sents: [], labels: L };
       const words = picked.map((t) => t.w), sents = picked.map((t) => t.s), truth = picked.map((t) => t.m);

@@ -241,8 +241,24 @@ for (; steps < 60; steps++) {
       const near = hit >= 0 ? hit : texts.findIndex((x) => x.includes(want) && want.length > 1);
       if (near >= 0) idx = near;
     }
+    // WRONG="<prompt fragment>" answers that one card incorrectly, so a pass can read the feedback a child
+    // actually gets instead of trusting the card that was written. It prints the sheet verbatim.
+    const wrongMode = !!(process.env.WRONG && choicePrompt.includes(process.env.WRONG));
+    if (wrongMode && texts.length > 1) { idx = (idx + 1) % texts.length; trace(`  wrong mode: answering ${JSON.stringify(texts[idx])}`); }
     await options.nth(idx).click().catch(() => {});
     await page.waitForTimeout(500);
+    if (wrongMode) {
+      const sheet = await page.evaluate(() => {
+        const s = document.querySelector('.sheet');
+        if (!s) return null;
+        const q = (sel) => (s.querySelector(sel)?.textContent || '').trim();
+        return { title: q('.sheet__title'), why: q('.sheet__why'), body: q('.sheet__body'),
+                 steps: [...s.querySelectorAll('.sheet__steps li')].map((li) => (li.textContent || '').trim()) };
+      });
+      console.log(`  WRONG: ${JSON.stringify(choicePrompt)} -> ${JSON.stringify(texts[idx])}`);
+      console.log(`  FEEDBACK: ${JSON.stringify(sheet)}`);
+      if (SHOTS) await page.screenshot({ path: `${SHOTS}/wrong-${steps}.png` }).catch(() => {});
+    }
   } else if (await tfs.count()) {
     // True/false shows the same two buttons whatever the card asks, so the only guide is the packs that use the
     // prompt; when they disagree the majority is the least-wrong guess and the card reports itself if it is wrong.
