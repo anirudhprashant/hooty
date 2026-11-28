@@ -304,14 +304,15 @@
           "money",
           "postoffice"
          ],
-         "prompt": "Which is one cheap way to send money?",
+         "prompt": "A money order form comes in three parts: the form, a part for official use and the acknowledgement. Why is one payment split into three parts?",
          "options": [
-          "The post office",
-          "A taxi ride",
-          "A gold shop"
+          "So that the sender, the office and the receiver each keep a record",
+          "So that the post office can charge its fee three times over",
+          "So that no envelope or stamp is needed for the letter",
+          "So that the money reaches the receiver three days sooner"
          ],
          "answer": 0,
-         "explanation": "Right! The post office is one cheap way to send money.",
+         "explanation": "Three parts exist because each one goes to a different pair of hands: you keep the counterfoil as your proof, the office keeps its own record, and one part travels with the money. If the amount is ever questioned, the copies can be checked against each other, which is what makes this safer than folding notes into a letter. Charging three fees is not how a money order works, and the three parts add no speed.",
          "src": [
           {
            "ch": 1,
@@ -319,7 +320,7 @@
           }
          ],
          "anchor": "english-g10-ch1-l1-a7",
-         "focus": 0
+         "focus": 1
         },
         {
          "type": "fillblank",
@@ -490,20 +491,20 @@
           "deep",
           "vocabulary"
          ],
-         "prompt": "You fill a money order form at the post office. You keep one small part of the form. That part is called the counterfoil. Why do you keep it?",
+         "prompt": "You fill in a money order form to send forty rupees to your grandmother. The clerk tears off a small part and hands it to you. What is that part for?",
          "options": [
-          "It is the fee you pay the postman.",
-          "It is your proof that you sent money.",
-          "It is paper for writing a new letter.",
-          "It is a gift for your friend far away."
+          "It is a spare form to use if the first one is filled wrongly",
+          "It is the slip your grandmother must show to collect the money",
+          "It is your own copy of what you sent, to show if the money is questioned",
+          "It is the office's copy, which you must post back to them"
          ],
-         "answer": 1,
+         "answer": 2,
          "why": {
-          "It is a gift for your friend far away.": "Wrong: thinks the form part is a present, not a record.",
-          "It is paper for writing a new letter.": "Wrong: thinks all paper is for writing letters.",
-          "It is the fee you pay the postman.": "Wrong: mixes up money you pay with paper you keep."
+          "It is the slip your grandmother must show to collect the money": "Wrong: the slip your grandmother shows is the office's copy, which travels with the money; the counterfoil stays with you.",
+          "It is the office's copy, which you must post back to them": "Wrong: nothing goes back to the office from you; the piece you keep is your own record, not their file copy.",
+          "It is a spare form to use if the first one is filled wrongly": "Wrong: a spare form would be blank, but the counterfoil already has your amount, the date and the name written on it."
          },
-         "explanation": "Right: keeping a part of the form shows what you did.",
+         "explanation": "The piece you keep is the counterfoil: your record of the amount, the date and the receiver's name. It is proof for the sender, not a ticket for the receiver, because your grandmother is paid against the office's copy and the counterfoil never travels with the money. That is why the clerk hands it to you and not to her.",
          "f": [
           "1.9",
           "1.12"
@@ -519,7 +520,7 @@
           }
          ],
          "anchor": "english-g10-ch1-l1-a7",
-         "focus": 1
+         "focus": -1
         },
         {
          "type": "mcq",
@@ -2396,15 +2397,15 @@
           "lencho",
           "sunday"
          ],
-         "prompt": "When did Lencho come to the post office?",
+         "prompt": "On Sunday Lencho reached the post office earlier than usual and asked whether a letter had come for him. What does the early hour tell us about him?",
          "options": [
-          "Earlier than usual on Sunday",
-          "Later than usual on Sunday",
-          "On a weekday morning",
-          "Late on Saturday night"
+          "He was eager to know whether God had answered",
+          "He wanted to finish before the postman went out",
+          "He had come to complain about a missing letter",
+          "He had a second letter ready to post that morning"
          ],
          "answer": 0,
-         "explanation": "The text says Lencho came earlier than usual that Sunday.",
+         "explanation": "He came early because he was waiting on an answer from God, and the text gives no other errand for that hour: his one question at the counter is whether a letter has come. The complaint and the second letter come after he has counted the money, so neither can explain the early start.",
          "src": [
           {
            "ch": 1,
@@ -3184,13 +3185,13 @@
          "prompt": "The snow fell from a hemlock tree, not from a merry tree. The poet still felt better. What does this suggest?",
          "options": [
           "The poet did not notice the tree.",
-          "Only happy trees can help people.",
+          "Happy trees can help people.",
           "Snow feels the same on everyone.",
           "A sad-looking thing can bring joy."
          ],
          "answer": 3,
          "why": {
-          "Only happy trees can help people.": "He thinks the tree type must be cheerful, but the poem shows otherwise.",
+          "Happy trees can help people.": "He thinks the tree type must be cheerful, but the poem shows otherwise.",
           "The poet did not notice the tree.": "He thinks the poet ignored the tree, but the poet names it clearly.",
           "Snow feels the same on everyone.": "He talks about people in general, not what this moment suggests."
          },
@@ -3476,17 +3477,17 @@
           "exam",
           "assertion"
          ],
-         "prompt": "Assertion (A): Lencho writes a letter to God when his crops are ruined.\nReason (R): Lencho asks God for a hundred pesos because his crops are ruined.",
+         "prompt": "Assertion (A): The hail left Lencho's field of ripe corn destroyed.\nReason (R): Lencho's house stood alone on the crest of a low hill.",
          "options": [
+          "Both A and R are true, but R is not the correct explanation of A.",
           "A is false but R is true.",
-          "A is true but R is false.",
           "Both A and R are true, and R is the correct explanation of A.",
-          "Both A and R are true, but R is not the correct explanation of A."
+          "A is true but R is false."
          ],
-         "answer": 2,
-         "explanation": "Both statements are true, and the request for a hundred pesos is directly linked to his ruined crops.",
-         "anchor": "english-g10-ch1-l1-a1",
-         "focus": 2
+         "answer": 0,
+         "explanation": "Both sentences are true: the hour of hail ruined the standing corn, and the house did stand alone on the hill above the valley. But the house did not cause the loss; stones falling on the crop for a whole hour did. A true detail that sits beside an assertion is not the same thing as its explanation, which is what this pair is testing.",
+         "anchor": "english-g10-ch1-l2-a1",
+         "focus": 0
         },
         {
          "type": "mcq",
@@ -3523,22 +3524,22 @@
           "case"
          ],
          "context": "Lencho's house stood alone on the crest of a low hill, the only one in the entire valley. From that height he could see the river and his field of ripe corn, which he knew intimately. The earth needed a downpour, or at least a shower. During the meal, big drops of rain began to fall, and huge mountains of clouds could be seen approaching. Lencho called the raindrops new coins, but very large hailstones began to fall with the rain. The boys ran out to collect the frozen pearls while the hail rained for an hour on the house.",
-         "prompt": "After an hour of very large hailstones falling on the valley, what would most likely happen to the field of ripe corn?",
+         "prompt": "The hail fell on the valley for a whole hour. What would most likely happen to the standing ripe corn?",
          "options": [
-          "The corn would be badly damaged, since large hail falling for so long strikes the plants again and again",
-          "The corn would ripen faster because hailstones add coolness to the crop",
-          "The corn would be washed away by the river rather than harmed by the hail",
-          "The corn would remain untouched because the house on the hill shielded the whole valley"
+          "It would be protected by a layer of ice",
+          "It would ripen faster in the cooler air",
+          "It would be carried away by the flooded river",
+          "It would be battered and stripped, and the crop lost"
          ],
-         "answer": 0,
+         "answer": 3,
          "why": {
-          "The corn would ripen faster because hailstones add coolness to the crop": "Wrong: hail is ice striking the plants; it does not help crops ripen",
-          "The corn would remain untouched because the house on the hill shielded the whole valley": "Wrong: the house sits on the hill; it cannot cover an entire open valley",
-          "The corn would be washed away by the river rather than harmed by the hail": "Wrong: the danger described is the hail from above, not the river flooding the field"
+          "It would ripen faster in the cooler air": "Wrong: cold air does not ripen standing corn, and an hour of stones is not gentle weather.",
+          "It would be protected by a layer of ice": "Wrong: ice lying on the plants presses them down and breaks them; a hail blanket is not shelter.",
+          "It would be carried away by the flooded river": "Wrong: this field stands on a hill above the river, and the lesson blames the hail for the loss."
          },
-         "explanation": "Correct: large hailstones falling steadily for an hour would batter and destroy standing ripe corn",
+         "explanation": "Because stone after stone hits the same plants for a whole hour, the corn is beaten down and stripped, which is the loss Lencho is about to face. Hail does not ripen corn, and a layer of ice only presses the crop down harder; the river is not what destroys this field.",
          "anchor": "english-g10-ch1-l2-a1",
-         "focus": -1
+         "focus": 2
         },
         {
          "type": "mcq",
@@ -3685,20 +3686,20 @@
           "case"
          ],
          "context": "In the solitary house on the hill, every heart held a single hope after the crops were ruined. All through the night Lencho, an ox of a man, thought only of that one hope. He believed God's eyes see everything, and he knew how to write. At daybreak on Sunday he began to write a letter to God, asking for a hundred pesos because he needed the money to sow his field again. He wrote 'To God' on the envelope, placed a stamp, and dropped the letter into the mailbox.",
-         "prompt": "Lencho asked for a hundred pesos. If his only need had been food for the family to eat, rather than sowing the field again, how would his letter most likely have been different?",
+         "prompt": "Lencho asked God for a hundred pesos, the sum he needed to sow his field again. If he had needed only a week of food, what would most likely have changed in his letter?",
          "options": [
-          "He would have left the envelope unaddressed, since the purpose had changed",
-          "He would have asked for a different amount, because the hundred pesos was tied to his need to sow his field again",
-          "He would have written the letter on a weekday instead of Sunday at daybreak",
-          "He would not have written to God at all, since God only helps with farming"
+          "He would have waited for the next harvest before writing",
+          "He would have asked for the same hundred pesos, whatever the need",
+          "He would have written to the postmaster instead of to God",
+          "He would have named a smaller sum, since the amount grew out of his need"
          ],
-         "answer": 1,
+         "answer": 3,
          "why": {
-          "He would not have written to God at all, since God only helps with farming": "Wrong: his faith in God was not limited to farming; he believed God's eyes see everything.",
-          "He would have written the letter on a weekday instead of Sunday at daybreak": "Wrong: the timing came from his habit of writing at daybreak on Sunday, not from the purpose of the money.",
-          "He would have left the envelope unaddressed, since the purpose had changed": "Wrong: he wrote 'To God' on the envelope because of his faith, which would remain whatever the money was for."
+          "He would have asked for the same hundred pesos, whatever the need": "Wrong: the lesson ties the hundred pesos to sowing the field, so a different need gives a different sum.",
+          "He would have written to the postmaster instead of to God": "Wrong: the letter is addressed to God; the post office only enters the story after the reply comes.",
+          "He would have waited for the next harvest before writing": "Wrong: the family has nothing to eat now, so waiting for a harvest answers nothing."
          },
-         "explanation": "Correct: the hundred pesos was the sum he needed to sow his field again, so a different need would mean a different request.",
+         "explanation": "The hundred pesos is not a round wish: the lesson ties it to one purpose, sowing the field again. Change the purpose and the sum changes with it, because Lencho works his request out from what his family actually needs. Asking the same sum for a week of food would leave most of it with no explanation.",
          "anchor": "english-g10-ch1-l3-a1",
          "focus": -1
         },
@@ -4269,15 +4270,15 @@
           "autobiography",
           "source"
          ],
-         "prompt": "The text you are about to read comes from a famous book. What is it?",
+         "prompt": "Mandela spent thirty years in prison and then became the first black President of South Africa. What does that sequence tell you about the struggle against apartheid?",
          "options": [
-          "A newspaper report about sports",
-          "Mandela's autobiography, Long Walk to Freedom",
-          "A book of short stories",
-          "A letter to a friend"
+          "It was settled quickly once the courts agreed",
+          "It was easy, since other countries supported it",
+          "It was quiet, with few South Africans taking part",
+          "It lasted a lifetime for the people who led it"
          ],
-         "answer": 1,
-         "explanation": "Well done! The extract is taken from Mandela's own life story, Long Walk to Freedom.",
+         "answer": 3,
+         "explanation": "Thirty years is most of a grown man's working life spent in prison, and the question turns on that: the struggle was long because the people in it paid for it with their freedom. None of the other three fits a fight that took thirty years and a jail sentence.",
          "src": [
           {
            "ch": 2,
@@ -4285,7 +4286,7 @@
           }
          ],
          "anchor": "english-g10-ch2-l1-a1",
-         "focus": -1
+         "focus": 2
         },
         {
          "type": "fillblank",
@@ -4896,15 +4897,15 @@
           "deklar",
           "sworn"
          ],
-         "prompt": "Who was sworn in first as second deputy president?",
+         "prompt": "The new government was installed at the Union Buildings, which had been the seat of white supremacy for decades. Why does that setting matter?",
          "options": [
-          "Zenani",
-          "Mr de Klerk",
-          "A world leader",
-          "Thabo Mbeki"
+          "The old government kept the building and stayed in charge",
+          "The old seat of unfair rule now stood for a rule of all",
+          "It had been built specially for the swearing-in ceremony",
+          "It was the only building large enough to hold the crowd"
          ],
          "answer": 1,
-         "explanation": "Mr de Klerk was sworn in first, as second deputy president.",
+         "explanation": "The lesson makes the point itself: the old seat of unfair rule became the home of a fair new beginning. Size and age are practical reasons the text never gives, and the old government did not stay in charge, because the election had removed it. What matters is what the place used to stand for and what it stands for now.",
          "src": [
           {
            "ch": 2,
@@ -4912,7 +4913,7 @@
           }
          ],
          "anchor": "english-g10-ch2-l2-a7",
-         "focus": -1
+         "focus": 0
         },
         {
          "type": "matchpairs",
@@ -5188,14 +5189,14 @@
          "prompt": "People of many colours and nations came together. The writer called the crowd a 'rainbow gathering'. The day was bright and clear. What does 'rainbow' mean here?",
          "options": [
           "A sky after the rain",
-          "Only colourful clothes",
+          "Colourful clothes",
           "A painting on a wall",
           "Many different people together"
          ],
          "answer": 3,
          "why": {
           "A sky after the rain": "Wrong: this is the weather meaning, not the meaning about people.",
-          "Only colourful clothes": "Wrong: clothes are not mentioned; the people themselves were different.",
+          "Colourful clothes": "Wrong: clothes are not mentioned; the people themselves were different.",
           "A painting on a wall": "Wrong: a painting is a picture, not a living crowd."
          },
          "explanation": "Right: a rainbow has many colours, so it means many kinds of people together.",
@@ -5604,18 +5605,18 @@
          ],
          "prompt": "A village gets clean water for the first time. The leader says, 'This is a common victory for everyone.' What does 'common' mean here?",
          "options": [
-          "Shared by all the people of the village",
-          "Ordinary and not worth celebrating",
-          "Cheap and easy to get",
-          "Very rare and special"
+          "Shared by every family in the village",
+          "Ordinary, and hardly worth celebrating",
+          "Cheap, because the work cost the village nothing",
+          "Rare, because only one family did the work"
          ],
          "answer": 0,
          "why": {
-          "Ordinary and not worth celebrating": "This thinks common means plain, but here it means shared.",
-          "Cheap and easy to get": "This thinks common means low cost, which is not the meaning here.",
-          "Very rare and special": "This thinks common means rare, which is the opposite meaning."
+          "Ordinary, and hardly worth celebrating": "Wrong: 'ordinary' is the other everyday meaning of common, but a leader praising new water is not calling it unremarkable.",
+          "Cheap, because the work cost the village nothing": "Wrong: common can mean cheap in some phrases, but this sentence is about who shares the victory, not what it cost.",
+          "Rare, because only one family did the work": "Wrong: rare is the opposite of common, and the words 'for everyone' rule it out."
          },
-         "explanation": "Right. A common victory belongs to everyone together.",
+         "explanation": "'Common' here means shared because of the phrase 'for everyone': the victory belongs to the whole village, so no family stands outside it. The trap is the other everyday meaning, 'ordinary', which would have the leader calling the new water unremarkable in the same breath as praising it.",
          "f": [
           "3.7"
          ],
@@ -6787,7 +6788,7 @@
          ],
          "prompt": "In prison, a guard was sometimes kind to Mandela. Mandela saw a glimmer of humanity in him. Mandela says goodness is a flame that can be hidden but never put out. What does this mean?",
          "options": [
-          "Only guards inside prisons have goodness.",
+          "Guards inside prisons have goodness.",
           "Even hard people keep some goodness inside.",
           "Goodness dies when people act unkindly.",
           "A flame needs a real fire to stay alive."
@@ -6795,7 +6796,7 @@
          "answer": 1,
          "why": {
           "Goodness dies when people act unkindly.": "Mandela says the flame is never put out, so goodness never fully dies.",
-          "Only guards inside prisons have goodness.": "Mandela saw it in one guard, but he means goodness in all people.",
+          "Guards inside prisons have goodness.": "Mandela saw it in one guard, but he means goodness in all people.",
           "A flame needs a real fire to stay alive.": "The flame is a picture of goodness, not a real fire."
          },
          "explanation": "Right: the kind guard shows goodness hiding inside even a harsh system.",
@@ -14930,15 +14931,15 @@
           "amanda",
           "instructions"
          ],
-         "prompt": "What is Amanda told not to bite?",
+         "prompt": "Amanda is told not to bite her nails, not to hunch her shoulders and to sit up straight. Why does she then dream of a green sea and of roaming alone as an orphan?",
          "options": [
-          "Sweets",
-          "Her lips",
-          "Her pencil",
-          "Her nails"
+          "Because her homework is too hard to finish in time",
+          "Because she has never seen the sea and longs to know it",
+          "Because she has been sent away from home to live with strangers",
+          "Because the orders leave her no quiet of her own to enjoy"
          ],
          "answer": 3,
-         "explanation": "Well done! The poem opens with this instruction to Amanda.",
+         "explanation": "Because the orders never stop, Amanda imagines a place where nobody is left to instruct her: a silent green sea, an orphan's street. The poem's point is escape, not geography. Nobody sends her away in the story, which is why the orphan is a picture in her head and not a real journey.",
          "src": [
           {
            "ch": 4,
@@ -14946,7 +14947,7 @@
           }
          ],
          "anchor": "english-g10-ch4-l6-a1",
-         "focus": 0
+         "focus": -1
         },
         {
          "type": "fillblank",
@@ -21471,15 +21472,15 @@
           "splash"
          ],
          "title": "Wild with Joy",
-         "prompt": "How did Mijbil behave in the bathroom water?",
+         "prompt": "Mijbil first lay dull and uninterested, then went wild with joy in the bathroom water. What does the change show?",
          "options": [
-          "He slept in the bathtub.",
-          "He cried and tried to leave.",
-          "He sat still and shivered.",
-          "He plunged, rolled and shot underwater."
+          "He had begun to feel at home with Maxwell",
+          "He was so tired that the water sent him to sleep",
+          "He was afraid of the water and wanted to get out",
+          "He had hurt himself and was crying in pain"
          ],
-         "answer": 3,
-         "explanation": "He went wild with joy, making enough slosh and splash for a hippo!",
+         "answer": 0,
+         "explanation": "The lesson says Mij lost his apathy and took keen interest in everything, and that in the water he went wild with joy. That play is the evidence he is settling in, because an animal only romps like that once a place stops feeling strange. Sleeping or crying would say the opposite, and the text shows neither.",
          "src": [
           {
            "ch": 6,
@@ -28566,7 +28567,7 @@
          ],
          "prompt": "People start calling a wise man 'the Awakened One'. Before this, he was just a searcher like others. When do people most likely start using this new name for him?",
          "options": [
-          "Only when he sits down under the tree",
+          "When he sits down under the tree",
           "After his understanding finally comes to him",
           "Before he starts his long search for answers",
           "While he is still walking from village to village"
@@ -28575,7 +28576,7 @@
          "why": {
           "Before he starts his long search for answers": "This is too early; before the search he has not found anything yet.",
           "While he is still walking from village to village": "This is still too early; during the search he is looking, not finding.",
-          "Only when he sits down under the tree": "Sitting down is the start of waiting, not the moment of waking."
+          "When he sits down under the tree": "Sitting down is the start of waiting, not the moment of waking."
          },
          "explanation": "Right: 'Awakened' fits only after his understanding finally comes.",
          "f": [
@@ -29184,13 +29185,13 @@
           "Death has come to almost every family at some time.",
           "More people die each year than babies are born.",
           "People should stop living because death wins in the end.",
-          "Only a few rich families can escape death with medicine."
+          "A few rich families can escape death with medicine."
          ],
          "answer": 0,
          "why": {
           "More people die each year than babies are born.": "Wrong: this turns the line into a counting fact about births and deaths.",
           "People should stop living because death wins in the end.": "Wrong: this twists it into giving up on life, which the story never says.",
-          "Only a few rich families can escape death with medicine.": "Wrong: this adds money and medicine, ideas not in the line at all."
+          "A few rich families can escape death with medicine.": "Wrong: this adds money and medicine, ideas not in the line at all."
          },
          "explanation": "Right: it means loss is common, so no house is free from sorrow.",
          "f": [
@@ -30016,23 +30017,23 @@
           "all"
          ],
          "title": "Who Must Face Death?",
-         "prompt": "Who falls into the power of death, according to the Buddha?",
+         "prompt": "The Buddha says that weeping and grieving bring no peace of mind. What does he say grief does instead?",
          "options": [
-          "Only fools and the young",
-          "Only the old and unwise",
-          "Both young and adult, both fools and wise",
-          "Only those who live far away"
+          "It shortens the life of the person who died",
+          "It adds to our pain, and the body suffers too",
+          "It shows others how much we loved them",
+          "It brings the dead person back for a while"
          ],
-         "answer": 2,
-         "explanation": "The Buddha says all fall into the power of death. No one is left out.",
+         "answer": 1,
+         "explanation": "The sermon is direct: pain will be greater and the body will suffer. Grief is a second wound because it does not undo what happened and adds its own suffering, which is why the Buddha speaks of drawing out the arrow of lamentation, complaint and grief. Nothing in the text says mourning shortens a life or brings anyone back.",
          "src": [
           {
            "ch": 8,
            "p": 3
           }
          ],
-         "anchor": "english-g10-ch8-l5-a1",
-         "focus": 1
+         "anchor": "english-g10-ch8-l5-a8",
+         "focus": 0
         },
         {
          "type": "matchpairs",
@@ -30200,11 +30201,11 @@
           "The young boy is safe because he is strong.",
           "Both the boy and the coach can die.",
           "The wise coach is safe because he is clever.",
-          "Only the old coach can be harmed by death."
+          "The old coach can be harmed by death."
          ],
          "answer": 1,
          "why": {
-          "Only the old coach can be harmed by death.": "Wrong: a child thinks death only touches old people.",
+          "The old coach can be harmed by death.": "Wrong: a child thinks death only touches old people.",
           "The wise coach is safe because he is clever.": "Wrong: a child thinks wisdom can protect a person from death.",
           "The young boy is safe because he is strong.": "Wrong: a child thinks being young and strong keeps death away."
          },
@@ -30735,14 +30736,14 @@
          ],
          "prompt": "Dev's dog died, and he feels deep sadness. Ria moved to a new city, and she feels deep sadness too. What does this show?",
          "options": [
-          "Only death can cause grief",
+          "Death can cause grief",
           "Dev and Ria are just very tired",
           "Ria is too weak to be happy",
           "Grief comes from any loss or big change"
          ],
          "answer": 3,
          "why": {
-          "Only death can cause grief": "Wrong: this thinks grief has only one cause, death.",
+          "Death can cause grief": "Wrong: this thinks grief has only one cause, death.",
           "Ria is too weak to be happy": "Wrong: this blames Ria instead of seeing a normal feeling.",
           "Dev and Ria are just very tired": "Wrong: this calls a deep emotion simple tiredness."
          },
